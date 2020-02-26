@@ -29,6 +29,7 @@ public class SimpleProcessor implements DocumentProcessor
      */
     public ArrayList<String> processText(String text)
     {
+    	//System.err.print("processing text in simple processor");
         List<String> tokens = Arrays.asList(text.toLowerCase().replaceAll("[^a-z0-9']", " ").split("\\s+"));
 
         ArrayList<String> terms = new ArrayList<>();

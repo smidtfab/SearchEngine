@@ -45,8 +45,8 @@ public class SearchEngine
         }
 
         // Build index
-        DocumentProcessor docProcessor = new SimpleProcessor();
-        //DocumentProcessor docProcessor = new HtmlProcessor(File stopwords.txt);
+        //DocumentProcessor docProcessor = new SimpleProcessor();
+        DocumentProcessor docProcessor = new HtmlProcessor(pathToStopWords);
         Indexer indexer = new Indexer(pathToIndex, pathToCollection, docProcessor);
         indexer.run();
 
@@ -120,7 +120,9 @@ public class SearchEngine
         ind.printStatistics();
 
         // Instantiate retriever and run
-        DocumentProcessor docProcessor = new SimpleProcessor();
+        //DocumentProcessor docProcessor = new SimpleProcessor();
+        //TODO: Change file path argument
+        DocumentProcessor docProcessor = new HtmlProcessor(pathToIndex);
         RetrievalModel cosine = new Cosine();
         Interactive inter = new Interactive(cosine, ind, docProcessor);
         inter.run();
@@ -137,9 +139,11 @@ public class SearchEngine
                 SearchEngine.doIndex(args);
                 break;
             case "batch":
+            	System.out.println("batch");
                 SearchEngine.doBatch(args);
                 break;
             case "interactive":
+            	System.out.println("interactive");
                 SearchEngine.doInteractive(args);
                 break;
             default:

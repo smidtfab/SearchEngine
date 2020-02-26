@@ -49,6 +49,7 @@ public class Indexer
         ind.save();
         System.err.println("done.");
         System.err.println("Index statistics:");
+        //System.err.println(docProcessor);
         ind.printStatistics();
     }
     /**
@@ -157,7 +158,9 @@ public class Indexer
         String html = new String(Files.readAllBytes(docFile.toPath()));
        
         Tuple<String, String> parsed = this.docProcessor.parse(html);
+        
         System.out.println(parsed.item1);
+        
         ArrayList<String> titleTerms = this.docProcessor.processText(parsed.item1);
         
 

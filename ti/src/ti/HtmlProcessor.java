@@ -4,8 +4,13 @@
 package ti;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -54,12 +59,22 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	public ArrayList<String> processText(String text)
 	{
-		ArrayList<String> terms = new ArrayList<>();
-
-		// P2
-		// Tokenizing, normalizing, stopwords, stemming, etc. 
-
-		return terms;
+		ArrayList<String> tokens = this.tokenize(text);
+		ArrayList<String> processedTokens = this.tokenize(text);
+		
+		for (String token : tokens) {
+			if(!this.isStopWord(token)) {
+				String normToken = this.normalize(token);
+				//System.out.println(normToken);
+				String stemmedToken = this.stem(normToken);
+				System.out.println(normToken + " -- stemmed --> " + stemmedToken);
+				processedTokens.add(stemmedToken);
+			}
+		}
+		//System.err.println(tokens.get(0));
+		//System.err.println("------------------------------------------------------------");
+		
+		return processedTokens;
 	}
 
 	/**
@@ -70,11 +85,14 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	protected ArrayList<String> tokenize(String text)
 	{
-		ArrayList<String> tokens = new ArrayList<>();
+		List<String> tokens = Arrays.asList(text.replaceAll("[^a-zA-Z0-9']", " ").split("\\s+"));
+		ArrayList<String> terms = new ArrayList<>();
+		
+        for (String token : tokens)
+            if (token.length() > 4)
+                terms.add(token);
 
-		// P2
-
-		return tokens;
+		return terms;
 	}
 
 	/**
@@ -85,9 +103,7 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	protected String normalize(String text)
 	{
-		String normalized = null;
-
-		// P2
+		String normalized = text.toLowerCase();
 
 		return normalized;
 	}
@@ -100,11 +116,31 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	protected boolean isStopWord(String term)
 	{
-		boolean isTopWord = false;
+		boolean isStopWord = false;
 
-		// P2
+		try {
+		    Scanner scanner = new Scanner(this.pathToStopWords);
 
-		return isTopWord;
+		    //now read the file line by line...
+		    int lineNum = 0;
+		    while (scanner.hasNextLine()) {
+		        String line = scanner.nextLine();
+		        lineNum++;
+		        if(line.equals(term)) { 
+		            System.out.println("stop word in line #" + lineNum + " --> " + term);
+		            scanner.close();
+		            return true;
+		        }
+		    }
+		    scanner.close();
+		} catch(FileNotFoundException e) { 
+		    //throw e;
+			System.err.println(e.getStackTrace());
+		} finally {
+			
+		}
+
+		return isStopWord;
 	}
 
 	/**
@@ -115,10 +151,11 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	protected String stem(String term)
 	{
-		String stem = null;
-
-		// P2
-
+		Stemmer stemmer = new Stemmer();
+		char[] termChars = term.toCharArray();
+		stemmer.add(termChars, termChars.length);
+		stemmer.stem();
+		String stem = stemmer.toString();
 		return stem;
 	}
 }
