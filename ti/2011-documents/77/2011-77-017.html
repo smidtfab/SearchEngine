@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]>
+<html id="ie7" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<![endif]-->
+<!--[if (gt IE 7) | (!IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<!--<![endif]-->
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Data + Model + View</title>
+
+	<style type="text/css" media="screen">
+		@import url( http://s1.wp.com/wp-content/themes/pub/rubric/style.css?m=1297808292g );
+	</style>
+
+	<link rel="pingback" href="http://datamodelview.wordpress.com/xmlrpc.php" />
+	<link rel="alternate" type="application/rss+xml" title="Data + Model + View &raquo; Feed" href="http://datamodelview.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Data + Model + View &raquo; Comments Feed" href="http://datamodelview.wordpress.com/comments/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1297799136g" type="text/css" />
+<script type='text/javascript' src='http://s2.wp.com/wp-includes/js/l10n.js?m=1295648996g&amp;ver=20101110'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/jquery/jquery.js?m=1290133841g&amp;ver=1.4.4'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://datamodelview.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://datamodelview.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Data + Model + View' href='http://datamodelview.wordpress.com/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='shortlink' href='http://wp.me/wq08' />
+<link rel="shortcut icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1284002170g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1284002170g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1251140292g" />
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( /i/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( /i/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel='openid.server' href='http://datamodelview.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://datamodelview.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://datamodelview.wordpress.com/osd.xml" title="Data + Model + View" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+	<script type="text/javascript" charset="utf-8">
+		try{
+			var id = location.hash.match( /\#\!\/entry\/(\d+)/ )[1];
+			if ( id ) {
+				window.location = "http://datamodelview.wordpress.com?p=" + id;
+			};
+		}catch( error ){
+		}
+	</script>		
+<style type="text/css">
+#header{
+	background: url(http://s1.wp.com/wp-content/themes/pub/rubric/images/rubric/pen-sm.jpg) no-repeat top right;
+}
+#header a {
+	color:#B54141;
+}
+</style>
+<meta name="application-name" content="Data + Model + View" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Just another WordPress.com weblog" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://datamodelview.wordpress.com/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /></head>
+
+<body>
+<div id="rap">
+<h1 id="header"><a href="http://datamodelview.wordpress.com/">Data + Model + View</a></h1>
+
+<div id="content">
+<!-- end header -->
+
+
+<h2>July 22, 2010</h2>
+<div class="post-85 post type-post status-publish format-standard hentry category-in-database-sml category-query-driven-sml category-talks" id="post-85">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/07/22/analyst-of-the-big-data-era/" rel="bookmark">Analysts of the Big Data&nbsp;Era</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/in-database-sml/" title="View all posts in in-database SML" rel="category tag">in-database SML</a>,<a href="http://en.wordpress.com/tag/query-driven-sml/" title="View all posts in query-driven SML" rel="category tag">query-driven SML</a>,<a href="http://en.wordpress.com/tag/talks/" title="View all posts in talks" rel="category tag">talks</a> &#8212; Daisy @ 7:21 am <br /></div>
+
+	<div class="storycontent">
+		<p>This is the opening of Brian Dolan&#8217;s talk in his talk in <a href="http://db.cs.berkeley.edu/dblunch.php">the Berkeley DB seminar Fall 2009</a>: Welcome to the Petabyte Age.</p>
+<p>And here is the welcom message from  Hal Varian, Google&#8217;s Chief Economist:</p>
+<p style="text-align:center;"><em>I keep saying the sexy job in the next ten years<br />
+will be statisticians. People think I&#8217;m joking, but<br />
+who would have guess that computer engineers<br />
+Would&#8217;ve been the sexy job of the 1990&#8242;s?<br />
+The ability to take data—to be able to understand<br />
+it, to process it, to extract value from it, to<br />
+visualize it, to communicate it—that’s going to be<br />
+a hugely important skill in the next decades, not<br />
+only at the professional level but even at the<br />
+educational level for elementary school kids,<br />
+for high school kids, for college kids. Because<br />
+now we really do have essentially free and<br />
+ubiquitous data. So the complimentary scarce<br />
+factor is the ability to understand that data and<br />
+extract value from it.<br />
+</em>Hal Varian, Google&#8217;s Chief Economist<br />
+Source: “The McKinsey Quarterly”, Jan 2009.</p>
+<p style="text-align:left;">I am fortunate to meet two professional who got the HOTTEST job of this era &#8212; analyst of the big data, and get a peak at what kind of problem they are solving and how they are solving it.</p>
+<p style="text-align:left;">Brian worked as the director of research analytics for Fox Audience Network. He is dealing with 5 billion rows of data per day, and trillions of rows of data to query in total as of 2009. Clearly, how to store, how to manage, and how to learn knowledge from this massive data brings un-preceded challenges and opportunities in many domains, including data warehousing, data management (distributed computing), and large-scale statistical analysis. In his day to day life, Brian has to struggle with these problems to answer questions from executives and salemen in terms of on-line advertising. An example question could be:&#8221;How many female WWF enthusiasts under the age of 30 visited the Toyota community over the last four days and saw a medium rectangle?&#8221; And a follow-up query could be:&#8221; How are these people similar to those that visited Nissan?&#8221; These questions are impossible to be answered by current DB/Data Mining/SML/BI tools. The way Brian is dealing with it is to be an expert in data management and statistical machinear learning, to modify data storage, management, computation to manage Big Data. There is no integrated solution for answering such analytical, yet highly valuable questions.</p>
+<p style="text-align:left;">The same problem happened to Roger, head of the data analyst team in O&#8217;Reilly. They are analyzing a database with job postings, and their tasks involve queries to analyze the trend of certain jobs in a specific industrial sector. Currently, they are pulling data out of database to do it in R. However, they have to go through the painful down-sampling, and pre-processing in database, so that they can pipe reasonable sized data into R, because passing all the data is just not an option: 1) R cannot handle it 2) piping in and out DB is really expensive. Also, such tasks depends heavily on natural language processing.</p>
+<p style="text-align:left;">I think in-database query-driven NLP/ML research that I am part-of cut right through those problems, to enable data analyst to have an integrated system that can perform scalable data storage, management and statistical analysis.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/07/22/analyst-of-the-big-data-era/#respond" title="Comment on Analysts of the Big Data&nbsp;Era">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>July 8, 2010</h2>
+<div class="post-131 post type-post status-publish format-standard hentry category-in-database-sml category-papers category-query-driven-sml" id="post-131">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/07/08/splash/" rel="bookmark">In-database Statistical Log&nbsp;Analysis</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/in-database-sml/" title="View all posts in in-database SML" rel="category tag">in-database SML</a>,<a href="http://en.wordpress.com/tag/papers/" title="View all posts in papers" rel="category tag">papers</a>,<a href="http://en.wordpress.com/tag/query-driven-sml/" title="View all posts in query-driven SML" rel="category tag">query-driven SML</a> &#8212; Daisy @ 10:39 pm <br /></div>
+
+	<div class="storycontent">
+		<p>A paper, <a href="http://www.eecs.umich.edu/techreports/cse/2009/CSE-TR-553-09.pdf">Splash: Integrated Ad-Hoc Querying of Data and Statistical Models</a>, by Lujun Fang, Kristen LeFevre of UMich, presents a system called Splash, which integrates statistical modeling as aggregate functions in SQL, and use SQL queries to drive ad-hoc model creating and inference analysis.</p>
+<p>The motivating application is log analysis, for recording and detecting inappropriate access and misuse over auditing logs (e.g., database access logs). An example given is that Kaiser Permanente recently fired fifteen employees for inappropriately viewing the medical records of Nadya Suleman, the highly-publicized mother of octuplets. Few tools has been built to allow auditors to easily, systematically and proactively analyze the logs to observe the legislations and regulations over sensitive data.</p>
+<p>The API of Spark is the following: 1) feature extractor <em>features()</em>, which takes as input a database record, and produces a feature vector; 2) profile aggregation function <em>profile (D)</em>, where <em>D</em> is the set of features extracted from data, generating a probability density function as the profile of all the data. The <em>profile(D)</em> function can be used with <em>group by</em> clause  to generate profile at different granularities. To interact with profile objects, they have 3)<em> sim(feature, profile)</em> to perform classification &#8212; whether a data item is of a specific class represented by <em>profile</em>, and 4) <em>sim(profile, profile)</em> to compare the similarities of two classes, through KL-divergence.</p>
+<p>In addition, the paper also describes how to generate representative data items to describe the profiles, which can be used for example, to explain an abnormal profile detected by a system administrator. The paper also described ways to achieve efficiency using materialization and compression of profile.</p>
+<p>The experiments examines performance scalability and different optimizations. Also, it compares performing log analysis in SQL using the above API versus in Weka, and observed that: it is relatively easy to express conventional tasks (e.g., simple classification) in both systems, primarily because Weka provides a custom API for these tasks. However, when the analysis task involves additional data processing, or compound tasks, it is necessary to embed calls to the  Weka API in a larger (custom-coded) program, which is inconvenient and time-consuming for ad-hoc analysis. In contrast, compound tasks can usually be expressed quite easily in Splash.</p>
+<p>The above results show the flexibility from the high-level abstraction of statistical models/inference in a language like SQL and the performance benefits of supporting statistical functions/inference in a system like Database. This is exactly the motivation and approach that <a href="http://www.cs.berkeley.edu/~daisyw/BayesStore.html">BayesStore </a>is taking. I think this paper shows a cool API and good application for in-database statistical  model-based analysis.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/07/08/splash/#respond" title="Comment on In-database Statistical Log&nbsp;Analysis">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>July 6, 2010</h2>
+<div class="post-111 post type-post status-publish format-standard hentry category-commercial-products category-in-database-sml category-languages category-talks" id="post-111">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/07/06/k-programming-language-talk/" rel="bookmark">K/Kdb — scalable array&nbsp;processing language and database</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/commercial-products/" title="View all posts in commercial products" rel="category tag">commercial products</a>,<a href="http://en.wordpress.com/tag/in-database-sml/" title="View all posts in in-database SML" rel="category tag">in-database SML</a>,<a href="http://en.wordpress.com/tag/languages/" title="View all posts in languages" rel="category tag">languages</a>,<a href="http://en.wordpress.com/tag/talks/" title="View all posts in talks" rel="category tag">talks</a> &#8212; Daisy @ 12:04 am <br /></div>
+
+	<div class="storycontent">
+		<p>Arthur Whitney gave a talk a while back (in March) at Parlab Seminar, talking about his array processing language &#8212; K programming language and the database system kdb that supports this language and its more general version: the Q programming language.</p>
+<p>According to Arthur, Q is similar to SQL but is simpler and  more expressive. Q implements all relational capabilities as well as  time series analysis. Q efficiently supports atoms, lists, maps, tables and functions. Tables are stored as lists of associative arrays (stored in columns). K and Q languages are designed with financial applications in mind.  The company <a href="http://kx.com/">kx systems</a> has implemented kdb/tick and kdb/taq financial applications over kdb.</p>
+<p>The main features of the k programming language is its conciseness, and it has built-in primitives for array operations and parallelism. In terms of parallel computation, k does it by data partitioning embedded in &#8220;f each x&#8221; statement. The attribute to partition data on can be specified by the user.</p>
+<p>The main selling point of kdb is its scalability and efficiently to deal with millions record per second of real-time data and billions of historic data in the financial applications for analytic workloads. kdb is one of the early in-memory column-based database system, predate the recent <a href="http://db.lcs.mit.edu/projects/cstore/">C-Store</a> work.</p>
+<p>I think kdb is head-to-head competing with streaming database in the financial sector. It might be more  efficient by getting rid of all the database overhead, although they do not have any comparisons or benchmarks. R can be used on top of Kx to do more sophisticated analytics, while kdb only support simple functions, data selection and &#8220;f each x&#8221; clause.</p>
+<p>One interesting note is kx systems started with one customer and build itself up without any venture capital funding. And now it has many big financial institutes as its customers. <a href="http://www.cs.berkeley.edu/~bodik/">Ras</a> brought up the overhead of parallelization &#8212; load data to GPU (multicore) &#8212; so it is better   have many operations chained up for the same data.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/07/06/k-programming-language-talk/#respond" title="Comment on K/Kdb — scalable array&nbsp;processing language and database">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>May 6, 2010</h2>
+<div class="post-109 post type-post status-publish format-standard hentry category-class" id="post-109">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/05/06/amp-lab-final-projects/" rel="bookmark">AMP class final&nbsp;projects</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/class/" title="View all posts in class" rel="category tag">class</a> &#8212; Daisy @ 10:37 pm <br /></div>
+
+	<div class="storycontent">
+		<p>During the semester, the two assignments were both to take some large datasets (e.g., Twitter data), from several GB to TB, and do some analytics over them. Here are some lessons learned. There are lots of real-life problems on big data, and lots of tools to cope with these problems (e.g., MR, Pig, Hive, Sawzall, DryadLINQ), but limited reports about what&#8217;s easy and what&#8217;s hard.</p>
+<p>The challenges with the assignment on the Twitter data are: 1) dirty data, 2) hard to choose &#8220;proper&#8221; tools, 3) hard to check the correctness of the answer, 4) little effort to produce generally applicable code, 5) difficult to debug.</p>
+<p>For big data, there are lots of variance in the data format, which is hard to make robust  code.  The distributed execution is tricky to debug, where developers cannot easily attach a  debugger and logs can be hard to find.  Problems also lies in bad language integration, many bugs caused by mismatch between  framework and language type, error handling, etc.</p>
+<p>Everyone agreed that there is an astute need for better tooling. Frameworks need better error handling/recovery, and automatic test cases generation and summarization of data that your code  cannot handle. A better language support for distributed computing is also needed: DryadLINQ is the best so far, whereas UDF&#8217;s are currently pretty miserable to write in PIG and Hive.</p>
+<p>Finally, there is a need for better training on the programmers as well as non-technical professionals to perform and make use of data analytics over the distributed computing environment on big data.</p>
+<p>Different class projects were presented. One is looking at using MP to parallelize different entity resolution algorithm. Another is to perform inference on real-time traffic GPS sensor reading streams. A third is to design a language over Avro that is strongly typed and easy to write UDF&#8217;s and queries, which makes it very easy to perform analytics tasks like the ones in the assignment &#8212; from days of work to couple of lines of code.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/05/06/amp-lab-final-projects/#respond" title="Comment on AMP class final&nbsp;projects">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>February 4, 2010</h2>
+<div class="post-98 post type-post status-publish format-standard hentry category-artificial-ai category-class" id="post-98">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/02/04/crowdsourcing/" rel="bookmark">Crowdsourcing</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/artificial-ai/" title="View all posts in artificial AI" rel="category tag">artificial AI</a>,<a href="http://en.wordpress.com/tag/class/" title="View all posts in class" rel="category tag">class</a> &#8212; Daisy @ 9:15 pm <br /></div>
+
+	<div class="storycontent">
+		<p>Recently the work &#8220;crowdsourcing&#8221; received a lot of attention in the tech world. The basic assumption for the success application of &#8220;crowdsourcing&#8221; is that human beings are better and faster in some tasks (e.g. image tagging) than computer. And if those tasks can be partitioned into many little tasks, which can be carried out by a single person, then &#8220;crowdsourcing&#8221; might be the right technique to solve the problem. In this sense, &#8220;crowdsourcing&#8221; is also a form of &#8220;cloud computing&#8221;, only that the &#8220;cloud&#8221; consists of people rather than computers.</p>
+<p>There are different incentives: 1. money 2. fun 3. fame 4. team work .. and different applications can use one or multiple of those.</p>
+<p>The criteria of problems that can be solved/benefited from &#8220;crowdsourcing&#8221; is an important topic. I have already mentioned two &#8212; 1. easy for human, hard for computer 2. parallelizable. The third criterion, is &#8220;verifiable&#8221; or &#8220;falsifiable&#8221;, i.e. there is a way or an authority verify or falsify the contribution. The way can be computation, or can be human judges.</p>
+<p>The tooling around the crowdsourcing is also interesting. A reputation system is needed to rate the contributions, which could be anonymous. Game theory strategies might be needed to design the crowdsourcing incentive and scheme.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/02/04/crowdsourcing/#respond" title="Comment on Crowdsourcing">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+
+<div class="post-95 post type-post status-publish format-standard hentry category-uncategorized tag-data-sources tag-grants" id="post-95">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/02/04/digging-into-data-challenge/" rel="bookmark">Digging Into&nbsp;Data Challenge</a></h3>
+	<div class="meta">Filed under:  <a href="http://datamodelview.wordpress.com/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a> &#8212; Daisy @ 7:41 pm <br />Tags: <a href="http://en.wordpress.com/tag/data-sources/" rel="tag">data sources</a>, <a href="http://en.wordpress.com/tag/grants/" rel="tag">grants</a><br /></div>
+
+	<div class="storycontent">
+		<p>The <a href="http://www.diggingintodata.org/Default.aspx">Digging into Data Challenge</a> is a grand competition organized by four international research organizations ( JISC, NEH, NSF, SSHRC ) from three countries &#8212; Canada, UK, and US &#8212; to focus the attention of the social science and humanities research communities to large-scale data analysis and its potential applications to a wide range of scholarly resources, to encourage innovative large scale data analytics approaches to help scholars use these tools to ask new questions about and gain new insights into the world. This challenge was launched Jan. 2009 and Dec. 2009 the Awardees announced, with project spanning from music (23,000 hours), speech, 18th-century letters (53,000), criminal record, authorship identification of culture heritage materials, etc. It is amazing that the collaborators of all these winning projects involves researchers from multiple countries and trying use large-scale data analytic power to find relationship, discrepancies and perform computation in large heterogeneous datasets. A collection of data repositories that research teams can get access to, including digital art collection, digital library, archeology, can be found <a href="http://www.diggingintodata.org/Repositories/tabid/167/Default.aspx">here</a>.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/02/04/digging-into-data-challenge/#respond" title="Comment on Digging Into&nbsp;Data Challenge">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>January 25, 2010</h2>
+<div class="post-103 post type-post status-publish format-standard hentry category-class category-machine-learning category-uncategorized" id="post-103">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/01/25/three-ml-techniques-can-they-be-parallelized/" rel="bookmark">Three ML Techniques — can&nbsp;they be parallelized?</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/class/" title="View all posts in class" rel="category tag">class</a>,<a href="http://en.wordpress.com/tag/machine-learning/" title="View all posts in machine learning" rel="category tag">machine learning</a>,<a href="http://datamodelview.wordpress.com/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a> &#8212; Daisy @ 6:17 pm <br /></div>
+
+	<div class="storycontent">
+		<p>In the AMP class today, Michael Jordan discussed three ML techniques in the context of scalable ML algorithms.Most ML tools deals with data that can fit in memory, and only until recently it is more than enough.</p>
+<p>There are different data types, problems and models that are studied in Machine Learning and Statistics. Past literature has parallelized machine learning algorithm through Map-Reduce interface (<a href="http://www-cs.stanford.edu/~ang/papers/nips06-mapreducemulticore.pdf">Andrew Ng et. al.</a>), through iterative interface (SPARK), or through customized partitioning and communication protocols (<a href="http://www.select.cs.cmu.edu/meetings/biglearn09/">different parallel graphical model inference algorithms</a>). The following three ML algorithms/techniques are not yet parallelized and has the potential to be benefited from parallelism with different degrees of difficulty.</p>
+<p>Theme 1: Kernel methods (most complex)</p>
+<p>quadratic programming (maximizing the margin)</p>
+<p>typical kernel methods with complexity O(n^3) where n is GB. One why is to figure out how to throw away data point smarter and smarter given computation budget, more data point better results (?)</p>
+<p>Ref: Ling Huang&#8217;s recent work on using representative data points to process millions of data points</p>
+<p>Theme 2: Ensemble Methods</p>
+<p>Netflix Prize winner has 300 models ensembled through voting</p>
+<p>bootstrap (sample on the synthetic &#8220;ground truth&#8221;)&#8211; simple way to put error bars on knowledge from data</p>
+<p>Theme 3: Random Forest (SVN) &#8212; champion of accuracy</p>
+<p>decision tree (supervised learning) + bootstrap</p>
+<p>decision is unstable, highly invariable</p>
+<p>really easy to use map-reduce to parallelize</p>
+<p>clustering forest</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/01/25/three-ml-techniques-can-they-be-parallelized/#respond" title="Comment on Three ML Techniques — can&nbsp;they be parallelized?">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>January 22, 2010</h2>
+<div class="post-72 post type-post status-publish format-standard hentry category-big-data category-conference-2 category-machine-learning category-talks" id="post-72">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/01/22/nips-2009-workshop-videos/" rel="bookmark">NIPS 2009 Workshop: Large-Scale Machine Learning – Parallelism&nbsp;and Massive Datasets</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/big-data/" title="View all posts in big data" rel="category tag">big data</a>,<a href="http://en.wordpress.com/tag/conference-2/" title="View all posts in conference" rel="category tag">conference</a>,<a href="http://en.wordpress.com/tag/machine-learning/" title="View all posts in machine learning" rel="category tag">machine learning</a>,<a href="http://en.wordpress.com/tag/talks/" title="View all posts in talks" rel="category tag">talks</a> &#8212; Daisy @ 3:12 am <br /></div>
+
+	<div class="storycontent">
+		<p>I was trying to find some state-of-the-art scalability problems (use cases), models and data sets for my research when I stumbled across <a href="http://videolectures.net/nipsworkshops09_machine_learning/">NIPS 2009 Workshop Videos</a>. For one thing &#8212; having online conference talk video is a fascinating for learning. The workshop is focused on &#8220;Large-Scale Machine Learning: Parallelism and Massive Datasets&#8221;, and a number of talks are very interesting.</p>
+<p>Edwin Pednault from IBM Watson talked about an infrastructure for rapid implementation of parallel reusable analytics called Hadoop-ML. It tries to build a layer on top of Hadoop to shield ML model and algorithm developers from the instability and optimization problems of the control and communication layer of the parallel systems such as Hadoop. They build a higher level API for developing machine learning models, which then gets translated into map-reduce. The API has 5 functions to be defined for each ML model: 1. initialization 2. beginIteration 3. processRecord 4. mergeTask and 5. endIteration. Then, Edwin also illustrated the API by two examples &#8212; decision tree and k-means algorithm.</p>
+<p>It is interesting motivation to build higher level API on top of parallel systems, however, without looking at the paper, I do not see why the 5 methods API is much easier than the map-reduce language model. To be fair, I do not think there is an answer to what is the right interface for developing ML models to shield the statisticians and ML developers from the lower level system issues such as data processing, management, optimization, communication, etc.. And for this same reason, I am betting on a different high-level programming language &#8212; SQL from the database community. A lot of the recent work has shown that SQL can be used to express a broad range of SML models, and SQL implementation can leverage 40 years of research on parallel database and query optimization, as well as the more recent Hadoop parallel system through HadoopDB.</p>
+<p>I really enjoyed the talk by Pedro Domingos from U. of Washington. He discussed a number of inference and learning algorithms over large Markov Networks with &#8220;millions of variables, billions of features, thousands of latent variables, and strong dependencies&#8221;. For inference in particular, he discussed the lazy inference and relational cutting planes by Sebastian Riedel at UMass, and (approximate) lifted inference algorithms. In terms of learning, he mentioned relational clustering and pathfinding. There is a very interesting reference to the relational databases with those algorithms/techniques. In the Q&amp;A session, Pedro mentioned that the problem of learning/inference in large graphical model is cursed because there are three difficult problems that needs to be cracked &#8212; structure learning, weight learning and inference. Maybe the solution is to learn structures that have easy to learn weights and easy inference. One direction is certainly to learn first-order RVs and dependencies. It was exciting to me, because his vision is drawing a closer connection with the relational database, and because 2 years ago, my research on BayesStore started out using the first-order Bayesian Networks.</p>
+<p>It is interesting to me that the scalability issues do not necessarily need to be solved by parallelism, but maybe just solved by a smart serial algorithm. It is fair to say that we might need to look at &#8220;dumb&#8221; algorithms, because they are likely the ones that are easier to be parallelized, but the &#8220;smart&#8221; algorithm might be just scalable enough on single computer.</p>
+<p>Then there are two talks from Computer Vision, one from Bill Freeman from MIT talking about what problems were solved (with references to commercial products) and what problems they would like to be solved by ML community.</p>
+<p>Thore Graepel from MSR talked about their Bayesian probabilistic classification model (not Naive Bayes) for  computational advertising. He touched upon the learning problem with streaming data creates the need for on-line learning algorithm and infrastructure. He mentioned that the learning and inference needs to be done in production systems, rather than offline, in a batch system. He also mention the need to put error-bars/confidence to the models or the output of the classifications, for example based on the number training. Of course, the model involves exploration of the rest of the ad-space.</p>
+<p>One interesting observation is that computational advertising is a natural system that combines Algorithm, Machine and People &#8212; you have the Bayesian classification algorithm, you need machine to parallelize online learning algorithm with data streaming in, and naturally you have the user click streams as a feedback to the goodness of your model.</p>
+<p>Alex Gray from Georgia Tech talked about possible &#8220;dwarfs&#8221; for supporting machine learning algorithms on top of a parallel infrastructure. He listed five: 1. linear algebra 2. graph algorithm 3.  N-body problems 4. optimizations and 5. map-reduce.</p>
+<p>I think he is correct that we need more programming models beyond map-reduce to support the development of machine learning models over parallel systems. One of them might well be iterative language model, which is prevalent in any learning problem as an optimization problem (e.g. linear regression, gradient descent). I am not sure what other programming models there are that are suitable for ML, but they will need to be different in terms of patterns in communication, complexity in computation and data.</p>
+<p>Daniel Walker talked about his research project with Google about efficient algorithms for training conditional maximum entropy models. The goal is to reduce the communication cost. Training conditional maximum entropy is an optimization problem, which needs N iterations, and each iteration, the updated parameter at the master node needs to be broadcast to the worker nodes. They designed an ensemble weight mixtures model, which eliminates the communication cost. This work can be compared to SPARK project, whose approach is not to redesign the model to be more computationally efficient, but to redesign the communication pattern to optimize for such algorithms using <a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-158.pdf">Nexus</a>.</p>
+<p>Apart from those, there are also more technical papers on the parallel algorithms for junction tree and belief propagation etc.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/01/22/nips-2009-workshop-videos/#respond" title="Comment on NIPS 2009 Workshop: Large-Scale Machine Learning – Parallelism&nbsp;and Massive Datasets">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>January 21, 2010</h2>
+<div class="post-75 post type-post status-publish format-standard hentry category-class" id="post-75">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/01/21/amp-class/" rel="bookmark">AMP class</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/class/" title="View all posts in class" rel="category tag">class</a> &#8212; Daisy @ 3:22 am <br /></div>
+
+	<div class="storycontent">
+		<p>This semester I am going to sit in Mike Franklin&#8217;s grad division class. Mike Franklin also happens to be my research adviser. The vision of the class is to explore the research frontiers and shape the scope of the future AMP lab &#8212; Algorithms, Machines and People.</p>
+<p>Algorithms being the machine learning models and algorithms, Machines being the cloud computing systems and infrastructure, and People is a necessary component in the loop to make a real usable system, which include techniques such as mechanic turks and crowd sourcing.</p>
+<p>A number of industrial speakers are lined up to talk about their relevant research and problems in this space. The schedule of the course can be found at <a href="http://sites.google.com/a/cs.berkeley.edu/cs294-amp/">here</a>.</p>
+<p>This AMP vision is very related to my research, which is to provide in-database scalable (Machine) algorithms (Algorithm) for advanced analytics based on statistical models. This vision is very related to this Blog as well. This exploratory class uses the Berkeley tradition of starting a big research project with 1 exploratory grad division course.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/01/21/amp-class/#respond" title="Comment on AMP class">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<h2>January 20, 2010</h2>
+<div class="post-66 post type-post status-publish format-standard hentry category-big-data category-events" id="post-66">
+	 <h3 class="storytitle"><a href="http://datamodelview.wordpress.com/2010/01/20/data-exhaust-alchemy/" rel="bookmark">Data&nbsp;Exhaust Alchemy</a></h3>
+	<div class="meta">Filed under:  <a href="http://en.wordpress.com/tag/big-data/" title="View all posts in big data" rel="category tag">big data</a>,<a href="http://en.wordpress.com/tag/events/" title="View all posts in events" rel="category tag">events</a> &#8212; Daisy @ 7:27 am <br /></div>
+
+	<div class="storycontent">
+		<p>I attended a <a href="http://www.vlab.org/">VLAB</a> event at Stanford organized by Roger Magoulas from O&#8217;Reilly. The event entitled &#8220;Data Exhaust Alchemy&#8221; is about how to turn the Web&#8217;s &#8220;waste&#8221; into &#8220;gold&#8221;, through data analytics. It is a great introductory event to the set of companies that are generating revenue from the information extracted from the Web data. The event include panelists including Mike (JB) John-Baptiste from PeerSet, DJ Patil from LinkedIn and Jeff Hammerbacher from Cloudera, Mark Breier and Pablos Holman.</p>
+<p>One of the highlights of the event is certainly when the panelist are asked about the role of database in such SML-based analytics tasks. Obviously, Jeff is on the no-SQL side of the boat for such tasks, claiming that relational databases are good for structured data, transactions and simple analytics, but not for advanced analytics involving SML models. Although he did acknowledge the fact that SQL are being used and researched for supporting different SML models. I agree that Hadoop/Map-Reduce has tremendous momentum among the statisticians and machine learning developers, but SQL has been shown to be able to express Multiple Linear Regression, Naive Bayes, PageRank, SVN, CRF, etc. So the argument for no-SQL that SQL cannot support SML models is not true.</p>
+<p>Then DJ took up the question and made an analogy &#8212; imagine you have a leak in the pipe, a handy-man comes and would you like him to only have one tool or he has many tools? Of course, you want him to have many tools to be able to solve different kind of problems, similar to how LinkedIn internally uses many different tools to solve different infrastructure problems &#8212; LinkedIn uses Cloudera as well as commercial databases. I guess the question I have is, if there is a framework that made it easy to apply SML in-database(or parallel database for that matter), would data analysts and/or business analysts use this framework? Or would they still prefer to craft their solution using a bunch of tools?</p>
+<p>The other big kicks are Pablos reading off personal information directly from people&#8217;s credit cards using a RFID reader, bought for $8 from Ebay, and trying to make a match-making service using an open-source spam filters, by sending information on the candidates one likes/dislikes(no-spam/spam) as emails.</p>
+	</div>
+
+	<div class="feedback">
+                        <a href="http://datamodelview.wordpress.com/2010/01/20/data-exhaust-alchemy/#respond" title="Comment on Data&nbsp;Exhaust Alchemy">Leave a Comment</a>	</div>
+
+</div>
+
+
+
+<a href="http://datamodelview.wordpress.com/page/2/" >Next Page &raquo;</a>
+<!-- begin footer -->
+</div>
+
+
+<!-- begin sidebar -->
+<div id="menu">
+
+<ul>
+<li id="gravatar-3" class="widget widget_gravatar"><p><img alt='' src='http://0.gravatar.com/avatar/49737670bff24d0d6b65b4603cf506ab?s=128&amp;d=identicon&amp;r=G' class='avatar avatar-128' height='128' width='128' /></p>
+</li>
+<li id="pages-3" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>
+		<ul>
+			<li class="page_item page-item-2"><a href="http://datamodelview.wordpress.com/about/" title="Daisy Zhe&nbsp;Wang">Daisy Zhe&nbsp;Wang</a></li>
+		</ul>
+		</li>
+<li id="linkcat-1356" class="widget widget_links"><h2 class="widgettitle">Blogroll</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://adambosworth.net/">21st Centry Health Care &#8212; Adam Bosworth</a></li>
+<li><a href="http://alonhalevy.blogspot.com/" title="Google DB group">Alon Halevy</a></li>
+<li><a href="http://dbmsmusings.blogspot.com/" title="Yale DB group">Daniel Abadi</a></li>
+<li><a href="http://digitalresearchtools.pbworks.com/">Digital Research Tools</a></li>
+<li><a href="http://highscalability.com/">High Scalability</a></li>
+<li><a href="http://databeta.wordpress.com/" title="Berkeley DB group">Joseph M. Hellerstein</a></li>
+<li><a href="http://infoblog.stanford.edu/" title="Stanford DB group">Stanford InfoBlog</a></li>
+<li><a href="http://databasecolumn.vertica.com/" title="Many big names in DB community blogging for Vertica">The Database Column</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-33525" class="widget widget_links"><h2 class="widgettitle">Conference</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.acl2010.org/dates.html">ACL</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-336" class="widget widget_links"><h2 class="widgettitle">Cool Stuff</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.logicomix.com/en/" title="comic book on quest for logic">Logicomix</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-14382" class="widget widget_links"><h2 class="widgettitle">Organizations</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://dataspora.com/index.html" title="A company that employs ML/stats models to analyze large data to help managers make decisions">Dataspora</a></li>
+<li><a href="http://googleresearch.blogspot.com/">Google Research Blog</a></li>
+<li><a href="http://www.predictiveanalyticsworld.com/" title="An organization educating predictive analytics models and tools">Predictive Analytics World</a></li>
+<li><a href="http://rapid-i.com/">RapidMiner</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-121128" class="widget widget_links"><h2 class="widgettitle">Related Blogs</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://anyall.org/blog/">Brendan O&#039;Connor &#8212; AI and Social Science</a></li>
+<li><a href="http://anyall.org/blog/">Brendan O’Connor</a></li>
+<li><a href="http://www.datawrangling.com/">Data Wrangling</a></li>
+<li><a href="http://www.dbms2.com/">DBMS2</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-88921" class="widget widget_links"><h2 class="widgettitle">Related Projects</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://lucene.apache.org/mahout/index.html">Apache Mahout</a></li>
+<li><a href="http://wiki.apache.org/hadoop/PoweredBy">Hadoop Wiki</a></li>
+<li><a href="http://www.cs.duke.edu/dbgroup/Main/RIOT">RIOT @ Duke</a></li>
+<li><a href="http://scidb.org/" title="MIT DB group: SciDB">SciDB @ MIT</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-2495437" class="widget widget_links"><h2 class="widgettitle">Text Analytics</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.lexalytics.com/lexablog/">Lexalytics Blog</a></li>
+<li><a href="http://lingpipe-blog.com/?s=sentiment">Ling Pipe Blog</a></li>
+
+	</ul>
+</li>
+
+<li id="categories-2" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>
+		<ul>
+			<li class="cat-item cat-item-290"><a href="http://datamodelview.wordpress.com/category/announcement/" title="View all posts filed under announcement">announcement</a>
+</li>
+	<li class="cat-item cat-item-38607946"><a href="http://datamodelview.wordpress.com/category/artificial-ai/" title="View all posts filed under artificial AI">artificial AI</a>
+</li>
+	<li class="cat-item cat-item-2075170"><a href="http://datamodelview.wordpress.com/category/big-data/" title="View all posts filed under big data">big data</a>
+</li>
+	<li class="cat-item cat-item-6376"><a href="http://datamodelview.wordpress.com/category/class/" title="View all posts filed under class">class</a>
+</li>
+	<li class="cat-item cat-item-3712399"><a href="http://datamodelview.wordpress.com/category/commercial-products/" title="View all posts filed under commercial products">commercial products</a>
+</li>
+	<li class="cat-item cat-item-10177272"><a href="http://datamodelview.wordpress.com/category/conference-2/" title="View all posts filed under conference">conference</a>
+</li>
+	<li class="cat-item cat-item-15352"><a href="http://datamodelview.wordpress.com/category/discussion/" title="View all posts filed under discussion">discussion</a>
+</li>
+	<li class="cat-item cat-item-924"><a href="http://datamodelview.wordpress.com/category/events/" title="View all posts filed under events">events</a>
+</li>
+	<li class="cat-item cat-item-38607898"><a href="http://datamodelview.wordpress.com/category/in-database-sml/" title="View all posts filed under in-database SML">in-database SML</a>
+</li>
+	<li class="cat-item cat-item-2761"><a href="http://datamodelview.wordpress.com/category/languages/" title="View all posts filed under languages">languages</a>
+</li>
+	<li class="cat-item cat-item-40978"><a href="http://datamodelview.wordpress.com/category/machine-learning/" title="View all posts filed under machine learning">machine learning</a>
+</li>
+	<li class="cat-item cat-item-9802"><a href="http://datamodelview.wordpress.com/category/my-work/" title="View all posts filed under my work">my work</a>
+</li>
+	<li class="cat-item cat-item-5281"><a href="http://datamodelview.wordpress.com/category/papers/" title="View all posts filed under papers">papers</a>
+</li>
+	<li class="cat-item cat-item-18683811"><a href="http://datamodelview.wordpress.com/category/probabilistic-database/" title="View all posts filed under probabilistic database">probabilistic database</a>
+</li>
+	<li class="cat-item cat-item-38855333"><a href="http://datamodelview.wordpress.com/category/query-driven-sml/" title="View all posts filed under query-driven SML">query-driven SML</a>
+</li>
+	<li class="cat-item cat-item-42375"><a href="http://datamodelview.wordpress.com/category/talks/" title="View all posts filed under talks">talks</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://datamodelview.wordpress.com/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</li>
+<li id="archives-3" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href='http://datamodelview.wordpress.com/2010/07/' title='July 2010'>July 2010</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2010/05/' title='May 2010'>May 2010</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2010/02/' title='February 2010'>February 2010</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2010/01/' title='January 2010'>January 2010</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2009/09/' title='September 2009'>September 2009</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2009/05/' title='May 2009'>May 2009</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2009/04/' title='April 2009'>April 2009</a></li>
+	<li><a href='http://datamodelview.wordpress.com/2009/03/' title='March 2009'>March 2009</a></li>
+		</ul>
+</li>
+
+</ul>
+
+</div>
+
+
+<p class="credit"><cite>Theme: <a href="http://theme.wordpress.com/themes/rubric/">Rubric</a>. <a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.</cite></p>
+
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.en,type.wpcom'};</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.en%2Ctype.wpcom" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?p&#038;ver=MU'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {
+	my_hash: ""
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1298424233g&amp;ver=MU'></script>
+	<div style="display:none">
+	<div class="grofile-hash-map-49737670bff24d0d6b65b4603cf506ab">
+	</div>
+	</div>
+<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="http://s.stats.wordpress.com/w.js?19" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'7726448','v':'wpcom','user_id':'0','post':'0','subd':'datamodelview'});
+ex_go({'crypt':'RDZUTi12JkxTOXZYQ0IuZWlDV09vMkU1JUtLMD05WFhhVXldNlg5aGMvOEc9UWYvemNXJWtlMTEvQlVdWVdpSWFnVHFqJjNUNTE3VElLaz9FQnIrNUdHSW04aFMyZGlWM3ZxRWglViV4WV9OXzNXd2x1a35NJXkleHBjN3dfSjNINHR4dWJhbTl2Y1ZLPUQ0cFZ8NlE1Ui9zdmVXNHFrZVVRU0lVX1gvd3MwTDVQU190ZWVVQnpQLGp8'});
+addLoadEvent(function(){linktracker_init('7726448',0);});
+	</script>
+</body>
+</html>

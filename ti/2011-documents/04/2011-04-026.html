@@ -1,0 +1,954 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+reCAPTCHA Component & Helper for CakePHP | The Bakery, Everything CakePHP</title>
+<link href="/favicon.ico" type="image/x-icon" rel="icon" /><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="http://bakery.cakephp.org/articles.rss" type="application/rss+xml" rel="alternate" title="15 Most Recent Articles" /><link href="http://bakery.cakephp.org/comments.rss" type="application/rss+xml" rel="alternate" title="The Bakery: 15 Most Recent Comments" /><link rel="stylesheet" type="text/css" href="/csfnavbar/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/theme/bakery/css/reset20080115.css" />
+	<link rel="stylesheet" type="text/css" href="/theme/bakery/css/bakery.css" />
+	<link rel="stylesheet" type="text/css" href="/theme/bakery/css/cupertino/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="/theme/bakery/css/jquery.ui.stars.min.css" />
+<script type="text/javascript" src="/cache_js/layout.js?file[]=jquery-1.4.2.min&amp;file[]=core&amp;file[]=views/default&amp;file[]=jquery-ui.min&amp;file[]=jquery.ui.stars.min"></script>
+<script type="text/javascript" src="/cache_js/default.js?file[]=views/articles/view.js"></script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">
+//<![CDATA[
+stLight.options({publisher:'f2c7ed5f-6a79-4dc5-b5c6-4c1e80392ccd'});
+//]]>
+</script>
+	<meta name="title" content="reCAPTCHA Component &amp; Helper for CakePHP" />
+	<meta name="author" content="Howard" />
+	<meta name="description" content="CakePHP Article related to component, captcha, recaptcha, hide email, Components" />
+	<meta name="keywords" content="component, captcha, recaptcha, hide email, Components" />
+	<meta name="abstract" content="an easy-to-use component and helper set to use reCAPTCHA on your website. " />
+	<meta name="copyright" content="Copyright 2008 Howard" /></head>
+<body>
+	<div id="cakephp-global-navigation">
+	<ul>
+		<li class="main"><a href="http://cakephp.org">CakePHP</a></li>
+		<li><a href="#" class="empty">Downloads</a>
+			<ul>
+				<li><a href="http://cakephp.org">Latest Release</a></li>
+				<li class="cake-version"><a href="http://github.com/cakephp/cakephp/tree/1.2">CakePHP 1.2</a>
+					<ul>
+						<li><a href="http://github.com/cakephp/cakephp/archives/1.2">Download</a>&nbsp;|</li>
+						<li><a href="http://cakephp.lighthouseapp.com/projects/42648-cakephp/milestones">Tickets</a></li>
+					</ul>
+				</li>
+				<li class="cake-version"><a href="http://github.com/cakephp/cakephp/tree/1.3">CakePHP 1.3</a>
+					<ul>
+						<li><a href="http://github.com/cakephp/cakephp/archives/1.3">Download</a>&nbsp;|</li>
+						<li><a href="http://cakephp.lighthouseapp.com/projects/42648-cakephp/milestones">Tickets</a></li>
+					</ul>
+				</li>
+				<li class="cake-version"><a href="http://github.com/cakephp/cakephp/tree/2.0">CakePHP 2.0</a>
+					<ul>
+						<!-- <li><a href="#">Download</a>|</li> -->
+						<li><a href="http://cakephp.lighthouseapp.com/projects/42648-cakephp/milestones">Tickets</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="#" class="empty">Documentation</a>
+			<ul>
+				<li class="cake-version"><a href="http://api.cakephp.org">API</a>
+					<ul>
+						<li><a href="http://api11.cakephp.org">1.1</a>&nbsp;|</li>
+						<li><a href="http://api12.cakephp.org">1.2</a>&nbsp;|</li>
+						<li><a href="http://api13.cakephp.org">1.3</a></li>
+					</ul>
+				</li>
+				<li class="cake-version"><a href="http://book.cakephp.org">Book</a>
+					<ul>
+						<li><a href="http://book.cakephp.org/view/305/The-Manual">1.1</a>&nbsp;|</li>
+						<li><a href="http://book.cakephp.org/view/3/The-Manual">1.2</a>&nbsp;|</li>
+						<li><a href="http://book.cakephp.org/view/876/The-Manual">1.3</a></li>
+					</ul>
+				</li>
+				<li><a href="http://cakephp.lighthouseapp.com">Tickets</a></li>
+				<li><a href="http://translation.cakephp.org">Translations</a></li>
+			</ul>
+		</li>
+		<li><a href="#" class="empty">Community</a>
+			<ul>
+				<li><a href="http://bakery.cakephp.org">Bakery</a></li>
+				<li><a href="http://github.com/cakephp/cakephp/contributors">Contributors</a></li>
+				<li><a href="http://groups.google.com/group/cake-php">Google Groups</a></li>
+				<li><a href="http://cakephp.org/logos">Logo</a></li>
+				<li><a href="http://cakephp.org/planet">Planet</a></li>
+				<li><a href="http://ask.cakephp.org">Q &amp; A</a></li>
+				<li><a href="http://tv.cakephp.org">TV (Screencasts)</a></li>
+			</ul>
+		</li>
+		<li><a href="http://cakephp.org/services">Services</a>
+			<ul>
+				<li><a href="http://cakephp.org/services/certification">Certification</a></li>
+				<li><a href="http://cakephp.org/services/consultation">Consultation</a></li>
+				<li><a href="http://cakephp.org/services/support">Support</a></li>
+				<li><a href="http://cakephp.org/services/training">Training</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+	<div id="container">
+
+		<div id="header">
+	<div class="innerContainer">
+	
+		<div id="secondary_nav">
+			<ul class="navigation">
+				<li> <a href="/users/login">Login</a> </li><li> <a href="/users/register">Register</a> </li>				<li><a href="http://cakephp.org/">About CakePHP</a></li>
+				<li><a href="http://cakefoundation.org/pages/donations">Donate</a></li>
+			</ul>
+			<ul class="navigation" id="language-switcher"><li class="eng selected"><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/en.png" alt="" /></a></li><li class="deu"><a href="/deu/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/de.png" alt="" /></a></li><li class="fre"><a href="/fre/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/fr.png" alt="" /></a></li><li class="jpn"><a href="/jpn/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/ja.png" alt="" /></a></li><li class="por"><a href="/por/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/pt.png" alt="" /></a></li><li class="spa"><a href="/spa/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/es.png" alt="" /></a></li><li class="rus"><a href="/rus/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/ru.png" alt="" /></a></li></ul>		</div>
+
+		<div id="top-search" class="">
+						<form id="ArticleIndexForm" method="post" action="/articles" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST" /></div><div class="input text required"><label for="ArticleBody">Find</label><input name="data[Article][body]" type="text" id="ArticleBody" /></div><div class="input select required"><label for="ArticleCategoryId">Category</label><select name="data[Article][category_id]" id="ArticleCategoryId">
+<option value=""></option>
+<option value="4caea0d5-2618-46e3-aae9-411982f0cb67">News</option>
+<option value="4caea0d5-863c-4616-8fd5-4e9a82f0cb67">Articles</option>
+<option value="4caea0d5-247c-4d4f-8901-424882f0cb67">Code</option>
+<option value="4caea0d5-b270-40e2-b645-4c2682f0cb67">Case Studies</option>
+<option value="4caea0d5-2fb0-4d01-87dd-404b82f0cb67">Tutorials</option>
+<option value="4caea0d5-bb40-45a0-a7c3-414882f0cb67">General Interest</option>
+<option value="4caea0d5-da38-4aa1-a38e-4d2482f0cb67">Components</option>
+<option value="4caea0d5-863c-463a-a1c1-4fe482f0cb67">Helpers</option>
+<option value="4caea0d5-5cfc-4e52-a25e-48a382f0cb67">Models</option>
+<option value="4caea0d5-3860-4aa8-844e-41f082f0cb67">Plugins</option>
+<option value="4caea0d5-4418-42ba-9a71-458282f0cb67">Snippets</option>
+<option value="4caea0d5-12fc-479c-9204-412582f0cb67">Behaviors</option>
+</select></div><div class="submit"><input type="submit" value="Search" /></div></form>		</div>
+
+		<div style="padding-top: 30px">
+			<h1><a href="http://bakery.cakephp.org/">The Bakery <span>Everything CakePHP</span></a></h1>
+		</div>
+
+		
+		<div class="menu">
+			<ul class="top-menu">
+				<li>
+					<a href="/articles">All articles</a>				</li>
+				<li>
+					<a href="/categories">Categories</a>				</li>
+				<li>
+					<a href="/users">Users</a>				</li>
+							</ul> 
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+		<div id="content">
+			<div id="body">
+				<div id="article" class="published">
+	<h3>reCAPTCHA Component & Helper for CakePHP</h3>
+	<div id="sidebar">
+		<ul class="favorites">
+			<li class="favorite">
+				<a href="/favorite/4caea0e3-d35c-4e34-9b86-45a082f0cb67" class="add-favorite favorite">Favorite it</a>			</li>
+			<li class="watch">
+				<a href="/watch/4caea0e3-d35c-4e34-9b86-45a082f0cb67" class="add-favorite watch">Watch it</a>			</li>
+			<li class="report">
+				<a href="/report/Article/4caea0e3-d35c-4e34-9b86-45a082f0cb67">Report this Article</a>			</li>
+		</ul>
+		<div id="article_badges">
+			<span class="news badge">
+			<a href="/articles/category/components">Components</a>			</span>
+			<span class="date">Nov 15th 2008</span>
+		</div>
+		<div id="article_details" class="info">
+			<ul>
+				<li class="views">
+					18649 views				</li>
+				<li class="comments">
+					29 comments				</li>
+							</ul>
+		</div>
+		<div id="ajax_rate" class="info"> <div id="article_rating">
+	<h4>Rating</h4>
+				<div class="rating" id="rating-4d989d9a11b2d">
+				<a href="/articles/rate/4caea0e3-d35c-4e34-9b86-45a082f0cb67/up" class="rateUp">Up</a> <a href="/articles/rate/4caea0e3-d35c-4e34-9b86-45a082f0cb67/down" class="rateDown">Down</a><p>0.00</p>			</div>
+			<script type="text/javascript">
+				$(function(){
+					$('#rating-4d989d9a11b2d fieldset').each(function() {
+						$(this)
+							.stars({
+								split:2,
+								cancelShow:false,
+								callback: function(ui, type, value) {
+									ui.$form.submit();
+								}
+							})
+							.closest('form')
+								.find('legend, label, div.submit').remove();
+					})
+				});
+			</script>
+			</div> </div>
+		<div id="ajax_tag" class="info"> <div id="article_tags">
+<h4>Tags</h4>
+<ul>
+	<li> <a href="/articles/index/by:component">component</a> </li><li> <a href="/articles/index/by:captcha">captcha</a> </li><li> <a href="/articles/index/by:recaptcha">recaptcha</a> </li><li> <a href="/articles/index/by:hide email">hide email</a> </li></ul>
+</div>
+ </div>
+
+			<div class="adsense smallSquare info">
+			<h4>Advertising</h4>
+			<script type="text/javascript"><!--
+google_ad_client = "pub-2042773218904579";
+google_ad_slot = "1141609114";
+google_ad_width = "200";
+google_ad_height = "200";
+
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>		</div>
+	</div>
+	<div class="main">
+			<div class="translations">
+		This article is also available in the following languages:		<ul class="languages">
+					<li><a href="/deu/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/de.png" alt="" /></a></li>
+					<li><a href="/fre/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/fr.png" alt="" /></a></li>
+					<li><a href="/jpn/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/ja.png" alt="" /></a></li>
+					<li><a href="/por/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/pt.png" alt="" /></a></li>
+					<li><a href="/spa/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/es.png" alt="" /></a></li>
+					<li><a href="/rus/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp"><img src="/i18n/img/flags/ru.png" alt="" /></a></li>
+				</ul>
+	</div>
+
+<span class="author">By <a href="/users/view/Howard">Howard</a></span>
+<div class="intro"> an easy-to-use component and helper set to use reCAPTCHA on your website.  </div>
+	<div id="content-page-1" class="body">This is an easy to use component and helper set for you to get reCAPTCHA(including mailhide) running on your website now. If you don't know what reCAPTCHA is please head to <a href="http://recaptcha.net/">http://recaptcha.net/</a> now to find out! Please note this code is largely derived off of the library provided for reCAPTCHA - it's just repurposed for ease of use in CakePHP.<br />
+<br />
+Create the following files:<br />
+<code><span style="color: #000000">
+app/controllers/components/recaptcha.php&nbsp;<br />app/views/helpers/recaptcha.php<br /></span>
+</code>
+<br />
+code for app/controllers/components/recaptcha.php<br />
+<h4><strong>Component Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">RecaptchaComponent&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Object&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$publickey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$privatekey</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$is_valid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">startup</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$controller</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.apiServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"http://api.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.apiSecureServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"https://api-secure.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.verifyServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"api-verify.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.pubKey"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">publickey</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.privateKey"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">privatekey</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">controller&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$controller</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">controller</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">helpers</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"Recaptcha"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">valid</span><span style="color: #007700">(</span><span style="color: #0000BB">$form</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset(</span><span style="color: #0000BB">$form</span><span style="color: #007700">[</span><span style="color: #DD0000">'recaptcha_challenge_field'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;isset(</span><span style="color: #0000BB">$form</span><span style="color: #007700">[</span><span style="color: #DD0000">'recaptcha_response_field'</span><span style="color: #007700">])){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">recaptcha_check_answer</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">privatekey</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">"REMOTE_ADDR"</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">[</span><span style="color: #DD0000">'recaptcha_challenge_field'</span><span style="color: #007700">],&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">[</span><span style="color: #DD0000">'recaptcha_response_field'</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">is_valid</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Calls&nbsp;an&nbsp;HTTP&nbsp;POST&nbsp;function&nbsp;to&nbsp;verify&nbsp;if&nbsp;the&nbsp;user's&nbsp;guess&nbsp;was&nbsp;correct<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$privkey<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$remoteip<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$challenge<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$response<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;array&nbsp;$extra_params&nbsp;an&nbsp;array&nbsp;of&nbsp;extra&nbsp;variables&nbsp;to&nbsp;post&nbsp;to&nbsp;the&nbsp;server<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;ReCaptchaResponse<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recaptcha_check_answer&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$remoteip</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$challenge</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$response</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$extra_params&nbsp;</span><span style="color: #007700">=&nbsp;array()){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;you&nbsp;must&nbsp;get&nbsp;an&nbsp;API&nbsp;key&nbsp;from&nbsp;&lt;a&nbsp;href='http://recaptcha.net/api/getkey'&gt;http://recaptcha.net/api/getkey&lt;/a&gt;"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$remoteip&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$remoteip&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"For&nbsp;security&nbsp;reasons,&nbsp;you&nbsp;must&nbsp;pass&nbsp;the&nbsp;remote&nbsp;ip&nbsp;to&nbsp;reCAPTCHA"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//discard&nbsp;spam&nbsp;submissions<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$challenge&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$challenge</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$response</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">is_valid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'incorrect-captcha-sol'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_http_post</span><span style="color: #007700">(</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.verifyServer'</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"/verify"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'privatekey'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'remoteip'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$remoteip</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'challenge'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$challenge</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'response'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$response<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)&nbsp;+&nbsp;</span><span style="color: #0000BB">$extra_params<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$answers&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">explode&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">trim&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$answers&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;==&nbsp;</span><span style="color: #DD0000">'true'</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">is_valid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">is_valid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$answers&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Submits&nbsp;an&nbsp;HTTP&nbsp;POST&nbsp;to&nbsp;a&nbsp;reCAPTCHA&nbsp;server<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$host<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$path<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;array&nbsp;$data<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;int&nbsp;port<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;array&nbsp;response<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">_recaptcha_http_post</span><span style="color: #007700">(</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$path</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$port&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">80</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$req&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_qsencode&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"POST&nbsp;</span><span style="color: #0000BB">$path</span><span style="color: #DD0000">&nbsp;HTTP/1.0\r\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"Host:&nbsp;</span><span style="color: #0000BB">$host</span><span style="color: #DD0000">\r\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"Content-Type:&nbsp;application/x-www-form-urlencoded;\r\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"Content-Length:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$req</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"User-Agent:&nbsp;reCAPTCHA/PHP\r\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$http_request&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #0000BB">$req</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">==&nbsp;(&nbsp;</span><span style="color: #0000BB">$fs&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">fsockopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$port</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errstr</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">)&nbsp;)&nbsp;)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;open&nbsp;socket'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$fs</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$http_request</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(&nbsp;!</span><span style="color: #0000BB">feof</span><span style="color: #007700">(</span><span style="color: #0000BB">$fs</span><span style="color: #007700">)&nbsp;)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$fs</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1160</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;One&nbsp;TCP-IP&nbsp;packet<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fs</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">"\r\n\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$response</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$response</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Encodes&nbsp;the&nbsp;given&nbsp;data&nbsp;into&nbsp;a&nbsp;query&nbsp;string&nbsp;format<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;$data&nbsp;-&nbsp;array&nbsp;of&nbsp;string&nbsp;elements&nbsp;to&nbsp;be&nbsp;encoded<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;string&nbsp;-&nbsp;encoded&nbsp;request<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">_recaptcha_qsencode&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$req&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$req&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">stripslashes</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;)&nbsp;.&nbsp;</span><span style="color: #DD0000">'&amp;'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Cut&nbsp;the&nbsp;last&nbsp;'&amp;'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$req</span><span style="color: #007700">=</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$req</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$req</span><span style="color: #007700">)-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$req</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+<br />
+<br />
+<br />
+code for app/views/helpers/recaptcha.php<br />
+<h4><strong>Helper Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">RecaptchaHelper&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">AppHelper&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$helpers&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'form'</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">display_form</span><span style="color: #007700">(</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'return'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$use_ssl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">__form</span><span style="color: #007700">(</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.pubKey"</span><span style="color: #007700">),</span><span style="color: #0000BB">$error</span><span style="color: #007700">,</span><span style="color: #0000BB">$use_ssl</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"echo"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">hide_mail</span><span style="color: #007700">(</span><span style="color: #0000BB">$email&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'return'</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">recaptcha_mailhide_html</span><span style="color: #007700">(</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.pubKey'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.privateKey'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"echo"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;the&nbsp;challenge&nbsp;HTML&nbsp;(javascript&nbsp;and&nbsp;non-javascript&nbsp;version).<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;called&nbsp;from&nbsp;the&nbsp;browser,&nbsp;and&nbsp;the&nbsp;resulting&nbsp;reCAPTCHA&nbsp;HTML&nbsp;widget<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;is&nbsp;embedded&nbsp;within&nbsp;the&nbsp;HTML&nbsp;form&nbsp;it&nbsp;was&nbsp;called&nbsp;from.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$pubkey&nbsp;A&nbsp;public&nbsp;key&nbsp;for&nbsp;reCAPTCHA<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$error&nbsp;The&nbsp;error&nbsp;given&nbsp;by&nbsp;reCAPTCHA&nbsp;(optional,&nbsp;default&nbsp;is&nbsp;null)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;boolean&nbsp;$use_ssl&nbsp;Should&nbsp;the&nbsp;request&nbsp;be&nbsp;made&nbsp;over&nbsp;ssl?&nbsp;(optional,&nbsp;default&nbsp;is&nbsp;false)<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;string&nbsp;-&nbsp;The&nbsp;HTML&nbsp;to&nbsp;be&nbsp;embedded&nbsp;in&nbsp;the&nbsp;user's&nbsp;form.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">__form</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$use_ssl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;you&nbsp;must&nbsp;get&nbsp;an&nbsp;API&nbsp;key&nbsp;from&nbsp;&lt;a&nbsp;href='http://recaptcha.net/api/getkey'&gt;http://recaptcha.net/api/getkey&lt;/a&gt;"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$use_ssl</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.apiSecureServer'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.apiServer'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$errorpart&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$error</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$errorpart&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"&amp;amp;error="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$error</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">'&lt;script&nbsp;type="text/javascript"&nbsp;src="'</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'/challenge?k='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$errorpart&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'"&gt;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;noscript&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;iframe&nbsp;src="'</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'/noscript?k='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$errorpart&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'"&nbsp;height="300"&nbsp;width="500"&nbsp;frameborder="0"&gt;&lt;/iframe&gt;&lt;br/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea&nbsp;name="recaptcha_challenge_field"&nbsp;rows="3"&nbsp;cols="40"&gt;&lt;/textarea&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="hidden"&nbsp;name="recaptcha_response_field"&nbsp;value="manual_challenge"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="hidden"&nbsp;name="recaptcha_response_field"&nbsp;value="manual_challenge"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/noscript&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Mailhide&nbsp;related&nbsp;code&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">_recaptcha_aes_encrypt</span><span style="color: #007700">(</span><span style="color: #0000BB">$val</span><span style="color: #007700">,</span><span style="color: #0000BB">$ky</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!&nbsp;</span><span style="color: #0000BB">function_exists&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"mcrypt_encrypt"</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;Mailhide,&nbsp;you&nbsp;need&nbsp;to&nbsp;have&nbsp;the&nbsp;mcrypt&nbsp;php&nbsp;module&nbsp;installed."</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mode</span><span style="color: #007700">=</span><span style="color: #0000BB">MCRYPT_MODE_CBC</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$enc</span><span style="color: #007700">=</span><span style="color: #0000BB">MCRYPT_RIJNDAEL_128</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">=</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_aes_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$val</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">mcrypt_encrypt</span><span style="color: #007700">(</span><span style="color: #0000BB">$enc</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ky</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mode</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">_recaptcha_mailhide_urlbase64&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">base64_encode&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'+/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-_'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;gets&nbsp;the&nbsp;reCAPTCHA&nbsp;Mailhide&nbsp;url&nbsp;for&nbsp;a&nbsp;given&nbsp;email,&nbsp;public&nbsp;key&nbsp;and&nbsp;private&nbsp;key&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recaptcha_mailhide_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">''&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">""&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;Mailhide,&nbsp;you&nbsp;have&nbsp;to&nbsp;sign&nbsp;up&nbsp;for&nbsp;a&nbsp;public&nbsp;and&nbsp;private&nbsp;key,&nbsp;"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"you&nbsp;can&nbsp;do&nbsp;so&nbsp;at&nbsp;&lt;a&nbsp;href='http://mailhide.recaptcha.net/apikey'&gt;http://mailhide.recaptcha.net/apikey&lt;/a&gt;"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ky&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pack</span><span style="color: #007700">(</span><span style="color: #DD0000">'H*'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cryptmail&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_aes_encrypt&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ky</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"http://mailhide.recaptcha.net/d?k="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&amp;c="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_mailhide_urlbase64&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$cryptmail</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;gets&nbsp;the&nbsp;parts&nbsp;of&nbsp;the&nbsp;email&nbsp;to&nbsp;expose&nbsp;to&nbsp;the&nbsp;user.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;eg,&nbsp;given&nbsp;johndoe@example,com&nbsp;return&nbsp;["john",&nbsp;"example.com"].<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;email&nbsp;is&nbsp;then&nbsp;displayed&nbsp;as&nbsp;john...@example.com<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">_recaptcha_mailhide_email_parts&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">"/@/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">strlen&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;&lt;=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(</span><span style="color: #0000BB">strlen&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;&lt;=&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;html&nbsp;to&nbsp;display&nbsp;an&nbsp;email&nbsp;address&nbsp;given&nbsp;a&nbsp;public&nbsp;an&nbsp;private&nbsp;key.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;to&nbsp;get&nbsp;a&nbsp;key,&nbsp;go&nbsp;to:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;http://mailhide.recaptcha.net/apikey<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recaptcha_mailhide_html</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$emailparts&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_mailhide_email_parts&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">recaptcha_mailhide_url&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$emailparts</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;a&nbsp;href='"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">)&nbsp;.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"'&nbsp;onclick=\"window.open('"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"',&nbsp;'',&nbsp;'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300');&nbsp;return&nbsp;false;\"&nbsp;title=\"Reveal&nbsp;this&nbsp;e-mail&nbsp;address\"&gt;...&lt;/a&gt;@"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$emailparts&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+To use the reCAPTCHA system load the component<br />
+<h4><strong>Controller Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">var&nbsp;</span><span style="color: #0000BB">$components&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Recaptcha'</span><span style="color: #007700">);&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+After you save the component and helper and initiate them, set your public & private keys in "beforeFilter" of your controller to the ones you received when you signed up on the reCAPTCHA website.<br />
+<br />
+<h4><strong>Controller Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">beforeFilter</span><span style="color: #007700">(){<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">publickey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">privatekey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+in the view, the helper can be used to verify form submissions or hide your e-mail addresses (NOTE: mcrypt is <strong>required</strong> for this.)<br />
+<h4><strong>Controller Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #FF8000">//create&nbsp;the&nbsp;reCAPTCHA&nbsp;form.<br />&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">display_form</span><span style="color: #007700">(</span><span style="color: #DD0000">'echo'</span><span style="color: #007700">)<br /><br /></span><span style="color: #FF8000">//hide&nbsp;an&nbsp;e-mail&nbsp;address<br />&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hide_mail</span><span style="color: #007700">(</span><span style="color: #DD0000">"someuser@somdomain.tld"</span><span style="color: #007700">,</span><span style="color: #DD0000">'echo'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+<br />
+in the controller to verify a form submission using reCAPTCHA do the following.<br />
+<h4><strong>Controller Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">valid</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">params</span><span style="color: #007700">[</span><span style="color: #DD0000">'form'</span><span style="color: #007700">]))<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//submission&nbsp;is&nbsp;valid!<br /></span><span style="color: #007700">else<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//invalid&nbsp;reCAPTCHA&nbsp;entry.<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+I hope you enjoy it, this is the first component / helper (let alone helper) pair I've written.</div>
+<p class="right pages-paging">
+</p>
+<div class="adsense textLeaderboard">
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2042773218904579";
+google_ad_slot = "9277502179";
+google_ad_width = "728";
+google_ad_height = "90";
+
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div>	</div>
+</div>
+
+<span class="st_twitter_hcount"></span><span class="st_facebook_hcount"></span><span class="st_ybuzz_hcount"></span><span class="st_gbuzz_hcount"></span><span class="st_email_hcount"></span><span class="st_sharethis_hcount"></span>
+<div id="article-comments">
+	<h3>Comments</h3>
+		<div class="comments">
+	<a name="comments"></a>
+	<ul class="tree-block"><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/m0dmd"><img src="http://www.gravatar.com/avatar/69cf772443d5d37f0ebc8fc693330b84" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/m0dmd">m0dmd</a></span>
+</div>
+<div class="comment">
+	<a name="comment4d6fcd66-7ca4-4db9-bcf8-13c7adcbdab8"></a>
+	<span class="date">Posted 03/03/11 05:18:30 PM</span>
+	<div class="body">
+		For anyone who is interested in having the Recaptcha, validated after form validation. You can accomplish this by sending Recaptcha->valid( $this->params['form'] ) as a @parameter of your Model->registration() method.<br />
+<br />
+public function register( $data = array(), $recaptcha = false ) {<br />
+     $this->set( $data );<br />
+     if ( $this->validates() ) {<br />
+          if ( $recaptcha ) {...}<br />
+     }<br />
+     return false;<br />
+}<br />
+<br />
+Very simple!	</div>
+	<div class="report">
+		<a href="/report/Comment/4d6fcd66-7ca4-4db9-bcf8-13c7adcbdab8">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4d6fcd66-7ca4-4db9-bcf8-13c7adcbdab8/quote:1#comment4d6fcd66-7ca4-4db9-bcf8-13c7adcbdab8">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/tasin"><img src="http://www.gravatar.com/avatar/0afe817c9d4a4c636ab70e6b7e6f1545" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/tasin">tasin</a></span>
+</div>
+<div class="comment">
+	<a name="comment4d21ef80-97ec-4f45-bdd1-c1e1d13e7814"></a>
+	<span class="date">Posted 01/03/11 09:47:12 AM</span>
+	<div class="body">
+		Many thanks for this. It took me only 10 minutes to add the component/helper and it worked beautifully!	</div>
+	<div class="report">
+		<a href="/report/Comment/4d21ef80-97ec-4f45-bdd1-c1e1d13e7814">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4d21ef80-97ec-4f45-bdd1-c1e1d13e7814/quote:1#comment4d21ef80-97ec-4f45-bdd1-c1e1d13e7814">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/dookie"><img src="http://www.gravatar.com/avatar/e935f01685e50d7c82e2b1f6962419a7" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/dookie">dookie</a></span>
+</div>
+<div class="comment">
+	<a name="comment4d1f72c4-0cdc-41b2-8262-ea31d13e7814"></a>
+	<span class="date">Posted 01/01/11 12:30:28 PM</span>
+	<div class="body">
+		I've change to cake 1.3, and when I submit my form, I allways have $this->params['form'] empty.<br />
+<br />
+What I need to do to put this working fine?	</div>
+	<div class="report">
+		<a href="/report/Comment/4d1f72c4-0cdc-41b2-8262-ea31d13e7814">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4d1f72c4-0cdc-41b2-8262-ea31d13e7814/quote:1#comment4d1f72c4-0cdc-41b2-8262-ea31d13e7814">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/bubuzzz"><img src="http://www.gravatar.com/avatar/d9a28606efa0e91c161d3f57cff1526d" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/bubuzzz">bubuzzz</a></span>
+</div>
+<div class="comment">
+	<a name="comment4d0e0175-5414-4401-bf76-f666d13e7814"></a>
+	<span class="date">Posted 12/19/10 06:58:29 AM</span>
+	<div class="body">
+		I used your plugin in my first cakephp project and it works great. However, i have a small problem with the ajax pagination. I include the captcha form inside a view having the ajax pagination and everytime i navigate into the new page, the whole view gets updated (in the ajax mode) but the captcha form disappears. If i navigate in the normal way (no ajax), form still show up. Do you have any suggestion to solve it ? 	</div>
+	<div class="report">
+		<a href="/report/Comment/4d0e0175-5414-4401-bf76-f666d13e7814">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4d0e0175-5414-4401-bf76-f666d13e7814/quote:1#comment4d0e0175-5414-4401-bf76-f666d13e7814">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/louiemiranda"><img src="http://www.gravatar.com/avatar/244e6196a79d2f18d873577f0d6459f7" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/louiemiranda">louiemiranda</a></span>
+</div>
+<div class="comment">
+	<a name="comment4cbfecff-b2b4-4648-ba8d-7c56d13e7814"></a>
+	<span class="date">Posted 10/21/10 02:34:23 AM</span>
+	<div class="body">
+		This has worked for me on cakephp 1.3.x<br />
+<br />
+Although, I am having issue when validating the form. When I click submit on an empty form. It first validates the captcha and does not display the error on each forms. What I wanted is, validate the form first, then recaptcha.<br />
+<br />
+I am using this code.<br />
+<code><span style="color: #000000">
+<br />if($this-&gt;Recaptcha-&gt;valid($this-&gt;params['form']))&nbsp;{<br />&nbsp;&nbsp;&nbsp;if&nbsp;(!empty($this-&gt;data))&nbsp;{<br />&nbsp;&nbsp;&nbsp;$this-&gt;Feedback-&gt;create();<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($this-&gt;Feedback-&gt;save($this-&gt;data))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//...&nbsp;save&nbsp;here<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Session-&gt;setFlash(__('could&nbsp;not&nbsp;be&nbsp;saved.',&nbsp;true));<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br />}<br />}<br />else&nbsp;{<br />&nbsp;&nbsp;&nbsp;//invalid&nbsp;reCAPTCHA&nbsp;entry.<br />&nbsp;&nbsp;&nbsp;$this-&gt;Session-&gt;setFlash(__('Invalid&nbsp;captcha.&nbsp;Please,&nbsp;try&nbsp;again.',&nbsp;true));<br />}<br /></span>
+</code>
+<br />
+What might be possibly wrong?<br />
+<br />
+Thanks	</div>
+	<div class="report">
+		<a href="/report/Comment/4cbfecff-b2b4-4648-ba8d-7c56d13e7814">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4cbfecff-b2b4-4648-ba8d-7c56d13e7814/quote:1#comment4cbfecff-b2b4-4648-ba8d-7c56d13e7814">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/lucashammer"><img src="http://www.gravatar.com/avatar/7c070d6d7d489eceea423717e2a48a81" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/lucashammer">lucashammer</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea208-70fc-4b59-8bd7-410182f0cb67"></a>
+	<span class="date">Posted 09/02/10 12:00:54 PM</span>
+	<div class="body">
+		My first component download from the bakery.  Helped out a lot.  Works beautiful on CakePHP 1.3.3.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea208-70fc-4b59-8bd7-410182f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea208-70fc-4b59-8bd7-410182f0cb67/quote:1#comment4caea208-70fc-4b59-8bd7-410182f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/lomskyrc"><img src="http://www.gravatar.com/avatar/e6b7ced431ba16710ec143587cc40592" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/lomskyrc">lomskyrc</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1f9-8e54-44d4-8fe7-402e82f0cb67"></a>
+	<span class="date">Posted 07/13/10 12:28:07 PM</span>
+	<div class="body">
+		var $compoments = array ('Recaptcha');<br />
+use<br />
+$this->Recaptcha->valid($this->params['form']))<br />
+but Undefined property: ContactsController::$Recaptcha, <br />
+Fatal error: Call to a member function valid() on a non-object<br />
+<br />
+the helpers it works great.<br />
+<br />
+cakephp v1.3.2	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1f9-8e54-44d4-8fe7-402e82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1f9-8e54-44d4-8fe7-402e82f0cb67/quote:1#comment4caea1f9-8e54-44d4-8fe7-402e82f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/thedilab"><img src="http://www.gravatar.com/avatar/7bd6b5fb46f2b7eecb4f31d53b9fabae" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/thedilab">thedilab</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1dd-1830-4514-bfa6-4bfc82f0cb67"></a>
+	<span class="date">Posted 03/30/10 11:41:43 PM</span>
+	<div class="body">
+		It works great,<br />
+<br />
+Thanks.<br />
+<br />
+<a href="http://www.the-di-lab.com/">www.the-di-lab.com</a>	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1dd-1830-4514-bfa6-4bfc82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1dd-1830-4514-bfa6-4bfc82f0cb67/quote:1#comment4caea1dd-1830-4514-bfa6-4bfc82f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/goonanism"><img src="http://www.gravatar.com/avatar/d445d253f5bf4fe63d069b4a2b4286e8" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/goonanism">goonanism</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1da-0d10-4e43-ba5e-46d682f0cb67"></a>
+	<span class="date">Posted 03/17/10 03:30:56 PM</span>
+	<div class="body">
+		I'd been racking my brain as to how I could implement this so I Google searched it and this came up.<br />
+<br />
+Worked perfectly - well done!	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1da-0d10-4e43-ba5e-46d682f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1da-0d10-4e43-ba5e-46d682f0cb67/quote:1#comment4caea1da-0d10-4e43-ba5e-46d682f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/voxatrophia"><img src="http://www.gravatar.com/avatar/1f38c34c7702d253863dcdcaf7e6e581" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/voxatrophia">voxatrophia</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1d5-096c-44f3-94df-4b9782f0cb67"></a>
+	<span class="date">Posted 02/25/10 01:26:43 AM</span>
+	<div class="body">
+		Despite being a bit old, this component/helper works great.<br />
+<br />
+If you update to 1.3 and you want to use the new <a href="http://book.cakephp.org/view/1573/Components">Component settings feature</a>, you can change the startup function to initialize, and then just use the settings array.<br />
+<br />
+<h4><strong>Component Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">initialize</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$controller</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$settings&nbsp;</span><span style="color: #007700">=&nbsp;array()){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">publickey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$settings</span><span style="color: #007700">[</span><span style="color: #DD0000">'publickey'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">privatekey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$settings</span><span style="color: #007700">[</span><span style="color: #DD0000">'privatekey'</span><span style="color: #007700">];<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.apiServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"http://api.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.apiSecureServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"https://api-secure.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.verifyServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"api-verify.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.pubKey"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">publickey</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.privateKey"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">privatekey</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">controller&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$controller</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">controller</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">helpers</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"Recaptcha"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+<br />
+And you would set your variables either in app_controller or where ever.<br />
+<br />
+<h4><strong>Controller Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">var&nbsp;</span><span style="color: #0000BB">$components&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Recaptcha'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'publickey'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'key'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'privatekey'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'other_key'<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Auth'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'userModel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'MyUser'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'loginAction'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">'controller'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'users'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'action'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'login'</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;)<br />);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+It's a bit of a frivolous change, but it keeps your beforeFilter clean.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1d5-096c-44f3-94df-4b9782f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1d5-096c-44f3-94df-4b9782f0cb67/quote:1#comment4caea1d5-096c-44f3-94df-4b9782f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/janwillem"><img src="http://www.gravatar.com/avatar/161da903a25258387bd55479b9a4efe9" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/janwillem">janwillem</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1d2-fc24-4b68-b929-48e482f0cb67"></a>
+	<span class="date">Posted 02/16/10 01:03:14 PM</span>
+	<div class="body">
+		I've modified the original helper from Howard to also work with the <a href="http://recaptcha.net/apidocs/captcha/client.html">Ajax API</a> which you'll need for Ajax calls and e.g. on modal windows. There seems to be some bug related to this, which makes that you need the Ajax API to make it work.<br />
+<br />
+Here is the modified Helper code (app/views/helpers/recaptcha.php)<br />
+<br />
+<h4><strong>Helper Class:</strong></h4><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /><br /></span><span style="color: #007700">&lt;?</span><span style="color: #0000BB">php&nbsp;&nbsp;<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">RecaptchaHelper&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">AppHelper&nbsp;</span><span style="color: #007700">{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$helpers&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'form'</span><span style="color: #007700">);&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">display_form</span><span style="color: #007700">(</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'return'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$use_ssl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">){&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">__form</span><span style="color: #007700">(</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.pubKey"</span><span style="color: #007700">),</span><span style="color: #0000BB">$error</span><span style="color: #007700">,</span><span style="color: #0000BB">$use_ssl</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"echo"</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">hide_mail</span><span style="color: #007700">(</span><span style="color: #0000BB">$email&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'return'</span><span style="color: #007700">){&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">recaptcha_mailhide_html</span><span style="color: #007700">(</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.pubKey'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.privateKey'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$output_method&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"echo"</span><span style="color: #007700">)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;the&nbsp;challenge&nbsp;HTML&nbsp;(javascript&nbsp;and&nbsp;non-javascript&nbsp;version).&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;called&nbsp;from&nbsp;the&nbsp;browser,&nbsp;and&nbsp;the&nbsp;resulting&nbsp;reCAPTCHA&nbsp;HTML&nbsp;widget&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;is&nbsp;embedded&nbsp;within&nbsp;the&nbsp;HTML&nbsp;form&nbsp;it&nbsp;was&nbsp;called&nbsp;from.&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$pubkey&nbsp;A&nbsp;public&nbsp;key&nbsp;for&nbsp;reCAPTCHA&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;string&nbsp;$error&nbsp;The&nbsp;error&nbsp;given&nbsp;by&nbsp;reCAPTCHA&nbsp;(optional,&nbsp;default&nbsp;is&nbsp;null)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;boolean&nbsp;$use_ssl&nbsp;Should&nbsp;the&nbsp;request&nbsp;be&nbsp;made&nbsp;over&nbsp;ssl?&nbsp;(optional,&nbsp;default&nbsp;is&nbsp;false)&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;string&nbsp;-&nbsp;The&nbsp;HTML&nbsp;to&nbsp;be&nbsp;embedded&nbsp;in&nbsp;the&nbsp;user's&nbsp;form.&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">__form</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$use_ssl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">){&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;you&nbsp;must&nbsp;get&nbsp;an&nbsp;API&nbsp;key&nbsp;from&nbsp;&lt;a&nbsp;href='http://recaptcha.net/api/getkey'&gt;http://recaptcha.net/api/getkey&lt;/a&gt;"</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$use_ssl</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.apiSecureServer'</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">read</span><span style="color: #007700">(</span><span style="color: #DD0000">'Recaptcha.apiServer'</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$errorpart&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$error</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$errorpart&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"&amp;amp;error="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$error</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;type="text/javascript"&nbsp;src="'&nbsp;</span><span style="color: #007700">.&nbsp;&nbsp;</span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">.</span><span style="color: #DD0000">'/js/recaptcha_ajax.js"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id="recaptcha_div"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;type="text/javascript"&gt;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recaptcha.create("'&nbsp;</span><span style="color: #007700">.&nbsp;&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"recaptcha_div",&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme:&nbsp;"clean",<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'</span><span style="color: #007700">;&nbsp;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Mailhide&nbsp;related&nbsp;code&nbsp;*/&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">_recaptcha_aes_encrypt</span><span style="color: #007700">(</span><span style="color: #0000BB">$val</span><span style="color: #007700">,</span><span style="color: #0000BB">$ky</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!&nbsp;</span><span style="color: #0000BB">function_exists&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"mcrypt_encrypt"</span><span style="color: #007700">))&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;Mailhide,&nbsp;you&nbsp;need&nbsp;to&nbsp;have&nbsp;the&nbsp;mcrypt&nbsp;php&nbsp;module&nbsp;installed."</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mode</span><span style="color: #007700">=</span><span style="color: #0000BB">MCRYPT_MODE_CBC</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$enc</span><span style="color: #007700">=</span><span style="color: #0000BB">MCRYPT_RIJNDAEL_128</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">=</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_aes_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$val</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">mcrypt_encrypt</span><span style="color: #007700">(</span><span style="color: #0000BB">$enc</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ky</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mode</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">_recaptcha_mailhide_urlbase64&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">base64_encode&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'+/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-_'</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;gets&nbsp;the&nbsp;reCAPTCHA&nbsp;Mailhide&nbsp;url&nbsp;for&nbsp;a&nbsp;given&nbsp;email,&nbsp;public&nbsp;key&nbsp;and&nbsp;private&nbsp;key&nbsp;*/&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recaptcha_mailhide_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">''&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">""&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;(</span><span style="color: #DD0000">"To&nbsp;use&nbsp;reCAPTCHA&nbsp;Mailhide,&nbsp;you&nbsp;have&nbsp;to&nbsp;sign&nbsp;up&nbsp;for&nbsp;a&nbsp;public&nbsp;and&nbsp;private&nbsp;key,&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"you&nbsp;can&nbsp;do&nbsp;so&nbsp;at&nbsp;&lt;a&nbsp;href='http://mailhide.recaptcha.net/apikey'&gt;http://mailhide.recaptcha.net/apikey&lt;/a&gt;"</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ky&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pack</span><span style="color: #007700">(</span><span style="color: #DD0000">'H*'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cryptmail&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_aes_encrypt&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ky</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"http://mailhide.recaptcha.net/d?k="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$pubkey&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&amp;c="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_mailhide_urlbase64&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$cryptmail</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;gets&nbsp;the&nbsp;parts&nbsp;of&nbsp;the&nbsp;email&nbsp;to&nbsp;expose&nbsp;to&nbsp;the&nbsp;user.&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;eg,&nbsp;given&nbsp;johndoe@example,com&nbsp;return&nbsp;["john",&nbsp;"example.com"].&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;email&nbsp;is&nbsp;then&nbsp;displayed&nbsp;as&nbsp;john...@example.com&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">_recaptcha_mailhide_email_parts&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">"/@/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email&nbsp;</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">strlen&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;&lt;=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(</span><span style="color: #0000BB">strlen&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;&lt;=&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;html&nbsp;to&nbsp;display&nbsp;an&nbsp;email&nbsp;address&nbsp;given&nbsp;a&nbsp;public&nbsp;an&nbsp;private&nbsp;key.&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;to&nbsp;get&nbsp;a&nbsp;key,&nbsp;go&nbsp;to:&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;http://mailhide.recaptcha.net/apikey&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recaptcha_mailhide_html</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">)&nbsp;{&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$emailparts&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_recaptcha_mailhide_email_parts&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">recaptcha_mailhide_url&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$email</span><span style="color: #007700">);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$emailparts</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;a&nbsp;href='"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">)&nbsp;.&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"'&nbsp;onclick=\"window.open('"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"',&nbsp;'',&nbsp;'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300');&nbsp;return&nbsp;false;\"&nbsp;title=\"Reveal&nbsp;this&nbsp;e-mail&nbsp;address\"&gt;...&lt;/a&gt;@"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$emailparts&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />}&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>&nbsp;<br />?&gt;</span>
+</code>
+<br />
+This is using the clean theme, check the reCAPTCHA site for other available themes. I hope this helps! 	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1d2-fc24-4b68-b929-48e482f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1d2-fc24-4b68-b929-48e482f0cb67/quote:1#comment4caea1d2-fc24-4b68-b929-48e482f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/digivinci"><img src="http://www.gravatar.com/avatar/b8e3cc05985087c8990686de76e4415e" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/digivinci">digivinci</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1cf-4b54-459d-8ef6-4bc282f0cb67"></a>
+	<span class="date">Posted 02/08/10 09:31:42 AM</span>
+	<div class="body">
+		any chance we can get a peek at that updated code? thanks! :)	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1cf-4b54-459d-8ef6-4bc282f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1cf-4b54-459d-8ef6-4bc282f0cb67/quote:1#comment4caea1cf-4b54-459d-8ef6-4bc282f0cb67">Quote</a></p>
+			</div><ul><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/webbedit"><img src="http://www.gravatar.com/avatar/f8ce5331e47a2727baba2ee0a77d2866" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/webbedit">webbedit</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1cf-7ab4-4c47-94fa-440882f0cb67"></a>
+	<span class="date">Posted 02/08/10 09:40:52 AM</span>
+	<div class="body">
+		<q>any chance we can get a peek at that updated code? thanks! :)</q>
+<br />
+Sure thing, it's really only two lines added to the component, and one line to the __form() function of the helper, but I'll paste the beginning of the component and the whole __form() function so you can see the changes in some sort of context.<br />
+<br />
+Component:<br />
+<code><span style="color: #000000">
+<br /><span style="color: #0000BB">&lt;?php<br />&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">RecaptchaComponent&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Object&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$publickey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$privatekey</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$theme</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"clean"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$is_valid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">startup</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$controller</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.apiServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"http://api.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.apiSecureServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"https://api-secure.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.verifyServer"</span><span style="color: #007700">,</span><span style="color: #DD0000">"api-verify.recaptcha.net"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.pubKey"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">publickey</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.privateKey"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">privatekey</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Configure</span><span style="color: #007700">::</span><span style="color: #0000BB">write</span><span style="color: #007700">(</span><span style="color: #DD0000">"Recaptcha.theme"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">theme</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">controller&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">$controller</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">controller</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">helpers</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"Recaptcha"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />...<br /></span>
+</span>
+</code>
+<br />
+helper->__form():<br />
+<code><span style="color: #000000">
+<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;__form($pubkey,&nbsp;$error&nbsp;=&nbsp;null,&nbsp;$use_ssl&nbsp;=&nbsp;false){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($pubkey&nbsp;==&nbsp;null&nbsp;||&nbsp;$pubkey&nbsp;==&nbsp;'')&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;("To&nbsp;use&nbsp;reCAPTCHA&nbsp;you&nbsp;must&nbsp;get&nbsp;an&nbsp;API&nbsp;key&nbsp;from&nbsp;&lt;a&nbsp;href='http://recaptcha.net/api/getkey'&gt;http://recaptcha.net/api/getkey&lt;/a&gt;");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($use_ssl)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$server&nbsp;=&nbsp;Configure::read('Recaptcha.apiSecureServer');<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$server&nbsp;=&nbsp;Configure::read('Recaptcha.apiServer');<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;$errorpart&nbsp;=&nbsp;"";<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($error)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$errorpart&nbsp;=&nbsp;"&amp;amp;error="&nbsp;.&nbsp;$error;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;script&gt;var&nbsp;RecaptchaOptions&nbsp;=&nbsp;{theme:\''.Configure::read('Recaptcha.theme').'\'};&nbsp;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;type="text/javascript"&nbsp;src="'.&nbsp;$server&nbsp;.&nbsp;'/challenge?k='&nbsp;.&nbsp;$pubkey&nbsp;.&nbsp;$errorpart&nbsp;.&nbsp;'"&gt;&lt;/script&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;noscript&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;iframe&nbsp;src="'.&nbsp;$server&nbsp;.&nbsp;'/noscript?k='&nbsp;.&nbsp;$pubkey&nbsp;.&nbsp;$errorpart&nbsp;.&nbsp;'"&nbsp;height="300"&nbsp;width="500"&nbsp;frameborder="0"&gt;&lt;/iframe&gt;&lt;br/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea&nbsp;name="recaptcha_challenge_field"&nbsp;rows="3"&nbsp;cols="40"&gt;&lt;/textarea&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="hidden"&nbsp;name="recaptcha_response_field"&nbsp;value="manual_challenge"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="hidden"&nbsp;name="recaptcha_response_field"&nbsp;value="manual_challenge"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/noscript&gt;';<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span>
+</code>
+<br />
+Then, to change the theme you simply set $this->Recaptcha->theme = ''; in your controller as you do with the public and private key component variables.<br />
+<br />
+Hope it's of help!<br />
+<br />
+Paul.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1cf-7ab4-4c47-94fa-440882f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1cf-7ab4-4c47-94fa-440882f0cb67/quote:1#comment4caea1cf-7ab4-4c47-94fa-440882f0cb67">Quote</a></p>
+			</div></li></ul></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/webbedit"><img src="http://www.gravatar.com/avatar/f8ce5331e47a2727baba2ee0a77d2866" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/webbedit">webbedit</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1ce-8650-452b-9112-46b582f0cb67"></a>
+	<span class="date">Posted 02/04/10 05:56:16 AM</span>
+	<div class="body">
+		Had it up and running in no time at all using the standard captcha form.  <br />
+<br />
+I have added a theme variable so I can change the default skin on the captcha which required passing through the variable from the controller, through the component to the helper which echoes "var RecaptchaOptions = {theme:\''.Configure::read('Recaptcha.theme').'\'}; " before the main javascript.<br />
+<br />
+Your first component/helper was a good one, keep up the good work!<br />
+<br />
+Paul.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1ce-8650-452b-9112-46b582f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1ce-8650-452b-9112-46b582f0cb67/quote:1#comment4caea1ce-8650-452b-9112-46b582f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/pbysh"><img src="http://www.gravatar.com/avatar/80ae8ec34e9e3e66c5be50733afaa44e" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/pbysh">pbysh</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1bf-e168-4d3d-932d-476082f0cb67"></a>
+	<span class="date">Posted 12/15/09 01:32:15 PM</span>
+	<div class="body">
+		Easy to use, had it up and running in minutes. Thanks.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1bf-e168-4d3d-932d-476082f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1bf-e168-4d3d-932d-476082f0cb67/quote:1#comment4caea1bf-e168-4d3d-932d-476082f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/rowlandm"><img src="http://www.gravatar.com/avatar/2959bf0d82bf1dd1c0b564c247feaf0c" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/rowlandm">rowlandm</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1b6-fb7c-4ad4-8686-440882f0cb67"></a>
+	<span class="date">Posted 11/10/09 09:26:05 PM</span>
+	<div class="body">
+		Thanks.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1b6-fb7c-4ad4-8686-440882f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1b6-fb7c-4ad4-8686-440882f0cb67/quote:1#comment4caea1b6-fb7c-4ad4-8686-440882f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/imran7000"><img src="http://www.gravatar.com/avatar/3eb575d0f47ae4b9d316ec58dae42ba5" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/imran7000">imran7000</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea1a1-ead8-40b7-af65-465282f0cb67"></a>
+	<span class="date">Posted 09/02/09 08:31:42 AM</span>
+	<div class="body">
+		Thanks.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea1a1-ead8-40b7-af65-465282f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea1a1-ead8-40b7-af65-465282f0cb67/quote:1#comment4caea1a1-ead8-40b7-af65-465282f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/prockrammer"><img src="http://www.gravatar.com/avatar/345e1999e4a6163bcb98476dbbb55ff0" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/prockrammer">pROCKrammer</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea197-9174-4cc7-96ae-456982f0cb67"></a>
+	<span class="date">Posted 08/05/09 08:18:53 AM</span>
+	<div class="body">
+		I got error "Could not open socket" <br />
+<br />
+Here<br />
+<a href="http://www.linux.uz/dsearch/signup">http://www.linux.uz/dsearch/signup</a>	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea197-9174-4cc7-96ae-456982f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea197-9174-4cc7-96ae-456982f0cb67/quote:1#comment4caea197-9174-4cc7-96ae-456982f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/rkaiser0324"><img src="http://www.gravatar.com/avatar/c84d25888fdc7cc23d40b8768d821250" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/rkaiser0324">rkaiser0324</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea16e-e49c-4480-9185-48ff82f0cb67"></a>
+	<span class="date">Posted 04/14/09 07:33:41 AM</span>
+	<div class="body">
+		Great tutorial.  However I think you have a small typo - the second-to-last code block actually goes in the View, but it's labeled "Controller class".  That tripped me up until I realized it.<br />
+<br />
+Thanks again!	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea16e-e49c-4480-9185-48ff82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea16e-e49c-4480-9185-48ff82f0cb67/quote:1#comment4caea16e-e49c-4480-9185-48ff82f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/jdbartlett"><img src="http://www.gravatar.com/avatar/5f115b6edf4656cce4b7c52634837acb" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/jdbartlett">jdbartlett</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea167-2998-410f-b943-42ac82f0cb67"></a>
+	<span class="date">Posted 03/20/09 10:12:37 AM</span>
+	<div class="body">
+		If you're using Security Component, don't forget to add the reCAPTCHA fields to your disabledFields:<br />
+<br />
+<code><span style="color: #000000">
+<br />$this-&gt;Security-&gt;disabledFields&nbsp;=&nbsp;array('recaptcha_challenge_field',&nbsp;'recaptcha_response_field');<br /></span>
+</code>	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea167-2998-410f-b943-42ac82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea167-2998-410f-b943-42ac82f0cb67/quote:1#comment4caea167-2998-410f-b943-42ac82f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/Snapp"><img src="http://www.gravatar.com/avatar/ff6b2b9d48dcb5b6109a796e508a04c3" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/Snapp">Snapp</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea167-72b4-4f40-97f2-412d82f0cb67"></a>
+	<span class="date">Posted 03/19/09 11:37:45 PM</span>
+	<div class="body">
+		I believe I might be having the same problems as the users above but it seems all my comments are being approved.<br />
+<br />
+I've used the block<br />
+<br />
+<code><span style="color: #000000">
+<br /><span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">valid</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">params</span><span style="color: #007700">[</span><span style="color: #DD0000">'form'</span><span style="color: #007700">]))<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//submission&nbsp;is&nbsp;valid!<br /></span><span style="color: #007700">else<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//invalid&nbsp;reCAPTCHA&nbsp;entry.<br /></span><span style="color: #0000BB">?&gt;</span>&nbsp;</span>
+</code>
+<br />
+Any workarounds yet?	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea167-72b4-4f40-97f2-412d82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea167-72b4-4f40-97f2-412d82f0cb67/quote:1#comment4caea167-72b4-4f40-97f2-412d82f0cb67">Quote</a></p>
+			</div><ul><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/Sahan"><img src="http://www.gravatar.com/avatar/fcf28a25e3a9dcf3277bf42997f5e024" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/Sahan">Sahan</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea18a-da00-4615-abac-4fbe82f0cb67"></a>
+	<span class="date">Posted 06/24/09 10:20:56 PM</span>
+	<div class="body">
+		<q>I believe I might be having the same problems as the users above but it seems all my comments are being approved.<br />
+<br />
+I've used the block<br />
+<br />
+<code><span style="color: #000000">
+<br /><span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">valid</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">params</span><span style="color: #007700">[</span><span style="color: #DD0000">'form'</span><span style="color: #007700">]))<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//submission&nbsp;is&nbsp;valid!<br /></span><span style="color: #007700">else<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//invalid&nbsp;reCAPTCHA&nbsp;entry.<br /></span><span style="color: #0000BB">?&gt;</span>&nbsp;</span>
+</code>
+<br />
+Any workarounds yet?</q>
+<br />
+Hi here's a solution you can try, worked for me!<br />
+<br />
+Check your corresponding view, app/views/users/register.ctp (in my case)<br />
+<br />
+And make sure the code that displays the reCaptcha form:<br />
+<br />
+<code><span style="color: #000000">
+$recaptcha-&gt;display_form('echo')</span>
+</code>
+<br />
+is within your form,NOT outside example:<br />
+<br />
+<code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">create</span><span style="color: #007700">(</span><span style="color: #DD0000">'User'</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'url'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'/users/register'</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">display_form</span><span style="color: #007700">(</span><span style="color: #DD0000">'echo'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">(</span><span style="color: #DD0000">'username'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">(</span><span style="color: #DD0000">'password'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">(</span><span style="color: #DD0000">'email'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">(</span><span style="color: #DD0000">'first_name'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">input</span><span style="color: #007700">(</span><span style="color: #DD0000">'last_name'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$form</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">end</span><span style="color: #007700">(</span><span style="color: #DD0000">'Register'</span><span style="color: #007700">);&nbsp;<br />&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+Hope this helps! :)	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea18a-da00-4615-abac-4fbe82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea18a-da00-4615-abac-4fbe82f0cb67/quote:1#comment4caea18a-da00-4615-abac-4fbe82f0cb67">Quote</a></p>
+			</div></li></ul></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/milliseconds"><img src="http://www.gravatar.com/avatar/547c9e3bc507e3a1b64955c1d4868fbd" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/milliseconds">milliseconds</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea15d-15cc-4629-93bf-4b2082f0cb67"></a>
+	<span class="date">Posted 02/17/09 06:24:33 PM</span>
+	<div class="body">
+		When I load a view that I created with the code I get the following error many times. The only variation is digit itself... that changes with the characters of my private key.<br />
+<br />
+Warning (2): pack() [function.pack]: Type H: illegal hex digit L [APP/views/helpers/recaptcha.php, line 79]
+<br />
+I must be missing a step but I can't figure it out. Can anyone help?	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea15d-15cc-4629-93bf-4b2082f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea15d-15cc-4629-93bf-4b2082f0cb67/quote:1#comment4caea15d-15cc-4629-93bf-4b2082f0cb67">Quote</a></p>
+			</div><ul><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/Sahan"><img src="http://www.gravatar.com/avatar/fcf28a25e3a9dcf3277bf42997f5e024" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/Sahan">Sahan</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea18b-fda0-4fe2-a348-47ec82f0cb67"></a>
+	<span class="date">Posted 06/25/09 11:17:21 PM</span>
+	<div class="body">
+		<q>When I load a view that I created with the code I get the following error many times. The only variation is digit itself... that changes with the characters of my private key.<br />
+<br />
+Warning (2): pack() [function.pack]: Type H: illegal hex digit L [APP/views/helpers/recaptcha.php, line 79]
+<br />
+I must be missing a step but I can't figure it out. Can anyone help?</q>
+<br />
+Hi try this!<br />
+<br />
+It seems one of the functions in your "/helpers/recaptcha.php" is missing, so add this function in there!<br />
+<br />
+<code><span style="color: #000000">
+<br />function&nbsp;_recaptcha_aes_pad($val)&nbsp;<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;$block_size&nbsp;=&nbsp;16;<br />&nbsp;&nbsp;&nbsp;&nbsp;$numpad&nbsp;=&nbsp;$block_size&nbsp;-&nbsp;(strlen&nbsp;($val)&nbsp;%&nbsp;$block_size);&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;str_pad($val,&nbsp;strlen&nbsp;($val)&nbsp;+&nbsp;$numpad,&nbsp;chr($numpad));<br />&nbsp;&nbsp;}<br /></span>
+</code>
+<br />
+Then... find the <code><span style="color: #000000">
+function&nbsp;hide_mail</span>
+</code> in the same page and add in the Public and Private Keys given for MailHide as variables, see below..<br />
+<br />
+<code><span style="color: #000000">
+<br />function&nbsp;hide_mail($email&nbsp;=&nbsp;'',$output_method&nbsp;=&nbsp;'return'){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$pubkey&nbsp;=&nbsp;"01URu9mx0VAUTVkg3Eb6Bn1Q==";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$privkey&nbsp;=&nbsp;"8AE48922E14FB61F90BDDBE4C61D70E5";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$data&nbsp;=&nbsp;$this-&gt;recaptcha_mailhide_html($pubkey,&nbsp;$privkey,&nbsp;$email);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if($output_method&nbsp;==&nbsp;"echo")<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$data;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$data;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span>
+</code>
+<br />
+That solved the problem for me! Cheers! :)	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea18b-fda0-4fe2-a348-47ec82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea18b-fda0-4fe2-a348-47ec82f0cb67/quote:1#comment4caea18b-fda0-4fe2-a348-47ec82f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/Howard"><img src="http://www.gravatar.com/avatar/0e74137e90d77c780ccd6bd9ae5fb728" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/Howard">Howard</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea15f-bfc4-420e-bfe0-4fc082f0cb67"></a>
+	<span class="date">Posted 02/27/09 03:56:49 PM</span>
+	<div class="body">
+		You need to have mcrypt installed as stated above to use some of the helpers functions. Hope this helps!<br />
+<br />
+<q>When I load a view that I created with the code I get the following error many times. The only variation is digit itself... that changes with the characters of my private key.<br />
+<br />
+Warning (2): pack() [function.pack]: Type H: illegal hex digit L [APP/views/helpers/recaptcha.php, line 79]
+<br />
+I must be missing a step but I can't figure it out. Can anyone help?</q>	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea15f-bfc4-420e-bfe0-4fc082f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea15f-bfc4-420e-bfe0-4fc082f0cb67/quote:1#comment4caea15f-bfc4-420e-bfe0-4fc082f0cb67">Quote</a></p>
+			</div></li></ul></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/cakemanager"><img src="http://www.gravatar.com/avatar/15f47441810a37b1a586792408267538" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/cakemanager">cakemanager</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea14c-62fc-45d9-a34e-455082f0cb67"></a>
+	<span class="date">Posted 12/06/08 03:03:18 AM</span>
+	<div class="body">
+		In case someone has problems (like I): In the view the element must be called after the form->create() is executed.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea14c-62fc-45d9-a34e-455082f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea14c-62fc-45d9-a34e-455082f0cb67/quote:1#comment4caea14c-62fc-45d9-a34e-455082f0cb67">Quote</a></p>
+			</div></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/Wi1d"><img src="http://www.gravatar.com/avatar/6bed1fcab91ad0ae985afeecb3e19038" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/Wi1d">Wi1d</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea149-54d4-48b0-930e-452182f0cb67"></a>
+	<span class="date">Posted 11/23/08 12:00:57 PM</span>
+	<div class="body">
+		When I add die(pr($this->params)) inside of my controller I see that it is empty so $recaptcha->recaptcha_check_answer() never gets executed. Recaptcha is included in both $this->helper and $this->component and the form displays without issue. I'm also not seeing any sign of the challenge response in $this->data.<br />
+<br />
+Any ideas where I might be going wrong or why $this->params['form'] refuses to be populated with the captcha response? Any help would be greatly appreciated.<br />
+<br />
+<br />
+*** update ***<br />
+It seems like this may be a problem with browsers? Everything works beautifully in IE 8. $this->params[form] is populated appropriately and I can validate the captcha response. <br />
+<br />
+Unfortunately it fails in Firefox 3.0.4 (safe mode), Safari 3.2, and Opera 9.62. At least it does for me. Anyone else validate or have a solution?	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea149-54d4-48b0-930e-452182f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea149-54d4-48b0-930e-452182f0cb67/quote:1#comment4caea149-54d4-48b0-930e-452182f0cb67">Quote</a></p>
+			</div><ul><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/zapibranigan"><img src="http://www.gravatar.com/avatar/79a8d889076a019c07fff677965c8921" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/zapibranigan">zapibranigan</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea153-b160-48fd-beff-486f82f0cb67"></a>
+	<span class="date">Posted 01/11/09 09:55:17 AM</span>
+	<div class="body">
+		<q>Any ideas where I might be going wrong or why $this->params['form'] refuses to be populated with the captcha response?</q>
+<br />
+I have exactly the same problem, though it has worked for some time, and I don't know why now it doesn't work anymore (and I really don't understand why in the ___form() function there are two inputs with the same name?)<br />
+<br />
+**EDIT**<br />
+you need valid XHTML pages for this to work. I've modified my page according to the W3C validator, and now it works well!	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea153-b160-48fd-beff-486f82f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea153-b160-48fd-beff-486f82f0cb67/quote:1#comment4caea153-b160-48fd-beff-486f82f0cb67">Quote</a></p>
+			</div></li></ul></li><li><div class="author-details">
+	<div class="gravatar">
+		<a href="/users/view/gwoo"><img src="http://www.gravatar.com/avatar/067b1e443a7598888c07f5b2c2968e73" class="gravatar" alt="" /></a>	</div>
+	<span class="username"><a href="/users/view/gwoo">gwoo</a></span>
+</div>
+<div class="comment">
+	<a name="comment4caea141-c194-4d2f-83f0-459082f0cb67"></a>
+	<span class="date">Posted 10/22/08 12:15:18 AM</span>
+	<div class="body">
+		You can group your Configure settings into an array and access them with dot notation. This is one major benefit of the Configure class over standard defines.	</div>
+	<div class="report">
+		<a href="/report/Comment/4caea141-c194-4d2f-83f0-459082f0cb67">Report this</a>	</div>
+						<p><a href="/articles/Howard/2008/11/15/recaptcha-component-helper-for-cakephp/comment:4caea141-c194-4d2f-83f0-459082f0cb67/quote:1#comment4caea141-c194-4d2f-83f0-459082f0cb67">Quote</a></p>
+			</div></li></ul>Please <a href="/users/login">login</a> to post a comment.</div>
+<img src="/comments/img/indicator.gif" id="busy-indicator" style="display:none;" alt="" /></div>
+
+				<div class="clear">&nbsp;</div>
+			</div>
+			<div class="adsense" id="bottom-ads">
+				<script type="text/javascript"><!--
+google_ad_client = "pub-2042773218904579";
+google_ad_slot = "2938926380";
+google_ad_width = "728";
+google_ad_height = "90";
+
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>			</div>
+		</div>
+	</div>
+
+	<div id="footer-container">
+	<div id="footer"><div class="latest-container">
+		<div class="latest articles">
+			<h4>Latest Articles</h4>
+			<ul>
+					<li><a href="/articles/mbates/2011/03/18/amazon_sqs_component_1">Amazon SQS Component</a></li>
+					<li><a href="/articles/pjhile/2011/03/03/json-able_behavior">JSON-able Behavior</a></li>
+					<li><a href="/articles/jboesch/2011/03/07/javascript_unit_testing_with_jasmine">Javascript Unit Testing with Jasmine</a></li>
+					<li><a href="/articles/2011/02/25/http_basic_authentication_with_users_from_database">HTTP basic authentication with users from database</a></li>
+					<li><a href="/articles/rajibahmed/2011/02/23/cakephp_swiftmailer4_x_x_component_with_batch_send">Cakephp SwiftMailer4.X.X Component with batch send</a></li>
+				</ul>
+		</div>
+		
+		<div class="latest code">
+			<h4>Latest Code</h4>
+			<ul>
+					<li><a href="/articles/kishorkundan/2011/03/31/increase_contrast_of_an_image_image_processing_histogram_equalization_using_gd_library_and_cakephp">Increase contrast of an Image (Image processing, Histogram Equalization using gd library and cakephp)</a></li>
+					<li><a href="/articles/2011/03/12/findbatch_behavior">FindBatch Behavior</a></li>
+					<li><a href="/articles/mashaper/2011/03/09/mashape_cake_plugin_-_api_generation_2">Mashape Cake Plugin - API Generation</a></li>
+					<li><a href="/articles/abailiss/2011/03/09/simple_oauth_component_-_2_methods_are_all_you_need">Simple oAuth Component - 2 methods are all you need!</a></li>
+					<li><a href="/articles/silasmontgomery/2011/03/02/cakephp_full_calendar_plugin_2">CakePHP Full Calendar Plugin</a></li>
+				</ul>
+		</div>
+		
+		<div class="latest news">
+			<h4>Latest News</h4>
+			<ul>
+					<li><a href="/articles/markstory/2011/03/20/cakephp_1_3_8_and_1_2_10_released">CakePHP 1.3.8 and 1.2.10 released</a></li>
+					<li><a href="/articles/predominant/2011/02/03/a_facelift_for_the_cakephp_book">A facelift for the CakePHP Book</a></li>
+					<li><a href="/articles/markstory/2011/01/19/cakephp_1_3_7_released">CakePHP 1.3.7 Released</a></li>
+					<li><a href="/articles/markstory/2010/12/26/happy_holiday_yule_cake_-_cakephp_2_0-dev_released">Happy Holiday yule cake - CakePHP 2.0-dev released </a></li>
+					<li><a href="/articles/predominant/2010/09/12/cakephp-1-3-4-released">CakePHP 1.3.4 released</a></li>
+				</ul>
+		</div>
+	
+	<div class="latest comments">
+		<h4>Latest Comments</h4>
+			<ul>
+					<li><a href="/articles/schneimi/2010/08/19/ajax-star-rating-plugin-1#comment4d988e95-bf50-45f6-b4ae-21a2adcbdab8">Don&#039;t forget to Auth-&gt;allow(&#039;view&#039;) action</a></li>
+					<li><a href="/articles/santino83/2011/02/19/behavior_for_model_inheritance_the_missing_feature#comment4d97a5a6-1ba0-4eac-abe7-0c8eadcbdab8">Repo on Github</a></li>
+					<li><a href="/articles/pjhile/2011/03/03/json-able_behavior#comment4d979e7e-0184-4c29-b272-0bbbadcbdab8">I&#039;ve seen 2 alternatives that already exist</a></li>
+					<li><a href="/articles/wernerhp/2010/08/31/cksource-helper-for-ckeditor#comment4d974057-8f98-41a7-9337-174fadcbdab8">sorry i&#039;am very new to Cake. i&#039;ve the same problem. how can this be fixed? cake 1.3.8 CKEditor 3.5.2</a></li>
+					<li><a href="/articles/tehtreag/2010/08/08/model_repletion#comment4d9506b6-cc98-4556-abbd-464aadcbdab8">Nice but...</a></li>
+				</ul>
+		</div>
+</div>
+		<p class="copyright">
+		Powered by <a href="javascript:var%20s%20=%20document.createElement(&#039;script&#039;);s.type=&#039;text/javascript&#039;;document.body.appendChild(s);s.src=&#039;http://erkie.github.com/asteroids.min.js&#039;;alert(&#039;Enjoy http://erkie.github.com/ before enjoying http://github.com/cakedc/Blazon&#039;);void(0);">Blazon</a> &copy; 2010 <a href="http://cakedc.com" target="_blank">Cake Development Corporation</a><br />Bakery website &copy; 2006-2010 <a href="http://cakefoundation.org" target="_blank">Cake Software Foundation, Inc.</a><br /><a href="http://www.cakephp.org"><img src="/theme/bakery/img/cake.power.gif" alt="Powered By CakePHP" width="98" height="13" /></a>		</p>
+	</div>
+</div>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-743287-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {	var anchor = window.location.hash;
+	$('.tree-block > li > ul')
+		.hide()
+		.parent()
+			.append('<p><a href="#" class="collapser">&raquo; Expand this thread</a></p>')
+		.find('a.collapser')
+			.click(function(e) {
+				var thread = $(this).parent().prev('ul').toggle();
+				if (thread.is(':visible')) {
+					$(this).html('&laquo; Collapse this thread');
+				} else {
+					$(this).html('&raquo; Expand this thread');
+				}
+				e.preventDefault();
+				
+			});
+	console.debug(anchor);
+	if (anchor) {
+		anchor = anchor.substring(1);
+		console.debug($('a[name='+anchor+']').closest('ul'));
+		$('a[name='+anchor+']').closest('ul').show();
+	}
+$(function() {
+	$("#cakephp-global-navigation ul li a.empty")
+		.click(function(e) { e.preventDefault(); })
+		.parent().bind('mouseleave mouseenter click', function(event) {
+			var submenu = $(this).children('ul');
+			if (event.type == 'mouseleave') {
+				submenu.hide();
+			} else if (event.type == 'mouseenter') {
+				submenu.show();
+			} else {
+				submenu.toggle();
+			}
+		});
+})});
+//]]>
+</script></body>
+</html>

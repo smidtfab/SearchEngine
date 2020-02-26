@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-layout-view="default" class="xj_layout_head"><script>(function(){var d={date:8,app:"s",host:"s",ip:4,ua:"s",user:"s",url:"s",html:4,css:4,render:4,js:4,nlr:4,nlr_eval:4,img:4,embed:4,obj:4,mcc:4,mcr:4,mct:4,nac:4,pac:4,l_t:"s"},h=document,e="getElementsByTagName",i=window,c=function(){return(new Date).getTime()},f=c(),g={},b={},a={},j=i.bzplcm={listen:{},start:function(k){b[k]=c();return j},stop:function(k){g[k]=c()-b[k];return j},ts:function(k){g[k]=c()-f;return j},abs_ts:function(k){g[k]=c();return j},add:function(l){for(var k in l){if("function"!=typeof l[k]){a[k]=l[k]}}},send:function(){if(!g.he){j.ts("he")}a.date=["xdate"];a.host=["xhost"];a.ip=["xip"];a.ua=["xua"];a.url=["xpath"];a.html=g.he-g.hb;a.css=g.ca-g.cb;a.render=g.jb-g.hb;a.js=g.ja-g.jb;a.nlr=g.nr-g.ns;a.nlr_eval=g.ni+g.ne;a.img=h[e]("img").length;a.embed=h[e]("embed").length;a.obj=h[e]("object").length;if(i.xg&&i.xg.xnTrackEvent){i.xg.xnTrackEvent(d,"BazelCSPerfLite",a)}}}})();</script><script>if(window.bzplcm)window.bzplcm.ts('hb')</script>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Crowdsource Placemaking Lab</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="A network where people crowdsource the places they're passionate about creating in their neighborhood or city." />
+    <meta name="keywords" content="crowdsourcing, placemaking" />
+<script type="text/javascript">
+djConfig = { baseScriptUri: 'http://crowdsourceplacemaking.com/xn/static-6.11.8.1/js/dojo-0.3.1-ning/', isDebug: false }
+ning = {"CurrentApp":{"premium":true,"iconUrl":"http:\/\/api.ning.com\/icons\/appatar\/614766?default=614766&width=64&height=64","url":"http:\/\/cooltown.ning.com","domains":["crowdsourceplacemaking.com"],"online":true,"privateSource":true,"id":"cooltown","description":"A network where people crowdsource the places they&#039;re passionate about creating in their neighborhood or city.","name":"Crowdsource Placemaking Lab","owner":"tuxkapono","createdDate":"2007-03-08T23:05:16.062Z","runOwnAds":false,"category":{"crowdsourcing":null,"placemaking":null},"tags":["crowdsourcing","placemaking"]},"CurrentProfile":null,"maxFileUploadSize":5};
+    (function(){
+        if (!window.ning) { return; }
+
+        var age, gender, rand, obfuscated, combined;
+
+	    obfuscated = document.cookie.match(/xgdi=([^;]+)/);
+	    if (obfuscated) {
+	          var offset = 100000;
+	          obfuscated = parseInt(obfuscated[1]);
+	          rand = obfuscated / offset;
+	          combined = (obfuscated % offset) ^ rand;
+	          age = combined % 1000;
+	          gender = (combined / 1000) & 3;
+	          gender = (gender == 1 ? 'm' : gender == 2 ? 'f' : 0);
+	          ning.viewer = {"age":age,"gender":gender};
+	    }
+	 })();
+
+if (window.location.hash.indexOf('#!/') == 0) {
+    window.location.replace(window.location.hash.substr(2));
+}
+window.xg = {};
+xg.addOnRequire = function(f) { xg.addOnRequire.functions.push(f); };
+xg.addOnRequire.functions = [];
+xg.addOnFacebookLoad = function (f) { xg.addOnFacebookLoad.functions.push(f); };
+xg.addOnFacebookLoad.functions = [];
+xg._loader = {
+    p: 0,
+    loading: function(set) { xg._loader.p++; },
+    onLoad: function(set) {
+        xg._loader.p--;
+        if (xg._loader.p == 0 && typeof(xg._loader.onDone) == 'function') {
+            xg._loader.onDone();
+        }
+    }
+};
+xg._loader.loading('xnloader');
+if (window.bzplcm) {
+    window.bzplcm._profileCount = 0;
+    window.bzplcm._profileSend = function() { if (window.bzplcm._profileCount++ == 1) window.bzplcm.send(); };
+}
+xg._loader.onDone = function() {
+        if(window.bzplcm)window.bzplcm.start('ni');
+    xg.shared.util.parseWidgets();    var addOnRequireFunctions = xg.addOnRequire.functions;
+    xg.addOnRequire = function(f) { f(); };
+    try {
+        if (addOnRequireFunctions) { dojo.lang.forEach(addOnRequireFunctions, function(onRequire) { onRequire.apply(); }); }
+    } catch (e) {
+        if(window.bzplcm)window.bzplcm.ts('nx').send();
+        throw e;
+    }
+    if(window.bzplcm) { window.bzplcm.stop('ni'); window.bzplcm._profileSend(); }
+};
+window.xn = { track: { _globals: { screen_name: null, subdomain: "cooltown", is_owner: false, is_admin: false, is_member: false, join_date: 0, request_method: "GET", trace: "31f7145b-925f-43b9-b87c-c2a90ee7375e"}, event: function() {}, pageView: function() {}, registerCompletedFlow: function() {}, registerError: function() {}, timer: function() { return { lapTime: function() {} }; }, _trackingHost: "track.ning.com", _jsDebug: false } }    </script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_ning_ga._setAccount', 'UA-2270114-6']); 
+    _gaq.push(['_ning_ga._setNamespace', 'ning']);
+        _gaq.push(['_ning_ga._setCustomVar', 1,"member_type", "anonymous", 3]);
+    _gaq.push(['_ning_ga._setCustomVar', 2,"subdomain",  "cooltown.ning.com" ,3]); 
+    _gaq.push(['_ning_ga._setCustomVar', 3,"category",    "local" ,3]);
+    _gaq.push(['_ning_ga._setCustomVar', 4,"product_type","plus" ,3]);
+    _gaq.push(['_ning_ga._setCustomVar', 5,"member_segment","150-999" ,3]);
+    _gaq.push(['_ning_ga._trackPageview']);
+
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+</script>
+<link rel="alternate" type="application/atom+xml" title="Forum - Crowdsource Placemaking Lab" href="http://crowdsourceplacemaking.com/forum/topic/list?feed=yes&amp;xn_auth=no" /><link rel="alternate" type="application/atom+xml" title="Blog Posts - Crowdsource Placemaking Lab" href="http://crowdsourceplacemaking.com/profiles/blog/feed?xn_auth=no" /><link rel="alternate" type="application/rss+xml" title="Latest Activity - Crowdsource Placemaking Lab" href="http://crowdsourceplacemaking.com/activity/log/list?fmt=rss" />
+<style type="text/css" media="screen,projection">
+#xg_navigation ul div.xg_subtab ul li a {
+    color:#AAAAAA;
+    background:#F2F2F2;
+}
+#xg_navigation ul div.xg_subtab ul li a:hover {
+    color:#777777;
+    background:#D9D9D9;
+}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Cooltown Studios Blog - Crowdsource Placemaking Lab" href="http://www.cooltownstudios.com/site/rss_2.0/" /><script>if(window.bzplcm)window.bzplcm.ts('cb')</script>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/socialnetworkmain/widgets/index/css/common-982.min.css?xn_version=460722040);
+@import url(http://static.ning.com/socialnetworkmain/widgets/index/css/component.min.css?xn_version=3589724119);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/cooltown/instances/css/embed_1301676747.css?xn_version=201103311618);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/cooltown/instances/css/theme-982_1301617113.css?xn_version=201103311618);
+
+</style>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie6.min.css?v=201103311618" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie7.css?v=201103311618" />
+<![endif]-->
+<script>if(window.bzplcm)window.bzplcm.ts('ca')</script><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://crowdsourceplacemaking.com/profiles/blog/rsd" />
+</head>
+<body>
+    <div class="xj_before_content">        <div id="xn_bar">
+            <div id="xn_bar_menu">
+                <div id="xn_bar_menu_branding" >
+                                    </div>
+
+                <div id="xn_bar_menu_more">
+                    <form id="xn_bar_menu_search" method="GET" action="http://crowdsourceplacemaking.com/main/search/search">
+                        <fieldset>
+                            <input type="text" name="q" id="xn_bar_menu_search_query" value="Search Crowdsource Placemaking Lab" _hint="Search Crowdsource Placemaking Lab" accesskey="4" class="text xj_search_hint" />
+                            <a id="xn_bar_menu_search_submit" href="#" onclick="document.getElementById('xn_bar_menu_search').submit();return false">Search</a>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <ul id="xn_bar_menu_tabs">
+                                            <li><a href="http://crowdsourceplacemaking.com/main/authorization/signUp?">Sign Up</a></li>
+                        <li><a href="http://crowdsourceplacemaking.com/main/authorization/signIn?target=http%3A%2F%2Fcrowdsourceplacemaking.com%2F">Sign In</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+        </div>
+    <div class="xg_theme" data-layout-pack="brutus">
+        <div id="xg_themebody">
+            <div id="xg_ad_above_header" class="xg_ad xj_ad_above_header dy-displaynone">
+                    
+                </div>        
+            <div id="xg_head">
+                <div id="xg_masthead">
+                    <h1 id="xg_sitename" class="xj_site_name"><a id="application_name_header_link" href="/"><img src="http://api.ning.com:80/files/zZHBQHzpe-ZLA-4bJJPEGUlWvhxR*UDWmH-ch0oYKQ1ELAXqPUqOIP9LFuDgFvYD3cCsDfd7LW0-SJGsosZsKA__/cspmlabbanner.gif" alt="Crowdsource Placemaking Lab"></a></h1>
+                    <p id="xg_sitedesc" class="xj_site_desc">The social network for crowdsourcing cool places</p>
+                </div>
+                <div id="xg_navigation" class="xj_navigation"><ul>
+    <li id="xg_tab_main" class="xg_subtab this"><a href="/"><span>Main</span></a></li><li id="xg_tab_xn0" class="xg_subtab"><a href="/page/what-place-would-you-be-1"><span>About</span></a></li><li id="xg_tab_profile" class="xg_subtab"><a href="/profiles"><span>My Page</span></a></li><li id="xg_tab_groups" class="xg_subtab"><a href="/groups"><span>Groups</span></a></li><li id="xg_tab_members" class="xg_subtab"><a href="/profiles/members/"><span>Members</span></a></li><li id="xg_tab_forum" class="xg_subtab"><a href="/forum"><span>Forum</span></a></li><li id="xg_tab_events" class="xg_subtab"><a href="/events"><span>Events</span></a></li></ul>
+</div>
+            </div>
+            <div id="xg_ad_below_header" class="xg_ad xj_ad_below_header dy-displaynone">
+                        
+                    </div>
+            <div id="xg" class="xg_widget_main xg_widget_main_index xg_widget_main_index_index">
+            	 
+                <div id="xg_body">
+                   
+                    <div class="xj_notifications"></div>
+                    <div class="xg_column xg_span-16" id="column1">
+                        <div id="xg_canvas" class="xj_canvas">
+                            <div  class='xg_colgroup first-child last-child'>
+<div _maxEmbedWidth="730" _columnCount="3"  class='xg_3col first-child'>
+<div  class='xg_colgroup first-child last-child'>
+<div _maxEmbedWidth="220" _columnCount="1"  id="xg_layout_column_1" class='xg_1col first-child'>
+<div class="xg_module  html_module module_text xg_reset"
+        >
+        <div class="xg_module_head"><h2>Connect...</h2></div>
+            <div class="xg_module_body">
+            <a href="http://www.twitter.com/cooltown"><img src="http://api.ning.com:80/files/iWmAt9StO5QQEkWbroPCW6Wa8iAjVd0Q83Swe9SyH79-tyhXZHs6V0hFaxP96dLLb3wmqu*7vXYI9SnrrjhJ0Q__/twitter.jpg" style="margin-left: 0px" alt="Cooltown on Twitter"  /></a><a href="http://www.facebook.com/pages/Crowdsource-Placemaking/120699111306215"><img src="http://api.ning.com:80/files/LuETf-3mlSa2cREAF9T*nOWePyLewlG-YmzzHiK6ZCO9LhIAsCC-yoz2U5L2W5zwNun3**qRaMY7TnkE4TxP*A__/facebook.jpg" style="margin-left: 0px" alt="Crowdsource Placemaking on Facebook"  /></a><a href="http://cooltownplaces.com"><img src="http://api.ning.com:80/files/qneJ8wZ5s-5BlH918Minehts8DkK7wcF-BjPy85vMFZT8k3hS7Y*apuhZ0GLhoX0Nvm6gCy3VUNPFhqXc-9B5Q__/cooltownplaces.jpg" style="margin-left: 0px" alt="Cooltown Places"  /></a><br />
+        </div>
+            </div>
+<div class="xg_module module_groups">
+    <div class="xg_module_head">
+        <h2>Groups</h2>
+    </div>
+            <div class="xg_module_body body_list">
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/bronzevilleurbangreenbug"><img  src="http://api.ning.com:80/files/qsmk3TVnefPmshPjK-Zck-Jyf63AgmQ0jgzLYBSymKYIaikEqpkl6k5sZSB9*HI5sZKqb49dVKJaNUatsOmcBg__/BUGcard.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/bronzevilleurbangreenbug">Bronzeville Urban Green &hellip;</a></h3>
+            <p class="xg_lightfont">31 members</p>
+        </div>
+    </li>    <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/rising"><img  src="http://api.ning.com:80/files/f3mwh9UiMqjrSA63z*dSRIZdanUrsbk9ILXi1WVMD-GXpDkXm3syIvHOy7bZxv668ItNIzNLL7ywfAueFANk1w__/brusselsoutdoorcafe.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/rising">CsPm Rising</a></h3>
+            <p class="xg_lightfont">4 members</p>
+        </div>
+    </li>                </ul>
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/bronzevillegreen"><img  src="http://api.ning.com/files/zdzofzS6TM8k1BJniXTC7aCelQSapsD3rWl8ckyYJwTkUr0q8n5uAL3GjwMNnTU0AqELiIeQg13P*FjyCUVU1UA9JxL3cPp3/renaissancexGreen.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/bronzevillegreen">Bronzeville Green &copy;</a></h3>
+            <p class="xg_lightfont">5 members</p>
+        </div>
+    </li>    <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/epicmaine"><img  src="http://api.ning.com:80/files/dAnrob7KfdLfFdOJmVrBYbIfQTxbbCngGjLL-mRFHsZlcDCmXgoZ5DgGYCZDj4YjoKHQh4v-6NQJcIAcgkZ4*w__/fblogoepic.png?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/epicmaine">EPIC Maine</a></h3>
+            <p class="xg_lightfont">2 members</p>
+        </div>
+    </li>                </ul>
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/pelotonlabscoworkingportlandmaine"><img  src="http://api.ning.com:80/files/*W87NsWmR089Pj0p8ZEIdqUVb5kiK-nq7nfxItK6fqbrGWB3GmPN5lRXvfcxcrgEgMfqQ*h40kVpDtIOuXsQ3Q__/200pxBikeicon.svg.png?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/pelotonlabscoworkingportlandmaine">Peloton Labs Coworking, &hellip;</a></h3>
+            <p class="xg_lightfont">5 members</p>
+        </div>
+    </li>    <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/burdettroadlimehouse"><img  src="http://api.ning.com:80/files/3gFz-qH9zhOoDcy8aGlgWpz1HMUdNpCeaLdOnT3ikqR6Vwc0O1u1ZQhFZ9pkTFBIPRyN915vucaq95GwaqNT7w__/307BurdettRoad.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/burdettroadlimehouse">Burdett Road, Limehouse</a></h3>
+            <p class="xg_lightfont">1 member</p>
+        </div>
+    </li>                </ul>
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/bristol"><img  src="http://api.ning.com:80/files/5aIp1fPBku0EFjjwWyPiU*h1B*83m8M*sntlkoOYy5PaeBw6d6xQxOpgSM7JlL1N6CDYbaQSgrtEYysjVMhJPw__/rdatbristol.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/bristol">Bristol, Connecticut</a></h3>
+            <p class="xg_lightfont">6 members</p>
+        </div>
+    </li>    <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/arrowheadcalifornia"><img  src="http://api.ning.com:80/files/veMMOFhwWFoiIYS8arFyGM*LkYLNha2X98UAx7TGRwkBTftpYkR9pmjYUKmbEGVCsZzetuKPQcHYSv2NqMPCKA__/2139003028_a7db6ca70f_o.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/arrowheadcalifornia">Arrowhead, California</a></h3>
+            <p class="xg_lightfont">1 member</p>
+        </div>
+    </li>                </ul>
+                            <ul class="clist">
+                        <li class="xg_lightborder ">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/bicyclecity"><img  src="http://api.ning.com:80/files/0f1KBp2XFvghcNhGFjdUmGruhTZow9FeEMBYWTcuZgYqrhmnT1D*OdVQe3MGMf5MeQGDrTSGif15CyxC0hHavg__/chzermatt.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/bicyclecity">Bicycle City, Columbia SC</a></h3>
+            <p class="xg_lightfont">4 members</p>
+        </div>
+    </li>    <li class="xg_lightborder last-child">
+        <div class="ib">
+                        <a href="http://crowdsourceplacemaking.com/group/betterblock"><img  src="http://api.ning.com:80/files/N3iMXV9KgwLwUhCpcpeP1kj0*J*KRCXTZ8UhNU4KIf4-z7INRWieNeKOp8-ffYSq7ngild6gOFYTd7-UKijRAQ__/betterblock.jpg?crop=1%3A1&amp;width=40" width="40" height="40" alt="" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/group/betterblock">Better Block in Oak Clif&hellip;</a></h3>
+            <p class="xg_lightfont">2 members</p>
+        </div>
+    </li>                </ul>
+                    </div>
+                <div class="xg_module_foot">
+                <ul>
+                                            <li class="right"><a href="http://crowdsourceplacemaking.com/groups">View All</a></li>
+                                    </ul>
+            </div>
+        </div>
+<div class="xg_module module_members">
+    <div class="xg_module_head">
+        <h2>Members</h2>
+    </div>
+    <div class="xg_module_body body_small">
+    <ul class="clist">
+        <li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/samanthacreightney"  title="samantha creightney"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="samantha creightney" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/EdibleChicago"  title="Edible Chicago"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Edible Chicago" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/RickTerrien"  title="Rick Terrien"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Rick Terrien" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/OrrinWilliams"  title="Orrin Williams"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Orrin Williams" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/NeilBailey"  title="Neil Bailey"><img class=" photo"  src="http://api.ning.com:80/files/Tv1tcQ9chswGjAmmuWLMLdjikF5WDpxZ9Xj75Cgwf7F0CV-SnFtMqUbu7J9AEfVhd*ITD8fJ4ZLKWseTbChtYQ__/n517953202_2941766_7988627.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Neil Bailey" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/ElizabethCelaya"  title="Elizabeth Celaya"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Elizabeth Celaya" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/GwendolynThomas"  title="Gwendolyn Thomas"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Gwendolyn Thomas" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/DerbyArmstead"  title="Derby Armstead"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Derby Armstead" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/SharonLouis"  title="Sharon Louis"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Sharon Louis" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/EricThomaston"  title="Eric Thomaston"><img class=" photo"  src="http://api.ning.com:80/files/TQrxniPGR*POL90uEB8sVRJxI1gzkyNlQ0QTlhINKDQBmJB*0xkK9govVbJrKJGGH4IILFhszHOTz*7ydOjmFQ__/EricThomaston.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Eric Thomaston" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/IqbalKhaiy"  title="Iqbal Khaiy"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Iqbal Khaiy" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/PatOaklief"  title="Pat Oaklief"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Pat Oaklief" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/JodiHoulihan"  title="Jodi Houlihan"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Jodi Houlihan" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/BruceEricMontgomery"  title="Bruce Eric Montgomery"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Bruce Eric Montgomery" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/JanBergman"  title="Jan Bergman"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Jan Bergman" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/RobinBooker"  title="Robin Booker"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" height="48" width="48" alt="Robin Booker" /></a></span>
+    </li>
+
+    </ul>
+</div>
+<div class="xg_module_foot">
+    <ul>
+                    <li class="right"><a href="http://crowdsourceplacemaking.com/profiles/members/">View All</a></li>
+            </ul>
+</div>
+</div><div class="xg_module module_events">
+    <div class="xg_module_head">
+        <h2>Events</h2>
+    </div>
+    <div class="xg_module_body body_list">
+        <div class="wrap easyclear xg_lightborder last-child"><ul class="clist"><li>
+                <div class="tb">
+                <h3><a href="http://crowdsourceplacemaking.com/events/sustainable-village-building">Sustainable Village Building @ U of C</a></h3>
+            <p><a href="http://crowdsourceplacemaking.com/events/event/listByDate?date=2011-03-02">March 2, 2011</a> at 6:30pm to <a href="http://crowdsourceplacemaking.com/events/event/listByDate?date=2011-05-04">May 4, 2011</a> at 9pm – <a href="http://crowdsourceplacemaking.com/events/event/listByLocation?location=University+of+Chicago">University of Chicago</a>    		</p>
+    		                        </div>
+    </li>
+</ul></div>    </div>
+    <div class="xg_module_foot">
+        <ul>
+            <li class="left"><a href="http://crowdsourceplacemaking.com/events/event/new?cancelTarget=http%3A%2F%2Fcrowdsourceplacemaking.com%2F" class="xg_sprite xg_sprite-add">Add an Event</a></li>
+                                        <li class="right"><a href="http://crowdsourceplacemaking.com/events/event/listUpcoming">View All</a></li>
+                    </ul>
+    </div>
+</div>
+    <div class="xg_module module_forum">
+            <div class="xg_module_head">
+            <h2>Forum</h2>
+        </div>
+        <div class="xg_module_body">
+                <div class="vcard">
+                    <div class="author">        <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/Shawn"  title="Shawn"><img class="xj_user_default photo"  src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=32&amp;height=32&amp;crop=1%3A1&amp;xj_user_default=1" height="32" width="32" alt="Shawn" /></a></span>
+    </div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://crowdsourceplacemaking.com/forum/topics/developer-buyin" _snid="614766:Topic:5546">Developer Buy-in</a>
+                    <small class="nobr" >9&nbsp;Replies</small>
+            </h3>
+                        <p class="small xg_lightfont indent ">
+                    Started by Shawn in <a href="http://crowdsourceplacemaking.com/forum/categories/614766:Category:161/listForCategory">Open Forum</a>. <a href="http://crowdsourceplacemaking.com/forum/topics/developer-buyin/showLastReply">Last reply</a> by Neil Takemoto Jan 28.            </p>
+        </div>
+    </div>
+    <div class="vcard">
+                    <div class="author">        <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/EricFrederick"  title="Eric Frederick"><img class=" photo"  src="http://api.ning.com/files/CCa-0DpSopA-qmfF4WYlf62hlBQ57z2dK8L5MNUl60ZNfNX3AaIOdqt8VAuTCOo1XUaFt7Xb6cJ1epK3*YowYmSW5CAYmi*A/n2355209_49968406_7370.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Eric Frederick" /></a></span>
+    </div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://crowdsourceplacemaking.com/forum/topics/what-about-crowdsourced-places" _snid="614766:Topic:3208">What about crowdsourced places in small towns?</a>
+                            </h3>
+                        <p class="small xg_lightfont indent ">
+                    Started by Eric Frederick in <a href="http://crowdsourceplacemaking.com/forum/categories/614766:Category:161/listForCategory">Open Forum</a> Jun. 4, 2009.            </p>
+        </div>
+    </div>
+    <div class="vcard">
+                    <div class="author">        <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/neiltakemoto"  title="Neil Takemoto"><img class=" photo"  src="http://api.ning.com:80/files/Xg2Tmk74remHxAK*K9E6ro-Y*NmI3hx9-eIgz8Wj8lAJnDS6iGYHhsCudRQPHuO2qVU3LVfvxzA3IknNqmcsFA__/meworkplaceprofile.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Neil Takemoto" /></a></span>
+    </div>
+                <div class="topic indent">
+            <h3>
+                <a href="http://crowdsourceplacemaking.com/forum/topics/more-community-less-architect" _snid="614766:Topic:328">More community = less architect: The piazza</a>
+                    <small class="nobr" >2&nbsp;Replies</small>
+            </h3>
+                        <p class="small xg_lightfont indent ">
+                    Started by Neil Takemoto in <a href="http://crowdsourceplacemaking.com/forum/categories/614766:Category:161/listForCategory">Open Forum</a>. <a href="http://crowdsourceplacemaking.com/forum/topics/more-community-less-architect/showLastReply">Last reply</a> by Matt Korner Oct. 31, 2010.            </p>
+        </div>
+    </div>
+        </div>
+            <div class="xg_module_foot">
+            <ul>
+                                    <li class="left"><a href="http://crowdsourceplacemaking.com/main/authorization/signUp?target=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fforum%2Ftopic%2Fnew%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F" dojoType="PromptToJoinLink" _joinPromptText="Please sign up or sign in to complete this step." _signInUrl="http://crowdsourceplacemaking.com/main/authorization/signIn?target=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fforum%2Ftopic%2Fnew%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F" class="xg_sprite xg_sprite-add xj_new_topic_link">Start Discussion</a></li>
+                                <li class="right"><a href="http://crowdsourceplacemaking.com/forum">View All</a></li>
+            </ul>
+        </div>    </div>
+<div class="xg_module module_photo">
+    <div class="xg_module_head">
+        <h2>Photos</h2>
+    </div>
+    <div class="xg_module_body body_slideshow xj_slideshow_body xj_embed_container" _embedCode="&lt;embed class=&quot;xg_slideshow xj_photo_embed&quot; src=&quot;http://static.ning.com/socialnetworkmain/widgets/photo/slideshowplayer/slideshowplayer.swf?v=201103311618&quot; quality=&quot;high&quot; bgcolor=&quot;#&quot;
+    width=&quot;220&quot;
+    height=&quot;157&quot;
+    allowFullScreen=&quot;true&quot;
+    allowScriptAccess=&quot;always&quot;
+    scale=&quot;noscale&quot;
+    wmode=&quot;opaque&quot;
+    FlashVars=&quot;feed_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fphoto%2Fphoto%2FslideshowFeed%3Fxn_auth%3Dno%26random%3D1%26mtime%3D1300635748%26x%3DHbNy2w3Clc225Nl8cBCBfAQhZYcIQQjt&amp;autoplay=1&amp;loop=1&amp;hideWatermark=1&amp;hideVisit=1&amp;config_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fphoto%2Fphoto%2FshowPlayerConfig%3Fx%3DHbNy2w3Clc225Nl8cBCBfAQhZYcIQQjt%26xn_auth%3Dno%26feed_url%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252Fphoto%252Fphoto%252FslideshowFeed%253Fxn_auth%253Dno%2526random%253D1%2526mtime%253D1300635748%2526x%253DHbNy2w3Clc225Nl8cBCBfAQhZYcIQQjt%26version%3DDEP-6475-1%253A662d965_71_11_9%26theme982Version%3D4&amp;layout=within_app&amp;slideshow_title=&amp;fullsize_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fphoto%2Fphoto%2Fslideshow%3Ffeed_url%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252Fphoto%252Fphoto%252FslideshowFeed%253Fxn_auth%253Dno%2526random%253D1%2526mtime%253D1300635748%26back_url%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F&quot;
+    type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot;&gt;
+&lt;/embed&gt;">
+                Loading…            </div>
+                <div class="xg_module_foot">
+        <ul>
+                            <li class="left"><a href="http://crowdsourceplacemaking.com/photo/photo/chooseUploader" class="xg_sprite xg_sprite-add">Add Photos</a></li>
+                                        <li class="right"><a href="http://crowdsourceplacemaking.com/photo/photo/list">View All</a></li>
+                                <li class="right photo-facebook-share" style="display:none; margin-right:10px;" ><a target="_blank" 
+                        href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fphoto%2Fphoto%2Flist%3Ffrom%3Dfb"><img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/icon/facebook.gif?v=201103311618" /></a></li>
+                    </ul>
+    </div></div>
+<div class="xg_module module_video">
+    <div class="xg_module_head">
+        <h2>Videos</h2>
+    </div>
+    <div class="xg_module_body body_large">
+  <ul class="clist">
+      <li>
+        <div class="ib">
+                <a href="http://crowdsourceplacemaking.com/video/tedxwarwick-charlie-price"><img  src="http://api.ning.com:80/files/gF6JFNQHYNKoClBnD2yFGBZZyLfQvcHNCS1oaXIlYl*28*GZ3o7MeQRXbCvbPvJWpsad4SLCqCKNUFJqazw0dg__/425918173.jpeg?width=136" alt="TEDxWarwick - Charlie Price - Aquaponics - Getting More out of Less" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/video/tedxwarwick-charlie-price">
+                TEDxWarwick - Charlie Price - Aquaponics - Getting More out of Less            </a></h3>
+                        <p class="xg_lightfont">
+                Added by <a class="xg_lightfont" href="http://crowdsourceplacemaking.com/profile/Danielle">Danielle</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://crowdsourceplacemaking.com/video/just-eat-organic"><img  src="http://api.ning.com:80/files/iERT6rC30ROyRvlYaR9tg*FJeh0aUBh7L00Tah-Omv*V8m-0bfVG7ON248lE6ZVYcqK92W0LenN1KnHyB8ilTA__/660737498.jpeg?width=136" alt="JUST EAT ORGANIC!" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/video/just-eat-organic">
+                JUST EAT ORGANIC!            </a></h3>
+                        <p class="xg_lightfont">
+                Added by <a class="xg_lightfont" href="http://crowdsourceplacemaking.com/profile/Danielle">Danielle</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">    <li>
+        <div class="ib">
+                <a href="http://crowdsourceplacemaking.com/video/obama-to-make-organic-farming"><img  src="http://api.ning.com:80/files/ZALrp*laKblZxd0KopsT3ZL*Iyjb2CL4cDsIvIcpwRp*H7jTs0FY83zeD9pEaGQyfQrwq6xMIk-I8VfCicWoNg__/675535987.jpeg?width=136" alt="OBAMA TO MAKE ORGANIC FARMING ILLEGAL - HR875 and S425 Explained - STOP THE NWO!" width="136" /></a>
+        </div>
+        <div class="tb">
+            <h3><a href="http://crowdsourceplacemaking.com/video/obama-to-make-organic-farming">
+                OBAMA TO MAKE ORGANIC FARMING ILLEGAL - HR875 and S425 Explained - STOP THE NWO!            </a></h3>
+                        <p class="xg_lightfont">
+                Added by <a class="xg_lightfont" href="http://crowdsourceplacemaking.com/profile/Danielle">Danielle</a>                            </p>
+                    </div>
+    </li>
+    </ul><ul class="clist">  </ul>
+</div>
+        <div class="xg_module_foot">
+            <ul>
+                <li class="left"><a class="xg_sprite xg_sprite-add" href="http://crowdsourceplacemaking.com/video/video/chooseUploader">Add Videos</a></li>
+                <li class="right"><a href="http://crowdsourceplacemaking.com/video/video">View All</a></li>
+                 <li class="right video-facebook-share" style="display:none; margin-right:10px;"><a target="_blank"
+                     href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fvideo%2Fvideo%3Ffrom%3Dfb"><img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/icon/facebook.gif?v=201103311618" /></a></li>
+            </ul>
+        </div>
+    </div>
+<div class="xg_module  html_module module_text xg_reset"
+        >
+                <div class="xg_module_body nopad">
+            <table border="0" cellspacing="0">
+<tr>
+<td><a href="http://www.twitter.com/cooltown"><img src="http://api.ning.com:80/files/iWmAt9StO5QQEkWbroPCW6Wa8iAjVd0Q83Swe9SyH79-tyhXZHs6V0hFaxP96dLLb3wmqu*7vXYI9SnrrjhJ0Q__/twitter.jpg" alt="Cooltown on Twitter"  /></a></td>
+<td><a href="http://www.facebook.com/pages/Crowdsource-Placemaking/120699111306215"><img src="http://api.ning.com:80/files/LuETf-3mlSa2cREAF9T*nOWePyLewlG-YmzzHiK6ZCO9LhIAsCC-yoz2U5L2W5zwNun3**qRaMY7TnkE4TxP*A__/facebook.jpg" alt="Crowdsource Placemaking on Facebook"  /></a></td>
+</tr>
+</table>
+        </div>
+            </div>
+&nbsp;</div>
+<div _maxEmbedWidth="492" _columnCount="2"  id="xg_layout_column_2" class='xg_2col last-child'>
+<div class="xg_module  html_module module_text xg_reset"
+        >
+        <div class="xg_module_head"><h2>What place would you be passionate about creating with others in your neighborhood?</h2></div>
+            <div class="xg_module_body">
+            <p><a target="_self" href="http://api.ning.com:80/files/vwCTOX8e9WTKzrgyReYHK*BGsPJas5shqtVX3VnIOVmeawqzL042BpwTUyW8HD-f95QYMd517tKWcFxHImYb7g__/1795387307.jpg"><img class="align-full" width="600" src="http://api.ning.com:80/files/vwCTOX8e9WTKzrgyReYHK*BGsPJas5shqtVX3VnIOVmeawqzL042BpwTUyW8HD-f95QYMd517tKWcFxHImYb7g__/1795387307.jpg?width=600"  /></a> <span style="font-size: medium;">The goal of this site is to assist people who are committed to <a href="http://www.cooltownstudios.com/2008/02/08/what-is-crowdsourced-placemaking-why-how">crowdsourcing a place</a> that they feel should exist in their neighborhood or city, but doesn't... yet. Learn more <a href="http://crowdsourceplacemaking.com/page/what-place-would-you-be-1">here</a>.</span></p>
+        </div>
+            </div>
+<div class="xg_module module_blog indented_content">
+    <div class="xg_module_head">
+        <h2>Blog Posts</h2>
+    </div>
+    <div class="xg_module_body body_detail">
+            <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/Danielle"  title="Danielle"><img class=" photo"  src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Danielle" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://crowdsourceplacemaking.com/profiles/blogs/mercy-mercy-me" _snid="614766:BlogPost:10104">Mercy Mercy Me</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/Danielle">Danielle</a> on March 28, 2011 at 11:37am                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://crowdsourceplacemaking.com/profile/Danielle"  title="Danielle"><img class=" photo"  src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Danielle" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://crowdsourceplacemaking.com/profiles/blogs/the-l3c-debate" _snid="614766:BlogPost:9808">The L3C Debate</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/Danielle">Danielle</a> on March 22, 2011 at 2:33pm                                            </p>
+                                    </div>
+            </div>
+    </div>
+    <div class="xg_module_foot">
+        <ul>
+            <li class="left"><a href="http://crowdsourceplacemaking.com/profiles/blog/new" class="xg_sprite xg_sprite-add">Add a Blog Post</a></li>
+            <li class="right"><a href="http://crowdsourceplacemaking.com/profiles/blog/list">View All</a></li>        </ul>
+    </div>
+</div>
+<div class="xg_module xg_module_activity   column_2"
+    dojotype="ActivityModule"
+    _isProfile=""
+    _isAdmin=""
+    _columnCount="2"
+
+        _delDeleteLinkText="Delete"
+    _delItemUrl="http://crowdsourceplacemaking.com/activity/log/remove"
+    _delIconTooltip="Remove"  >
+    <div class="xg_module_head">
+        <h2>Latest Activity</h2>
+    </div>
+    <div class="xg_module_body">
+        <div class="module module-feed">
+            <div class="feed-story feed-story-status xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message">    <div class="status-bg xg_theme-button-bc"></div>
+        <div class="status">
+            <div class="arrow left_arrow square_arrow xg_theme-link-c"></div>
+            <div class="current"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> Uploading an incredible video, TedX on aquaponics.</span>            </div></div></div><span class="feed-timestamp xg_lightfont">yesterday</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> added a video</span></div><div class="rich rich-96"><div class="rich-thumb"><a href="http://crowdsourceplacemaking.com/xn/detail/614766:Video:10405?xg_source=activity"> <img src="http://api.ning.com:80/files/gF6JFNQHYNKoClBnD2yFGBZZyLfQvcHNCS1oaXIlYl*28*GZ3o7MeQRXbCvbPvJWpsad4SLCqCKNUFJqazw0dg__/425918173.jpeg" width="96"  /></a></div><div class="rich-detail"><div class="rich-title"><a href="http://crowdsourceplacemaking.com/xn/detail/614766:Video:10405?xg_source=activity">TEDxWarwick - Charlie Price - Aquaponics - Getting More out of Less</a></div><div class="rich-date"></div><div class="rich-excerpt">Charlie Price from the social enterprise Aquaponics UK, explores the role aquaponics can play in the future of our collective food supply. He provides an ins...</div></div></div><span class="feed-timestamp xg_lightfont">yesterday</span></div><div class="feed-story feed-story-status xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message">    <div class="status-bg xg_theme-button-bc"></div>
+        <div class="status">
+            <div class="arrow left_arrow square_arrow xg_theme-link-c"></div>
+            <div class="current"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> Posted blog, Mercy Mercy Me</span>            </div></div></div><span class="feed-timestamp xg_lightfont">March 28</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> added a blog post</span></div><div class="rich"><div class="rich-detail"><div><a href="http://crowdsourceplacemaking.com/xn/detail/614766:BlogPost:10104?xg_source=activity">Mercy Mercy Me</a></div><div class="rich-excerpt"> 
+
+ 
+Marvin Gaye wasn’t quite my contemporary.  He was born April 2, 1939.  I didn’t show up until ten years later.  Astrologically we were zodiac relations under the sign of Aries.  I don’t know if the birth signs had anything to do with my love of…</div></div></div><span class="feed-timestamp xg_lightfont">March 28</span></div><div class="feed-story feed-story-status xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message">    <div class="status-bg xg_theme-button-bc"></div>
+        <div class="status">
+            <div class="arrow left_arrow square_arrow xg_theme-link-c"></div>
+            <div class="current"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> Just joined Crowdrise.</span>            </div></div></div><span class="feed-timestamp xg_lightfont">March 28</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> added a video</span></div><div class="rich rich-96"><div class="rich-thumb"><a href="http://crowdsourceplacemaking.com/xn/detail/614766:Video:9908?xg_source=activity"> <img src="http://api.ning.com:80/files/iERT6rC30ROyRvlYaR9tg*FJeh0aUBh7L00Tah-Omv*V8m-0bfVG7ON248lE6ZVYcqK92W0LenN1KnHyB8ilTA__/660737498.jpeg" width="96"  /></a></div><div class="rich-detail"><div class="rich-title"><a href="http://crowdsourceplacemaking.com/xn/detail/614766:Video:9908?xg_source=activity">JUST EAT ORGANIC!</a></div><div class="rich-date"></div><div class="rich-excerpt">Share your videos with friends, family, and the world</div></div></div><span class="feed-timestamp xg_lightfont">March 24</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> updated their profile photo</span></div><span class="feed-timestamp xg_lightfont">March 22</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> added a blog post</span></div><div class="rich"><div class="rich-detail"><div><a href="http://crowdsourceplacemaking.com/xn/detail/614766:BlogPost:9808?xg_source=activity">The L3C Debate</a></div><div class="rich-excerpt">I am posting (the italics) of a rebuttal to an article published in the Stanford Social Innovation Review. Article submitted by Kelly Kleiman
+<a rel="nofollow" href="http://linkd.in/gBB0vv" target="_blank">http://linkd.in/gBB0vv</a>
+ 
+It's important to all of us trying to keep social enterprise afloat to understand…</div></div></div><span class="feed-timestamp xg_lightfont">March 22</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> left a <a href="http://crowdsourceplacemaking.com/xn/detail/614766:Comment:10004?xg_source=activity">comment</a> for <a href="http://crowdsourceplacemaking.com/profile/samanthacreightney?xg_source=activity">samantha creightney</a></span></div><span class="feed-timestamp xg_lightfont">March 22</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> left a <a href="http://crowdsourceplacemaking.com/xn/detail/614766:Comment:9905?xg_source=activity">comment</a> for <a href="http://crowdsourceplacemaking.com/profile/JohnToliver?xg_source=activity">John Toliver</a></span></div><span class="feed-timestamp xg_lightfont">March 22</span></div><div class="feed-story  xg_separator"><a href="/profile/samanthacreightney?xg_source=activity"><img class="xj_user_default feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/samanthacreightney?xg_source=activity">samantha creightney</a> is now a member of Crowdsource Placemaking Lab</span></div><div class="rich"><div class="rich-detail"><a class="xg_sprite xg_sprite-megaphone" href="/profile/samanthacreightney?xg_source=activity#add_comment">Welcome Them!</a></div></div><span class="feed-timestamp xg_lightfont">March 22</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> <a href="http://crowdsourceplacemaking.com/xn/detail/614766:Comment:9804?xg_source=activity">commented</a> on <a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle's</a> blog post '<a href="http://crowdsourceplacemaking.com/xn/detail/614766:BlogPost:9606?xg_source=activity">What&#039;s Being Discussed for Urban Ag Chicago</a>'</span></div><div class="rich"><div class="rich-detail"><div class="rich-comment"><em>This submitted by Debbie Hilllman, Thanks again Debbie</em></div></div></div><span class="feed-timestamp xg_lightfont">March 21</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> added 2 blog posts</span></div><div class="rich"><div class="rich-detail"><ul class="links"><li><a href="http://crowdsourceplacemaking.com/xn/detail/614766:BlogPost:9606?xg_source=activity">What&#039;s Being Discussed for Urban Ag Chicago</a></li><li><a href="http://crowdsourceplacemaking.com/xn/detail/614766:BlogPost:9705?xg_source=activity">Ordinances</a></li></ul></div></div><span class="feed-timestamp xg_lightfont">March 21</span></div><div class="feed-story  xg_separator"><a href="/profile/Danielle?xg_source=activity"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/at*4j6F6caRBZPnd8DwvIY9cvw7DIs3gg9veLyOq350baO5fLab2-75io6vGtOsDWGS3eYCM8NdOFefRJ7ZTbw__/SoMeHeadshot.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a> left a <a href="http://crowdsourceplacemaking.com/xn/detail/614766:Comment:9604?xg_source=activity">comment</a> for <a href="http://crowdsourceplacemaking.com/profile/EdibleChicago?xg_source=activity">Edible Chicago</a></span></div><span class="feed-timestamp xg_lightfont">March 21</span></div><div class="feed-story  xg_separator"><a href="/profile/RickTerrien?xg_source=activity"><img class="xj_user_default feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com:80/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=48&amp;height=48&amp;crop=1%3A1&amp;xj_user_default=1" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/RickTerrien?xg_source=activity">Rick Terrien</a> left a <a href="http://crowdsourceplacemaking.com/xn/detail/614766:Comment:9408?xg_source=activity">comment</a> for <a href="http://crowdsourceplacemaking.com/profile/Danielle?xg_source=activity">Danielle</a></span></div><span class="feed-timestamp xg_lightfont">March 20</span></div><div class="feed-story  xg_separator"><a href="http://crowdsourceplacemaking.com"><img class=" feed-avatar" "width="48" height="48" alt="" src="http://api.ning.com/icons/appatar/614766?default=614766&amp;width=48&amp;height=48" /></a><div class="feed-message"><span class="feed-string"><a href="http://crowdsourceplacemaking.com/profile/EdibleChicago?xg_source=activity">Edible Chicago</a> and <a href="http://crowdsourceplacemaking.com/profile/RickTerrien?xg_source=activity">Rick Terrien</a> joined Crowdsource Placemaking Lab</span></div><div class="rich"><div class="rich-thumbs rich-thumbs-32"><a href="/profile/EdibleChicago?xg_source=activity"> <img src="http://api.ning.com/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=32&amp;height=32&amp;crop=1%3A1&amp;xj_user_default=1&amp;format=jpg" width="32" height="32" /></a><a href="/profile/RickTerrien?xg_source=activity"> <img src="http://api.ning.com/files/NbE1uMiIziqcCVXzHuv*zgfeK919qjHNX0KpTQJvZiE4sA1MDyYykCWHGzBBU3MAVGshyIWO3zxIWs18*E6upw__/707408986.png?width=32&amp;height=32&amp;crop=1%3A1&amp;xj_user_default=1&amp;format=jpg" width="32" height="32" /></a></div></div><span class="feed-timestamp xg_lightfont">March 20</span></div>        </div>
+    </div>
+        <div class="xg_module_foot">
+        <ul>            <li class="left"><a class="xg_icon xg_icon-rss" href="http://crowdsourceplacemaking.com/activity/log/list?fmt=rss">RSS</a></li>
+        </ul>
+    </div></div>
+<div class="xg_module  html_module module_text xg_reset"
+        >
+        <div class="xg_module_head"><h2>Thank you to Renaissance Downtowns</h2></div>
+            <div class="xg_module_body">
+            <p style='text-align:left'><img src='http://api.ning.com:80/files/zJzpLgJ6gDlUguDgaYU5zVjDKchCBn4SWIxTRsFqWZvvPIZzZUg76PjWdCob2WZCoBuCzAo*9oZtEb3sGhYquw__/rdwaterfront.jpg' align="left" style="margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 0px"  /></p>
+<br />
+<font size="3">Thank you to <a href="http://renaissancedowntowns.com">Renaissance Downtowns</a> for sponsoring this site, and continuing to be one of the only real estate development companies committed to <a href="http://www.cooltownstudios.com/2008/02/08/what-is-crowdsourced-placemaking" target="_blank">crowdsourced placemaking</a>. Read more in their <a href="http://crowdsourceplacemaking.com/profiles/blogs/press-release-from-renaissance" target="_blank">press release</a>.</font><br />
+        </div>
+            </div>
+&nbsp;</div>
+</div>
+&nbsp;</div>
+<div _maxEmbedWidth="173" _columnCount="1"  class='xg_1col last-child'>
+&nbsp;</div>
+</div>
+<script>xg_quickadd_forceReload = true /* enable the quick add refreshing. */ </script>
+
+                        </div>
+                    </div>
+                    <div class="xg_column xg_span-5 xg_last" id="column2">
+                        <div class="xj_user_info">    <div class="xg_module" id="xg_module_account">
+        <div class="xg_module_body xg_signup xg_lightborder">
+            <p>Welcome to<br />Crowdsource Placemaking Lab</p>
+            <p class="last-child">
+                <big><strong><a href="http://crowdsourceplacemaking.com/main/authorization/signUp?">Sign Up</a></strong></big><br/>
+                or <a href="http://crowdsourceplacemaking.com/main/authorization/signIn?target=http%3A%2F%2Fcrowdsourceplacemaking.com%2F" style="white-space:nowrap">Sign In</a>            </p>
+                            <div class="xg_external_signup xg_lightborder xj_signup">
+                    <p class="dy-small">You can also sign up with:</p>
+                    <ul class="providers">
+            <li data-provider-name="Facebook"><a onclick="window.open('https://crowdsourceplacemaking.networkauth.com/facebook/connect_start?ext_perm=user_birthday%2Cuser_location%2Cemail&token_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F%26source%3DsignUp%26close%3D1', null, 'width=626,height=436,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no,status=no'); return false;" href="https://crowdsourceplacemaking.networkauth.com/facebook/connect_start?ext_perm=user_birthday%2Cuser_location%2Cemail&amp;token_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F%26source%3DsignUp%26close%3D0">
+                            <span class="mini-service mini-service-facebook" title="Facebook"></span>
+                    </a></li>
+            <li data-provider-name="Google"><a onclick="window.open('https://crowdsourceplacemaking.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid&token_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F%26source%3DsignUp%26close%3D1', null, 'width=530,height=480,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no,status=no'); return false;" href="https://crowdsourceplacemaking.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid&amp;token_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F%26source%3DsignUp%26close%3D0">
+            <span class="mini-service mini-service-google" title="Google"></span>
+        </a></li>
+            <li data-provider-name="Yahoo!"><a onclick="window.open('https://crowdsourceplacemaking.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fme.yahoo.com%2F&token_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F%26source%3DsignUp%26close%3D1', null, 'width=500,height=480,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no,status=no'); return false;" href="https://crowdsourceplacemaking.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fme.yahoo.com%2F&amp;token_url=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fcrowdsourceplacemaking.com%252F%26source%3DsignUp%26close%3D0">
+            <span class="mini-service mini-service-yahoo" title="Yahoo!"></span>
+        </a></li>
+    </ul>
+                </div>
+                    </div>
+    </div>
+</div>
+                        <div class="xj_sidebar_content"><div class="xg_module html_module module_text xg_reset"
+        >
+                <div class="xg_module_body nopad">
+            <a href="http://renaissancedowntowns.com"><img src="http://api.ning.com:80/files/WNIqA*2Jwdoa7JDqNVWmIorkEafdgIrJ3IEelwKkQSNlNmmk0BfxEBIXwq*A5mQ5PoLAXsbA8cbwxKA*uBMsSg__/RD_sky173x425_01.gif" alt="Renaissance Downtowns"  /></a>
+        </div>
+            </div>
+<div class="xg_module module_feed xg_reset">
+    <div class="xg_module_head"><h2>Cooltown Studios Blog</h2></div>
+                    <div class="xg_module_body">
+            <p class="last-child"><a href="http://feedproxy.google.com/~r/cooltownstudios/~3/-sLwkhClrBk/" target="_blank">Defining a piazza, and why it&rsquo;s not a plaza</a></p>
+        </div>
+                        <div class="xg_module_body">
+            <p class="last-child"><a href="http://feedproxy.google.com/~r/cooltownstudios/~3/pN3gkbID4RQ/" target="_blank">What emerging generations really want: A piazza&hellip; 2011</a></p>
+        </div>
+                        <div class="xg_module_body">
+            <p class="last-child"><a href="http://feedproxy.google.com/~r/cooltownstudios/~3/uz3LUDmJujk/" target="_blank">&ldquo;Daytime nightclub&rdquo; for foodies: Modern food halls</a></p>
+        </div>
+                        <div class="xg_module_body">
+            <p class="last-child"><a href="http://feedproxy.google.com/~r/cooltownstudios/~3/oVp7zZfX_n8/" target="_blank">&lsquo;Citysumers&rsquo; define powerful new urban trend</a></p>
+        </div>
+                        <div class="xg_module_body">
+            <p class="last-child"><a href="http://feedproxy.google.com/~r/cooltownstudios/~3/OBZQjWgRwNI/" target="_blank">&ldquo;Active Design&rdquo; prioritizes health in designing cities</a></p>
+        </div>
+        <div class="xg_module_foot">
+    <ul>
+                <li class="right"><a href="http://www.cooltownstudios.com/" target="_blank">More…</a></li>
+            </ul>
+</div>
+</div>
+	<div class="xg_module module_badge">
+		<div class="xg_module_head">
+	    <h2>Badge</h2>
+	    </div>
+	    <div class="xg_module_body xj_badge_body xj_embed_container" _embedCode="&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab&quot;
+    id=&quot;badgeSwf&quot; width=&quot;100%&quot; height=&quot;174&quot; &gt;
+    &lt;param name=&quot;movie&quot; value=&quot;http://static.ning.com/socialnetworkmain/widgets/index/swf/badge.swf?v=201103311618&quot; /&gt;
+    &lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt;
+    &lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot; /&gt;
+    &lt;param name=&quot;flashvars&quot; value=&quot;hideVisit=1&amp;amp;config=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fbadge%2FshowPlayerConfig%3Fsize%3Dmedium%26v%3D9&amp;amp;backgroundColor=0x000000&amp;amp;textColor=0xFFFFFF&quot; /&gt;
+    &lt;param name=&quot;wmode&quot; value=&quot;opaque&quot;/&gt;
+    &lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;
+&lt;embed
+    class=&quot;xj_badge_embed&quot;
+    src=&quot;http://static.ning.com/socialnetworkmain/widgets/index/swf/badge.swf?v=201103311618&quot;
+    quality=high
+    bgColor=&quot;#000000&quot;
+    width=&quot;100%&quot;
+    height=&quot;174&quot;
+    name=&quot;badgeSwf&quot;
+    type=&quot;application/x-shockwave-flash&quot;
+    pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot;
+    wmode=&quot;opaque&quot;
+    FlashVars=&quot;hideVisit=1&amp;amp;config=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Fbadge%2FshowPlayerConfig%3Fsize%3Dmedium%26v%3D9&amp;amp;backgroundColor=0x000000&amp;amp;textColor=0xFFFFFF&quot;
+    scale=&quot;noscale&quot;
+    allowScriptAccess=&quot;always&quot;&gt;
+&lt;/embed&gt;
+&lt;/object&gt;">
+    Loading…</div>
+	    <div class="xg_module_foot">
+	        <p class="right"><a href="http://crowdsourceplacemaking.com/main/embeddable/list">Get Badge</a></p>
+	    </div>
+	</div>
+    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="xg_foot">
+                <div id="xg_footcontent">
+                    <div class="xj_foot_content"><p class="left">
+    © 2011 &nbsp; Created by <a href="/profile/neiltakemoto">Neil Takemoto</a>.    </p>
+    <p class="right xg_lightfont">
+                <a href="http://crowdsourceplacemaking.com/main/embeddable/list">Badges</a> &nbsp;|&nbsp;
+                            <a href="http://crowdsourceplacemaking.com/main/authorization/signUp?target=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Findex%2Freport" dojoType="PromptToJoinLink" _joinPromptText="Please sign up or sign in to complete this step." _signInUrl="http://crowdsourceplacemaking.com/main/authorization/signIn?target=http%3A%2F%2Fcrowdsourceplacemaking.com%2Fmain%2Findex%2Freport">Report an Issue</a> &nbsp;|&nbsp;
+                <a href="http://crowdsourceplacemaking.com/main/authorization/termsOfService?previousUrl=http%3A%2F%2Fcrowdsourceplacemaking.com%2F">Terms of Service</a>
+    </p>
+</div>
+                </div>
+            </div>
+			<div id="xg_ad_below_footer" class="xg_ad xj_ad_below_footer dy-displaynone">
+				
+			</div>
+        </div>
+    </div>
+    <div class="xj_after_content"><div id="xj_baz17246" class="xg_theme"></div>
+<div id="xg_overlay" style="display:none;">
+<!--[if lte IE 6.5]><iframe></iframe><![endif]-->
+</div>
+<!--googleoff: all--><noscript>
+	<style type="text/css" media="screen">
+        #xg { position:relative;top:120px; }
+        #xn_bar { top:120px; }
+	</style>
+	<div class="errordesc noscript">
+		<div>
+            <h3><strong>Hello, you need to enable JavaScript to use Crowdsource Placemaking Lab.</strong></h3>
+            <p>Please check your browser settings or contact your system administrator.</p>
+			<img src="/xn_resources/widgets/index/gfx/jstrk_off.gif" height="1" width="1" />
+		</div>
+	</div>
+</noscript><!--googleon: all-->
+<script>if(window.bzplcm)window.bzplcm.ts('jb')</script><script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/core.min.js?v=201103311618"></script>        <script>
+            var sources = ["http:\/\/b.scorecardresearch.com\/beacon.js","http:\/\/static.ning.com\/cooltown\/instances\/shared\/js\/set_common.min.js?r=1301617113","http:\/\/static.ning.com\/cooltown\/instances\/shared\/js\/set_sidebar_u.min.js?r=1297373879","http:\/\/static.ning.com\/cooltown\/instances\/shared\/js\/set_mainindeinde_u.min.js?r=1300919806"];
+            var numSources = sources.length;
+            var heads = document.getElementsByTagName('head');
+            var node = heads.length > 0 ? heads[0] : document.body;
+            for (var i = 0; i < numSources; i++) {
+                var source = sources[i];
+                xg._loader.loading(source);
+                var script = document.createElement('script');
+                
+                script.type = 'text/javascript';
+                var cb = (function(source) { return function() { xg._loader.onLoad(source); }; })(source);
+                script.onerror = script.onload = cb;
+                script.onreadystatechange = function() {
+                    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                        cb();
+                    }
+                }
+                script.src = source;
+                node.appendChild(script);
+            }
+        </script>
+    <script type="text/javascript">
+if (!ning._) {ning._ = {}}
+ning._.compat = { encryptedToken: "<empty>" }
+ning._.CurrentServerTime = "2011-04-03T18:06:21+00:00";
+ning._.probableScreenName = "";
+ning._.domains = {
+    base: 'ning.com',
+    ports: { http: '80', ssl: '443' }
+};
+ning.loader.version = '201103311618_9'; // DEP-6475-1:662d965 26
+djConfig.parseWidgets = false;
+</script>
+<script>if(window.bzplcm)window.bzplcm.ts('ja')</script><script>window.bzplcm.add({"app":"cooltown","user":null,"l_t":"homepage","mcr":12,"mct":12});</script><script type="text/javascript">
+    xg.token = '';
+    xg.cdnHost = 'static.ning.com';
+    xg.version = '201103311618';
+    xg.useMultiCdn = true;
+        xg.staticRoot = 'socialnetworkmain';
+    xg.xnTrackHost = "track.ning.com";
+            xg.cdnDefaultPolicyHost = 'static';
+        xg.cdnPolicy = [];
+        xg.global = xg.global||{}; xg.global.currentMozzle = 'main';
+    xg.global.userCanInvite = false;
+    xg.global.requestBase = '';
+    xg.global.locale = 'en_US';
+    xg.num_thousand_sep = ",";
+    xg.num_decimal_sep = ".";
+        (function() {
+        dojo.addOnLoad(function() {
+            if(window.bzplcm) { window.bzplcm.ts('hr'); window.bzplcm._profileSend(); }
+                    });
+                            xg._loader.onLoad('xnloader');
+            })();
+</script>
+<script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/js/thrift/xn_track.min.js?v=201103311618"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5323596-1");
+pageTracker._trackPageview();
+</script><script>if(window.bzplcm)window.bzplcm.ts('he')</script>
+</div>
+</body>
+</html>

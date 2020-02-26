@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html
+xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"      xmlns:og="http://opengraphprotocol.org/schema/"
+xmlns:fb="http://www.facebook.com/2008/fbml"><head
+profile="http://gmpg.org/xfn/11"><link
+rel="stylesheet" type="text/css" href="http://www.learncomputer.com/wp-content/w3tc/min/a6df44/default.include.2129800946.css" media="all" /> <script type="text/javascript" src="http://www.learncomputer.com/wp-content/w3tc/min/a6df44/default.include.3623472154.js"></script> <meta
+http-equiv="X-UA-Compatible" content="IE=8" /><meta
+http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>reCAPTCHA with CakePHP Forms Tutorial | LearnComputer!</title><link
+rel='stylesheet' href='http://www.learncomputer.com/wp-content/themes/learncomputer/syntaxhighlighter/styles/shCore.css' type='text/css' media='all' /><link
+rel='stylesheet' href='http://www.learncomputer.com/wp-content/themes/learncomputer/syntaxhighlighter/styles/shThemeDefault.css' type='text/css' media='all' /><meta
+name="robots" content="index,follow" /><meta
+property="og:image" content="http://www.learncomputer.com/wp-content/scripts/timthumb/timthumb.php?src=/wp-content/uploads/2011/01/cakephp-recaptcha.jpg&zc=0" /><meta
+property="og:title" content="reCAPTCHA with CakePHP Forms Tutorial" /><meta
+property="fb:app_id" content="170654549628398"/><meta
+property="og:description" content="Unfortunately, as a developer today, you have to consider the possibility of spammers using automated scripts to submit the forms on your web site. One popular method for preventing this is to use a CAPTCHA. A CAPTCHA is an image that contains words or an alphanumeric code. The image is often slightly distorted. The user must correctly enter the words or code for the form to be considered valid. This prevents scripts from submitting forms since the CAPTCHA is not readable by automated systems." /><meta
+property="og:site_name" content="LearnComputer!" /><meta
+property="og:url" content="http://www.learncomputer.com/recaptcha-cakephp/" /><meta
+property="og:type" content="article" /><link
+rel="alternate" type="application/rss+xml" title="LearnComputer! RSS Feed" href="http://www.learncomputer.com/feed/" /><link
+rel="alternate" type="application/atom+xml" title="LearnComputer! Atom Feed" href="http://www.learncomputer.com/feed/atom/" /><link
+rel="pingback" href="http://www.learncomputer.com/xmlrpc.php" /><link
+rel="shortcut icon" href="http://www.learncomputer.com/wp-content/themes/learncomputer/favicon.ico" type="image/x-icon" /> <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-8949118-1']);_gaq.push(['_setDomainName','.www.learncomputer.com'],['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script> <link
+rel="alternate" type="application/rss+xml" title="LearnComputer! &raquo; reCAPTCHA with CakePHP Forms Tutorial Comments Feed" href="http://www.learncomputer.com/recaptcha-cakephp/feed/" /><link
+rel='stylesheet' id='slideshow-gallery-css'  href='http://www.learncomputer.com/wp-content/plugins/slideshow-gallery/css/gallery-css.php?1=1&#038;resizeimages=Y&#038;width=570&#038;height=410&#038;border=1px+solid+%23CCCCCC&#038;background=%23000000&#038;infobackground=%23000000&#038;infocolor=%23FFFFFF&#038;ver=1.0' type='text/css' media='screen' /><link
+rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.learncomputer.com/xmlrpc.php?rsd" /><link
+rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.learncomputer.com/wp-includes/wlwmanifest.xml" /><link
+rel='index' title='LearnComputer!' href='http://www.learncomputer.com/' /><link
+rel='start' title='LearnComputer! Goes Live!' href='http://www.learncomputer.com/learncomputer-has-been-born/' /><link
+rel='shortlink' href='http://www.learncomputer.com/?p=4010' /><meta
+name="description" content="Unfortunately, as a developer today, you have to consider the possibility of spammers using automated scripts to submit the forms on your web site. One popular method for preventing this is to use a CAPTCHA. A CAPTCHA is an image that contains words or an alphanumeric code. The image is often slightly distorted. The user must correctly enter the words or code for the form to be considered valid. This prevents scripts from submitting forms since the CAPTCHA is not readable by automated systems." /><meta
+name="keywords" content="captcha,recaptcha,php,cakephp,forms,google" /><link
+rel="canonical" href="http://www.learncomputer.com/recaptcha-cakephp/" /> <script type="text/javascript">function addHandler(object,event,handler){if(typeof object.addEventListener!='undefined')
+object.addEventListener(event,handler,false);else
+if(typeof object.attachEvent!='undefined')
+object.attachEvent('on'+event,handler);else
+throw'Incompatible browser';}</script> <script type="text/javascript">jQuery(document).ready(function($){$('.sharebar').sharebar({horizontal:'true',swidth:'65',minwidth:1000,position:'left',leftOffset:30,rightOffset:10});});</script>  <script type="text/javascript">var tb_pathToImage="http://www.learncomputer.com/wp-includes/js/thickbox/loadingAnimation.gif";var tb_closeImage="http://www.learncomputer.com/wp-includes/js/thickbox/tb-close.png";</script>  <script type='text/javascript' src='http://www.learncomputer.com/wp-content/themes/learncomputer/syntaxhighlighter/scripts/shCore.js'></script> <script type='text/javascript' src='http://www.learncomputer.com/wp-content/themes/learncomputer/syntaxhighlighter/scripts/shBrushPhp.js'></script> </head><body
+id="home"><div
+id="header"><div
+id="shadow-wrap-header"><ul
+id="accessibility"><li><a
+rel="nofollow" href="http://www.learncomputer.com/login/?action=register">Register</a></li><li><a
+rel="nofollow" href="http://www.learncomputer.com/login/">Log in</a></li><li
+class="last-item"><a
+href="/contact-us/" alt="Contact Us" title="Contact Us">Contact Us:</a> &nbsp;1-888-396-2096</li></ul><ul
+id="cart-header"><li><a
+href="http://www.learncomputer.com/store/cart/" style="border:none;" alt="View Cart" title="View Cart" rel="nofollow"><img
+src="http://www.learncomputer.com/wp-content/plugins/phpurchase/images/cart-icon-16.png" alt="View Cart" width="16" height="16" /></a></li></ul><div
+id="branding"><h1 id="logo"><a
+href="http://www.learncomputer.com/" title="LearnComputer!">LearnComputer!</a></h1><div
+class="logo-description"> Your Information Technology Trainers</div></div></div><div
+id="nav" class="clearfix"><div
+id="nav-search"><form
+role="search" method="get" id="searchform" action="http://www.learncomputer.com/" ><div><label
+class="screen-reader-text" for="s">Search for:</label> <input
+type="text" value="" name="s" id="s" /> <input
+type="submit" id="searchsubmit" value="Search" /></div></form></div><div
+id="pixopoint_menu1_wrapper"><div
+id="pixopoint_menu1"><ul
+class="sf-menu" id="suckerfishnav"><li
+class="page-item-home"><a
+href="http://www.learncomputer.com/" title="Home">Home</a></li><li
+class="page_item page-item-4024"><a
+href="http://www.learncomputer.com/courseware/" title=""></a></li><li
+class="page_item page-item-1291 haschildren"><a
+href="http://www.learncomputer.com/training/" title="Training Courses">Training</a><ul
+class='children'><li
+class="page_item page-item-1385"><a
+href="http://www.learncomputer.com/training/android/" title="Android Training">Android</a></li><li
+class="page_item page-item-3772"><a
+href="http://www.learncomputer.com/training/drupal/" title="Drupal Training">Drupal</a></li><li
+class="page_item page-item-4202"><a
+href="http://www.learncomputer.com/training/agile/" title="Agile Training">Agile</a></li><li
+class="page_item page-item-2008"><a
+href="http://www.learncomputer.com/training/hadoop/" title="Hadoop Training">Hadoop</a></li><li
+class="page_item page-item-3746"><a
+href="http://www.learncomputer.com/training/html5/" title="HTML5 Training">HTML5</a></li><li
+class="page_item page-item-4011"><a
+href="http://www.learncomputer.com/training/security/" title="Security Training">Security</a></li><li
+class="page_item page-item-1413"><a
+href="http://www.learncomputer.com/training/php/" title="PHP Training">PHP</a></li><li
+class="page_item page-item-1416"><a
+href="http://www.learncomputer.com/training/network/" title="Networking Training">Networking</a></li><li
+class="page_item page-item-1412"><a
+href="http://www.learncomputer.com/training/java/" title="Java Training">Java</a></li></ul></li><li
+class="page_item page-item-2500"><a
+href="http://www.learncomputer.com/schedule/" title="Training Schedule">Schedule</a></li><li
+class="page_item page-item-2308"><a
+href="http://www.learncomputer.com/onsite-training/" title="Request Customized Instructor-led Onsite Training">Onsite Training</a></li><li
+class="page_item page-item-226 current_page_parent"><a
+href="http://www.learncomputer.com/blog/" title="Blog">Blog</a></li><li
+class="page_item page-item-2 haschildren"><a
+href="http://www.learncomputer.com/about/" title="About Us">About Us</a><ul
+class='children'><li
+class="page_item page-item-4119"><a
+href="http://www.learncomputer.com/about/clients/" title="Our Clients">Clients</a></li><li
+class="page_item page-item-3117"><a
+href="http://www.learncomputer.com/about/hire-us/" title="Consulting Services">Consulting Services</a></li><li
+class="page_item page-item-122"><a
+href="http://www.learncomputer.com/about/jobs/" title="Information Technology Instructors Wanted">Jobs</a></li><li
+class="page_item page-item-931"><a
+href="http://www.learncomputer.com/about/news/" title="News">News</a></li><li
+class="page_item page-item-3993"><a
+href="http://www.learncomputer.com/about/team/" title="Our Team">Team</a></li><li
+class="page_item page-item-1026"><a
+href="http://www.learncomputer.com/about/training-facility/" title="Training Facility">Training Facility</a></li></ul></li></ul></div></div><div
+id="nav-follow-us"> <a
+href="http://www.twitter.com/ittrainers" title="Follow us on Twitter" target="_blank"><img
+src="/wp-content/themes/learncomputer/img/twitter_24.png" alt="Follow us on Twitter" border="0" width="24" height="24" /></a> <a
+href="http://www.facebook.com/ittrainers" title="Like us on Facebook" target="_blank"><img
+src="/wp-content/themes/learncomputer/img/facebook_24.png" alt="Like us on Facebook" border="0" width="24" height="24" /></a> <a
+href="/feed/" title="Subscribe to our RSS Feed" rel="alternate" target="_blank" type="application/rss+xml"><img
+src="/wp-content/themes/learncomputer/img/rss_24.png" alt="Subscribe to our RSS Feed" border="0" width="24" height="24" /></a></div></div></div><div
+id="shadow-wrap"><div
+id="breadcrumb"><p> <a
+title="Go to Home." href="http://www.learncomputer.com">Home</a> &gt; <a
+title="Go to Blog." href="http://www.learncomputer.com/blog/">Blog</a> &gt; <a
+title="Go to the web development category archives." href="http://www.learncomputer.com/category/web-development/">web development</a> &gt; <a
+title="Go to the php category archives." href="http://www.learncomputer.com/category/web-development/php/">php</a> &gt; <a
+title="Go to the cakephp category archives." href="http://www.learncomputer.com/category/web-development/php/cakephp/">cakephp</a> &gt; reCAPTCHA with CakePHP Forms Tutorial</p></div><div
+id="main" class="clearfix"><div
+id="container"><div
+id="content"><div
+class="post-4010 post type-post status-publish format-standard hentry category-cakephp category-php tag-cakephp tag-captcha tag-php tag-recaptcha" id="post-4010"><h1>reCAPTCHA with CakePHP Forms Tutorial</h1> <small
+class="meta"> <span
+class="date">January 14th, 2011</span> <span
+class="author">Michael Dorf</span><span
+class="addcomment"><a
+href="#respond" rel="nofollow">Leave a comment</a></span> </small><div
+class="entry"><ul
+id="sharebar" style="background:#;border-color:#;"><li><a
+href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="ittrainers">Tweet</a></li><li><a
+class="DiggThisButton DiggMedium">Digg</a></li><li><a
+title="Post to Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="normal-count"></a><script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script></li><li><script type="text/javascript">var dzone_url="http://www.learncomputer.com/recaptcha-cakephp/";</script> <script type="text/javascript">var dzone_title="reCAPTCHA with CakePHP Forms Tutorial";</script> <script type="text/javascript">var dzone_blurb="Unfortunately, as a developer today, you have to consider the possibility of spammers using automated scripts to submit the forms on your web site. One popular method for preventing this is to use a CAPTCHA. A CAPTCHA is an image that contains words or an alphanumeric code. The image is often slightly distorted. The user must correctly enter the words or code for the form to be considered valid. This prevents scripts from submitting forms since the CAPTCHA is not readable by automated systems.";</script> <script type="text/javascript">var dzone_style="1";</script> <script language="javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js"></script></li><li><span
+class="st_email" displayText="Email"></span><span
+class="st_sharethis" displayText="Share"></span></li></ul><ul
+id="sharebarx"><li><a
+href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ittrainers">Tweet</a></li><li><a
+class="DiggThisButton DiggCompact">Digg</a></li><li><a
+title="Post to Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-count"></a><script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script></li><li><script type="text/javascript">var dzone_url="http://www.learncomputer.com/recaptcha-cakephp/";</script> <script type="text/javascript">var dzone_title="reCAPTCHA with CakePHP Forms Tutorial";</script> <script type="text/javascript">var dzone_blurb="Unfortunately, as a developer today, you have to consider the possibility of spammers using automated scripts to submit the forms on your web site. One popular method for preventing this is to use a CAPTCHA. A CAPTCHA is an image that contains words or an alphanumeric code. The image is often slightly distorted. The user must correctly enter the words or code for the form to be considered valid. This prevents scripts from submitting forms since the CAPTCHA is not readable by automated systems.";</script> <script type="text/javascript">var dzone_style="2";</script> <script language="javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js"></script></li><li><span
+class="st_email" displayText="Email"></span><span
+class="st_sharethis" displayText="Share"></span></li></ul><div
+class="fb-like" style="clear: both;"><span
+class="fb-like-text">Do you like this article?</span><fb:like class="fb_edge_widget_with_comment fb_iframe_widget" show_faces="no" href="http://www.learncomputer.com/recaptcha-cakephp/" action="like" layout="standard" width="395"></fb:like></div> <img
+src="http://www.learncomputer.com/wp-content/uploads/2011/01/cakephp-recaptcha.jpg" alt="reCAPTCHA with CakePHP" title="reCAPTCHA with CakePHP" width="270" height="310" class="alignleft size-full wp-image-4012" /><p>Unfortunately, as a developer today, you have to consider the possibility of spammers using automated scripts to submit the forms on your web site.  One popular method for preventing this is to use a CAPTCHA.  A CAPTCHA is an image that contains words or an alphanumeric code.  The image is often slightly distorted.  The user must correctly enter the words or code for the form to be considered valid.  This prevents scripts from submitting forms since the CAPTCHA is not readable by automated systems.</p><p>The most popular system for implementing CAPTCHA is <a
+href="http://www.google.com/recaptcha" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.google.com']);" target="_blank" title="reCAPTCHA">reCAPTCHA</a> by Google.  reCAPTCHA provides an API that makes it easy for any developer to include CAPTCHAs on their web forms.  Furthermore, their API provides an audio of the CAPTCHA to help the visually impaired use your web form.  This means you can still create accessible systems while protecting your forms from automated SPAM.</p><p>As a side note, reCAPTCHA is pretty cool because the test words are actually snippets from scanned books.  By completing the CAPTCHA, users are fine tuning the optical character recognition system.  Basically, reCAPTCHA works by presenting 2 words.  For one of them, the correct answer is known.  If the user submits the correct answer for the known word, the unknown one is considered correct.  By serving the same unknown word to multiple users, a certain amount of statistical certainty about it can be created.  This allows Google to improve their OCR systems.</p><p>CAPTCHAs make the most sense on certain forms.  Obviously contact forms and other forms that send email are the best places to use a CAPTCHA.  However, registration forms are also a good place for one.  Spammers will often create accounts on web sites hoping to be able to spam by posting in forums or through email.</p><p>I am going to show one method of using reCAPTCHA with CakePHP.  To do this, we&#8217;ll make a mock registration form but I won&#8217;t be getting into a lot of extra details such as confirming passwords and so on.  We&#8217;re going to focus on the CAPTCHA portion.</p><p>To begin, you&#8217;ll need to download the PHP library from reCAPTCHA.  While you can develop a helper and component to utilize reCAPTCHA, we&#8217;re instead going to use the existing PHP library from within CakePHP.  The PHP library consists of a single file called <b><i>recaptchalib.php</i></b>.  Make a new subdirectory of your <b><i>/vendors</i></b> directory under your CakePHP installation call reCAPTCHA and place this file in the subdirectory.</p><p>We&#8217;re going to need a user model to save our registration data.  For our example, let&#8217;s assume that our User model consists only of an email address, username and password.  We&#8217;ll use CakePHP&#8217;s model validation to make sure that all of the fields are submitted, that a valid email address is submitted and that the username is unique.</p><p>Our registration form will need to include the CAPTCHA and a place for the user to type the code.  Fortunately, the reCAPTCHA library takes care of this for us.  We&#8217;re also going to manually write some of the form code.  I prefer to wrap my form in an unordered list and I prefer to have field errors inside the label.  For my code, I pass parameters to the form helper&#8217;s create method to suppress automatically adding div tags and labels:</p><pre class="brush: php">
+$form-&gt;create(&#39;User&#39;, array(
+	&#39;action&#39;=&gt;&#39;register&#39;,
+	&#39;inputDefaults&#39; =&gt; array(
+		&#39;div&#39; =&gt; false,
+		&#39;label&#39; =&gt;false
+	)
+));
+</pre><p>Then for each form element I output a label, test for an error and output it and finally show the input box.  That looks something like this (remember, my form elements are list items in an unordered list):</p><pre class="brush: php">
+echo &#39;&lt;li&gt;&lt;label for=&quot;UserEmail&quot;&gt;Email&#39;;
+if ($form-&gt;isFieldError(&#39;email&#39;)) {
+	echo &#39;&lt;br/&gt;&lt;strong&gt;&#39; . $form-&gt;error(&#39;email&#39;) . &#39;&lt;/strong&gt;&#39;;
+}
+echo &#39;&lt;/label&gt;&#39;;
+echo $form-&gt;text(&#39;email&#39;);
+echo &#39;&lt;/li&gt;&#39;;
+</pre><p>After, I&#8217;ve output all the form fields but before I close the form or add the submit button, I&#8217;ll output the CAPTCHA.  First, we&#8217;ll need to import the library:</p><pre class="brush: php">
+App::import(&#39;Vendor&#39;,&#39;recaptcha/recaptchalib&#39;);
+</pre><p>This code is the CakePHP equivalent of PHP&#8217;s require_once.  The parameters tell CakePHP where to find the file to include.  In the case, &#8216;Vendor&#8217; means that it is in the vendors subdirectory. <b><i>&#8216;recaptcha/recaptchalib&#8217;</i></b> tells CakePHP that the file is <b><i>recaptchalib.php</i></b> and it is in the &#8220;recaptcha&#8221; subdirectory of the vendors folder.  Here&#8217;s how I ouptut the CAPTCHA:</p><pre class="brush: php">
+$publickey = &#39; &lt;your ReCaptcha Public Key&gt;&#39;;
+if (isset($recaptcha_error)) {
+	echo &#39;&lt;strong&gt;&#39; . $recaptcha_error . &#39;&lt;/strong&gt;&lt;br/&gt;&#39;;
+}
+echo recaptcha_get_html($publickey);
+</pre><p>This differs slightly from the sample code provided on the reCAPTCHA web site.  The sample code for processing the CAPTCHA has a die statement so that if you do not enter the CAPTCHA correctly, you get a page with an error and instructions to go back and try again.  I wanted to output an error message and allow the user to just try again.  In my processing code, instead of dying on an error, I&#8217;ll set a user-friendly message in <b><i>$recaptcha_error</i></b>.  The above code looks for the error and if it exists, displays it to the user.</p><p>Now, let&#8217;s look at our controller code and how we actually process the CAPTCHA.  Since we need to check the CAPTCHA and return an error if it is not correct, we&#8217;ll want to validate the data from the controller rather than rely on the <b><i>model.save()</i></b> method to validate our data.  Here&#8217;s the code:</p><pre class="brush: php">
+if (!empty($this-&gt;data)) {
+	App::import(&#39;Vendor&#39;,&#39;recaptcha/recaptchalib&#39;);
+	$privatekey = &#39; &lt;Your ReCaptcha Private Key&gt;&#39;;
+	$resp = recaptcha_check_answer( $privatekey, 
+					$_SERVER[&#39;REMOTE_ADDR&#39;],
+					$_POST[&#39;recaptcha_challenge_field&#39;],
+					$_POST[&#39;recaptcha_response_field&#39;]);
+	if (!$resp-&gt;is_valid) {
+		$this-&gt;set(&#39;recaptcha_error&#39;, 
+			&#39;You did not enter the words correctly.  Please try again.&#39;);
+	}
+	$this-&gt;User-&gt;set($this-&gt;data);
+	if (($this-&gt;User-&gt;validates()) &amp;&amp; ($resp-&gt;is_valid)) {
+		// Success!  Write code to save and redirect user as needed
+	} else {
+		$errors=$this-&gt;User-&gt;invalidFields();
+		$this-&gt;set(&#39;errrors&#39;,$errors);
+	}
+}
+</pre><p>We check first to see if any data was submitted.  If it was, we load the reCAPTCHA library and make a call to the API to check the submitted response to the CAPTCHA.  If the response is not valid, we set our user-friendly error message.  Next, we load the model with our submitted data and call the <b><i>validates()</i></b> method on it.  If <b><i>validates()</i></b> returns <b><i>true</i></b> and the reCAPTCHA response is valid, we have successfully submitted a new registration.  We would next add code here to complete the registration.  This could be as simple as saving the new user, logging them in and redirecting to the home page.  Or we could save the record and send a verification email.</p><p>However, if both conditions are not true, we load the <b><i>$errors</i></b> variable with the error messages generated by our model&#8217;s <b><i>validates()</i></b> method.  We do this by setting <b><i>$errors</i></b> to <b><i>invalidFields()</i></b>.  Now, we can use the <b><i>$errors</i></b> variable in our view code to display individual field errors and the <b><i>$recaptcha_error</i></b> variable to display any error generated by our use of a CAPTCHA.</p><p>While there are methods of using the reCAPTCHA library to display and validate CAPTCHAs that are more &#8220;CakePHP&#8221; like, we&#8217;ve looked at a very simple method for including the library in CakePHP code.  Hopefully this will help you with including CAPTCHAs on your forms and fighting SPAM.</p><h6>Help us spread the word!</h6><div
+class="wp-socializer 32px"><ul
+class="wp-socializer-jump columns-no"><li><a
+href="http://twitter.com/home?status=reCAPTCHA+with+CakePHP+Forms+Tutorial%20-%20http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','twitter.com']);" title="Twitter" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Twitter" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -1089px; border:0;"></a></li><li><a
+href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;t=reCAPTCHA+with+CakePHP+Forms+Tutorial" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.facebook.com']);" title="Facebook" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Facebook" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -297px; border:0;"></a></li><li><a
+href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;title=reCAPTCHA+with+CakePHP+Forms+Tutorial&amp;source=LearnComputer%21+Your+Information+Technology+Trainers&amp;summary=Unfortunately%2C+as+a+developer+today%2C+you+have+to+consider+the+possibility+of+spammers+using+automated+scripts+to+submit+the+forms+on+your+web+site.++One+popular+method+for+preventing+this+is+to+use+a+CAPTCHA.++A+CAPTCHA+is+an+image+that+contains+words+or+an+alphanumeric+code.++The+image+is+often+slightly+distorted.++The+user+must+correctly+enter+the+words+or+code+for+the+form+to+be+considered+valid.++This+prevents+scripts+from+submitting+forms+since+the+CAPTCHA+is+not+readable+by+automated+systems." onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.linkedin.com']);" title="LinkedIn" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="LinkedIn" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -528px; border:0;"></a></li><li><a
+href="http://delicious.com/post?url=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;title=reCAPTCHA+with+CakePHP+Forms+Tutorial&amp;notes=Unfortunately%2C+as+a+developer+today%2C+you+have+to+consider+the+possibility+of+spammers+using+automated+scripts+to+submit+the+forms+on+your+web+site.++One+popular+method+for+preventing+this+is+to+use+a+CAPTCHA.++A+CAPTCHA+is+an+image+that+contains+words+or+an+alphanumeric+code.++The+image+is+often+slightly+distorted.++The+user+must+correctly+enter+the+words+or+code+for+the+form+to+be+considered+valid.++This+prevents+scripts+from+submitting+forms+since+the+CAPTCHA+is+not+readable+by+automated+systems." onclick="javascript:_gaq.push(['_trackEvent','outbound-article','delicious.com']);" title="del.icio.us" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="del.icio.us" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -99px; border:0;"></a></li><li><a
+href="http://buzz.yahoo.com/submit/?submitUrl=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;submitHeadline=reCAPTCHA+with+CakePHP+Forms+Tutorial&amp;submitSummary=Unfortunately%2C+as+a+developer+today%2C+you+have+to+consider+the+possibility+of+spammers+using+automated+scripts+to+submit+the+forms+on+your+web+site.++One+popular+method+for+preventing+this+is+to+use+a+CAPTCHA.++A+CAPTCHA+is+an+image+that+contains+words+or+an+alphanumeric+code.++The+image+is+often+slightly+distorted.++The+user+must+correctly+enter+the+words+or+code+for+the+form+to+be+considered+valid.++This+prevents+scripts+from+submitting+forms+since+the+CAPTCHA+is+not+readable+by+automated+systems.&amp;submitAssetType=text" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','buzz.yahoo.com']);" title="YahooBuzz" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="YahooBuzz" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -1155px; border:0;"></a></li><li><a
+href="http://reddit.com/submit?url=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;title=reCAPTCHA+with+CakePHP+Forms+Tutorial" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','reddit.com']);" title="Reddit" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Reddit" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -891px; border:0;"></a></li><li><a
+href="http://www.mixx.com/submit?page_url=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;title=reCAPTCHA+with+CakePHP+Forms+Tutorial" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.mixx.com']);" title="Mixx" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Mixx" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -627px; border:0;"></a></li><li><a
+href="http://sphinn.com/index.php?c=post&amp;m=submit&amp;link=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','sphinn.com']);" title="Sphinn" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Sphinn" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -957px; border:0;"></a></li><li><a
+href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;title=reCAPTCHA+with+CakePHP+Forms+Tutorial" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.stumbleupon.com']);" title="StumbleUpon" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="StumbleUpon" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -990px; border:0;"></a></li><li><a
+href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F&amp;title=reCAPTCHA+with+CakePHP+Forms+Tutorial&amp;annotation=Unfortunately%2C+as+a+developer+today%2C+you+have+to+consider+the+possibility+of+spammers+using+automated+scripts+to+submit+the+forms+on+your+web+site.++One+popular+method+for+preventing+this+is+to+use+a+CAPTCHA.++A+CAPTCHA+is+an+image+that+contains+words+or+an+alphanumeric+code.++The+image+is+often+slightly+distorted.++The+user+must+correctly+enter+the+words+or+code+for+the+form+to+be+considered+valid.++This+prevents+scripts+from+submitting+forms+since+the+CAPTCHA+is+not+readable+by+automated+systems." onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.google.com']);" title="Google" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Google" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -396px; border:0;"></a></li><li><a
+href="http://www.learncomputer.com/feed/rss/"  title="RSS" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="RSS" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -924px; border:0;"></a></li><li><a
+href="mailto:?subject=reCAPTCHA+with+CakePHP+Forms+Tutorial&amp;body=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F" title="email" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif"  alt="email" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -264px; border:0;"></a></li><li><a
+href="http://www.printfriendly.com/print?url=http%3A%2F%2Fwww.learncomputer.com%2Frecaptcha-cakephp%2F" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.printfriendly.com']);" title="Print" target="_blank" ><img
+src="http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-mask-32px.gif" alt="Print" style="width:32px; height:32px; background: transparent url(http://www.learncomputer.com/wp-content/plugins/wp-socializer/social-icons/wp-socializer-sprite-32px.png) no-repeat; background-position:0px -858px; border:0;"></a></li></ul><div
+class="wp-socializer-clearer"></div></div><div
+class="author-box"> <img
+width="50" height="50" class="avatar avatar-50 photo" src="http://www.learncomputer.com/wp-content/uploads/2011/02/blank-avatar-85.png" alt=""><p>Would you like to be featured in this area? If you have a relevant advice or tutorial to share with our readers, we invite you to become our guest blogger.  Please read our simple <a
+href='/guest-blogger-invitation-guidelines/' title='Guest Blogger submission guidelines'><b>submission guidelines</b></a> and request a <b>Contributor</b> account today!</p></div><h6>Link to This Post</h6> If you want to link to this post, copy and paste the following HTML code to your website:<form
+name="textlink" class="cform"><p><textarea name="selectlink" cols="60" rows="3" class="area" style="width:500px;height:40px" onclick="select_all(this);">&lt;a href=&quot;http://www.learncomputer.com/recaptcha-cakephp/&quot; title=&quot;reCAPTCHA with CakePHP Forms Tutorial&quot; target=&quot;_blank&quot;&gt;reCAPTCHA with CakePHP Forms Tutorial&lt;/a&gt;</textarea></p></form><div
+id="related"><h6>Related Posts</h6><div
+class="column "><div
+class="image"><a
+href="http://www.learncomputer.com/available-username-cakephp-ajax-jquery/" title="Check for Available Username with CakePHP, Ajax and jQuery"><img
+width="125" height="125" title="Check for Available Username with CakePHP, Ajax and jQuery" alt="Check for Available Username with CakePHP, Ajax and jQuery" class="img-border-sm wp-post-image" src="/wp-content/scripts/timthumb/timthumb.php?src=/wp-content/uploads/2010/09/username-taken.png&w=125&h=125&zc=1" /></a></div> <a
+href="http://www.learncomputer.com/available-username-cakephp-ajax-jquery/" title="Check for Available Username with CakePHP, Ajax and jQuery">Check for Available Username with CakePHP, Ajax and jQuery</a></div><div
+class="column "><div
+class="image"><a
+href="http://www.learncomputer.com/php-form-tutorial/" title="PHP Contact Form Tutorial"><img
+width="125" height="125" title="PHP Contact Form Tutorial" alt="PHP Contact Form Tutorial" class="img-border-sm wp-post-image" src="/wp-content/scripts/timthumb/timthumb.php?src=/wp-content/uploads/2010/05/php-form.png&w=125&h=125&zc=1" /></a></div> <a
+href="http://www.learncomputer.com/php-form-tutorial/" title="PHP Contact Form Tutorial">PHP Contact Form Tutorial</a></div><div
+class="column "><div
+class="image"><a
+href="http://www.learncomputer.com/cakephp-installation-configuration/" title="CakePHP Installation &amp; Configuration"><img
+width="125" height="125" title="CakePHP Installation &amp; Configuration" alt="CakePHP Installation &amp; Configuration" class="img-border-sm wp-post-image" src="/wp-content/scripts/timthumb/timthumb.php?src=/wp-content/uploads/2010/12/cakephp-installation-configuration.jpg&w=125&h=125&zc=1" /></a></div> <a
+href="http://www.learncomputer.com/cakephp-installation-configuration/" title="CakePHP Installation &amp; Configuration">CakePHP Installation &amp; Configuration</a></div><div
+class="column "><div
+class="image"><a
+href="http://www.learncomputer.com/cakephp-relationships/" title="CakePHP Relationships Explained"><img
+width="125" height="125" title="CakePHP Relationships Explained" alt="CakePHP Relationships Explained" class="img-border-sm wp-post-image" src="/wp-content/scripts/timthumb/timthumb.php?src=/wp-content/uploads/2011/02/cakephp-relationships.jpg&w=125&h=125&zc=1" /></a></div> <a
+href="http://www.learncomputer.com/cakephp-relationships/" title="CakePHP Relationships Explained">CakePHP Relationships Explained</a></div></div> <br
+class="fix" /> <br/><ul
+class="previousnext clearfix"><li
+class="previous_post"><a
+href="http://www.learncomputer.com/what-is-dalvik/" rel="prev"><span>Previous Entry:</span> What is Dalvik, Anyway?</a></li><li
+class="next_post"><a
+href="http://www.learncomputer.com/outsourcing-email-to-cloud/" rel="next"><span>Next Entry:</span> Outsourcing Email to the Cloud</a></li></ul></div><div
+class="postmetadata"><p
+class="categories"> Posted in <a
+href="http://www.learncomputer.com/category/web-development/php/cakephp/" title="View all posts in cakephp" rel="category tag">cakephp</a>, <a
+href="http://www.learncomputer.com/category/web-development/php/" title="View all posts in php" rel="category tag">php</a></p><p
+class="tags">LearnComputer! Tags: <a
+href="http://www.learncomputer.com/tag/cakephp/" rel="tag">cakephp</a>, <a
+href="http://www.learncomputer.com/tag/captcha/" rel="tag">captcha</a>, <a
+href="http://www.learncomputer.com/tag/php/" rel="tag">php</a>, <a
+href="http://www.learncomputer.com/tag/recaptcha/" rel="tag">recaptcha</a></p><p
+class='technorati-tags'>Technorati Tags: <a
+class='technorati-link' href='http://technorati.com/tag/cakephp' rel='tag,nofollow' target='_blank'>cakephp</a>, <a
+class='technorati-link' href='http://technorati.com/tag/captcha' rel='tag,nofollow' target='_blank'>captcha</a>, <a
+class='technorati-link' href='http://technorati.com/tag/php' rel='tag,nofollow' target='_blank'>php</a>, <a
+class='technorati-link' href='http://technorati.com/tag/recaptcha' rel='tag,nofollow' target='_blank'>recaptcha</a></p><p
+class="infos"> You can follow any responses to this entry through the <a
+href="http://www.learncomputer.com/recaptcha-cakephp/feed/" rel="nofollow">RSS 2.0 Feed.</a><br/>You can<a
+href="#respond">leave a response</a>or<a
+href="http://www.learncomputer.com/recaptcha-cakephp/trackback/" rel="trackback nofollow">trackback</a> from your own site.</p></div></div><div
+id="respond"><h3>Comment</h3><div
+class="cancel-comment-reply"> <a
+rel="nofollow" id="cancel-comment-reply-link" href="/recaptcha-cakephp/#respond" style="display:none;">Click here to cancel reply.</a></div><form
+action="http://www.learncomputer.com/wp-comments-post.php" method="post" id="commentform"><div
+class="respond-left"><p><input
+type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' /> <label
+for="author">Name (required)</label></p><p><input
+type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' /> <label
+for="email">Mail (will not be published) (required)</label></p><p><input
+type="text" name="url" id="url" value="" size="22" tabindex="3" /> <label
+for="url">Website</label></p></div><div
+class="respond-right"><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea><p><input
+name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /> <input
+type='hidden' name='comment_post_ID' value='4010' id='comment_post_ID' /> <input
+type='hidden' name='comment_parent' id='comment_parent' value='0' /></p> <noscript><strong><u><font
+color="red" size="5">To leave a comment please enable JavaScript in your browser settings!</font></u></strong></noscript></div></form></div></div></div><div
+id="sidebar"><ul
+id="sidebar-list" class="sb-list clearfix"><li
+id="cart-view-li" style="display:none;"></li> <script type="text/javascript">/*<![CDATA[*/jQuery.getJSON("/wp-content/plugins/phpurchase/cart-widget-response.php",function(data){var countItems=data["countItems"];var total=data["total"];if(countItems>0){var regTxt=' Pending Registration'+((countItems>1)?'s':'');var html='';html+='<ul><li id="phpurchasecartwidget-3" class="widget PHPurchaseCartWidget">';html+='<div class="sb-title widgettitle">My Registrations</div>';html+='<p><a href="http://www.learncomputer.com/store/cart/" alt="View Cart" title="View Cart" rel="nofollow">';html+=countItems+regTxt+' &ndash; ';html+=total+'</a>';html+='<a href="http://www.learncomputer.com/store/cart/" style="border:none;" alt="View Cart" title="View Cart" rel="nofollow">';html+='<img src="http://www.learncomputer.com/wp-content/plugins/phpurchase/images/cart-icon-16.png" alt="View Cart" style="margin-left:5px;margin-right:5px;vertical-align:middle;" width="16" height="16" border="0"/></a>';html+=' | &nbsp;';html+='<a href="http://www.learncomputer.com/store/checkout/" alt="Checkout" title="Checkout" rel="nofollow">Checkout</a> ';html+='<a href="http://www.learncomputer.com/store/checkout/" style="border:none;" alt="Checkout" title="Checkout" rel="nofollow">';html+='<img src="http://www.learncomputer.com/wp-content/plugins/phpurchase/images/checkout-icon-16.png" alt="Checkout" style="margin-left:5px;margin-right:5px;vertical-align:middle;" width="16" height="16" border="0"/></a></p>';html+='</li></ul>';var cartView=jQuery('#cart-view-li');cartView.html(html);setTimeout(function(){cartView.fadeIn('slow');},500);}});/*]]>*/</script> <li
+id="text-2" class="widget widget_text"><div
+class="sb-title widgettitle">Upcoming Training</div><div
+class="textwidget"><table
+class='sidebar_course' cellspacing='0' cellpadding='0' style='width: 310px;'><tr><td
+width='50' style='text-align:center;vertical-align:middle;white-space:nowrap;'>Apr 11-13</td><td
+width='200' class='icon_laptop_sidebar_course' style='text-align:left;padding-right:20px;'><a
+style='border-bottom:none;' href="http://www.learncomputer.com/training/php/php-javascript-ajax-jquery/2011-11-04/"  title='PHP, JavaScript, Ajax and jQuery Training Course'>PHP, JavaScript, Ajax and jQuery </a></td><td
+width='16'><img
+style='vertical-align:middle;' src='/wp-content/themes/learncomputer/img/ok-16-16.png' width='16' height='16' alt='Class Guaranteed to Run!' title='Class Guaranteed to Run!' class='guaranteedToRun16SmButton' /></td></tr><tr><td
+width='50' style='text-align:center;vertical-align:middle;white-space:nowrap;'>May 28-30</td><td
+width='200' class='icon_laptop_sidebar_course' style='text-align:left;padding-right:20px;'><a
+style='border-bottom:none;' href="http://www.learncomputer.com/training/php/web-development-php-mysql/2011-28-05/"  title='Web Development with PHP/MySQL Training Course'>Web Development with PHP/MySQL </a></td><td
+width='16'><img
+style='vertical-align:middle;' src='/wp-content/themes/learncomputer/img/ok-16-16.png' width='16' height='16' alt='Class Guaranteed to Run!' title='Class Guaranteed to Run!' class='guaranteedToRun16SmButton' /></td></tr><tr><td
+width='50' style='text-align:center;vertical-align:middle;white-space:nowrap;'>Jun 27-29</td><td
+width='200' class='icon_laptop_sidebar_course' style='text-align:left;padding-right:20px;'><a
+style='border-bottom:none;' href="http://www.learncomputer.com/training/php/php-javascript-ajax-jquery/2011-27-06/"  title='PHP, JavaScript, Ajax and jQuery Training Course'>PHP, JavaScript, Ajax and jQuery </a></td></tr><tr><td
+width='50' style='text-align:center;vertical-align:middle;white-space:nowrap;'>Aug 13-15</td><td
+width='200' class='icon_laptop_sidebar_course' style='text-align:left;padding-right:20px;'><a
+style='border-bottom:none;' href="http://www.learncomputer.com/training/php/web-development-php-mysql/2011-13-08/"  title='Web Development with PHP/MySQL Training Course'>Web Development with PHP/MySQL </a></td></tr><tr><td
+width='50' style='text-align:center;vertical-align:middle;white-space:nowrap;'>Apr 05</td><td
+width='200' class='icon_webinar_sidebar_course' style='text-align:left;padding-right:20px;'><a
+style='border-bottom:none;' href="http://www.learncomputer.com/webinars/network/intro-switching/2011-05-04/"  title='Introduction to Switching'>Introduction to Switching</a></td></tr></table><table
+class='sidebar_category' width='100%' style='margin-top: 5px;'><tr><td
+style='text-align:right;font-size:11px;'><img
+src='/wp-content/themes/learncomputer/img/icon-blackboard-16-16.png' width='16' height='16'
+alt='Classroom Training' style='vertical-align:middle;' /> - Classroom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+src='/wp-content/themes/learncomputer/img/icon-laptop-16-16.png' width='16' height='16'
+alt='Online Training' style='vertical-align:middle;' /> - Online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+src='/wp-content/themes/learncomputer/img/icon-webinar-16-16.png' width='16' height='16'
+alt='Webinar Training' style='vertical-align:middle;' /> - Webinar</td></tr></table><table
+class='sidebar_category' width='100%' style='margin-top:5px;'><tr><td
+style='text-align:right;font-size:11px;'><img
+src='/wp-content/themes/learncomputer/img/ok-16-16.png'
+width='16' height='16' alt='Guaranteed to Run!' title='Guaranteed to Run!'
+style='vertical-align:middle;' /> - Guaranteed to Run!</td></tr></table><table
+class='sidebar_category' width='100%' style='margin-top:5px;'><tr><td
+style='text-align:right;'><a
+href="http://www.learncomputer.com/schedule/"  title='Full Schedule'>Full Schedule &#187;</a></td></tr></table></div></li><li
+id="testimonialswidget-3" class="widget TestimonialsWidget"><div
+class="sb-title widgettitle">Recent Client Testimonials</div><ul
+id='testimonials'><li
+style='display: block'><p><i>This course was excellent!  Guy Cole was able to create a great learning environment.  He is technical, eloquent, and funny all at the same time. I'd take this course again any time!</i></p><p><i>&nbsp;&nbsp;&nbsp;- Regina, IBM</i></p></li><li
+style='display: none'><p><i>I learned a great deal in just a days' Networking Fundamentals Course. Boris, you made my day...</i></p><p><i>&nbsp;&nbsp;&nbsp;- Artem, Microsoft Corporation</i></p></li><li
+style='display: none'><p><i>Goal of training met , in terms of  the course objectives set my course managers </i></p><p><i>&nbsp;&nbsp;&nbsp;- CPT Peter Johnson, U.S.ARMY 53A ISM course </i></p></li><li
+style='display: none'><p><i>I liked the interactive approach the Guy used during chapter demos and sample app.  We all shared our products and learned from each others' blunders. ;-) </i></p><p><i>&nbsp;&nbsp;&nbsp;- Derek, Verizon</i></p></li><li
+style='display: none'><p><i>Good practical android course. Lots of material but if you pay attention in class you will get your money's worth. Instructor knows his stuff. </i></p><p><i>&nbsp;&nbsp;&nbsp;- Gene, Verizon</i></p></li><li
+style='display: none'><p><i>Guy is a knowledgeable instructor and skillful presenter. He made this course really come together with exercises and practical project. I hope he teaches other courses!!!</i></p><p><i>&nbsp;&nbsp;&nbsp;- Andrew, Kyocera</i></p></li><li
+style='display: none'><p><i>The Android App Development class was very effective for me. In just two days, I learned enough material to get me started on my own. Instructor and facility were both top notch! </i></p><p><i>&nbsp;&nbsp;&nbsp;- Shekhar, MIPS Technologies</i></p></li><li
+style='display: none'><p><i>Good introduction to Android development with lots of practical examples. Instructor is knowledgeable and jovial.</i></p><p><i>&nbsp;&nbsp;&nbsp;- Kyocera</i></p></li><li
+style='display: none'><p><i>I enjoyed the exposure to Eclipse and exploring interactions within the Android environment.</i></p><p><i>&nbsp;&nbsp;&nbsp;- Hollis, TCI</i></p></li><li
+style='display: none'><p><i>This was an intense 3-day course. The great part though is you don't need to remember everything. As long as you complete the class project, you will learn many valuable lessons. I highly recommend this course! </i></p><p><i>&nbsp;&nbsp;&nbsp;- Pradeep, US Government</i></p></li><li
+style='display: none'><p><i>Instructor knew all details and explained everything with extreme patience</i></p><p><i>&nbsp;&nbsp;&nbsp;- Kyocera</i></p></li><li
+style='display: none'><p><i>This course could easily have taken longer than two days, but Boris did an awesome job breaking it down into a shorter course. He explains and demonstrates extremely well!</i></p><p><i>&nbsp;&nbsp;&nbsp;- Gregory, LSI</i></p></li><li
+style='display: none'><p><i>I am an experienced OOP programmer/developer, and I believe that the programming examples were extremely relevant.  Mr.  Cole put in much effort and ensured that the programming templates were relevant and workeable.</i></p><p><i>&nbsp;&nbsp;&nbsp;- MAJ Jarrod, Fort Gordon School of Information Technology</i></p></li><li
+style='display: none'><p><i>I come from a Java background, and Android seems natural for me to pick up. Guy made the transition from Java to Android very easy. He is a very good teacher. I enjoyed this training.</i></p><p><i>&nbsp;&nbsp;&nbsp;- Leonid</i></p></li><li
+style='display: none'><p><i>The Android Application Development course was very well delivered and left me with a wealth of real code I can use at work.</i></p><p><i>&nbsp;&nbsp;&nbsp;- Vlad, Wells Fargo</i></p></li><li
+style='display: none'><p><i>Android Application Development class is cutting edge. It covers best of both worlds - the basics and advanced SDK functions. The project is very relevant to the course.</i></p><p><i>&nbsp;&nbsp;&nbsp;- Josh, Stanford University</i></p></li><li
+style='display: none'><p><i>Guy Cole is both an expert Android instructor and a great entertainer. I thoroughly enjoyed this course!</i></p><p><i>&nbsp;&nbsp;&nbsp;- Chris, Rockwell Collins</i></p></li></ul> <script type='text/javascript'>jQuery(document).ready(function(){jQuery('ul#testimonials').innerfade({speed:1000,timeout:7000,type:'sequence',containerheight:'80px'});});</script> </li><li
+id="text-3" class="widget widget_text"><div
+class="sb-title widgettitle">Training Categories</div><div
+class="textwidget"><table
+class="sidebar_category" width="100%"><tr><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/android-icon.png" width="25" height="25" class="imageIcon25Left" alt="Android Training" /></td><td><a
+href="http://www.learncomputer.com/training/android/"  title="Android Training">Android Training</a></td><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/html5-icon.png" width="25" height="25" class="imageIcon25Left" alt="HTML5 Training" /></td><td><a
+href="http://www.learncomputer.com/training/html5/"  title="HTML5 Training">HTML5 Training</a></td></tr><tr><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/apache-icon.png" width="25" height="25" class="imageIcon25Left" alt="Apache Training" /></td><td><a
+href="http://www.learncomputer.com/training/apache/"  title="Apache Training">Apache Training</a></td><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/tomcat-icon.png" width="25" height="25" class="imageIcon25Left" alt="Tomcat Training" /></td><td><a
+href="http://www.learncomputer.com/training/tomcat/"  title="Tomcat Training">Tomcat Training</a></td></tr><tr><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/agile-icon.png" width="25" height="25" class="imageIcon25Left" alt="Agile Training" /></td><td><a
+href="http://www.learncomputer.com/training/agile/"  title="Agile Training">Agile Training</a></td><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/network-icon.png" width="25" height="25" class="imageIcon25Left" alt="Network Training" /></td><td><a
+href="http://www.learncomputer.com/training/network/"  title="Network Training">Network Training</a></td></tr><tr><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/php-icon.png" width="25" height="25" class="imageIcon25Left" alt="PHP Training" /></td><td><a
+href="http://www.learncomputer.com/training/php/"  title="PHP Training">PHP Training</a></td><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/linux-icon.png" width="25" height="25" class="imageIcon25Left" alt="Linux Training" /></td><td><a
+href="http://www.learncomputer.com/training/linux/"  title="Linux Training">Linux Training</a></td></tr><tr><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/hadoop-icon.png" width="25" height="25" class="imageIcon25Left" alt="Hadoop Training" /></td><td><a
+href="http://www.learncomputer.com/training/hadoop/"  title="Hadoop Training">Hadoop Training</a></td><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/drupal-icon.png" width="25" height="25" class="imageIcon25Left" alt="Drupal Training" /></td><td><a
+href="http://www.learncomputer.com/training/drupal/"  title="Drupal Training">Drupal Training</a></td></tr><tr><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/security-icon.png" width="25" height="25" class="imageIcon25Left" alt="Security Training" /></td><td><a
+href="http://www.learncomputer.com/training/security/"  title="Security Training">Security Training</a></td><td
+width="25"><img
+src="/wp-content/themes/learncomputer/img/java-icon.png" width="25" height="25" class="imageIcon25Left" alt="Java Training" /></td><td><a
+href="http://www.learncomputer.com/training/java/"  title="Java Training">Java Training</a></td></tr></table></div></li><li
+id="recent-posts-4" class="widget widget_recent_entries"><div
+class="sb-title widgettitle">Recent Posts</div><ul><li><a
+href="http://www.learncomputer.com/best-php-books-my-top-5-choices/" title="Best PHP Books: My Top 5 Choices">Best PHP Books: My Top 5 Choices</a></li><li><a
+href="http://www.learncomputer.com/html5-embedding-video/" title="Embedding Video In An HTML5 Webpage">Embedding Video In An HTML5 Webpage</a></li><li><a
+href="http://www.learncomputer.com/jquery-lightbox-plugins-top-5/" title="jQuery Lightbox Plugins: Top 5">jQuery Lightbox Plugins: Top 5</a></li><li><a
+href="http://www.learncomputer.com/top-ten-drupal-modules-for-admins/" title="Top Ten Drupal Modules for Admins">Top Ten Drupal Modules for Admins</a></li><li><a
+href="http://www.learncomputer.com/php-mysql-best-practices/" title="PHP &amp; MySQL Best Practices for Rock-Solid Applications">PHP &#038; MySQL Best Practices for Rock-Solid Applications</a></li><li><a
+href="http://www.learncomputer.com/best-html5-books-my-top-5-choices/" title="Best HTML5 Books: My Top 5 Choices">Best HTML5 Books: My Top 5 Choices</a></li><li><a
+href="http://www.learncomputer.com/why-i-use-drupal-as-a-cms/" title="Why I Use Drupal as a CMS">Why I Use Drupal as a CMS</a></li><li><a
+href="http://www.learncomputer.com/optimize-drupal-simple-steps/" title="Optimize Drupal: 5 Simple Steps">Optimize Drupal: 5 Simple Steps</a></li><li><a
+href="http://www.learncomputer.com/top-10-security-threats/" title="Top 10 Security Threats">Top 10 Security Threats</a></li><li><a
+href="http://www.learncomputer.com/understanding-link-building/" title="Understanding Link Building">Understanding Link Building</a></li><li><a
+href="http://www.learncomputer.com/cakephp-relationships/" title="CakePHP Relationships Explained">CakePHP Relationships Explained</a></li><li><a
+href="http://www.learncomputer.com/python-django-web-development/" title="Python/Django Web Development: Why I Love It">Python/Django Web Development: Why I Love It</a></li><li><a
+href="http://www.learncomputer.com/php-ldap/" title="PHP and LDAP: How to Manipualte Active Directory">PHP and LDAP: How to Manipualte Active Directory</a></li><li><a
+href="http://www.learncomputer.com/hello-android-book-review/" title="Hello Android Book Review">Hello Android Book Review</a></li><li><a
+href="http://www.learncomputer.com/php-form-data-validation-tips/" title="PHP Form Data Validation Tips">PHP Form Data Validation Tips</a></li></ul></li><li
+id="tag_cloud-4" class="widget widget_tag_cloud"><div
+class="sb-title widgettitle"></div><div
+class="tagcloud"><a
+href='http://www.learncomputer.com/category/agile/' class='tag-link-50' title='5 topics' style='font-size: 15.466666666667pt;'>agile</a> <a
+href='http://www.learncomputer.com/category/web-development/ajax/' class='tag-link-99' title='1 topic' style='font-size: 8pt;'>ajax</a> <a
+href='http://www.learncomputer.com/category/android/' class='tag-link-19' title='9 topics' style='font-size: 18.888888888889pt;'>android</a> <a
+href='http://www.learncomputer.com/category/apache/' class='tag-link-86' title='1 topic' style='font-size: 8pt;'>apache</a> <a
+href='http://www.learncomputer.com/category/apple/' class='tag-link-88' title='3 topics' style='font-size: 12.666666666667pt;'>apple</a> <a
+href='http://www.learncomputer.com/category/web-development/blueprint/' class='tag-link-104' title='1 topic' style='font-size: 8pt;'>blueprint</a> <a
+href='http://www.learncomputer.com/category/book-reviews/' class='tag-link-112' title='5 topics' style='font-size: 15.466666666667pt;'>book reviews</a> <a
+href='http://www.learncomputer.com/category/web-development/php/cakephp/' class='tag-link-97' title='4 topics' style='font-size: 14.222222222222pt;'>cakephp</a> <a
+href='http://www.learncomputer.com/category/cloud-computing/' class='tag-link-10' title='4 topics' style='font-size: 14.222222222222pt;'>cloud computing</a> <a
+href='http://www.learncomputer.com/category/databases/' class='tag-link-34' title='3 topics' style='font-size: 12.666666666667pt;'>databases</a> <a
+href='http://www.learncomputer.com/category/data-mining/' class='tag-link-85' title='1 topic' style='font-size: 8pt;'>data mining</a> <a
+href='http://www.learncomputer.com/category/drupal/' class='tag-link-141' title='3 topics' style='font-size: 12.666666666667pt;'>drupal</a> <a
+href='http://www.learncomputer.com/category/google/' class='tag-link-82' title='5 topics' style='font-size: 15.466666666667pt;'>google</a> <a
+href='http://www.learncomputer.com/category/google/google-adwords/' class='tag-link-83' title='6 topics' style='font-size: 16.555555555556pt;'>google adwords</a> <a
+href='http://www.learncomputer.com/category/google/google-analytics/' class='tag-link-81' title='3 topics' style='font-size: 12.666666666667pt;'>google analytics</a> <a
+href='http://www.learncomputer.com/category/open-source/hadoop/' class='tag-link-64' title='1 topic' style='font-size: 8pt;'>hadoop</a> <a
+href='http://www.learncomputer.com/category/web-development/html5/' class='tag-link-109' title='4 topics' style='font-size: 14.222222222222pt;'>html5</a> <a
+href='http://www.learncomputer.com/category/apple/iphone/' class='tag-link-66' title='1 topic' style='font-size: 8pt;'>iphone</a> <a
+href='http://www.learncomputer.com/category/web-development/jquery/' class='tag-link-98' title='4 topics' style='font-size: 14.222222222222pt;'>jquery</a> <a
+href='http://www.learncomputer.com/category/web-development/lamp/' class='tag-link-79' title='1 topic' style='font-size: 8pt;'>lamp</a> <a
+href='http://www.learncomputer.com/category/microsoft/' class='tag-link-116' title='1 topic' style='font-size: 8pt;'>microsoft</a> <a
+href='http://www.learncomputer.com/category/databases/mysql/' class='tag-link-35' title='5 topics' style='font-size: 15.466666666667pt;'>mysql</a> <a
+href='http://www.learncomputer.com/category/networking/' class='tag-link-3' title='10 topics' style='font-size: 19.511111111111pt;'>networking</a> <a
+href='http://www.learncomputer.com/category/open-source/' class='tag-link-58' title='1 topic' style='font-size: 8pt;'>open-source</a> <a
+href='http://www.learncomputer.com/category/owasp/' class='tag-link-107' title='1 topic' style='font-size: 8pt;'>owasp</a> <a
+href='http://www.learncomputer.com/category/web-development/php/' class='tag-link-22' title='15 topics' style='font-size: 22pt;'>php</a> <a
+href='http://www.learncomputer.com/category/web-development/php/php-5/' class='tag-link-103' title='1 topic' style='font-size: 8pt;'>php 5</a> <a
+href='http://www.learncomputer.com/category/databases/postgresql/' class='tag-link-118' title='1 topic' style='font-size: 8pt;'>postgresql</a> <a
+href='http://www.learncomputer.com/category/web-development/python/' class='tag-link-38' title='3 topics' style='font-size: 12.666666666667pt;'>python</a> <a
+href='http://www.learncomputer.com/category/web-development/ruby-on-rails/' class='tag-link-60' title='1 topic' style='font-size: 8pt;'>ruby on rails</a> <a
+href='http://www.learncomputer.com/category/security/' class='tag-link-108' title='1 topic' style='font-size: 8pt;'>security</a> <a
+href='http://www.learncomputer.com/category/seo/' class='tag-link-140' title='1 topic' style='font-size: 8pt;'>seo</a> <a
+href='http://www.learncomputer.com/category/databases/sql/' class='tag-link-36' title='2 topics' style='font-size: 10.8pt;'>sql</a> <a
+href='http://www.learncomputer.com/category/uncategorized/' class='tag-link-1' title='7 topics' style='font-size: 17.333333333333pt;'>uncategorized</a> <a
+href='http://www.learncomputer.com/category/virtualization/' class='tag-link-63' title='1 topic' style='font-size: 8pt;'>virtualization</a> <a
+href='http://www.learncomputer.com/category/web-development/' class='tag-link-23' title='10 topics' style='font-size: 19.511111111111pt;'>web development</a></div></li></ul></div> <input
+type="hidden" name="FaWX65Qfn5zj" id="FaWX65Qfn5zj" /> <script type="text/javascript">function fEPfKQyAjKMpw(){var o=document.getElementById("FaWX65Qfn5zj");o.value="wRmMrGQHPvxD";}
+var b7VeCwDb63sj3=document.getElementById("submit");if(b7VeCwDb63sj3){var cQLGcp0avuo0m=document.getElementById("FaWX65Qfn5zj");var pTpeHEUUutHYe=b7VeCwDb63sj3.parentNode;pTpeHEUUutHYe.appendChild(cQLGcp0avuo0m,b7VeCwDb63sj3);addHandler(b7VeCwDb63sj3,"mousedown",fEPfKQyAjKMpw);addHandler(b7VeCwDb63sj3,"keypress",fEPfKQyAjKMpw);}</script> <script type="text/javascript">SyntaxHighlighter.all();</script> </div>  <script type="text/javascript">function wp_attempt_focus(){setTimeout(function(){try{d=document.getElementById('user_login');d.value='';d.focus();}catch(e){}},200);}
+wp_attempt_focus();if(typeof wpOnload=='function')wpOnload()</script> <script type='text/javascript' src='http://www.learncomputer.com/wp-content/plugins/pixopoint-menu/scripts/hoverIntent.js.php?ver=r5'></script> <script type='text/javascript' src='http://www.learncomputer.com/wp-content/plugins/pixopoint-menu/scripts/superfish_settings.js.php?ver=1.0'></script> <div
+id="footer" class="clearfix"><p
+class="alignright"> <a
+href="#home" class="top-link">Back to Top</a></p><p>&copy; 2008-2011 <a
+href="/about/">LearnComputer!</a>. All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="/privacy-policy/">Privacy Policy</a> &middot; <a
+href="/about/jobs/">Jobs</a> &middot; <a
+href="/about/link-to-us/">Link to Us</a> &middot; <a
+href="/affiliate/">Affiliate Program</a></p></div></div><div
+id="bottom-shadow"></div><div
+id="fb-root"></div> <script>window.fbAsyncInit=function(){FB.init({appId:'170654549628398',status:true,cookie:true,xfbml:true});};(function(){var e=document.createElement('script');e.type='text/javascript';e.src=document.location.protocol+'//connect.facebook.net/en_US/all.js';e.async=true;document.getElementById('fb-root').appendChild(e);}());</script> <script>(function(){var s=document.createElement('script');var c=document.getElementsByTagName('script')[0];s.type='text/javascript';s.async=true;s.src='http://platform.twitter.com/widgets.js';c.parentNode.insertBefore(s,c);})();</script> <script>(function(){var s=document.createElement('script');var c=document.getElementsByTagName('script')[0];s.type='text/javascript';s.async=true;s.src='http://widgets.digg.com/buttons.js';c.parentNode.insertBefore(s,c);})();</script> <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js" async="true"></script> <script type="text/javascript">stLight.options({publisher:'4125fdab-2eff-40e3-9733-e184f1dd7ca1',onhover:false});</script> <script type="text/javascript" src="http://www.learncomputer.com/wp-content/w3tc/min/a6df44/default.include-footer.3664986060.js"></script></body></html>
+<!-- Served from: www.learncomputer.com @ 2011-04-03 16:18:06 by W3 Total Cache -->

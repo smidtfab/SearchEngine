@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<meta name="keywords" content="Darpa Network Challenge" />		
+	<title>Darpa Network Challenge: World News, Hot Tweets and Blog buzz - Liquida</title>
+	
+	<link rel="canonical" href="http://www.liquida.com/darpa-network-challenge/" />	<link rel="icon" href="http://www.liquida.com/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="http://www.liquida.com/favicon.ico" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" href="http://www.liquida.com/opensearch_desc.xml" title="Liquida Search" />
+		<link rel="alternate" type="application/atom+xml" title="Liquida  - Atom - RSS feed 'darpa-network-challenge'" href="http://www.liquida.com/darpa-network-challenge.feed/" />
+	<link rel="stylesheet" type="text/css" href="/css2/serp.css" media="all" />
+	<!--[if IE 6]>
+		<link rel="stylesheet" href="/css2/home-ie6.css" type="text/css" />
+	<![endif]-->	
+	<script src="/js/search5.js" type="text/javascript"></script>
+	 
+	<script src="/js2/gAdsense.js" type="text/javascript"></script>
+	<script src="/js2/gAdsenserender.js" type="text/javascript"></script>
+	<script>
+
+	function baloon(a) {
+		var select = getNextSibling(a);
+		var explain_id = 'e'+a.id.substr(1);
+		if (select.style.display == 'none' || select.style.display == '') {
+			select.style.display = 'block';
+			$(explain_id).innerHTML = "Our semantic analysis measures the mood of a post and the author's perspective on a specific topic by analyzing the adjectives present in a text and weighing them appropriately. The purpose of this analysis is to understand how something is being talked about and does not imply a negative or positive judgment. For example, if something unpleasant happens to a celebrity the Sentiment for that post will probably be 'Very bad', but this does not imply that the author has a negative opinion of the person.";
+		} else {
+			select.style.display = 'none';
+			$(explain_id).innerHTML = '';
+		}
+
+			
+	}
+	
+	var photopanelwidth = 648;
+	var currpanel=1;
+	var fromPos = -photopanelwidth;		
+	var panels = 0;
+	 
+
+	
+	function imgLoop() {
+		
+
+		var prev_loopPanel = document.createElement('div');
+		prev_loopPanel.setAttribute('id','sp'+(panels+1));
+		prev_loopPanel.className = 'slidepanel';
+		prev_loopPanel.innerHTML = $('sp'+panels).innerHTML;
+		//prev_loopPanel.inject('sp1','before');
+		$('slidepanels').insertBefore(prev_loopPanel,$('slidepanels').firstChild);
+		
+		var next_loopPanel = document.createElement('div');
+		next_loopPanel.setAttribute('id','sp'+(panels+2));
+		next_loopPanel.className = 'slidepanel';
+		next_loopPanel.innerHTML = $('sp1').innerHTML;
+		//next_loopPanel.inject('sp'+panels, 'after');
+		$('slidepanels').appendChild(next_loopPanel);		
+	}	
+	
+	
+	function nextPanel(){
+		if (currpanel < panels+1) {
+			toPos = fromPos - photopanelwidth;
+			var posChange = new Fx.Style('slidepanels', 'left', {
+				duration: 750
+			});
+			posChange.start(fromPos, toPos).chain(function() {
+				if (currpanel == panels+1) {
+					currpanel = 1;
+					var newPos = -photopanelwidth;
+					$('slidepanels').setStyle('left',newPos);
+					fromPos = newPos;								
+				}
+			});
+			fromPos = toPos;
+			currpanel++;
+		}
+	}
+	function prevPanel(){
+		if (currpanel > 0) {
+			toPos = fromPos + photopanelwidth;
+			var posChange = new Fx.Style('slidepanels', 'left', {
+				duration: 750
+				
+			});
+			posChange.start(fromPos, toPos).chain(function() {
+				if (currpanel == 1) {
+					currpanel = panels;
+					var newPos = panels*photopanelwidth;
+					$('slidepanels').setStyle('left',-newPos);
+					fromPos = newPos*-1;			
+				} else {
+					fromPos = toPos;
+					currpanel--;
+				}
+			});
+		}
+	}
+	function gbuzzPopup(surl) {
+		newwindow=window.open(surl,'Condividi','width=560,height=300');
+		if (window.focus) {newwindow.focus()}
+	}
+
+	function ct_over() {
+		if (this.parentNode.className!='on' && this.parentNode.className!='topCt on') {
+			this.parentNode.className = 'over';
+		}
+		
+	}
+
+	function ct_normal() {
+		if (this.parentNode.className!='on' && this.parentNode.className!='topCt on') {		
+			this.parentNode.className = '';
+		}
+	}	
+
+	adSense.adfc_channel='8376875266';
+	adSense.adfc_query='darpa+network+challenge';
+	adSense.forContent('it', 'text', 4);
+
+	var filter_containers=new Array('cats','locs','tfs','srs');
+	window.addEvent('domready', function(){
+
+		if (panels>0) imgLoop();
+		
+		for (x = 0; x < filter_containers.length; x++) {
+			var conts = $$('.'+filter_containers[x]);
+			for (a = 0; a < conts.length; a++) {
+				var toA = $$('#'+filter_containers[x]+'-'+a+' em');
+				var newA = new Element('a', {
+					'href': '#',
+					'class': toA[0].className,
+					'rel': 'nofollow',					
+					'id': toA[0].id,
+					'events': {
+						'click': function(event){
+							if (event.preventDefault) 
+								event.preventDefault();
+							event.returnValue = false;
+							var to_url = dbsixtyfour(this.id);
+							location.href = to_url;
+						}
+					}
+				});		
+				newA.innerHTML = toA[0].innerHTML;		
+				conts[a].empty();
+				conts[a].appendChild(newA);
+			}
+		}
+
+		var ct_filters = $$('.ct a');
+		ct_filters.addEvent('mouseenter',ct_over);
+		ct_filters.addEvent('mouseleave',ct_normal);
+		
+
+	});
+	
+	</script>
+</head><body>
+		
+	<div class="top">
+			
+	<div class="topnav">
+		<h3><a href="http://www.liquida.com/hot-topics/" title="The topics the web is talking about">Hot Topics</a></h3>
+								<a title="tony blair" href="http://www.liquida.com/tony-blair/">tony blair</a>
+					<div class="sep">.</div>			<a title="hu jintao" href="http://www.liquida.com/hu-jintao/">hu jintao</a>
+					<div class="sep">.</div>			<a title="ed balls" href="http://www.liquida.com/ed-balls/">ed balls</a>
+					<div class="sep">.</div>			<a title="fbi" href="http://www.liquida.com/fbi/">fbi</a>
+					<div class="sep">.</div>			<a title="net neutrality" href="http://www.liquida.com/net-neutrality/">net neutrality</a>
+					<div class="sep">.</div>			<a title="eric schmidt" href="http://www.liquida.com/eric-schmidt/">eric schmidt</a>
+					<div class="sep">.</div>			<a title="sarah palin" href="http://www.liquida.com/sarah-palin/">sarah palin</a>
+					<div class="sep">.</div>			<a title="larry page" href="http://www.liquida.com/larry-page/">larry page</a>
+			</div>	
+
+		
+	</div>
+	
+	<div class="attacco">
+	<div class="attaccosx"></div>
+	<div class="attaccoctrnoresults"></div>			
+	<div class="attaccodx"></div>
+</div>	<div class="container">
+           	
+    	<div class="content"><div class="af" id="af">
+	<a id="afHandle" title="" href="">Advanced filters</a>
+	<div id="afcont" class="afcont" style="display: none;">
+		<div class="afcontfix"></div>
+
+				<dl>
+			<dt>Categories</dt>
+			<dd><em class="on">All categories</em></dd>
+									<dd class="cats" id="cats-0"><em id="L3NlYXJjaC9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS9pbnRlcm5ldC8="><span>(20)</span>Internet</em></dd>
+											<dd class="cats" id="cats-1"><em id="L3NlYXJjaC9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS9uZXdzLw=="><span>(5)</span>News</em></dd>
+											<dd class="cats" id="cats-2"><em id="L3NlYXJjaC9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS9zcG9ydHMv"><span>(4)</span>Sports</em></dd>
+											<dd class="cats" id="cats-3"><em id="L3NlYXJjaC9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS9nYW1lcy8="><span>(3)</span>Games</em></dd>
+											
+		</dl>
+							<dl>
+				<dt>Time span</dt>
+									<dd class="tfs" id="tfs-0"><em id="aHR0cDovL3d3dy5saXF1aWRhLmNvbS9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS8=" class="on">Any time</em></dd>	
+					<dd class="tfs" id="tfs-1"><em id="aHR0cDovL3d3dy5saXF1aWRhLmNvbS9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS8/ZD0x">Last 24 Hours</em></dd>
+					<dd class="tfs" id="tfs-2"><em id="aHR0cDovL3d3dy5saXF1aWRhLmNvbS9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS8/ZD03">Last week</em></dd>
+					<dd class="tfs" id="tfs-3"><em id="aHR0cDovL3d3dy5saXF1aWRhLmNvbS9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS8/ZD0zMA==">Last month</em></dd>
+					<dd class="tfs" id="tfs-4"><em id="aHR0cDovL3d3dy5saXF1aWRhLmNvbS9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS8/ZD05MA==">Last 3 months</em></dd>
+					<dd class="tfs" id="tfs-5"><em id="aHR0cDovL3d3dy5saXF1aWRhLmNvbS9kYXJwYS1uZXR3b3JrLWNoYWxsZW5nZS8/ZD0xODA=">Last 6 months</em></dd>	
+			</dl>
+				<dl class="ls">
+			<dt>Attributes</dt>
+							<dd><em class="on">Relevance</em></dd>
+				<dd class="srs" id="srs-0"><em id="L2RhcnBhLW5ldHdvcmstY2hhbGxlbmdlL2xhdGVzdC1uZXdzLw==">Date</em></dd>
+									<dd class="srs" id="srs-1"><em id="L2RhcnBhLW5ldHdvcmstY2hhbGxlbmdlL3NlbnRpbWVudC1nb29kLz9kPTE4MA==">Sentiment good</em></dd>
+					<dd class="srs" id="srs-2"><em id="L2RhcnBhLW5ldHdvcmstY2hhbGxlbmdlL3NlbnRpbWVudC1iYWQvP2Q9MTgw">Sentiment bad</em></dd>
+				
+					</dl>
+		<a title="" href="javascript:afHide();" class="close">close</a>
+	</div>
+</div><div class="main">
+	<!-- google_ad_section_start -->
+	
+			<div class="intro">
+				<h1>Darpa Network Challenge</h1>
+				<iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://www.facebook.com/plugins/like.php?locale=en_US&amp;href=http://www.liquida.com/darpa-network-challenge/&amp;layout=button_count&amp;show_faces=false&amp;width=115&amp;action=like&amp;colorscheme=light" class="fblike" id="fblike" name="fblike"></iframe>
+							</div>
+			
+	 
+
+
+
+
+
+<ol class="items">		<!-- id: 2745353 -->
+		<!-- iid: 7c42cd75cb5c2833e29c8a38020e0f19 -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2745353/" title="Read: Inflated Expectations: Crowd-Sourcing Comes of Age in the DARPA Network Challenge">Inflated Expectations: Crowd-Sourcing Comes of Age in the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong></a></h2>
+			</div>
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/4126/60-second-science-blog/" title="60-Second Science Blog">60-Second Science Blog</a> 
+							</div>			
+			<p class="iP">December 21, 2009 &mdash; The U.S. Defense Advanced Research Projects Agency's (<strong>DARPA</strong>) <strong>Network</strong> <strong>Challenge</strong> earlier this month demonstrated that <a href="http://www.liquida.com/social-networks/" title="social networks">social networks</a>, more than being platforms for self-promotion, can be also be highly effective tools for rapidly gathering and disseminating very precise...</p>
+						
+					</li>
+			<!-- id: 2305697 -->
+		<!-- iid: 43d3ef121f167faceef3a91b315931d4 -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2305697/" title="Read: DARPA Network Challenge Lasts All of 9 Hours"><strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong> Lasts All of 9 Hours</a></h2>
+			</div>
+						<div class="iInfo">
+								by <a class="by" href="http://www.liquida.com/blog/25493/slashdot-stories/" title="Slashdot Stories">Slashdot Stories</a> 
+							</div>			
+			<p class="iP">December 06, 2009 &mdash; stillnotelf writes "A team based at <a href="http://www.liquida.com/mit/" title="MIT">MIT</a> has won the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong>. <strong>DARPA</strong> notes: 'The Challenge has captured the imagination of people around the world, is rich with scientific intrigue, and, we hope, is part of a growing "renaissance of wonder"...</p>
+						
+					</li>
+			<!-- id: 2286459 -->
+		<!-- iid: a8e28348e032c7af983714ced4795082 -->
+		<!-- sent: 6,3 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2286459/" title="Read: Darpa's Network Challenge"><strong>Darpa's</strong> <strong>Network</strong> <strong>Challenge</strong></a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2286459/" title="Read: Darpa's Network Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/3/3d/2286459_balloon_small.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/1846/make-magazine-blog/" title="MAKE Magazine Blog">MAKE Magazine Blog</a> 
+				 
+					with a 
+					<span class="baloonCont" style="z-index:898">
+						<a id="a-898" class="iSentLink mood-5" href="javascript:void(0)" onmouseover="baloon(this)" onmouseout="baloon(this)" title=""><b>VERY GOOD</b></a>
+						<div class="baloon">
+							<div class="baloon-top"></div>
+							<div class="baloon-cont">
+								<strong class="tit">Overall mood: <em class="mood-5">VERY GOOD!</em></strong>
+								<span class="elements">
+									<span><strong>Postitive adjectives found in the text</strong>: happy, timely, smart.</span>																		<span><strong>Most frequent adjectives</strong>: happy.</span>									
+								</span>
+								<div id="e-898"></div>
+							</div>
+						</div>					
+					</span> sentiment
+							</div>			
+			<p class="iP">December 05, 2009 &mdash; Reminder - <strong>Darpa's</strong> <strong>Network</strong> <strong>Challenge</strong> is in 24 hours... To mark the 40th anniversary of the <a href="http://www.liquida.com/internet/" title="Internet">Internet</a>, <strong>DARPA</strong> has announced the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong>, a competition that will explore...</p>
+						</div>
+						
+					</li>
+			<!-- id: 2347216 -->
+		<!-- iid: f9bbbdc3533be086f8fd061a1a704ef2 -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2347216/" title="Read: MIT mobilized crowd with cash to win DARPA Network Challenge">MIT mobilized crowd with cash to win <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong></a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2347216/" title="Read: MIT mobilized crowd with cash to win DARPA Network Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/5/5f/2347216_BalloonMap.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+								by <a class="by" href="http://www.liquida.com/blog/1170/ars-technica/" title="Ars Technica">Ars Technica</a> 
+							</div>			
+			<p class="iP">December 08, 2009 &mdash; The Defense Advanced Research Projects Agency (<strong>DARPA</strong>) launched a contest this month to celebrate the 40th anniversary of ARPANet, the first packet switching <strong>network</strong>. The contest, called the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong>,...</p>
+						</div>
+						
+					</li>
+			<!-- id: 2320120 -->
+		<!-- iid: b1c23bc22365f9f1b2f12bef30332131 -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2320120/" title="Read: MIT Team Spots 10 Red Balloons in 9 Hours, Wins $40K in DARPA Network Challenge">MIT Team Spots 10 Red Balloons in 9 Hours, Wins $40K in <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong></a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2320120/" title="Read: MIT Team Spots 10 Red Balloons in 9 Hours, Wins $40K in DARPA Network Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/c/c6/2320120_openballoonproject.png);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/4097/programmableweb/" title="ProgrammableWeb">ProgrammableWeb</a> 
+							</div>			
+			<p class="iP">December 07, 2009 &mdash;  networks. As the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong> homepage states: To mark the 40th anniversary of the <a href="http://www.liquida.com/internet/" title="Internet">Internet</a>,  <strong>DARPA</strong> has announced the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong>, a competition that will...</p>
+						</div>
+						
+					</li>
+			<!-- id: 2282511 -->
+		<!-- iid: 5d9ef762677087decbbdddc25536a7a5 -->
+		<!-- sent: 3,77 -->			</ol>
+	<script>
+	var panels=3;
+	</script>
+	<div class="photoBlogs">
+		<div class="pbTop">
+			<h3><a href="http://www.liquida.com/darpa-network-challenge/photo/" title="View all photos about Darpa Network Challenge">Photos <em>on "Darpa Network Challenge"</em></a></h3>
+			<a class="va" href="http://www.liquida.com/darpa-network-challenge/photo/" title="View all photos about Darpa Network Challenge">View all &raquo;</a>
+		</div>
+		<div class="slidesx">
+			<a id="slidesxarr" class="off" href="javascript:prevPanel()" title=""></a>
+		</div>
+		<div class="slidecont">
+			<div class="slidepanels" id="slidepanels" style="width:7410px">
+				<div class="slidepanel" id="sp1">
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2347216/" title="MIT mobilized crowd with cash to win DARPA Network Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/5/5f/2347216_BalloonMap.jpg);"></span>
+							</a>
+							<p class="date">December 08, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2347216/" title="MIT mobilized crowd with cash to win DARPA Network Challenge">MIT mobilized crowd with cash...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/1170/ars-technica/" title="Ars Technica">Ars Technica</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2320120/" title="MIT Team Spots 10 Red Balloons in 9 Hours, Wins $40K in DARPA Network Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/c/c6/2320120_openballoonproject.png);"></span>
+							</a>
+							<p class="date">December 07, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2320120/" title="MIT Team Spots 10 Red Balloons in 9 Hours, Wins $40K in DARPA Network Challenge">MIT Team Spots 10 Red...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/4097/programmableweb/" title="ProgrammableWeb">ProgrammableWeb</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2286459/" title="Darpa's Network Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/3/3d/2286459_balloon_small.jpg);"></span>
+							</a>
+							<p class="date">December 05, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2286459/" title="Darpa's Network Challenge">Darpa's Network Challenge</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/1846/make-magazine-blog/" title="MAKE Magazine Blog">MAKE Magazine Blog</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2249497/" title="DARPA Network Challenge - Not Networks, but maybe a Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/d/d8/2249497_how_it_works.jpg);"></span>
+							</a>
+							<p class="date">December 04, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2249497/" title="DARPA Network Challenge - Not Networks, but maybe a Challenge">DARPA Network Challenge - Not...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/23873/complexity-and-social-networks-blog/" title="Complexity and Social Networks Blog">Complexity and Social Networks Blog</a></span>
+						</div>							
+				
+												</div><div class="slidepanel" id="sp2">
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2287324/" title="Darpa’s Network Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/c/c6/2287324_balloon_small.jpg);"></span>
+							</a>
+							<p class="date">December 05, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2287324/" title="Darpa’s Network Challenge">Darpa’s Network Challenge</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/42296/toys-gadget/" title="Toys gadget">Toys gadget</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2314156/" title="MIT Team Wins DARPA Balloon Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/a/a4/2314156_darpa-balloon.jpg);"></span>
+							</a>
+							<p class="date">December 07, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2314156/" title="MIT Team Wins DARPA Balloon Challenge">MIT Team Wins DARPA Balloon...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/1209/mashable/" title="Mashable">Mashable</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/2332045/" title="MIT Wins DARPA Balloon Challenge" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/d/dc/2332045_DARPA_Balloon_Challenge.jpg);"></span>
+							</a>
+							<p class="date">December 07, 2009</p>
+							<h2><a href="http://www.liquida.com/page/2332045/" title="MIT Wins DARPA Balloon Challenge">MIT Wins DARPA Balloon Challenge</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/1258/geralog/" title="geralog">geralog</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/12496345/" title="What You Missed at PopTech, Day Three" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/4/45/12496345_full_1288033069poptech-walkingstick.jpeg);"></span>
+							</a>
+							<p class="date">October 25, 2010</p>
+							<h2><a href="http://www.liquida.com/page/12496345/" title="What You Missed at PopTech, Day Three">What You Missed at PopTech,...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/4032/good-blog/" title="GOOD Blog">GOOD Blog</a></span>
+						</div>							
+				
+												</div><div class="slidepanel" id="sp3">
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/10283885/" title="Applying the lessons of Enterprise 2.0 to Gov 2.0" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/1/13/10283885_andrew_mcafee1-thumb-386x349.jpg);"></span>
+							</a>
+							<p class="date">August 27, 2010</p>
+							<h2><a href="http://www.liquida.com/page/10283885/" title="Applying the lessons of Enterprise 2.0 to Gov 2.0">Applying the lessons of...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/25636/o-relly-radar/" title="O'Relly Radar">O'Relly Radar</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/9196522/" title="Alexander Howard: Will Social Security Get Social Media in the Government 2.0 Age?" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/b/bc/9196522_org-to-gov-ss-thumb-486x364.jpg);"></span>
+							</a>
+							<p class="date">July 27, 2010</p>
+							<h2><a href="http://www.liquida.com/page/9196522/" title="Alexander Howard: Will Social Security Get Social Media in the Government 2.0 Age?">Alexander Howard: Will Social...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/2553/politics-the-huffington-post/" title="Politics - The Huffington Post">Politics - The Huffington Post</a></span>
+						</div>							
+				
+												<div class="slidesep"></div>
+										
+						<div class="spitem">
+							<a href="http://www.liquida.com/page/4606929/" title="Have you voted for a Pepsi Refresh Project? Check out Elastic Park which needs your vote!" class="slideimg">
+								<span style="background-image: url(http://steliq.com/c/lm/2/28/4606929_6a00d8341c011b53ef0120a8d0d209970b-320wi);"></span>
+							</a>
+							<p class="date">February 25, 2010</p>
+							<h2><a href="http://www.liquida.com/page/4606929/" title="Have you voted for a Pepsi Refresh Project? Check out Elastic Park which needs your vote!">Have you voted for a Pepsi...</a></h2>
+							<span class="by">by: <a href="http://www.liquida.com/blog/28924/lip-sticking/" title="Lip-Sticking">Lip-Sticking</a></span>
+						</div>							
+				
+								</div>		
+			</div>
+		</div>
+		<div class="slidedx">
+			<a id="slidedxarr" href="javascript:nextPanel()" title=""></a>
+		</div>
+	</div>
+	<ol class="items">
+		
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2282511/" title="Read: MIT and the DARPA Network Challenge">MIT and the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong></a></h2>
+			</div>
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/25493/slashdot-stories/" title="Slashdot Stories">Slashdot Stories</a> 
+				 
+					with a 
+					<span class="baloonCont" style="z-index:895">
+						<a id="a-895" class="iSentLink mood-5" href="javascript:void(0)" onmouseover="baloon(this)" onmouseout="baloon(this)" title=""><b>VERY GOOD</b></a>
+						<div class="baloon">
+							<div class="baloon-top"></div>
+							<div class="baloon-cont">
+								<strong class="tit">Overall mood: <em class="mood-5">VERY GOOD!</em></strong>
+								<span class="elements">
+									<span><strong>Postitive adjectives found in the text</strong>: grand, unique, effective.</span>																											
+								</span>
+								<div id="e-895"></div>
+							</div>
+						</div>					
+					</span> sentiment
+							</div>			
+			<p class="iP">December 04, 2009 &mdash; mit_team writes "As you might have heard, <strong>DARPA</strong> has announced a <strong>network</strong> <strong>challenge</strong> in the vein of the <strong>DARPA</strong> grand challenge. In this challenge, participants are tasked with finding 10 red <a href="http://www.liquida.com/weather/" title="weather">weather</a> balloons distributed throughout the continental US for 8 hours...</p>
+						
+					</li>
+			<!-- id: 2249497 -->
+		<!-- iid: 8c4da47dfbcaf433518227ce4b8b6b0d -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2249497/" title="Read: DARPA Network Challenge - Not Networks, but maybe a Challenge"><strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong> - Not Networks, but maybe a Challenge</a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2249497/" title="Read: DARPA Network Challenge - Not Networks, but maybe a Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/d/d8/2249497_how_it_works.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+								by <a class="by" href="http://www.liquida.com/blog/23873/complexity-and-social-networks-blog/" title="Complexity and Social Networks Blog">Complexity and Social...</a> 
+							</div>			
+			<p class="iP">December 04, 2009 &mdash; As many of you know, <strong>DARPA</strong> has announced a <strong>network</strong> <strong>challenge</strong> in the vein of the <strong>DARPA</strong> grand challenge (although for much less money). In this <strong>challenge</strong>, participants are tasked with finding 10 red <a href="http://www.liquida.com/weather/" title="weather">weather</a> balloons...</p>
+						</div>
+						
+					</li>
+			<!-- id: 2302115 -->
+		<!-- iid: 3062dfde4ab4eefd4c837a6de0c23cb5 -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2302115/" title="Read: DARPA Network Challenge Winners - the MIT Team!"><strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong> Winners - the MIT Team!</a></h2>
+			</div>
+						<div class="iInfo">
+								by <a class="by" href="http://www.liquida.com/blog/23873/complexity-and-social-networks-blog/" title="Complexity and Social Networks Blog">Complexity and Social...</a> 
+							</div>			
+			<p class="iP">December 06, 2009 &mdash; Many of you have seen <strong>DARPA's</strong> announcement that the team from the Human Dynamics Group at the Media Lab won the <strong>Network</strong> <strong>Challenge</strong>! I recently blogged about the team's approach a few days ago, and I want to offer my congratulations to the whole team. It's pretty amazing that on...</p>
+						
+					</li>
+			<!-- id: 2287324 -->
+		<!-- iid: 9a0fa9ec426575879e6d6a62b8c6d621 -->
+		<!-- sent: 6,3 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2287324/" title="Read: Darpa’s Network Challenge"><strong>Darpa</strong>’s <strong>Network</strong> <strong>Challenge</strong></a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2287324/" title="Read: Darpa’s Network Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/c/c6/2287324_balloon_small.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/42296/toys-gadget/" title="Toys gadget">Toys Gadget</a> 
+				 
+					with a 
+					<span class="baloonCont" style="z-index:892">
+						<a id="a-892" class="iSentLink mood-5" href="javascript:void(0)" onmouseover="baloon(this)" onmouseout="baloon(this)" title=""><b>VERY GOOD</b></a>
+						<div class="baloon">
+							<div class="baloon-top"></div>
+							<div class="baloon-cont">
+								<strong class="tit">Overall mood: <em class="mood-5">VERY GOOD!</em></strong>
+								<span class="elements">
+									<span><strong>Postitive adjectives found in the text</strong>: happy, timely, smart.</span>																		<span><strong>Most frequent adjectives</strong>: happy.</span>									
+								</span>
+								<div id="e-892"></div>
+							</div>
+						</div>					
+					</span> sentiment
+							</div>			
+			<p class="iP">December 05, 2009 &mdash; Reminder - <strong>Darpa's</strong> <strong>Network</strong> <strong>Challenge</strong> is in 24 hours... To mark the 40th anniversary of the <a href="http://www.liquida.com/internet/" title="Internet">Internet</a>, <strong>DARPA</strong> has announced the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong>, a competition that will explore...</p>
+						</div>
+						
+					</li>
+			<!-- id: 2314156 -->
+		<!-- iid: 962a71450712b480a8f93b39e2cae87e -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2314156/" title="Read: MIT Team Wins DARPA Balloon Challenge">MIT Team Wins DARPA Balloon Challenge</a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2314156/" title="Read: MIT Team Wins DARPA Balloon Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/a/a4/2314156_darpa-balloon.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/1209/mashable/" title="Mashable">Mashable</a> 
+							</div>			
+			<p class="iP">December 07, 2009 &mdash; On December 5, 1969, the entire 4-node network for ARPANET was completed, building on the first host-to-host connection from some months earlier. The technical core for what would become the <a href="http://www.liquida.com/internet/" title="Internet">Internet</a> was born. Forty years later, the Defense Advanced Research Projects Agency (DARPA) kicked off a...</p>
+						</div>
+						
+					</li>
+			<!-- id: 2332045 -->
+		<!-- iid: 9eb4f0b4293323b12c42029d62152cbf -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/2332045/" title="Read: MIT Wins DARPA Balloon Challenge">MIT Wins DARPA Balloon Challenge</a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/2332045/" title="Read: MIT Wins DARPA Balloon Challenge">
+				<span style="background-image:url(http://steliq.com/c/ls/d/dc/2332045_DARPA_Balloon_Challenge.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/internet/">Internet</a> 				by <a class="by" href="http://www.liquida.com/blog/1258/geralog/" title="geralog">Geralog</a> 
+							</div>			
+			<p class="iP">December 07, 2009 &mdash; A group of <a href="http://www.liquida.com/mit/" title="MIT">MIT</a> students won <strong>DARPA's</strong> $40,000 <strong>Network</strong> <strong>Challenge</strong> by being the first to submit the locations of 10 moored, red, 8-foot <a href="http://www.liquida.com/weather/" title="weather">weather</a> balloons at 10 fixed locations across the continental U.S. The team accomplished the goal in just less...</p>
+						</div>
+						
+					</li>
+			<!-- id: 18546035 -->
+		<!-- iid: f1eaaac69ca513f8fa112bab3276ffa6 -->
+		<!-- sent: 999,99 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/18546035/" title="Read: Rapid Fire: 2011-03-14">Rapid Fire: 2011-03-14</a></h2>
+			</div>
+						<div class="iInfo">
+				in <a class="iCat" href="/news/">News</a> 				by <a class="by" href="http://www.liquida.com/blog/33449/defense-industry-daily/" title="Defense Industry Daily">Defense Industry Daily</a> 
+							</div>			
+			<p class="iP">March 13, 2011 &mdash;  1000 Zumwalt Class Destroyer Program Office. <a href="http://www.liquida.com/us-army/" title="US Army">US Army</a> issues a sources-sought notice for RSTA components for Cerberus portable sensor tower, which is used at forward operating bases. <strong>DARPA</strong> kicks off voting for eXperimental Crowd-derived Combat-support Vehicle Design <strong>Challenge</strong>.</p>
+						
+					</li>
+			<!-- id: 12496345 -->
+		<!-- iid: 8ea90329060dfacb16710e32e38e6fc6 -->
+		<!-- sent: 2,06 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/12496345/" title="Read: What You Missed at PopTech, Day Three">What You Missed at PopTech, Day Three</a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/12496345/" title="Read: What You Missed at PopTech, Day Three">
+				<span style="background-image:url(http://steliq.com/c/ls/4/45/12496345_full_1288033069poptech-walkingstick.jpeg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+								by <a class="by" href="http://www.liquida.com/blog/4032/good-blog/" title="GOOD Blog">GOOD Blog</a> 
+				 
+					with a 
+					<span class="baloonCont" style="z-index:888">
+						<a id="a-888" class="iSentLink mood-4" href="javascript:void(0)" onmouseover="baloon(this)" onmouseout="baloon(this)" title=""><b>GOOD</b></a>
+						<div class="baloon">
+							<div class="baloon-top"></div>
+							<div class="baloon-cont">
+								<strong class="tit">Overall mood: <em class="mood-4">GOOD!</em></strong>
+								<span class="elements">
+									<span><strong>Postitive adjectives found in the text</strong>: talented, extraordinary, brilliant.</span>									<span><strong>Negative adjectives found in the text</strong>: jittery, bad, blind.</span>																		
+								</span>
+								<div id="e-888"></div>
+							</div>
+						</div>					
+					</span> sentiment
+							</div>			
+			<p class="iP">October 25, 2010 &mdash;  extraordinary is that the three girls developed the technology at a UN-sponsored school for <a href="http://www.liquida.com/palestinian-refugees/" title="Palestinian refugees">Palestinian refugees</a> in the West Bank. Riley Crane won the 2009 <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong> using the Internet and social networking to find 10 weather...</p>
+						</div>
+						
+					</li>
+			<!-- id: 10283885 -->
+		<!-- iid: 441547b6a8a1d5d58bccf6eb74be9232 -->
+		<!-- sent: 4,4 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/10283885/" title="Read: Applying the lessons of Enterprise 2.0 to Gov 2.0">Applying the lessons of Enterprise 2.0 to Gov 2.0</a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/10283885/" title="Read: Applying the lessons of Enterprise 2.0 to Gov 2.0">
+				<span style="background-image:url(http://steliq.com/c/ls/1/13/10283885_andrew_mcafee1-thumb-386x349.jpg);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/news/">News</a> 				by <a class="by" href="http://www.liquida.com/blog/25636/o-relly-radar/" title="O'Relly Radar">O'Relly Radar</a> 
+				 
+					with a 
+					<span class="baloonCont" style="z-index:887">
+						<a id="a-887" class="iSentLink mood-5" href="javascript:void(0)" onmouseover="baloon(this)" onmouseout="baloon(this)" title=""><b>VERY GOOD</b></a>
+						<div class="baloon">
+							<div class="baloon-top"></div>
+							<div class="baloon-cont">
+								<strong class="tit">Overall mood: <em class="mood-5">VERY GOOD!</em></strong>
+								<span class="elements">
+									<span><strong>Postitive adjectives found in the text</strong>: collaborative, effective, tough.</span>																		<span><strong>Most frequent adjectives</strong>: collaborative, tough.</span>									
+								</span>
+								<div id="e-887"></div>
+							</div>
+						</div>					
+					</span> sentiment
+							</div>			
+			<p class="iP">August 27, 2010 &mdash;  <strong>challenge</strong> at Professor McAfee's blog. What are the most common mistakes in implementations of social software, or ESSPs as you call them? Specifically, how do you set up effective crowdsourcing platforms? (Answer begins at 19:10) What did the MIT "balloon team" that won the...</p>
+						</div>
+						
+					</li>
+			<!-- id: 9924088 -->
+		<!-- iid: 1aa706dd18263910d089def0827945d0 -->
+		<!-- sent: 3,19 -->				
+		<li>
+			<div class="iTop">
+				<h2><a class="h2a" href="http://www.liquida.com/page/9924088/" title="Read: Tracking the tech that will make government better">Tracking the tech that will make government better</a></h2>
+			</div>
+						<a class="iImg" href="http://www.liquida.com/page/9924088/" title="Read: Tracking the tech that will make government better">
+				<span style="background-image:url(http://steliq.com/c/ls/5/59/9924088_gov2-summit.png);"></span>
+			</a>
+			<div class="wImg">
+						<div class="iInfo">
+				in <a class="iCat" href="/news/">News</a> 				by <a class="by" href="http://www.liquida.com/blog/25636/o-relly-radar/" title="O'Relly Radar">O'Relly Radar</a> 
+				 
+					with a 
+					<span class="baloonCont" style="z-index:886">
+						<a id="a-886" class="iSentLink mood-5" href="javascript:void(0)" onmouseover="baloon(this)" onmouseout="baloon(this)" title=""><b>VERY GOOD</b></a>
+						<div class="baloon">
+							<div class="baloon-top"></div>
+							<div class="baloon-cont">
+								<strong class="tit">Overall mood: <em class="mood-5">VERY GOOD!</em></strong>
+								<span class="elements">
+									<span><strong>Postitive adjectives found in the text</strong>: innovative, successful, grand.</span>									<span><strong>Negative adjectives found in the text</strong>: criminal, impossible.</span>									<span><strong>Most frequent adjectives</strong>: innovative.</span>									
+								</span>
+								<div id="e-886"></div>
+							</div>
+						</div>					
+					</span> sentiment
+							</div>			
+			<p class="iP">August 17, 2010 &mdash;  Massachusetts Institute of Technology, shared one of the most successful examples of crowdsourcing in history: the strategy that led to the <a href="http://www.liquida.com/mit/" title="MIT">MIT</a> balloon team's victory in the <strong>DARPA</strong> <strong>Network</strong> <strong>Challenge</strong> . "For the first time, we can bridge the gap...</p>
+						</div>
+						
+					</li>
+	</ol>	
+	<!-- google_ad_section_end -->
+	<div id="adv1"></div>	<div class="pages">
+							<a class="moreposts" rel="nofollow" href="/darpa-network-challenge/?page=2" title="Vai alla pagina successiva"></a>
+			</div>		
+</div>
+		<div class="sidebar">
+			<h3 class="logo">
+	<a href="http://www.liquida.com/" title="Liquida: worldwide News and Opinion">Liquida: worldwide News and Opinion</a>
+</h3>
+<form class="serp" id="search_form" onsubmit="return search($('search_field').value, 'http://www.liquida.com/', 'http://www.liquida.com/')">
+	<div class="coolinput-sx"></div>
+	<div class="coolinput">
+		<input type="text" id="search_field" name="search_field" value="darpa network challenge">
+	</div>
+	<div class="coolinput-dx"></div>
+	<input type="submit" name="submit" class="coolinput-vai" value="">
+	<input type="hidden" value="post" id="search_what" name="search_what"/>
+	<input type="hidden" value="www" id="search_cat" name="search_cat"/>	
+</form>  	<div class="sbox">
+		<div class="sboxtop nb">
+			<h3>Filter <em>"Darpa Network Challenge"</em> in:</h3>
+		</div>
+		<ul class="ct">
+			<li class="on">
+				<div class="hl"></div>
+				<a class="blogs" href="/darpa-network-challenge/" title="Sort darpa-network-challenge by posts"><span class="ct-facet">(58)</span><strong>Blogs</strong></a>
+			</li>
+							<li><span class="ph news"><strong>News</strong></span></li>
+										<li><span class="ph video"><strong>Videos</strong></span></li>
+										<li>
+					<div class="hl"></div>
+					<a class="images" href="/darpa-network-challenge/photo/" title="Sort darpa-network-challenge by photos"><span class="ct-facet">(35)</span><strong>Images</strong></a>
+				</li>
+										<li><span class="ph twitter"><strong>Tweets</strong></span></li>
+					</ul>
+	</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5128753-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>						<div class="wikibox">
+								
+					<h3 class="wikitit"><strong>Wikipedia</strong> <em>on "Darpa Network Challenge"</em></h3>
+					<div class="wikidesc">
+						<a href="http://en.wikipedia.org/wiki/DARPA_Network_Challenge" title="DARPA Network Challenge" class="img">
+							<span style="background:url(http://upload.wikimedia.org/wikipedia/en/thumb/a/a0/DARPABalloonMap.jpg/69px-DARPABalloonMap.jpg)"></span>						</a>
+						The 2009 DARPA Network Challenge was a prize competition for exploring the roles the Internet and social networking play in the real-time communications, wide-area collaborations, and practical actions required to solve broad-scope, time-critical pr <a class="ro" href="http://en.wikipedia.org/wiki/DARPA_Network_Challenge" title="DARPA Network Challenge">read on</a>
+					</div>
+												
+			</div>		
+			<div class="sbox">
+	<div class="sboxtop">
+		<h3><em>"Darpa Network Challenge"</em> Cloud</h3>
+	</div>
+	<div class="sboxcont">
+		
+		<div class="stag">
+			
+			<div class="stcloud">
+				
+        		<a class="t3" href="http://www.liquida.com/america/" title="america">america</a> <a class="t5" href="http://www.liquida.com/ben-goldacre/" title="ben goldacre">ben goldacre</a> <a class="t1" href="http://www.liquida.com/continental-united-states/" title="continental-united-states">continental united states</a> <a class="t3" href="http://www.liquida.com/defense-advanced-research-projects-agency/" title="defense advanced research projects agency">defense advanced research projects agency</a> <a class="t2" href="http://www.liquida.com/facebook/" title="facebook">facebook</a> <a class="t5" href="http://www.liquida.com/google-maps/" title="google maps">google maps</a> <a class="t1" href="http://www.liquida.com/internet/" title="internet">internet</a> <a class="t5" href="http://www.liquida.com/laura-poitras/" title="laura poitras">laura poitras</a> <a class="t2" href="http://www.liquida.com/media/" title="media">media</a> <a class="t1" href="http://www.liquida.com/mit/" title="mit">mit</a> <a class="t5" href="http://www.liquida.com/mit-students/" title="mit-students">mit students</a> <a class="t5" href="http://www.liquida.com/packet-switching/" title="packet-switching">packet switching</a> <a class="t5" href="http://www.liquida.com/russia/" title="russia">russia</a> <a class="t5" href="http://www.liquida.com/saab/" title="saab">saab</a> <a class="t5" href="http://www.liquida.com/science/" title="science">science</a> <a class="t5" href="http://www.liquida.com/social-networks/" title="social-networks">social networks</a> <a class="t5" href="http://www.liquida.com/south-africa/" title="south africa">south africa</a> <a class="t3" href="http://www.liquida.com/u.s./" title="u.s.">u.s.</a> <a class="t5" href="http://www.liquida.com/united-states/" title="united states">united states</a> <a class="t5" href="http://www.liquida.com/us-navy/" title="us navy">us navy</a> <a class="t1" href="http://www.liquida.com/weather/" title="weather">weather</a> <a class="t4" href="http://www.liquida.com/weather-balloons/" title="weather-balloons">weather balloons</a> <a class="t2" href="http://www.liquida.com/web-2.0/" title="web-2.0">web 2.0</a> <a class="t3" href="http://www.liquida.com/west-bank/" title="west bank">west bank</a> 	
+			</div>
+		</div>
+		
+	</div>						
+</div>
+	<div class="milancio">
+	<a href="http://www.liquida.com/" class="tohome" title="Go to Liquida Homepage">Discover Liquida</a>
+	<ul>
+		<li class="pari"><a href="http://www.liquida.com/local/" title="Worldwide news and opinions">Worldwide News</a></li>
+		<li><a href="http://www.liquida.com/local/" title="Local news from all over the world">Local News</a></li>
+		<li class="pari"><a href="http://www.liquida.com/trend/" title="Hot topics in Liquida">Liquida Trends</a></li>
+		<li><a href="http://www.liquida.com/video/" title="Most watched videos in Liquida">Hot Videos</a></li>
+		<li class="solo"><a href="http://www.liquida.com/tweeted-links/" title="Top Tweeted links">Top Tweeted Links</a></li>
+	</ul>
+	<a class="ml-sub" href="http://www.liquida.com/submitblog/" title="Submit a blog to Liquida"></a>
+	<a class="ml-wid" href="http://www.liquida.com/widget/" title="Liquida widgets for your blog"></a>
+	<a class="ml-add" href="http://www.liquida.com/add-tools/" title="Add a Liquida badge to your blog"></a>
+</div>		<!-- chiudo sidebar + content + container -->				
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>		<div class="bottom">
+			<div class="bottomsx noresults"></div>
+			<div class="bottomctr noresults"></div>
+			<div class="bottomdx"></div>
+		</div>
+		
+		<div class="clear"></div>
+		<div class="footer">
+			<div class="fcont">
+				<div class="fcontBox copy">
+					<h4>&copy; RGB S.r.l. :</h4>
+					<ul>
+						<li>All rights reserved</li>
+						<li>Patent pending</li>
+					</ul>
+				</div>
+				<div class="fcontBox info">
+					<h4>Info:</h4>
+					<ul>
+						<li><a rel="nofollow" href="http://www.liquida.com/about-us/" title="">About</a></li>
+						<li><a rel="nofollow" href="http://www.liquida.com/disclaimer/" title="">Terms &amp; Conditions</a></li>
+						<li><a rel="nofollow" href="http://www.liquida.com/" title="">Comment policy</a></li>
+					</ul>
+					<ul>
+						<li><a title="" href="http://blog.liquida.com/category/faq/" rel="nofollow">Liquida FAQ</a></li>				
+						<li><a rel="nofollow" href="http://www.liquida.com/contact-us/" title="">Contact Us</a></li>
+						<li><a rel="nofollow" href="http://www.liquida.com/submitblog/" title="">Submit a blog</a></li>						
+					</ul>									
+				</div>
+				<div class="fcontBox sezioni">
+					<h4>Areas:</h4>
+					<ul>
+						<li><a title="" href="http://www.liquida.com/syndacation/" rel="nofollow">RSS</a></li>
+						<li><a title="'" href="http://www.liquida.com/video/" rel="nofollow">Hot Video</a></li>
+						<li><a title="" href="http://www.liquida.com/forum/" rel="nofollow">Forum</a></li>
+					</ul>
+					<ul>
+						<li><a href="http://www.liquida.com/trend/" title="" rel="nofollow">Trends</a></li>
+						<li><a href="http://www.liquida.com/widget/" title="" rel="nofollow">Liquida Widget</a></li>
+						<li><a href="http://www.liquida.com/add-tools/" title="" rel="nofollow">Add Liquida</a></li>
+					</ul>									
+				</div>
+				<div class="fcontBox network">
+					<h4>Categories:</h4>
+					<ul>
+						<li><a title="Worldwide News" href="http://www.liquida.com/" rel="nofollow">Worldwide News</a></li>
+						<li><a title="Living" href="http://www.liquida.com/living/" rel="nofollow">Living</a></li>
+						<li><a title="Business" href="http://www.liquida.com/business/" rel="nofollow">Business</a></li>
+					</ul>
+					<ul>
+						<li><a title="Style" href="http://www.liquida.com/style/" rel="nofollow">Style</a></li>
+						<li><a title="Technology" href="http://www.liquida.com/technology/" rel="nofollow">Technology</a></li>
+						<li><a title="Entertainment" href="http://www.liquida.com/entertainment/" rel="nofollow">Entertainment</a></li>
+					</ul>									
+					<ul>
+						<li><a title="Autos" href="http://www.liquida.com/autos/" rel="nofollow">Autos</a></li>
+						<li><a title="Science" href="http://www.liquida.com/science/" rel="nofollow">Science</a></li>
+						<li><a title="Sports" href="http://www.liquida.com/sports/" rel="nofollow">Sports</a></li>
+					</ul>
+					<ul class="footFix">
+						<li><a title="Arts" href="http://www.liquida.com/arts/" rel="nofollow">Arts</a></li>
+						<li><a title="Travel" href="http://www.liquida.com/travel/" rel="nofollow">Travel</a></li>
+						<li><a title="Green" href="http://www.liquida.com/green/" rel="nofollow">Green</a></li>
+					</ul>					
+				</div>				
+				<div class="fcontBanzai">
+					<a rel="nofollow" href="http://www.banzai.it" title="Banzai"></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		 
+					<script>
+						adDoubleNew(adSense);	
+					</script>		
+				
+		<!-- @ld FEP EC2 liqec2en-fep1 -->
+
+		<!-- @ld totqtime 248.78 --><!-- @ld node liqec2-1-search1.localdomain -->	
+		
+		<!-- @ld exectime 276,97920799255 -->		
+		<script type="text/javascript" src="http://s3.amazonaws.com/new.cetrk.com/pages/scripts/0010/2155.js"> </script>
+		    </body>
+</html>

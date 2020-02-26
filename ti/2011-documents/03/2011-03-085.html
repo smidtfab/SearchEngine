@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+    <head data-layout-view="default">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Crowdsourcing at its Best - GovLoop - Social Network for Government</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="I just found an interesting comment on a blog at Information Week from Janelle:
+When the City of San Francisco, the City of Houston, and the Country of Ireland…" />
+    <meta name="keywords" content="Houston, Ireland, San Francisco, collaboration, crowdsourcing, government 2.0, ideas, open government" />
+    <meta name="title" content="Crowdsourcing at its Best - GovLoop - Social Network for Government" />
+            <link rel="image_src" href="http://api.ning.com/icons/appatar/1154385?default=1154385&amp;width=64&amp;height=64" />
+    <script type="text/javascript">
+djConfig = { baseScriptUri: 'http://www.govloop.com/xn/static-6.11.8.1/js/dojo-0.3.1-ning/', isDebug: false }
+ning = {"CurrentApp":{"premium":true,"iconUrl":"http:\/\/api.ning.com\/icons\/appatar\/1154385?default=1154385&width=64&height=64","url":"http:\/\/govloop.ning.com","domains":["govloop.com"],"online":true,"privateSource":true,"id":"govloop","description":"GovLoop is the premier social network for government connecting over 40,000 federal, state and local employees, contractors and academics.","name":"GovLoop - Social Network for Government","owner":"sressler","createdDate":"2007-09-20T00:28:17.321Z","runOwnAds":false,"category":{"Jobs":null,"MPA\/MPP":null,"State":null,"Local":null,"Gov20":null,"Federal":null,"OpenGov":null,"Collaboration":null,"Transparent":null,"Government":null},"tags":["Jobs","MPA\/MPP","State","Local","Gov20","Federal","OpenGov","Collaboration","Transparent","Government"]},"CurrentProfile":null,"maxFileUploadSize":7};
+    (function(){
+        if (!window.ning) { return; }
+
+        var age, gender, rand, obfuscated, combined;
+
+	    obfuscated = document.cookie.match(/xgdi=([^;]+)/);
+	    if (obfuscated) {
+	          var offset = 100000;
+	          obfuscated = parseInt(obfuscated[1]);
+	          rand = obfuscated / offset;
+	          combined = (obfuscated % offset) ^ rand;
+	          age = combined % 1000;
+	          gender = (combined / 1000) & 3;
+	          gender = (gender == 1 ? 'm' : gender == 2 ? 'f' : 0);
+	          ning.viewer = {"age":age,"gender":gender};
+	    }
+	 })();
+
+if (window.location.hash.indexOf('#!/') == 0) {
+    window.location.replace(window.location.hash.substr(2));
+}
+window.xg = {};
+xg.addOnRequire = function(f) { xg.addOnRequire.functions.push(f); };
+xg.addOnRequire.functions = [];
+xg.addOnFacebookLoad = function (f) { xg.addOnFacebookLoad.functions.push(f); };
+xg.addOnFacebookLoad.functions = [];
+xg._loader = {
+    p: 0,
+    loading: function(set) { xg._loader.p++; },
+    onLoad: function(set) {
+        xg._loader.p--;
+        if (xg._loader.p == 0 && typeof(xg._loader.onDone) == 'function') {
+            xg._loader.onDone();
+        }
+    }
+};
+xg._loader.loading('xnloader');
+if (window.bzplcm) {
+    window.bzplcm._profileCount = 0;
+    window.bzplcm._profileSend = function() { if (window.bzplcm._profileCount++ == 1) window.bzplcm.send(); };
+}
+xg._loader.onDone = function() {
+        if(window.bzplcm)window.bzplcm.start('ni');
+    xg.shared.util.parseWidgets();    var addOnRequireFunctions = xg.addOnRequire.functions;
+    xg.addOnRequire = function(f) { f(); };
+    try {
+        if (addOnRequireFunctions) { dojo.lang.forEach(addOnRequireFunctions, function(onRequire) { onRequire.apply(); }); }
+    } catch (e) {
+        if(window.bzplcm)window.bzplcm.ts('nx').send();
+        throw e;
+    }
+    if(window.bzplcm) { window.bzplcm.stop('ni'); window.bzplcm._profileSend(); }
+};
+window.xn = { track: { _globals: { screen_name: null, subdomain: "govloop", is_owner: false, is_admin: false, is_member: false, join_date: 0, request_method: "GET", trace: "d6623c6c-8101-45f2-931e-92e9e114f03d"}, event: function() {}, pageView: function() {}, registerCompletedFlow: function() {}, registerError: function() {}, timer: function() { return { lapTime: function() {} }; }, _trackingHost: "track.ning.com", _jsDebug: false } }    </script>
+</script>
+<meta name="medium" content="blog" /><link rel="alternate" type="application/atom+xml" title="Sam Allgood&#039;s Posts - GovLoop - Social Network for Government" href="http://www.govloop.com/profiles/blog/feed?user=22ym5dyw3a6h9&amp;xn_auth=no" /><link rel="alternate" type="application/atom+xml" title="Comments - Crowdsourcing at its Best - GovLoop - Social Network for Government" href="http://www.govloop.com/profiles/comment/feed?attachedTo=1154385%3ABlogPost%3A838980&amp;xn_auth=no" />
+<style type="text/css" media="screen,projection">
+#xg_navigation ul div.xg_subtab ul li a {
+    color:#FFFFFF;
+    background:#000000;
+}
+#xg_navigation ul div.xg_subtab ul li a:hover {
+    color:#FFFFFF;
+    background:#254520;
+}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Latest Activity - GovLoop - Social Network for Government" href="http://www.govloop.com/activity/log/list?fmt=rss" /><link rel="alternate" type="application/atom+xml" title="Top Content - GovLoop - Social Network for Government" href="http://www.govloop.com/leaderboards/topcontent/day?feed=yes&amp;xn_auth=no&amp;n=20&amp;images=yes&amp;imageMaxSize=240" />
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/socialnetworkmain/widgets/index/css/common.min.css?xn_version=847961647);
+@import url(http://static.ning.com/socialnetworkmain/widgets/profiles/css/component.min.css?xn_version=2204144250);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/govloop/instances/css/embed_1301685368.css?xn_version=201103311618);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/govloop/instances/css/theme_1301615586.css?xn_version=201103311618);
+
+</style>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie6.min.css?v=201103311618" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie7.css?v=201103311618" />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.govloop.com/profiles/blog/rsd" />
+
+    <script type="text/javascript" src="http://www.govloop.com/extensions/mods/js/jquery.js"></script></head>
+    <body>
+        <div id='fb-root'></div>
+<script>
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId      : '138827596139412', 
+      status     : true,   
+      cookie     : true,   
+      xfbml      : true,  
+      channelUrl : 'http://www.govloop.com/xn_resources/widgets/index/js/facebookapp/channel.html'
+    });
+    var n = xg.addOnFacebookLoad.functions.length;
+    for (var i = 0; i < n; i++) {
+      xg.addOnFacebookLoad.functions[i]();
+    }
+    xg.addOnFacebookLoad = function (f) { f(); };
+  };
+  (function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  })();
+</script>        <div id="xn_bar">
+            <div id="xn_bar_menu">
+                <div id="xn_bar_menu_branding" >
+                                    </div>
+
+                <div id="xn_bar_menu_more">
+                    <form id="xn_bar_menu_search" method="GET" action="http://www.govloop.com/main/search/search">
+                        <fieldset>
+                            <input type="text" name="q" id="xn_bar_menu_search_query" value="Search GovLoop - Social Network for Government" _hint="Search GovLoop - Social Network for Government" accesskey="4" class="text xj_search_hint" />
+                            <a id="xn_bar_menu_search_submit" href="#" onclick="document.getElementById('xn_bar_menu_search').submit();return false">Search</a>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <ul id="xn_bar_menu_tabs">
+                                            <li><a href="http://www.govloop.com/main/authorization/signUp?target=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best">Sign Up</a></li>
+                        <li><a href="http://www.govloop.com/main/authorization/signIn?target=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best">Sign In</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <div id="xg" class="xg_theme xg_widget_profiles xg_widget_profiles_blog xg_widget_profiles_blog_show" data-layout-pack="classic">
+            <div id="xg_head">
+                <div id="xg_masthead">
+                    <p id="xg_sitename"><a id="application_name_header_link" href="/"><img src="http://api.ning.com/files/8NljMhRqKZx*zlXy3NEWkrntSoNLCUG9L4hYFUDRnQSxpNNH3-7zJtqPWacpghF1GVOkGvpDTOAgPgwuW6WKAJpyZfNmZyDq/logo.png?width=205&amp;height=94&amp;xn_auth=no&amp;type=png" alt="GovLoop - Social Network for Government"></a></p>
+                    
+                </div>
+                <div id="xg_navigation">
+                    <ul>
+    <li id="xg_tab_main" class="xg_subtab"><a href="/"><span>Main</span></a></li><li dojoType="SubTabHover" id="xg_tab_profile" class="xg_subtab"><a href="/profiles"><span>My Page</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles" style="float:none;"><span>My Profile</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/groups/group/listForContributor" style="float:none;"><span>My Groups</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/friend/list?my=1" style="float:none;"><span>My Friends</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/opensocial/application/list" style="float:none;"><span>Applications</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_members" class="xg_subtab"><a href="/profiles/members/"><span>Members</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/be-a-leader" style="float:none;"><span>Be A Leader</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/members/" style="float:none;"><span>Browse Members</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/member-of-the-week" style="float:none;"><span>Member of the Week</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/find-govloop-colleagues" style="float:none;"><span>Search for Colleagues</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/go?/rankings_leaderboard" style="float:none;"><span>Top 100</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/leaderboards" style="float:none;"><span>Leaderboards</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/govgoodies-1" style="float:none;"><span>GovGoodies</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_blogs" class="xg_subtab this"><a href="/profiles/blog/list"><span>Blogs</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/blog/new" style="float:none;"><span>Add a Blog Post</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/blog/list?promoted=1" style="float:none;"><span>Best Of</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/featured-bloggers-1" style="float:none;"><span>Featured Bloggers</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a target="blank" href="http://data.govloop.com/Government/GovLoop-Tags-and-RSS-Feeds/ufg7-7dkv" style="float:none;"><span>Find By Keywords</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/blog/list?tag=mostcomment" style="float:none;"><span>Most Comment</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/project-of-the-week" style="float:none;"><span>Project of the Week</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/profiles/blog/list?tag=supporters" style="float:none;"><span>GL Supporters</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_groups" class="xg_subtab"><a href="/groups"><span>Groups</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/add-a-group" style="float:none;"><span>Add a Group</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a target="blank" href="http://data.govloop.com/Government/GovLoop-Groups-Directory/748k-9ai4" style="float:none;"><span>Find a Group</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/groups-by-federal-agency" style="float:none;"><span>By Agency</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/where-in-the-world-is-govloop" style="float:none;"><span>By Location</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_forum" class="xg_subtab"><a href="/forum"><span>Forum</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/forum/topic/new" style="float:none;"><span>Ask a Question</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a target="blank" href="http://data.govloop.com/Government/GovLoop-Tags-and-Feeds-Forums/u6bp-ih9h" style="float:none;"><span>Find By Keywords</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/forum/category/listByTitle" style="float:none;"><span>Find By Category</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/forum?sort=mostRecentDiscussions" style="float:none;"><span>Latest</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/forum?sort=mostPopularDiscussions" style="float:none;"><span>Popular</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_xn1" class="xg_subtab"><a href="/forum/categories/1154385:Category:84/listForCategory"><span>GovGigs</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/forum/topic/new?target=http%3A%2F%2Fwww.govloop.com%2Fforum%2Fcategories%2F1154385%3ACategory%3A84%2FlistForCategory&amp;categoryId=1154385%3ACategory%3A84" style="float:none;"><span>Add a Gig</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/new-hire-handbook" style="float:none;"><span>New Hire Handbook</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/scholarship-1" style="float:none;"><span>Scholarship</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_events" class="xg_subtab"><a href="/events"><span>Events</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/events/event/new?cancelTarget=http%3A%2F%2Fwww.govloop.com%2Fevents" style="float:none;"><span>Add an Event</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/govups-2" style="float:none;"><span>Gov-Ups</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/events/event/listUserEvents?my=1" style="float:none;"><span>My Events</span></a></li></ul></div></li><li id="xg_tab_xn52" class="xg_subtab"><a target="blank" href="http://topics.govloop.com"><span>Topics</span></a></li><li dojoType="SubTabHover" id="xg_tab_xn12" class="xg_subtab"><a href="/page/resources-1"><span>Resources</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a target="blank" href="http://tools.govloop.com/gsa_government_travel_per_diem_rates_calculator" style="float:none;"><span>Per Diem Calculator</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a target="blank" href="http://data.govloop.com" style="float:none;"><span>Data.GovLoop</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a target="blank" href="http://ideas.govloop.com" style="float:none;"><span>Ideas.GovLoop</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/photo" style="float:none;"><span>Photos</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/podcasts-2" style="float:none;"><span>Podcasts</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/presentations-1" style="float:none;"><span>Presentations</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/video" style="float:none;"><span>Videos</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/opensocial/ningapps/show?appUrl=http%3A%2F%2Fwikiapp.ning.com%2Fwiki%2Fwiki.xml%3Fning-app-status%3Dnetwork&amp;owner=sressler" style="float:none;"><span>Wiki</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/get-your-govloop-swag" style="float:none;"><span>GL Swag</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/government-mobile-apps" target="_blank" style="float:none;"><span>Gov Mobile Apps</span></a></li></ul></div></li><li dojoType="SubTabHover" id="xg_tab_xn28" class="xg_subtab"><a href="/page/frequently-asked-questions"><span>About</span></a><div class="xg_subtab" style="display:none;position:absolute;"><ul class="xg_subtab" style="display:block;" ><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/contact-us" style="float:none;"><span>Contact Us</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/frequently-asked-questions" style="float:none;"><span>FAQ</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/govloop-advisory-board" style="float:none;"><span>GL Advisory Board</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/engagement-guidelines" style="float:none;"><span>Guidelines</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/media-kit" style="float:none;"><span>Media Kit</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/partners-supporters" style="float:none;"><span>Partners</span></a></li><li style="list-style:none !important;display:block;text-align:left;"><a href="/page/sponsorship-1" style="float:none;"><span>Sponsorship</span></a></li></ul></div></li></ul>
+
+                </div>
+            </div>
+            
+            <div id="xg_body">
+                
+                <div class="xg_column xg_span-16 xj_classic_canvas">
+                    <ul class="navigation easyclear"><li><a href="http://www.govloop.com/profiles/blog/list">All Blog Posts</a></li><li><a href="http://www.govloop.com/profiles/blog/list?my=1">My Blog</a></li><li class="right  xg_lightborder navbutton"><a href="http://www.govloop.com/profiles/blog/new" class="xg_sprite xg_sprite-add">Add</a></li></ul>
+<div class="xg_module xg_blog xg_blog_detail xg_blog_mypage">
+        <div class="xg_headline xg_headline-img xg_headline-2l">
+    <div class="ib">        <span class="xg_avatar"><a class="fn url" href="http://www.govloop.com/profile/SamAllgood"  title="Sam Allgood"><img class=" photo"  src="http://api.ning.com/files/7DzXg*4ql97Trx50BXFZf146sPVBPEDLM*qJMoHENK3VnnbVdgVg9mbONKukrPYobZ3vyiJcMUEiKMp3KxoRCiKXWBclt9jA/SamPic.jpeg?width=64&amp;height=64&amp;crop=1%3A1" height="64" width="64" alt="Sam Allgood" /></a></span>
+    </div>
+    <div class="tb">
+        <h1>Crowdsourcing at its Best</h1>
+        <ul class="navigation byline">
+            <li><a class="nolink">Posted by </a><a href="/profile/SamAllgood">Sam Allgood</a><a class="nolink"> on April 9, 2010 at 12:30pm</a></li>
+            <li><a class="xg_sprite xg_sprite-view" href="http://www.govloop.com/profiles/blog/list?user=22ym5dyw3a6h9">View Sam Allgood&#039;s blog</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="xg_module_body">
+        <div class="postbody">
+                    I just found an interesting comment on a blog at Information Week from Janelle:<div><br/></div>
+<div><hr/><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;">When the City of San Francisco, the City of Houston, and the Country of Ireland wanted to launch innovation portals to increase collaboration &amp; gather ideas between employees and citizens, they turned to Brightidea.</span></div>
+<div><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"><br/></span><p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;">All three programs have unique themes with the City of San Francisco gathering ideas from city employees on how to decrease the current $522 million budget deficit over a finite period of time, and setting up rewards and recognition program for the top ideas. The City of Houston had such success with their program that nearly 30% of ideas submitted were immediately implemented.<br/></span></p>
+<p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"><br/></span></p>
+<p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;">Irelands Your Country Your Call competition is a worldwide challenge to collect ideas on securing Irleands economic prosperity in the future. The competitions backing of 200,000 prize money and 500,000 towards implementation of two top proposals is a true testament to the value of harnessing the collective brainpower of many. The participation has been overwhelming with over 40,000 visitors, 2,000 idea submissions, and thousands of comments and votes in just weeks since its launch. <br/><br/><a rel=nofollow target="blank" href="http://www.improvesf.org">http://www.improvesf.org</a><br/><a rel=nofollow target="blank" href="http://www.yourcountryyourcall.com/">http://www.yourcountryyourcall.com/</a><br/><a rel=nofollow target="blank" href="http://www.brightidea.com">http://www.brightidea.com</a></span></p>
+<hr/><p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;">Having a ministry in Ireland, I went to the <a rel=nofollow target="blank" href="http://www.yourcountryyourcall.com/index.html">Your Country Your Call</a> site and found it to include fascinating uses of technology, especially the 'Share Your Ireland Moment - Get Involved' page.</span></p>
+<p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;"><br/></span></p>
+<p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: arial, helvetica, sans-serif;">They're offering 500,000 and 100,000 Euro top prizes</span></p>
+</div>        </div>
+        <div class="left-panel">
+            <div class="likebox">
+    <div class="ning-like">
+        <div class="xg_lightborder like-button like-button-3">
+            <a data-content-id="1154385:BlogPost:838980" data-content-type="BlogPost" data-sign-up-url="http://www.govloop.com/main/authorization/signUp?target=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best" class="xg_sprite" href="#">Like</a>
+        </div>
+        <div class="like-count dy-displaynone">
+            <a href="#" class="view-liked" _id="1154385:BlogPost:838980">0 members like this</a>
+        </div>
+    </div>
+</div>
+            <p class="share-links clear"><a class="xg_sprite xg_sprite-share" href="http://www.govloop.com/main/sharing/share?id=1154385%253ABlogPost%253A838980">Share</a>        <a class="post_to_twitter" target="blank" href="http://twitter.com/home?status=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best" _message="Checking out &quot;Crowdsourcing at its Best&quot; on GovLoop - Social Network for Gov:" _url="http://www.govloop.com/profiles/blogs/crowdsourcing-at-its-best" _urlShortenerKey="333989091617" _screenName="" _twitterAuthenticationNeeded="" _source="content" target="_blank">Twitter</a>
+        <div class="likebox">
+    <div class="facebook-like" data-content-type="BlogPost" data-content-id="1154385:BlogPost:838980">
+        <fb:like href="http://www.govloop.com/xn/detail/1154385:BlogPost:838980" layout="button_count" show_faces="false" width="450"></fb:like>
+    </div>
+</div>
+</p>        </div>
+        <div class="right-panel">
+                            <p class="small object-detail" id="tagsList">
+                    Tags: <a href="http://www.govloop.com/profiles/blog/list?tag=Houston">Houston</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=Ireland">Ireland</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=San+Francisco">San Francisco</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=collaboration">collaboration</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=crowdsourcing">crowdsourcing</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=government+2.0">government 2.0</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=ideas">ideas</a>, <a href="http://www.govloop.com/profiles/blog/list?tag=open+government">open government</a>                </p>
+                    </div>
+                    <ul class="pagination smallpagination">
+                            <li class="left"><a href="http://www.govloop.com/profiles/blogs/uk-citizens-get-personalized" title="UK citizens get personalized dashboard for all government services">&lt; Previous Post</a></li>                             <li class="right"><a title="The Federal Budget Explained By A College Student in 1.5 minutes" href="http://www.govloop.com/profiles/blogs/the-federal-budget-explained">Next Post &gt;</a></li>
+                        </ul>
+            </div>
+</div>
+
+        <div class="xg_module">
+                                        <div class="xg_module_body">
+                    <p id="add-comment">Comment</p>
+                                            <div class="comment-join">
+                            <h3>You need to be a member of GovLoop - Social Network for Government to add comments!</h3>
+                        <p><a href="http://www.govloop.com/main/authorization/signUp?target=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best">Join GovLoop - Social Network for Government</a></p>
+                        </div>
+                                                        </div>
+                    <div class="xg_module_body" id="comments"  _numComments="4" _scrollTo="">
+                    <dl _id="1154385:Comment:1127448" id="c_4d9" class="comment vcard xg_lightborder">
+            <dt>
+                <a name="first_comment"></a><a name="comment-1154385_Comment_1127448" id="comment-1154385_Comment_1127448"></a>
+                        <span class="xg_avatar"><a class="fn url" href="http://www.govloop.com/profile/DustinHaisler"  title="Dustin Haisler"><img class=" photo"  src="http://api.ning.com/files/McaICAermA2fu*yMBIrwYVzbTVuJ02NbIjcQSm8X9mduV4jZjqefx9xVu5HrwnROhZS6YDdkmhetkDG8VrFaII5Tb4kLriq2/dustinnew.png?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Dustin Haisler" /></a></span>
+                    Comment by <a href="/profile/DustinHaisler" class="fn url">Dustin Haisler</a> on February 14, 2011 at 11:11am            </dt>
+            <dd>
+            Hey Joe, I'm happy to share best practices for government crowdsourcing based on my experience at Spigit (<a rel=nofollow target="blank" href="http://www.spigit.com" target="_blank">http://www.spigit.com</a>).  As a CIO, I launch Manor Labs (<a rel=nofollow target="blank" href="http://www.manorlabs.org" target="_blank">http://www.manorlabs.org</a>) for the City of Manor, Texas and now as Director of Government Innovation for Spigit, I recently launched New York City's internal crowdsourcing portal call NYC Simplicity Idea Market (<a rel=nofollow href="http://www.govloop.com/profiles/blogs/project-of-week-nyc?xg_source=activity" target="_blank">http://www.govloop.com/profiles/blogs/project-of-week-nyc?xg_source...</a>).            </dd>
+                    </dl>
+            <dl _id="1154385:Comment:1035622" id="c_335" class="comment vcard xg_lightborder">
+            <dt>
+                <a name="comment-1154385_Comment_1035622" id="comment-1154385_Comment_1035622"></a>
+                        <span class="xg_avatar"><a class="fn url" href="http://www.govloop.com/profile/SamAllgood"  title="Sam Allgood"><img class=" photo"  src="http://api.ning.com/files/7DzXg*4ql97Trx50BXFZf146sPVBPEDLM*qJMoHENK3VnnbVdgVg9mbONKukrPYobZ3vyiJcMUEiKMp3KxoRCiKXWBclt9jA/SamPic.jpeg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Sam Allgood" /></a></span>
+                    Comment by <a href="/profile/SamAllgood" class="fn url">Sam Allgood</a> on November 8, 2010 at 1:57pm            </dt>
+            <dd>
+            Joe, I did some searching and could not find any reference to it on brightidea.com, which appears to be headquartered or at least have an office in Houston. A Google search shows that the term Bright Idea is used a lot in Houston stories.            </dd>
+                    </dl>
+            <dl _id="1154385:Comment:1035559" id="c_319" class="comment vcard xg_lightborder">
+            <dt>
+                <a name="comment-1154385_Comment_1035559" id="comment-1154385_Comment_1035559"></a>
+                        <span class="xg_avatar"><a class="fn url" href="http://www.govloop.com/profile/JoeSanchez"  title="Joe Sanchez"><img class=" photo"  src="http://api.ning.com/files/SNGRUjGYbFXYnZLiOcV8Lu0swp9qgUj6976g6BjC7bT1rGK5LIeJU3QOexzDTtLvIL8x73iM3A9524tivLJO9sXgIy*xwUNl/JoeTwitterandFacebookPicture.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Joe Sanchez" /></a></span>
+                    Comment by <a href="/profile/JoeSanchez" class="fn url">Joe Sanchez</a> on November 8, 2010 at 1:13pm            </dt>
+            <dd>
+            Can you please point me to an information source for the City of Houston crowdsourcing project?            </dd>
+                    </dl>
+            <dl _id="1154385:Comment:889972" id="c_ac1" class="comment vcard xg_lightborder last-child">
+            <dt>
+                <a name="last_comment"></a><a name="comment-1154385_Comment_889972" id="comment-1154385_Comment_889972"></a>
+                        <span class="xg_avatar"><a class="fn url" href="http://www.govloop.com/profile/AdrielHampton"  title="Adriel Hampton"><img class=" photo"  src="http://api.ning.com/files/lg2NzzEbsaxvRknaerlbnJfv5PB*OF1gUG2nE1pOQqrpj7bVMQW6jSQIyXzBj7WkjqJJysYgr31Kmon4OS7O6ZMLZUI7r8fX/Outdoor_bwmug.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Adriel Hampton" /></a></span>
+                    Comment by <a href="/profile/AdrielHampton" class="fn url">Adriel Hampton</a> on June 15, 2010 at 1:50pm            </dt>
+            <dd>
+            I participated in the SF crowdsourcing exercise as a consumer/employee - very nice platform!            </dd>
+                    </dl>
+            </div>
+                    <div class="xg_module_foot" id="xj_comments_footer" >
+                                            <p class="left">
+                            <a class="xg_icon xg_icon-rss" href="http://www.govloop.com/profiles/comment/feed?attachedTo=1154385%3ABlogPost%3A838980&amp;xn_auth=no">RSS</a>
+                        </p>
+                                    </div>
+                    </div>
+    
+      <input type="hidden" id="incrementViewCountEndpoint" value="http://www.govloop.com/profiles/blog/incrementViewCount?id=1154385%3ABlogPost%3A838980&amp;xn_out=json" />
+
+                </div>
+                <div class="xg_column xg_span-4 xg_last xj_classic_sidebar">
+                        <div class="xg_module" id="xg_module_account">
+        <div class="xg_module_body xg_signup xg_lightborder">
+            <p>Welcome to<br />GovLoop - Social Network for Government</p>
+            <p class="last-child">
+                <big><strong><a href="http://www.govloop.com/main/authorization/signUp?target=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best">Sign Up</a></strong></big><br/>
+                or <a href="http://www.govloop.com/main/authorization/signIn?target=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best" style="white-space:nowrap">Sign In</a>            </p>
+                            <div class="xg_external_signup xg_lightborder xj_signup">
+                    <p class="dy-small">You can also sign up with:</p>
+                    <ul class="providers">
+            <li data-provider-name="Facebook"><a onclick="window.open('https://govloop.networkauth.com/facebook/connect_start?ext_perm=user_birthday%2Cuser_location%2Cemail&token_url=http%3A%2F%2Fwww.govloop.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fwww.govloop.com%252Fprofiles%252Fblogs%252Fcrowdsourcing-at-its-best%26source%3DsignUp%26close%3D1', null, 'width=626,height=436,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no,status=no'); return false;" href="https://govloop.networkauth.com/facebook/connect_start?ext_perm=user_birthday%2Cuser_location%2Cemail&amp;token_url=http%3A%2F%2Fwww.govloop.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fwww.govloop.com%252Fprofiles%252Fblogs%252Fcrowdsourcing-at-its-best%26source%3DsignUp%26close%3D0">
+                            <span class="mini-service mini-service-facebook" title="Facebook"></span>
+                    </a></li>
+            <li data-provider-name="Google"><a onclick="window.open('https://govloop.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid&token_url=http%3A%2F%2Fwww.govloop.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fwww.govloop.com%252Fprofiles%252Fblogs%252Fcrowdsourcing-at-its-best%26source%3DsignUp%26close%3D1', null, 'width=530,height=480,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no,status=no'); return false;" href="https://govloop.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid&amp;token_url=http%3A%2F%2Fwww.govloop.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fwww.govloop.com%252Fprofiles%252Fblogs%252Fcrowdsourcing-at-its-best%26source%3DsignUp%26close%3D0">
+            <span class="mini-service mini-service-google" title="Google"></span>
+        </a></li>
+            <li data-provider-name="Yahoo!"><a onclick="window.open('https://govloop.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fme.yahoo.com%2F&token_url=http%3A%2F%2Fwww.govloop.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fwww.govloop.com%252Fprofiles%252Fblogs%252Fcrowdsourcing-at-its-best%26source%3DsignUp%26close%3D1', null, 'width=500,height=480,location=no,menubar=no,resizable=yes,scrollbars=yes,toolbar=no,status=no'); return false;" href="https://govloop.networkauth.com/openid/start?openid_identifier=http%3A%2F%2Fme.yahoo.com%2F&amp;token_url=http%3A%2F%2Fwww.govloop.com%2Fmain%2Fauthorization%2FprocessExternalAuth%3Ftarget%3Dhttp%253A%252F%252Fwww.govloop.com%252Fprofiles%252Fblogs%252Fcrowdsourcing-at-its-best%26source%3DsignUp%26close%3D0">
+            <span class="mini-service mini-service-yahoo" title="Yahoo!"></span>
+        </a></li>
+    </ul>
+                </div>
+                    </div>
+    </div>
+<div class="xg_module html_module module_text xg_reset"
+        >
+        <div class="xg_module_head"><h2>Popular Content</h2></div>
+            <div class="xg_module_body">
+            <p><strong><b><a target="blank" href="http://tools.govloop.com/mm/news/" target="_blank">GovMadness Showdown</a></b><br /></strong></p>
+<p><span style="font-weight: bold;"><a href="http://www.govloop.com/page/government-shutdown" target="_blank">Ask About the Shutdown</a></span></p>
+<p><a href="http://www.govloop.com/page/getting-started-guide"></a><strong><a target="_blank" href="http://www.govloop.com/page/green-government">Green Government</a></strong></p>
+<p><strong><a href="http://www.govloop.com/page/government-project-management" target="_blank">Proj. Management Guide</a></strong></p>
+<p><b><a href="http://www.govloop.com/page/new-hire-handbook" target="_blank">New Hire Handbook</a></b></p>
+        </div>
+            </div>
+<div class="xg_module xg_module_activity column_1"
+    dojotype="ActivityModule"
+    _isProfile=""
+    _isAdmin=""
+    _columnCount="1"
+
+        _delDeleteLinkText="Delete"
+    _delItemUrl="http://www.govloop.com/activity/log/remove"
+    _delIconTooltip="Remove"  >
+    <div class="xg_module_head">
+        <h2>Latest Activity</h2>
+    </div>
+    <div class="xg_module_body">
+        <div class="module module-feed">
+            <div class="feed-story  xg_separator"><a href="/profile/jessicaprue?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com:80/files/ZbrV*AfDOOgQzcG0t6taIEygGa2X7aXqjivWKK7G3g9ucZwilJ9dJlqwXUw6PV*q4TGvdtmVziRawiouKv3kmvXv--aWDcVw/JessicaPrue.JPG?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/jessicaprue?xg_source=activity">jessicaprue</a> added a blog post</span></div><div class="rich"><div class="rich-detail"><div><a href="http://www.govloop.com/xn/detail/1154385:BlogPost:1348852?xg_source=activity">Continuing transparency efforts despite funding cuts</a></div><div class="rich-excerpt">Many blogs and news outlets recently expressed concern with the drastic $32 million cuts to the Electronic Government Fund in the proposed Full-Year Continuing Appropriations Act (see Huffington Post, Cairns Blog, and Computer World, among others). …</div></div></div><span class="feed-timestamp xg_lightfont">53 minutes ago</span></div><div class="feed-story  xg_separator"><a href="/profile/DannielleBlumenthal?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/0eMW891BrPT01DHNd0S-2bE7EXtRx6t-cj4eNz4jiLHaQuBx5hBOLA2nugCjnbXmRC7*-rd80RGgPY0-1fBkUfyv9ZarkNZE/DossyProfilePicJune20102.jpg?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/DannielleBlumenthal?xg_source=activity">Dannielle Blumenthal</a> added a blog post</span></div><div class="rich"><div class="rich-detail"><div><a href="http://www.govloop.com/xn/detail/1154385:BlogPost:1348596?xg_source=activity">Using Brand Architecture to Rethink Government</a></div><div class="rich-excerpt">Everybody knows what branding is - the creation of a consistent image to the outside world, that will hopefully "stick" in the customer's mind and add a premium to what is otherwise a generic product.
+(Behind the image there should be substance of c…</div></div></div><span class="feed-timestamp xg_lightfont">2 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/StefanCzerniawski?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/StefanCzerniawski?xg_source=activity">Stefan Czerniawski</a> added a blog post</span></div><div class="rich"><div class="rich-detail"><div><a href="http://www.govloop.com/xn/detail/1154385:BlogPost:1348775?xg_source=activity">Aphorism 50</a></div><div class="rich-excerpt">Andrew Stanton, quoted by Kevin Koch
+
+
+
+Original post</div></div></div><span class="feed-timestamp xg_lightfont">2 hours ago</span></div><div class="feed-story  xg_separator"><a href="http://www.govloop.com"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/icons/appatar/1154385?default=1154385&amp;width=32&amp;height=32" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/DaphneStavropoulos?xg_source=activity">Daphne Stavropoulos</a>, <a href="http://www.govloop.com/profile/JennaVenkerWeidenbenner?xg_source=activity">Jenna Venker Weidenbenner</a>, <a href="http://www.govloop.com/profile/cfarrell383?xg_source=activity">cfarrell383</a> and 6 more joined GovLoop - Social Network for Government</span></div><div class="rich"><div class="rich-thumbs rich-thumbs-32"><a href="/profile/DaphneStavropoulos?xg_source=activity"> <img src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1&amp;format=jpg" width="32" height="32" /></a><a href="/profile/JennaVenkerWeidenbenner?xg_source=activity"> <img src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1&amp;format=jpg" width="32" height="32" /></a><a href="/profile/cfarrell383?xg_source=activity"> <img src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1&amp;format=jpg" width="32" height="32" /></a><a href="/profile/KarlaWald?xg_source=activity"> <img src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1&amp;format=jpg" width="32" height="32" /></a><a href="/profile/pierretessier?xg_source=activity"> <img src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1&amp;format=jpg" width="32" height="32" /></a><a href="/profile/blagoevskitrazoff?xg_source=activity"> <img src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1&amp;format=jpg" width="32" height="32" /></a><div class="rich-more"><a href="http://www.govloop.com/profiles/members/?xg_source=activity">3 more…</a></div></div></div><span class="feed-timestamp xg_lightfont">2 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/JoshNankivel?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/jx-mC30MLadJt86f*rOmqhNO-fEFYpE-acwgTRC359-klpKqJYNwA8zBewFeXRBNafQuZH0eu8QeF6J2otI5asNY6XoqSZq4Jy0OKPwjxew_/joshnankivel200x200.png?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/JoshNankivel?xg_source=activity">Josh Nankivel</a> <a href="http://www.govloop.com/xn/detail/1154385:Comment:1348590?xg_source=activity">commented</a> on <a href="http://www.govloop.com/profile/LaurenModeen?xg_source=activity">Lauren Modeen's</a> blog post '<a href="http://www.govloop.com/xn/detail/1154385:BlogPost:1341842?xg_source=activity">TED Talks Are My Red Bull</a>'</span></div><div class="rich"><div class="rich-detail"><div class="rich-comment"><em>I completely agree Lauren, as a blogger whenever I've got writers block all I need do it browse TED for awhile and watch some talks.  It's like nitro for your brain!
+Josh - pmStudent.com</em></div></div></div><span class="feed-timestamp xg_lightfont">6 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/JoshNankivel?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/jx-mC30MLadJt86f*rOmqhNO-fEFYpE-acwgTRC359-klpKqJYNwA8zBewFeXRBNafQuZH0eu8QeF6J2otI5asNY6XoqSZq4Jy0OKPwjxew_/joshnankivel200x200.png?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/JoshNankivel?xg_source=activity">Josh Nankivel</a> added a discussion</span></div><div class="rich"><div class="rich-detail"><div class="rich-title"><a href="http://www.govloop.com/xn/detail/1154385:Topic:1348669?xg_source=activity">Kanban in Gov Projects</a></div><div class="rich-excerpt">I'm using Kanban with two teams on a federal project.  Anyone else using Kanban?
+ 
+I'm producing some online training and am in the Kanban and agile circles, but not so much when it comes to Kanban in government work.
+ 
+I'd like to get your perspect…</div></div></div><span class="feed-timestamp xg_lightfont">6 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/EileenBrooks?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/kT7b*-hYVSzN3Wprbv-L757z-F-z35J3DousNeh4RWL7FQQAsJIICaKZXfb1bNPc**djXYoZOYi7k5aUQ8D8XDPYhjM2BfVW/DSCN1170.JPG?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/EileenBrooks?xg_source=activity">Eileen Brooks</a> left a <a href="http://www.govloop.com/xn/detail/1154385:Comment:1348588?xg_source=activity">comment</a> for <a href="http://www.govloop.com/profile/CHIRAGPATEL?xg_source=activity">CHIRAG PATEL</a></span></div><span class="feed-timestamp xg_lightfont">6 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/DonFitchett?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/QVV-d1mULbYrjkPEI*iu93ibpvErz52D4LRPNtw2PEvCISLmORwcwu2H2h4v3VTS1caZ18FrvrtO0noIbIaMNsG49LCyecjl/740642913.bin?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/DonFitchett?xg_source=activity">Don Fitchett</a> added a blog post</span></div><div class="rich"><div class="rich-detail"><div><a href="http://www.govloop.com/xn/detail/1154385:BlogPost:1348667?xg_source=activity">Industrial Networking Solutions Security - PLC, SCADA</a></div><div class="rich-excerpt">A great article about reducing risk to your manufacturing network. Clarifies industrial network security risk including with PLC and SCADA.
+Covers ANSI/ISA-99.02.01 security standard, infrastructure, power security, firewalls and antivirus programs…</div></div></div><span class="feed-timestamp xg_lightfont">12 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/NancyBrokaw?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com:80/files/dYdFbcstHZzbAgML-r1TTHYhZd99kpDYSPd*5Y*2XMbbKFHIs4QC1U8GfdVjYT*vUjwZ5dRScSV6psSvB*ybDUs6Xx6oWelJ/NancyBrokawplat.jpg?width=48&amp;height=48&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/NancyBrokaw?xg_source=activity">Nancy Brokaw</a> updated their profile photo</span></div><span class="feed-timestamp xg_lightfont">13 hours ago</span></div><div class="feed-story  xg_separator"><a href="/profile/NancyBrokaw?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com:80/files/dYdFbcstHZzbAgML-r1TTHYhZd99kpDYSPd*5Y*2XMbbKFHIs4QC1U8GfdVjYT*vUjwZ5dRScSV6psSvB*ybDUs6Xx6oWelJ/NancyBrokawplat.jpg?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/NancyBrokaw?xg_source=activity">Nancy Brokaw</a> joined <a href="http://www.govloop.com/profile/SusanPattee?xg_source=activity">Susan Pattee's</a> group</span></div><div class="rich rich-64"><div class="rich-thumb"><a href="http://www.govloop.com/xn/detail/1154385:Group:1347776?xg_source=activity"> <img src="http://api.ning.com/files/o4XkbUTbkb9kuYthgYKYwDhSNPrB*0Dw2JvKN6ugW2SEAO7rgYxeuAQqNAKF7tNAQ5ob*YPQrQTvMva9pJvyMdpag6b7iAyD/cosgogphoto.jpeg?crop=1%3A1&amp;width=64" width="64"  /></a></div><div class="rich-detail"><div class="rich-title"><a href="http://www.govloop.com/xn/detail/1154385:Group:1347776?xg_source=activity">Colorado Springs</a></div><div class="rich-excerpt">For people who want to get things done in Colorado Springs. Let's support transparency in government, speak in plain language, work together and hop out of the silos!</div></div></div><span class="feed-timestamp xg_lightfont">13 hours ago</span></div><div class="feed-story feed-story-friending xg_separator"><a href="/profile/GenevieveSkora?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/dvdNad**20z0LUYSXZwzVAtPFAfk05t4cRxHNQgt6jwKCQKz*m7f6JK9nba3c2kumR4im8juZKP*2A79Cl97*qDWAbgzeLFA/Ivy_Denver.jpg?width=32&amp;height=32&amp;crop=1%3A1" /></a><a href="/profile/JimLindstrom?xg_source=activity"><img class=" feed-avatar friend-2" "width="32" height="32" alt="" src="http://api.ning.com:80/files/itgCZdYQtEyTqnGd-pVH6hRuuNm9ASzyB77e3yG77Yf74DctRkbEMRuDqANCzM40h1-TObF7KNq*Tz2M8*zlfDsnwpHexk24/DSCN3488.JPG?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message"><span class="feed-string"><a href="http://www.govloop.com/profile/GenevieveSkora?xg_source=activity">Genevieve Skora</a> and <a href="http://www.govloop.com/profile/JimLindstrom?xg_source=activity">Jim Lindstrom</a> are now friends</span></div><span class="feed-timestamp xg_lightfont">13 hours ago</span></div><div class="feed-story feed-story-status xg_separator"><a href="/profile/TeriCentner?xg_source=activity"><img class=" feed-avatar" "width="32" height="32" alt="" src="http://api.ning.com/files/eirmmfomI-YFeZMMB8IPykktlVQyo61BuwkUIAbHsoR1dLdyXanEI4kj5*8wrgZfJ7MK4g1ruMmO*mwi1SQ9AcFrzXhZd-eK/flower.jpg?width=32&amp;height=32&amp;crop=1%3A1" /></a><div class="feed-message">    <div class="status-bg xg_theme-button-bc"></div>
+        <div class="status">
+            <div class="arrow left_arrow square_arrow xg_theme-link-c"></div>
+            <div class="current"><span class="feed-string"><a href="http://www.govloop.com/profile/TeriCentner?xg_source=activity">Teri Centner</a> Bummer, man. 1 point. :(</span>            </div></div></div><span class="feed-timestamp xg_lightfont">14 hours ago</span></div>        </div>
+    </div>
+        <div class="xg_module_foot">
+        <ul>            <li class="left"><a class="xg_icon xg_icon-rss" href="http://www.govloop.com/activity/log/list?fmt=rss">RSS</a></li>
+        </ul>
+    </div></div>
+<div class="xg_module mini-leaderboard-module xj_leaderboard_module">
+    <div class="xg_module_head handle">
+     <h2><span>Top Content</span>&nbsp;</h2>
+    <p class="edit" style="display:none"><a class="button" href="#"><span>Edit</span></a></p>
+</div>
+<div class="xg_module_body">
+            <table class="leaderboard">
+                        <tbody>
+                                    <tr >
+                        <td class="lb-rank">1</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1346999" class="" ><img alt="" src="http://api.ning.com/files/xUYe4QiCDFqoFum4z-QHP8Uf9*bBTR3ARrYO-Y-k0SYx*AUKseofbtzeWs3i3k0HV4jUan1YZscGZuSM*BBBHX1Qsm27-CiX/n610750188_3645.jpg?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1346999" class="" >5 Attributes of the Best Online Community Managers</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr class="alt">
+                        <td class="lb-rank">2</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1341842" class="" ><img alt="" src="http://api.ning.com/files/xUYe4QiCDFqoFum4z-QHP8Uf9*bBTR3ARrYO-Y-k0SYx*AUKseofbtzeWs3i3k0HV4jUan1YZscGZuSM*BBBHX1Qsm27-CiX/n610750188_3645.jpg?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1341842" class="" >TED Talks Are My Red Bull</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr >
+                        <td class="lb-rank">3</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348554" class="" ><img alt="" src="http://api.ning.com/files/sBGSIrDrGmTHAdnEXVNrvdUkLNXNOi9JQVEmTPZqwdISyLcRwH0yOvHTqZ8q7CE-HtSA2poUW*vWsHzl9X2dcsswmUX8lpcj/RCR.jpg?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348554" class="" >Iyengar on Free Access to Law in India</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr class="alt">
+                        <td class="lb-rank">4</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348852" class="" ><img alt="" src="http://api.ning.com/files/ZbrV*AfDOOgQzcG0t6taIEygGa2X7aXqjivWKK7G3g9ucZwilJ9dJlqwXUw6PV*q4TGvdtmVziRawiouKv3kmvXv--aWDcVw/JessicaPrue.JPG?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348852" class="" >Continuing transparency efforts despite funding cuts</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr >
+                        <td class="lb-rank">5</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348533" class="" ><img alt="" src="http://api.ning.com/files/ES2sCM5GJeB9XfQlIPulN2pBRtip8kIPXyzFR2i0Zi6LYiCmhMnAuxMWc6kNT8RzITCTzzKWRmglPNxl7qtuXe2gSN8cN40oLgsSltIKwuE_/mangatar.jpg?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348533" class="" >2011 PMF Data Visualization: Semifinalists vs Finalists</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr class="alt">
+                        <td class="lb-rank">6</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348667" class="" ><img alt="" src="http://api.ning.com/files/QVV-d1mULbYrjkPEI*iu93ibpvErz52D4LRPNtw2PEvCISLmORwcwu2H2h4v3VTS1caZ18FrvrtO0noIbIaMNsG49LCyecjl/740642913.bin?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348667" class="" >Industrial Networking Solutions Security - PLC, SCADA</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr >
+                        <td class="lb-rank">7</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ATopic%3A1348669" class="" ><img alt="" src="http://api.ning.com/files/jx-mC30MLadJt86f*rOmqhNO-fEFYpE-acwgTRC359-klpKqJYNwA8zBewFeXRBNafQuZH0eu8QeF6J2otI5asNY6XoqSZq4Jy0OKPwjxew_/joshnankivel200x200.png?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ATopic%3A1348669" class="" >Kanban in Gov Projects</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr class="alt">
+                        <td class="lb-rank">8</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348596" class="" ><img alt="" src="http://api.ning.com/files/0eMW891BrPT01DHNd0S-2bE7EXtRx6t-cj4eNz4jiLHaQuBx5hBOLA2nugCjnbXmRC7*-rd80RGgPY0-1fBkUfyv9ZarkNZE/DossyProfilePicJune20102.jpg?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348596" class="" >Using Brand Architecture to Rethink Government</a></h3>
+                                                                                </td>
+                    </tr>
+                                    <tr >
+                        <td class="lb-rank">9</td>
+                        <td class="lb-content">
+                            <span class="xg_avatar left"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348775" class="" ><img alt="" src="http://api.ning.com/files/DSb3UdcH6ttE0NP3Aq5gZw0wZ5D5V-9EFItS3OC6rxmwS3V3ZLZI9lU8xp9KyLZgXFqnyyzaWdv8OK19Txvlsforin-IWvy5/gov_loop_square.gif?width=32&amp;height=32&amp;crop=1%3A1" class="photo" width="32" height="32" /></a></span>
+                            <h3 class="dy-protect"><a href="http://www.govloop.com/xn/detail/1154385%3ABlogPost%3A1348775" class="" >Aphorism 50</a></h3>
+                                                                                </td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    <div class="xg_module_foot">
+        <ul>
+                            <li class="left"><a class="xg_icon xg_icon-rss" href="http://www.govloop.com/leaderboards/topcontent/day?feed=yes&amp;xn_auth=no&amp;n=20&amp;images=yes&amp;imageMaxSize=240">RSS</a></li>
+                            <li class="right"><a href="http://www.govloop.com/leaderboards/topcontent/day">View All</a></li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+            <div id="xg_foot">
+                <p class="left">
+    © 2011 &nbsp; Created by <a href="/xn/detail/u_sressler">GovLoop</a>.    </p>
+    <p class="right xg_lightfont">
+                <a href="http://www.govloop.com/main/embeddable/list">Badges</a> &nbsp;|&nbsp;
+                            <a href="http://www.govloop.com/main/authorization/signUp?target=http%3A%2F%2Fwww.govloop.com%2Fmain%2Findex%2Freport" dojoType="PromptToJoinLink" _joinPromptText="Please sign up or sign in to complete this step." _signInUrl="http://www.govloop.com/main/authorization/signIn?target=http%3A%2F%2Fwww.govloop.com%2Fmain%2Findex%2Freport">Report an Issue</a> &nbsp;|&nbsp;
+                <a href="http://www.govloop.com/main/authorization/termsOfService?previousUrl=http%3A%2F%2Fwww.govloop.com%2Fprofiles%2Fblogs%2Fcrowdsourcing-at-its-best">Terms of Service</a>
+    </p>
+
+            </div>
+        </div>
+        
+        <div id="xj_baz17246" class="xg_theme"></div>
+<div id="xg_overlay" style="display:none;">
+<!--[if lte IE 6.5]><iframe></iframe><![endif]-->
+</div>
+<!--googleoff: all--><noscript>
+	<style type="text/css" media="screen">
+        #xg { position:relative;top:120px; }
+        #xn_bar { top:120px; }
+	</style>
+	<div class="errordesc noscript">
+		<div>
+            <h3><strong>Hello, you need to enable JavaScript to use GovLoop - Social Network for Government.</strong></h3>
+            <p>Please check your browser settings or contact your system administrator.</p>
+			<img src="/xn_resources/widgets/index/gfx/jstrk_off.gif" height="1" width="1" />
+		</div>
+	</div>
+</noscript><!--googleon: all-->
+<script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/core.min.js?v=201103311618"></script>        <script>
+            var sources = ["http:\/\/b.scorecardresearch.com\/beacon.js","http:\/\/static.ning.com\/govloop\/instances\/shared\/js\/set_common.min.js?r=1301615605","http:\/\/static.ning.com\/govloop\/instances\/shared\/js\/set_shared_c0.min.js?r=1298581331","http:\/\/static.ning.com\/govloop\/instances\/shared\/js\/set_sidebar_u.min.js?r=1297372045"];
+            var numSources = sources.length;
+            var heads = document.getElementsByTagName('head');
+            var node = heads.length > 0 ? heads[0] : document.body;
+            for (var i = 0; i < numSources; i++) {
+                var source = sources[i];
+                xg._loader.loading(source);
+                var script = document.createElement('script');
+                
+                script.type = 'text/javascript';
+                var cb = (function(source) { return function() { xg._loader.onLoad(source); }; })(source);
+                script.onerror = script.onload = cb;
+                script.onreadystatechange = function() {
+                    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                        cb();
+                    }
+                }
+                script.src = source;
+                node.appendChild(script);
+            }
+        </script>
+    <script type="text/javascript">
+if (!ning._) {ning._ = {}}
+ning._.compat = { encryptedToken: "<empty>" }
+ning._.CurrentServerTime = "2011-04-03T18:16:38+00:00";
+ning._.probableScreenName = "";
+ning._.domains = {
+    base: 'ning.com',
+    ports: { http: '80', ssl: '443' }
+};
+ning.loader.version = '201103311618_125'; // DEP-6475-1:662d965 26
+djConfig.parseWidgets = false;
+</script>
+<script type="text/javascript">
+    xg.token = '';
+    xg.cdnHost = 'static.ning.com';
+    xg.version = '201103311618';
+    xg.useMultiCdn = true;
+        xg.staticRoot = 'socialnetworkmain';
+    xg.xnTrackHost = "track.ning.com";
+            xg.cdnDefaultPolicyHost = 'static';
+        xg.cdnPolicy = [];
+        xg.global = xg.global||{}; xg.global.currentMozzle = 'profiles';
+    xg.global.userCanInvite = false;
+    xg.global.requestBase = '';
+    xg.global.locale = 'en_US';
+    xg.num_thousand_sep = ",";
+    xg.num_decimal_sep = ".";
+        (function() {
+        dojo.addOnLoad(function() {
+            if(window.bzplcm) { window.bzplcm.ts('hr'); window.bzplcm._profileSend(); }
+                    });
+                            ning.loader.require('xg.profiles.blog.show', 'xg.index.like', 'xg.index.tweet.PostToTwitterLink', 'xg.index.facebookLike', function() { xg._loader.onLoad('xnloader'); });
+            })();
+</script>
+<script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/js/thrift/xn_track.min.js?v=201103311618"></script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(
+	['cc._setAccount', 'UA-3002088-1'],
+	['cc._setDomainName', '.govloop.com'],
+	['cc._setAllowHash', false],
+	['cc._trackPageview']);
+</script>
+
+<script language="javascript" src="http://topics.govloop.com/wp-content/themes/govloop/js/autotagging.js"></script> 
+
+<script type="text/javascript"> 
+   $(function() {
+		addLinkerEvents();
+    });
+</script>
+
+<script type="text/javascript">
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<SCRIPT TYPE='text/javascript' LANGUAGE='JavaScript' SRC='/elqNow/elqCfg.js'></SCRIPT>
+<SCRIPT TYPE='text/javascript' LANGUAGE='JavaScript' SRC='/elqNow/elqImg.js'></SCRIPT>
+
+<script type="text/javascript" src="http://static.ning.com/govlife/js/jquery.tools.min.js"></script>
+<script type="text/javascript">
+var urlBase = "http://"+document.domain;
+if(document.URL == urlBase || document.URL == urlBase+"/" || document.URL == urlBase+"/index.php") {
+if (typeof(x$) != 'undefined') {
+var preHeaderHTML = '<span id="prev">prev</span><div id="carouselContainer"><div class="items"></div></div><span id="next">next</span>';
+var arr = [
+
+{ "l":"http://www.govloop.com/profiles/blogs/daily-dose-are-you-being-too",
+ "i":"http://api.ning.com:80/files/XFP9kmxd6CYHkvUZmCA3V1syCQBhAFYoaGt3t0rLPEpEXKNss1VcdOs5fKKHW9Ar3v9*vSm8w15Tk0kMeoXS5h1MHaxT9Aqx/Screenshot20110401at8.33.57AM.png?width=325&height=236",
+  "s":"Daily Dose",
+  "t":"Are You Being Too Close Minded About Your Job Search?"
+},
+
+{ "l":"http://www.govloop.com/profiles/blogs/5-attributes-of-the-best",
+ "i":"http://api.ning.com:80/files/-xDzfZE-uz841HRLQ3dgV0P-nozBSU-4VvRTFrvSU0TNp5xTG2JAGVGFW1y-y-XuNyluImXT66DMOQvdb4VxEFqcpugkCX4O/Screenshot20110401at8.33.26AM.png?width=325&height=236",
+  "s":"Top 5",
+  "t":"Attributes of the Best Online Community Managers"
+},
+
+{ "l":"http://www.govloop.com/profiles/blogs/ted-talks-are-my-red-bull",
+ "i":"http://api.ning.com:80/files/x6YNF5ujzJEnoc6-RzWCy9FBFQlphqjGFqQk8bZwPmpalnG0pHweGc4gKT1vXUN3WNoA2NIlybDenKXEvtgeTCj1M6t-*ogY/Slide1.png?width=325&height=236",
+  "s":"It Gives You Wings!",
+  "t":"TED Talks Are My Red Bull"
+},
+
+{ "l":"http://www.govloop.com/profiles/blogs/budget-cuts-may-end",
+ "i":"http://api.ning.com:80/files/p3y6dTjlR6c6FB*tHaUnIyOK72CHBkW3u5NzGREJc3RhGhf01tNwvALtGc*81B7Ak2VslWfi*v1TcQ6wuZ9LiCO-*4M1nUy0/features_hero2.jpg?width=325&height=236",
+  "s":"Budget Battle Targets Open Gov",
+  "t":"Budget Cuts May End Transparency Programs"
+},
+
+
+{ "l":"http://www.govloop.com/profiles/blogs/daily-dose-is-government-the",
+ "i":"http://api.ning.com:80/files/NFcL64DhixfgRkTRrRthM7T9f79pEFiXkxizE10OR8OOZVC0xfxjTHx5Iy-rdhy9TSl3wUgJt1CdgQZ*o2hd-WRUrAUOZ4rJ/bulldurhampic.jpg?width=325&height=236",
+"s":"Daily Dose",
+  "t":"Is Government The Minor Leagues?"
+},
+
+{ "l":"http://www.govloop.com/profiles/blogs/leadership-is-face-to-face",
+ "i":"http://paulwolfideas.files.wordpress.com/2011/03/bloomberg100927_960.jpg?w=325&h=236",
+  "s":"Getting to Know You",
+  "t":"Leadership Is Face To Face"
+},
+
+{ "l":"http://www.govloop.com/group/managementconceptsalumni/forum/topics/govreads-project-management",
+ "i":"http://api.ning.com:80/files/BwbvoQWOaExGuBUo5AW6rjaOURlkyJJuN9u5HD2ZF4uHCs9zXsOgMUKv1xczHyIxGIDj8HbMhqFqWhrukTGBvGvl*FSPCSYm/Screenshot20110328at11.39.07AM.png?width=325&height=236",
+  "s":"GovReads",
+  "t":"Project Management Answer Book"
+},
+
+
+];
+
+x$("#spotlight").html(preHeaderHTML);
+for (i=0;i<arr.length;i++) {
+	var model = x$('<a href="'+arr[i].l+'" style="background:url('+arr[i].i+')"><h5></h5><h4></h4><div class="txt"></div></a>');model.clone(true).find('h5').html(arr[i].s).end().find('h4').html(arr[i].t).end().appendTo('.items');
+}
+}
+}
+x$(document).ready(function() { x$("#carouselContainer").scrollable({prevPage: "#prev",nextPage: "#next",size: 2, loop:true, interval: 9000 }); });
+if (typeof(x$) != 'undefined') {
+  x$("#xg_foot").load('/html_include/hero_embed.php');
+  var footer_html = x$("#xg_foot");
+  x$("#xg_foot").remove();
+  x$("#xg").after(footer_html);
+  x$("#xg_body").addClass("easyclear");
+}
+</script>
+<script type="text/javascript">
+if (typeof(x$) != 'undefined') {
+var oldHref = x$('#xg_profiles_settings_email_show').attr('href');
+if (oldHref) {
+var oldValue = x$('#xg_profiles_settings_email_show').html();
+var newValue = oldValue.replace('govloop.com','govloop.ning.com');
+x$('#xg_profiles_settings_email_show').html(newValue);
+var newHref = oldHref.replace('govloop.com','govloop.ning.com');
+x$('#xg_profiles_settings_email_show').attr('href',newHref);
+}
+}
+</script>
+<style type="text/css">
+/* footer */
+#xg_foot p {padding:10px 20px;}
+#xg_foot {position: relative; clear:both; width:100%; padding:0; min-width:780px; }
+.xg_dock_spacer {height:0;}
+#xg_foot { border:0 none; font-family:inherit; font-size:100%; font-style:inherit; font-weight:inherit; margin:0; padding:0; padding-bottom:20px; vertical-align:baseline; color:#fff !important; }
+#xg_foot p { margin:0 !important; padding:0 !important; margin-top:20px !important;}
+#xg_foot h3 { color:#fff; font-size:16px !important; font-family:'Helvetica',sans-serif; font-weight:bold; }
+#xg_foot p, #xg_foot li { font-family:'Helvetica'; line-height:1.2em !important; }
+#xg_foot a { color:#aaa; }
+#xn_bar { background-color:transparent !important; }
+#xg_foot { background-color:#474747 !important;  }
+
+/* Footer
+----------- */
+#locale {position:relative;float:left;}
+
+.footer-content {width:960px;margin:0 auto;clear:both; padding:30px 0; }
+#xg_foot, .footer {background-color:#e9eee8;}
+
+.footer-content h3 {font-size:140%;}
+.heart {color:#f4376c;}
+.footer-content p {margin-top:20px;}
+.footer-last .right {margin-top:0;}
+.footer-content ul {list-style-type:none;margin-top:20px;}
+.footer-content ul.text li {margin-bottom:15px;}
+.footer-last {clear:both;padding-top:30px;}
+.footer-last span, .footer-last a {padding-right:20px;}
+.footer-last a {color:#959595 !important;}
+.adjacent {margin-left:1em;padding-left:1em;border-left:1px solid #ccc;}
+.minus5 {margin-top:-5px;}
+
+#xg_foot small { color:#fff; display:block; font-family:Helvetica; font-size:1em; }
+.col {float:left; text-align:left;}
+.col-left,.col-right {margin-bottom:2em;}
+.col-left {width:616px;}
+.col-right {width:277px; float:right;}
+.col-third {width:306px;margin-right:20px;}
+.col-last {margin-right:0;}
+
+.col-border-left {border-left: 1px solid #e1e1e1;margin-left: 13px;padding-left: 13px;}
+.col-border-right {border-right: 1px solid #e1e1e1;margin-right: 13px;padding-right: 13px;}
+</style>
+
+
+
+
+
+<script type="text/javascript">
+var NUMBER_OF_ALLOWED_PAGES = 3;
+var SKIP_PERIOD = 1;
+</script>
+<style type="text/css">
+/*body{font:62.5% arial,helvetica,clean,sans-serif;}*/
+#signup-alert {
+  position: absolute;
+  background: #fff;
+  border: 5px solid #222;
+  z-index: 9999;
+}
+hr {
+  border: 0 #eeeeee solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+#signup-alert h2 { font-size: 2.4em; margin: 0; color: #5eba16; }
+#signup-alert h3 { font-size: 1.6em; font-weight: bold; margin: 0 0 20px 0; }
+#signup-alert img { margin: 0 20px 0 0;}
+
+#signup-alert span.email-input-container { border: 1px solid #5eba16; overflow: hidden; display: inline-block; padding: 0; margin: 0 5px 0 0; float: left; }
+#signup-alert input#email { border: none; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding: 5px; color: #5eba16; font-size: 32px; font-weight: bold; font-family: helvetica, arial, sans-serif; width: 210px; }
+
+#signup-alert span.join-button-container { border: 1px solid #438510; overflow: hidden; display: inline-block; padding: 0; margin: 0 0 0 5px; float: right; }
+#signup-alert input#join { cursor: pointer; background: #5eba16; border: none; border-top: 1px solid #9dd570; border-bottom: 1px solid #53a613; text-shadow: #438510 -1px -1px 0; padding: 4px 32px; color: #fff; font-size: 32px; font-weight: bold; font-family: helvetica, arial, sans-serif; }
+#signup-alert input#skip,
+#signup-alert input#signin { cursor: pointer; background: #eeeeee; border: 1px solid #cccccc; padding: 1px 10px; color: #666666; font-size: 11px; font-weight: bold; font-family: helvetica, arial, sans-serif; float: right; margin-left: 5px; }
+#signup-alert input#join:active { background: #438510; }
+#signup-alert input#skip:active,
+#signup-alert input#signin:active { color: #33ccff; }
+.lightbox { display: none; position: absolute; z-index: 100000; background: #222; background: rgba(0,0,0,0.5); left: 50%; padding: 20px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+.lightbox_content { background: #fff; position: relative; padding: 10px; }
+</style>
+
+<script src="http://govups.com/phpfaber/jquery.js" type="text/javascript"></script>
+<form name="frm" id="frm" style="margin:0; padding:0;">
+<div style="display:none; width:600px; margin-left:-300px; top:250px;" id="signup-alert" class="lightbox">
+    <div class="lightbox_content">
+      <div style="margin-bottom: 5px;">
+        <img src="http://govups.com/phpfaber/dr.govlooplarge.jpg" width="183" height="183" alt="Dr. GovLoop" align="left" />
+        <h2>Join the Community</h2>
+        <br />
+        <h3>Loving the GovLoop? Dr. GovLoop's prescription is to join for more awesomeness.</h3>
+        <center><span class="email-input-container"><input type="text" name="email" id="email" value="Your Email" /></span><span class="join-button-container"><input type="submit" name="join" id="join" value="Join" /></span></center>
+      </div>
+      <div style="clear: both;"></div>
+      <hr />
+      <input type="button" name="signin" id="signin" value="Member? Sign In" />
+      <input type="button" name="skip" id="skip" value="Not Now" />
+    </div>
+</div>
+</form>
+<script type="text/javascript">
+  $('#signup-alert').signupLightbox();
+</script>
+
+    <script>
+    function cf_showiplist(){ $("#cf_otherswithip_container").show("slow"); }
+    function cf_hideiplist(){ $("#cf_otherswithip_container").hide("slow"); }
+    function cf_showfreezemessage(){ $("#cf_freezemessage_container").show("slow"); }
+    function cf_hidefreezemessage(){ $("#cf_freezemessage_container").hide("slow"); }
+    function cf_updatefreezestatus(){
+    var cf_freezemember="off";
+    if(document.getElementById("cf_freezestatus").checked==true){ cf_freezemember="on"; }
+    var cf_freezemessage=$("#freezemessagetext").val();
+    $.ajax({ type: "POST",url: "http://www.govloop.com/extensions/mods/controlfreak_update.php",data: "mode=updatestatus&cf_freezestatus="+cf_freezemember+"&cf_freezemessage="+cf_freezemessage+"&screenName=%3Afb%3D",
+    async: false, success: function(response){ alert(response); } });
+    }
+    function cf_updatefreezemessage(){
+    var cf_freezemessage=$("#freezemessagetext").val();
+    $.ajax({ type: "POST",url: "http://www.govloop.com/extensions/mods/controlfreak_update.php",data: "mode=updatemessage&cf_freezemessage="+cf_freezemessage+"&screenName=%3Afb%3D",
+    async: false, success: function(response){ alert(response); } });
+    }
+    </script></body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="CrowdFlower's crowdsourcing solutions offer a cost-conscious, elastic workforce which gives companies immediate, high-quality work. CrowdFlower customers complete massive volumes of simple jobs and eliminate the lead time and overhead associated with hiring or outsourcing.">
+  
+  <title>CrowdFlower -  Documentation</title>
+  
+  <link rel="shortcut icon" href="/images/favicon.png" />
+  
+  <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="/stylesheets/bundles/marketing_master.css?v=846c" />
+  <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="/stylesheets/bundles/marketing.css?v=1dd1" />
+  <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="/stylesheets/bundles/docs.css?v=ef25" />
+  
+  <script type="text/javascript" src="/javascripts/bundles/mootools.js?v=998c"></script>
+  <script type="text/javascript" src="/javascripts/bundles/crowdflower_base.js?v=ef34"></script>
+  <script type="text/javascript" src="/javascripts/bundles/docs.js?v=1751"></script>
+  <script type="text/javascript" src="http://use.typekit.com/vyd2clc.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type="text/javascript" charset="utf-8">
+  <!--
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3841988-8']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+      ga.src = "http://www.google-analytics.com/ga.js";
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+  //-->
+</script>
+
+  
+  
+  
+</head>
+<body class="marketing docs ">
+  <div id="login_panel">
+  <div id="login_container">
+      <a href="#login_form" id="login_panel_tab">Login</a>
+      <form action="/login" method="post" id="login_form" accept-charset="utf-8">
+        <h2>Login 
+            <a class="signup" href="/account/new">(or Signup)</a>
+        </h2>
+        <input type="hidden" name="_method" value="put">
+        <label for="email">Email:</label> <input class="login_input" type="text" name="email" value="">
+        <label for="password">Password:</label> <input class="login_input" type="password" name="password" value="">
+    
+        <input class="button" type="submit" value="Login" id="login_button">
+      </form>
+  </div>
+</div>
+  <div id="header">
+    <div id="logo">
+      <a title="CrowdFlower - Crowdsourcing / Labor-On-Demand" alt="CrowdFlower - Crowdsourcing / Labor-on-Demand" href="/">CrowdFlower</a>
+    </div>
+    <div class="phone_top">
+Call us: <span class="lighter">415 - 651 - 4485</span> 
+</div>
+<ul id="main-nav">
+    <li class=''><a href='/solutions'>Solutions</a></li>
+    <li class=''><a href='/self_service'>Self Service</a></li>
+    <li class=''><a href='/news'>News &amp; Events</a></li>
+    <li><a href="http://blog.crowdflower.com/">Blog</a></li>
+</ul> 
+
+  </div>
+  <div id="content">
+    <ul class="sub-nav">
+  <li class='current'><a href='/docs/interface'>Requester Interface</a></li>
+<li class=''><a href='/docs/gold'>Gold</a></li>
+<li class=''><a href='/docs/api'>API</a></li>
+<li class=''><a href='/docs/cml'>CML</a></li>
+<li class=''><a href='/docs/channel_api'>Channel API</a></li>
+
+</ul>
+
+    
+    <h1 id='requester_interface'>Requester Interface</h1>
+
+<p>This page is intended to provide a basic overview of the CrowdFlower user interface. Here you can learn to navigate the interface and access the many features and tools available to you.</p>
+<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#dashboard'>Dashboard</a></li><li><a href='#data_page'>Data Page</a></li><li><a href='#edit_page'>Edit Page</a></li><li><a href='#preview_page'>Preview Page</a></li><li><a href='#gold_page'>Gold Page</a></li><li><a href='#workers_page'>Workers Page</a></li><li><a href='#calibration'>Calibration</a></li></ul></div>
+<h2 id='dashboard'>Dashboard</h2>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}</code></pre>
+
+<p>The dashboard is the best location to view your job&#8217;s progress and overall status.</p>
+
+<div class='params'>
+<dl>
+<dt>Unit Count</dt>
+
+<dd>The total number of units in your job. If you were to upload 18 rows of data, your unit count would display 18 units. If you do not upload data, your job will show 1 unit by default.</dd>
+
+<dt>Gold Count</dt>
+
+<dd>The total number of active Gold units in the job. Gold units are included in the total unit count.</dd>
+
+<dt>Judgments Needed</dt>
+
+<dd>The total number of judgments needed in the job. By default, the job is set to collect 3 judgments per unit. This can be altered when calibrating prior to running the job.</dd>
+
+<dt>Pending</dt>
+
+<dd>The number of judgments needed for the job to complete. This number will fluctuate due to workers occasionally transferring from trusted to untrusted. This is only relevant when a job is running.</dd>
+
+<dt>Trusted and Untrusted</dt>
+
+<dd>The total number of trusted and untrusted judgments collected in the job. Please visit our <a href='/docs/gold'>Gold documentation</a> to learn more about trusted and untrusted judgments.</dd>
+
+<dt>Actions</dt>
+
+<dd>This drop-down menu (displayed as &#8220;Not Running&#8221; prior to running the job) allows you to order judgments, copy, delete, and cancel your job. After the job begins to acquire judgments, you will be able to download the trusted judgments acquired in aggregated and full CSV formats. Note, reports can only be generated once while the job is running. Your reports will automatically be regenerated once the job completes.</dd>
+</dl>
+</div>
+
+<h2 id='data_page'>Data Page</h2>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}/units</code></pre>
+
+<p>This page allows you to view the dataset you have uploaded. It is recommended that you verify that your data was uploaded correctly. Note that each of your units have been assigned a unique <code>unit_id</code>. This id will be used to keep track of the unit throughout the completion process.</p>
+
+<div class='params'>
+<dl>
+<dt>Add Data</dt>
+
+<dd>Allows you to add new data to a job that already contains a dataset. Your new data must be in the same format as the previous data, including headers.</dd>
+
+<dt>Delete Data</dt>
+
+<dd>You cannot currently delete columns or rows in a pre-existing dataset. Selecting this button will automatically copy your job to a new job that will allow you to upload a new/altered dataset.</dd>
+
+<dt>Split Column</dt>
+
+<dd>Allows you to define a delimiter that will be used to parse out cells within a specified column into separate units. E.g. you wish to delimit 10 options found within a column&#8217;s cells in your spreadsheet. If the the 10 options were on separate lines within the cell, you could delimit the cells with a newline character. This will result in 10 separate units per row when regularly the cell would be considered one unit.</dd>
+</dl>
+</div>
+
+<h2 id='edit_page'>Edit Page</h2>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}/edit</code></pre>
+
+<p>The Edit page allows you to create and edit the form that your workers will interact with. There are currently two options available to you: the graphical editor and the CML editor.</p>
+
+<div class='params'>
+<dl>
+<dt>Graphical Interface</dt>
+
+<dd>The simplest way to create your form. This editing interface is most appropriate for simple jobs that will not contain complex features such as logic, custom formatting, JavaScript, etc.</dd>
+
+<dt>Title and Description</dt>
+
+<dd>Workers will first see your title. If compelling, they may choose to view your description/instructions and accept the job. It is recommended that you be as concise and clear as possible in your instructions. Examples are highly recommended.</dd>
+
+<dt>Apply Your Data</dt>
+
+<dd>Found directly under the description, select this box to apply the data you have uploaded. This information will be dynamic in your job (e.g. a unique URL displayed with every unit). Text is permitted in this area.</dd>
+
+<dt>Add Questions</dt>
+
+<dd>Select this box displaying &#8220;build form&#8221; to add your form&#8217;s questions from a list of question types. No coding required!</dd>
+
+<dt>CML Editor</dt>
+
+<dd>CML (CrowdFlower Markup Language) allows you to use code to implement special contingencies (logic, HTML, Javascript, CSS, etc.) in your form. You can learn more about CML by reading the <a href='/docs/cml'>CML documentation</a>. If you choose to edit with CML, we insist that you read this documentation.</dd>
+
+<dt>Advanced Options</dt>
+
+<dd>Allows you to set specific requirements for your job such as location restrictions, worker restrictions, keywords, etc.</dd>
+</dl>
+</div>
+
+<h2 id='preview_page'>Preview Page</h2>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}/preview</code></pre>
+
+<p>The preview page displays your form from a worker&#8217;s perspective. Test all form logic, JavaScript, CSS, etc. here prior to running your job. If the form is not functioning correctly in the preview interface, it will not function correctly for the workers. Use &#8220;Test Validation&#8221; to test any validators that have been added to your questions.</p>
+
+<h2 id='gold_page'>Gold Page</h2>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}/golds</code></pre>
+
+<p>The Gold page allows you to view and manage your Gold Standard Data. Take a look at our <a href='/docs/gold'>Gold documentation</a> for a detailed explanation of Gold.</p>
+
+<div class='params'>
+<dl>
+<dt>Create Gold</dt>
+
+<dd>This button directs you to the Gold creating interface.</dd>
+
+<dt>Gold Report</dt>
+
+<dd>The best way to obtain a broad perspective of the health of your Gold Standard Data. Here you may sort the gold listings by the number of contentions that workers have written when missing a unit, as well as by the percentage of judgments missed. Gold units with low agreement may indicate that the unit is faulty.</dd>
+
+<dt>Upload Gold CSV</dt>
+
+<dd>This button allows you to upload edits made to your Gold Data in CSV format. The safest and easiest practice is to modify units one by one from the Gold page, but if you choose to upload via a Gold CSV, be sure that your columns do not change. If you leave a field blank in the CSV, it will delete any existing data.</dd>
+</dl>
+</div>
+
+<p>You can download a spreadsheet version of your Gold units in CSV format with the following URL:</p>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}/golds/report.csv  </code></pre>
+
+<p>No source data will be included in this file.</p>
+
+<h2 id='workers_page'>Workers Page</h2>
+
+<pre lang='no-highlight'><code class='no-highlight' lang='no-highlight'>http://crowdflower.com/jobs/{job_number}/workers</code></pre>
+
+<p>This page contains information on all workers that have participated in your job. Trusted workers will be displayed in green. Untrusted workers will be displayed in red.</p>
+
+<div class='params'>
+<dl>
+<dt>Show Details</dt>
+
+<dd>Displays information on specific workers including answer distribution and missed Gold units. You can forgive a worker&#8217;s missed Gold units as well. This forgiveness only applies to the individual worker.</dd>
+
+<dt>Flag Worker</dt>
+
+<dd>Removes workers that are not performing to your standards. This will not remove their judgments from your results. Typically, you should let your Gold remove poor workers (and their judgments) from the job.</dd>
+</dl>
+</div>
+
+<h2 id='calibration'>Calibration</h2>
+
+<p>The calibration page allows you to set all of the order parameters for your job; including the number of units in an assignment, the worker pay per assignment, and the labor channels that will work on your job. Please make sure to thoroughly check your form, Gold units, and data prior to commencing this step.</p>
+
+<div class='params'>
+<dl>
+<dt>Judgments Per Unit</dt>
+
+<dd>The number of judgments that each unit will obtain. Even trusted workers can make mistakes, but if multiple trusted workers submit responses on the same unit, it is more likely that the correct response will be submitted. Aggregation will display the most agreed upon answer.</dd>
+
+<dt>Units Per Assignment</dt>
+
+<dd>Workers see one to several units at a time. An Assignment is a page of units. When you have Gold, a gold unit will be randomly inserted in the assignment. This allows you to control how much gold the workers will see. If you would like workers to see 1 Gold Unit for every 3 Source Units, you would set Units Per Assignment to 4. In this case, workers will complete four units, submit their responses, and receive notification when/if they miss the gold unit hidden within the Assignment.</dd>
+
+<dt>Pay Per Assignment</dt>
+
+<dd>The amount a worker is compensated for the equivalent of one page of work.</dd>
+</dl>
+</div>
+    <div class="docs_toc sidebar">
+</div>
+    <br class="clear">
+  </div>
+  
+  <div id="footer">
+    <div class="span-2">
+      <h2>About</h2>
+      <a href="/about">About CrowdFlower</a>
+      <a href="/about/team/index">Team</a>
+      <a href="/about/jobs">Jobs</a>
+    </div>
+    <div class="span-2">
+      <h2>API</h2>
+      <a href="/docs/interface">Requester Interface</a>
+      <a href="/docs/gold">Gold</a>
+      <a href="/docs/api">CrowdFlower API</a>
+      <a href="/docs/cml">CML</a>
+      <a href="/docs/channel_api">Channel API</a>
+    </div>
+    <div class="span-2">
+      <h2>Solutions</h2>
+      <a href="/solutions/blv/index">Business Listing Verification</a>
+      <a href="/solutions/search_rel/index">Search Relevance</a>
+      <a href="/solutions/prod_cat/index">Product Categorization</a>
+      <a href="/solutions/custom/index">Custom Solutions</a>
+    </div>
+    <div class="span-2">
+      <h2>Self-Service</h2>
+      <a href="/self_service/faq">FAQ</a>
+      <a href="/self_service">Overview</a>
+    </div>
+    <div class="span-2">
+      <h2>News / Events</h2>
+      <a href="/news">Coverage</a>
+      <a href="/news/press_releases">Press Releases</a>
+      <a href="/news/videos">Videos</a>
+      <a href="/news/events">Events</a>
+      <a href="/news/publications">Publications</a>
+    </div>
+    <div class="span-2 last">
+      <h2>Social Media</h2>
+      <a href="http://blog.crowdflower.com/">Blog</a>
+      <a href="http://twitter.com/CrowdFlower">Twitter</a>
+      <a href="http://facebook.com/CrowdFlower">Facebook</a>
+      
+      <h2>Law Talk</h2>
+      <a href="/general/privacy">Privacy Policy</a>
+      <a href="/general/terms_of_service">Terms of Service</a>
+      <a href="http://www.crowdflower.com">&copy;2011 CrowdFlower</a>
+    </div>
+    <br class="clear" />
+  </div>
+  
+  <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  mktoMunchkin("890-IJH-613");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Zend_Service_ReCaptcha in the standard incubator | Christer&#039;s blog o&#039; fun</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://s0.wp.com/wp-content/themes/pub/twentyten/style.css?m=1299605264g" />
+<link rel="pingback" href="http://cogo.wordpress.com/xmlrpc.php" />
+<meta name="google-site-verification" content="-YfEGbmcZ4h9uckZunSfjPFPZg55lc8NooMVKi1YEsA" />
+<style type="text/css">
+#flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+#flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+#flickr_icon_td {padding:0 5px 0 0 !important;}
+.flickr_badge_image {text-align:center !important;}
+.flickr_badge_image img {border: 1px solid black !important;}
+#flickr_badge_uber_wrapper {width:150px;}
+#flickr_www {display:block; text-align:center; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+#flickr_badge_uber_wrapper a:hover,
+#flickr_badge_uber_wrapper a:link,
+#flickr_badge_uber_wrapper a:active,
+#flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+#flickr_badge_wrapper {background-color:#ffffff;border: solid 1px #000000}
+#flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Christer&#039;s blog o&#039; fun &raquo; Feed" href="http://cogo.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Christer&#039;s blog o&#039; fun &raquo; Comments Feed" href="http://cogo.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Christer&#039;s blog o&#039; fun &raquo; Zend_Service_ReCaptcha in the standard&nbsp;incubator Comments Feed" href="http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1297799136g" type="text/css" />
+<script type='text/javascript' src='http://s2.wp.com/wp-includes/js/l10n.js?m=1295648996g&amp;ver=20101110'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/jquery/jquery.js?m=1290133841g&amp;ver=1.4.4'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/comment-reply.js?m=1235673275g&amp;ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cogo.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cogo.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Christer&#039;s blog o&#039; fun' href='http://cogo.wordpress.com/' />
+<link rel='prev' title='More HDR&nbsp;madness' href='http://cogo.wordpress.com/2008/06/27/more-hdr-madness/' />
+<link rel='next' title='AOTW 27, 2008: Bert Jansch &#8211; The Black&nbsp;Swan' href='http://cogo.wordpress.com/2008/06/30/aotw-27-2008-bert-jansch-the-black-swan/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/' />
+<link rel='shortlink' href='http://wp.me/phj7-56' />
+<link rel="shortcut icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1284002170g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1284002170g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1250548519g" />
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( /i/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( /i/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel='openid.server' href='http://cogo.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://cogo.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://cogo.wordpress.com/osd.xml" title="Christer&#039;s blog o&#039; fun" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+	<script type="text/javascript" charset="utf-8">
+		try{
+			var id = location.hash.match( /\#\!\/entry\/(\d+)/ )[1];
+			if ( id ) {
+				window.location = "http://cogo.wordpress.com?p=" + id;
+			};
+		}catch( error ){
+		}
+	</script>		
+<meta name="application-name" content="Christer&#039;s blog o&#039; fun" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Christer Edvartsen&#039;s blog about ... stuff!" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://cogo.wordpress.com/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /></head>
+
+<body class="single single-post postid-316 single-format-standard">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="http://cogo.wordpress.com/" title="Christer&#039;s blog o&#039; fun" rel="home">Christer&#039;s blog o&#039; fun</a>
+					</span>
+				</div>
+				<div id="site-description">Christer Edvartsen&#039;s blog about &#8230; stuff!</div>
+
+										<img src="http://s0.wp.com/wp-content/themes/pub/twentyten/images/headers/path.jpg?m=1267465824g" width="940" height="198" alt="" />
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li ><a href="http://cogo.wordpress.com/" title="Home">Home</a></li><li class="page_item page-item-619"><a href="http://cogo.wordpress.com/1001-albums/" title="1001&nbsp;Albums">1001&nbsp;Albums</a></li><li class="page_item page-item-16"><a href="http://cogo.wordpress.com/about-me/" title="About&nbsp;me">About&nbsp;me</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://cogo.wordpress.com/2008/06/27/more-hdr-madness/" rel="prev"><span class="meta-nav">&larr;</span> More HDR&nbsp;madness</a></div>
+					<div class="nav-next"><a href="http://cogo.wordpress.com/2008/06/30/aotw-27-2008-bert-jansch-the-black-swan/" rel="next">AOTW 27, 2008: Bert Jansch &#8211; The Black&nbsp;Swan <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-316" class="post-316 post type-post status-publish format-standard hentry category-php category-technology tag-captcha tag-incubator tag-php tag-recaptcha tag-zend-framework">
+					<h1 class="entry-title">Zend_Service_ReCaptcha in the standard&nbsp;incubator</h1>
+
+					<div class="entry-meta">
+						<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/" title="11:24 am" rel="bookmark"><span class="entry-date">June 28, 2008</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://cogo.wordpress.com/author/cogo/" title="View all posts by christer">christer</a></span>					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p>I imported the Zend_Service_ReCaptcha stuff to the <a href="http://framework.zend.com/" target="_blank">Zend Framework</a> standard incubator yesterday. You can access it from the subversion repository at <a href="http://framework.zend.com/svn/framework/standard/incubator/library/Zend/Service/" target="_blank">http://framework.zend.com/svn/framework/standard/incubator/library/Zend/Service/</a>.</p>
+<p>The component also includes a class to use the mail hide feature over at <a href="http://recaptcha.net/" target="_blank">recaptcha.net</a> that allows you to render an email address as something like user&#8230;@foo.com and the reader has to solve a recaptcha to see the complete email address.</p>
+<p>No documentation has been made yet but I will include some basic usage of the component in this post.</p>
+<h2>Display a ReCaptcha in a form</h2>
+<p>First you need to register at <a href="http://recaptcha.net/" target="_blank">recaptcha.net</a> to get a set of public/private keys for the domain you want to use the recaptcha on. If you develop something locally and you use <em>localhost</em> as hostname you will need to register <em>localhost</em> on the recaptcha site to get the keys. Once you have the keys you are good to go!</p>
+<p>When displaying the captcha you will only need the public key. The private key will be used when you verify the user input to see if a user has solved the captcha or not.</p>
+<pre class="brush: php;">
+&lt;?php
+/** @see Zend_Service_ReCaptcha */
+require_once 'Zend/Service/ReCaptcha.php';
+
+$publicKey = 'my public key from recaptcha.net';
+$reCaptcha = new Zend_Service_ReCaptcha($publicKey);
+?&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;ReCaptcha test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+            &lt;?= $reCaptcha ?&gt;
+            &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Replace the public key with your own public key and you will see something that hopefully resembles this screenshot:</p>
+<p><img class="alignnone size-full wp-image-317" src="http://cogo.files.wordpress.com/2008/06/recaptcha_1.png?w=334&#038;h=163" alt="Zend_Service_ReCaptcha" width="334" height="163" /></p>
+<h2>Verify the user input</h2>
+<p>Now that we have our recaptcha in place we need to verify the user input. To do that we have to expand the block of php code at the top of our example here a bit.</p>
+<p>PS! The syntax highlight plugin manages to write !emptyempty in the code below, so you&#8217;ll need to fix that if you copy the code.</p>
+<pre class="brush: php;">
+&lt;?php
+/** @see Zend_Service_ReCaptcha */
+require_once 'Zend/Service/ReCaptcha.php';
+
+$publicKey = 'my public key from recaptcha.net';
+$reCaptcha = new Zend_Service_ReCaptcha($publicKey);
+
+// See if the form has been posted and that the two fields from the
+// recaptcha are not empty
+if (isset($_POST['submit']) &amp;&amp;
+    !empty($_POST['recaptcha_challenge_field']) &amp;&amp;
+    !empty($_POST['recaptcha_response_field']) ) {
+    // Set the private key. We need this to verify user input
+    $privateKey = 'my private key';
+    $reCaptcha-&gt;setPrivateKey($privateKey);
+
+    // See if the input is valid
+    $response = $reCaptcha-&gt;verify($_POST['recaptcha_challenge_field'],
+                                   $_POST['recaptcha_response_field']);
+
+    if (!$response-&gt;isValid()) {
+        // Not valid. Add the error message from the recaptcha web service
+        // to the recaptcha object so it will be shown in the recaptcha
+        $reCaptcha-&gt;setParam('error', $response-&gt;getErrorCode());
+    } else {
+        // Success! The recaptcha has been solved
+    }
+}
+?&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;ReCaptcha test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+            &lt;?= $reCaptcha ?&gt;
+            &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>And thats it!</p>
+<h2>Hide email addresses with Zend_Service_ReCaptcha_MailHide</h2>
+<p>If you need to display an email address you can hide parts of it using the Zend_Service_ReCaptcha_MailHide component. You need a separate pair of public/private keys for this so head over to recaptcha.net and grab those keys.</p>
+<p>Lets say we want to hide mynewemailaddress@domain.com. Do something like the following piece of code:</p>
+<pre class="brush: php;">
+/** @see Zend_Service_ReCaptcha */
+require_once 'Zend/Service/ReCaptcha/MailHide.php';
+
+$publicKey = 'my public key';
+$privateKey = 'my super duper private key';
+
+$mailHide = new Zend_Service_ReCaptcha_MailHide($publicKey,
+                                                $privateKey,
+                                                'mynewemailaddress@domain.com');
+
+print($mailHide);
+</pre>
+<p>The output of this will be myne&#8230;@domain.com except that the &#8220;&#8230;&#8221; part will have link to a JavaScript popup that displays a recaptcha, and once the user solves it, the complete email address will be displayed.</p>
+<p>So &#8230; feel free to play around with the component and if you find some errors or feel that something is missing, let me know! I will add some more stuff about custom themes the next couple of days and maybe make a Zend Framework theme for the recaptcha.</p>
+											</div><!-- .entry-content -->
+
+
+					<div class="entry-utility">
+						This entry was posted in <a href="http://en.wordpress.com/tag/php/" title="View all posts in PHP" rel="category tag">PHP</a>, <a href="http://en.wordpress.com/tag/technology/" title="View all posts in Technology" rel="category tag">Technology</a> and tagged <a href="http://en.wordpress.com/tag/captcha/" rel="tag">captcha</a>, <a href="http://en.wordpress.com/tag/incubator/" rel="tag">incubator</a>, <a href="http://en.wordpress.com/tag/php/" rel="tag">PHP</a>, <a href="http://en.wordpress.com/tag/recaptcha/" rel="tag">recaptcha</a>, <a href="http://en.wordpress.com/tag/zend-framework/" rel="tag">zend framework</a>. Bookmark the <a href="http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/" title="Permalink to Zend_Service_ReCaptcha in the standard&nbsp;incubator" rel="bookmark">permalink</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://cogo.wordpress.com/2008/06/27/more-hdr-madness/" rel="prev"><span class="meta-nav">&larr;</span> More HDR&nbsp;madness</a></div>
+					<div class="nav-next"><a href="http://cogo.wordpress.com/2008/06/30/aotw-27-2008-bert-jansch-the-black-swan/" rel="next">AOTW 27, 2008: Bert Jansch &#8211; The Black&nbsp;Swan <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-below -->
+
+				<div id="wpl-likebox"><div id="wpl-button"><a href='http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/?like=1&amp;_wpnonce=235fbcd591' title='I like this post' class='like needs-login' rel='nofollow'><span>Like</span></a></div><div id="wpl-count">Be the first to like this post.</div></div>
+			<div id="comments">
+
+
+			<h3 id="comments-title">One Response to <em>Zend_Service_ReCaptcha in the standard&nbsp;incubator</em></h3>
+
+
+			<ol class="commentlist">
+					<li class="post pingback">
+		<p>Pingback: <a href='http://cogo.wordpress.com/2008/12/31/2008-is-almost-at-an-end/' rel='external nofollow' class='url'>2008 is almost at an end &laquo; Christer&#8217;s blog o&#8217; fun</a></p>
+	</li>
+			</ol>
+
+
+
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://cogo.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='316' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						
+<input type="hidden" name="genseq" value="1301850341" />
+<p><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe">Notify me of follow-up comments via email.</label></p><p><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Send me site updates</label></p><input type="hidden" name="sub-type" value="comment-form-text3" /><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="62629cf5d1" /></p>					</form>
+							</div><!-- #respond -->
+						
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" action="http://cogo.wordpress.com/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form></li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li id="twitter-3" class="widget-container widget_twitter"><h3 class="widget-title"><a href='http://twitter.com/cogocogo'>My tweets</a></h3><ul class='tweets'>
+<li>Funny to see that Warrors 2 (a browser game) is still online. <a href="http://bit.ly/hBVid9" rel="nofollow">http://bit.ly/hBVid9</a> <a href="http://twitter.com/cogocogo/statuses/54496283934732288" class="timesince">6&nbsp;hours&nbsp;ago</a></li>
+<li>Har vært med haandbryggerlauget i Fredrikstad i kveld. Drukket usedvanlig mye godt øl! For en gjeng. <a href="http://twitter.com/cogocogo/statuses/54307669443485696" class="timesince">18&nbsp;hours&nbsp;ago</a></li>
+<li>Playing with Post-receive URLs from github to trigger Jenkins builds <a href='http://twitter.com/search?q=%23github'>#github</a> <a href='http://twitter.com/search?q=%23jenkins'>#jenkins</a> <a href="http://twitter.com/cogocogo/statuses/54151884616904705" class="timesince">1&nbsp;day&nbsp;ago</a></li>
+<li>Enjoying a Duvel: <a href="http://flic.kr/p/9v7sQ1" rel="nofollow">http://flic.kr/p/9v7sQ1</a> <a href='http://twitter.com/search?q=%23beer'>#beer</a> <a href='http://twitter.com/search?q=%23duvel'>#duvel</a> <a href="http://twitter.com/cogocogo/statuses/53889392674209792" class="timesince">1&nbsp;day&nbsp;ago</a></li>
+<li>New blog post: Mocking MongoCollection With Mockery <a href="http://bit.ly/dXD6e2" rel="nofollow">http://bit.ly/dXD6e2</a> <a href='http://twitter.com/search?q=%23php'>#php</a> <a href='http://twitter.com/search?q=%23phpunit'>#phpunit</a> <a href='http://twitter.com/search?q=%23mockery'>#mockery</a> <a href="http://twitter.com/cogocogo/statuses/53867818545983488" class="timesince">1&nbsp;day&nbsp;ago</a></li>
+</ul>
+</li>	<li id="flickr" class="widget-container widget_flickr">	<h3 class="widget-title">My flickr photos</h3><!-- Start of Flickr Badge -->
+<table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0" class="flickr-size-small"><tr><td><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+<tr><td align='center'>
+<a href="http://www.flickr.com/photos/cogocogo/5580293448/"><img alt="Duvel" title="Duvel" src="http://farm6.static.flickr.com/5140/5580293448_2589f2ee24_m.jpg" border="0" /></a><br /><br /><a href="http://www.flickr.com/photos/cogocogo/5572030856/"><img alt="Shipyard XXXX IPA (Pugsley&#039;s Signature Series)" title="Shipyard XXXX IPA (Pugsley&#039;s Signature Series)" src="http://farm6.static.flickr.com/5303/5572030856_dd4771f3df_m.jpg" border="0" /></a><br /><br /><a href="http://www.flickr.com/photos/cogocogo/5564610161/"><img alt="Nøgne Ø #100" title="Nøgne Ø #100" src="http://farm6.static.flickr.com/5221/5564610161_a4f8c9e11f_m.jpg" border="0" /></a><br /><br /><a href="http://www.flickr.com/photos/cogocogo/">More Photos</a>
+</td></tr>
+</table>
+</td></tr></table>
+<!-- End of Flickr Badge -->
+
+		</li><li id="linkcat-1356" class="widget-container widget_links"><h3 class="widget-title">Blogroll</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://rexxars.com/">Espen Hovlandsdal</a></li>
+<li><a href="http://dispo.se/">Jan Petter</a></li>
+<li><a href="http://www.oter.net/oter">Jo Christian Oterhals</a></li>
+<li><a href="http://www.klunde.net/">Kristian Lunde</a></li>
+<li><a href="http://thyrhaug.net/">Magne Thyrhaug</a></li>
+<li><a href="http://www.e-mats.org">Mats Lindh</a></li>
+<li><a href="http://blog.michaelodden.com/">Michael Odden</a></li>
+<li><a href="http://prematureoptimization.org/blog/" title="Premature Optimization">Shahar Evron</a></li>
+<li><a href="http://ulimit.blogspot.com/">Stein Ove</a></li>
+
+	</ul>
+</li>
+<li id="rss_links-2" class="widget-container widget_rss_links"><h3 class="widget-title">RSS</h3><ul><li><a href="http://cogo.wordpress.com/feed/" title="Subscribe to Posts">RSS - Posts</a></li><li><a href="http://cogo.wordpress.com/comments/feed/" title="Subscribe to Comments">RSS - Comments</a></li></ul>
+</li><li id="text-92786331" class="widget-container widget_text"><h3 class="widget-title">ZCE</h3>			<div class="textwidget"><a href="http://www.zend.com/store/education/certification/authenticate.php?ClientCandidateID=ZEND005150&amp;RegistrationID=219687105"><img src="http://www.zend.com/images/training/php5_zce_logo.gif" /></a></div>
+		</li><li id="blog_subscription-2" class="widget-container widget_blog_subscription"><h3 class="widget-title"><label for="subscribe-field">Email Subscription</label></h3>
+<form action="http://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="subscribe-blog">
+			<p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+		<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" value="" id="subscribe-field"/></p>
+	
+	<input type="hidden" name="action" value="subscribe"/>
+	<input type="hidden" name="blog_id" value="66533"/>
+	<input type="hidden" name="source" value="http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/"/>
+	<input type="hidden" name="sub-type" value="widget"/>
+
+	<input type="hidden" id="_wpnonce" name="_wpnonce" value="6667a7adce" /><input type="hidden" name="_wp_http_referer" value="/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/" />
+	<p><input type="submit" value="Sign me up!" /></p>
+</form>
+
+</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="http://cogo.wordpress.com/wp-login.php?action=register">Register</a></li>			<li><a href="http://cogo.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://cogo.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://cogo.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+</li>			</ul>
+		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://cogo.wordpress.com/" title="Christer&#039;s blog o&#039; fun" rel="home">
+					Christer&#039;s blog o&#039; fun				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+				Theme: <a href="http://theme.wordpress.com/themes/twentyten/">Twenty Ten</a>				<a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery( function() {
+			
+			jQuery('#wpl-button > a.like').click( function(e) {
+				e.preventDefault();
+				
+				jQuery('#wpl-mustlogin').remove();
+
+				jQuery.post( 'http://cogo.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_like_click'
+				} );
+
+				var tenMins = new Date();
+				tenMins.setTime( tenMins.getTime() + 600000 );
+				document.cookie = 'wpl_rand=99fbe3f054; expires=' + tenMins.toGMTString() + '; domain=wordpress.com; path=/;';
+				
+				jQuery('#wpl-count').after( '\
+					<div id="wpl-mustlogin"> \
+						<form action="http://cogo.wordpress.com/wp-login.php" method="post"> \
+							<p>Just one more step to like this post:</p> \
+							<label><span>Username</span> <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="80" /></label> \
+							<label><span>Password</span> <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="81" /></label> \
+							<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="82" /> \
+							<input type="hidden" name="redirect_to" value="http://cogo.wordpress.com/2008/06/28/zend_service_recaptcha-in-the-standard-incubator/?like=1" /> \
+							<input type="hidden" name="wpl_rand" value="99fbe3f054" /> \
+							<p>Not a member yet? <a href="http://wordpress.com/signup/?ref=likebox" id="wpl-signup-link">Sign up with WordPress.com</a></p> \
+						</form> \
+					</div> \
+				');
+				
+				jQuery('#wpl-mustlogin').hide().slideDown('fast');
+			} );
+			
+			jQuery('#wpl-mustlogin input.input').live( 'focus', function() {
+				jQuery(this).prev().hide();
+			}).live( 'blur', function() {
+				if ( jQuery(this).val() == '' )
+					jQuery(this).prev().show();
+			});
+			
+			jQuery('#wpl-mustlogin input#wp-submit').live( 'click', function(e) {
+				e.preventDefault();
+				
+				jQuery.post( 'http://cogo.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_login_submit'
+				}, function() {
+					jQuery('#wpl-mustlogin form').submit();
+				} );
+			});			
+			
+			jQuery('#wpl-mustlogin a#wpl-signup-link').live( 'click', function(e) {
+				e.preventDefault();
+				
+				var link = jQuery(this).attr('href');
+				
+				jQuery.post( 'http://cogo.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_signup_click'
+				}, function() {
+					location.href = link;
+				} );
+			});					
+			
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.en,type.wpcom,posttag.captcha,posttag.incubator,posttag.php,posttag.recaptcha,posttag.zend-framework'};</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.en%2Ctype.wpcom%2Cposttag.captcha%2Cposttag.incubator%2Cposttag.php%2Cposttag.recaptcha%2Cposttag.zend-framework" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?p&#038;ver=MU'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {
+	my_hash: ""
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1298424233g&amp;ver=MU'></script>
+	<div style="display:none">
+	</div>
+
+	<script type="text/javascript">
+		var vglnk = { api_url: "//api.viglink.com/api",
+		key: "cdee124b11d6baacda6c3e29b12e23dc" };
+		(function(d, t) {
+			var s = d.createElement(t); s.type = "text/javascript"; s.async = true;
+			s.src = vglnk.api_url + "/vglnk.js?key=" + vglnk.key;
+			var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r); 
+		}(document, "script"));
+	</script>
+	<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script type='text/javascript' src='http://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shCore.js?m=1258143671g&#038;ver=2.1.364b'></script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/shBrushPhp.js?m=1260182860g&#038;ver=2.1.364b'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var themecssurl = "http://s0.wp.com/wp-content/plugins/syntaxhighlighter-wpcom/shThemeDefault.css?m=1267535107g&amp;ver=2.1.364b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.getElementsByTagName("head")[0].appendChild(themecss);
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://s1.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter/scripts/clipboard.swf?m=1253219630g';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.all();
+</script>
+<script src="http://s.stats.wordpress.com/w.js?19" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'66533','v':'wpcom','user_id':'0','post':'316','subd':'cogo'});
+ex_go({'crypt':'RDY2ZWNfUWVkQTlbTHF4VGJBZ0lYWX58XV02bXV1LHRSOV1hMmd4Z2pVVnAxbFNENUxnY0EzeVBwUHVDXWt2ZU5VSS9DTl9LW2NhUEk0S0lWWmdBdy18YV1QLDJkSldnZlItTi9hYn44fGdOW193VnBIUERMcyUleHBQamcxP0xibENsJWpHdX5KYVtBemtXbnFiT1c5c0ZzTnFzLW84UixjJl1oVzdzYTlYaTZESHlyKzdrX1dyMXRNcG1weDl+WzJTTmpJK0hqTCs9d0JuLnhFPy9UPWg3S3otZmFQakVUNWd2RDQ/Ky9bUk9uMXlNcGE4bzBbNTJ+RVlTUlZ4LGNDLUFTMUpKbm1FWHBaR0RIP0w1LkEmTVdOUDR+fEhfX3ptX0gvT1VuVDk='});
+addLoadEvent(function(){linktracker_init('66533',316);});
+	</script>
+</body>
+</html>

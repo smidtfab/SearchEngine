@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Description" content="The research makes three primary contributions:
+
+1. Identifies the coordination requirements necessary to crowdsource complex tasks, and describe a framework to support a variety of task types.
+2. Instantiats the framework in a prototype system for architecting the problem and managing the solution flow.
+3. Demonstrates how the system can extend to more complex flows that include verification phases, and provide evidence that such phases can lead to better outcomes. It also describes how the system can be extended to support arbitrarily complex and recursive flows." />
+<meta name="Keywords" content="" />
+    <title>CrowdForge: Crowdsourcing Complex Work - Crowdsourcing.org</title>
+    <link href="http://feeds.feedburner.com/CrowdsourcingCommunityFeed" rel="alternate" type="application/rss+xml" title="Crowdsourcing.org feed" />
+<link href="http://feeds.feedburner.com/CrowdsourcingCreativeFeed" rel="alternate" type="application/rss+xml" title="Creative community feed" />
+<link href="http://feeds.feedburner.com/CrowdsourcingToolsFeed" rel="alternate" type="application/rss+xml" title="Tools community feed" />
+<link href="/feed/user/id/247" rel="alternate" type="application/rss+xml" title="Member feed" />
+    <link href="http://yui.yahooapis.com/combo?3.0.0/build/widget/assets/skins/sam/widget.css&amp;3.0.0/build/widget/assets/skins/sam/widget-stack.css&amp;3.0.0/build/overlay/assets/skins/sam/overlay.css&amp;2.8.1/build/autocomplete/assets/skins/sam/autocomplete.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7]> <link href="http://static.crowdsourcing.org/css/ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<link href="http://static.crowdsourcing.org/css-build/92f84f1a5a1c99c4f41c6ab401241969.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://yui.yahooapis.com/combo?3.0.0/build/yui/yui-min.js&amp;3.0.0/build/oop/oop-min.js&amp;3.0.0/build/dom/dom-min.js&amp;3.0.0/build/event-custom/event-custom-min.js&amp;3.0.0/build/event/event-min.js&amp;3.0.0/build/pluginhost/pluginhost-min.js&amp;3.0.0/build/node/node.js&amp;3.0.0/build/event/event-key-min.js&amp;3.0.0/build/attribute/attribute-min.js&amp;3.0.0/build/base/base-min.js&amp;3.0.0/build/anim/anim-min.js&amp;3.0.0/build/io/io-base-min.js&amp;3.0.0/build/io/io-upload-iframe-min.js&amp;3.0.0/build/classnamemanager/classnamemanager-min.js&amp;3.0.0/build/widget/widget-min.js&amp;3.0.0/build/widget/widget-position-min.js&amp;3.0.0/build/widget/widget-position-ext-min.js&amp;3.0.0/build/widget/widget-stack-min.js&amp;3.0.0/build/widget/widget-stdmod-min.js&amp;3.0.0/build/overlay/overlay-min.js&amp;3.0.0/build/dom/selector-css3-min.js&amp;3.0.0/build/json/json-min.js&amp;&amp;3.0.0/build/dom/selector-native-min.js&amp;3.0.0/build/dom/selector-css2-min.js&amp;3.0.0/build/io/io-form-min.js&amp;2.8.1/build/utilities/utilities.js&amp;2.8.1/build/uploader/uploader-min.js&amp;2.8.1/build/swf/swf-min.js&amp;2.8.1/build/button/button-min.js&amp;2.8.1/build/container/container-min.js&amp;2.8.1/build/datasource/datasource-min.js&amp;2.8.1/build/autocomplete/autocomplete-min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+<script type="text/javascript" src="/js/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/js/forms/wysiwyg.js"></script>
+<script type="text/javascript" src="http://static.crowdsourcing.org/js-build/c8d0c481b14a2e7dabc92bde8da04f55.js"></script>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/png" />
+	<link href="/images/favicon.png" rel="icon" type="image/png" />
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        google.load('friendconnect', '0.8');
+    </script>
+
+    <div id="container" class="container">
+        <a class="feedback" href="https://crowdsourcing.uservoice.com/forums/48555-general"></a>
+
+        <div class="header">
+            <a class="logo" href="/"></a>
+            <div id="user-navigator" class="user-navigator">
+                <a id="login-button" class="link-btn" href="#">
+                    <span class="bord-right">
+                        <span class="name">LOGIN</span>
+                    </span>
+                </a>
+                <ul class="wrap-user-link">
+        <li><a href="/about" class="">About</a></li>
+    <li><a href="/sign-up" class="">Join</a></li>
+    
+    <li><a href="/faq" class="">FAQ</a></li>
+    <li class="last"><a href="/from-the-editor" class="">Blog</a></li>
+</ul>
+
+            </div>
+            <a id="follow-twitter" href="http://twitter.com/Crowdsourcing_"></a>
+            <div class="navigator">
+                <ul id="navigator-main" class="navigator-main">
+    <li class="nav nav-home"><a href="/" class="">Home</a></li>
+    <li class="nav nav-all-community"><a href="/communities" class="">All communities</a></li>
+    <li class="nav nav-editor"><a href="/from-the-editor" class="">From the editor</a></li>
+    <li class="nav nav-search"><a href="#"></a></li>
+    <li class="nav nav-submit-content"><a href="#">Submit content</a></li>
+    <li class="nav nav-question"><a href="/question/add" class="noacl">Ask a question</a></li>
+</ul>
+
+<div id="submit-content" class="submit-content" style="display: none;">
+    <div class="choice-dropdown" style="left: 591px; top: 0px;">
+        <div id="dropdown2" class="dropdown" style="display: none; width: 137px; top: 0px;">
+                            <a href="/article/add" class="noacl">Article</a>
+                            <a href="/blog/add" class="noacl">Blog</a>
+                            <a href="/document/add" class="noacl">Document</a>
+                            <a href="/site/add" class="noacl">Site</a>
+                            <a href="/featured-site/add" class="noacl">Featured Site</a>
+                            <a href="/video/add" class="noacl">Video</a>
+            
+        </div>
+    </div>
+</div>
+
+<div id="box-search" class="box-search" style="display: none;">
+    <form action="/search/page/1" method="get">
+        <div class="choice-dropdown">
+            <a id="choice" class="choice">Whole site</a>
+            <div id="dropdown" class="dropdown-search" style="display: none;">
+                <a class="current" id="com-0">Whole site</a>
+                            <a  id="com-1">Innovation</a>
+                            <a  id="com-2">Engagement</a>
+                            <a  id="com-3">Creative</a>
+                            <a  id="com-4">Social</a>
+                            <a  id="com-5">Knowledge</a>
+                            <a  id="com-6">Prediction</a>
+                            <a  id="com-7">Crowdfunding</a>
+                            <a  id="com-8">Tools</a>
+            
+            </div>
+        </div>
+        <input id="search_community" name="c" type="hidden" value="0" />
+        <input class="inp-search" id="search_query" name="q" type="text" maxlength="50" value="" />
+        <span class="overtext" id="search-query-overtext">Enter search query here</span>
+        <input class="btn-search" type="submit" value="&nbsp;" />
+    </form>
+</div>
+
+<script type="text/javascript">
+YUI().use('base', 'event', function(Y) {
+    Y.on('domready', function () {
+        var ItcForms = YUI.namespace('Itc.Forms'),
+            searchForm = new ItcForms.Search({
+                message: '',
+                isSearched: false
+            }),
+            ItcElements = YUI.namespace('Itc.Elements'),
+            submitContent = new ItcElements.SubmitContent();
+
+        Y.on('click', searchForm.showSearch,      '.nav-search a', searchForm);
+        Y.on('click', searchForm.selectCommunity, '#dropdown a',   searchForm);
+
+        Y.on('mouseover', searchForm.showDropdown, '#choice',   searchForm);
+        Y.on('mouseover', searchForm.showDropdown, '#dropdown', searchForm);
+        Y.on('mouseout',  searchForm.hideDropdown, '#choice',   searchForm);
+        Y.on('mouseout',  searchForm.hideDropdown, '#dropdown', searchForm);
+        
+        Y.on('focus', searchForm.hideDefaultText, '#search_query', searchForm);
+        Y.on('click', searchForm.hideDefaultText, '#search-query-overtext', searchForm);
+        Y.on('blur',  searchForm.showDefaultText, '#search_query', searchForm);
+
+        Y.on('click',     submitContent.showDropdown, 'li.nav.nav-submit-content', submitContent);
+        Y.on('mouseover', submitContent.showDropdown, '#dropdown2', submitContent);
+        Y.on('mouseout',  submitContent.hideDropdown, 'li.nav.nav-submit-content', submitContent);
+        Y.on('mouseout',  submitContent.hideDropdown, '#dropdown2', submitContent);
+    });
+});
+</script>
+<div id="communityNavigationScroller" class="community-navigation-scroller">	
+	<div class="prev-community disabled"></div>
+	<div class="wrap-navigator-community">
+		<ul class="navigator-community">
+		   		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/creative/3" class=""><img src="/images/community_menu/071f791f160d18462f05772fe7a91439.png" alt="Creative" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/crowdfunding/7" class=""><img src="/images/community_menu/46aa09d85f329381cd03221042c5a7cd.png" alt="Crowdfunding" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/engagement/2" class=""><img src="/images/community_menu/5cf006aebc9b840054d4550b11f202e5.png" alt="Engagement" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/innovation/1" class=""><img src="/images/community_menu/31d1c08cb805fa83fe650084546132d0.png" alt="Innovation" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/knowledge/5" class=""><img src="/images/community_menu/83b3a0f47779b3e34673fd76e36fb08a.png" alt="Knowledge" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/prediction/6" class=""><img src="/images/community_menu/767e432c065bdf61d6a4b245a69e3860.png" alt="Prediction" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/social/4" class=""><img src="/images/community_menu/257d48864af9851310ee9f668cfe86b9.png" alt="Social" /></a>
+		        </li>
+		    		        		            
+		        
+                <li class="nav-com">
+                    <a href="/community/tools/8" class=""><img src="/images/community_menu/66e3f56d7316114c46e6d1ded8cd56c1.png" alt="Tools" /></a>
+		        </li>
+		    
+		</ul>
+	</div>
+	<div class="next-community"></div>
+</div>
+
+            </div>
+            <div class="breadcrumb">
+                            <a href="/" class="home">Home</a><span>&raquo;</span>
+    
+            <a href="/communities" class="">Communities</a><span>&raquo;</span>
+    
+            <span class="">CrowdForge: Crowdsourcing Complex Work</span>
+    
+
+            </div>
+        </div>
+
+        <div class="wrap-main">
+            <div class="online-info-panel">
+    <div class="corn-left"></div>
+    <div class="corn-right"></div>
+    <p>
+     
+      30 mins ago, <a href="/profile/tim/239" class="">Tim</a> added a new document called  <a href="/document/the-unstoppable-rise-of-open-innovation-and-crowdsourcing/3394" class="active">The Unstoppable Rise of Open Innovation and Crowdsourcing</a> &nbsp;&nbsp;|&nbsp;
+     
+      1 hours ago, <a href="/profile/benjamin-fossel/234" class="">Benjamin Fossel</a> added a new site called  <a href="/site/philoptima/wwwphiloptimaorg/3393" class="">PhilOptima</a> &nbsp;&nbsp;|&nbsp;
+     
+      1 hours ago, <a href="/profile/benjamin-fossel/234" class="">Benjamin Fossel</a> added a new site called  <a href="/site/the-modest-needs/wwwmodestneedsorg/3392" class="">The Modest Needs</a> &nbsp;&nbsp;|&nbsp;
+     
+      3 hours ago, <a href="/profile/benjamin-fossel/234" class="">Benjamin Fossel</a> added a new document called  <a href="/document/audiences-at-the-gate-reinventing-arts-philanthropy-through-guided-crowdsourcing/3391" class="active">Audiences at the Gate: Reinventing Arts Philanthropy Through Guided Crowdsourcing</a> &nbsp;&nbsp;|&nbsp;
+     
+      4 hours ago, <a href="/profile/archenette-evangelio/247" class="">Archenette Evangelio</a> added a new document called  <a href="/document/beyond-the-team-crowdsourcing-crowdsourcing-seeking-ideas-directly-from-your-target-audience/3390" class="active">Beyond the Team: Crowdsourcing (Crowdsourcing; seeking ideas directly from your target audience)</a> &nbsp;&nbsp;|&nbsp;
+    
+    </p>
+</div>
+
+
+            <div class="main">
+                
+
+                <div class="wrap type2">
+                    <div class="content">
+                        
+
+                        <div style="position: absolute; top: 45px;">
+    <div style="float: left; padding-top: 4px; width: 80px;">
+        <script type="text/javascript">
+            tweetmeme_style = 'compact';
+        </script>
+        <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+    </div>
+    <div style="float: left;">
+        <fb:like show_faces="false"></fb:like>
+    </div>
+</div>
+
+                         <!-- Start main content -->
+<h1>CrowdForge: Crowdsourcing Complex Work</h1>
+<div class="main-text-page">
+    <div style="clear: both;">
+                    <embed height="600px" 
+       width="100%" 
+       type="application/x-shockwave-flash" salign="" 
+       allowscriptaccess="always" 
+       allowfullscreen="true" 
+       menu="true" 
+       name="document" 
+       bgcolor="#ffffff" 
+       devicefont="false" 
+       wmode="opaque" 
+       scale="showall" 
+       loop="true" 
+       play="true" 
+       pluginspage="http://www.macromedia.com/go/getflashplayer" 
+       quality="high" 
+       src="http://d1.scribdassets.com/ScribdViewer.swf" 
+       flashvars="&auto_size=false&privacy=1&document_id=48206694&access_key=key-20eirrk24qr6u3hrj429"
+/>
+<noscript>
+    <div style="height:500px;overflow:auto;">
+        CrowdForge: Crowdsourcing Complex Work<br />
+Aniket Kittur, Boris Smus, Robert E. Kraut<br />
+<br />
+February 1, 2011<br />
+<br />
+CMU-HCII-11-100<br />
+<br />
+Human-Computer Interaction Institute School of Computer Science Carnegie Mellon University Pittsburgh, PA 15213-3890<br />
+<br />
+Abstract: Micro-task markets such as Amazon’s Mechanical Turk represent a new paradigm for accomplishing work, in which employers can tap into a large population of workers around the globe to accomplish tasks in a fraction of the time and money of more traditional methods. However, such markets typically support only simple, independent tasks, such as labeling an image or judging the relevance of a search result. Here we present a general purpose framework for accomplishing complex tasks using micro-task markets. Our approach is inspired by the MapReduce framework for distributed processing and provides scaffolding for complex human computation tasks. We describe our general framework, a web-based prototype, and case studies on article writing and decision making that demonstrate the benefits of the approach.<br />
+<br />
+This work has been funded in part by the National Science Foundation under grants OCI-0943148 and IIS-0968484. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the view of the sponsors.<br />
+<br />
+Keywords: crowdsourcing, Mechanical Turk, human computation, distributed processing, MapReduce, coordination.<br />
+<br />
+INTRODUCTION Crowdsourcing has become a powerful mechanism for accomplishing work online. Hundreds of thousands of volunteers have completed tasks including classifying craters on planetary surfaces (clickworkers.arc.nasa.gov), deciphering<br />
+<br />
+scanned text (recaptcha.net), and discovering new galaxies (galaxyzoo.org). Crowdsourcing has succeeded as a commercial strategy for accomplishing work as well, with companies accomplishing work ranging from crowdsourcing t-shirt designs (Threadless) to research and development (Innocentive).<br />
+<br />
+One of the most interesting developments is the creation of general-purpose markets for crowdsourcing diverse tasks. For example, in Amazon’s Mechanical Turk (MTurk), tasks range from labeling images with keywords to judging the relevance of search results to transcribing podcasts. Such ―micro-task‖ markets typically involve short tasks (ranging from a few seconds to a few minutes) which users self-select and complete for monetary gain (typically from 1-10 cents per task). These markets represent the potential for accomplishing work in a<br />
+<br />
+fraction of the time and money required by more traditional methods [5][12][19][21].<br />
+<br />
+However, the types of tasks accomplished through MTurk have typically been limited to those that are low complexity, independent, and require little time and cognitive effort to complete. Here we describe a framework for extending micro-task markets to support complex,<br />
+<br />
+interdependent tasks. Our framework is based on insights from the organizational behavior literature for understanding the kinds of coordination dependencies involved in complex tasks, and from the distributed computing literature for techniques to support those dependencies in distributed human computation. We make three primary contributions:<br />
+<br />
+We identify the coordination requirements necessary to crowdsource complex tasks, and describe a framework to support a variety of task types. The framework<br />
+<br />
+systematically breaks complex problems down into simpler tasks by creating subtasks that define and create other subtasks and distributes these tasks to workers. Output<br />
+<br />
+from subtasks can be evaluated and consolidated via additional outsourced tasks.<br />
+<br />
+We instantiate the framework in a prototype system for architecting the problem and managing the solution flow. We demonstrate the utility of the system through case studies using the prototype to solve complex problems including writing an article and researching a purchasing decision. We show quantitative evidence that the approach works better than asking a single individual to solve the problem, even controlling for the total wages offered.<br />
+<br />
+We demonstrate how the system can extend to more complex flows that include verification phases, and provide evidence that such phases can lead to better outcomes. We also describe how the system can be extended to support arbitrarily complex and recursive flows.<br />
+<br />
+MECHANICAL TURK According to Amazon, Mechanical Turk is ―marketplace for work that requires human intelligence.‖ Using it, employers post<br />
+<br />
+tasks, which Amazon terms ―Human Intelligence Tasks‖ or ―HITs.‖ These are self-contained tasks that worker can select, work on, submit an answer, and collect a reward for completing.<br />
+<br />
+There has been an increasing amount of research on Mechanical Turk recently. A large number of studies have examined the usefulness of MTurk as a platform for collecting and evaluating data for applications including machine translation [4] image databases [7], and natural language processing [19]. There have also been studies examining the use of MTurk as a platform for experiments in perception [5][10], judgment and decision making [11], and user interface evaluation [12]. Sorokin & Forsyth use Mechanical Turk to tag images in computer vision research and suggest voting mechanisms to improve quality [21]. Little et al. [15] introduced TurkIt, a toolkit for iterative tasks in MTurk, which we will discuss in more detail later in the paper.<br />
+<br />
+MTurk encompasses a large and heterogeneous pool of tasks and workers; Amazon claims over 100,000 workers in 100 different countries, and as of the time of writing there were<br />
+<br />
+approximately 80,000 HITs available. The typical task on MTurk is self-contained, simple, repetitive, and short, requiring little specialized skill and often paying less than minimum wage. For example, during February 2010, we scraped descriptions of 13,449 HIT groups posted to Mechanical Turk. The modal HIT was allotted 60 minutes for completion and paid $0.03 US. We should note that the allotted time is often much greater than the actual completion time; assuming that workers received the US minimum wage of $7.25/hour or 12 cents per minute, a wage of $.03 per task implies that many tasks take a fraction of a minute to complete. Examples of tasks include identifying objects in a photo or video, de-duplicating data, transcribing audio recordings, or researching data details.<br />
+<br />
+There are a number of reasons why these kinds of tasks are so common. Most workers (who call themselves ―turkers‖) spend less than 8 hours per week on MTurk, and use it as a way to convert free time into a supplementary source of income, for pocket money, as a hobby, or to kill time, but not as their primary job [9]. As a result most turkers will not engage in long or complex tasks. Another potential explanation is the reward<br />
+<br />
+structure of Mechanical Turk, in which employers can reject work for any reason without giving an explanation. For example, to deal with spam, many employers summarily reject submitted work if it doesn’t agree with others’ submissions. Workers are unlikely to engage in long or complex tasks if there is a high probability that they will not get paid even if they completed the work in good faith. These rejections can have a serious impact on future earning too, since employers often ban workers whose prior work has been rejected over some threshold. This results in MTurk being a crowdsourcing market in which the average capacity for long or complex work is quite low.<br />
+<br />
+COORDINATION IN COMPLEX TASKS<br />
+<br />
+In contrast to the typical tasks posted on Mechanical Turk, much of the work required in many real-world work organizations and even many temporary employment assignments is often more complex, interdependent, and requires significant time and cognitive effort [16]. These tasks require substantially more coordination among coworkers than do the simple tasks<br />
+<br />
+typically seen on micro-task markets. The impact of micro-task markets would be substantially greater if they could also be applied to these more complex and interdependent task.<br />
+<br />
+Consider for example the task of writing a short article about a locale for a public relationship campaign, a newspaper, a travel guide or an encyclopedia. This is a complex and highly interrelated task that involves many subtasks, such as deciding on the scope and structure of the article, finding and collecting relevant information, writing the narrative, taking pictures, laying out the document and editing the final copy. Furthermore, if more than one person is involved in the task, each person needs to coordinate in order to avoid redundant work and to make the final product coherent. Many kinds of tasks ranging from researching where to go on vacation to planning a new consumer product to writing software share the properties of being complex and highly interdependent, requiring substantial effort from individual contributors.<br />
+<br />
+These difficulties with coordinating complex tasks are not unique to crowdsourcing. Organizational scholars have long<br />
+<br />
+investigated coordination across individuals and parts of a firm. Williamson won a Nobel Prize in economics for his theory of transaction costs [24], identifying the conditions under which it is efficient for a company to buy goods and services on a market instead of hiring employees to produce the work in house. According to this view, markets are efficient only when the costs of<br />
+<br />
+identifying an appropriate supplier, defining the<br />
+<br />
+exchange (e.g., the nature of the goods to be produced and its price), policing and enforcing the contract and settling the transaction are less than can be<br />
+<br />
+accomplished if the transaction were conducted in-house. Using employers may reduce transactions costs because at employees at least partially identify with the interests of the company and agree to besupervised and directed by managers. In an early paper, Malone and his colleagues argued that electronic markets<br />
+<br />
+may reduce the costs of search, bargaining, enforcement and settlement and dramatically expand the types of goods and services that can be offered on electronic markets [17]. The goal of our research to continue to reduce these transaction costs, by disaggregating and reaggregating complex, multi-person tasks so that task definition, production and supervision can all be done in micro-task markets.<br />
+<br />
+Task partitioning with division of labor is one of the most commonly used methods for coordinating tasks. Adam Smith in his classic The Nature and Causes of the Wealth of Nations [22] described the efficacy benefits associated with it. Via division of labor, a greater pool of agents can work in parallel, the agents can be specialized for the tasks they perform, and they can complete an assignment without losing time switching from task to task [2].<br />
+<br />
+This approach works well when the tasks involve what Van de Ven et al. [23] call ―pooled interdependence‖, in which the group product is a simple aggregation of the individually produced products. Such tasks are typical of those currently<br />
+<br />
+supported by Mechanical Turk, such as judging the relevance of a search result or finding company information on a web. However, aggregating the results of individually produced tasks does not work as well when the work is complex and the component tasks are interdependent. Splitting a interdependent project into subtasks incurs costs: those subtasks need to be assigned to workers suited to the task; workers may need to be trained; timing of subtasks may need to be coordinated; the results of one subtask may be the input to other subtasks; the approach taken in one subtask may constrain the work taken in another; standards and quality may need to be enforced across subtasks; subtasks may need to be integrated and made consistent; and so forth. These are the sorts of conditions that Williamson suggested make some types of work difficult to accomplish efficiently in a market.<br />
+<br />
+Many of these challenges are exacerbated in crowdsourcing markets. Because individual participants in micro-task markets do not want to and may not be capable of engaging in long or complex tasks, work must be broken down into many small pieces that can be quickly accomplished, leading to high<br />
+<br />
+coordination costs for interdependent workers. Tasks must be simple enough for workers to easily learn and complete. More generally, the nature of the workers and their relationship with the company posting the work produces additional challenges. With low commitment by companies and high turnover among the workers, there is minimal opportunity for training. Current micro-task markets have little built-in support for managing the flow of tasks, either in terms of time or input-output, and workers generally complete tasks independently with no knowledge of what others have done, making it difficult to enforce standards and consistency.<br />
+<br />
+To identify the types of coordination we will need to support for crowdsourcing complex tasks we turn to previous work on coordination in organizational behavior [16][17][18][23]. In particular, Malone & Crowston [16] suggest a useful taxonomy of interdependencies that require coordination that we draw on in our current work. These dependencies are summarized in Table 1 and described in more detail below:<br />
+<br />
+Managing shared resources. Whenever a limited resource needs to be shared, coordinating resource allocation becomes important. Allocating a fixed pool of workers to multiple tasks that must be completed under a deadline is a classic example of managing shared resources. In producing a newsletter under a deadline, for example, the fixed staff of writers, editors and proof readers need to be allocated so that all the planned stories are written, and all of them don’t demand work from an overtaxed editing and proofing staff at the last minute. Moreover, unless all subtasks are known beforehand, this allocation could change depending on how tasks are split up. Therefore a dynamic task allocation process is needed to manage worker resources throughout the task flow.<br />
+<br />
+Managing<br />
+<br />
+producer/consumer<br />
+<br />
+relationships.<br />
+<br />
+In<br />
+<br />
+many<br />
+<br />
+situations one activity produces something required as input for another activity. For example, the structure of an article needs to be decided on before the sections can be written. This leads to a number of dependencies: 1) prerequisite constraints: certain activities need to take place before others; 2) transfer: the output of one activity needs to be shared with another; 3) usability: the<br />
+<br />
+output of one activity needs to be in such a form that it can be used by another. For successful coordination in complex tasks each of these dependencies must be supported.<br />
+<br />
+Managing task/subtask dependencies. There are many different ways a task can be divided into subtasks [18]. In a topdown approach, a single person (e.g., the task creator) could specify all of the subtasks (and sub-subtasks, etc.) to decompose a task into. However, in many cases decomposition of the task may itself be a part of the process. For example, the task creator may not be able to a priori specify all the sections for an article or the classes for a software program in advance. Supporting both top-down specification of the task goals and bottom-up identification of subtasks is crucial for crowdsourcing complex tasks in which subtasks may be generated and completed dynamically.<br />
+<br />
+APPROACH Our goal is to support the coordination dependencies<br />
+<br />
+involved in complex work through micro-task markets. As previously mentioned, most tasks on these markets are simple and self-contained with no challenging coordination dependencies. The audio<br />
+<br />
+transcription tasks posted by Castingwords.com are a rare exception to the typical MTurk task. Castingwords breaks up an audio stream into overlapping segments, and workers are employed to generate transcriptions from each audio segment. These transcriptions are then verified by other workers, whose work is later automatically put together into a complete transcription. Unlike the standard micro-market task, the disaggregation of an audio file into smaller transcription tasks and the use of a second wave of workers to verify the work done by the transcriptions involves the producer/consumer<br />
+<br />
+dependency and others of the dependencies identified in the<br />
+<br />
+previous section. It also provides a simple model for many of the elements of our approach. For example, the transcription task can be broken up into the following elements:<br />
+<br />
+A pre-specified partition that breaks up the audio into smaller subtasks A flow that controls the sequencing of the tasks and transfer of information between them A quality control phase that involves verification of one task by another worker Automatic aggregation of the results<br />
+<br />
+The TurkIt toolkit for MTurk [15] extends some of these elements by enabling task designers to specify iterative flows. Little and colleagues use as an example a text identification in which the results of multiple workers’ outputs are voted on and the best sent to new workers, whose work is then voted on, and so forth. Viewed according to the elements above, this is a producer/consumer dependency, with a flow between a production task (text identification) and a quality control task (voting) that also serves to aggregate the results.<br />
+<br />
+Our goal is to generalize these elements into a<br />
+<br />
+framework that supports the highly crowdsourcing complex of work. our<br />
+<br />
+Specifically,<br />
+<br />
+framework aims to support: Multi-level partitions in which a task can be broken up by more than one partition Dynamic partitioning so that workers themselves can decide how to partition a task, with their results generating new subtasks during the flow (rather than the task designer needing fully specify partitioning beforehand) Complex flows involving many tasks and many workers A variety of quality control methods including voting, verification, or merging items Intelligent aggregation of results both automatically and by workers.<br />
+<br />
+A simple method for specifying and managing tasks and flows between tasks To accomplish these goals our approach draws on concepts from the distributed computing literature [1][20]. Malone and Crowston [16] note the general parallels between coordination in human systems and computer systems. Crowdsourced labor markets can be viewed as large distributed systems in which each person, such as a worker on Mechanical Turk, is analogous to a computer processor that can solve a task requiring human intelligence. In this way a crowdsourcing market could be seen as a loosely coupled distributed computing system [1].<br />
+<br />
+Key challenges in distributed computing include partitioning computations into tasks that can be done in parallel, mapping tasks to processors, distributing data to and between processors, and fault tolerance1 [1][20]. Many of these challenges map to the coordination dependencies identified earlier, as shown in Table 11. This suggests that some solutions to managing<br />
+<br />
+1<br />
+<br />
+Fault tolerance is not included in the table as it does not map well to the identified coordination dependencies. However, we will address this issue in more detail in the section on quality control below.<br />
+<br />
+distributed computing with multiple processors may be profitably applied to crowdsourcing as well.<br />
+<br />
+A simple, well-known, and widely used distributed computing model is Google’s MapReduce framework [6]. MapReduce was inspired by functional programming languages in which a large array of data is processed in parallel through a two step process: first, key/value pairs are each processed to generate a set of intermediate key/value pairs (the Map phase). Next, values with identical intermediate keys are merged (the Reduce phase). Although there are many other models of distributed computing [1][20], key advantages of MapReduce include: 1) its simplicity, allowing programmers without experience in parallel<br />
+<br />
+programming to easily make use of distributed system resources; 2) a large variety of real world problems have been found amenable to representation in Map and Reduce tasks.<br />
+<br />
+Our approach builds on the general approach to distributed computing exemplified by MapReduce of breaking down a complex problem into a sequence of simpler subtasks using a<br />
+<br />
+small set of subtask types (e.g., Maps and Reduces). We define three types of subtasks:<br />
+<br />
+Partition tasks, in which a larger task is broken down into discrete subtasks Map tasks, in which a specified task is processed by one or more workers Reduce tasks, in which the results of multiple workers’ tasks are merged into a single output<br />
+<br />
+CrowdForge abstracts away many of the programming details of creating and managing subtasks by treating partition/map/reduce steps as the basic building blocks for distributed process flows, enabling complex tasks to be broken up systematically and dynamically into sequential and parallelizable subtasks.<br />
+<br />
+In partition tasks, workers are asked to create a high level partitioning of the problem, such as creating an outline of an article with section headings or a list of criteria for buying a new car. In our system the partitioning is made an explicit part of the<br />
+<br />
+task itself, with subtasks dynamically created based on the results of the partition step.<br />
+<br />
+Importantly, this means that the task designer does not have to know beforehand all of the subtasks that will be generated: defining the division of labor and subtask design are shifted to the market itself.<br />
+<br />
+In map tasks, a specified processing step is applied to each item in the partition. These tasks are ideally simple enough to be answerable by a single worker in a short amount of time. For example, a map task for article writing could ask a worker to collect one fact on a given topic in the article’s outline. Multiple instances of a map tasks could be instantiated for each partition; e.g., multiple workers could be asked to collect one fact each on a topic in parallel.<br />
+<br />
+Finally, reduce tasks take all the results from a given map task and consolidate them, typically into a single result. In the article writing example, a reduce step might take facts collected for a<br />
+<br />
+given topic by many workers and have a worker turn them into a paragraph.<br />
+<br />
+Any of these steps can be iterative. For example, the topic for an article section defined in a first partition can itself be partitioned into subsections. Similarly, the paragraphs returned from one reduction step can in turn be reordered through a second reduction step.<br />
+<br />
+CASE STUDIES Before describing implementation details of the system we first provide examples and evidence of how the system works in practice through two case studies: article writing and researching a purchase decision.<br />
+<br />
+Article writing The first complex task we explored was writing an encyclopedia article. Writing an article is a challenging and interdependent task that involves many different subtasks: planning the scope of the article, how it should be structured, finding and filtering information to include, writing up that information, finding and<br />
+<br />
+fixing grammar and spelling, and making the article coherent. While there are examples of collaborative writing on the Internet, notably Wikipedia, previous work has shown that the success of harnessing a large group of contributors is often dependent on a small core of leaders that do a large proportion of the work and organize the contributions of others [13][14].<br />
+<br />
+This poses a challenge in micro-task markets where individuals may not be willing to spend the large amount of effort needed to be a leader and may not be able to communicate with others in order to coordinate or influence their behavior. Furthermore, because of the many related subtasks, article writing encompasses many of the coordination dependencies in Table 1. Finally, many of the subtasks involved, such as assembling the relevant information or doing the actual writing, can be time consuming and complex. These characteristics make article writing a challenging but representative test case for our approach.<br />
+<br />
+To solve this problem we created a simple flow consisting of a partition, map, and reduce step. The partition step asked workers<br />
+<br />
+to create an article outline, represented as an array of section headings such as ―History‖ and ―Geography‖. In an environment where workers would complete high effort tasks, the next step might be to have someone write a paragraph for each section. However, the difficulty and time involved in finding the information for and writing a complete paragraph for a heading is a mismatch to the low work capacity of micro-task markets. Thus we broke the task up further, separating the information collection and writing subtasks. Specifically, each section heading from the partition was used to generate map tasks in which multiple workers were asked to submit a single fact about the section (turkers were also asked to submit a URL reference to the source of the fact to encourage high quality fact collection).<br />
+<br />
+Next, the reduction step asked other workers to create a paragraph for each section based on the facts collected in the map step. By separating the collection of information and writing into two stages we could significantly decrease the cost of each stage, making the task more suitable for micro-task workers. In addition, we benefit from other effects such being<br />
+<br />
+able to collect more and more diverse information when more workers were involved. The partition-mapreduce process is illustrated in Figure 2. Finally, since the sections of encyclopedic articles are relatively independent, the resulting paragraphs were themselves reduced into an article by simply concatenating them2.<br />
+<br />
+We used this approach to create five articles about New York City. Articles cost an average of $3.26 to produce, and required an average of 36 subtasks or HITs, each performed by an individual worker. Partition-workers identified 5.3 topics per article in the partition step. The average number article ended with 658 words. A fragment of a typical article is shown in Figure 2; this article consisted of 955 words and 7 sections: brief history, getting there, basic layout, neighborhoods, getting around, attractions and ethnic diversity. It was completed via 36 different HITs for a total cost of $3.15.<br />
+<br />
+2<br />
+<br />
+For other kinds of articles there could be another crowdsourced reduce phase that integrates the paragraphs.<br />
+<br />
+To verify the quality of these collaboratively written articles, we compared them to articles written individually by workers and to the entry from the Simple English Wikipedia on New York produce group City a of [25]. To<br />
+<br />
+comparison individually<br />
+<br />
+written articles, we created eight HITs which each requested one worker to write the full article. To control for motivations<br />
+<br />
+associated with reward, we paid these individuals $3.05, approximately the same amount as the average group payment. The resulting articles consisted of an average of 393 words, approximately 60% the length of the collaborative written articles. We then evaluated the quality of all articles by asking a new set of workers to each rate a single article based on four dimensions: use of facts, spelling and grammar, article structure, and personal preference. Fifteen workers rated each article on five-point Likert scales. We averaged the ratings of the 15 raters<br />
+<br />
+across the four dimensions to get an overall quality score for each article.<br />
+<br />
+On average the articles produced by the group were ofhigher quality than those produced individually (seeFigure 3: mean quality for group-written articles = 4.01 versus 3.75 for individually-written ones, t(11)=2.17, p=.05).<br />
+<br />
+The average quality for the group-written articles was roughly the same as the Simple English Wikipedia article (Wikipedia quality=3.95). Not only was the average quality of the group articles higher than the individually written ones, but as Figure 3 also shows, the variability was lower as well (t(11)=-2.43, p=.03), with a lower proportion of poor articles.<br />
+<br />
+Overall, we found that using CrowdForge to crowdsource the complex and interdependent task of article writing worked surprisingly well. Despite the coordination requirements involved in managing and integrating the work of dozens of workers, each contributing only a small amount of work, the group-produced articles were rated higher and had lower<br />
+<br />
+variability than individual-produced articles -- even though individuals were paid the same amount as the whole group and did not have to deal with coordination challenges -- and similar in quality to corresponding Simple Wikipedia articles.<br />
+<br />
+Quality Control In the article writing study each partition task was completed by a single worker. This creates the possibility that a single bad partition (i.e., outline) could have a large negative effect on the whole task. We found this did occur in one of the group articles, with a bad outline’s effects cascading down the task chain. It is remarkable that despite this brittleness, we still found a robust advantage of the group condition over the individual condition, speaking to the strength of the approach. However, in many cases we would like to minimize the likelihood of any task failing due to a single low quality worker by combining multiple workers’ results.<br />
+<br />
+Our approach to dealing with this challenge is to utilize additional Map or Reduce tasks to supporting fault tolerance and quality control. For example, to represent Castingwords<br />
+<br />
+transcription<br />
+<br />
+flow,<br />
+<br />
+described<br />
+<br />
+earlier,<br />
+<br />
+in<br />
+<br />
+the<br />
+<br />
+CrowdForgeframework, workers verifying the results of other workers’ outputs can be represented as a Map task that applies a verification function to each value. Other kinds of quality control processes can also be applied; for example, voting on the best choice can be represented as a Reduce task in which a single output is chosen from multiple workers’ outputs based on the vote. Other kinds of human intelligence tasks could also be used, such as a Reduce task in which workers combine the best aspects of other workers’ outputs rather than choosing a single best output. An advantage of this approach is that quality control steps are treated the same as other kinds of subtasks, minimizing added complexity. This also means that many different kinds of quality control can be used depending on the task and the kind of fault tolerance desired, as opposed to forcing task designers to use a single mechanism such as voting or verification.<br />
+<br />
+To test the utility of different quality control methods in the article writing case we ran an additional experiment on MTurk. We were especially interested in whether more complex quality control methods that require human intelligence -- such as<br />
+<br />
+combining the best aspects of multiple workers’ outputs -would work better than methods such as simple voting. Merging results (in this case, article outlines) could have a number of advantages over voting. The likelihood of a poor outline could be reduced, since at the very least – if workers did no merging at all – the best of the outline options should be chosen. It is also possible that the merged outlines could be better than the initial outlines, if the best aspects of each of multiple outlines were combined, or if seeing multiple outlines at once facilitates comparison<br />
+<br />
+between them and thus leads to better outlines.<br />
+<br />
+To test these hypotheses we ran an experiment on quality control of article outlines. In the first phase turkers we asked to 20 each<br />
+<br />
+independently generate an outline for an article on the recent<br />
+<br />
+Gulf of Mexico oil spill using the same procedure as in the article writing case study above. We then took these 20 outlines and randomly assigned them into 20 different sets of three outlines (outlines could be in more than one set). Each set was given to a different turker, who were asked to create a new outline for the article using elements from the 3 outlines in his or her set (i.e., a Reduce task). Turkers were instructed to use any elements from any of the outlines they had available, but were not allowed to add new elements. This resulted in 20 merged outlines.<br />
+<br />
+For evaluation we crossed the 20 initial and 20 merged outlines, resulting in 400 paired comparisons between an original outline and a merged one. We then asked turkers to choose which outline in each comparison would result in a better article. To ensure that turkers evaluated both outlines, they were also required to identity which elements in the two outlines were the same, with the caveat that elements did not need to be worded exactly the same in the two outlines as long as they were conceptually similar. This question follows the best practices outlined in [12] for subjective tasks, by using a verifiable<br />
+<br />
+question that forces the worker to do much of the processing they would need to in order to make a good evaluation: by comparing the two outlines, they could then evaluate factors such as which elements were missing from one outline, and the level of cohesion of the different elements. An outline’s quality score is the number of comparisons that it won.<br />
+<br />
+Results showed that the merged outlines were rated as better outlines more often than the initial outlines: 61% of merged outlines were chosen compared to 39% of initial outlines. A binomial test revealed the results as statistically significant (p < .001). Histograms of choice preferences for individual outlines are shown in Figure 4. The results indicate that merged outlines had fewer poor outlines: while 7 of the initial outlines were preferred 35% or less of the time, no merged outlines had preference values lower than 35%. Furthermore, the best merged outlines were considered better than the best initial outlines: the best initial outline was preferred 74% of the time, while 3 merged outlines were preferred more than that with the highest preferred 90% of the time. Together these results suggest that complex quality control tasks such as combining the results of<br />
+<br />
+multiple workers’ outputs can be more effective than simple voting. CrowdForge makes such quality control tasks simple to implement as Reduce tasks.<br />
+<br />
+Researching a purchase We also investigate a different task— researching purchase decisions—in order to test the generality of the framework. Modern purchasing decisions can be overwhelming because of large numbers of choices and information about each choice. Though there is a lot of information available to help a consumer make intelligent purchasing choices, it is often distributed across unrelated forums and websites across the Internet. Purchase decisions could benefit from an intelligent, personalized processing of the options. We applied our framework to commission decision matrices, in this case to help consumers compare automobiles.<br />
+<br />
+The previous example described a unidimensional partition process for accomplishing complex work. This example extends the framework by showing how one can partition the initial task on multiple dimensions (or, equivalently, repartition each<br />
+<br />
+element of the original partition). In the partition HIT for this problem, one worker was given a short description of a consumer in the market for a car (a hypothetical suburban family that drives their two children to and from school and enjoys occasional road trips) and asked to submit criteria for an automotive purchase that would be relevant to that persona. Another worker was given the same description and requested to submit a list of potential cars that might be interesting for the persona to buy. Combining the resulting lists yielded a matrix resembling a blank product comparison table, in which for example, a Honda Odyssey could be compared to a Ford Escape on dimensions such as reliability and safety. In the map step, workers were asked to submit facts for one cell in the table, for example evidence relevant to safety ratings for the Honda Odyssey they might find from an online review of the car. Finally, in the reduce step workers were given all the facts for a cell collected by workers in the map step, and were asked to write a single sentence consolidating them.<br />
+<br />
+We used this approach to commission a personalized car purchase recommendation table for the hypothetical family<br />
+<br />
+described above. In the partition step we some workers to asked<br />
+<br />
+submit potential car make/models relevant to the family, and others to submit purchasing criteria they thought the family might employ. For simplicity, we accepted the three most commonly cited items from each dimension: the cars Honda Odyssey, Ford Escape and Nissan Pathfinder crossed with the evaluation criteria room, price and safety rating. Other workers then found relevant facts for each cell, and yet others consolidated those facts into a sentence according to the process described above. The entire task was completed in 54 different HITs for a total cost of $3.70. An excerpt from the resulting product comparison table is shown in Figure 5. While the CrowdForge frame was successful in producing the comparison, table, we had no success getting even a single worker to generate a similar product comparison chart individually, even when offering more money than we paid the entire group.<br />
+<br />
+PROTOTYPE We implemente d a software prototype to test our<br />
+<br />
+approach by allowing task designers to indirectly use MTurk to solve complex problems. It was this prototype that generated the HITs used in the experiments described above. The prototype allows task designers to break complex problems down into sub-problems, to specify the relationship between the sub-problems, and to generate a solution using MTurk. The system consists of a web user interface for the task designer, and a backend server which interfaces with Amazon’s MTurk servers. The web user interface in Figure 6 allows users to define each step in the problem solving process and to specify the flow between each step. The server-side component creates<br />
+<br />
+MTurk HITs, consumes their results, and generates new HITs as needed. The prototype is written in Python using Django [8], a high-level web framework for rapid application development. Boto [3], a Python interface to Amazon Web Services, is used to communicate with MTurk.<br />
+<br />
+The system abstracts the entire process as a problem, which references multiple HIT Templates (which may be either partitions, maps, or reduces), and a flow that defines the dependencies between the HIT Templates. The prototype allows multiple problems to exist in parallel, each one tracking its own currently active HIT Template. HIT Templates are<br />
+<br />
+parameterized templates used to create HITs on MTurk, specifying basic parameters like title, HTML body and compensation amount. Finally, flows manage the sequential coordination between HITs, as well as transferring data between HITs.<br />
+<br />
+The system uses a notification-based flow control mechanism to manage which tasks and templates are posted. Every few<br />
+<br />
+minutes the system monitors active problems for four kinds of events, and fires notifications as needed.<br />
+<br />
+The result retrieved notification fires when the system detects a new result from MTurk. The HIT expired notification fires when a HIT that was posted by the prototype expires due to the HIT lifetime running out. The HIT complete notification fires when all instances of a HIT were completed by turkers. The stage complete notification fires when all HITs of the currently active HIT Template are completed or expired. The simplest predefined flow (Figure 1) starts with a HIT Template, the result of which is fed into a map HIT Template, the results of partition<br />
+<br />
+which are fed into a reduce HIT Template. Transitions between these three HIT Templates occur when the stage complete notification fires. In the article writing example, this flow takes the article outline generated by a worker completing a partition HIT, and creates map HITs to collect facts for each heading in the outline. Note that this process is dynamic: the number of headings does not need to be specified beforehand by the task designer. Once all map HITs for a heading are complete, the flow posts a reduction HIT to consolidate all facts collected in the map HITs into a paragraph. The prototype has several such predefined flows, but also allows developers to write custom flows and register them with the system.<br />
+<br />
+COMPLEX FLOWS The example of article writing assumed a simple linear flow from partitioning to mapping to reduction. This linearity may not be powerful enough to represent some tasks. For example, a textbook may have a complex outline more closely resembling a tree than a list. This hierarchical outline can be achieved by modifying the partition hit type: in addition to collecting headings, include a checkbox allowing workers to specify<br />
+<br />
+whether or not each heading should be further partitioned. As previously mentioned, the CrowdForge prototype allows developers to implement additional flows for more complex cases. If the turker specifies to partition a heading into subheadings, the tree flow should create partition HITs. Otherwise, the tree flow should create map HITs as in the simple flow.<br />
+<br />
+In the more general case, subtasks can be themselves be broken down into partition, map and reduce phases (Figure 7). The notification-based architecture of the CrowdForge prototype allows this kind of nesting to be implemented as a custom flow; future work will allow the creation of nested flows using the GUI tools only.<br />
+<br />
+CONCLUSION In this paper we presented a general-purpose framework for solving complex problems through micro-task markets. Based on concepts from coordination science and distributed computing, the CrowdForge framework provides a systematic and dynamic way to break down tasks into subtasks and manage<br />
+<br />
+the flow and dependencies betweenthem. Key contributions of the framework include support for dynamic and multi-level partitions, complex flows, quality control, complex aggregation, a GUI for task designers, and a simple unifying framework for task and flow management. We demonstrate through two case studies how the framework can break down complex tasks such as writing an article or researching a purchase decision into flows of partition, map, and reduce subtasks. In the article writing case we showed that CrowdForge-produced articles were rated more highly and had lower variability than individual-produced articles, despite the coordination<br />
+<br />
+requirements of managing and integrating dozens of workers, and were rated of similar quality as Simple Wikipedia articles. In an extension to this example, we showed how to insert a quality control step in the flow and demonstrated the value of combining the best aspects of multiple workers’ outputs rather than simple voting. In the purchase decision case we were unable to get even a single individual to complete the task given the high effort involved, but could accomplish the goal using CrowdForge with low monetary costs.<br />
+<br />
+As general purpose markets continue to evolve, there is a growing need to be able to solve a wider range of tasks of increasing complexity and coordination requirements.<br />
+<br />
+Furthermore, as the nature of work itself becomes more distributed, such an approach has the potential to change the way that work gets done, enabling many more people to be involved in solving complex problems ranging from business intelligence to writing software. However, markets don’t work well for complex tasks when the employer cannot define exactly what they want in advance or if the contract is difficult to predefine. The CrowdForge framework reduces this need for predefinition by allowing for subtasks to be dynamically generated by the market itself.<br />
+<br />
+There are a number of directions we are exploring for future work. Most immediately, one challenge is extending our GUI to support more complex, nested flows so that task designers with no programming experience can complete arbitrarily complex work that involves high coordination dependencies. Looking further ahead, we are interested in exploring the possibilities of the CrowdForge framework in other kinds of task markets. For<br />
+<br />
+example, if the framework was applied to a market in which the expertise of individual workers was known (e.g., in a corporation) there might be greater opportunities for managing resource allocation of workers to appropriate tasks.<br />
+<br />
+Feedback about the selection and quality of their past work could also be useful for improving resource allocation if the system had a shared memory of individual workers’ history across tasks.<br />
+<br />
+Our approach is also an example of how coordination solutions can cut across multiple fields. Coordination theorists have emphasized that some principles of coordination generalize across radically different entities being coordinated, as when principles from economics are used to schedule tasks for a computer operating system [16].<br />
+<br />
+Here we tie coordination science to distributed computing, demonstrating how principles from the domain of coordinating computer systems can be used to coordinate human activity.<br />
+<br />
+ACKNOWLEDGMENTS This work has been funded in part by the National Science Foundation under Grants OCI-0943148 and IIS-0968484. We would also like to thank Susheel Khamkar for his valued contributions.<br />
+<br />
+REFERENCES [1] Bal, H.E., Steiner, J.G. and Tanenbaum, A.S. Programming languages for distributed computing systems. ACM Computing Surveys (CSUR) (1989) vol. 21 (3). [2] Becker, G.S. and Murphy, K.M. The division of labor, coordination costs, and knowledge. The Quarterly Journal of Economics (1992) vol. 107 (4) pp. 1137-1160 [3] Boto, http://code.google.com/p/boto/ [4] Callison-Burch, C. Fast, cheap, and creative: evaluating translation quality using Amazon's Mechanical Turk.<br />
+<br />
+Proceedings of the 2009 Conference on Empirical Methods in Natural Language Processing: Volume 1- Volume 1 (2009) pp. 286-295<br />
+<br />
+[5] Cole, F., Sanik, K., DeCarlo, D., Finkelstein, A., Funkhouser, T., Rusinkiewicz, S., and Singh, M. How well do line drawings depict shape? In ACM SIGGRAPH (2009), 1–9. [6] Dean, J. and Ghemawat, S. Map Reduce: Simplified data processing on large clusters. Communications of the ACMAssociation for Computing Machinery-CACM, 51, 1 (2008), 107-114. [7] Deng, J., Dong, W., Socher, R., Li, L.J., Li, K., Fei-Fei, L. "ImageNet: A large-scale hierarchical image database," cvpr, pp.248-255, 2009 IEEE Conference on Computer Vision and Pattern Recognition, 2009 [8] Django, http://www.djangoproject.com [9] Ipeirotis, P. (2010, Mar 3). The New Demographics of Mechanical Turk. http://behind-the-enemylines.<br />
+<br />
+blogspot.com/2010/03/new-demographics-of-mechanicalturk.html. Retrieved 9-21-20 [10] Heer, J. and Bostock, M. Crowdsourcing graphical perception: using mechanical turk to assess visualization design. Proceedings of the 28th international conference on Human factors in computing systems (2010) pp. 203-212<br />
+<br />
+[11] Horton, J. J., Rand, D.G. and Zeckhauser, R.J., The online laboratory: Conducting experiments in a real labor market (2010). NBER Working Paper Series, Vol. w15961. [12] Kittur, A., Chi, E., Suh, B. Crowdsourcing User Studies With Mechanical Turk. In Proceedings of CHI (2008). [13] Kittur, A., Lee, B., Kraut, R. E. Coordination in Collective Intelligence: The Role of Team Structure and Task<br />
+<br />
+Interdependence. In Proceedings of CHI (2009). [14] Kittur, A. and Kraut, R. E. 2008. Harnessing the wisdom of crowds in wikipedia: quality through coordination. CSCW '08. ACM, New York, NY, 37-46 [15] Little, G., Chilton, L., Goldman, M. and Miller, R. TurKit: Tools for iterative tasks on mechanical turk. SIGKDD Workshop on Human Computation (2009). [16] Malone, T. and Crowston, K. The interdisciplinary study of coordination. ACM Computing Surveys, 26, (1994), 87-119. [17] Malone, T., Yates, J. and Benjamin, R. Electronic markets and electronic hierarchies. Communications of the ACM, 30 (6). 484-497. [18] Mintzberg, H. 1979. The Structuring of<br />
+<br />
+Organizations.Prentice-Hall, Englewood Cliffs, N.J. [19] Snow,<br />
+<br />
+R., O'Connor, B., Jurafsky, D., and Ng, A.Y. Cheap and fast--but is it good?: evaluating non-expert annotations for natural language tasks. Proceedings of the Conference on Empirical Methods in Natural Language Processing, Association for Computational Linguistics (EMNLP 2008), 254-263. [20] Skillicorn, D.B., Talia, D. Models and languages for parallel computation, ACM Computing Surveys 30(2) (1998) 123–169. [21] Sorokin, A., Forsyth, D. Utility data annotation with Amazon Mechanical Turk, First IEEE Workshop on Internet Vision at CVPR 08. [22] Smith, A. The Nature and Causes of the Wealth of Nations. Liberty Classics, Indianapolis:, 1776. [23] Van de Ven, A., Delbecq, A. and Koenig, R. Determinants of coordination modes within organizations. American<br />
+<br />
+Sociological Review, 41 (1976), 322-338. [24] Williamson, O. Transaction-Cost Economics: The<br />
+<br />
+Governance of Contractual Relations. The Journal of Law and Economics, 22 (2). 233. [25] Wikipedia Simple entry on New York City,<br />
+<br />
+http://simple.wikipedia.org/wiki/New_York_City<br />
+<br />
+
+    </div>    
+</noscript>
+
+
+            
+    </div>
+    <div class="info-tray">
+        
+
+<script language="javascript" type="text/javascript">
+YUI().use('*', function(Y) {
+    Y.on('domready', function(){
+        var Dialogs = YUI.namespace('Itc.Dialogs');
+
+        var MailDialog = new Dialogs.DialogItemMail({
+            contentBox : '#itc-dialog-mail',
+            centered   : true,
+            zIndex     : 200,
+            width      : 700
+        });
+
+        // mail forms
+        MailDialog.initDialog([
+            {
+                uri    : '/mail/friendform/',
+                params : {
+                    format:  'json',
+                    item_id: 2518
+                }
+            },
+            {
+                uri    : '/mail/services/',
+                params : {
+                    format: 'json'
+                },
+                width : 500
+            },
+            {
+                uri    : '/mail/getmails/',
+                params : {
+                    format: 'json'
+                },
+                width : 560
+            }
+        ]);
+
+        Y.one('#ugc-action-mail').on('click', function (e) {
+            e.preventDefault();
+
+            MailDialog.showDialog();
+
+            return false;
+        });
+
+        if (Y.one('#ugc-action-flagged')) {
+            var FlagDialog = new Dialogs.DialogItemFlag({
+                contentBox : '#itc-dialog-flag',
+                centered   : true,
+                zIndex     : 200,
+                width      : 380
+            });
+
+            FlagDialog.initDialog([{
+                uri    : '/item/flag/',
+                params : {
+                    format : 'json',
+                    id     : '2518'
+                }
+            }]);
+
+            Y.one('#ugc-action-flagged').on('click', function (e) {
+                e.preventDefault();
+
+            	FlagDialog.showDialog();
+
+                return false;
+            });
+        }
+
+        // new rating
+		Y.one('#ugc-action-rate-like').on('click', function () {
+            var rating = 1;
+    		var uri = '/item/rate?format=json&id=2518&'+'rating='+rating;
+			var cObj = YAHOO.util.Connect.asyncRequest('GET', uri, callback_obj);
+        });
+        
+		Y.one('#ugc-action-rate-dislike').on('click', function () {
+        	var rating = -1;
+			var uri = '/item/rate';
+			var uri = '/item/rate?format=json&id=2518&'+'rating='+rating;
+			var cObj = YAHOO.util.Connect.asyncRequest('GET', uri, callback_obj);
+    	});
+
+		// callback for rate item
+		var callback_obj = {
+		        argument : ['targetPre'],
+		        success: function(o) { reportResponseAction(o.responseText); },
+		        failure: function(o) { console.info(arguments); }
+		};
+
+		// callback function for rate item
+		function reportResponseAction(response) {
+			var json = Y.JSON.parse(response);
+			
+			if (json && json.ratingHtml) {	
+				Y.one('.rate').set('innerHTML', json.ratingHtml);
+				
+				Y.one('#ugc-action-rate-like').on('click', function () {
+		            var rating = 1;
+		    		var uri = '/item/rate?format=json&id=2518&'+'rating='+rating;
+					var cObj = YAHOO.util.Connect.asyncRequest('GET', uri, callback_obj);
+		        });
+		        
+				Y.one('#ugc-action-rate-dislike').on('click', function () {
+		        	var rating = -1;
+					var uri = '/item/rate';
+					var uri = '/item/rate?format=json&id=2518&'+'rating='+rating;
+					var cObj = YAHOO.util.Connect.asyncRequest('GET', uri, callback_obj);
+		    	});
+			}
+		}
+
+        // rating dialog
+        if (Y.one('#ugc-action-rate')) {
+            var RateDialog = new Dialogs.DialogItemRate({
+                contentBox : '#itc-dialog-rate',
+                centered   : true,
+                zIndex     : 101,
+                width      : 225,
+                item_id    : 2518
+            });
+
+            RateDialog.initDialog([{
+                 uri    : '/document/rate',
+                 params : {
+                     format : 'json'
+                 }
+            }]);
+
+            Y.one('#ugc-action-rate').on('click', function (e) {
+                e.preventDefault();
+
+            	RateDialog.showDialog();
+
+                return false;
+            });
+        }
+
+        
+        if (Y.one('#sponsorBtn')) {
+            var SponsorDialog = new Dialogs.DialogBox({
+                contentBox : '#itc-dialog-sponsor',
+                centered   : true,
+                zIndex     : 101,
+                width      : 225
+            });
+
+            SponsorDialog.initDialog([{
+                 uri    : '/document/sponsorform',
+                 params : {
+                     format : 'json',
+                     id: 2518
+                 }
+            }]);
+
+            Y.one('#sponsorBtn').on('click', function (e) {
+                e.preventDefault();
+
+                SponsorDialog.showDialog();
+
+                return false;
+            });
+        }
+
+        
+    });
+});
+</script>
+
+<div class="rate"><a href="javascript:void(0)" id="ugc-action-rate-like" title="Like">+1</a><span class="rate_like" title="Like">0</span><a href="javascript:void(0)" id="ugc-action-rate-dislike" title="Dislike">-1</a><span class="rate_dislike" title="Dislike">0</span></div>
+
+<div class="options" style="z-index: 0;">
+    
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+	<a class="link-btn-sm link-bookmark addthis_button" href="#" target="_self"><span class="bord-right"><span class="name"><span class="arrow" >+ Bookmark</span></span></span></a>
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+	<a href="/document/crowdforge-crowdsourcing-complex-work/2518" class="link-btn-sm link-download noacl" target="_self"><span class="bord-right"><span class="name"><span class="arrow" >Download</span></span></span></a>
+
+
+
+
+        
+    
+
+            
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+	<a href="/document/flag" class="link-btn-sm link-flag noacl" target="_self"><span class="bord-right"><span class="name"><span class="arrow" >Flag</span></span></span></a>
+
+
+
+
+    
+
+    
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+
+	<a id="ugc-action-mail" class="link-btn-sm link-email" href="#" target="_self"><span class="bord-right"><span class="name"><span class="arrow" >Email</span></span></span></a>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+	<a href="/document/2518/add-to-favorites" class="link-btn-sm link-add-favorite noacl" target="_self"><span class="bord-right"><span class="name"><span class="arrow" >Add to favorites</span></span></span></a>
+
+
+
+
+</div>
+
+<div style="clear:both"></div>
+
+
+    </div>
+    <br />
+	<h5>Document summary:</h5>
+	<p>In this research, the researchers presented a general purpose framework for accomplishing complex tasks using micro-task markets. Their approach is inspired by the MapReduce framework for distributed processing and provides a scaffolding for complex human computation tasks. They described<br />
+their general framework, a web-based prototype, and case studies<br />
+on article writing and decision making that demonstrate the<br />
+benefits of the approach.
+	<br />
+	<h5>Contributor comments:</h5>
+	<p>The research makes three primary contributions:<br />
+<br />
+1. Identifies the coordination requirements necessary to crowdsource complex tasks, and describe a framework to support a variety of task types.<br />
+2. Instantiats the framework in a prototype system for architecting the problem and managing the solution flow.<br />
+3. Demonstrates how the system can extend to more complex flows that include verification phases, and provide evidence that such phases can lead to better outcomes. It also describes how the system can be extended to support arbitrarily complex and recursive flows.</p>
+
+    <div class="info-tray">
+        
+
+<div class="tags">
+  <p>
+    <strong>Tagged:</strong>
+        <a href="/search?q=Amazon Mechanical Turk" class="">Amazon Mechanical Turk</a>,
+        <a href="/search?q=collaborative crowdsourcing" class="">collaborative crowdsourcing</a>,
+        <a href="/search?q=CrowdForge" class="">CrowdForge</a>,
+        <a href="/search?q=Crowdsourcing" class="">Crowdsourcing</a>,
+        <a href="/search?q=freelance writers" class="">freelance writers</a>,
+        <a href="/search?q=freelancers" class="">freelancers</a>,
+        <a href="/search?q=online writing" class="">online writing</a>,
+        <a href="/search?q=writers" class="">writers</a>
+    
+  </p>
+  <p><strong>Communities:</strong>
+      <a href="/community/creative/3" class="">Creative</a>,
+      <a href="/community/tools/8" class="">Tools</a>
+  
+  </p>
+
+    
+    <p class="change-content">
+      You need to&nbsp;<a href="/contact/request-to-update-content/?url=/document/crowdforge-crowdsourcing-complex-work/2518">contact us</a>&nbsp;if you are the owner of this content item and want to make changes.
+    </p>
+</div>
+    </div>
+</div>
+                         
+	<!--  Comments Start -->
+		    
+	 
+	<div class="ugc">
+        <h3>0 comments to this document:</h3><br />
+	    
+	    	              
+
+	    
+	    	    	<script type="text/javascript"><!--
+	    YUI().use('*', function(Y) {
+	        Y.on('domready', function(){
+		        function showErrors(response) {
+		        	var json = Y.JSON.parse(response);
+
+		        	if (json.flag) {
+			        	// Submit form
+		        		document.forms['comments'].submit();
+		        	} else {
+			        	//Hide error message
+			        	var mesErr = YAHOO.util.Dom.getElementsByClassName('error-msg');
+			        	
+			        	YAHOO.util.Dom.setStyle(mesErr, 'display', 'none');
+			        	// Set new error message
+		    			var divmsg = document.createElement('div');
+		    			divmsg.className = 'error-msg';
+		    			divmsg.innerHTML = json.message;
+		    			// Insert message before fblike block
+						var con = YAHOO.util.Dom.getElementsByClassName('content');
+						var curentCon = con[0];
+						var fCild = curentCon.firstChild;
+						curentCon.insertBefore(divmsg, fCild);
+						scroll(0, 0);
+
+						// Hide fields error messages
+			        	var errorsMsg = YAHOO.util.Dom.getElementsByClassName('errors');
+			        	YAHOO.util.Dom.setStyle(errorsMsg, 'display', 'none');
+
+			        	// Set new error messages for fields
+			        	for (var key in json.errors) {
+							var val = json.errors[key];
+			    			var div = document.createElement ('div');
+			    			div.className = 'errors';
+			    			div.innerHTML = val;
+			    			if (key == 'comment') {
+			    				var cont = document.getElementById(key);
+				    			cont.appendChild(div);
+			    			} else {
+			    				var cont = document.getElementById(key).parentNode;
+				    			var nextsib = cont.nextSibling;
+				    			nextsib.appendChild(div);
+			    			}
+						}
+		        	}
+		        }
+	    		Y.one('#submit-form-button').on('click', function() {
+		    		// Post form for validating
+	    			var formObject = document.getElementById('comments');
+	    			YAHOO.util.Connect.setForm(formObject);
+	    			var cObj = YAHOO.util.Connect.asyncRequest('GET', '/item/validate?format=json', callback_obj, 'format=json');
+	
+	    		});
+	    		// callback
+	    		var callback_obj = {
+	    		        argument : ['targetPre'],
+	    		        success: function(o) { showErrors(o.responseText); },
+	    		        failure: function(o) { alert('Error!'); }
+	    		};
+	    		
+	        });
+	    });
+--></script>
+	       <div class="block-comments-form guest">
+        <form action="" method="post" enctype="application/x-www-form-urlencoded" id="comments">
+            <div class="guest-fields">
+                <label>You are:</label><div class="note">your name or nickname</div><div class="wrap-input-required"><input class="inp" style="width:406px;" type="text" name="guest_name" id="guest_name" value="" tabindex="100" /></div><div style="clear:both"></div>
+                <label>Your email:</label><div class="note">we won't display it!</div><div class="wrap-input"><input class="inp" style="width:406px;" type="text" name="guest_email" id="guest_email" value="" tabindex="101" /></div><div style="clear:both"></div>
+                <label>Your site or blog:</label><div class="note">we will add a link</div><div class="wrap-input"><input class="inp" style="width:406px;" type="text" name="guest_link" id="guest_link" value="" tabindex="102" /></div><div style="clear:both"></div>
+            </div>
+            <a class="btn-guest-login" id="guest-login" href="#">
+                <span class="image"><!-- . --></span>
+                <span class="big">Login <em>or</em><br/>join now!</span><br/>
+                and you won't need<br/>to fill in these fields
+            </a>
+            <div class="comment-wrap">
+                <div class="guest-icon">
+                    <label>You say:</label>
+                    <img src="/images/def-avatar-3.png" width="75" alt ="Guest" />
+                </div>
+                <div class="guest-comment">
+                    <div class="wrap-comment-textarea" id="comment">
+    <div class="corner"></div>
+    <div class="top"></div>
+    <div class="content">
+        <textarea class="comment" name="comment" cols="5" rows="4"></textarea>
+    </div>
+    <div class="bottom"></div>    
+</div>
+
+                </div>
+            </div>
+                    <div class="hidden">
+                        <dt id="comment_type-label">&#160;</dt>
+<dd id="comment_type-element">
+<input type="hidden" name="comment_type" value="1" tabindex="104" id="comment_type" /></dd>
+                        <dt id="guest_avatar-label">&#160;</dt>
+<dd id="guest_avatar-element">
+<input type="hidden" name="guest_avatar" value="3" tabindex="103" id="guest_avatar" /></dd>
+                    </div>
+            <div class="wrap-btn">
+                <button class="btn-submit"type="button"id="submit-form-button"><span class="b-left"><span class="b-right"><span class="name">Submit!</span></span></span></button>
+            </div> 
+        </form>
+</div>
+	    
+	</div>
+
+
+                    </div>
+                                        <div class="sidebar">
+                        
+<p>
+<a href="/sign-up" class="join"></a>
+</p>
+<div class="about-crowdsourcing">
+    <a id="crowdsourcing-video2" class="home-site-tour site-tour-button" href="#"><span class="right"><span class="bg">&nbsp;</span></span></a>
+</div>
+<p>&nbsp;</p>
+    
+<div class="information flag document">
+    <div class="submitted">
+        <p><strong>Views:</strong> 396</p>
+        
+                    <p><strong>Author:</strong> Aniket Kittur, Boris Smus, Robert E. Kraut</p>
+        
+        
+        
+        
+                    <p><strong>Source:</strong> <a href="http://reports-archive.adm.cs.cmu.edu/anon/hcii/CMU-HCII-11-100.pdf" target="_blanck">http://reports-archive.adm.cs.cmu.edu/anon/hcii/CMU-HCII-11-100.pdf</a></p>
+        
+        <p><strong>Submitted:</strong> Feb 04, 2011</p>
+                    <script language="javascript" type="text/javascript">
+	            YUI().use('node', function(Y) {
+	                Y.on('domready', function() {
+	                	var lb = YUI.namespace('Itc.Forms').LightBox();  
+
+	                    Y.on('click', function(e) {
+                            e.preventDefault();
+
+	                        lb.showDialog(
+	                            '<h1>How to Embed this Item in your Website</h1>',
+	                            '<p>Copy the script from the input box on Crowdsourcing.org<br/>In your HTML code: paste the code inside the <span style="color:red;">&lt;body&gt;</span> tag, where you want it place.</p><img src="/images/img-popup-embed.png" /><p><b>In a Content Management System (like a Wordpress):</b> follow instructions in your admin panel or<br />paste the code into the text area where you want it.</p>',
+	                            null,
+	                            true
+	                        )},
+	                        '#link-help-embed'
+	                    );
+	                });
+	            });
+            </script>
+            <p><strong>Embed in your site:</strong></p>
+	        <div class="wrap-input-sm">
+	           <input class="inp" type="text" name="site name" value="&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; id=&quot;embed_code&quot; width=&quot;540&quot; height=&quot;560&quot; codebase=&quot;http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab&quot;&gt; &lt;param name=&quot;movie&quot; value=&quot;http://www.crowdsourcing.org/resources/EmbededUGC.swf&quot; /&gt; &lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt; &lt;param name=&quot;wmode&quot; value=&quot;opaque&quot; /&gt; &lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt; &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt; &lt;param name=&quot;flashvars&quot; value=&quot;&amp;item_id=2518&amp;type=document&amp;ho=100&amp;lo=0&amp;sw=452&amp;sh=400&quot;&gt; &lt;embed src=&quot;http://www.crowdsourcing.org/resources/EmbededUGC.swf&quot; quality=&quot;high&quot; width=&quot;540&quot; height=&quot;560&quot; name=&quot;embed_code&quot; id=&quot;embed_code&quot; align=&quot;middle&quot; play=&quot;true&quot; loop=&quot;false&quot; quality=&quot;high&quot; allowScriptAccess=&quot;always&quot; allowFullScreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.adobe.com/go/getflashplayer&quot; wmode=&quot;opaque&quot; flashvars=&quot;&amp;item_id=2518&amp;type=document&amp;title=Scribd&amp;ho=100&amp;lo=0&amp;sw=452&amp;sh=400&quot; /&gt; &lt;/object&gt;" readonly="readonly"/>
+	        </div>
+            <a class="text-sm" href="#" id="link-help-embed">how do I do this?</a>
+            
+    </div>
+    
+    
+    
+    
+    <div class="author">
+        
+        <a href="/profile/archenette-evangelio/247" class="">
+
+    
+
+<img src="/images/resized//av_247_36x0_proportion.png?1300962371"  width="36" alt="Archenette Evangelio" />
+    
+    
+</a>
+	    <div>
+	        Submitted by: <a href="/profile/archenette-evangelio/247" class="">Archenette Evangelio</a>
+	        <a href="/feed/user/id/247" class="subsctibe">Subscribe to all Archenette Evangelio content</a>
+	    </div>
+	
+	</div>
+    
+</div><div class="related-conent-block">
+    <h2>Related Content</h2>
+    <div class="cont">
+              
+        <div class="content-item">
+                
+                
+
+    
+
+<img src="/images/resized//video_1359_75x0_proportion.jpg?1300962234"  width="75" alt="Bicycle Built for Two Thousand" />
+    
+    
+
+            
+
+            <div class="description">
+                                <h4><a href="/video/bicycle-built-for-two-thousand/1359" class="">Bicycle Built for Two Thousand</a></h4>
+                
+                <p><a href="/" class="">Carl Esposti</a></p>
+                <p class="date">Aug 22, 2010</p>
+            </div>
+        </div>
+              
+        <div class="content-item">
+                
+                
+
+    
+
+<img src="/images/resized//auto_document_1363_75x0_proportion.jpg?1300962216"  width="75" alt="Crowdsourcing (Definition/Examples)" />
+    
+    
+
+            
+
+            <div class="description">
+                                <h4><a href="/document/crowdsourcing-definitionexamples/1363" class="active">Crowdsourcing (Definition/Examples)</a></h4>
+                
+                <p><a href="/" class="">Crowdsourcing.org</a></p>
+                <p class="date">Aug 26, 2010</p>
+            </div>
+        </div>
+              
+        <div class="content-item">
+                
+                
+
+    
+
+<img src="/images/resized//auto_document_1366_75x0_proportion.jpg?1300962216"  width="75" alt="crowdSPRING - The Story Behind The Start-up" />
+    
+    
+
+            
+
+            <div class="description">
+                                <h4><a href="/document/crowdspring---the-story-behind-the-start-up/1366" class="active">crowdSPRING - The Story Behind The Start-up</a></h4>
+                
+                <p><a href="/" class="">Crowdsourcing.org</a></p>
+                <p class="date">Aug 26, 2010</p>
+            </div>
+        </div>
+              
+        <div class="content-item">
+                
+                
+
+    
+
+<img src="/images/resized//auto_document_1367_75x0_proportion.jpg?1300962216"  width="75" alt="The Future of Our Cities: Open, Crowdsourced, and Participatory" />
+    
+    
+
+            
+
+            <div class="description">
+                                <h4><a href="/document/the-future-of-our-cities-open-crowdsourced-and-participatory/1367" class="active">The Future of Our Cities: Open, Crowdsourced, and Participatory</a></h4>
+                
+                <p><a href="/" class="">Crowdsourcing.org</a></p>
+                <p class="date">Aug 26, 2010</p>
+            </div>
+        </div>
+      
+    </div>
+    
+        <a href="/document/crowdforge-crowdsourcing-complex-work/2518/related" class="link-btn-sidebar see-all"><span class="bord-right"><span class="name">See all related content</span></span></a>
+    
+</div><p>&nbsp;</p>
+<!--
+<p>&nbsp;</p>
+<p><a href="/document/crowdsourcing-industry-landscape-by-crowdsourcingorg-v12/1468" mce_href="/document/crowdsourcing-industry-landscape-by-crowdsourcingorg-v12/1468"><img src="http://i1133.photobucket.com/albums/m590/crowdsourcing_org/Slide1-1.png" mce_src="http://i1133.photobucket.com/albums/m590/crowdsourcing_org/Slide1-1.png" alt="" width="224" height="168" /></a></p>
+<p style="text-align: center;" mce_style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;" mce_style="text-align: center;"><span style="font-size: medium;" mce_style="font-size: medium;">Crowdsourcing Landscape</span></p>
+<p style="text-align: center;" mce_style="text-align: center;"><span style="font-size: small;" mce_style="font-size: small;"><a href="/document/crowdsourcing-industry-landscape-by-crowdsourcingorg-v12/1468" mce_href="/document/crowdsourcing-industry-landscape-by-crowdsourcingorg-v12/1468">enlarge</a></span></p>
+<p style="text-align: center;" mce_style="text-align: center;"><span style="font-size: small;" mce_style="font-size: small;"><br /></span></p>
+<p style="text-align: left;" mce_style="text-align: left;"><span style="font-size: small;" mce_style="font-size: small;"><a href="/document/crowdsourcing-community-definitions-v1-by-crowdsourcingorg/1492" mce_href="/document/crowdsourcing-community-definitions-v1-by-crowdsourcingorg/1492"><img src="http://i1133.photobucket.com/albums/m590/crowdsourcing_org/Slide1.png" mce_src="http://i1133.photobucket.com/albums/m590/crowdsourcing_org/Slide1.png" alt="" width="224" height="170" /></a><br /></span></p>
+<p style="text-align: left;" mce_style="text-align: left;">&nbsp;</p>
+<p style="text-align: center;" mce_style="text-align: center;"><span style="font-size: medium;" mce_style="font-size: medium;">Crowdsourcing Landscape Definitions<br /></span></p>
+<p style="text-align: center;" mce_style="text-align: center;"><span style="font-size: small;" mce_style="font-size: small;"><a href="/document/crowdsourcing-community-definitions-v1-by-crowdsourcingorg/1492" mce_href="/document/crowdsourcing-community-definitions-v1-by-crowdsourcingorg/1492">enlarge</a></span></p>
+-->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul class="navigate-community">
+        <li><a href="/community/creative/3" class="">Creative</a></li>
+        <li><a href="/community/crowdfunding/7" class="">Crowdfunding</a></li>
+        <li><a href="/community/engagement/2" class="">Engagement</a></li>
+        <li><a href="/community/innovation/1" class="">Innovation</a></li>
+        <li><a href="/community/knowledge/5" class="">Knowledge</a></li>
+        <li><a href="/community/prediction/6" class="">Prediction</a></li>
+        <li><a href="/community/social/4" class="">Social</a></li>
+        <li><a href="/community/tools/8" class="">Tools</a></li>
+    
+</ul>
+
+            <ul class="navigate-main">
+    <li><a href="/" class="">Home</a></li>
+    <li><a href="/communities" class="">All Communities</a></li>
+    <li><a href="/from-the-editor" class="">From the Editor</a></li>
+    <li><a href="/about" class="">About</a></li>
+        <li><a href="/sign-up" class="">Join</a></li>
+    
+    <li><a href="/faq" class="">FAQ</a></li>
+    <li><a href="/feeds" class="">RSS</a></li>
+    <li><a href="/contact" class="">Contact</a></li>
+    <li><a href="/sitemap" class="">Site Map</a></li>
+        <li><a href="/sign-up" class="">Login</a></li>
+    
+    <li><a href="/terms" class="">Terms of Service</a></li>
+    <li><a href="/copyright" class="">Copyright & DMCA</a></li>
+    <li><a href="/terms#anchor2">Privacy Policy</a></li>
+    <li class="last"><a class="site-tour-button" href="#">Site Tour</a></li>
+</ul>
+
+
+            <div class="copyright">
+                Use of this site is subject to express <a href="/terms" class="">Terms of Service</a>.<br />
+                &copy; 2010 Crowdsourcing LLC
+            </div>
+        </div>
+    </div>
+
+    <div id="itc-dialog-container"></div>
+
+	<div id="lb-popup" class="popup" style="display:none;">
+	    <div class="yui-widget-hd"></div>
+	    <div class="yui-widget-bd"></div>
+	</div>
+
+    <div id="shadow-popup" class="shadow-popup"></div>
+
+            <div id="loginform" class="popup login" style="display:none;">
+    <div class="top">
+        <div class="bg"></div>
+        <div class="corner left"></div>
+        <div class="corner right"></div>
+    </div>
+    <div class="content">
+        <div class="title">
+            <h1>Login</h1>
+            <a id="hide-button" href="#" class="close"></a>
+        </div>
+        <div class="cont">
+            <form action="/login/process" method="post" enctype="application/x-www-form-urlencoded">
+                <div class="wrap-form">
+                                            <label class="sm"><span>Email</span><a href="/sign-up">Join now!</a></label><div class="wrap-input-sm"><input class="inp" style="width: 216px;" type="text" name="mail" id="login-mail" value="" tabindex="1000" /></div><div style="clear:both"></div>
+                                            <label class="sm">
+    <span>Password</span>
+            <a href="/forgot-password">Forgot your password?</a>
+    
+</label>
+<div class="wrap-input-sm">
+    <input class="inp" style="width: 216px;" type="password" autocomplete="off" name="password" id="login-password" value="" tabindex="1001" />
+</div>
+
+<div style="clear:both"></div>
+
+
+                                            
+<div class="wrap-checkbox ">
+    <input type="hidden" name="remember" id="login_remember_popup" value="" /><img class="check checkbox" src="/images/checkbox-empty.gif" alt="" id="login_remember_popup-check" /><label class="checkbox" for="login_remember_popup-check">Remember me</label>
+</div>
+
+
+
+
+                    
+                    <div class="wrap-btn">
+                        <button tabindex="1003" id="login-btn" type="submit">
+                            <span class="b-left">
+                                <span class="b-right">
+                                    <span class="name">Login</span>
+                                </span>
+                            </span>
+                        </button>  
+                    </div>
+                    <div class="delimiter-or">
+                        <p>or</p>
+                    </div>
+                    <p class="login-from">
+                        Login with Facebook Connect<br />
+                        <fb:login-button onlogin="window.location.reload()">Connect</fb:login-button>
+                    </p>
+                    
+                    <p class="login-from">
+                        Login with Google Friend Connect<br />
+                        <a id="google-connect" class="link-connect link-connect-google" href="#">Connect</a>
+                    </p>
+                    
+                </div>
+                                    	                    	                       <input type="hidden" name="r[controller]" value="document" />
+	                    
+                    	                    	                       <input type="hidden" name="r[item_title]" value="crowdforge-crowdsourcing-complex-work" />
+	                    
+                    	                    	                       <input type="hidden" name="r[id]" value="2518" />
+	                    
+                    	                    	                       <input type="hidden" name="r[module]" value="default" />
+	                    
+                    	                    	                       <input type="hidden" name="r[action]" value="details" />
+	                    
+                    	                    	                       <input type="hidden" name="r[page]" value="1" />
+	                    
+                    	                    	                       <input type="hidden" name="r[route]" value="ci-details" />
+	                    
+                    
+                
+            </form>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bg"></div>
+        <div class="corner left"></div>
+        <div class="corner right"></div>
+    </div>
+</div>
+        <div id="loginform2" class="popup required-login" style="display:none;">
+    <div class="top">
+        <div class="bg"></div>
+        <div class="corner left"></div>
+        <div class="corner right"></div>
+    </div>
+    <div class="content">
+        <div class="title">
+            <h1>Oops... you tried to do action that is available for logged in users only</h1>
+            <a href="#" class="close"></a>
+        </div>
+        <div class="cont">
+            <form action="/login/process" method="post">
+                <div class="wrap-form">
+                    <div class="continue">Please login to continue</div>
+                                            <label><span>Email</span><a href="/sign-up">Join now!</a></label><div class="wrap-input-required"><input class="inp" style="width: 423px;;" type="text" name="mail" id="mail2" value="" tabindex="100" /></div><div style="clear:both"></div><br />
+                                            <label>
+    <span>Password</span>
+    <a href="#">Forgot your password?</a>
+</label>
+
+
+<div class="wrap-input-required">
+    <input class="inp" 
+           style="                       width: 423px;
+                  ;"
+           type="password" autocomplete="off" 
+           name="password"
+           id="pass2"
+           value=""
+                      tabindex="101"
+           
+    />
+</div>
+
+<div style="clear:both"></div>
+
+<br />
+                                            
+<div class="wrap-checkbox ">
+    <input type="hidden" name="remember" id="login_remember" value="" /><img class="check checkbox" src="/images/checkbox-empty.gif" alt="" id="login_remember-check" /><label class="checkbox" for="login_remember-check">Remember me</label>
+</div>
+
+
+
+<br />
+                    
+
+
+                    <div class="t-center">
+                        <button class="btn-submit" tabindex="203" id="login-btn2" type="submit">
+                            <span class="b-left">
+                                <span class="b-right">
+                                    <span class="name">Login</span>
+                                </span>
+                            </span>
+                        </button>
+                        <button class="btn-submit" id="close-btn" type="submit">
+                            <span class="b-left">
+                                <span class="b-right">
+                                    <span class="name">Close</span>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+                                    	                    	                       <input type="hidden" name="r[controller]" value="document" />
+	                    
+                    	                    	                       <input type="hidden" name="r[item_title]" value="crowdforge-crowdsourcing-complex-work" />
+	                    
+                    	                    	                       <input type="hidden" name="r[id]" value="2518" />
+	                    
+                    	                    	                       <input type="hidden" name="r[module]" value="default" />
+	                    
+                    	                    	                       <input type="hidden" name="r[action]" value="details" />
+	                    
+                    	                    	                       <input type="hidden" name="r[page]" value="1" />
+	                    
+                    	                    	                       <input type="hidden" name="r[route]" value="ci-details" />
+	                    
+                    
+                
+            </form>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bg"></div>
+        <div class="corner left"></div>
+        <div class="corner right"></div>
+    </div>
+</div>
+    
+
+    <div id="fb-root"></div>
+
+<script type="text/javascript">
+YUI().use('*', function(Y) {
+
+	
+	Y.on('domready', function() {
+	    google.friendconnect.container.setParentUrl('/');
+	    google.friendconnect.container.initOpenSocialApi({
+	        site: '01851950117421864338',
+	        onload: function(securityToken) {
+	            if (!window.timesloaded) {
+	              window.timesloaded = 1;
+	            } else {
+	              window.timesloaded++;
+	            }
+	            
+	            if (window.timesloaded > 1) {
+					                window.top.location.href = "/login/external";
+	            
+	            }
+	        }
+	    });
+
+	    if (Y.one('#google-connect')) {
+                google.friendconnect.renderSignInButton({ 'id': 'google-connect', 'text' : 'Connect', 'style': 'long' });
+	    }
+
+	    if (Y.one('#google-connect-signup')) {
+            google.friendconnect.renderSignInButton({ 'id': 'google-connect-signup', 'text' : 'Connect', 'style': 'long' });
+        }
+
+	    if (Y.one('#google-connect-profile')) {
+	    	google.friendconnect.renderSignInButton({ 'id': 'google-connect-profile', 'text' : 'Connect', 'style': 'long' });
+	    }
+    });
+    
+		
+    window.fbAsyncInit = function() {
+        FB.init({ appId: '7ff525e5b58e57cfc3ac36cbedeec88e', status: true, cookie: true, xfbml: true });
+        /*FB.Event.subscribe('auth.login', function(response) {
+            window.location.reload();
+        });*/
+
+        /*FB.Event.subscribe('auth.sessionChange', function(response) {
+            if (response.session) {
+                window.top.location.href = "/login/external";
+            } else {
+            }
+        });*/
+
+        /*FB.XFBML.parse(element);*/
+    };
+
+    (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+
+        Y.one('#fb-root').appendChild(e);
+    }());
+});
+</script>
+
+
+    <script type='text/javascript'>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19053969-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

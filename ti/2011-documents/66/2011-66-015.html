@@ -1,0 +1,612 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_HeadMain">   
+<script type="text/javascript">
+/*<![CDATA[*//*---->*/ 
+if (self != top){ // prevent loading HighBeam in frames
+   top.location.href = self.location;href;
+}  
+function CheckContentHeight(){ // set footer to bottom of screen if there is not enough content   
+//alert("screen.availHeight  = " + screen.availHeight); // test
+//alert("document.body.offsetHeight  = " + document.body.offsetHeight); // <body> height  
+var emptySpace = screen.availHeight - document.body.offsetHeight; // check for minimal content pages
+ 
+if(emptySpace > 200){ // move footer to bottom of user's screen 
+try { // pages with legal footer and search footer  
+  //alert("emptySpace > 0"); // test 
+  var IE8offset = 0;
+  if(navigator.userAgent.indexOf("MSIE 8.0") < 0){ // check for IE 8
+//alert("IE8"); // test 
+IE8offset = -100; // CheckContentHeight() is called again in FooterSearch.ascx since first call doesn't work 
+document.getElementById("footer-search").style.marginTop = (emptySpace - 185 + IE8offset) + "px" ; // move search footer down 
+  }
+}
+catch(err) { // pages with no search footer
+  document.getElementById("footer").style.marginTop = (emptySpace - 195) + "px"; // move footer down 
+}
+}
+} 
+function addLoadEvent(func) { // call one or more functions after page loads  
+var oldonload = window.onload;   
+if (typeof window.onload != 'function') {   
+window.onload = func;   
+} else {   
+window.onload = function() {   
+if (oldonload) {   
+oldonload();   
+}   
+func();   
+}   
+}   
+}   
+addLoadEvent(CheckContentHeight); // set footer positioning after page load
+function hoverIE6(id, margin){ // hover does not work with IE6
+if(navigator.userAgent.indexOf("MSIE 6.0") > 0){ // check for IE 6   
+//alert("IE6"); // test  
+document.getElementById(id).style.marginTop = margin;
+}   
+}  
+/*--*//*]]>*/
+</script>   
+<title>
+Motivation and engagement in the workplace: examining a multidimensional framework and instrument from a measurement and evaluation perspective.(ARTICLES)(Report) - Measurement and Evaluation in Counseling and Development | HighBeam Research - FREE trial
+</title><meta id="ctl00_MetaKeywords" name="keywords" content="Motivation and engagement in the workplace: examining a multidimensional framework and instrument from a measurement and evaluation perspective.(ARTICLES)(Report), Measurement and Evaluation in Counseling and Development, academic and education, academic and education/psychology, HighBeam Research" /><meta id="ctl00_MetaDescription" name="description" content="Motivation and engagement in the workplace: examining a multidimensional framework and instrument from a measurement and evaluation perspective.(ARTICLES)(Report) ... find Measurement and Evaluation in Counseling and Development articles.   This investigation conducts measurement and evaluation of a multidimensional model of workplace motivation and engagem..." /><meta name="robots" content="NOODP" /><meta name="robots" content="NOYDIR" /><meta http-equiv="content-language" content="en" /><link rel="search" type="application/opensearchdescription+xml" title="HighBeam Research" href="/searchprovider.xml" /><link rel="image_src" href="/img/layout/logo_highbeam_tag_print.gif" />
+<!-- Leave this dummy place holder.  It prevents an error on the doc page. Trust me. -->
+<script src="http://hbr.hbrstatic.com/Javascript/jquery-1.4.2.min.js?20110112" type="text/javascript"></script>
+<script type="text/javascript" src="http://hbr.hbrstatic.com/commoncontent/js/omniture.js?20110112"></script>
+<link href="http://hbr.hbrstatic.com/StyleSheets/articleWall.css?20110112" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE]>
+<link href="http://hbr.hbrstatic.com/StyleSheets/hacks/2009iewallhacks.css?20110112" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="http://hbr.hbrstatic.com/StyleSheets/shorthand.css?20110112 rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 7]>
+<link href="http://hbr.hbrstatic.com/StyleSheets/hacks/ie7.css?20110112 rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<link href="http://hbr.hbrstatic.com/StyleSheets/hacks/ie6.css?20110112 rel="stylesheet" type="text/css" />
+<![endif]-->
+<NOSCRIPT><meta http-equiv=REFRESH content=0;URL=/doc/1G1-192363416.html?jse=0></NOSCRIPT></head>
+<body id="ctl00_body1">
+<form name="aspnetForm" method="post" id="aspnetForm">
+<div>
+</div>
+<script language='javascript' type='text/javascript'>function ShowHide(){var dtsty = document.getElementById('ctl00_ph_ctl00_ArticleMain_dtCopyright').style;var ddsty = document.getElementById('ctl00_ph_ctl00_ArticleMain_ddCCC').style;if(dtsty.display=='none') { dtsty.display=''; ddsty.display='none'; }else { ddsty.display=''; dtsty.display='none'; }}</script>
+<div id="width">
+<div id="minwidth">
+<div id="container">
+<div id="header" class="forms-header">
+<div class="header-wrapper">
+<div id="ctl00_RHeader_divouterstylebase" class="divheaderstyle">
+<div id="ctl00_RHeader_midcondensingdiv" class="divheadermidstyle">
+<div class="header-logo-search">
+<div class="header-logo">
+<a class="logo" href="/" >
+<img src="http://hbr.hbrstatic.com/Img/layout/logo_highbeam_large.gif" alt="HighBeam Research - Newspaper archives and journal articles" title="HighBeam Research - Newspaper archives and journal articles" />
+</a>
+</div>
+<div class="search-control">
+<!-- Fingerprint literal text should be set off a property of header if other than default -->
+<h2 class="fingerprint">
+Research articles and archives from 6,500+ publications
+</h2>
+<div id="ctl00_RHeader_Panel1">
+<script type="text/javascript">
+function doHighBeamSearch(searchControl, messageControl) {
+var searchTerm = $("#" + searchControl).val();
+searchTerm = $.trim(searchTerm);
+if (searchTerm == "") {
+$('#' + messageControl).show();
+}
+else {
+var searchURL = "/search/?searchTerm=" + escape(searchTerm) + "&searchType=Article";
+window.location = searchURL;
+}
+} 
+</script>
+<input name="ctl00$RHeader$searchcore$txtSearchN" type="text" id="ctl00_RHeader_searchcore_txtSearchN" class="searchInput" />
+<input type="button" name="ctl00$RHeader$SearchButton" value="" onclick="return !doHighBeamSearch('ctl00_RHeader_searchcore_txtSearchN','searchTermEmptyMessage');__doPostBack('ctl00$RHeader$SearchButton','')" id="ctl00_RHeader_SearchButton" title="Search" class="search-button" />
+</div>
+</div>
+</div>
+<p id="searchTermEmptyMessage" class="errortext" style="display:none">
+<img src="http://hbr.hbrstatic.com/img/ico_caution.gif" alt="Caution" title="Caution" />
+Please enter a keyword above.
+</p>
+<ul class="sub-nav">
+<li>
+<a class="bold" href="/UserCredentials.aspx?ReturnUrl=http://www.highbeam.com/doc.aspx?docid=1G1:192363416" rel="nofollow">Log in</a>
+</li>
+<li>
+<span class="spansep">|</span>
+<a class="bold" href="/Registration/Registration1" rel="nofollow">Free trial</a>
+</li>
+<li>
+<span class="spansep">|</span>
+<a href="/help/memberOptions.hbr" id="ctl00_RHeader_lnkBenefitsVisitor" rel="nofollow">What's in a free trial</a>
+</li>
+<li>
+<span class="spansep">|</span>
+<a href="/help/help.hbr" rel="nofollow">Help</a>
+</li>
+</ul>
+</div>
+</div>
+   
+</div>  
+</div>
+<div id="content-page">
+<script type="text/javascript" src="http://hbr.hbrstatic.com/Javascript/jquery-1.4.2.min.js?20110112"></script>
+<script type="text/javascript" src="http://hbr.hbrstatic.com/Javascript/mrc.js?20110112"></script>
+<script type="text/javascript" src="http://hbr.hbrstatic.com/Javascript/ea.js?20110112"></script>
+<script type="text/javascript" src="http://hbr.hbrstatic.com/commoncontent/js/omniture.js?20110112"></script>
+<script type="text/javascript" src="http://hbr.hbrstatic.com/capcontent/js/fieldfunctions.js?20110112"></script>
+<link rel="stylesheet" type="text/css" media="all" href="http://hbr.hbrstatic.com/StyleSheets/base.css??20110112" />
+<input type="hidden" name="ctl00$ph$JScheck$hfClientJSEnabled" id="ctl00_ph_JScheck_hfClientJSEnabled" value="False" />
+<script type="text/javascript">
+document.getElementById('ctl00_ph_JScheck_hfClientJSEnabled').value = "True";
+if (document.getElementById('ctl00_ph_JScheck_hfClientJSEnabled').value != 'True')
+{  
+window.location.href= '/doc/1G1-192363416.html?jse=1';
+}
+</script>
+   
+<table id="contentColContainer">
+<tr>
+<!-- Column 1 -->
+<td id="contentCol">
+<div id="wrapper">
+<div id="content">
+<div id="articleArea">
+<div class="breadcrumbwall"><a href="/">Articles</a><span> > </span><span>Health magazines</span><span> > </span><a href="/health+magazines/articles/psychology%2c+children%2c+and+parenting+magazines.aspx">Psychology, Children, and Parenting magazines</a><span> > </span><a href="/Measurement+and+Evaluation+in+Counseling+and+Development/publications.aspx">Measurement and Evaluation in Counseling and Development articles</a><span> > </span><a href="/Measurement+and+Evaluation+in+Counseling+and+Development/publications.aspx?date=200901" class="bold fwb">January 2009</a></div>
+   
+<div id="ctl00_ph_ctl00_articlemainwrap" class="FunnelModeC">
+<table class="articlehead">
+<tr>
+<td valign="top" width="85px">
+<div id="pubLogo">
+<img src="/Aspx/GetPubLogo.aspx?pub=Measurement+and+Evaluation+in+Counseling+and+Development" class="logo" alt="Measurement and Evaluation in Counseling and Development" title="Measurement and Evaluation in Counseling and Development" />
+</div>
+</td>
+<td style="padding-right: 5px;">
+<h1 style="margin-top: 0">
+Article: Motivation and engagement in the workplace: examining a multidimensional framework and instrument from a measurement and evaluation perspective.(ARTICLES)(Report)
+</h1>
+<dl class="byline">
+<dt class="first">Article from:</dt><dd>Measurement and Evaluation in Counseling and Development </dd><dt>Article date:</dt><dd>January 1, 2009</dd>
+<dt>Author:</dt><dd id="ctl00_ph_ctl00_ArticleMain_authorspot"><script language='javascript' type='text/javascript'><!--
+document.write('Martin, Andrew J.');
+//--></script></dd>
+<span class="cpyright"><span class="sepra"></span><span id="ctl00_ph_ctl00_ArticleMain_dtCopyright" class="copyright"><nobr><a href="Common/Controls/#" id="ctl00_ph_ctl00_ArticleMain_lnkCopyright" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='Copyright';s.tl(this,'o','Copyright');ShowHide();return false;">Copyright</a></nobr></span><span id="ctl00_ph_ctl00_ArticleMain_ddCCC" style="display:none">COPYRIGHT 2008 American Counseling Association. This material is published under license from the publisher through the Gale Group, Farmington Hills, Michigan.&nbsp;&nbsp; All inquiries regarding rights or concerns about this content should be directed to <a href="/contact_us.aspx" rel="nofollow" >Customer Support</a>. <nobr>(<a href="Common/Controls/#" id="ctl00_ph_ctl00_ArticleMain_lnkHideCopyright" class="normal" onclick="ShowHide();return false;">Hide copyright information</a>)</nobr></span></span>
+</dl>
+</td>
+<td id="related-articles">
+  <div id="related-articles-wrapper">
+<!--[if lte IE 6]><![if gte IE 7]><![endif]-->
+<div class="corners-rounded corner-top-left">&nbsp;</div>
+<div class="corners-rounded corner-top-right">&nbsp;</div>
+<div class="corners-rounded corner-bottom-left">&nbsp;</div>
+<div class="corners-rounded corner-bottom-right">&nbsp;</div>
+<!--[if lte IE 6]><![endif]><![endif]-->
+<div class="related-articles-link">
+<a rel="nofollow" href="#mlt"><img id="ImgRelated" title="See related articles" alt="See related articles" src="/img/ico_related.gif" /></a>
+<a rel="nofollow" href="#mlt">Related articles</a>
+</div>
+ 
+  </div>   
+</td>
+</tr>
+</table>
+<div id="articleCopy">
+ <script type="text/javascript" language="JavaScript">
+<!--
+  function google_ad_request_done(google_ads) {
+/*
+ * This function is required and is used to display
+ * the ads that are returned from the JavaScript
+ * request. You should modify the document.write
+ * commands so that the HTML they write out fits
+ * with your desired ad layout.
+ */
+var s = '';
+var i;
+/*
+ * Verify that there are actually ads to display.
+ */
+if (google_ads.length <= 0)
+{
+var hideeltid = '';
+if(null != hideeltid && '' != hideeltid)
+{
+var hideelt = document.getElementById(hideeltid);
+if(null != hideelt)
+{
+hideelt.style.display = 'none';
+hideelt.style.visibility = 'hidden';
+}
+}
+s += '\r\n<!-- No google ads returned. -->';
+document.write(s);
+return;
+}
+var breaker = ""
+var hideheader = ('True' == 'True');
+if(hideheader)
+{
+s += '<div class=\"qandastyletextad\">';
+breaker = "<br />";
+}
+s += '<h5><a href=\"' + google_info.feedback_url + '\">Ads by Google</a></h5>';
+var specdnumber = 3;
+if(0 >= specdnumber)
+{
+specdnumber = 150;
+}
+for(i=0; i < google_ads.length && i < specdnumber; ++i)
+{
+s += '<p class="googAd' + [i+1] + '">' +
+ '<a href="' + google_ads[i].url + '" >' + '<span class="title">' + google_ads[i].line1 + '</span></a><br />' +
+ '<span class="desc">' + google_ads[i].line2 + ' ' + google_ads[i].line3 + '</span><br />' +
+ '<a href="' + google_ads[i].url + '" ><span class="url">' + google_ads[i].visible_url + '</span></a></p>';
+}
+if(hideheader)
+{
+s += '</div>';
+}
+document.write(s);
+return;
+  }
+google_ad_client = 'pub-1767711865744298'; // substitute your client_id
+google_ad_channel = '6160418542';
+google_ad_output = 'js';
+//google_max_num_ads = '3';
+google_max_num_ads = '3';
+google_kw_type = 'broad';
+google_kw = 'Motivation   engagement in   workplace  examining   multidimensional framework   instrument from   measurement   evaluation perspective  ARTICLES  Report';
+google_skip = 0;
+google_feedback = 'on';
+  // -->
+</script>
+<!--
+  /*
+   * The JavaScript returned from the following page uses
+   * the parameter values assigned above to populate an array
+   * of ad objects. Once that array has been populated,
+   * the JavaScript will call the google_ad_request_done
+   * function to display the ads.
+   */
+-->
+<script type="text/javascript" language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+<div id="be-doc-text"><P>  This investigation conducts measurement and evaluation of a multidimensional model of workplace motivation and engagement from a construct validation perspective. Two studies were conducted, one using the multi-item multidimensional Motivation and Engagement Scale-Work (N = 637 school personnel) and one using a parallel short form (N = 574 school personnel). </P> <P>  ********** </P> <P>  For a number of reasons, work has presented many challenges for employees. In almost every organizational and industry setting, the workplace has been constantly changing and at an increasingly rapid pace because of growing competition fueled by globalization (Schabracq &amp; Cooper, 2000). Estimates of time spent at the workplace have indicated that most employees work long hours, often not amply remunerated (Dollard, 2006). Reports of an increasing lack of control, less input into decision making, and less involvement in the scheduling of work tasks and methods of work have been consistently associated with poorer well-being (Karasek &amp; Theorell, 1990). Indeed, stress-related workers' compensation claims have continued to increase at an alarming rate. For example, stress-related claims in Australia (the context of the present investigation) increased by 62% between 1996/1967 and 2002/2003 (Office of the Australian Safety and Compensation Council, 2006). This finding is consistent with indicators in other developed countries. For example, more than half of working adults in the United States have reported that they are concerned about the amount of stress in their lives (Stambor, 2006). Considering these findings, strong grounds clearly exist for the conduct of research emphasizing motivation, engagement, resilience, and satisfaction in the workplace and for the broader issue of career and employment measurement and evaluation, counseling, and development. </P> <P>  The present investigation focuses on a workplace known to be subject to many of the pressures and challenges just described. Specifically, this investigation conducts measurement and evaluation of workplace motivation and engagement in the school setting among teachers, counselors, psychologists, executive personnel, and administrative staff. Previous research has identified stress, disengagement, heavy workloads, little support, and high turnover in this challenging setting (Fry &amp; Martin, 1994; Mayer, 2006; McCormack, Gore, &amp; Thomas, 2006; Richardson &amp; Watt, 2006; Smithers &amp; Robinson, 2003). Such factors can significantly hamper individual career and employment development. The school setting, therefore, represents and important context in which to measure and evaluate not only motivation and engagement but also cognate constructs such as enjoyment of work, workplace participation, career aspirations, and workplace buoyancy that are relevant to thoroughgoing measurement and evaluation of individuals' career and employment and the implications such measurement and evaluation have for career and employment counseling and development. </P> <P>  THEORIES OF MOTIVATION AND ENGAGEMENT IN THE WORKPLACE </P> <P>  Many theories of workplace motivation and engagement have been suggested. Needs-based theories have assessed the needs the workplace meets or what needs the employee strives to have met (Brewer &amp; Skinner, 2003). Maslow's (1954) need hierarchy proposed that individuals will experience greater job satisfaction. Herzberg's (1966) two-factor theory proposed two basic needs in the workplace: the need to avoid unpleasantness and pain and the need for growth and actualization. According to need achievement theory (Atkinson, 1957; see also Langan-Fox &amp; Roth, 1995, for more recent work), individuals are motivated by the need to succeed or the need to avoid failure. McGregor (1960) posited two perspectives on workplace motivation: Theory X in which workers are seen to dislike and fear work (leading to laziness and disengagement) and Theory Y in which workers have the psychological need to work, to meet responsibilities, and to achieve. </P> <P>  Values-based theories of workplace motivation and engagement have also been proposed. According to equity theory (Adams, 1965; see also Greenberg, 1990; Summers &amp; Hendrix, 1991, for more recent work), people prefer or value conditions of fairness and equity in their workplaces (e.g., in terms of pay, promotion, opportunities, and resources). People judge what they put in and get out of their jobs to develop their valuing of their work. According to theories promoting goal setting (e.g., Locke &amp; Latham, 2002) and goal commitment (e.g., Erez &amp; Zidon, 1984), the presence of a goal motivates people to strive to meet it. Furthermore, according to social learning theory (Bandura, 1997), self-regulation is a means to attain these goals in the workplace (Kanfer, 1990). According to expectancy-value theory--first addressed in the organizational domain by Vroom (1964; see also Van Eerde &amp; Thierry, 1996, for more recent work)--individuals make decisions about behavior on the basis of perceived consequences of that behavior and their perceptions primarily constitute the strength of their expectancy that effort will translate into performance and how attractive the consequences of that performance is. Social learning theory is also relevant to expectancy-based research in that its central tenet, self-efficacy, is closely aligned to workplace expectancies (Locke &amp; Henne, 1986) as is the issue of control (Rotter, 1966; see also Luthans &amp; Martinko, 1987). These values-based theories have emphasized the consequences and returns of one's actions, which also brings into consideration operant theories (Skinner, 1948, 1971; see also Stajkovic &amp; Luthans, 1997, for more recent work) and their more recent organizational applications such as organizational behavior management, which has emphasized the consequences of workplace behavior as motivators. </P> <P>  In summary, no one motivation theory in organizational, workplace, and career psychology is widely accepted. Because of this, some commentators have suggested that empirical research into such psychology has been fragmented. Many studies have addressed only a few aspects of workplace motivation and engagement and these aspects have not been embedded into a broader program (Thierry, 1998). The field of educational psychology is worth noting because it has proven to be a relatively fertile ground for integrated motivational theory and practice. Recent research in the educational domain has explored the validity of encompassing models of motivation (e.g., Pintrich, 2003). In this context, the Motivation and Engagement Wheel (Martin, 2001, 2002, 2003, 2007a, 2007b) was developed. </P> <P>  THE MOTIVATION AND ENGAGEMENT WHEEL </P> <P>  The Motivation and Engagement Wheel is composed of 4 higher order factors and 11 first-order factors (see Figure 1). Higher order factors (and their corresponding first-order factors) are adaptive cognitions (self-efficacy, mastery orientation, and valuing), adaptive behaviors (planning, task management, and persistence), impeding/maladaptive cognitions (anxiety, failure avoidance, and uncertain control), and maladaptive behaviors (self-handicapping and disengagement). Initially, this Motivation and Engagement Wheel was developed to measure and evaluate motivation and engagement in the educational domain (see Martin, 2001,2003, 2007a); however, Martin (2004a, 2004b) more recently has suggested that the Motivation and Engagement Wheel can be readily adapted to the workplace and has specifically articulated how this can be achieved. </P> <P>  [FIGURE 1 OMITTED] </P> <P>  Several theories are reflected in the adaptive dimensions of the Motivation and Engagement Wheel: (a) social learning theory (e.g., Bandura, 1997) and expectancy-based research (e.g., Van Eerde &amp; Thierry, 1996; Vroorn, 1964) are reflected in the self-efficacy dimension; (b) social learning theory and its self-regulation component (e.g., Farr, Hofinanii, &amp; Ringenbach, 1993; Kanfer, 1990) are reflected in the planning, task management, and persistence dimensions; (c) valuing (e.g., Adams, 1965; Van Eerde &amp; Thierry, 1996; Vroom, 1964) is reflected in the valuing dimension; (d) self-actualization and the need for growth (Maslow, 1954) along with goals-based research (see Erez, 1984; Locke &amp; Latham, 2002) are reflected in the mastery orientation dimension; and (e) goals-based research is also reflective of workers' inclination for planning and task management (goal setting; Locke &amp; Latham, 2002) and persistence (goal commitment; Erez &amp; Zidon, 1984). Other theories are reflected in the impeding and maladaptive dimensions of the Motivation and Engagement Wheel: (a) need achievement (e.g., Atkinson, 1957; Langan-Fox &amp; Roth, 1995) and two-factor approaches (e.g., Herzberg, 1966; McGregor, 1960) are reflected in the anxiety; failure avoidance, self handicapping, and disengagement dimension, and (b) control is reflected in the uncertain control dimension (e.g., Luthans &amp; Martinko, 1987; Rotter, 1966). </P> <P>  MEASUREMENT AND EVALUATION UNDERPINNING THE MOTIVATION AND ENGAGEMENT WHEEL </P> <P>  Alongside the Motivation and Engagement Wheel is its counterpart instrument: the Motivation and Engagement Scale (MES). Typically administered to high school students, the MES-High School (MES-HS; Martin, 2001, 2003, 2007a, 2007b) has demonstrated a strong factor structure and reliable and normally distributed factors, has consistently identified gender and age effects, and has predicted a variety of educational outcomes (such as enjoyment of school, classroom participation, and educational aspirations) and achievement-related outcomes (such as school grades, literacy, and numeracy). The present investigation assesses an adaptation of the MES to the workplace using the MES-Work (MES-W). Specifically, it conducts measurement and evaluation from a construct validation perspective using within and between-network approaches. </P> <P>  WITHIN-AND BETWEEN-NETWORK APPROACHES TO CONSTRUCT VALIDITY </P> <P>  Researchers in psychometric psychology have increasingly emphasized the need to measure and evaluate frameworks and instrument within a construct validation framework (e.g., see Marsh, 1997, 2002). Studies that have adopted a construct validation approach can be classified as within-network studies or between-network studies. Within-network studies explore the internal structure of a construct. Beginning with a logical analysis of internal consistency of the construct definition, measurement instruments, and generation of predictions, within-network studies typically have used empirical techniques such as confirmatory factor analysis (CFA), exploratory factor analysis, and reliability analysis. Between-network studies attempt to establish a logical,, theoretically consistent pattern of relations between constructs. This research considers these relations by adopting statistical procedures such as correlation, regression, or structural equation modeling (SEM) analyses to examine relationships between measures and instruments. </P> <P>  In reality, few studies have adopted this dual (within-and between-network) approach to validity; thus, in this sense, such studies have provided relatively limited input into understanding the constructs and measures under focus. In contrast, the present study conducts measurement and evaluation using both approaches to validity. First a within-network study is conducted using CFA and multilevel modeling to test the multidimensional motivation and engagement framework. Second, a between-network study is conducted by &hellip; </P></div>
+<!-- Membership Button -->
+<div class="allofthis">
+<p>
+<a href="/reg/reg1.aspx" rel="nofollow" title="Read all of this <strong>article</strong>Read all of this <strong>article</strong> with a FREE trial">Read all of this <strong>article</strong> with a FREE trial</a>
+</p>
+</div>
+<!-- /Membership Button -->
+<p class="copyright">
+</p>
+</div>
+</div>
+<script src="http://hbr.hbrstatic.com/javascript/jquery-1.4.2.min.js?20110112" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$.post("/ControlLoader.aspx?ControlName=Malt.ascx&ParentPageName=ASP.doc_aspx&DocId=1G1:192363416&Publication=Measurement and Evaluation in Counseling and Development&tab=lib&publogos=True", {}, function(maltData) {
+// format and output result
+document.getElementById('MaltMasterDiv').innerHTML = maltData;
+});
+});
+</script>
+<div id="MaltMasterDiv"></div>
+<!-- only visible for "Business magazines" site index category -->
+</div>
+</div>
+</div>
+</td>
+<!-- /Column 1 -->
+<!-- Column 2 -->
+<td id="sidebar" valign="top">
+<div id="col2">
+<div id="ctl00_ph_ctl00_adServer" class="adServer">
+<iframe id="ad-r1" class="dfp ad300x250" src="http://ad.doubleclick.net/adi/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;dcopt=ist;pos=r1;channel=1000000024;sz=300x250;tile=1;ord=48094625;" marginwidth="0"
+marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000">
+<script src=http://ad.doubleclick.net/adj/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;dcopt=ist;pos=r1;channel=1000000024;sz=300x250;tile=1;ord=48094625; type="text/javascript"></script><noscript><a href=http://ad.doubleclick.net/jump/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;dcopt=ist;pos=r1;channel=1000000024;sz=300x250;tile=1;ord=48094625; target="_blank"><img src=http://ad.doubleclick.net/ad/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;dcopt=ist;pos=r1;channel=1000000024;sz=300x250;tile=1;ord=48094625; border="0" alt="" /></a></noscript>
+</iframe>
+</div>
+<a href="http://www.cengagebrain.com/shop/index.html?cid=NLHBR" style="display: block; margin-bottom: 20px;" target="_blank">
+<img src="/img/CallToAction/cengage_brain_300x100.jpg" alt="Visit Cengage Brain" title="Visit Cengage Brain"/>
+</a>
+<div class="adServer">
+<iframe id="ad-r2" class="dfp admultiple" src="/iframead/display.aspx?site=gale.hbr.doc&zone=p709&kvps=page=wall;cat=hbr_77;pub=p709;pos=r2;channel=1000000025;sz=300x250,300x600;tile=2;ord=48094625;&id=ad-r2" marginwidth="0"
+marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000">
+<script src=http://ad.doubleclick.net/adj/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;pos=r2;channel=1000000025;sz=300x250,300x600;tile=2;ord=48094625; type="text/javascript"></script><noscript><a href=http://ad.doubleclick.net/jump/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;pos=r2;channel=1000000025;sz=300x250,300x600;tile=2;ord=48094625; target="_blank"><img src=http://ad.doubleclick.net/ad/gale.hbr.doc/p709;page=wall;cat=hbr_77;pub=p709;pos=r2;channel=1000000025;sz=300x250,300x600;tile=2;ord=48094625; border="0" alt="" /></a></noscript>
+</iframe>
+</div>
+<div id="actionImageMap" style="margin-bottom:20px;">
+<img src="http://hbr.hbrstatic.com/img/CallToAction/free-trial-promo2_image_count.png" id="ctl00_ph_ctl00_imgCTA" title="" usemap="#call_to_action_map" />
+</div>
+</div>
+<div class="clearFix">
+</div>
+</td>
+<!-- /Column 2 -->
+</tr>
+</table>
+<table id="adtable">
+<tr>
+<td id="adtablespacer">&nbsp;</td>
+<td class="ad clearit google">
+<div style="height: 3px; overflow: hidden; width: 100%; float: none; clear: both;"></div>
+ <script type="text/javascript" language="JavaScript">
+<!--
+  function google_ad_request_done(google_ads) {
+/*
+ * This function is required and is used to display
+ * the ads that are returned from the JavaScript
+ * request. You should modify the document.write
+ * commands so that the HTML they write out fits
+ * with your desired ad layout.
+ */
+var s = '';
+var i;
+/*
+ * Verify that there are actually ads to display.
+ */
+if (google_ads.length <= 0)
+{
+var hideeltid = '';
+if(null != hideeltid && '' != hideeltid)
+{
+var hideelt = document.getElementById(hideeltid);
+if(null != hideelt)
+{
+hideelt.style.display = 'none';
+hideelt.style.visibility = 'hidden';
+}
+}
+s += '\r\n<!-- No google ads returned. -->';
+document.write(s);
+return;
+}
+var breaker = ""
+var hideheader = ('True' == 'False');
+if(hideheader)
+{
+s += '<div class=\"qandastyletextad\">';
+breaker = "<br />";
+}
+s += '<h5><a href=\"' + google_info.feedback_url + '\">Ads by Google</a></h5>';
+var specdnumber = 6;
+if(0 >= specdnumber)
+{
+specdnumber = 150;
+}
+for(i=0; i < google_ads.length && i < specdnumber; ++i)
+{
+s += '<p class="googAd' + [i+1] + '">' +
+ '<a href="' + google_ads[i].url + '" >' + '<span class="title">' + google_ads[i].line1 + '</span></a><br />' +
+ '<span class="desc">' + google_ads[i].line2 + ' ' + google_ads[i].line3 + '</span><br />' +
+ '<a href="' + google_ads[i].url + '" ><span class="url">' + google_ads[i].visible_url + '</span></a></p>';
+}
+if(hideheader)
+{
+s += '</div>';
+}
+document.write(s);
+return;
+  }
+google_ad_client = 'pub-1767711865744298'; // substitute your client_id
+google_ad_channel = '7117637913';
+google_ad_output = 'js';
+//google_max_num_ads = '3';
+google_max_num_ads = '6';
+google_kw_type = 'broad';
+google_kw = 'Motivation   engagement in   workplace  examining   multidimensional framework   instrument from   measurement   evaluation perspective  ARTICLES  Report';
+google_skip = 3;
+google_feedback = 'on';
+  // -->
+</script>
+<!--
+  /*
+   * The JavaScript returned from the following page uses
+   * the parameter values assigned above to populate an array
+   * of ad objects. Once that array has been populated,
+   * the JavaScript will call the google_ad_request_done
+   * function to display the ads.
+   */
+-->
+<script type="text/javascript" language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+<div style="height: 3px; overflow: hidden; width: 100%; float: none; clear: both;"></div>
+</td>
+<td id="adtablespacerright">&nbsp;</td>
+</tr>
+</table>
+<!-- areas must be run at server so that omnitureTracking tag is processed -->
+<map id="ctl00_ph_ctl00_call_to_action_map" name="call_to_action_map">
+<area id="ctl00_ph_ctl00_logoNewsweek" shape="rect" coords="0,202,149,234" alt="Newsweek" title="Newsweek" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:Newsweek';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoHarpers" shape="rect" coords="0,235,149,291" alt="Harper's Magazine" title="Harper's Magazine" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:Harper\'s Magazine';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoWaPo" shape="rect" coords="0,339,149,413" alt="The Washington Post" title="The Washington Post" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:The Washington Post';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoTrib" shape="rect" coords="150,292,299,338" alt="Chicago Tribune" title="Chicago Tribune" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:Chicago Tribune (Chicago, IL)';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoCrains" shape="rect" coords="0,292,149,338" alt="Crain's Chicago Business" title="Crain's Chicago Business" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:Crain\'s Chicago Business';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoPRNewsWire" shape="rect" coords="150,339,299,413" alt="PRNewswire" title="PRNewswire" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:PR Newswire';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<!--
+<area id="ctl00_ph_ctl00_logoPedNews" shape="rect" coords="" alt="Pediatric News" title="Pediatric News" rel="nofollow" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:Pediatric News';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoNation" shape="rect" coords="" alt="The Nation" title="The Nation" rel="nofollow" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:The Nation';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+-->
+<area id="ctl00_ph_ctl00_logoAdAge" shape="rect" coords="150,202,299,234" alt="Advertising Age" title="Advertising Age" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:Advertising Age';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_logoEconomist" shape="rect" coords="150,235,299,291" alt="The Economist (US)" title="The Economist (US)" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToPubPage:The Economist (US)';s.tl(this,'o','GraphicToPubPage');return true;"></area>
+<area id="ctl00_ph_ctl00_lnkRegBottom" shape="rect" coords="0,414,299,601" alt="A FREE trial gives you access to over 80 million articles!" title="A FREE trial gives you access to over 80 million articles!" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToReg';s.tl(this,'o','GraphicToReg');return true;"></area>
+<area id="ctl00_ph_ctl00_lnkRegTop" shape="rect" coords="0,0,299,201" alt="Access over 6,500 publications with a FREE trial!" title="Access over 6,500 publications with a FREE trial!" rel="nofollow" href="/reg/reg1.aspx" onclick="var s=s_gi('highbeamcom');s.linkTrackVars='prop34';s.prop34='GraphicToReg';s.tl(this,'o','GraphicToReg');return true;"></area>
+</map>
+<!-- Search footer -->
+  
+<div id="footer-search">
+<h2 id="fingerprint2">Find articles, research, and archives</h2>
+<script type="text/javascript">
+function doHighBeamSearch(searchControl, messageControl) {
+var searchTerm = $("#" + searchControl).val();
+searchTerm = $.trim(searchTerm);
+if (searchTerm == "") {
+$('#' + messageControl).show();
+}
+else {
+var searchURL = "/search/?searchTerm=" + escape(searchTerm) + "&searchType=Article";
+window.location = searchURL;
+}
+} 
+</script>
+<div id="ctl00_ph_fsearch_SearchCoreControl_panelSearchBox">
+<input name="ctl00$ph$fsearch$SearchCoreControl$txtSearch" type="text" id="ctl00_ph_fsearch_SearchCoreControl_txtSearch" class="searchInput" />
+<input type="button" name="ctl00$ph$fsearch$SearchCoreControl$SearchButton" value="" onclick="doHighBeamSearch('ctl00_ph_fsearch_SearchCoreControl_txtSearch','searchTermEmptyMessage');return false;__doPostBack('ctl00$ph$fsearch$SearchCoreControl$SearchButton','')" id="ctl00_ph_fsearch_SearchCoreControl_SearchButton" title="Search" class="search-button" ImageAlign="top" />
+<!--<button class="search-button" ID="Button1" />-->
+</div>
+</div>
+<style type="text/css">
+/* article bottom search */
+#footer-search {
+text-align: center; 
+padding: 0 0 5px 0; 
+margin-bottom: 1px; 
+height: 64px; 
+background:url(/Img/Layout/article_footer_search_bg.gif) 0 -1px; 
+width: 100%;
+}
+#footer-search  #fingerprint2 { padding-top: 1px; padding-bottom: 2px; margin:0 7em 0 16px; font-size: 98%; color: #c63; font-weight: bold; }
+#footer-search  div.error { display: none; }
+div#footer { margin-top: 0px; }
+#footer hr { display: none; }
+#footer .sub-nav {
+   _height: 18px; /* IE 6 adds layout */
+}
+</style>
+<!--[if IE 8]>  
+<script type="text/javascript">
+   // alert("IE8"); // test
+   CheckContentHeight(-100); // IE8 fix
+</script>
+<![endif]-->
+<!-- /Search footer -->
+</div><!-- /content-page -->
+<div class="clearit sasftr" style="width: 100%">
+<div id="footer">
+<hr />
+<div id="innerfooter">
+<div id="ctl00_Footer_myinnermost">
+<p><a href="/">HighBeam&reg; Research</a>, a part of The Gale Group, Inc. &copy; Copyright 2011. All rights reserved.</p>
+<ul class="clearit sub-nav">
+<li class="first"><a href="/" >Home</a></li>
+<li><a href="/About/About.hbr" >About us</a></li>
+<li><a href="/Help/Help.hbr" >Customer support</a></li>
+<li><a href="/groupsubscriptions.aspx" >Group subscriptions</a></li>
+<li><a href="/mediakit/contactus.hbr" >Advertising</a></li>
+<li><a href="/contact_us.aspx?form=partner" >Partnerships</a></li>
+<li><a href="/about/privacypolicy.hbr" >Privacy policy</a></li>
+<li><a href="/about/termsandconditions.hbr" >Terms and conditions</a></li>
+</ul>
+<p id="partners">  
+The HighBeam advertising network includes:
+<img src="/img/logos/womensforum.gif" width="160" height="10" alt="womensforum.com GlamFamily" />
+</p>
+</div><!-- /myinnermost -->
+</div><!-- /innerfooter -->
+</div><!-- /footer -->
+</div>
+<script language="javascript" type="text/javascript">
+var tancc='sq=:academic and education:psychology';
+var tcdacmd='dt';
+</script> 
+ 
+<script src="http://an.tacoda.net/an/12146/slf.js" language="javascript" type="text/javascript"></script>
+</div><!-- /container -->
+</div><!-- /minwidth -->
+</div><!-- /width -->
+<div style="position: absolute;"><!-- START ANALYTICS TRACKING -->
+<!-- BEGIN SiteCatalyst code version: H.1. -->
+<script language="JavaScript" type="text/javascript"><!--
+/* Specify the Report Suite ID(s) to track here */
+var s_account="highbeamcom";
+//--></script>
+<script language="JavaScript" src="/javascript/SiteCatalyst_s_code.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript"><!--
+s.pageName='elibrary article visitor';
+s.channel='docpage';
+s.server='www.highbeam.com';
+s.campaign='none';
+s.prop12='1G1';
+s.prop13='academic and education';
+s.prop14='academic and education/psychology';
+s.prop17='MAGS';
+s.prop18='Measurement and Evaluation in Counseling and Development|709';
+s.prop20='HIGHBEAM';
+s.eVar20='HIGHBEAM';
+s.eVar33='0';
+s.prop33='0';
+s.hier1='1G1,MAGS,Measurement and Evaluation in Counseling and Development';
+s.hier2='Guest';
+s.prop21='1G1:192363416 - Motivation and engagement in the workplace: examining a multidimensional framework and instrument from a measurement and evaluation perspective.(ARTICLES)(Report)';
+s.prop22='012009';
+s.prop25='first';
+s.eVar25='first';
+s.eVar26='1G1';
+s.eVar27='MAGS';
+s.eVar28='Measurement and Evaluation in Counseling and Development|709';
+s.prop40='1';
+s.eVar40='1';
+s.prop41='1G1,MAGS,Measurement and Evaluation in Counseling and Development';
+s.eVar41='1G1,MAGS,Measurement and Evaluation in Counseling and Development';
+s.eVar42='1G1:MAGS:Measurement and Evaluation in Counseling and Development:1G1:192363416';
+s.prop42='Wall:Company:0';
+s.prop43='Wall:Person:0';
+s.prop44='Wall:Ticker:0';
+s.prop45='Wall:Product:0';
+s.eVar35='012009';
+
+ 
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://highbeamcom.122.2O7.net/b/ss/highbeamcom/1/H.1--NS/29964?c1=&amp;v0=none&amp;v20=6202&amp;c20=6202&amp;products=&amp;purchaseID=&amp;g=%2fdoc.aspx&amp;ch=docpage&amp;r=&amp;pageName=elibrary+article+visitor&amp;events=" height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- END SiteCatalyst code version: H.1. -->
+<!-- END ANALYTICS TRACKING -->
+</div><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY4MDg0NTcyMWRk5ONQ9/5ytDZSIx/I3RL+hz2Dm50=" /></form>
+<!-- You are on Server: wd-web-03 -->
+<!-- Begin comScore Tag -->
+<script type="text/javascript">
+/*<![CDATA[*//*---->*/  
+document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+/*--*//*]]>*/   
+</script>
+<script type="text/javascript">
+/*<![CDATA[*//*---->*/ 
+COMSCORE.beacon({
+c1: 2,
+c2: 6035830,
+c3: "",
+c4: "",
+c5: "",
+c6: "",
+c15: ""
+});
+/*--*//*]]>*/ 
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/b?c1=2&c2=6035830&c3=&c4=&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+/*<![CDATA[*//*---->*/  
+_qoptions = {
+qacct: "p-566IGcrB3g3GU"
+};
+/*--*//*]]>*/   
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-566IGcrB3g3GU.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+</body>
+</html>

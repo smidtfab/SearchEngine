@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" dir="ltr" lang="en">
+<![endif]-->
+<!--[if (gt IE 6) | (!IE)]><!-->
+<html dir="ltr" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<title>Developing Swift River to Validate Crowdsourcing | iRevolution</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://s1.wp.com/wp-content/themes/pub/coraline/style.css?m=1297715505g" />
+<link rel="pingback" href="http://irevolution.net/xmlrpc.php" />
+		<script src='http://wordpress.com/remote-login.php?action=js&amp;host=irevolution.net&amp;id=3385318&amp;t=1301851619&amp;back=irevolution.net%2F2009%2F04%2F10%2Fdeveloping-swift-river-to-validate-crowdsourcing%2F' type="text/javascript"></script>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+			if ( 'function' === typeof WPRemoteLogin ) {
+				document.cookie = "wordpress_test_cookie=test; path=/";
+				if ( document.cookie.match( /(;|^)\s*wordpress_test_cookie\=/ ) ) {
+					WPRemoteLogin();
+				}
+			}
+		/* ]]> */
+		</script>
+		<link rel="alternate" type="application/rss+xml" title="iRevolution &raquo; Feed" href="http://irevolution.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iRevolution &raquo; Comments Feed" href="http://irevolution.net/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iRevolution &raquo; Developing Swift River to Validate&nbsp;Crowdsourcing Comments Feed" href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1297799136g" type="text/css" />
+<script type='text/javascript' src='http://s2.wp.com/wp-includes/js/l10n.js?m=1295648996g&amp;ver=20101110'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/jquery/jquery.js?m=1293711051g&amp;ver=1.4.4'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/comment-reply.js?m=1293711052g&amp;ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://irevolution.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://irevolution.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='iRevolution' href='http://irevolution.net/' />
+<link rel='prev' title='Threat and Risk Mapping Analysis in&nbsp;Sudan' href='http://irevolution.net/2009/04/09/threat-and-risk-mapping-analysis-in-sudan/' />
+<link rel='next' title='Nation-State Routing: Globalizing&nbsp;Censorship' href='http://irevolution.net/2009/04/13/nation-state-routing-globalizing-censorship/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/' />
+<link rel='shortlink' href='http://wp.me/pecFU-pQ' />
+<link rel="shortcut icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1293711051g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1293711051g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1293711056g" />
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( /i/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( /i/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel='openid.server' href='http://irevolution.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://irevolution.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://irevolution.net/osd.xml" title="iRevolution" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+	<script type="text/javascript" charset="utf-8">
+		try{
+			var id = location.hash.match( /\#\!\/entry\/(\d+)/ )[1];
+			if ( id ) {
+				window.location = "http://irevolution.net?p=" + id;
+			};
+		}catch( error ){
+		}
+	</script>		
+<meta name="application-name" content="iRevolution" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="From innovation to Revolution" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://irevolution.net/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /></head>
+
+<body class="single single-post postid-1602 single-format-standard two-column content-sidebar">
+<div id="container" class="hfeed">
+	<div id="header">
+		<div id="masthead" role="banner">
+						<div id="site-title">
+				<span>
+					<a href="http://irevolution.net/" title="iRevolution" rel="home">iRevolution</a>
+				</span>
+			</div>
+			<div id="site-description">From innovation to Revolution</div>
+		</div><!-- #masthead -->
+
+		<div id="access" role="navigation">
+		  			<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+						<div class="menu"><ul><li ><a href="http://irevolution.net/" title="Home">Home</a></li><li class="page_item page-item-2"><a href="http://irevolution.net/about/" title="About">About</a></li><li class="page_item page-item-19"><a href="http://irevolution.net/bio/" title="Bio">Bio</a></li><li class="page_item page-item-701"><a href="http://irevolution.net/contact/" title="Contact">Contact</a></li><li class="page_item page-item-76"><a href="http://irevolution.net/dissertation/" title="Dissertation">Dissertation</a></li><li class="page_item page-item-55"><a href="http://irevolution.net/origins/" title="Origins">Origins</a></li><li class="page_item page-item-878"><a href="http://irevolution.net/projects/" title="Projects">Projects</a></li><li class="page_item page-item-5061"><a href="http://irevolution.net/rss-2/" title="RSS">RSS</a></li><li class="page_item page-item-4609"><a href="http://irevolution.net/twitter/" title="Twitter">Twitter</a></li></ul></div>
+		</div><!-- #access -->
+
+		<div id="branding">
+						<a href="http://irevolution.net/">
+									<img src="http://irevolution.files.wordpress.com/2008/04/cropped-oath.jpg" width="990" height="180" alt="" />
+							</a>
+					</div><!-- #branding -->
+	</div><!-- #header -->
+
+	<div id="content-box">
+
+		<div id="content-container">
+			<div id="content" role="main">
+
+			
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://irevolution.net/2009/04/09/threat-and-risk-mapping-analysis-in-sudan/" rel="prev"><span class="meta-nav">&larr;</span> Threat and Risk Mapping Analysis in&nbsp;Sudan</a></div>
+					<div class="nav-next"><a href="http://irevolution.net/2009/04/13/nation-state-routing-globalizing-censorship/" rel="next">Nation-State Routing: Globalizing&nbsp;Censorship <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-1602" class="post-1602 post type-post status-publish format-standard hentry category-crowdsourcing category-ushahidi tag-crowdsourcing tag-swift-river tag-ushahidi tag-votereport">
+					<h1 class="entry-title">Developing Swift River to Validate&nbsp;Crowdsourcing</h1>
+
+					<div class="entry-meta">
+						<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/" title="1:52 pm" rel="bookmark"><span class="entry-date">April 10, 2009</span></a> <span class="byline"><span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://irevolution.net/author/fletcherlicious/" title="View all posts by Patrick Meier">Patrick Meier</a></span></span><span class="comments-link"><span class="meta-sep">|</span> <a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comments" title="Comment on Developing Swift River to Validate&nbsp;Crowdsourcing">14 Comments</a></span>
+											</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p style="text-align:justify;"><a href="http://blog.ushahidi.com/index.php/2009/04/09/explaining-swift-river/">Swift River</a> is an <a href="http://www.ushahidi.com/">Ushahidi</a> initiative to crowdsource the process of data validation. We’re developing a Swift River pilot to complement the <a href="http://www.votereport.in/">VoteReport India</a> crowdsourcing platform we officially launched this week. As part of the Swift River team, I&#8217;d like to share with <em>iRevolution</em> readers what I hope the Swift River tool will achieve.</p>
+<p style="text-align:justify;">We had an excellent series of <a href="http://blog.ushahidi.com/index.php/2009/03/21/ushahidi-strategy-tech-meeting-in-orlando/">brainstorming sessions</a> several weeks ago in Orlando and decided we would combine both natural language processing (<a href="http://en.wikipedia.org/wiki/NLP">NLP</a>) and decentralized human filtering to get one step closer at validating crowdsourced data. Let me expand on how I see both components working individually and together.</p>
+<h3 style="text-align:justify;">Automated Parsing</h3>
+<p style="text-align:justify;">Double-counting has typically been the bane of traditional NLP or automated event-data extraction algorithms. At Virtual Research Associates (<a href="http://www.vranet.com/">VRA</a>), for example, we would parse headlines of Reuters newswires in quasi real-time, which meant that a breaking story would typically be updated throughout the day or week.</p>
+<p style="text-align:justify;">But the natural language parser was specifically developed to automate event-data extraction based on the parameters &#8220;Who did what, to whom, where and when?&#8221; In other words, the parser could not distinguish whether coded events were actually the same or related. This tedious task was left to VRA analysts to carry out.</p>
+<h3 style="text-align:justify;">Digital Straw</h3>
+<p style="text-align:justify;">The logic behind eliminating double counting (duplicate event-data) is inevitably reversed given the nature of crowdsourcing. To be sure, the more reports are collected about a specific event, the more likely it is that the event in question actually took place as described by the crowd. Ironically, that is precisely why we want to “drink from the fire hose,” the swift river of data gushing through the wires of social media networks.</p>
+<p style="text-align:justify;">We simply need a clever digital straw to filter the torrent of data. This is where our Swift River project comes in and why I first addressed the issue of double counting. One of the central tasks I’d like Swift River to do is to parse the incoming reports from VoteReport India and to cluster them into unique event-clusters. This would be one way to filter the cascading data. Moreover, the parser could potentially help filter fabricated reports.</p>
+<h3 style="text-align:justify;">An Example</h3>
+<p style="text-align:justify;">For example, if 17 individual reports from different sources are submitted over a two-day period about “forged votes,” then the reports in effect self-triangulate or validate each other. Of course, someone (with too much time on their hands) might decide to send 17 false reports about “forged votes.”</p>
+<p style="text-align:justify;">Our digital straw won’t filter all the impurities, but automating this first-level filter is surely better than nothing. Automating this process would require that the digital straw automate the extraction of nouns, verbs and place names from each report, i.e., actor, action and location. Date and time would automatically be coded based on when the report was submitted.</p>
+<p style="text-align:justify;">Reports that use similar verbs (synonyms) and refer to the same or similar actors at the same location on the same day can then be clustered into appropriate event-clusters. More on that in the section on crowdsourcing the filter below.</p>
+<h3 style="text-align:justify;">More Filters</h3>
+<p style="text-align:justify;">A second-level filter would compare the content of the reports to determine if they were exact replicas. In other words, if someone were simply copying and pasting the same report, Swift River could flag those identical reports as suspicious. This means someone gaming the system would have to send multiple reports with different wording, thus making it a bit more time consuming to game the system.</p>
+<p style="text-align:justify;">A third-level filter or trip-wire could compare the source of the 17 reports. For example, perhaps 10 reports were submitted by email, 5 by SMS and two by Twitter. The greater the diversity of media used to report an event, the more likely that event actually happened. This means that someone wanting to game the system would have to send several emails, text messages and Tweets using different language to describe a particular event.</p>
+<p style="text-align:justify;">A fourth-level filter could identify the email addresses, IP addresses and mobile phone numbers in question to determine if they too were different. A crook trying to game the system would now have to send emails from different accounts and IP addresses, different mobile phone numbers, and so on. Anything “looking suspicious” would be flagged for a human to review; more on that soon. The point is to make the gaming of the system as time consuming and frustrating as possible.</p>
+<h3 style="text-align:justify;">Gaming the System</h3>
+<p style="text-align:justify;">Of course, if someone is absolutely bent on submitting fabricated data that passes all the filters, then they will.  But those individuals probably constitute a minority of offenders. Perhaps the longer and more often they do this, the more likely someone in the crowd will pick up on the con. As for the less die-hard crooks out there, they may try and game the system only to see that their reports do not get mapped. Hopefully they&#8217;ll give up.</p>
+<p style="text-align:justify;">I do realize I&#8217;m giving away some &#8220;secrets&#8221; to gaming the system, but I hope this will be more a deterrent than an invitation to crack the system. If you do happen to be someone bent on gaming the platform, I wish you&#8217;d get in touch with us instead and help us improve the filters. Either way, we&#8217;ll learn from you.</p>
+<p style="text-align:justify;">No one on the Swift River team claims that 100% of the dirt will be filtered. What we seek to do is develop a digital filter that makes the data that does come through palatable enough for public consumption.</p>
+<h3 style="text-align:justify;">Crowdsourcing the Filter</h3>
+<p style="text-align:justify;">Remember the unique event-clusters idea from above? These could be visualized in a simple and intuitive manner for human volunteers (the crowd) to filter. Flag icons, perhaps using three different colors—green, orange and red—could indicate how suspicious a specific series of reports might be based on the results of the individual filters described above.</p>
+<p style="text-align:justify;">A green flag would indicate that the report has been automatically mapped on VoteReport upon receipt. An orange flag would indicate the need for review by the crowd while a red flag would send an alert for immediate review.</p>
+<p style="text-align:justify;">If a member of the crowd does confirm that a series of reports were indeed fabricated, Swift River would note the associated email address(es), IP address(es) and/or mobile phone number(s) and automatically flag future reports from those sources as red. In other words, Swift River would start rating the credibility of users as well.</p>
+<p style="text-align:justify;">If we can pull this off, Swift River may actually start to provide &#8220;early warning&#8221; signals. To be sure, if we fine tune our unique event-cluster approach, a new event-cluster would be created by a report that describes an event which our parser determines has not yet been reported on.</p>
+<p style="text-align:justify;">This should set off a (yellow) flag for immediate review by the crowd. This could either be a legitimate new event or a fabricated report that doesn&#8217;t fit into pre-existing cluster. Of course, we will get a number of false positives, but that&#8217;s precisely why we include the human crowdsourcing element.</p>
+<h3 style="text-align:justify;">Simplicity</h3>
+<p style="text-align:justify;">Either way, as the Swift River team has already agreed, this process of crowdsourcing the filter needs to be rendered as simple and seamless as possible. This means minimizing the number of clicks and “mouse motions” a user has to make and allowing for short-cut keys to be used, just like in Gmail. In addition, a userfiendly version of the interface should be designed specifically for mobile phones (various platforms and brands).</p>
+<p style="text-align:justify;">As always, I&#8217;d love to get your feedback.</p>
+<p style="text-align:justify;"><a href="http://fletcher.tufts.edu/phd/students/meier.shtml"> Patrick Philippe Meier</a></p>
+											</div><!-- .entry-content -->
+
+					<div class="entry-info">
+						This entry was posted in <a href="http://en.wordpress.com/tag/crowdsourcing/" title="View all posts in Crowdsourcing" rel="category tag">Crowdsourcing</a>, <a href="http://en.wordpress.com/tag/ushahidi/" title="View all posts in Ushahidi" rel="category tag">Ushahidi</a> and tagged <a href="http://en.wordpress.com/tag/crowdsourcing/" rel="tag">Crowdsourcing</a>, <a href="http://en.wordpress.com/tag/swift-river/" rel="tag">Swift River</a>, <a href="http://en.wordpress.com/tag/ushahidi/" rel="tag">Ushahidi</a>, <a href="http://en.wordpress.com/tag/votereport/" rel="tag">VoteReport</a>. Bookmark the <a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/" title="Permalink to Developing Swift River to Validate&nbsp;Crowdsourcing" rel="bookmark">permalink</a>.											</div><!-- .entry-info -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://irevolution.net/2009/04/09/threat-and-risk-mapping-analysis-in-sudan/" rel="prev"><span class="meta-nav">&larr;</span> Threat and Risk Mapping Analysis in&nbsp;Sudan</a></div>
+					<div class="nav-next"><a href="http://irevolution.net/2009/04/13/nation-state-routing-globalizing-censorship/" rel="next">Nation-State Routing: Globalizing&nbsp;Censorship <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-below -->
+
+				<div id="wpl-likebox"><div id="wpl-button"><a href='http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?like=1&amp;_wpnonce=235fbcd591' title='I like this post' class='like needs-login' rel='nofollow'><span>Like</span></a></div><div id="wpl-count">Be the first to like this post.</div></div>
+<div id="comments">
+	
+	
+			<h3 id="comments-title">14 Responses to <span>Developing Swift River to Validate&nbsp;Crowdsourcing</span></h3>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-2103">
+		<div id="comment-2103">
+		<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/d0d838482e2bdd4df5e325b0548635a1?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://unthinkingly.com' rel='external nofollow' class='url'>Chris Blow</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2103">
+				April 11, 2009 at 12:01 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2103#respond' onclick='return addComment.moveForm("comment-2103", "2103", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>Thanks as always for your articulate post Patrick. We will indeed be addressing many of these in the coming weeks! Hopefully by the end of the Indian Elections we will have a robust v0.1.</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-fletcherlicious bypostauthor odd alt depth-2" id="li-comment-2104">
+		<div id="comment-2104">
+		<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/cf2b431c7b5acbcfdaf54e489d702bc7?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://fletcher.tufts.edu/phd/students/Meier.shtml' rel='external nofollow' class='url'>Patrick Philippe Meier</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2104">
+				April 11, 2009 at 7:23 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2104#respond' onclick='return addComment.moveForm("comment-2104", "2104", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>I love it when a plan comes together! Thanks Chris!</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	</li>
+</ul>
+</li>
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2108">
+		<div id="comment-2108">
+		<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/b879ddb88f9f238e093217c9a6dd39e4?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://travel.perfectspace.com' rel='external nofollow' class='url'>Nate</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2108">
+				April 12, 2009 at 12:50 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2108#respond' onclick='return addComment.moveForm("comment-2108", "2108", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>I am very interested in talking to you about how I might be able to help and also use this kind of process at CrisisWire.com.  Please contact me when/if you get an opportunity.</p>
+<p>Thanks,</p>
+<p>Nate</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-fletcherlicious bypostauthor odd alt depth-2" id="li-comment-2110">
+		<div id="comment-2110">
+		<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/cf2b431c7b5acbcfdaf54e489d702bc7?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://fletcher.tufts.edu/phd/students/Meier.shtml' rel='external nofollow' class='url'>Patrick Philippe Meier</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2110">
+				April 12, 2009 at 6:15 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2110#respond' onclick='return addComment.moveForm("comment-2110", "2110", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>Thanks for getting in touch, Nate. Glad Chris is already following up.</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	</li>
+</ul>
+</li>
+	<li class="comment even thread-even depth-1" id="li-comment-2109">
+		<div id="comment-2109">
+		<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/d0d838482e2bdd4df5e325b0548635a1?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://unthinkingly.com' rel='external nofollow' class='url'>Chris Blow</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2109">
+				April 12, 2009 at 2:35 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2109#respond' onclick='return addComment.moveForm("comment-2109", "2109", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>Nate, you are near the top of the list of people that we have been meaning to get in touch with for some time. Crisiswire is a big inspiration for the project! I will send you an email you and perhaps we can arrange a call with the team.</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	<ul class='children'>
+	<li class="comment odd alt depth-2" id="li-comment-2231">
+		<div id="comment-2231">
+		<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/b879ddb88f9f238e093217c9a6dd39e4?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://travel.perfectspace.com' rel='external nofollow' class='url'>Nate</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2231">
+				May 10, 2009 at 5:26 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2231#respond' onclick='return addComment.moveForm("comment-2231", "2231", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>Hey Chris,</p>
+<p>I&#8217;m not sure if you have tried emailing me yet, but I haven&#8217;t received anything. No worries if you&#8217;re busy. I understand that (and am pretty busy myself this week).  But, just to let you know, I&#8217;ll be soon redeveloping CrisisWire and I&#8217;d love to take into account what you&#8217;re doing early on.  </p>
+<p>Anyway, feel free to contact me via <a href="http://blog.perfectspace.com/contact" rel="nofollow">http://blog.perfectspace.com/contact</a> if email for some reason isn&#8217;t getting through. </p>
+<p>Thanks!</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	<ul class='children'>
+	<li class="comment byuser comment-author-fletcherlicious bypostauthor even depth-3" id="li-comment-2233">
+		<div id="comment-2233">
+		<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/cf2b431c7b5acbcfdaf54e489d702bc7?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://fletcher.tufts.edu/phd/students/Meier.shtml' rel='external nofollow' class='url'>Patrick Philippe Meier</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2233">
+				May 10, 2009 at 4:47 pm</a>
+					|
+													</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>Hi Nate, not sure if you meant to address your comment to me or to Chris Blow&#8230;</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt depth-3" id="li-comment-2235">
+		<div id="comment-2235">
+		<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/d0d838482e2bdd4df5e325b0548635a1?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://unthinkingly.com' rel='external nofollow' class='url'>Chris Blow</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2235">
+				May 11, 2009 at 5:57 am</a>
+					|
+													</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>hi nate! i just sent you my phone number using your public contact form. </p>
+<p>also check out the mailing list via <a href="http://swiftapp.org" rel="nofollow">http://swiftapp.org</a><br />
+ <img src='http://s2.wp.com/wp-includes/images/smilies/icon_smile.gif?m=1293711052g' alt=':)' class='wp-smiley' /> </p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2113">
+		<div id="comment-2113">
+		<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/f97289763292de52bfa3268624f8df67?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn">Keith B</cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2113">
+				April 13, 2009 at 9:03 am</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2113#respond' onclick='return addComment.moveForm("comment-2113", "2113", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>I know that it might be going against the spirit of crowdsourcing, but could it be possible to differentiate between reliable observers/reporters and brand new ones?  I&#8217;m thinking something like Amazon&#8217;s feedback system.  Certain sources of information &#8211; a single mobile phone user or twitter feed &#8211; will produce information that is confirmed reliable more often than others.  Might giving &#8216;preferred&#8217; sources a slightly accelerated route to publishing discourage or diminish gaming of the system by individuals wanting to skew the crowd&#8217;s information?  If the &#8216;promotions&#8217; system is done transparently, it remains as democratic a process as treating all tips equally and increases the effort &#8211; in time and effort &#8211; that an individual/group has to make to bias the information.  </p>
+<p>/You&#8217;ll forgive me if some of my suggestions seem daft or have been made before &#8211; I&#8217;m fairly new to the whole area  ;0)</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-even depth-1" id="li-comment-2167">
+		<div id="comment-2167">
+		<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/aa23f0da7af0fe486075ca7b52a2795c?s=48&amp;d=identicon&amp;r=G' class='avatar avatar-48' height='48' width='48' />
+			<cite class="fn"><a href='http://hook.org' rel='external nofollow' class='url'>anselm</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#comment-2167">
+				April 27, 2009 at 6:55 pm</a>
+					|
+					<a class='comment-reply-link' href='/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?replytocom=2167#respond' onclick='return addComment.moveForm("comment-2167", "2167", "respond", "1602")'>Reply</a>								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-body"><p>is gaming always bad? some actors may resort to gaming because otherwise their voice is diminished in a system that locks them out. i suspect that about half of the motives for gaming are non commercial &#8211; see for example how moot won the time magazines most influential person of the year contest.  there was no profit motive &#8211; it was humor &#8211; but it speaks to the fact that he as a person is notable, new and a harbinger of a future that the time magazine readership may otherwise not have been exposed to.</p>
+<p>you often know who your actors are, and the web of trust that extends from you to them is key. see for example advogato.org which uses a &#8220;trust as it extends from the founders&#8221; approach. this is quite a good filter but also dampens novel actors, dampens serendipity, and may limit new apprehension of reality on the ground.</p>
+<p>perhaps the real issue is finding a way to make sure that posting is not completely energy free. if there is a certain amount of labor to create information then the actors always will have some legitimacy &#8211; the actors are spending a currency to participate. it is like bugs in a meadow &#8211; together there is a cacophony &#8211; and each bug is doing its best to spend its energies wisely as part of that cacophony.</p>
+</div>
+
+	</div><!-- #comment-##  -->
+
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href='http://irevolution.wordpress.com/2009/04/27/video-introduction-to-crisis-mapping/' rel='external nofollow' class='url'>Video Introduction to Crisis Mapping &laquo; iRevolution</a></p>
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href='http://irevolution.wordpress.com/2009/05/07/moving-forward-with-swift-river/' rel='external nofollow' class='url'>Moving Forward with Swift River &laquo; iRevolution</a></p>
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href='http://irevolution.wordpress.com/2010/04/08/wag-the-dog/' rel='external nofollow' class='url'>Wag the Dog, or How Falsifying Crowdsourced Data Can Be a Pain &laquo; iRevolution</a></p>
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href='http://wp.slis.ua.edu/maccall-spring2011-ls566-01-25/2011/03/30/irevolution/' rel='external nofollow' class='url'>iRevolution | Aboutness</a></p>
+	</li>
+		</ol>
+
+		
+	
+									<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2009/04/10/developing-swift-river-to-validate-crowdsourcing/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://irevolution.net/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='1602' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						
+<input type="hidden" name="genseq" value="1301851619" />
+<p><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe">Notify me of follow-up comments via email.</label></p><p><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of site updates</label></p><input type="hidden" name="sub-type" value="comment-form-text4" /><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4292a17533" /></p>					</form>
+							</div><!-- #respond -->
+						
+</div><!-- #comments -->
+			
+			</div><!-- #content -->
+		</div><!-- #content-container -->
+
+
+		
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+			<li id="text-222244912" class="widget-container widget_text"><h3 class="widget-title">Patrick Meier</h3>			<div class="textwidget">Born and raised in Africa. Director of Crisis Mapping at Ushahidi and co-founder of the International Network of Crisis Mappers. Previously co-directed Harvard's Program on Crisis Mapping and Early Warning and consulted extensively for international organizations in Africa, Asia and Europe. Completing PhD at The Fletcher School and currently a Visiting Fellow at Stanford University's Program on Liberation Technology. MA from Columbia University. BA from York and EAP at UC Berkeley.
+</div>
+		</li><li id="search-3" class="widget-container widget_search"><form role="search" method="get" id="searchform" action="http://irevolution.net/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form></li><li id="blog_subscription-3" class="widget-container widget_blog_subscription"><h3 class="widget-title"><label for="subscribe-field">Email Subscription</label></h3>
+<form action="http://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="subscribe-blog">
+			<p>Enter email to receive blog posts.</p>
+		<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" value="" id="subscribe-field"/></p>
+	
+	<input type="hidden" name="action" value="subscribe"/>
+	<input type="hidden" name="blog_id" value="3385318"/>
+	<input type="hidden" name="source" value="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/"/>
+	<input type="hidden" name="sub-type" value="widget"/>
+
+	<input type="hidden" id="_wpnonce" name="_wpnonce" value="9d3831d89a" /><input type="hidden" name="_wp_http_referer" value="/2009/04/10/developing-swift-river-to-validate-crowdsourcing/" />
+	<p><input type="submit" value="Sign me up!" /></p>
+</form>
+
+</li><li id="categories-3" class="widget-container widget_categories"><h3 class="widget-title">Topics</h3>		<ul>
+			<li class="cat-item cat-item-9204"><a href="http://irevolution.net/category/conferences/" title="View all posts filed under Conferences">Conferences</a>
+</li>
+	<li class="cat-item cat-item-7972208"><a href="http://irevolution.net/category/crisis-mapping/" title="View all posts filed under Crisis Mapping">Crisis Mapping</a>
+</li>
+	<li class="cat-item cat-item-201845"><a href="http://irevolution.net/category/crowdsourcing/" title="View all posts filed under Crowdsourcing">Crowdsourcing</a>
+</li>
+	<li class="cat-item cat-item-7255387"><a href="http://irevolution.net/category/digital-activism/" title="View all posts filed under Digital Activism">Digital Activism</a>
+</li>
+	<li class="cat-item cat-item-239655"><a href="http://irevolution.net/category/early-warning/" title="View all posts filed under Early Warning">Early Warning</a>
+</li>
+	<li class="cat-item cat-item-29015373"><a href="http://irevolution.net/category/humanitarian-tech/" title="View all posts filed under Humanitarian Tech">Humanitarian Tech</a>
+</li>
+	<li class="cat-item cat-item-5854566"><a href="http://irevolution.net/category/irevolution/" title="View all posts filed under iRevolution">iRevolution</a>
+</li>
+	<li class="cat-item cat-item-75749"><a href="http://irevolution.net/category/mobile-banking/" title="View all posts filed under Mobile Banking">Mobile Banking</a>
+</li>
+	<li class="cat-item cat-item-5426"><a href="http://irevolution.net/category/new-media/" title="View all posts filed under New Media">New Media</a>
+</li>
+	<li class="cat-item cat-item-4051192"><a href="http://irevolution.net/category/ushahidi/" title="View all posts filed under Ushahidi">Ushahidi</a>
+</li>
+		</ul>
+</li>		<li id="top-posts" class="widget-container widget_stats_topposts">			<h3 class="widget-title">Popular Posts</h3>			<ul><li><a href='http://irevolution.net/2011/02/27/tactics-egypt-revolution-jan25/'>Civil Resistance Tactics Used in Egypt's Revolution #Jan25</a></li><li><a href='http://irevolution.net/dissertation/'>Dissertation</a></li><li><a href='http://irevolution.net/2011/03/04/crisis-mapping-libya/'>Crisis Mapping Libya: This is No Haiti (Updated)</a></li><li><a href='http://irevolution.net/2010/12/26/political-power-of-social-media/'>The Political Power of Social Media</a></li><li><a href='http://irevolution.net/2011/03/08/volunteers-behind-libya-crisis-map/'>The Volunteers Behind the Libya Crisis Map: A True Story</a></li></ul>		</li>		<li id="recent-posts-3" class="widget-container widget_recent_entries">		<h3 class="widget-title">Lastest Posts</h3>		<ul>
+				<li><a href="http://irevolution.net/2011/03/28/disaster-relief-2-0/" title="Disaster Relief 2.0: Between a Signac and a&nbsp;Picasso">Disaster Relief 2.0: Between a Signac and a&nbsp;Picasso</a></li>
+				<li><a href="http://irevolution.net/2011/03/26/technology-to-counter-rumors/" title="How To Use Technology To Counter Rumors During Crises: Anecdotes from&nbsp;Kyrgyzstan">How To Use Technology To Counter Rumors During Crises: Anecdotes from&nbsp;Kyrgyzstan</a></li>
+				<li><a href="http://irevolution.net/2011/03/18/live-crisis-maps-prevent-mass-atrocities/" title="Can Live Crisis Maps Help Prevent Mass&nbsp;Atrocities?">Can Live Crisis Maps Help Prevent Mass&nbsp;Atrocities?</a></li>
+				<li><a href="http://irevolution.net/2011/03/17/crisis-mapping-libya-and-japan/" title="Live Crisis Mapping: Update on Libya and&nbsp;Japan">Live Crisis Mapping: Update on Libya and&nbsp;Japan</a></li>
+				<li><a href="http://irevolution.net/2011/03/08/volunteers-behind-libya-crisis-map/" title="The Volunteers Behind the Libya Crisis Map: A True&nbsp;Story">The Volunteers Behind the Libya Crisis Map: A True&nbsp;Story</a></li>
+				<li><a href="http://irevolution.net/2011/03/06/changing-world-map/" title="Changing the World One Map at a&nbsp;Time">Changing the World One Map at a&nbsp;Time</a></li>
+				<li><a href="http://irevolution.net/2011/03/04/crisis-mapping-libya/" title="Crisis Mapping Libya: This is No Haiti&nbsp;(Updated)">Crisis Mapping Libya: This is No Haiti&nbsp;(Updated)</a></li>
+				<li><a href="http://irevolution.net/2011/02/27/tactics-egypt-revolution-jan25/" title="Civil Resistance Tactics Used in Egypt&#8217;s Revolution&nbsp;#Jan25">Civil Resistance Tactics Used in Egypt&#8217;s Revolution&nbsp;#Jan25</a></li>
+				<li><a href="http://irevolution.net/2011/02/22/introduction-to-digital-origins-of-dictatorship-and-democracy/" title="Introduction to Digital Origins of Dictatorship and&nbsp;Democracy">Introduction to Digital Origins of Dictatorship and&nbsp;Democracy</a></li>
+				<li><a href="http://irevolution.net/2011/02/16/checkins-for-disaster-response/" title="Check-In&#8217;s with a Purpose: Applications for Disaster&nbsp;Response">Check-In&#8217;s with a Purpose: Applications for Disaster&nbsp;Response</a></li>
+				<li><a href="http://irevolution.net/2011/02/10/facebook-for-repressive-regimes/" title="How to Use Facebook if You Are a Repressive&nbsp;Regime">How to Use Facebook if You Are a Repressive&nbsp;Regime</a></li>
+				<li><a href="http://irevolution.net/2011/02/08/dissertation_quantitative_analysis/" title="Access to Mobile Phones Increases Protests Against Repressive&nbsp;Regimes">Access to Mobile Phones Increases Protests Against Repressive&nbsp;Regimes</a></li>
+				<li><a href="http://irevolution.net/2011/02/05/check-ins-with-a-purpose/" title="Maps, Activism and Technology: Check-In&#8217;s with a&nbsp;Purpose">Maps, Activism and Technology: Check-In&#8217;s with a&nbsp;Purpose</a></li>
+				<li><a href="http://irevolution.net/2011/02/03/egypt-jan25-ushahidi/" title="Using a Map to Bear Witness in Egypt&nbsp;#Jan25">Using a Map to Bear Witness in Egypt&nbsp;#Jan25</a></li>
+				<li><a href="http://irevolution.net/2011/01/31/facebook-https-is-now-live-for-sudan/" title="Facebook https is now live for&nbsp;Sudan">Facebook https is now live for&nbsp;Sudan</a></li>
+				<li><a href="http://irevolution.net/2011/01/31/civil-resistance-sudans-jan30/" title="Civil Resistance: Early Lessons Learned from Sudan&#8217;s&nbsp;#Jan30">Civil Resistance: Early Lessons Learned from Sudan&#8217;s&nbsp;#Jan30</a></li>
+				<li><a href="http://irevolution.net/2011/01/30/protest-map-of-khartoum/" title="Crisis Mapping Sudan: Protest Map of&nbsp;Khartoum">Crisis Mapping Sudan: Protest Map of&nbsp;Khartoum</a></li>
+				<li><a href="http://irevolution.net/2011/01/29/crisis-mapping-egypt/" title="Crisis Mapping Egypt: Collection of Protest Maps&nbsp;(Updated)">Crisis Mapping Egypt: Collection of Protest Maps&nbsp;(Updated)</a></li>
+				<li><a href="http://irevolution.net/2011/01/28/following-developments-in-egypt/" title="How I&#8217;m following the developments in Egypt&nbsp;(Updated)">How I&#8217;m following the developments in Egypt&nbsp;(Updated)</a></li>
+				<li><a href="http://irevolution.net/2011/01/20/what-is-crisis-mapping/" title="What is Crisis Mapping? An Update on the Field and Looking&nbsp;Ahead">What is Crisis Mapping? An Update on the Field and Looking&nbsp;Ahead</a></li>
+				</ul>
+		</li><li id="text-222244913" class="widget-container widget_text"><h3 class="widget-title">Conferences</h3>			<div class="textwidget"><b>Skoll World Forum 2011 - London<br>
+SxSW 2011 - Austin<br>
+Where 2.0 2011 - SF<br>
+PDF 2011 - NY<br>
+Exit Fest 2011 - Belgrade<br>
+Golden Tag 2011 - Oslo<br>
+Thinking Digital 2011 - Newcastle<br>
+HAS 2011 - Boston<br>
+One World 2011 - Prague<br>
+Amnesty Int'l 2011 - SF<br>
+RePublica 2011 - Berlin<br>
+Re-Campaign 2011 - Berlin<br>
+Newseum 2011 - DC<br>
+MORE 25 2011 - Bermuda<br>
+ICT-Conf 2011 - Rome<br>
+IPI World Congress 2011 - Taiwan<br><br>
+PopTech 2010 - Camden<br>
+Where 2.0 2010 - SF<br>
+CrisisMappers 2010 - Boston<br>
+Foo Camp 2010 - Phoenix<br>
+TEDx 2010 - SF<br>
+Genocide Prevention - Cambodia<br>
+TechCamp 2010 - Santiago<br>
+PDF 2010 - Santiago<br>
+ValGEO 2010 - Milano<br>
+CrowdConf 2010 - SF<br>
+CGI-U 2010 - Miami<br>
+Liberation Tech 2010 - SF<br>
+Mashable 2010 - NY<br>
+Gov 2.0 Expo 2010 -DC<br>
+UN Global Pulse 2010 - Bellagio<br>
+Twitter Chirp 2010 - SF<br><br>
+LIFT 2009 - Geneva<br>
+ICT4D 2009 - Doha<br>
+CrisisMappers 2009 - Cleveland<br>
+ABWxD 2009 - Rhode Island <br>
+
+
+
+</div>
+		</li><li id="rss-382900641" class="widget-container widget_rss"><h3 class="widget-title"><a class='rsswidget' href='http://twitter.com/statuses/user_timeline/16895951.rss' title='Syndicate this content'><img style='background:orange;color:white;border:none;' width='14' height='14' src='http://s.wordpress.com/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://twitter.com/PatrickMeier' title='Twitter updates from Patrick Meier / PatrickMeier.'>My Tweets</a></h3><ul><li><a class='rsswidget' href='http://twitter.com/PatrickMeier/statuses/54125728895217664' title='PatrickMeier: The Russian fires crisis map clearly exposed the limits of governance and statehood, this was highly disruptive, http://awe.sm/5HiuR'>PatrickMeier: The Russian fires crisis map clearly exposed the limits of governance and statehood, this was highly disruptive, http://awe.sm/5HiuR</a></li><li><a class='rsswidget' href='http://twitter.com/PatrickMeier/statuses/54079194484838400' title='PatrickMeier: In Berlin for weekend workshop on &quot;Information and Communication Technology in Areas of Limited Statehood: A New Form of Governance?&quot;'>PatrickMeier: In Berlin for weekend workshop on &quot;Information and Communication Technology in Areas of Limited Statehood: A New Form of Governance?&quot;</a></li><li><a class='rsswidget' href='http://twitter.com/PatrickMeier/statuses/53947037871386625' title='PatrickMeier: RT @kenyakate: 30K+ Ivorian refugees in Liberia; WFP rations for '>PatrickMeier: RT @kenyakate: 30K+ Ivorian refugees in Liberia; WFP rations for &lt;1/2 refugees for only 2 wks more. Local harvest completely used up</a></li><li><a class='rsswidget' href='http://twitter.com/PatrickMeier/statuses/53857994257076224' title='PatrickMeier: RT @undispatch: Microtasking as real-time support to relief workers &amp; real-time engagement for communities, http://ow.ly/4qh3G'>PatrickMeier: RT @undispatch: Microtasking as real-time support to relief workers &amp; real-time engagement for communities, http://ow.ly/4qh3G</a></li><li><a class='rsswidget' href='http://twitter.com/PatrickMeier/statuses/53834575255846912' title='PatrickMeier: Thoroughly enjoyed the conversations &amp; good humor at the &quot;Clouds, Crowds &amp; Social Change&quot; panel, my slides: http://awe.sm/5HhRP #skollwf'>PatrickMeier: Thoroughly enjoyed the conversations &amp; good humor at the &quot;Clouds, Crowds &amp; Social Change&quot; panel, my slides: http://awe.sm/5HhRP #skollwf</a></li></ul></li><li id="text-222244914" class="widget-container widget_text"><h3 class="widget-title">Favorites &amp; Recent Reads</h3>			<div class="textwidget"></div>
+		</li><li id="archives-4" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://irevolution.net/2011/03/' title='March 2011'>March 2011</a>&nbsp;(7)</li>
+	<li><a href='http://irevolution.net/2011/02/' title='February 2011'>February 2011</a>&nbsp;(7)</li>
+	<li><a href='http://irevolution.net/2011/01/' title='January 2011'>January 2011</a>&nbsp;(11)</li>
+	<li><a href='http://irevolution.net/2010/12/' title='December 2010'>December 2010</a>&nbsp;(8)</li>
+	<li><a href='http://irevolution.net/2010/11/' title='November 2010'>November 2010</a>&nbsp;(6)</li>
+	<li><a href='http://irevolution.net/2010/10/' title='October 2010'>October 2010</a>&nbsp;(11)</li>
+	<li><a href='http://irevolution.net/2010/09/' title='September 2010'>September 2010</a>&nbsp;(6)</li>
+	<li><a href='http://irevolution.net/2010/08/' title='August 2010'>August 2010</a>&nbsp;(6)</li>
+	<li><a href='http://irevolution.net/2010/07/' title='July 2010'>July 2010</a>&nbsp;(8)</li>
+	<li><a href='http://irevolution.net/2010/06/' title='June 2010'>June 2010</a>&nbsp;(5)</li>
+	<li><a href='http://irevolution.net/2010/05/' title='May 2010'>May 2010</a>&nbsp;(2)</li>
+	<li><a href='http://irevolution.net/2010/04/' title='April 2010'>April 2010</a>&nbsp;(8)</li>
+	<li><a href='http://irevolution.net/2010/03/' title='March 2010'>March 2010</a>&nbsp;(6)</li>
+	<li><a href='http://irevolution.net/2010/02/' title='February 2010'>February 2010</a>&nbsp;(4)</li>
+	<li><a href='http://irevolution.net/2010/01/' title='January 2010'>January 2010</a>&nbsp;(11)</li>
+	<li><a href='http://irevolution.net/2009/12/' title='December 2009'>December 2009</a>&nbsp;(9)</li>
+	<li><a href='http://irevolution.net/2009/11/' title='November 2009'>November 2009</a>&nbsp;(7)</li>
+	<li><a href='http://irevolution.net/2009/10/' title='October 2009'>October 2009</a>&nbsp;(15)</li>
+	<li><a href='http://irevolution.net/2009/09/' title='September 2009'>September 2009</a>&nbsp;(13)</li>
+	<li><a href='http://irevolution.net/2009/08/' title='August 2009'>August 2009</a>&nbsp;(9)</li>
+	<li><a href='http://irevolution.net/2009/07/' title='July 2009'>July 2009</a>&nbsp;(8)</li>
+	<li><a href='http://irevolution.net/2009/06/' title='June 2009'>June 2009</a>&nbsp;(37)</li>
+	<li><a href='http://irevolution.net/2009/05/' title='May 2009'>May 2009</a>&nbsp;(3)</li>
+	<li><a href='http://irevolution.net/2009/04/' title='April 2009'>April 2009</a>&nbsp;(13)</li>
+	<li><a href='http://irevolution.net/2009/03/' title='March 2009'>March 2009</a>&nbsp;(16)</li>
+	<li><a href='http://irevolution.net/2009/02/' title='February 2009'>February 2009</a>&nbsp;(17)</li>
+	<li><a href='http://irevolution.net/2009/01/' title='January 2009'>January 2009</a>&nbsp;(7)</li>
+	<li><a href='http://irevolution.net/2008/12/' title='December 2008'>December 2008</a>&nbsp;(25)</li>
+	<li><a href='http://irevolution.net/2008/11/' title='November 2008'>November 2008</a>&nbsp;(27)</li>
+	<li><a href='http://irevolution.net/2008/10/' title='October 2008'>October 2008</a>&nbsp;(13)</li>
+	<li><a href='http://irevolution.net/2008/09/' title='September 2008'>September 2008</a>&nbsp;(7)</li>
+	<li><a href='http://irevolution.net/2008/08/' title='August 2008'>August 2008</a>&nbsp;(7)</li>
+	<li><a href='http://irevolution.net/2008/07/' title='July 2008'>July 2008</a>&nbsp;(12)</li>
+	<li><a href='http://irevolution.net/2008/06/' title='June 2008'>June 2008</a>&nbsp;(35)</li>
+	<li><a href='http://irevolution.net/2008/05/' title='May 2008'>May 2008</a>&nbsp;(8)</li>
+	<li><a href='http://irevolution.net/2008/04/' title='April 2008'>April 2008</a>&nbsp;(49)</li>
+		</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+		
+			</div><!-- #content-box -->
+
+	<div id="footer" role="contentinfo">
+		
+
+		<div id="colophon">
+			Theme: <a href="http://theme.wordpress.com/themes/coraline/">Coraline</a> by <a href="http://automattic.com/">Automattic</a> <span class="generator-link"><a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.</span>
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #container -->
+
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery( function() {
+			
+			jQuery('#wpl-button > a.like').click( function(e) {
+				e.preventDefault();
+				
+				jQuery('#wpl-mustlogin').remove();
+
+				jQuery.post( 'http://irevolution.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_like_click'
+				} );
+
+				var tenMins = new Date();
+				tenMins.setTime( tenMins.getTime() + 600000 );
+				document.cookie = 'wpl_rand=274768964c; expires=' + tenMins.toGMTString() + '; domain=wordpress.com; path=/;';
+				
+				jQuery('#wpl-count').after( '\
+					<div id="wpl-mustlogin"> \
+						<form action="http://irevolution.wordpress.com/wp-login.php" method="post"> \
+							<p>Just one more step to like this post:</p> \
+							<label><span>Username</span> <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="80" /></label> \
+							<label><span>Password</span> <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="81" /></label> \
+							<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="82" /> \
+							<input type="hidden" name="redirect_to" value="http://irevolution.net/2009/04/10/developing-swift-river-to-validate-crowdsourcing/?like=1" /> \
+							<input type="hidden" name="wpl_rand" value="274768964c" /> \
+							<p>Not a member yet? <a href="http://wordpress.com/signup/?ref=likebox" id="wpl-signup-link">Sign up with WordPress.com</a></p> \
+						</form> \
+					</div> \
+				');
+				
+				jQuery('#wpl-mustlogin').hide().slideDown('fast');
+			} );
+			
+			jQuery('#wpl-mustlogin input.input').live( 'focus', function() {
+				jQuery(this).prev().hide();
+			}).live( 'blur', function() {
+				if ( jQuery(this).val() == '' )
+					jQuery(this).prev().show();
+			});
+			
+			jQuery('#wpl-mustlogin input#wp-submit').live( 'click', function(e) {
+				e.preventDefault();
+				
+				jQuery.post( 'http://irevolution.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_login_submit'
+				}, function() {
+					jQuery('#wpl-mustlogin form').submit();
+				} );
+			});			
+			
+			jQuery('#wpl-mustlogin a#wpl-signup-link').live( 'click', function(e) {
+				e.preventDefault();
+				
+				var link = jQuery(this).attr('href');
+				
+				jQuery.post( 'http://irevolution.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_signup_click'
+				}, function() {
+					location.href = link;
+				} );
+			});					
+			
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.en,type.wpcom,posttag.crowdsourcing,posttag.swift-river,posttag.ushahidi,posttag.votereport'};</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.en%2Ctype.wpcom%2Cposttag.crowdsourcing%2Cposttag.swift-river%2Cposttag.ushahidi%2Cposttag.votereport" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?p&#038;ver=MU'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {
+	my_hash: ""
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1298424233g&amp;ver=MU'></script>
+	<div style="display:none">
+	<div class="grofile-hash-map-d0d838482e2bdd4df5e325b0548635a1">
+	</div>
+	<div class="grofile-hash-map-cf2b431c7b5acbcfdaf54e489d702bc7">
+	</div>
+	<div class="grofile-hash-map-b879ddb88f9f238e093217c9a6dd39e4">
+	</div>
+	<div class="grofile-hash-map-f97289763292de52bfa3268624f8df67">
+	</div>
+	<div class="grofile-hash-map-aa23f0da7af0fe486075ca7b52a2795c">
+	</div>
+	</div>
+<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="http://s.stats.wordpress.com/w.js?19" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'3385318','v':'wpcom','user_id':'0','post':'1602','subd':'irevolution'});
+ex_go({'crypt':'RDY2ZWNfUWVLOWJvdDlOLXUldThxLjcxfGhCJS1rQkZneSx8RHFpcV9mMjhiK20vfGVSY21qWXhLdVRIN0V4TS5lTj96b19hbVhOPTJiaiZRRkZReHFTakRJRXNhPUh3ZTF8WnN3MW0ldFJLSDQySi89d1tUaCxrblNfTmdaRk5ZcHx3WC5UJSY9fDRiZyVRSCZFZHl8LmYyN1RsfD8yL2csWlRdXXM3MERtLlBUQWxULFRvYzRuR0d8dVo1dW5rUm95bnpJMDhCYnM2VVBNMG9bJVlnWDg5Vzhud1A9UXFJU0c2Kw=='});
+addLoadEvent(function(){linktracker_init('3385318',1602);});
+	</script>
+</body>
+</html>

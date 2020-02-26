@@ -1,0 +1,1545 @@
+           
+                                                                        
+                        
+                                                                            
+                              	          
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+    <title>Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers | Browse - Astronomy Education Review</title>
+    
+        <link rel="stylesheet" type="text/css" href="/css/commons/jquery.css" />
+    
+    <script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/jquery.ui.all.min.js"></script> -->
+    <script type="text/javascript" src="/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.extensions.js"></script>
+
+        <!-- <script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=ABQIAAAAYvFT58E2yR3MOrCzeJhSzRT0ZrJlgIO30SgTevF1rJ8LP8OGiBT_stgKQhmoSCbdshgjI5NacwCiTg" ></script> -->
+        <script type="text/javascript" src="/js/scitation.utilities.js"></script>
+    <script type="text/javascript" src="/js/scitation.abstract.js"></script>
+    
+            
+                            <link type="text/css" rel="stylesheet" href="http://aer.aas.org/cmlink/7.2663" />
+                                                    <link rel="stylesheet" type="text/css" href="/css/commons/fulltext.css" />
+    <link rel="stylesheet" type="text/css" href="/css/commons/mathstyle.css" />
+    
+           
+      
+       	   	         
+       <script type="text/javascript" src="/js/fulltext.js"></script>
+       <script type="text/javascript" src="/js/flowplayer-3.1.4.min.js"></script>
+       <script type="text/javascript">
+         
+         var selectedpanel = "";
+         
+         $(function() {
+             $('.boxy').boxy();
+         });
+
+         $(document).ready(function(){  
+
+            $(".popuplink").click(function() { javascript:window.open($(this).attr('href')); return false; });
+            
+            /* AQS Listener ************ */
+            $(".aqslistener").click(function (e) {
+                var searchcoden = 'AERSCZ';
+                if (searchcoden == '') searchcoden = searchkey;
+                var articleInfo = $(this).parent().parent().attr("name");
+                AQSlistener($(this).html(),'', searchcoden, e.pageX, e.pageY, articleInfo,'/search');
+            });
+
+            if (navigator.appName=="Microsoft Internet Explorer")
+            {
+                $("#mediacontentpanel").css("background-color","white");
+                $("#mediabrowser_wrap").css("z-index","5005");
+                $(".contentarea").css("height",$(window).height());
+            }
+            
+            /* ENABLING PROGRAM LISTENERS --------------------------------- */ 
+            /* ENABLING PROGRAM LISTENERS --------------------------------- */
+
+            $(".tablabel").hover(
+                function () {
+                    $(this).animate({opacity:1.0},200);
+                  }, 
+                  function () {
+                    $(this).animate({opacity:0.85},200);
+                  }
+            );
+
+            hiConfig = {
+                sensitivity: 3, // number = sensitivity threshold (must be 1 or higher)
+                interval: 100, // number = milliseconds for onMouseOver polling interval
+                timeout: 200, // number = milliseconds delay before onMouseOut
+                over: function() {
+                    var showdom = $(this).attr("alt");
+                    $("#"+showdom).show('fast');
+                }, // function = onMouseOver callback (REQUIRED)
+                out: function() { 
+                    var showdom = $(this).attr("alt");
+                    $("#"+showdom).hide('fast');
+                    } // function = onMouseOut callback (REQUIRED)
+            }
+            $(".dropdownmenu").hoverIntent(hiConfig);
+
+            $(".first_occurence_link a, .firscit").click(
+                function () {
+                    $(".figref,.citeref,.tableref").removeClass("highlightOBJ");
+                    var idtohigh = $(this).attr("href");
+                    $("a[name="+idtohigh.substring(1,idtohigh.length)+"]").addClass("highlightOBJ");
+                }
+            );
+            $(".author_name").click(
+                function (e) { 
+                    return LaunchContentPreview("authorPreviewer", $(this).html(), "", "author", e.pageX, e.pageY, "fixed") 
+                }
+            );
+            $(".institution_name").click(
+                function (e) { 
+                    var parentelement = $(this).parent().get(0);
+                    var instname = $(parentelement).find(".institution_name").html();
+                    return LaunchContentPreview("institutionPreviewer", instname, "", "institution", e.pageX, e.pageY, "fixed") 
+                }
+            );
+            
+            $(".launchMedia").click( function () { return launchMedia(this); });
+            $(".figref").click( function (e) { return LaunchDOMContentPreview($(this).attr("href"), "figure", e.pageX, e.pageY); });
+            $(".citeref").click( function (e) { return LaunchDOMContentPreview($(this).attr("href"), "reference", e.pageX, e.pageY); });
+            $("#contenthandle, #contentarea_tabB a, #contentarea_tabC a, #contentarea_tabD a").click( function() { hideMediaBrowser(); });
+
+            $(".searchabledom").mouseup(function(e){
+                $("#singlePreview").hide();
+                var selection = getSelectioner();
+                var strlength = selection.length;
+                if(selection!="" && strlength > 2 && strlength < 100)
+                    return LaunchQuickSearch(selection, "AERSCZ", "AER", e.pageX, e.pageY); 
+                else
+                    CloseAllContentBrowsers();
+            });
+            
+            $(".section h1,.section h2").append(" <a href=\"#top\" class=\"backtotop\">top</a>");
+            $("#singlePreview").draggable();
+            
+            launchRelatedArticlesListing(20,"AERSCZ000009000001010103000001",".relatedarticles_listing","");
+            
+            /* ENABLING PROGRAM LISTENERS --------------------------------- */
+            /* ENABLING PROGRAM LISTENERS --------------------------------- */
+ 
+            $("#refsectiontabs").tabs();
+
+            $(".link_shownextprevious").hover(
+                function (e) { 
+                    var prevnextdom = $(this).attr("alt");
+                    $("#prevnext_floater").show();
+                    LaunchArticlePrevNext(prevnextdom, e.pageX, e.pageY);
+                },
+                function() {
+                    $("#prevnext_floater").animate({"opacity":"0.0"},50, function() {
+                        $("#prevnext_floater").hide(); 
+                    });                
+                }
+            );
+
+            $(".articlereferenceslist li a, .edItem_block li a, .articlecitingslist li a").click(function (e) {
+                var cvips = $(this).find("span").html();
+                if (cvips == null) return true; 
+                var previewurl = "http://aer.aas.org/cmlink/15.470?cvips=" + cvips + "&absurl=" + escape($(this).attr("href"));
+                LaunchAJAXContentPreview(previewurl, e.pageX, e.pageY);
+                return false; 
+            }); 
+            $(".authorList_entry .deployNote").click(function (e) {
+                return LaunchDOMContentPreview("#affnote_" + $(this).attr("rel"), "footnote", e.pageX, e.pageY);
+            });
+                    
+          $(".boxref, .tableref").click(
+                function () { 
+                    // Grab the id of the node that you would like to copy from the jump
+                    // link href
+                    var id = $(this).attr("href");
+                    
+                    // Rewrite the inner html of the popup box to the html of the text box
+                    $("#fulltextwrapper_content").html($(id).html());
+                    
+                    //  Make it fade in and display
+                    $(".dropmenusection").hide();
+                    $("#darken").fadeIn('slow');
+                    $("#fulltextwrapper").fadeIn('slow');
+                    
+                    return false;
+                }
+            );
+            
+        }); 
+        var leftcontenttype = "";
+        var coinsresolver = "http://aer.aas.org/cmlink/15.457"; 
+        var sitealias = "";
+        var searchalias = "/search";
+        var previewurl = "http://aer.aas.org/cmlink/15.470";
+        
+    </script>
+      
+           
+     
+          
+
+</head>
+<body>   
+
+
+ 
+         
+     
+                                                                 
+      
+              
+<div id="top"></div> 
+<div id="mainContentWrapper" class="canbestyled">
+
+        <div id="mediabrowser_wrap">
+            <div id="mediacontentpanel">
+                <div id="contenthandle"></div>
+                <a href="#" onclick="return hideMediaBrowser();"><img src="/img/fulltext/closeslider_small.png" alt="Close Slider" style="border:none; position:absolute; top:20px; right:60px;" /></a>
+           	 	<div id="contentarea_tabA" class="contentarea">
+           	 	    <h3>Abstract</h3>
+           	 	     
+      
+								
+								
+						
+								
+				
+						
+						
+				
+		
+								    		    
+		    		    		    		    
+		    		    
+		    
+		    		    		    
+		    		    		    
+		    		    		    
+		    		    		    
+		    		    		    
+		    		    		    
+		    		    		    
+		    		        		        		        
+		        		        		    		    
+		                            
+		    		        		        		    		    
+		    
+		    		    
+		    
+		    		    
+		    		        <div class="citationLine">
+		            <p>2010, AER, 9 (1), 010103, doi:10.3847/AER2009036</p>
+		        </div>
+		    		
+		
+       
+               	 	     
+							<div class="abstitle">
+		        <h1>
+		        Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers
+		        		        </h1>
+		    </div>
+				
+	              		 
+                                                                                                        
+    <script type="text/javascript">
+       $(document).ready(function(){ 
+       
+            var pmap;
+            var geocoder;
+            var InstIcon;
+
+            /* Map This Listener ************ */
+            $(".mapaffiliation").click(function (e) {
+                var institutionname = $(this).attr("rel");
+                return launchMapThis(institutionname, 'ABQIAAAAYvFT58E2yR3MOrCzeJhSzRT0ZrJlgIO30SgTevF1rJ8LP8OGiBT_stgKQhmoSCbdshgjI5NacwCiTg');
+                //createGeoMapPlot(institutionname, e.pageX, e.pageY);
+            });
+            
+            //initializePopupMapEngine('mapthiscanvas');
+            //$("#mapthiswindow").draggable();
+            
+        });
+   </script>
+
+		    <!-- start tagging and authors -->
+	    <div class="authors_block">
+	        
+        
+                        
+                                    <!-- start tagging and authors -->
+
+                                                
+                                    
+                        			            <div class="authorList" name="coden=AERSCZ&volume=9&issue=1&pg=010103&seqno=1">
+                                               
+		              		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">M. Jordan Raddick</span><sup>1</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">Georgia Bracey</span><sup>2</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">Pamela L. Gay</span><sup>2</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">Chris J. Lintott</span><sup>3</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">Phil Murray</span><sup>4</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">Kevin Schawinski</span><sup>5</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                                                  <span class="looklikelink authorname aqslistener">Alexander S. Szalay</span><sup>1</sup>,                                                                                                     
+                                                             
+		              		              		              		              		              					  					  					  
+					  					  					  					  
+					  					  					  
+					                        
+                                            					  
+                                                                                                                                                      					                                                      and                              <span class="looklikelink authorname aqslistener">Jan Vandenberg</span><sup>1</sup>                                                                       
+                                                  </div>
+            
+           
+      	        <p class="affiliation">
+	            	                	                			                    <sup>1</sup>Johns Hopkins University, Baltimore, Maryland 21218  
+	                      	<span class="looklikelink mapaffiliation" rel="Johns+Hopkins+University%2C+Baltimore%2C+Maryland+21218"><img src="/img/abstract/mapicon.png" alt="Map This"/> map</span>		                    <br/>
+	                    	                	                			                    <sup>2</sup>Southern Illinois University Edwardsville, Edwardsville, Illinois 62026  
+	                      	<span class="looklikelink mapaffiliation" rel="Southern+Illinois+University+Edwardsville%2C+Edwardsville%2C+Illinois+62026"><img src="/img/abstract/mapicon.png" alt="Map This"/> map</span>		                    <br/>
+	                    	                	                			                    <sup>3</sup>Oxford University, Oxford, OX1 3RH United Kingdom  
+	                      	<span class="looklikelink mapaffiliation" rel="Oxford+University%2C+Oxford%2C+OX1+3RH+United+Kingdom"><img src="/img/abstract/mapicon.png" alt="Map This"/> map</span>		                    <br/>
+	                    	                	                			                    <sup>4</sup>Fingerprint Digital Media, Newtownards, Northern Ireland, BT23 7GY United Kingdom  
+	                      	<span class="looklikelink mapaffiliation" rel="Fingerprint+Digital+Media%2C+Newtownards%2C+Northern+Ireland%2C+BT23+7GY+United+Kingdom"><img src="/img/abstract/mapicon.png" alt="Map This"/> map</span>		                    <br/>
+	                    	                	                			                    <sup>5</sup>Yale University, New Haven, Connecticut 06520  
+	                      	<span class="looklikelink mapaffiliation" rel="Yale+University%2C+New+Haven%2C+Connecticut+06520"><img src="/img/abstract/mapicon.png" alt="Map This"/> map</span>		                    <br/>
+	                    	                	            	        </p>
+	    </div>
+	
+
+
+    
+                  	
+              	                                      		
+              		 
+                        			<div class="abstract">
+                                    
+<div class="aip-paragraph">The Galaxy Zoo citizen science website invites anyone with an Internet connection to participate in research by classifying galaxies from the Sloan Digital Sky Survey. As of April 2009, more than 200,000 volunteers have made more than 100 million galaxy classifications. In this article, we present results of a pilot study into the motivations and demographics of Galaxy Zoo volunteers and define a technique to determine motivations from free responses that can be used in larger multiple-choice surveys with similar populations. Our categories form the basis for a future survey, with the goal of determining the prevalence of each motivation.</div>
+
+                                                    <p> &copy;                        
+                                                                                   2010
+                                                                                                        <em>The American Astronomical Society</em>
+                                            </p>
+                            </div> 
+		
+		
+	                		
+              		              		              		
+              		 
+				
+						
+						
+				         
+				<div class="PubData">
+			<h2>PUBLICATION DATA</h2>
+		    		    	<div class="pubdata_block issn_block">
+		    		
+		    					    		<h3>ISSN:</h3>
+			    
+			    					    
+			    					    						    						    			<div class="pubdata_leftalign">1539-1515 (online)</div>
+			    				            		            
+		            		            
+		    	</div>	<!-- end pubdata_block issn_block -->
+		    		    		      		    	<div class="pubdata_block publisher_block">
+		    		<h3>Publisher:</h3>
+		    	       <div class="pubdata_leftalign">
+		    	       
+		    	       		    	       		    		   
+		    		   		    		   		    		   
+		    		   		    		   		The American Astronomical Society
+		    		   		    		   
+		    		   </div>  
+		    	</div><!-- end pudata_block publisher_block -->
+		      		    		</div><!-- end PubData -->
+			
+	              		 
+
+<div class="absPermalink">
+    <div class="permalinkText">Permalink</div> 
+    <div class="permalinkLinks">
+                    <a href="http://link.aip.org/link/doi/10.3847/AER2009036">http://link.aip.org/link/doi/10.3847/AER2009036</a>
+	    	</div>
+</div>
+
+
+              		<br/>    
+        		</div>
+     	
+                                    <div id="contentarea_tabB" class="contentarea"><h3>Outline</h3> <div class="artOutlineList"><ol class="fulltext_outline"><li><a href="#s1">INTRODUCTION</a></li><li><a href="#s2">HISTORY OF GALAXY ZOO PARTICIPATION</a></li><li><a href="#s3">THE CITIZEN SCIENCE LANDSCAPE</a></li><li><a href="#s4">METHODOLOGY FOR DETERMINING MOTIVATIONS</a><ol><li><a href="#s4A">Forum Survey</a></li><li><a href="#s4B">Selecting Interview Subjects</a></li><li><a href="#s4C">Interview Protocols</a></li><li><a href="#s4D">Analysis of Responses—Creating the Categories</a></li><li><a href="#s4E">Inter-Rater Reliability</a></li></ol></li><li><a href="#s5">DISCUSSION</a></li><li><a href="#s6">CONCLUSIONS</a></li><li><a href="#xA">Appendix</a><ol><li><span class="sectoutline-span">Appendix A: Initial Interview Protocol for Interviews 1–12</span></li></ol></li><li><a href="#xB">Appendix</a><ol><li><span class="sectoutline-span">Appendix B: Final Interview Protocol for Interviews #20–47</span></li></ol></li><li><a href="#ack">Acknowledgments</a></li><li><a href="#fulltext-references">References</a></li></ol></div></div>
+                                
+                                    <div id="contentarea_tabC" class="contentarea"><h3>Figures</h3> <div class="figlist"><div class="figure"><a href="/cmlink/scitation.journals.AERSCZ.9.1.010103.1.FIGURE_f1?figurecutoff=2007&amp;issueYear=2010" class="launchMedia"><img src="/FEWebservices/ImagesWebservice?id=AERSCZ000009000001010103000001&amp;type=thumbnail&amp;fid=1" alt="Figure" class="figimg"/></a><div class="caption"><span class="figname">Fig 1. </span>
+
+<graphic highres="yes" lowres="yes" file="1"/>
+<figure-caption><div class="aip-paragraph">A screenshot of the Galaxy Zoo interface. Volunteers look at the galaxy in the center of the screen and determine its shape. They then click one of the six buttons on the right side of the screen to report their classification. Their report is written into a database and compared with the findings of other volunteers to create a database of galaxy morphologies</div></figure-caption>
+</div><div class="first_occurence_link"><a href="#figref_f1">View first occurrence of Fig. 1 in article.</a></div></div><div class="figure"><a href="/cmlink/scitation.journals.AERSCZ.9.1.010103.1.FIGURE_f2?figurecutoff=2007&amp;issueYear=2010" class="launchMedia"><img src="/FEWebservices/ImagesWebservice?id=AERSCZ000009000001010103000001&amp;type=thumbnail&amp;fid=2" alt="Figure" class="figimg"/></a><div class="caption"><span class="figname">Fig 2. </span>
+
+<graphic highres="yes" lowres="yes" file="2"/>
+<figpart id="f2a"/>
+<figpart id="f2b"/>
+<figure-caption><div class="aip-paragraph">(a) Number of days since the launch of GZ1 versus cumulative number of registered users. The large jump in users on day 394 corresponds to press coverage of the discovery of a new object called “Hanny’s Voorwerp” (<span class="bibciteref_collection">Lintott <span class="etal">et al.</span> 2009<sup><a class="citeref" href="#c11" rel="c11" name="citeref_c11">11</a></sup></span>). (b) Number of days since the launch of GZ1 versus cumulative number of volunteer classifications. The same large jump on day 394 also appears in the number of classifications</div></figure-caption>
+</div><div class="first_occurence_link"><a href="#figref_f2a">View first occurrence of Fig. 2a in article.</a><br/><a href="#figref_f2b">View first occurrence of Fig. 2b in article.</a><br/></div></div></div></div>
+                                
+                                    <div id="contentarea_tabD" class="contentarea"><h3>Tables</h3> <div class="tableCaptionlist"><div class="tablelist_caption"><span class="tableCapName">Table I. </span>Volunteers interviewed for this study. The table shows the interview code used by the authors, the type of interview (IM or Phone), and the interviewee’s age, gender, country of residence, and occupation (occupations were adapted from volunteer self-reports except where in quotes)<div class="first_occurence_link"><a href="#tableref_t1">View first occurrence in article</a><br/><a href="#t1">View table in article</a></div></div><div class="tablelist_caption"><span class="tableCapName">Table II. </span>Initial categorization scheme for motivations developed by each rater. The table gives the rater’s name for the motivation category and a typical statement of motivation from that category. (a) Schema of rater #1, (b) Schema of rater #2, and (c) Schema of rater #3<div class="first_occurence_link"><a href="#tableref_t2">View first occurrence in article</a><br/><a href="#t2">View table in article</a></div></div><div class="tablelist_caption"><span class="tableCapName">Table III. </span>Final motivation categories that arose during the interviews, selected after discussion among the three raters. The table shows the motivation category name as used by the research team and the one-sentence description of the category used in the survey.<div class="first_occurence_link"><a href="#tableref_t3">View first occurrence in article</a><br/><a href="#t3">View table in article</a></div></div></div></div>
+                                
+                <div id="contentarea_tabF" class="contentarea"> 
+                                    
+                
+                           
+                   
+       
+    </div>
+
+				
+												
+				
+        		<div id="contenttabs">
+                    <div class="tablabel" id="tabA" onclick="return launchMediaBrowser(this);"><img src="/img/fulltext/tab3.png" alt="Abstract" /></div>
+                    <div class="tablabel" id="tabB" onclick="return launchMediaBrowser(this);"><img src="/img/fulltext/tab1.png" alt="Outline" /></div>
+                                        <div class="tablabel" id="tabC" onclick="return launchMediaBrowser(this);"><img src="/img/fulltext/tab2.png" alt="Figures" /></div>
+                                                            <div class="tablabel" id="tabD" onclick="return launchMediaBrowser(this);"><img src="/img/fulltext/tab4.png" alt="Tables" /></div>
+                                        					                </div>
+    		</div>
+		</div>
+
+		<div id="singlePreview"><div class="closer" onclick="return CloseAllContentBrowsers()"><img src="/img/fulltext/x-corner.png" alt="Close" /></div><div class="previewbody"></div></div>
+		<div id="prevnext_floater"></div>
+        <div id="fulltext_header">
+             
+         
+                            
+      			<div id="fulltext_journalbranding"></div>
+			<div class="mediaactions">
+	             
+        
+            
+        
+        
+    
+    <script type="text/javascript">
+    // <![CDATA[
+            $(document).ready(function(){
+                $("ul#communitynav").superfish({speed:'fast'});
+                //$(".facebooklink").attr("href", "http://www.facebook.com/share.php?u="+window.location.href+"&t=$esc.url($shortName)");
+            }); 
+            var emailresolver = "http://aer.aas.org/cmlink/1.245";
+    // ]]>
+    </script>
+    
+    
+    <div style="display:none;">
+         <form id="addToMySciForm" action="http://scitation.aip.org/myscitation/addToMyArticles-submit.do" method="get" target="_blank" name="addToMySci">
+            <div style="display:none;">
+             <input type="hidden" name="source" value="scitation" />
+             <input type="hidden" name="downloadcitation" value=" Go " />
+             <input type="hidden" name="source" value="scitation" />
+             <input type="hidden" name="fn" value="mysci"/>
+            </div>
+             <div id="adddomtomysci">
+             </div>
+         </form>
+         <form method="post" id="connotea_form" action="http://www.connotea.org/add" target="_blank">
+            <fieldset class="hide">
+            <input type="hidden" name="uri" value="http://link.aip.org/link/doi/10.3847/AER2009036 " />
+            <input type="hidden" name="usertitle" value="Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers" />
+            <input type="hidden" name="description" value="
+The Galaxy Zoo citizen science website invites anyone with an Internet connection to participate in research by classifying galaxies from the Sloan Digital Sky Survey. As of April 2009, more than 200,000 volunteers have made more than 100 million galaxy classifications. In this article, we present results of a pilot study into the motivations and demographics of Galaxy Zoo volunteers and define a technique to determine motivations from free responses that can be used in larger multiple-choice surveys with similar populations. Our categories form the basis for a future survey, with the goal of determining the prevalence of each motivation.
+" />
+            </fieldset>          
+          </form>
+          <form method="post" id="bibsonomy_form" action="http://www.bibsonomy.org/ShowBookmarkEntry" target="_blank">    
+            <fieldset class="hide">
+            <input type="hidden" name="url" id="bib_a" value="http://link.aip.org/link/doi/10.3847/AER2009036"  />
+            <input type="hidden" name="description" id="bib_b" value="Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers" />
+            <input type="hidden" name="extended" id="bib_c" value="
+The Galaxy Zoo citizen science website invites anyone with an Internet connection to participate in research by classifying galaxies from the Sloan Digital Sky Survey. As of April 2009, more than 200,000 volunteers have made more than 100 million galaxy classifications. In this article, we present results of a pilot study into the motivations and demographics of Galaxy Zoo volunteers and define a technique to determine motivations from free responses that can be used in larger multiple-choice surveys with similar populations. Our categories form the basis for a future survey, with the goal of determining the prevalence of each motivation.
+" />
+            </fieldset>
+          </form>
+         <form method="get" id="citeulike_form" action="http://www.citeulike.org/posturl" target="_blank">
+            <fieldset class="hide">
+            <input type="hidden" name="url" id="cite_a" value="http://link.aip.org/link/doi/10.3847/AER2009036" />
+            <input type="hidden" name="src" value="post_page" />
+            <input type="hidden" name="title" value="Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers" />
+            </fieldset>
+         </form>
+    
+         <form method="get" id="delicious_form" action="http://del.icio.us/post?v=4&amp;noui&amp;jump=close" target="_blank">
+            <fieldset class="hide">
+            <input type="hidden" name="url" id="del_a" value="http://link.aip.org/link/doi/10.3847/AER2009036" />
+            <input type="hidden" name="notes" id="del_b" value="
+The Galaxy Zoo citizen science website invites anyone with an Internet connection to participate in research by classifying galaxies from the Sloan Digital Sky Survey. As of April 2009, more than 200,000 volunteers have made more than 100 million galaxy classifications. In this article, we present results of a pilot study into the motivations and demographics of Galaxy Zoo volunteers and define a technique to determine motivations from free responses that can be used in larger multiple-choice surveys with similar populations. Our categories form the basis for a future survey, with the goal of determining the prevalence of each motivation.
+" />
+            <input type="hidden" name="title" id="del_c" value="Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers" />
+            </fieldset>
+          </form>
+    </div>
+    
+                                                    
+    
+        
+    <div id="linkingactionsdiv">    
+             
+      
+                <div id="fulltext_pdfcartlinks">
+            <a href="http://scitation.aip.org/getpdf/servlet/GetPDFServlet?filetype=pdf&id=AERSCZ000009000001010103000001&idtype=cvips&doi=10.3847/AER2009036&prog=normal">Download PDF</a> 
+                        | 
+        </div>
+       
+			            <div id="inlinesearchhelp"><p class='inlinesearchtext'><img src='/img/fulltext/linelinesearch-logo.png' alt='Inline Search'/></p><p>Highlight any word or phrase in the body of this article to see additional options to:<ul><li>View all articles containing the word or phrase in the journal you're browsing</li><li>View the Top 5 articles related to the word or phrase you've highlighted</li><li>Note: For performance concerns, this function will only work for less than 100 characters highlighted.</li></ul></p></div>
+            <span style="color:red;font-size:90%; position:relative;top:-1px;">NEW:</span><span class="link_shownextprevious looklinelink" alt="inlinesearchhelp"><img src="/img/fulltext/inlinesearch.png" class="imgmovedown" alt="Print view"></span>
+                   
+                                               
+                                                
+            <a href="http://aer.aas.org/resource/1/aerscz/v9/i1/p010103_s1?view=fulltext&display=print" class="popuplink"><img src="/img/fulltext/printview.png" class="imgmovedown" alt="Print view"> Print View</a>
+            <div class="dropdownmenu" alt="toolsblock">
+            <div class="dropmenusection" id="toolsblock">
+                                    <p><a href="#" onclick="return constructArticleDLbox('Download', 'AERSCZ000009000001010103000001');"><img src="/img/icons/abstract/bicon-dl.gif" alt="Download Citation Icon"> Download Citation</a></p>
+                                
+                <p><a href="#" onclick="return emailthisAbstract('AERSCZ000009000001010103000001','article');" title="Email Abstract to a Colleague"><img src="/img/icons/abstract/bicon-email.gif" alt="Email Icon"> Email Abstract</a></p>
+               
+                                                                
+                               
+               
+                <p><a href="#" onclick="emailErrAlerts('AERSCZ000009000001010103000001', 'Galaxy Zoo: Exploring the Motivations of Citizen Science Vol...');" title="Alert me if a correction is posted"><img src="/img/icons/abstract/bicon-errata.gif" alt="Erratum Icon"> Erratum Alert</a></p>
+                <p><a href="/modules/article_tools_formB.jsp?cvips=AERSCZ000009000001010103000001" class="boxy" title="Research Toolkit"><img src="/img/icons/abstract/bicon-tools.gif" alt="Toolkit Icon"> Research Toolkit</a></p>
+                
+                                    <p><a href="/modules/blog_article_formB.jsp?cvips=AERSCZ000009000001010103000001&amp;title=$cleantitle&amp;soc=AAS&amp;linkurl=http://link.aip.org/link/doi/10.3847/AER2009036&amp;jabv=AER&amp;vol=9&amp;pnum=010103&amp;pyear=2010&amp;pdate=epublish_date" class="boxy" title="Blog This Article"><img src="/img/icons/abstract/bicon-blog.gif" alt="Blog Icon" /> Blog This Article</a></p>
+                                
+                <p><a href="#" onclick="return addSingleArticletoMySci('AERSCZ000009000001010103000001')" title="MySCITATION"><img src="/img/icons/abstract/bicon-mysci.gif" alt="My Scitation Icon"> Add to MyScitation</a></p>
+            </div>
+            <img src="/img/dbt/arttoolsicon.png" alt="Article Tools Icon">Tools
+            </div>
+            
+            <div class="dropdownmenu" alt="shareblock">
+            <div class="dropmenusection" id="shareblock">
+                <p><a href="#" onclick="return submitCommunity('connotea_form');"><img src="/img/icons/connotea.gif" alt="Connotea Icon">&nbsp;&nbsp;Connotea</a></p>
+                <p><a href="#" onclick="return submitCommunity('citeulike_form');"><img src="/img/icons/citeULike.gif" alt="CiteULike Icon">&nbsp;&nbsp;CiteULike</a></p>
+                <p><a href="#" onclick="return submitCommunity('delicious_form');"><img src="/img/icons/delicious.jpg" alt="Delicious Icon">&nbsp;&nbsp;del.icio.us</a></p>
+                <p><a href="#" onclick="return submitCommunity('bibsonomy_form');"><img src="/img/icons/bibsonomy.gif" alt="Bibsonomy Icon">&nbsp;&nbsp;BibSonomy</a></p>
+                <p><a href="http://twitter.com/home?status=Galaxy+Zoo%3A+Exploring+the+Motivations+of+Citizen+Science+Volunteers%20http://link.aip.org/link/doi/10.3847/AER2009036%20%23astronomicalsurveys%20%23astronomycomputing%20%23galaxies%20%23Internet%20%23Websites%20%23publicoutreach%20%23galaxies%20%23cosmology%20%23researchintoteaching%2Flearning%20%23web-basedlearning%20"  class="popuplink"><img src="/img/icons/twitter.jpg" alt="tweet this article" /> Tweet this Article</a></p>
+                <p><a href="http://www.facebook.com/share.php?u=http%3A%2F%2Faer.aas.org%2Fresource%2F1%2Faerscz%2Fv9%2Fi1%2Fp010103_s1&t=Galaxy+Zoo%3A+Exploring+the+Motivations+of+Citizen+Science+Volunteers" class="popuplink facebooklink"><img src="/img/icons/facebook.jpg" alt="Add to Facebook" />Add to Facebook</a></p>
+            </div>
+            <img src="/img/dbt/bookmarkingicon.png" alt="Social Bookmarking Icon">Share
+            </div>
+            <!-- <a href="help.jsp" onclick="return launchPage('help.jsp');"><img src="/img/fulltext/helpicon.png" class="imgmovedown" alt="Help"> Help</a> -->
+            <a href="#" onclick="return textsize('+');"><img src="/img/fulltext/text_increase.gif" class="imgmovedown" alt="Increase text" /></a>
+            <a href="#" onclick="return textsize('-');"><img src="/img/fulltext/text_decrease.gif" class="imgmovedown" alt="Decrease text" /></a>
+            <a href="#" onclick="return textsize('13');"><img src="/img/fulltext/text_normal.gif" class="imgmovedown" alt="Normalize text" /></a>
+    </div>
+
+
+
+			</div>
+		</div>
+		
+		
+		<div id="ft_wrapper">
+    		<div class="ft_head">
+        		<div class="breadcrumb_prevnext">
+        			              		 
+            
+              
+            
+            <div class="navpath">
+               
+   			                    
+                                                
+								            
+                              
+                                
+                            
+                              
+                                
+                            
+                                                
+                                                <a href="http://aer.aas.org/">Astronomy Education Review</a>
+                                                       
+                                
+			    												
+					            				
+				
+				                				    					
+										
+						    				<span class="volume_level"><span class="separator">/</span> <a href="http://aer.aas.org/resource/1/aerscz/v9"><span class="vol-prefix">Volume</span> 9</a></span>
+		            		            			
+									     	<span class="issue_level"><span class="separator">/</span> <a href="http://aer.aas.org/resource/1/aerscz/v9/i1"><span class="iss-prefix">Issue</span> 1</a></span>
+										
+	                	                	                    <span class="separator">/</span> <a href="http://aer.aas.org/resource/1/aerscz/v9/i1?&section=research-and-applications&page=1">RESEARCH AND APPLICATIONS</a>
+	                	                	                                                                    <span class="separator">/</span> <a href="http://aer.aas.org/resource/1/aerscz/v9/i1/p010103_s1">Back to Abstract</a>
+                
+			</div>   
+
+      
+                    		
+        
+
+        <div class="pagination">
+                                                                                                                                  <div id="showprevious" style="display:none;"><h3>What It Would Take to Increase the Number of High School Astronomy Courses: A Survey of Principals and a Comparison to Astronomy Teachers, and a Prescription for Change</h3><p>
+A survey to principals of high schools without astronomy points to the conditions needed to increase the number of high school astronomy courses and acceptable justifications for adding in a course. The former includes the need for more and better trained teachers, changing the perceptions of higher officials from local administrations to Federal-level legislators and education department officials, more funds, locally a need for students to show enough interest as well as a curriculum that hel...</p></div>
+          
+                    <a class="link_shownextprevious" alt="showprevious" href="http://aer.aas.org/resource/1/aerscz/v9/i1/p010102_s1?view=fulltext">Previous</a> Article
+                
+                |
+                
+                                                        <div id="shownext" style="display:none;"><h3>Multidimensional Education Research: Managing Multiple Data Streams</h3><p>
+We discuss collecting data simultaneously from many different instruments, including both qualitative and quantitative sources. A list of instruments used is provided, and data collection methods are described. Many practical logistical concerns are discussed, warning of potential pitfalls to be avoided. This article is intended to be a practical guide for other research groups wishing to use data from multiple sources, especially if they have not collected qualitative data before.
+</p></div>
+                    <a class="link_shownextprevious" alt="shownext" href="http://aer.aas.org/resource/1/aerscz/v9/i1/p010104_s1?view=fulltext">Next</a> Article
+          
+            </div>
+
+      
+              		</div>
+                                <div class="fulltext-headmeta">
+                                        
+                                          
+                    
+	                 
+							<div class="abstitle">
+		        <h1>
+		        Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers
+		        		        </h1>
+		    </div>
+				
+		                 
+                
+            
+      
+      
+        
+        
+                                                                                                                   
+                                
+        
+            <span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft_id=info:doi/10.3847/AER2009036&amp;rft.issn=15391515&amp;rft.title=Astronomy Education Review&amp;rft.atitle=Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers&amp;rft.stitle=AER&amp;rft.date=18 February 2010&amp;rft.volume=9&amp;rft.issue=1&amp;rft.spage=010103&amp;rft.epage=010103-18&amp;rft.coden=AERSCZ"></span>
+
+            
+          
+	                 
+                                               
+                    <script type="text/javascript">
+               $(document).ready(function(){ 
+                    
+                });
+           </script>
+                            
+            <div class="fulltext_authors_block">
+                   
+        
+                                <!-- start tagging and authors -->
+
+                                                <div class="authorList" name="coden=AERSCZ&volume=9&issue=1&pg=010103&seqno=1">
+                                 
+                                                                                                                                                                                                      
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">M. Jordan Raddick</span><sup>1</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">Georgia Bracey</span><sup>2</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                                      
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">Pamela L. Gay</span><sup>2</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                                      
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">Chris J. Lintott</span><sup>3</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">Phil Murray</span><sup>4</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">Kevin Schawinski</span><sup>5</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                                      
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                                                      <span class="aqslistener looklikelink">Alexander S. Szalay</span><sup>1</sup>,                                                                              </div>
+                                                     
+                                                                                                                                                                                
+                                                                                        
+                                                                                                                                                                                       <div class="authorList_entry">    
+                            and                            <span class="aqslistener looklikelink">Jan Vandenberg</span><sup>1</sup>                                                   </div>
+                                            </div>
+            
+           
+                         <p class="affiliation">
+                                                                    		                            <sup>1</sup>	                            Johns Hopkins University, Baltimore, Maryland 21218  
+	                            <br/>
+                                                                            		                            <sup>2</sup>	                            Southern Illinois University Edwardsville, Edwardsville, Illinois 62026  
+	                            <br/>
+                                                                            		                            <sup>3</sup>	                            Oxford University, Oxford, OX1 3RH United Kingdom  
+	                            <br/>
+                                                                            		                            <sup>4</sup>	                            Fingerprint Digital Media, Newtownards, Northern Ireland, BT23 7GY United Kingdom  
+	                            <br/>
+                                                                            		                            <sup>5</sup>	                            Yale University, New Haven, Connecticut 06520  
+	                            <br/>
+                                                                                           </p>
+                                                                            </div>
+
+            
+    	                 
+	
+				
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+				
+		
+		
+	
+														    										
+		    <div class="absHistory">
+	 
+		   			   		<p class="fulltextHistory">
+		   				   		     
+																	
+						
+																	
+						                                                                    				   
+				   						
+					
+									
+						
+						
+						
+						
+						
+						
+						
+								
+		    																							(Received 01 June 2009; accepted 24 August 2009; published online 18 February 2010)
+													</p>
+		    	
+	    </div>
+	
+	
+	                </div>    
+             </div>
+    		<div id="ft_content">
+	    		<div id="articlebody" class="searchabledom"> 
+		            
+                      
+                                            <div id="fulltext_body">
+<div class="sectionWrapper"><div class="section" id="s1"><h1>INTRODUCTION</h1>
+
+<div class="aip-paragraph">Science educators are increasingly recognizing the key role that participation in authentic scientific practice plays in science education (<span class="bibciteref_collection">Michaels, Shouse, and Schweingruber 2008<sup><a class="citeref" href="#c14" rel="c14" name="citeref_c14">14</a></sup></span>). Participation in scientific research can have many advantages for learners, including a first-hand experience with the scientific process, an increase in knowledge about the research topic (<span class="bibciteref_collection">Brossard <span class="etal">et al.</span> 2005<sup><a class="citeref" href="#c7" rel="c7" name="citeref_c7">7</a></sup></span>), and an increase in scientific thinking (<span class="bibciteref_collection">Trumbull <span class="etal">et al.</span> 2000<sup><a class="citeref" href="#c20" rel="c20" name="citeref_c20">20</a></sup></span>). However, non-experts often find high barriers to participating in genuine scientific research, such as the need for deep understanding of scientific content and methods, difficulty in accessing data and tools, and inability to make contact with professional scientists who could serve as mentors (<span class="bibciteref_collection">Scott, Asoko, and Leach 2007<sup><a class="citeref" href="#c17" rel="c17" name="citeref_c17">17</a></sup></span>; <span class="bibciteref_collection">Sung <span class="etal">et al.</span> 2003<sup><a class="citeref" href="#c19" rel="c19" name="citeref_c19">19</a></sup></span>; <span class="bibciteref_collection">Hawkins 1978<sup><a class="citeref" href="#c9" rel="c9" name="citeref_c9">9</a></sup></span>). Some of these barriers can be lowered when learners work with researchers by participating in carefully planned citizen science activities.</div>
+<div class="aip-paragraph">The practice of “citizen science” involves members of the public (“citizen scientists”) working with professional scientists to complete a research project. The American Association of Variable Star Observers (<span class="bibciteref_collection">AAVSO<sup><a class="citeref" href="#c23" rel="c23" name="citeref_c23">23</a></sup></span>) (<span class="bibciteref_collection">Williams 2001<sup><a class="citeref" href="#c22" rel="c22" name="citeref_c22">22</a></sup></span>) and the Audubon Society’s Christmas Bird Count (<span class="bibciteref_collection">Root 1988<sup><a class="citeref" href="#c15" rel="c15" name="citeref_c15">15</a></sup></span>) have both successfully partnered citizen scientists with professional scientists for more than a century, producing research results that could not otherwise have been achieved. More recently, the Cornell Laboratory of Ornithology has recruited birdwatchers as citizen scientists for published studies of the distribution of bird populations in North America. These studies would have been impossible without participation of citizen scientists (<span class="bibciteref_collection">Bonney 2008<sup><a class="citeref" href="#c4" rel="c4" name="citeref_c4">4</a></sup></span>; <span class="bibciteref_collection">Bhattacharjee 2005<sup><a class="citeref" href="#c3" rel="c3" name="citeref_c3">3</a></sup></span>).</div>
+<div class="aip-paragraph">The availability of large scientific data sets through the Internet has allowed citizen science projects to engage volunteers in new ways. In addition to collecting data, citizen scientists can analyze existing data, including data from modern astronomy surveys and missions.</div>
+<div class="aip-paragraph">In this article, we discuss an online citizen science project called Galaxy Zoo. This project asks volunteers—self-styled “Zooites”—to morphologically classify selected images of galaxies from the Sloan Digital Sky Survey. As of April 2009, more than 200,000 people from 113 countries had been involved in making more than 100 million classifications of galaxies. These results are being used in more than 50 research projects that have thus far produced 16 articles accepted or submitted to peer-reviewed journals (see http://www.galaxyzoo.org/story for an up-to-date list of science articles accepted and submitted using data from Galaxy Zoo).</div>
+<div class="aip-paragraph">The Galaxy Zoo project offers two interfaces. Galaxy Zoo (GZ1; http://zoo1.galaxyzoo.org) asks users to determine if a galaxy is spiral or elliptical and to determine the rotation direction of spirals (see Figure <span class="figref_collection"><a class="figref" href="#f1" rel="f1" name="figref_f1">1</a></span>). For a fuller discussion of Galaxy Zoo 1, including a statistical discussion of the accuracy of classifications made by volunteers, see <span class="bibciteref_collection">Lintott <span class="etal">et al.</span> (2008)<sup><a class="citeref" href="#c12" rel="c12" name="citeref_c12">12</a></sup></span>. A newer project, Galaxy Zoo 2 (GZ2; zoo2.galaxyzoo.org), presents users with more detailed questions about a subset of 250,000 galaxies; GZ2 will be the subject of a future series of articles.</div><div class="figure" id="f1"><a href="/cmlink/scitation.journals.AERSCZ.9.1.010103.1.FIGURE_f1?figurecutoff=2007&amp;issueYear=2010" class="launchMedia"><img src="/FEWebservices/ImagesWebservice?id=AERSCZ000009000001010103000001&amp;type=thumbnail&amp;fid=1" alt="Figure" class="figimg"/></a><div class="caption"><span class="figname">Fig 1. </span>
+
+<graphic highres="yes" lowres="yes" file="1"/>
+<figure-caption><div class="aip-paragraph">A screenshot of the Galaxy Zoo interface. Volunteers look at the galaxy in the center of the screen and determine its shape. They then click one of the six buttons on the right side of the screen to report their classification. Their report is written into a database and compared with the findings of other volunteers to create a database of galaxy morphologies</div></figure-caption>
+</div><div class="first_occurence_link"><a href="#figref_f1">View first occurrence of Fig. 1 in article.</a></div></div>
+<div class="aip-paragraph">In this article, we present the history of user involvement in GZ1 (Section <span class="secref_collection"><a class="secref" href="#s2" rel="s2" name="secref_s2">2</a></span>); place our study in the context of other studies that have explored the motivations of volunteers in citizen science projects (Section <span class="secref_collection"><a class="secref" href="#s3" rel="s3" name="secref_s3">3</a></span>); outline our methodology for exploring GZ1 volunteers’ motivations; present the categories of motivation we uncovered in the course of this research (Section <span class="secref_collection"><a class="secref" href="#s4" rel="s4" name="secref_s4">4</a></span>); and discuss our confidence in our motivations and future refinements to our study (Section <span class="secref_collection"><a class="secref" href="#s5" rel="s5" name="secref_s5">5</a></span>). The work described in this article is a pilot for a larger study in which about 10,000 Galaxy Zoo volunteers completed a survey—the motivation categories defined in this article were used to create the survey questions. The way that this study impacts our ongoing survey research is described briefly in Section <span class="secref_collection"><a class="secref" href="#s5" rel="s5" name="secref_s5">5</a></span>; results from the survey will be described in a future article.</div>
+</div></div>
+<div class="sectionWrapper"><div class="section" id="s2"><h1>HISTORY OF GALAXY ZOO PARTICIPATION</h1>
+
+<div class="aip-paragraph">The GZ1 website launched on July 8, 2007. As part of its launch, principal investigator Chris Lintott appeared on BBC’s morning radio program, “Today,” on July 11, and the project was reported on the BBC News website (http://news.bbc.co.uk/1/hi/sci/tech/6289474.stm). The project was also announced via his blog, “Chris Lintott’s Universe” (www.chrislintott.net).</div>
+<div class="aip-paragraph">News of the project was quickly picked up across print and online media, with articles appearing in print in <em class="emphitalic">The Christian Science Monitor</em> and the <em class="emphitalic">Boston Globe</em>, and online on <em class="emphitalic">The (London) Times Online</em>, <em class="emphitalic">badastronomy.com</em>, and <em class="emphitalic">universetoday.com</em>, as well as in many other print and online media. As a result of this publicity, news of the project quickly spread—especially via online media—and participation increased drastically.</div>
+<div class="aip-paragraph">Almost immediately after the BBC radio show coverage aired, tens of thousands of volunteers joined. By the end of the next day (July 12, 2007), nearly 1.5 million classifications had been completed by more than 35,000 volunteer classifiers. For comparison, a graduate student working on a related project was able to classify a sample of 50,000 galaxies in one week, but only by devoting himself entirely to the task (<span class="bibciteref_collection">Schawinski <span class="etal">et al.</span> 2007<sup><a class="citeref" href="#c16" rel="c16" name="citeref_c16">16</a></sup></span>). In the nearly 2 years since its original launch, GZ1 has continued to grow, both in number of users and in number of galaxies classified [see Figures <span class="figref_collection"><a class="figref" href="#f2a" rel="f2a f2b" name="figref_f2a">2a</a>,<a class="figref" href="#f2b" rel="f2a f2b" name="figref_f2b">2b</a></span>].</div><div class="figure" id="f2"><a class="figpart_anchor" id="f2a"> </a><a class="figpart_anchor" id="f2b"> </a><a href="/cmlink/scitation.journals.AERSCZ.9.1.010103.1.FIGURE_f2?figurecutoff=2007&amp;issueYear=2010" class="launchMedia"><img src="/FEWebservices/ImagesWebservice?id=AERSCZ000009000001010103000001&amp;type=thumbnail&amp;fid=2" alt="Figure" class="figimg"/></a><div class="caption"><span class="figname">Fig 2. </span>
+
+<graphic highres="yes" lowres="yes" file="2"/>
+<figpart id="f2a"/>
+<figpart id="f2b"/>
+<figure-caption><div class="aip-paragraph">(a) Number of days since the launch of GZ1 versus cumulative number of registered users. The large jump in users on day 394 corresponds to press coverage of the discovery of a new object called “Hanny’s Voorwerp” (<span class="bibciteref_collection">Lintott <span class="etal">et al.</span> 2009<sup><a class="citeref" href="#c11" rel="c11" name="citeref_c11">11</a></sup></span>). (b) Number of days since the launch of GZ1 versus cumulative number of volunteer classifications. The same large jump on day 394 also appears in the number of classifications</div></figure-caption>
+</div><div class="first_occurence_link"><a href="#figref_f2a">View first occurrence of Fig. 2a in article.</a><br/><a href="#figref_f2b">View first occurrence of Fig. 2b in article.</a><br/></div></div>
+<div class="aip-paragraph">Hand in hand with the flood of galaxy classifications came a flood of e-mails. In response to this deluge, the Galaxy Zoo team launched a forum to encourage volunteers to communicate with one another and answer each other’s questions (the forum required a separate registration from the main website). The team later launched a blog in which Galaxy Zoo team members (nicknamed “Zookeepers” by volunteers) describe the research they are doing with volunteers’ classifications. As of April 11, 2009, the forum had more than 11,000 members, and the blog receives an average of about 25,000 unique visitors per month. One unanticipated consequence of the Galaxy Zoo Forums was the development of novel collaborative research projects by volunteers (<span class="bibciteref_collection">Cardamone <span class="etal">et al.</span> 2009<sup><a class="citeref" href="#c8" rel="c8" name="citeref_c8">8</a></sup></span>), and the discovery of at least one truly unique object (<span class="bibciteref_collection">Lintott <span class="etal">et al.</span> 2009<sup><a class="citeref" href="#c11" rel="c11" name="citeref_c11">11</a></sup></span>).</div>
+<div class="aip-paragraph">The spectacular growth of GZ1 shows that the site was successful in attracting volunteers to classify galaxies. Additionally, some volunteers go beyond the basic task of classifying galaxies to other thoughtful interactions that may lead to increased understanding of science, such as participating in the forum and blog or participating in collaborative research projects</div>
+<div class="aip-paragraph">The success of Galaxy Zoo represents a major opportunity for astronomy research and astronomy education. To take full advantage of this opportunity in future citizen science projects, we must understand what made Galaxy Zoo such a successful project. We must understand what factors motivate volunteers to participate in Galaxy Zoo. By understanding these motivations, we can plan future citizen science projects to appeal to these motivations, potentially maximizing their numbers of participants (and therefore their scientific impact), and increasing public understanding of and participation in science.</div>
+</div></div>
+<div class="sectionWrapper"><div class="section" id="s3"><h1>THE CITIZEN SCIENCE LANDSCAPE</h1>
+
+<div class="aip-paragraph">As a starting point in trying to understand volunteers’ motivations, we review the existing literature concerning volunteer motivation in citizen science. For a more complete literature review of Citizen Science, see <span class="bibciteref_collection">Bracey (2009)<sup><a class="citeref" href="#c5" rel="c5" name="citeref_c5">5</a></sup></span>.</div>
+<div class="aip-paragraph">Citizen science pre-dates the Internet, and early projects involved participants making observations of the natural world that were often reported through the mail. Today, these observations are often reported through the Internet, but they do not require the Internet (for example, see http://www.history.noaa.gov/legacy/coop.html and http://www.audubon.org/bird/cbc/history.html).</div>
+<div class="aip-paragraph">The Internet, however, allows citizen scientists to participate in research in completely new ways. For the first time, large numbers of people are being asked to analyze entirely online data sets rather than to create data sets, and to communicate with others entirely online. An important precursor to the host of new online-analysis citizen science projects is SETI@home (<span class="bibciteref_collection">Anderson <span class="etal">et al.</span> 2002<sup><a class="citeref" href="#c2" rel="c2" name="citeref_c2">2</a></sup></span>), which was launched in 1999. More accurately described as distributed computing, SETI@home asks participants to donate idle time on their home computers to analyze radio telescope data with the hope of discovering signals from extraterrestrial civilizations. In 2006, one of the first entirely online citizen science projects, Stardust@Home (<span class="bibciteref_collection">Mendez 2008<sup><a class="citeref" href="#c13" rel="c13" name="citeref_c13">13</a></sup></span>), invited participants to actively use a web interface to search for dust grains captured in aerogel by a spacecraft sent to study Comet Wild 2. Results from the citizen scientists were used by mission scientists. When a Stardust@Home user discovers a dust grain, he or she is listed as a coauthor on the article announcing the discovery and also is given the privilege of naming the dust grain. The Stardust@Home team also writes a news section of their website communicating their results and plans to volunteers (http://stardustathome.ssl.berkeley.edu/news.php).</div>
+<div class="aip-paragraph">While citizen science itself has a long history, little research has gone into who makes up the citizen science community and what motivations they have for participating. A few studies appeared in the 1990s, but the majority of the research has only been published in the current decade. Most studies focused on the benefits of citizen science to its participants (both scientists and citizens) and to society. The few studies that also looked at who volunteers are and why they volunteered were conducted with environmental or biology-related projects, and no studies were found that involved completely online projects such as Galaxy Zoo. While this pilot study is the first to study the motivations of volunteers in an online astronomy project, an overview of the existing studies will give some context and background to our study of volunteer motivations.</div>
+<div class="aip-paragraph"><span class="bibciteref_collection">Bradford and Israel (2004)<sup><a class="citeref" href="#c6" rel="c6" name="citeref_c6">6</a></sup></span> analyzed the types of volunteers involved in the Florida Fish and Wildlife Conservation Commission (FWC) annual survey of Florida beaches for turtle nests. Volunteers participated in a variety of tasks in the sea turtle project, but the most common tasks were to patrol beaches for sea turtle nesting activity and to mark the nests. The researchers administered a survey containing Likert Scale values for 30 motivation-related questions that was returned by 382 volunteers. Volunteers in the FWC survey tended to be older, well-educated, white females. Most people volunteered for more than one reason, but the most popular reason by far was to help and protect sea turtles.</div>
+<div class="aip-paragraph"><span class="bibciteref_collection">King and Lynch (1998)<sup><a class="citeref" href="#c10" rel="c10" name="citeref_c10">10</a></sup></span> studied volunteers working at the Ohio Chapter of the Nature Conservancy who participated in a variety of environmental management tasks, including helping with studies of nesting birds. The study used a 14-question survey. The first question provided a list of 12 motivations and asked volunteers to check those that applied to them. Another question asked volunteers to report which single motivation applied most to them. A total of 86 people responded to the survey. The researchers found that these volunteers were mostly middle-aged, well-educated, fairly affluent white males. About three-quarters of this group worked full-time, and 40% had completed a graduate degree. Most respondents checked multiple motivations for volunteering, but when choosing the single motivation that was most important to them, 63% said they wanted “to do something for nature.” Other motivations included “to explore career options,” “to help create a better society,” and “to allow the organization to provide more goods/services for less money.”</div>
+<div class="aip-paragraph">It is important to know whether these findings can be generalized to participants in other types of citizen science projects; for example, projects concerning other areas of science or involving different types of technology, and whether they can be generalized to the new generation of online data analysis citizen science projects such as Stardust@home and Galaxy Zoo. A goal of our study is to determine the demographic characteristics and motivations of participants in the Galaxy Zoo citizen science project. Comparison of our results with results of these studies will show whether the same motivations hold in an online astronomy project.</div>
+</div></div>
+<div class="sectionWrapper"><div class="section" id="s4"><h1>METHODOLOGY FOR DETERMINING MOTIVATIONS</h1>
+
+<div class="aip-paragraph">To determine a list of Galaxy Zoo 1 volunteer motivations, we looked for trends in free-form responses gathered during two different solicitations of information. During our first phase, volunteers were asked to respond publicly in the Galaxy Zoo forum (see Section <span class="secref_collection"><a class="secref" href="#s4A" rel="s4A" name="secref_s4A">4A</a></span>), and during the second phase, selected volunteers responded to interviews (see Section <span class="secref_collection"><a class="secref" href="#s4B" rel="s4B" name="secref_s4B">4B</a></span>).</div>
+<div class="subsect1" id="s4A"><h2>Forum Survey</h2>
+
+<div class="aip-paragraph">As a preliminary mechanism to learn about volunteers’ motivations from the volunteers themselves, the team created a new topic on the site’s forum titled “What Makes Galaxy Zoo Interesting?” The introductory message to this forum topic, posted by science team member Kate Land, read:</div>
+<div class="aip-paragraph"><bq>
+<div class="aip-paragraph">We have been overwhelmed by the awesome response we have had to this project. We feel like we’ve really captured people’s imaginations with Galaxy Zoo, and we’d like to know why.</div>
+<div class="aip-paragraph">Please leave us feedback here about why you are taking part. We hope that what we learn from you can be helpful to future projects like ours.</div>
+</bq></div>
+<div class="aip-paragraph">As of January 22, 2009, the day we downloaded our final data set of forum posts for analysis, this forum message had generated 826 responses. The richness of the forum responses suggested that we should begin a more rigorous study of volunteers’ motivations to participate in Galaxy Zoo. This more rigorous study involved interviewing Galaxy Zoo volunteers and is described below in Sections <span class="secref_collection"><a class="secref" href="#s4B" rel="s4B s4C s4D s4E" name="secref_s4B">4B</a>,<a class="secref" href="#s4C" rel="s4B s4C s4D s4E" name="secref_s4C">4C</a>,<a class="secref" href="#s4D" rel="s4B s4C s4D s4E" name="secref_s4D">4D</a>,<a class="secref" href="#s4E" rel="s4B s4C s4D s4E" name="secref_s4E">4E</a></span>. We read the initial forum responses in December 2007 before creating the interview protocol, but a rigorous analysis of the 826 forum posts was conducted only after interview transcripts were analyzed.</div>
+</div>
+<div class="subsect1" id="s4B"><h2>Selecting Interview Subjects</h2>
+
+<div class="aip-paragraph">After securing permission from the Institutional Review Board at Johns Hopkins University, we conducted half-hour interviews with Galaxy Zoo volunteers—volunteers who participated in the citizen science activity (classifying galaxies), but not necessarily in the forum. The goal of these interviews was to generate from the interviewees’ free responses a set of motivation categories from an initial sample of Galaxy Zoo participants. We interviewed 22 people out of a total of about 160 000 Galaxy Zoo volunteers.</div>
+<div class="aip-paragraph">To obtain a pool of interview subjects, we sent out an e-mail solicitation to volunteers who had chosen to register their e-mail with the site and who had not opted out of receiving Galaxy Zoo mailing list e-mails. E-mail solicitations were sent out in four batches of approximately 300–400 e-mails each. We had originally hoped to obtain enough response for about 20 interviews from the first batch of solicitations, but getting this amount turned out to require four separate attempts. This solicitation was consistent with the Galaxy Zoo privacy policy, which states that volunteers may be contacted for the purpose of research into the site’s operation. The total number of volunteers who received solicitations for interviews was 1,336.</div>
+<div class="aip-paragraph">One potential area of concern was the question of whether we might contaminate further studies into volunteers’ motivation by soliciting some volunteers for interviews in this study, then asking those same volunteers about their motivations in a future survey (Section <span class="secref_collection"><a class="secref" href="#s5" rel="s5" name="secref_s5">5</a></span>). However, the large size of the Galaxy Zoo volunteer population mitigates this concern. When the first e-mail solicitation was sent on April 1, 2008, the number of volunteers had risen to 137,228, and by the time the last solicitation was sent on August 24, 2008, it had grown to 161,961. The 1,336 volunteers who received e-mail solicitations to participate in the interviews described here are less than 1% of the overall Galaxy Zoo volunteer population, meaning that less than 1% of our population will potentially be asked about their motivations twice. We believe that this will not pose a significant threat to the internal validity of either this study or the survey study that will follow.</div>
+<div class="aip-paragraph">As an inducement for participating in an interview, we promised to send five interview subjects, selected at random, a copy of an astronomy book signed by the authors, one of whom is a Galaxy Zoo research team member. E-mails to use as contacts for this offer were kept separately from all information used in this study, with no links between subjects’ interview transcripts and their e-mails.</div>
+<div class="aip-paragraph">When volunteers responded to the e-mailed interview request, a mutually convenient time was set for an interview. Interviews were scheduled to take half an hour. As mentioned above, interviews were conducted with 22 subjects. (An additional 21 people offered to participate, but either did not return e-mails or could not find a mutually convenient time for both interviewer and interviewee to talk.) Table <span class="tableref_collection"><a class="tableref" href="#t1" rel="t1" name="tableref_t1">1</a></span> shows demographic characteristics for all participants included in the study.</div>
+</div>
+<div class="subsect1" id="s4C"><h2>Interview Protocols</h2>
+
+<div class="aip-paragraph">Our initial interview protocol is shown in Appendix <span class="appref_collection"><a class="appref" href="#xA" rel="xA" name="appref_xA">A</a></span>. We asked a series of questions about subjects’ demographics, their impressions of the Galaxy Zoo website, their motivations for participating, and their experiences with and definition of science. [The question about definition of science was taken from the <em class="emphitalic">Views on Science-Technology-Society</em> instrument (<span class="bibciteref_collection">Aikenhead and Ryan 1992<sup><a class="citeref" href="#c1" rel="c1" name="citeref_c1">1</a></sup></span>).]</div>
+<div class="aip-paragraph">As an online project, Galaxy Zoo is likely to attract a technically literate audience. With this audience, we thought that interviews using a technical medium such as instant messaging might be appropriate, and some research shows that instant messaging can be an effective medium for conducting interviews in human-computer interaction research (<span class="bibciteref_collection">Voida <span class="etal">et al.</span> 2004<sup><a class="citeref" href="#c21" rel="c21" name="citeref_c21">21</a></sup></span>). Some subjects were not comfortable using instant messaging software, so phone interviews were conducted with these subjects. The same researcher (Raddick) conducted all interviews, both instant messaging and phone. All phone interviews were recorded and later transcribed. Questions were asked in the same order in the first seven interviews, but in some interviews, questions were skipped to keep the total interview within the half-hour timeframe the volunteer had committed.</div>
+<div class="aip-paragraph">After conducting these seven interviews, with codes A–G, we realized that some questions about participants’ past experiences with and attitudes toward science—questions we considered important—were not being asked in every interview. We therefore changed the order in which questions were asked to bring these questions closer to the beginning of the interview; the revised order is shown in Appendix <span class="appref_collection"><a class="appref" href="#xB" rel="xB" name="appref_xB">B</a></span>. The protocol shown in Appendix <span class="appref_collection"><a class="appref" href="#xB" rel="xB" name="appref_xB">B</a></span> was used to conduct interviews with codes H–V. All the results reported here come from analysis of questions that were asked on both versions of the survey protocol and therefore asked of all subjects. Results of our analysis of questions concerning their experience with and definition of science are left for future work.</div>
+</div>
+<div class="subsect1" id="s4D"><h2>Analysis of Responses—Creating the Categories</h2>
+
+<div class="aip-paragraph">To ensure that our motivation categories accurately reflected what people said in the interviews, we used a grounded theory approach in which theoretical models—in our case, categories of motivation—emerge from the data (<span class="bibciteref_collection">Strauss and Corbin 1990<sup><a class="citeref" href="#c18" rel="c18" name="citeref_c18">18</a></sup></span>). We began by having two independent raters (Raddick and Bracey) read through the first 12 interviews (those with codes A–L; we chose these 12 because they were the interviews we had already conducted at the time we began this analysis). Each rater read through each interview and identified statements of motivation in the interview transcripts. A statement of motivation is a phrase in the transcript that provides insight into a reason why the subject participated in Galaxy Zoo. Phrases were considered independently; for example, the hypothetical statement, “As a person who loves astronomy, I enjoy looking at pictures of the night sky” would be considered two separate statements of motivation: “A person who loves astronomy” and “I enjoy looking at pictures of the night sky.” Rater #1 (Raddick) identified 79 statements of motivation and rater #2 (Bracey) identified 80 statements of motivation.</div>
+<div class="aip-paragraph">Each rater independently wrote the identified statements of motivation onto separate index cards. In many cases, one person used multiple statements to refer to what was later grouped into a single motivation by the raters. In this way, an interview subject might have ten statements of motivation that refer to three motivations. Once the motivational statements were recorded, the raters then shuffled the index cards and sorted them into categories by identifying common themes within the statements of motivation (Tables <span class="tableref_collection"><a class="tableref" href="#t2" rel="t2" name="tableref_t2">2</a></span>a and <span class="tableref_collection"><a class="tableref" href="#t2" rel="t2" name="tableref_t2">2</a></span>b). In addition, a third rater (Gay) read through the transcripts of the first ten interviews (those with codes A–J) and identified groups of statements of motivation (e.g., all the phrases related to one motivation) in each interview. The rater then sorted these groups of statements into motivation categories (Table <span class="tableref_collection"><a class="tableref" href="#t2" rel="t2" name="tableref_t2">2</a></span>c).</div>
+
+<div class="aip-paragraph">In summary, rater #1 identified nine separate motivations from the statements of motivation, rater #2 identified eight separate motivations, and rater #3 identified eight separate motivations. The next step was for the three raters to discuss all these motivations and determine which motivations were stating the same concepts in different words. We concluded that the following identified categories could be combined or split:<div class="aip_itemlist"><ul class="bullet-list">
+<li><span class="elementLabel">•</span>
+<div class="aip-paragraph">Rater #2’s “Interested in Science/Astronomy” category was split to correspond to rater #1 and rater #3’s separate “Astronomy” and “Science” categories.</div>
+</li>
+<li><span class="elementLabel">•</span>
+<div class="aip-paragraph">Rater #1’s “Imagination” category and rater #2’s “Sense of wonder” category were considered aspects of the same motivation expressed by reviewer #3’s “Scale of the Universe” category; this motivation was given the name “Vastness.”</div>
+</li>
+<li><span class="elementLabel">•</span>
+<div class="aip-paragraph">“Helping” (raters #1 and #2) and “Volunteerism” (#3) were considered the same category, referred to as “Helping.”</div>
+</li>
+<li><span class="elementLabel">•</span>
+<div class="aip-paragraph">“Images” (raters #1 and #3) and “Liked the pictures” (#2) were considered the same motivation, referred to as “Beauty.”</div>
+</li>
+<li><span class="elementLabel">•</span>
+<div class="aip-paragraph">Raters #1 and #3 agreed that rater #2’s “Involvement in ‘real science’” category was a separate from “Helping;” this motivation was referred to as “Contribute.”</div>
+</li>
+</ul></div></div>
+<div class="aip-paragraph">As a result of these discussions, we settled on a list of 12 motivations, and a typical statement of motivation describing each; these statements were used to describe each motivation on our survey. These 12 final motivations are shown in Table <span class="tableref_collection"><a class="tableref" href="#t3" rel="t3" name="tableref_t3">3</a></span>; the table shows the motivation category names used by the research team and the one-sentence descriptions used in the survey described in Section <span class="secref_collection"><a class="secref" href="#s5" rel="s5" name="secref_s5">5</a></span>.</div>
+<div class="aip-paragraph">Once we settled on this list of 12 motivation categories, the next step was for each of the three raters to code the entire set of interview transcripts, as well as ten additional interviews that were conducted later (those with codes M–V), using these motivation categories. This step allows us to calculate the inter-rater reliability of the categories (Section <span class="secref_collection"><a class="secref" href="#s4E" rel="s4E" name="secref_s4E">4E</a></span>).</div>
+<div class="aip-paragraph">To ensure that we were not missing any major motivation categories, we used the same motivation categories to classify all motivations identified within the forum posts (see Section <span class="secref_collection"><a class="secref" href="#s4A" rel="s4A" name="secref_s4A">4A</a></span>), with an eye toward identifying any missing categories. Within the 826 forum responses, 215 responses contained statements of motivation, and two were thrown out because responders indicated they were under the age of 18. (While we have no way of knowing the ages of other forum responders, we proceeded under the assumption that since the forum posts are already in the public domain, no harm would be done to forum participants who did not provide demographic information and whose motivations were kept separate from their forum username within the spreadsheets we used in our analysis.)</div>
+<div class="aip-paragraph">After analyzing all forum responses, we did not identify any potentially new motivations that the raters could not independently fit within an existing category. Without being able to crosscheck our list of motivations against a large sample of forum posts, it would have been difficult to conclude that we had a complete list of motivations. Because we did not find any additional motivations in the larger sample of forum posts, we conclude that we do have a nearly complete set of volunteer motivations. In addition, since forum users and e-mail respondents would be affected by different biases, the fact that these different groups share the same motivations adds weight to the generalizability of our samples. Detailed inter-rater reliability and response rates are discussed below.</div>
+<div class="aip-paragraph">Both the forum and interview data are limited in ways that make the determination of the frequency of motivations difficult. In the forums, posters often referenced motivations from others’ prior posts in what they said, and the motivation distribution of people who use the forums is not necessarily the same as the motivation distribution of the much larger group of volunteers who only classify galaxies. In addition, although interviews were sought from a randomly chosen set of volunteers who would ideally represent an unbiased sample, we recognize that the sample will, by its nature, only reflect the motivations of people who agreed to be interviewed. In this case, of the 1,336 people we invited to participate, only 22 were interviewed, a response rate of only 1.4 percent. However, the goal of this study was to determine a complete set of motivation categories to be used in further research. Accomplishing this goal does not require us to make any statements about the frequency with which motivations appear in our population.</div>
+</div>
+<div class="subsect1" id="s4E"><h2>Inter-Rater Reliability</h2>
+
+<div class="aip-paragraph">As a check on inter-rater reliability, we went through the interview transcripts and forum posts and categorized just the first motivation that the volunteer mentioned. Since both these data sets (all interviews and forum posts) required the raters to examine free-form text-based data (either interview transcripts or forum posts), we were able to combine both data sets for the purposes of measuring inter-rater reliability.</div>
+<div class="aip-paragraph">Overall, we found that for the complete data set, all three of the raters matched for 644 (76%) classifications, two out of three matched for 175 (21%) of the classifications, and in only 29 cases (3%) was there no agreement. However, these values may not be the best indication of inter-rater reliability. This is because the full data set includes 609 forum posts for which two or more raters indicated that no statement of motivation was present.</div>
+<div class="aip-paragraph">After excluding these items and considering only the remaining 237 responses, we found all three raters matched 98 times (41%) and two out of three matched for 110 (46%) of the items, and no agreement was found in the same 29 (12%) items. This corresponds to a pairwise percent agreement of 56% between raters #1 and #3, 56% between raters #1 and #2, and 58% between raters #2 and #3, as well as a Fleiss Kappa value of 0.474. For the purposes of being able to identify what motivations are present consistently, but not for identifying the frequency of motivations to high accuracy, we consider our results reliable.</div>
+</div>
+</div></div>
+<div class="sectionWrapper"><div class="section" id="s5"><h1>DISCUSSION</h1>
+
+<div class="aip-paragraph">It is important to emphasize that most users do not have a single motivation. After eliminating forum posts that were not relevant (for instance “Thanks for responding” messages), we found the majority of the respondents mentioned more than one motivation within either their interview or forum posting, with the typical respondent listing two motivations (102 forum and seven interview respondents, or 46% of the combined sample of interviews and forum posts). Only 89 (37%) of the 237 posts and no interviews included statements of motivation that all raters could fit into only one category. This is consistent with the previous studies of citizen science volunteer motivation discussed in Section <span class="secref_collection"><a class="secref" href="#s3" rel="s3" name="secref_s3">3</a></span>, which found that most volunteers reported more than one motivation.</div>
+<div class="aip-paragraph">We examined the motivations in the order they are stated to check inter-rater reliability (Section <span class="secref_collection"><a class="secref" href="#s4E" rel="s4E" name="secref_s4E">4E</a></span>). There will not necessarily be a direct correlation between a respondent’s primary motivation—the motivation that they consider most important—and what they say first. While one might reasonably guess that the order that motivations are listed may correlate to importance of the motivations to the responders, we have no data to check this hypothesis.</div>
+<div class="aip-paragraph">We next looked at the frequencies with which these motivations appeared in our sample (Table <span class="tableref_collection"><a class="tableref" href="#t4" rel="t4" name="tableref_t4">4</a></span>). As discussed in Section <span class="secref_collection"><a class="secref" href="#s4D" rel="s4D" name="secref_s4D">4D</a></span>, these reported frequencies do not indicate the prevalence of these motivations in the larger volunteer population, but the fact that the motivations appear with reasonable frequency in this sample does give us confidence that these motivations are truly present in the larger population.</div>
+<div class="aip-paragraph"><div class="tablegrp" id="t4"><table><thead align="left" valign="bottom"><tr><td class="tableCaptionCell" colspan="13"><span class="tableCapName">Table IV. </span>Frequency of motivations identified in respondents’ interviews or forum posts. Only motivations found by two or more of the three raters are counted. The 631 responses determined “non-pertinent/containing no motivations” by two or more raters were removed from the sample prior to calculating percentages. Percentages are based on the number of times among the 207 remaining responses containing a motivation. This includes both the forum posts and the 22 interviews. These frequencies do not indicate the frequencies that these motivations appear in the larger population, but they do give us confidence that these motivations are present in the larger population.</td></tr>
+<tr valign="bottom"><th rowspan="3">Motivation</th><th colspan="4" align="center">Interviews</th><th colspan="4" align="center">Forums</th><th colspan="4" align="center">All</th></tr>
+<tr valign="bottom"><th colspan="2" align="center">Initial<br/> responses</th><th colspan="2" align="center">All<br/> responses</th><th colspan="2" align="center">Initial<br/> responses</th><th colspan="2" align="center">All<br/> responses</th><th colspan="2" align="center">Initial<br/> responses</th><th colspan="2" align="center">All<br/> responses</th></tr>
+<tr valign="bottom"><th>Freq</th><th align="center">%</th><th align="center">Freq</th><th align="center">%</th><th align="center">Freq</th><th align="center">%</th><th align="center">Freq</th><th align="center">%</th><th align="center">Freq</th><th align="center">%</th><th align="center">Freq</th><th align="center">%</th></tr>
+</thead><tbody align="left" valign="middle">
+<tr valign="bottom"><td>Astronomy</td><td align="center">7</td><td align="center">35%</td><td align="center">11</td><td align="center">17%</td><td align="center">86</td><td align="center">46%</td><td align="center">99</td><td align="center">46%</td><td align="center">93</td><td align="center">39%</td><td align="center">110</td><td align="center">46%</td></tr>
+<tr valign="bottom"><td>Beauty</td><td align="center">1</td><td align="center">5%</td><td align="center">4</td><td align="center">6%</td><td align="center">9</td><td align="center">5%</td><td align="center">35</td><td align="center">16%</td><td align="center">10</td><td align="center">4%</td><td align="center">39</td><td align="center">16%</td></tr>
+<tr valign="bottom"><td>Community</td><td align="center">0</td><td align="center">0%</td><td align="center">1</td><td align="center">2%</td><td align="center">3</td><td align="center">2%</td><td align="center">14</td><td align="center">6%</td><td align="center">3</td><td align="center">1%</td><td align="center">14</td><td align="center">6%</td></tr>
+<tr valign="bottom"><td>Contribute</td><td align="center">1</td><td align="center">5%</td><td align="center">6</td><td align="center">9%</td><td align="center">29</td><td align="center">15%</td><td align="center">46</td><td align="center">22%</td><td align="center">30</td><td align="center">13%</td><td align="center">52</td><td align="center">22%</td></tr>
+<tr valign="bottom"><td>Discovery</td><td align="center">1</td><td align="center">5%</td><td align="center">3</td><td align="center">5%</td><td align="center">4</td><td align="center">2%</td><td align="center">17</td><td align="center">8%</td><td align="center">5</td><td align="center">2%</td><td align="center">20</td><td align="center">8%</td></tr>
+<tr valign="bottom"><td>Fun</td><td align="center">3</td><td align="center">15%</td><td align="center">5</td><td align="center">8%</td><td align="center">14</td><td align="center">7%</td><td align="center">21</td><td align="center">11%</td><td align="center">17</td><td align="center">7%</td><td align="center">26</td><td align="center">11%</td></tr>
+<tr valign="bottom"><td>Help</td><td align="center">0</td><td align="center">0%</td><td align="center">6</td><td align="center">9%</td><td align="center">4</td><td align="center">2%</td><td align="center">10</td><td align="center">7%</td><td align="center">4</td><td align="center">2%</td><td align="center">16</td><td align="center">7%</td></tr>
+<tr valign="bottom"><td>Learning</td><td align="center">1</td><td align="center">5%</td><td align="center">3</td><td align="center">5%</td><td align="center">5</td><td align="center">3%</td><td align="center">21</td><td align="center">10%</td><td align="center">6</td><td align="center">3%</td><td align="center">24</td><td align="center">10%</td></tr>
+<tr valign="bottom"><td>Science</td><td align="center">0</td><td align="center">0%</td><td align="center">4</td><td align="center">6%</td><td align="center">2</td><td align="center">1%</td><td align="center">5</td><td align="center">4%</td><td align="center">2</td><td align="center">1%</td><td align="center">9</td><td align="center">4%</td></tr>
+<tr valign="bottom"><td>Teaching</td><td align="center">1</td><td align="center">5%</td><td align="center">1</td><td align="center">2%</td><td align="center">2</td><td align="center">1%</td><td align="center">3</td><td align="center">2%</td><td align="center">3</td><td align="center">1%</td><td align="center">4</td><td align="center">2%</td></tr>
+<tr valign="bottom"><td>Vastness</td><td align="center">1</td><td align="center">5%</td><td align="center">10</td><td align="center">15%</td><td align="center">25</td><td align="center">13%</td><td align="center">47</td><td align="center">24%</td><td align="center">26</td><td align="center">11%</td><td align="center">57</td><td align="center">24%</td></tr>
+<tr valign="bottom"><td>Zoo</td><td align="center">4</td><td align="center">20%</td><td align="center">11</td><td align="center">17%</td><td align="center">5</td><td align="center">3%</td><td align="center">8</td><td align="center">8%</td><td align="center">9</td><td align="center">4%</td><td align="center">19</td><td align="center">8%</td></tr>
+<tr valign="bottom"><td>Non-pertinent</td><td align="center"/><td align="center"/><td align="center"/><td align="center"/><td align="center">609</td><td align="center">N/A</td><td align="center"/><td align="center"/><td align="center">609</td><td align="center">N/A</td><td align="center"/><td align="center"/></tr>
+</tbody></table></div></div>
+<div class="aip-paragraph">In looking at the distribution of initial responses where two or more raters agreed as shown in Table <span class="tableref_collection"><a class="tableref" href="#t4" rel="t4" name="tableref_t4">4</a></span>, we found that only three responses (after removing “non-pertient”/“no motivation” from the sample) appeared at a 10% or greater level among the list of first-mentioned motivations: Astronomy (39%), Contribute (13%), and Vastness (11%).</div>
+<div class="aip-paragraph">Expanding the sample to include all motivations listed by each person rather than just the first and again only considering cases where two or more raters agreed, we find that these motivations continue to dominate, but more motivations are found in common across more than 10% of the responders.</div>
+<div class="aip-paragraph">The primary goal of this investigation was to identify a list of motivation categories driving participants in the GZ1 project to classify galaxies. We have used these categories to construct a survey instrument that uses multiple-choice and Likert scale responses to assess the frequency of each motivation category in our population. We have administered this instrument as an online survey and are now analyzing the responses. Results of this survey research will be published in a future article.</div>
+<div class="aip-paragraph">While we were able to match all the motivational statements in both the interviews and the forum free responses against the 12 motivation categories, we recognize that our sample has certain biases that may indicate that there are motivations we could not have sampled. Our only comparison data set was posts to the Galaxy Zoo forum; however, only about 5% of all Zooites have a forum account, and not all of those individuals are active within the forums. There may also be unmeasured population differences between those users that self-select to socially and intellectually interact in the forums and users who only classify galaxies. For example, the motivation to participate in GZ1 as a mechanism to make friends is much less likely to be present in people who do not socially engage through the Galaxy Zoo forums. Recognizing that the comparison data set is not an unbiased sample, the survey that we are now conducting will allow users the opportunity to offer a free response motivation in addition to asking them to select the relative importance of each of the previously identified motivations.</div>
+</div></div>
+<div class="sectionWrapper"><div class="section" id="s6"><h1>CONCLUSIONS</h1>
+
+<div class="aip-paragraph">Our method of interviewing participants, identifying motivational statements, and categorizing those statements into a set of overarching motivations produced a list of motivations that was applicable across both an extended interview set and forum posts. We conclude that it is possible to explore the motivations of a large population of citizen scientists through a very small sampling of individuals using interviews, although we recommend using larger interview sets in future studies.</div>
+<div class="aip-paragraph">Through interviews of 12 randomly selected GZ1 participants, we were able to identify approximately 80 “statements of motivation” describing reasons why subjects chose to participate in Galaxy Zoo. Three raters classified these statements of motivation, and consensus among the raters led to 12 categories of motivation. Each rater then classified each interview transcript into all the motivation categories that applied to it, noting which motivation category the subject mentioned first. We used these rater classifications to measure the inter-rater reliability of our categories.</div>
+<div class="aip-paragraph">After our initial analysis, we searched for additional motivations in ten additional interviews and in 826 forum posts, and we did not identify any additional motivations. We feel that being able to cross-check our interview based motivations list against the forum posts provided adequate levels of certainty that we have identified a list of motivations sufficiently representative of the majority of Galaxy Zoo volunteers that we can proceed with a broader future study with a larger sample. We are now conducting this study by surveying a large sample of volunteers. Results from this larger study will offer insight into why people choose to participate in citizen science activities, which will be useful in designing future citizen science projects.</div>
+</div></div>
+</div>
+                                        
+                                        					
+															
+							    		
+		    				          	 
+      
+                                                                             
+                           
+                                
+                <div id="ack" class="ack">
+                                         
+                    
+<h1>Acknowledgments</h1>
+<div class="aip-paragraph">This publication has been made possible by the participation of more than 200,000 volunteers in the Galaxy Zoo project. The authors would like to acknowledge the help and support that Tom Foster provided during the earliest stages of this work, and the input of Karen Carney. Xiaoquan Zhang, Feng Zhu, and Aaron Price provided valuable input on methodologies. This project would not have been possible without the technical support of Johns Hopkins University, who hosted and advised GZ1, and that of Phil Murray (Fingerprint Digital Media) and Edward Edmondson (University of Portsmouth), who have managed and hosted the Galaxy Zoo forums, and Alice Sheppard and the other forum moderators. Support for the work of K.S. was provided by NASA through Einstein Postdoctoral Fellowship Grant No. PF9-00069 issued by the Chandra X-ray Observatory Center, which is operated by the Smithsonian Astrophysical Observatory for and on behalf of NASA under Contract No. NAS8-03060NAS8-03060. K.S. gratefully acknowledges support from Yale University.</div>
+  
+                </div>
+                   
+	  		          		
+		          			          			          		<div id="appmat"><div class="appendix" id="xA">
+<div class="sectionWrapper"><div class="section"><h1>Appendix A: Initial Interview Protocol for Interviews 1–12</h1>
+
+<div class="aip-paragraph">Hello! My name is Jordan, and I’ll be asking you a few questions through [Skype/IM/Messenger] today. Thank you for your interest in Galaxy Zoo, and for agreeing to participate in this interview. This interview contains 24 questions, and should take about 30 minutes to complete.</div>
+<div class="aip-paragraph">Your responses will help us improve the site to better meet your needs. Before we start, have you read the Information Sheet on the website?</div>
+<div class="aip-paragraph">[if no:] Please take a moment to read the sheet. You can find it at http://www.galaxyzooblog.org/wp-content/uploads/2008/04/interview.swf.</div>
+<div class="aip-paragraph">Let me explain what I will be asking you. There are six parts to this interview.First, I will ask some basic demographic questions.Second, I will ask about why you have chosen to participate in Galaxy Zoo.Third, I will ask your opinion on some features of the site.Fourth, I will ask for your responses to some “thought experiments”—if we changed the site in a few different ways, what would you think?Fifth, I will ask about your experiences with science.Sixth, I will ask for your definition of science.As you answer, I may sometimes ask follow-up questions.</div>
+<div class="aip-paragraph">Do you have any questions about what we’ll be talking about today?</div>
+<div class="aip-paragraph">If you have any questions as we go, please ask—I’m happy to answer! If you would prefer not to answer a question for any reason, just say “prefer not to answer,” and I will move on to the next question. You don’t have to give a reason. If you would like to end the interview at any time, please let me know. Do you have any questions about this?</div>
+<div class="aip-paragraph">Great, let’s get started! First, let me ask you for some basic data about yourself (5 questions).</div>
+<div class="aip-paragraph"><strong class="emphbold">Demographics</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">What is your age? (For legal reasons, this survey is limited to participants over the age of 18.)<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[if under 18:] Unfortunately, for legal reasons, we’ll have to stop the official interview. Still, thank you for your time! If you have any questions, or you would like a copy of the published research that results from this interview, contact the study coordinator, Jordan Raddick, at +1 410 516 8889.</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">What is your sex (gender)?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">In what country do you reside?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">What is your…<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[U.S.] ZIP code?</div>
+</li>
+<li><span class="elementLabel">b.</span>
+<div class="aip-paragraph">[U.K.] the first part of your postcode?</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">5.</span>
+<div class="aip-paragraph">What is your Galaxy Zoo username? (Optional—see the information sheet at http://www.galaxyzooblog.org/wp-content/uploads/2008/04/interview.swf about what we will do with this information.)</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thanks! Next, let me ask about what you have gotten out of Galaxy Zoo; why you chose to volunteer your time to classify galaxies (which we very much appreciate!). (3 questions)</div>
+<div class="aip-paragraph"><strong class="emphbold">Your Motivations</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">What were your reasons for joining Galaxy Zoo?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[if they give only one reason:] Were there any other reasons?</div>
+</li>
+<li><span class="elementLabel">b.</span>
+<div class="aip-paragraph">[if they give several reasons in question #1:] You’ve named several reasons for participating in Galaxy Zoo. Which one do you consider most important? Why?</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">Are you still classifying galaxies on Galaxy Zoo today?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[yes:] What are your reasons for continuing to classify galaxies today?</div>
+</li>
+<li><span class="elementLabel">b.</span>
+<div class="aip-paragraph">[no:] What reasons did you have for stopping?</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">Has your participation in Galaxy Zoo helped you in any “real life” settings, such as at your job?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[if yes] How?</div>
+</li>
+</ol></div></div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thank you! Now, let me ask for your opinion on some parts of the website. We are interested in your honest assessments—I didn’t write the site, so don’t worry about hurting my feelings! (4 questions)</div>
+<div class="aip-paragraph"><strong class="emphbold">Evaluating the Site</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">Where did you first find out about Galaxy Zoo?</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">How difficult do you find classifying galaxies? Is there anything that would make it easier?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">What comments do you have on the Galaxy Zoo interface?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">From where do you most often use Galaxy Zoo?</div>
+</li>
+<li><span class="elementLabel">5.</span>
+<div class="aip-paragraph">What suggestions do you have for future versions of the site?</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thanks! Next, I’ll do some “thought experiments.” Imagine that Galaxy Zoo were a little different in the ways I’ll describe. How would that change your opinion of the project, or how much you would want to volunteer?</div>
+<div class="aip-paragraph"><strong class="emphbold">“Thought Experiments”</strong> [note: these will be asked in random order]<div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">Astronomers are now analyzing the classifications from Galaxy Zoo users, including you. They will almost certainly discover many interesting things about the universe. But, if you were told that for some reason your classifications were excluded from our study sample, how would that change how you participate in the project? (By the way, this is just hypothetical—all classifications are included in our sample.)</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">Galaxy Zoo depends on people like you choosing to offer their time to classify galaxies. But, if you were told by someone else, such as a boss or a teacher, to participate in Galaxy Zoo, how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">Galaxy Zoo includes about a million galaxies, most of which have been looked at by only a few people. If Galaxy Zoo instead included galaxies that had been extensively studied before, how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">If Galaxy Zoo did not include a forum, so that you could not interact with other users, how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">5.</span>
+<div class="aip-paragraph">Some people on the forum have joked that the site is “addictive”—that they can’t help doing “just one more galaxy.” If we changed the interface so that you had to request the next galaxy (rather than getting the next one immediately), how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">6.</span>
+<div class="aip-paragraph">As you know, we are classifying galaxies that have never been classified before, and you are helping us. But if the site gave you a “right” answer after you finished classifying a galaxy, how would that change how you participate in the project?</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thanks—that was very helpful! Next, let me ask a few questions about your experiences with science, past and present (4 questions).</div>
+<div class="aip-paragraph"><strong class="emphbold">Your Experiences With Science</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">Does your job or course of study involve science, maths, engineering, or technology? How?</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">Have you ever studied science? To what level?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">Are there any science-related activities that you enjoy (for example, stargazing or reading popular science books)? Which ones?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">Do you participate, or have you participated, in other large online collaboration projects (for example, SETI@home, Stardust@home, Wikipedia, etc.)?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">Which ones?</div>
+</li>
+</ol></div></div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thank you! Now, the last question is about your definition of the term “science.” We are interested in your first impressions, so don’t think too long about this—just say the first thing that comes to your mind.</div>
+<div class="aip-paragraph"><strong class="emphbold">Your Definition Of Science</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">How would you define the term “science”?</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">We’ve reached the end of the interview! Thank you so much for your help.</div>
+<div class="aip-paragraph">Here’s what happens next. I will now save this transcript, but I will delete your username and refer to you by a code number. Your code number is XXX. If you’d like to withdraw from the study at any time, contact the study coordinator, Jordan Raddick (raddick@jhu.edu), and give him your code number. If you have any questions, or you would like a copy of the published research that results from this interview, contact Jordan.</div>
+<div class="aip-paragraph">You’ll be entered into a prize drawing, as explained in my E-mail to you. We’ll contact you by E-mail if you have won (but your E-mail will be kept separate from this transcript).</div>
+</div></div>
+</div><div class="appendix" id="xB">
+<div class="sectionWrapper"><div class="section"><h1>Appendix B: Final Interview Protocol for Interviews #20–47</h1>
+
+<div class="aip-paragraph"><strong class="emphbold">INTERVIEW PROTOCOL FOR GALAXY ZOO STUDY</strong></div>
+<div class="aip-paragraph">Hello! My name is Jordan and I’ll be asking you a few questions through [Skype/IM/Messenger] today. Thank you for your interest in Galaxy Zoo, and for agreeing to participate in this interview. This interview contains 24 questions, and should take about 30 minutes to complete.</div>
+<div class="aip-paragraph">Your responses will help us improve the site to better meet your needs. Before we start, have you read the Information Sheet on the website?</div>
+<div class="aip-paragraph">[if no:] Please take a moment to read the sheet. You can find it at http://www.galaxyzooblog.org/wp-content/uploads/2008/04/interview.swf.</div>
+<div class="aip-paragraph">If you have any questions as we go, please ask—I’m happy to answer! If you would prefer not to answer a question for any reason, just say “prefer not to answer,” and I will move on to the next question. You don’t have to give a reason. If you would like to end the interview at any time, please let me know. Do you have any questions about this?</div>
+<div class="aip-paragraph">Great, let’s get started! First, let me ask you for some basic data about yourself (5 questions).</div>
+<div class="aip-paragraph"><strong class="emphbold">Demographics</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">What is your age? (For legal reasons, this survey is limited to participants over the age of 18.)<div class="aip_itemlist"><ol class="alpha-lc-list">
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[if under 18:] Unfortunately, for legal reasons, we’ll have to stop the official interview. Still, thank you for your time! If you have any questions, or you would like a copy of the published research that results from this interview, contact the study coordinator, Jordan Raddick, at +1 410 516 8889.</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">What is your sex (gender)?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">In what country do you reside?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">What is…<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[U.S.] your ZIP code?</div>
+</li>
+<li><span class="elementLabel">b.</span>
+<div class="aip-paragraph">[U.K.] the first part of your postcode?</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">5.</span>
+<div class="aip-paragraph">What is your Galaxy Zoo username? (Optional—see the information sheet at http://www.galaxyzooblog.org/wp-content/uploads/2008/04/interview.swf about what we will do with this information.)</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thanks! Next, let me ask about what you have gotten out of Galaxy Zoo; why you chose to volunteer your time to classify galaxies (which we very much appreciate!). (3 questions)</div>
+<div class="aip-paragraph"><strong class="emphbold">Your Motivations</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">Where did you first find out about Galaxy Zoo?</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">What were your reasons for joining Galaxy Zoo?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[if they give only one reason:] Were there any other reasons?</div>
+</li>
+<li><span class="elementLabel">b.</span>
+<div class="aip-paragraph">[if they give several reasons in question #1:] You’ve named several reasons for participating in Galaxy Zoo. Which one do you consider most important? Why?</div>
+</li>
+</ol></div></div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">Are you still classifying galaxies on Galaxy Zoo today?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">[yes:] What are your reasons for continuing to classify galaxies today?</div>
+</li>
+<li><span class="elementLabel">b.</span>
+<div class="aip-paragraph">[no:] What reasons did you have for stopping?</div>
+</li>
+</ol></div></div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thanks—that was very helpful! Next, let me ask a few questions about your experiences with science, past and present (4 questions).</div>
+<div class="aip-paragraph"><strong class="emphbold">Your Experiences With Science</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">Does your job or course of study involve science, maths, engineering or technology? How?</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">Have you ever studied science? To what level?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">Are there any science-related activities that you enjoy (for example, stargazing or reading popular science books)? Which ones?</div>
+</li>
+
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">Do you participate, or have you participated, in other large online collaboration projects (for example, SETI@home, Stardust@home, Wikipedia, etc.)?<div class="aip_itemlist"><ol class="alpha-lc-list">
+
+<li><span class="elementLabel">a.</span>
+<div class="aip-paragraph">Which ones?</div>
+</li>
+</ol></div></div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thank you! The next question is about your definition of the term “science.” We are interested in your first impressions, so don’t think too long about this—just say the first thing that comes to your mind.</div>
+<div class="aip-paragraph"><strong class="emphbold">Your Definition Of Science</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">How would you define the term “science”?</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thanks! Next, I’ll do some “thought experiments.” Imagine that Galaxy Zoo were a little different in the ways I’ll describe. How would that change your opinion of the project, or how much you would want to volunteer?</div>
+<div class="aip-paragraph"><strong class="emphbold">“Thought Experiments”</strong> [note: these will be asked in random order]<div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">Astronomers are now analyzing the classifications from Galaxy Zoo users, including you. They will almost certainly discover many interesting things about the universe. But, if you were told that for some reason your classifications were excluded from our study sample, how would that change how you participate in the project? (By the way, this is just hypothetical—all classifications are included in our sample.)</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">Galaxy Zoo depends on people like you choosing to offer their time to classify galaxies. But, if you were told by someone else, such as a boss or a teacher, to participate in Galaxy Zoo, how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">Galaxy Zoo includes about a million galaxies, most of which have been looked at by only a few people. If Galaxy Zoo instead included galaxies that had been extensively studied before, how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">If Galaxy Zoo did not include a forum, so that you could not interact with other users, how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">5.</span>
+<div class="aip-paragraph">Some people on the forum have joked that the site is “addictive”—that they can’t help doing “just one more galaxy.” If we changed the interface so that you had to request the next galaxy (rather than getting the next one immediately), how would that change how you participate in the project?</div>
+</li>
+<li><span class="elementLabel">6.</span>
+<div class="aip-paragraph">As you know, we are classifying galaxies that have never been classified before, and you are helping us. But if the site gave you a “right” answer after you finished classifying a galaxy, how would that change how you participate in the project?</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">Thank you! Now, let me ask for your opinion on some parts of the website. We are interested in your honest assessments—I didn’t write the site, so don’t worry about hurting my feelings! (4 questions)</div>
+<div class="aip-paragraph"><strong class="emphbold">Evaluating The Site</strong></div>
+<div class="aip-paragraph"><div class="aip_itemlist"><ol class="arabic-num-list">
+<li><span class="elementLabel">1.</span>
+<div class="aip-paragraph">How difficult do you find classifying galaxies? Is there anything that would make it easier?</div>
+</li>
+<li><span class="elementLabel">2.</span>
+<div class="aip-paragraph">What comments do you have on the Galaxy Zoo interface?</div>
+</li>
+<li><span class="elementLabel">3.</span>
+<div class="aip-paragraph">From where do you most often use Galaxy Zoo?</div>
+</li>
+<li><span class="elementLabel">4.</span>
+<div class="aip-paragraph">What suggestions do you have for future versions of the site?</div>
+</li>
+</ol></div></div>
+<div class="aip-paragraph">We’ve reached the end of the interview! Thank you so much for your help.</div>
+<div class="aip-paragraph">Here’s what happens next. I will now save this transcript, but I will delete your username and refer to you by a code number. Your code number is 47. If you’d like to withdraw from the study at any time, contact the study coordinator, Jordan Raddick (raddick@jhu.edu), and give him your code number. If you have any questions, or you would like a copy of the published research that results from this interview, contact Jordan.</div>
+<div class="aip-paragraph">You’ll be entered into a prize drawing, as explained in my E-mail to you. We’ll contact you by E-mail if you have won (but your E-mail will be kept separate from this transcript).</div>
+</div></div>
+</div></div>    
+										
+					                        <h1>Tables</h1>
+                        <div class="tablelist"><div class="tablegrp" id="t1"><table><thead align="left" valign="bottom"><tr><td class="tableCaptionCell" colspan="6"><table-caption><span class="tableCapName">Table I. </span>Volunteers interviewed for this study. The table shows the interview code used by the authors, the type of interview (IM or Phone), and the interviewee’s age, gender, country of residence, and occupation (occupations were adapted from volunteer self-reports except where in quotes)</table-caption></td></tr>
+<tr><th>Code</th><th>Type</th><th align="center">Age</th><th>Gender</th><th>Country</th><th>Occupation</th></tr>
+</thead><tbody align="left" valign="middle">
+<tr><td>A</td><td>IM</td><td align="center">58</td><td>Male</td><td>U.K.</td><td>Technology/IT project manager/web designer</td></tr>
+<tr><td>B</td><td>IM</td><td align="center">57</td><td>Male</td><td>U.K.</td><td>IT, as CIO of a large banking group</td></tr>
+<tr><td>C</td><td>IM</td><td align="center">25</td><td>Male</td><td>U.S.</td><td>Build and configure computers</td></tr>
+<tr><td>D</td><td>IM</td><td align="center">49</td><td>Male</td><td>Denmark</td><td>“I work for a company doing engineering software”</td></tr>
+<tr><td>E</td><td>IM</td><td align="center">47</td><td>Male</td><td>U.S.</td><td>Sheet metal fabricator</td></tr>
+<tr><td>F</td><td>IM</td><td align="center">61</td><td>Female</td><td>U.K.</td><td>Surgical Nurse</td></tr>
+<tr><td>G</td><td>IM</td><td align="center">25</td><td>Male</td><td>Netherlands</td><td>PhD student in astronomy</td></tr>
+<tr><td>H</td><td>IM</td><td align="center">24</td><td>Male</td><td>France(U.K. citizen)</td><td>Environmental advisor for oil company</td></tr>
+<tr><td>I</td><td>IM</td><td align="center">24</td><td>Male</td><td>U.K.</td><td>Physics teacher</td></tr>
+<tr><td>J</td><td>IM</td><td align="center">23</td><td>Male</td><td>U.S.</td><td>Investment banking</td></tr>
+<tr><td>K</td><td>IM</td><td align="center">25</td><td>Female</td><td>Argentina</td><td>Freelance web developer</td></tr>
+<tr><td>L</td><td>IM</td><td align="center">51</td><td>Male</td><td>Belgium</td><td>Chemist</td></tr>
+<tr><td>M</td><td>Phone</td><td align="center">42</td><td>Female</td><td>U.S.</td><td>[Declined to report]</td></tr>
+<tr><td>N</td><td>IM</td><td align="center">30</td><td>Male</td><td>Japan</td><td>[Declined to report]</td></tr>
+<tr><td>O</td><td>Phone</td><td align="center">45</td><td>Male</td><td>U.S.</td><td>Scientific illustrator</td></tr>
+<tr><td>P</td><td>Phone</td><td align="center">68</td><td>Male</td><td>U.K.</td><td>Retired</td></tr>
+<tr><td>Q</td><td>IM</td><td align="center">38</td><td>Male</td><td>U.S.</td><td>Software quality assurance</td></tr>
+<tr><td>R</td><td>IM</td><td align="center">36</td><td>Female</td><td>U.S.</td><td>“was pre-med,…later…a math major”</td></tr>
+<tr><td>S</td><td>Phone</td><td align="center">79</td><td>Male</td><td>U.K.</td><td>Automotive engineering business</td></tr>
+<tr><td>T</td><td>IM</td><td align="center">60</td><td>Male</td><td>U.S.</td><td>Judge (state court)</td></tr>
+<tr><td>U</td><td>Phone</td><td align="center">56</td><td>Female</td><td>U.K.</td><td>Draftsperson in theater</td></tr>
+<tr><td>V</td><td>IM</td><td align="center">22</td><td>Male</td><td>France</td><td>Engineering student</td></tr>
+</tbody></table></div><div class="tablegrp" id="t2"><table><thead align="left" valign="bottom"><tr><td class="tableCaptionCell" colspan="2"><table-caption><span class="tableCapName">Table II. </span>Initial categorization scheme for motivations developed by each rater. The table gives the rater’s name for the motivation category and a typical statement of motivation from that category. (a) Schema of rater #1, (b) Schema of rater #2, and (c) Schema of rater #3</table-caption></td></tr>
+<tr><th/></tr>
+</thead><tbody align="left" valign="middle">
+<tr><td><strong class="emphbold">(a)<br/>Motivation Category</strong></td><td><strong class="emphbold">Typical Statement of Motivation from Category</strong></td></tr>
+<tr><td>Astronomy</td><td>I have an interest in astronomy.</td></tr>
+<tr><td>Fun</td><td>I had a lot of fun categorizing the galaxies:-)</td></tr>
+<tr><td>Helping</td><td>I thought that if I could help I should…</td></tr>
+<tr><td>Images</td><td>I liked the pictures as well.</td></tr>
+<tr><td>Imagination</td><td>It stretches the imagination</td></tr>
+<tr><td>Interesting Project</td><td>It’s a very interesting study…</td></tr>
+<tr><td>Scale of the Universe</td><td>Well he [the subject’s son] has gotten a better idea of the vast size of the universe</td></tr>
+<tr><td>Science</td><td>Always had an interest in science…</td></tr>
+<tr><td>Teaching</td><td>I’m a physics teacher and a member of the PTNC [Physics Teacher News &amp; Comments] group.</td></tr>
+<tr><td>Miscellaneous</td><td>…the slight probability that I may point out the one object that will completely shock our current understanding about the universe</td></tr>
+<tr><td colspan="2"/></tr>
+<tr><td><strong class="emphbold">(b)</strong></td><td/></tr>
+<tr><td><strong class="emphbold">Motivation Category</strong></td><td><strong class="emphbold">Typical Example</strong></td></tr>
+<tr><td>Desire to learn</td><td>family project for me and my son… who has a desire to learn about astronomy</td></tr>
+<tr><td>Fun</td><td>a lot of fun</td></tr>
+<tr><td>Helping</td><td>happy to help</td></tr>
+<tr><td>Interested in project itself</td><td>thought it was an interesting idea to utilize the Internet to bring together tons of people to help classify these galaxies that would otherwise take up a lot of time</td></tr>
+<tr><td>Interested in science/astronomy</td><td>Astronomy has always interested me</td></tr>
+<tr><td>Involvement in “real science”</td><td>participate in a real scientific project</td></tr>
+<tr><td>Liked the pictures</td><td>I like the pictures as well</td></tr>
+<tr><td>Sense of wonder</td><td>partly the romantic side of so many possibilities of different environments, life, planets, stars</td></tr>
+<tr><td>Not used</td><td>I think that the user interface for classification is pretty well done. It is simple and straightforward.</td></tr>
+<tr><td colspan="2"/></tr>
+<tr><td><strong class="emphbold">(c)</strong></td></tr>
+<tr><td><strong class="emphbold">Motivation Category</strong></td><td><strong class="emphbold">Typical Example</strong></td></tr>
+<tr><td>Scale of Universe</td><td>So many galaxies, so many in a single image, and the beauty of them</td></tr>
+<tr><td>Images</td><td>I enjoyed having a flick through the photos</td></tr>
+<tr><td>Astronomy</td><td>I enjoy astronomy quite a bit.… So obviously, seeing a project focused on galaxy classification garnered my interest.<br/></td></tr>
+<tr valign="bottom"><td><strong class="emphbold">(c)<br/>Motivation Category</strong></td><td><strong class="emphbold">Typical Example</strong></td></tr>
+<tr><td>Science</td><td>First, I enjoy studying the physics in astronomy</td></tr>
+<tr><td>Volunteerism</td><td>I thought that if I could help I should</td></tr>
+<tr><td>Fun</td><td>For the fun of it</td></tr>
+<tr><td>Teaching</td><td>I’m a physics teacher… It looked like it would be a good way to communicate the vastness of the universe.</td></tr>
+<tr><td>Galaxy Zoo</td><td>I was interested in seeing how ‘human computing’ would be used in the project.</td></tr>
+</tbody></table></div><div class="tablegrp" id="t3"><table><thead align="left" valign="bottom"><tr><td class="tableCaptionCell" colspan="2"><table-caption><span class="tableCapName">Table III. </span>Final motivation categories that arose during the interviews, selected after discussion among the three raters. The table shows the motivation category name as used by the research team and the one-sentence description of the category used in the survey.</table-caption></td></tr>
+<tr><th>Motivation Category</th><th>Description (used in survey instrument)</th></tr>
+</thead><tbody align="left" valign="middle">
+<tr><td>Contribute</td><td>I am excited to contribute to original scientific research.</td></tr>
+<tr><td>Learning</td><td>I find the site and forums helpful in learning about astronomy.</td></tr>
+<tr><td>Discovery</td><td>I can look at galaxies that few people have seen before.</td></tr>
+<tr><td>Community</td><td>I can meet other people with similar interests.</td></tr>
+<tr><td>Teaching</td><td>I find Galaxy Zoo to be a useful resource for teaching other people.</td></tr>
+<tr><td>Beauty</td><td>I enjoy looking at the beautiful galaxy images.</td></tr>
+<tr><td>Fun</td><td>I had a lot of fun categorizing the galaxies.</td></tr>
+<tr><td>Vastness</td><td>I am amazed by the vast scale of the universe.</td></tr>
+<tr><td>Helping</td><td>I am happy to help.</td></tr>
+<tr><td>Zoo</td><td>I am interested in the Galaxy Zoo project.</td></tr>
+<tr><td>Astronomy</td><td>I am interested in astronomy.</td></tr>
+<tr><td>Science</td><td>I am interested in science.</td></tr>
+</tbody></table></div></div>
+                                        
+                                    
+	            </div>
+                
+                
+                												
+				<div id="refsectiontabs" "class="flora">
+					<ul>
+						<li>
+							<a href="#fulltext-references">
+							<span>References  
+        
+                  (23)
+            
+    							</span>
+							</a>
+						</li>
+												<li id="fulltext-tab">
+	                        <a href="#fulltext-related">
+	                        <span class="relatedtablabel">Related Articles</span>
+	                        </a>						
+						</li>
+					</ul>
+		            <div id="fulltext-references" class="searchabledom">            
+		             	 
+
+						
+                            <!-- start reference section -->
+                                                                                <div style="display:none;">
+                        <form id="addToMySciFormREF" action="http://scitation.aip.org/myscitation/addToMyArticles-submit.do" method="get" target="_blank" name="addToMySciREF">
+                            <div style="display:none;">
+                            <input type="hidden" name="source" value="scitation" />
+                            <input type="hidden" name="downloadcitation" value=" Go " />
+                            <input type="hidden" name="source" value="scitation" />
+                            <input type="hidden" name="fn" value="mysci"/>
+                            </div>
+                            <div id="adddomtomysciREF">
+                            </div>
+                        </form>
+                    </div>      
+                    <div class="citings_action_bar">   
+                                                                                                                                                <div class="popupinanewwindowlink"><a href="?view=refs" title="View in Separate Window/Tab" class="refIcon popuplink"> View in Separate Window/Tab <img src="/img/icons/load_new_win_icon_small.gif" alt="pop up window icon" style="border:none; align:right;" /></a></div>
+                                                	<span class="ref-actions">
+                        	Selected:
+                        	<a href="#" onclick="return constructDLbox('Download','articlereferenceslist');">Export Citations</a> |
+                        	<a href="#" onclick="return addArticle('articlereferenceslist','adddomtomysciREF','addToMySciFormREF');">Add to MyArticles</a>
+                        	</span>
+                                            </div>
+                                        
+                                        
+
+                   <div class="articlereferenceslist">
+                   <ol>
+                                            <li id="c1"><input type="checkbox" name="SelectCheck" value="AJPIAS0000690000S1000S12000001" >Aikenhead, G. S., and Ryan, A. G. 1992, &ldquo;The Development of a New Instrument: `Views on Science-Technology-Society'(VOSTS),&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CRFL&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=AJPIAS&to_v=69&to_p=S12&to_loc=AIP&to_url=http%3A%2F%2Flink.aip.org%2Flink%2F%3FAJP%2F69%2FS12%2F1">Science Education, <b>76</b>, 477<span class='RRECvips'>AJPIAS0000690000S1000S12000001</span></a>.
+                            | <a href="#citeref_c1" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c2">American Association of Variable Star Observers (AAVSO). http://www.aavso.org.
+                            | <a href="#citeref_c2" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c3">Anderson, D. P., Cobb, J., Korpela, E., Lebofsky, M., and Werthimer, D. 2002, &ldquo;SETI@home: An Experiment in Public-Resource Computing,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=ZZZZZZ&to_v=45&to_p=56&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1145%2F581571.581573">Communications of the ACM, <b>45</b>, 56</a>.
+                            | <a href="#citeref_c3" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c4">Bhattacharjee, Y. 2005, &ldquo;Citizen Scientists Supplement Work of Cornell Researchers,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=SCIEAS&to_v=308&to_p=1402&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1126%2Fscience.308.5727.1402">Science, <b>308</b>, 1402</a>. <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=SCIEAS&to_v=308&to_p=1402&to_loc=MEDLINE&to_url=http%3A%2F%2Fwww.ncbi.nlm.nih.gov%2Fentrez%2Fquery.fcgi%3Fcmd%3DRetrieve%26db%3DPubMed%26list_uids%3D15933178%26dopt%3DCitation">[MEDLINE]</a>
+                            | <a href="#citeref_c4" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c5">Bonney, R. 2008, in <i>Exemplary Science in Informal Education Settings</i>, eds. R. E. Yager and J. H. Falk, Arlington, VA: NSTA Press, 213.
+                            | <a href="#citeref_c5" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c6">Bracey, G. L. 2009. &ldquo;The Developing Field of Citizen Science: A Review of the Literature,&rdquo; Science Education (submitted).
+                            | <a href="#citeref_c6" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c7">Bradford, B. M., and G. D. Israel 2004, <i>Evaluating Volunteer Motivation for Sea Turtle Conservation in Florida</i>, Gainesville, FL: University of Florida, Agriculture Education and Communication Department, Institute of Agriculture and Food Sciences, AEC, 372.
+                            | <a href="#citeref_c7" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c8">Brossard, D., Lewenstein, B., and Bonney, R. 2005, &ldquo;Scientific Knowledge and Attitude Change: The Impact of a Citizen Science Project,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=ISEDEB&to_v=27&to_p=1099&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1080%2F09500690500069483">International Journal of Science Education, <b>27</b>, 1099</a>.
+                            | <a href="#citeref_c8" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c9">Cardamone, C. N., Schawinski, K., Sarzi, M., Bamford, S. P., Bennert, N., Urry, C. M., Lintott, C. J., Keel, W. C., Parejko, J., Nichol, R. C., Thomas, D., Andreescu, D., Jordan Raddick, M., Slosar, A., Szalay, A., and Vandenberg, J. 2009, &ldquo;Galaxy Zoo Green Peas: Discovery of a Class of Compact Extremely Star Forming Galaxies,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=MNRAA4&to_v=399&to_p=1191&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1111%2Fj.1365-2966.2009.15383.x">Monthly Notices of the Royal Astronomical Society, <b>399</b>, 1191</a>.
+                            | <a href="#citeref_c9" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c10">Hawkins, D. 1978, &ldquo;Critical Barriers to Science Learning,&rdquo; Outlook, <b>29</b>, 3.
+                            | <a href="#citeref_c10" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c11">King, K., and Lynch, C. V. 1998, &ldquo;The Motivation of Volunteers in the nature Conservancy - Ohio Chapter, a Non-Profit Environmental Organization,&rdquo; Journal of Volunteer Administration, <b>16</b>, 5.
+                            | <a href="#citeref_c11" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c12">Lintott, C. J., Schawinski, K., Keel, W., van Arkel, H., Bennert, N., Edmondson, E., Thomas, D., Smith, D., Herbert, P., Virani, S., Andreescu, D., Bamford, S., Land, K., Murray, P., Nichol, R., Raddick, J., Slosar, A., Szalay, A., and Vandenberg, J. 2009, &ldquo;Galaxy Zoo: Hanny's Voorwerp, a Quasar Light Echo?,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=MNRAA4&to_v=399&to_p=129&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1111%2Fj.1365-2966.2009.15299.x">Monthly Notices of the Royal Astronomical Society, <b>399</b>, 129</a>.
+                            | <a href="#citeref_c12" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c13">Lintott, C. J., Schawinski, K., Slosar, A., Land, K., Bamford, S., Thomas, D., Raddick, M. J., Nichol, R., Szalay, A. S., Andreescu, D., Murray, P., and Vandenberg, J. 2008, &ldquo;Galaxy Zoo: Morphologies Derived from Visual Inspection of Galaxies from the Sloan Digital Sky Survey,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=MNRAA4&to_v=389&to_p=1179&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1111%2Fj.1365-2966.2008.13689.x">Monthly Notices of the Royal Astronomical Society, <b>389</b>, 1179</a>.
+                            | <a href="#citeref_c13" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c14">Mendez, B. J. H. 2008, &ldquo;SpaceScience@Home: Authentic Research Projects that Use Citizen Scientists,&rdquo; in <i>EPO and a Changing World: Creating Linkages and Expanding Partnerships</i>, ASP Conference Series 385, eds. C. Garmony, M. G. Gibbs, and J. W. Moody, San Francisco, ASP, 385.
+                            | <a href="#citeref_c14" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c15">Michaels, S., Shouse, A. W., and Schweingruber, H. A. 2008, <i>Ready, Set, Science</i>, Washington, DC: National Academies Press.
+                            | <a href="#citeref_c15" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c16">Root, T. 1988, <i>Atlas of Wintering North American Birds: An Analysis of Christmas Bird Count Data</i>, Chicago, IL: University of Chicago Press.
+                            | <a href="#citeref_c16" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c17">Schawinski, K., Thomas, D., Sarzi, M., Maraston, C., Kaviraj, S., Joo, S. -J., Yi, S. K., and Silk, J. 2007, &ldquo;Observational Evidence for AGN Feedback in Early-Type Galaxies,&rdquo; Monthly Notices of the Royal Astronomical Society, <b>382</b>, 1415.
+                            | <a href="#citeref_c17" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c18">Scott, P., Asoko, H., and Leach, J. 2007, in <i>Handbook of Research on Science Education</i>, eds. S. K. Abell and N. G. Lederman, New York, NY: MacMillan.
+                            | <a href="#citeref_c18" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c19">Strauss, A. L., and Corbin, J. M. 1990, <i>Basics of Qualitative Research</i>, Thousand Oaks, CA: Sage Publications.
+                            | <a href="#citeref_c19" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c20">Sung, N. S., Gordon, J. I., Rose, G. D., Getzoff, E. D., Kron, S. J., Mumford, D., Onuchic, J. N., Scherer, N. F., Sumners, D. L., and Kopell, N. J. 2003, &ldquo;Educating Future Scientists,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=SCIEAS&to_v=301&to_p=1485&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1126%2Fscience.1086133">Science, <b>301</b>, 1485</a>. <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=SCIEAS&to_v=301&to_p=1485&to_loc=MEDLINE&to_url=http%3A%2F%2Fwww.ncbi.nlm.nih.gov%2Fentrez%2Fquery.fcgi%3Fcmd%3DRetrieve%26db%3DPubMed%26list_uids%3D12970550%26dopt%3DCitation">[MEDLINE]</a>
+                            | <a href="#citeref_c20" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c21">Trumbull, D. J., Bonney, R., Bascom, D., and Cabral, A. 2000, &ldquo;Thinking Scientifically During Participation in a Citizen-Science Project,&rdquo; <a href="http://link.aip.org/link/?&l_creator=getabs-normal1&l_dir=FWD&l_rel=CITES&from_key=AERSCZ000009000001010103000001&from_keyType=CVIPS&from_loc=AIP&to_j=ZZZZZZ&to_v=84&to_p=265&to_loc=DOI&to_url=http%3A%2F%2Fdx.doi.org%2F10.1002%2F%28SICI%291098-237X%28200003%2984%3A2%3C265%3A%3AAID-SCE7%3E3.0.CO%3B2-5">Science Education, <b>84</b>, 265</a>.
+                            | <a href="#citeref_c21" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c22">Voida, A., Mynatt, E. D., Erickson, T., and Kellogg, W. A. 2004, &ldquo;Interviewing Over Instant Messaging,&rdquo; Conference on Human Factors in Computing Systems (Vienna, Austria).
+                            | <a href="#citeref_c22" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                            <li id="c23">Williams, T. R. 2001, &ldquo;Reconsidering the History of the AAVSO,&rdquo; Journal of the American Association of Variable Star Observers, <b>29</b>, 132.
+                            | <a href="#citeref_c23" class="firscit"><img src="/img/icons/firstcitation.png" alt="First Citation" /> first citation in article</a>
+                        </li>
+                                       </ol>    
+                   </div>  
+
+            
+            
+        
+    		            </div>
+		            		            <div id="fulltext-related">
+					    <div class="relatedarticles_listing"></div>
+		            </div>
+		        </div>
+ 		  </div>     	
+</div>
+      	
+      
+                                                              
+<div id="fulltext_footer">
+            &copy;                        
+                                               2010
+                                                        <em>The American Astronomical Society</em>
+                </div>
+
+		<div id="darken"></div>
+		<div id="fulltextwrapper">
+		    <div class="exitbutton"><a href="#" onclick="return closeFulltext();"><img src="/img/fulltext/closeimg.png" alt="close" style="border:none;" /></a></div>
+		    <div id="fulltextwrapper_content"></div>
+		</div> 
+				<!-- <div id="mapthiswindow"><div id="mapthiswindow_inner"><img src="/img/aqs/small-x.png" style="float:right" onclick="$('#mapthiswindow').hide()" class="looklikelink" alt="Close Map Window" /><p id="mapthiswindow-title"></p><div id="mapthiscanvas"></div></div></div> -->
+		
+		
+		 		<script type="text/javascript">
+		//<![CDATA[
+		flowplayer("a.flowPlayer", "/modules/flowplayer-3.1.5.swf");
+		//]]>
+		</script>
+		
+		                     
+      
+          
+                                        
+        
+                                
+                                
+        
+        
+                
+        <div id="aqsTemplate" style="display:none;">
+                                            <h3>Find articles by <strong>AUTHORNAME</strong></h3>
+                <div class="aqsleft"><a id="mlsearchUrlDefault" href="/search?sortby=newestdate&q=AUTHORURLTOKEN&searchzone=2&searchtype=searchin&faceted=faceted&key=AERSCZ&possible1=AUTHORURLTOKEN&possible1zone=author&alias=&displayid=AAS"><img src="/img/aqs/author_jr.gif" style="height:15px" alt ="This Publication" />This Publication</a></div>
+                
+                   
+        
+        
+                                
+        
+        <div class="aqsleft">
+            <a href="http://scitation.aip.org/vsearch/servlet/VerityServlet?KEY=FREESR&possible1=AUTHORURLTOKEN&possible1zone=author&maxdisp=25&smode=strresults"><img src="/img/aqs/author_sc.gif" style="height:15px" alt ="Scitation" />Scitation</a>
+        </div>
+        
+                           
+        
+        
+                                
+        
+        <div class="aqsleft">
+            <a href="http://scitation.aip.org/vsearch/servlet/VerityServlet?KEY=SPIN&possible1=AUTHORURLTOKEN&possible1zone=author&maxdisp=25&smode=strresults&aqs=true"><img src="/img/aqs/author_sp.gif" style="height:15px" alt ="SPIN" />SPIN</a>
+        </div>
+        
+                           
+        
+        
+                                
+        
+        <div class="aqsleft">
+            <a href="http://www.scitopia.org/scitopia/?expression=AUTHORURLTOKEN"><img src="/img/aqs/author_st.gif" style="height:15px" alt ="Scitopia" />Scitopia</a>
+        </div>
+
+        
+                           
+        
+        
+                                
+        
+        <div class="aqsleft">
+            <a href="http://scholar.google.com/scholar?q=AUTHORURLTOKEN"><img src="/img/aqs/author_gs.gif" style="height:15px" alt ="Google Scholar" />Google Scholar</a>
+        </div>  
+
+        
+                           
+        
+        
+                                
+        
+        <div class="aqsleft">
+            <a href="http://www.ncbi.nlm.nih.gov/sites/entrez?dopt=DocSum&cmd=Search&db=pubmed&term=AUTHORURLTOKEN"><img src="/img/aqs/author_pm.gif" style="height:15px" alt ="PubMed" />PubMed</a>
+        </div>
+
+        
+                         
+                <br class="clearit" />
+                    </div>
+      
+                      
+</body>
+</html>   
+   
+     
+                                              
+            
+      
+      

@@ -1,0 +1,316 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <title>RecaptchaRegisterPlugin - Trac Hacks - Plugins Macros etc. - Trac</title><link rel="start" href="/wiki" /><link rel="search" href="/search" /><link rel="help" href="/wiki/TracGuide" /><link rel="stylesheet" href="/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/chrome/redirect/css/redirect.css" type="text/css" /><link rel="stylesheet" href="/chrome/tags/css/tractags.css" type="text/css" /><link rel="stylesheet" href="/chrome/common/css/wiki.css" type="text/css" /><link rel="stylesheet" href="/pygments/trac.css" /><link rel="icon" href="/favicon.ico" type="image/x-icon" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /><link rel="alternate" href="/wiki/RecaptchaRegisterPlugin?format=txt" title="Plain Text" type="text/x-trac-wiki" /><style type="text/css">/* vim: syntax=css
+*/
+form, input, body {
+	background-image: url(/chrome/site/trachacks_bg.png);
+	background-position: 64px 64px;
+}
+
+#ticket form {
+	background-image: none;
+}
+
+form#search {
+	background: transparent;
+}
+
+pre, tt {
+	color: #600;
+}
+
+.ext-link {
+	background-image: none;
+	padding-left: 0px;
+	border-bottom: solid 1px;
+}
+
+/* For Mozilla and Safari */
+*>#content {
+	padding: 0;
+	margin: 15px 15px 0 15px;
+	text-align: left;
+	min-height: 770px;
+}
+
+/* For IE */
+* html #content {
+	padding: 0;
+	margin: 15px 15px 0 15px;
+	text-align: left;
+	height: 770px;
+}
+
+#newsflash {
+	border: solid 2px #8f8;
+	width: 400px;
+	float: right;
+	background: #dfd;
+	font-size: 0.8em;
+	margin: 0em;
+	margin-left: 1em;
+	padding: 0.5em 1em 0.5em 1em;
+}
+
+#newsflash h1 {
+	font-size: 1.2em;
+	padding: 0em;
+	margin: 0em;
+}
+
+#newsflash .post hr {
+	display: none;
+}
+
+span.tagcount {
+	color: #999;
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+#newticketguide {
+ background: #fdc;
+ border: 2px solid #d00;
+ font-style: italic;
+ padding: 0 .5em;
+ margin: 1em 0;
+ text-align: center;
+}
+
+#newticketguide h1 {
+	font-variant: small-caps;
+	letter-spacing: 0.3em;
+	font-weight: bold;
+}
+
+#newticketguide hr {
+	padding: 0;
+	margin: 1em auto;
+	width: 40%;
+	text-align: center;
+	border: 1px dotted #d00;
+}
+</style>
+ <script type="text/javascript" src="/chrome/common/js/trac.js"></script>
+</head>
+<body>
+
+
+<div id="banner">
+
+<div id="header"><a id="logo" href="http://trac-hacks.org/"><img src="/chrome/site/trachacks_banner.png" width="300" height="73" alt="Trac Hacks" /></a><hr /></div>
+
+<form id="search" action="/search" method="get">
+ <div>
+  <label for="proj-search">Search:</label>
+  <input type="text" id="proj-search" name="q" size="10" accesskey="f" value="" />
+  <input type="submit" value="Search" />
+  <input type="hidden" name="wiki" value="on" />
+  <input type="hidden" name="changeset" value="on" />
+  <input type="hidden" name="ticket" value="on" />
+ </div>
+</form>
+
+
+
+<div id="metanav" class="nav"><ul><li class="first"><a href="/login">Login</a></li><li><a href="/settings">Settings</a></li><li><a accesskey="6" href="/wiki/TracGuide">Help/Guide</a></li><li><a href="/about">About Trac</a></li><li><a href="/register">Register</a></li><li class="last"><a href="/reset_password">Forgot your password?</a></li></ul></div>
+</div>
+
+<div id="mainnav" class="nav"><ul><li class="active first"><a accesskey="1" href="/wiki">Wiki</a></li><li><a accesskey="2" href="/timeline">Timeline</a></li><li><a href="/browser">Browse Source</a></li><li><a href="/report">View Tickets</a></li><li><a accesskey="7" href="/newticket">New Ticket</a></li><li><a accesskey="4" href="/search">Search</a></li><li><a href="/tags" accesskey="T">Tags</a></li><li class="last"><a href="/blog">Blog</a></li></ul></div>
+<div id="main">
+
+
+
+
+<div id="ctxtnav" class="nav">
+ <h2>Wiki Navigation</h2>
+ <ul>
+   <li><a href="/wiki">Start Page</a></li>
+   <li><a href="/wiki/TitleIndex">Index by Title</a></li>
+   <li><a href="/wiki/RecentChanges">Index by Date</a></li>
+   <li class="last"><a href="/wiki/RecaptchaRegisterPlugin?action=diff&amp;version=13">Last Change</a></li>
+ </ul>
+ <hr />
+</div>
+
+<div id="content" class="wiki">
+
+ 
+  
+  
+   
+   <div class="wikipage">
+    <div id="searchable"><h1 id="RecaptchaRegisterPlugin">Recaptcha Register Plugin</h1>
+<h2 id="Description">Description</h2>
+<p>
+This hack adds a <a class="ext-link" href="http://recaptcha.net/"><span class="icon">reCAPTCHA</span></a> that the user must pass before registering. You must have the <a class="wiki" href="/wiki/AccountManagerPlugin">AccountManagerPlugin</a> installed.
+</p>
+<p>
+<strong>Fork:</strong> I have made a small <a class="ext-link" href="https://bitbucket.org/mitar/trac-recaptcharegister"><span class="icon">fork on Bitbucket</span></a> with some improvements/fixes. Feel free to <a class="ext-link" href="https://bitbucket.org/mitar/trac-recaptcharegister/issues"><span class="icon">suggest new</span></a>.
+</p>
+<h2 id="BugsFeatureRequests">Bugs/Feature Requests</h2>
+<p>
+Existing bugs and feature requests for <a class="wiki" href="/wiki/RecaptchaRegisterPlugin">RecaptchaRegisterPlugin</a> are 
+<a class="report" href="/report/9?COMPONENT=RecaptchaRegisterPlugin">here</a>.
+</p>
+<p>
+If you have any issues, create a 
+<a href="http://trac-hacks.org/newticket?component=RecaptchaRegisterPlugin&amp;owner=alecu">new ticket</a>.
+</p>
+<h2 id="Download">Download</h2>
+<p>
+Download the zipped source from <a href="http://trac-hacks.org/changeset/latest/recaptcharegisterplugin?old_path=/&amp;filename=recaptcharegisterplugin&amp;format=zip" title="Download the recaptcharegisterplugin hack">here</a>.
+</p>
+<h2 id="Source">Source</h2>
+<p>
+You can check out <a class="wiki" href="/wiki/RecaptchaRegisterPlugin">RecaptchaRegisterPlugin</a> from <a href="http://trac-hacks.org/svn/recaptcharegisterplugin">here</a> using Subversion, or <a class="source" href="/browser/recaptcharegisterplugin">browse the source</a> with Trac.
+</p>
+<h2 id="Usage">Usage</h2>
+<h3 id="InstalltheAccountManagerplugin"><a href="/wiki/Install" class="wiki">Install</a> the Account Manager plugin</h3>
+<p>
+Please see <a class="wiki" href="/wiki/AccountManagerPlugin">AccountManagerPlugin</a> page. Make sure you have <strong>disabled</strong> the <a class="wiki" href="/wiki/AccountManagerPlugin#RegistrationModule">RegistrationModule</a>, since you'll be using this registration instead.
+</p>
+<h3 id="Installtherecaptchapythonmodule"><a href="/wiki/Install" class="wiki">Install</a> the recaptcha python module</h3>
+<p>
+<a class="wiki" href="/wiki/RecaptchaRegisterPlugin">RecaptchaRegisterPlugin</a> <strong>depends</strong> on this module. Make sure you install it. If not installed, then trac will not show the <a class="wiki" href="/wiki/RecaptchaRegisterPlugin">RecaptchaRegisterPlugin</a>, and will only show an error if you setup trac's logging.
+</p>
+<pre class="wiki">easy_install recaptcha_client
+</pre><h3 id="Installthisplugin"><a href="/wiki/Install" class="wiki">Install</a> this plugin</h3>
+<pre class="wiki">easy_install http://trac-hacks.org/svn/recaptcharegisterplugin/0.11
+</pre><h3 id="SetupreCAPTCHA">Setup reCAPTCHA</h3>
+<p>
+You need to make an account at <a class="ext-link" href="http://recaptcha.net/"><span class="icon">http://recaptcha.net/</span></a> to receive your public and private keys. 
+</p>
+<p>
+Edit your conf/trac.ini file and add these lines, including your public and private reCAPTCHA keys:
+</p>
+<pre class="wiki">[components]
+recaptcharegister.* = enabled
+
+[recaptcha]
+public_key = 
+private_key =
+</pre><p>
+That should be it! Email me if you have problems. 
+</p>
+<h2 id="About">About</h2>
+<p>
+This plugin is being developed for <a class="ext-link" href="http://trac.usla.org.ar"><span class="icon">USLA tracs</span></a>, a service by and for the Free Software Users of Argentina.
+</p>
+<p>
+It is loosely based on the work of <a class="wiki" href="/wiki/TracRecaptchaPlugin">TracRecaptchaPlugin</a>, so it's GPL licensed as well.
+</p>
+<h2 id="RecentChanges">Recent Changes</h2>
+<p>
+<p>
+<strong><a class="changeset" href="/changeset/9846" title="Adding 0.10 branch to repository. Fixes #5726.">[9846]</a> by <a href="/wiki/rjollos" class="wiki">rjollos</a> on 02/10/11 20:18:57</strong>
+</p>
+<p>
+Adding 0.10 branch to repository. Fixes <a class="closed ticket" href="/ticket/5726" title="[Patch] Support for Trac 0.10 (closed)">#5726</a>.
+</p>
+<p>
+<strong><a class="changeset" href="/changeset/5064" title="`req.args.args` -&gt; `req.args.get`
+">[5064]</a> by <a href="/wiki/s0undt3ch" class="wiki">s0undt3ch</a> on 12/26/08 20:04:02</strong>
+</p>
+<p>
+<tt>req.args.args</tt> -&gt; <tt>req.args.get</tt>
+</p>
+<p>
+<strong><a class="changeset" href="/changeset/4944" title="New version of the RecaptchaRegisterPlugin.
+It no longer requires one to  ...">[4944]</a> by <a href="/wiki/s0undt3ch" class="wiki">s0undt3ch</a> on 12/03/08 18:29:58</strong>
+</p>
+<p>
+New version of the <a class="wiki" href="/wiki/RecaptchaRegisterPlugin">RecaptchaRegisterPlugin</a>.
+It no longer requires one to disable the <a class="wiki" href="/wiki/AccountManagerPlugin">AccountManagerPlugin</a> registration module.
+It no longer provides it's own template, it's not necessary.
+It's now also fully configurable on the <a href="/wiki/admin" class="wiki">admin</a> panel under the <a class="wiki" href="/wiki/AccountManagerPlugin">AccountManagerPlugin</a> configuration options.
+New options introduced:
+</p>
+<ul><li><strong><tt>lang</tt></strong> so that an <a href="/wiki/admin" class="wiki">admin</a> can configure the language for the reCAPTCHA form(this introduces the option for the auto language selection based on user preferences for trac 0.12).
+</li></ul><p>
+Also, if a Trac <a href="/wiki/admin" class="wiki">admin</a> has not yet configured the reCAPTCHA keys, a link to the correct reCAPTCHA page to generate a new "key pair" will be shown which will also include the current domain plus a name of this plug so that reCPATCHA can track usage statistics of the several plugins there are.
+</p>
+<p>
+<strong><a class="changeset" href="/changeset/4915" title="branching to test some s0undt3ch ideas
+">[4915]</a> by <a href="/wiki/alecu" class="wiki">alecu</a> on 12/02/08 06:23:02</strong>
+</p>
+<p>
+branching to test some <a href="/wiki/s0undt3ch" class="wiki">s0undt3ch</a> ideas
+</p>
+
+</p>
+<h2 id="AuthorContributors">Author/Contributors</h2>
+<p>
+<strong>Author:</strong> <a class="wiki" href="/wiki/alecu">alecu</a> <br />
+<strong>Contributors:</strong>
+</p>
+</div>
+   </div>
+   
+  
+   <ul class="tags">
+    <lh>Tags</lh>
+    
+     <li><a href="/wiki/0.11" title="Hacks for Trac 0.11.x ">0.11</a></li>
+    
+     <li><a href="/wiki/0.12" title="Hacks for Trac 0.12 ''(trunk)'' ">0.12</a></li>
+    
+     <li><a href="/tags/%27accountmanager%27" title="Objects tagged ''accountmanager''">accountmanager</a></li>
+    
+     <li><a href="/wiki/alecu" title="alecu ">alecu</a></li>
+    
+     <li><a href="/tags/%27antirobot%27" title="Objects tagged ''antirobot''">antirobot</a></li>
+    
+     <li><a href="/tags/%27captcha%27" title="Objects tagged ''captcha''">captcha</a></li>
+    
+     <li><a href="/wiki/mitar" title="mitar ">mitar</a></li>
+    
+     <li><a href="/wiki/plugin" title="Plugins ">plugin</a></li>
+    
+   </ul>
+  
+  
+   <div class="buttons">
+     <form method="get" action="/wiki/RecaptchaRegisterPlugin"><div>
+      <input type="hidden" name="action" value="edit" />
+      <input type="submit" value="Edit this page" accesskey="e" />
+     </div></form>
+      <form method="get" action="/attachment/wiki/RecaptchaRegisterPlugin"><div>
+       <input type="hidden" name="action" value="new" />
+       <input type="submit" value="Attach file" />
+      </div></form>
+   </div>
+  
+  <script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+ 
+ 
+</div>
+
+<script type="text/javascript">searchHighlight()</script>
+<div id="altlinks"><h3>Download in other formats:</h3><ul><li class="first last"><a href="/wiki/RecaptchaRegisterPlugin?format=txt">Plain Text</a></li></ul></div>
+
+</div>
+
+<div id="footer">
+ <hr />
+ <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/chrome/common/trac_logo_mini.png" height="30" width="107"
+   alt="Trac Powered"/></a>
+ <p class="left">
+  Powered by <a href="/about"><strong>Trac 0.10.6dev</strong></a><br />
+  By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+ </p>
+ <p class="right">
+  Hosting sponsored by <a href="http://www.tgc.de" style="border-bottom: 0;"><img src="/chrome/site/tgc-logo-30x210.png" alt="true global communications GmbH" /></a>
+ </p>
+</div>
+
+
+
+ </body>
+</html>
+

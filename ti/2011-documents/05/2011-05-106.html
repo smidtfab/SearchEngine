@@ -1,0 +1,753 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Quality Control</title>
+  <meta name="description" content="Quality Control - In engineering and manufacturing, quality control and quality engineering are used in developing systems to ensure products or services are ..." />
+  <meta name="keywords" content="quality control,six sigma,process improvements,standard deviations,shewhart cycle,critical tolerances,quality improvement process,sigma levels,quality assurance management" />
+  <meta http-equiv="Content-Language" content="en" />
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+  <link rel="stylesheet" type="text/css" href="http://trigger.bukisa.com/trigger/fc/?l=en&amp;f=reset|screen|en_main|plugins/alerts|plugins/shadowbox|buttons|plugins/validator|topics|publish" media="all" />
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://trigger.bukisa.com/trigger/fc/?f=ie/ie7" media="all" />
+<![endif]--><!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://trigger.bukisa.com/trigger/fc/?f=ie/ie8" media="all" />
+<![endif]-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  // GA Async Version
+  var _gaq = _gaq || [];
+  _gaq.push(
+    ['_setAccount', 'UA-3657490-1'],
+            ['_setCustomVar', 4, 'RevShareType', 'None', 3],
+            ['_setCustomVar', 1, 'ContentType', 'topics', 3],   
+    ['_setCustomVar', 5, 'PublishDate', '2010-04', 3],
+        ['_trackPageview']
+      );
+  </script>
+   
+  <script type="text/javascript" src="http://trigger.bukisa.com/trigger/fj/?l=en&amp;f=core|buttons|plugins/alerts|plugins/qtip|plugins/shadowbox|interface/effects|swfobject-1.5|engine|plugins/validator/validator|plugins/validator/en|validate|plugins/autogrow|topics"></script>
+ 
+  <link rel="canonical" href="http://www.bukisa.com/topics/quality-control" />  <link rel="search" type="application/opensearchdescription+xml" href="http://www.bukisa.com/bukisa.xml" title="Bukisa.com search" />
+    <meta property="fb:app_id" content="207200454730" />
+  </head>
+<body style="background: url(http://assets.bukisa.com/img/topics/pg_bg.gif) repeat-x top;">
+
+
+<div id="wrapper">
+  <div id="header">
+    <div class="logo">
+      <a href="/"><img src="http://assets.bukisa.com/img/topics/bukisa-logo.png" width="186" height="55" alt="Share your Knowledge" class="png" /></a>
+      <span>Share your Knowledge</span>
+    </div>
+    <div class="header_section">
+      <div class="row">
+                        <div class="top_link no_bg">
+          Hi, please 
+          <a onclick="_gaq.push(['_trackEvent', 'General', 'Login']);" title="Login" href="http://www.bukisa.com/login/popup?back=%2Ftopics%2Fquality-control" rel="shadowbox;height=320;width=610">Log In</a> or
+          <a onclick="fbLogin('/topics/quality-control');_gaq.push(['_trackEvent', 'General', 'FB Connect Header']);" href="#" title="Log in with Facebook" id="login_with_facebook">Log in via <img src="http://assets.bukisa.com/img/social_icons/facebook_16.png" width="16" height="16" alt="Log in with Facebook" class="png" /></a> 
+          or
+          <a onclick="_gaq.push(['_trackEvent', 'Campaigns', 'Internal', 'Join Header']);" href="http://www.bukisa.com/join">Join</a> now
+        </div>
+              </div>
+      <div class="big_tab_left"></div>
+      <div class="big_tab">
+        <div class="big_tab_bx">
+          <div class="search_box">
+            <form action="/search">
+            <input name="search_btn" type="submit" value="search" class="search_btn buttons" />
+            <input name="q" type="text" value="Learn something new, Search Bukisa..." onclick="clickclear(this, 'Learn something new, Search Bukisa...')" onblur="clickrecall(this,'Learn something new, Search Bukisa...')" maxlength="200" size="30" class="search_txt" />
+            </form>
+          </div>
+                    <div class="tab_link publish"><a href="/login">Publish Content</a></div>          
+          <div class="tab_link featured"><a href="/featured">Featured Content</a></div>
+					<div class="tab_link faq"><a href="/faq">Get Help</a></div>
+                  </div>
+      </div>
+      <div class="big_tab_right"></div>
+    </div>
+    <div id="top_navi">
+    	<div class="cat_title">Categories</div>
+<ul class="top_navigation"> 
+      <li><a href="http://www.bukisa.com/channels/art-entertainment">Art &amp; Entertainment</a></li>
+    <li><a href="http://www.bukisa.com/channels/business-finance">Business &amp; Finance</a></li>
+    <li><a href="http://www.bukisa.com/channels/culture-society">Culture &amp; Society</a></li>
+    <li><a href="http://www.bukisa.com/channels/events-holidays">Events &amp; Holidays</a></li>
+    <li><a href="http://www.bukisa.com/channels/fashion-beauty">Fashion &amp; Beauty</a></li>
+    <li><a href="http://www.bukisa.com/channels/health-nutrition">Health &amp; Nutrition</a></li>
+            
+   
+  <li id="navi-more"><a href="#">More</a>
+    <ul>
+            <li><a href="http://www.bukisa.com/channels/automotive">Automotive</a></li>
+            <li><a href="http://www.bukisa.com/channels/education">Education</a></li>
+            <li><a href="http://www.bukisa.com/channels/family">Family</a></li>
+            <li><a href="http://www.bukisa.com/channels/food">Food &amp; Drinks</a></li>
+            <li><a href="http://www.bukisa.com/channels/hobbies-crafts">Hobbies &amp; Crafts</a></li>
+            <li><a href="http://www.bukisa.com/channels/home-garden">Home &amp; Garden</a></li>
+            <li><a href="http://www.bukisa.com/channels/internet">Internet</a></li>
+            <li><a href="http://www.bukisa.com/channels/pets">Pets</a></li>
+            <li><a href="http://www.bukisa.com/channels/relationships">Relationships</a></li>
+            <li><a href="http://www.bukisa.com/channels/religion-spirituality">Religion &amp; Spirituality</a></li>
+            <li><a href="http://www.bukisa.com/channels/reviews">Reviews</a></li>
+            <li><a href="http://www.bukisa.com/channels/science-technology">Science &amp; Technology</a></li>
+            <li><a href="http://www.bukisa.com/channels/self-improvement">Self Improvement</a></li>
+            <li><a href="http://www.bukisa.com/channels/sports-fitness">Sports &amp; Fitness</a></li>
+            <li><a href="http://www.bukisa.com/channels/travel">Travel</a></li>
+          </ul>
+  </li>
+  </ul>			    </div>
+  </div>
+  <div id="tp_content">
+  <div class="breadcrumbs">You are in: 
+    <a href="http://www.bukisa.com/" title="Home">Home</a> &raquo;    Quality Control</div>
+ 
+
+<div id="tp_column_left">
+
+  
+  
+  <h1>Quality Control</h1>
+  
+    <div style="margin-bottom:10px;margin-top:10px;float:left;">
+      <script type="text/javascript"><!--
+  google_ad_client = "pub-8380061879300117";
+  /* Bukisa Topics - 468x60 Text */
+  google_ad_slot = "3151628691";
+  google_ad_width = 468;
+  google_ad_height = 60;
+  //-->
+  </script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>  
+  </div>
+
+    <div class="tp_grey_box">
+  	    <div class="tp_top">
+      <div class="tp_bottom">
+                <p>In engineering and manufacturing, quality control and quality engineering are used in developing systems to ensure products or services are designed and produced to meet or exceed customer requirements.<br /><br />Quality control is the branch of engineering and manufacturing which deals with assurance and failure testing in design and production of products or services, to meet or exceed customer requirements. (Wikipedia)</p>
+      </div>
+    </div>
+  </div>
+    
+      
+<h2 class="tp_latest_data">
+  <span>Quality Control Related Content From Bukisa</span>
+  </h2>
+
+<div class="tp_latest_data_box">
+  <div class="tp_box_top">
+        <div class="tp_box_row">
+      <div class="tp_listing_img">
+        <img src="http://assets.bukisa.com/img/ctype_1.gif" width="70" height="70" />
+              </div>
+      <div class="tp_listing_text">
+        <h3><a href="http://www.bukisa.com/articles/415666_quality-control-by-managed">Quality Control by Managed</a></h3>
+        <p>quality control involves all factors in production.</p>
+      </div>
+    </div>    
+        <div class="tp_box_row">
+      <div class="tp_listing_img">
+        <img src="http://assets.bukisa.com/img/ctype_1.gif" width="70" height="70" />
+              </div>
+      <div class="tp_listing_text">
+        <h3><a href="http://www.bukisa.com/articles/213886_quality-systems-management">Quality  Systems Management</a></h3>
+        <p>What are the points you will keep in mind about quality control and inspection, if you are the quality systems manager of a rubber products manufacturing unit ?</p>
+      </div>
+    </div>    
+        <div class="tp_box_row tp_last_row">
+      <div class="tp_listing_img">
+        <img src="http://assets.bukisa.com/img/ctype_2.gif" width="70" height="70" />
+                <span class="tp_l_play_btn"><img src="http://assets.bukisa.com/img/topics/play_btn.png" alt="Play" class="png" /></span>
+              </div>
+      <div class="tp_listing_text">
+        <h3><a href="http://www.bukisa.com/videos/92027_how-to-test-the-quality-of-cigars">How to Test the Quality of Cigars</a></h3>
+        <p>Learn about the ultimate quality control: weighing, testing, and documenting roller performance at the La Aurora factory in the Dominican Republic.</p>
+      </div>
+    </div>    
+      </div>
+  <div class="tp_box_bottom">
+        <div id="bl-load-more-target" class="tp_icon_show_more">
+    	<a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'Show More', 'Bukisa Content']);Load.bukisa_latest('Quality+Control', 3);">Show more</a>
+  	</div>
+  </div>
+</div>
+
+  
+<h2 class="tp_related">Related Quality Control Terms </h2>
+
+<div class="tp_related_box">
+  <div class="tp_box_top">
+         
+    <div class="tp_box_row">
+            <div class="tp_listing_text">
+        <h3><a onclick="Shadowbox.open({content:'/topics/terms/Quality_control_%28disambiguation%29',player:'iframe',width:800,height:600});" href="javascript:void(0);" title="Quality Control (disambiguation) (Source: Wikipedia)">Quality Control (disambiguation)</a></h3>
+        <p>Quality control is a process for maintaining proper standards in manufacturing.<br /><br />Quality control may also apply to:<br /><br />Quality Control (album), the Jurassic 5 musical collective's second album, released in 2000A song from Summer Girl, the fifth LP from Smash Mouth (<a onclick="Shadowbox.open({content:'/topics/terms/Quality_control_(disambiguation)',player:'iframe',width:800,height:600});" href="javascript:void(0);" title="Quality Control (disambiguation) (Source: Wikipedia)">read more</a>)</p>
+      </div>
+    </div>
+         
+    <div class="tp_box_row">
+            <div class="tp_listing_text">
+        <h3><a onclick="Shadowbox.open({content:'/topics/terms/W._Edwards_Deming',player:'iframe',width:800,height:600});" href="javascript:void(0);" title="W. Edwards Deming (Source: Wikipedia)">W. Edwards Deming</a></h3>
+        <p>William Edwards Deming (October 14, 1900 – December 20, 1993) was an American statistician,  professor, author, lecturer, and consultant.  Deming is widely credited with improving production in the United States during the Cold War, although he is perhaps best known for his work in Japan.  There, from 1950 onward he taught top management how to improve design (and thus service), product quality, testing and sales (the last through global markets) through various methods, including the application of statistical methods.  (<a onclick="Shadowbox.open({content:'/topics/terms/W._Edwards_Deming',player:'iframe',width:800,height:600});" href="javascript:void(0);" title="W. Edwards Deming (Source: Wikipedia)">read more</a>)</p>
+      </div>
+    </div>
+         
+    <div class="tp_box_row tp_last_row">
+            <div class="tp_listing_text">
+        <h3><a onclick="Shadowbox.open({content:'/topics/terms/Quality_assurance',player:'iframe',width:800,height:600});" href="javascript:void(0);" title="Quality Assurance (Source: Wikipedia)">Quality Assurance</a></h3>
+        <p>Quality assurance, or QA for short, refers to planned and systematic production processes that provide confidence in a product's suitability for its intended purpose. It is a set of activities intended to ensure that products (goods and/or services) satisfy customer requirements in a systematic, reliable fashion. QA cannot absolutely guarantee the production of quality products, unfortunately, but makes this more likely.   (<a onclick="Shadowbox.open({content:'/topics/terms/Quality_assurance',player:'iframe',width:800,height:600});" href="javascript:void(0);" title="Quality Assurance (Source: Wikipedia)">read more</a>)</p>
+      </div>
+    </div>
+      </div>
+  <div class="tp_box_bottom">
+        <div id="wt-load-more-target" class="tp_icon_related">
+    	<a href="javascript:void(0);" onclick="Load.wiki_terms('Quality+Control', 3, '556216|30363|556217');">Show more</a>
+  	</div>
+  	  </div>
+</div>
+
+  
+  <div class="tp_module_container">
+	<h2 id="tp_flickr" class="tp_flickr">
+		<span class="tp_edit_flickr">Photos</span>
+			</h2>
+	
+		
+		<div class="tp_flickr module_content_container">
+	  <div id="f_left_arrow">
+	    &nbsp;
+	  </div>
+	  <div id="f_placement">
+	    	    <div class="tp_flickr_thumb">
+	      <a onclick="_gaq.push(['_trackPageview']);Shadowbox.open({content:'http://www.flickr.com/photos/29456680@N06/3988872599/#/photos/29456680@N06/3988872599/lightbox/',player:'iframe',width:740,height:560});" href="javascript:void(0);" rel="nofollow">
+	        
+	      						<img alt="090925-A-4422M-001" width="100" height="68" border="0" src="http://farm3.static.flickr.com/2560/3988872599_d76e8e78e4_t.jpg" />
+	      </a>
+	    </div>
+	    	    <div class="tp_flickr_thumb">
+	      <a onclick="_gaq.push(['_trackPageview']);Shadowbox.open({content:'http://www.flickr.com/photos/41284017@N08/5216051059/#/photos/41284017@N08/5216051059/lightbox/',player:'iframe',width:740,height:560});" href="javascript:void(0);" rel="nofollow">
+	        
+	      						<img alt="10di1555-51" width="100" height="68" border="0" src="http://farm6.static.flickr.com/5289/5216051059_136b5818d4_t.jpg" />
+	      </a>
+	    </div>
+	    	    <div class="tp_flickr_thumb">
+	      <a onclick="_gaq.push(['_trackPageview']);Shadowbox.open({content:'http://www.flickr.com/photos/41284017@N08/5216079185/#/photos/41284017@N08/5216079185/lightbox/',player:'iframe',width:740,height:560});" href="javascript:void(0);" rel="nofollow">
+	        
+	      						<img alt="10di1555-47" width="100" height="68" border="0" src="http://farm5.static.flickr.com/4132/5216079185_b2870606df_t.jpg" />
+	      </a>
+	    </div>
+	    	    <div class="tp_flickr_thumb">
+	      <a onclick="_gaq.push(['_trackPageview']);Shadowbox.open({content:'http://www.flickr.com/photos/12836528@N00/793549635/#/photos/12836528@N00/793549635/lightbox/',player:'iframe',width:740,height:560});" href="javascript:void(0);" rel="nofollow">
+	        
+	      						<img alt="Crawdad Network-First Chapter of Deming's Out of the Crisis" width="100" height="68" border="0" src="http://farm2.static.flickr.com/1341/793549635_c2a97c0393_t.jpg" />
+	      </a>
+	    </div>
+	    	    <div class="tp_flickr_thumb">
+	      <a onclick="_gaq.push(['_trackPageview']);Shadowbox.open({content:'http://www.flickr.com/photos/34728058@N08/4173995922/#/photos/34728058@N08/4173995922/lightbox/',player:'iframe',width:740,height:560});" href="javascript:void(0);" rel="nofollow">
+	        
+	      						<img alt="Army engineers hold quality control class for Spanish contractors" width="100" height="68" border="0" src="http://farm3.static.flickr.com/2711/4173995922_617a720a73_t.jpg" />
+	      </a>
+	    </div>
+	    	  </div>
+	  <div id="f_right_arrow">
+	    <a href="javascript:void(0);" onclick="Flickr.load('', 5);"><img src="http://assets.bukisa.com/img/topics/flickr_right_arrow.gif" alt="" class="tp_next_imgs" /></a>
+	  </div>
+	  <div class="tp_flickr_bottom clearfix">
+	    <span>Powered by</span><a rel="nofollow" href="http://www.flickr.com/"><img src="http://assets.bukisa.com/img/topics/flickr_logo.gif" alt="flickr" title="flickr" /></a>
+	  </div>
+	</div>
+    <div class="clear"></div>
+</div>
+
+  
+  <div class="ad_verti">
+            <script type="text/javascript"><!--
+    google_ad_client = "pub-8380061879300117";
+    /* Bukisa Topics, 160x600, Left */
+    google_ad_slot = "9831713333";
+    google_ad_width = 160;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+      </div>
+
+  <div class="tp_sub_column">
+    <h2 class="tp_powered_google">Latest News About Quality Control</h2>
+<div class="tp_powered_by_google"><a rel="nofollow" href="http://www.google.com/">(Powered by Google)</a></div>
+
+<div class="tp_google_data_box" id="tp_google_news">
+  <div class="tp_box_top">  
+            <div class="tp_box_row">
+            <div class="tp_listing_img">
+        <img src="http://www.cbc.ca/gfx/images/sports/photos/2011/03/31/584-kershaw-clayton.jpg" style="width:80px;height:auto;" />
+      </div>
+            <div class="tp_listing_text">
+        <h3><a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Google News']);" rel="nofollow" target="_blank" href="http://www.truebluela.com/2011/4/2/2086915/dodgers-vs-giants-ted-lilly-matt-cain">Dodgers Look To Lilly To Continue Quality Control</a></h3>
+        <p>by Eric Stephen on Apr 2, 2011 11:32 AM PDT in Game Previews The Dodgers got <b>quality</b> starts in each of their first two games, and hope for a third today from Ted Lilly, who heads to the hill against Matt Cain and the Giants. Lilly had 22 <b>quality</b> starts <b>...</b></p>
+      </div>    
+    </div>
+        <div class="tp_box_row">
+            <div class="tp_listing_img">
+        <img src="http://cdn.bleacherreport.net/images_root/images/photos/001/169/016/natinals2_crop_340x234.jpeg?1301681335" style="width:80px;height:auto;" />
+      </div>
+            <div class="tp_listing_text">
+        <h3><a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Google News']);" rel="nofollow" target="_blank" href="http://bleacherreport.com/articles/652022-washington-nationals-is-there-any-quality-control-at-nats-park">Washington Nationals: Is There Any Quality Control at Nat&#39;s Park</a></h3>
+        <p>I&#39;m sure all organizations have goof-ups here and there but with two in two days and the Natinals incident last season, one has to wonder what kind of <b>quality control</b> that team has. And if they can&#39;t even spell the team name (or starting pitcher&#39;s <b>...</b></p>
+      </div>    
+    </div>
+        <div class="tp_box_row tp_last_row">
+            <div class="tp_listing_img">
+        <img src="http://www.indybay.org/uploads/2011/03/31/jennings.jpg" style="width:80px;height:auto;" />
+      </div>
+            <div class="tp_listing_text">
+        <h3><a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Google News']);" rel="nofollow" target="_blank" href="http://www.indybay.org/newsitems/2011/03/31/18676021.php">Protect Water Quality in the Central Valley!</a></h3>
+        <p>by Dan Bacher Below is a brief explanation and draft letter to the Central Valley Regional Water <b>Quality Control</b> Board that Bill Jennings of the California Sportfishing Protection Alliance is asking organizations to sign on to. <b>...</b></p>
+      </div>    
+    </div>
+          </div>
+  <div class="tp_box_bottom">
+    <div id="gn-load-more-target" class="tp_icon_show_more">
+    	<a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'Show More', 'Google News']);Load.google_news('', 3);">Show more</a>
+  	</div>
+  </div>
+</div>  
+
+    
+  </div>
+    <a name="submit_comment"></a>
+<h2 class="tp_comments add">Add new comment</h2>
+<div class="tp_comments">
+    	
+      <div class="message" id="info">
+    * You must be logged in order to leave comments, please
+        <a rel="nofollow" href="/login/?back=topics%2Fquality-control%2F%23comment-form">Sign in</a>
+    or <a onclick="_gaq.push(['_trackEvent', 'General', 'Join via Comment']);" href="/join">join</a> us.
+     <a href="#" onclick="fbLogin('topics/quality-control/#comment-form');_gaq.push(['_trackEvent', 'General', 'FB Connect Comment']);" title="Connect with Facebook to comment/publish"><img src="http://assets.bukisa.com/img/fb_connect_small.png" style="vertical-align:middle;" width="165" height="22" alt="" border="0" /></a>
+    </div>
+  </div>
+<a name="comments"></a>
+<h2 class="tp_comments label">Comments </h2>
+<div class="tp_comments">  
+    <div class="message" id="info">
+    Be the first to comment on this topic.
+  </div>
+  </div>
+  </div>
+
+<div id="tp_column_right">
+    
+  <div class="tp_manager_box">
+    <div class="tp_top">
+      <div class="tp_bottom">
+                <div class="tp_manager_details">
+          <div class="tp_avatar">
+            <img src="http://c0190771.cdn.cloudfiles.rackspacecloud.com/41581_bXmxn_50.png" alt="Bukisa.Staff" />
+          </div>
+          <p>Quality Control is managed by <a href="/people/Bukisa.Staff">Bukisa.Staff</a></p>
+        </div>
+                <ul class="tp_manager_options">
+          <li style="float:left;width:50px;">
+            <a href="http://www.bukisa.com/report/topic?id=76060" rel="shadowbox;height=320;width=450" class="tp_icon_report_topic">Report</a>
+          </li>
+          <li class="addthis_toolbox addthis_default_style" style="float:right;width:190px;">
+            <a rel="nofollow" href="http://www.addthis.com/bookmark.php?v=250&amp;username=bukisa" class="addthis_button_compact">Share</a>
+            <a class="addthis_button_facebook"></a>
+            <a class="addthis_button_twitter"></a>    
+            <a class="addthis_button_facebook_like"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tp_banner_img">
+    <script type="text/javascript"><!--
+  google_ad_client = "pub-8380061879300117";
+  /* Bukisa Topics 300x250 Right */
+  google_ad_slot = "1630785259";
+  google_ad_width = 300;
+  google_ad_height = 250;
+  //-->
+  </script>
+  <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>  
+    </div>
+                    
+
+<div class="tp_module_container">
+	<h2 class="tp_edit_youtube" id="tp_youtube">
+		<span class="float-left">Videos</span>
+	</h2>
+				<div class="tp_video_box module_content_container">
+	  <div class="tp_box_top">
+	    	    	    <div class="tp_box_row">
+	      <div class="tp_listing_img tp_video_img">
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/PgpDN-bARwc" rel="shadowbox;width=480;height=360 nofollow" title="Play Jurassic 5 - Quality Control"><img class="yv_thumb" src="http://i.ytimg.com/vi/PgpDN-bARwc/default.jpg" alt="" border="0" /></a>
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/PgpDN-bARwc" rel="shadowbox;width=480;height=360 nofollow" title="Play Jurassic 5 - Quality Control"><img src="http://assets.bukisa.com/img/topics/play_btn.png" alt="Play" class="tp_play_btn png" /></a>
+	      </div>
+	      <div class="tp_listing_text">
+	        	        <h3><a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/PgpDN-bARwc" rel="shadowbox;width=480;height=360 nofollow" title="Play Jurassic 5 - Quality Control">Jurassic 5 - Quality Control</a></h3>
+	        <span>4:41 minutes</span>
+	      </div>
+	    </div>
+	    	    	    <div class="tp_box_row">
+	      <div class="tp_listing_img tp_video_img">
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/c1w3Ivk3jc8" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control - Behind the Scenes"><img class="yv_thumb" src="http://i.ytimg.com/vi/c1w3Ivk3jc8/default.jpg" alt="" border="0" /></a>
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/c1w3Ivk3jc8" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control - Behind the Scenes"><img src="http://assets.bukisa.com/img/topics/play_btn.png" alt="Play" class="tp_play_btn png" /></a>
+	      </div>
+	      <div class="tp_listing_text">
+	        	        <h3><a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/c1w3Ivk3jc8" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control - Behind the Scenes">Quality Control - Behind the Scenes</a></h3>
+	        <span>2:11 minutes</span>
+	      </div>
+	    </div>
+	    	    	    <div class="tp_box_row">
+	      <div class="tp_listing_img tp_video_img">
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/L5s2dgnSHoo" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control 3 [4/5] Graffiti Movie"><img class="yv_thumb" src="http://i.ytimg.com/vi/L5s2dgnSHoo/default.jpg" alt="" border="0" /></a>
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/L5s2dgnSHoo" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control 3 [4/5] Graffiti Movie"><img src="http://assets.bukisa.com/img/topics/play_btn.png" alt="Play" class="tp_play_btn png" /></a>
+	      </div>
+	      <div class="tp_listing_text">
+	        	        <h3><a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/L5s2dgnSHoo" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control 3 [4/5] Graffiti Movie">Quality Control 3 [4/5] Graffiti Movie</a></h3>
+	        <span>9:05 minutes</span>
+	      </div>
+	    </div>
+	    	    	    <div class="tp_box_row">
+	      <div class="tp_listing_img tp_video_img">
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/TrC3t1kxzng" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control 3 [1/5] Graffiti Movie"><img class="yv_thumb" src="http://i.ytimg.com/vi/TrC3t1kxzng/default.jpg" alt="" border="0" /></a>
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/TrC3t1kxzng" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control 3 [1/5] Graffiti Movie"><img src="http://assets.bukisa.com/img/topics/play_btn.png" alt="Play" class="tp_play_btn png" /></a>
+	      </div>
+	      <div class="tp_listing_text">
+	        	        <h3><a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/TrC3t1kxzng" rel="shadowbox;width=480;height=360 nofollow" title="Play Quality Control 3 [1/5] Graffiti Movie">Quality Control 3 [1/5] Graffiti Movie</a></h3>
+	        <span>9:00 minutes</span>
+	      </div>
+	    </div>
+	    	    	    <div class="tp_box_row tp_last_row">
+	      <div class="tp_listing_img tp_video_img">
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/BcJem_m-Oy8" rel="shadowbox;width=480;height=360 nofollow" title="Play quality control 1"><img class="yv_thumb" src="http://i.ytimg.com/vi/BcJem_m-Oy8/default.jpg" alt="" border="0" /></a>
+	        <a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/BcJem_m-Oy8" rel="shadowbox;width=480;height=360 nofollow" title="Play quality control 1"><img src="http://assets.bukisa.com/img/topics/play_btn.png" alt="Play" class="tp_play_btn png" /></a>
+	      </div>
+	      <div class="tp_listing_text">
+	        	        <h3><a onclick="_gaq.push(['_trackPageview']);" href="http://www.youtube.com/v/BcJem_m-Oy8" rel="shadowbox;width=480;height=360 nofollow" title="Play quality control 1">quality control 1</a></h3>
+	        <span>6:21 minutes</span>
+	      </div>
+	    </div>
+	    	  </div>
+	  <div class="tp_box_bottom">
+	    <div id="yt-load-more-target"><a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'Show More', 'Videos']);Load.youtube('', 4);">Show more</a></div>
+	    <a id="powered_youtube" rel="nofollow" href="http://www.youtube.com/">Powered by</a>
+	  </div>
+	</div>
+  </div>
+
+    
+<div class="clear"></div>
+<div class="tp_module_container">
+	<h2 class="tp_edit_twitter" id="tp_twitter">Tweets</h2>
+  
+    
+    	<div class="tp_members_box module_content_container">
+  	  <div class="tp_box_top">
+  	      	    <div class="tp_box_row">
+  	      <div class="tp_listing_img">
+  	        <img src="http://a0.twimg.com/profile_images/822554502/purplelotussquare_normal.gif" width="48" height="48" />
+  	      </div>
+  	      <div class="tp_listing_text">
+  	        <p>
+  	          <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://twitter.com/purplelotuskava">purplelotuskava</a>: 
+  	          Our quality control team is literally &quot;out of this world&quot;. 100% natural Vanuatu #Kava - only the very best at Purple Lotus Kava Bar  	          <span style='color:#9c9c9c;'>2 Minutes ago</span>
+  	        </p>
+  	      </div>
+  	    </div>  
+  	      	    <div class="tp_box_row">
+  	      <div class="tp_listing_img">
+  	        <img src="http://a1.twimg.com/profile_images/1117167098/alljobslogo_normal.jpg" width="48" height="48" />
+  	      </div>
+  	      <div class="tp_listing_text">
+  	        <p>
+  	          <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://twitter.com/AllJobsBD">AllJobsBD</a>: 
+  	          National Agricare Group, Post:Quality Control Officer <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://goo.gl/fb/jq6pE" target="_blank" >http://goo.gl/fb/jq6pE</a>  	          <span style='color:#9c9c9c;'>8 Minutes ago</span>
+  	        </p>
+  	      </div>
+  	    </div>  
+  	      	    <div class="tp_box_row">
+  	      <div class="tp_listing_img">
+  	        <img src="http://a2.twimg.com/profile_images/1099499440/IMG_8515_normal.jpg" width="48" height="48" />
+  	      </div>
+  	      <div class="tp_listing_text">
+  	        <p>
+  	          <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://twitter.com/gmfunk">gmfunk</a>: 
+  	          @MrsOrman My job is to menror and help. Your last tweet makes my point. Books edited, vetted, quality control more evident. Self pub=chabge  	          <span style='color:#9c9c9c;'>9 Minutes ago</span>
+  	        </p>
+  	      </div>
+  	    </div>  
+  	      	    <div class="tp_box_row">
+  	      <div class="tp_listing_img">
+  	        <img src="http://a0.twimg.com/profile_images/1234440394/1724225541colazero.com-female_1436_normal.gif" width="48" height="48" />
+  	      </div>
+  	      <div class="tp_listing_text">
+  	        <p>
+  	          <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://twitter.com/EvonneCoutinho">EvonneCoutinho</a>: 
+  	          GSI Super Quality Wireless Handsfree Remote Control With Transmitter For Apple iPhone 3G/3GS/4/4G And iPod Nano... <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://amzn.to/htzDGN" target="_blank" >http://amzn.to/htzDGN</a>  	          <span style='color:#9c9c9c;'>10 Minutes ago</span>
+  	        </p>
+  	      </div>
+  	    </div>  
+  	      	    <div class="tp_box_row tp_last_row">
+  	      <div class="tp_listing_img">
+  	        <img src="http://a2.twimg.com/profile_images/602568278/logo1_normal.gif" width="48" height="48" />
+  	      </div>
+  	      <div class="tp_listing_text">
+  	        <p>
+  	          <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://twitter.com/doc_RT">doc_RT</a>: 
+  	          Statistical process control for radiotherapy quality assurance. <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Twitter']);" rel="nofollow" href="http://1.usa.gov/fgpUE7" target="_blank" >http://1.usa.gov/fgpUE7</a>  	          <span style='color:#9c9c9c;'>12 Minutes ago</span>
+  	        </p>
+  	      </div>
+  	    </div>  
+  	      	  </div>
+  	  <div class="tp_box_bottom">
+  	    <div id="tw-load-more-target"><a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'Show More', 'Tweets']);Load.twitter('', '1');">Show more</a></div>
+  	    <div style="background:none;">Powered by <a rel="nofollow" href="http://www.twitter.com/"><img src="http://assets.bukisa.com/img/topics/twit_logo.gif" alt="Twitter" title="Twitter" /></a></div>
+  	  </div>
+  	</div>
+  </div>
+
+        
+<h2>Tags</h2>
+
+<div class="tp_tags">  
+  &middot; 
+    <a href="/tags/six-sigma" class="font_14_blue">six sigma</a> &middot; 
+    <a href="/tags/process-improvements" class="font_14_blue">process improvements</a> &middot; 
+    <a href="/tags/standard-deviations" class="font_14_blue">standard deviations</a> &middot; 
+    <a href="/tags/shewhart-cycle" class="font_14_blue">shewhart cycle</a> &middot; 
+    <a href="/tags/critical-tolerances" class="font_14_blue">critical tolerances</a> &middot; 
+    <a href="/tags/quality-improvement-process" class="font_14_blue">quality improvement process</a> &middot; 
+    <a href="/tags/sigma-levels" class="font_14_blue">sigma levels</a> &middot; 
+    <a href="/tags/quality-assurance-management" class="font_14_blue">quality assurance management</a> &middot; 
+  </div>
+
+    <h2>Related Content</h2>
+<div class="related_tp_box">
+  <div class="tp_box_top">
+      <div class="tp_box_row">
+      <span><a href="http://www.bukisa.com/articles/415666_quality-control-by-managed" title="Quality Control by Managed">Quality Control by Managed</a></span>
+    </div>     
+      <div class="tp_box_row">
+      <span><a href="http://www.bukisa.com/articles/144121_quality-management-techniques-and-core-concept" title="Quality Management Techniques and Core Concept">Quality Management Techniques and Core Concept</a></span>
+    </div>     
+      <div class="tp_box_row">
+      <span><a href="http://www.bukisa.com/articles/398754_the-six-minute-book-summary-of-the-six-sigma-way-by-peter-s-pande-robert-p-neuman-and-roland-r-cavanagh" title="The Six Minute Book Summary of The Six Sigma Way by Peter S. Pande, Robert P. Neuman, And Roland R. Cavanagh">The Six Minute Book Summary of The Six Sigma Way by Peter S. Pande, Robert P. Neuman, And Roland R. Cavanagh</a></span>
+    </div>     
+      <div class="tp_box_row">
+      <span><a href="http://www.bukisa.com/articles/447435_understanding-quality-management" title="Understanding Quality Management">Understanding Quality Management</a></span>
+    </div>     
+      <div class="tp_box_row">
+      <span><a href="http://www.bukisa.com/articles/455922_six-sigma-and-healthcare" title="Six Sigma And Healthcare">Six Sigma And Healthcare</a></span>
+    </div>     
+    </div>
+  <div class="tp_box_bottom"></div>
+</div>
+
+      <h2>Definitions</h2>
+  <div class="tp_definitions">
+        <h3>Terms</h3>
+    <p>quality control.</p>
+            <h3>Definition</h3>
+    <p>Maintenance of standards of quality of manufactured goods.</p>
+                <h3>Part of Speech</h3>
+    <p>noun.</p>
+            <h3>Synonyms</h3>
+    <p>quality control.</p>
+      </div>
+
+      <h2>Languages</h2>
+  <div class="tp_languages">
+    <ul>
+            <li style="background-image: url('http://assets.bukisa.com/img/flags/lang/he.png');"><a title="בקרת איכות" href="http://he.bukisa.com/topics/בקרת_איכות">בקרת איכות</a></li>
+          </ul>
+  </div>
+
+  
+    <h2>References</h2>  
+  <div class="tp_reference">
+    <ol>
+        <li><a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Reference']);" href="http://en.wikipedia.org/wiki/Quality_control" rel="nofollow" target="_blank">Wikipedia - 'Quality Control'</a></li>
+            <li>Definitions by: <a onclick="_gaq.push(['_trackEvent', 'Topics Exit', 'Reference']);" href="http://www.definitions.net/" rel="nofollow" target="_blank">Definitions.net</a></li>
+        </ol>
+  </div>  
+    
+
+  <div style="float:left;margin-top:15px;margin-bottom:10px;">
+    <script type="text/javascript">
+    document.write(unescape("%3Cscript src='http://adserver.IgnitAd.com/0.92/Serve.aspx?aid=39&wsid=590&sid=8' type='text/javascript'%3E%3C/script%3E"));  
+    </script>
+  </div>
+</div>        
+
+    </div>
+</div>
+  
+<div id="footer" class="clearfix">
+  <div class="footer_width">
+    <ul class="footer_links">
+            <li><a href="http://www.bukisa.com/login">Publish Content</a></li>
+            <li><a href="http://www.bukisa.com/featured">Featured Content</a></li>
+      <li class="last"><a href="http://www.bukisa.com/faq">Get Help</a></li>
+          </ul>
+    <div class="search_box_footer">
+      <form action="/search"> 
+      <div class="search_txt_footer">
+        <input name="q" type="text" value="Learn something new, Search Bukisa..." onclick="clickclear(this, 'Learn something new, Search Bukisa...')" onblur="clickrecall(this,'Learn something new, Search Bukisa...')" maxlength="200" size="25" />
+      </div>
+            <div class="select_cat">
+        <select name="cat_id">
+          <option value="0">All Categories</option>          
+           
+          <option value="57">Art &amp; Entertainment</option>
+           
+          <option value="2">Automotive</option>
+           
+          <option value="66">Business &amp; Finance</option>
+           
+          <option value="125">Culture &amp; Society</option>
+           
+          <option value="27">Education</option>
+           
+          <option value="142">Events &amp; Holidays</option>
+           
+          <option value="15">Family</option>
+           
+          <option value="25">Fashion &amp; Beauty</option>
+           
+          <option value="16">Food &amp; Drinks</option>
+           
+          <option value="17">Health &amp; Nutrition</option>
+           
+          <option value="1">Hobbies &amp; Crafts</option>
+           
+          <option value="92">Home &amp; Garden</option>
+           
+          <option value="5">Internet</option>
+           
+          <option value="11">Pets</option>
+           
+          <option value="36">Relationships</option>
+           
+          <option value="18">Religion &amp; Spirituality</option>
+           
+          <option value="9">Reviews</option>
+           
+          <option value="12">Science &amp; Technology</option>
+           
+          <option value="26">Self Improvement</option>
+           
+          <option value="46">Sports &amp; Fitness</option>
+           
+          <option value="39">Travel</option>
+                    
+        </select>
+      </div>
+            <input type="hidden" name="where" value="0" />
+      <input name="search" type="submit" value="search" class="search_btn_f buttons" />
+      </form>
+    </div>
+    <div class="bottom_links">
+      <div class="column column_first">
+        <div>Bukisa</div>
+        <ul>
+          <li><a href="http://blog.bukisa.com/">Blog</a></li>
+          <li><a href="http://www.bukisa.com/info/about-bukisa">About Us</a></li>
+          <li><a href="http://www.bukisa.com/contact">Contact Us</a></li>
+          <li><a href="http://www.bukisa.com/rss/latest">RSS Feed</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <div>Site Links</div>
+        <ul>
+										<li><a href="http://www.bukisa.com/join">Join</a></li>
+          <li><a href="http://www.bukisa.com/login">Login</a></li>
+          					<li><a href="http://www.bukisa.com/latest">Recently Added</a></li>
+					<li><a href="http://www.bukisa.com/search">Advanced Search</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <div>Help &amp; Tools</div>
+        <ul>
+          <li><a title="Community Support" target="_blank" href="http://getsatisfaction.com/bukisa">Community Support</a></li>
+          <li><a href="http://www.bukisa.com/info/bukisa-101">Bukisa 101</a></li>
+          <li><a href="http://www.bukisa.com/widget">Widgets</a></li>
+          <li><a href="javascript:void(0);" onclick="window.external.AddSearchProvider('http://www.bukisa.com/bukisa.xml');pageTracker._trackPageview('/outgoing/install-open-search');">Search Plugin</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <div>Sitemaps</div>
+        <ul>
+          <li><a href="/how-to-articles">How To Articles</a></li>
+          <li><a href="http://www.bukisa.com/twitter-users">Twitter Users</a></li>
+          <li><a href="/topics-sitemap">Topics Sitemaps</a></li>
+          <li><a href="http://www.bukisa.com/sitemap">General Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="column column_last">
+        <div>Follow Us</div>
+        <ul id="follow_list">
+          <li id="f-facebook"><a href="http://www.facebook.com/Bukisa" rel="nofollow" target="_blank" title="Bukisa on Facebook">On Facebook</a></li>
+          <li id="f-twitter"><a href="http://twitter.com/Bukisa" rel="nofollow" target="_blank" title="Bukisa on Twitter">On Twitter</a></li>
+          <li id="f-newsletter"><a href="/newsletter/popup" rel="shadowbox;width=340;height=380" title="Sign up to the Bukisa Newsletter">Bukisa Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+    	Please read our <a href="/info/tos">Terms of Use</a> and <a href="/info/privacy-policy">Privacy Policy</a> | User published content is licensed under a <a href="http://creativecommons.org/licenses/by-nd/3.0/" rel="nofollow">Creative Commons License</a> <u>except where otherwise noted</u>.<br />
+    	&copy; Copyright 2008 - 2011 Webika Ltd. All Rights Reserved.
+       v. 3.0.1 / 20110131      (w2)      <br />
+      <img src="http://assets.bukisa.com/img/flags/il.png" width="16" height="11" alt="Hebrew" border="0" />
+      <a href="http://he.bukisa.com">Hebrew</a> |
+      <img src="http://assets.bukisa.com/img/flags/pt.png" width="16" height="11" alt="Portuguese" border="0" />
+      <a href="http://pt.bukisa.com">Portuguese</a>
+    </div>
+  </div>
+</div>
+
+	<br />
+  <script type="text/javascript">
+    // GA
+    (function() {
+      var ga = document.createElement('script');
+      ga.src = ('https:' == document.location.protocol ?
+      'https://ssl' : 'http://www') +
+      '.google-analytics.com/ga.js';
+      ga.setAttribute('async', 'true');
+      document.documentElement.firstChild.appendChild(ga);
+    })();
+    // addthis
+    var addthis_config = {
+       ui_cobrand: "Bukisa",
+       ui_header_color: "#000000",
+       ui_header_background: "#B3D4ED",
+       data_track_clickback: true
+    }
+    // external
+    document.write(unescape("%3Cscript src='http://s7.addthis.com/js/250/addthis_widget.js#username=bukisa' type='text/javascript'%3E%3C/script%3E"));  
+    // for google
+    window.google_analytics_uacct = "UA-3657490-1";
+  </script>
+        			<div id="fb-root"></div>
+  <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+
+  <script type="text/javascript">
+		var _sf_async_config={uid:3158,domain:"bukisa.com"};
+	  (function(){
+    function loadChartbeat() {
+  	window._sf_endpt=(new Date()).getTime();
+  	var e = document.createElement('script');
+  	e.setAttribute('language', 'javascript');
+  	e.setAttribute('type', 'text/javascript');
+  	e.setAttribute('src',
+  	   (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+  	   "static.chartbeat.com/js/chartbeat.js");
+  	document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+  	 loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+  </script>
+
+</body>
+</html>

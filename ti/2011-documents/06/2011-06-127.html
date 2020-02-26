@@ -1,0 +1,2050 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(d,i,e){e=e!=undefined?e:(new Date).getTime();this.t[d]=[e,i]};this.tick("start",null,b)}var f=new c;a.jstiming={Timer:c,load:f};try{var g=null;if(a.chrome&&a.chrome.csi)g=Math.floor(a.chrome.csi().pageT);if(g==null)if(a.gtbExternal)g=a.gtbExternal.pageT();if(g==null)if(a.external)g=a.external.pageT;if(g)a.jstiming.pt=g}catch(h){};a.tickAboveFold=function(b){var d=0;if(b.offsetParent){do d+=b.offsetTop;while(b=b.offsetParent)}b=d;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+<link href='http://invisibleweblog.blogspot.com/2010/11/crowdsourcing-for-information-retrieval.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="The Invisible Web Weblog - Atom" href="http://invisibleweblog.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="The Invisible Web Weblog - RSS" href="http://invisibleweblog.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="The Invisible Web Weblog - Atom" href="http://www.blogger.com/feeds/14978051/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=14978051" />
+<link rel="alternate" type="application/atom+xml" title="The Invisible Web Weblog - Atom" href="http://invisibleweblog.blogspot.com/feeds/1102150804008281728/comments/default" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>The Invisible Web Weblog: Crowdsourcing for Information Retrieval</title>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/987282334-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=14978051&zx=89a68e5f-dba5-4152-acd6-469ae7b2a557"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Rounders 2
+Date:     27 Feb 2004
+Updated by: Blogger Team
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="mainBgColor" description="Main Background Color"
+type="color" default="#fff">
+<Variable name="mainTextColor" description="Text Color" type="color"
+default="#000">
+<Variable name="postTitleColor" description="Post Title Color" type="color"
+default="#333">
+<Variable name="dateHeaderColor" description="Date Header Color"
+type="color" default="#810">
+<Variable name="borderColor" description="Post Border Color" type="color"
+default="#bbb">
+<Variable name="mainLinkColor" description="Link Color" type="color"
+default="#b30">
+<Variable name="mainVisitedLinkColor" description="Visited Link Color"
+type="color" default="#c63">
+<Variable name="titleBgColor" description="Page Header Background Color"
+type="color" default="#710">
+<Variable name="titleTextColor" description="Blog Title Color"
+type="color" default="#fff">
+<Variable name="topSidebarHeaderColor"
+description="Top Sidebar Title Color"
+type="color" default="#fff">
+<Variable name="topSidebarBgColor"
+description="Top Sidebar Background Color"
+type="color" default="#999">
+<Variable name="topSidebarTextColor" description="Top Sidebar Text Color"
+type="color" default="#fff">
+<Variable name="topSidebarLinkColor" description="Top Sidebar Link Color"
+type="color" default="#fff">
+<Variable name="topSidebarVisitedLinkColor"
+description="Top Sidebar Visited Link Color"
+type="color" default="#ddd">
+<Variable name="bodyFont" description="Text Font" type="font"
+default="normal normal 100% 'Trebuchet MS',Verdana,Arial,Sans-serif">
+<Variable name="pageTitleFont" description="Blog Title Font" type="font"
+default="normal bold 200% 'Trebuchet MS',Verdana,Arial,Sans-serif">
+<Variable name="descriptionFont" description="Blog Description Font" type="font"
+default="normal normal 100% 'Trebuchet MS',Verdana,Arial,Sans-serif">
+<Variable name="headerFont" description="Sidebar Title Font" type="font"
+default="normal bold 100% 'Trebuchet MS',Verdana,Arial,Sans-serif">
+<Variable name="postTitleFont" description="Post Title Font" type="font"
+default="normal bold 135% 'Trebuchet MS',Verdana,Arial,Sans-serif">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+body {
+background:#ccc;
+margin:0;
+text-align:center;
+line-height: 1.5em;
+font:x-small Trebuchet MS, Verdana, Arial, Sans-serif;
+color:#000000;
+font-size/* */:/**/small;
+font-size: /**/small;
+}
+/* Page Structure
+----------------------------------------------- */
+/* The images which help create rounded corners depend on the
+following widths and measurements. If you want to change
+these measurements, the images will also need to change.
+*/
+#outer-wrapper {
+width:740px;
+margin:0 auto;
+text-align:left;
+font: normal normal 100% 'Trebuchet MS',Verdana,Arial,Sans-serif;
+}
+#main-wrap1 {
+width:485px;
+float:left;
+background:#ffffff url("http://www1.blogblog.com/rounders2/corners_main_bot.gif") no-repeat left bottom;
+margin:15px 0 0;
+padding:0 0 10px;
+color:#000000;
+font-size:97%;
+line-height:1.5em;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#main-wrap2 {
+float:left;
+width:100%;
+background:url("http://www1.blogblog.com/rounders2/corners_main_top.gif") no-repeat left top;
+padding:10px 0 0;
+}
+#main {
+background:url("http://www.blogblog.com/rounders2/rails_main.gif") repeat-y left;
+padding:0;
+width:485px;
+}
+#sidebar-wrap {
+width:240px;
+float:right;
+margin:15px 0 0;
+font-size:97%;
+line-height:1.5em;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+.main .widget {
+margin-top: 4px;
+width: 468px;
+padding: 0 13px;
+}
+.main .Blog {
+margin: 0;
+padding: 0;
+width: 484px;
+}
+/* Links
+----------------------------------------------- */
+a:link {
+color: #bb3300;
+}
+a:visited {
+color: #cc6633;
+}
+a:hover {
+color: #cc6633;
+}
+a img {
+border-width:0;
+}
+/* Blog Header
+----------------------------------------------- */
+#header-wrapper {
+background:#771100 url("http://www2.blogblog.com/rounders2/corners_cap_top.gif") no-repeat left top;
+margin-top:22px;
+margin-right:0;
+margin-bottom:0;
+margin-left:0;
+padding-top:8px;
+padding-right:0;
+padding-bottom:0;
+padding-left:0;
+color:#ffffff;
+}
+#header {
+background:url("http://www.blogblog.com/rounders2/corners_cap_bot.gif") no-repeat left bottom;
+padding:0 15px 8px;
+}
+#header h1 {
+margin:0;
+padding:10px 30px 5px;
+line-height:1.2em;
+font: normal bold 200% 'Trebuchet MS',Verdana,Arial,Sans-serif;
+}
+#header a,
+#header a:visited {
+text-decoration:none;
+color: #ffffff;
+}
+#header .description {
+margin:0;
+padding:5px 30px 10px;
+line-height:1.5em;
+font: normal normal 100% 'Trebuchet MS',Verdana,Arial,Sans-serif;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+margin-top:0;
+margin-right:28px;
+margin-bottom:0;
+margin-left:43px;
+font-size:85%;
+line-height:2em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color:#881100;
+}
+.post {
+margin:.3em 0 25px;
+padding:0 13px;
+border:1px dotted #bbbbbb;
+border-width:1px 0;
+}
+.post h3 {
+margin:0;
+line-height:1.5em;
+background:url("http://www2.blogblog.com/rounders2/icon_arrow.gif") no-repeat 10px .5em;
+display:block;
+border:1px dotted #bbbbbb;
+border-width:0 1px 1px;
+padding-top:2px;
+padding-right:14px;
+padding-bottom:2px;
+padding-left:29px;
+color: #333333;
+font: normal bold 135% 'Trebuchet MS',Verdana,Arial,Sans-serif;
+}
+.post h3 a, .post h3 a:visited {
+text-decoration:none;
+color: #333333;
+}
+a.title-link:hover {
+background-color: #bbbbbb;
+color: #000000;
+}
+.post-body {
+border:1px dotted #bbbbbb;
+border-width:0 1px 1px;
+border-bottom-color:#ffffff;
+padding-top:10px;
+padding-right:14px;
+padding-bottom:1px;
+padding-left:29px;
+}
+html>body .post-body {
+border-bottom-width:0;
+}
+.post-body {
+margin:0 0 .75em;
+}
+.post-body blockquote {
+line-height:1.3em;
+}
+.post-footer {
+background: #eee;
+margin:0;
+padding-top:2px;
+padding-right:14px;
+padding-bottom:2px;
+padding-left:29px;
+border:1px dotted #bbbbbb;
+border-width:1px;
+font-size:100%;
+line-height:1.5em;
+color: #666;
+}
+/*
+The first line of the post footer might only have floated text, so we need to give it a height.
+The height comes from the post-footer line-height
+*/
+.post-footer-line-1 {
+min-height:1.5em;
+_height:1.5em;
+}
+.post-footer p {
+margin: 0;
+}
+html>body .post-footer {
+border-bottom-color:transparent;
+}
+.uncustomized-post-template .post-footer {
+text-align: right;
+}
+.uncustomized-post-template .post-author,
+.uncustomized-post-template .post-timestamp {
+display: block;
+float: left;
+text-align:left;
+margin-right: 4px;
+}
+.post-footer a {
+color: #bb3300;
+}
+.post-footer a:hover {
+color: #cc6633;
+}
+a.comment-link {
+/* IE5.0/Win doesn't apply padding to inline elements,
+so we hide these two declarations from it */
+background/* */:/**/url("http://www.blogblog.com/rounders/icon_comment_left.gif") no-repeat left 45%;
+padding-left:14px;
+}
+html>body a.comment-link {
+/* Respecified, for IE5/Mac's benefit */
+background:url("http://www.blogblog.com/rounders2/icon_comment_left.gif") no-repeat left 45%;
+padding-left:14px;
+}
+.post img, table.tr-caption-container {
+margin-top:0;
+margin-right:0;
+margin-bottom:5px;
+margin-left:0;
+padding:4px;
+border:1px solid #bbbbbb;
+}
+.tr-caption-container img {
+border: none;
+margin: 0;
+padding: 0;
+}
+blockquote {
+margin:.75em 0;
+border:1px dotted #bbbbbb;
+border-width:1px 0;
+padding:5px 15px;
+color: #881100;
+}
+.post blockquote p {
+margin:.5em 0;
+}
+#blog-pager-newer-link {
+float: left;
+margin-left: 13px;
+}
+#blog-pager-older-link {
+float: right;
+margin-right: 13px;
+}
+#blog-pager {
+text-align: center;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+margin-left: 13px;
+}
+/* Comments
+----------------------------------------------- */
+#comments {
+margin:-25px 13px 0;
+border:1px dotted #bbbbbb;
+border-width:0 1px 1px;
+padding-top:20px;
+padding-right:0;
+padding-bottom:15px;
+padding-left:0;
+}
+#comments h4 {
+margin:0 0 10px;
+padding-top:0;
+padding-right:14px;
+padding-bottom:2px;
+padding-left:29px;
+border-bottom:1px dotted #bbbbbb;
+font-size:120%;
+line-height:1.4em;
+color:#333333;
+}
+#comments-block {
+margin-top:0;
+margin-right:15px;
+margin-bottom:0;
+margin-left:9px;
+}
+.comment-author {
+background:url("http://www.blogblog.com/rounders2/icon_comment_left.gif") no-repeat 2px .3em;
+margin:.5em 0;
+padding-top:0;
+padding-right:0;
+padding-bottom:0;
+padding-left:20px;
+font-weight:bold;
+}
+.comment-body {
+margin:0 0 1.25em;
+padding-top:0;
+padding-right:0;
+padding-bottom:0;
+padding-left:20px;
+}
+.comment-body p {
+margin:0 0 .5em;
+}
+.comment-footer {
+margin:0 0 .5em;
+padding-top:0;
+padding-right:0;
+padding-bottom:.75em;
+padding-left:20px;
+}
+.comment-footer a:link {
+color: #000000;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.comment-form {
+padding-left:20px;
+padding-right:5px;
+}
+#comments .comment-form h4 {
+padding-left:0px;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 5px;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+border: 4px solid #ffffff;
+}
+.profile-datablock {
+margin-top:0;
+margin-right:15px;
+margin-bottom:.5em;
+margin-left:0;
+padding-top:8px;
+}
+.profile-link {
+background:url("http://www.blogblog.com/rounders2/icon_profile_left.gif") no-repeat left .1em;
+padding-left:15px;
+font-weight:bold;
+}
+.profile-textblock {
+clear: both;
+margin: 0;
+}
+.sidebar .clear, .main .widget .clear {
+clear: both;
+}
+#sidebartop-wrap {
+background:#999999 url("http://www.blogblog.com/rounders2/corners_prof_bot.gif") no-repeat left bottom;
+margin:0px 0px 15px;
+padding:0px 0px 10px;
+color:#ffffff;
+}
+#sidebartop-wrap2 {
+background:url("http://www2.blogblog.com/rounders2/corners_prof_top.gif") no-repeat left top;
+padding: 10px 0 0;
+margin:0;
+border-width:0;
+}
+#sidebartop h2 {
+line-height:1.5em;
+color:#ffffff;
+border-bottom: 1px dotted #ffffff;
+margin-bottom: 0.5em;
+font: normal bold 100% 'Trebuchet MS',Verdana,Arial,Sans-serif;
+}
+#sidebartop a {
+color: #ffffff;
+}
+#sidebartop a:hover {
+color: #dddddd;
+}
+#sidebartop a:visited {
+color: #dddddd;
+}
+/* Sidebar Boxes
+----------------------------------------------- */
+.sidebar .widget {
+margin:.5em 13px 1.25em;
+padding:0 0px;
+}
+.widget-content {
+margin-top: 0.5em;
+}
+#sidebarbottom-wrap1 {
+background:#ffffff url("http://www.blogblog.com/rounders2/corners_side_top.gif") no-repeat left top;
+margin:0 0 15px;
+padding:10px 0 0;
+color: #000000;
+}
+#sidebarbottom-wrap2 {
+background:url("http://www1.blogblog.com/rounders2/corners_side_bot.gif") no-repeat left bottom;
+padding:0 0 8px;
+}
+.sidebar h2 {
+margin:0;
+padding:0 0 .2em;
+line-height:1.5em;
+font:normal bold 100% 'Trebuchet MS',Verdana,Arial,Sans-serif;
+}
+.sidebar ul {
+list-style:none;
+margin:0 0 1.25em;
+padding:0;
+}
+.sidebar ul li {
+background:url("http://www2.blogblog.com/rounders2/icon_arrow_sm.gif") no-repeat 2px .25em;
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:3px;
+padding-left:16px;
+margin-bottom:3px;
+border-bottom:1px dotted #bbbbbb;
+line-height:1.4em;
+}
+.sidebar p {
+margin:0 0 .6em;
+}
+#sidebar h2 {
+color: #333333;
+border-bottom: 1px dotted #333333;
+}
+/* Footer
+----------------------------------------------- */
+#footer-wrap1 {
+clear:both;
+margin:0 0 10px;
+padding:15px 0 0;
+}
+#footer-wrap2 {
+background:#771100 url("http://www2.blogblog.com/rounders2/corners_cap_top.gif") no-repeat left top;
+color:#ffffff;
+}
+#footer {
+background:url("http://www.blogblog.com/rounders2/corners_cap_bot.gif") no-repeat left bottom;
+padding:8px 15px;
+}
+#footer hr {display:none;}
+#footer p {margin:0;}
+#footer a {color:#ffffff;}
+#footer .widget-content {
+margin:0;
+}
+/** Page structure tweaks for layout editor wireframe */
+body#layout #main-wrap1,
+body#layout #sidebar-wrap,
+body#layout #header-wrapper {
+margin-top: 0;
+}
+body#layout #header, body#layout #header-wrapper,
+body#layout #outer-wrapper {
+margin-left:0,
+margin-right: 0;
+padding: 0;
+}
+body#layout #outer-wrapper {
+width: 730px;
+}
+body#layout #footer-wrap1 {
+padding-top: 0;
+}
+
+--></style>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+    function showRelatedContent(args) {
+      var el = document.getElementById('related-iframe');
+      if (el.parentNode.style.display != 'none') {
+        el.parentNode.style.display = 'none';
+        document.onclick = showRelatedContent.prevOnClick;
+        return;
+      }
+      
+      var match = /(?:^[?]|&)c=([0-9]+)(?:&|(?!.))/.exec(args);
+      if (match !== null) {
+        document.getElementById('related-loading').style.left = match[1] + 'px';
+        el.style.left = Math.max(0, match[1] - parseInt(el.width) / 2) + 'px';
+      }
+      el.src = "http://www.blogger.com"
+          + '/related-content.g?q='
+          + "http://invisibleweblog.blogspot.com/"
+          + '&id=' + "14978051";
+      el.parentNode.style.display = 'block';
+      showRelatedContent.prevOnClick = document.onclick;
+
+      // Hide related-content dropdown when clicking anywhere but on it.
+      document.onclick = function() {
+        var el = document.getElementById('related-iframe');
+        if (el.parentNode.style.display != 'none') {
+          el.parentNode.style.display = 'none';
+        }
+        document.onclick = showRelatedContent.prevOnClick;
+      };
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=14978051&amp;blogName=The+Invisible+Web+Weblog&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=TAN&amp;layoutType=LAYOUTS&amp;searchRoot=http%3A%2F%2Finvisibleweblog.blogspot.com%2Fsearch&amp;blogLocale=en_GB&amp;homepageUrl=http%3A%2F%2Finvisibleweblog.blogspot.com%2F&amp;targetPostID=1102150804008281728" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+
+<div></div></div></div>
+<div id='outer-wrapper'>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='http://invisibleweblog.blogspot.com/'>The Invisible Web Weblog</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>A Weblog about the Invisible Web and Information Availability on the Web</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol section' id='crosscol'></div>
+</div>
+<div id='main-wrap1'><div id='main-wrap2'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Sunday, November 14, 2010</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='1102150804008281728'></a>
+<h3 class='post-title entry-title'>
+Crowdsourcing for Information Retrieval
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-1102150804008281728'>
+Information Retrieval Journal is going to publish a special Issue on "Crowdsourcing for Information Retrieval". In their Call for papers, it is mentioned that: "the advent of crowdsourcing is revolutionizing information technology by enabling a wide host of new methodology for data collection, annotation, and processing, as well as system design and evaluation. Given the massive datasets that are both ubiquitous and rapidly growing in today&#8217;s digital age, the field of information retrieval (IR) stands to particularly benefit from such advances as academic researchers and industrial practitioners alike leverage the wisdom of crowds to more effective cope with and exploit massive datasets. The novelty of crowdsourcing makes this is an especially exciting time to focus the IR community&#8217;s attention toward it and provide an opportunity for discussion and education on this key emerging area. Traditionally manual-labor intensive processes have been particularly impacted  by dramatically reducing the time, cost, and effort involved."<br />Topics of interest include but are not limited to the following areas:<br /><br />* Theoretical, experimental, and/or methodological developments advancing state-of-the-art knowledge of crowdsourcing for IR.<br /><br />* Novel applications of IR enabled by crowdsourcing (e.g. use of real-time crowd response, using human computation to &#8220;close the loop&#8221; with automation for hybrid IR systems, etc.)<br /><br />* Tutorials or best practices on employing crowdsourcing to support different IR scenarios.<br /><br />* Innovative ideas for better using crowdsourcing platforms.<br /><br />* Description of novel software packages improving ease and/or quality of crowdsourcing.<br /><br />* Reflective or forward-looking vision on use of crowdsourcing in this area.
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Yazdan Mansourian</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://invisibleweblog.blogspot.com/2010/11/crowdsourcing-for-information-retrieval.html' rel='bookmark' title='permanent link'><abbr class='published' title='2010-11-14T18:50:00+03:30'>Sunday, November 14, 2010</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-action'>
+<a href='http://www.blogger.com/email-post.g?blogID=14978051&postID=1102150804008281728' title='Email Post'>
+<img alt='' class='icon-action' height='13' src='http://img1.blogblog.com/img/icon18_email.gif' width='18'/>
+</a>
+</span>
+<span class='item-control blog-admin pid-2047174370'>
+<a href='http://www.blogger.com/post-edit.g?blogID=14978051&postID=1102150804008281728' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='http://www.blogger.com/share-post.g?blogID=14978051&postID=1102150804008281728&target=email' target='_blank' title='Email This'>
+<span class='share-button-link-text'>Email This</span>
+</a><a class='goog-inline-block share-button sb-blog' href='http://www.blogger.com/share-post.g?blogID=14978051&postID=1102150804008281728&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'>
+<span class='share-button-link-text'>BlogThis!</span>
+</a><a class='goog-inline-block share-button sb-twitter' href='http://www.blogger.com/share-post.g?blogID=14978051&postID=1102150804008281728&target=twitter' target='_blank' title='Share to Twitter'>
+<span class='share-button-link-text'>Share to Twitter</span>
+</a><a class='goog-inline-block share-button sb-facebook' href='http://www.blogger.com/share-post.g?blogID=14978051&postID=1102150804008281728&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'>
+<span class='share-button-link-text'>Share to Facebook</span>
+</a><a class='goog-inline-block share-button sb-buzz' href='http://www.blogger.com/share-post.g?blogID=14978051&postID=1102150804008281728&target=buzz' onclick='window.open(this.href, "_blank", "height=415,width=690"); return false;' target='_blank' title='Share to Google Buzz'>
+<span class='share-button-link-text'>Share to Google Buzz</span>
+</a>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='http://invisibleweblog.blogspot.com/search/label/Information%20Retrieval' rel='tag'>Information Retrieval</a>,
+<a href='http://invisibleweblog.blogspot.com/search/label/Information%20Seeking' rel='tag'>Information Seeking</a>,
+<a href='http://invisibleweblog.blogspot.com/search/label/Journals' rel='tag'>Journals</a>,
+<a href='http://invisibleweblog.blogspot.com/search/label/LIS' rel='tag'>LIS</a>,
+<a href='http://invisibleweblog.blogspot.com/search/label/Research' rel='tag'>Research</a>,
+<a href='http://invisibleweblog.blogspot.com/search/label/Searching%20the%20Web' rel='tag'>Searching the Web</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'></div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+<div id="latency-1102150804008281728"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-1102150804008281728")); } </script>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://invisibleweblog.blogspot.com/2010/11/basics-of-academic-writing_21.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://invisibleweblog.blogspot.com/2010/11/multimedia-data-annotation-and.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://invisibleweblog.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+</div>
+</div></div>
+</div></div>
+<div id='sidebar-wrap'>
+<div id='sidebartop-wrap'><div id='sidebartop-wrap2'>
+<div class='sidebar section' id='sidebartop'><div class='widget Text' id='Text1'>
+<h2 class='title'>Something to Remember</h2>
+<div class='widget-content'>
+<em>In order to succeed, your desire for success should be greater than your fear of failure ...</em>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=Text&widgetId=Text1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("Text1"));' target='configText1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div></div>
+<div id='sidebarbottom-wrap1'><div id='sidebarbottom-wrap2'>
+<div class='sidebar section' id='sidebar'><div class='widget Image' id='Image1'>
+<h2>My Old School</h2>
+<div class='widget-content'>
+<img alt='My Old School' height='159' id='Image1_img' src='http://photos1.blogger.com/x/blogger2/3075/1828/212/z/90539/gse_multipart18494.jpg' width='212'/>
+<br/>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=Image&widgetId=Image1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Image1"));' target='configImage1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Profile' id='Profile1'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<a href='http://www.blogger.com/profile/07332606703923175633'><img alt='My Photo' class='profile-img' height='80' src='http://4.bp.blogspot.com/_3phVK8XWM4w/SiDWMWzwf1I/AAAAAAAAAEI/Lb6JgK8DixA/S220/Yazdan+2009.JPG' width='66'/></a>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link' href='http://www.blogger.com/profile/07332606703923175633' rel='author'>
+Yazdan Mansourian
+</a>
+</dt>
+<dd class='profile-textblock'>Yazdan Mansourian completed his PhD in 2006 in the Department of Information Studies at the University of Sheffield and took up a post as Assistant Professor in the Department of Educational Technology at Tarbiat Moallem University, Tehran, in January 2007. He has a BSc in Agricultural Engineering and Plant Breeding and an MA in Library and Information Science from Ferdowsi University of Mashhad. He worked as a reference librarian and an administrator of information services in the main library of Ferdowsi University from 1998 to 2001. He also worked as an expert on information services in the Public &amp; International Relations Office of Mashhad municipality between 2001 and 2002. Besides publishing several articles in English and Persian, he is co-author of a book about serials management in libraries.</dd>
+</dl>
+<a class='profile-link' href='http://www.blogger.com/profile/07332606703923175633' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget LinkList' id='LinkList2'>
+<h2>Related Links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://y.mansourian.googlepages.com/'>My Current Homepage</a></li>
+<li><a href='http://dagda.shef.ac.uk/yazdan/'>My Old Homepage</a></li>
+<li><a href='http://cvs.tmu.ac.ir/cv.php?Name=yazdan'>Full Curriculum Vitae</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=LinkList&widgetId=LinkList2&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList2"));' target='configLinkList2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Label' id='Label1'>
+<h2>Labels</h2>
+<div class='widget-content list-label-widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/About%20the%20Weblog'>About the Weblog</a>
+<span dir='ltr'>(11)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Academic%20Writing'>Academic Writing</a>
+<span dir='ltr'>(10)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Basic%20Issues'>Basic Issues</a>
+<span dir='ltr'>(124)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Blogging'>Blogging</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Books'>Books</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Conferences'>Conferences</a>
+<span dir='ltr'>(116)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Deep%20Web'>Deep Web</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Digital%20Preservation'>Digital Preservation</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Dissertations'>Dissertations</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/E-Learning'>E-Learning</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Evaluation%20of%20Information'>Evaluation of Information</a>
+<span dir='ltr'>(11)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Evaluation%20of%20Library%20Website'>Evaluation of Library Website</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Evidence%20Based%20LIS'>Evidence Based LIS</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/HCI'>HCI</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/ILISA'>ILISA</a>
+<span dir='ltr'>(9)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Information%20Retrieval'>Information Retrieval</a>
+<span dir='ltr'>(44)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Information%20Seeking'>Information Seeking</a>
+<span dir='ltr'>(19)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Inspirational%20Quotes'>Inspirational Quotes</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Interviews'>Interviews</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Invisible%20Web'>Invisible Web</a>
+<span dir='ltr'>(23)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Journals'>Journals</a>
+<span dir='ltr'>(60)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Knowledge%20Management'>Knowledge Management</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Learning'>Learning</a>
+<span dir='ltr'>(17)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Library%20Services'>Library Services</a>
+<span dir='ltr'>(13)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/LIS'>LIS</a>
+<span dir='ltr'>(69)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Miscellaneous'>Miscellaneous</a>
+<span dir='ltr'>(61)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/News'>News</a>
+<span dir='ltr'>(125)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Open%20Access%20Repositories'>Open Access Repositories</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Publications'>Publications</a>
+<span dir='ltr'>(38)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Qualitative%20Research'>Qualitative Research</a>
+<span dir='ltr'>(11)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Reading'>Reading</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Refereeing'>Refereeing</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Research'>Research</a>
+<span dir='ltr'>(77)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Scientometrics'>Scientometrics</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Searching%20the%20Web'>Searching the Web</a>
+<span dir='ltr'>(39)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Teaching'>Teaching</a>
+<span dir='ltr'>(46)</span>
+</li>
+<li>
+<a dir='ltr' href='http://invisibleweblog.blogspot.com/search/label/Workshops'>Workshops</a>
+<span dir='ltr'>(22)</span>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target='configLabel1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2011-01-01T00%3A00%3A00%2B03%3A30&updated-max=2012-01-01T00%3A00%3A00%2B03%3A30&max-results=22'>2011</a>
+<span class='post-count' dir='ltr'>(22)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2011_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://invisibleweblog.blogspot.com/2011/03/happy-new-year.html'>Happy New Year</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/03/eblip-new-issue.html'>EBLIP New Issue</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/03/reading-octagon.html'>Reading Octagon</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2011_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(5)</span>
+<ul class='posts'>
+<li><a href='http://invisibleweblog.blogspot.com/2011/02/surrounded-by-theses-and-dissertations.html'>Surrounded by Theses and Dissertations!</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/02/tpdl-2011.html'>TPDL 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/02/web-search-engine-research.html'>Web Search Engine Research</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/02/mathematics-quotes.html'>Mathematics Quotes</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/02/international-journal-of-information.html'>International Journal of Information Management</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2011_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(14)</span>
+<ul class='posts'>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/colloquium-epicic.html'>Colloquium EPICIC</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/research-on-life-span.html'>Research on Life Span</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/issome-2011.html'>ISSOME 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/personal-and-social-digital-legacy.html'>Personal and Social Digital Legacy</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/international-paper-contest.html'>International Paper Contest</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/learning-landscapes-and-new-reality.html'>Learning Landscapes and New Reality</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/ilisa-workshop-on-peer-review.html'>ILISA Workshop on Peer Review</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/too-much-and-too-little-citations.html'>Too Many or Few Citations!</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/popular-and-prestigious-publications.html'>Popular and Prestigious Publications</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/cas-and-sdi-in-libraries.html'>CAS and SDI in Libraries</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/library-information-science-research.html'>Library &amp; Information Science Research</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/business-information-systems.html'>Business Information Systems</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/ipm-in-2011.html'>IPM in 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2011/01/hello-2011.html'>Hello 2011</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2010-01-01T00%3A00%3A00%2B03%3A30&updated-max=2011-01-01T00%3A00%3A00%2B03%3A30&max-results=50'>2010</a>
+<span class='post-count' dir='ltr'>(140)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(29)</span>
+<ul class='posts'>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/quick-look-at-2010.html'>A Quick Look at 2010</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/library-hi-tech.html'>Library Hi Tech</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/international-information-library.html'>The International Information &amp; Library Review</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/decision-making-skills.html'>Decision Making Skills</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/journal-of-informetrics.html'>Journal of Informetrics</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/reading-and-writing-practice.html'>Reading and Writing Practice</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/elpub-2011.html'>ELPUB 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/collnet-2011.html'>COLLNET 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/lis-research-in-australia.html'>LIS Research in Australia</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/new-library-world-current-issue.html'>New Library World Current Issue</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/electronic-library.html'>The Electronic Library</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/online-information-review.html'>Online Information Review</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/journal-of-documentation-vol-66-no-6.html'>Journal of Documentation: Vol. 66, No. 6</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/what-links-research-to-practice.html'>What Links Research to Practice</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/stable-and-transient-nature-of-internet.html'>Stable and Transient Nature of the Internet</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/jasis-latest-issue.html'>JASIS&amp;T Latest Issue</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/theory-and-practice-of-digital.html'>Theory and Practice of Digital Libraries</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/social-theory-in-information-systems.html'>Social Theory in Information Systems Research</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/information-research.html'>Information Research</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/taming-information-tsunami.html'>Taming the Information Tsunami</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/excellent-library-science-blogs.html'>Excellent Library Science Blogs</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/peter-drucker.html'>Peter Drucker</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/qualitative-research-in-web-20.html'>Qualitative Research in Web 2.0</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/two-seminars-in-one-day.html'>Two Seminars in One Day</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/digital-enabled-social-networks.html'>Digital Enabled Social Networks</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/internet-and-teacher-education.html'>Internet and Teacher Education</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/reading-quotes.html'>Reading Quotes</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/12/reading-octagon.html'>Reading Octagon</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(15)</span>
+<ul class='posts'>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/internet-hidden-and-obvious-paradoxes.html'>Internet Hidden and Obvious Paradoxes</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/intech-2011.html'>INTECH 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/bis-2011.html'>BIS 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/reports-on-my-book.html'>Reports on My Book</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/process-of-peer-review.html'>Process of Peer Review</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/essential-skills-for-teachers.html'>Essential Skills for Teachers ...</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/basics-of-academic-writing_21.html'>Basics of Academic Writing</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/crowdsourcing-for-information-retrieval.html'>Crowdsourcing for Information Retrieval</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/multimedia-data-annotation-and.html'>Multimedia Data Annotation and Retrieval</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/librasia-2011.html'>LibrAsia 2011</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/happiness.html'>Happiness</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/public-libraries-in-world-science-day.html'>Public Libraries in the World Science Day</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/evidence-based-lis.html'>Evidence Based LIS</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/what-is-success.html'>What is Success?</a></li>
+<li><a href='http://invisibleweblog.blogspot.com/2010/11/value-of-scholarly-and-scientific.html'>Value of Scholarly and Scientific Output</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(14)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2010_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(14)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2009-01-01T00%3A00%3A00%2B03%3A30&updated-max=2010-01-01T00%3A00%3A00%2B03%3A30&max-results=50'>2009</a>
+<span class='post-count' dir='ltr'>(61)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(12)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2009_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2008-01-01T00%3A00%3A00%2B03%3A30&updated-max=2009-01-01T00%3A00%3A00%2B03%3A30&max-results=50'>2008</a>
+<span class='post-count' dir='ltr'>(87)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(12)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(12)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2008_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(15)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2007-01-01T00%3A00%3A00%2B03%3A30&updated-max=2008-01-01T00%3A00%3A00%2B03%3A30&max-results=50'>2007</a>
+<span class='post-count' dir='ltr'>(75)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(14)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2007_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2006-01-01T00%3A00%3A00%2B03%3A30&updated-max=2007-01-01T00%3A00%3A00%2B03%3A30&max-results=50'>2006</a>
+<span class='post-count' dir='ltr'>(99)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(16)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(14)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(14)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2006_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/search?updated-min=2005-01-01T00%3A00%3A00%2B03%3A30&updated-max=2006-01-01T00%3A00%3A00%2B03%3A30&max-results=22'>2005</a>
+<span class='post-count' dir='ltr'>(22)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2005_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2005_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2005_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2005_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://invisibleweblog.blogspot.com/2005_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget LinkList' id='LinkList1'>
+<h2>Links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://www.shef.ac.uk/is/'>Department of Information Studies</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=14978051&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target='configLinkList1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div></div>
+</div>
+<div id='footer-wrap1'><div id='footer-wrap2'>
+<div class='footer section' id='footer'></div>
+</div></div>
+</div>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/1019049897-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '14978051';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=14978051','http://invisibleweblog.blogspot.com/2010/11/crowdsourcing-for-information-retrieval.html','14978051');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=14978051','APq4FmBRgwZjjDu8CNRhwK1HwfKbrObNeAkXic0HY6hPm6eocgLoL2TvGHC8iIGZqVHSZc5tVcLOyG2onTOr2LyO03ysSQY5Bg==','AOuZoY5TVTuo868901HSfZNzoMVfTdHXtg:1301697610835');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'The Invisible Web Weblog', 'pageType': 'item', 'url': 'http://invisibleweblog.blogspot.com/2010/11/crowdsourcing-for-information-retrieval.html', 'canonicalUrl': 'http://invisibleweblog.blogspot.com/2010/11/crowdsourcing-for-information-retrieval.html', 'homepageUrl': 'http://invisibleweblog.blogspot.com/', 'faviconUrl': 'http://www.blogger.com/favicon.ico', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Crowdsourcing for Information Retrieval', 'pageTitle': 'The Invisible Web Weblog: Crowdsourcing for Information Retrieval', 'encoding': 'UTF-8', 'locale': 'en-GB', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42The Invisible Web Weblog - Atom\42 href\75\42http://invisibleweblog.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42The Invisible Web Weblog - RSS\42 href\75\42http://invisibleweblog.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42The Invisible Web Weblog - Atom\42 href\75\42http://www.blogger.com/feeds/14978051/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\07514978051\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42The Invisible Web Weblog - Atom\42 href\75\42http://invisibleweblog.blogspot.com/feeds/1102150804008281728/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(d,i,e){e\75e!\75undefined?e:(new Date).getTime();this.t[d]\75[e,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;if(a.chrome\46\46a.chrome.csi)g\75Math.floor(a.chrome.csi().pageT);if(g\75\75null)if(a.gtbExternal)g\75a.gtbExternal.pageT();if(g\75\75null)if(a.external)g\75a.external.pageT;if(g)a.jstiming.pt\75g}catch(h){};a.tickAboveFold\75function(b){var d\0750;if(b.offsetParent){do d+\75b.offsetTop;while(b\75b.offsetParent)}b\75d;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){if(!j){j\75true;a.jstiming.load.tick(\42firstScrollTime\42)}}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': ''}}]);
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text1', 'sidebartop', null, document.getElementById('Text1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image1', 'sidebar', null, document.getElementById('Image1'), {'resize': true}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList2', 'sidebar', null, document.getElementById('LinkList2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

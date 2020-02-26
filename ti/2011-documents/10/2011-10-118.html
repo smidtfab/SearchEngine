@@ -1,0 +1,5088 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Forrester Research Communities: Is Crowdsourcing marketing’s “Easy”...</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+	
+
+<script type="text/javascript">
+    if (top != self) {
+        var isSafeTopUrl = false;
+        try {
+            var topUrl = top.location.href;
+            var topUrlQsIdx = topUrl.indexOf('?');
+            if (topUrlQsIdx > 0) {
+                topUrl = topUrl.substring(0, topUrlQsIdx);
+            }
+            topUrl = topUrl.toLowerCase();
+
+            var safeTopUrls = new Array(
+                'http://community.forrester.com/skin-basic.jspa',
+                'http://community.forrester.com/skin-advanced.jspa',
+                'http://community.forrester.com/skin-advanced!UploadSkinZip.jspa',
+                'http://community.forrester.com/skin-palette.jspa',
+                'http://community.forrester.com/skin-palette!start.jspa'
+            );
+            for (var i = 0; i < safeTopUrls.length; i++) {
+                if (safeTopUrls[i].toLowerCase() == topUrl) {
+                    isSafeTopUrl = true;
+                    break;
+                }
+            }
+        } catch (err) {
+        }
+        if (!isSafeTopUrl) top.location = location;
+    }
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="en-US" />
+<meta name="keywords" content="product_marketing, crowdsouring" />
+
+<link rel="search"
+    href="/opensearch.xml"
+    title="Forrester Research Communities"
+    type="application/opensearchdescription+xml"/>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+    
+
+
+    <script type="text/javascript">
+        (function() {
+            var prepareUrl = function(url) {
+                if (url.indexOf(";") > 0) {
+                    url = url.substring(0, url.indexOf(";"));
+                }
+                if (url.charAt(url.length - 1) == '/') {
+                    url = url.substring(0, url.length - 1);
+                }
+                return url
+            };
+            if (typeof(window._jive_base_url) == "undefined") {
+                window._jive_base_url = prepareUrl("/")
+            }
+            if (typeof(window._jive_resource_url) == "undefined") {
+                window._jive_resource_url = prepareUrl("/4.5.3/")
+            }
+                if (typeof(window._jive_current_user) == "undefined") {
+                    window._jive_current_user = {
+                        anonymous: true,
+                        username: 'ANONYMOUS',
+                        ID: '-1',
+                        enabled: true,
+                        avatarID: '-1',
+                        displayName: ''
+                    };
+                }
+
+
+
+        })();
+
+        var _jive_effective_user_id = "-1";
+        var _jive_auth_token ="no-user";
+        var _jive_locale = "en_US";
+
+    </script>
+
+
+<script type="text/javascript">
+    function KJS(config) { this._path = (config && config.path) || ''; this._d = {}; }
+    KJS.prototype = {
+        require: function(/* deps */) {
+            var ms = Array.prototype.slice.call(arguments), fn;
+            if (typeof ms[ms.length - 1] == 'function') { fn = ms.pop(); }
+            for (var i = 0; i < ms.length; i++) {
+                this.sat(ms[i] +'--required');
+            }
+            if (fn) {
+                this.run(fn, ms);
+            }
+        },
+        load: function(file, depends, satisfies) {
+            var kjs = this,
+                s = (satisfies || []).concat(file.split('?')[0]),
+                satisfy = function(body) {
+                    kjs.embed(body);
+                    var i;
+                    while (i = s.shift()) { kjs.sat(i); }
+                };
+            if (!kjs.isSat(s)) {
+                this.get(this._path + file, function(body) {
+                    depends && depends.length ?
+                        kjs.run(function() { satisfy(body); }, depends) :
+                        satisfy(body);
+                });
+            }
+        },
+        run: function(fn, depends, satisfies) {
+            var kjs = this, ifn,
+                s = satisfies || [],
+                fn_with_satisfies = s.length ?
+                    function() { fn(); var i; while (i = s.pop()) { kjs.sat(i); } } : fn;
+            if (!kjs.isSat(s)) {
+                if (!depends.length) {
+                    fn_with_satisfies();
+                } else if (1 == depends.length) {
+                    ifn = fn_with_satisfies;
+                } else {
+                    var c = depends.length;
+                    ifn = function() { if (!--c) { fn_with_satisfies(); } };
+                }
+                var i;
+                while (i = depends.pop()) {
+                    if (true === this._d[i]) { ifn(); }
+                    else {
+                        this._d[i] = this._d[i] ?
+                        function(ofn, nfn) {
+                            return function() { ofn(); nfn(); };
+                        }(this._d[i], ifn) : ifn;
+                    }
+                }
+            }
+        },
+        get: function(url, fn) {
+            var t;
+            try {
+                t = new XMLHttpRequest();
+            } catch(_) {
+                try {
+                    t = new ActiveXObject('Msxml2.XMLHTTP');
+                } catch(_) {
+                    t = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+            }
+            t.open('GET', url, true);
+            t.onreadystatechange = function() {
+                if (4 == t.readyState) {
+                    fn(t.responseText);
+                    t.onreadystatechange = function(){};
+                }
+            };
+            t.send();
+        },
+        embed: function(body) {
+            eval(body);
+        },
+        sat: function(dep) {
+            if (this._d[dep] && true !== this._d[dep]) { this._d[dep](); }
+            this._d[dep] = true;
+        },
+        isSat: function(deps) {
+            var c = 0;
+            for (var i; i < deps.length; i++) {
+                if (this._d[deps[i]]) { count++; }
+            }
+            return c > 0 && c === deps.length
+        }
+    };
+    var kjs = new KJS();
+</script>
+
+    
+      
+      
+    <script type="text/javascript">
+        window.SPELL_LANGS = "English (Canada)=en_ca,English (United Kingdom)=en_gb,+English (United States)=en_us,French=fr,French (Canada)=fr_ca,German=de,Italian=it,Spanish=es";
+        window.CS_BASE_URL = "";
+        window.CS_RESOURCE_BASE_URL = "/4.5.3";
+        window.tinyMCEPreInit = {
+            suffix : "_src",
+            base : CS_BASE_URL + "/resources/scripts/tiny_mce3"
+        };
+        if (typeof(_jive_project_i18n) == "undefined") {
+            var _jive_project_i18n = new Array();
+            _jive_project_i18n['project.calendar.task'] = "Task";
+            _jive_project_i18n['project.calendar.tasks'] = "Tasks";
+            _jive_project_i18n['project.calendar.checkpoint'] = "Checkpoint";
+            _jive_project_i18n['project.calendar.checkpoints'] = "Checkpoints";
+            _jive_project_i18n['global.edit'] = "Edit";
+            _jive_project_i18n['global.delete'] = "Delete";
+            _jive_project_i18n['project.task.mark.complete'] = "Mark complete";
+            _jive_project_i18n['project.task.assign.to.me'] = "Assign to me";
+            _jive_project_i18n['task.incomplete.link'] = "Incomplete";
+            _jive_project_i18n['project.checkPoint.create.link'] = "Create a checkpoint";
+            _jive_project_i18n['project.task.create.link'] = "Create a task";
+        }
+    </script>
+     
+
+
+
+
+    
+
+
+
+    
+<script type="text/javascript">
+kjs.run(function() {
+kjs.load('/4.5.3/resources/scripts/gen/d801a4676645c26708da947e78395a7e.js', [  ]);
+kjs.run(function() {
+        Zapatec.Calendar._TT["DEF_DATE_FORMAT"] = "%m/%d/%Y";
+
+
+}, [ '/4.5.3/resources/scripts/gen/d801a4676645c26708da947e78395a7e.js' ], [ 'Zapatec.Calendar' ]);
+}, [ 'Zapatec.Calendar--required' ]);
+</script>
+    
+    <script type="text/javascript">
+        var profileShortUrl = "/profile-short.jspa";
+        var profileLoadingTooltip = "Loading user profile";
+        var profileErrorTooltip = "There was an error loading that profile information.";
+
+        var projectChooserUrl = "/project-chooser!input.jspa";
+
+        var containerShortUrl = "/container-short.jspa";
+        var containerLoadingTooltip = "Loading place information.";
+        var containerErrorTooltip = "There was an error loading that place information.";
+
+        var videoShortUrl = "/view-video-short.jspa";
+        var videoLoadingTooltip = "video.tooltip.loading";
+        var videoErrorTooltip = "video.tooltip.error";
+
+        var followErrorMessage = "An internal error ocurred while following the project or community.";
+
+        (function() {
+            var originalWrite = document.write;
+            document.write = function() {
+                if(typeof $j != 'undefined' && $j.isReady) {
+                    console.warn("document.write called after document was loaded: ", arguments);
+                }
+                else {
+                    // In IE before version 8 `document.write()` does not
+                    // implement Function methods, like `apply()`.
+                    return Function.prototype.apply.call(originalWrite, document, arguments);
+                }
+            }
+        })();        
+    </script>
+
+
+
+
+
+    <link rel="stylesheet" href="/4.5.3/styles/jive-global.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="/styles/jive-icons-legacy.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="/4.5.3/styles/jive-icons.css" type="text/css" media="all" />
+
+
+
+
+
+    <!--[if IE 6]>
+    <style type="text/css">
+    /* hack for IE6's lack of alpha PNG support */
+    #jive-wrapper .ie6png {
+        filter: expression(function(e){
+            e.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" +
+                (e.tagName=='IMG' ? e.src : e.currentStyle.backgroundImage.split('\"')[1]) + ")",
+            e.runtimeStyle.backgroundImage = "none",
+            e.src = "/images/transparent.png"
+        }(this));
+    }
+    </style>
+
+    <link rel="stylesheet" href="/4.5.3/styles/jive-icons-ie.css" type="text/css" media="all" />
+    <![endif]-->
+
+
+<script type="text/javascript" src="/4.5.3/resources/scripts/gen/ddd0dc6c982bca7f48562fa3c3575a51.js"></script>
+<script type="text/javascript">
+        // begin list of custom CSS
+        jive.rte.defaultStyles = new Array();
+        // end list of custom CSS
+
+
+            var jiveControl = new jive.model.Controller();
+
+
+if (dwr == null) var dwr = {};
+if (dwr.engine == null) dwr.engine = {};
+if (DWREngine == null) var DWREngine = dwr.engine;
+
+dwr.engine._origScriptSessionId = "179EEAE9FF19DB3AE6C803C25C7828A0";
+dwr.engine._sessionCookieName = "JSESSIONID"; // JSESSIONID
+dwr.engine._allowGetForSafariButMakeForgeryEasier = "true";
+dwr.engine._scriptTagProtection = "throw 'allowScriptTagRemoting is false.';";
+dwr.engine._defaultPath = "/dwr/interface";
+dwr.engine._pollWithXhr = "false";
+
+
+    (function() {
+        var options = {
+            friendsRange : 20,
+            everyoneRange : 20,
+            youUsername : 'ANONYMOUS',
+            youID : -1,
+            isGuest : true
+        };
+
+        var i18n = {
+            acclaimLikingLike : "Like",
+            acclaimLikingUnlike : "Liked",
+            acclaimLikedNone : "None",
+            acclaimLikingLiked : "Person Liked This",
+            acclaimLikingLikedPlural : "People Liked This",
+            acclaimPeopleLiked : "People who liked this",
+            acclaimLikedYou : "You",
+            acclaimLikedFriends : "Friends",
+            acclaimLikedEveryone : "Everyone Else",
+            globalMore : "More",
+            globalClose : "Close"
+        };
+
+        new jive.Acclaim(options, i18n);
+    })();
+
+
+        var quickuserprofile = new QuickUserProfile("jive-note-user-body", profileShortUrl, profileLoadingTooltip,
+                profileErrorTooltip);
+        var jiveprojectchooser = new JiveProjectChooser(projectChooserUrl);
+        var quickcontainersummary = new QuickContainerSummary("jive-note-container-body", containerShortUrl,
+                containerLoadingTooltip, containerErrorTooltip);
+        var quickviewvideo = new QuickViewVideo("jive-note-video-body", videoShortUrl, videoLoadingTooltip,
+                videoErrorTooltip);
+
+        var jiveFollow = new jive.Follow(followErrorMessage);
+
+
+</script>
+
+<script type="text/javascript" src="/4.5.3/resources/scripts/gen/95105cb8d3368854f5d438036d35983c.js"></script>
+<script type="text/javascript">
+    window.errorHandlerMessage = "An error occurred:";
+
+    window.editorErrorHandler = function(message, exception) {
+        // if the message is something other than a timeout, show the message plus the error code
+        if (message.indexOf('Timeout') == -1) {
+            $j('#dwr-error-text').text(errorHandlerMessage + ' Error Code: ' + message);
+            $j('#dwr-error-table').fadeIn();
+            setTimeout(function() {
+                $j('#dwr-error-table').fadeOut();
+            }, 10000);
+        }
+    };
+
+
+    
+    if(typeof(tinyMCE) != "undefined"){ // could be Safari 2, which dies with tinyMCE
+        tinyMCE.addI18n('en.jivemacros',{
+                    "unused.jive.key" : "nothing."
+        });
+    }
+    if(typeof(tinyMCE) != "undefined"){ // could be Safari 2, which dies with tinyMCE
+        tinyMCE.addI18n('en.jivemacros',{
+                    "unused.jive.key" : "nothing."
+        });
+    }
+
+
+        window.RawHTMLSaveFunction = function(element_id, html, body){
+            var text = $j('#wysiwygtext');
+            if (text.is(':not(:visible)')) {
+                return html;
+            }else{
+                return text.val();
+            }
+        }
+        jive.rte.multiRTE = new Array();
+
+        window.refreshLinks = function() {
+            jive.rte.multiRTE.forEach(function(rteID) {
+                if ($j('#' + rteID + '_parent').length < 1) {
+                    // safari 2, text only
+                    $j('#' + rteID + '_toggle_html').hide();
+                    $j('#jivePreferredEditorModeLinkHREF').hide();
+                    return;
+                }
+
+                if(currentMode == 'rawhtml') {
+                    $j('#' + rteID + '_toggle_html').css('display', 'block');
+                }else{
+                    $j('#' + rteID + '_toggle_html').hide();
+                }
+
+                if (preferredMode == currentMode) {
+                    $j('#jivePreferredEditorModeLinkHREF').hide();
+                } else {
+                    $j('#jivePreferredEditorModeLinkHREF').css('display', 'block');
+                }
+            });
+        }
+
+    window.editor = new jive.ext.y.HashTable();
+
+
+       
+jive.rte.macros.push(new jive.rte.Macro("color","","TEXT", true, false, [], [{name: "0",value: ""},{name: "__default_attr",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("size","","TEXT", true, false, [], [{name: "0",value: ""},{name: "__default_attr",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("font","","TEXT", true, false, [], [{name: "0",value: ""},{name: "__default_attr",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("toc","","IMAGE", true, true, [], [], true,false));
+jive.rte.macros.push(new jive.rte.Macro("code","","TEXT", false, true, [{ name: "sql", deleteAll: true, params: [{ name: "__default_attr", value :"sql"} ]},{ name: "html", deleteAll: true, params: [{ name: "__default_attr", value :"html"} ]},{ name: "xml", deleteAll: true, params: [{ name: "__default_attr", value :"xml"} ]},{ name: "java", deleteAll: true, params: [{ name: "__default_attr", value :"java"} ]},{ name: "plain", deleteAll: true, params: [{ name: "__default_attr", value :"plain"} ]}], [{name: "__default_attr",value: ["sql","html","xml","java","plain"]}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("noformat","","TEXT", true, false, [], [], true,false));
+jive.rte.macros.push(new jive.rte.Macro("thread","thread/","INLINE", true, false, [], [{name: "id",value: ""},{name: "0",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("message","message/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("external-site","bookmarks/","INLINE", false, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("document","docs/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("microblog","status/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("polls","polls/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("blogpost","blogs/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("blog","blogs/","INLINE", true, false, [], [{name: "id",value: ""},{name: "name",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("community","community/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("space","community/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("user","","INLINE", true, false, [], [{name: "id",value: ""},{name: "username",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("project","project/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("task","view-task.jspa?task=","INLINE", true, false, [], [{name: "id",value: ""},{name: "0",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("group","groups/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("quote","","TEXT", false, true, [], [{name: "title",value: ""},{name: "__default_attr",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("vimeo","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("veoh","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("dailymotion","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("google","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));
+jive.rte.macros.push(new jive.rte.Macro("youtube","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));
+
+
+
+</script>
+<script type="text/javascript" src="/4.5.3/resources/scripts/gen/ebb46d234aeb904c880585ac05cbdb06.js"></script>
+<script type="text/javascript">
+        $j(function() {
+			$j('.jive-shared-list-toggle').click(function() {
+				$j('.jive-shared-list-short').toggle();
+				$j('.jive-shared-list-all').toggle();
+                                return false;
+			});
+        });
+
+
+        var _jive_video_picker__url = "?container=2045&containerType=14"
+
+
+    
+    function toggleFeatured() {
+
+        ToggleFeatured.toggleFeatured(1, 4163, 2045, 14, {
+            callback:function(featured) {
+
+                if (featured) {
+                    $j('#featured-toggle-unfeature').show();
+                    $j('#featured-toggle-feature').hide();
+                } else {
+                    $j('#featured-toggle-unfeature').hide();
+                    $j('#featured-toggle-feature').show();
+                }
+
+
+
+                Jive.AlertMessage('content-featured-notify', {
+                    beforeStart:function() {
+                        if (featured) {
+                            $j('#content-featured-notify').html('<div><span class="jive-icon-med jive-icon-info"></span>This item is now featured!</div>');
+                           
+                        } else {
+                            $j('#content-featured-notify').html('<div><span class="jive-icon-med jive-icon-info"></span>You have removed this from featured content.</div>');
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+
+        (function() {
+            var options = {
+                isModerated:        false,
+                isThreaded:         true,
+                resourceType:       1,
+                resourceID:         4163,
+
+                containerType:      14,
+                containerID:        2045,
+
+                listAction:         "/comment-list.jspa",
+                resourceVersionID:  -1,
+
+                preferredMode:      'advanced',
+                currentMode:        'advanced',
+                rteDisabledBrowser: false,
+                isAnonymous:        true,
+
+                question:           false,
+                imagesEnabled:      false,
+
+                i18n: {
+                    postSuccessText:         'Your message was posted successfully.',
+                    postErrorText:           'An error occured while trying to submit your post. Please try again.',
+                    forumThrdReplyTo:        'Reply to',
+
+                    // Question text for discussions-question.soy
+                    questionNotAnswered:     'This question is {0}Not Answered.{1}',
+                    markQuestionAsAssumedAnswered: '{0}{1}Mark as assumed answered{2}{3}',
+                    questionAssumedAnswered: 'This question is {0}Assumed Answered.{1}',
+                    questionAnswered: 'This question has been {0}Answered.{1}',
+                    correctAnswer: 'Correct Answer',
+                    helpfulAnswer: 'Helpful Answer',
+                    helpfulAnswers: 'Helpful Answers',
+                    byWord: 'by&nbsp;',
+                    onWord: '&nbsp;on&nbsp;',
+                    leftParen: '(',
+                    rightParen: ')',
+                    unmarkAsCorrectAnswer: 'Unmark as Correct',
+                    unmarkAsHelpfulAnswer: 'Unmark as Helpful',
+                    seeAnswerInContext: 'See the answer in context',
+                    seeThisAnswer: 'See this answer',
+                    allHelpfulAnswersAwarded: 'You\'ve awarded all available Helpful Answers',
+                    oneHelpfulAnswerLeft: 'You have {0} more Helpful answer to award.',
+                    someHelpfulAnswersLeft: 'You have {0} more Helpful answers to award.',
+                    postUserWroteLabel: '{0} wrote',
+                    postGuestWroteLabel: 'Guest wrote',
+                    formSubmitPleaseWait:'Please Wait ...',
+                    postReplyMustBeApprvdText:'Please note, your reply will need to be approved by a moderator before it is posted in the forum.',
+                    globalLoginRequired:'You are no longer logged in. Please {0}log in{1} to continue.'
+                }
+            };
+
+            // Create DiscusssionApp
+            var discussisons = new jive.DiscussionApp.Main(options);
+        })();
+
+
+        new jive.MoreLikeThisApp.Main({
+            objectType: 2,
+            objectID: 11058,
+            containerID: "jive-more-like-this-2-11058",
+            numResults: 5,
+            noContentMessage: "No similar content found",
+            errorMessage: "Unable to retrieve content from the server:"
+        });
+
+
+        $j(function() {
+            $j("#jive-view-picker").change();
+        });
+
+        $j(function() {
+            var tooltipUrl = "/view-favorite-tooltip.jspa";
+            $j("#jive-bookmark-sidebar .jive-avatar").livequery(function() {
+                var favoriteId = $j(this).parents("li").attr("id").slice("favorite-".length);
+                $j(this).tooltip("bookmark", tooltipUrl + "?favorite=" + favoriteId);
+            });
+        });
+
+
+</script>
+	
+<script type="text/javascript" src="/4.5.3/resources/scripts/gen/38fb221925a9de4900c9944b91e6859c.js"></script>
+<script type="text/javascript" src="/4.5.3/resources/scripts/gen/e91d07bcef7399832684ce33e15c0b09.js"></script>
+	
+    
+    
+
+	<link rel="stylesheet" href="/4.5.3/styles/jive-content.css" type="text/css" media="all" />
+    
+
+            <link rel="alternate" type="application/rss+xml"
+                title=" Technology Marketing Discussions Feed"
+                href="/community/feeds/threads?community=2045">
+
+        <link rel="alternate" type="application/rss+xml"
+            title="Messages in 'Is Crowdsourcing marketing’s “Easy” button?' Discussion Feed"
+            href="/community/feeds/messages?thread=4163">
+
+
+
+
+
+
+    
+
+    <!-- BEGIN action bar -->
+
+    
+
+    <!-- END action bar -->
+
+
+        <link rel="canonical" href="/thread/4163#11570"/>
+
+
+
+
+
+
+    <link rel="stylesheet" href="/themes/flb-default/styles/start-panel.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/themes/flb-default/styles/flb.css" type="text/css" media="all" />
+
+    <style type="text/css">/* custom-css */
+/* Applies to all Communities */
+/* Last Edited by KFT NOV-18-2010 */
+
+
+
+
+/* hides content in JavaScript enabled browser, must be moved to .JS */
+.js_hid { 
+display: none;
+}
+
+
+
+/* Globals
+--------------------------------------------------------------- */
+
+body { font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+a,
+a:link,
+a:visited  { color: #0856A4; }
+
+a:hover, a:focus { color: #355491; }
+
+html body p a:link,
+html body p a:visited
+ { text-decoration: underline; }
+ 
+.underline,
+a.underline
+{ text-decoration: underline; }
+
+.whiteLink a { color: #FFF; }
+
+a.font-color-meta:link, 
+a.font-color-meta:visited {
+color:#004D86;  /* Double check this one ? for History/Your Stuff */
+}
+
+.anonHide { display: none; } /* hides content from authenicated users. Controlled by user-bar.ftl */
+
+
+/* END Globals */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Basic Formatting
+--------------------------------------------------------------- */
+
+html body .noDisplay	{display: none;}
+html body .block	{display: block;}
+html body .inline	{display: inline;}
+
+html body .visHidden	{visibility: hidden;}
+html body .visVisible	{visibility: visible;}
+
+html body .bold		{font-weight: bold;}
+html body .noBold	{font-weight: normal;}
+html body .noUnderline, html body a.noUnderline, html body span.noUnderline	{text-decoration: none;}
+
+
+html body .font65 		{font-size: 65%;}
+html body .font68 		{font-size: 68%;}
+html body .font70 		{font-size: 70%;}
+html body .font72 		{font-size: 72%;}
+html body .font78 		{font-size: 78%;}
+html body .font80 		{font-size: 80%;}
+html body .font85		{font-size: 85%;}
+html body .font90		{font-size: 90%;}
+html body .font93		{font-size: 93%;}
+html body .font100		{font-size: 100%;}
+html body .font105		{font-size: 105%;}
+html body .font110		{font-size: 110%;}
+html body .font115		{font-size: 115%;}
+html body .font120		{font-size: 120%;}
+
+html body .lh120		{line-height: 120%;}
+html body .lh130		{line-height: 130%;}
+html body .lh140		{line-height: 140%;}
+html body .lh150		{line-height: 150%;}
+html body .lh160		{line-height: 160%;}
+html body .lh170		{line-height: 170%;}
+html body .lh180		{line-height: 180%;}
+
+	
+
+/* Various PADDING denominations
+------------------------------------------------------ */
+html body .noPadding	{padding: 0;}
+html body .padSml		{padding: .25em;}
+html body .padMed		{padding: .5em;}
+html body .padLrg		{padding: 1em;}
+html body .padHug		{padding: 2em;}
+	
+/* Top padding */
+html body .padTopSml	{padding-top: .25em;}
+html body .padTopMed	{padding-top: .5em;}
+html body .padTopLrg	{padding-top: 1em;}
+html body .padTopHug	{padding-top: 2em;}
+html body .padTopNone	{padding-top: 0;}
+	
+/* Right padding */
+html body .padRightSml	{padding-right: .25em;}
+html body .padRightMed	{padding-right: .5em;}
+html body .padRightLrg	{padding-right: 1em;}
+html body .padRightHug	{padding-right: 2em;}
+html body .padRightNone	{padding-right: 0;}
+	
+/* Bottom padding */
+html body .padBotSml	{padding-bottom: .25em;}
+html body .padBotMed	{padding-bottom: .5em;}
+html body .padBotLrg	{padding-bottom: 1em;}
+html body .padBotHug	{padding-bottom: 2em;}
+html body .padBotNone	{padding-bottom: 0;}
+	
+/* Left padding */
+html body .padLeftSml	{padding-left: .25em;}
+html body .padLeftMed	{padding-left: .5em;}
+html body .padLeftLrg	{padding-left: 1em;}
+html body .padLeftHug	{padding-left: 2em;}
+html body .padLeftNone	{padding-left: 0;}
+	
+/* Vertical padding */
+html body .padVertSml	{padding-top: .25em; padding-bottom: .25em;}
+html body .padVertMed	{padding-top: .5em; padding-bottom: .5em;}
+html body .padVertLrg	{padding-top: 1em; padding-bottom: 1em;}
+html body .padVertHug	{padding-top: 2em; padding-bottom: 2em;}
+html body .padVertNone	{padding-top: 0; padding-bottom: 0;}
+	
+/* Horizontal padding */
+html body .padHorizSml	{padding-right: .25em; padding-left: .25em;}
+html body .padHorizMed	{padding-right: .5em; padding-left: .5em;}
+html body .padHorizLrg	{padding-right: 1em; padding-left: 1em;}
+html body .padHorizHug	{padding-right: 2em; padding-left: 2em;}
+html body .padHorizNone	{padding-right: 0; padding-left: 0;}
+
+
+/* Various MARGIN denominations
+------------------------------------------------------ */	
+html body .noMargin		{margin: 0;}
+html body .marSml		{margin: .25em;}
+html body .marMed		{margin: .5em;}
+html body .marLrg		{margin: 1em;}
+html body .marHug		{margin: 2em;}
+	
+/* Top margin */
+html body .marTopSml	{margin-top: .25em;}
+
+html body .marTopMed	{margin-top: .5em;}
+html body .marTopLrg	{margin-top: 1em;}
+html body .marTopHug	{margin-top: 2em;}
+html body .marTopNone	{margin-top: 0;}
+	
+/* Right margin */
+html body .marRightSml	{margin-right: .25em;}
+html body .marRightMed	{margin-right: .5em;}
+html body .marRightLrg	{margin-right: 1em;}
+html body .marRightHug	{margin-right: 2em;}
+html body .marRightNone	{margin-right: 0;}
+	
+/* Bottom margin */
+html body .marBotSml	{margin-bottom: .25em;}
+html body .marBotMed	{margin-bottom: .5em;}
+html body .marBotLrg	{margin-bottom: 1em;}
+html body .marBotHug	{margin-bottom: 2em;}
+html body .marBotNone	{margin-bottom: 0;}
+	
+/* Left margin */
+html body .marLeftSml	{margin-left: .25em;}
+html body .marLeftMed	{margin-left: .5em;}
+html body .marLeftLrg	{margin-left: 1em;}
+html body .marLeftHug	{margin-left: 2em;}
+html body .marLeftNone	{margin-left: 0;}
+	
+/* Vertical margin */
+html body .marVertSml	{margin-top: .25em; margin-bottom: .25em;}
+html body .marVertMed	{margin-top: .5em; margin-bottom: .5em;}
+html body .marVertLrg	{margin-top: 1em; margin-bottom: 1em;}
+html body .marVertHug	{margin-top: 2em; margin-bottom: 2em;}
+html body .marVertNone	{margin-top: 0; margin-bottom: 0;}
+	
+/* Horizontal margin */
+html body .marHorizSml	{margin-right: .25em; margin-left: .25em;}
+html body .marHorizMed	{margin-right: .5em; margin-left: .5em;}
+html body .marHorizLrg	{margin-right: 1em; margin-left: 1em;}
+html body .marHorizHug	{margin-right: 2em; margin-left: 2em;}
+html body .marHorizNone	{margin-right: 0; margin-left: 0;}
+
+html body .noBkg {background: none !important;}
+html body .dispBlock {display: block;}
+
+
+
+
+/* END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page Layout
+--------------------------------------------------------------- */
+
+
+/* 2 Column Layoyt */
+
+#jive-body-layout-ls .jive-body-layout-l {
+    float:left;
+    margin:0 -300px 0 0;
+    padding:0;
+}
+
+#jive-body-layout-ls .jive-body-layout-l .jive-widget-container-large {
+    margin-right:300px;
+}
+
+.jive-body-layout-s,
+.jive-body-layout-s1,
+.jive-body-layout-s2 {
+    width:270px;
+}
+
+
+#jive-body-layout-sl .jive-body-layout-l {
+    float:right;
+    margin:0 0 0 -300px;
+    padding:0;
+    width:100%;
+}
+
+#jive-body-layout-sl .jive-body-layout-l .jive-widget-container-large {
+    margin-left:300px;
+}
+
+
+
+
+/* 3 Column Layoyt */
+#jive-body-layout-sls .jive-body-layout-l {
+    float:left;
+    margin:0 -290px;
+    padding:0;
+}
+
+#jive-body-layout-sls .jive-body-layout-l .jive-widget-container-large {
+    margin:0 290px;
+}
+
+#jive-body-layout-sls .jive-body-layout-s1,
+#jive-body-layout-sls .jive-body-layout-s2  {
+    width:270px;
+}
+
+
+
+
+/* Content Pages */
+
+#jive-body-maincol-container {
+	float:left;
+	margin:0 -290px 0 0;
+	min-height:350px;
+	min-width:100%;
+	padding:0;
+	width:100%;
+}
+
+#jive-body-maincol {
+	margin:0 290px 0 0;
+	padding:0 20px;
+}
+
+#jive-body-sidebarcol-container {
+	float:right;
+	margin:0;
+	padding:0;
+	width:290px;
+}
+
+
+/* END Page Layout */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global Header
+--------------------------------------------------------------- */
+
+#jive-wrapper {
+    min-width: 1050px;
+margin-top: 8px; /* TEMP */
+
+}
+
+/* IE6 doesn't listen to max/min-width, so an 'expression' hack is used. */
+* html #jive-wrapper {
+    width: expression( document . body . clientWidth < 1052 ? "1050px": "auto" );
+}
+
+#jive-global-header {
+    background: #FFFFFF;
+    border: none;
+    position: absolute;
+    min-width: 600px;
+    top: 5px;
+    left: 18px;
+}
+
+#jive-global-header-texture {
+    background: none;
+    padding: 0;
+}
+
+
+
+#jive-global-header .jive-header-logo {
+    height: 97px;
+    width: 575px;
+}
+
+#jive-global-header .jive-header-logo a.jive-global-header-logolink {
+    left: auto;
+    position: relative;
+    top: 30px;
+    width: 150px;
+    height: 50px;
+    background: none; /* remove jive logo */
+}
+
+/* END */
+
+
+
+
+
+
+
+
+
+
+
+/* Primary Nav
+--------------------------------------------------------------- */
+
+div.navContainer {
+	background-image: none;
+	background-color: #016895;
+	zoom: 1;
+}
+
+.navContainer {
+	height:auto;
+}
+
+#navGlobal .left {
+	background-image: none;
+}
+
+#navGlobal td {
+	background: none;
+	background-color: transparent;
+	border-right: none;
+}
+
+#navGlobal .current {
+	background:url("http://www.forrester.com/community/images/elements/navGlobal_current_left.gif") no-repeat scroll left 4px transparent;
+	padding-left: 5px;
+}
+
+#navGlobal .current a {
+	/* -moz-border-radius: 6px 6px 0 0; */
+	background:url("http://www.forrester.com/community/images/elements/navGlobal_current_right.gif") no-repeat scroll right top #FFF;
+	margin-right: 0;
+	/* background-color: #FFF; */
+	color: #004D86;
+	margin-bottom:0;
+	padding: 2px 5px 7px 0;
+	position: relative;
+	top: 2px;
+	height:15px;
+}
+
+
+#navGlobal td a {
+	color:#FFF;
+	/* padding:0.5em 15px 0.5em 0; */
+	padding: 5px 10px;
+	display: block;
+	font-weight: bold;
+	white-space:nowrap;
+	text-decoration: none;
+	line-height:1.4555;
+	height: 18px;
+}
+
+#navGlobal td a:hover {
+	color:#80c7fc;
+	text-decoration: none;
+}
+
+table#navGlobal {
+	font-size: 70%;
+	line-height: 1.4em;
+	padding: 0;
+	margin-left: 4px;
+}
+
+#flb-navbar {
+    padding: 16px 16px 0;
+    font-size: 133%;
+}
+
+
+/* END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Userbar
+--------------------------------------------------------------- */
+
+
+/* IE FLOAT FIX */
+#jive-userbar-login {float:right;}
+
+#jive-header-nouserbar-placeholder {
+    float: none;
+    position: relative;
+    height: 75px;
+}
+
+#jive-userbar {
+    background: none;
+    float: right;
+    clear: none;
+    width: auto;
+    height: auto;
+    margin-top: 24px;
+	margin-right: 10px;
+    position: relative;
+}
+
+#jive-userbar-user {
+    float: right;
+    clear: right;
+    padding-right: 20px;
+    padding-left: 0;
+    position: relative;
+}
+
+#jive-userbar-user span {
+    padding-top: 10px;
+	color:#777777;
+	display:inline;
+	float:left;
+	font-size:0.8889em;
+	padding-left:1px;
+	padding-top:15px;
+}
+
+#jive-userbar-user-avatar {
+    display: none;
+}
+
+#jive-userbar-droplink {
+    float: right;
+    clear: right;
+    padding: 11px 10px 0 0;
+    position: absolute;
+    top: 93px;
+    right: 12px;
+    z-index: 2;
+    min-width: 530px;
+}
+
+#jive-userbar-droplink.anon {
+    top: 104px;
+}
+
+/* IE6 only */
+*+html #jive-userbar-droplink {
+/* IE7 only */
+   top: 92px;
+}
+
+#jive-userbar-droplink ul
+ {
+    float: right;
+    padding: 6px 0 0;
+    position: relative;
+}
+
+#jive-userbar-droplink ul ul{
+    float: none;
+}
+
+#jive-userbar-droplink a.jive-userbar-droplink {
+    font-size: 0.90em;
+    font-weight: normal;
+    color: #004D86;
+}
+
+#jive-userbar-droplink a.jive-userbar-droplink:hover {
+    color: #004D86;
+    text-decoration: underline;
+}
+
+#jive-userbar-droplink a.jive-userbar-droplink span {
+    display: none;
+}
+
+#jiveUserMenu2Link,
+#jiveUserMenu5Link {
+    display: none;
+}
+
+#jive-userbar-droplink #jiveUserMenu3Link {
+    margin-right: 0;
+}
+
+#jive-userbar-droplink #jive-userbar-droplink-people,
+#jive-userbar-droplink #jive-userbar-droplink-mycommunity,
+#jive-userbar-droplink #jive-userbar-forrester-blogs,
+#jive-userbar-droplink #jive-userbar-droplink-forr-profile
+  {
+    background: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 14px;
+    padding-right: 0;
+}
+
+#jive-userbar-right {
+    position: relative;
+    clear: right;
+    padding: 10px 20px 0 0;
+    right: auto;
+}
+
+#jive-userbar-droplink li div.jive-userbar-menu {
+    top: 32px;
+    left: auto;
+    right: 0;
+}
+
+/* IE6 only */
+*+html #jive-userbar-droplink li
+{
+/* IE7 only */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* IE6 only */
+*+html #jive-userbar-droplink li div.jive-userbar-menu {
+/* IE7 only */
+    top: 20px;
+}
+
+#jive-userbar-search {
+    float: right;
+}
+
+#jive-search-target-link {
+    background: transparent url(/themes/flb-default/images/flb-blue-down-arrow.png) no-repeat scroll center right;
+    padding-right: 12px;
+    margin-top: 4px;
+    margin-right: 1em;
+    color: #1861AA;
+    float: left;
+	text-decoration: none;
+}
+
+a#jive-search-target-link:focus {
+    outline: none;
+}
+
+#jive-userbar-search .jive-userbar-search-button {
+    /* background: transparent url(/themes/flb-default/images/flb-userbar-search-btn.png) no-repeat 0 0; */
+    background: transparent url("http://www.forrester.com/community/images/elements/flb-userbar-search-btn.png") no-repeat 0 0;
+    border: none;
+    color: #333;
+    height: 24px;
+    margin-left: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -1000em;
+    width: 27px;
+    float: left;
+}
+
+#jive-userbar-search .jive-userbar-search-field {
+    background: #fff url(/themes/flb-default/images/flb-userbar-search-bg.png) no-repeat top right;
+    border: none;
+    color: #333;
+    padding: 0 0 0 14px;
+    width: 148px;
+    height: 24px;
+    float: left;
+    line-height:24px;
+}
+
+#jive-userbar-search .jive-userbar-search-button:hover {
+    background-position: 0 0;
+}
+
+#jive-userbar-search .jive-search-advanced-link {
+    float: left;
+    width: 9ex;
+    padding-left: 1em;
+    margin-top: -2px;
+    display: none;
+}
+
+#jive-userbar-search span a {
+    text-decoration: none;
+    color: #1861AA;
+}
+
+#jive-userbar-search span a:hover {
+    text-decoration: underline;
+    color: #1861AA;
+}
+#user-bar-wrapper { z-index: 999; }
+
+#jive-userbar-right { z-index: 999; }
+
+#jive-spotlight-search {
+    background:none repeat scroll 0 0 #f9f9f9;
+    right: 46px;
+    top: 33px;
+    left: auto;
+    border-width:1px;
+}
+
+#jive-userbar-login {
+	height:62px;
+}
+
+.jive-userbar-login-guest {
+    border: none;
+    font-size: 0.9em;
+    background-image: none;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.jive-userbar-slidedown {
+	float:left;
+	font-size:0.8889em;
+	margin:42px 0 0;
+	overflow:hidden;
+	padding:0 0 5px;
+	position:absolute;
+	right:90%;
+	left: auto;
+	top:96px;
+	width:auto;
+	z-index:801;
+}
+
+/* END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tabbar
+--------------------------------------------------------------- */
+
+#flb-tabbar {
+    background: #FFF none repeat scroll 0 0;
+    border-top: 1px solid #FFF;
+    height: 21px;
+    margin: 0 20px;
+}
+
+.jive-body-home #jive-body-intro .jive-body-tabbar {
+    top: -21px;
+}
+
+#jive-body-intro .jive-body-tabbar {
+    background: #FFF none repeat scroll 0 0;
+    padding: 0;
+    position: absolute;
+    top: 53px;
+    bottom: auto;
+    display: block;
+    float: left;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 1.8em;
+}
+
+#flb-tabbar .jive-body-tab,
+#jive-body-intro .jive-body-tabcurrent,
+#jive-body-intro .jive-body-tab,
+#flb-tabbar .jive-body-tab a,
+#jive-body-intro .jive-body-tabcurrent a,
+#jive-body-intro .jive-body-tab a {
+    background: none;
+    font-weight: normal;
+    font-size: 0.95em;
+    padding: 0 0 1px;
+    margin: 0 6px;
+    color: #004D86;
+border: none;
+-moz-box-shadow: none;
+}
+
+#jive-body-intro .jive-body-tabcurrent a {
+    font-weight: bold;
+}
+
+/* The follwing IE specific styles were used in old design */
+/* IE6 only */
+*+html #flb-tabbar .jive-body-tab,
+*+html #jive-body-intro .jive-body-tabcurrent,
+*+html #jive-body-intro .jive-body-tab,
+*+html #flb-tabbar .jive-body-tab a,
+*+html #jive-body-intro .jive-body-tabcurrent a,
+*+html #jive-body-intro .jive-body-tab a {
+    /* IE7 only */
+
+}
+
+#jive-body-intro .jive-body-tab {
+    margin: 0;
+}
+
+#jive-body-intro .jive-body-tab .jive-icon-sml {
+    display: none;
+}
+
+#jive-body-intro .jive-body-tab .jive-link-count {
+    color: #909090;
+    font-size: 90%;
+}
+
+
+#jive-body-intro .jive-body-tabcurrent .jive-body-tab-customizable,
+#jive-body-intro .jive-body-tab-customizable {
+    background: none;
+    padding-right: 0;
+}
+
+#jive-body-intro .jive-body-tabcurrent .jive-body-tab-customizable em,
+#jive-body-intro .jive-body-tab-customizable em {
+	line-height: 1em;
+    padding: 0;
+	margin: 0 6px 0 0;
+
+}
+
+#flb-tabbar .jive-body-tab a:hover,
+#jive-body-intro .jive-body-tab a:hover,
+#jive-body-intro .jive-body-tab-customizable em a:hover,
+#jive-body-intro .jive-body-tabcurrent .jive-body-tab-customizable em a:hover,
+.jive-body-tabbar #jive-set-default-tab:hover {
+	color:#004D86;
+	text-decoration: underline;
+}
+
+#jive-body-intro .jive-body-tab-customizable em a {
+	color:#004D86;
+	font-weight:normal;
+	text-decoration:none;
+	padding: 0;
+}
+
+/* hide the set as default tab */
+.jive-body-tabbar #jive-set-default-tab {
+	display:none;
+}
+
+#jive-body-intro .jive-body-tabbar > span {
+	border-right:1px solid #909090;
+	padding:0 0 0;
+}
+/* end tabbar */
+
+
+
+
+
+
+
+
+
+
+
+
+/* breadcrumb
+--------------------------------------------------------------- */
+
+#jive-breadcrumb {
+    background-color: #FFF;
+    border-top: 1px solid #CEE6AD;
+    color: #666666;
+    display: block;
+    font-size: 0.9em;
+    margin: 9px 22px 10px;
+    padding: 12px 3px 8px;
+}
+
+/* end breadcrumb */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  FOR HUB PAGE ONLY
+--------------------------------------------------------------- */
+
+/*  hide tabbar links  */
+.jive-body-home .jive-body-tabbar #jive-all-tab,
+.jive-body-home .jive-body-tabbar #jive-discussions-tab,
+.jive-body-home .jive-body-tabbar #jive-documents-tab { display: none; }
+.jive-body-home .jive-body-tabbar > span { border:none; }
+
+/* HIDES Content Menu, Announcement, Tab Icons  */
+.jive-body-home #jive-body-intro .jive-body-tabcurrent .jive-body-tab-customizable em a {display:inline; left:1220px; position:absolute;}
+
+.jive-body-home #jive-body-intro .jive-body-tabcurrent .jive-body-tab-customizable em a + a { left:1250px; }
+
+.jive-body-home #jive-body-intro .jive-body-tabbar {left:-1200px; overflow:visible; }
+
+.jive-body-home #jive-body-intro .jive-body-tabbar {top:-20px;}
+.jive-body-home #jive-body-intro .jive-body-intro-community {display:none;}
+.jive-body-home #jive-body-intro.jive-body-intro-home #jive-body-intro-content {display:none;}
+.jive-body-home #jive-new-announcement {display:none;}
+.jive-body-home #jive-body-tabbar-links {display:none;}
+.jive-body-home #jive-body-intro.jive-body-intro-home {height:0;}
+.jive-body-home #flb-tabbar { height: 26px; }
+.jive-body-home #jive-breadcrumb {display:none;}
+
+/* Commuinity List Panel */
+
+.jive-body-home .communityList td {
+    padding: 4px 0 4px 4px;
+    vertical-align: top;
+}
+
+.jive-widget .jive-widget-body .jive-html-text-widget .borderlessGreenGradThin .communityList h3 {
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	color:#1c665e;
+	font-size: 15px;
+	background: none;
+	padding: 0;
+	font-weight: normal;
+
+}
+
+.jive-widget .jive-widget-body .jive-html-text-widget .borderlessGreenGradThin .communityList h4 {
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	color: #1c665e;
+	font-size: 12px;
+	text-transform: none;
+	background: none;
+	padding: 15px 1px 0;
+	display: block;
+	letter-spacing:0;
+}
+
+.communityList a
+	{background: url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/arow_ornge.gif) no-repeat 0 .35em; 
+	padding-left: 0.8em; 
+	margin:0 3px 0;
+	display: list-item;
+	list-style-type:none;}
+
+/* FLB Welcome Panel */
+	
+#startPanel { margin-bottom:20px; }
+
+#startPanel h1 { font-family:Verdana,Arial,Helvetica,sans-serif; }	
+	
+
+
+/* END FOR HUB PAGE ONLY */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* home page widgets
+--------------------------------------------------------------- */
+
+.jive-body-community-overview li#jive-link-createThread {
+	padding: 8px 0 32px 8px;
+	margin-top: 3px;
+}
+
+.jive-body-community-overview li#jive-link-createThread a {font-weight: bold;}
+
+.menuInsertCopy {
+	color:#494949; 
+	display:block; 
+	padding-top:6px;
+}
+
+.jive-widget-communityactionswidget ul { padding-right: 0;}
+
+
+
+/* end home page widgets */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* hide container name
+--------------------------------------------------------------- */
+
+#jive-body-intro {
+    background: none;
+    border: none;
+    margin: 0 0 10px 0;
+    padding-top: 0;
+}
+
+#jive-body-intro .jive-body-intro-community,
+#jive-body-intro.jive-body-intro-home #jive-body-intro-content {
+    display: none;
+}
+
+#jive-body-intro.jive-body-intro-home {
+    height: 24px;
+}
+
+#jive-body-tabbar-links {
+    bottom: -8px;
+}
+
+.jive-customize-info, .jive-customize-details {
+    margin-top: 0;
+}
+
+/* END */
+
+
+
+
+
+
+
+
+
+/* Messages
+--------------------------------------------------------------- */
+
+#jive-alert {
+    background-color:#FFF0C4;
+    border:medium none;
+    margin-bottom:18px;
+}
+
+.jive-alert-header .jive-alert-title .jive-alert-label {
+    font-size:0.9em;
+    font-weight:normal;
+    padding:3px 3px 1px 22px;
+    text-transform:uppercase;
+}
+
+.jive-alert-header .jive-alert-title a { font-size:95%; }
+
+.jive-alert-type { padding:6px 10px; }
+
+.jive-alert-announcement-label { color:#6E6E6E; }
+
+.jive-alert-header ul li a { color:#0856A4; }
+
+#jive-alert-counter {
+    background-color:transparent;
+    margin:0;
+    padding:0 0 0 5px;
+    position:absolute;
+    right:5px;
+    top:7px;
+}
+
+.jive-alert-count a, .jive-alert-count-active a {
+    background-color:#FFF;
+    display:block;
+    padding:0 4px;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.jive-alert-count-active a {
+    background-color:transparent;
+    font-weight:normal;
+}
+
+.jive-error-box, .jive-info-box, .jive-success-box, .jive-warn-box {
+    -moz-border-radius:4px 4px 4px 4px;
+    clear:both;
+    margin:0 20px 20px;
+    overflow:hidden;
+    padding:0;
+}
+
+.jive-body-home #jive-announcements-messaging {
+    margin:0;
+}
+
+
+/* END Messages */
+
+
+
+
+
+
+
+
+
+
+
+/*  Acordion
+--------------------------------------------------------------- */
+#CommunityMainPanel {
+	overflow:hidden;
+	background:url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/hp/jview/bkg_grn.jpg) repeat-x #a9cd76;
+}	
+
+.ui-accordion-container {
+	padding:0 9px 3px;
+}	
+
+.panelAccordT {
+	height:9px;
+	background:#688A45 url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/hp/jview/acc_tr_g.gif) no-repeat right;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}	
+.panelAccordB {
+	height:9px;
+	background:#A9CD76 url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/hp/jview/acc_br_g.gif) no-repeat right bottom;
+/*	top: -3px;*/
+	padding: 0;
+	margin: 0;
+}
+
+.accordion_content table {
+	border:none;
+	border-collapse:collapse;
+}
+	
+.accordion_content td {
+	border:none;
+	padding:0;
+}
+
+.accordion_content .panelGraphic {
+float:left;
+margin:10px 6px 0 6px;
+}
+
+#accordion h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 2em;
+	font-weight:normal;
+	color: #688A45;
+}
+
+#accordion h2 {
+	font-size:80%;
+	margin-top: 0;
+	margin-bottom: 6px;
+	color: #c7731b;
+	font-weight:normal;
+	padding-top: 0;
+}
+
+#accordion h3 {
+	font-size:80%;
+	margin-bottom: 6px;
+	margin-top: 2px;
+	color: #c7731b;
+}
+
+#accordion h4 {
+	font-size:80%;
+	margin-bottom: 6px;
+	margin-top: 2px;
+}
+
+#accordion p {
+	color:#333333;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:1.1em;
+	line-height:1.4;
+	margin-top:4px;
+	margin-bottom:12px;
+}
+.accordion_content ul {
+	font-size:82%;
+	margin-bottom: 6px;
+	margin-top: 2px;
+	padding-left: 2em;
+	margin-left: 0;
+}
+.accordion_content li {
+	margin-left: 0;
+}
+
+#accordion a.accHeader {
+	font-weight: bold;
+	color: #FFF;
+	display: block;
+	font-size: 120%;
+	border-bottom: 1px solid #FFF;
+	zoom: 1;
+	outline: none;
+	background: url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/hp/jview/b_arrowbutton.gif) no-repeat left center;
+	padding: 5px 8px 5px 18px;
+	text-decoration:none;
+}
+
+#accordion a.accHeader:hover {
+	color: #2F3F20;
+	text-decoration:none;
+	background-image: url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/hp/jview/b_arrowbutton_h.gif);
+}
+
+#accordion .selected {
+	/*border-bottom:none;*/
+}	
+
+.accordion_content {
+	/*	line-height: 120%;*/
+	padding: 0 8px 0 8px;
+	background-color: #FFF;
+	margin: 0;
+	zoom: 1;
+/*	height:250;*/
+	overflow:hidden;
+}
+
+.accordion_content2 {	/*	line-height: 120%;*/
+	padding: 0 8px 0 8px;
+	background-color: #FFF;
+	margin: 0;
+	zoom: 1;
+/*	height:250;*/
+	overflow:hidden;
+}
+.accordion_content1 {	/*	line-height: 120%;*/
+	padding: 0 8px 0 8px;
+	background-color: #FFF;
+	margin: 0;
+	zoom: 1;
+/*	height:250;*/
+	overflow:hidden;
+}
+.accordion_content3 {	/*	line-height: 120%;*/
+	padding: 0 8px 0 8px;
+	background-color: #FFF;
+	margin: 0;
+	zoom: 1;
+/*	height:250;*/
+	overflow:hidden;
+}
+
+/*  END Acordion  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* What's New Panel
+--------------------------------------------------------------- */
+
+.jive-widget-container-large .jive-widget-body .whatsNew h1 {
+	color: #688A45;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	font-size: 2.5em;
+}
+
+.whatsNew h2 {
+	color: #016895;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}
+
+.whatsNew h2 a {
+	text-decoration: none;
+	color:#016895;
+}
+
+.whatsNew h2 a:hover {
+	text-decoration: underline;
+}
+
+.whatsNew p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-size: 1.2em;
+	line-height: 1.4;
+	margin-top: 4px;
+}
+
+td.whatsNewItem {
+	width: 33%;
+	text-align: left;
+	vertical-align: top;
+	padding-right:24px;
+}
+/*  END What's New Panel  */
+
+
+
+
+
+
+
+
+
+
+
+
+/*  Business Challenge
+--------------------------------------------------------------- */
+
+.businessChallenge h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 2em;
+	font-weight:normal;
+	color: #688A45;
+	padding-top: 0px;
+}
+
+.businessChallenge h2 {
+	font-size:80%;
+	margin-top: 0;
+	margin-bottom: 6px;
+	color: #c7731b;
+	font-weight:normal;
+	padding-top: 0;
+}
+
+.businessChallenge h3 {
+	font-size:1.6em;
+	margin-bottom: 0px;
+	color:#016895;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 9px;
+}
+
+.businessChallenge h4 {
+	font-size:1em;
+	margin-bottom: 0px;
+	color: #494949;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	padding-bottom: 0px;
+}
+.businessChallenge h5 {
+	font-size:1em;
+	margin-bottom: 0px;
+	color: #494949;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	padding-top: 6px;
+	padding-bottom: 0px;
+}
+
+.businessChallenge p {
+	color:#333;
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:1.1em;
+	line-height:1.4;
+	margin:4px 0 9px;
+}
+
+
+/* List with an orange arrow background image bullet */
+.businessChallenge ul.arrow {font-size:1.1em; list-style-type: none; padding: .3em 0 .6em 0; margin: 0;}
+.businessChallenge ul.arrow li {background: url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/arow_ornge.gif) no-repeat 0 .35em; padding-left: 1em; padding-bottom: .7em; line-height: 130%; margin:0; list-style-type:none;}
+.businessChallenge ul.arrow li ul {margin: .2em 0 0 1.1em; padding: 0; list-style: disc;}	
+.businessChallenge ul.arrow li ul li {padding: 0 0 .4em 0; background: none;}
+
+
+.businessChallenge li {
+	margin-left: 0;
+}
+
+/* END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Large Panel Formatting
+--------------------------------------------------------------- */
+
+
+.panelBorderBottom {
+	border-bottom:1px solid #E6E6E6;
+	padding-bottom:28px;
+	margin-bottom:24px;
+}	
+
+.panelSpaceBot {
+	margin-bottom:20px;
+}	
+
+
+/* END Large Panel Formatting */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Widgets and Panels
+--------------------------------------------------------------- */
+.jive-box-header, .jive-sidebar-header, .jive-widget-header {
+    background: none;
+    border: none;
+}
+
+.jive-widget {
+    border: none;
+}
+
+.jive-widget .jive-widget-header {
+    background: #FFFFFF url(/themes/flb-default/images/jive-contentblock-bg.png) repeat-x scroll center bottom;
+}
+
+.jive-widget-showhide .jive-icon-minus {
+    margin-left: -8px;
+}
+
+.jive-widget-formatted-body {
+    padding: 5px 0;
+}
+
+.jive-widget-rssfeed-entry {
+    padding:0;
+}
+
+.jive-widget-rssfeed-entry-header a {
+    color:#0856A4;
+    font-size: 100%;
+}
+
+.jive-widget-rssfeed-entry-body {
+    display: none;
+}
+
+ul.jive-sidebar-rssfeed li {
+    padding-bottom: 10px;
+}
+
+.jive-body-layout-l .jive-widget-topmembers .jive-widget-topmembers-member,
+.jive-body-layout-l .jive-widget-newestmembers .jive-widget-newestmembers-member {
+	border:none;
+	display:block;
+	float:left;
+	margin:0;
+	padding:8px;
+}
+
+.jive-body-layout-l .jive-widget-topmembers .jive-widget-topmembers-member div,
+.jive-body-layout-l .jive-widget-newestmembers .jive-widget-newestmembers-member div {
+	background-color: #FFF;
+	border: none;
+	padding: 0 5px;
+}
+
+.jive-widget-topmembers .jive-widget-topmembers-member span img,
+.jive-widget-newestmembers .jive-widget-newestmembers-member span img {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	margin: 3px 0 0;
+	padding: 0;
+}
+
+.jive-box-body-empty { padding: 0; }
+
+div.jive-table-activity  { padding: 0; }
+
+td.jive-table-cell-type {
+	padding-left:0;
+	padding-right:1px;
+	width:18px;
+}
+
+.jive-widget-body .jive-table table {
+	border-top:medium none;
+	padding-left:0;
+	padding-right:0;
+}
+
+.jive-table-activity td {
+	padding-bottom:6px;
+	padding-top:5px;
+}
+
+.jive-table th, .jive-table td {
+	padding:7px;
+}
+
+.jive-table td.jive-table-cell-date {
+	color:#999999;
+	font-size:0.7778em;
+	padding:0 0 0 7px;
+	text-align:right;
+}
+
+.jive-table tr td.jive-table-cell-activity {
+	color:#666666;
+	font-size:0.8889em;
+	padding-left:3px;
+}
+
+.jive-widget-refresh {
+	display:block;
+	overflow:hidden;
+	position:absolute;
+	right:0;
+	top:12px;
+}
+
+.jive-widget-header-refresh,
+.jive-widget-header-options {
+	padding-right:0;
+}
+
+
+.jive-icon-list li {
+padding:0 0 7px 22px;
+}
+
+
+/* END Widgets and Panels */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* large widget
+--------------------------------------------------------------- */
+
+.jive-body-layout-l .jive-widget .jive-widget-header h4, 
+.jive-body-layout-l1 .jive-widget .jive-widget-header h4,
+.jive-body-layout-l2 .jive-widget .jive-widget-header h4,
+#jive-body-layout-l .jive-widget .jive-widget-header h4,
+#jive-content-results .jive-box-header h4,
+.jive-widget-container-large .jive-widget-body h1
+{
+	color: #688A45;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 2em;
+	font-weight: normal;
+	padding-bottom: 6px;
+	padding-left: 0;
+	border-bottom: none;
+}
+
+.jive-widget-container-large .jive-widget-body h2 {
+	font-size: 1.5em;
+	font-weight: normal;
+	padding-bottom: 6px;
+	padding-left: 0;
+	border-bottom: none;
+}
+
+
+
+/* END large widget */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* small widget
+--------------------------------------------------------------- */
+
+.jive-body-layout-s .jive-widget,
+.jive-body-layout-s1 .jive-widget,
+.jive-body-layout-s2 .jive-widget,
+.jive-body-layout-s3 .jive-widget {
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    border: none;
+}
+
+.jive-body-layout-s .jive-widget .jive-widget-header h4,
+.jive-body-layout-s1 .jive-widget .jive-widget-header h4,
+.jive-body-layout-s2 .jive-widget .jive-widget-header h4,
+.jive-body-layout-s3 .jive-widget .jive-widget-header h4,
+.jive-body-layout-s .jive-widget .jive-widget-body h4,
+.jive-body-layout-s1 .jive-widget .jive-widget-body h4,
+.jive-body-layout-s2 .jive-widget .jive-widget-body h4,
+.jive-body-layout-s3 .jive-widget .jive-widget-body h4 {	
+	color: #494949;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	letter-spacing: 0.15em;
+	padding-left: 0;
+	padding-top:12px;
+	text-transform: uppercase;
+	background:url("/themes/flb-default/images/widget-small-header.png") repeat-x scroll left top #FFFFFF;
+}
+
+.jive-body-layout-s .jive-widget .jive-widget-body ul,
+.jive-body-layout-s1 .jive-widget .jive-widget-body ul,
+.jive-body-layout-s2 .jive-widget .jive-widget-body ul,
+.jive-body-layout-s3 .jive-widget .jive-widget-body ul {
+    padding-left: 0;
+}
+
+ul.jive-sidebar-rssfeed li a {
+	display:block;
+	font-weight:normal;
+	margin-bottom:3px;
+	margin-top:3px;
+}
+
+/* END small widget */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* borderless widget panel styles
+--------------------------------------------------------------- */
+
+
+.borderlessGreenTop {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/panelGrad_topL.gif") repeat scroll 0 0 transparent;
+}
+.borderlessBlueTop {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessBlue_topL.gif") repeat scroll 0 0 transparent;
+}
+
+.borderlessGreenTop,
+.borderlessBlueTop {
+	clear:both;
+	height:9px;
+	line-height:9px;
+	overflow:hidden;
+	text-align:right;
+}
+
+.borderlessGreenTopR {
+	background-image:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/panelGrad_topR.gif");
+}
+.borderlessBlueTopR {
+	background-image:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessBlue_topR.gif");
+}
+.borderlessGreenTopR,
+.borderlessBlueTopR {
+	float:right;
+	height:9px;
+	line-height:9px;
+	width:9px;
+}
+
+.borderlessGreenGrad {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/panelGrad_bkg.gif") repeat-x scroll 0 0 #EAF5DC;
+	padding:0 11px 5px;
+}
+.borderlessGreenGradThin {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/panelGrad_bkg.gif") repeat-x scroll 0 0 #EAF5DC;
+	padding:0 6px 5px;
+}
+.borderlessBlueGrad {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessBlue_bkg.gif") repeat-x scroll 0 0 #198DC0;
+	color:#FFF;
+	padding:0 11px 5px;
+}
+.borderlessGreenGradS {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessGreenS_bkg.gif") repeat-x scroll 0 0 #EAF5DC;
+	padding:0 11px 5px;
+}
+.borderlessBlueGradS {
+	background:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessBlueS_bkg.gif") repeat-x scroll 0 0 #198DC0;
+	color:#FFF;
+	padding:0 11px 5px;
+}
+.borderlessGreenBot {
+	background-image:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/panelGrad_botL.gif");
+}
+.borderlessBlueBot {
+	background-image:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessBlue_botL.gif");
+}
+
+.borderlessGreenBot,
+.borderlessBlueBot {
+	clear:both;
+	height:9px;
+	line-height:9px;
+	margin-bottom:12px;
+	overflow:hidden;
+	text-align:right;
+}
+
+.borderlessGreenBotR {
+	background-image:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/role_based/images/panelGrad_botR.gif");
+}
+.borderlessBlueBotR {
+	background-image:url("http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/community/images/elements/borderlessBlue_botR.gif");
+}
+
+.borderlessGreenBotR,
+.borderlessBlueBotR {
+	float:right;
+	height:9px;
+	line-height:9px;
+	width:9px;
+}
+
+.borderlessBlueGrad h1 {
+	color:#FFF;
+	font-family:georgia;
+	font-size:3.2em;
+	font-weight:normal;
+}
+
+.borderlessBlueGrad h2 {
+	color:#FFF;
+	font-size:1.5em;
+	padding-top:0;
+	font-weight:normal;
+}
+
+.borderlessBlueGrad p {
+	font-size:1.15em;
+	line-height:1.4;
+}
+
+.borderlessBlueGrad a,
+.borderlessBlueGrad a:visited  {
+	color: #fff;
+}
+
+.jive-widget .jive-widget-body .jive-html-text-widget .borderlessGreenGrad h3 {
+	font-family:Arial,Helvetica,sans-serif;
+	color:#1c665e;
+	font-size:1.1em;
+	background:none;
+	padding: 6px 0 0;
+
+}
+
+.jive-widget .jive-widget-body .jive-html-text-widget .borderlessGreenGrad h4 {
+	color: #1c665e;
+	font-size: 1em;
+	text-transform: none;
+	background: none;
+	padding: 15px 0 0;
+	display: block;
+}
+
+
+.borderlessGreenGrad td {
+	padding-bottom: 3px;
+	padding-right: 4px;
+	vertical-align: top;
+}
+
+.borderlessGreenGrad td + td{
+	padding-right: 0;
+}
+
+
+.borderlessSidebarStandard  {
+	background:url("/themes/flb-default/images/widget-small-header.png") repeat-x scroll left top #FFFFFF;
+	padding-bottom:20px;
+	padding-top:4px;
+}
+
+
+.jive-html-text-widget .borderlessSidebarStandard .jive-icon-list li {
+	padding-left:22px;
+	position:relative;
+}
+
+.jive-html-text-widget .borderlessSidebarStandard ul li {
+	clear:both;
+	list-style-type:none;
+	margin:0;
+	padding:0 0 10px;
+}
+
+/* END borderless widget panel styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Actions Panel
+--------------------------------------------------------------- */
+
+#jive-body-sidebarcol .jive-sidebar-actions .jive-sidebar-body-actions,
+.jive-sidebar-actions .jive-sidebar-body,
+.jive-widget-container-small .jive-widget-actions {
+	padding: 0 10px 6px;
+}
+
+.jive-box-actions .jive-box-header {
+    padding: 6px 10px 0;
+}
+
+.jive-sidebar-actions .jive-sidebar-body h4,
+.jive-widget-container-small .jive-widget-actions h4 {background: none !important;}
+
+.jive-sidebar-actions,
+.jive-widget-container-small .jive-widget-actions,
+#jive-action-sidebar {
+    -moz-border-radius:6px;
+	border-radius:6px;
+    background: none;
+    border:1px solid #CBE5A8;
+    padding-top: 0;
+}
+
+.jive-sidebar-actions .jive-sidebar-body h4,
+.jive-sidebar-actions .jive-sidebar-body h4.jive-sidebar-body-inner-header {
+	padding: 8px 6px 8px 0;
+}
+
+.jive-sidebar-actions h4 {
+	font-size: 1.111em;
+	background-image: none;
+	font-weight: bold;
+	margin-bottom: 0;
+	padding: 8px 6px 8px 0;
+}
+
+#jive-action-sidebar-body ul li,
+.jive-widget-actions .jive-widgetsize-small .jive-widget-body ul li {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+#jive-action-sidebar-body ul.jive-icon-list li a span.jive-icon-discussion,
+.jive-widget-actions ul.jive-icon-list li a span.jive-icon-discussion {
+    position: relative;
+}
+
+li#jive-link-createThread {
+	padding: 8px 0 32px 8px;
+	margin-top: 3px;
+	background:url('http://www.forrester.com/community/images/elements/menu_StartDiscussion.png') no-repeat;
+	zoom: 1;
+}
+
+li#jive-link-createThread a {font-weight: bold;}
+
+
+/* hide follow community toggle */
+li#jive-link-community-startFollowing,
+li#jive-link-community-stopFollowing {
+display: none;
+}
+
+/* END action panels */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sidebar panels
+--------------------------------------------------------------- */
+
+.jive-sidebar {
+	background:#FFFFFF url(/themes/flb-default/images/widget-small-header.png) repeat-x scroll left top;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	border: none;
+	font-size:1em;
+	margin:0 0 25px;
+	padding: 6px 0 0;
+}
+
+.jive-sidebar .jive-sidebar-header {
+	background: none;
+}
+
+.jive-sidebar p, .jive-sidebar ul {
+	font-size:0.9999em;
+	line-height:1.4;
+}
+
+.jive-sidebar-body h4,
+.jive-sidebar-header h4,
+.jive-sidebar-body-polls h4,
+.jive-sidebar-actions h4
+ {
+	color:#494949;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:1em;
+	font-weight:bold;
+	letter-spacing:0.15em;
+	padding-left:0;
+	text-transform:uppercase;
+}
+
+.jive-sidebar .jive-sidebar-body {
+    padding: 0;
+}
+
+.jive-sidebar .jive-sidebar-body-polls {
+    padding: 0;
+}
+
+.jive-sidebar-pollform, .jive-sidebar-pollresults {
+    padding:6px 0px 12px 0px;
+}
+
+.jive-sidebar-pollform span {
+    line-height:1.25;
+    padding:4px 0 7px;
+}
+
+div#blog-nav-filters div.jive-sidebar-body strong {
+	display:block;
+	padding-bottom:9px;
+	padding-top:5px;
+}
+
+.jive-widget-borderless {
+	padding:0;
+	margin:0;
+}
+
+/* end sidebar panels */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* content pages
+--------------------------------------------------------------- */
+
+.jive-pagination-prevnext {
+	background-color:#FFF;
+}
+
+.jive-content-block-container {
+	background: none;
+	border: none;
+}	
+
+.jive-content-block-container .jive-content-block-header {
+	color:#688A45;
+	float:left;
+	font-size:2em;
+	font-weight:normal;
+	margin:0;
+	padding:5px 0 6px 8px;
+}
+
+#jive-body-intro-content .jive-people-applied-filters ul li {	 /* filters on People page */
+font-size:1em;
+}
+
+#jive-body-intro-content .jive-people-applied-filters ul li a {	 /* filters on People page */
+	border:1px solid #EEE;
+	padding:3px 15px 3px 5px;
+}
+#jive-body-intro-main-hdr h1 span.jive-icon-big {  /* hiding icon on People page */
+	display: none;
+}
+
+.jive-rendered-content {
+	font-size:1.112em;
+	line-height:1.3;
+}
+
+
+
+#jive-post-bodybox { 
+	background-image: none;
+	background-color: #F9F8F8;
+	border-color:#DDDDDD;
+ }
+ 
+#jive-doc-corner-img { background-image: none; }
+
+#jive-post-title input { background-color: #FFF; }
+
+.jive-compose-meta-large { border-top:1px solid #DDD; }
+
+
+
+
+/* end content pages */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FORMS (and elsewhere?) */
+
+.jive-body-preferences .jive-body-tabbar > span { border-right: none; }
+
+.jive-body-preferences .jive-body-tab a { margin-left:3px; }
+
+.email-notification-preferences .jive-table-preferences td.jive-table-cell-label { width:440px !important; }
+
+.email-notification-preferences .jive-table-preferences table td { padding:4px 3px; }
+
+.email-notification-preferences .jive-table-preferences table tr.tr-email-digest td { padding:16px 3px; border-bottom: 1px dashed #ccc; border-spacing:8px; }
+
+.email-notification-preferences .jive-table-preferences table tr.tr-email-digest td { padding:16px 3px; border-bottom: 1px dashed #ccc; border-spacing:8px; }
+
+.email-notification-preferences .jive-table-preferences tr.tr-email-digest td.jive-table-cell-label { font-weight: bold; }
+
+.jive-body-tabcurrent strong, .jive-body-tab a {
+	font-size:1em;
+	padding:5px 11px 5px 6px;
+}
+.jive-body-tabcurrent strong, .jive-body-tabcurrent a {
+	font-size:1em;
+	padding-top:7px;
+}
+
+
+/* END FORMS (and elsewhere?) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Profile
+--------------------------------------------------------------- */
+
+.jive-profile-display-main li.jive-profile-phone { display: none; }
+ul.jive-profile-tt-fields li:first-child  { display: none; }
+
+.jive-content-block-profile {
+	padding:0;
+}
+
+#jive-privatemsg-links a {
+	margin-bottom:7px;
+}
+
+.jive-icon-friend-add {
+	position:relative;
+	top:-6px;
+}
+
+#friend-add-form.jive-sidebar {
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background-image:none;
+	background-color: #F6F6F6;
+	font-size: 1em;
+	margin: 0 6px 25px;
+	padding: 6px;
+}
+
+#jive-add-friend-link, #jive-adding-friend-link { padding-top: 6px; }
+
+.jive-icon-friend-add {
+	position:relative;
+	top:-5px;
+}
+
+
+/* end Profile */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* answer bar
+--------------------------------------------------------------- */
+
+#jive-answer-bar {
+	background:#F4F4F4 none;
+	border:none;
+	color:#000;
+	display:block;
+	margin:0 0 1px;
+	padding:0;
+}
+
+.jive-thread-info {
+	background-color:#F4F4F4;
+	border:none;
+	color:#000;
+	margin-bottom:5px;
+}
+
+/* end answer bar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* discussion
+--------------------------------------------------------------- */
+
+.jive-thread-post,
+.jive-thread-reply-postauthor {
+    background: #E2F6C6 none;
+    border-color: #CBE5A8;
+}
+
+.jive-thread-post .jive-thread-post-body-container,
+.jive-thread-post .jive-thread-post-body-container,
+.jive-thread-reply-postauthor .jive-thread-reply-body-container,
+.jive-thread-post .jive-thread-post-body-container,
+.jive-thread-reply .jive-thread-reply-body-container {
+    background: #FFFFFF none;
+    border-color: #CBE5A8;
+}
+
+.jive-thread-reply-self, .jive-thread-reply, .jive-quote {
+	background: #f9f8f8 none;
+}
+
+.jive-thread-post .jive-author span.jive-author-avatar-container, .jive-thread-reply-postauthor .jive-author span.jive-author-avatar-container {
+/*	background-image:url(../images/jive-thread-arrow-author.gif);*/
+	background-image:url(../images/jive-thread-arrow.gif);
+}
+
+.jive-body-content-discussion .jive-pagination {
+	padding:3px 290px 0 0;
+}
+
+.jive-thread-post-subject-content h2 a, .jive-thread-post-subject-content h2 a:hover {
+color:#333333;
+font-size:0.85em;
+margin:0;
+text-decoration:none;
+}
+
+/* end discussion */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* save and share links 
+--------------------------------------------------------------- */
+
+.jive-thread-info-padding {
+padding:3px 5px 5px 10px;
+}
+
+.forr-thread-info {float:left; padding-top: 3px;}
+
+.socLinks a {
+	background:url(http://www.forrester.com/community/images/icons/socialMediaIcons.png) no-repeat scroll transparent;
+	margin-left:12px;
+	padding-bottom:2px;
+	padding-left:20px;
+	padding-top:2px;
+	line-height: 20px;
+}
+
+.socLinks {
+	float:right; 
+	height:22px; 
+	padding-right:8px; 
+	white-space:nowrap;
+}
+
+a.socLink_rss 		{ background-position: 0 -68px; }
+a.socLink_twitter 	{ background-position: 0 -51px; }
+a.socLink_facebook	{ background-position: 0 -17px; }
+a.socLink_digg 		{ background-position: 0 -34px; }
+a.socLink_delicious	{ background-position: 0 0; }
+
+/* end save and share links */
+
+
+
+
+
+
+
+
+
+
+
+
+/* documents
+--------------------------------------------------------------- */
+
+
+
+#jive-compose-title input {
+	background-color: #FFF;
+}
+
+.jive-body-content-document .jive-content {
+	background-color:#FFF;
+	border:1px solid #e6e6e6;
+}
+
+
+
+/* documents */
+
+
+
+
+
+
+
+
+/* blogs
+--------------------------------------------------------------- */
+
+/* removing to reduce the amount of community names displayed from 4 to 3 */
+
+.jive-blog-info {
+	background:none;
+	padding:0;
+}
+
+.jive-blog-info-details {
+	color:#999999;
+	padding:5px 0 0 12px;
+	/* position:relative; */
+	/* top:5px; */
+}
+
+.jive-blog-info .jive-blog-info-details {
+	color:#999999;
+	padding:5px 0 0;
+	position:relative;
+	top:5px;
+}
+
+.jive-blog-info .jive-pagination {
+	padding: 0 0 8px;
+}
+
+.jive-blog-info h3 {
+	display:none;
+}
+
+.jive-blog-post-subject-header {
+	margin:0 150px 0 0px;
+}
+
+.jive-blog-post {
+	background:none;
+}
+
+.jive-blog-post-subject-header h2 {
+	font-size:2em;
+	font-weight:normal;
+	line-height:1.2em;
+	margin:0;
+	padding:0 0 4px;
+}
+
+.jive-blog-post-subject-header h2 a {
+	color:#688A45;
+}
+
+.jive-blog-post-body {
+	padding:0 0 15px;
+}
+
+.jive-blog-post-details {
+	background-color:#F9F9F9;
+	border:none;
+	height:16px;
+	margin:5px 0 75px;
+	padding:5px;
+}
+
+/* end blogs */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* tag groups
+--------------------------------------------------------------- */
+
+#jive-content-results #jive-content-tagset {
+	font-size:0.7888em;
+	margin-bottom:8px;
+}
+
+#jive-content-results #jive-content-tagset-content {
+	background:#F6F6F6 none;
+	margin-bottom:9px;
+	overflow:hidden;
+	padding:0 0 4px;
+}
+
+.jive-taggroup {
+	border:1px solid #F6F6F6;
+	margin:0 0 0 9px;
+
+	padding:5px;
+}
+
+.jive-taggroup-current {
+	background-color:#FFFFFF;
+	border:1px solid #E2E2E2;
+}
+
+/* end tag groups */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* search page
+--------------------------------------------------------------- */
+
+.jive-body-search #jive-body-intro {
+    display: block;
+}
+
+#flb-search-forrester {
+    margin: 8px 0 18px 22px;
+    padding-left: 14px;
+    background: transparent url(/themes/flb-default/images/flb-arrow-orange-right.png) no-repeat center left;
+}
+
+.jive-body-search .jive-standard-formblock-container {
+    display: none;
+}
+
+#flb-search-forrester a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #0856A4;
+}
+
+#flb-search-forrester a:hover, #flb-search-forrester a:focus {
+    text-decoration: underline;
+}
+
+.jive-content-list-options {
+	border-top: 1px dotted #DADADA;
+	background-color: transparent;
+}
+
+.jive-body-search #jive-body-intro h1 {
+	color: #688A45;
+}
+
+.jive-body-search #jive-body-intro h1 span.jive-icon-big {  /* hiding icon on Search Results page */
+	display: none;
+}
+
+.jive-body-search .jive-rendered-content em.jive-hilite {
+	font-style: normal;
+	background-color: transparent;
+}
+
+/* end seach page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer
+--------------------------------------------------------------- */
+
+#flb-footer {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#flb-footer-banner {
+	border-top:1px solid #CCC;
+    background-color: #FFF;
+    height: 68px;
+    margin: 1em 15px;
+    position: relative;
+}
+
+#flb-footer-nav {
+    height: 61px;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#flb-footer-nav li {
+	font-size: 90%;
+}
+
+#flb-footer-nav li a {
+    text-decoration: none;
+    color:#7f7f7f;
+    display: block;
+    float: left;
+    border-left: 1px solid #999;
+    padding: 0.1em 0.6em;
+	line-height: 1em;
+}
+
+#flb-footer-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    zoom: 1;
+}
+#flb-footer-nav ul li {
+    float: left;
+    margin: 0;
+    padding:0.6em 0;
+}
+
+#flb-footer-nav a:hover {
+    text-decoration: underline;
+}
+        
+#flb-footer-nav ul > li:first-child {
+}
+
+#flb-footer-nav ul > li:first-child > a:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+/* end footer */
+</style>
+    <style type="text/css">/* custom-css-container */
+
+#jive-global-header .jive-header-logo {
+    background-image: url(http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/images/headers/community/h_community_tm.png);
+}
+
+
+
+/* link to role community specific CSS */
+/* Meet Your Community Panel */
+
+.jive-body-community-overview .jive-widget-topmemberswidget   {
+	border: 1px solid #ddd;
+	background-color: #f6f6f6;
+	padding: 16px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+}
+
+.jive-body-community-overview .jive-widget-topmemberswidget .jive-widget-topmembers .jive-widget-topmembers-member div, 
+.jive-body-community-overview .jive-widget-topmemberswidget .jive-widget-newestmembers .jive-widget-newestmembers-member div {
+    background-color: transparent;
+    border: medium none;
+    padding: 0 0;
+}
+
+.jive-body-layout-l .jive-widget-topmembers .jive-widget-topmembers-member {
+padding: 0px 8px 8px 0px;
+}
+
+.jive-widget-topmemberswidget a.jive-username-link,
+.jive-widget-topmemberswidget .jive-widget-topmembers .jive-widget-topmembers-member .j-status-levels {
+    display: none;
+
+}
+
+.jive-widget-topmembers {
+height: 72px;
+overflow: hidden;
+padding: 0;
+}
+
+.jive-widget-topmembers-more {
+font-size: 1em;
+padding-bottom: 0;
+padding-left: 0;
+}
+
+
+
+.jive-widget-container .jive-widget-topmemberswidget .jive-widget-header h4 {
+background-color: #f6f6f6;
+color: #494949;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1em;
+font-weight: bold;
+letter-spacing: 0.15em;
+padding-left: 0px;
+padding-top: 0;
+text-transform: uppercase;
+}
+
+/* END Meet Your Community Panel */
+
+
+
+
+
+
+
+
+
+
+/* ROLE only CSS */
+
+
+/* POLLS */
+
+.j-poll-view ul.jive-poll-results-lists li div.j-vote-count {
+font-size:0.9em;
+margin:0;
+padding:0;
+position:absolute;
+right:0;
+top:45px;
+}
+
+.j-poll-view ul.jive-poll-results-lists li.j-yourvote p.j-indicator {
+background:none repeat scroll 0 0 transparent;
+color:#666666;
+display:block;
+float:left;
+}
+
+.j-widget-body-polls .j-poll-activity {
+font-weight:normal;
+}
+
+.j-poll-post-details {
+border: none;
+display:block;
+font-size:0.8889em;
+margin:0;
+padding:0 0 12px;
+}
+
+
+.j-poll { 
+background:none; 
+border: none;
+}
+
+.j-widget-body-polls .j-poll-submitted {
+background:none;
+border:1px solid #E6E6E6;
+-moz-border-radius:6px;
+border-radius:6px;
+padding:6px 14px;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll-submitted {
+border: none;
+padding: 0;
+}
+
+.j-poll-title {
+padding:0 0 8px;
+margin: 0;
+border: none;
+}
+
+.j-poll-title h1 {
+font-size:1.6em;
+font-weight:normal;
+margin:0;
+padding:5px 120px 3px 60px;
+}
+
+.j-poll-title p {
+float:left;
+font-size:0.9em;
+margin:0;
+padding:0 0 0 8px;
+}
+
+.j-poll-title div.j-votect {
+display:inline;
+float:left;
+padding:0 0 0 12px;
+margin: 0;
+}
+
+.jive-widget-body .j-widget-body-polls { padding: 10px 0 0; }
+
+.jive-widget-latestpollwidget .j-widget-body-polls .j-poll ol h4 {
+background:none repeat scroll 0 0 transparent;
+display:inline;
+font-size:1.2em;
+font-weight:normal;
+margin:0;
+padding:0 12px 4px 0;
+text-transform:none;
+font-family: Georgia, "Times New Roman", Times, serif;
+letter-spacing: 0;
+}
+
+.j-poll-view ul {
+background-color:#F4F4F4;
+list-style-type:none;
+margin: 0 12px 12px;
+padding:8px;
+}
+
+.j-widget-body-polls .j-poll-resultbar {
+background:none repeat scroll 0 0 #fff;
+border:none;
+clear:both;
+margin:4px 0;
+padding:0;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll-resultbar {
+background:none repeat scroll 0 0 #F6F6F6;
+}
+
+
+.j-poll-resultbar,
+.j-votes-exist .j-poll-resultbar {
+background:none repeat scroll 0 0 #FFFFFF;
+border: none;
+padding: 0;
+clear:both;
+margin:4px 0;
+}
+
+.j-poll-view ul li.j-choice, .j-poll-view ul.jive-poll-results-lists li.j-yourvote {
+background:none repeat scroll 0 0 transparent;
+color:#000;
+}
+
+.j-poll-view ul li h4 {
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size:1.1em;
+font-weight:normal;
+margin:0;
+padding:0;
+}
+
+.j-poll-submitted .j-val-poll-bar,
+.j-val-poll-bar {
+background-image: none;
+background-color: #016895;
+display: block;
+height: 13px;
+min-width: 0;
+border: none;
+}
+
+.j-widget-body-polls .j-poll ol em {
+color:#999999;
+/* display:inline; */
+display:none;
+font-size:0.9em;
+font-style:normal;
+font-weight:normal;
+margin:4px 0;
+padding:0 1px;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol em { display: none; }
+
+.j-poll-description {
+padding:10px 0 0;
+}
+
+.j-widget-body-polls .j-poll .j-yourvote {
+background-color: #fff;
+}
+
+.j-poll-view ul.jive-poll-results-lists li {
+padding:12px 5px 3px;
+}
+
+j-widget-body-polls .j-poll ol li {
+border-bottom: 1px dotted whiteSmoke;
+clear: both;
+margin: 0px 0px 4px;
+padding: 2px 1px 6px 22px;
+position: relative;
+}
+
+.j-widget-body-polls .j-poll-submitted ol li {
+border-bottom:medium none;
+clear:both;
+margin:0 0 5px;
+}
+
+.j-widget-body-polls h5 {
+font-size:1.5em;
+font-weight:normal;
+margin:0;
+padding:0;
+}
+
+.jive-widgetsize-small .j-widget-body-polls h5 {
+font-size:1.1em;
+font-weight:bold;
+margin:0;
+padding:0;
+line-height: 1.3;
+}
+
+.j-poll-view .jive-box-header h4 {
+clear:both;
+color:#666666;
+font-size:1.2em;
+font-weight:bold;
+padding:8px 15px 0;
+position:relative;
+}
+
+.jive-box-byline {
+background:none;
+border-bottom:none;
+color:#777777;
+font-size:8pt;
+margin:0 12px;
+padding:5px 3px 10px;
+}
+
+.j-vote-count p strong {
+font-weight: normal;
+}
+
+.j-poll-view {
+background:none repeat scroll 0 0 #FFFFFF;
+border:1px solid #ddd;
+margin:12px 0 12px;
+padding:0;
+position:relative;
+}
+
+.j-poll-view ul.jive-poll-results-lists li div.j-vote-count p {
+-moz-border-radius:3px 3px 3px 3px;
+background:none repeat scroll 0 0 #DDDDDD;
+border-left:medium none;
+float:left;
+margin:2px;
+padding:3px 6px;
+}
+
+.j-widget-body-polls .j-poll-desc {
+color:#666666;
+font-size:1.2em;
+line-height:1.4;
+margin:9px 0;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll-desc {
+font-size: 1em;
+}
+
+.jive-widget-latestpollwidget .jive-box-controls {
+background: none;
+border-bottom:1px solid #E7E7E7;
+border-top:1px solid #E7E7E7;
+font-size:0.9em;
+padding: 8px 10px 8px 5px;
+}
+
+.jive-box-controls .j-pgnav-all {
+position:absolute;
+right:5px;
+top:auto;
+}
+
+.j-poll-submitted ol {
+background-color:#F6F6F6;
+border-bottom: none;
+margin:6px -4px 8px;
+padding:6px 0;
+}
+
+.jive-widgetsize-small .j-poll-submitted ol {
+background-color:#fff;
+margin:0;
+padding:6px 0;
+}
+
+.content-large .j-widget-body-polls .j-poll-meta span {
+padding:9px 0 0;
+}
+
+.j-widget-body-polls .j-poll ol {
+border-top:none;
+padding: 0;
+}
+
+.j-widget-body-polls .j-poll-submitted ol {
+border-top:none;
+padding: 8px;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol {
+padding: 0 0 6px;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol.jive-poll-vote-list {
+padding: 0 0 0 6px;
+}
+
+.j-widget-body-polls .j-poll .j-yourvote {
+background-color:transparent;
+}
+
+.j-widget-body-polls .j-poll ol .j-yourvote h4 {
+color:#333333;
+}
+
+.j-poll-view ul li.j-choice label, .j-poll-view ul li.j-yourvote h4 {
+font-weight: 1.1em;
+}
+
+.j-poll-view ul.jive-poll-results-lists li div.j-vote-count p { display: none; }
+
+.j-poll-view ul.jive-poll-vote-list {
+background-color:#F6F6F6;
+list-style-type:none;
+margin:9px 12px 12px;
+padding:6px;
+}
+
+.j-poll-view ul.jive-poll-vote-list li {
+margin:0 0 2px;
+padding:9px 6px;
+position:relative;
+}
+
+.j-poll-view ul li input {
+left:6px;
+position:absolute;
+top:8px;
+}
+
+.j-poll-view .j-poll-buttons {
+border-top:medium none;
+margin:0;
+padding:0 12px 12px;
+}
+
+.j-poll-view ul li label {
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size:1.1em;
+font-weight:normal;
+outline:medium none;
+padding:0 0 0 24px;
+}
+
+.j-widget-body-polls .j-poll ol label {
+font-family: Georgia, "Times New Roman", Times, serif;
+cursor:pointer;
+font-size:1.2em;
+font-weight:normal;
+padding:1px 0;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol label {
+font-size:1.2em;
+padding: 0;
+margin: 0;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol li {
+border:medium none;
+margin:0;
+padding:6px 0;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol.jive-poll-vote-list li {
+padding:2px 0 6px 18px;
+}
+
+.j-widget-body-polls .j-poll ol li input {
+top:auto;
+}
+
+.jive-widgetsize-small .j-widget-body-polls .j-poll ol li input {
+top:auto;
+margin-left:0;
+margin-right:0;
+padding-left:0;
+}
+
+.j-poll-title div.j-votect a {
+background: none;
+}
+
+.jive-widget-latestpollwidget .jive-box-controls { display:none; }
+
+.jive-widget-latestpollwidget .j-poll-activity  { display:block; visibility:visible; }
+
+.j-widget-body-polls .j-poll-meta,
+.j-poll .j-poll-title p.font-color-meta,
+.j-poll-title .j-left
+ { display: none; }
+
+.j-poll-title h1,
+.j-poll-title div.j-votect {
+    padding-left: 0;
+}
+
+.j-poll-description {
+    padding: 0;
+}
+
+
+/* END Polls */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Enable side-by-side popular and recent widgets */
+
+div.jive-widget-popularthreadswidget {
+width: 49%;
+float: left;
+z-index: 99999;
+}
+
+div.jive-widget-recentcontentwidget {
+width: 49%;
+float: left;
+z-index: 99999;
+}
+
+div.jive-widget-recentcontentwidget div.jive-widgetsize-large {
+padding-right: 16px;
+border-right: 1px solid #E6E6E6;
+}
+
+div.jive-widget-popularthreadswidget div.jive-widgetsize-large {
+padding-left: 16px;
+}
+
+.jive-widget-popularthreadswidget + .jive-widget { 
+min-width:50px;
+clear:both;
+}
+
+.jive-widget-content-edit div.jive-widget-recentcontentwidget,
+.jive-widget-content-edit div.jive-widget-popularthreadswidget {
+float: none;
+width: auto;
+margin-bottom:300px;
+}
+
+/* END Enable side-by-side popular and recent widgets */</style>
+	
+
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/RBJavascript/globalHeader.js"></script>
+
+
+</head>
+<body class="jive-body-content jive-body-content-discussion" >
+
+
+<a href="#jive-body" class="jive-skip-nav">Skip navigation</a>
+
+    <div id="jive-compliance" class=""style="display:none">
+        <span class="jive-icon-med "></span>
+        
+    </div>
+
+    <div id="jive-wrapper" class="clearfix">
+
+<!-- BEGIN header -->
+    <div id="jive-global-header" class="clearfix">
+        <div id="jive-global-header-texture">
+                    <div class="jive-header-logo ie6png" >
+                        <a href="http://www.forrester.com/" class="jive-global-header-logolink"><!-- IE6 hack --><img src="http://www.forrester.com/role_based/images/spacer.gif" width="150" height="50" /><!-- END IE6 hack --></a>
+                    </div>
+        </div>
+    </div>
+
+
+<!-- Forrester Mod -->
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/coremetrics/initAnalytics.js"></script>
+
+
+
+
+<!-- END header -->
+<!-- BEGIN user bar -->
+<div id="user-bar-wrapper">
+    <div id="jive-userbar">
+<div id="jive-userbar-login">
+    <form action="$/cs_login"
+          method="post" name="loginform" autocomplete="off">
+        
+        
+
+        <span class="jive-userbar-login-welcome" id="jiveLoginWelcome">
+            <span class="jive-userbar-login-guest">
+            Welcome, Guest.
+            To participate fully,<br /> please <a href="/login.jspa">register</a> (it's free) or <a href="/login.jspa">sign in</a>.
+            </span>
+
+            <span class="jive-userbar-login-loginlink">
+				<a href="/login.jspa"><img src="http://www.forrester.com/community/images/elements/b_startNow.gif" border="0" /><!--  Login --></a>
+			</span>
+
+        </span>
+
+        <span class="jive-userbar-login-form" id="jiveLoginForm" style="display: none;">
+
+            <span class="jive-userbar-login-username">
+                <label for="login-username">
+Username:                </label>
+                <a href="forgot-username!input.jspa" title="I forgot my username ">(?)</a>
+                <input type="text" name="username" size="20" maxlength="150" value="" tabindex="1"
+                               id="login-username" />
+            </span>
+
+            <span class="jive-userbar-login-password">
+                <label for="login-password">
+Password:                </label>
+                <a href="emailPasswordToken!input.jspa" title="I forgot my password ">(?)</a>
+                <input type="password" name="password" size="20" maxlength="150" value="" tabindex="2"
+                               id="login-password" />
+            </span>
+
+            <span class="jive-userbar-login-auto">
+                <input type="checkbox" name="autoLogin" id="login-auto" value="true" tabindex="3" />
+                <label for="login-auto">Remember Me</label>
+            </span>
+
+            <span class="jive-userbar-login-submit">
+                <input type="submit" name="login" value="Login" tabindex="4"
+                       class="jive-login-button" />
+                <input type="reset" name="doCancel" value="Cancel" tabindex="5"
+                               class="jive-cancel-button" onclick="jivetoggleLogin();" />
+            </span>
+        </span>
+
+    </form>
+</div>
+
+<!-- FORR Modifications  -->
+<!-- Added by KFT -->	
+	<style type="text/css">
+
+		.jive-body-home #jive-body-intro { display:none; }
+		.jive-body-home #jive-breadcrumb { display:none; }
+		.jive-body-home #jive-body-intro { border:none; }
+		#jive-userbar-login { height:38px; }
+		#jive-userbar { margin-top:14px; }
+		.jive-userbar-login-welcome { padding-top:0; }
+		.anonHide { display: block; }
+
+	</style>
+<!-- END Added by KFT -->
+
+<!-- FORR BEGIN user links  -->
+
+<div id="jive-userbar-droplink" class="anon">
+	<ul>
+            <li>
+                <a class="jive-userbar-droplink" id="jive-userbar-forrester-blogs"
+                   href="http://blogs.forrester.com/tech_product_management" target="_blank">
+                    Forrester Blogs</a>
+            </li>
+	</ul>
+</div>
+
+
+<!-- END FORR Modifications  -->
+        <div id="jive-userbar-right">
+<div id="jive-userbar-search">
+    <form action="/search.jspa" method="get" id="jive-userbar-search-form">
+        <input type="hidden" name="peopleEnabled" value="true"/>
+
+        <input type="hidden" name="userID"/>
+        <input type="hidden" name="containerType"/>
+        <input type="hidden" name="container"/>
+        <input type="hidden" name="spotlight" value="false"/>
+
+        <script type="text/javascript">
+                    var forresterSearchUrl = "http://www.forrester.com/rb/search/results.jsp?N=0&Ntk=MainSearch&Ntx=mode+MatchAllPartial&s=1&Ntt=";
+                    var searchForresterText = "Search Research & Tools";
+                    var searchJiveText = "Search Community";
+        </script>
+        
+		
+		<a href="#" id="jive-search-target-link" onClick="toggleSearchTarget(); return false;">Search Community</a>
+        <input type="hidden" id="jive-search-target" value="jive"/>
+                
+        <label for="jive-query"
+               class="j-508-label">Search for:</label>
+        <input type="text" id="jive-query" name="q" value="" accesskey="4" class="jive-userbar-search-field"
+               autocomplete="off"/>
+        <button type="submit" value="Search Tags"
+                class="jive-userbar-search-button">Search</button>
+    </form>
+
+    <div id="jive-spotlight-search-container"></div>
+    <script type="text/javascript">
+        var containerType = 14;
+        var containerID = 2045;
+
+        $j('#jive-userbar-search-form').submit(function() {
+            var query = $j('#jive-query').val();
+            var isWildcard = query.charAt(query.length-1) == '*';
+            if (query && !isWildcard) {
+                $j('#jive-userbar-search-form input[name=spotlight]').val("true");
+            }
+            return submitCheckTarget();
+        });
+        
+        $j('#jive-userbar-search-form').keyup(function(event) {
+			if (event.keyCode=='13') {event.preventDefault(); $j('#jive-userbar-search-form').submit();}
+		});
+		
+    </script>
+</div>        </div>
+    </div>
+
+</div>
+<!-- END user bar -->
+
+        <div id="jive-body">
+            <div id="flb-navbar">
+<div class="navContainer">
+<table cellpadding="0" cellspacing="0" id="navGlobal" summary="This table contains the global navigation links for the site.">
+    <tr>
+        <td class="left" id="pNav_Research"><a href="http://www.forrester.com/" title="Forrester Research">Research</a></td>
+        <td class="current" id="pNav_Community"><a href="http://community.forrester.com/index.jspa">Community</a></td>
+        <td id="pNav_Analysts"><a href="http://www.forrester.com/rb/AllAnalysts.jsp" title="Forrester Research Analysts">Analysts</a></td>
+        <td id="pNave_Teleconferences"><a href="http://www.forrester.com/rb/search/results.jsp?N=0+133002+235" title="Forrester IT &amp; Marketing Teleconferences">Teleconferences</a></td>
+        <td id="pNav_Events"><a href="http://www.forrester.com/events" title="Forrester IT &amp; Marketing Events">Events</a></td>
+
+        <td id="pNav_ConsumerData"><a href="http://www.forrester.com/rb/consumertechno.jsp" title="Consumer Data">Consumer Data</a></td>
+        <td id="pNav_BusData"><a href="http://www.forrester.com/rb/businessdata.jsp">Business Data</a></td>
+        <td id="pNav_ExecProg"><a href="http://www.forrester.com/flb">Executive Programs</a></td>
+        <td id="pNav_Consulting"><a href="http://www.forrester.com/Consulting" title="Forrester Consulting">Consulting</a></td>
+        <td id="pNav_About"><a href="http://www.forrester.com/FactSheet" title="About Forrester">About Forrester</a></td>
+    </tr>
+</table>
+</div>            </div>
+            <div id="flb-tabbar">
+            </div>
+<!-- BEGIN breadcrumb -->
+<div id="jive-breadcrumb">
+
+
+    <span>
+
+
+
+                <a href="/">Forrester Research Communities</a> &gt; 
+
+                <a href="/community/tech_marketer"
+                   >Technology Marketing</a> &gt; 
+
+
+
+        <a class='jive-breadcrumb-last' href="/community/tech_marketer?view=discussions">Discussions</a></span>
+</div>
+<!-- END breadcrumb -->
+
+                                                                       
+
+
+    <script>
+            window._jive_images_enabled = true;
+    </script>
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="/4.5.3/styles/tiny_mce3/plugins/inlinepopups/skins/clearlooks2/window.css" />
+
+
+
+            <input type="hidden" name="jive.token.name" value="message.post.4163"/>
+        <input type="hidden" name="message.post.4163" value="1301851211667-AEVAZJLEDF4D8YJEFRSWJBN3HB8GR7QH"/>
+
+    <script type="text/html" id="rte-template">
+	<form action="/post.jspa?container=2045&containerType=14&thread=4163&message=11570&reply=true" method="post" name="isInline" id="postform" >
+	<input type="hidden" name="containerType" value="14">
+	<input type="hidden" name="container" value="2045">
+
+		<input type="hidden" name="thread" value="4163">
+
+		<input type="hidden" name="reply" value="true">
+
+        <input type="hidden" name="message" value="">
+        <input type="hidden" name="inlinePost" value="true">
+
+	<input type="hidden" name="postedFromGUIEditor" id="postTypeFlag" value="false" />
+
+
+	<div class="jive-error-message jive-error-box" id="dwr-error-table" style="display:none;">
+		<div>
+			<span class="jive-icon-med jive-icon-redalert"></span>
+			<span class="jive-error-text" id="dwr-error-text"></span>
+		</div>
+	</div>
+
+
+
+	<div class="jive-error-message jive-error-box" id="post-error-table" style="display:none;">
+		<div id="post-error-subject" style="display:none;">
+Please enter a title.		</div>
+		<div id="post-error-body" style="display:none;">
+You can not post a blank message. Please type your message and try again.		</div>
+	</div>
+
+	<input type="hidden" name="subject" size="75" maxlength="255"  id="subject01" value=""/>
+
+
+
+
+<div>
+    <div class="wysiwygtext_html_link" id="wysiwygtext_html_link" style="display:block">
+        <a href="javascript:;" class="toggle_html" style="display:none;">
+Show Full Editor        </a>
+        <a href="javascript:void(0);" class="jive-description toggle_preferred_mode" style="display:none;" id="jivePreferredEditorModeLinkHREF">
+Always use this editor        </a>
+    </div>
+    <textarea id="wysiwygtext" rows="10" class="jive-comment-textarea"><%= body %></textarea>
+    <textarea name="discussionBody" rows="10" style="display:none;" class="jive-comment-textarea"><%= body %></textarea>
+</div>
+
+
+	
+
+	<div>
+		<input type="submit" name="post" class="jive-form-button-save" value="Add Reply" />
+		<input type="button" name="cancel" class="jive-form-button-cancel" value="Cancel" />
+	</div>
+	</form>
+    </script>
+
+
+
+<!-- BEGIN header & intro  -->
+<div id="jive-body-intro">
+
+    <div id="jive-body-intro-content">
+
+        <a href="/community/tech_marketer?view=discussions&amp;start=0"><span class="jive-icon-sml jive-icon-arrow-generic-up"></span>
+                See All Discussions in&nbsp;Technology Marketing
+        </a>
+    </div>
+</div>
+<!-- END header & intro -->
+
+
+<!-- BEGIN main body -->
+<div id="jive-body-main">
+
+    <!-- BEGIN main body column -->
+    <div id="jive-body-maincol-container">
+        <div id="jive-body-maincol">
+            <!-- moderation feedback message -->
+
+            <!-- hidden div used in parsing of ajax response to indicate that we have a moderated message -->
+            
+            <div id="success-moderation-edit" class="jive-success-box" style="display:none"></div>
+
+            <div id="thread.watch.notify" class="jive-info-box" style="display:none"></div>
+
+            <div id="content-featured-notify" class="jive-info-box" style="display:none"></div>
+
+
+
+
+
+            <!-- BEGIN thread messages -->
+            <div id="jive-thread-messages-container" class="jive-thread-messages">
+
+
+
+                <!-- BEGIN thread info -->
+                <div class="jive-thread-info font-color-meta">
+					<div class="forr-thread-info">
+						<strong>     
+        
+            879&nbsp;Views
+        
+
+</strong>
+							<strong>4 Replies</strong>
+						<a href="#11570" class="localScroll">Latest reply</a>:
+						Feb 25, 2011 6:35 AM by
+Andre Pino					</div>
+				
+                    	<div class="socLinks FLBhide">
+                        <a class="socLink_rss" href="/community/feeds/messages?thread=4163">RSS</a>
+                        <a class="socLink_twitter" href="http://twitter.com/timeline/home/?status=From the Forrester Community: Is Crowdsourcing marketing’s “Easy” button? | http://community.forrester.com/thread/4163"  target="_blank">Twitter</a>
+			 			<a class="socLink_facebook" href="http://www.facebook.com/share.php?u=http://community.forrester.com/thread/4163&t=Is Crowdsourcing marketing’s “Easy” button?" target="_blank">Facebook</a>
+			 			<a class="socLink_digg" href="http://www.digg.com/submit?url=http://community.forrester.com/thread/4163" target="_blank">Digg</a>
+						<a class="socLink_delicious" href="http://del.icio.us/post" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=http://community.forrester.com/thread/4163', 'delicious', 'toolbar=no,width=700,height=400'); return false;">del.icio.us</a>
+						</div>
+
+
+
+
+                </div>
+                <!-- END thread info -->
+
+                <!-- BEGIN original thread post -->
+                 
+
+                    <div class="jive-thread-post">
+
+                            <a name="4163"></a><a name="11058"></a>
+                            <div class="jive-thread-post-body">
+
+                            <div class="jive-author">
+
+                                    <span class="jive-author-avatar-container">
+
+
+<a href="/people/2005372"
+   data-externalId=""
+   data-username="2005372"
+   data-avatarId="1754"
+   class="jiveTT-hover-user"
+   onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 11332, presence );"
+   onmouseout="quickuserprofile.cancelTooltip();"
+        >
+    <img
+            class="jive-avatar"
+
+            src="/people/2005372/avatar/46.png?a=1754"
+            border="0" height="46" width="46"
+            alt="Andre Pino"
+            /></a>
+<span class="j-status-levels"><img src="/4.5.3/themes/flb-default/images/badge_forrester_24.gif"
+           alt="Forrester" title="Forrester"/> </span>
+                                    </span>
+
+                                    <div class="jive-username-link-wrapper">
+<a href="/people/2005372"
+data-externalId=""
+data-username="2005372"
+data-avatarId="1754"
+id="jive-113321845114556289852"
+onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 11332, presence );"
+onmouseout="quickuserprofile.cancelTooltip();"
+class="jiveTT-hover-user jive-username-link"
+>Andre Pino</a>                                    </div>
+                                    <em>6 posts since <br/>Aug 24, 2010</em>
+                            </div>
+
+                            <div class="jive-thread-post-body-container">
+                                <div class="jive-thread-post-subject">
+                                    <div class="jive-thread-post-subject-content">
+                                        <div class="jive-social-actions clearfix">
+                                                <div class="jive-reply">
+
+    <a href="/post!reply.jspa?thread=4163"
+       title="Reply to this message">
+                                                        <span class="jive-icon-sml jive-icon-comment-add"></span>4
+    </a>
+                                                </div>
+                                        </div>
+
+                                        <div class="jive-thread-post-moderating"><span class="jive-icon-med jive-icon-moderation"></span>Currently Being Moderated</div>
+                                        <h3>Feb 7, 2011 7:30 AM</h3>
+                                        <h2><a href="/message/11058#11058">Is Crowdsourcing marketing&rsquo;s &ldquo;Easy&#8221; button?</a></h2>
+                                    </div>
+                                </div>
+
+                                <div class="jive-thread-post-message">
+                                    <!-- [DocumentBodyStart:eda5adde-f223-4a16-86ba-3561f4f33803] --><div class="jive-rendered-content"><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;"><strong style="mso-bidi-font-weight: normal"> </strong>&#160;</p><p class="MsoNormal">I was speaking with Karin Shelley from GlobalLogic last week and she mentioned that GlobalLogic was celebrating their 10<sup>th</sup> anniversary. As a part of their celebration, they wanted to create a 10<sup>th</sup> anniversary logo that would represent the occasion and include the seven key geographies in which they operate.</p><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p class="MsoNormal">Since their internal resource was busy on other projects, they posted the logo design requirements on a crowdsourced logo design site (logotournament.com). Within 24 hours they had several design submissions and within 2 days a final selection was made and hi-res graphic source files provided. All for $250 USD !</p><p class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><a href="http://community.forrester.com/servlet/JiveServlet/showImage/2-11058-1295/GL+10th+Logo.jpg"><img alt="GL 10th Logo.jpg" class="jive-image" height="176" src="http://community.forrester.com/servlet/JiveServlet/downloadImage/2-11058-1295/172-176/GL+10th+Logo.jpg" width="172"/></a> </strong></p><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p class="MsoNormal">That immediately started me thinking about crowdsourcing as a great way to get other marketing design work, content and collateral produced with minimum time, effort and cost while taking full advantage of the creative talent and domain expertise that crowdsourcing offers.</p><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p class="MsoNormal">What do you think? What has your crowdsourced marketing experience been? Are there some projects that are crowdsourced acceptable and some that really don&rsquo;t lend themselves to croudsourcing?</p></div><!-- [DocumentBodyEnd:eda5adde-f223-4a16-86ba-3561f4f33803] -->
+
+
+                                </div>
+
+                            <!-- BEGIN content details -->
+                            <div id="discussion-action-div-baseDiscussionForm" class="jive-thread-post-details clearfix">
+
+                            	<ul>
+                                    <li class="discussion-thread-acclaim">
+<div id="acclaim-container-2-11058-" class="acclaim-container">
+    <div id="jive-acclaim-like-container-2-11058-" data-uniqueKey="2-11058-" data-ratingType="like" data-hasVoted="false" data-likes="0" class="acclaim-like-container">
+         <span class="jive-icon-sml jive-icon-like"></span>Like
+         (<a href="#" id="jive-acclaim-likedlink-2-11058-"  class=" jive-acclaim-likedlink">0</a>)
+    </div>
+</div></li>
+    <li><strong>
+    <a href="/post!reply.jspa?thread=4163"
+       title="Reply to this message">
+<span class="jive-icon-sml jive-icon-comment-add"></span>Reply    </a>
+</strong></li>
+                            	</ul>
+
+
+    <!-- BEGIN view/add/edit tags -->
+    <span class="jive-content-footer-item jive-content-footer-tags">
+            <span class="jive-icon-sml jive-icon-tag"></span>Tags: <span id="jive-edit-inline-add-none" style="display:none;">none</span> <span style="display:none;" id="jive-edit-inline-placeholder"> (<a href="#" class="jive-edit-inline-tags-link">add</a>)</span>
+
+            <span class="jive-thread-post-details-tags" id="jive-thread-post-details-tags_f8LG2b">
+                    <a href="/community/tech_marketer?view=tags&tags=product_marketing">product_marketing</a>,
+                    <a href="/community/tech_marketer?view=tags&tags=crowdsouring">crowdsouring</a>
+            </span>
+    </span>
+    <!-- END view/add/edit tags -->
+                                </div>
+                                <!-- END content details -->
+
+                            </div>
+                        </div>
+                        <div class="jive-thread-ratings clearfix">
+        <div class="jive-content-rating clearfix" data-guid="L4BT5GC2UR01DI57SURZ8UR7V8QCYKWB">
+
+<script type='text/javascript'>
+    $j(document).ready(function() {
+
+        var i18n = {
+            avgUserRatingTitlei18n : "Average User Rating",
+            avgUserRatingLabeli18n : "Average User Rating",
+            rateRatingLabel : "rating",
+            rateRatingPluralLabel : "s",
+            myRatingLabel : "My Rating:",
+            rateRatingsLabel : "ratings",
+            ratingSavingText : "Saving...",
+            rateSavedText : "Saved.",
+            rateRatingSaved : "Rating Saved!",
+            writeAReview : "Write a review",
+            commentOnRating : "Comment on your rating",
+            formSubmitPleaseWait:'Please Wait ...'
+        };
+
+        new jive.Rate(14, 2045, 1, 4163, 'thread', i18n, true, 'L4BT5GC2UR01DI57SURZ8UR7V8QCYKWB');
+    });
+
+</script>
+
+        </div>
+                        </div>
+                    </div>
+                <!-- END original thread post -->
+
+
+                 
+
+    <!-- BEGIN reply -->
+
+
+
+    <ul class="jive-discussion-replies jive-discussion-threaded jive-discussion-indent-0">
+    <li class="reply" id="discussion-11504">
+
+
+        <div id="thread-message-11504" class="jive-thread-message clearfix">
+            <div class="jive-thread-reply-indent-shadow">
+
+            <div class="jive-thread-reply jive-thread-reply-alt jive-thread-reply-self  clearfix">
+
+            <div class="jive-thread-reply-body" id="11504">
+                <a name="11504"></a>
+                <div class="jive-author">
+
+                        <span class="jive-author-avatar-container">
+<img class="jive-avatar" src="/people/guest/avatar/46.png" border="0" height="46"
+     width="46" alt="" title=""/>
+                        </span>
+                        <div class="jive-username-link-wrapper">
+                            <span class="jive-guestname">        Justin Fogarty
+</span>
+                                <br><span class="jive-guestname">Ariba</span>
+                        </div>
+
+                </div>
+
+                <div class="jive-thread-reply-body-container">
+
+                    <div class="jive-thread-reply-subject font-color-meta">
+
+                        <div class="jive-thread-post-moderating"><span class="jive-icon-med jive-icon-moderation"></span>Currently Being Moderated</div>
+                        <div class="jive-thread-reply-date">
+                        <span>Feb 22, 2011 4:10 PM</span>
+                            (<a href="#11058" title="Go to message" class="font-color-meta-light localScroll" >in response to Andre Pino</a>)
+                        </div>
+
+                        <strong>
+                        <a href="/message/11504#11504">Re: Is Crowdsourcing marketing’s “Easy” button?</a>
+                        </strong>
+
+                    </div>
+
+                    <div class="jive-thread-reply-message">
+                        <!-- [DocumentBodyStart:024f6f71-38fc-4b4b-abc4-a1ef51a04ef9] --><div class="jive-rendered-content"><p>Great post on an interesting topic.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>What's not to love? The marketer gets what they need quickly and cheaply without having an extensive (read: time consuming and expensive) vendor engagement. And the creative folks use their excess capacity to make a few $ and possibly a new customer.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>Our experience with this is limited to a couple of tries, but they've been promising. When you're talking about creative, your exisiting vendors don't have a monopoly on good work. Might as well test the crowdsourcing waters to see what ideas are out there, particularly for projects that aren't mission critical and have relatively wide open specs.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>I know this example is in a very different world than most of us work in, but check out the music video for the MGMT song "Kids" and read the story of how it came about in the video description. It illustrates how great band (or company's) fans can be as a creative resource.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p><object height="350" width="425"><param name="movie" value="http://www.youtube.com/v/bIEOZCcaXzE"/><param name="wmode" value=""/><embed height="350" src="http://www.youtube.com/v/bIEOZCcaXzE" type="application/x-shockwave-flash" width="425" wmode="transparent"></embed></object></p></div><!-- [DocumentBodyEnd:024f6f71-38fc-4b4b-abc4-a1ef51a04ef9] -->
+                    </div>
+
+                    <!-- BEGIN content details -->
+                    <div id="discussion-action-div-11504" class="jive-content-controls clearfix">
+                        <ul>
+
+
+                            <li class="discussion-message-acclaim">
+<div id="acclaim-container-2-11504-" class="acclaim-container">
+    <div id="jive-acclaim-like-container-2-11504-" data-uniqueKey="2-11504-" data-ratingType="like" data-hasVoted="false" data-likes="0" class="acclaim-like-container">
+         <span class="jive-icon-sml jive-icon-like"></span>Like
+         (<a href="#" id="jive-acclaim-likedlink-2-11504-"  class="font-color-meta jive-acclaim-likedlink">0</a>)
+    </div>
+</div></li>
+
+    <li><strong>
+    <a href="/post!reply.jspa?message=11504"
+       title="Reply to this message">
+<span class="jive-icon-sml jive-icon-comment-add"></span>Reply    </a>
+</strong></li>
+                        
+                        </ul>
+                    </div>
+                    <!-- END content details-->
+
+                </div>
+
+            </div>
+        </div>
+
+        </div></div>
+
+
+
+    <!-- BEGIN reply -->
+
+
+
+    <ul class="jive-discussion-replies jive-discussion-threaded jive-discussion-indent-1">
+    <li class="reply" id="discussion-11507">
+
+
+        <div id="thread-message-11507" class="jive-thread-message clearfix">
+            <div class="jive-thread-reply-indent-shadow">
+
+            <div class="jive-thread-reply jive-thread-reply-alt  clearfix">
+
+            <div class="jive-thread-reply-body" id="11507">
+                <a name="11507"></a>
+                <div class="jive-author">
+
+                        <span class="jive-author-avatar-container">
+
+
+<a href="/people/1473354"
+   data-externalId=""
+   data-username="1473354"
+   data-avatarId="-1"
+   class="jiveTT-hover-user"
+   onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 10112, presence );"
+   onmouseout="quickuserprofile.cancelTooltip();"
+        >
+    <img
+            class="jive-avatar"
+
+            src="/people/1473354/avatar/46.png?a=-1"
+            border="0" height="46" width="46"
+            alt="Ratnesh Pandey"
+            /></a>
+<span class="j-status-levels"><img src="/4.5.3/images/status/statusicon-47.gif"
+           alt="Member" title="Member"/> </span>
+                        </span>
+
+                        <div class="jive-username-link-wrapper">
+<a href="/people/1473354"
+data-externalId=""
+data-username="1473354"
+data-avatarId="-1"
+id="jive-101121845114578441852"
+onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 10112, presence );"
+onmouseout="quickuserprofile.cancelTooltip();"
+class="jiveTT-hover-user jive-username-link"
+>Ratnesh Pandey</a>                        </div>
+                        <em>1 posts since <br/>Aug 2, 2010</em>
+                </div>
+
+                <div class="jive-thread-reply-body-container">
+
+                    <div class="jive-thread-reply-subject font-color-meta">
+
+                        <div class="jive-thread-post-moderating"><span class="jive-icon-med jive-icon-moderation"></span>Currently Being Moderated</div>
+                        <div class="jive-thread-reply-date">
+                        <span>Feb 23, 2011 5:08 AM</span>
+                            (<a href="#11504" title="Go to message" class="font-color-meta-light localScroll" >in response to 
+
+        Justin Fogarty
+</a>)
+                        </div>
+
+                        <strong>
+                        <a href="/message/11507#11507">Re: Is Crowdsourcing marketing’s “Easy” button?</a>
+                        </strong>
+
+                    </div>
+
+                    <div class="jive-thread-reply-message">
+                        <!-- [DocumentBodyStart:bcacce4b-5fe1-4b96-a807-3b7ec93ceb07] --><div class="jive-rendered-content"><p> its easy as a concept, but executing it has its own set of challenges.</p><p>1. there is a lot of buy in for the idea, but tha enthusiam peters off withthe campaign.</p><p>2. as it might happen, the quality of inputs may not meet the excellence level</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>hence, crowdsourcing is a campaign and needs to be managed as such. the marketer needs to be clear in the message, identify the right media and target the right people.</p><p>Once the campaign is over, they must be transparent in the evaluation methodology MUST make the results known to the participants and interested parties.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>ratnesh&#160;&#160;&#160;&#160; </p></div><!-- [DocumentBodyEnd:bcacce4b-5fe1-4b96-a807-3b7ec93ceb07] -->
+                    </div>
+
+                    <!-- BEGIN content details -->
+                    <div id="discussion-action-div-11507" class="jive-content-controls clearfix">
+                        <ul>
+
+
+                            <li class="discussion-message-acclaim">
+<div id="acclaim-container-2-11507-" class="acclaim-container">
+    <div id="jive-acclaim-like-container-2-11507-" data-uniqueKey="2-11507-" data-ratingType="like" data-hasVoted="false" data-likes="0" class="acclaim-like-container">
+         <span class="jive-icon-sml jive-icon-like"></span>Like
+         (<a href="#" id="jive-acclaim-likedlink-2-11507-"  class="font-color-meta jive-acclaim-likedlink">0</a>)
+    </div>
+</div></li>
+
+    <li><strong>
+    <a href="/post!reply.jspa?message=11507"
+       title="Reply to this message">
+<span class="jive-icon-sml jive-icon-comment-add"></span>Reply    </a>
+</strong></li>
+                        
+                        </ul>
+                    </div>
+                    <!-- END content details-->
+
+                </div>
+
+            </div>
+        </div>
+
+        </div></div>
+
+
+
+    <!-- BEGIN reply -->
+
+
+
+    <ul class="jive-discussion-replies jive-discussion-threaded jive-discussion-indent-1">
+    <li class="reply" id="discussion-11570">
+
+
+        <div id="thread-message-11570" class="jive-thread-message clearfix">
+            <div class="jive-thread-reply-indent-shadow">
+
+            <div class="jive-thread-reply jive-thread-reply-alt jive-thread-reply-postauthor  clearfix">
+
+            <div class="jive-thread-reply-body" id="11570">
+                <a name="11570"></a>
+                <div class="jive-author">
+
+                        <span class="jive-author-avatar-container">
+
+
+<a href="/people/2005372"
+   data-externalId=""
+   data-username="2005372"
+   data-avatarId="1754"
+   class="jiveTT-hover-user"
+   onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 11332, presence );"
+   onmouseout="quickuserprofile.cancelTooltip();"
+        >
+    <img
+            class="jive-avatar"
+
+            src="/people/2005372/avatar/46.png?a=1754"
+            border="0" height="46" width="46"
+            alt="Andre Pino"
+            /></a>
+<span class="j-status-levels"><img src="/4.5.3/themes/flb-default/images/badge_forrester_24.gif"
+           alt="Forrester" title="Forrester"/> </span>
+                        </span>
+
+                        <div class="jive-username-link-wrapper">
+<a href="/people/2005372"
+data-externalId=""
+data-username="2005372"
+data-avatarId="1754"
+id="jive-113321845114584642852"
+onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 11332, presence );"
+onmouseout="quickuserprofile.cancelTooltip();"
+class="jiveTT-hover-user jive-username-link"
+>Andre Pino</a>                        </div>
+                        <em>6 posts since <br/>Aug 24, 2010</em>
+                </div>
+
+                <div class="jive-thread-reply-body-container">
+
+                    <div class="jive-thread-reply-subject font-color-meta">
+
+                        <div class="jive-thread-post-moderating"><span class="jive-icon-med jive-icon-moderation"></span>Currently Being Moderated</div>
+                        <div class="jive-thread-reply-date">
+                        <span>Feb 25, 2011 6:35 AM</span>
+                            (<a href="#11507" title="Go to message" class="font-color-meta-light localScroll" >in response to Ratnesh Pandey</a>)
+                        </div>
+
+                        <strong>
+                        <a href="/message/11570#11570">Re: Is Crowdsourcing marketing’s “Easy” button?</a>
+                        </strong>
+
+                    </div>
+
+                    <div class="jive-thread-reply-message">
+                        <!-- [DocumentBodyStart:d49e3b7a-e38d-4907-9126-d3a487182a0c] --><div class="jive-rendered-content"><p>Ratnesh,</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>I think you highlight some areas of caution in using crowdsourcing.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><ol start="1"><li>Quality - The supplier's true ability to provide a quality service may not be exposed during the supplier selection phase.<br/></li><li>Project Complexity - The more complex the project, the more risk that the marketer takes in using crowdsourced suppliers<br/></li><li>Project Length - In a lengthy project, the marketer assumes a lot of risk when they rely on a supplier that they have no experience with.<br/></li></ol><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>Can crowdsourcing overcome these issues?</p></div><!-- [DocumentBodyEnd:d49e3b7a-e38d-4907-9126-d3a487182a0c] -->
+                    </div>
+
+                    <!-- BEGIN content details -->
+                    <div id="discussion-action-div-11570" class="jive-content-controls clearfix">
+                        <ul>
+
+
+                            <li class="discussion-message-acclaim">
+<div id="acclaim-container-2-11570-" class="acclaim-container">
+    <div id="jive-acclaim-like-container-2-11570-" data-uniqueKey="2-11570-" data-ratingType="like" data-hasVoted="false" data-likes="0" class="acclaim-like-container">
+         <span class="jive-icon-sml jive-icon-like"></span>Like
+         (<a href="#" id="jive-acclaim-likedlink-2-11570-"  class="font-color-meta jive-acclaim-likedlink">0</a>)
+    </div>
+</div></li>
+
+    <li><strong>
+    <a href="/post!reply.jspa?message=11570"
+       title="Reply to this message">
+<span class="jive-icon-sml jive-icon-comment-add"></span>Reply    </a>
+</strong></li>
+                        
+                        </ul>
+                    </div>
+                    <!-- END content details-->
+
+                </div>
+
+            </div>
+        </div>
+
+        </div></div>
+
+
+
+
+
+
+    </li>
+    </ul>
+    
+    <!-- END reply -->
+
+
+
+
+    
+    <!-- END reply -->
+
+    <!-- BEGIN reply -->
+
+
+
+    <li class="reply" id="discussion-11569">
+
+
+        <div id="thread-message-11569" class="jive-thread-message clearfix">
+            <div class="jive-thread-reply-indent-shadow">
+
+            <div class="jive-thread-reply jive-thread-reply-postauthor  clearfix">
+
+            <div class="jive-thread-reply-body" id="11569">
+                <a name="11569"></a>
+                <div class="jive-author">
+
+                        <span class="jive-author-avatar-container">
+
+
+<a href="/people/2005372"
+   data-externalId=""
+   data-username="2005372"
+   data-avatarId="1754"
+   class="jiveTT-hover-user"
+   onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 11332, presence );"
+   onmouseout="quickuserprofile.cancelTooltip();"
+        >
+    <img
+            class="jive-avatar"
+
+            src="/people/2005372/avatar/46.png?a=1754"
+            border="0" height="46" width="46"
+            alt="Andre Pino"
+            /></a>
+<span class="j-status-levels"><img src="/4.5.3/themes/flb-default/images/badge_forrester_24.gif"
+           alt="Forrester" title="Forrester"/> </span>
+                        </span>
+
+                        <div class="jive-username-link-wrapper">
+<a href="/people/2005372"
+data-externalId=""
+data-username="2005372"
+data-avatarId="1754"
+id="jive-113321845114591314852"
+onmouseover="var presence = null; quickuserprofile.getUserProfileTooltip( 11332, presence );"
+onmouseout="quickuserprofile.cancelTooltip();"
+class="jiveTT-hover-user jive-username-link"
+>Andre Pino</a>                        </div>
+                        <em>6 posts since <br/>Aug 24, 2010</em>
+                </div>
+
+                <div class="jive-thread-reply-body-container">
+
+                    <div class="jive-thread-reply-subject font-color-meta">
+
+                        <div class="jive-thread-post-moderating"><span class="jive-icon-med jive-icon-moderation"></span>Currently Being Moderated</div>
+                        <div class="jive-thread-reply-date">
+                        <span>Feb 25, 2011 6:19 AM</span>
+                            (<a href="#11504" title="Go to message" class="font-color-meta-light localScroll" >in response to 
+
+        Justin Fogarty
+</a>)
+                        </div>
+
+                        <strong>
+                        <a href="/message/11569#11569">Re: Is Crowdsourcing marketing’s “Easy” button?</a>
+                        </strong>
+
+                    </div>
+
+                    <div class="jive-thread-reply-message">
+                        <!-- [DocumentBodyStart:43eaa7fd-36ae-421a-b119-db696b3cb7be] --><div class="jive-rendered-content"><p>Justin thanks for weighing in on this topic.</p><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p>Your example sheds a whole new light on crowdsourcing for marketing. Can marketing leverage crowdsourcing&#160; for customer "advocacysourcing"? Why not??</p><p>Why not leverage your company's greatest fans to write success stories, be customer references, shoot short advocacy or best practice videos?</p></div><!-- [DocumentBodyEnd:43eaa7fd-36ae-421a-b119-db696b3cb7be] -->
+                    </div>
+
+                    <!-- BEGIN content details -->
+                    <div id="discussion-action-div-11569" class="jive-content-controls clearfix">
+                        <ul>
+
+
+                            <li class="discussion-message-acclaim">
+<div id="acclaim-container-2-11569-" class="acclaim-container">
+    <div id="jive-acclaim-like-container-2-11569-" data-uniqueKey="2-11569-" data-ratingType="like" data-hasVoted="false" data-likes="0" class="acclaim-like-container">
+         <span class="jive-icon-sml jive-icon-like"></span>Like
+         (<a href="#" id="jive-acclaim-likedlink-2-11569-"  class="font-color-meta jive-acclaim-likedlink">0</a>)
+    </div>
+</div></li>
+
+    <li><strong>
+    <a href="/post!reply.jspa?message=11569"
+       title="Reply to this message">
+<span class="jive-icon-sml jive-icon-comment-add"></span>Reply    </a>
+</strong></li>
+                        
+                        </ul>
+                    </div>
+                    <!-- END content details-->
+
+                </div>
+
+            </div>
+        </div>
+
+        </div></div>
+
+
+
+
+
+
+    </li>
+    </ul>
+    
+    <!-- END reply -->
+
+
+
+
+    </li>
+    </ul>
+    
+    <!-- END reply -->
+
+
+
+                <div id="jive-thread-reply-footer" class="clearfix">
+                        <a href="#4163" class="localScroll"><span class="jive-icon-sml jive-icon-arrow-top"></span>Go to original post</a>
+                        <div class="jive-rendered-content" style="display:none"><!-- [DocumentBodyStart:eda5adde-f223-4a16-86ba-3561f4f33803] --><div class="jive-rendered-content"><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;"><strong style="mso-bidi-font-weight: normal"> </strong>&#160;</p><p class="MsoNormal">I was speaking with Karin Shelley from GlobalLogic last week and she mentioned that GlobalLogic was celebrating their 10<sup>th</sup> anniversary. As a part of their celebration, they wanted to create a 10<sup>th</sup> anniversary logo that would represent the occasion and include the seven key geographies in which they operate.</p><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p class="MsoNormal">Since their internal resource was busy on other projects, they posted the logo design requirements on a crowdsourced logo design site (logotournament.com). Within 24 hours they had several design submissions and within 2 days a final selection was made and hi-res graphic source files provided. All for $250 USD !</p><p class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><a href="http://community.forrester.com/servlet/JiveServlet/showImage/2-11058-1295/GL+10th+Logo.jpg"><img alt="GL 10th Logo.jpg" class="jive-image" height="176" src="http://community.forrester.com/servlet/JiveServlet/downloadImage/2-11058-1295/172-176/GL+10th+Logo.jpg" width="172"/></a> </strong></p><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p class="MsoNormal">That immediately started me thinking about crowdsourcing as a great way to get other marketing design work, content and collateral produced with minimum time, effort and cost while taking full advantage of the creative talent and domain expertise that crowdsourcing offers.</p><p class="MsoNormal" style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p><p class="MsoNormal">What do you think? What has your crowdsourced marketing experience been? Are there some projects that are crowdsourced acceptable and some that really don&rsquo;t lend themselves to croudsourcing?</p></div><!-- [DocumentBodyEnd:eda5adde-f223-4a16-86ba-3561f4f33803] --></div>
+                        <strong>
+
+    <a href="/post!reply.jspa?thread=4163"
+       title="Reply to this message">
+                                <span class="jive-icon-med jive-icon-comment-add"></span>Reply to original post
+    </a>
+                        </strong>
+                </div>
+
+
+
+            </div>
+            <!-- END messages -->
+
+		</div>
+    </div>
+    <!-- END main body column -->
+
+    <!-- BEGIN sidebar column container -->
+    <div id="jive-body-sidebarcol-container">
+        <!-- BEGIN sidebar column -->
+        <div id="jive-body-sidebarcol">
+        <script type="text/javascript">
+            function createDocFromThread() {
+                    document.location = '/thread-to-doc.jspa?thread=4163';
+            }
+        </script>
+
+<div id="jive-action-sidebar" class="jive-sidebar jive-box jive-sidebar-actions jive-box-actions">
+
+
+    <div class="jive-box-header">
+        <h4 id="jive-action-sidebar-tab-header_thread-actions-tab">Actions</h4>
+    </div>
+    <div id="jive-action-sidebar-body" class="jive-sidebar-body jive-sidebar-body-actions jive-box-body">
+
+        <div id="jive-action-sidebar-tab-_thread-actions-tab"
+             class="jive-action-sidebar-tab-first"
+ >
+
+
+
+            <ul id="jive-action-sidebar-tab-list_thread-actions-tab" class=" jive-icon-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <li id="jive-link-thread-print" style=""
+                        ><a href="/thread/4163?decorator=print&amp;displayFullThread=true"
+rel="nofollow"
+onclick=""
+title="">
+<span class="jive-icon-med jive-icon-print-preview"></span>
+View print preview
+</a></li>
+
+
+
+            </ul>
+        </div> <!-- /#jive-action-sidebar-tab-_id -->
+    </div>
+
+</div>
+
+    <!-- BEGIN sidebar box 'More Like This' -->
+
+    <div class="jive-box jive-sidebar">
+        <div class="jive-box-header jive-sidebar-header">
+            <h4>More Like This</h4>
+        </div>
+        <div class="jive-box-body jive-sidebar-body jive-sidebar-body-morelikethis">
+            <ul class="jive-icon-list" id="jive-more-like-this-2-11058">
+                <li><span>Retrieving data ...</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- END sidebar box 'More Like This' -->
+        
+            
+            
+
+		<!-- start jive social container -->
+<div class="jive-box jive-sidebar">
+	<div class="jive-box-header jive-sidebar-header">
+		<h4>Bookmarked By (0)</h4>
+	</div>
+	<div class="jive-sidebar-byline">
+        <form id="view-favorite-activity-form" action="/view-favorite-activity.jspa">
+            <input type="hidden" name="object" value="4163"/>
+            <input type="hidden" name="contentObjectType" value="1"/>
+            <label for="jive-view-picker">View:</label>
+            <select id="jive-view-picker" name="view">
+                <option value="everyone">Everyone</option>
+                <option value="notes">Only Notes</option>
+            </select>
+            <input type="hidden" name="page" value="1"/>
+        </form>
+    </div>
+    <div class="jive-box-body jive-sidebar-body clearfix" id="jive-bookmark-sidebar">
+        <div id="jive-bookmark-avatars-container">
+            <div class="jive-sidebar-footer view-previous">
+                <a href="#" class="jive-less">Previous</a>
+            </div>
+            <div id="jive-bookmark-list"
+                class="jive-avatar-list pageable-container clearfix fixedheight">
+            </div>
+
+            <div class="jive-sidebar-footer view-next">
+                <a class="jive-more" href="#">Next</a>
+            </div>
+        </div>
+    </div>
+
+</div>        <!-- end jive social container -->
+
+
+		
+
+
+        </div>
+        <!-- END sidebar column -->
+    </div>
+    <!-- END sidebar column container -->
+
+    <!-- END main body -->
+
+</div>
+<!-- END main body -->
+
+
+
+        </div>
+
+<!-- BEGIN footer -->
+        
+<div id="flb-footer">
+    <div id="flb-footer-banner">
+        <div id="flb-footer-nav">
+            <ul>
+                <li><a name="Footer_aboutForrester" href="http://www.forrester.com/FactSheet">About Forrester</a></li>
+                <li><a href="http://www.forrester.com/careers">Careers</a></li>
+                <li><a href="http://www.forrester.com/Briefing">Request A Briefing</a></li>
+                <li><a name="Footer_myAccount" href="http://www.forrester.com/My/Account">My Account</a></li>
+                <li><a name="Footer_contactUs" href="http://www.forrester.com/My/Contacts">Contact Us</a></li>
+                <li><a href="http://www.forrester.com/Help">Help</a></li>
+				<li><a href="http://www.forrester.com/community_guidelines">Community Guidelines</a></li>
+                <li><a href="http://www.forrester.com/sitemap">Site Map</a></li>
+            </ul>
+            <ul>
+                <li><a href="http://www.forrester.com/rb/copyright.jsp">Copyright &copy; 2010</a></li>
+                <li><a href="http://www.forrester.com/Becomeaclient">Service Guarantee</a></li>
+<li><a href="http://www.forrester.com/socialmediapolicy">Social Media Policy</a></li>
+                <li><a href="http://www.forrester.com/CitationPolicy">Citation Policy</a></li>
+                <li><a href="http://www.forrester.com/PrivacyPolicy">Privacy Policy</a></li>
+                <li><a href="http://www.forrester.com/IntegrityPolicy">Integrity Policy</a></li>
+                <li><a href="http://www.forrester.com/rb/termsOfUse.jsp">Terms Of Use</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/coremetrics/v40/eluminate.js" language="javascript1.2"></script>
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/coremetrics/cmdatatagutils.js" language="javascript1.2"></script>
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/coremetrics/initAnalytics.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-291968-3");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<!-- ************** ANALYTICS ************** -->
+<script type="text/javascript">
+<!--
+core_categoryID = "Community";
+//-->
+</script>
+<!-- *************************************** -->
+
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/RBJavascript/globalFooter.js"></script>
+
+<script type="text/javascript" src="http://a964.g.akamaitech.net/f/964/714/1h/www.forrester.com/coremetrics/processAnalytics.js"></script>
+
+
+<!-- END footer -->
+
+    </div> 
+
+
+<div id="jiveTT-note-user" class="jive-tooltip2 notedefault snp-mouseoffset"  >
+	<div class="jive-tooltip2-mid j-mini-modal">
+		<div class="jive-tooltip2-mid-padding j-modal-content clearfix" id="jive-note-user-body"></div>
+	</div>
+<!--[if lt IE 7]><iframe src="javascript:false;" class="ieselectfix"></iframe><![endif]--></div>
+
+<div id="jiveTT-note-video" class="jive-tooltip2 notedefault snp-mouseoffset"  >
+	<div class="jive-tooltip2-mid j-mini-modal">
+		<div class="jive-tooltip2-mid-padding j-modal-content clearfix" id="jive-note-video-body"></div>
+	</div>
+<!--[if lt IE 7]><iframe src="javascript:false;" class="ieselectfix"></iframe><![endif]--></div>
+
+<div id="jivecontainerTT-note-container" class="jive-tooltip2 notedefault snp-mouseoffset"  >
+	<div class="jive-tooltip2-mid j-mini-modal">
+		<div class="jive-tooltip2-mid-padding j-modal-content clearfix" id="jive-note-container-body"></div>
+	</div>
+<!--[if lt IE 7]><iframe src="javascript:false;" class="ieselectfix"></iframe><![endif]--></div>
+
+
+
+
+    
+
+
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-291968-5");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+<script type="text/javascript">
+    var jivespotlightsearch = new JiveSpotlightSearch("#jive-query", "#jive-spotlight-search-container",
+    "/spotlight-search.jspa", containerType, containerID);
+
+
+</script>
+<script type="text/javascript">
+			function toggleSearchTarget() {
+				if ($j('#jive-search-target').val() === 'jive') {
+					$j('#jive-search-target').val('forrester');
+					$j('#jive-search-target-link').html(searchForresterText);
+				} else {
+					$j('#jive-search-target').val('jive');
+					$j('#jive-search-target-link').html(searchJiveText);
+				}
+			}
+
+			function submitCheckTarget() {
+				if ($j('#jive-search-target').val() === 'forrester') {
+					window.location = forresterSearchUrl + $j('#jive-query').val();
+					return false;
+				}
+				return true;
+			}
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1050 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>
+Get Satisfaction - People Powered Customer Service
+</title>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+
+<meta content="View topics about products &amp; services from CrowdFlower" name="description" />
+<link href="http://getsatisfaction.com/dolores_labs/topics.rss?sort=recently_created" rel="alternate" title="RSS" type="application/rss+xml" />
+
+<link href='/favicon.png' rel='shortcut icon' />
+<link href="http://assets3.getsatisfaction.com/stylesheets/8d79e2a3cb/master.css" media="all" rel="Stylesheet" type="text/css" />
+<!--[if lte IE 6]>
+<link href="http://assets2.getsatisfaction.com/stylesheets/8d79e2a3cb/ie6.css" media="all" rel="Stylesheet" type="text/css" />
+<![endif]-->
+<link href="http://assets1.getsatisfaction.com/stylesheets/new_toolbar.css" media="all" rel="stylesheet" type="text/css" />
+
+
+<style media='all' type='text/css'>
+#container {
+  padding: 0;
+  width: 978px;
+  background: #FFF url(/images/community_sidebar_bg.png) repeat-y -1009px top !important; }
+  #container h1 {
+    padding: 0;
+    color: auto;
+    border: none;
+    font-size: 1.6em;
+    letter-spacing: 0;
+    font-weight: normal;
+    margin-bottom: 15px; }
+    #container h1 small {
+      font-size: 70%;
+      color: #777; }
+  #container #content {
+    float: left;
+    width: 610px;
+    padding: 20px 15px;
+    position: relative;
+    z-index: 2; }
+    #container #content h2 {
+      color: #333;
+      font-size: 90%;
+      font-weight: normal;
+      padding-bottom: 2px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      border-bottom: 1px solid #DDD; }
+  #container #sidebar {
+    width: 308px;
+    float: right;
+    padding: 15px;
+    position: relative; }
+#company_nav #sub_header {
+  padding-bottom: 10px; }
+
+</style>
+<!--[if lte IE 6]>
+<style media='all' type='text/css'>
+
+</style>
+<![endif]-->
+<script src="http://assets3.getsatisfaction.com/javascripts/jquery-1.4.2.js" type="text/javascript"></script>
+<script src="http://assets4.getsatisfaction.com/javascripts/jquery-ui-1.8.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var $j = jQuery.noConflict();
+//]]>
+</script>
+<link href="http://assets2.getsatisfaction.com/javascripts/jquery-ui-1.8.2-css/smoothness/jquery-ui-1.8.2.custom.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="http://assets1.getsatisfaction.com/javascripts/8d79e2a3cb/error_report.js" type="text/javascript"></script>
+<script src="http://assets3.getsatisfaction.com/javascripts/8d79e2a3cb/application.js" type="text/javascript"></script>
+<script src="http://assets1.getsatisfaction.com/javascripts/8d79e2a3cb/sfn_data_remote.js" type="text/javascript"></script>
+<script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js" type="text/javascript"></script>
+
+<link href="http://assets2.getsatisfaction.com/stylesheets/8d79e2a3cb/company.css" media="screen" rel="Stylesheet" type="text/css" />
+<link href="http://assets2.getsatisfaction.com/stylesheets/8d79e2a3cb/topic_browser.css" media="screen" rel="Stylesheet" type="text/css" />
+
+<script type='text/javascript'>
+// <![CDATA[
+document.observe("dom:loaded", function() {
+  page.products_path = "/dolores_labs/products";
+  followable = new Followable();
+  followable.detect_followables();
+  page.topic_box = new StartTopicBox('start_topic_box', "/dolores_labs/searches.new_topic");
+});
+
+toggle_style_picker = function() {
+  var picker = $('topic_style_select');
+  picker.toggle();
+  if(picker.visible()) 
+    picker.autoHide();
+}
+select_search_style = function(style) {
+  var picker = $('topic_style_select');
+  $('search_style').setValue(style);
+
+  var search_field = $('search_query');
+
+  if($F(search_field) == "Search topics") {
+    search_field.focus();
+  } else {
+    $('company_topic_search').submit();       
+  }
+  picker.hide();
+}
+  page.update_history("http://getsatisfaction.com/dolores_labs","CrowdFlower", "company_history");  
+  
+
+page.company = 'dolores_labs';
+
+document.observe("dom:loaded", function() {
+  page.watch("login", function(){
+    var user_console = $('user_console')
+    if(!user_console){ return; }
+    user_console.down('.name').update(current_user.nick());
+    user_console.down('.logged_in').show();
+    user_console.down('.logged_out').hide();
+  })
+  $$(".combo").each(function(el) {
+    el.combo = new Combo(el);
+  });
+});
+page.set_login_trackback();
+
+
+// ]]>
+</script>
+
+</head>
+<body>
+
+<div id='wrapper'>
+<div id='mini_profile' style='display:none'>
+<div id='mini_progress_indicator' style='display:none'>
+<div><img alt="Spinner" src="http://assets2.getsatisfaction.com/images/spinner.gif" /> Loading Profile...</div>
+</div>
+<div class='mp_inset clearfix' id='mini_profile_data'>
+<img alt="User Icon" class="icon" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" />
+<div class='details'>
+<p>
+<strong class='name'></strong>
+<span class='url'></span>
+</p>
+<p class='tagline'></p>
+<div class='more'>
+<p class='created_at'></p>
+<p class='location'></p>
+<p class='stats'>
+Posted
+<span class='topics'></span>
+and
+<span class='replies'></span>
+</p>
+<p class='premium'></p>
+</div>
+</div>
+<div class='getsatisfaction'></div>
+<div class='identities'></div>
+<div class='private_fields'></div>
+</div>
+</div>
+
+<div id="followable_dropdown" class="nps" style="display:none">
+</div>
+
+
+<div id='overlay' style='display:none'>
+<div id="mini_modal" style="display: none;">
+  <div id="mini_modal_top" class="clearfix">
+  <a class="close" href="#" onclick="page.hide_overlay(); return false;">Close</a>
+  <img alt="Loading..." id="mini_modal_loader" src="http://assets4.getsatisfaction.com/images/ajax_loader.gif" style="display: none" />
+  <div id="mini_modal_content"></div>
+  </div>
+  <div id="mini_modal_cap"></div>
+</div>
+<div id='inline_login' style='display:none'></div>
+<div id='overlay_screen' style='display:none'></div>
+</div>
+
+
+
+<div id='toolbar'>
+<div class='tb_inset clearfix'>
+<a href="http://getsatisfaction.com" id="gsfn_logo" title="Get Satisfaction Home">Get Satisfaction</a>
+<div class='translate' id='find_bar'>
+<form action='#' id='header_topic_search' onsubmit='return false;'>
+<div class='combo'>
+<input id='company_or_product_input' tabindex='1' type='text' value='Find products and companies' />
+<img alt="Combo_arrow" class="combo_arrow" src="http://assets4.getsatisfaction.com/images/combo_arrow.png" style="display: none;" />
+<div class='searching' style='display:none'>
+<img alt="Spinner" src="http://assets2.getsatisfaction.com/images/spinner.gif" />
+</div>
+<div class='menu' style='display:none'>
+<div class='search_results nav_set' id='company_or_product_results' style='display:none'></div>
+<div class='clearfix' id='companies_nav'>
+<dl class='clearfix' id='c_history_list'>
+<dt>&nbsp;</dt>
+</dl>
+<dl class='clearfix' id='p_history_list'>
+<dt>&nbsp;</dt>
+</dl>
+</div>
+</div>
+</div>
+<input alt="Go" class="submit" src="http://assets4.getsatisfaction.com/images/find_btn.png" style="padding: 0; border: 0;" title="Go" type="image" />
+</form>
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.DelayedEventObserver('company_or_product_input', 1.0, function(element, value) {if (!$F('company_or_product_input').empty() && !$('company_or_product_input').hasClassName('disabled')) { $('find_bar').down('.searching').show();; new Ajax.Request('/searches/companies_or_products', {asynchronous:true, evalScripts:true, onComplete:function(request){$('find_bar').down('.searching').hide();}, parameters:'query=' + encodeURIComponent(value)}); }})
+//]]>
+</script>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    document.observe("dom:loaded", function() {
+      var search_field = $('company_or_product_input');
+      search_field.prompted_text = "Find products and companies";
+      search_field.value = "Find products and companies";
+      page.render_history();
+    });
+  //]]>
+</script>
+
+<div class='translate' id='user_console'>
+<ul class='logged_in' style='display:none'>
+<li id='user_nav' onmouseout="$(this).down('.menu').hide()" onmouseover="$(this).down('.menu').show();">
+<span>Welcome,</span>
+<a href="/me" class="name" id="user_click"><span class='notranslate'>(Account)</span> <img alt="v" src="http://assets2.getsatisfaction.com/images/assets/toolbar_arrow.png" /></a>
+<div class='menu' style='display:none'>
+<div class='user_links'>
+<a href="/me">Your Dashboard</a>
+<a href="/me/edit">Profile Information</a>
+<a href="/me/contacts">Your Contacts</a>
+<a href="/me/uses">Favorite Products &amp; Companies</a>
+<a href="/me/notifications">Email &amp; Notifications</a>
+</div>
+</div>
+</li>
+<li class='last'><a href="/logout" id="sign_out" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit();return false;">Sign out</a></li>
+</ul>
+<div class='logged_out'>
+<a href="/login" onclick="return page.login_and_reload()" rel="nofollow">Log in</a>
+or
+<a href="/people/new" onclick="return page.login_and_reload()" rel="nofollow">Sign up</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<div id='page'>
+
+
+<div id='header'>
+<div class='clearfix' id='company_header'>
+<div id='community_status'>
+<div class="active translate" id="participation"><div><span class='SL_block notranslate'>CrowdFlower</span>&nbsp;employees are here to help.</div><img alt="corner" src="http://assets2.getsatisfaction.com/images/participation_ribbon.png" /></div>
+
+<div class="translate" id="claim_link">Are you an employee? <a href="/dolores_labs/claim_requests/new">Join your community</a>.</div>
+</div>
+<div class="translate" id="community_tagline">Community-powered support for <a href="/dolores_labs" class="notranslate">CrowdFlower</a></div>
+<a href="/dolores_labs" class="company_logo"><img alt="CrowdFlower" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/3632899/CrowdFlowerLogo_full_aspect_medium.png" /></a>
+
+</div>
+
+<div class='clearfix translate' id='company_tabs'>
+<div id="breadcrumb_trail"><ul id="crumbs"><li class="crumb first crumb_0"><div class="crumb_link"><a href="/dolores_labs">Community</a> <img alt="Sprite_screen" onclick="Breadcrumb.expand(this)" onmouseout="Breadcrumb.out(this)" onmouseover="Breadcrumb.over(this)" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /></div><div class="crumb_select"><ul><li><a href="/dolores_labs">Overview</a></li>
+<li><a href="/dolores_labs/topics">Topics</a></li>
+<li><a href="/dolores_labs/products">Products</a></li>
+<li><a href="/dolores_labs/people">People</a></li>
+<li><a href="/dolores_labs/overheard">Overheard</a></li>
+<li><a href="/dolores_labs/changes">Change log</a></li></ul></div></li>
+<li class="crumb last crumb_1"><div class="crumb_link"><span>Overview</span> </div></li></ul></div>
+<div id='header_start_topic'>
+<span>OR</span>
+<a href="/dolores_labs/topics/new">Start a topic</a>
+</div>
+<form action="/dolores_labs/searches" class="sb_pod clearfix" id="company_topic_search" method="get">
+<input class="text prompted" id="search_query" name="query" onfocus="new PromptedField(this, 'Search topics')" tabindex="3" type="text" value="Search topics" />
+<div class='search_submit_widget'>
+<input alt="Go" class="search_submit" src="http://assets1.getsatisfaction.com/images/topic_search_icon.png" title="Search" type="image" />
+<a class="style_activator" href="#" onclick="toggle_style_picker(); return false;" title="Select search type"></a>
+<div id='topic_style_select' style='display:none'>
+<input id="search_style" name="style" type="hidden" value="topics" />
+<div class='style_select_box'>
+<a href="#" onclick="select_search_style('topics'); return false;">All Topics</a>
+<a href="#" onclick="select_search_style('question'); return false;">Questions</a>
+<a href="#" onclick="select_search_style('idea'); return false;">Ideas</a>
+<a href="#" onclick="select_search_style('problem'); return false;">Problems</a>
+<a href="#" onclick="select_search_style('praise'); return false;">Praise</a>
+<a href="#" onclick="select_search_style('update'); return false;">Updates</a>
+</div>
+</div>
+</div>
+  </form>
+</div>
+
+
+</div>
+<div id="page_notification" class="main_msg clearfix" style="display: none;">
+  <a class="cancel_btn" href="#" onclick="page.hide_notification(); return false;">x</a>
+  <div class="top"></div>
+  <div class="content clearfix translate">
+  </div>
+</div>
+
+<div class='clearfix' id='container'>
+<script type="text/javascript" charset="utf-8">
+  // <![CDATA[
+  if (!Cookie.accept) {
+    document.write("<div id=\"feature_msg\" style=\"margin-bottom: 30px;\">" +
+      "<div class=\"change_top\">" +
+        "<div class=\"inset\">" +
+          "<p><strong style=\"font-size: 110%;\">Get Satisfaction uses Javascript and cookies.</strong></p>" +
+          "<p>You'll need to enable cookies to participate.</p>" +
+        "</div>" +
+      "</div>" +
+    "</div>");
+  }
+  // ]]>
+  
+</script>
+
+<noscript>
+<div id="feature_msg" class="clearfix" style="margin-bottom: 30px;">
+  <div class="change_top">
+    <div class="inset">
+      <p><strong style="font-size: 110%;">Get Satisfaction uses Javascript and cookies.</strong></p>
+      <p>You'll need to enable Javascript and cookies to participate.</p>
+    </div>
+  </div>
+</div>
+</noscript>
+
+<div id="content"><div class='community_topic_box translate'>
+<div id='start_topic_box'>
+<ul class='style_tabs clearfix'>
+<li class='question'>
+<a href="#question">Ask a question</a>
+<img alt="Style_tab_tooth" src="http://assets3.getsatisfaction.com/images/style_tab_tooth.png" />
+</li>
+<li class='idea'>
+<a href="#idea">Share an idea</a>
+<img alt="Style_tab_tooth" src="http://assets3.getsatisfaction.com/images/style_tab_tooth.png" />
+</li>
+<li class='problem'>
+<a href="#problem">Report a problem</a>
+<img alt="Style_tab_tooth" src="http://assets3.getsatisfaction.com/images/style_tab_tooth.png" />
+</li>
+<li class='praise'>
+<a href="#praise">Give praise</a>
+<img alt="Style_tab_tooth" src="http://assets3.getsatisfaction.com/images/style_tab_tooth.png" />
+</li>
+</ul>
+  <form action="/dolores_labs/topics/new" id="start_topic_form" method="get">
+<fieldset>
+<input class="style" id="topic_style" name="topic[style]" type="hidden" value="question" />
+<input id="from" name="from" type="hidden" value="company" />
+<input id="product" name="product" type="hidden" value="" />
+<div class='textbox'>
+<textarea class="text query" cols="200" id="topic_query" name="topic[query]" rows="2" tabindex="2"></textarea>
+</div>
+<label class='prompt' for='topic_query' style='display:none'></label>
+<a class="reset" href="#" onclick="; return false;" style="display:none">Start over</a>
+<div class='results_container' id='inline_search_results' style='display:none'></div>
+<input class="submit" id="topic_go" name="commit" type="submit" value="Continue" />
+</fieldset>
+  </form>
+</div>
+
+</div>
+<div class='translate' id='changelog'>
+
+</div>
+<div id='reset_change_log'>
+</div>
+<div class='tabs translate' id='overview_tabs'>
+<ul>
+<li class="on highlights"><a href="/dolores_labs?view=highlights" sfn-data-remote="true">Highlights</a></li>
+<li class="recent"><a href="/dolores_labs?view=recent" sfn-data-remote="true">Recent Activity <small>(<span class="notranslate">0</span>&nbsp;new topics today)</small></a></li>
+<li class="overheard"><a href="/dolores_labs?view=overheard" sfn-data-remote="true">On Twitter</a></li>
+</ul>
+</div>
+<div id='community_topics'>
+<div class='topic_set questions' id='question_viewer'>
+<div class='head translate'>
+<h2>Frequently Asked Questions</h2>
+</div>
+<ul class='list'>
+<li class='clearfix topic_524616'>
+<a href="/people/divya_lalitha" class="mini_profile_icon" onmouseover="mp(this, &quot;divya_lalitha&quot;)"><img alt="divya lalitha" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">3</span>&nbsp;people asked this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/image371/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>3</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/image371" class="subject">IMage</a>
+<div class='meta'>
+<div>
+<a href="/people/divya_lalitha" class="creator_name">divya lalitha</a>
+<span class='translate'>
+asked
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/image371" class="translate"><span class="notranslate">1</span>&nbsp;reply</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1265395087000' title="February 05, 2010 18:38">on February 05, 2010 18:38</span> by <a href="/people/tyson_tate" class="notranslate">Tyson Tate</a>
+</span>
+</div>
+</div>
+<div class='translate'>
+    <span class="concluded"><img alt="Micro-check" src="http://assets4.getsatisfaction.com/images/micro-check.png" /> Answered</span>
+
+</div>
+<div>
+
+</div>
+</div>
+</li>
+<li class='clearfix topic_576176'>
+<a href="/people/devadass" class="mini_profile_icon" onmouseover="mp(this, &quot;devadass&quot;)"><img alt="Devadass" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">3</span>&nbsp;people asked this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/doubt-lgp8/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>3</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/doubt-lgp8" class="subject">doubt</a>
+<div class='meta'>
+<div>
+<a href="/people/devadass" class="creator_name">Devadass</a>
+<span class='translate'>
+asked
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/doubt-lgp8" class="translate"><span class="notranslate">1</span>&nbsp;reply</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1254770417000' title="October 05, 2009 19:20">on October 05, 2009 19:20</span> by <a href="/people/yelena_429874" class="notranslate">Yelena</a>
+</span>
+</div>
+</div>
+<div>
+
+</div>
+</div>
+</li>
+<li class='clearfix topic_557578'>
+<a href="/people/dawn_469073" class="mini_profile_icon" onmouseover="mp(this, &quot;dawn_469073&quot;)"><img alt="Dawn" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">2</span>&nbsp;people asked this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/google_spreadsheet_menu_doc/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>2</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/google_spreadsheet_menu_doc" class="subject">Google Spreadsheet Menu doc</a>
+<div class='meta'>
+<div>
+<a href="/people/dawn_469073" class="creator_name">Dawn</a>
+<span class='translate'>
+asked
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/google_spreadsheet_menu_doc" class="translate"><span class="notranslate">2</span>&nbsp;replies</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1253648165000' title="September 22, 2009 19:36">on September 22, 2009 19:36</span> by <a href="/people/dawn_469073" class="notranslate">Dawn</a>
+</span>
+</div>
+</div>
+<div>
+
+</div>
+</div>
+</li>
+
+</ul>
+
+<ul class='more_links translate'>
+<li class='first'><a href="/dolores_labs/questions/popular">Frequently asked</a></li>
+<li><a href="/dolores_labs/questions/answered">Answered</a></li>
+<li><a href="/dolores_labs/questions/unanswered">Needs answer</a></li>
+<li><a href="/dolores_labs/questions/recent">Recent</a></li>
+</ul>
+</div>
+<div class='topic_set ideas' id='idea_viewer'>
+<div class='head translate'>
+<h2>Popular Ideas</h2>
+</div>
+<ul class='list'>
+<li class='clearfix topic_509718'>
+<a href="/people/stephanie_315822" class="mini_profile_icon" onmouseover="mp(this, &quot;stephanie_315822&quot;)"><img alt="Stephanie" height="30" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/2963189/steph_small.jpg" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">5</span>&nbsp;people shared this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/due_date/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>5</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/due_date" class="subject">Due Date</a>
+<div class='meta'>
+<div>
+<a href="/people/stephanie_315822" class="creator_name">Stephanie</a>
+<span class='translate'>
+shared
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/due_date" class="translate"><span class="notranslate">1</span>&nbsp;reply</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1265395582000' title="February 05, 2010 18:46">on February 05, 2010 18:46</span> by <a href="/people/tyson_tate" class="notranslate">Tyson Tate</a>
+</span>
+</div>
+</div>
+<div class='translate'>
+    <span class="open"> Planned</span>
+
+</div>
+<div>
+
+</div>
+</div>
+</li>
+<li class='clearfix topic_795808'>
+<a href="/people/matteo_negri" class="mini_profile_icon" onmouseover="mp(this, &quot;matteo_negri&quot;)"><img alt="Matteo Negri" height="30" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/3763017/spike_small.jpg" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">4</span>&nbsp;people shared this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/payment_increase_when_the_job_is_running_for_calibration_on_the_fly/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>4</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/payment_increase_when_the_job_is_running_for_calibration_on_the_fly" class="subject">Payment increase when the job is running for &quot;calibration&quot; on the fly!</a>
+<div class='meta'>
+<div>
+<a href="/people/matteo_negri" class="creator_name">Matteo Negri</a>
+<span class='translate'>
+shared
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/payment_increase_when_the_job_is_running_for_calibration_on_the_fly" class="translate"><span class="notranslate">0</span>&nbsp;replies</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Posted <span class="i18n-date notranslate" locale='en' timestamp='1267698715000' title="March 04, 2010 10:31">on March 04, 2010 10:31</span>
+</span>
+</div>
+</div>
+<div>
+
+</div>
+</div>
+</li>
+<li class='clearfix topic_617477'>
+<a href="/people/gabriel_parent" class="mini_profile_icon" onmouseover="mp(this, &quot;gabriel_parent&quot;)"><img alt="Gabriel Parent" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">3</span>&nbsp;people shared this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/source_of_worker/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>3</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/source_of_worker" class="subject">Source of worker</a>
+<div class='meta'>
+<div>
+<a href="/people/gabriel_parent" class="creator_name">Gabriel Parent</a>
+<span class='translate'>
+shared
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/source_of_worker" class="translate"><span class="notranslate">3</span>&nbsp;replies</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1265395622000' title="February 05, 2010 18:47">on February 05, 2010 18:47</span> by <a href="/people/tyson_tate" class="notranslate">Tyson Tate</a>
+</span>
+</div>
+</div>
+<div class='translate'>
+    <span class="concluded"><img alt="Micro-check" src="http://assets4.getsatisfaction.com/images/micro-check.png" /> Implemented</span>
+
+</div>
+<div>
+
+</div>
+</div>
+</li>
+
+</ul>
+
+<ul class='more_links translate'>
+<li class='first'><a href="/dolores_labs/ideas/popular">Popular</a></li>
+<li><a href="/dolores_labs/ideas/completed">Completed</a></li>
+<li><a href="/dolores_labs/ideas/rejected">Not planned</a></li>
+<li><a href="/dolores_labs/ideas/recent">Recent</a></li>
+</ul>
+</div>
+<div class='topic_set problems' id='problem_viewer'>
+<div class='head translate'>
+<h2>Common Problems</h2>
+</div>
+<ul class='list'>
+<li class='clearfix topic_790746'>
+<a href="/people/ymahdad" class="mini_profile_icon" onmouseover="mp(this, &quot;ymahdad&quot;)"><img alt="ymahdad" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">2</span>&nbsp;people reported this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/gold_standard_not_seen/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>2</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/gold_standard_not_seen" class="subject">gold standard not seen!!!!</a>
+<div class='meta'>
+<div>
+<a href="/people/ymahdad" class="creator_name">ymahdad</a>
+<span class='translate'>
+reported
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/gold_standard_not_seen" class="translate"><span class="notranslate">1</span>&nbsp;reply</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1267471533000' title="March 01, 2010 19:25">on March 01, 2010 19:25</span> by <a href="/people/chris_van_pelt" class="notranslate">Chris Van Pelt</a>
+</span>
+</div>
+</div>
+<div>
+
+</div>
+</div>
+</li>
+<li class='clearfix topic_790207'>
+<a href="/people/ymahdad" class="mini_profile_icon" onmouseover="mp(this, &quot;ymahdad&quot;)"><img alt="ymahdad" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">2</span>&nbsp;people reported this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/gold_are_all_empty_after_copying/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>2</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/gold_are_all_empty_after_copying" class="subject">Gold are all empty after copying</a>
+<div class='meta'>
+<div>
+<a href="/people/ymahdad" class="creator_name">ymahdad</a>
+<span class='translate'>
+reported
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/gold_are_all_empty_after_copying" class="translate"><span class="notranslate">2</span>&nbsp;replies</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1267473450000' title="March 01, 2010 19:57">on March 01, 2010 19:57</span> by <a href="/people/ymahdad" class="notranslate">ymahdad</a>
+</span>
+</div>
+</div>
+<div>
+
+</div>
+</div>
+</li>
+<li class='clearfix topic_784798'>
+<a href="/people/jordi" class="mini_profile_icon" onmouseover="mp(this, &quot;jordi&quot;)"><img alt="jordi" height="30" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/1670411/cupcake6_small.png" width="30" /></a>
+
+    <div class="me_too">
+      <div class="inset">
+        <div class="me_too_action" onmouseover="new MeToo(this)">
+          <div class="overlay inactive" style="display:none">
+            <strong><span class="notranslate">2</span>&nbsp;people reported this!</strong> Click <img alt="Mini_star" src="http://assets4.getsatisfaction.com/images/mini_star.png" /> to add your vote!
+          </div>
+          <a href="/dolores_labs/topics/no_amt_qualifications_no_fun/me_toos?from=topic_list" class="me_too_link"><img alt="*" class="star" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" /> <strong>2</strong></a>
+        </div>
+      </div>
+    </div>
+
+
+<div class='topic_details'>
+<a href="/dolores_labs/topics/no_amt_qualifications_no_fun" class="subject">no AMT qualifications -&gt; no fun</a>
+<div class='meta'>
+<div>
+<a href="/people/jordi" class="creator_name">jordi</a>
+<span class='translate'>
+reported
+</span>
+<span class='divider'>&middot;</span>
+<a href="/dolores_labs/topics/no_amt_qualifications_no_fun" class="translate"><span class="notranslate">3</span>&nbsp;replies</a>
+<span class='divider'>&middot;</span>
+<span class='translate'>
+Last reply <span class="i18n-date notranslate" locale='en' timestamp='1267163798000' title="February 26, 2010 05:56">on February 26, 2010 05:56</span> by <a href="/people/markerdmann" class="notranslate">markerdmann</a>
+</span>
+</div>
+</div>
+<div>
+
+</div>
+</div>
+</li>
+
+</ul>
+
+<ul class='more_links translate'>
+<li class='first'><a href="/dolores_labs/problems/common">Common</a></li>
+<li><a href="/dolores_labs/problems/solved">Solved</a></li>
+<li><a href="/dolores_labs/problems/active">Being worked on</a></li>
+<li><a href="/dolores_labs/problems/recent">Recent</a></li>
+</ul>
+</div>
+<div class='topic_set praise last' id='praise_viewer'>
+<div class='head translate'>
+<h2>Recent Praise</h2>
+</div>
+<ul class='list'>
+<li class='clearfix'>
+<a href="/dolores_labs/topics/love_you-knn0" class="subject">LOVE YOU</a>
+<div class='meta'>
+&mdash;
+<a href="/people/ray_473630" class="creator_name">Ray</a>,
+
+<span class='created_at translate'>
+<span class="i18n-date notranslate" locale='en' timestamp='1253865409000' title="September 25, 2009 07:56">on September 25, 2009 07:56</span>
+</span>
+</div>
+</li>
+
+</ul>
+<ul class='more_links translate'>
+<li class='first'><a href="/dolores_labs/praise/recent">See more praise</a></li>
+</ul>
+</div>
+
+</div>
+</div><div id="sidebar">
+<div class='community_pod' id='community_info_sidebar'>
+<div class='sb_pod'>
+<div id='community_description'>
+<h2 class='translate'>About this Community</h2>
+This is one of many support communities on<br />Get Satisfaction, a place where customers and companies connect around the products and services they use.
+</div>
+
+</div>
+<div class='sb_pod'>
+<div class='clearfix' id='support_channels'>
+<h3 class='translate'>
+Additional support links
+
+</h3>
+<div class='inner_content'>
+<dl id='support_links'>
+<dd class='website'>
+<img alt="Sprite_screen" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" />
+<a href="http://crowdflower.com">Website</a>
+</dd>
+<dd class='twitter'>
+<img alt="Sprite_screen" src="http://assets3.getsatisfaction.com/images/sprite_screen.png" />
+<a href="http://twitter.com/crowdflower">Twitter</a>
+</dd>
+</dl>
+</div>
+</div>
+
+</div>
+<div class='sb_pod community_stats translate'>
+<table>
+<tr>
+<th>Community Stats</th>
+<th class='right'>Total</th>
+</tr>
+<tr>
+<td>Topics posted</td>
+<td class='right notranslate'>115</td>
+</tr>
+<tr>
+<td>People</td>
+<td class='right notranslate'>114</td>
+</tr>
+<tr>
+<td>Employees</td>
+<td class='right notranslate'>8</td>
+</tr>
+</table>
+</div>
+</div>
+<div class='community_pod' id='current_user_sidebar'>
+<div class='sb_pod clearfix' id='your_membership'>
+<h2 class='translate'>Join the community</h2>
+<div class='translate' id='new_customer_callout'>
+<ul>
+<li>
+Rate
+<span class='notranslate'>
+CrowdFlower
+</span>
+</li>
+<li>
+Get updates about
+<span class='notranslate'>
+CrowdFlower
+</span>
+</li>
+<li>Have your answers featured here</li>
+<li>Show it off with a logo on your dashboard</li>
+</ul>
+<small class='note'>All you need to do is click it. Do it!</small>
+<a href="#" id="customer_membership_button" onclick="page.login_and_do(this, function(){ new Ajax.Request('/dolores_labs/customers', {asynchronous:true, evalScripts:true, method:'post'}) }.bind(this), {prompt: &quot;become a member&quot;});; return false;">I'm a customer</a>
+</div>
+
+</div>
+</div>
+<div class='community_pod' id='community_members_sidebar'>
+<h2 class='translate'>Community members</h2>
+<div class='sb_pod'>
+<div class='sb_pod clearfix' id='sidebar_featured_people'>
+<div class='member clearfix'>
+<a href="/people/inayath" class="mini_profile_icon" onmouseover="mp(this, &quot;inayath&quot;)"><img alt="inayath" height="55" src="http://getsatisfaction.com/images/user_default_medium.png" width="55" /></a>
+
+<div class='translate'>
+<a href="/people/inayath" class="notranslate">inayath</a>
+reported
+their first
+problem:
+</div>
+<a href="/dolores_labs/topics/crowflower_customer_support_does_not_respond" class="topic_link">crowflower customer support does not respond......!!!</a>
+
+</div>
+<div class='member clearfix'>
+<a href="/people/chris_van_pelt" class="mini_profile_icon employee" onmouseover="mp(this, &quot;chris_van_pelt&quot;)">
+  <img alt="Chris Van Pelt" height="55" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/2908543/facebook_medium.jpg" width="55" />
+  <small class="label">EMPLOYEE</small>
+</a>
+<div>
+<a href="/people/chris_van_pelt">Chris Van Pelt</a>
+<span class='translate'>
+(an employee)
+</span>
+</div>
+<div class='translate'>just answered a question:</div>
+<div>
+<a href="/dolores_labs/topics/too_stringent_restriction_on_maximum_amount_of_assignment" class="topic_link">Too stringent restriction on maximum amount of $ / assignment</a>
+</div>
+
+</div>
+<div class='clearfix last member'>
+<a href="/people/ray_473630" class="mini_profile_icon" onmouseover="mp(this, &quot;ray_473630&quot;)"><img alt="Ray" height="55" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/3762397/Ray_Solnik_-_Color__Informal-1x1_medium.jpg" width="55" /></a>
+
+<div>
+<a href="/people/ray_473630">Ray</a>
+<span class='translate'>
+(a customer)
+</span>
+</div>
+<div class='translate'>just suggested an idea:</div>
+<div>
+<a href="/dolores_labs/topics/jobs_presented_per_page" class="topic_link">Jobs presented per page</a>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class='sb_pod'>
+<div class='sb_pod clearfix' id='sidebar_new_members'>
+<h3 class='translate'>Welcome to our new members</h3>
+<div class='inner_content clearfix'>
+<div class='even first member'>
+<a href="/people/inayath" class="mini_profile_icon" onmouseover="mp(this, &quot;inayath&quot;)"><img alt="inayath" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+<a href="/people/inayath" class="name">inayath</a>
+<div class='time_stamp translate'>
+joined
+<span class="i18n-date notranslate" locale='en' timestamp='1298471935000' title="February 23, 2011 14:38">on February 23, 2011 14:38</span>
+</div>
+</div>
+<div class='last member odd'>
+<a href="/people/jimjones_1658355" class="mini_profile_icon" onmouseover="mp(this, &quot;jimjones_1658355&quot;)"><img alt="Jim Jones" height="30" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/5792109/41776_605517844_9006_n_small.jpg" width="30" /></a>
+
+<a href="/people/jimjones_1658355" class="name">Jim Jones</a>
+<div class='time_stamp translate'>
+joined
+<span class="i18n-date notranslate" locale='en' timestamp='1295034517000' title="January 14, 2011 19:48">on January 14, 2011 19:48</span>
+</div>
+</div>
+<div class='even first member'>
+<a href="/people/joseph_1477222" class="mini_profile_icon" onmouseover="mp(this, &quot;joseph_1477222&quot;)"><img alt="Joseph" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+<a href="/people/joseph_1477222" class="name">Joseph</a>
+<div class='time_stamp translate'>
+joined
+<span class="i18n-date notranslate" locale='en' timestamp='1285011695000' title="September 20, 2010 19:41">on September 20, 2010 19:41</span>
+</div>
+</div>
+<div class='last member odd'>
+<a href="/people/teuvok" class="mini_profile_icon" onmouseover="mp(this, &quot;teuvok&quot;)"><img alt="teuvok" height="30" src="http://getsatisfaction.com/images/user_default_small.png" width="30" /></a>
+
+<a href="/people/teuvok" class="name">teuvok</a>
+<div class='time_stamp translate'>
+joined
+<span class="i18n-date notranslate" locale='en' timestamp='1283856550000' title="September 07, 2010 10:49">on September 07, 2010 10:49</span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='community_pod clearfix' id='popular_products_sidebar'>
+<div class='sb_pod'>
+<h2 class='translate'>Products &amp; Services</h2>
+<ul id='popular_products'>
+<li class='clearfix'>
+<div class="product_47946 followable"><a class="translate activate" href="#" onclick="$(this).up('.followable').followable.activate_overlay(); new Ajax.Request('/products/dolores_labs_crowdflower/score', {asynchronous:true, evalScripts:true, method:'get'}); return false;" style="display: none;"><span></span></a><a href="/dolores_labs/products/dolores_labs_crowdflower" class="img_link" title="CrowdFlower"><img alt="Cf_medium" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/2914266/CF_medium.png" /></a></div>
+<div class='label'>
+<h4><a href="/dolores_labs/products/dolores_labs_crowdflower">CrowdFlower</a></h4>
+<p class='translate'><span class="notranslate">89</span>&nbsp;topics</p>
+</div>
+</li>
+<li class='clearfix'>
+<div class="product_49333 followable"><a class="translate activate" href="#" onclick="$(this).up('.followable').followable.activate_overlay(); new Ajax.Request('/products/dolores_labs_crowdflower_channels/score', {asynchronous:true, evalScripts:true, method:'get'}); return false;" style="display: none;"><span></span></a><a href="/dolores_labs/products/dolores_labs_crowdflower_channels" class="img_link" title="CrowdFlower Channels"><img alt="Cf-channels_medium" src="http://s3.amazonaws.com/satisfaction-production/public/uploaded_images/2963179/CF-Channels_medium.png" /></a></div>
+<div class='label'>
+<h4><a href="/dolores_labs/products/dolores_labs_crowdflower_channels">CrowdFlower Channels</a></h4>
+<p class='translate'><span class="notranslate">27</span>&nbsp;topics</p>
+</div>
+</li>
+</ul>
+<a href="/dolores_labs/products" class="more translate">See all products &amp; services</a>
+</div>
+</div>
+
+<div class='translate' id='gsfn_sidebar_message'>
+<div class='text'>
+<p>
+Conversations should be conducted in the spirit of the
+<a href="/ccpact">Company-Customer Pact</a>.
+</p>
+</div>
+</div>
+
+<p class='community_creator translate'>
+<a href="http://getsatisfaction.com/" class="powered_by" style="float: right"><img alt="Powered_by" src="http://assets1.getsatisfaction.com/images/assets/powered_by.png" /></a>
+This community created by <span class='notranslate'><a href="/people/stephanie_315822">Stephanie</a></span> <span style='white-space:nowrap;'><span class="i18n-date notranslate" locale='en' timestamp='1244148251000' title="June 04, 2009 20:44">on June 04, 2009 20:44</span>.</span>
+</p>
+</div>
+</div>
+
+</div>
+<div id='footer'>
+<div class='clearfix' id='footer_content'>
+<div class='footer_copy translate'>
+&copy; 2011
+<span class='notranslate'>
+Get Satisfaction Inc.
+</span>
+All rights reserved.
+</div>
+<div class='footer_links'>
+Get Satisfaction
+<a href="/legal" class="translate">Legal</a>
+<span class='divider'>
+|
+</span>
+<a href="/help" class="translate">Help</a>
+</div>
+</div>
+</div>
+<div id='adwords_target'></div>
+
+</div>
+
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-2005202-1");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+  
+
+
+
+
+
+
+
+
+</body>
+</html>

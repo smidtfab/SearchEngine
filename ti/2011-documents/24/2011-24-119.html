@@ -1,0 +1,1326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="http://www.typepad.com/" />
+	
+	<meta name="description" content="Amazon Web Services, Products, Tools, and Developer Information..." />
+	<link rel="stylesheet" href="http://aws.typepad.com/aws/styles.css?v=6" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/themes/common/print.css" type="text/css" media="print" />
+	<link rel="alternate" type="application/atom+xml" title="Posts on 'Amazon Web Services Blog' (Atom)" href="http://aws.typepad.com/aws/atom.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'Amazon Web Services Blog' (RSS 1.0)" href="http://aws.typepad.com/aws/index.rdf" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'Amazon Web Services Blog' (RSS 2.0)" href="http://aws.typepad.com/aws/rss.xml" />
+	<script type="text/javascript">
+		var TPApp = {};
+		TPApp.app_uri = "http://www.typepad.com/";
+	</script>
+	<script type="text/javascript" src="http://static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/js/yui/yahoo-dom-event.js,/js/app/thumbnail-gallery-min.js,/js/sixatrack-loader.js,/js/app/flyouts-min.js"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['t2._setAccount', 'UA-225723-36']);
+		_gaq.push(['t2._setDomainName', 'none']);
+		_gaq.push(['t2._setAllowLinker', true]);
+        _gaq.push(['t2._setCustomVar', 1, 'Blog', '6a00d8341c534853ef00d83451ba1569e2', 3]);
+        _gaq.push(['t2._setCustomVar', 2, 'Page Type', 'Category', 3]);
+		_gaq.push(['t2._trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+	<title>Amazon Web Services Blog: Mechanical Turk</title>
+	<link rel="start" href="http://aws.typepad.com/aws/" title="Home" />
+</head>
+
+<body class="layout-three-column">
+
+	<script src="http://4839.hittail.com/mlt.js" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://s25.sitemeter.com/js/counter.js?site=s25awsblog">
+        </script>
+        <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+         _uacct = "UA-1142536-1";
+        urchinTracker();
+         </script>
+
+	
+	<div id="container">
+		<div id="container-inner" class="pkg">
+			
+			<!-- banner -->
+<div id="banner">
+	<div id="banner-inner" class="pkg">
+		
+		<h1 id="banner-header"><a href="http://aws.typepad.com/aws/" accesskey="1">Amazon Web Services Blog</a></h1>
+		<h2 id="banner-description">
+			Amazon Web Services, Products, Tools, and Developer Information...
+		</h2>
+	</div>
+</div>
+
+
+
+			<div id="pagebody">
+				<div id="pagebody-inner" class="pkg">
+					<div id="alpha">
+						<div id="alpha-inner" class="pkg">
+							<!-- sidebar1 -->
+
+
+<!-- user photo -->
+
+	<div class="module-photo module">
+		<div class="module-content"><img src="http://aws.typepad.com/.a/6a00d8341c534853ef00e54ff18b618833-150wi" alt="My Photo" /></div>
+	</div>
+
+
+	<div class="module-archives module">
+		<h2 class="module-header">Recent Posts</h2>
+		<div class="module-content">
+			<ul class="module-list">
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/adding-a-second-availability-zone-in-tokyo.html">Adding a Second AWS Availability Zone in Tokyo</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/amazon-ec2-dedicated-instances.html">Amazon EC2 Dedicated Instances</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/build-a-cluster-computing-environment-in-under-10-minutes.html">Build a Cluster Computing Environment in Under 10 minutes</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/updated-amazon-linux-ami-201102-released.html">Updated Amazon Linux AMI (2011.02) Released</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/upcoming-webinar-orchestrating-the-cloud.html">Upcoming Webinar: Orchestrating the Cloud</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/now-available-windows-2008-r2-on-amazon-ec2.html">Now Available: Windows Server 2008 R2 on Amazon EC2</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/new-approach-amazon-ec2-networking.html">A New Approach to Amazon EC2 Networking</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/iam-now-available-for-amazon-cloudfront.html">IAM Now Available for Amazon CloudFront</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/building-powerful-web-applications-in-the-aws-cloud-a-love-story.html">Building Powerful Web Applications in the AWS Cloud: A Love Story</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+<div class="module-recent-comments module">
+	<h2 class="module-header">Recent Comments</h2>
+	<div class="module-content">
+		<ul class="module-list">
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e6052341a970c">Alan Williams</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef0147e3acdf48970b">Son, I am disappoint</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e6051440f970c">Jay</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e872bdb3a970d">Gamedude007</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e6050a55e970c">Andy</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/03/up-up-and-away-cloud-computing-reaches-for-the-sky.html#comment-6a00d8341c534853ef0147e3ab9112970b">Cttripp</a> on <a href="http://aws.typepad.com/aws/2009/03/up-up-and-away-cloud-computing-reaches-for-the-sky.html">Up, Up, and Away - Cloud Computing Reaches for the Sky</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e872af0cd970d">Peter Bowen</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e604f131c970c">Chris Moyer</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef0147e3aa0b60970b">Jeff Lomax</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e604ebcf0970c">Andy, CloudBerry Lab</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://feeds.delicious.com/v2/js/awsbuzz?title=AWS%20Buzz%20on%20Delicious&icon=rss&count=10&sort=date"></script>
+
+<!-- 
+<div class="module-typelist module">
+	<h2 class="module-header">Recent Links</h2>
+	<div class="module-content">
+		<ul class="module-list">
+							<li class="module-list-item"><a title="" href="http://krow.livejournal.com/442461.html">Brian "Krow" Aker's Idle Thoughts - S3, JungleDisk, and where did I put my tape drive?</a></li>
+							<li class="module-list-item"><a title="" href="http://www.ddj.com/dept/database/191601621">Dr. Dobb's | Synchronize Now! | August 2, 2006</a></li>
+							<li class="module-list-item"><a title="" href="http://tsandhol.blogspot.com/2006/08/backupy-goodness.html">tsandhol's boring crap: Backupy Goodness</a></li>
+							<li class="module-list-item"><a title="" href="http://blog.einfach-firefox.de/index.php/alexa-traffic-rank-what-it-is-and-why-you-should-care-or-not/">Make Money Online » Alexa traffic rank: what it is and why you should care (or not)</a></li>
+							<li class="module-list-item"><a title="" href="http://www.birddogdigital.com/blog/2006/07/von-kempelen-home-great-idea.html">birdDog digital Blog & Podcast - Mac Sales & Support for Small Businesses & Creative Firms: von Kempelen - Home - Great idea</a></li>
+							<li class="module-list-item"><a title="" href="http://www.juliogarcia.org/2006/07/28/i-hate-hard-drives/">I hate hard drives » Julio Garcia dot org - Now with more 'Whaaaaaaa?'</a></li>
+							<li class="module-list-item"><a title="" href="http://www.stairways.com/blog/2006-08-01-amazon-s3-interarchy">Stairways Software: How Do I Make An Amazon S3 Hosted Website Using Interarchy</a></li>
+							<li class="module-list-item"><a title="" href="http://akatsuki.co.uk/article/backup-in-the-age-of-the-terabyte">akatsuki.co.uk: Backup in the Age of the Terabyte</a></li>
+							<li class="module-list-item"><a title="" href="http://www.pardonthedisruption.com/2006/08/10_ways_web_20_.html">Chip Griffin: Pardon the Disruption: 10 Ways Web 2.0 Promises to Change the Way We Live and Work</a></li>
+							<li class="module-list-item"><a title="" href="http://mechanical-turk.blogspot.com/2006/07/happy-monday-turkers.html">Mechanical Turk Monitor: Happy Monday Turkers!</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="module-wishlist module">
+	
+		<h2 class="module-header"><a href="http://www.amazon.com/exec/obidos/redirect?tag=8a9yhb4-20&amp;path=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fregistry%2F2AT7V3BAJ69DX">Web Services Wish List</a></h2>
+	
+	<div class="module-content"><a href="http://www.amazon.com/exec/obidos/redirect?tag=8a9yhb4-20&amp;path=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fregistry%2F2AT7V3BAJ69DX"
+		title="Visit this Wish List at Amazon.com"><img
+		src="http://www.typepad.com/t/content?src=TiledWishlist:183837,73998"
+		alt="Visit this Wish List at Amazon.com" /></a></div>
+</div>
+
+-->
+
+<!--
+
+<script type="text/javascript" defer="true" src="http://blueorganizer.adaptiveblue.com/js/bluelink-window.js"></script>
+
+    <div style="max-width: 170px">
+        <a href="http://www.amazon.com/E-Commerce-Service-AWS-home-page/b/ref=sc_fe_c_0_15763381_1/103-8605431-4007801?ie=UTF8&node=12738641&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8cmaSujw9XXQDxdYnZ_gbMRgV0Of5kgNbzZqGO_q%22rN5pVvENV8Vofw144rvluDkQtDEZCInELnq6GJlfzaLqiQEjIRXK3p64cVSJt6p_xbL1gAL6st35d9w8hIunA5hYE60zIZFwdXMQdmN7GLwPAA_qGK124Vu8pxgoHvGHH3hfP6p">E-Commerce Service</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon E-Commerce Service (ECS) exposes Amazon's product data and e-commerce functionality.</span></div><br>
+        <a href="http://www.amazon.com/b/ref=sc_fe_c_0_15763381_2/103-8605431-4007801?ie=UTF8&node=201590011&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8feqOELwPN1RsuJ2g1kKqqJd7U0aOkt2xPp1Y0_0RBsSj98%2225HQkcBaJPKGqgCC8PTEJFJ4CWv1TBZUbAafqqU_iI7HLIZFOlR8Itc%22_vDLJfBG_Boh7t12Px%22bFyysZmZbm">Elastic Compute Cloud</a><br>
+
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon Elastic Compute Cloud is a web service that provides resizable compute capacity in the cloud.</span></div><br>
+        <a href="http://www.amazon.com/Historical-Pricing-AWS-home-page/b/ref=sc_fe_c_0_15763381_3/103-8605431-4007801?ie=UTF8&node=15811391&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8pCeOpbM691lDEdcnKsxeMFMV0Of5kgNbzZqGO_q%22rN5pVvENV8Vofw144rvluDkQtDEZCInELnq6GRlfzaLqiQEjIRXK3p64cVSJt6p_xbL1gAL6st35d9w8hIunAL3XCEKyVZFwdXMQdmN7GLwPAA_qGK124Vu8pxgoHvGHH3hfP6p">Historical Pricing</a>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Amazon Historical Pricing web service gives developers programmatic access to over three years of actual sales data for books, music, videos, and DVDs.</span></div><br>
+        <a href="http://www.amazon.com/Mechanical-Turk-AWS-home-page/b/ref=sc_fe_c_0_15763381_4/103-8605431-4007801?ie=UTF8&node=15879911&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8kSeSt5M991lDEdcmJ_wgIIMRQzX_wgZcBgrHIRXSupTyOXQ05Opwqo1495MqOLCR7a_YyATEj8W9oMlcfG1rvE_jH7HIWlQ%22bpSJvMFOdiLYx2WPaYhSbq2OsJbmCvNXCE0D4kQqCydOeuN6UTgSpllwS8a01h08rIYF5meLH7c">Mechanical Turk</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">One of the best ways to understand Amazon Mechanical Turk is to complete a HIT and see what the experience is like.</span></div><br>
+        <a href="http://www.amazon.com/S3-AWS-home-page-Money/b/ref=sc_fe_c_0_15763381_5/103-8605431-4007801?ie=UTF8&node=16427261&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8u0H%22AH365yREFJwAMYxfQtcT2vL9aohdzorGJl07vpQDOvjJvKkwhpWIOiqqpK8X5KFYB2TzU1a6k2lcz0urvkojQ%22HL7V%22Ql7OYc7V7iaW2gALRqAs7sndQsVGzeeNZyg0zL7%22rCuI_xThULXM_Bo_v58eJRMrRcd">Simple Storage Service</a><br>
+
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon S3 is storage for the Internet. It is designed to make web-scale computing easier for developers.</span></div><br>
+        <a href="http://www.amazon.com/Simple-Queue-Service-home-page/b/ref=sc_fe_c_0_15763381_6/103-8605431-4007801?ie=UTF8&node=13584001&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8uCKVlnw%2258kyxJxi772f9%22hS65LVroZatZeLKJr_z65p%229AI3PozPcv2bjvlhCAQ5eUZy29CNrM7qI7cB0ustkUjMZHLPBQ%22gZSHuE%229pOGGw_r_EstSku2_EZXoEr3YDAeyWpkeqiJOfaN6Lj2PeQlaW1v1VsH%22x6gEGSXXQxcf">Simple Queue Service</a>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon Simple Queue Service offers a reliable, highly scalable hosted queue for storing messages as they travel between computers.</span></div><br>
+        <a href="http://www.amazon.com/b/ref=sc_fe_c_0_15763381_7/103-8605431-4007801?ie=UTF8&node=236156011&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8feqOELwPN1RsuJ2g1kKqqJd7U0aOkt2xPB1Y0_0RBsSj98%2225HQkcBaJPKGqgCC8PTEJFJ4CWv1TBZUbAm1ruEEjI7HLIZFOlR8Itc%22_vDLJfBG_Boh7t12Px%22bFyysZmZbm">Alexa Thumbnails</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">All thumbnail images are accessible via web services, using SOAP or REST.</span></div><br>
+        <a href="http://www.amazon.com/Alexa-Top-Sites-home-page/b/ref=sc_fe_c_0_15763381_8/103-8605431-4007801?ie=UTF8&node=14248821&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8giKTd5wTGfBzF6xlIIxaIgMT05LVj2tct7KHQ2q_qh8yUvzIVymzPAW4VqqrbS8Q0C_PtgSEMHq9h_7cDqLqu_%22jI%22bK8l6%22jl52zolVaCvMnsW_d%22I7rnJQBxHoAPwKcVeyJRFsEaZRdagTZC29rgEc0Ha1TVqRr2JzYa">Alexa Top Sites</a><br>
+
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Alexa Top Sites web service provides ranked lists of the top sites on the Internet.</span></div><br>
+        <a href="http://www.amazon.com/Alexa-Web-Information-Service-home/b/ref=sc_fe_c_0_15763381_9/103-8605431-4007801?ie=UTF8&node=12782661&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8giKTd5wTJT7DFsMkWkhaIJwRWrv%22u%22YceFrJMRrSEpzFOvEJLTUyqUWZ95gfsD6_tz_PAUnFGHW6hIlzr8eqvgUpQNXLXBA%22hBTIuA%22%22E9LJClG_BE2QdKdUnkeBoeNZFguAKVFsCus_DTh6J1gOrsEx8PXI8xKPqQgyQv0X%22ZZhX7VRPb">Alexa Web Information Service</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Alexa Web Information Service makes Alexa's vast repository of information about the traffic and structure of the web available to developers.</span></div><br>
+        <a href="http://www.amazon.com/b/ref=sc_fe_c_0_15763381_10/103-8605431-4007801?ie=UTF8&node=269962011&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8feqOELwPN1RsuJ2g1kKqqJd7U0aOkt2xPdf1Q6eRfgnk7OV2_PQnBlaJUyGshK8PLnBXERzlU1HTq3Uxvi1rCUEjG%22HL1tlOzA8JrgV%22vX1Hs3K8d%22IVwDJ8ANHoF8tLFEXo3c">Alexa Web Search</a><br/>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Alexa Web Search web service offers programmatic access to Alexa's web search engine.</span></div>
+    </div>
+
+-->
+
+
+
+						</div>
+					</div>
+					<div id="beta">
+						<div id="beta-inner" class="pkg">
+							<!-- entries -->
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-6a00d8341c534853ef0147e0855d50970b">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2010/12/new-mechanical-turk-blog.html">New Mechanical Turk Blog</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><a href="http://mechanicalturk.typepad.com/blog/"> <img style="float: right; margin-left: 10px; margin-bottom: 10px; border: 1px solid black;" src="http://media.amazonwebservices.com/blog/mechanical_turk_blog.png" alt="" /> </a> The Mechanical Turk now has a <a href="http://mechanicalturk.typepad.com/blog/">blog</a> of its very own.</p>
+<p>The new <a href="http://mechanicalturk.typepad.com/blog/" target="_self">Mechanical Turk blog</a> will be used to share information with Mechanical Turk Requesters, Workers, and fans of the Mechanical Turk marketplace.</p>
+<p>It will include product announcements, how-to guides, best practices, case studies, and examples of how businesses are using Mechanical Turk for everything from transcription to content moderation to data cleansing and testing of search algorithms.</p>
+<p>-- Jeff;</p>
+
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">December 09, 2010 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2010/12/new-mechanical-turk-blog.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2010/12/new-mechanical-turk-blog.html#comments">Comments (1)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2010/12/new-mechanical-turk-blog.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-6a00d8341c534853ef0133f65151fb970b">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2010/11/amazon-mechanical-turk-in-action-.html">Amazon Mechanical Turk in Action; Net:Work Conference Discount</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Programs have always been good at dealing with highly structured, very uniform data. They sometime stumble when asked to deal with data that is irregular, unstructured, or otherwise messy in some way. Normalizing data that came from a casual, real-world source where people are allowed to enter free-form text can be tedious and expensive.</p>
+<p><a href="https://github.com/datawrangling/spatialanalytics" target="_self"><img alt="" src="http://media.amazonwebservices.com/blog/twitter_locations.png" style="float: right; margin-left: 10px; margin-bottom: 10px;" /></a> A <a href="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php" target="_self">recent story on ReadWriteWeb</a> tells the tale of data scientist <a href="http://www.linkedin.com/in/peterskomoroch" target="_self">Peter Skomorch</a> and his analysis of real-world data taken from <a href="http://www.linkedin.com/" target="_self">LinkedIn</a>. Peter and his colleagues used a processing pipeline which made use of the <a href="http://www.mturk.com/" target="_self">Amazon Mechanical Turk </a>to tap into what he described as the &quot;human brain-power of thousands of Turks.&quot; They were, for example, able to figure out that &quot;IBM&quot;, &quot;I.B.M.,&quot; and &quot;IBM UK&quot; all referred to the same company.</p>
+<p>Earlier, Pete had used this technique to create a view of the locations of thousands of Twitter users; the code for this project can be found <a href="https://github.com/datawrangling/spatialanalytics" target="_self">here</a>.</p>
+<p>&#0160;If you are interested in the Amazon Mechanical Turk and other forms of workforce collaboration, you may also find the upcoming <a href="http://network2010-AWS.eventbrite.com/?discount=AWS" target="_self">Net:Work 2010 conference</a> to be of interest. Sharon Chiarella, VP of the Amazon Mecanical Turk, will be speaking. The conference will be held in San Francisco on December 9th; you can get a $100 discount by <a href="http://network2010-AWS.eventbrite.com/?discount=AWS" target="_self">clicking here</a>.</p>
+<p>-- Jeff;</p>
+<p>&#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">November 22, 2010 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2010/11/amazon-mechanical-turk-in-action-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2010/11/amazon-mechanical-turk-in-action-.html#comments">Comments (1)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2010/11/amazon-mechanical-turk-in-action-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-6a00d8341c534853ef013487f6af77970c">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2010/10/new-workforce-management-features-for-amazon-mechanical-turk.html">New Workforce Management Features for Amazon Mechanical Turk</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>We've added some new workforce management tools to <a href="http://www.mturk.com/" target="_self">Amazon Mechanical Turk</a>. If you are are a current or potential Mechanical Turk Requester, these features are for you.</p>
+<p>These features were designed to make it easier for you to find and reward the Workers who are doing good work on your HITs (Human Intelligence Tasks). The new tools help you to identify good Workers, allow you to manage Workers and Qualification Types, and save you time by sending more work to your best Workers.</p>
+<p>The new features include:</p>
+<ul>
+<li style="padding-bottom:8px;"><strong>Worker Statistics</strong> - Information on who is doing work for you and how well they are doing at it.</li>
+
+<li style="padding-bottom:8px;"><strong>Qualification Types Management</strong> - The ability to create new Qualification Types using the web interface, and to assign them to Workers. You can use this pair of features to create groups of highly qualified Workers.</li>
+
+<li style="padding-bottom:8px;"><strong>Worker Management Tools</strong> - The ability to provide selected Workers with bonuses and to block undesirable Workers.</li>
+</ul>
+
+<p>Here is a presentation with more information about each feature:</p>
+
+<div style="margin-left:auto;margin-right:auto;">
+<div style="width:425px" id="__ss_5326541">
+<strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/mechanicalturk/manage-your-workforce-fall-2010-requester-product-update" title="Manage your Workforce - Fall 2010 Requester Product Update">Manage your Workforce - Fall 2010 Requester Product Update</a></strong><object id="__sse5326541" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=manageyourworkforcefall2010-100930140612-phpapp02&stripped_title=manage-your-workforce-fall-2010-requester-product-update&userName=mechanicalturk" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse5326541" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=manageyourworkforcefall2010-100930140612-phpapp02&stripped_title=manage-your-workforce-fall-2010-requester-product-update&userName=mechanicalturk" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/mechanicalturk">Mechanical Turk </a>.</div></div>
+</div>
+
+
+<p>-- Jeff;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">October 04, 2010 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2010/10/new-workforce-management-features-for-amazon-mechanical-turk.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2010/10/new-workforce-management-features-for-amazon-mechanical-turk.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2010/10/new-workforce-management-features-for-amazon-mechanical-turk.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-6a00d8341c534853ef01348082a678970c">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2010/05/bay-area-amazon-mechanical-turk-meetup.html">Bay Area Amazon Mechanical Turk Meetup</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>On May 18th, 2010, we&#39;ll be conducting a <a href="http://aws.amazon.com/about-aws/mturk-meetup/">Mechanical Turk Meetup</a> in Palo Alto, California. The event will run from 6:30 PM to 9:30 PM at the Garden Court Hotel and is sponsored by <a href="http://www.attinteractive.com/">AT&amp;T Interactive</a>.</p><p>You&#39;ll here from Donghui Feng, Research Scientist for AT&amp;T Interactive. He&#39;ll talk about the use of the Mechanical Turk for data extraction and data analysis. Following his talk will&#0160; be Neil Symes, Director of Listing Quality at AT&amp;T Interactive.</p><p>Next on the roster will be Omar Alonso of Microsoft. He will talk about experiment design and execution, and will gthen present some guidelines for data preparation, interface design, quality control, and scheduling.</p><p>A member of the Mechanical Turk team will also be speaking.</p><p> Attendance is free but space is limited and you need to <a href="http://aws.amazon.com/about-aws/mturk-meetup/">register</a>.</p><p>-- Jeff;</p><p>PS - If you can&#39;t attend, check out some of our <a href="http://aws.amazon.com/solutions/case-studies/#ondemand">on-demand case studies</a>.</p><p></p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">May 05, 2010 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2010/05/bay-area-amazon-mechanical-turk-meetup.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2010/05/bay-area-amazon-mechanical-turk-meetup.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2010/05/bay-area-amazon-mechanical-turk-meetup.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-cool_sites entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-6a00d8341c534853ef0133ecafa4b3970b">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2010/04/croon-my-tune-create-singing-greeting-using-mechanical-turk.html">Croon My Tune - Create A Singing Greeting Using Mechanical Turk</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><img src="http://d1nqddva888cns.cloudfront.net/liberty_bell_2.jpg" style="float: right; margin-left: 10px; margin-bottom: 10px;" />I was on the east coast of the US last week and spent a very pleasant day at the <a href="http://phillyemergingtech.com/">Emerging Technologies for the Enterprise</a> conference in Philadelphia. As a native of the city is always great to go back. During my all too brief time in the city I spoke at the conference, met with a couple of developers, and had time for a cheese steak at <a href="http://www.sonnysfamoussteaks.com/">Sonny&#39;s Famous Steaks</a> in Old City.</p>
+
+<p>While at the conference I heard about a really cool and unique use for the <a href="http://www.mturk.com/">Mechanical Turk</a> and I just had to share it with you!</p>
+
+
+<p>The application is called <a href="http://croonmytune.com/">Croon My Tune</a>. It runs on <a href="http://aws.amazon.com/ec2">EC2</a> and also makes use of <a href="http://aws.amazon.com/sdb">SimpleDB</a>, <a href="http://aws.amazon.com/s3">S3</a>, and <a href="https://payments.amazon.com/sdui/sdui/index.htm">Amazon Payments</a>. You can use it to create short, entertaining greetings. </p>
+
+<div style="clear: both;">&#0160;</div>
+
+<p>You can choose from a number of well known tunes:</p>
+
+<p style="text-align: center;"><img src="http://d1nqddva888cns.cloudfront.net/cmt_tunes.png" /></p>
+
+<p>Then you enter your message:</p>
+
+<p style="text-align: center;"><img src="http://d1nqddva888cns.cloudfront.net/cmt_message.png" /></p>
+
+<p>You then pay for your croon using Amazon Payments and wait for an email message to indicate that it is ready!</p>
+
+<p>A Mechanical Turk HIT (Human Intelligence Task) is created and your croon will be created within a half-day or so (actually, mine took just 36 minutes):</p>
+
+<p style="text-align: center;">
+<img src="http://d1nqddva888cns.cloudfront.net/cmt_chill.png" />
+</p>
+
+<p>The finished croon is stored in Amazon S3 and can be played directly. <a href="http://croonmytune.com/songs/97263270-47e5-11df-ab18-12313906c424?utm_source=site_email&amp;utm_medium=email&amp;utm_campaign=song_is_ready_email">Here&#39;s mine!</a></p><p>Is that cool, or what?</p>
+
+<p>-- Jeff;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">April 14, 2010 in <a href="http://aws.typepad.com/aws/cool_sites/">Cool Sites</a>, <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2010/04/croon-my-tune-create-singing-greeting-using-mechanical-turk.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2010/04/croon-my-tune-create-singing-greeting-using-mechanical-turk.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2010/04/croon-my-tune-create-singing-greeting-using-mechanical-turk.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-amazon_ec2 entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-6a00d8341c534853ef0133ec4f5ee8970b">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2010/03/east-coast-us-aws-events-april-2010.html">East Coast US AWS Events - April 2010</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Here&#39;s some information on some AWS events coming up in April, all on the East Coast of the US:</p>
+
+<div>
+<img src="http://d1nqddva888cns.cloudfront.net/aws_east_coast_2010_apr.png" style="float: right; margin-left: 10px; margin-bottom: 10px; border: 1px solid black;" />
+<ul>
+<li style="padding-bottom: 12px;">I will be speaking at the <a href="http://rawsug.org/">Rochester AWS User Group</a> at 6:00 PM on Monday, April 5th. My talk will cover some of the latest AWS developments including the <a href="http://aws.amazon.com/vpc">Virtual Private Cloud</a> and the <a href="http://aws.amazon.com/rds">Relational Database Service</a>.</li>
+<li style="padding-bottom: 12px;">I will be speaking at the <a href="http://www.meetup.com/nyccloudcomputing/calendar/12916804/">New York City Cloud Computing Group</a> at 6:00 PM on Tuesday, April 6th. I&#39;ll cover VPC and RDS again.</li>
+<li style="padding-bottom: 12px;">I will be <a href="http://phillyemergingtech.com/sessions/amazon-web-services-%E2%80%93-the-latest-developments">speaking</a> at the <a href="http://phillyemergingtech.com/">Emerging Tech for the Enterprise</a> conference in Philadelphia on April 9th. I am looking forward to this visit to my home town! If you will be at ETE, please say hello, and also plan to see Chris Cera and David Brussin talk about <a href="http://phillyemergingtech.com/sessions/enterprise-cloud-computing-pitfalls-puzzles-and-great-rewards">Enterprise Cloud Computing: Pitfalls, Puzzles, and Great Rewards</a>.</li>
+<li style="padding-bottom: 12px;">As the final talk of my trip to the East Coast, I will be speaking to the <a href="http://rubynation.org/">RubyNation</a> conference in Reston, Virginia on Saturday, April 10th. I worked in Reston back when the unofficial motto was &quot;We&#39;re not dead, we&#39;re Reston.&quot; Things have livened up considerably since then and I&#39;m looking forward to connecting with some old friends and colleagues while I am in the area.</li>
+<li style="padding-bottom: 12px;">There will be a <a href="http://aws.amazon.com/about-aws/mturk-meetup/">Mechanical Turk 
+Meetup</a> in New York at 6:00 PM on April 13th. Learn more about <a href="http://www.mturk.com/">Mechanical Turk</a>&#39;s global 
+on-demand workforce, discover best practices, talk to existing 
+Requesters, and mingle with members of the Mechanical Turk team. 
+Preregister <a href="http://aws.amazon.com/meetup-rsvp">here</a>.
+</li>
+<li style="padding-bottom: 12px;">Terry Wise, Director of Business Development for the Amazon Web 
+Services, will be speaking at <a href="http://www.pega.com/pegaworld/">PegaWORLD</a> in Philadelphia on 
+April 26th. Terry will talk about how <a href="http://www.tenethealth.com/pages/home.aspx">Tenet Healthcare</a> 
+uses Pega’s Cloud Computing solution to radically improve the way it 
+builds its business process applications, reducing delivery time&#0160; and 
+cost by a factor of 5. Discount registrations for the conference are 
+available <a href="http://www.winningthroughagility.com/amazon">here</a>. </li>
+</ul>
+</div><p>-- Jeff;</p><p>PS - Despite the route implied by my map, I will be traveling by plane and train!</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">March 29, 2010 in <a href="http://aws.typepad.com/aws/amazon_ec2/">Amazon EC2</a>, <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2010/03/east-coast-us-aws-events-april-2010.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2010/03/east-coast-us-aws-events-april-2010.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2010/03/east-coast-us-aws-events-april-2010.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-66251425">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2009/05/new-mechanical-turk-resource-center.html">New Mechanical Turk Resource Center</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<style>
+   .quote20090501
+  {
+    width: 80%;
+    border: 1px dotted black;
+    padding: 8px;
+    margin-left: 60px;
+    margin-bottom: 10px;
+  }
+
+</style>
+
+<p>
+  We've put together a
+  <a href="https://requester.mturk.com/mturk/resources">Mechanical Turk Resource Center</a>
+  jam-packed with interesting and useful information.
+</p>
+
+<p>
+  You can start by reading about
+  <a href="https://requester.mturk.com/mturk/resources/usecases">How Mechanical Turk Can Help Your Business</a>.
+  Then you can read about how requesters are using Mechanical Turk on our
+  <a href="https://requester.mturk.com/mturk/resources/testimonials">customer interviews</a>
+  page. We've got some great stories from companies and schools 
+  including
+  <a href="http://aws.amazon.com/solutions/case-studies/castingwords-interview/">Casting Words</a>,
+  <a href="http://aws.amazon.com/solutions/case-studies/snapmylife-interview/">SnapMyLife</a>,
+  <a href="http://aws.amazon.com/solutions/case-studies/Channel-Intelligence-Interview/">Channel Intelligence</a>,
+  <a href="http://aws.amazon.com/solutions/case-studies/knewton/">Knewton</a>,
+  and the
+  <a href="http://aws.amazon.com/solutions/case-studies/stanford-ai-lab-interview">Stanford AI Lab</a>.
+</p>
+
+<p>
+  We also added a
+  <a href="https://requester.mturk.com/mturk/resources/tools">guide to choosing the right tools</a>, a
+  <a href="https://requester.mturk.com/mturk/resources/checklist">getting-started checklist</a>, and a
+  <a href="http://mturkpublic.s3.amazonaws.com/docs/MTURK_BP.pdf">best practices guide.</a>
+</p>
+
+<p>
+  <a href="http://aws.amazon.com/solutions/case-studies/knewton/">
+    <img src="http://aws.typepad.com/files/mt_knew_cs.png"
+	 style="float:right;margin-left:10px;margin-bottom:10px;border:1px solid black;">
+  </a>
+
+  I just spent some time going through the case studies. There's a lot of really good
+  information and advice inside for anyone using or contemplating the use of 
+  <a href="http://www.mturk.com">Mechanical Turk</a>.
+</p>
+
+<p>
+  In the
+  <a href="http://aws.amazon.com/solutions/case-studies/castingwords-interview/">first</a>
+  interview you will learn how and why
+  <a href="http://www.castingwords.com">CastingWords</a>
+  was founded, and
+  <a href="http://aws.amazon.com/solutions/case-studies/castingwords-interview/">how</a>
+  they use the Mechanical Turk
+  workforce to transcribe audio and to grade
+  the resulting work.
+</p>
+
+<p>
+  From there you can
+  <a href="http://aws.amazon.com/solutions/case-studies/snapmylife-interview/">read about</a> 
+  how
+  <a href="http://www.snapmylife.com">SnapMyLife</a> uses the same workforce to
+  moderate uploaded pictures within 3 minutes, 24 hours a day, 7 days a week, at an estimated
+  cost savings of 50% over other outsourcing methods.
+</p>
+
+<p>
+  Next, continue on to the
+  <a href="http://aws.amazon.com/solutions/case-studies/Channel-Intelligence-Interview/">Channel Intelligence interview</a>
+  and read about how they have integrated Mechanical Turk into a product classification
+  system at a cost savings of 85%. I really like this quote from the interview:
+
+  <div class="quote20090501">
+    We estimated that it would have taken us 600 man hours to categorize the 
+    73,000 products correctly. The Turkers ended up doing it in four days. 
+    It was nonstop. We kept logging in to see if the work was being done 
+    and the HITs kept getting worked. Needless to say, it was a pretty 
+    exciting moment for us.
+ </div>
+</p>
+
+<p>
+  Moving right along, the CEO of 
+  <a href="http://www.knewton.com">Knewton</a>
+  <a href="http://aws.amazon.com/solutions/case-studies/knewton/">talks about</a>
+  how they used 
+  Mechanical Turk to accelerate their business processes and reduce
+  their time to market. They needed a database of colleges:
+
+  <div class="quote20090501">
+    We wanted to build a database about colleges, so we just had
+    students at the college collect the data for us and send it
+    over through MTurk. Boom, instant database. So, I was
+    once in a business that was developing a database for
+    stores in New York City. We had a team that we paid about
+    $10 an hour. They ran around and just knocked on every
+    single door. That cost us maybe $100,000 and took a year's time.
+ </div>
+
+  Knewton also used Turk to help them choose their company logo 
+  and the accompanying tagline. They test their questions, and
+  even have their web site proofread and checked for link 
+  errors. They even paid people to spend over three hours taking
+  one of their sample tests. He notes that they had earmarked
+  $70,000 for site QA, but ended up spending less than $10K
+  (via Mechanical Turk) on QA, market research, product
+  enhancements, and so forth. 
+</p>
+
+<p>
+  In the
+  <a href="http://aws.amazon.com/solutions/case-studies/stanford-ai-lab-interview">last interview</a>,
+  Stanford University Ph.D. candidate 
+  <a href="http://xenon.stanford.edu/~rion/">Rion Snow</a>
+  talks about how he
+  used Mechanical Turk to compare natural language annotations
+  made by experts against similar work by the Turk workforce. As
+  he says:
+
+  <div class="quote20090501">
+    What we found was, in general if you just asked a single annotator on Turk to
+    label all of the samples, the quality wasn't going to be nearly as good as
+    if you went and asked a linguist or graduate student to do the same thing.
+    However, if you were able to break the work up among a large group of
+    Turkers and ask them to perform multiple independent annotations per
+    question you can actually do quite a bit better than experts.
+    Say that we get 10 separate independent annotations for each question,
+    and then aggregate the responses by voting or averaging; we found this
+    data to be better than that of expert annotators.
+  </div>
+
+  Rion says that Mechanical Turk allows them to collect about 10,000 annotations
+  per day. In previous projects he spent a lot of time simply finding and organizing
+  a workforce so this is a big step forward for him. He sees the 
+  Turk workforce as an "always-on, always-available army of workers."
+</p>
+
+<p>
+  <a href="http://mturkpublic.s3.amazonaws.com/docs/MTURK_BP.pdf">
+    <img src="http://aws.typepad.com/files/mt_best_practices_guide.png"
+	 style="float:right;margin-left:10px;margin-bottom:10px;border:1px solid black;">
+  </a>
+  New and existing Mechanical Turk Requesters will find a lot of helpful
+  information in the new
+  <a href="http://mturkpublic.s3.amazonaws.com/docs/MTURK_BP.pdf">Amazon Mechanical Turk Best Practices Guide</a>. This 12-page document provides guidelines for planning, designing, and testing HITs. For example, it advises the use of a comment box on each HIT. This box gives Workers the ability to provide their thoughts on the tasks that they complete. 
+The guide also recommends that Requester organizations designate a specific person as the Mechanical Turk administrator. This person can design the HITs, interact with the community, receive and respond to feedback, and process the results. There's information about designing HITs and the associated instructions, setting an equitable
+reward for successful completion of a HIT, and lots more.
+
+</p>
+
+<div style="clear:both;">&nbsp;</div>
+
+<p>
+  On a slightly lighter note,
+  <a href="http://www.aaronkoblin.com/">Aaron Koblin</a>
+  recently emailed me to make sure that
+  I was aware of his newest Turk-powered project, the
+  <a href="http://www.bicyclebuiltfortwothousand.com/">Bicycle Built for 2,000</a>.
+  Aaron and his colleague
+  <a href="http://www.oddsympathy.com/">Daniel Massey</a>
+
+  collected 2,088 voice recordings
+  (at a cost of 6 cents per recording) which were then assembled to form the
+  finished product. Here's a video of the process in action:
+</p>
+
+<p style="text-align:center;">
+  <object width="400" height="225">
+    <param name="allowfullscreen" value="true" />
+    <param name="allowscriptaccess" value="always" />
+    <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=3571124&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=&amp;fullscreen=1" />
+    <embed src="http://vimeo.com/moogaloop.swf?clip_id=3571124&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="225">
+    </embed>
+</object>
+</p>
+
+<p>
+  If you are doing or have done something unique, cool, and valuable using 
+  Mechanical Turk, we'd love to hear from you. Leave a comment or send us some
+  <a href="mailto:awseditor@amazon.com">email</a>.
+</p>
+
+<p>-- Jeff;</p>
+
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">May 05, 2009 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2009/05/new-mechanical-turk-resource-center.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2009/05/new-mechanical-turk-resource-center.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2009/05/new-mechanical-turk-resource-center.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-60566782">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2008/12/solve-for-efficiency-with-amazon-mechanical-turk.html">Solve for Efficiency With Amazon Mechanical Turk</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><img  src="http://2.bp.blogspot.com/_R3jz5f_NkRo/SVjTj_6EpCI/AAAAAAAAAjQ/6Itd78gddLA/s400/nitrobenzmethanol.jpg" vspace="5" width="400" align="right" height="311" hspace="5">This is a quick post about another great use of <a href="http://aws.amazon.com/mturk/">Amazon Mechanical Turk</a>. Over on <a href="http://friendfeed.com/e/2b5d0f22-b68e-7bf5-19f1-acbb9d4479d0/Mechanical-Turk-Does-Solubility-on-Google/">Friend Feed</a> Jean-Claude Bradley posted a blog post called “<a href="http://usefulchem.blogspot.com/2008/12/mechanical-turk-does-solubility-on.html">Mechanical Turk Does Solubility on Google Spreadsheet</a>”, which talks about using Mechanical Turk to process solubility data for the <a href="http://onschallenge.wikispaces.com/">Open Notebook Science Challenge</a>.</p>
+<p>What I believe is revolutionary here is that rather than rely on government funding to help process results, scientists are able to use Crowdsourcing to process results in real time—and at a very fine unit of granularity. When you combine those characteristics with the Open Notebook Science Challenge, the result is unprecedented transparency.</p>
+<p>The blog post referenced above inspired another, titled “<a href="http://researchremix.wordpress.com/2008/12/29/generalizability-coefficient-for-mechanical-turk-annotations/"> Generalizability coefficient for Mechanical Turk annotations</a>”, that describes using Amazon Mechanical Turk and Crowdsourcing to generate annotations of a thesis. Wow, eliminating (or more likely reducing) one of the biggest pains associated with a thesis. Doctoral candidates everywhere should take note.</p>
+<p>It’s about more than Grad Student pain relief though: by Crowdsourcing mechanical tasks such as annotation, students are free to focus on data collection and analysis. That makes the entire process more efficient. </p>
+<p>These innovative uses of Amazon Mechanical Turk combined with the new <a href="http://aws.amazon.com/publicdatasets/">Public Data Sets</a>, are an exciting time in both Cloud Computing and in science.</p>
+<p><em>Mike</em></p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">December 29, 2008 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2008/12/solve-for-efficiency-with-amazon-mechanical-turk.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2008/12/solve-for-efficiency-with-amazon-mechanical-turk.html#comments">Comments (1)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2008/12/solve-for-efficiency-with-amazon-mechanical-turk.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-43054010">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2007/12/new-amazon-mech.html">New Amazon Mechanical Turk Features...</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>The <a href="http://www.mturk.com/">Amazon Mechanical Turk</a> team has been hard at work on a couple of important new features: credit card funding and transaction history. Both of these features are available from the <a href="http://requester.mturk.com/mturk/youraccount?">Your Account</a> page.</p>
+
+<p><img border="0" src="http://aws.typepad.com/photos/uncategorized/2007/12/19/turk_account.gif" title="Turk_account" alt="Turk_account" style="margin: 0px 0px 5px 5px; float: right;" />
+With the debut of credit card funding, Mechanical Turk Requesters (the people and organizations who create the HITS) can instantly add funds to their accounts using a credit or debit card or from an existing balance in an <a href="https://payments.amazon.com/">Amazon Payments</a> account. It is no longer necessary to&nbsp; fund work using a bank account. </p>
+
+<p>This new feature simplifies and accelerates the process of getting work done. Requesters can pre-fund their account at any level (the minimum is one dollar). Once this is done, the prepaid balance can be used to create and pay for work right away. </p>
+
+<p>You now have access to your detailed transaction history from <a href="http://requester.mturk.com/mturk/youraccount?">Your Account</a> as well. You can check on your account balance and you can see the last 18 months of prepayments into your account and payments to workers. You can even download this data in <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> form.</p>
+
+<p>-- Jeff;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">December 19, 2007 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2007/12/new-amazon-mech.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2007/12/new-amazon-mech.html#comments">Comments (1)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2007/12/new-amazon-mech.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-mechanical_turk entry-author-aws_evangelist entry-type-post entry" id="entry-38917865">
+					<h3 class="entry-header"><a href="http://aws.typepad.com/aws/2007/09/update-on-the-s.html">Update on the Search for Steve Fossett (Update 3)</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><span style="color: #ff0000;"><strong>Update 3</strong></span> We know many of you are anxious to learn what happened to your search submissions. Full details on areas screened and passed on to the Steve Fossett Search and Rescue team are at: <a href="http://s3.amazonaws.com/fossett/index.html">s3.amazonaws.com/fossett/index.html</a>.</p>
+
+<p><span style="color: #ff0000;"><strong>Important Update2! Thanks for the great feedback.</strong></span><span style="color: #000000;"> We found this great tool for submitting your coordinates manually - </span><span style="color: #ff0000;"><a href="http://www.violentskies.com/search-for-steve-fossett/index.html"><span style="color: #330099;">http://www.violentskies.com/search-for-steve-fossett/index.html</span></a></span><span style="color: #330099;">.</span><span style="color: #000000;"> Users are encouraged to use this tool as it would help us aggregate and organize the search results and most importantly not miss any results because every response is important.</span></p>
+
+<p><strong><span style="color: #ff0000;">Important Update!</span></strong> Thanks to all the thousands of people making this a full-time job! <u>Please read these guidelines before reporting a find here</u>. (1) If you find a likely location, submit it as a &quot;yes&quot; in Mechanical Turk. Please do not post here! The team is reviewing, and most of these &quot;likely&quot; observations are being reported by mutiple people. Only by using the official process are we able to aggregate feedback on a given tile of imagery. (2) If you wander off in Google Earth looking around, it is easy to wander out of the search dataset and into old images that are not relevant to the search. Another reason to register and use the images in Mechanical Turk per-se, rather than flipping back and forth between Google Earth. (3) However if you still want to post a manual set of coordinates, best to do so at <a href="http://turksearch.wordpress.com/">http://turksearch.wordpress.com</a> </p>
+
+<p>Recently I blogged about the <a href="http://aws.typepad.com/aws/2007/09/help-find-steve.html">use of Amazon Mechanical Turk</a> to scale out the search for Steve Fossett. As a pilot who used to be involved in traditional Search and Rescue efforts, this form of innovation is incredible. Someone's fate no longer depends solely on a relatively small number of aircraft; instead a large number of people can quickly search and cross-check high-resolution images. </p>
+
+<p>If you have not yet helped in the search, please visit <a href="http://www.mturk.com/mturk/preview?groupId=9TSZK4G35XEZJZG21T60">www.mturk.com</a> to pitch in. </p>
+
+<p>So it seems appropriate to provide some feedback to all of the tens of thousands of people who have helped in the search. Accordingly, the following is straight from the product team: </p><blockquote><p>Workers: thanks for your continued support!<br /><br />Since launching the search for Steve Fossett, the support from the Mechanical Turk worker community has been outstanding. To date, tens of thousands of Steve Fossett searchers have completed millions of HITs. Your support in reviewing hundreds of thousands of images, covering thousands of square miles of terrain, has generated a number of highly credible leads. This effort has filtered the images down to less than 0.03% of images received. <br /><br />After you submit each HIT, Mechanical Turk compares your answer to those received from workers looking at the same image. As highly rated images are identified, experts review them using Google Earth and pass the most promising leads directly to search teams. <br /><br />Images are made available through the support of providers GeoEye, DigitalGlobe and Sanborn. Teams at Google prepare the raw images into the tiles. Data is then processed using EC2 and stored in S3 before being made available through Mechanical Turk. <br /><br />Workers have already reviewed hundreds of thousands of images from GeoEye, and are now working on imagery from DigitalGlobe. We've just begun processing Sanborn data and will begin loading new HITs shortly. <br /><br />Your continued participation is sincerely appreciated. Thanks for all your support. </p></blockquote><p>So what have they found? Here's a couple of screenshots...</p>
+
+<p><img src="http://s3.amazonaws.com/fossett/ge-details.jpg" /><br /><strong>Experts reviewing each image have immediate access to the comments provided by workers as well as the percentage of workers who flagged the image.</strong></p>
+
+<p><img src="http://s3.amazonaws.com/fossett/ruler.jpg" /><br /><strong>After workers submits their HITs, responses are reviewed by experts using Google Earth to better examine the surrounding areas and evaluate each lead.</strong></p>
+
+<p>-- Mike</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">September 14, 2007 in <a href="http://aws.typepad.com/aws/mechanical_turk/">Mechanical Turk</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2007/09/update-on-the-s.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://aws.typepad.com/aws/2007/09/update-on-the-s.html#comments">Comments (419)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://aws.typepad.com/aws/2007/09/update-on-the-s.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+	
+
+
+			<!-- post footer links -->
+
+		</div>
+	</div>
+			<div class="pager-bottom pager-entries pager content-nav">
+		<div class="pager-inner">
+			
+			
+			<span class="pager-right">
+				<a href="http://aws.typepad.com/aws/mechanical_turk/page/2/"><span class="pager-label">Next</span>
+					<span class="chevron">&#187;</span></a>
+			</span>
+		</div>
+	</div>
+	
+	
+
+
+						</div>
+					</div>
+					<div id="gamma">
+						<div id="gamma-inner" class="pkg">
+							<!-- sidebar2 -->
+
+<!--    #include virtual="/lists/rss_feed/module.inc"-->
+
+<div class="module-content">
+  <h2 class="module-header">RSS Feed</h2>
+  <div style="text-align:center;">
+    <a href="http://feeds.feedburner.com/AmazonWebServicesBlog">
+      <img src="http://media.amazonwebservices.com/blog/Newspaper_Feed_add_128x128.png" />
+    </a>
+    <ul class="module-list">
+      <li class="module-list-item">
+        <a href="http://feeds.feedburner.com/AmazonWebServicesBlog">
+          Subscribe to this blog's feed
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="module-content">
+  <h2 class="module-header">Coming Soon</h2>
+  <ul  class="module-list">
+
+    <li class="module-list-item">March 23 - Portland, OR: <a href="http://aws.amazon.com/about-aws/events/home">AWS User Group </a></li>
+
+<li class="module-list-item">April 13 - Webinar: <a href="https://www2.gotomeeting.com/register/623363291">AWS Cloud Strategies for Advertising Agencies </a></li>
+
+<li class="module-list-item">Full List of AWS Events (through the end of March 2011): <a href="http://aws.typepad.com/aws/2011/03/aws-events-for-march-2011.html">View all March Events</a></li>
+
+<!--    <li class="module-list-item">January 19 - <a href=""></a></li> -->
+ 
+  </ul>
+</div>
+
+<div class="module-content">
+  <h2 class="module-header">Email Subscription</h2>
+  <form
+   style="border:1px solid #ccc;padding:3px;text-align:center;"
+   action="http://feedburner.google.com/fb/a/mailverify"
+   method="post" target="popupwindow"
+   onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=AmazonWebServicesBlog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p> Enter your email address:</p>
+    <p><input type="text" style="width:140px" name="email"/></p>
+    <input type="hidden" value="AmazonWebServicesBlog" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" />
+    <p>Delivered by <a href="http://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+<div class="module-typelist module">
+	<h2 class="module-header">Useful Links</h2>
+	<div class="module-content">
+		<ul class="module-list">
+							<li class="module-list-item"><a title="" href="http://aws.amazon.com">Amazon Web Services</a></li>
+							<li class="module-list-item"><a title="" href="http://aws.amazon.com/solutions/aws-solutions/">AWS Solutions</a></li>
+							<li class="module-list-item"><a title="" href="http://aws.amazon.com/products/">AWS Products</a></li>
+							<li class="module-list-item"><a title="" href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a></li>
+							<li class="module-list-item"><a title="" href="http://developer.amazonwebservices.com/connect/forumindex.jspa">AWS Developer Forums</a></li>
+							<li class="module-list-item"><a title="" href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&amp;p=irol-InfoReq">Media/Analyst Inquiries</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="module-subscribe module">
+	<div class="module-content">
+		<a onclick="window.open(this.href, 'blogroll', 'width=550,height=600,scrollbars=yes'); return false;" href="http://www.typepad.com/t/app/lists?__mode=quickpost&amp;is_qp=1&amp;type=1&amp;qp_href=http%3A%2F%2Faws.typepad.com%2Faws%2F">Add me to your TypePad People list</a>
+	</div>
+</div>
+<div class="module-calendar module">
+	<h2 class="module-header">April 2011</h2>
+	<div class="module-content">
+		<table summary="Monthly calendar with links to each day's posts">
+			<tr>
+				
+					<th>Sun</th>
+				
+					<th>Mon</th>
+				
+					<th>Tue</th>
+				
+					<th>Wed</th>
+				
+					<th>Thu</th>
+				
+					<th>Fri</th>
+				
+					<th>Sat</th>
+				
+			</tr>
+			
+				<tr>
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">1</a></td>
+				
+			
+				
+					<td>2</td>
+				</tr>
+			
+				<tr>
+					<td>3</td>
+				
+			
+				
+					<td>4</td>
+				
+			
+				
+					<td>5</td>
+				
+			
+				
+					<td>6</td>
+				
+			
+				
+					<td>7</td>
+				
+			
+				
+					<td>8</td>
+				
+			
+				
+					<td>9</td>
+				</tr>
+			
+				<tr>
+					<td>10</td>
+				
+			
+				
+					<td>11</td>
+				
+			
+				
+					<td>12</td>
+				
+			
+				
+					<td>13</td>
+				
+			
+				
+					<td>14</td>
+				
+			
+				
+					<td>15</td>
+				
+			
+				
+					<td>16</td>
+				</tr>
+			
+				<tr>
+					<td>17</td>
+				
+			
+				
+					<td>18</td>
+				
+			
+				
+					<td>19</td>
+				
+			
+				
+					<td>20</td>
+				
+			
+				
+					<td>21</td>
+				
+			
+				
+					<td>22</td>
+				
+			
+				
+					<td>23</td>
+				</tr>
+			
+				<tr>
+					<td>24</td>
+				
+			
+				
+					<td>25</td>
+				
+			
+				
+					<td>26</td>
+				
+			
+				
+					<td>27</td>
+				
+			
+				
+					<td>28</td>
+				
+			
+				
+					<td>29</td>
+				
+			
+				
+					<td>30</td>
+				</tr>
+			
+		</table>
+	</div>
+</div>
+
+	<div class="module-archives module">
+		<h2 class="module-header"><a
+			href="http://aws.typepad.com/aws/archives.html">Archives</a></h2>
+		<div class="module-content">
+			<ul class="module-list">
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/index.html">April 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/index.html">March 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/02/index.html">February 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/01/index.html">January 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/12/index.html">December 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/11/index.html">November 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/10/index.html">October 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/09/index.html">September 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/08/index.html">August 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/07/index.html">July 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/06/index.html">June 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/05/index.html">May 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/04/index.html">April 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/03/index.html">March 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/02/index.html">February 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/01/index.html">January 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/12/index.html">December 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/11/index.html">November 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/10/index.html">October 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/09/index.html">September 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/08/index.html">August 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/07/index.html">July 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/06/index.html">June 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/05/index.html">May 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/04/index.html">April 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/03/index.html">March 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/02/index.html">February 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/01/index.html">January 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/12/index.html">December 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/11/index.html">November 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/10/index.html">October 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/09/index.html">September 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/08/index.html">August 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/07/index.html">July 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/06/index.html">June 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/05/index.html">May 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/04/index.html">April 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/03/index.html">March 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/02/index.html">February 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/01/index.html">January 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/12/index.html">December 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/11/index.html">November 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/10/index.html">October 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/09/index.html">September 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/08/index.html">August 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/07/index.html">July 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/06/index.html">June 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/05/index.html">May 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/04/index.html">April 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/03/index.html">March 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/02/index.html">February 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/01/index.html">January 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/12/index.html">December 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/11/index.html">November 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/10/index.html">October 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/09/index.html">September 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/08/index.html">August 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/07/index.html">July 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/06/index.html">June 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/05/index.html">May 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/04/index.html">April 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/03/index.html">March 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/02/index.html">February 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/01/index.html">January 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/12/index.html">December 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/11/index.html">November 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/10/index.html">October 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/09/index.html">September 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/08/index.html">August 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/07/index.html">July 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/06/index.html">June 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/05/index.html">May 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/04/index.html">April 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/03/index.html">March 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/02/index.html">February 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/01/index.html">January 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2004/12/index.html">December 2004</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2004/11/index.html">November 2004</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+<div class="module-typelist module">
+	<h2 class="module-header">Useful Books</h2>
+	<div class="typelist-thumbnailed module-content">
+		<ul class="module-list">
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0980798000/1n9867a-20"><img alt="Frank Munz: Middleware and Cloud Computing: Oracle on Amazon Web Services (AWS), Rackspace Cloud and RightScale" src="http://a5.typepad.com/6a00d8341c534853ef0147e1aa9bc5970b-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0980798000/1n9867a-20">Frank Munz: Middleware and Cloud Computing: Oracle on Amazon Web Services (AWS), Rackspace Cloud and RightScale</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/0980576830/sixapart-22"><img alt="Jeff Barr: Host Your Web Site on the Cloud: Amazon Web Services Made Easy" src="http://a4.typepad.com/6a00d8341c534853ef013488d5abd4970c-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/0980576830/sixapart-22">Jeff Barr: Host Your Web Site on the Cloud: Amazon Web Services Made Easy</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0596156367/1n9867a-20"><img alt="George Reese: Cloud Application Architectures: Building Applications and Infrastructure in the Cloud (Theory in Practice (O'Reilly))" src="http://a2.typepad.com/6a00d8341c534853ef0115708fca3a970b-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0596156367/1n9867a-20">George Reese: Cloud Application Architectures: Building Applications and Infrastructure in the Cloud (Theory in Practice (O'Reilly))</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0596515812/1n9867a-20"><img alt="James Murty: Programming Amazon Web Services: S3, EC2, SQS, FPS, and SimpleDB (Programming)" src="http://a6.typepad.com/6a00d8341c534853ef00e55174e08e8833-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0596515812/1n9867a-20">James Murty: Programming Amazon Web Services: S3, EC2, SQS, FPS, and SimpleDB (Programming)</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0470097779/1n9867a-20"><img alt="Francis Shanahan: Amazon.com Mashups" src="http://a5.typepad.com/6a00d8341c534853ef00e54fe32f258834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0470097779/1n9867a-20">Francis Shanahan: Amazon.com Mashups</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0471768588/1n9867a-20"><img alt="Jason  Bloomberg: Service Orient or Be Doomed! : How Service Orientation Will Change Your Business" src="http://a6.typepad.com/6a00d8341c534853ef00e54fdd758e8834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0471768588/1n9867a-20">Jason  Bloomberg: Service Orient or Be Doomed! : How Service Orientation Will Change Your Business</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0425190390/1n9867a-20"><img alt="Tom  Standage: The Turk : The Life and Times of the Famous Eighteenth-Century Chess-Playing Machine" src="http://a4.typepad.com/6a00d8341c534853ef00e5501478148834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0425190390/1n9867a-20">Tom  Standage: The Turk : The Life and Times of the Famous Eighteenth-Century Chess-Playing Machine</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0764543555/1n9867a-20"><img alt="Theodore W.  Leung: Professional XML Development with Apache Tools : Xerces, Xalan, FOP, Cocoon, Axis, Xindice (Wrox Professional Guides)" src="http://a3.typepad.com/6a00d8341c534853ef00e550026f938833-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0764543555/1n9867a-20">Theodore W.  Leung: Professional XML Development with Apache Tools : Xerces, Xalan, FOP, Cocoon, Axis, Xindice (Wrox Professional Guides)</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/141162551X/1n9867a-20"><img alt="Jason Levitt: The Web Developer's Guide to Amazon E-Commerce Service: Developing Web Applications Using Amazon Web Services and PHP" src="http://a0.typepad.com/6a00d8341c534853ef00e54fee32f88834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/141162551X/1n9867a-20">Jason Levitt: The Web Developer's Guide to Amazon E-Commerce Service: Developing Web Applications Using Amazon Web Services and PHP</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/059600642X/1n9867a-20"><img alt="Will Iverson: Real World Web Services" src="http://a7.typepad.com/6a00d8341c534853ef00e54fd7bf3f8833-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/059600642X/1n9867a-20">Will Iverson: Real World Web Services</a></p></li>
+			
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="http://www.typepad.com/t/stats?blog_id=73998&amp;user_id=183837&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qoptions = { tags:"typepad.core" }; _qacct="p-fcYWUmj5YbYKM"; quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-fcYWUmj5YbYKM" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-fcYWUmj5YbYKM.gif?tags=typepad.core" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+ 
+
+<!-- Blogside Toolbar -->
+<script type="text/javascript">
+    var TPToolbar = {
+        src:   "http://www.typepad.com/services/toolbar?blog_id=6a00d8341c534853ef00d83451ba1569e2&asset_id=&atype=Category&to=http%3A%2F%2Faws.typepad.com%2Faws%2Fmechanical_turk%2F&autofollowed=0",
+        asset_xid: "",
+    
+        bookmarklet_uri: "http://static.typepad.com/.shared/js/qp/loader-combined-min.js"
+    };
+    var TYPEPAD___bookmarklet_domain = "http://www.typepad.com/";
+</script>
+<script type="text/javascript" src="/.shared/js/toolbar/blogside-toolbar-combined-min.js"></script>
+<!-- End Blogside Toolbar -->
+<!-- Begin comScore Tag -->
+<script>
+document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js'%3E%3C/script%3E"));
+</script>
+<script>
+COMSCORE.beacon({
+  c1: 2,
+  c2: "6035669",
+  c3: "",
+  c4: "http://aws.typepad.com/aws/mechanical_turk/",
+  c5: "",
+  c6: "",
+  c15: ""
+});
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&c2=6035669&c3=&c4=http%3A%2F%2Faws.typepad.com%2Faws%2Fmechanical_turk%2F&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+</body>
+</html>
+<!-- ph=1 -->

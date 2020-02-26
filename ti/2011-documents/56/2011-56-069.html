@@ -1,0 +1,670 @@
+<html>
+<head>
+<title>Docs For Class Services_ReCaptcha</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">Services_ReCaptcha</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+  		  [ <a href="../classtrees_Services_ReCaptcha.html" class="menu">class tree: Services_ReCaptcha</a> ]
+		  [ <a href="../elementindex_Services_ReCaptcha.html" class="menu">index: Services_ReCaptcha</a> ]
+		  [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+      <b>Packages:</b><br />
+              <a href="../li_Services_ReCaptcha.html">Services_ReCaptcha</a><br />
+            <br /><br />
+                        <b>Classes:</b><br />
+        <div class="package">
+		    		<a href="../Services_ReCaptcha/Services_ReCaptcha.html">Services_ReCaptcha</a><br />
+	    		<a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html">Services_ReCaptcha_Base</a><br />
+	    		<a href="../Services_ReCaptcha/Services_ReCaptcha_Exception.html">Services_ReCaptcha_Exception</a><br />
+	    		<a href="../Services_ReCaptcha/Services_ReCaptcha_HTTPException.html">Services_ReCaptcha_HTTPException</a><br />
+	    		<a href="../Services_ReCaptcha/Services_ReCaptcha_MailHide.html">Services_ReCaptcha_MailHide</a><br />
+	  </div>
+                  <b>Files:</b><br />
+      	  <div class="package">
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---Services---ReCaptcha---Base.php.html">		Base.php
+		</a><br>
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---examples---example-01.php.html">		example-01.php
+		</a><br>
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---examples---example-02.php.html">		example-02.php
+		</a><br>
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---examples---example-03.php.html">		example-03.php
+		</a><br>
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---Services---ReCaptcha---Exception.php.html">		Exception.php
+		</a><br>
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---Services---ReCaptcha---MailHide.php.html">		MailHide.php
+		</a><br>
+			<a href="../Services_ReCaptcha/_Services_ReCaptcha-1.0.2---Services---ReCaptcha.php.html">		ReCaptcha.php
+		</a><br>
+	  </div><br />
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1>Class: Services_ReCaptcha</h1>
+Source Location: /Services_ReCaptcha-1.0.2/Services/ReCaptcha.php<br /><br />
+
+
+<table width="100%" border="0">
+<tr><td valign="top">
+
+<h3><a href="#class_details">Class Overview</a></h3>
+<pre><a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html">Services_ReCaptcha_Base</a>
+   |
+   --Services_ReCaptcha</pre><br />
+<div class="description">PHP5 interface to the reCATCHA API.</div><br /><br />
+<h4>Author(s):</h4>
+<ul>
+          <li>David Jean Louis &lt;<a href="mailto:izi at php.net">izi at php.net</a>&gt;</li>
+                                                      </ul>
+
+
+
+
+        
+          
+                          
+<h4>Version:</h4>
+<ul>
+  <li>Release: @package_version@</li>
+</ul>
+
+<h4>Copyright:</h4>
+<ul>
+  <li>2008-2009 David Jean Louis</li>
+</ul>
+
+</td>
+
+<td valign="top">
+<h3><a href="#class_vars">Variables</a></h3>
+<ul>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$apiSecureURL">$apiSecureURL</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$apiURL">$apiURL</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$apiVerifyURL">$apiVerifyURL</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$error">$error</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$options">$options</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$request">$request</a></li>
+  </ul>
+</td>
+
+<td valign="top">
+<h3><a href="#class_methods">Methods</a></h3>
+<ul>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#method__construct">__construct</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetError">getError</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetHTML">getHTML</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetRequest">getRequest</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetURL">getURL</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodsetError">setError</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodsetRequest">setRequest</a></li>
+    <li><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodvalidate">validate</a></li>
+  </ul>
+</td>
+
+</tr></table>
+<hr />
+
+<table width="100%" border="0"><tr>
+
+
+
+<td valign="top">
+<h3>Inherited Variables</h3>
+<div class="tags">
+<h4>Class: <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html">Services_ReCaptcha_Base</a></h4>
+<dl>
+<dt>
+  <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#var$apiPrivateKey">Services_ReCaptcha_Base::$apiPrivateKey</a>
+  </dt>
+<dd>
+   
+</dd>
+<dt>
+  <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#var$apiPublicKey">Services_ReCaptcha_Base::$apiPublicKey</a>
+  </dt>
+<dd>
+   
+</dd>
+</dl>
+</div>
+</td>
+
+<td valign="top">
+<h3>Inherited Methods</h3>
+<div class="tags">
+<h4>Class: <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html">Services_ReCaptcha_Base</a></h4>
+<dl>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#method__construct">Services_ReCaptcha_Base::__construct()</a>
+  </dt>
+  <dd>
+    Constructor, you must pass a valid public and private API key, and  optionnaly an array of options.
+  </dd>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodgetHTML">Services_ReCaptcha_Base::getHTML()</a>
+  </dt>
+  <dd>
+    Returns the corresponding HTML code.
+  </dd>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodgetOption">Services_ReCaptcha_Base::getOption()</a>
+  </dt>
+  <dd>
+    Returns an option from <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$options">Services_ReCaptcha::$options</a>.
+  </dd>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodgetOptions">Services_ReCaptcha_Base::getOptions()</a>
+  </dt>
+  <dd>
+    Returns the <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$options">Services_ReCaptcha::$options</a> array.
+  </dd>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodsetOption">Services_ReCaptcha_Base::setOption()</a>
+  </dt>
+  <dd>
+    Sets an option in <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$options">Services_ReCaptcha::$options</a> and returns the  current Services_ReCaptcha_Base instance.
+  </dd>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodsetOptions">Services_ReCaptcha_Base::setOptions()</a>
+  </dt>
+  <dd>
+    Sets a number of options at once in <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$options">Services_ReCaptcha::$options</a>  and returns the current Services_ReCaptcha_Base instance.
+  </dd>
+    <dt>
+    <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#method__toString">Services_ReCaptcha_Base::__toString()</a>
+  </dt>
+  <dd>
+    Returns the corresponding HTML code, this is a &quot;magic&quot; shortcut to the  getHTML() method.
+  </dd>
+  </dl>
+</div>
+</td>
+
+</tr></table>
+<hr />
+
+<a name="class_details"></a>
+<h3>Class Details</h3>
+<div class="tags">
+[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a56">56</a>]<br />
+PHP5 interface to the reCATCHA API.<br /><p>reCAPTCHA is a freely available CAPTCHA implementation. It distinguishes  humans from computers.</p><p>In order to use reCAPTCHA, you need a public/private API key pair. This key  pair helps to prevent an attack where somebody hosts a reCAPTCHA on their  website, collects answers from their visitors and submits the answers to  your site. You can sign up for a key on the  <a href="http://recaptcha.net/api/getkey">reCAPTCHA Administration Portal</a></p><div class="tags">
+<ul>
+<li><b>Author:</b> David Jean Louis &lt;<a href="mailto:izi@php.net">izi@php.net</a>&gt;</li>
+<li><b>Version:</b> Release: @package_version@</li>
+<li><b>Copyright:</b> 2008-2009 David Jean Louis</li>
+<li><b>Link:</b> <a href="http://recaptcha.net/apidocs/captcha/client.html">http://recaptcha.net/apidocs/captcha/client.html</a></li>
+<li><b>Link:</b> <a href="http://pear.php.net/package/Services_ReCaptcha">http://pear.php.net/package/Services_ReCaptcha</a></li>
+<li><b>Since:</b> Class available since release 0.1.0</li>
+<li><b>Example:</b> example not found</li>
+<li><b>Example:</b> example not found</li>
+<li><b>License:</b> <a href="http://opensource.org/licenses/mit-license.php">MIT License</a></li>
+</ul>
+</div>
+</div><br /><br />
+<div class="top">[ <a href="#top">Top</a> ]</div><br />
+
+<hr />
+<a name="class_vars"></a>
+<h3>Class Variables</h3>
+<div class="tags">
+	<a name="var$apiSecureURL"></a>
+	<p></p>
+	<h4>$apiSecureURL = <span class="value">&nbsp;'https://api-secure.recaptcha.net'</span></h4>
+	<p>[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a74">74</a>]</p>
+  The reCAPTCHA API secure URL, this is URL is used by default when the  script is running on an https host or when you force it via the 'secure'  option.<br /><div class="tags">
+<ul>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$apiURL"></a>
+	<p></p>
+	<h4>$apiURL = <span class="value">&nbsp;'http://api.recaptcha.net'</span></h4>
+	<p>[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a65">65</a>]</p>
+  The reCAPTCHA API URL.<br /><div class="tags">
+<ul>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+        <tr>
+      <td><b>Overrides:</b>&nbsp;&nbsp;</td>
+      <td>Array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$apiVerifyURL"></a>
+	<p></p>
+	<h4>$apiVerifyURL = <span class="value">&nbsp;'http://api-verify.recaptcha.net/verify'</span></h4>
+	<p>[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a81">81</a>]</p>
+  Url of the ReCaptcha verify API.<br /><div class="tags">
+<ul>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$error"></a>
+	<p></p>
+	<h4>$error = <span class="value"></span></h4>
+	<p>[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a90">90</a>]</p>
+  The error code used to display the error message in the captcha.<br /><div class="tags">
+<ul>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetError">Services_ReCaptcha::getError()</a></li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodsetError">Services_ReCaptcha::setError()</a></li>
+<li><b>Access:</b> protected</li>
+</ul>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$options"></a>
+	<p></p>
+	<h4>$options = <span class="value">array(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'secure'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;false,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'xhtml'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;true,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'theme'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;null,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'lang'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;null,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'custom_translations'&nbsp;=&gt;&nbsp;null,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'custom_theme_widget'&nbsp;=&gt;&nbsp;null,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'tabindex'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;null,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;)</span></h4>
+	<p>[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a113">113</a>]</p>
+  Options to customize the html, the url and the look and feel of the captcha.<br /><p>Available options are: <ul><li>secure: whether to force the ssl url (default: false);</li><li>xhtml: whether the html should be xhtml compliant (default: true);</li><li>theme: string, defines which theme to use for reCAPTCHA (default: red);</li><li>lang: string, one of the supported language codes (default: en);</li><li>custom_translations: array, se this to specify custom translations
+     of reCAPTCHA strings (default: null).</li><li>custom_theme_widget: string, the ID of a DOM element (default: null);</li><li>tabindex: integer, the tabindex for the reCAPTCHA text area.</li></ul>  For a full documentation of theses options please consult the  <a href="http://recaptcha.net/apidocs/captcha/client.html">API documentation</a>.</p><div class="tags">
+<ul>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodsetOptions">Services_ReCaptcha_Base::setOptions()</a></li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodgetOption">Services_ReCaptcha_Base::getOption()</a></li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodgetOptions">Services_ReCaptcha_Base::getOptions()</a></li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodsetOption">Services_ReCaptcha_Base::setOption()</a></li>
+<li><b>Access:</b> protected</li>
+</ul>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+        <tr>
+      <td><b>Overrides:</b>&nbsp;&nbsp;</td>
+      <td>Array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$request"></a>
+	<p></p>
+	<h4>$request = <span class="value"></span></h4>
+	<p>[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a143">143</a>]</p>
+  The HTTP_Request2 instance.<br /><p>You can customize the request if you need to (ie: if you use a proxy)  with the get/setRequest() methods, for example:</p><p><code><pre><ol><li><div class="src-line">&nbsp;<font color="blue">require_once&nbsp;</font><span class="encapsed_string">'Services/ReCaptcha.php'</span>;</div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<strong>$recaptcha&nbsp;</strong>=&nbsp;new&nbsp;<a href="../Services_ReCaptcha/Services_ReCaptcha.html">Services_ReCaptcha</a><strong>(</strong><span class="encapsed_string">'pubkey'</span><strong>,&nbsp;</strong><span class="encapsed_string">'privkey'</span><strong>)</strong>;</div></li>
+<li><div class="src-line">&nbsp;<strong>$recaptcha</strong><strong>-&gt;</strong><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetRequest">getRequest</a><strong>(</strong><strong>)</strong><strong>-&gt;</strong>setConfig<strong>(</strong>array<strong>(</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="encapsed_string">'proxy_host'&nbsp;</span>=&gt;&nbsp;<span class="encapsed_string">'localhost'</span><strong>,</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="encapsed_string">'proxy_port'&nbsp;</span>=&gt;&nbsp;8118<strong>,</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>))</strong>;</div></li>
+</ol></pre></code></p><div class="tags">
+<ul>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetRequest">Services_ReCaptcha::getRequest()</a></li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodsetRequest">Services_ReCaptcha::setRequest()</a></li>
+<li><b>Access:</b> protected</li>
+</ul>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>HTTP_Request2</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+</div><br />
+
+<hr />
+<a name="class_methods"></a>
+<h3>Method Detail</h3>
+<div class="tags">
+	<a name="method__construct"></a>
+	<h3>__construct (Constructor)<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a158">158</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void __construct(
+string
+$pubKey, string
+$privKey, [
+$options = array()])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Constructor, you must pass a valid public and private API key.<br /><div class="tags">
+<ul>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$options">Services_ReCaptcha::$options</a></li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+Overrides <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#method__construct">Services_ReCaptcha_Base::__construct()</a> (Constructor, you must pass a valid public and private API key, and  optionnaly an array of options.)
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><tt>$pubKey</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;The public API key (mandatory)</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><tt>$privKey</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;The private API key (mandatory)</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><tt>$options</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;An array of options (optional)</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodgetError"></a>
+	<h3>getError<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a344">344</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getError(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the current error code.<br /><div class="tags">
+<ul>
+<li><b>Return:</b> The error code</li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$error">Services_ReCaptcha::$error</a></li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodgetHTML"></a>
+	<h3>getHTML<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a214">214</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getHTML(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the HTML code to insert into your form.<br /><p>Instead of this method you can use the __toString() magic method to get  the HTML code, for example:</p><p><code><pre><ol><li><div class="src-line">&nbsp;<font color="blue">require_once&nbsp;</font><span class="encapsed_string">'Services/ReCaptcha.php'</span>;</div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<strong>$recaptcha&nbsp;</strong>=&nbsp;new&nbsp;<a href="../Services_ReCaptcha/Services_ReCaptcha.html">Services_ReCaptcha</a><strong>(</strong><span class="encapsed_string">'pubkey'</span><strong>,&nbsp;</strong><span class="encapsed_string">'privkey'</span><strong>)</strong>;</div></li>
+<li><div class="src-line">&nbsp;<font color="green">//&nbsp;both&nbsp;are&nbsp;equivalents:</font></div></li>
+<li><div class="src-line">&nbsp;<strong>$html&nbsp;</strong>=&nbsp;<strong>$recaptcha</strong><strong>-&gt;</strong><a href="../Services_ReCaptcha/Services_ReCaptcha.html#methodgetHTML">getHTML</a><strong>(</strong><strong>)</strong>;</div></li>
+<li><div class="src-line">&nbsp;<strong>$html&nbsp;</strong>=&nbsp;(string)&nbsp;<strong>$recaptcha</strong>;</div></li>
+</ol></pre></code></p><div class="tags">
+<ul>
+<li><b>Return:</b> The HTML to include in your webpage</li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#method__toString">Services_ReCaptcha_Base::__toString()</a></li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+Overrides <a href="../Services_ReCaptcha/Services_ReCaptcha_Base.html#methodgetHTML">Services_ReCaptcha_Base::getHTML()</a> (Returns the corresponding HTML code.)
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodgetRequest"></a>
+	<h3>getRequest<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a377">377</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>HTTP_Request2 getRequest(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the HTTP_Request2 instance, if it's not yet set it is  instanciated on the fly.<br /><div class="tags">
+<ul>
+<li><b>Return:</b> The request instance</li>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$request">Services_ReCaptcha::$request</a></li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodgetURL"></a>
+	<h3>getURL<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a174">174</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getURL(
+[string
+$path = 'challenge'])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the URL of the script or iframe src attribute.<br /><div class="tags">
+<ul>
+<li><b>Return:</b> The URL of the script or iframe src attribute</li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><tt>$path</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;Set this to &quot;noscript&quot; to get the iframe URL instead                      of the script URL</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodsetError"></a>
+	<h3>setError<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a361">361</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code><a href="../Services_ReCaptcha/Services_ReCaptcha.html">Services_ReCaptcha</a> setError(
+string
+$error)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Sets the error code to display in the captcha and returns the current  Services_ReCaptcha instance.<br /><div class="tags">
+<ul>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$error">Services_ReCaptcha::$error</a></li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><tt>$error</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;The error message</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodsetRequest"></a>
+	<h3>setRequest<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a397">397</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code><a href="../Services_ReCaptcha/Services_ReCaptcha.html">Services_ReCaptcha</a> setRequest(
+
+$request)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Sets the HTTP_Request2 instance and returns the current  Services_ReCaptcha instance.<br /><div class="tags">
+<ul>
+<li><b>See:</b> <a href="../Services_ReCaptcha/Services_ReCaptcha.html#var$request">Services_ReCaptcha::$request</a></li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">HTTP_Request2&nbsp;&nbsp;</td>
+        <td><tt>$request</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;The request to set</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+	<a name="methodvalidate"></a>
+	<h3>validate<span class="smalllinenumber">&nbsp;&nbsp;&nbsp;[line <a href="../__filesource/fsource_Services_ReCaptcha__Services_ReCaptcha-1.0.2ServicesReCaptcha.php.html#a277">277</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>bool validate(
+[string
+$challenge = null], [string
+$response = null], [int
+$ip = null])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Validates the challenge response typed by the user and returns true if  the challenge response is ok or false otherwise.<br /><p>You can explicitely pass the challenge, response and ip values if for  some reason you need to do so.</p><div class="tags">
+<ul>
+<li><b>Return:</b> Whether the challenge response is valid or not</li>
+<li><b>Throws:</b> Services_ReCaptcha_HTTPException When the server returns an                                           error response</li>
+<li><b>Throws:</b> Services_ReCaptcha_Exception When the request cannot be sent</li>
+<li><b>Access:</b> public</li>
+</ul>
+</div>
+<br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><tt>$challenge</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;Value of the challenge field, if not given, the                           method will look for the value in $_POST array</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><tt>$response</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;Value of the response field, if not given, the                           method will look for the value in $_POST array</td>
+      </tr>
+          <tr>
+        <td class="type">int&nbsp;&nbsp;</td>
+        <td><tt>$ip</tt>&nbsp;&nbsp;</td>
+        <td>&mdash;</td>
+        <td>&nbsp;&nbsp;The user IP address, if not given, the method                           will use $_SERVER['REMOTE_ADDR']</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />  
+</div>
+
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Mon, 25 Oct 2010 16:00:02 +0000 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>. PEAR Logo Copyright &#0169;  PHP Group 2004.
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>machine-learning &laquo; Follow the Data</title>
+	<meta name="robots" content="all" />
+	<meta name="description" content="A data driven blog" />
+	
+	<link rel="pingback" href="http://followthedata.wordpress.com/xmlrpc.php" />
+	<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/tarski/style.css?m=1301511778g" type="text/css" media="screen,projection" />
+	<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/tarski/print.css?m=1301511778g" type="text/css" media="print" />
+	
+<link rel="alternate" type="application/rss+xml" title="Follow the Data &raquo; Feed" href="http://followthedata.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Follow the Data &raquo; Comments Feed" href="http://followthedata.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Follow the Data &raquo; machine-learning Tag Feed" href="http://followthedata.wordpress.com/tag/machine-learning/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1301511761g" type="text/css" />
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/l10n.js?m=1301511756g&amp;ver=20101110'></script>
+<script type='text/javascript' src='http://s2.wp.com/wp-includes/js/jquery/jquery.js?m=1301511755g&amp;ver=1.4.4'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://followthedata.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://followthedata.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Follow the Data' href='http://followthedata.wordpress.com/' />
+<meta name="generator" content="WordPress.com" />
+<link rel="shortcut icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1301511755g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1301511755g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1301511761g" />
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( /i/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( /i/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel='openid.server' href='http://followthedata.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://followthedata.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://followthedata.wordpress.com/osd.xml" title="Follow the Data" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+	<script type="text/javascript" charset="utf-8">
+		try{
+			var id = location.hash.match( /\#\!\/entry\/(\d+)/ )[1];
+			if ( id ) {
+				window.location = "http://followthedata.wordpress.com?p=" + id;
+			};
+		}catch( error ){
+		}
+	</script>		
+<meta name="application-name" content="Follow the Data" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="A data driven blog" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://followthedata.wordpress.com/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /></head>
+
+<body class="center "><div id="wrapper">
+
+<div id="header">
+
+		
+	<div id="header-image">
+		<a title="Return to front page" href="http://followthedata.wordpress.com/"><img alt="" src="http://followthedata.files.wordpress.com/2011/02/ftd1.jpg" /></a>	</div>
+	
+	<div id="title">
+		<a title="Return to front page" href="http://followthedata.wordpress.com/"><span id="blog-title">Follow the Data</span></a>		<p id="tagline">A data driven blog</p>	</div>
+	
+	<div id="navigation">
+		<ul id="nav-1">
+	<li><a title="Return to front page" href="http://followthedata.wordpress.com/">Home</a></li>
+	<li class="page_item page-item-2"><a href="http://followthedata.wordpress.com/about/" title="About Follow the&nbsp;Data">About Follow the&nbsp;Data</a></li>
+</ul>
+
+		<ul id="nav-2">
+			<li><a class="feed" title="Subscribe to the Follow the Data feed" href="http://followthedata.wordpress.com/feed/">Subscribe to feed</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<div id="content">
+
+<div id="primary">
+
+		<div class="entry archive">
+			<div class="post-meta">
+							<h1 class="post-title">Tag Archive</h1>
+		</div>
+		<div class="post-content">
+			<p>You are currently browsing the tag archive for the &lsquo;machine-learning&rsquo; tag.</p>
+															</div>
+		</div>
+
+	<div class="post-398 post type-post status-publish format-standard hentry category-web-sites tag-data-mining tag-information-retrieval tag-machine-learning tag-nlp tag-qa entry">
+		<div class="post-meta">
+			<h2 class="post-title" id="post-398"><a href="http://followthedata.wordpress.com/2010/07/05/metaoptimize-qa/" rel="bookmark" title="Permanent link to MetaOptimize&nbsp;Q+A">MetaOptimize&nbsp;Q+A</a></h2>
+			<p class="post-metadata">July 5, 2010 in <a href="http://en.wordpress.com/tag/web-sites/" title="View all posts in Web sites" rel="category tag">Web sites</a> | Tags: <a href="http://en.wordpress.com/tag/data-mining/" rel="tag">data-mining</a>, <a href="http://en.wordpress.com/tag/information-retrieval/" rel="tag">information-retrieval</a>, <a href="http://en.wordpress.com/tag/machine-learning/" rel="tag">machine-learning</a>, <a href="http://en.wordpress.com/tag/nlp/" rel="tag">nlp</a>, <a href="http://en.wordpress.com/tag/qa/" rel="tag">q+a</a> | by <a href="http://followthedata.wordpress.com/author/mickot/" title="Posts by Mikael Huss">Mikael Huss</a> | <a href="http://followthedata.wordpress.com/2010/07/05/metaoptimize-qa/#respond" title="Comment on MetaOptimize&nbsp;Q+A">Leave a comment</a>			</p>
+		</div>
+
+		<div class="post-content">
+			<p>The MetaOptimize site has a nice <a href="http://stackoverflow.com/">StackOverflow</a>-style <a href="http://metaoptimize.com/qa">question &amp; answer community</a> dedicated to machine learning, data mining, natural language processing and the like. It seems to have gotten off to a nice start. Here, you can enquire about things like <a href="http://metaoptimize.com/qa/questions/186/good-freely-available-textbooks-on-machine-learning">the best freely available machine learning textbooks </a>or <a href="http://metaoptimize.com/qa/questions/509/can-i-set-up-hadoop-on-a-single-cpu-machine">how to set up Hadoop on your office machine</a>, or more technical details such as <a href="http://metaoptimize.com/qa/questions/232/does-subsampling-bias-the-auc">whether subsampling biases the ROC-AUC score</a>.</p>
+		</div>
+			</div>
+	<div class="post-342 post type-post status-publish format-standard hentry category-web-sites tag-benchmarking tag-competitions tag-machine-learning tag-prediction entry">
+		<div class="post-meta">
+			<h2 class="post-title" id="post-342"><a href="http://followthedata.wordpress.com/2010/05/28/machine-learning-competitions-and-algorithm-comparisons/" rel="bookmark" title="Permanent link to Machine learning competitions and algorithm&nbsp;comparisons">Machine learning competitions and algorithm&nbsp;comparisons</a></h2>
+			<p class="post-metadata">May 28, 2010 in <a href="http://en.wordpress.com/tag/web-sites/" title="View all posts in Web sites" rel="category tag">Web sites</a> | Tags: <a href="http://en.wordpress.com/tag/benchmarking/" rel="tag">benchmarking</a>, <a href="http://en.wordpress.com/tag/competitions/" rel="tag">competitions</a>, <a href="http://en.wordpress.com/tag/machine-learning/" rel="tag">machine-learning</a>, <a href="http://en.wordpress.com/tag/prediction/" rel="tag">prediction</a> | by <a href="http://followthedata.wordpress.com/author/mickot/" title="Posts by Mikael Huss">Mikael Huss</a> | <a href="http://followthedata.wordpress.com/2010/05/28/machine-learning-competitions-and-algorithm-comparisons/#comments" title="Comment on Machine learning competitions and algorithm&nbsp;comparisons">1 comment</a>			</p>
+		</div>
+
+		<div class="post-content">
+			<p>Tomorrow, 29 May 2010, a lot of (European) people will be watching the Eurovision Song Contest to see which country will take home the prize. Personally, I don&#8217;t really care about who wins the contest itself, but I do care (somewhat) about which predictor will win the <a href="http://kaggle.com/Eurovision2010">Eurovision Voting Forecast</a> competition arranged by <a href="http://kaggle.com">kaggle.com</a>. Kaggle describes itself as &#8220;<em>a platform for data mining, bioinformatics and forecasting competitions</em>&#8220;. It provides an objective framework for comparing techniques and &#8220;<em>allows organizations to have their data scrutinized by the world&#8217;s best statisticians</em>.&#8221;</p>
+<p>Contests like this are fun, but they can also have more serious aims. For instance, Kaggle also hosts a competition about <a href="http://kaggle.com/hivprogression">predicting HIV progression</a> based on the virus&#8217; DNA sequence. The currently leading submission has already improved on the best methods reported in literature, and so a post at Kaggle&#8217;s <a href="http://kaggle.com/blog/">No Free Hunch blog</a> asks whether <a href="http://kaggle.com/blog/2010/05/13/are-competitions-the-future-of-research/">competitions might be the future of research</a>. I think they may well be, at least in some domains. A few months back, I mentioned <a href="http://followthedata.wordpress.com/2010/03/18/data-mine-your-way-to-100000/">an interesting challenge at Innocentive</a> which is essentially a very difficult pure research problem, and it will be interesting to learn how the winning team there did it (if any details are disclosed). (I signed up for this competition myself, but haven&#8217;t been able to devote more than one or two hours to it so far, unfortunately.)</p>
+<p>There are other platforms for prediction competitions as well, for instance <a href="http://tunedit.org/">TunedITs</a> challenge platform, which allows university teachers to &#8220;<em>make their courses more attractive and valuable, through organization of on-line student competitions instead of traditional assignments</em>.&#8221; TunedIT also has a research platform where you can run automated tests on machine learning algorithms and get reproducible experimental results. You can also benchmark results against a knowledge base or contribute to and use a repository of various data sets and algorithms.</p>
+<p>Another initiative for serious evaluation of machine learning algorithms in various problem domains is <a href="http://mlcomp.org/">MLcomp</a>. Here, you can upload your own datasets (or use pre-loaded ones) and run existing algorithms on them through a web interface. MLcomp then reports various metrics that allow you to compare different methods.</p>
+<p>By the way, 22 teams participated in Kaggle&#8217;s Eurovision challenge, and Azerbaijan is the clear favorite, having been picked as the winner by 14 teams. Let&#8217;s see how it goes tomorrow.</p>
+		</div>
+			</div>
+	<div class="post-270 post type-post status-publish format-standard hentry category-emerging-fields tag-artificial-general-intelligence tag-google tag-h tag-machine-learning tag-mind-reading tag-quantum-computing entry">
+		<div class="post-meta">
+			<h2 class="post-title" id="post-270"><a href="http://followthedata.wordpress.com/2009/12/13/far-out-stuff/" rel="bookmark" title="Permanent link to Far-out&nbsp;stuff">Far-out&nbsp;stuff</a></h2>
+			<p class="post-metadata">December 13, 2009 in <a href="http://en.wordpress.com/tag/emerging-fields/" title="View all posts in Emerging fields" rel="category tag">Emerging fields</a> | Tags: <a href="http://en.wordpress.com/tag/artificial-general-intelligence/" rel="tag">artificial-general-intelligence</a>, <a href="http://en.wordpress.com/tag/google/" rel="tag">Google</a>, <a href="http://en.wordpress.com/tag/h/" rel="tag">h+</a>, <a href="http://en.wordpress.com/tag/machine-learning/" rel="tag">machine-learning</a>, <a href="http://en.wordpress.com/tag/mind-reading/" rel="tag">mind-reading</a>, <a href="http://en.wordpress.com/tag/quantum-computing/" rel="tag">quantum-computing</a> | by <a href="http://followthedata.wordpress.com/author/mickot/" title="Posts by Mikael Huss">Mikael Huss</a> | <a href="http://followthedata.wordpress.com/2009/12/13/far-out-stuff/#comments" title="Comment on Far-out&nbsp;stuff">2 comments</a>			</p>
+		</div>
+
+		<div class="post-content">
+			<p>Some science fiction-type nuggets from the past few weeks:</p>
+<p><a href="http://googleresearch.blogspot.com/2009/12/machine-learning-with-quantum.html">Google does machine learning using quantum computing</a>. Apparently, a &#8220;quantum algorithm&#8221; called <a href="http://en.wikipedia.org/wiki/Grover%27s_algorithm">Grover&#8217;s algorithm</a> can search an unsorted database in O(√N) time. The Google blog explains this in layman&#8217;s terms:</p>
+<blockquote><p>Assume I hide a ball in a cabinet with a million drawers. How many drawers do you have to open to find the ball? Sometimes you may get lucky and find the ball in the first few drawers but at other times you have to inspect almost all of them. So on average it will take you 500,000 peeks to find the ball. Now a quantum computer can perform such a search looking only into 1000 drawers.</p></blockquote>
+<p>I&#8217;ve absolutely no clue how this algorithm works &#8211; although I did take an introductory course in quantum mechanics many a moon ago, I&#8217;ve forgotten everything about it and the course probably didn&#8217;t go deep enough to explain it anyway. Google are apparently collaborating with a Canadian company called <a href="http://www.dwavesys.com/">D-Wave,</a> who develop hardware for realizing something called a &#8220;quantum adiabatic algorithm&#8221; by &#8220;magnetically coupling superconducting loops&#8221;. It is interesting that D-Wave are explicitly focusing on machine learning; the home page states that &#8220;<em>D-Wave is pioneering the development of a new class of high-performance computing system designed to solve complex search and optimization problems, with an initial emphasis on synthetic intelligence and machine learning applications</em>.&#8221;</p>
+<p>Speaking of synthetic intelligence, the winter issue of <a href="http://hplusmagazine.com/magazine">H+ Magazine </a>contains an article by Ben Goertzel where he discusses the possibility that the first <a href="http://en.wikipedia.org/wiki/Strong_AI#Artificial_general_intelligence">artificial general intelligence</a> will arise in China. The well-known AI researcher Hugo de Garis, who runs a lab in Xiamen in China, certainly believes that this will happen. In his words:</p>
+<blockquote><p>China has a population of 1.3 billion. The US has a population of 0.3 billion. China has averaged an economic growth rate of about 10% over the past 3 decades. The US has averaged 3%. The Chinese government is strongly committed to heavy investment into high tech. From the above premises, one can virtually prove, as in a mathematical theorem, that China in a decade or so will be in a superior position to offer top salaries (in the rich Southeastern cities) to creative, brilliant Westerners to come to China to build artificial brains — much more than will be offered by the US and Europe. With the planet‘s most creative AI researchers in China, it is then almost certain that the planet‘s first artificial intellect to be built will have Chinese characteristics.</p></blockquote>
+<p>Some other arguments in favor of this idea mentioned in the article are that &#8220;One of China‘s major advantages is the lack of strong skepticism about AGI resulting from past failures&#8221; and that China &#8220;has little of the West‘s subliminal resistance to thinking machines or immortal people&#8221;.</p>
+<p>(By the way, the same issue contains a good article by Alexandra Carmichael on subjects frequently discussed on this blog. The most fascinating detail from that article, to me, was when she mentions &#8220;<em>self-organized clinical trials</em>&#8220;; apparently users of PatientsLikeMe with ALS had set up their own virtual clinical trial where some of them started to take lithium and some didn&#8217;t, after which the outcomes were compared.)</p>
+<p>Finally, I thought this methodology for <a href="http://scitedaily.wordpress.com/2009/11/25/tag-images-with-your-mind/">tagging images with your mind</a> was pretty neat. This particular type of mind reading does not seem to have reached a high specificity and sensitivity yet, but that will improve in time.</p>
+		</div>
+			</div>
+	<div class="post-57 post type-post status-publish format-standard hentry category-research tag-machine-learning tag-prediction entry">
+		<div class="post-meta">
+			<h2 class="post-title" id="post-57"><a href="http://followthedata.wordpress.com/2009/08/05/game-based-prediction-model-selection/" rel="bookmark" title="Permanent link to Game-based prediction model&nbsp;selection">Game-based prediction model&nbsp;selection</a></h2>
+			<p class="post-metadata">August 5, 2009 in <a href="http://en.wordpress.com/tag/research/" title="View all posts in Research" rel="category tag">Research</a> | Tags: <a href="http://en.wordpress.com/tag/machine-learning/" rel="tag">machine-learning</a>, <a href="http://en.wordpress.com/tag/prediction/" rel="tag">prediction</a> | by <a href="http://followthedata.wordpress.com/author/mickot/" title="Posts by Mikael Huss">Mikael Huss</a> | <a href="http://followthedata.wordpress.com/2009/08/05/game-based-prediction-model-selection/#respond" title="Comment on Game-based prediction model&nbsp;selection">Leave a comment</a>			</p>
+		</div>
+
+		<div class="post-content">
+			<p>In an <a href="http://www.plosone.org/article/info:doi%2F10.1371%2Fjournal.pone.0006287#pone-0006287-t001">interesting article, </a>Pers and coauthors describe a sort of game to compare different machine learning algorithms. A recurring problem in studies using machine learning is that the researchers initially try out a wide variety of methods, then settle on one of them and report the results only for that algorithm, in a way pretending that the initial selection did not take place. The problem is that data-dependent optimization of the model, including the comparison of different methods, can influence the final model and potentially lead to erroneous conclusions. In addition, model selection is complicated by the fact that a specific researcher may be more skilled in using (parametrizing) a particular type of model. Moreover, different methods probably differ a lot in how difficult they are to parametrize.</p>
+<p>The authors of this paper introduce a kind of game to facilitate a more objective comparison of machine learning methods:</p>
+<blockquote><p>In this article we present the VAML (Validation and Assessment of Machine Learning) game. The game aims at building a model for individual predictions based on complex data. The game starts by electing a referee who samples a reasonable number of bootstrap subsets or subsamples from the available data. Each player chooses a strategy for building a prediction model. The referee shares out the bootstrap samples and the players apply their strategies and build a prediction model separately in each bootstrap sample. The referee then uses the data not sampled in the respective bootstrap steps and a strictly proper scoring rule (&#8230;) to evaluate the predictive performance of the different models. For the interpretation of the results it is most important that all modeling steps are repeated in each bootstrap sample and that the same set of bootstrap samples is used for all strategies. These insights are formulated as fixed rules of the game.</p></blockquote>
+<p>The idea &#8211; as I interpret it &#8211; is to try to squeeze out as much as possible from each method by letting each player tune her own method to the best of her knowledge. This alleviates biases coming from a researcher being better at certain methods than at others or (perhaps unconsciously) simply preferring certain methods. Also, the referee probably ensures a more objective comparison than a single modeller would typically make.</p>
+<p>It&#8217;s a bit funny (and perhaps typical) that the results obtained in this relatively objective study were only marginally better than a completely naive baseline model. Three well-reputed algorithms &#8211; random forests, support vector machines and LASSO regression &#8211; were compared, with random forests narrowly &#8220;winning&#8221;, although it was overfitting the most. Its training set error was almost zero, but the prediction error was about the same as the other methods and the naive model.</p>
+		</div>
+			</div>
+</div>
+<div id="secondary">
+
+<div class="widgets">
+
+<div id="wp_tag_cloud" class="widget wp_widget_tag_cloud"><h3>Tags</h3><div style="overflow:hidden"><a href='http://followthedata.wordpress.com/tag/advertising/' class='tag-link-521' title='2 topics' style='font-size: 8pt;'>advertising</a>
+<a href='http://followthedata.wordpress.com/tag/aging/' class='tag-link-17218' title='2 topics' style='font-size: 8pt;'>aging</a>
+<a href='http://followthedata.wordpress.com/tag/augmented-reality/' class='tag-link-282669' title='2 topics' style='font-size: 8pt;'>augmented-reality</a>
+<a href='http://followthedata.wordpress.com/tag/beijing/' class='tag-link-6025' title='2 topics' style='font-size: 8pt;'>Beijing</a>
+<a href='http://followthedata.wordpress.com/tag/big-data/' class='tag-link-2075170' title='7 topics' style='font-size: 14.837209302326pt;'>big-data</a>
+<a href='http://followthedata.wordpress.com/tag/bioinformatics/' class='tag-link-60424' title='2 topics' style='font-size: 8pt;'>bioinformatics</a>
+<a href='http://followthedata.wordpress.com/tag/citizen-science/' class='tag-link-607605' title='2 topics' style='font-size: 8pt;'>citizen-science</a>
+<a href='http://followthedata.wordpress.com/tag/collaborative/' class='tag-link-45018' title='2 topics' style='font-size: 8pt;'>collaborative</a>
+<a href='http://followthedata.wordpress.com/tag/computational-journalism/' class='tag-link-2007773' title='4 topics' style='font-size: 11.581395348837pt;'>computational-journalism</a>
+<a href='http://followthedata.wordpress.com/tag/contagious/' class='tag-link-185613' title='2 topics' style='font-size: 8pt;'>contagious</a>
+<a href='http://followthedata.wordpress.com/tag/crowdsourcing/' class='tag-link-201845' title='5 topics' style='font-size: 12.883720930233pt;'>crowdsourcing</a>
+<a href='http://followthedata.wordpress.com/tag/data/' class='tag-link-22379' title='4 topics' style='font-size: 11.581395348837pt;'>data</a>
+<a href='http://followthedata.wordpress.com/tag/data-analysis/' class='tag-link-83336' title='2 topics' style='font-size: 8pt;'>data-analysis</a>
+<a href='http://followthedata.wordpress.com/tag/data-mining/' class='tag-link-867' title='8 topics' style='font-size: 15.651162790698pt;'>data-mining</a>
+<a href='http://followthedata.wordpress.com/tag/data-visualization/' class='tag-link-86765' title='3 topics' style='font-size: 9.953488372093pt;'>data-visualization</a>
+<a href='http://followthedata.wordpress.com/tag/databases/' class='tag-link-10286' title='2 topics' style='font-size: 8pt;'>databases</a>
+<a href='http://followthedata.wordpress.com/tag/genomics/' class='tag-link-21853' title='2 topics' style='font-size: 8pt;'>genomics</a>
+<a href='http://followthedata.wordpress.com/tag/google/' class='tag-link-81' title='2 topics' style='font-size: 8pt;'>Google</a>
+<a href='http://followthedata.wordpress.com/tag/h/' class='tag-link-10177' title='2 topics' style='font-size: 8pt;'>h+</a>
+<a href='http://followthedata.wordpress.com/tag/happiness/' class='tag-link-22297' title='2 topics' style='font-size: 8pt;'>happiness</a>
+<a href='http://followthedata.wordpress.com/tag/healthcare/' class='tag-link-1460' title='3 topics' style='font-size: 9.953488372093pt;'>healthcare</a>
+<a href='http://followthedata.wordpress.com/tag/ibm/' class='tag-link-32744' title='3 topics' style='font-size: 9.953488372093pt;'>ibm</a>
+<a href='http://followthedata.wordpress.com/tag/links/' class='tag-link-2200' title='3 topics' style='font-size: 9.953488372093pt;'>Links</a>
+<a href='http://followthedata.wordpress.com/tag/machine-learning/' class='tag-link-40978' title='4 topics' style='font-size: 11.581395348837pt;'>machine-learning</a>
+<a href='http://followthedata.wordpress.com/tag/microfluidics/' class='tag-link-56042' title='2 topics' style='font-size: 8pt;'>microfluidics</a>
+<a href='http://followthedata.wordpress.com/tag/networks/' class='tag-link-3968' title='2 topics' style='font-size: 8pt;'>networks</a>
+<a href='http://followthedata.wordpress.com/tag/open-data/' class='tag-link-249014' title='5 topics' style='font-size: 12.883720930233pt;'>open-data</a>
+<a href='http://followthedata.wordpress.com/tag/personal-genomics/' class='tag-link-7594138' title='7 topics' style='font-size: 14.837209302326pt;'>personal-genomics</a>
+<a href='http://followthedata.wordpress.com/tag/personalized-medicine/' class='tag-link-191143' title='12 topics' style='font-size: 18.255813953488pt;'>personalized-medicine</a>
+<a href='http://followthedata.wordpress.com/tag/prediction/' class='tag-link-44071' title='21 topics' style='font-size: 22pt;'>prediction</a>
+<a href='http://followthedata.wordpress.com/tag/privacy/' class='tag-link-3279' title='2 topics' style='font-size: 8pt;'>privacy</a>
+<a href='http://followthedata.wordpress.com/tag/quick-links/' class='tag-link-55450' title='2 topics' style='font-size: 8pt;'>quick-links</a>
+<a href='http://followthedata.wordpress.com/tag/r/' class='tag-link-10189' title='3 topics' style='font-size: 9.953488372093pt;'>R</a>
+<a href='http://followthedata.wordpress.com/tag/reality-mining/' class='tag-link-4989212' title='5 topics' style='font-size: 12.883720930233pt;'>reality-mining</a>
+<a href='http://followthedata.wordpress.com/tag/resources/' class='tag-link-1784' title='2 topics' style='font-size: 8pt;'>resources</a>
+<a href='http://followthedata.wordpress.com/tag/science/' class='tag-link-173' title='3 topics' style='font-size: 9.953488372093pt;'>science</a>
+<a href='http://followthedata.wordpress.com/tag/self-tracking/' class='tag-link-11259091' title='14 topics' style='font-size: 19.395348837209pt;'>self-tracking</a>
+<a href='http://followthedata.wordpress.com/tag/sequencing/' class='tag-link-72369' title='4 topics' style='font-size: 11.581395348837pt;'>sequencing</a>
+<a href='http://followthedata.wordpress.com/tag/sleep/' class='tag-link-2224' title='2 topics' style='font-size: 8pt;'>sleep</a>
+<a href='http://followthedata.wordpress.com/tag/social-data/' class='tag-link-4317825' title='5 topics' style='font-size: 12.883720930233pt;'>social-data</a>
+<a href='http://followthedata.wordpress.com/tag/social-networks/' class='tag-link-36117' title='3 topics' style='font-size: 9.953488372093pt;'>social-networks</a>
+<a href='http://followthedata.wordpress.com/tag/statistics/' class='tag-link-5849' title='2 topics' style='font-size: 8pt;'>statistics</a>
+<a href='http://followthedata.wordpress.com/tag/svd/' class='tag-link-937285' title='2 topics' style='font-size: 8pt;'>svd</a>
+<a href='http://followthedata.wordpress.com/tag/twitter/' class='tag-link-599182' title='2 topics' style='font-size: 8pt;'>Twitter</a>
+<a href='http://followthedata.wordpress.com/tag/visualization/' class='tag-link-44111' title='2 topics' style='font-size: 8pt;'>visualization</a></div></div><div id="linkcat-1356" class="widget widget_links"><h3>Blogroll</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://asmarterplanet.com/" title="Instrumented, interconnected, intelligent">A Smarter Planet</a></li>
+<li><a href="http://bcbio.wordpress.com/">Blue Collar Bioinformatics</a></li>
+<li><a href="http://mndoci.com/blog/">business|bytes|genes|molecules</a></li>
+<li><a href="http://www.datawrangling.com/">Data Wrangling</a></li>
+<li><a href="http://lifeanalytics.blogspot.com/">Life Analytics</a></li>
+<li><a href="http://onertipaday.blogspot.com/">One R Tip A Day</a></li>
+<li><a href="http://www.quantifiedself.com/">Quantified Self</a></li>
+<li><a href="http://thedecisiontree.com/blog/">The Decision Tree</a></li>
+
+	</ul>
+</div>
+<div id="text-3" class="widget widget_text"><h3>Strata Conf &#8211; we&#8217;re going!</h3>			<div class="textwidget"><a href="http:/strataconf.com">
+<img src="http://assets.en.oreilly.com/1/event/55/strata2011_160x600.jpg" width="160" height="600" border="0" alt="Strata 2011" title="Strata 2011" />
+</a>
+</div>
+		</div>
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+
+	<div id="miscellany">
+	
+	<div class="widgets">
+
+	
+		<div class="searchbox">
+	<form method="get" id="searchform" action="/"><fieldset>
+		<input type="text" value="" name="s" id="s" tabindex="21" />
+		<input type="submit" id="searchsubmit" value="Search" tabindex="22" />
+	</fieldset></form>
+</div>
+		
+	</div>
+
+	</div>
+
+
+	<div id="about">
+		<div class="navigation">
+							<div class="left"></div>
+			<div class="right"></div>
+				</div>		
+	</div>
+
+
+	<div id="theme-info">
+		<div class="primary content">
+			<p><span class="designer">Theme: <a href="http://theme.wordpress.com/themes/tarski/">Tarski</a> by Ben Eastaugh and Chris Sternal-Johnson. </span><span class="generator"><a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.</span></p>
+		</div>
+		<div class="secondary">
+			<p><a class="feed" title="Subscribe to the Follow the Data feed" href="http://followthedata.wordpress.com/feed/">Subscribe to feed.</a></p>
+		</div>
+	</div>
+
+
+</div>
+
+</div><script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.en,type.wpcom'};</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.en%2Ctype.wpcom" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?p&#038;ver=MU'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {
+	my_hash: ""
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1301511758g&amp;ver=MU'></script>
+	<div style="display:none">
+	</div>
+<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="http://s.stats.wordpress.com/w.js?19" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'8369482','v':'wpcom','user_id':'0','post':'0','subd':'followthedata'});
+ex_go({'crypt':'RDZUTi12JkxTOXZYQ0IuZWlDV09vMkU1JUtLMD05WFhhVXldNlg5aGMvOEc9UWYvemNXJWtlMTEvQlVrLldaSlt2VHFqJjNUNTE3VElLaz9FbWQtXXdOR1M9Rm5mT3pxeU1rUnQuUSZYPXBYbUtpWTBnWnhINl8uRW5+dDQ/K0t8WCY9VVdpXyxdUmt2WCVQR0FsVk1LYWt1VnlvckxDfD1VaEcrZWxRcg=='});
+addLoadEvent(function(){linktracker_init('8369482',0);});
+	</script>
+</body></html>

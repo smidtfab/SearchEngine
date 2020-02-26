@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="verify-v1" content="ADgm4hb2ntrAykKZUqHBOutkDJWkEwut4+qfzZHEnVM=" />
+<meta name="blogcatalog" content="9BC9207302" /> 
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<title>Basic Usage of reCAPTCHA with PHP - PHP tutorial</title>
+<META name="keywords" content="">
+<META name="description" content="In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books.">
+<script language="javascript" type="text/javascript">
+<!--
+var popupWindow=null;
+function popup(mypage,myname,w,h,pos,infocus){
+
+if (pos == 'random')
+{LeftPosition=(screen.width)?Math.floor(Math.random()*(screen.width-w)):100;TopPosition=(screen.height)?Math.floor(Math.random()*((screen.height-h)-75)):100;}
+else
+{LeftPosition=(screen.width)?(screen.width-w)/2:100;TopPosition=(screen.height)?(screen.height-h)/2:100;}
+settings='width='+ w + ',height='+ h + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=no,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=no';popupWindow=window.open('',myname,settings);
+if(infocus=='front'){popupWindow.focus();popupWindow.location=mypage;}
+if(infocus=='back'){popupWindow.blur();popupWindow.location=mypage;popupWindow.blur();}
+
+}
+// -->
+</script>
+</head>
+<body>
+
+<div id="mainframe"><div id="main">
+
+	<div id="topnav">
+	<ul>
+	    <li id="n1"><a href=http://www.tutorialhero.com><img src=logo.gif border=0></a></li>	    
+	</ul>
+	</div>
+
+	<div id="header">
+
+</div>
+
+	<div id="container">
+			
+		
+		<div id="columns">
+		
+		<a href=subscribe.php><div id="topheader_subscribe"><span class=red>Subscribe</span></div></a>
+		<div id="topheader">
+			<div id=c>
+			
+			<img src=tarrow.gif><span class=red>Tutorial</span> search
+			
+			<form action="index.php" method="get">
+			<br><INPUT type="text" size="20" name="search"><input type="hidden" name="id" value="search" /> <select name="category"><option value=null>All categories</option><option value=104>3DS Max</option><option value=542>Access</option><option value=625>Adobe Acrobat</option><option value=630>Adobe Audition</option><option value=817>Adobe Flex</option><option value=588>Adobe Premiere</option><option value=553>After Effects</option><option value=646>ArchiCAD</option><option value=658>Architectural Desktop</option><option value=266>ASP</option><option value=190>ASP.NET</option><option value=191>AutoCAD</option><option value=761>Autodesk</option><option value=194>Blender 3D</option><option value=468>BodyPaint</option><option value=215>Bryce 3D</option><option value=807>Buzzsaw</option><option value=400>C++</option><option value=613>CATIA</option><option value=222>Cinema 4D</option><option value=763>Civil 3D</option><option value=281>Coldfusion</option><option value=433>Corel Draw</option><option value=13>CSS</option><option value=604>Delphi</option><option value=5>Dreamweaver</option><option value=764>DWF Viewer</option><option value=383>Excel</option><option value=32>Fireworks</option><option value=3>Flash</option><option value=427>Freehand</option><option value=312>Frontpage</option><option value=528>Fruity Loops</option><option value=67>Gimp</option><option value=484>GoLive</option><option value=289>HTML</option><option value=80>Illustrator</option><option value=416>Image Ready</option><option value=492>InDesign</option><option value=671>IntelliCAD</option><option value=765>Inventor</option><option value=14>Java</option><option value=200>JavaScript</option><option value=766>Land Desktop</option><option value=235>Lightwave 3D</option><option value=255>Linux</option><option value=605>Mac OS X</option><option value=767>Map</option><option value=240>Maya 3D</option><option value=768>Mechanical Desktop</option><option value=634>MicroStation</option><option value=567>MySQL</option><option value=552>Outlook</option><option value=496>Pagemaker</option><option value=89>Paint Shop</option><option value=411>Painter</option><option value=606>Photography</option><option value=1>Photoshop</option><option value=135 selected>PHP</option><option value=456>Poser</option><option value=379>PowerPoint</option><option value=725>Pro/ENGINEER</option><option value=342>Python</option><option value=769>Raster Design</option><option value=770>Revit</option><option value=675>Rhino 3D</option><option value=330>Ruby on Rails</option><option value=352>SEO</option><option value=684>Solid Edge</option><option value=694>SolidWorks</option><option value=498>Swift 3D</option><option value=506>Swish Max</option><option value=565>Terragen</option><option value=584>Valve Editor</option><option value=719>VectorWorks</option><option value=389>Visual Basic</option><option value=772>VIZ</option><option value=347>Web Design</option><option value=250>Windows</option><option value=373>Word</option><option value=361>XML</option></select><INPUT class=btn type=submit name="btn" value="Search">
+			</form>	
+			</div>
+		</div>
+
+		<div>
+		
+				<div id="right">
+			<div id="rightheader">
+					<div id=c>
+					<img src=tarrow.gif>Cool Stuff
+					</div>
+			</div>
+			<div id="rightbox">
+				<div id=c>			
+				<center>
+				<a href="http://www.tutorialhero.com/photoshop.php">
+				<img src=images/photoshop_banner.jpg border=0 width=190 height=316></a>
+				<br>
+				How would you like to MASTER graphic design by next week?</a>
+				<br><br><a href="http://www.tutorialhero.com/photoshop.php"><b>
+				Click here to find out how</b></a>
+				</center>
+				</div>
+			</div>
+				
+			<div id="rightheader">
+					<div id=c>
+					<img src=tarrow.gif>Photoshop Templates
+					</div>
+			</div>
+			<div id="rightbox">
+				<div id="c">
+				Featured Photoshop templates - professional ready to use designs for your next project<br><br><center><a href=photoshop_templates.php><b>View all templates</b></a></center><p>
+				<!-- Templates list code start. -->
+				<script type="text/javascript" src="http://www.templatehelp.com/codes/pr_interface.php?cols=1&amp;rows=4&amp;sadult=0&amp;sp=0&amp;bgcolor=%23eeeeeb&amp;type=1&amp;category=0&amp;frname=templates&amp;pr_code=4vL95x4G007sR316ZqL45I93UkMO36"></script>
+				<!-- Templates list code end. -->
+				</p></div>
+			</div>
+		</div>
+		
+		
+		<div id="left">
+			
+			<div id="leftheader">
+					<div id=c>
+					<img src=tarrow.gif>PHP Tutorials
+					</div>
+			</div>			
+			
+			<div id="leftnav">
+				<div id=c>
+				
+				<ul><li><a href="http://www.tutorialhero.com/view-135-php_tutorials.php">PHP tutorials</a></li></ul><div id=leftsub><ul><li><a href="http://www.tutorialhero.com/view-136-php_ad_management_tutorials.php" title="PHP Ad Management tutorials">Ad Management</a></li><li><a href="http://www.tutorialhero.com/view-166-php_authentication_tutorials.php" title="PHP Authentication tutorials">Authentication</a></li><li><a href="http://www.tutorialhero.com/view-137-php_basics_tutorials.php" title="PHP Basics tutorials">Basics</a></li><li><a href="http://www.tutorialhero.com/view-138-php_calendar_tutorials.php" title="PHP Calendar tutorials">Calendar</a></li><li><a href="http://www.tutorialhero.com/view-139-php_chat_tutorials.php" title="PHP Chat tutorials">Chat</a></li><li><a href="http://www.tutorialhero.com/view-140-php_cms_tutorials.php" title="PHP CMS tutorials">CMS</a></li><li><a href="http://www.tutorialhero.com/view-141-php_cookies_tutorials.php" title="PHP Cookies tutorials">Cookies</a></li><li><a href="http://www.tutorialhero.com/view-143-php_counters_tutorials.php" title="PHP Counters tutorials">Counters</a></li><li><a href="http://www.tutorialhero.com/view-144-php_database_tutorials.php" title="PHP Database tutorials">Database</a></li><li><a href="http://www.tutorialhero.com/view-145-php_date__time_tutorials.php" title="PHP Date & Time tutorials">Date & Time</a></li><li><a href="http://www.tutorialhero.com/view-146-php_development_tutorials.php" title="PHP Development tutorials">Development</a></li><li><a href="http://www.tutorialhero.com/view-148-php_e_commerce_tutorials.php" title="PHP E Commerce tutorials">E Commerce</a></li><li><a href="http://www.tutorialhero.com/view-149-php_email_tutorials.php" title="PHP Email tutorials">Email</a></li><li><a href="http://www.tutorialhero.com/view-150-php_error_handling_tutorials.php" title="PHP Error Handling tutorials">Error Handling</a></li><li><a href="http://www.tutorialhero.com/view-151-php_file_manipulation_tutorials.php" title="PHP File Manipulation tutorials">File Manipulation</a></li><li><a href="http://www.tutorialhero.com/view-152-php_flash_tutorials.php" title="PHP Flash tutorials">Flash</a></li><li><a href="http://www.tutorialhero.com/view-153-php_forms_tutorials.php" title="PHP Forms tutorials">Forms</a></li><li><a href="http://www.tutorialhero.com/view-147-php_forum_tutorials.php" title="PHP Forum tutorials">Forum</a></li><li><a href="http://www.tutorialhero.com/view-566-php_functions_tutorials.php" title="PHP Functions tutorials">Functions</a></li><li><a href="http://www.tutorialhero.com/view-154-php_guestbooks_tutorials.php" title="PHP Guestbooks tutorials">Guestbooks</a></li><li><a href="http://www.tutorialhero.com/view-155-php_image_manipulation_tutorials.php" title="PHP Image Manipulation tutorials">Image Manipulation</a></li><li><a href="http://www.tutorialhero.com/view-156-php_installing_tutorials.php" title="PHP Installing tutorials">Installing</a></li><li><a href="http://www.tutorialhero.com/view-170-php_link_indexing_tutorials.php" title="PHP Link Indexing tutorials">Link Indexing</a></li><li><a href="http://www.tutorialhero.com/view-171-php_navigation_tutorials.php" title="PHP Navigation tutorials">Navigation</a></li><li><a href="http://www.tutorialhero.com/view-157-php_networking_tutorials.php" title="PHP Networking tutorials">Networking</a></li><li><a href="http://www.tutorialhero.com/view-158-php_oop_tutorials.php" title="PHP OOP tutorials">OOP</a></li><li><a href="http://www.tutorialhero.com/view-159-php_pear_tutorials.php" title="PHP PEAR tutorials">PEAR</a></li><li><a href="http://www.tutorialhero.com/view-160-php_polls_tutorials.php" title="PHP Polls tutorials">Polls</a></li><li><a href="http://www.tutorialhero.com/view-161-php_randomizing_tutorials.php" title="PHP Randomizing tutorials">Randomizing</a></li><li><a href="http://www.tutorialhero.com/view-162-php_redirection_tutorials.php" title="PHP Redirection tutorials">Redirection</a></li><li><a href="http://www.tutorialhero.com/view-163-php_searching_tutorials.php" title="PHP Searching tutorials">Searching</a></li><li><a href="http://www.tutorialhero.com/view-164-php_security_tutorials.php" title="PHP Security tutorials">Security</a></li><li><a href="http://www.tutorialhero.com/view-142-php_sessions_tutorials.php" title="PHP Sessions tutorials">Sessions</a></li><li><a href="http://www.tutorialhero.com/view-168-php_traffic_analysis_tutorials.php" title="PHP Traffic Analysis tutorials">Traffic Analysis</a></li><li><a href="http://www.tutorialhero.com/view-167-php_wap_tutorials.php" title="PHP WAP tutorials">WAP</a></li><li><a href="http://www.tutorialhero.com/view-169-php_xml_tutorials.php" title="PHP XML tutorials">XML</a></li></ul></div>
+				
+				</div>
+			</div>
+			
+			<div id="leftheader">
+					<div id=c>
+					<img src=tarrow.gif>Tutorials
+					</div>
+			</div>			
+			
+			<div id="leftnav">
+				<div id=c>
+				
+				<ul id=leftsub><li><a href="http://www.tutorialhero.com/view-104-3ds_max_tutorials.php">3DS Max</a></li><li><a href="http://www.tutorialhero.com/view-542-access_tutorials.php">Access</a></li><li><a href="http://www.tutorialhero.com/view-625-adobe_acrobat_tutorials.php">Adobe Acrobat</a></li><li><a href="http://www.tutorialhero.com/view-630-adobe_audition_tutorials.php">Adobe Audition</a></li><li><a href="http://www.tutorialhero.com/view-817-adobe_flex_tutorials.php">Adobe Flex</a></li><li><a href="http://www.tutorialhero.com/view-588-adobe_premiere_tutorials.php">Adobe Premiere</a></li><li><a href="http://www.tutorialhero.com/view-553-after_effects_tutorials.php">After Effects</a></li><li><a href="http://www.tutorialhero.com/view-646-archicad_tutorials.php">ArchiCAD</a></li><li><a href="http://www.tutorialhero.com/view-658-architectural_desktop_tutorials.php">Architectural Desktop</a></li><li><a href="http://www.tutorialhero.com/view-266-asp_tutorials.php">ASP</a></li><li><a href="http://www.tutorialhero.com/view-190-asp.net_tutorials.php">ASP.NET</a></li><li><a href="http://www.tutorialhero.com/view-191-autocad_tutorials.php">AutoCAD</a></li><li><a href="http://www.tutorialhero.com/view-761-autodesk_tutorials.php">Autodesk</a></li><li><a href="http://www.tutorialhero.com/view-194-blender_3d_tutorials.php">Blender 3D</a></li><li><a href="http://www.tutorialhero.com/view-468-bodypaint_tutorials.php">BodyPaint</a></li><li><a href="http://www.tutorialhero.com/view-215-bryce_3d_tutorials.php">Bryce 3D</a></li><li><a href="http://www.tutorialhero.com/view-400-c++_tutorials.php">C++</a></li><li><a href="http://www.tutorialhero.com/view-613-catia_tutorials.php">CATIA</a></li><li><a href="http://www.tutorialhero.com/view-222-cinema_4d_tutorials.php">Cinema 4D</a></li><li><a href="http://www.tutorialhero.com/view-281-coldfusion_tutorials.php">Coldfusion</a></li><li><a href="http://www.tutorialhero.com/view-433-corel_draw_tutorials.php">Corel Draw</a></li><li><a href="http://www.tutorialhero.com/view-13-css_tutorials.php">CSS</a></li><li><a href="http://www.tutorialhero.com/view-604-delphi_tutorials.php">Delphi</a></li><li><a href="http://www.tutorialhero.com/view-5-dreamweaver_tutorials.php">Dreamweaver</a></li><li><a href="http://www.tutorialhero.com/view-383-excel_tutorials.php">Excel</a></li><li><a href="http://www.tutorialhero.com/view-32-fireworks_tutorials.php">Fireworks</a></li><li><a href="http://www.tutorialhero.com/view-3-flash_tutorials.php">Flash</a></li><li><a href="http://www.tutorialhero.com/view-427-freehand_tutorials.php">Freehand</a></li><li><a href="http://www.tutorialhero.com/view-312-frontpage_tutorials.php">Frontpage</a></li><li><a href="http://www.tutorialhero.com/view-528-fruity_loops_tutorials.php">Fruity Loops</a></li><li><a href="http://www.tutorialhero.com/view-67-gimp_tutorials.php">Gimp</a></li><li><a href="http://www.tutorialhero.com/view-484-golive_tutorials.php">GoLive</a></li><li><a href="http://www.tutorialhero.com/view-289-html_tutorials.php">HTML</a></li><li><a href="http://www.tutorialhero.com/view-80-illustrator_tutorials.php">Illustrator</a></li><li><a href="http://www.tutorialhero.com/view-416-image_ready_tutorials.php">Image Ready</a></li><li><a href="http://www.tutorialhero.com/view-492-indesign_tutorials.php">InDesign</a></li><li><a href="http://www.tutorialhero.com/view-671-intellicad_tutorials.php">IntelliCAD</a></li><li><a href="http://www.tutorialhero.com/view-14-java_tutorials.php">Java</a></li><li><a href="http://www.tutorialhero.com/view-200-javascript_tutorials.php">JavaScript</a></li><li><a href="http://www.tutorialhero.com/view-235-lightwave_3d_tutorials.php">Lightwave 3D</a></li><li><a href="http://www.tutorialhero.com/view-255-linux_tutorials.php">Linux</a></li><li><a href="http://www.tutorialhero.com/view-605-mac_os_x_tutorials.php">Mac OS X</a></li><li><a href="http://www.tutorialhero.com/view-240-maya_3d_tutorials.php">Maya 3D</a></li><li><a href="http://www.tutorialhero.com/view-634-microstation_tutorials.php">MicroStation</a></li><li><a href="http://www.tutorialhero.com/view-567-mysql_tutorials.php">MySQL</a></li><li><a href="http://www.tutorialhero.com/view-552-outlook_tutorials.php">Outlook</a></li><li><a href="http://www.tutorialhero.com/view-496-pagemaker_tutorials.php">Pagemaker</a></li><li><a href="http://www.tutorialhero.com/view-89-paint_shop_tutorials.php">Paint Shop</a></li><li><a href="http://www.tutorialhero.com/view-411-painter_tutorials.php">Painter</a></li><li><a href="http://www.tutorialhero.com/view-606-photography_tutorials.php">Photography</a></li><li><a href="http://www.tutorialhero.com/view-1-photoshop_tutorials.php">Photoshop</a></li><li><a href="http://www.tutorialhero.com/view-135-php_tutorials.php">PHP</a></li><li><a href="http://www.tutorialhero.com/view-456-poser_tutorials.php">Poser</a></li><li><a href="http://www.tutorialhero.com/view-379-powerpoint_tutorials.php">PowerPoint</a></li><li><a href="http://www.tutorialhero.com/view-725-pro_engineer_tutorials.php">Pro/ENGINEER</a></li><li><a href="http://www.tutorialhero.com/view-342-python_tutorials.php">Python</a></li><li><a href="http://www.tutorialhero.com/view-675-rhino_3d_tutorials.php">Rhino 3D</a></li><li><a href="http://www.tutorialhero.com/view-330-ruby_on_rails_tutorials.php">Ruby on Rails</a></li><li><a href="http://www.tutorialhero.com/view-352-seo_tutorials.php">SEO</a></li><li><a href="http://www.tutorialhero.com/view-684-solid_edge_tutorials.php">Solid Edge</a></li><li><a href="http://www.tutorialhero.com/view-694-solidworks_tutorials.php">SolidWorks</a></li><li><a href="http://www.tutorialhero.com/view-498-swift_3d_tutorials.php">Swift 3D</a></li><li><a href="http://www.tutorialhero.com/view-506-swish_max_tutorials.php">Swish Max</a></li><li><a href="http://www.tutorialhero.com/view-565-terragen_tutorials.php">Terragen</a></li><li><a href="http://www.tutorialhero.com/view-584-valve_editor_tutorials.php">Valve Editor</a></li><li><a href="http://www.tutorialhero.com/view-719-vectorworks_tutorials.php">VectorWorks</a></li><li><a href="http://www.tutorialhero.com/view-389-visual_basic_tutorials.php">Visual Basic</a></li><li><a href="http://www.tutorialhero.com/view-347-web_design_tutorials.php">Web Design</a></li><li><a href="http://www.tutorialhero.com/view-250-windows_tutorials.php">Windows</a></li><li><a href="http://www.tutorialhero.com/view-373-word_tutorials.php">Word</a></li><li><a href="http://www.tutorialhero.com/view-361-xml_tutorials.php">XML</a></li></ul>
+				
+				</div>
+			</div>	
+		
+		
+			<div id="leftheader">
+					<div id=c>
+					<img src=tarrow.gif>Stuff
+					</div>
+			</div>
+			
+			<div id="leftbox">
+				<div id=c>
+				<ul>				
+				<li><a class="blinks" href="most_popular_tutorials.php">Most Popular Tutorials</a>
+				<li><a class="blinks" href="best_rated_tutorials.php">Best Rated Tutorials</a>
+				<li><a class="blinks" href="random_tutorial.php">Random Tutorial</a>
+				</ul>
+				<ul>
+				<li><a class="blinks" href="tutorial_submission_tool.php">Tutorial submission tool</a>
+				<li><a class="blinks" href="photoshop_templates.php">Photoshop Templates</a>
+				<li><a class="blinks" href="flash_templates.php">Flash Templates</a>
+				<li><a class="blinks" href="http://www.allsigs.com" target=_blank>Forum signatures</a>
+				<li><a class="blinks" href="http://www.gotmyidea.com" target=_blank>Free Video Tutorials</a>
+				<li><a class="blinks" href="http://www.scriptvista.com" target=_blank>Best Scripts</a>
+				<li><a class="blinks" href="http://www.goodtutorials-ps.com" target=_blank>Good Tutorials</a>
+				<li><a class="blinks" href="http://www.e-smartech.com" target=_blank>Gadgets</a>
+				<li><a class="blinks" href="http://www.e-techgadget.com" target=_blank>Tech Gadgets</a>
+				<li><a class="blinks" href="http://www.wiifit.org" target=_blank>Wii Fit</a>
+				</ul>
+				<ul>
+				<li><a class="blinks" href="contact.php">Contact</a>
+				</ul>
+				Total Tutorials: <b>76267</b>
+				</div>
+			</div>
+		
+		
+			<div id="leftheader">
+						<div id=c>
+						<img src=tarrow.gif>Affiliates
+						</div>
+				</div>
+				
+				<div id="leftbox">
+					<div id=c><center>
+					<p><a href="http://www.gotmyidea.com" target="_blank"><img border="0" src="http://www.tutorialhero.com/images/aff_default.png" width="88" height="31"></a></p><p><a href="http://tutorial-index.com" target="_blank"><img border="0" src="http://tutorial-index.com/images/main/ti_logo_short.jpg" width="88" height="31"></a></p><p><a href="http://www.3dmaxtutorial.net" target="_blank"><img border="0" src="http://www.3dmaxtutorial.net/Banner_88.jpg" width="88" height="31"></a></p>					
+					<a href=affiliates.php>View all</a> - <a href=affiliates.php#apply>Apply</a>
+					</center></div>
+				</div>
+			</div>
+		
+		</div>
+		
+		
+		</div>
+		</div>
+		
+		<div id="middle">
+		
+			<div id=c>
+			<h1>Basic Usage of reCAPTCHA with PHP - PHP tutorial</h1><hr>
+			</div>
+			<div id="c">
+				<div id=tut_wrap>
+	<div id="tt"></div>
+		<div id="tm">
+			<div id="tmimg"><img src=default_php.gif width=50 height=50></div>
+			In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books.
+			<div id="ts">Category: <a href=view-135-php_tutorials.php>PHP</a> > <a href=view-166-php_authentication_tutorials.php>Authentication</a> - Difficulty: <img src=dif3.gif></div><br>
+			<div id=adsense_block_tut><script type="text/javascript"><!--
+google_ad_client = "pub-0119109909334277";
+/* 336x280, created 5/7/10 */
+google_ad_slot = "3038467019";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+			<br>
+			<div class=tutorial_link><h2>Basic Usage of reCAPTCHA with PHP tutorial description</h2><table class=tutinfo width=100%><tr><td width=150>Added on</td><td>12.03.2011</td></tr><tr><td>Total clicks</td><td>17</td></tr><tr><td>Tutorial Rating</td><td>0</td></tr><tr><td>Tutorial Difficulty</td><td>0</td></tr></table><a href="http://www.tutorialhero.com/click-76572-basic_usage_of_recaptcha_with_php.php" target="_blank" title="Authentication - Basic Usage of reCAPTCHA with PHP">Click here to view this tutorial</a><br>Basic Usage of reCAPTCHA with PHP <br><br>		<!-- AddThis Bookmark Button BEGIN -->
+		<script type="text/javascript">
+		  addthis_url    = location.href;   
+		  addthis_title  = document.title;  
+		  addthis_pub    = 'Philarmon';     
+		</script><script type="text/javascript" src="http://s7.addthis.com/js/addthis_widget.php?v=12" ></script>
+		<!-- AddThis Bookmark Button END --><br><br></div>
+		</div>		
+	<div id="tb"></div>
+
+
+<h2>More cool PHP tutorials:</h2><hr><br>
+<div id="tt"></div>
+	<div id="tm">
+		<div id="tmimg"><img src=default_php.gif width=50 height=50 alt="Building a live news blogging system in php. Spiced with HTML5, CSS3 and jQuery [demo] "></div>		
+			<a href=tutorial-67630-building_a_live_news_blogging_system_in_php._spiced_with_html5_css3_and_jquery_[demo].php title="Building a live news blogging system in php. Spiced with HTML5, CSS3 and jQuery [demo]"><b>Building a live news blogging system in php. Spiced with HTML5, CSS3 and jQuery [demo]</b></a><br>			
+			<div id="td">Awesome demo of a series of tutorials on building a live blogging system with php, htm5, css3, jquery and mysql.
+			<div id="ts">Difficulty: <img src=dif4.gif></div>
+			</div>		
+	</div>
+<div id="tb"></div>
+<div id="tt"></div>
+	<div id="tm">
+		<div id="tmimg"><img src=default_php.gif width=50 height=50 alt="Simple Form Validation "></div>		
+			<a href=tutorial-58733-simple_form_validation.php title="Simple Form Validation"><b>Simple Form Validation</b></a><br>			
+			<div id="td">A simple PHP form validation tutorial. It has first name, last name, email and comments
+			<div id="ts">Difficulty: <img src=dif4.gif></div>
+			</div>		
+	</div>
+<div id="tb"></div>
+<div id="tt"></div>
+	<div id="tm">
+		<div id="tmimg"><img src=default_php.gif width=50 height=50 alt="Design Patterns "></div>		
+			<a href=tutorial-46623-design_patterns.php title="Design Patterns"><b>Design Patterns</b></a><br>			
+			<div id="td">A very small introduction to what are design patterns and why use them. The website also has other tutorials on the Observer pattern and the Strategy pattern as well.
+			<div id="ts">Difficulty: <img src=dif2.gif></div>
+			</div>		
+	</div>
+<div id="tb"></div>
+<div id="tt"></div>
+	<div id="tm">
+		<div id="tmimg"><img src=default_php.gif width=50 height=50 alt="CMS Tutorial: Part 5: Administration Classes "></div>		
+			<a href=tutorial-30730-cms_tutorial_part_5_administration_classes.php title="CMS Tutorial: Part 5: Administration Classes"><b>CMS Tutorial: Part 5: Administration Classes</b></a><br>			
+			<div id="td">In the fifth implements two classes to handle cms posts and categories.
+			<div id="ts">Difficulty: <img src=dif3.gif></div>
+			</div>		
+	</div>
+<div id="tb"></div>
+<div id="tt"></div>
+	<div id="tm">
+		<div id="tmimg"><img src=default_php.gif width=50 height=50 alt="How to replace the default page title on Joomla sites "></div>		
+			<a href=tutorial-77058-how_to_replace_the_default_page_title_on_joomla_sites.php title="How to replace the default page title on Joomla sites"><b>How to replace the default page title on Joomla sites</b></a><br>			
+			<div id="td">One of the greatest frustrations for Joomla beginners is learning how to replace the default "Welcome to the Frontpage" text on Joomla home pages. This tutorial demonstrates how to change this on this or any other page.
+			<div id="ts">Difficulty: <img src=dif4.gif></div>
+			</div>		
+	</div>
+<div id="tb"></div>
+			</div>
+		</div>
+	</div>
+	
+</div></div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-652216-5";
+urchinTracker();
+</script>
+</body>
+</html>

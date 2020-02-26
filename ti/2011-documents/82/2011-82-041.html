@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>  Testing and Crowdsourcing :: Software Testing and more</title>
+<meta name="generator" content="WordPress 3.1" /><!-- leave this for stats -->
+<link rel="stylesheet" href="http://www.testingthefuture.net/wp-content/themes/excess/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Software Testing and more RSS Feed" href="http://www.testingthefuture.net/feed/" />
+<link rel="pingback" href="http://www.testingthefuture.net/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Software Testing and more &raquo; Testing and Crowdsourcing Comments Feed" href="http://www.testingthefuture.net/2009/04/testing-and-crowdsourcing/feed/" />
+<link href="http://www.testingthefuture.net/wp-content/plugins/history-manager/history-manager.css" type="text/css" rel="stylesheet" /><script type='text/javascript' src='http://www.testingthefuture.net/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://www.testingthefuture.net/wp-includes/js/jquery/jquery.js?ver=1.4.4'></script>
+<script type='text/javascript' src='http://www.testingthefuture.net/wp-content/plugins/history-manager/history-manager.js?ver%5B0%5D=jquery'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.testingthefuture.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.testingthefuture.net/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Software Testing and more' href='http://www.testingthefuture.net/' />
+<link rel='start' title='The final test of the year' href='http://www.testingthefuture.net/2008/12/the-final-test-of-the-year/' />
+<link rel='prev' title='End-to-end Testing' href='http://www.testingthefuture.net/2009/03/end-to-end-testing/' />
+<link rel='next' title='spideren voor het bepalen van de test scope' href='http://www.testingthefuture.net/2009/05/spideren-voor-het-bepalen-van-de-test-scope/' />
+<meta name="generator" content="WordPress 3.1" />
+<link rel='canonical' href='http://www.testingthefuture.net/2009/04/testing-and-crowdsourcing/' />
+<link rel='shortlink' href='http://www.testingthefuture.net/?p=320' />
+<link rel="stylesheet" href="http://www.testingthefuture.net/wp-content/plugins/posts-per-cat/ppc.css" type="text/css" media="screen" /><link rel="stylesheet" href="http://www.testingthefuture.net/wp-content/plugins/posts-per-cat/ppc-list.css" type="text/css" media="screen" /><meta name="tweetmeme-title" content="Testing and Crowdsourcing" />
+	<!-- NotCaptcha HEAD start -->
+	<script type="text/javascript">
+		var NC_PLUGIN_URL = "http://www.testingthefuture.net/wp-content/plugins";
+	</script>
+	<script type="text/javascript" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/trackbar.js"></script>
+	<style>
+	#captchaImgDiv img {padding:0;margin:0;border:0;display:inline;float:none}
+	#captchaImgDiv td {padding:0;margin:0;border:0}
+	#captchaImgDiv div {padding:0;margin:0;border:0}
+	#captchaImgDiv span {padding:0;margin:0;border:0}
+	.imgunit {
+		width:50px;
+		height:50px;
+		overflow:hidden;
+		padding:0;
+		margin:0;
+		margin-left:10px;
+		position: relative; /* IE fix */
+	}
+	.imgunit img {padding:0;margin:0;position:relative}
+	.captchablock {width:74px; float:left; padding:2px; margin:0;}
+	.captchablock img {padding:0;margin:0;border:0;display: inline;}
+	/* Reset */
+	table.trackbar div, table.trackbar td {margin:0; padding:0;}
+	table.trackbar {border-collapse:collapse;border-spacing:0;}
+	table.trackbar img{border:0;display: inline;}
+	
+	/* Styles */
+	table.trackbar {width:70px; background:repeat-x url(http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha//imgtrackbar/b_bg_on.gif) top left;}
+	table.trackbar .l {width:1%; text-align: right; font-size: 1px; background:repeat-x url(http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha//imgtrackbar/b_bg_off.gif) top left;}
+	table.trackbar .l div {position:relative; width:0; text-align: right; z-index:500; white-space:nowrap;}
+	table.trackbar .l div img {cursor:pointer;}
+	table.trackbar .l div span {position:absolute;top:-12px; right:6px; z-index:1000; font:11px tahoma; color:#000;}
+	table.trackbar .l div span.limit {text-align:left; position:absolute;top:-12px; right:100%; z-index:100; font:11px tahoma; color:#D0D0D0;}
+	table.trackbar .r {position:relative; width:1%; text-align: left; font-size: 1px; background:repeat-x url(http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha//imgtrackbar/b_bg_off.gif) top right; cursor:default;}
+	table.trackbar .r div {position:relative; width:0; text-align: left; z-index:500; white-space:nowrap;}
+	table.trackbar .r div img {cursor:pointer;}
+	table.trackbar .r div span {position:absolute;top:-12px; left:6px; z-index:1000; font:11px tahoma; color:#000;}
+	table.trackbar .r div span.limit {position:absolute;top:-12px; left:100%; z-index:100; font:11px tahoma; color:#D0D0D0;}
+	table.trackbar .c {font-size:1px; width:100%;}
+	</style>
+	<!-- NotCaptcha HEAD end -->	
+	</head>
+<body>
+
+<div id="header">
+	<div id="logo">
+		<h1><a href="http://www.testingthefuture.net/">Software Testing and more</a></h1>
+		<h2></h2>
+	</div>
+	<!-- end logo -->
+	<div id="menu">
+		<ul>
+			<li class="page_item"><a href="http://www.testingthefuture.net/">Homepage</a></li>
+			<li class="page_item page-item-1298"><a href="http://www.testingthefuture.net/andreas-prins/" title="Andreas">Andreas</a></li>
+<li class="page_item page-item-2"><a href="http://www.testingthefuture.net/ewald-roodenrijs/" title="Ewald">Ewald</a></li>
+<li class="page_item page-item-217"><a href="http://www.testingthefuture.net/software-testing-magazines/" title="Magazines">Magazines</a></li>
+		</ul>
+	</div>
+	<!-- end menu -->
+</div>
+<!-- end header -->
+
+<div id="page">
+<div id="bg">
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6785673-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	<div id="content">
+		
+	
+		<div class="post" id="post-320">
+			<h1 class="title"><a href="http://www.testingthefuture.net/2009/04/testing-and-crowdsourcing/" rel="bookmark" title="Permanent Link: Testing and Crowdsourcing">Testing and Crowdsourcing</a></h1>
+			<p class="date">Apr<b>15</b></p>
+			<div class="entry">
+				<!-- BEGIN ODIOGO LISTEN BUTTON v2.5.7 (WP) -->
+		<script type="text/javascript" language="javascript" src="http://widget.odiogo.com/odiogo_js.php?feed_id=373961&amp;platform=wp&amp;version=2.5.7"></script>
+		
+		<!-- END ODIOGO LISTEN BUTTON v2.5.7 (WP) -->
+		<!-- BEGIN ODIOGO LISTEN BUTTON v2.5.7 (WP) -->
+		<script type="text/javascript" language="javascript">
+		<!--
+		// ODIOGO_START:do_NOT_remove_this_comment
+		showOdiogoReadNowButton ("373961", "Testing and Crowdsourcing", "320", 290, 55);
+		// -->
+		</script>
+		<br/>
+		<script type="text/javascript" language="javascript">
+		<!--
+		showInitialOdiogoReadNowFrame ("373961", "320", 290, 0);
+		// ODIOGO_END:do_NOT_remove_this_comment
+		// -->
+		</script>
+		<!-- END ODIOGO LISTEN BUTTON v2.5.7 (WP) -->
+		
+<div class="tweetmeme_button" style="float: right; margin-left: 10px;"><a class="tm_button" rel="&amp;source=ewaldroodenrijs&amp;style=normal&amp;b=2" href="http://www.testingthefuture.net/2009/04/testing-and-crowdsourcing/"></a></div>
+<p>Ever since EUROSTAR I have become intrigued about crowdsourcing. How can I use crowd sourcing in software testing? According to <a href="http://nl.wikipedia.org/wiki/Crowdsourcing">Wikipedia </a>crowdsourcing is: &#8220;An English-language contamination, a recent development used to indicate which organizations (government, enterprises, institutions) or individuals using a large group not previously specified individuals (professionals, volunteers, interested) for consultancy, innovation , policy and research&#8221;. A complicated and too long a sentence, but when I focus this on software testing is actually is “using strangers to your software testing”. When reading this, testers will directly have alarm bells go off: <strong>risks</strong>! Unknowns &#8230; people I do not in any way have control &#8230; But also, I can have experts to run tests. Not only testing experts, but matter experts. The question that arises is: how effective crowdsourcing can be to test software applications? Because crowd sourcing is cheap and there are many resources available in their ‘free time’ for me to test.</p>
+<blockquote><p><em>How do I actually use crowdsourcing for testing applications?</em></p></blockquote>
+<p>How do I actually use crowdsourcing for testing applications? First, it is important to determine at what moment you want to deploy the software for crowdsourcing. Of course testing should start as soon as possible in the development process, but it comes down to what status the product is in when you want the testing to be done. With crowdsourcing it is important that the product is at that quality that you do not risk to affect your company’s goodwill. You should at least have confidence in the product. This product doesn’t have to function flawless because, others are going to test it. Thus, I should have a product that already has undergone a <em>system test</em>.</p>
+<blockquote><p><em>Which type of person do you want to test for you?</em></p></blockquote>
+<p>After this it is important to know who you want to test for you. Which type of person do you want to test for you? Are this the prospected users or just people with technical knowledge. As an example; you can to carry out security tests by approaching hackers or crackers to do this for you. It also is important to know the size of the group. How many people do you want to test? So who I want to execute the test and with how many people is important to me.</p>
+<blockquote><p><em>Why do these person test for you?</em></p></blockquote>
+<p>Once we know who you want to test it is important to approach this group with a reason why they go for you test. By game for suppliers may be because it is fun to try a new game, because that&#8217;s basically it. Because your application to let people try it they will. Another reason may be that the human race, given that innovative software can use. And of course the beautiful clincher: money. If you for some time test that gives them a sum of money. All these things are &#8216;plea adopters&#8217;, reasons why people you want to spend their free time to test. So do I determine my target audience pleaser of.</p>
+<blockquote><p><em>How can the test be controlled?</em></p></blockquote>
+<p>But the most important thing about crowdsourcing software testing is <strong>control</strong>. Not the control of people, but control of what is being tested. I need to know what is being tested. The analysis of the testing during the process is important to track the testing. With this the focus is on <em>during</em> because, afterwards it is not possible to give a response. So I need to follow the test process, maybe not in real/time, but at the end of each day I want to analyze the results of the tests. This possibility is needed to use crowdtesting. When during testing I find out that people are always coming down to do the same when there is no need for it, because it has been working perfectly, there are no risks or is not important, I can respond. Experience teaches that to kindly ask not to do certain things 9 out of 10 times this is ignored. So I need to make things attractive to test it or make other things less attractive. For example, I could temporarily remove some things. I must therefore think in advance how to do this. This can be done by giving what I would like to be tested, like test cases &#8230;</p>
+<p>In order to set crowdsourcing properly, I actually am doing things structured. I already need to determine in advance the following:</p>
+<p>	1. Which state is to test my product?<br />
+	2. Who should test it and how?<br />
+	3. What is the rewards for these people?<br />
+	4. What do I test and what not?</p>
+<p><em>Tip: Jeff Howe&#8217;s blog (<a href="http://crowdsourcing.typepad.com/">http://crowdsourcing.typepad.com/</a>)</em></p>
+<p>Crowdsourcing is a possibility to carry out tests at perhaps a low cost. There are however a number of risks to consider. These risks can be constrained by determining what you really want to do with crowdsourcing. If the risks have good measures it is possible to have a large group of potential resources at a low price and you can start testing!</p>
+							</div>
+			<div class="meta">
+				<p>
+					<small>
+						This entry was posted
+												on Wednesday, April 15th, 2009 at 09:17						and is filed under <a href="http://www.testingthefuture.net/category/crowdtesting/" title="View all posts in crowdtesting" rel="category tag">crowdtesting</a>, <a href="http://www.testingthefuture.net/category/ewaldroodenrijs/" title="View all posts in Ewald Roodenrijs" rel="category tag">Ewald Roodenrijs</a>, <a href="http://www.testingthefuture.net/category/innovation-in-testing/" title="View all posts in innovation in testing" rel="category tag">innovation in testing</a>.
+						You can follow any responses to this entry through the <a href='http://www.testingthefuture.net/2009/04/testing-and-crowdsourcing/feed/'>RSS 2.0</a> feed.
+
+													You can <a href="#respond">leave a response</a>, or <a href="http://www.testingthefuture.net/2009/04/testing-and-crowdsourcing/trackback/" rel="trackback">trackback</a> from your own site.
+
+						
+					</small>
+				</p>
+			</div>
+		</div>
+
+		
+<!-- You can start editing here. -->
+
+<div id="comments" class="post">
+
+	<h2 class="title">2 Responses to &#8220;Testing and Crowdsourcing&#8221;</h2>
+	<div class="entry">
+	<ol class="commentlist">
+
+	
+		<li class="alt" id="comment-1009">
+			<cite><a href='http://www.rbcs-us.com' rel='external nofollow' class='url'>Software Testing Services</a></cite> Says:
+						<br />
+
+			<small class="commentmetadata"><a href="#comment-1009" title="">July 20th, 2010 at 11:54</a> </small>
+
+			<p>Thanks for posting the information. I really liked the information that you have shared above. Its really helpful as it has cleared me both the concepts.</p>
+
+		</li>
+
+	
+	
+		<li id="comment-trackback">
+			<cite>Trackbacks</cite> Says:
+						<br />
+
+			<small class="commentmetadata"><a href="#comment-trackback" title="">April 3rd, 2011 at 16:31</a> </small>
+
+			<ul>
+<li><a href="http://webobserver.fr/non-classe/crowdsourcing-quality-assurance-qualite-bas-prix/">Crowdsourcing et Quality Assurance, la qualité à bas prix ? | Web Observer</a></li>
+</ul>
+
+		</li>
+
+	
+	
+	</ol>
+		</div>
+
+ </div>
+<!-- end comments -->
+
+<div id="respond" class="post">
+
+<h2 class="title">Leave a Reply</h2>
+<div class="entry">
+
+<form action="http://www.testingthefuture.net/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type="hidden" name="comment_post_ID" value="320" />
+</p>
+
+<div style="display:block;padding-bottom:5px;" id="captchaImgDiv">
+
+<!-- NotCaptcha FORM start -->
+<small>Before you submit form:</small><br />
+<script language="javascript">
+	document.write('<div style="clear:both"><small>Place this icons <b>vertical</b> <img src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/vertical_sign.png" alt="^" border="0" /></small></div>');
+	document.write('<div style="clear:both">');
+	function setCaptchaValue(id, val) {
+		document.getElementById(id+"Field").value = val/10;
+		val = -val/10*50 - (val/10);
+		document.getElementById(id+"Pict").style.left = val + "px";
+	}
+
+	document.write('<div class="captchablock">');
+	document.write('<div id="imgoneUnit" class="imgunit"><img id="imgonePict" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?i=1&r=1301848266" /></div>');
+	document.write('<input type="hidden" id="imgoneField" name="imgoneField" value="0" />');
+	//<![CDATA[
+	trackbar.getObject('imgone').init({
+		onMove : function() {
+			setCaptchaValue('imgone', this.leftValue);
+		},
+		dual : false, // two intervals
+		width : 70, // px
+		roundUp: 10,
+		leftLimit : 0, // unit of value
+		leftValue : 0, // unit of value
+		rightLimit : 70, // unit of value
+		rightValue : 70, // unit of value
+		clearLimits: 1,
+		clearValues: 1 });
+	// -->
+	document.write('</div>');
+
+	document.write('<div class="captchablock">');
+	document.write('<div id="imgtwoUnit" class="imgunit"><img id="imgtwoPict" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?i=2&r=1301848266" /></div>');
+	document.write('<input type="hidden" id="imgtwoField" name="imgtwoField" value="0" />');
+	//<![CDATA[
+	trackbar.getObject('imgtwo').init({
+		onMove : function() {
+			setCaptchaValue('imgtwo', this.leftValue);
+		},
+		dual : false, // two intervals
+		width : 70, // px
+		roundUp: 10,
+		leftLimit : 0, // unit of value
+		leftValue : 0, // unit of value
+		rightLimit : 70, // unit of value
+		rightValue : 70, // unit of value
+		clearLimits: 1,
+		clearValues: 1 });
+	// -->
+	document.write('</div>');
+
+	document.write('<div class="captchablock">');
+	document.write('<div id="imgthreeUnit" class="imgunit"><img id="imgthreePict" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?i=3&r=1301848266" /></div>');
+	document.write('<input type="hidden" id="imgthreeField" name="imgthreeField" value="0" />');
+
+	//<![CDATA[
+	trackbar.getObject('imgthree').init({
+		onMove : function() {
+			setCaptchaValue('imgthree', this.leftValue);
+		},
+		dual : false, // two intervals
+		width : 70, // px
+		roundUp: 10,
+		leftLimit : 0, // unit of value
+		leftValue : 0, // unit of value
+		rightLimit : 70, // unit of value
+		rightValue : 70, // unit of value
+		clearLimits: 1,
+		clearValues: 1 });
+	// -->
+	document.write('</div>');
+	document.write('</div>');
+	document.write('<div style="clear:both"><small>Move the sliders to change angle of images</small><br />');
+	document.write('<small><b style="cursor:pointer; padding:2px; border-bottom: 1px dashed" onclick="refresh_security_image()">Reload images</b></small></div>');
+</script>
+<noscript>
+	<div style="clear:both"><small>Please, choose number of <b>vertical</b> image <img src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/vertical_sign.png" alt="^" border="0" /></small></div>
+	<div style="clear:both;padding:4px;">
+		<img id="imgonePict" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?n=1&i=1&r=1301848266" align="left" />
+		<select name="imgoneField">
+			<option value="">- select -</option>
+<option value=0>1</option>
+<option value=1>2</option>
+<option value=2>3</option>
+<option value=3>4</option>
+<option value=4>5</option>
+<option value=5>6</option>
+<option value=6>7</option>
+<option value=7>8</option>
+
+		</select>
+	</div>
+	<div style="clear:both;padding:4px;">
+		<img id="imgtwoPict" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?n=1&i=2&r=1301848266" align="left" />
+		<select name="imgtwoField">
+			<option value="">- select -</option>
+<option value=0>1</option>
+<option value=1>2</option>
+<option value=2>3</option>
+<option value=3>4</option>
+<option value=4>5</option>
+<option value=5>6</option>
+<option value=6>7</option>
+<option value=7>8</option>
+
+		</select>
+	</div>
+	<div style="clear:both;padding:4px;">
+		<img id="imgthreePict" src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?n=1&i=3&r=1301848266" align="left" />
+		<select name="imgthreeField">
+			<option value="">- select -</option>
+<option value=0>1</option>
+<option value=1>2</option>
+<option value=2>3</option>
+<option value=3>4</option>
+<option value=4>5</option>
+<option value=5>6</option>
+<option value=6>7</option>
+<option value=7>8</option>
+
+		</select>
+	</div>
+	</div>
+</noscript>
+<img src="http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/blank.gif" width="1" height="1" />
+<!-- Leave the link - make internet cleaner! -->
+<small>Human test by <a href="http://notcaptcha.webjema.com/">Not Captcha</a></small>
+<!-- Оставьте ссылку - сделайте интернет чище! -->
+<!-- NotCaptcha FORM end -->
+
+<script type="text/javascript">
+  <!--
+  function refresh_security_image() {
+
+	var blank = new String("http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/blank.gif");
+	document.getElementById("imgonePict").src = blank;
+	document.getElementById("imgtwoPict").src = blank;
+	document.getElementById("imgthreePict").src = blank;
+	
+  	var new_url1 = new String("http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?i=1&r=1301848266");
+  	var new_url2 = new String("http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?i=2&r=1301848266");
+  	var new_url3 = new String("http://www.testingthefuture.net/wp-content/plugins/wp-notcaptcha/lib/notcaptcha.php?i=3&r=1301848266");
+
+	// we need a random new url so this refreshes
+	new_url1 = new_url1 + Math.floor(Math.random() * 1000);
+	new_url2 = new_url2 + Math.floor(Math.random() * 1000);
+	new_url3 = new_url3 + Math.floor(Math.random() * 1000);
+	
+	document.getElementById("imgonePict").src = new_url1;
+	document.getElementById("imgtwoPict").src = new_url2;
+	document.getElementById("imgthreePict").src = new_url3;
+  }
+  -->
+ </script>
+</div><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d9ce1d7e59" /></p>
+</form>
+
+</div>
+</div>
+<!-- end respond -->
+
+	
+	</div>
+	<!-- end content -->
+
+<div id="sidebar">
+	<ul>
+		<li id="search-3" class="widget widget_search"><h2 class="widgettitle">Search</h2><form method="get" id="searchform" action="http://www.testingthefuture.net/">
+<div><input type="text" value="" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="Search" />
+</div>
+</form>
+</li><li id="rss-2" class="widget widget_rss"><h2 class="widgettitle"><a class='rsswidget' href='http://feeds.feedburner.com/testingthefuture' title='Syndicate this content'><img style='border:0' width='14' height='14' src='http://www.testingthefuture.net/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://www.testingthefuture.net' title=''>Software testing and more</a></h2><ul><li><a class='rsswidget' href='http://feedproxy.google.com/~r/TestingTheFuture/~3/3N-EPqT6Wm0/' title='The first part of this story is published in this post. Read this blog to see how you can start generating ideas and if you want to know the two types of thinking. This blog describes the limitations if you choose the wrong mindset. Summary of part 1 is explained in the picture below. The [&hellip;]'>Innovations; It’s all about the right mindset (Part 2)</a></li></ul></li><li id="text-4" class="widget widget_text"><h2 class="widgettitle">Subscribe via Email</h2>			<div class="textwidget"><form style="border:1px solid #ccc;padding:3px;text-align:center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=TestingTheFuture', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="TestingTheFuture" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /></form></div>
+		</li><li id="history_manager-3" class="widget widget_history_manager"><h2 class="widgettitle"></h2>Click to unfold.
+<div class="history_manager"><div><h3 class="open">Recent Posts</h3><ul style="margin-top:0; margin-bottom:0;">	<li><a href='http://www.testingthefuture.net/2011/03/innovations-its-all-about-the-right-mindset-part-2/' title='Innovations; It’s all about the right mindset (Part 2)'>Innovations; It’s all about the right mindset (Part 2)</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/03/innovations-it%e2%80%99s-all-about-the-right-mindset-part-1/' title='Innovations; It’s all about the right mindset (Part 1)'>Innovations; It’s all about the right mindset (Part 1)</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/03/education-construction-with-it-experience/' title='Education Construction with IT experience'>Education Construction with IT experience</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/03/reliability-cloud-recovery-testing-of-the-cloud/' title='Reliability; Cloud recovery testing'>Reliability; Cloud recovery testing</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/03/the-product-risk-analysis-vs-the-cloud-risk-analysis/' title='The product risk analysis vs. the cloud risk analysis'>The product risk analysis vs. the cloud risk analysis</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/02/why-it%e2%80%99s-difficult-to-change-and-innovate/' title='Why it’s difficult to change and innovate'>Why it’s difficult to change and innovate</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/02/testing-cloud-applications-testing-business-technology/' title='Testing cloud applications; testing business technology'>Testing cloud applications; testing business technology</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/02/quality-of-the-cloud-infrastructure-using-%e2%80%98agile%e2%80%99/' title='Quality of the cloud infrastructure using ‘agile’'>Quality of the cloud infrastructure using ‘agile’</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/02/testing-with-the-cloud-engineering-world-2011/' title='Testing with the Cloud &#8211; Engineering World 2011'>Testing with the Cloud &#8211; Engineering World 2011</a></li>
+	<li><a href='http://www.testingthefuture.net/2011/01/testing-is-the-crumple-zone-and-bumper-of-projects/' title='Testing is the crumple zone and bumper of projects'>Testing is the crumple zone and bumper of projects</a></li>
+</ul></div>
+<div><h3 class="open">Categories</h3><ul style="margin-top:0; margin-bottom:0;">	<li class="cat-item cat-item-68"><a href="http://www.testingthefuture.net/category/ewaldroodenrijs/" title="View all posts filed under Ewald Roodenrijs">Ewald Roodenrijs</a> (75)
+</li>
+	<li class="cat-item cat-item-28"><a href="http://www.testingthefuture.net/category/structured-testing/" title="View all posts filed under structured testing">structured testing</a> (62)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.testingthefuture.net/category/innovation-in-testing/" title="View all posts filed under innovation in testing">innovation in testing</a> (57)
+</li>
+	<li class="cat-item cat-item-70"><a href="http://www.testingthefuture.net/category/andreas-prins/" title="View all posts filed under Andréas Prins">Andréas Prins</a> (55)
+</li>
+	<li class="cat-item cat-item-104"><a href="http://www.testingthefuture.net/category/clouds/" title="View all posts filed under Clouds">Clouds</a> (23)
+</li>
+	<li class="cat-item cat-item-35"><a href="http://www.testingthefuture.net/category/quality-assurance/" title="View all posts filed under QA">QA</a> (18)
+</li>
+	<li class="cat-item cat-item-53"><a href="http://www.testingthefuture.net/category/security-testing/" title="View all posts filed under security testing">security testing</a> (16)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.testingthefuture.net/category/new-media/" title="View all posts filed under new media">new media</a> (13)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.testingthefuture.net/category/crowdtesting/" title="View all posts filed under crowdtesting">crowdtesting</a> (11)
+</li>
+	<li class="cat-item cat-item-24"><a href="http://www.testingthefuture.net/category/augmented-reality/" title="View all posts filed under Augmented Reality">Augmented Reality</a> (8)
+</li>
+</ul></div>
+</div></li><li id="twitter-466815272" class="widget widget_twitter"><div><h2 class="widgettitle"><a class='twitterwidget' href='http://twitter.com/ewaldroodenrijs' title='Twitter: ewaldroodenrijs'>Tweets by Ewald</a></h2><ul>				<li>
+					<span class="entry-content">I'm at Delfland, Schiedam http://4sq.com/hPPWNx</span>
+					<span class="entry-meta">
+						<span class="time-meta">
+							<a href="http://twitter.com/ewaldroodenrijs/statuses/5.44658853893E+16">
+								about 7 hours ago							</a>
+						</span>
+						<span class="from-meta">
+							from <a href="http://foursquare.com" rel="nofollow">foursquare</a>						</span>
+						
+					</span>
+				</li>
+				<li>
+					<span class="entry-content">Congratulations to <a href="http://twitter.com/Corinnedenijs" class="twitter-user">@Corinnedenijs</a>, the champion goal tender</span>
+					<span class="entry-meta">
+						<span class="time-meta">
+							<a href="http://twitter.com/ewaldroodenrijs/statuses/5.42537261097E+16">
+								about 21 hours ago							</a>
+						</span>
+						<span class="from-meta">
+							from <a href="http://www.tweetdeck.com" rel="nofollow">TweetDeck</a>						</span>
+						
+					</span>
+				</li>
+</ul></div></li><li id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div class="tagcloud"><a href='http://www.testingthefuture.net/tag/accepting/' class='tag-link-77' title='4 topics' style='font-size: 11.756097561pt;'>accepting</a>
+<a href='http://www.testingthefuture.net/tag/agile/' class='tag-link-85' title='2 topics' style='font-size: 8pt;'>agile</a>
+<a href='http://www.testingthefuture.net/tag/attitude-of-testing/' class='tag-link-107' title='2 topics' style='font-size: 8pt;'>attitude of testing</a>
+<a href='http://www.testingthefuture.net/tag/augmented-reality/' class='tag-link-24' title='8 topics' style='font-size: 16.0243902439pt;'>Augmented Reality</a>
+<a href='http://www.testingthefuture.net/tag/augmented-testing/' class='tag-link-82' title='2 topics' style='font-size: 8pt;'>Augmented Testing</a>
+<a href='http://www.testingthefuture.net/tag/certification/' class='tag-link-43' title='2 topics' style='font-size: 8pt;'>Certification</a>
+<a href='http://www.testingthefuture.net/tag/checking/' class='tag-link-80' title='5 topics' style='font-size: 13.1219512195pt;'>checking</a>
+<a href='http://www.testingthefuture.net/tag/cloud-testing/' class='tag-link-16' title='10 topics' style='font-size: 17.5609756098pt;'>cloud testing</a>
+<a href='http://www.testingthefuture.net/tag/communication/' class='tag-link-100' title='2 topics' style='font-size: 8pt;'>communication</a>
+<a href='http://www.testingthefuture.net/tag/conference/' class='tag-link-75' title='4 topics' style='font-size: 11.756097561pt;'>conference</a>
+<a href='http://www.testingthefuture.net/tag/creativity/' class='tag-link-65' title='3 topics' style='font-size: 10.0487804878pt;'>creativity</a>
+<a href='http://www.testingthefuture.net/tag/crowdtesting/' class='tag-link-5' title='10 topics' style='font-size: 17.5609756098pt;'>crowdtesting</a>
+<a href='http://www.testingthefuture.net/tag/development-testing/' class='tag-link-72' title='2 topics' style='font-size: 8pt;'>development testing</a>
+<a href='http://www.testingthefuture.net/tag/ehr/' class='tag-link-115' title='2 topics' style='font-size: 8pt;'>EHR</a>
+<a href='http://www.testingthefuture.net/tag/end-to-end-testing/' class='tag-link-30' title='2 topics' style='font-size: 8pt;'>end-to-end testing</a>
+<a href='http://www.testingthefuture.net/tag/epd/' class='tag-link-114' title='3 topics' style='font-size: 10.0487804878pt;'>EPD</a>
+<a href='http://www.testingthefuture.net/tag/evaluation/' class='tag-link-34' title='12 topics' style='font-size: 18.756097561pt;'>evaluation</a>
+<a href='http://www.testingthefuture.net/tag/exploring/' class='tag-link-78' title='3 topics' style='font-size: 10.0487804878pt;'>exploring</a>
+<a href='http://www.testingthefuture.net/tag/infrastructure/' class='tag-link-103' title='7 topics' style='font-size: 15.1707317073pt;'>infrastructure</a>
+<a href='http://www.testingthefuture.net/tag/innovation-in-testing/' class='tag-link-3' title='6 topics' style='font-size: 14.3170731707pt;'>innovation in testing</a>
+<a href='http://www.testingthefuture.net/tag/innovation-killer/' class='tag-link-131' title='2 topics' style='font-size: 8pt;'>innovation killer</a>
+<a href='http://www.testingthefuture.net/tag/lean/' class='tag-link-89' title='2 topics' style='font-size: 8pt;'>lean</a>
+<a href='http://www.testingthefuture.net/tag/mastertestplan/' class='tag-link-87' title='3 topics' style='font-size: 10.0487804878pt;'>mastertestplan</a>
+<a href='http://www.testingthefuture.net/tag/model-based-testing/' class='tag-link-19' title='7 topics' style='font-size: 15.1707317073pt;'>model-based testing</a>
+<a href='http://www.testingthefuture.net/tag/new-media/' class='tag-link-4' title='2 topics' style='font-size: 8pt;'>new media</a>
+<a href='http://www.testingthefuture.net/tag/performance/' class='tag-link-62' title='4 topics' style='font-size: 11.756097561pt;'>performance</a>
+<a href='http://www.testingthefuture.net/tag/presentation/' class='tag-link-57' title='7 topics' style='font-size: 15.1707317073pt;'>presentation</a>
+<a href='http://www.testingthefuture.net/tag/product-risk-analysis/' class='tag-link-88' title='2 topics' style='font-size: 8pt;'>product risk analysis</a>
+<a href='http://www.testingthefuture.net/tag/quality-assurance/' class='tag-link-35' title='3 topics' style='font-size: 10.0487804878pt;'>QA</a>
+<a href='http://www.testingthefuture.net/tag/quality-gates/' class='tag-link-26' title='2 topics' style='font-size: 8pt;'>Quality gates</a>
+<a href='http://www.testingthefuture.net/tag/security/' class='tag-link-64' title='5 topics' style='font-size: 13.1219512195pt;'>security</a>
+<a href='http://www.testingthefuture.net/tag/security-testing/' class='tag-link-53' title='2 topics' style='font-size: 8pt;'>security testing</a>
+<a href='http://www.testingthefuture.net/tag/serious-games/' class='tag-link-13' title='2 topics' style='font-size: 8pt;'>serious games</a>
+<a href='http://www.testingthefuture.net/tag/software-testing/' class='tag-link-31' title='3 topics' style='font-size: 10.0487804878pt;'>software testing</a>
+<a href='http://www.testingthefuture.net/tag/staas/' class='tag-link-14' title='2 topics' style='font-size: 8pt;'>STaaS</a>
+<a href='http://www.testingthefuture.net/tag/structured-testing/' class='tag-link-28' title='19 topics' style='font-size: 22pt;'>structured testing</a>
+<a href='http://www.testingthefuture.net/tag/tagging/' class='tag-link-90' title='2 topics' style='font-size: 8pt;'>tagging</a>
+<a href='http://www.testingthefuture.net/tag/test-clouds/' class='tag-link-29' title='16 topics' style='font-size: 20.8048780488pt;'>test clouds</a>
+<a href='http://www.testingthefuture.net/tag/test-data/' class='tag-link-112' title='3 topics' style='font-size: 10.0487804878pt;'>test data</a>
+<a href='http://www.testingthefuture.net/tag/test-design-technique/' class='tag-link-37' title='6 topics' style='font-size: 14.3170731707pt;'>test design technique</a>
+<a href='http://www.testingthefuture.net/tag/test-management/' class='tag-link-10' title='7 topics' style='font-size: 15.1707317073pt;'>test management</a>
+<a href='http://www.testingthefuture.net/tag/test-strategy/' class='tag-link-33' title='4 topics' style='font-size: 11.756097561pt;'>test strategy</a>
+<a href='http://www.testingthefuture.net/tag/usability/' class='tag-link-51' title='3 topics' style='font-size: 10.0487804878pt;'>usability</a>
+<a href='http://www.testingthefuture.net/tag/w-model/' class='tag-link-60' title='2 topics' style='font-size: 8pt;'>w-model</a>
+<a href='http://www.testingthefuture.net/tag/website-optimizing/' class='tag-link-50' title='2 topics' style='font-size: 8pt;'>website optimizing</a></div>
+</li><li id="text-3" class="widget widget_text"><h2 class="widgettitle">Disclaimer</h2>			<div class="textwidget">The opinions expressed on this blog are our own personal opinions and do not represent our employer's view in any way.</div>
+		</li>	</ul>
+</div>
+<!-- end sidebar -->
+<div style="clear: both; height: 20px;">&nbsp;</div>
+</div></div>
+<!-- end page -->
+
+<!-- If you'd like to support WordPress, having the "powered by" link somewhere -->
+<!-- on your blog is the best way, it's our only promotion or advertising.      -->
+<div id="footer">
+	<div class="wrap">
+		<p id="legal">
+			<a href="http://www.testingthefuture.net/feed/">Entries (RSS)</a> | <a href="http://www.testingthefuture.net/comments/feed/">Comments (RSS)</a></p>
+	</div>
+</div>
+<script src="http://www.testingthefuture.net/wp-content/plugins/tweetmeme/button.js" type="text/javascript"></script></body>
+</html>

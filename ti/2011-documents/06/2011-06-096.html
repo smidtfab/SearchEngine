@@ -1,0 +1,1084 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Sri Lanka News Web Provide you Sri Lanka News 24H, Sri Lanka News Forum, Sri Lanka News Blog, Sri Lanka News Photos, Sri Lanka News Videos">
+<meta name="keywords" content="Sri Lanka News Web, , Sri Lanka News, News Web, Lanka News, Sri Lanka News Web, Colombo News, Sri Lanka News Blog, lanka news, news">
+<meta name="revisit-after" content="2 days">
+<title>Crowd_sourcing - by SriLankaNewsWeb.com</title>
+<link rel="stylesheet" type="text/css" href="http://www.SriLankaNewsWeb.com/template/bluegloss/style.css">
+<style>
+<!--
+.stitle      { font-family: Arial; font-size: 7pt; color: #808080 }
+.context     { font-family: Verdana; font-size: 7pt; color: #990000}
+.contexttext { font-family: Verdana; font-size: 7pt; color: #990000; border: 1px solid #990000}
+-->
+</style>
+<script Language="JavaScript">
+var confirmMsg  = 'Do you really want to ';
+var LodingImage = '<img border="0" src="http://www.SriLankaNewsWeb.com/template/loading.gif" width="10" height="10">';
+////////////////////////////////////////////////////////////////////////////////
+function AjaxFriendlyx(text){
+   text = text.replace("&","<and>");
+   text = text.replace("\n","  <br>");
+   return text;
+}
+////////////////////////////////////////////////////////////////////////////////
+function PhotoBrowser(){
+	   if (window.XMLHttpRequest) {
+	       http_request = new XMLHttpRequest();
+	   } else if (window.ActiveXObject) {
+	       http_request = new ActiveXObject("Microsoft.XMLHTTP");
+	   }
+	   document.getElementById('photobrowsertext').innerHTML = '<span class="adminlink1">'+LodingImage+'</span>';
+ 	   var url = 'ajax.php?PhotoBrowser=Yes';
+	   http_request.onreadystatechange = PhotoBrowserSub;
+	   http_request.open('POST', url, true);
+	   http_request.send(null);
+}
+function PhotoBrowserSub() {
+   if (http_request.readyState == 4) {
+		var response = http_request.responseText;
+	   document.getElementById('photobrowsertext').innerHTML = response;
+   }
+}
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="http://www.SriLankaNewsWeb.com/template/animate.js">
+</script>
+</head>
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" language="Javascript1.2">
+<table border="0" width="1000" id="table1" cellpadding="0" style="border-collapse: collapse" align="center">
+	<tr>
+		<td background="template/bluegloss/top_bar.jpg" height="65">
+		<table border="0" width="100%" id="table15" cellpadding="4" style="border-collapse: collapse">
+			<tr>
+				<td align="left" style="font-family: Verdana; font-size: 12pt; color: #FFFFFF">
+				<table border="0" id="table43" cellpadding="0" style="border-collapse: collapse">
+					<tr>
+						<td>
+						<img border="0" src="template/logo.png" align="center"></td>
+						<td class="mainmenu"><span class="Product">Sri Lanka News Web</span></td>
+					</tr>
+				</table>
+				</td>
+				<td align="right" valign="bottom">
+<div align="right">
+	<table border="0" cellpadding="4" style="border-collapse: collapse">
+		<tr>
+			<form action="http://search.conduit.com/Results.aspx" method="get">
+			<td align="right">
+			    <input type="text" name="q" size="40" / value="">
+			    <input type="hidden" name="hl" value="en">
+			    <input type="hidden" name="selfSearch" value="1">
+			    <input type="hidden" name="octid" value="CT405924">
+			    <input type="hidden" name="SearchSourceOrigin" value="1">
+			    <input type="hidden" name="ctid" value="CT405924">
+			    <input type="hidden" name="SelfSearch" value="1">
+			</td>
+			<td align="left">
+				<input type="submit" name="sa" value="Search" />
+			</td>
+			</form>
+		</tr>
+	</table>
+</div>				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table><table border="0" width="1000" id="table2" cellpadding="0" style="border-collapse: collapse" align="center" background="template/bluegloss/top_black_bar.jpg">
+		<tr>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="index.htm">Home</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="photos.htm">News Photos</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="videos.htm">News Videos</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="10">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="100" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="cartoon.htm">News Cartoons</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="forum.htm">News Forum</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="10">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="100" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="blog.htm">News Blog</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="10">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="100" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="sri-lanka-people.htm">SL People</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="sri-lanka-food-recipes.htm">Food Recipes</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="120">
+<a href="changecolor.php?changetemplate=default"><img border="0" src="template/default.jpg" width="19" height="14" alt="Default Template"></a><a href="changecolor.php?changetemplate=green"><img border="0" src="template/green.jpg" width="19" height="14" alt="Green Template"></a><a href="changecolor.php?changetemplate=blue"><img border="0" src="template/blue.jpg" width="19" height="14" alt="Blue Template"></a><a href="changecolor.php?changetemplate=red"><img border="0" src="template/red.jpg" width="19" height="14" alt="Red Template"></a><a href="changecolor.php?changetemplate=gold"><img border="0" src="template/gold.jpg" width="19" height="14" alt="Gold Template"></a><a href="changecolor.php?changetemplate=bluegloss"><img border="0" src="template/bluegloss.jpg" width="19" height="14" alt="Blue Gloss Template"></a>
+			</td>
+		</tr>
+</table><TABLE BORDER="0" WIDTH="1000" ID="TABLE3" CELLPADDING="0" STYLE="BORDER-COLLAPSE: COLLAPSE" align="center">
+	<TR>
+		<TD STYLE="background-image: url('template/bluegloss/top_blue.jpg'); BACKGROUND-REPEAT: REPEAT-X" WIDTH="220" ALIGN="LEFT" VALIGN="TOP" ID="LEFT_NAV">
+<p align="center"><a href="http://www.aboutmaldivesresorts.com/" alt="About Maldives Resorts"><img border="0" src="http://www.aboutmaldivesresorts.com/images/banners/001.jpg" width="300" height="250" alt="About Maldives Resorts"></a></p>
+	<table border="0" width="100%" id="table34" cellpadding="4" style="border-collapse: collapse">
+		<form method="POST" action="do_login.php" name="MembersLogin">
+		<tr>
+			<td class="topic_title">Members Login</td>
+		</tr>
+		<tr>
+			<td>
+			<table border="0" width="100%" id="table51" cellpadding="4" style="border-collapse: collapse">
+								<tr>
+					<td>User ID</td>
+					<td><input type="text" name="uname" size="20" class="inputtext"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="upassword" size="10" class="inputtext"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><input type="submit" value="Login" name="Login" class="subbutton">&nbsp;&nbsp;<a class="adminlink2" href="pages.php?page=blocks-register.php&title=Member Registration">Register</a></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><small><a href="pages.php?page=blocks-ForgotPassword.php&title=Forgot%20Password">Forgot password?</a></small></td>
+				</tr>
+			</table>
+			<input type="hidden" name="returnurl" value="http://www.SriLankaNewsWeb.com/wiki.php<safras.q>title<safras.e>Crowd_sourcing">
+			</td>
+		</tr>
+		</form>
+	</table>
+<hr noshade color="#0A3A7B" size="1">
+<table border="0" width="100%" id="table22" cellpadding="4" style="border-collapse: collapse">
+				<tr>
+					<td class="topic_title">Sri Lanka News Categories</td>
+				</tr>
+				<tr>
+					<td>
+					<table border="0" width="100%" id="table23" cellpadding="0" style="border-collapse: collapse">
+			<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P18" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-18-AccidentsandIncidents.htm">Accidents and Incidents</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P2" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-2-ArtandSociety.htm">Art and Society</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P3" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-3-BusinessandFinance.htm">Business and Finance</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P19" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-19-EducationandEmployment.htm">Education and Employment</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P14" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-14-EnvironmentandDevelopment.htm">Environment and Development</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P16" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-16-HelpandAid.htm">Help and Aid</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P17" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-17-ScienceandTechnology.htm">Science and Technology</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P4" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-4-SecurityandPolitics.htm">Security and Politics</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P6" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-6-ShareMarketandExchangeRates.htm">Share Market and Exchange Rates</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P1" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-1-SportsandEntertainment.htm">Sports and Entertainment</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P5" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-5-TourismandForeignAffairs.htm">Tourism and  Foreign Affairs</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P9" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-9-WomenandHealth.htm">Women and Health</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P20" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-20-Information.htm">Information</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P10" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-10-FoodRecipes.htm">Food Recipes</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P7" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-7-LoveandRelationship.htm">Love and Relationship</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P21" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-21-WebandIT.htm">Web and IT</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P13" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-13-AJAXExamplesandTutorials.htm">AJAX Examples and Tutorials</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P12" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-12-JavaScriptsExamplesandTutorials.htm">Java Scripts Examples and Tutorials</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P11" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-11-PHPScriptsExamplesandTutorials.htm">PHP Scripts Examples and Tutorials</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P22" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-22-TamilMovieNews.htm">Tamil Movie News</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P23" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-23-BollywoodCinemaNews.htm">Bollywood Cinema News</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P24" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-24-Maldives.htm">Maldives</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+							</table>
+					</td>
+				</tr>
+			</table><hr noshade color="#0A3A7B" size="1">
+<div align="center">
+		<table border="0" width="100%" id="table144" cellpadding="0" style="border-collapse: collapse">
+			<tr>
+				<td align="left" class="partnerslinks" valign="top">
+				<fieldset style="padding: 2">
+				<legend align="center"><b>
+				<font face="Verdana" size="1" color="#FF0000">Important Links</font></b></legend>
+				<table border="0" width="100%" id="table145" style="border-collapse: collapse" cellpadding="4">
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<b>
+						<font color="#006699">
+						<a href="http://www.indiatubevideos.com/">
+						<font color="#FF0000">India Tube Videos</font></a></font></b></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.property-lanka.com/">
+						<font color="#006699">Property Sri Lanka</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.bollywoodcinemaonline.com">
+						<font color="#006699">Bollywood Cinema Online</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						</span></font><a href="http://www.newbalihotels.com/">
+						<font face="Verdana" size="1" color="#006699">Bali Hotels</font></a></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> <a href="http://www.youtubesrilanka.com/"><b>
+						<font color="#CC0000">Y</font></b><font color="#CC0000">ou<b>T</b>ube
+						</font><span style="color: #006699"><b>S</b>ri <b>L</b>anka</span></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.mauritiusholidayresorts.com/">
+						<span style="color: #0066FF">Mauritius Hotels &amp; Resorts</span></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.universalluxuryresorts.com/">
+						<font color="#006699">Universal Luxury Resorts</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						</font><a href="http://www.maldivesholidayresorts.net/">
+						<font face="Verdana" size="1" color="#0066FF">Maldives 
+						Resorts</font></a></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.srilankapicturegallery.com/">
+						Sri Lanka Picture Gallery</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.123makinglove.com">
+						How to Make Love</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="https://www.securepaynet.net/gdshop/rhp/default.asp?prog_id=eInterNext&ci=1767&isc=gppgrs01">
+						Domain Names for $6.99</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.SriLankaWebHosting.Com" style="color: #006699">
+						Sri Lanka <b>Web
+						Hosting</b> Company</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.SriLankanMap.Com" style="color: #006699">
+						Sri Lanka Map</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699; " href="http://www.srilankatoolbar.net">Sri Lanka Toolbar</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.SriLankaBlogSpot.com/">
+						Sri Lanka Blog Directory</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b>
+						<a href="http://www.srilankadot.com/" style="color: #006699">Sri Lanka Dot .Com</a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.SriLankaFriends.Net" style="color: #006699">
+						Sri Lanka Friends</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.srilankanewsweb.com/">
+						<b><font color="#FF0000">Sri Lanka News</font></b> Web</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://bannerexchange.pissu.com">Banner
+						Exchange</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.FunLK.Com">
+						<span style="color: #006699">Fun &amp; Joke</span></a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.mulpituwa.com/top100sites/">
+						Top 100 Sri Lankan Sites</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						</font><a href="http://www.mulpituwa.com">
+						<font face="Verdana" size="1" color="#006699">Sri Lanka 
+						News</font></a></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<p>
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<b>
+						<a style="color: #CC0000" href="http://www.tubevideosonline.com/">
+						Tube Videos
+						Online</a></b></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<p>
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b>
+						<a style="color: #006699" href="http://www.celebritywallpapersonline.com">
+						Celebrity Wallpapers Online</a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #CC0000; font-weight:700" href="http://www.a2zpicturegallery.com/">a2z Picture Gallery</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<p>
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.TamilMovies.Net">Tamil Movies Network</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://php-javascript-ajax.blogspot.com/">
+						PHP JavaScript AJAX</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://theseoarticles.blogspot.com/">
+						Search Engine Optimization</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> <a href="http://www.toplink-exchange.com/">
+						<font color="#000080">Top 
+						Link Exchange</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.webmasterscity.net">
+						Web Masters City</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://artofmakinglove.blogspot.com/">
+						Art of Making Love</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.lwv-tours.com" style="color: #006699">
+						Lanka Wonder
+						Vacations</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006600" href="http://www.SriLankaHolidayHotels.Com" title="Sri Lanka Hotels">Sri Lanka Hotels</a></font></td>
+					</tr>
+					</table>
+				</fieldset></td>
+			</tr>
+
+			<tr>
+				<td align="left" class="partnerslinks" valign="top">
+				&nbsp;</td>
+			</tr>
+			</table></div>
+
+	<fieldset style="border:1px solid #C0C0C0; padding:2px; font-family:Verdana; font-size:8pt; color:#666666">
+	<legend align="left">Mycities Network</legend>
+	<table border="0" width="100%" id="table146" style="border-collapse: collapse" cellpadding="4">
+		<tr>
+			<td align="left">
+			<a href="http://www.newbalihotels.com/" title="Bali Hotels"><img src="http://www.123makinglove.com/Banner/bali200x260.jpg" border=0></a>
+			</td>
+		</tr>
+		</table>
+	</fieldset>		</TD>
+		<TD STYLE="background-image: url('template/bluegloss/top_blue.jpg'); BACKGROUND-REPEAT: REPEAT-X" WIDTH="10" ALIGN="LEFT" VALIGN="TOP"></TD>
+		<TD STYLE="background-image: url('template/bluegloss/top_blue.jpg'); BACKGROUND-REPEAT: REPEAT-X" WIDTH="770" ALIGN="LEFT" VALIGN="TOP" ID="CENTER_NAV">
+<br><br>
+<div align="center">
+	<table border="0" width="100%" cellpadding="4" style="border-collapse: collapse">
+	<tr>
+		<td align="left" valign="top" class="topic_title" colspan="2">Crowd sourcing</td>
+	</tr>
+		<tr>
+			<td align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-7752404582611133";
+/* SriLankaNewsWeb300x250, created 3/16/09 */
+google_ad_slot = "9851526927";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+			<td align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-7752404582611133";
+/* SriLankaNewsWeb300x250, created 3/16/09 */
+google_ad_slot = "9851526927";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+		</tr>
+	</table>
+</div>
+<style>
+<!--
+img           { border-style : solid; border-width: 0 }
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" media="print" href="http://en.wikipedia.org/wiki/skins-1.5/common/commonPrint.css?52" />
+<link rel="stylesheet" type="text/css" media="handheld" href="http://en.wikipedia.org/wiki/skins-1.5/monobook/handheld.css?52" />
+<style TYPE="text/css">
+<!--
+td           { font-family: Verdana; font-size: 8pt }
+img{border: 0 none;}
+-->
+</style>
+<table border="0" width="100%" id="table1" cellpadding="4" style="border-collapse: collapse">
+	<tr>
+		<td align="left" valign="top" class="topic_title">Crowd sourcing</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">
+<p align="justify">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Crowdsourcing - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.17wmf1" />
+<link rel="canonical" href="wiki-Crowdsourcing" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit" />
+<link rel="edit" title="Edit this page" target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" target="_blank" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
+<script src="/w/extensions/OggHandler/OggPlayer.js?12" type="text/javascript"></script><script type="text/javascript">
+wgOggPlayer.msg = {"ogg-play": "Play", "ogg-pause": "Pause", "ogg-stop": "Stop", "ogg-no-player": "Sorry, your system does not appear to have any supported player software.\nPlease \x3ca href=\"http://www.mediawiki.org/wiki/Extension:OggHandler/Client_download\"\x3edownload a player\x3c/a\x3e.", "ogg-player-videoElement": "Native browser support", "ogg-player-oggPlugin": "Browser plugin", "ogg-player-cortado": "Cortado (Java)", "ogg-player-vlc-mozilla": "VLC", "ogg-player-vlc-activex": "VLC (ActiveX)", "ogg-player-quicktime-mozilla": "QuickTime", "ogg-player-quicktime-activex": "QuickTime (ActiveX)", "ogg-player-totem": "Totem", "ogg-player-kaffeine": "Kaffeine", "ogg-player-kmplayer": "KMPlayer", "ogg-player-mplayerplug-in": "mplayerplug-in", "ogg-player-thumbnail": "Still image only", "ogg-player-selected": "(selected)", "ogg-use-player": "Use player:", "ogg-more": "More…", "ogg-download": "Download file", "ogg-desc-link": "About this file", "ogg-dismiss": "Close", "ogg-player-soundthumb": "No player", "ogg-no-xiphqt": "You do not appear to have the XiphQT component for QuickTime.\nQuickTime cannot play Ogg files without this component.\nPlease \x3ca href=\"http://www.mediawiki.org/wiki/Extension:OggHandler/Client_download\"\x3edownload XiphQT\x3c/a\x3e or choose another player."};
+wgOggPlayer.cortadoUrl = "http://upload.wikimedia.org/jars/cortado.jar";
+wgOggPlayer.extPathUrl = "/w/extensions/OggHandler";
+</script><style type="text/css" media="all">
+.ogg-player-options {
+	border: solid 1px #ccc;
+	padding: 2pt;
+	text-align: left;
+	font-size: 10pt;
+}
+
+.center .ogg-player-options ul {
+	margin: 0.3em 0px 0px 1.5em;
+}
+</style><script type="text/javascript">wgNamespaceNumber=0;wgAction="view";wgPageName="Crowdsourcing";wgMainPageTitle="Main Page";wgWikimediaMobileUrl="http:\/\/en.m.wikipedia.org\/wiki";</script><script src="http://bits.wikimedia.org/w/extensions-1.17/WikimediaMobile/MobileRedirect.js?8.2" type="text/javascript"></script><!--[if lt IE 7]><style type="text/css">body{behavior:url("http://en.wikipedia.org/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Crowdsourcing skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --><script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Crowdsourcing</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub">  (Redirected from <a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowd_sourcing&amp;redirect=no" title="Crowd sourcing">Crowd sourcing</a>)</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="thumb tright">
+<div class="thumbinner" style="width:302px;">
+<div id="ogg_player_1">
+<div><a href="wiki-File:Editing_Hoxne_Hoard_at_the_British_Museum.ogv" class="image" title="Editing Hoxne Hoard at the British Museum.ogv"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Editing_Hoxne_Hoard_at_the_British_Museum.ogv/mid-Editing_Hoxne_Hoard_at_the_British_Museum.ogv.jpg" width="300" height="225" alt="Editing Hoxne Hoard at the British Museum.ogv" /></a></div>
+<div><button onclick="if (typeof(wgOggPlayer)&#160;!= 'undefined') wgOggPlayer.init(false, {&quot;id&quot;: &quot;ogg_player_1&quot;, &quot;videoUrl&quot;: &quot;http://upload.wikimedia.org/wikipedia/commons/2/27/Editing_Hoxne_Hoard_at_the_British_Museum.ogv&quot;, &quot;width&quot;: 300, &quot;height&quot;: 225, &quot;length&quot;: &quot;71&quot;, &quot;linkUrl&quot;: &quot;/wiki/File:Editing_Hoxne_Hoard_at_the_British_Museum.ogv&quot;, &quot;isVideo&quot;: true});" style="width: 300px; text-align: center" title="Play video"><img src="/w/extensions/OggHandler/play.png" width="22" height="22" alt="Play video" /></button></div>
+</div>
+<div class="thumbcaption">
+<div class="magnify"><a href="wiki-File:Editing_Hoxne_Hoard_at_the_British_Museum.ogv" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/skins-1.17/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Wikipedians and <a href="wiki-British_Museum">British Museum</a> curators collaboration on the article <a href="wiki-Hoxne_Hoard">Hoxne Hoard</a> in June 2010.</div>
+</div>
+</div>
+<p><b>Crowdsourcing</b> is the act of outsourcing tasks, traditionally performed by an employee or <a href="wiki-Independent_contractor" title="Independent contractor">contractor</a>, to an undefined, large group of people or community (a "crowd"), through an open call.</p>
+<p>Jeff Howe, one of first authors to employ the term, established that the concept of crowdsourcing depends essentially on the fact that because it is an open call to an undefined group of people, it gathers those who are most fit to perform tasks, solve complex problems and contribute with the most relevant and fresh ideas.</p>
+<p>For example, the public may be invited to develop a new technology, carry out a design task (also known as <b>community-based design</b><sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span></span>1<span></span></a></sup> and <a href="wiki-Distributed_participatory_design" class="mw-redirect" title="Distributed participatory design">distributed participatory design</a>), refine or carry out the steps of an algorithm (see <a href="wiki-Human-based_computation">human-based computation</a>), or help capture, systematize or analyze large amounts of data (see also <a href="wiki-Citizen_science">citizen science</a>).</p>
+<p>The term has become popular with businesses, authors, and journalists as shorthand for the trend of leveraging the mass collaboration enabled by <a href="wiki-Web_2.0">Web 2.0</a> technologies to achieve business goals. However, both the term and its underlying business models have attracted controversy and criticisms.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Web-based_crowdsourcing"><span class="tocnumber">2.1</span> <span class="toctext">Web-based crowdsourcing</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Collaboratition"><span class="tocnumber">2.2</span> <span class="toctext">Collaboratition</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Early_examples"><span class="tocnumber">3</span> <span class="toctext">Early examples</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Recent_examples"><span class="tocnumber">4</span> <span class="toctext">Recent examples</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Appeal"><span class="tocnumber">5</span> <span class="toctext">Appeal</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Controversy"><span class="tocnumber">6</span> <span class="toctext">Controversy</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Brand_marketing"><span class="tocnumber">7</span> <span class="toctext">Brand marketing</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Historical_examples"><span class="tocnumber">8</span> <span class="toctext">Historical examples</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#See_also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Notes"><span class="tocnumber">10</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#External_links"><span class="tocnumber">12</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=1" title="Edit section: History"></a></span> <span class="mw-headline" id="History">History</span></h2>
+<p>The term "crowdsourcing" is a <a href="wiki-Portmanteau">portmanteau</a> of "<a href="wiki-Crowd">crowd</a>" and "<a href="wiki-Outsourcing">outsourcing</a>," first coined by Jeff Howe in a June 2006 <i><a href="wiki-Wired_(magazine)" title="Wired (magazine)">Wired</a></i> magazine article "The Rise of Crowdsourcing".<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span></span>2<span></span></a></sup><sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span></span>3<span></span></a></sup> Howe explains that because technological advances have allowed for cheap consumer electronics, the gap between professionals and amateurs has been diminished. Companies are then able to take advantage of the talent of the public, and Howe states that "It’s not outsourcing; it’s crowdsourcing." A less commercial approach was introduced by Henk van Ess in September 2010: “Crowdsourcing is channelling the experts' desire to solve a problem and then freely sharing the answer with everyone”.</p>
+<p>Projects which make use of <a href="wiki-Group_intelligence">group intelligence</a>, such as the <a target="_blank" href="http://en.wikipedia.org/w/index.php?title=LazyWeb&amp;action=edit&amp;redlink=1" class="new" title="LazyWeb (page does not exist)">LazyWeb</a> or <a href="wiki-Luis_von_Ahn">Luis von Ahn</a>'s <a href="wiki-ESP_Game" class="mw-redirect" title="ESP Game">ESP Game</a>, predate that word coinage by several years. Recently, the <a href="wiki-Internet">Internet</a> has been used to publicize and manage crowdsourcing projects.</p>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=2" title="Edit section: Overview"></a></span> <span class="mw-headline" id="Overview">Overview</span></h2>
+<p>Crowdsourcing is a distributed problem-solving and production model. In the classic use of the term, problems are broadcast to an unknown group of solvers in the form of an open call for solutions. Users—also known as the crowd—typically form into online communities, and the crowd submits solutions. The crowd also sorts through the solutions, finding the best ones. These best solutions are then owned by the entity that broadcast the problem in the first place—the crowdsourcer—and the winning individuals in the crowd are sometimes rewarded. In some cases, this labor is well compensated, either monetarily, with prizes, or with recognition. In other cases, the only rewards may be <a href="wiki-Kudos">kudos</a> or intellectual satisfaction. Crowdsourcing may produce solutions from <a href="wiki-Amateurs" class="mw-redirect" title="Amateurs">amateurs</a> or <a href="wiki-Volunteer" title="Volunteer" class="mw-redirect">volunteers</a> working in their spare time, or from experts or small businesses which were unknown to the initiating organization.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span></span>4<span></span></a></sup> Jeff Howe has differentiated four types of crowdsourcing strategies:</p>
+<ul>
+<li><a href="wiki-Crowdfunding" class="mw-redirect" title="Crowdfunding">Crowdfunding</a></li>
+<li>Crowdcreation</li>
+<li><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdvoting&amp;action=edit&amp;redlink=1" class="new" title="Crowdvoting (page does not exist)">Crowdvoting</a></li>
+<li><a href="wiki-Crowd_wisdom" class="mw-redirect" title="Crowd wisdom">Crowd wisdom</a></li>
+</ul>
+<p>The use of the term has spread to include models where discrete work is distributed to individuals within the crowd. Companies such as <a href="wiki-CloudCrowd">CloudCrowd</a> and <a href="wiki-CrowdFlower">CrowdFlower</a> do not use classic crowdSourcing because the crowd does not all participate together, or collectively sort through solutions.</p>
+<p>Perceived benefits of crowdsourcing include the following:</p>
+<ul>
+<li>Problems can be explored at comparatively little cost, and often very quickly.</li>
+<li>Payment is by results or even omitted (See <a href="http://de.wikipedia.org/wiki/Crowdsourcing" class="extiw" title="de:Crowdsourcing">this page on the German Wikipedia</a>).</li>
+<li>The organization can tap a wider range of talent than might be present in its own organization.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span></span>5<span></span></a></sup></li>
+<li>By listening to the crowd, organizations gain first-hand insight on their customers' desires.</li>
+<li>The community may feel a brand-building kinship with the crowdsourcing organization, which is the result of an earned sense of ownership through contribution and collaboration.</li>
+</ul>
+<p>In his article, <a href="http://www.exinfm.com/board/crowdsourcing.htm" class="external text" rel="nofollow">"Power of Crowdsourcing"</a>, Matt H. Evans contends that "Crowdsourcing taps into the global world of ideas, helping companies work through a rapid design process." This is usually available at relatively no cost, as people are always willing to share their ideas on a global scale.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span></span>6<span></span></a></sup></p>
+<p>Crowdsourcing has come in for some criticism for a number of reasons, such as it doesn't always produce quality results, and it is being used to source cheap - or even free - labour. When <a href="wiki-Facebook">Facebook</a> began its localization program in 2008, it encountered both these criticisms.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span></span>7<span></span></a></sup></p>
+<p>For this reason, crowdsourcing is becoming increasingly used as part of a broader Creative Services Exchange model, where the 'crowd' is vetted in advance and professional agency 'brokers' facilitate the trading of creative briefs between companies and the 'crowd'.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span></span>8<span></span></a></sup></p>
+<p>The difference between crowdsourcing and ordinary outsourcing is that a task or problem is outsourced to an undefined public rather than a specific other body. The difference between crowdsourcing and <a href="wiki-Open_source">open source</a> is that open source production is a cooperative activity initiated and voluntarily undertaken by members of the public. In crowdsourcing the activity is initiated by a client and the work may be undertaken on an individual, as well as a group, basis.<sup id="cite_ref-Daren_C._Brabham_2008_pp._75-90_8-0" class="reference"><a href="#cite_note-Daren_C._Brabham_2008_pp._75-90-8"><span></span>9<span></span></a></sup> Other differences between open source and crowdsourced production relate to the motivations of individuals to participate.<sup id="cite_ref-Daren_C._Brabham_2008_pp._75-90_8-1" class="reference"><a href="#cite_note-Daren_C._Brabham_2008_pp._75-90-8"><span></span>9<span></span></a></sup><sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span></span>10<span></span></a></sup></p>
+<p>Crowdsourcing also has the potential to be a problem-solving mechanism for government and nonprofit use.<sup id="cite_ref-Daren_C._Brabham_2008_pp._75-90_8-2" class="reference"><a href="#cite_note-Daren_C._Brabham_2008_pp._75-90-8"><span></span>9<span></span></a></sup> Urban and transit planning are prime areas for crowdsourcing.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span></span>11<span></span></a></sup> One project to test crowdsourcing's public participation process for transit planning in Salt Lake City has been underway from 2008 to 2009, funded by a U.S. Federal Transit Administration grant.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span></span>12<span></span></a></sup> Another notable application of crowdsourcing to government problem solving is the Peer to Patent Community Patent Review project for the U.S. Patent and Trademark Office.<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span></span>13<span></span></a></sup></p>
+<h3><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=3" title="Edit section: Web-based crowdsourcing"></a></span> <span class="mw-headline" id="Web-based_crowdsourcing">Web-based crowdsourcing</span></h3>
+<p>With the increase of web applications' capabilities over the past two decades, the capabilities for crowdsourcing techniques has been greatly increased, and now the term often refers exclusively to web based activity. While the potential for web-based crowdsourcing has existed for many years, it hasn't been well implemented until more recently.</p>
+<p>In an interview with <i>Wired</i>, <a href="wiki-Andrea_Grover">Andrea Grover</a>, curator of the 2006 crowdsourcing art show <a href="http://www.apexart.org/exhibitions/grover.htm" class="external text" rel="nofollow">Phantom Captain: Art and Crowdsourcing</a>, states that individuals tend to be more open in crowdsourced projects because they are not being physically judged or scrutinized.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span></span>14<span></span></a></sup> This ultimately allows for well-designed artistic projects because individuals are less conscious, or maybe even less aware, of scrutiny towards their work. In an online atmosphere there is more attention being given to the project rather than communication with other individuals.</p>
+<p>An important example of web-based crowdsourcing, mentioned also in Howe's original book, is <a href="wiki-Social_bookmarking">social bookmarking</a> (also called collaborative tagging). In social bookmarking systems, users assign tags to resources shared with other users, which has given rise to a type of information organisation that emerges from this crowdsourcing process. Other important examples are web-based <a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Idea_competitions&amp;action=edit&amp;redlink=1" class="new" title="Idea competitions (page does not exist)">idea competitions</a>.<sup id="cite_ref-Idea_Competitions_14-0" class="reference"><a href="#cite_note-Idea_Competitions-14"><span></span>15<span></span></a></sup></p>
+<h3><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=4" title="Edit section: Collaboratition"></a></span> <span class="mw-headline" id="Collaboratition">Collaboratition</span></h3>
+<p>"Collaboratition" is a <a href="wiki-Neologism">neologism</a> to describe a type of crowdsourcing used for problems that require a <b>collaborative</b> or cooperative effort to be successful, but use <b>competition</b> as a motivator for participation or performance. A good example of collaboratition is the 2009 DARPA experiment in crowdsourcing. DARPA placed 10 balloon markers across the United States and challenged teams to compete to be the first to report the location of all the balloons. Collaboration of efforts was required to complete the challenge quickly and in addition to the competitive motivation of the contest as a whole, the winning team (MIT, in less than seven hours) established its own "collaborapetitive" environment to generate participation in their team.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span></span>16<span></span></a></sup></p>
+<p>Another form of collaboration can be found in the term of <a href="wiki-Crowdfunding" class="mw-redirect" title="Crowdfunding">crowdfunding</a>, inspired from crowdsourcing. Crowdfunding collaboration takes on a different role, describes the collective cooperation, attention and trust by people who network pooling their money together, usually via the Internet, in order to support efforts initiated by other people or organizations. Crowdfunding occurs for any variety of purposes, from disaster relief to citizen journalism to artists seeking support from fans, to political campaigns. <i><a href="wiki-The_Age_of_Stupid">The Age of Stupid</a></i> is perhaps the most publicized and successful case to-date; this film raised $1.2 million via crowd funding, and also used crowd sourcing to distribute and exhibit it around the world.<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span></span>17<span></span></a></sup></p>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=5" title="Edit section: Early examples"></a></span> <span class="mw-headline" id="Early_examples">Early examples</span></h2>
+<p>The <a href="wiki-Oxford_English_Dictionary">Oxford English Dictionary</a> (OED) may provide one of the earliest examples of crowdsourcing. An open call was made to the community for contributions by volunteers to index all words in the English language and example quotations for each and every one of their usages. In the 70 year project, they received over 6 million submissions. The making of the OED is detailed in <a href="wiki-The_Surgeon_of_Crowthorne">The Surgeon of Crowthorne</a> by <a href="wiki-Simon_Winchester">Simon Winchester</a>.</p>
+<p>Augusto Boal's <a href="wiki-Theatre_of_the_Oppressed">Theatre of the Oppressed</a> provides early examples of crowdsourcing in theatrical performances. Boal's models give emphasis to the participants, and the influence their collaboration has on their performances.</p>
+<p>In 1994, Northeast Consulting compiled a database of trends in the marketplace. This database was collected from numerous sources, offering an example of early crowdsourcing.<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span></span>18<span></span></a></sup></p>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=6" title="Edit section: Recent examples"></a></span> <span class="mw-headline" id="Recent_examples">Recent examples</span></h2>
+<div class="rellink relarticle mainarticle">Main article: <a href="wiki-List_of_crowdsourcing_projects">List of crowdsourcing projects</a></div>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=7" title="Edit section: Appeal"></a></span> <span class="mw-headline" id="Appeal">Appeal</span></h2>
+<p>Grover explained in an <a href="http://www.wired.com/techbiz/media/news/2007/07/crowd_captain/" class="external text" rel="nofollow">interview</a> that crowdsourcing eliminates a financial barrier that prohibits most people from participating in art, as "Internet real estate is essentially free." Grover finds that the primary appeal of crowdsourcing is the satisfaction that is obtained through working with a community.</p>
+<p>Individuals who participate in crowdsourcing projects are often anonymous, and Grover states that "people reveal more when they’re not face-to-face," because "there’s a certain security in not being physically present," which adds to the appeal of crowdsourcing.</p>
+<p>Dion Hinchcliffe explains in his article <a href="http://www.ebizq.net/blogs/enterprise/2009/09/crowdsourcing_5_reasons_its_no.php" class="external text" rel="nofollow">Crowdsourcing: 5 Reasons Its Not Just For Start Ups Anymore</a> several reasons why businesses find crowdsourcing appealing. These include, but are not limited to, the ability to offload peak demand, access to cheaper business inputs, generating better results, and undertaking problems that would have been too difficult to solve internally. Crowdsourcing allows for businesses to submit problems in which contributors can work on problems in science, manufacturing, biotech, medicine, etc, with monetary rewards for successful solutions. Businesses can crowdsource design issues, ranging from simple web design (Crowdspring) or more complicated design problems. Although it is difficult to crowdsource complicated tasks, simple work tasks can be crowdsourced cheaply and effectively. The testing of software and other services can be crowdsourced. Crowdsourced customer support allows businesses to rely on customers to solve other customers issues and questions.</p>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=8" title="Edit section: Controversy"></a></span> <span class="mw-headline" id="Controversy">Controversy</span></h2>
+<p>The ethical, social, and economic implications of crowdsourcing are subject to wide debate. For example, author and media critic <a href="wiki-Douglas_Rushkoff">Douglas Rushkoff</a>, in an interview published in <i>Wired News</i>, expressed ambivalence about the term and its implications.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span></span>19<span></span></a></sup> Wikipedia co-founder <a href="wiki-Jimmy_Wales">Jimmy Wales</a> is also a vocal critic of the term.<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span></span>20<span></span></a></sup></p>
+<p>Some reports have focused on the negative effects of crowdsourcing on business owners, particularly in regard to how a crowdsourced project can sometimes end up costing a business more than a traditionally outsourced project.</p>
+<p>Some possible pitfalls of crowdsourcing include the following:</p>
+<ul>
+<li>Added costs to bring a project to an acceptable conclusion.</li>
+<li>Increased likelihood that a crowdsourced project will fail due to lack of monetary motivation, too few participants, lower quality of work, lack of personal interest in the project, global language barriers, or difficulty managing a large-scale, crowdsourced project.</li>
+<li>Below-market wages<sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span></span>21<span></span></a></sup> or no wages at all. <a href="wiki-Barter">Barter</a> agreements are often associated with crowdsourcing.</li>
+<li>No written contracts, non-disclosure agreements, or employee agreements or agreeable terms with crowdsourced employees.</li>
+<li>Difficulties maintaining a working relationship with crowdsourced workers throughout the duration of a project.</li>
+<li>Susceptibility to faulty results caused by targeted, malicious work efforts.</li>
+</ul>
+<p>Though some critics believe crowdsourcing exploits or abuses individuals for their labor, studies into the motivations of crowds have not yet shown that crowds feel exploited. On the contrary, many individuals in the crowd experience significant benefits from their participation in crowdsourcing applications.<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span></span>22<span></span></a></sup><sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span></span>23<span></span></a></sup><sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span></span>24<span></span></a></sup><sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span></span>25<span></span></a></sup> Further authors discuss both risks and rewards of using crowdsourcing as a means of balancing global inequalities.<sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span></span>26<span></span></a></sup></p>
+<p>Project's like Amazon.com's <a href="wiki-Amazon_Mechanical_Turk" title="Amazon Mechanical Turk">"Mechanical Turk"</a> have, however, made significant advancement in addressing these issues in the last several years. "The Turk" seeks to empower firms, developers and creators of any kind by lubricating the relationship between them and crowds. It achieves this by creating a platform through which crowds and employers communicate and perform transactions in a way that is safe for both parties.</p>
+<p>In Leah DeVun's interview of Andrea Grover the question, "Do you think that crowdsourcing removes an economic barrier that might prevent people from participating in art?" Grover's reply was yes. Grover went on to explain that crowdsourcing was originally based on economics. It was designed for businesses to be cost-efficient and lower their expenditures.<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span></span>27<span></span></a></sup></p>
+<p>Grover also provided an example of a crowdsourcing project that went astray. Justcurio.us was a website where users would ask questions, and receive answers from other users visiting the site. It eventually degraded into people asking questions for pornographic purposes. Grover relates that "maybe just asking a question is too simple. Maybe there has to be more complexity."<sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span></span>28<span></span></a></sup></p>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=9" title="Edit section: Brand marketing"></a></span> <span class="mw-headline" id="Brand_marketing">Brand marketing</span></h2>
+<p>Crowdsourcing has attracted the attention of brand marketers as a way to engage customers using social media. Doritos "Crash the Super Bowl" campaign is one prominent example of a fully integrated and successful program. Doritos fans created their own advertisements for the chance to win a trip to the game, $25,000 cash, and the fame of creating a Super Bowl advertisement. In 2011, four consumer-created ads for Doritos and Pepsi Max ranked among the top ten in the USA TODAY Ad Meter.<sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span></span>29<span></span></a></sup></p>
+<p>Crowdsourcing for brands doesn’t always work. Levia, a medical device marketer, failed to generate crowdsourcing activity with a similar promotion. They lacked the prerequisites of a crowd, sufficient motivation, and a reasonable expectation of work effort.<sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span></span>30<span></span></a></sup></p>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=10" title="Edit section: Historical examples"></a></span> <span class="mw-headline" id="Historical_examples">Historical examples</span></h2>
+<ul>
+<li><a href="wiki-Leblanc_process" title="Leblanc process">The Alkali Prize</a></li>
+<li><a href="wiki-Longitude_prize" title="Longitude prize">The Longitude Prize</a></li>
+<li><a href="wiki-Beno%C3%AEt_Fourneyron" title="Benoît Fourneyron">Fourneyron's Turbine</a></li>
+<li><a href="wiki-Mathematical_Tables_Project">Mathematical Tables Project</a></li>
+<li><a href="wiki-Montyon_Prizes">Montyon Prizes</a></li>
+<li><a href="wiki-Nicolas_Appert">Nicolas Appert</a> and food preservation</li>
+<li><a href="wiki-Loebner_Prize">Loebner Prize</a></li>
+<li><a href="wiki-Millennium_Prize_Problems">Millennium Prize Problems</a></li>
+</ul>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=11" title="Edit section: See also"></a></span> <span class="mw-headline" id="See_also">See also</span></h2>
+<div style="column-count: 2; -moz-column-count: 2; -webkit-column-count: 2;">
+<ul>
+<li><a href="wiki-Buzzwords" class="mw-redirect" title="Buzzwords">Buzzwords</a></li>
+<li><a href="wiki-Citizen_science">Citizen science</a></li>
+<li><a href="wiki-Clickworkers">Clickworkers</a></li>
+<li><a href="wiki-Co-creation">Co-creation</a></li>
+<li><a href="wiki-Collective_intelligence">Collective intelligence</a></li>
+<li><a href="wiki-Collaborative_innovation_network">Collaborative innovation network</a></li>
+<li><a href="wiki-Configuration_system" class="mw-redirect" title="Configuration system">Configuration system</a></li>
+<li><a href="wiki-Crowdcasting">Crowdcasting</a></li>
+<li><a href="wiki-Crowd_funding">Crowd funding</a></li>
+<li><a href="wiki-Distributed_Computing" class="mw-redirect" title="Distributed Computing">Distributed Computing</a></li>
+<li><a href="wiki-Distributed_thinking">Distributed thinking</a></li>
+<li><a href="wiki-Geo-wiki">Geo-wiki</a></li>
+<li><a href="wiki-Human-based_computation">Human-based Computation</a></li>
+<li><a href="wiki-Know-How_Trading">Know-How Trading</a></li>
+<li><a href="wiki-List_of_crowdsourcing_projects">List of crowdsourcing projects</a></li>
+<li><a href="wiki-The_Long_Tail" class="mw-redirect" title="The Long Tail">The Long Tail</a></li>
+<li><a href="wiki-Mass_Collaboration" class="mw-redirect" title="Mass Collaboration">Mass Collaboration</a></li>
+<li><a href="wiki-Mass_Customization" class="mw-redirect" title="Mass Customization">Mass Customization</a></li>
+<li><a href="wiki-Micro-revenue">Micro-revenue</a></li>
+<li><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Micro-task&amp;action=edit&amp;redlink=1" class="new" title="Micro-task (page does not exist)">Micro-task</a></li>
+<li><a href="wiki-Open_Innovation" class="mw-redirect" title="Open Innovation">Open Innovation</a></li>
+<li><a href="wiki-Problem_Solving" class="mw-redirect" title="Problem Solving">Problem Solving</a></li>
+<li><a href="wiki-Scripped">Scripped</a></li>
+<li><a href="wiki-Social_collaboration">Social collaboration</a></li>
+<li><a href="wiki-Social_commerce">Social commerce</a></li>
+<li><a href="wiki-Toolkits_for_User_Innovation">Toolkits for User Innovation</a></li>
+<li><a href="wiki-Tuangou">Tuangou</a></li>
+<li><a href="wiki-Virtual_assistant">Virtual assistant</a></li>
+<li><a href="wiki-Virtual_volunteering">Virtual volunteering</a></li>
+<li><a href="wiki-Waze">Waze</a></li>
+<li><a href="wiki-Wikinomics_(book)" title="Wikinomics (book)" class="mw-redirect">Wikinomics</a></li>
+<li><a href="wiki-Wisdom_of_Crowds" class="mw-redirect" title="Wisdom of Crowds">Wisdom of Crowds</a></li>
+<li><a href="wiki-Ubiquitous_Human_Computing">Ubiquitous Human Computing</a></li>
+<li><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Userfarm&amp;action=edit&amp;redlink=1" class="new" title="Userfarm (page does not exist)">Userfarm</a></li>
+<li><a href="wiki-Urtak">Urtak</a></li>
+</ul>
+</div>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=12" title="Edit section: Notes"></a></span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<div class="reflist references-column-count references-column-count-2" style="column-count: 2; -moz-column-count: 2; -webkit-column-count: 2; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://www.npr.org/templates/story/story.php?storyId=93495217" class="external text" rel="nofollow">Crowd Sourcing Turns Business On Its Head</a></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation web">David Whitford (2007-03-22). <a href="http://money.cnn.com/magazines/fsb/fsb_archive/2007/03/01/8402019/index.htm" class="external text" rel="nofollow">"Hired Guns on the Cheap"</a>. <i><a href="http://money.cnn.com/magazines/fsb/" class="external text" rel="nofollow">Fortune Small Business</a></i><span class="printonly">. <a href="http://money.cnn.com/magazines/fsb/fsb_archive/2007/03/01/8402019/index.htm" class="external free" rel="nofollow">http://money.cnn.com/magazines/fsb/fsb_archive/2007/03/01/8402019/index.htm</a></span><span class="reference-accessdate">. Retrieved 2007-08-07</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Hired+Guns+on+the+Cheap&amp;rft.atitle=%5Bhttp%3A%2F%2Fmoney.cnn.com%2Fmagazines%2Ffsb%2F+Fortune+Small+Business%5D&amp;rft.aulast=David+Whitford&amp;rft.au=David+Whitford&amp;rft.date=2007-03-22&amp;rft_id=http%3A%2F%2Fmoney.cnn.com%2Fmagazines%2Ffsb%2Ffsb_archive%2F2007%2F03%2F01%2F8402019%2Findex.htm&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="citation web">Jeff Howe (June 2006). <a href="http://www.wired.com/wired/archive/14.06/crowds.html" class="external text" rel="nofollow">"The Rise of Crowdsourcing"</a>. <i><a href="wiki-Wired_(magazine)" title="Wired (magazine)">Wired</a></i><span class="printonly">. <a href="http://www.wired.com/wired/archive/14.06/crowds.html" class="external free" rel="nofollow">http://www.wired.com/wired/archive/14.06/crowds.html</a></span><span class="reference-accessdate">. Retrieved 2007-03-17</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=The+Rise+of+Crowdsourcing&amp;rft.atitle=%5B%5BWired+%28magazine%29%7CWired%5D%5D&amp;rft.aulast=Jeff+Howe&amp;rft.au=Jeff+Howe&amp;rft.date=June+2006&amp;rft_id=http%3A%2F%2Fwww.wired.com%2Fwired%2Farchive%2F14.06%2Fcrowds.html&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <span class="citation web">Jeff Howe (June 2006). <a href="http://www.wired.com/wired/archive/14.06/crowds.html" class="external text" rel="nofollow">"The Rise of Crowdsourcing"</a>. <i><a href="wiki-Wired_(magazine)" title="Wired (magazine)">Wired</a></i><span class="printonly">. <a href="http://www.wired.com/wired/archive/14.06/crowds.html" class="external free" rel="nofollow">http://www.wired.com/wired/archive/14.06/crowds.html</a></span><span class="reference-accessdate">. Retrieved 2007-03-17</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=The+Rise+of+Crowdsourcing&amp;rft.atitle=%5B%5BWired+%28magazine%29%7CWired%5D%5D&amp;rft.aulast=Jeff+Howe&amp;rft.au=Jeff+Howe&amp;rft.date=June+2006&amp;rft_id=http%3A%2F%2Fwww.wired.com%2Fwired%2Farchive%2F14.06%2Fcrowds.html&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> Noveck, Simone. (2009). <a href="http://books.google.com/books?id=bmSmcDo3kPoC&amp;pg=PT14&amp;dq=wikigovernment&amp;client=" class="external text" rel="nofollow"><i>Wiki Government: How Technology Can Make Government Better, Democracy Stronger, and Citizens More Powerful,</i> p. 63.</a></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <a href="http://www.exinfm.com/board/crowdsourcing.htm" class="external free" rel="nofollow">http://www.exinfm.com/board/crowdsourcing.htm</a></li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> <span class="citation web">Tomoko A. Hosaka (April 2008). <a href="http://www.msnbc.msn.com/id/24205912/ns/technology_and_science-internet/" class="external text" rel="nofollow">"Facebook asks users to translate for free"</a>. <i><a href="wiki-MSNBC">MSNBC</a></i><span class="printonly">. <a href="http://www.msnbc.msn.com/id/24205912/ns/technology_and_science-internet/" class="external free" rel="nofollow">http://www.msnbc.msn.com/id/24205912/ns/technology_and_science-internet/</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Facebook+asks+users+to+translate+for+free&amp;rft.atitle=%5B%5BMSNBC%5D%5D&amp;rft.aulast=Tomoko+A.+Hosaka&amp;rft.au=Tomoko+A.+Hosaka&amp;rft.date=April+2008&amp;rft_id=http%3A%2F%2Fwww.msnbc.msn.com%2Fid%2F24205912%2Fns%2Ftechnology_and_science-internet%2F&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <span class="citation web">Steve O'Hear (February 2011). <a href="http://eu.techcrunch.com/2011/02/22/blur-group-trades-madison-avenue-for-its-creative-services-exchange/" class="external text" rel="nofollow">"Blur Group trades Madison Avenue for its Creative Services Exchange"</a>. <i><a href="wiki-TechCrunch">TechCrunch</a></i><span class="printonly">. <a href="http://eu.techcrunch.com/2011/02/22/blur-group-trades-madison-avenue-for-its-creative-services-exchange/" class="external free" rel="nofollow">http://eu.techcrunch.com/2011/02/22/blur-group-trades-madison-avenue-for-its-creative-services-exchange/</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Blur+Group+trades+Madison+Avenue+for+its+Creative+Services+Exchange&amp;rft.atitle=%5B%5BTechCrunch%5D%5D&amp;rft.aulast=Steve+O%27Hear&amp;rft.au=Steve+O%27Hear&amp;rft.date=February+2011&amp;rft_id=http%3A%2F%2Feu.techcrunch.com%2F2011%2F02%2F22%2Fblur-group-trades-madison-avenue-for-its-creative-services-exchange%2F&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-Daren_C._Brabham_2008_pp._75-90-8">^ <a href="#cite_ref-Daren_C._Brabham_2008_pp._75-90_8-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Daren_C._Brabham_2008_pp._75-90_8-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Daren_C._Brabham_2008_pp._75-90_8-2"><sup><i><b>c</b></i></sup></a> Daren C. Brabham. (2008). "Crowdsourcing as a Model for Problem Solving: An Introduction and Cases", <i>Convergence: The International Journal of Research into New Media Technologies, 14</i>(1), pp. 75-90.</li>
+<li id="cite_note-9"><b><a href="#cite_ref-9">^</a></b> Daren C. Brabham. (2008). <a href="http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/2159/1969" class="external text" rel="nofollow">"Moving the Crowd at iStockphoto: The Composition of the Crowd and Motivations for Participation in a Crowdsourcing Application"</a>, <i>First Monday, 13</i>(6)</li>
+<li id="cite_note-10"><b><a href="#cite_ref-10">^</a></b> Daren C. Brabham. (2009). "Crowdsourcing the Public Participation Process for Planning Projects", <i>Planning Theory, 8</i>(3), pp. 242-262.</li>
+<li id="cite_note-11"><b><a href="#cite_ref-11">^</a></b> U.S. Department of Transportation Federal Transit Administration Public Transportation Participation Pilot Program. <a href="http://www.fta.dot.gov/planning/programs/planning_environment_8711.html" class="external text" rel="nofollow">"PTP-3 FY 2008 Projects: Crowdsourcing Public Participation in Transit Planning"</a></li>
+<li id="cite_note-12"><b><a href="#cite_ref-12">^</a></b> Peer-to-Patent Community Patent Review Project. "Peer to Patent Community Patent Review", at <a href="http://www.peertopatent.org/" class="external free" rel="nofollow">http://www.peertopatent.org/</a>.</li>
+<li id="cite_note-13"><b><a href="#cite_ref-13">^</a></b> DeVun, Leah. "Looking at how crowds produce and present art." Wired News. Web. 19 Nov. 2009. &lt;<a href="http://www.wired.com/techbiz/media/news/2007/07/crowd_captain?currentPage=all" class="external free" rel="nofollow">http://www.wired.com/techbiz/media/news/2007/07/crowd_captain?currentPage=all</a>&gt;.</li>
+<li id="cite_note-Idea_Competitions-14"><b><a href="#cite_ref-Idea_Competitions_14-0">^</a></b> * Jan Marco Leimeister, Michael Huber, Ulrich Bretschneider, Helmut Krcmar (2009): Leveraging Crowdsourcing: Activation-Supporting Components for IT-Based Ideas Competition. In: Journal of Management Information Systems (2009), Volume: 26, Issue: 1, Publisher: M.E. Sharpe Inc., Pages: 197-224, ISSN: 07421222, DOI: 10.2753/MIS0742-1222260108 <a href="http://portal.acm.org/citation.cfm?id=1653890" class="external autonumber" rel="nofollow">[1]</a>
+<ul>
+<li>Winfried Ebner; Jan Marco Leimeister; Helmut Krcmar (2009): Community Engineering for Innovations -The Ideas Competition as a method to nurture a Virtual Community for Innovations. In: R&amp;D Management, 39 (4),pp 342-356 DOI: 10.1111/j.1467-9310.2009.00564.x <a href="http://www3.interscience.wiley.com/search/allsearch?mode=viewselected&amp;product=journal&amp;ID=122535413&amp;view_selected.x=67&amp;view_selected.y=8" class="external autonumber" rel="nofollow">[2]</a></li>
+</ul>
+</li>
+<li id="cite_note-15"><b><a href="#cite_ref-15">^</a></b> <a href="https://networkchallenge.darpa.mil/default.aspx" class="external free" rel="nofollow">https://networkchallenge.darpa.mil/default.aspx</a></li>
+<li id="cite_note-16"><b><a href="#cite_ref-16">^</a></b> <a href="http://ageofstupid.net" class="external free" rel="nofollow">http://ageofstupid.net</a></li>
+<li id="cite_note-17"><b><a href="#cite_ref-17">^</a></b> <a href="http://c21org.typepad.com/21st_century_organization/2009/02/looking-forward---emerging-and-declining-networks-for-2009.html" class="external free" rel="nofollow">http://c21org.typepad.com/21st_century_organization/2009/02/looking-forward---emerging-and-declining-networks-for-2009.html</a></li>
+<li id="cite_note-18"><b><a href="#cite_ref-18">^</a></b> <span class="citation news">Cove, Sarah (2007-07-12). <a href="http://www.wired.com/techbiz/media/news/2007/07/crowdsourcing?currentPage=1" class="external text" rel="nofollow">"What Does Crowdsourcing Really Mean?"</a>. <i>Wired News</i> (Assignment Zero)<span class="printonly">. <a href="http://www.wired.com/techbiz/media/news/2007/07/crowdsourcing?currentPage=1" class="external free" rel="nofollow">http://www.wired.com/techbiz/media/news/2007/07/crowdsourcing?currentPage=1</a></span><span class="reference-accessdate">. Retrieved 2008-02-19</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=What+Does+Crowdsourcing+Really+Mean%3F&amp;rft.jtitle=Wired+News&amp;rft.aulast=Cove&amp;rft.aufirst=Sarah&amp;rft.au=Cove%2C%26%2332%3BSarah&amp;rft.date=2007-07-12&amp;rft.pub=Assignment+Zero&amp;rft_id=http%3A%2F%2Fwww.wired.com%2Ftechbiz%2Fmedia%2Fnews%2F2007%2F07%2Fcrowdsourcing%3FcurrentPage%3D1&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-19"><b><a href="#cite_ref-19">^</a></b> <span class="citation news">McNichol, Tom (2007-07-02). <a href="http://money.cnn.com/galleries/2007/biz2/0702/gallery.wikia_rules.biz2/index.html" class="external text" rel="nofollow">"The Wales Rules for Web 2.0"</a>. <i>Business 2.0</i><span class="printonly">. <a href="http://money.cnn.com/galleries/2007/biz2/0702/gallery.wikia_rules.biz2/index.html" class="external free" rel="nofollow">http://money.cnn.com/galleries/2007/biz2/0702/gallery.wikia_rules.biz2/index.html</a></span><span class="reference-accessdate">. Retrieved 2008-02-19</span>. "I find the term 'crowdsourcing' incredibly irritating," Wales says. "Any company that thinks it's going to build a site by outsourcing all the work to its users not only disrespects the users but completely misunderstands what it should be doing. Your job is to provide a structure for your users to collaborate, and that takes a lot of work."</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=The+Wales+Rules+for+Web+2.0&amp;rft.jtitle=Business+2.0&amp;rft.aulast=McNichol&amp;rft.aufirst=Tom&amp;rft.au=McNichol%2C%26%2332%3BTom&amp;rft.date=2007-07-02&amp;rft_id=http%3A%2F%2Fmoney.cnn.com%2Fgalleries%2F2007%2Fbiz2%2F0702%2Fgallery.wikia_rules.biz2%2Findex.html&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-20"><b><a href="#cite_ref-20">^</a></b> <span class="citation web">Sherwood Stranieri (October 2006). <a href="http://paylancers.blogspot.com/2006/10/beer-money-mechanical-turk-on-campus.html" class="external text" rel="nofollow">"Beer Money: Mechanical Turk on Campus"</a>. <i>Paylancers</i><span class="printonly">. <a href="http://paylancers.blogspot.com/2006/10/beer-money-mechanical-turk-on-campus.html" class="external free" rel="nofollow">http://paylancers.blogspot.com/2006/10/beer-money-mechanical-turk-on-campus.html</a></span><span class="reference-accessdate">. Retrieved 2008-03-14</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Beer+Money%3A+Mechanical+Turk+on+Campus&amp;rft.atitle=Paylancers&amp;rft.aulast=Sherwood+Stranieri&amp;rft.au=Sherwood+Stranieri&amp;rft.date=October+2006&amp;rft_id=http%3A%2F%2Fpaylancers.blogspot.com%2F2006%2F10%2Fbeer-money-mechanical-turk-on-campus.html&amp;rfr_id=info:sid/en.wikipedia.org:Crowdsourcing"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-21"><b><a href="#cite_ref-21">^</a></b> Daren C. Brabham. (2008). "Moving the Crowd at iStockphoto: The Composition of the Crowd and Motivations for Participation in a Crowdsourcing Application", <i>First Monday, 13</i>(6), available online at <a href="http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/2159/1969" class="external free" rel="nofollow">http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/2159/1969</a>.</li>
+<li id="cite_note-22"><b><a href="#cite_ref-22">^</a></b> Daren C. Brabham. (2009, August). "Moving the Crowd at Threadless: Motivations for Participation in a Crowdsourcing Application", Paper presented at the annual meeting of the Association for Education in Journalism and Mass Communication, Boston, MA.</li>
+<li id="cite_note-23"><b><a href="#cite_ref-23">^</a></b> Katri Lietsala &amp; Atte Joutsen. (2007). "Hang-a-rounds and True Believers: A Case Analysis of the Roles and Motivational Factors of the Star Wreck Fans", In A. Lugmayr, K. Lietsala, &amp; J. Kallenbach (Eds.), MindTrek 2007 Conference Proceedings (pp. 25-30). Tampere, Finland: Tampere University of Technology.</li>
+<li id="cite_note-24"><b><a href="#cite_ref-24">^</a></b> Karim R. Lakhani, Lars Bo Jeppesen, Peter A. Lohse &amp; Jill A. Panetta. (2007). The value of openness in scientific problem solving (Harvard Business School Working Paper No. 07-050), available online at <a href="http://www.hbs.edu/research/pdf/07-050.pdf" class="external free" rel="nofollow">http://www.hbs.edu/research/pdf/07-050.pdf</a>.</li>
+<li id="cite_note-25"><b><a href="#cite_ref-25">^</a></b> Roth, S. (2008): Open Innovation AcrossThe Prosperity Gap: An Essay On Getting The Caucasus Back Into The European Innovation Society. In: International Black Sea University Scientific Journal, Vol 2., No. 2, pp. 5-20, <a href="http://steffenroth.files.wordpress.com/2009/10/ibsusj_open-innovationacrossthe-prosperity-gap.pdf" class="external free" rel="nofollow">http://steffenroth.files.wordpress.com/2009/10/ibsusj_open-innovationacrossthe-prosperity-gap.pdf</a></li>
+<li id="cite_note-26"><b><a href="#cite_ref-26">^</a></b> DeVun, Leah. "Looking at how crowds produce and present art." Wired News. Web. 19 Nov. 2009. &lt;<a href="http://www.wired.com/techbiz/media/news/2007/07/crowd_captain?currentPage=all" class="external free" rel="nofollow">http://www.wired.com/techbiz/media/news/2007/07/crowd_captain?currentPage=all</a>&gt;.</li>
+<li id="cite_note-27"><b><a href="#cite_ref-27">^</a></b> DeVun, Leah. "Looking at how crowds produce and present art." Wired News. Web. 19 Nov. 2009. &lt;<a href="http://www.wired.com/techbiz/media/news/2007/07/crowd_captain?currentPage=all" class="external free" rel="nofollow">http://www.wired.com/techbiz/media/news/2007/07/crowd_captain?currentPage=all</a>&gt;.</li>
+<li id="cite_note-28"><b><a href="#cite_ref-28">^</a></b> "PepsiCo’s Doritos and Pepsi Max Brands Dominate USA Today Ad Meter With Consumer-Created Super Bowl Commercials." Company press release. Web. 7 Feb. 2011. &lt;<a href="http://www.fritolay.com/about-us/press-release-20110207.html" class="external free" rel="nofollow">http://www.fritolay.com/about-us/press-release-20110207.html</a>&gt;.</li>
+<li id="cite_note-29"><b><a href="#cite_ref-29">^</a></b> <a href="http://merriamassociates.com/2010/11/crowdsourcing-without-a-crowd-levias-failed-attempt" class="external text" rel="nofollow">Crowdsourcing without a Crowd: Levia's Failed Attempt</a>, merriamassociates.com. Retrieved 15 November 2010</li>
+</ol>
+</div>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=13" title="Edit section: References"></a></span> <span class="mw-headline" id="References">References</span></h2>
+<p><a href="http://www.what-is-crowdsourcing.com" class="external text" rel="nofollow">What is crowdsourcing?</a></p>
+<ul>
+<li>Noveck, Beth Simone. (2009). <a href="http://books.google.com/books?id=bmSmcDo3kPoC&amp;dq" class="external text" rel="nofollow"><i>Wiki Government: How Technology Can Make Government Better, Democracy Stronger, and Citizens More Powerful.</i></a> Washington, D.C.: <a href="wiki-Brookings_Institution_Press" class="mw-redirect" title="Brookings Institution Press">Brookings Institution Press</a>. 10-<a href="wiki-Special:BookSources/0815702752" class="internal mw-magiclink-isbn">ISBN 0-8157-0275-2</a>; 13-<a href="wiki-Special:BookSources/9780815702757" class="internal mw-magiclink-isbn">ISBN 978-0-8157-0275-7</a></li>
+</ul>
+<h2><span class="editsection"><a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Crowdsourcing&amp;action=edit&amp;section=14" title="Edit section: External links"></a></span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://www.guardian.co.uk/technology/2010/dec/09/global-dependency-content/" class="external text" rel="nofollow">A New Kind of Globalisation?</a>, an article on crowdsourcing and ethical consumption, "<a href="wiki-The_Guardian">The Guardian</a>", December 9, 2010.</li>
+<li><a href="http://www.nytimes.com/2009/07/19/technology/internet/19unboxed.html/" class="external text" rel="nofollow">The Crowd Is Wise (When It’s Focused)</a>, by Steve Lohr, "<a href="wiki-The_New_York_Times">The New York Times</a>", July 18, 2009.</li>
+<li><a href="http://www.zwarts.jansma.nl/artefact-560-nl.html?lang=en" class="external text" rel="nofollow">Internettunnel Leidschendam, Zwarts &amp; Jansma Architects</a></li>
+<li><a href="http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/2159/1969" class="external text" rel="nofollow">Moving the Crowd at iStockphoto: The Composition of the Crowd and Motivations for Participation in a Crowdsourcing Application</a>, by Daren C. Brabham, <i>First Monday</i>, June 2, 2008.</li>
+<li><a href="http://www.businessweek.com/innovate/content/jul2006/id20060713_755844.htm" class="external text" rel="nofollow">Crowdsourcing: consumers as creators</a>, by Paul Boutin, <i>Business Week</i>, July 13, 2006.</li>
+<li><a href="http://portal.acm.org/citation.cfm?id=1064009.1064026" class="external text" rel="nofollow">Secure Distributed Human Computation</a> by Craig Gentry, Zulfikar Ramzan, and Stuart Stubblebine. Proceedings of the 6th ACM Conference on Electronic Commerce, 2005.</li>
+<li><a href="http://www.businessweek.com/innovate/content/feb2007/id20070201_774736.htm" class="external text" rel="nofollow">Innovation in the Age of Mass Collaboration</a>, by Don Tapscott and Anthony D. Williams, <i>Business Week</i>, February 1, 2007.</li>
+<li><a href="http://www.abqtrib.com/news/2007/apr/09/randy-burge-internet-allows-us-resource-crowd/" class="external text" rel="nofollow">Randy Burge: Internet allows us to resource the crowd</a>, <i><a href="wiki-Albuquerque_Tribune" class="mw-redirect" title="Albuquerque Tribune">Albuquerque Tribune</a></i>, April 9, 2007.</li>
+<li><a href="http://www.psocommons.org/wmhp/vol2/iss2/art2/" class="external text" rel="nofollow">Zook, Matthew; Graham, Mark; Shelton, Taylor; and Gorman, Sean (2010) "Volunteered Geographic Information and Crowdsourcing Disaster Relief: A Case Study of the Haitian Earthquake," World Medical &amp; Health Policy: Vol. 2: Iss. 2, Article 2.</a></li>
+<li><a href="http://www.wired.com/techbiz/media/news/2007/05/assignment_zero_citizendium" class="external text" rel="nofollow">Assignment Zero First Take: Wiki Innovators Rethink Openness:</a> <a href="wiki-Citizendium">Citizendium</a>, by Michael Ho for <i>Assignment Zero</i> and <i><a href="wiki-Wired_(magazine)" title="Wired (magazine)">Wired</a></i>, May 3, 2007.</li>
+<li><a href="http://www.niemanlab.org/2009/06/four-crowdsourcing-lessons-from-the-guardians-spectacular-expenses-scandal-experiment/" class="external text" rel="nofollow">Four crowdsourcing lessons from the Guardian’s (spectacular) expenses-scandal experiment</a> from <a target="_blank" href="http://en.wikipedia.org/w/index.php?title=Nieman_Journalism_Lab&amp;action=edit&amp;redlink=1" class="new" title="Nieman Journalism Lab (page does not exist)">Nieman Journalism Lab</a></li>
+<li><a href="http://www.crowdsourcingnetwork.it/mediawiki/index.php/Pagina_principale" class="external text" rel="nofollow">Wiki dedicated to Crowdsourcing</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5486/1000000
+Post-expand include size: 34646/2048000 bytes
+Template argument size: 13832/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:5292585-0!*!0!!en!4 and timestamp 20110403155951 -->
+</p>
+		</td>
+	</tr>
+</table>
+
+
+		</TD>
+	</TR>
+</TABLE>
+<table border="0" width="1000" id="table4" cellpadding="0" style="border-collapse: collapse" align="center">
+		<tr>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" class="mainmenu">Sri Lanka News Web by MyCities.Net Work</td>
+		</tr>
+</table>
+<br><br>
+<!--Begin Sri Lanka Banner Exchange Network code -->
+<center><iframe align=top width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no src="http://bannerexchange.pissu.com/view.php?uid=149&cat=0"><ilayer align=top width=468 height=60 src="http://bannerexchange.pissu.com/view.php?uid=149&cat=0"></ILAYER> </iframe><br>
+<a href="http://www.srilankanewsweb.com/toplink.php">Resources</a> - <a href="http://www.toplink-exchange.com/" target="_blank">Top Link Exchange</a><br>
+<a href="http://bannerexchange.pissu.com/index.php?ref=149">Join Sri Lanka Banner Exchange</a> | <a href="http://www.srilankanewsweb.com/telalinks.php">Link Exchange</a></center>
+<!--End Sri Lanka Banner Exchange Network code --><script src="http://hosting.conduit.com/Banners/TopSlider/TopSlider.js"> </script><script> var __ctid = 'CT405924'; var __baseURL='http://www.conduit.com/'; var __downloadUrl='http://SriLanka.mycitytoolbar.com/exe'; var __selectedColor='yellow'; var __opacity='91'; __TopSlide(); </script>																		
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Talk about Fan-funded music with real humans - digplanet > Business > Business models > Fan-funded music</title>
+<meta name="Keywords" content="Category:Business,Category:Business models,Fan-funded music">
+<meta name="description" content="Learn, explore, talk about Fan-funded music with real humans, and check out Fan-funded music on Wikipedia, Youtube, Facebook, and Twitter.  Digplanet gathers together information and people from all over the Internet, all focused on Fan-funded music, and makes it easy to add your thoughts or join the digparty and talk to real people who are also interested in Fan-funded music.">
+
+<meta property="og:title" content="Talk about Fan-funded music with real humans - digplanet > Business > Business models > Fan-funded music" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.digparty.com/wiki/digplanet/Category:Business/Category:Business_models/Fan-funded_music" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Digplanet" />
+<meta property="fb:admins" content="1147035171" />
+
+<link rel='canonical' href='http://www.digparty.com/wiki/digplanet/Category:Business/Category:Business_models/Fan-funded_music' />
+<link rel="stylesheet" href="/css/basic.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;version=20110308T014115Z" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=user&amp;only=styles&amp;skin=vector&amp;version=19700101T000001Z" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/wiki.php" type="text/css" media="screen">
+<link rel="stylesheet" href="/css/tabs.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+<!--[if IE]>
+<style type="text/css">
+.simple_overlay {
+	background-color:#333333;
+	padding:20px;
+}
+.simple_overlay .close {
+	right:-5px;
+	top:-5px;
+}
+</style>
+<![endif]-->
+<style type="text/css">
+td#digcommentscell p {
+	font-size:12px;
+}
+td#digcommentscell h2 {
+	font-size:18px;
+}
+td#digcommentscell {
+	border-top-color:#999;
+	border-top-style:solid;
+	border-top-width:3px;
+	background-color:#FFF;
+}
+</style>
+<script type="text/javascript" src="/js/jquery-ui-1.8.7.custom/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jsonutils/json2.js"></script>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+</head>
+
+<body class="mediawiki ltr skin-vector">
+
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId  : '24062123053',
+			status : true, // check login status
+			cookie : true, // enable cookies to allow the server to access the session
+			xfbml  : true  // parse XFBML
+		});
+	};
+	
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+
+function askuser(goto, title, topic) {
+	var pix = new Image();
+	pix.src = "/fb/attempt.php?r=" + topic;
+	
+	FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+			FB.ui(
+				{
+					method: 'stream.publish',
+					user_message_prompt: 'Tell your friends so that they can meet you here',
+					attachment: {
+						name: title,
+						description: ( "In Digparty you hang out with your friends in a 3D virtual world, talk " +
+							"(with your voice, like real life), watch Youtube videos (you get your own playlist), " +
+							"browse the web together, and create sprites with lives of their own. Really."
+						),
+						media: [{ 
+							'type': 'image', 
+							'src': 'http://www.digparty.com/images/feeds/girl2_90x90.png', 
+							'href': 'http://www.digparty.com/fb/'}],
+						href: 'http://www.digparty.com/fb/'
+					},
+					action_links: [
+						{ text: 'Check out Digparty!', href: 'http://www.digparty.com/fb/' }
+					]
+				},
+				function(response) {
+					location.href = goto;
+				}
+			);
+		} else {
+			// no user session available, someone you dont know
+			FB.login(function(response) {
+				if (response.session) {
+					// user successfully logged in
+					document.getElementById("loadcue").style.display = "block";
+					alert("Now that you're logged in, click the Digparty link again after the page refreshes");
+					location.reload(true);
+				} else {
+					; // user cancelled login
+				}
+			});
+		}
+	});
+}
+</script>
+<div id="loadcue" style="display:none;"></div>
+<script>
+function getStyle(oElm, strCssRule){
+	var strValue = "";
+	if(document.defaultView && document.defaultView.getComputedStyle){
+		strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+	}
+	else if(oElm.currentStyle){
+		strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+			return p1.toUpperCase();
+		});
+		strValue = oElm.currentStyle[strCssRule];
+	}
+	return strValue;
+}
+
+function toggletabs() {
+	if (document.getElementById("digtabcell").style.height != "auto") {
+		document.getElementById("digtabcell").style.height = "auto";
+		document.getElementById("tabs").style.height = "auto";
+		document.getElementById("toglink").innerHTML = "make tab area <b>smaller</b>";
+		$("div.tab_container").height("auto");
+	} else {
+		document.getElementById("digtabcell").style.height = "540px";
+		document.getElementById("tabs").style.height = "540px";
+		document.getElementById("toglink").innerHTML = "make tab area <b>bigger</b>";
+		$("div.tab_container").height("500px");
+	}
+}
+</script>
+<div id="topstripe"><a href="/wiki/" title="Go to the digplanet home, where you can start browsing through millions of topics on just about everything!" style="color:#FFF">digplanet</a><span style="float:right; margin-right:20px; font-size:14px; font-style:italic; font-family:'Times New Roman', Times, serif;">beta 1: Athena</span></div>
+<div id="header">
+	<table width="100%">
+		<tr height="20"><td colspan="3">&nbsp;</td></tr>
+		<tr valign="top">
+			<td align="left">
+				<h1 class='firstHeading' id='firstHeading'>Fan-funded music</h1>			</td>
+			<td align="center">
+				<div id='breadblock'><p class='bread'><a href='/wiki' class='breadcrumb'>Home</a>&nbsp;&gt;&nbsp;<a href="/wiki/digplanet/Category:Business" class='breadcrumb'>Business</a>&nbsp;&gt;&nbsp;<a href="/wiki/digplanet/Category:Business/Category:Business_models" class='breadcrumb'>Business models</a>&nbsp;&gt;&nbsp;Fan-funded music</p>
+</div>
+			</td>
+			<td align="right">
+				<form action="http://www.digparty.com/wiki/" method="post">
+					<label for="search">Search: </label>
+					<input name="search" type="text" value="">
+					<input type="submit" name="submit" id="submit" value="Search">
+				</form>
+				<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.digparty.com%2Fwiki%2Fdigplanet%2FCategory%3ABusiness%2FCategory%3ABusiness_models%2FFan-funded_music&layout=button_count&show_faces=true&width=200&action=recommend&font&colorscheme=light&height=21" 
+				scrolling="no" frameborder="0" 
+				style="border:none; overflow:hidden; width:200px; height:21px; float:right; margin-top:4px; margin-right:22px" 
+				allowtransparency="true"></iframe>
+			</td>
+		</tr>
+	</table>
+</div>
+<table id="digmaincontent" width="100%">
+	<tr valign="top">
+		<td width="150" id="dignavcell" class="basic_box">
+			<p class="navhead">Sections</p>
+			<p><a href="/wiki/Category:Business_models">Business models</a></p>
+<p><a href="/wiki/Category:Music_stubs">Music stubs</a></p>
+<div style='clear:both; height:50px'>&nbsp;</div>
+<p><a href='/wiki/digplanet/Category:Agriculture'>Agriculture</a></p>
+	<p><a href='/wiki/digplanet/Category:Applied_sciences'>Applied sciences</a></p>
+	<p><a href='/wiki/digplanet/Category:Arts'>Arts</a></p>
+	<p><a href='/wiki/digplanet/Category:Belief'>Belief</a></p>
+	<p><a href='/wiki/digplanet/Category:Business'>Business</a></p>
+	<p><a href='/wiki/digplanet/Category:Chronology'>Chronology</a></p>
+	<p><a href='/wiki/digplanet/Category:Culture'>Culture</a></p>
+	<p><a href='/wiki/digplanet/Category:Education'>Education</a></p>
+	<p><a href='/wiki/digplanet/Category:Environment'>Environment</a></p>
+	<p><a href='/wiki/digplanet/Category:Geography'>Geography</a></p>
+	<p><a href='/wiki/digplanet/Category:Health'>Health</a></p>
+	<p><a href='/wiki/digplanet/Category:History'>History</a></p>
+	<p><a href='/wiki/digplanet/Category:Humanities'>Humanities</a></p>
+	<p><a href='/wiki/digplanet/Category:Language'>Language</a></p>
+	<p><a href='/wiki/digplanet/Category:Law'>Law</a></p>
+	<p><a href='/wiki/digplanet/Category:Life'>Life</a></p>
+	<p><a href='/wiki/digplanet/Category:Mathematics'>Mathematics</a></p>
+	<p><a href='/wiki/digplanet/Category:Nature'>Nature</a></p>
+	<p><a href='/wiki/digplanet/Category:People'>People</a></p>
+	<p><a href='/wiki/digplanet/Category:Politics'>Politics</a></p>
+	<p><a href='/wiki/digplanet/Category:Science'>Science</a></p>
+	<p><a href='/wiki/digplanet/Category:Society'>Society</a></p>
+	<p><a href='/wiki/digplanet/Category:Technology'>Technology</a></p>
+		</td>
+		<td valign="top" style="background-color:#F3F3F3">
+			<div id="togdiv"><a onClick="toggletabs()" style="cursor:pointer" id="toglink">make tab area <b>bigger</b></a></div>
+			<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F3F3F3">
+				<tr valign="top">
+					<td id="digtabcell" style="min-width:825px">
+						<div id="tabs">
+							<ul class="tools_tabs">
+								<li><a href="#tabs-1" class="w1" id="t1" style="width:134px">Wikipedia Pages</a></li>
+								<li><a href="#tabs-2" class="w1" id="t2" style="width:134px">Youtube</a></li>
+								<li><a href="#tabs-3" class="w1" id="t3" style="width:134px">News</a></li>
+								<li><a href="#tabs-4" class="w1" id="t4" style="width:134px">Shopping</a></li>
+								<li><a href="#tabs-5" class="w1" id="t5" style="width:134px">Facebook</a></li>
+								<li><a href="#tabs-6" class="w1" id="t6" style="width:134px">Tweets</a></li>
+							</ul>
+							<div class="panes">
+								<div id="tabs-1" class="tab_container panels">
+									<div id="content">
+										<div id="bodyContent">
+											<p><b>Fan-funded music</b> is <a href="/wiki/Commercialization" title="Commercialization">commercialised</a> music that is funded directly by the <a href="/wiki/Fan_(person)" title="Fan (person)">fans</a> of an artist. It was first used by <a href="/wiki/ArtistShare">ArtistShare</a> to describe projects that were being recorded using the money raised by the fans of a particular artist rather than by a traditional <a href="/wiki/Record_label" title="Record label">record company</a>. SellaBand adopted the ArtistShare model to open up Fan Funding for artists but filed for bankruptcy in early 2010, relaunching in a less open form.</p>
+<p><a href="/wiki/Pledgemusic" title="Pledgemusic">PledgeMusic.com</a> have a completely open music funding platform that has been used by artists such as <a href="/wiki/Gang_of_Four">Gang of Four</a>, <a href="/wiki/Funeral_For_a_Friend" class="mw-redirect" title="Funeral For a Friend">Funeral For a Friend</a>, <a href="/wiki/The_Subways">The Subways</a>, <a href="/wiki/Robots_in_Disguise">Robots in Disguise</a>, <a href="/wiki/Cast_(band)" title="Cast (band)">Cast</a>. <a href="/wiki/Cornershop">Cornershop</a> etc</p>
+<p>Examples:</p>
+<ul>
+<li><a href="/w/index.php?title=Aucadia.com&amp;action=edit&amp;redlink=1" class="new" title="Aucadia.com (page does not exist)">Aucadia.com</a> - Fan funding website launched in January 2010. Fans can buy and trade shares in artists. Currently in Beta.</li>
+<li><a href="/wiki/Marillion">Marillion</a> - Seen by the music industry as the first established band to fully utilise the power of the internet, they have funded four albums through pre-sales to fans and totally revitalised their career in the process.</li>
+<li><a href="/w/index.php?title=Exile_Inside&amp;action=edit&amp;redlink=1" class="new" title="Exile Inside (page does not exist)">Exile Inside</a> - Jakes Shillingford of <a href="/wiki/My_Life_Story">My Life Story</a> invited investment from fans to set up a fan funded project which became Exile Inside.</li>
+<li><a href="/wiki/Donita_Sparks">Donita Sparks</a> (L7)</li>
+<li><a href="/wiki/Electric_Eel_Shock">Electric Eel Shock</a> - Japanese rock band who in 2006 raised £10,000 from their fans by offering 100 guestlist for life. Then in 2008 they raised $50,000 through Sellaband.com to record the new album "Sugoi Indeed" due for release in October 2009.</li>
+<li><a href="/wiki/Pledgemusic" title="Pledgemusic">PledgeMusic.com</a> - Fan Funding website launched in August 2009, that enables fan project funding through unique incentives and opportunities for fans, with an percentage of the projects proceeds donated to a charity of the artists choice. Successful campaigns include <a href="/wiki/Jack_Bruce">Jack Bruce</a>, <a href="/wiki/Tina_Dico">Tina Dico</a>, <a href="/wiki/Madina_Lake">Madina Lake</a>, and <a href="/wiki/The_Damnwells">The Damnwells</a>.</li>
+<li><a href="/w/index.php?title=Sellaband.com&amp;action=edit&amp;redlink=1" class="new" title="Sellaband.com (page does not exist)">Sellaband.com</a> - Fan Funding website launched in 2006 that as of mid 2009 had helped 33 artists raise $50,000.</li>
+<li><a href="/w/index.php?title=FeedTheMuse.net&amp;action=edit&amp;redlink=1" class="new" title="FeedTheMuse.net (page does not exist)">FeedTheMuse.net</a> - Fan Funding website launched in 2009 which differentiates itself from other fan-funding sites by allowing any level of artist to join and create a personalized landing page. The site is free for the artist, and offers personalized marketing support for their fundraising campaigns.</li>
+<li><a href="/wiki/Gerald_Clayton">Gerald Clayton</a> - The release<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> of the 2009 <a href="/wiki/Two-Shade">Two-Shade</a> album was funded<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup> through <a href="/wiki/ArtistShare">ArtistShare</a>.</li>
+<li><a href="/wiki/My_Major_Company_UK">My Major Company UK</a> - Fan Funding Label launched in 2010 that acts as a fully functioning record label as well as a funding platform</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Fan-funded_music&amp;action=edit&amp;section=1" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://www.allaboutjazz.com/php/news.php?id=39164" class="external text" rel="nofollow">All About Jazz News - Gerald Clayton's Two Shade Released!</a></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://www.artistshare.com/twoshade" class="external text" rel="nofollow">ArtistShare project page</a></li>
+</ol>
+</div>
+<ul>
+<li><a href="http://www.wired.com/entertainment/music/commentary/listeningpost/2008/03/listeningpost_0303" class="external free" rel="nofollow">http://www.wired.com/entertainment/music/commentary/listeningpost/2008/03/listeningpost_0303</a></li>
+<li><a href="http://news.cnet.com/8301-13526_3-9882091-27.html" class="external free" rel="nofollow">http://news.cnet.com/8301-13526_3-9882091-27.html</a></li>
+<li><a href="http://www.nj.com/entertainment/music/index.ssf/2008/01/jill_sobule_launches_fanfunded.html" class="external free" rel="nofollow">http://www.nj.com/entertainment/music/index.ssf/2008/01/jill_sobule_launches_fanfunded.html</a></li>
+<li><a href="http://www.bloomberg.com/apps/news?pid=conewsstory&amp;refer=conews&amp;tkr=SNE%3AUS&amp;sid=azzvvjebD6Pk" class="external free" rel="nofollow">http://www.bloomberg.com/apps/news?pid=conewsstory&amp;refer=conews&amp;tkr=SNE%3AUS&amp;sid=azzvvjebD6Pk</a></li>
+<li><a href="http://www.cbsnews.com/stories/2008/04/08/paidcontent/main4001947.shtml" class="external free" rel="nofollow">http://www.cbsnews.com/stories/2008/04/08/paidcontent/main4001947.shtml</a></li>
+<li><a href="http://www.telegraph.co.uk/scienceandtechnology/3356052/The-stock-market-for-songwriters.html" class="external free" rel="nofollow">http://www.telegraph.co.uk/scienceandtechnology/3356052/The-stock-market-for-songwriters.html</a></li>
+<li><a href="http://www.roanoke.com/extra/wb/171423" class="external free" rel="nofollow">http://www.roanoke.com/extra/wb/171423</a></li>
+<li><a href="http://www.mlive.com/news/annarbornews/index.ssf?/base/news-13/1239979302157110.xml&amp;coll=2" class="external free" rel="nofollow">http://www.mlive.com/news/annarbornews/index.ssf?/base/news-13/1239979302157110.xml&amp;coll=2</a></li>
+<li><a href="http://pqasb.pqarchiver.com/courant/access/1520569731.html?dids=1520569731:1520569731&amp;FMT=ABS&amp;FMTS=ABS:FT&amp;type=current&amp;date=Jul+27%2C+2008&amp;author=ERIC+R+DANTON&amp;pub=Hartford+Courant&amp;desc=NEW+SPIN+ON+RECORDS&amp;pqatl=google" class="external free" rel="nofollow">http://pqasb.pqarchiver.com/courant/access/1520569731.html?dids=1520569731:1520569731&amp;FMT=ABS&amp;FMTS=ABS:FT&amp;type=current&amp;date=Jul+27%2C+2008&amp;author=ERIC+R+DANTON&amp;pub=Hartford+Courant&amp;desc=NEW+SPIN+ON+RECORDS&amp;pqatl=google</a></li>
+<li><a href="http://www.npr.org/templates/story/story.php?storyId=90478696" class="external free" rel="nofollow">http://www.npr.org/templates/story/story.php?storyId=90478696</a></li>
+<li><a href="http://www.accessmylibrary.com/coms2/summary_0286-34128749_ITM" class="external free" rel="nofollow">http://www.accessmylibrary.com/coms2/summary_0286-34128749_ITM</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Fan-funded_music&amp;action=edit&amp;section=2" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="/wiki/Crowd_funding">Crowd funding</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Fan-funded_music&amp;action=edit&amp;section=3" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://www.fanfundedforum.com" class="external text" rel="nofollow">fanfundedforum.com</a></li>
+</ul>
+<table class="metadata plainlinks stub" style="background: transparent;">
+<tr>
+<td><a href="/wiki/File:Eighth_notes_and_rest.svg" class="image"><img alt="Stub icon" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Eighth_notes_and_rest.svg/30px-Eighth_notes_and_rest.svg.png" width="30" height="19" /></a></td>
+<td><i>This music-related article is a <a href="/wiki/Wikipedia:Stub" title="Wikipedia:Stub">stub</a>. You can help Wikipedia by <a href="http://en.wikipedia.org/w/index.php?title=Fan-funded_music&amp;action=edit" class="external text" rel="nofollow">expanding it</a>.</i><span class="noprint plainlinks navbar" style="position:absolute; right:15px; font-size:smaller; display:none;"><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Music-stub" title="Template:Music-stub"><span style="" title="View this template">v</span></a> <span style=""><b>·</b></span> <a href="/wiki/Template_talk:Music-stub" title="Template talk:Music-stub"><span style="" title="Discuss this template">d</span></a> <span style=""><b>·</b></span> <a href="http://en.wikipedia.org/w/index.php?title=Template:Music-stub&amp;action=edit" class="external text" rel="nofollow"><span style="" title="Edit this template">e</span></a></span></span></td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 233/1000000
+Post-expand include size: 3901/2048000 bytes
+Template argument size: 392/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:20521150-0!*!0!!en!4 and timestamp 20110403163720 -->
+										</div>
+									</div>
+								</div>
+								<div id="tabs-2" class="tab_container panels">
+									<div id="youContent">
+										
+
+<!-- Got past file_get_contents() -->
+
+
+
+<!-- Got past simplexml_load_string() -->
+
+
+
+<!-- Got past you->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+<p class='youpagelinks'>6 results&nbsp;-&nbsp;Go to:&nbsp;&nbsp;</p><table><tbody><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=8gfMUZahzMQ&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/8gfMUZahzMQ/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=8gfMUZahzMQ&feature=youtube_gdata_player">Fleur Jack Just Became the 51st Sellaband Recording Artist!</a></p><p class='youdesc'>New Zealand's Fleur Jack just reached her goal on Sellaband.com and became the 51st Recording Artist to have achieved this elusive goal. As it so often happens, this final day of fund raising ended in with a couple of big investments that propelled Fleur to her dream...to raise the capital necessary to produce a fan-funded music CD.</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=4hWE7m7r3PI&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/4hWE7m7r3PI/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=4hWE7m7r3PI&feature=youtube_gdata_player">BCUC Video Blog: Thanks to the Supporters</a></p><p class='youdesc'>In this video the members of the Africa Unsigned band BCUC thank all their supporters. The video is recorded in South Africa where they live. Go to www.africaunsigned.com/bcuc and support a minimum of $1 for their next studio recording!</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=DCob9FAq2dI&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/DCob9FAq2dI/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=DCob9FAq2dI&feature=youtube_gdata_player">KICKSTARTER MOVIE for YOUTUBE.mov</a></p><p class='youdesc'>GO here: kck.st .... This is a video that was made to help promote Jim's KICKSTARTER project, a project he started to help fund the release of his record LOUDMOUTH. Fan-funded music is the coolest kind of music. kck.st</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=_o4JKfPBOTE&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/_o4JKfPBOTE/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=_o4JKfPBOTE&feature=youtube_gdata_player">Pacifique - Wari</a></p><p class='youdesc'>A brand new video by Pacifique for their song 'Wari'. If you like this video and you do want to support their music, visit www.africaunsigned.com/pacifique and support them with a minimum of 1$. In return you will get some music and a share of revenue! In this video the talk about the effects of money on the society: "We wash ourselves with water but money makes us clean"...</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=NPA23nGPfF0&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/NPA23nGPfF0/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=NPA23nGPfF0&feature=youtube_gdata_player">Wanderlust: Feed The Muse project</a></p><p class='youdesc'>www.feedthemuse.net The Philadelphia based band "Wanderlust" and it's 4 members - Rob Bonfiglio, Mark Getten, Jim Cavanaugh and Scot Sax - talk about their new album they are creating through 'feed the muse' - a fan funded music project. The band released their major label debut "Prize" in 1995 with the singles "I Walked" and "Before We Fade" and the fan favorites "Troubled Man", "Coffee In The Kitchen" and "Sundial". www.feedthemuse.net Check out the cool perks for you donation and Contribute something today !</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=cJdzJcbVK1U&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/cJdzJcbVK1U/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=cJdzJcbVK1U&feature=youtube_gdata_player">Africa Unsigned (@africaunsigned) - Pim Betist (@pimbetist) - Pytch Startup.mov</a></p><p class='youdesc'></p></td></tr></tbody></table>									</div>
+								</div>
+								<div id="tabs-3" class="tab_container panels">
+									<div id="newsContent">
+											<div id="news_cse" style="width: 100%;" onclick="iframe_divclick(event)">Loading ...</div>
+	<form style="display:none"><input type="text" id="mynewssearch" /></form>
+	<script type="text/javascript">
+	$(document).ready(google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST}));
+	google.setOnLoadCallback(function() {
+		var customSearchControl = new google.search.CustomSearchControl('006577720217834376431:1mz97tlulrw');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var drawOptions = new google.search.DrawOptions();
+		drawOptions.setInput(document.getElementById('mynewssearch'));
+		customSearchControl.setLinkTarget("openhere");
+		customSearchControl.draw('news_cse', drawOptions);
+		customSearchControl.enableAds("pub-7523455642797450");
+		customSearchControl.execute("\"Fan-funded music\"");
+	}, true);
+	</script>
+
+      									</div>
+								</div>
+								<div id="tabs-4" class="tab_container panels">
+									<div id="shoppingContent">
+											<div id="shopping_cse" style="width: 100%;" onclick="iframe_divclick(event)">Loading ...</div>
+	<form style="display:none"><input type="text" id="myshoppingsearch" /></form>
+	<script type="text/javascript">
+	$(document).ready(google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST}));
+	google.setOnLoadCallback(function() {
+		var customSearchControl = new google.search.CustomSearchControl('006577720217834376431:zjydbbyldce');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var drawOptions = new google.search.DrawOptions();
+		drawOptions.setInput(document.getElementById('myshoppingsearch'));
+		customSearchControl.setLinkTarget("openhere");
+		customSearchControl.draw('shopping_cse', drawOptions);
+		customSearchControl.enableAds("pub-7523455642797450");
+		customSearchControl.execute("\"Fan-funded music\"");
+	}, true);
+	</script>
+
+      									</div>
+								</div>
+								<div id="tabs-5" class="tab_container panels">
+									<div id="fbContent">
+										<p>Oops, we seem to be having trouble contacting Facebook</p>
+									</div>
+								</div>
+								<div id="tabs-6" class="tab_container panels">
+									<div id="twitContent">
+										<p>Oops, we seem to be having trouble contacting Twitter</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td id="digcommentscell">
+<a name="digparty"></a>
+<h1 class="firstHeading" style="color:#2E6E9E">Digparty</h1><p>by <a href="http://www.digparty.com" target="_blank">Digparty&trade;</a></p>
+<p><strong>In Digparty you hang out with people, talk, watch videos, browse the web together, create sprites, and listen to music. Really.</strong></p>
+<p>You can even talk to each other (like with your voice), or chat to each other. Digparty runs on both PCs (Firefox or Internet Explorer) and Macs (Safari only), and is a small download (about 1.5MB).</p>
+<a href="http://www.youtube.com" target="_blank"><img src="/images/youtube_logo.gif" alt="" height="60" width="120" align="right" border="0" hspace="5"></a>
+<h2>Choose Your Media to Share with Your Friends</h2>
+<p>Digparty helps you find YouTube videos that you want to share with your friends at the Digparty. You'll build your own playlist, like you do on your iPod, and we'll put them up on big screens at the Digparty. They could be music videos, or whatever. You get to decide, and there's a ton of stuff to choose from<strong>.</strong></p>
+<img src="/images/headset_guy.png" alt="" height="155" width="229" align="left" border="0">
+<h2>You'll Probably Want a Headset (but it's optional)</h2>
+<p>In Digparty you can talk to your friends just like talking on the telephone. You can use the microphone and speakers in your computer, but using a headset is better. If you don't have one, <strong><a href="http://www.logitech.com/index.cfm/webcam_communications/internet_headsets_phones/%26cl=us,en" target="_blank">here's some good ones</a></strong>. <strong>Using your voice is optional.</strong>  If you'd rather just type, like in a chat room, that's ok too!</p>
+<img src="/app/sprites/images/Lego_Crystal.jpg" alt="" width="128" height="92" align="right" border="0" />
+<h2>Sprites - Adding Life to Digparty</h2>
+<p>Digparty creates a magical landscape of &quot;sprites&quot; - rocks, trees, and other things that have a life of their own. You can create sprites, and leave them behind for other people to find and comment on. Sprites can contain videos, web pages, or messages from you. <strong>Collect Digbucks&trade; to add to your sprite collection</strong>, and you can Digparty your way from &quot;Novice&quot; to &quot;Digparty Celebrity&quot;!</p>
+<img src="/images/browse.png" alt="" height="114" width="200" align="left" border="0">
+<h2>Browse With Friends</h2>
+<p>While you're at a Digparty, you can also click on one of the laptops in the house and look at web pages together. You can each send each other's browsers to pages that you want to share, and talk and chat while you're looking at them. Think gathering around a computer together while you're hanging out and you've got the idea. It's just like that.</p>
+<h2>You'll Need Shockwave</h2>
+<p>To go to a Digparty you'll need the <strong><a href="http://www.adobe.com/go/EN_US-H-GET-SHOCKWAVE" target="_blank">Adobe Shockwave plugin (Flash's big brother)</a></strong>. You'll need version 11 or better, because we turn it up to 11.</p>
+<h2>Ready to get started? Then <a href="http://www.digparty.com/fb/check.php?p=always&r=4d98a24025775_always&n=Fan-funded+music&d=&q=4d98a24027e82">Digparty Now!</a></h2>
+
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td id="digpartycell" style="width:250px; vertical-align:top">
+<div class="basic_box" id="digparties">
+	<a href="#digparty" title="Join the Digparty"><img src="/images/headset_girl.png" width="229" height="155" alt="Headset Girl" border="0"></a>
+	<h3><a href="#digparty" title="Join the Digparty">Join The Digparty</a></h3>
+	<p>In Digparty you hang out with live humans, talk, watch videos, browse the web together, create sprites, and listen to music. Really.</p>
+	<div id="digplanets"></div>
+</div>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	document.getElementById("digpartycell").style.width = "300px";
+} else {
+	document.getElementById("digpartycell").style.width = "250px";
+}
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image top, created 3/31/11 */
+	google_ad_slot = "7967420047";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: top, created 3/27/11 */
+	google_ad_slot = "3541382114";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image middle, created 3/31/11 */
+	google_ad_slot = "1231032516";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: middle, created 3/27/11 */
+	google_ad_slot = "8479975984";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image bottom, created 3/31/11 */
+	google_ad_slot = "4931197721";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: bottom, created 3/27/11 */
+	google_ad_slot = "3296318126";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		</td>
+	</tr>
+</table>
+<div id="mask"></div>
+<div id="iframe_overlay_outline" class="simple_overlay">
+	<div id="iframe_overlay_content">
+		<div style="text-align:right; display:none;" id="iframe_controls">
+		<a onClick="reload_iframe()" style="cursor:pointer"><img src="/fb/ajax/refresh.gif" width="16" height="16" alt="refresh" /></a>
+		&nbsp;&nbsp;<a id="iframe_newin_link" href="" target="_blank">Open in a new window</a>
+		<a onClick="close_iframe_overlay()" style="cursor:pointer"><img src="/images/close.png" width="36" height="36" alt="close" class="close" /></a></div>
+		<div id="loadbar">
+		<img src='http://www.digparty.com/images/ajax-loader.gif' style='max-width:128px; height:15px' />
+		Loading ... <a onClick="close_iframe_overlay()" style="cursor:pointer; text-decoration:underline">cancel</a></div>
+		<iframe id="openhere" name="openhere" height="600" width="600" frameborder="0" src="http://www.digparty.com" onload="iframeload()"></iframe>
+	</div>
+</div>
+<script type="text/javascript" src="/js/graph_jsonp.js"></script>
+<script type="text/javascript" src="/js/wiki_jsonp.js"></script>
+<script type="text/javascript">
+$("ul.tools_tabs").tabs("div.panes > div");
+
+$(document).ready(do_digplanets(1, "Fan-funded+music", "www.digparty.com"));
+
+//$(document).ready(do_you("Fan-funded music", 1));
+$(document).ready(do_fbpages("%22Fan-funded+music%22", ""));
+$(document).ready(do_twitter("%22Fan-funded+music%22", ""));
+
+// adjust for small screens
+function curwidth() {
+	var w = $(window).width();
+	if (w < 1178) {
+		document.getElementById("t1").style.width = "100px";
+		document.getElementById("t2").style.width = "100px";
+		document.getElementById("t3").style.width = "100px";
+		document.getElementById("t4").style.width = "100px";
+		document.getElementById("t5").style.width = "100px";
+		document.getElementById("t6").style.width = "100px";
+		document.getElementById("digtabcell").style.minWidth = "600px";
+	} else {
+		document.getElementById("t1").style.width = "134px";
+		document.getElementById("t2").style.width = "134px";
+		document.getElementById("t3").style.width = "134px";
+		document.getElementById("t4").style.width = "134px";
+		document.getElementById("t5").style.width = "134px";
+		document.getElementById("t6").style.width = "134px";
+		document.getElementById("digtabcell").style.minWidth = "825px";
+	}
+}
+window.onresize = curwidth;
+curwidth();
+</script>
+<div id="digfooter">
+	<table width="100%" border="0" cellspacing="0" cellpadding="10" height="35">
+	<tr valign="bottom">
+		<td align="left">
+			<p class="nav">Copyright &copy; 2011 Digparty. All rights reserved.</p>
+		</td>
+		<td align="right">
+			<p class="nav"><a class="nav" href="http://www.digparty.com/" target="_blank">Digparty Home</a> 
+			| <a class="nav" href="http://www.digparty.com/app/digparty_help.php" target="_blank">Help</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Advertisers</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Investors</a> 
+			| <a class="nav" href="http://www.digparty.com/privacy.php" target="_blank">Privacy Policy</a> 
+			| <a href="http://www.digparty.com/terms.php" target="_blank">Terms of Service</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Contact Us</a>
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Feedback</a></p>
+		</td>
+	</tr>
+</table></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6384678-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- http://en.wikipedia.org/w/api.php?action=parse&amp;page=Fan-funded_music&amp;prop=text|categories&amp;format=php -->
+
+</body>
+</html>

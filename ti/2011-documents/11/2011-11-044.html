@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Pozible | Crowdfunding Creativity</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Pozible Crowdfunding Creativity Possible Possibilities Australia Fundraising artists musicians filmmakers journalists designers entrepreneurs inventors event organisers software developers creative individuals creativity funding sponsorship" />
+	<meta name="description" content="Pozible is a new crowdfunding platform and community for creative projects and ideas. Developed for artists, musicians, filmmakers, journalists, designers, entrepreneurs, inventors, event organisers, software developers and all other creative minded people to raise funds and make awesome things possible." />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<link href="http://www.pozible.co.uk/assets/styles/home.css" media="screen,projection,tv" rel="stylesheet" type="text/css" />
+	<link href="http://www.pozible.co.uk/assets/styles/reset-min.css" rel="stylesheet" type="text/css" />
+	<link href="http://www.pozible.co.uk/assets/styles/print.css" media="print" rel="stylesheet" type="text/css" />    
+   	<link href="http://www.pozible.co.uk/assets/styles/project_list_20101028.css" media="screen,projection,tv" rel="stylesheet" type="text/css" />
+    
+	<link href="http://www.pozible.co.uk/assets/styles/home_top_20101111.css"  rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://www.pozible.co.uk/assets/styles/slider.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://www.pozible.co.uk/assets/scripts/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="http://www.pozible.co.uk/assets/scripts/global.js"></script>
+    <script type="text/javascript" src="http://www.pozible.co.uk/assets/scripts/jquery.easing.1.2.js"></script>
+	<script src="http://www.pozible.co.uk/assets/scripts/jquery.anythingslider.js" type="text/javascript" charset="utf-8"></script>
+    	<script type="text/javascript">
+	jQuery(document).ready(function(){
+		$('.fade_eff').hover(function(){$(this).fadeTo('fast', 0.66);},function(){$(this).fadeTo('fast', 1);});
+		if ( $.browser.msie && parseInt($.browser.version) < 7 ) {
+			$('#brower_notice').show();
+		};
+	});
+	</script>
+    
+<script type="text/javascript">
+function formatText(index, panel) {
+  return index + "";
+}
+$(function () {
+            $('.anythingSlider').anythingSlider({
+                easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
+                autoPlay: false,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
+                delay: 0,                    // How long between slide transitions in AutoPlay mode
+                startStopped: false,            // If autoPlay is on, this can force it to start stopped
+                animationTime: 600,             // How long the slide transition takes
+                hashTags: true,                 // Should links change the hashtag in the URL?
+                buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
+		        pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+		        startText: "",             // Start text
+		        stopText: "",               // Stop text
+		        navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
+            });
+            $("#slide-jump").click(function(){
+                $('.anythingSlider').anythingSlider(3);
+            });
+            
+        });
+</script>
+</head>
+<body>
+	<div id='brower_notice' style='display:none;'>Your browser is too old for this website, some of the features might not work properly, please download firefox <a href='http://www.mozilla.com/' target='_blank'>here</a> --- Pozible team</div>
+	<div id="page">
+        <div style="width:980px; margin: 0 auto;"><div id="header">
+	<a href="http://www.pozible.co.uk/index.php" class="logo" title="Pozible | Crowdfunding platform for your projects &amp; ideas">Pozible | Crowdfunding platform for your projects &amp; ideas</a>
+    	<!--<div class="country">
+  <div class="country_href"><a href="javascript:;" title="03 Apr 2011 17:10 pm BST" onclick="javascript:$('#country_list_a').toggle();">UK, change</a></div>
+  <div class="country_list country_re" id="country_list_a">
+    	<p class="cuuntry_change">Choose your preferred country</p>
+        <div class="country_form">
+    	<select id="country_select" name="country_select" >
+    		    		<option value="au">Australia</option>
+    		    		<option value="nz">New Zealand</option>
+    		    		<option value="us">U.S.A.</option>
+    		    		<option value="uk">UK</option>
+    		    		<option value="ie">Ireland</option>
+    		    		<option value="at">Austria</option>
+    		    		<option value="be">Belgium</option>
+    		    		<option value="cy">Cyprus</option>
+    		    		<option value="de">Germany</option>
+    		    		<option value="es">Spain</option>
+    		    		<option value="fi">Finland</option>
+    		    		<option value="fr">France</option>
+    		    		<option value="gr">Greece</option>
+    		    		<option value="it">Italy</option>
+    		    		<option value="lu">Luxembourg</option>
+    		    		<option value="mt">Malta</option>
+    		    		<option value="nl">The Netherlands</option>
+    		    		<option value="pt">Portugal</option>
+    		    		<option value="si">Slovenia</option>
+    		    		<option value="sk">Slovakia</option>
+    		    		<option value="other">Other Countries</option>
+    		    	</select>
+    	<input class="country_button" type="button" onclick="javascript:country_change();" value="Change" />
+        </div>
+        <p class="cuuntry_info">This information is used to customise your Pozible experience</p>
+    </div>
+</div>-->
+<script language="javascript">
+function country_change() {
+		$.get(
+		"http://www.pozible.co.uk/index.php/home/country/" + $('#country_select').val(),
+		function() {
+			location.reload();				
+		}
+	);
+	}
+$(document).ready(function(){
+	$('#country_select').val("uk");
+//	if( "uk" == "au" && "uk" != "au") {
+//		location.href = 'http://www.pozible.com.au/';
+//	}
+});
+</script>
+		<ul class="nav">
+		<li class='actived'><a href="http://www.pozible.co.uk/index.php" title="Home">Home</a></li>
+		<li ><a href="http://www.pozible.co.uk/index.php/list" title="Projects">Projects</a></li>
+		<li ><a href="http://www.pozible.co.uk/index.php/help/profiles">Profiles</a></li>
+		<li ><a href="http://www.pozible.co.uk/index.php/blog/home" title="Blog">Blog</a></li>
+		<li ><a href="http://www.pozible.co.uk/index.php/faq" title="FAQ">FAQ</a></li>
+		<li ><a href="http://www.pozible.co.uk/index.php/user/login" title="FAQ">Login</a></li>
+		<li ><a href="http://www.pozible.co.uk/index.php/user/signup" title="FAQ">Sign Up</a></li>
+        <li class="hline"></li>
+	</ul>
+</div>
+			 
+</div>
+    </div>
+
+		<script language="javascript">
+        $(document).ready(function(){
+            $('#b>li').bind('mouseover', function(){
+                var liIndex = $('#b>li').index($(this));
+                home_top(liIndex);
+            });
+            home_top(0);
+        });
+        
+        function home_top(liIndex) {								
+            $('#b>li').each(function(i,o){
+                if( liIndex == i ) {
+                    $(o).fadeTo('fast', 0.66);
+                } else {
+                    $(o).fadeTo('fast', 1);
+                }
+            });
+            $('#a>div').each(function(i,o){
+                if( liIndex == i ) {
+                    $(o).css('display', 'block');
+                } else {
+                    $(o).css('display', 'none');
+                }
+            });							
+        }
+        function home_top_foldback() {
+			$('#home_top').slideToggle(800, function(){
+				$('#home_top_1').toggle();
+			});			
+        }
+        </script>
+        <div class="content_top" id="home_top">
+            <div class="content_top_center" id="jin">
+            <p><span>Pozible</span> - Your creative platform to raise funds for a great <span>project</span> or <span>idea</span>. Share your project with your friends, fanbase & networks and promote it to the world.</p>
+            <div class="content_top_main">                
+                    <div class="content_top_left" id="a">
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/nm.png" />
+                        </div>  
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/guide_top1.png" />
+                        </div>                        
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/mirabilis.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/network.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/guide_top2.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/guide_top5.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/undertable.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/guide_top4.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/guide_top6.png" />
+                        </div>
+                        <div class="showimage" style="display:none">
+                            <img src="http://www.pozible.co.uk/assets/images/guide_top3.png" />
+                        </div>
+                    </div>
+                    <div class="content_top_right">
+                            <ul class="qhimg" id="b">
+								 <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+								  <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+								   <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+								 <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                               <!-- <li id="b_1"><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>
+                                <li><a href="javascript:;"><img src="http://www.pozible.co.uk/assets/images/hkk1.png" /></a></li>    -->                            
+                            </ul>
+                            
+                        </div>
+                    </div>
+            </div>
+            <div class="content_top_2">
+            	<a href="javascript:;" class="content_top_right_btt3" onclick="javascript:home_top_foldback();"><img class="content_top_right_btt fade_eff	" id="btt" src="http://www.pozible.co.uk/assets/images/bg_top_bt.png" /></a>
+            </div>
+        </div>
+        <div class="content_top_2">
+        	<a href="javascript:;" id="home_top_1" class="content_top_right_btt2"onclick="javascript:home_top_foldback();"><img class="fade_eff" id="btt" src="http://www.pozible.co.uk/assets/images/bg_top_down.png" /></a>
+        </div>
+            <div id="wraper" style="clear:both;">
+			<div id="content">
+				<div id="content-fund">
+					<div id="fundbreaker" style="margin:0 auto; padding-top:0px;">
+						<img src="http://www.pozible.co.uk/assets/images/banner1.png" alt="Australia crowd funding platform" />
+                        <div id="meet_1">
+                        	Crowdfunding creative projects and ideas
+                        </div>
+                        <span id="meet_2">UK's innovative crowdfunding platform developed for creative individuals, groups & organisations</span>
+						<div id="fund-cut" style=" width:980px; margin:0 auto;" >
+                    	<a href="http://www.pozible.co.uk/index.php/blog/article/index/3" target="_blank" title="video"> <img src="http://www.pozible.co.uk/assets/images/intro_vido.gif" id="video_button" class="fade_eff" /></a>
+                    	<div class="home_rolling">
+	<div id="home_rolling_content" style="height:24px">
+		<ul>   
+<li>
+       <a href="http://crowdfund4good.eventbrite.com/" target="_blank">Meet us at the Crowdfunding for Good Panel Discussion, Hub Melbourne 13 April, its free. </a>
+</li> 
+<li>
+       <a href="http://www.pozible.com.au/index.php/blog/article/index/25" target="_blank">New function - Pozible Wall available now.</a>
+</li> 
+
+
+   
+</ul>	</div>
+	<div class="image_news"><img src="http://www.pozible.co.uk/assets/images/news.png" /></div>
+</div>
+<script type="text/javascript" src="http://www.pozible.co.uk/assets/scripts/jcarousellite_1.0.1.pack.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	$('#home_rolling_content').jCarouselLite({
+		auto: 3500,
+		vertical: true,
+		visible: 1,
+		speed: 1500
+    });
+});
+</script>						<h3>Featured Projects</h3>
+						</div>
+					</div>
+                </div>
+				<div class="anythingSlider">
+		          <div class="wrapper">
+		            <ul>
+		              <li>
+		                <div class="project" id="p1">
+																	                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/251" title="Great Pacific Shame"><img src="http://www.pozible.co.uk/cache/project/251_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/251">Great Pacific Shame</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/4649">Tim Silverwood</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/251">Film, sailing across the Pacific Ocean to research plastic in the Great Pacific Garbage Patch. Keep donating I need $10K ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Newcastle&nbsp;Australia</span>
+                <span class="project_af2">Film</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>3980</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>199%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>61</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="215" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/243" title="Street Dreams"><img src="http://www.pozible.co.uk/cache/project/243_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/243">Street Dreams</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/4429">Mike Crowhurst</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/243">Our doco explores the dreams & hopeful stories of young girls exploited by human trafficking & prostitution in SE Asia. ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Brisbane&nbsp;Australia</span>
+                <span class="project_af2">Film</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>8727</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>65%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>11</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="139" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/258" title="the dream makers"><img src="http://www.pozible.co.uk/cache/project/258_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/258">the dream makers</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/3029">Amy  Gibson</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/258">This show makes great composers human by bringing their work alive with our most human performers - clowns. ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Melbourne&nbsp;Australia</span>
+                <span class="project_af2">Performance</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>405</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>5%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>86</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="10" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/920" title="Pictures Of Bright Lights- A N"><img src="http://www.pozible.co.uk/cache/project/920_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/920">Pictures Of Bright Lights-</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/5152">Little Ones Theatre</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/920">Pictures of Bright Lights by Maree Freeman is a haunting story and delicately crafted play with a big heart. ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Sydney&nbsp;Australia</span>
+                <span class="project_af2">Performance</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>930</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>27%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>20</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="58" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                						</div>
+		              </li>
+		              <li>
+		                <div class="project" id="p2">
+																	                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/225" title="What Song Is That?  "><img src="http://www.pozible.co.uk/cache/project/225_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/225">What Song Is That?  </a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/4149">MICHAEL WILTON + LITTLE GONZALES</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/225">WHAT SONG IS THAT? is a stimulating illustrated book for people who love music, pop culture, and graphic art!   ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Sydney&nbsp;Australia</span>
+                <span class="project_af2">Design</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">$</span>1286</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>37%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>48</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="79" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/245" title="NEW PROFESSION"><img src="http://www.pozible.co.uk/cache/project/245_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/245">NEW PROFESSION</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/943">Debra Waters</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/245">Short film that will take you on a journey through the life of a young girl who is lead into temptation. Need funding -)
+ ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Newcastle&nbsp;Australia</span>
+                <span class="project_af2">Film</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>250</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>5%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>76</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="10" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/902" title="Dirtyland - The Play"><img src="http://www.pozible.co.uk/cache/project/902_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/902">Dirtyland - The Play</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/4684">Arthur  ...</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/902">Seeking funds to stage a cracking new Australian play by young emerging playwright, Elise Hearst.   ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Sydney&nbsp;Australia</span>
+                <span class="project_af2">Performance</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>6010</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>75%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>57</strong>
+            <span>Hours to go</span>
+        </div>
+        <div class="jdt"><img width="161" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/916" title="Erōtikós"><img src="http://www.pozible.co.uk/cache/project/916_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/916">Erōtikós</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/2263">Simone Ruggiero</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/916">Red Rabbit Collective is heading to the UK to showcase brand new work, Erōtikós at the Edinburgh Fringe Festival. ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Perth&nbsp;Australia</span>
+                <span class="project_af2">Performance</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>2581</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>129%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>77</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="215" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                						</div>
+		              </li>
+		              <li>
+		                 <div class="project" id="p3">
+																	                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/241" title="Orpheus in the Underworld - Th"><img src="http://www.pozible.co.uk/cache/project/241_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/241">Orpheus in the Underworld -</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/3808">Simon Oats</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/241">Orpheus in the Underworld is an album based on the critically acclaimed solo show written and composed by Simon Oats.  ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Melbourne&nbsp;Australia</span>
+                <span class="project_af2">Music</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>1995</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>51%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>26</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="109" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/928" title="Iceland Dream Project"><img src="http://www.pozible.co.uk/cache/project/928_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/928">Iceland Dream Project</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/2556">Emma  Lindsay</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/928">Help artist Emma Lindsay travel to and create new art at the 2011 BAER International Artist Summer Residency, Iceland.  ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Brisbane&nbsp;Australia</span>
+                <span class="project_af2">Art</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>2020</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>81%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>66</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="174" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/917" title="help my arty bits"><img src="http://www.pozible.co.uk/cache/project/917_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/917">help my arty bits</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/5109">Kate McCarthy</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/917">I need to raise $550. You get a Kate McCarthy work on paper as a thank you! Love Kate. ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Binalong Bay&nbsp;Australia</span>
+                <span class="project_af2">Art</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>125</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>23%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>21</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="49" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                										                <div class="list_item">
+	<div class="list_top">
+	    <div class="list_image"><a href="http://www.pozible.co.uk/index.php/archive/index/918" title="Iron Sky"><img src="http://www.pozible.co.uk/cache/project/918_200_150.jpg" /></a></div>
+	        <div class="list_item_project">
+        		<h3><a href="http://www.pozible.co.uk/index.php/archive/index/918">Iron Sky</a>
+<!--        		<img src="http://www.pozible.co.uk/assets/images/icon-6.png" />-->
+        		</h3>
+	            <h5>By &nbsp;<a title="" href="http://www.pozible.co.uk/index.php/creator/index/5130">Timo Vuorensola</a></h5>
+	            <p><a href="http://www.pozible.co.uk/index.php/archive/index/918">In 1945 the Nazis went to the Moon. In 2018 they are coming back! ..</a></p>
+	            <div class="project_af">
+	            <span class="project_af1">Helsinki&nbsp;Finland</span>
+                <span class="project_af2">Film</span>
+            </div>
+        </div>
+    </div>
+    <div class="list_bottom">
+    	<div class="p_bf p_bf1">
+        	<strong><span class="text">A$</span>18</strong>
+            <span>Raised</span>
+        </div>
+                <div class="p_bf p_bf2">
+        	<strong>0%</strong></strong>
+            <span>Funded</span>
+        </div>
+                <div class="p_bf p_bf3">
+        	<strong>62</strong>
+            <span>Days to go</span>
+        </div>
+        <div class="jdt"><img width="0" height="14" src="http://www.pozible.co.uk/assets/images/bg_jdt_2.png" /></div>
+    </div>
+    </div>			                			                						</div>
+		              </li>
+           		 </ul>        
+          		</div>
+        	</div>
+			<div id="content-bottom">
+				<div class="home_1">
+                	<div class="funb_med">
+                		<a href="http://www.pozible.co.uk/index.php/blog/article/index/3" target="_blank" title="video"><img src="http://www.pozible.co.uk/assets/images/p_9.png" class="fade_eff" /></a>
+                	</div>
+                    <h3><a href="http://www.pozible.co.uk/index.php/blog/article/index/3" title="WHO.WHAT.HOW">WHAT.HOW.WHO</a></h3>
+                    <p>Get to know about Pozible, what we do, how we work and who we are.</p>
+                </div>
+                <div class="home_2">
+                	<ul>
+                	                    	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/5044"><img src="http://www.pozible.co.uk/cache/icon/5044_50_50.jpg" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/5044">Gary<br />Hearst</a>
+                        </li>
+                                        	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/5017"><img src="http://www.pozible.co.uk/cache/icon/5017_50_50.jpg" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/5017">Dorind..<br />Trusco..</a>
+                        </li>
+                                        	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/5137"><img src="http://graph.facebook.com/500582026/picture" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/5137">Bec<br />Hitch</a>
+                        </li>
+                                        	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/4992"><img src="http://www.pozible.co.uk/cache/icon/4992_50_50.jpg" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/4992">Ken<br />Sellec..</a>
+                        </li>
+                                        	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/5158"><img src="http://graph.facebook.com/754947918/picture" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/5158">Rodney<br />Ingers..</a>
+                        </li>
+                                        	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/5071"><img src="http://www.pozible.co.uk/cache/icon/5071_50_50.jpg" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/5071">Rachel..<br />Scott</a>
+                        </li>
+                                        	<li>
+                        	<a href="http://www.pozible.co.uk/index.php/creator/index/5034"><img src="http://www.pozible.co.uk/cache/icon/5034_50_50.jpg" width="50" class="fade_eff" title="" /></a>
+                            <a class="t" href="http://www.pozible.co.uk/index.php/creator/index/5034">Alasta..<br />McKinn..</a>
+                        </li>
+                                        
+                	                                        
+                    
+                    </ul>
+                    <div class="home_2_1">
+                    	<div class="home_2_left">
+                    		<h3>Top Supporters This Week</h3>
+                        	<p>We'd like to acknowledge our top supporters of the week, thank you so much for supporting our creative projects! </p>
+                        </div>
+                        <div class="home_2_right">
+                        	<img src="http://www.pozible.co.uk/assets/images/creative.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="home_3">
+                	<a href="http://www.pozible.co.uk/index.php/help/i/tell_us_more"><img src="http://www.pozible.co.uk/assets/images/p_11.png" class="fade_eff" /></a>
+                    <p><a href="http://www.pozible.co.uk/index.php/help/i/tell_us_more">Tell us more and get an invitation code.</a></p>
+                </div>
+			</div>
+			</div>
+		</div>
+   		<div id="footer"><div class="wraper">
+	<h3><img alt="" src="http://www.pozible.co.uk/assets/images/fund.png" /></h3>
+	<dl>
+		<dt>Navigation</dt>
+		<dd><a href="http://www.pozible.co.uk/index.php/home">Home</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/blog/article/index/3">About</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list">Projects</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/blog">Blog</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/faq">FAQ</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/user/login">Login</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/user/signup">Sign Up</a></dd>
+        <dd><a href="mailto:feedback@pozible.com">Feedback</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/help/i/contact" title="contact us">Contact Us</a></dd>
+	</dl>
+	<dl>
+		<dt>Project</dt>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/index/rec">Recommend</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/index/pop">Popular</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/index/new">Newest</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/list/index/endsoon">Ending Soon</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/list/index/suc">Successful</a></dd>
+	</dl>
+	<dl>
+		<dt>Project Categories</dt>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/art" title="Art">Art</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/comics" title="Comics">Comics</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/community" title="Community">Community</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/design" title="Design">Design</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/event" title="Event">Event</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/fashion" title="Fashion">Fashion</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/film" title="Film">Film</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/food" title="Food">Food</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/game" title="Game">Game</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/music" title="Music">Music</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/journalism" title="Journaddsm">Journalism</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/performance" title="Performance">Performance</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/photography" title="Photography">Photography</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/technology" title="Technology">Technology</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/video" title="Video">Video</a></dd>
+		<dd><a href="http://www.pozible.co.uk/index.php/list/category/writing" title="Writing">Writing</a></dd>
+	</dl>
+	<dl>
+		<dt>Resources</dt>
+		<dd><a href="http://www.pozible.co.uk/index.php/help/i/tell_us_more" title="get an invitation">Get An Invitation</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/help/i/project_guide" title="Project Guide">Project Guideline</a></dd>
+        <dd><a href="http://www.pozible.co.uk/index.php/user/createproject" title="create a project">Create A Project</a></dd>
+		<!--<dd><a title="Our Partners">Our Partners</a></dd>-->
+		<dd><a href="http://www.pozible.co.uk/index.php/help/i/intro_video" title="Intro Video">Intro Video</a></dd>   
+        <dd><a href="http://www.pozible.co.uk/index.php/blog/article/index/20" title="LikeBreak">LikeBreak Sponsorship</a></dd>        
+	</dl>
+	<div>
+        All rights reserved Pozible.com 2010&nbsp;&nbsp;&nbsp; www.pozible.com&nbsp;&nbsp;&nbsp;
+        <a href="mailto:info@pozible.com">info@pozible.com</a>&nbsp;&nbsp;&nbsp;
+		<a href="http://www.pozible.co.uk/index.php/help/i/privacy_policy">Privacy Policy</a> &nbsp;&nbsp;&nbsp;
+ 	    <a href="http://www.pozible.co.uk/index.php/help/i/terms_and_conditions">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;
+ 	    <a href="http://www.facebook.com/pozible" target="_blank"><img src="http://www.pozible.co.uk/assets/images/facebooksmall.png" alt="facebook" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/Pozible" target="_blank"><img src="http://www.pozible.co.uk/assets/images/twitter.png" align="twitter" /></a><br/><br/>Website designed by <a href="http://www.massivefishball.com" target="_blank">Massivefishball.com</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; Hosted by &nbsp;&nbsp;&nbsp;<a href="http://www.mediatemple.net/go/order/?refdom=pozible.com" target="_blank"><img alt="" src="http://www.pozible.co.uk/assets/images/mt-60x30-dk.jpg" /></a><br/><br/><br/><br/>
+        <a href="http://www.anat.org.au" target="_blank"> <img src="http://www.pozible.co.uk/assets/images/anat.png" class="bottom_logo" alt="Australian network for art & technology"></a>  
+<a href="http://www.vibewire.org" target="_blank"> <img src="http://www.pozible.co.uk/assets/images/vibewire.png" class="bottom_logo" alt="vibewire youth inc"></a>  
+<a href="http://www.sydneycreativeindustries.com" target="_blank"><img src="http://www.pozible.co.uk/assets/images/c3sydney.png" class="bottom_logo" alt="Sydney creative industry"></a>  
+<a href="http://www.briscreativeindustries.com" target="_blank"><img src="http://www.pozible.co.uk/assets/images/c3brisbane.png" class="bottom_logo" alt="Brisbane creative industry"></a><img src="http://www.pozible.co.uk/assets/images/globalyouth.png" class="bottom_logo" alt="Global Youth">
+<a href="http://www.wonderart.com.au" target="_blank" style=""><img src="http://www.pozible.co.uk/assets/images/wonderart.png" class="bottom_logo" alt="WonderArt Australia"></a>
+<a href="http://www.livefutures2020.com" target="_blank"><img src="http://www.pozible.co.uk/assets/images/livefuture.png" class="bottom_logo" alt="Live Future"></a>
+<a href="http://www.piip.org.au/about/incubator-council/" target="_blank"><img src="http://www.pozible.co.uk/assets/images/incubator_logo.png" class="bottom_logo"></a>
+<a href="http://www.xposureproductions.net" target="_blank"><img src="http://www.pozible.co.uk/assets/images/xposure.jpg" class="bottom_logo"></a>
+<a href="http://www.creativesydney.com.au" target="_blank"><img src="http://www.pozible.co.uk/assets/images/creativesyd.png" class="bottom_logo"></a>
+<a href="http://www.gaffa.com.au" target="_blank"><img src="http://www.pozible.co.uk/assets/images/gaffa.png" class="bottom_logo"></a>
+<a href="http://www.metroscreen.org.au/" target="_blank"><img src="http://www.pozible.co.uk/assets/images/metro.png" class="bottom_logo"></a><br/><br/>
+<a href="http://ice.org.au/" target="_blank"><img src="http://www.pozible.co.uk/assets/images/ice_logo.png" class="bottom_logo"></a>
+<a href="http://www.artabase.net/" target="_blank"><img src="http://www.pozible.co.uk/assets/images/artabase.png" class="bottom_logo"></a>
+<a href="http://www.ypaa.net/" target="_blank"><img src="http://www.pozible.co.uk/assets/images/ypaa_small.png" class="bottom_logo"></a>
+<a href="http://www.sydneyfilmschool.com/" target="_blank"><img src="http://www.pozible.co.uk/assets/images/SFS.png" class="bottom_logo"></a>    </div>
+</div></div>
+	    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15928575-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

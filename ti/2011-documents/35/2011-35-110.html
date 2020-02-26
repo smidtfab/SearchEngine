@@ -1,0 +1,625 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>amazon web services - In Mechanical Turk, how do you limit to one HIT per worker - Stack Overflow</title>
+<link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+<link rel="apple-touch-icon" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+<link rel="stylesheet" type="text/css" href="http://sstatic.net/stackoverflow/all.css?v=f023310c4326">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://sstatic.net/js/master.min.js?v=c6108f3b6409"></script>
+
+
+    <link rel="canonical" href="http://stackoverflow.com/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'In Mechanical Turk, how do you limit to one HIT per worker'" href="/feeds/question/2835915">
+    <script src="http://sstatic.net/js/question.js?v=92b74bed1a42" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({questionId:2835915});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"de76675dcd0f81aa32f15be8bc6ef8f2","inboxUnviewedCount":-1}});
+    </script>
+
+</head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" href="http://stackexchange.com">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="/users/login?returnurl=%2fquestions%2f2835915%2fin-mechanical-turk-how-do-you-limit-to-one-hit-per-worker">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com">meta</a>
+ <span class="lsep">|</span>
+<a href="/about">about</a>
+ <span class="lsep">|</span>
+<a href="/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="140" size="28" value="search">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="/tags">Tags</a></li>
+                        <li><a id="nav-users" href="/users">Users</a></li>
+                        <li><a id="nav-badges" href="/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion"  href="/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker" class="question-hyperlink">In Mechanical Turk, how do you limit to one HIT per worker</a></h1>
+</div>
+
+<div id="mainbar">
+
+
+<div id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1">
+    </div>
+
+    
+    <table>
+    <tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input type="hidden" value="2835915">
+    <a class="vote-up-off" title="This question is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">2</span>
+    <a class="vote-down-off" title="This question is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>    
+
+</div>
+
+    </td>
+    <td class="postcell">
+        <div>          
+            <div class="post-text">
+                <p>Hi all, I know from communication with Mechanical Turk workers that there is a way to limit the number of HITs a specific worker can complete, but I cant figure out how to do it. Any help would be greatly appreciated!</p>
+
+            </div>            
+            <div class="post-taglist">
+                <a href="/questions/tagged/amazon-web-services" class="post-tag" title="show questions tagged 'amazon-web-services'" rel="tag">amazon-web-services</a> <a href="/questions/tagged/mechanicalturk" class="post-tag" title="show questions tagged 'mechanicalturk'" rel="tag">mechanicalturk</a> 
+            </div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/q/2835915" title="short permalink to this question">link</a><span class="lsep">|</span><a href="/posts/2835915/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-2835915" title="flag this post for serious problems or moderator attention">flag</a></div>
+            </td>
+            <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="/posts/2835915/revisions" title="show all edits to this post"><span title="2010-05-14 18:03:05Z" class="relativetime">May 14 '10 at 18:03</span></a></div><div class="user-gravatar32"><a href="/users/182811/david-m"><img src="http://www.gravatar.com/avatar/96b3b4a6c0c2288b29164f36cd4fbfb7?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/182811/david-m">David M</a><br><span class="reputation-score" title="reputation score">1,391</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span></div></div>            </td>
+                        
+
+            <td class="post-signature owner">
+            <div class="user-info"><div class="user-action-time">asked <span title="2010-05-14 16:40:17Z" class="relativetime">May 14 '10 at 16:40</span></div><div class="user-gravatar32"><a href="/users/341438/david-rand"><img src="http://www.gravatar.com/avatar/373f272cfc85959ad6472d888fbddcb4?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/341438/david-rand">David Rand</a><br><span class="reputation-score" title="reputation score">11</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span></div></div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </td>
+    </tr>
+
+    
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2835915" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    
+    </table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>2 Answers</h2>
+            <div id="tabs">
+                <a href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker?tab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker?tab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker?tab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <a name="2836458"></a>
+    
+    <div id="answer-2836458" class="answer">
+        
+        <table>
+        <tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="2836458">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>See</p>
+
+<p><a href="http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2008-08-02/" rel="nofollow">http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2008-08-02/</a></p>
+
+<blockquote>
+  <p>You can set two types of limits:</p>
+  
+  <ul>
+  <li>The maximum number of assignments any Worker can accept for a specific HIT type you've created. This value is undefined until you set it.</li>
+  <li>The maximum number of assignments any Worker can accept for all your HITs that don't otherwise have a HIT-type-specific limit already assigned. The initial default value is 10.</li>
+  </ul>
+  
+  <p>Initially, all your HITs are grouped together with an overall limit (default of 10) applying to the group, regardless of HIT type.</p>
+</blockquote>
+
+<p>Note that this refers to the number of assignments that a worker can have currently accepted.  Once the worker has submitted an assignment, they can accept another assignment.</p>
+
+<p>You probably shouldn't care how many HITs a worker completes overall, but there might be a reason why you want to change the number a worker can have currently accepted from the default 10.  Of course, a worker can only accept one assignment from a HIT with multiple assignments.</p>
+
+<p>If you really, really want to limit the number of HITs a worker can actually do, you're going to need to either specify that you're not going to accept more than a certain number per worker, explicitly stating that you're going to reject any submissions once the limit has been reached OR you could monkey with qualification types to do that (but that could be a lot of work)!</p>
+
+<p>As an example of the latter, if you want to limit someone to doing N total assignments, you could a qualification type for each HIT and grant no more than N types to any one worker.</p>
+</div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker/2836458#2836458" title="permalink to this answer">link</a><span class="lsep">|</span><a href="/posts/2836458/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-2836458" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td align="right" class="post-signature">
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-05-14 18:02:17Z" class="relativetime">May 14 '10 at 18:02</span></div><div class="user-gravatar32"><a href="/users/182811/david-m"><img src="http://www.gravatar.com/avatar/96b3b4a6c0c2288b29164f36cd4fbfb7?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/182811/david-m">David M</a><br><span class="reputation-score" title="reputation score">1,391</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span></div></div>
+            </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2836458" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </table>
+    </div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3">
+    </div>
+
+    
+    <a name="3782847"></a>
+    
+    <div id="answer-3782847" class="answer">
+        
+        <table>
+        <tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="3782847">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>You can also do this with external questions.  I run psychology experiments on mechanical turk, so I need unique participants. In addition to requesting that workers only perform one HIT, I use a python script to verify uniqueness.  My HITs all run a cgi script to produce the question.  The script consults a log file, and if the worker has previously accepted a related job, it politely informs them that because I need unique participants, the HIT won't be available.</p>
+
+<p>I used to do this with qualifications, but found that it really limited participation.</p>
+</div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker/3782847#3782847" title="permalink to this answer">link</a><span class="lsep">|</span><a href="/posts/3782847/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-3782847" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td align="right" class="post-signature">
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-09-23 22:00:36Z" class="relativetime">Sep 23 '10 at 22:00</span></div><div class="user-gravatar32"><a href="/users/456706/david-l"><img src="http://www.gravatar.com/avatar/31ba4c403ce17b7e0c0ed68825368b15?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/456706/david-l">David L</a><br><span class="reputation-score" title="reputation score">1</span></div></div>
+            </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3782847" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </table>
+    </div>
+    
+    <a name='new-answer'></a>
+    <form id="post-form" action="/questions/2835915/answer/submit" method="post" >
+        <h2 class="space">Your Answer</h2>
+        
+<script type="text/javascript">
+    $(function() {
+     
+        initTagRenderer("".split(" "), "".split(" "));
+
+        lazyEditorReady('answer', true/* confirm navigation after wmd keypress */, "http://sstatic.net/Js/wmd.js?v=8cc0678d8147");
+    });  
+</script>
+
+
+
+
+<div id="post-editor">  
+
+    
+    <div id="wmd-container">
+        <div id="wmd-button-bar"></div>
+        <textarea id="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+
+    <div id="wmd-preview"></div>
+
+
+    <div id="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="de76675dcd0f81aa32f15be8bc6ef8f2">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+           
+    <div class="form-item">
+        <table>
+        <tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="/users/login?returnurl=%2fquestions%2f2835915%2fin-mechanical-turk-how-do-you-limit-to-one-hit-per-worker">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+            </div>
+        </td>
+    
+        </tr>
+        </table>
+    </div>
+    
+           
+        
+        
+        <div class="form-submit cbt"><input id="submit-button" type="submit" value="Post Your Answer" tabindex="110"></div>
+    </form>
+
+
+    <h2 class="bottom-notice">
+        Not the answer you're looking for? 
+        Browse other questions tagged <a href="/questions/tagged/amazon-web-services" class="post-tag" title="show questions tagged 'amazon-web-services'" rel="tag">amazon-web-services</a> <a href="/questions/tagged/mechanicalturk" class="post-tag" title="show questions tagged 'mechanicalturk'" rel="tag">mechanicalturk</a> 
+        or <a href="/questions/ask">ask your own question</a>.
+    </h2>
+
+</div>
+</div>
+<div id="sidebar">
+
+<div class="module newuser newuser-greeting" style="display:none">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar"><a href="/about">about &raquo;</a>&nbsp;&nbsp;&nbsp;<a href="/faq">faq &raquo;</a></p>
+    </div>
+</div>    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="/questions/tagged/amazon-web-services" class="post-tag" title="show questions tagged 'amazon-web-services'" rel="tag">amazon-web-services</a>&nbsp;<span class="item-multiplier">&times;&nbsp;646</span><br>
+<a href="/questions/tagged/mechanicalturk" class="post-tag" title="show questions tagged 'mechanicalturk'" rel="tag">mechanicalturk</a>&nbsp;<span class="item-multiplier">&times;&nbsp;42</span><br>
+</div> 
+        <p class="label-key">asked</p>
+        <p class="label-value" title="2010-05-14 16:40:17Z">10 months ago</p>
+        <p class="label-key">viewed</p>
+        <p class="label-value">449 times</p>
+        <p class="label-key">latest activity</p>
+        <p class="label-value"><a href="?lastactivity" class="lastactivity-link" title="2010-09-23 22:00:36Z">6 months ago</a></p>
+    </div>
+    
+    
+        <script type="text/javascript">
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=amazon-web-services,mechanicalturk"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2">
+    </div>
+
+    
+    <div>
+        <script type="text/javascript">
+            (function(){var q="http://careers.stackoverflow.com/Ad/js",g=location.search=="?golarge",a,d=100,c=location.hash.indexOf("#ninjas")>-1,f="Pretty",h="#adzerk2",b="#adzerk1",i="#herebeninjas";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html())})();$(function(){setTimeout(r,2e3);a=setTimeout(e,d)});var e=function(){clearTimeout(a);if(m()&&!k()){a=setTimeout(e,d);return}c=c||n();c&&$(b).css("height",$(b).outerHeight()).attr("id","stop-adzerk");if(l()&&!j()){a=setTimeout(e,d);return}g=g||o();f=g?"Large":f;p()},r=function(){clearTimeout(a);var b=$("div.hireme, "+i);b.each(function(){var a=$(this),d=a.html().replace(/\s+/g,"").length==0;if(d){var c=a,b=a.parents(".everyonelovesstackoverflow").first();if(b.length>0)c=b;c.remove()}})},l=function(){return $(h).length>0},j=function(){var a=$(h);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},o=function(){return $("#careersadsdoublehigh").length>0},m=function(){return $(b).length>0},k=function(){var a=$(b);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},n=function(){return $(i).length>0},p=function(){$.ajax({url:s(),dataType:"script",cache:true})},s=function(){return q+"?style="+f+"&gobanner="+c.toString()}})();
+        </script>
+    </div>
+
+      
+
+
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="/questions/193426/have-you-made-interesting-use-of-mechanical-turk" class="question-hyperlink">Have you made interesting use of Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/315009/mechanical-turk-using-html-in-the-api" class="question-hyperlink">Mechanical Turk: Using HTML in the API</a>
+</div>
+<div class="spacer">
+<a href="/questions/651613/are-there-alternatives-to-amazons-mechanical-turk-not-restricted-to-us" class="question-hyperlink">Are there alternatives to Amazon&#39;s Mechanical Turk not restricted to US?</a>
+</div>
+<div class="spacer">
+<a href="/questions/1020187/mechanical-turk-tutorials-or-how-to-guides" class="question-hyperlink">Mechanical Turk tutorials or how-to guides</a>
+</div>
+<div class="spacer">
+<a href="/questions/1114847/mechanical-turk-file-upload" class="question-hyperlink">Mechanical Turk File Upload</a>
+</div>
+<div class="spacer">
+<a href="/questions/2572881/knowing-the-selections-made-on-a-multichooser-box-in-a-mechanical-turk-hit-usi" class="question-hyperlink">Knowing the selections made on a &#39;multichooser&#39; box in a mechanical turk hit (using Command Line Tools)</a>
+</div>
+<div class="spacer">
+<a href="/questions/2573162/convert-graph-in-to-data-points-using-mechanical-turk" class="question-hyperlink">Convert graph in to data points using Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2906585/how-do-i-accept-a-file-upload-on-mechanical-turk" class="question-hyperlink">How do I accept a file upload on Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2916994/how-do-you-specify-the-requesters-workerid-in-a-mechanical-turk-hit" class="question-hyperlink">How do you specify the requester&#39;s workerID in a mechanical turk HIT?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2936154/how-to-dynamically-control-the-size-of-a-hit-in-amazon-mechanical-turk" class="question-hyperlink">How to dynamically control the size of a HIT in Amazon Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3073806/mechanical-turk-post-file-to-externalsubmit-interface" class="question-hyperlink">Mechanical Turk: Post file to externalSubmit interface?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3143982/amazon-mechanical-turk-api-example-creating-a-hit-from-php" class="question-hyperlink">Amazon Mechanical Turk API. Example Creating a HIT from PHP</a>
+</div>
+<div class="spacer">
+<a href="/questions/3194211/what-would-be-a-reasonable-expectation-for-job-turnaround-on-mechanical-turk" class="question-hyperlink">What would be a reasonable expectation for job turnaround on Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3238934/is-there-a-utility-to-help-me-make-lists-with-mechanical-turk" class="question-hyperlink">Is there a utility to help me make lists with Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3348029/mechanical-turk-cmd-line-tools-qualification-set-and-foreach-in-xml" class="question-hyperlink">Mechanical Turk / Cmd line tools / Qualification / #set and #foreach in xml</a>
+</div>
+<div class="spacer">
+<a href="/questions/3979928/in-mturk-how-can-i-use-participation-in-a-previous-hit-or-series-of-hits-as-a" class="question-hyperlink">In mTurk, how can I use participation in a previous HIT (or series of HITs) as a qualification?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas" class="question-hyperlink">MTurk: getQualificationScore returning &ldquo;QualificationType does not Exist&rdquo; for Base Qualifications Type (approval rate, etc)</a>
+</div>
+<div class="spacer">
+<a href="/questions/4091059/required-fields-in-mechanical-turk" class="question-hyperlink">Required fields in Mechanical Turk</a>
+</div>
+<div class="spacer">
+<a href="/questions/4146491/does-mechanical-turk-work" class="question-hyperlink">Does Mechanical Turk Work?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4483531/download-images-from-mechanical-turk" class="question-hyperlink">Download images from Mechanical Turk</a>
+</div>
+<div class="spacer">
+<a href="/questions/4661960/amazon-mechanical-turk-hit-request-from-outside-the-us" class="question-hyperlink">Amazon Mechanical Turk HIT Request from outside the US ?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4694780/creating-a-search-type-hit-on-mturk-without-access-to-prior-hit-data-to-avoid-red" class="question-hyperlink">Creating a search type HIT on MTurk without access to prior HIT data to avoid redundancy</a>
+</div>
+<div class="spacer">
+<a href="/questions/4857818/how-to-insert-a-draw-box-with-html-code-in-mechanical-turk" class="question-hyperlink">How to insert a draw box with html code in Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4918069/mechanical-turk" class="question-hyperlink">Mechanical Turk</a>
+</div>
+<div class="spacer">
+<a href="/questions/5297784/amazon-mechanical-turk-better-user-interface" class="question-hyperlink">Amazon Mechanical Turk - better user interface?</a>
+</div>
+
+    </div>
+    </div>
+
+</div>
+
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="/feeds/question/2835915" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+
+
+<script type="text/javascript" src="/posts/2835915/ivc/e8d1"></script>
+<noscript>
+    <div><img src="/posts/2835915/ivc/e8d1" class="dno" alt=""></div>
+</noscript>
+
+
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="/about">about</a> |
+                <a href="/faq">faq</a> |
+                 <a href="http://blog.stackoverflow.com">blog</a> |
+                    <a href="http://chat.stackoverflow.com">chat</a> |
+                <a href="http://data.stackexchange.com">data</a> |
+                <a href="http://itc.conversationsnetwork.org/series/stackoverflow.html">podcast</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com">feedback always welcome</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackoverflow.com">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackapps.com">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://careers.stackoverflow.com">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">&#9632;</span>&nbsp;<a href="http://serverfault.com">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">&#9632;</span>&nbsp;<a href="http://superuser.com">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">&#9632;</span>&nbsp;<a href="http://meta.stackoverflow.com">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">&#9632;</span>&nbsp;<a href="http://area51.stackexchange.com">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">&#9632;</span>&nbsp;<a href="http://webapps.stackexchange.com">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">&#9632;</span>&nbsp;<a href="http://gaming.stackexchange.com">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">&#9632;</span>&nbsp;<a href="http://askubuntu.com">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">&#9632;</span>&nbsp;<a href="http://webmasters.stackexchange.com">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">&#9632;</span>&nbsp;<a href="http://cooking.stackexchange.com">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">&#9632;</span>&nbsp;<a href="http://gamedev.stackexchange.com">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">&#9632;</span>&nbsp;<a href="http://math.stackexchange.com">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">&#9632;</span>&nbsp;<a href="http://photo.stackexchange.com">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">&#9632;</span>&nbsp;<a href="http://stats.stackexchange.com">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">&#9632;</span>&nbsp;<a href="http://tex.stackexchange.com">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">&#9632;</span>&nbsp;<a href="http://english.stackexchange.com">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">&#9632;</span>&nbsp;<a href="http://cstheory.stackexchange.com">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">&#9632;</span>&nbsp;<a href="http://programmers.stackexchange.com">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">&#9632;</span>&nbsp;<a href="http://unix.stackexchange.com">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">&#9632;</span>&nbsp;<a href="http://apple.stackexchange.com">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">&#9632;</span>&nbsp;<a href="http://wordpress.stackexchange.com">wordpress</a>&nbsp;
+                        <span style="color:#b5cda4;font-size:140%">&#9632;</span>&nbsp;<a href="http://physics.stackexchange.com">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">&#9632;</span>&nbsp;<a href="http://diy.stackexchange.com">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">&#9632;</span>&nbsp;<a href="http://gis.stackexchange.com">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">&#9632;</span>&nbsp;<a href="http://electronics.stackexchange.com">electronics</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">&#9632;</span>&nbsp;<a href="http://android.stackexchange.com">android</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.4.2.1</div>
+            </div>
+            <div id="copyright">
+                site design / logo &copy; 2011 stack exchange inc; 
+                <a href="/questions-all">user contributions</a> licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+    
+</body>
+</html>

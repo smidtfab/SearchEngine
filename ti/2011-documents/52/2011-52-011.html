@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Adding Captcha to your Form &mdash; TG2 v2.0  documentation</title>
+    <link rel="stylesheet" href="../../../_static/tg.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../../../',
+          VERSION:     '2.0 ',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="TG2 v2.0  documentation" href="../../../index.html" />
+    <link rel="up" title="ToscaWidgets Cookbook" href="../Cookbook.html" />
+    <link rel="next" title="How to create a database-driven select field" href="DynamicSelect.html" />
+    <link rel="prev" title="Creating a password verification field" href="PasswordValidation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="DynamicSelect.html" title="How to create a database-driven select field"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PasswordValidation.html" title="Creating a password verification field"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../../../index.html"><b>TurboGears--2.0 </b></a>
+  </li>
+
+          <li><a href="../ToscaWidgets.html" accesskey="U">ToscaWidgets</a> &raquo;</li>
+          <li><a href="../Cookbook.html" accesskey="U">ToscaWidgets Cookbook</a> &raquo;</li>
+  
+    <li> <b>/</b> <a href="">Adding Captcha to your Form</a></li>
+  
+
+      </ul>
+    </div>  
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  
+  <div class="section" id="adding-captcha-to-your-form">
+<h1>Adding Captcha to your Form<a class="headerlink" href="#adding-captcha-to-your-form" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-tw-recaptcha">
+<h2>What is tw.recaptcha?<a class="headerlink" href="#what-is-tw-recaptcha" title="Permalink to this headline">¶</a></h2>
+<p>tw.recaptcha is an extension to tw.forms TextField with a formencode validator. It keeps a form from being processed until there is proof that the form is being used by a human by forcing the human to analyze an image and type in the words that are shown.  It also has an audio clip you can listen to instead.</p>
+</div>
+<div class="section" id="why-is-tw-recaptcha-good">
+<h2>Why is tw.recaptcha good?<a class="headerlink" href="#why-is-tw-recaptcha-good" title="Permalink to this headline">¶</a></h2>
+<p>tw.recaptcha is good because like <a class="reference external" href="http://recaptcha.net/">ReCaptcha</a> the words you analyze are words that are scanned from old books that are being digitized.  The books are free and anyone can download and read them.  What happens is when the book is scanned it is broken up by word and those words are what is used in <a class="reference external" href="http://recaptcha.net/">ReCaptcha</a>.  Since a scanner is not perfect and sometimes interprets the words incorrectly, the human answers the <a class="reference external" href="http://recaptcha.net/">ReCaptcha</a> sends back help to make the digital copies as accurate as possible and thus a pleasant experience for everyone.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>easy_install tw.recaptcha</pre>
+</div>
+<p>If you have problems there is a way to manually get <a class="reference external" href="http://recaptcha.net/">ReCaptcha</a> working, often recaptcha-client does not install properly:</p>
+<p>Download and install recaptcha-client on its own first.  If you want to try it all in one command using easy_install then you could try this (just doing _easy_install_ _recaptcha-<a href="#id5"><span class="problematic" id="id6">client_</span></a> sometimes gives a broken egg):</p>
+<div class="highlight-python"><pre>easy_install recaptcha-client</pre>
+</div>
+<p>If you get a broken egg download manually and install using the available setup.py:</p>
+<div class="highlight-python"><pre>curl -O http://pypi.python.org/packages/source/r/recaptcha-client/recaptcha-client-1.0.1.tar.gz#md5=6a479f2142efc25954a6f37012b4c2dd
+tar -xvf recaptcha-client-1.0.1.tar.gz
+cd recaptcha-client-1.0.1
+python setup.py install</pre>
+</div>
+<p>Now try easy_installing tw.recaptcha again</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>First thing first.  Goto the <a class="reference external" href="http://recaptcha.net/">ReCaptcha</a> website and register your domain.  It is free.</p>
+<p>Once that is done we can move onto the actual coding aspect.</p>
+<p>The first step is to make sure you have all of the imports that you need.  If you are already using forms and/or validation you may already have some of these:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">tw.forms</span> <span class="kn">import</span> <span class="n">TableForm</span>
+<span class="kn">from</span> <span class="nn">tw.recaptcha</span> <span class="kn">import</span> <span class="n">ReCaptchaWidget</span>
+<span class="kn">from</span> <span class="nn">tw.recaptcha.validator</span> <span class="kn">import</span> <span class="n">ReCaptchaValidator</span>
+<span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">WidgetsList</span>
+<span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span><span class="p">,</span> <span class="n">NoDefault</span>
+<span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">NotEmpty</span>
+</pre></div>
+</div>
+<p>Create a new Form to hold your recaptcha:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyForm</span><span class="p">(</span><span class="n">TableForm</span><span class="p">):</span>
+   <span class="k">class</span> <span class="nc">fields</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+        <span class="n">recaptcha_response_field</span> <span class="o">=</span> <span class="n">ReCaptchaWidget</span><span class="p">(</span><span class="n">public_key</span><span class="o">=</span><span class="s">&#39;&lt;your_public_key&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, we are going to need a validator, and since there are extra fields appended with the recaptcha widget, we are going to need a filtering schema to address the extra fields.  Alright, now with that done you need to setup your filtering schema class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">FilteringSchema</span><span class="p">(</span><span class="n">Schema</span><span class="p">):</span>
+   <span class="n">filter_extra_fields</span> <span class="o">=</span> <span class="bp">False</span>
+   <span class="n">allow_extra_fields</span> <span class="o">=</span> <span class="bp">True</span>
+   <span class="n">ignore_key_missing</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>Add the recaptcha validator to the list of chained validators for your form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">validator</span> <span class="o">=</span> <span class="n">FilteringSchema</span><span class="p">(</span><span class="n">chained_validators</span><span class="o">=</span><span class="p">(</span><span class="n">ReCaptchaValidator</span><span class="p">(</span><span class="n">private_key</span><span class="o">=</span><span class="s">&#39;&lt;your_private_key&#39;</span><span class="p">,</span>  <span class="n">remote_ip</span><span class="o">=</span><span class="s">&#39;&lt;your_domains_ip_address&#39;</span><span class="p">),))</span>
+</pre></div>
+</div>
+<p>The next step is to create an instance of the form to pass into your page:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">captchaForm</span> <span class="o">=</span> <span class="n">MyForm</span><span class="p">(</span><span class="n">validator</span><span class="o">=</span><span class="n">validator</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That takes care of the creation process.  It should now load and work on your page.  Make sure the function that it goes to when you hit submit is expecting the two variables.  If you are using <em>/</em>/kw then you are fine.  If you are specifying each one individually, then you will want to add the two variables into your def if you don&#8217;t it will error saying it got values it wasn&#8217;t expecting. Your code might look something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyController</span><span class="p">(</span><span class="n">BaseController</span><span class="p">):</span>
+
+   <span class="nd">@expose</span><span class="p">(</span><span class="s">&quot;genshi:my.page.with.form.def&quot;</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">showForm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+       <span class="n">pylons</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">form</span> <span class="o">=</span> <span class="n">captchaForm</span>
+       <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
+
+   <span class="nd">@validate</span><span class="p">(</span><span class="n">captchaForm</span><span class="p">,</span> <span class="n">error_handler</span><span class="o">=</span><span class="n">showForm</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">storeFormData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">myvar</span><span class="p">,</span> <span class="n">myvar2</span><span class="p">,</span> <span class="n">recaptcha_response_field</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">recaptcha_challenge_field</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+       <span class="sd">&quot;&quot;&quot;My form storage code here&quot;&quot;&quot;</span>
+       <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Once you are done you will end up with a captcha on your page that looks like</p>
+<img alt="http://docs.turbogears.org/2.0/RoughDocs/ToscaWidgets/Cookbook/ReCaptcha?action=AttachFile&amp;do=get&amp;target=recaptcha_field.jpg" src="http://docs.turbogears.org/2.0/RoughDocs/ToscaWidgets/Cookbook/ReCaptcha?action=AttachFile&amp;do=get&amp;target=recaptcha_field.jpg" />
+</div>
+</div>
+
+
+            <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/tg-site/embed.js"></script><noscript><a href="http://tg-site.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+          </div>
+        </div>
+      
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../toc.html">
+              <img class="logo" src="../../../_static/tg.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../../../toc.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Adding Captcha to your Form</a><ul>
+<li><a class="reference external" href="#what-is-tw-recaptcha">What is tw.recaptcha?</a></li>
+<li><a class="reference external" href="#why-is-tw-recaptcha-good">Why is tw.recaptcha good?</a></li>
+<li><a class="reference external" href="#installation">Installation</a></li>
+<li><a class="reference external" href="#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="PasswordValidation.html" title="previous chapter">Creating a password verification field</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="DynamicSelect.html" title="next chapter">How to create a database-driven select field</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../../_sources/main/ToscaWidgets/Cookbook/ReCaptcha.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../../../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="DynamicSelect.html" title="How to create a database-driven select field"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PasswordValidation.html" title="Creating a password verification field"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../../../index.html"><b>TurboGears--2.0 </b></a>
+  </li>
+
+          <li><a href="../ToscaWidgets.html" accesskey="U">ToscaWidgets</a> &raquo;</li>
+          <li><a href="../Cookbook.html" accesskey="U">ToscaWidgets Cookbook</a> &raquo;</li>
+  
+    <li> <b>/</b> <a href="">Adding Captcha to your Form</a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, TurboGears DocTeam.
+      Last updated on Apr 20, 2009.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script type="text/javascript" src="http://disqus.com/forums/tg-site/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7088080-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+  </body>
+</html>

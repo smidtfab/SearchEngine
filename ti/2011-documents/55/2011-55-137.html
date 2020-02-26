@@ -1,0 +1,387 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+<head>
+<title>AWS Developer Forums: New version of Mechanical Turk API, 2006-01-16, now available!</title>
+<meta http-equiv="content-type"
+    content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"
+    href="/css/forums.css"/>
+
+
+
+</head>
+<body>
+
+<script src="/js/urchin.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+  var AWSForumsUrchin = function() {
+  var meta = document.createElement('meta');
+  meta.name = "Urchin-AWSF";
+  meta.id = "Urchin-AWSF";
+  meta.content = "OK";
+  urchinTracker();
+  document.getElementsByTagName('head')[0].appendChild( meta );
+ };
+ AWSForumsUrchin ();
+</script> 
+
+<link rel="stylesheet" href="/css/awsGlobalNav2.css" type="text/css" /> 
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" href="/css/awsGlobalNav2IE6.css" type="text/css" />
+    <link rel="stylesheet" href="/css/documentationIE6.css" type="text/css" />
+  <![endif]--> 
+   <table cellpadding="0" cellspacing="0" border="0" align="center" width="950px">
+      <tr>
+        <td valign="top">
+        <!-- header -->
+        <div id="mainNav">
+          <a href="http://aws.amazon.com/">
+          <img src="//dct5qpnx91avp.cloudfront.net/images/logo_aws.gif"
+             id="awsHeaderLogo"
+             width="164"
+             height="60"
+             alt="Amazon Web Services">
+          </a>
+        <div id="globalTopLinks">
+          <a href="https://console.aws.amazon.com/ec2/home"
+           class="signIn"><img src="//dct5qpnx91avp.cloudfront.net/images/laptop-icon-16x13.png"
+                               width="16"
+                               height="13"
+                               alt=""><span>Sign in to the AWS Management Console</span></a>
+          <a href="https://aws-portal.amazon.com/gp/aws/developer/registration/index.html"
+           class="create"><img src="//dct5qpnx91avp.cloudfront.net/images/aws-box-13x13.png"
+                               width="13"
+                               height="13"
+                               alt=""><span>Create an AWS Account</span></a>
+        </div>
+        <ul id="tabs">
+            <li class="first tab" id="awsTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/about-aws/">AWS</a>
+                </div>
+            </li>
+            <li class="tab" id="productsTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/products/">Products</a>
+                </div>
+            </li>
+
+            <li class="tab" id="developersTab">
+                <div class="liner">
+                    <span class="icon"></span>
+                    <a href="http://aws.amazon.com/resources/">Developers</a>
+                </div>
+            </li>
+            <li class="tab" id="communityTab">
+
+                <div class="liner">
+                    <span class="icon"></span>
+                    <a href="http://aws.amazon.com/resources/">Community</a>
+                </div>
+            </li>
+            <li class="tab" id="supportTab">
+                <div class="liner">
+
+                    <span class="icon"></span><a href="http://aws.amazon.com/support">Support</a>
+                </div>
+            </li>
+            <li class="last tab" id="accountTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/account/">Account</a>
+                </div>
+            </li>
+        </ul>
+        <div class="flyout">
+            <div class="liner">
+                <div class="content"></div>
+
+            <a href="#" class="close">
+                    close <img src="//dct5qpnx91avp.cloudfront.net/images/close-14x14.png" height="14" width="14" alt="">
+                </a>
+            </div>
+          </div>
+        </div>
+        </td>
+      </tr>
+    <tr><td valign="top">
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="jive-page-title">Discussion Forums</td>
+        <td nowrap align="right">
+<div id="jive-accountbox" class="clearfix">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td align="right" class="account-box-wrapper">
+Welcome, Guest                 <a class="jive-acc-login" href="/login.jspa;jsessionid=98BD4517D0F62E042F643ABFDFED68E9">Login</a>
+                 <a href="/help.jspa;jsessionid=98BD4517D0F62E042F643ABFDFED68E9" class="jive-acc-help" title="Forums Help">Forums Help</a> 
+         </td>
+    </tr>
+    </table>
+</div>
+</td>
+    </tr>
+    <tr>
+
+        <td style="padding-top: 8px;" colspan="2" valign="top">
+         <div id="jive-breadcrumbs">
+    <em>
+
+
+    <a href="/index.jspa;jsessionid=98BD4517D0F62E042F643ABFDFED68E9?categoryID=1">Discussion Forums</a>
+
+
+            <span class="bidi">
+            <span class="gt">&gt;</span>
+            <a href="/category.jspa;jsessionid=98BD4517D0F62E042F643ABFDFED68E9?categoryID=3">Category: Amazon Web Services</a>
+            </span>
+
+            <span class="bidi">
+            <span class="gt">&gt;</span>
+                    <a href="/forum.jspa;jsessionid=98BD4517D0F62E042F643ABFDFED68E9?forumID=11&start=0">Forum: Amazon Mechanical Turk (Beta)</a>
+            </span>
+
+        
+
+        <span class="bidi">
+            <span class="gt">&gt;</span>
+            <span class="bctxt">Announcement</span>
+        </span>
+    
+    
+    </em>
+</div>
+   <div id="jive-annpage">
+
+<div class="jive-buttons">
+<table summary="Buttons" cellpadding="0" cellspacing="0" border="0">
+<tbody>
+    <tr>
+        <td class="jive-icon">
+            
+                <a href="forum.jspa?forumID=11"
+                 ><img src="https://dn1lvoe5mgzdm.cloudfront.net/images/arrow-left-16x16.gif" width="16" height="16" border="0" alt="Back to Discussion Forum"></a>
+            
+        </td>
+        <td class="jive-icon-label">
+            
+                <a href="forum.jspa?forumID=11"
+                 >Back to Discussion Forum</a>
+            
+        </td>
+
+        
+    </tr>
+</tbody>
+</table>
+</div>
+
+<br />
+
+
+
+    <div class="jive-pm-box">
+    <div class="jive-table">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <thead>
+        <tr>
+            <th class="jive-first-last">
+            	
+                Announcement: New version of Mechanical Turk API, 2006-01-16, now available!
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" class="jive-first-last">
+                <div class="jive-pm-msg-info">
+                <table cellpadding="3" cellspacing="1" border="0" width="100%">
+                <tr>
+                    <td class="jive-label">
+                    	
+                        Posted By:
+                    </td>
+                    <td>
+                        
+                            <a href="profile.jspa?userID=17074"
+                                >Dan@AWS</a>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="jive-label">
+                        Created in:
+                    </td>
+                    <td colspan="2">
+                        
+                            Forum:
+                            <a href="forum.jspa?forumID=11">Amazon Mechanical Turk (Beta)</a>
+                        
+                    </td>
+                </tr>
+
+                
+
+                    <tr>
+                        <td class="jive-label">
+                            
+                            Status:
+                        </td>
+                        <td colspan="2">
+                            
+                            <span style="color:#f00;font-weight:bold;">Expired</span>
+                        </td>
+                    </tr>
+
+                
+
+                <tr>
+                    <td class="jive-label">
+                    	
+                        Posted on:
+                    </td>
+                    <td colspan="2">
+                        Mar 3, 2006 6:12 PM
+                    </td>
+                </tr>
+
+                
+
+                </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="jive-first-last">
+                <div class="jive-body">
+                <p>Greetings, developers!</p>
+<br />
+<p>I am pleased to announce a new version of the Mechanical Turk Requester API with several new features.</p>
+<br />
+<ul>
+<li>HIT Types.  You can now define HIT types to manage work that takes the form of many similar HITs.  A HIT type is simply a set of values for HIT properties that are common to all HITs of a particular type. You can now use a HIT type ID to create HITs with the property values of a HIT type, and to query for HITs of a given type.<br/><br/></li>
+<br />
+<li>"Reviewing" HITs.  When a HIT becomes "reviewable," such as when results have been submitted for all of the HIT's assignments or the HIT has reached its expiration time, your application can now move the HIT to a new status, called "reviewing."  Your application can query for "reviewable" HITs and "reviewing" HITs separately, giving your application greater flexibility in how it reviews HITs.<br/><br/></li>
+<br />
+<li>Updatable Qualification tests.  You can now change the Qualification test for a Qualification type at any time using the UpdateQualificationType operation.<br/><br/></li>
+<br />
+<li>New Qualification request fields.  A request for a Qualification now includes the ID of the user who is requesting the Qualification. The request also includes the test question data that corresponds to the user's answer data.  If you change the test for a type, you can keep track of which version of the test a user took by looking at the request data.<br/><br/></li>
+<br />
+<li>Other minor changes.  (See the release notes for more information.)<br/><br/></li>
+</ul>
+<br />
+<p>The new API version number is "2006-01-16".  Please be sure you are<br />
+specifying the API version with your requests:</p>
+<br />
+<ul>
+<li>SOAP users, be sure your applications are using the WSDL that<br />
+corresponds with the version of the API you wish to use.  The WSDL for<br />
+the newest version of the API is available at the following URL:<br/>
+<br/>
+<a href="http://mechanicalturk.amazonaws.com/AWSMechanicalTurk/2006-01-16/AWSMechanicalTurkRequester.wsdl">http://mechanicalturk.amazonaws.com/AWSMechanicalTurk/2006-01-16/AWSMechanicalTurkRequester.wsdl</a><br />
+<br/><br/></li>
+<br />
+<li>REST users, be sure to include the Version parameter with every<br />
+request.  To use the new features, specify a Version of "2006-01-16".<br />
+XML responses will conform to the corresponding version of the schema:<br/>
+<br/>
+<a href="http://mechanicalturk.amazonaws.com/AWSMechanicalTurk/2006-01-16/AWSMechanicalTurkRequester.xsd">http://mechanicalturk.amazonaws.com/AWSMechanicalTurk/2006-01-16/AWSMechanicalTurkRequester.xsd</a><br />
+<br/><br/></li>
+</ul>
+<br />
+<p>See the updated Mechanical Turk Service Developer Guide for more information about API versions and the WSDL and XSD.</p>
+<br />
+<p>To read the release notes for this release, and to read or download<br />
+the updated documentation, visit the AWS web site:</p>
+<br />
+<p><a href="http://aws.amazon.com/mturk">http://aws.amazon.com/mturk</a></p>
+<br />
+<p>Thanks!</p>
+<br />
+<p>-- Dan</p>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+
+
+
+</div> <br />
+        <br />
+         <hr moshade="noshade" width="100%" color="#cccccc" size="1"> 
+ 
+<style> 
+ 
+.aws-footer {
+    font-size:85%;
+    text-align:center;
+}
+ 
+.h_bar {
+  list-style-image: none;
+  list-style-position:outside;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 10px;
+}
+ 
+.h_bar li{
+  border-left: 1px solid #CCCCCC;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: inline;
+  list-style-type: none;
+}
+ 
+li.first{
+  border-left: 0px;
+}
+ 
+</style> 
+ 
+<div class="aws-footer"> 
+    <ul class="h_bar"> 
+        <li class="first"> 
+          <a target="_blank" href="http://aws.typepad.com/">AWS Blog <img src="https://dn1lvoe5mgzdm.cloudfront.net/images/amazon/icon_offsite.gif" height="13" alt="null" width="15" border="0"/></a> 
+        </li> 
+        <li> 
+          <a href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&amp;p=irol-InfoReq">Press Inquiries</a> 
+        </li> 
+        <li> 
+          <a href="http://aws.amazon.com/careers">Careers at AWS</a> 
+        </li> 
+        <li> 
+            <a href="http://aws.amazon.com/contact-us">Contact Us</a> 
+        </li> 
+        <li>    
+            <a href="/guidelines.jsp">Community Guidelines</a> 
+        </li> 
+        <li>    
+            <a href="http://aws.amazon.com/privacy">Privacy Policy</a> 
+        </li> 
+        <li>    
+            <a href="http://aws.amazon.com/terms">Terms of Use</a> 
+        </li> 
+    </ul>    
+    <br><span style="color: rgb(102, 102, 102);">&copy; 2009-2010 Amazon Web Services <span class="caps">LLC</span> or its affiliates. All rights reserved.</span> 
+ 
+    <br> 
+    <br><img src="https://dn1lvoe5mgzdm.cloudfront.net/images/amazon/logo_an_amazon_company.gif" height="21" width="160" border="0"/> 
+</div> 
+        </td>
+    </tr>
+</table>
+</body>
+</html>

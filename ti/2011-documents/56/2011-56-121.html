@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="http://www.typepad.com/" />
+	<meta name="keywords" content="amazon mechanical turk, crowdsourcing, on-demand labor, labor-as-a-service" />
+	<meta name="description" content="The official blog of Amazon Mechanical Turk - find tips, tricks, best practices, product announcements to learn more about using the mTurk marketplace. " />
+	<link rel="stylesheet" href="http://mechanicalturk.typepad.com/blog/styles.css?v=6" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/themes/common/print.css" type="text/css" media="print" />
+	<link rel="alternate" type="application/atom+xml" title="Posts on 'The Mechanical Turk Blog ' (Atom)" href="http://mechanicalturk.typepad.com/blog/atom.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'The Mechanical Turk Blog ' (RSS 1.0)" href="http://mechanicalturk.typepad.com/blog/index.rdf" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'The Mechanical Turk Blog ' (RSS 2.0)" href="http://mechanicalturk.typepad.com/blog/rss.xml" />
+	<script type="text/javascript">
+		var TPApp = {};
+		TPApp.app_uri = "http://www.typepad.com/";
+	</script>
+	<script type="text/javascript" src="http://static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/js/yui/yahoo-dom-event.js,/js/app/thumbnail-gallery-min.js,/js/sixatrack-loader.js,/js/app/flyouts-min.js"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['t2._setAccount', 'UA-225723-36']);
+		_gaq.push(['t2._setDomainName', 'none']);
+		_gaq.push(['t2._setAllowLinker', true]);
+        _gaq.push(['t2._setCustomVar', 1, 'Blog', '6a013488051a84970c013488e4664c970c', 3]);
+        _gaq.push(['t2._setCustomVar', 2, 'Page Type', 'index', 3]);
+		_gaq.push(['t2._trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+	<title>The Mechanical Turk Blog </title>
+	<link rel="openid.server" href="http://www.typepad.com/services/openid/server" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.typepad.com/services/rsd/6a013488051a84970c013488e4664c970c" />
+	
+        
+<script type="text/javascript" src="http://use.typekit.com/bjd1nks.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body class="layout-two-column-right">
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+    FB.init( { apiKey: 'a279adbe87e2b3c505e777af99a5260d' } );
+
+    YAHOO.util.Event.onDOMReady( function() {
+        FB.XFBML.parse();
+    } );
+};
+( function() {
+    var e = document.createElement( 'script' ); e.async = true;
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    document.getElementById( 'fb-root' ).appendChild( e );
+} )();
+</script>
+
+	
+	<div id="container">
+		<div id="container-inner" class="pkg">
+			
+			<!-- banner -->
+<div id="banner">
+	<div id="banner-inner" class="pkg">
+		
+		<h1 id="banner-header"><a href="http://mechanicalturk.typepad.com/blog/" accesskey="1">The Mechanical Turk Blog </a></h1>
+		<h2 id="banner-description">
+			The official blog of Amazon Mechanical Turk. 
+		</h2>
+	</div>
+</div>
+
+<div id="nav">
+	<div id="nav-inner">
+		<ul class="nav-list pkg">
+			<li class="nav-list-item"><a href="http://mechanicalturk.typepad.com/blog/">Home</a></li>
+			<li class="nav-list-item"><a href="http://mechanicalturk.typepad.com/blog/archives.html">Browse the Archives</a></li>
+			<li class="nav-list-item"><a href="http://mechanicalturk.typepad.com/blog/atom.xml">Subscribe to the Feed</a></li>
+			<li class="last-nav-list-item nav-list-item"><a href="http://www.mturk.com/">Visit Us at MTurk.com</a></li>
+		</ul>
+	</div>
+</div>
+
+
+			<div id="pagebody">
+				<div id="pagebody-inner" class="pkg">
+					<div id="alpha">
+						<div id="alpha-inner" class="pkg">
+							<!-- entry list sticky -->
+
+	
+	<div class="entry-category-announcements entry-category-product_ entry-category-requester entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0147e0ce740d970b">
+
+					<h3 class="entry-header"><a href="http://mechanicalturk.typepad.com/blog/2010/12/some-thoughts-on-invalid-hits-.html">Some thoughts on invalid HITs </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>There has been some discussion about the quality of work in the Mechanical Turk marketplace so we wanted to provide some information on our Requester <a href="https://requester.mturk.com/mturk/conditionsofuse" target="_self">Participation Agreement</a> (PA) and how we go about ensuring high quality work in the system. The Amazon Mechanical Turk PA outlines our terms of service for Requesters including the type of work considered invalid. When we find invalid work in the system, we work quickly to remove those HITs.&#0160; &#0160;<br /><br />Some examples of invalid HITs include requests that: &#0160;</p>
+<ul>
+<li>Require disclosure of the Worker&#39;s identity or e-mail address, either directly or indirectly</li>
+<li>Require registration at another website or group</li>
+<li>Directly or indirectly promote a site, service, or opinion&#0160;</li>
+<li>Violate the terms and conditions of an activity or website (for instance asking Workers to vote for something)</li>
+<li>Have explicit or offensive content, for instance, nudity, but do not have the Adult Content Qualification</li>
+<li>Ask Workers to solicit third parties&#0160;</li>
+<li>Generate &quot;referred&quot; site visits or click through traffic</li>
+<li>Ask workers to take action to manipulate a search engine&#39;s relationship data</li>
+<li>Violate copyrights&#0160;&#0160;</li>
+</ul>
+<p><span style="text-decoration: underline;"><strong>Reporting Invalid HITs<br /></strong></span>In addition to the measures we have in place to ensure quality work in the system, anybody using Amazon Mechanical Turk can also provide accurate, timely feedback on the HITs in the system. If you are a Worker or Requester and you identify a HIT that you think violates our PA, please report it and we will take appropriate action.&#0160; &#0160;To report an invalid HIT, select the “violates the Amazon Mechanical Turk policies” link at the bottom right of the HIT.&#0160;</p>
+<p><a href="http://mechanicalturk.typepad.com/.a/6a013488051a84970c0147e0ce6e97970b-pi" style="display: inline;"><img alt="SampleHIT_arrow" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e0ce6e97970b image-full" src="http://mechanicalturk.typepad.com/.a/6a013488051a84970c0147e0ce6e97970b-800wi" title="SampleHIT_arrow" /></a></p>
+<p>We monitor our marketplace closely and want you to know that we take quality very seriously and appreciate the time users take to report invalid work.</p>
+<p>-- The Mechanical Turk Team&#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 12/17/2010 at 19:08 in <a href="http://mechanicalturk.typepad.com/blog/announcements/">Announcements</a>, <a href="http://mechanicalturk.typepad.com/blog/product/">Product </a>, <a href="http://mechanicalturk.typepad.com/blog/requester/">Requester</a> </span> <span class="separator">|</span> <a class="permalink" href="http://mechanicalturk.typepad.com/blog/2010/12/some-thoughts-on-invalid-hits-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://mechanicalturk.typepad.com/blog/2010/12/some-thoughts-on-invalid-hits-.html#comments">Comments (8)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://mechanicalturk.typepad.com/blog/2010/12/some-thoughts-on-invalid-hits-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="http://digg.com/submit?url=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fsome-thoughts-on-invalid-hits-.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="http://del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fsome-thoughts-on-invalid-hits-.html&title=Some%20thoughts%20on%20invalid%20HITs%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Some thoughts on invalid HITs ';
+var tweetUrl    = 'http://bit.ly/ea6bWX';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="http://mechanicalturk.typepad.com/blog/2010/12/some-thoughts-on-invalid-hits-.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-conferences entry-category-press entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0148c6b8dbc2970c">
+
+					<h3 class="entry-header"><a href="http://mechanicalturk.typepad.com/blog/2010/12/network-recap.html">Net:Work Conference Recap</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><a href="http://mechanicalturk.typepad.com/.a/6a013488051a84970c0147e0aeea4c970b-pi" style="display: inline;"><img alt="Nework" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e0aeea4c970b" src="http://mechanicalturk.typepad.com/.a/6a013488051a84970c0147e0aeea4c970b-800wi" title="Nework" /></a> <br /><br /></p>
+<p>Last week <a href="http://events.gigaom.com/network/10/speakers/#sharon_chiarella" target="_self">Sharon Chiarella</a>, VP Mechanical Turk and I attended the <a href="http://gigaom.com/" target="_self">GigaOm</a> <a href="http://events.gigaom.com/network/10/" target="_self">Net:Work Future of Work</a> conference in San Francisco. These events are so awesome – it is great to spend time with the Crowdsourcing community, our customers and partners. We hear such useful and insightful feedback.&#0160;</p>
+<p>Sharon participated on The Human Cloud: Elastic Workforce in the Enterprise panel along with <a href="http://events.gigaom.com/network/10/speakers/#alex_edelstein" target="_self">Alex Edelstein</a>, CEO of <a href="http://www.cloudcrowd.com/" target="_self">CloudCrowd</a>, <a href="http://events.gigaom.com/network/10/speakers/#maynard_webb" target="_self">Maynard Web</a>, CEO of<a href="http://www.liveops.com/" target="_self"> LiveOps</a> and<a href="http://events.gigaom.com/network/10/speakers/#doron_reuveni" target="_self"> Doron Reuveni</a>, CEO of <a href="http://www.utest.com/" target="_self">uTest</a> and was moderated by <a href="http://events.gigaom.com/network/10/speakers/#niel_robertson" target="_self">Niel Robertson</a>, CEO of <a href="http://www.trada.com/" target="_self">Trada</a>.&#0160;</p>
+<p>The panel was asked to provide insight into the value of labor-as-a-service within the Enterprise, the impact of Cloud-based labor on outsourcing and how the category has changed over the last few years.</p>
+<p>Some key highlights:&#0160;</p>
+<ul>
+<li>Platforms like Mechanical Turk are speeding up the pace of innovation by allowing businesses to get work done more quickly and scale up and down with an on-demand labor pool as their needs change.&#0160;</li>
+<li>Anonymity of Workers was discussed. Alex Edelstein had a great parallel about the importance of a Workers identity – do you need to know who installed the steering wheel in your car to know if the work that was done was high quality? Sharon agreed that it is not an individual’s identity that’s important but the quality of their work.&#0160;</li>
+</ul>
+<p>Watch the video below to get the full details from the panel. Thanks to GigaOm for hosting such a great event – we were glad to be a part of it!&#0160;</p>
+<p>-- Natala&#0160;</p>
+<p>&#0160;</p>
+<p>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="340" id="lsplayer" width="560">
+<param name="movie" value="http://cdn.livestream.com/grid/LSPlayer.swf?channel=gigaomtv&amp;clip=pla_1c3427e7-2e69-4aff-89c6-c619b02027f3&amp;color=0xe7e7e7&amp;autoPlay=false&amp;mute=false&amp;iconColorOver=0x888888&amp;iconColor=0x777777" />
+<param name="allowScriptAccess" value="always" />
+<param name="allowFullScreen" value="true" /><embed allowfullscreen="true" allowscriptaccess="always" height="340" name="lsplayer" src="http://cdn.livestream.com/grid/LSPlayer.swf?channel=gigaomtv&amp;clip=pla_1c3427e7-2e69-4aff-89c6-c619b02027f3&amp;color=0xe7e7e7&amp;autoPlay=false&amp;mute=false&amp;iconColorOver=0x888888&amp;iconColor=0x777777" type="application/x-shockwave-flash" width="560" wmode="transparent" />
+</object>
+</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 12/14/2010 at 10:44 in <a href="http://mechanicalturk.typepad.com/blog/conferences/">Conferences</a>, <a href="http://mechanicalturk.typepad.com/blog/press/">Press</a> </span> <span class="separator">|</span> <a class="permalink" href="http://mechanicalturk.typepad.com/blog/2010/12/network-recap.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://mechanicalturk.typepad.com/blog/2010/12/network-recap.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://mechanicalturk.typepad.com/blog/2010/12/network-recap.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="http://digg.com/submit?url=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fnetwork-recap.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="http://del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fnetwork-recap.html&title=Net%3AWork%20Conference%20Recap', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Net:Work Conference Recap';
+var tweetUrl    = 'http://bit.ly/gZNmhx';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="http://mechanicalturk.typepad.com/blog/2010/12/network-recap.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-announcements entry-category-press entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0147e0792c63970b">
+
+					<h3 class="entry-header"><a href="http://mechanicalturk.typepad.com/blog/2010/12/hello-world.html">Hello world!</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Welcome to the official Mechanical Turk blog!</p>
+<p>We’re launching this blog to share information and updates with Requesters, Workers and fans of the Mechanical Turk marketplace. We plan to provide you with useful information such as product announcements, how-to guides, best practices, API tips and tricks as well as case studies, interviews and examples of how businesses are using Mechanical Turk for everything from transcription to content moderation to data cleansing and search algorithm testing.</p>
+<p>You can also stay updated by following us on Twitter <a title="Amazon Mechanical Turk on Twitter @amazonmturk" href="http://twitter.com/amazonmturk" target="_self">@amazonmturk</a> or friending us on <a title="Become a Fan of Amazon Mechanical Turk on Facebook" href="http://facebook.com/amazonmturk" target="_self">Facebook</a>.</p>
+<p><br /><strong>The Mechanical Turk Team</strong></p>
+<table>
+<tbody>
+<tr>
+<td width="35"><a href="http://www.twitter.com/amazonmturk"><img src="http://mechanicalturk.typepad.com/images/icon_twitter_30px.png" alt="Follow Amazon Mechanical Turk on Twitter" width="30" height="30" /></a></td>
+<td>
+<p><a href="http://www.twitter.com/amazonmturk"><em>Follow us on Twitter</em></a></p>
+</td>
+</tr>
+<tr>
+<td width="35"><a href="http://www.facebook.com/amazonmturk"><img src="http://mechanicalturk.typepad.com/images/icon_facebook_30px.png" alt="Become a Fan of Amazon Mechanical Turk on Facebook" width="30" height="30" /></a></td>
+<td>
+<p><a title="Become a Fan of Amazon Mechanical Turk on Facebook" href="http://www.facebook.com/amazonmturk"><em>Become a fan on Facebook</em></a></p>
+</td>
+</tr>
+<tr>
+<td width="35"><a href="http://mechanicalturk.typepad.com/blog/atom.xml"><img src="http://mechanicalturk.typepad.com/images/icon_rss_30px.png" alt="Subscribe to the Amazon Mechanical Turk RSS feed" width="30" height="30" /></a></td>
+<td>
+<p><a href="http://mechanicalturk.typepad.com/blog/atom.xml"><em>Subscribe to our RSS feed</em></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 12/08/2010 at 23:01 in <a href="http://mechanicalturk.typepad.com/blog/announcements/">Announcements</a>, <a href="http://mechanicalturk.typepad.com/blog/press/">Press</a> </span> <span class="separator">|</span> <a class="permalink" href="http://mechanicalturk.typepad.com/blog/2010/12/hello-world.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="http://mechanicalturk.typepad.com/blog/2010/12/hello-world.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="http://mechanicalturk.typepad.com/blog/2010/12/hello-world.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="http://digg.com/submit?url=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fhello-world.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="http://del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fhello-world.html&title=Hello%20world!', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Hello world!';
+var tweetUrl    = 'http://bit.ly/eDP052';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="http://mechanicalturk.typepad.com/blog/2010/12/hello-world.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+			<div class="pager-bottom pager-entries pager content-nav">
+		<div class="pager-inner">
+			<span class="pager-left">
+				<a href="http://mechanicalturk.typepad.com/blog/"><span class="chevron">&#171;</span>
+					<span class="pager-label">Previous</span></a>
+			</span>
+			
+			
+		</div>
+	</div>
+	
+	
+
+
+						</div>
+					</div>
+					<div id="beta">
+						<div id="beta-inner" class="pkg">
+							<!-- sidebar -->
+
+
+<div class="module-custom_html module">
+    <div class="module-content">
+<a href="http://www.mturk.com"><img src="http://mechanicalturk.typepad.com/button_blog_mturk.png" width="231" height="64" alt="Visit the Amazon Mechanical Turk website" /></a>
+    </div>
+</div>
+<!-- Blog Search Module -->
+<div class="module-search module">
+    <h2 class="module-header">Search</h2>
+    <div class="module-content">
+        <form id="search-blog" method="get" action="http://mechanicalturk.typepad.com/.services/blog/6a013488051a84970c013488e4664c970c/search">
+            <input type="search" name="filter.q" results="5" value="" />
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+</div>
+<!-- END Blog Search Module -->
+<div class="module-custom_html module">
+    <div class="module-content">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 3,
+  interval: 6000,
+  width: 230,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#dbdbdb',
+      color: '#666666'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#666666',
+      links: '#fea413'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('amazonmturk').start();
+</script>
+    </div>
+</div>
+<div class="module-custom_html module">
+    <div class="module-content">
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/amazonmturk" width="230" connections="6" stream="false" header="true"></fb:like-box>
+    </div>
+</div>
+<div class="module-custom_html module">
+    <div class="module-content">
+<script type="text/javascript">
+var disqus_shortname = 'amazonmturk';
+
+// DON'T EDIT BELOW THIS LINE
+(function () {
+    var div = document.getElementById('all-comments');
+    div.innerHTML = ''; div.id = 'disqus_thread';
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+    </div>
+</div>
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="http://www.typepad.com/t/stats?blog_id=86844807377098508&amp;user_id=&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try{
+    var pageTracker = _gat._getTracker("UA-20104705-1");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qoptions = { tags:"typepad.core" }; _qacct="p-fcYWUmj5YbYKM"; quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-fcYWUmj5YbYKM" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-fcYWUmj5YbYKM.gif?tags=typepad.core" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+ 
+
+<!-- Blogside Toolbar -->
+<script type="text/javascript">
+    var TPToolbar = {
+        src:   "http://www.typepad.com/services/toolbar?blog_id=6a013488051a84970c013488e4664c970c&asset_id=&atype=index&to=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2Fpage%2F2%2F&autofollowed=0",
+        asset_xid: "",
+    
+        bookmarklet_uri: "http://static.typepad.com/.shared/js/qp/loader-combined-min.js"
+    };
+    var TYPEPAD___bookmarklet_domain = "http://www.typepad.com/";
+</script>
+<script type="text/javascript" src="/.shared/js/toolbar/blogside-toolbar-combined-min.js"></script>
+<!-- End Blogside Toolbar -->
+<!-- Begin comScore Tag -->
+<script>
+document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js'%3E%3C/script%3E"));
+</script>
+<script>
+COMSCORE.beacon({
+  c1: 2,
+  c2: "6035669",
+  c3: "",
+  c4: "http://mechanicalturk.typepad.com/blog/",
+  c5: "",
+  c6: "",
+  c15: ""
+});
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&c2=6035669&c3=&c4=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+</body>
+</html>
+<!-- ph=1 -->

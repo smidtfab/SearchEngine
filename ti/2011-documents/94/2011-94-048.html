@@ -1,0 +1,682 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Qualifications</title>
+<style type="text/css">
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background-color: #fff;
+}
+
+body.toc {
+  margin: 0;
+  padding: 0;
+}
+
+a         { color: #036; text-decoration: underline; }
+a:visited { color: #666;  text-decoration: underline; }
+a:hover   { color: #c60; text-decoration: none; }
+
+h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #c60;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: #95a8a6;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c60;
+  margin-top: 25px;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #c60;
+  margin-top: 25px;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: normal;
+  color: #c60;
+  margin-top: 25px;
+}
+
+div.example {
+  border: 1px solid #999;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.example-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c60;
+  margin: 0 0 10px 0;
+}
+
+pre.programlisting {
+  font-family: "Courier New", Courier, mono;
+  font-size: 12px;
+  margin: 0 0 20px 0;
+}
+
+div.example pre.programlisting {
+  color: #000066;
+  background-color: #eff7ff;
+  padding: 10px;
+  border: 1px dashed #333;
+  margin-bottom: 0;
+}
+
+ul {
+	font-size: 12px;
+	list-style-position: outside;
+  list-style-type: circle;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+ul.nobullet {
+  list-style-type: none;
+}
+
+ul.nobullet * p {
+  margin: 0;
+}
+
+ul.noindent li {
+  margin-left: -25px;
+}
+
+ul.noindent * p{
+  margin: 0;
+}
+
+ol * ol {
+  list-style-type: lower-alpha;
+}
+
+#header {
+  font-size: 10px;
+  color: #999;
+  border-bottom: 1px dotted #999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#footer {
+  font-size: 10px;
+  color: #999;
+  border-top: 1px dotted #999;
+  text-align: center;
+  margin-top: 20px;
+}
+
+dt {
+  font-weight: bold;
+  font-style: italic;
+}
+
+table {
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+}
+
+p.table-title {
+  font-weight: bold;
+  margin: 10px 0 5px 5px;
+}
+
+td, th {
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+  vertical-align: top;
+}
+
+th {
+  background-color: #999;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: left;
+}
+
+tr td {
+  background-color: #fff;
+}
+
+tr.odd td {
+  background-color: #f4f4f4;
+}
+
+td p:first-child {
+  margin-top: 0;
+}
+
+td pre.programlisting {
+  margin-bottom: 0;
+}
+
+kbd {
+  font-family: "Courier New", Courier, mono;
+  font-size: 12px;
+  font-weight: bold;
+  color: #040;
+}
+
+.replaceable {
+  font-weight: bold;
+  color: #f00;
+}
+
+code.markup {
+  font-family: "Courier New", Courier, mono;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+code.sgmltag {
+  font-family: "Courier New", Courier, mono;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+code.filename {
+  font-family: "Courier New", Courier, mono;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+code.errorname {
+  font-family: "Courier New", Courier, mono;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+div.note,
+div.tip,
+div.important,
+div.warning,
+div.caution {
+  margin: 10px;
+  padding: 10px;
+  background-color: #eee;
+}
+
+div.note p,
+div.tip p,
+div.caution p {
+  margin-bottom: 0;
+}
+
+p.admonition-title {
+  margin: 0;
+}
+
+div.note pre.programlisting,
+div.tip pre.programlisting,
+div.caution pre.programlisting {
+  margin: 10px 0 0 0;
+}
+
+strong.caution {
+  color: #f00;
+}
+
+strong.required,
+strong.optional,
+strong.sometimes {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+strong.required {
+  color: #c60;
+}
+
+strong.optional {
+  color: #999;
+}
+
+strong.sometimes {
+  color: #036;
+}
+
+p.blockquote {
+  margin: 0 20px 0 20px;
+}
+
+div.requestparams,
+div.samplerequest {
+  border: 1px solid #999;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+div.requestparams h2,
+div.samplerequest h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+div.samplerequest div.example {
+  margin: 0 -1px -1px -1px;
+}
+
+div.requestparams h2 {
+  border-bottom: 1px solid #999;
+}
+
+div.requestparams p,
+div.requestparams ul {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div.requestparams table {
+  margin: 0 -1px -1px -1px;
+}
+
+div.tableheader {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  color: #999;
+  text-align: center;
+  margin: 15px 0 15px 0;
+}
+
+div.breadcrumb {
+  font-size: 10px;
+  color: #999;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.navcontainer { width: 100%; }
+
+.navcontainer a {
+  display: block;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.navcontainer a:link {
+  color: #036;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navcontainer  a:visited {
+  color: #036;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navcontainer a:hover {
+  background-color: #fff;
+  color: #c60;
+  padding: 5px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.navdiv {
+  font-size: 10px;
+  line-height: 12px;
+  color: #036;
+  list-style-position: outside;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+a.breadcrumb {
+  font-size: 10px;
+}
+
+.navdiv a:link { text-decoration: none; }
+
+.navdiv a:hover {
+  color: #000;
+}
+
+table.navcontainer,
+table.topnavcontainer {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+table.navcontainer * td,
+table.topnavcontainer * td,
+table.navcontainer * table {
+  padding: 0;
+  border: 0;
+}
+
+p.figure-caption {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+img.figure {
+  border: 1px solid #999;
+}
+
+img.inline {
+  border: 0;
+}
+.collapse {font-size: 9px}
+    </style>
+<script language="javascript">
+				function shoh (id, a){
+					if(document.getElementById(id).style.display =='none'){
+						document.getElementById(id).style.display ='inline';
+						document.getElementById(a).innerHTML = "Hide";
+					}
+					else {
+						document.getElementById(id).style.display = 'none';
+						document.getElementById(a).innerHTML = "Show";
+					}
+				}
+				</script>
+</head>
+<body>
+  
+<h1 id="top">Qualifications</h1>
+
+  
+    
+<h2>Qualifications and Qualification Requirements</h2>
+    
+<p>
+      A <em>Qualification</em> is a property of a Worker
+      that represents a Worker's skill, ability or reputation.  A HIT can
+      have <em>Qualification requirements</em> that a
+      Worker's Qualifications must meet before the Worker is allowed
+      to accept the HIT.
+    </p>
+    
+<p>
+      A Qualification is assigned to a Worker either by a Requester or
+      by the Mechanical Turk system.  The creator and maintainer of a
+      Qualification type is known as the "author" of the type.
+    </p>
+    
+<p>
+      A Qualification is assigned to a Worker with a
+      <em>Qualification type</em> and a number value.  A
+      Qualification requirement specifies the type, and a rule that
+      determines if the value meets the requirement.  A Worker can
+      only accept a HIT if all of the HIT's Qualification requirements
+      are met by the Worker's Qualifications.
+    </p>
+  
+  
+    
+<h2>Qualification Requests</h2>
+    
+<p>
+      You can create a new Qualification type for use with your HITs
+      by calling the <strong><a href="../ApiReference/CreateQualificationTypeOperation.html">CreateQualificationType</a></strong>
+      operation.  Once a Qualification type has been created, it is
+      available for use in a Qualiciation requirement, and can be
+      searched or browsed at the Mechanical Turk web site.
+    </p>
+    
+<div class="tip">
+<p class="admonition-title">
+<strong>Tip:</strong>
+</p>
+      Any Requester can use any Qualification type for a Qualification
+      requirement, regardless of who created the type.  However, only
+      the author the Qualification type can grant requests for the
+      type and assign values.
+    </div>
+    
+<p>
+      A Worker discovers a Qualification type by browsing HITs that
+      require a Qualification of that type, or by searching or
+      browsing the Qualification types directly.  The Worker can view
+      a description of the type, and request a Qualfication of the
+      type from the type's author.
+    </p>
+    
+<p>
+      By default, a Worker can only request a Qualification for a
+      given type once.  The author of the type can allow a Worker to
+      re-request a Qualification by specifying a value for the
+      <strong>RetryDelayInSeconds</strong> parameter when
+      creating the type.  If set, the Worker must wait until the delay
+      has elapsed after the first request before requesting the
+      Qualification again.
+    </p>
+  
+  
+    
+<h2>Granting Qualification Requests</h2>
+    
+<p>
+      Your can retrieve pending requests for your types using the
+      <strong><a href="../ApiReference/GetQualificationRequestsOperation.html">GetQualificationRequests</a></strong> operation.  You
+      grant the Qualification, with a number value, using the
+      <strong><a href="../ApiReference/GrantQualificationOperation.html">GrantQualification</a></strong> operation.
+    </p>
+    
+<div class="note">
+<p class="admonition-title">
+<strong>Note:</strong>
+</p>
+      
+<p>
+	There is no way to "reject" a Qualification request.  To
+	prevent a Worker who has requested a Qualification from
+	completing a HIT that requires that Qualification, grant the
+	request with a value that does not meet the HIT's
+	Qualification requirement.
+      </p>
+    
+</div>
+    
+<div class="note">
+<p class="admonition-title">
+<strong>Note:</strong>
+</p>
+      
+<p>
+	A Qualification can only be given to a Worker by granting a
+	Qualification request.  There is no way to assign a
+	Qualification to a Worker without the Worker first requesting
+	the Qualification.
+      </p>
+    
+</div>
+  
+  
+    
+<h2>Qualification Tests</h2>
+    
+<p>
+      A Qualification type may include a <em>Qualification
+      test</em>, a set of questions similar to a HIT that a
+      Worker must answer when requesting the Qualification.  The test
+      answers are returned with the request from a call to
+      <strong><a href="../ApiReference/GetQualificationRequestsOperation.html">GetQualificationRequests</a></strong>.  The author of
+      the type can use the answers to determine the value to assign
+      when granting the request.
+    </p>
+    
+<p>
+      The Qualification type may also include an <em>answer
+      key</em> for the test, with answers and score values for
+      each question in the test.  In addition to score values for each
+      matching answer, the answer key can specify how the
+      Qualification value is calculated from the sum of the scores.
+      For example, the Qualification value may be a percentage of
+      correct answers.
+    </p>
+    
+<div class="note">
+<p class="admonition-title">
+<strong>Note:</strong>
+</p>
+      If a Qualification test has an answer key, the test may only
+      contain multiple choice questions.  An answer key cannot grade
+      questions with free-text answers.
+    </div>
+    
+<div class="tip">
+<p class="admonition-title">
+<strong>Tip:</strong>
+</p>
+      For more information on answer keys, see <a href="../ApiReference/AnswerKeyDataStructureArticle.html">the AnswerKey
+      data structure</a>.
+    </div>
+  
+  
+    
+<h2>Updating and Retrieving Qualification Scores</h2>
+    
+<p>
+      After you have granted a Qualification to a Worker and the
+      Worker has completed a HIT for you, you can update the Worker's
+      Qualification score with the
+      <strong><a href="../ApiReference/UpdateQualificationScoreOperation.html">UpdateQualificationScore</a></strong> operation.  The
+      operation requires the Worker's user ID, which is included in
+      the assignment data the Worker submits for your HITs.  You can
+      use this operation to revoke a qualifying score if the Worker is
+      not performing to expectations, or promote a score if the Worker
+      has earned it with good results.
+    </p>
+    
+<p>
+      You can query a user's Qualification score for a type you
+      created using the <strong><a href="../ApiReference/GetQualificationScoreOperation.html">GetQualificationScore</a></strong>
+      operation.
+    </p>
+    
+<div class="note">
+<p class="admonition-title">
+<strong>Note:</strong>
+</p>
+      
+<p>
+	If your Qualification type has a Qualification test, an answer
+	key, and allows test retakes, a Worker who has been granted
+	the Qualification can take the test again to get a new score,
+	even if you have updated the score since it was first granted.
+	To query a user's current score, use the
+	<strong><a href="../ApiReference/GetQualificationScoreOperation.html">GetQualificationScore</a></strong> operation.  You can
+	configure the ability to retake a Qualification test when you
+	create the Qualification type.
+      </p>
+    
+</div>
+  
+  
+    
+<h2>Updating a Qualification Type's Test</h2>
+    
+<p>
+      It is sometimes useful to make modifications to a Qualification
+      type's test, to improve the accuracy of the resulting
+      Qualification scores, or to replace old test questions with new
+      ones.  You can replace the test for a Qualification type using
+      the <strong><a href="../ApiReference/UpdateQualificationTypeOperation.html">UpdateQualificationType</a></strong> operation.
+    </p>
+    
+<p>
+      The <strong><a href="../ApiReference/UpdateQualificationTypeOperation.html">UpdateQualificationType</a></strong> operation can
+      also be used to replace an automatically graded test (with an
+      answer key) with a manually graded one (without an answer key),
+      and vice versa.  It can also be used to change the test
+      duration, the amount of time the Worker has to complete the
+      test.
+    </p>
+  
+  
+    
+<h2>Deactivating a Qualification Type</h2>
+    
+<p>
+      Once you create a Qualification type, you are responsible for
+      granting Qualification requests for the type (or having requests
+      granted automatically using a Qualification test and answer
+      key).  You can temporarily deactivate a Qualification type by
+      using the <strong><a href="../ApiReference/UpdateQualificationTypeOperation.html">UpdateQualificationType</a></strong> operation
+      to update the status of the type.  The type can be activated
+      again with the same operation.
+    </p>
+    
+<p>
+      An inactive Qualification type cannot be requested by a Worker.
+      It does not appear on the Mechanical Turk web site, and does not
+      appear in search results.  While the type is inactive, a HIT
+      that requires a Qualification of the type cannot be created.
+      Workers with Qualifications of the type will continue to have
+      those Qualifications, and will continue to qualify for existing
+      HITs that require the Qualification.
+    </p>
+  
+  
+    
+<h2>System Qualifications</h2>
+    
+<p>
+      Mechanical Turk maintains a special set of Qualifications that
+      represent a Worker's history and reputation.  The system assigns
+      these Qualifications to every user, and continuously updates
+      their values as Workers use the system.  HITs may have
+      Qualification requirements based on system Qualifications.
+    </p>
+    
+<p>
+      HITs may also have a Qualification requirement based on the
+      Worker's location, according to the mailing address given to
+      Mechanical Turk by the Worker.  This allows HITs to be
+      restricted to Workers that reside in specific countries, such as
+      for tasks that can only be performed in certain locations, or
+      for HITs that need to be performed by Workers that reside in the
+      same country as the Requester for tax purposes.
+    </p>
+    
+<div class="tip">
+<p class="admonition-title">
+<strong>Tip:</strong>
+</p>
+      For a list of system Qualifications and more information about
+      locale-based Qualification requirements, see <a href="../ApiReference/QualificationRequirementDataStructureArticle.html">the
+      QualificationRequirement data structure</a>.
+    </div>
+  
+  
+    
+<h2>Searching Qualification Types</h2>
+    
+<p>
+      The <strong><a href="../ApiReference/SearchQualificationTypesOperation.html">SearchQualificationTypes</a></strong> operation
+      returns Qualification types whose names or descriptions match a
+      search query.  The results are similar to what is returned when
+      performing such a search on the Mechanical Turk web site or
+      Requester Console, except that system Qualifications may also be
+      included in results.
+    </p>
+  
+
+</body>
+</html>

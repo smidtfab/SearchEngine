@@ -1,0 +1,2109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<title>
+configuring hotbird satellite dreambox - Freelancer.com
+</title>
+
+ <meta name="description" content="Configuring hotbird satellite dreambox" /> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta name="robots" content="index,follow" />  
+
+
+<meta name="verify-v1" content="TTmFSxUJxXuHsKl9kPGeYetHBfsjnO7s87WxaAha8NE="/>
+
+<link href="http://www.freelancer.com/rss/search.xml?keyword=configuring+hotbird+satellite+dreambox" rel="alternate" type="application/rss+xml" title="Latest projects" >
+
+
+
+<meta name="verify-v1" content="9ejzgFxg7wuxHdyyiqmdTe3JQgBUfIVvdJiXlVRHkEw=" />
+<meta name="google-site-verification" content="s6tg1XRjKnD9we7DYaaGeUlxOrVgg4dJYUWyvhsD2B4" />
+<meta name="google-site-verification" content="Os01EUjriD5LgZ5VHZqf23SGdeCX-7g7dsi-8ekNBdk" />
+<meta name="google-site-verification" content="Xi9iryvGIjCbFdxBx5GjqMprKdhYIrOeKAgCSS_GEEs" />
+<meta name="google-site-verification" content="aUe2esuVVPvwLu9u_15cbwtL8CSU8cMP9ZtDNE_SNh8" />
+
+<meta name="alexaVerifyID" content="lOECm39vgYv4N9PwoW6nsSSLiUw" />
+
+<meta name="y_key" content="145378928393bc8d" />
+<meta name="msvalidate.01" content="756854B52F963132E377E441F92F1136" />
+<meta property="fb:admins" content="783930382" />
+
+<meta name="robots" content="noodp" />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<link rel="icon" type="image/ico" href="http://www.freelancer.com/favicon.ico" />
+<link rel="shortcut icon" href="http://www.freelancer.com/favicon.ico" />
+
+
+
+<link href="../../css/gaf_style.css?54" rel="stylesheet" type="text/css" />
+<!--[if lt IE 7]><link href="../../css/pngfix.css?1" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+<script src="//cdn6.freelancer.com/js/jquery-1.4.4.min.gaf.js?1" type="text/javascript"></script>
+<script src="//cdn4.freelancer.com/js/searchbar.js?1" type="text/javascript"></script>
+<script src="//cdn6.freelancer.com/js/functions.js?13" type="text/javascript"></script>
+<script src="//cdn3.freelancer.com/js/scripts.js" type="text/javascript"></script>
+<script type="text/javascript">
+JQ = jQuery.noConflict();
+function getUserIdfromCookie()
+{
+        var cookie_base = "GETAFREE";
+        var cookie_user_id = cookie_base + "_USER_ID";
+        var cookieName= encodeURIComponent(cookie_user_id) + "=",
+            cookieStart = document.cookie.indexOf(cookieName),
+            cookieValue = null;
+
+        if(cookieStart != -1 && document.cookie.length>0) {
+                var cookieEnd = document.cookie.indexOf(";",cookieStart)
+                if (cookieEnd ==-1) {
+                        cookieEnd = document.cookie.length;
+                }
+                cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+                return cookieValue;
+        } else
+                return "";
+}
+
+function updateStatus()
+{
+        var updateOnlinePeriod = 120; //60 secs in all
+		JQ.ajax({
+			type: 'POST',
+			data: {cachetimeout: updateOnlinePeriod},
+			url:   "../../users/onUpdateOnlineStatus.php"
+		});
+        setTimeout('updateStatus()',updateOnlinePeriod*1000);
+}
+
+
+JQ(document).ready(function () {
+	setTimeout('updateStatus()', 120*1000);
+});
+
+</script>
+<script type="text/javascript" src="//cdn5.freelancer.com/js/search-snippet.js?3"></script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-223765-6']);
+
+
+
+
+  _gaq.push(['_trackPageview']);
+
+
+
+
+
+
+  (function() {
+
+
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</head>
+
+<body>
+
+<div id="c9d-container">
+
+
+<script>
+	jq = jQuery.noConflict();
+	jq(document).ready(function() {
+
+		jq.preLoadImages("/images/login/btn_lgn.png", "/images/login/btn_lgn.png");
+		jq.preLoadImages("/images/login/btn_hd.png", "/images/login/btn_hd.png");
+		jq.preLoadImages("/images/login/lgn_mdl.png", "/images/login/lgn_mdl.png");
+		jq.preLoadImages("/images/login/lgn_btm.png", "/images/login/lgn_btm.png");
+		jq.preLoadImages("/images/login/lgn_top.png", "/images/login/lgn_top.png");
+		// Start Login Area
+		jq(".lgn-btn").toggle(function() {
+			jq(".lgn-wrp").show();
+			jq(this).css('backgroundPosition','0 bottom');
+			jq(".lgn-cnr-tl").css('backgroundPosition','0 0');
+		}, function() {
+			jq(this).css('backgroundPosition','0 top');
+			jq(".lgn-cnr-tl").css('backgroundPosition','0 -33px');
+			jq(".lgn-wrp").hide();
+		});
+		//End Login Area
+		
+		var gotoURL = jq('input[name=goto]').val();
+		if (gotoURL) {
+			jq('#register-link').attr('href',jq('#register-link').attr('href')+'?goto='+gotoURL);
+		}
+	});
+	
+(function($) {
+  var cache = [];
+  // Arguments are image paths relative to the current page.
+  $.preLoadImages = function() {
+    var args_len = arguments.length;
+    for (var i = args_len; i--;) {
+      var cacheImage = document.createElement('img');
+      cacheImage.src = arguments[i];
+      cache.push(cacheImage);
+    }
+  }
+})(jQuery)
+
+</script>
+<div id="c9d-header">
+	<div class="grid">
+		<div class="login-grid">
+			<div class="rgt">
+				<div id="loginFl">
+					<div class="lgn-hd">
+						<div class="lgn-cnr-tl png"><a id="register-link" class="register-area" href="/users/signup.php">Register</a></div>
+						<div class="lgn-btn"></div>
+					</div>
+					<div class="lgn-wrp">
+						<div class="lgn-top">
+						</div>
+						<div class="lgn-mdl">
+							<form name="login_form" action="https://www.freelancer.com/users/onlogin.php" method="post">
+								<input class="lgn_input" maxlength="150" type="text" name="username" value="Username" onblur="javascript: if(this.value=='') { this.value='Username';}" onfocus="javascript: if(this.value=='Username') {this.value='';};" />
+								<p></p>
+								<input class="lgn_input" maxlength="150" type="password" name="passwd" value="Password" onblur="javascript: if(this.value=='') { this.value='Password';}" onfocus="javascript: if(this.value=='Password') {this.value='';};"  />
+                                <table style='vertical-align:top'>
+                                <tr>
+                                <td style='vertical-align:top'>
+								<input class="lgn_btn_sbmt" type="submit" value="Login"/>
+                                </td>
+                                <td style='vertical-align:top'>
+								<input id="loginpermanent" type="checkbox" name="savelogin" tabindex="3" style=""/>&nbsp;<label class="lgn-text" for="loginpermanent">Remember me</label>
+								<div>
+								<a href="/users/signup.php">Register Account?</a><span style="color: black;">&nbsp; 
+								| &nbsp;</span> <a href="/users/forgot.php" class="lgn-fgt">Forgot details?</a>
+								</div>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td colspan='2'>
+								<div style='padding:5px 0px 0px 3px;text-align:left;'>
+									<fb:login-button 
+	onlogin="facebook_verifyLoginStatus()"
+	perms="offline_access,user_education_history,user_location,user_hometown,user_website,user_work_history,email"
+	autologoutlink="true">Login with Facebook</fb:login-button>
+<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script>
+FB.init({
+	appId: '120131118061981',
+	status: true,
+	cookie: true,
+	xfbml: true,
+	channelUrl:"http://www.freelancer.com/facebook/channel.html"
+});
+</script>
+
+<script src="/js/facebook-login.js?6"></script>
+
+								</div>
+                                </td>
+                                </tr>
+                                </table>
+							</form>
+						</div>
+						<div class="lgn-btm">
+						</div>
+					</div>
+					<div class="">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+var clicked = false; 
+JQ(document).ready(function() {
+	var obj = JQ(".head-logo").next(); 
+	/*
+	JQ(".head-logo").hover(
+		function() {
+			if(!clicked)
+				JQ(".head-dropdown").fadeIn('fast'); 
+		},
+		function() {
+			if(!clicked)
+				JQ(".head-dropdown").fadeOut('fast'); 
+		}
+	);
+	*/
+	JQ(".head-dropdown").click(function() {
+		if(clicked) {
+			clicked = false; 
+			JQ(".head-dropdown").css("background-position", "left"); 
+			obj.hide(); 
+		} else {
+			clicked = true; 
+			JQ(".head-dropdown").css("background-position", "right"); 
+			obj.css('left', (parseFloat(JQ(".head-logo-linkarea").offset().left)+36.0).toString()+'px').css('top', parseFloat(JQ(".head-logo-linkarea").css('height')).toString()+'px'); 
+			obj.show(); 
+		}
+	});
+	JQ(window).resize(function() {
+		obj.css('left', (parseFloat(JQ(".head-logo-linkarea").offset().left)+36.0).toString()+'px').css('top', parseFloat(JQ(".head-logo-linkarea").css('height')).toString()+'px'); 
+	}); 
+	JQ(document).click(function(e) {
+		if(e.pageX < JQ(".head-dropdown").offset().left || e.pageX > JQ(".head-dropdown").offset().left + parseInt(JQ(".head-dropdown").css("width"))
+			|| e.pageY < JQ(".head-dropdown").offset().top || e.pageY > JQ(".head-dropdown").offset().top + parseInt(JQ(".head-dropdown").css("height"))) {
+			JQ(".head-dropdown").css("background-position", "left"); 
+			obj.hide(); 
+			//JQ(".head-dropdown").hide(); 
+			clicked = false; 
+		}
+	});
+}); 
+</script>
+
+<span class="c9d-freelancer-logo head-logo"><a href="http://www.freelancer.com/" class="head-logo-linkarea"></a><span class="head-dropdown png"></span>
+</span><a class="dropdown-freemarket" href="http://www.freelancer.com/marketplace/"></a>
+<span class="container-domain-switcher"></span>
+
+    </div>
+</div>
+
+
+<!-- BEGIN BANNER -->
+<div id="c9d-banner2">
+		<div class="grid c9d-bn2">
+		<!--[if IE 6]>
+		<style type="text/css">
+			#topheader {width: 500px; }
+		</style>
+		<![endif]-->
+
+		<h1 id="topheader">Freelancer</h1>
+		
+		<a href="http://www.freelancer.com/buyers/create.php" class="ns_btn-big ns_right"><span>Post a Project &raquo;</span></a>
+		
+		<!-- ><div class="rgt c9d-ad">
+	
+	
+			<a href="http://www.freemarket.com/" class="c9d-blk2">
+				<img src="//cdn2.freelancer.com/img/banners_rotate/362x96-2.jpg" width="362" height="96" /></a>
+	
+		</div> -->
+		</div>
+</div>
+<!-- END BANNER -->
+
+<!-- BEGIN MENU1 -->
+<div class="c9d-nav">
+		<div class="grid">
+				<div class="rgt c9d-srhf" id="search-bar">
+						<form action="/projects/search.php" method="post">
+						<div class="form-container">
+								<div id="search_click"><button class="lft" id="search_button" name="search" type="submit"></button></div>
+								<input type="text" id="searchbox" name="keyword" autocomplete="off" value="Search Keywords" class="sipt" />
+								<div id="aricon" class="arrow arrow-up"></div>
+								<div class="fancy-panel" style="display:none;">
+										<div class="categories">
+												<ul>
+													<li><input class="search_type" checked="checked" type="radio" name="search_type" search_type="projects" /><span>Projects</span></li>
+													<li><input class="search_type"  type="radio" name="search_type" search_type="marketplace" /><span>Freemarket</span></li>
+												<br />
+												<hr />
+												<li><a href="http://www.freelancer.com/users/search/">Search Users</a></li>
+												<!-- <li><input type="checkbox" name="users">&nbsp; Users</li> -->
+												<!-- <li class="nav-tline"><input type="checkbox" name="files">&nbsp; Files</li> -->
+												</ul>
+										</div>
+								</div>
+						</div>
+						</form>
+				</div>
+
+		<div id="navbar" >
+				<ul class="main-nav">
+				<!--[if IE 6]>
+				<style type="text/css">
+					#post_project_menu_button {width: 105px};
+				</style>
+				<![endif]-->
+				<li id="post_project_menu_button" style="" class="c9d-curpg"><a href="http://www.freelancer.com/buyers/create.php">Post Project</a></li>
+				<li class="c9d-nl">&nbsp;|&nbsp;</li>
+
+				<li class="submenu"><a href="http://www.freelancer.com/sellers/"><span></span>Browse Jobs</a>
+				<div class="inner-boundary">
+						<ul class="inner-border">
+						<li><a href="http://www.freelancer.com/projects/all.php">Latest Projects</a></li>
+						<li><a href="http://www.freelancer.com/projects/featured.php">Latest Featured</a></li>
+						<li><a href="http://www.freelancer.com/projects/fulltime.php">Latest Fulltime</a></li>
+						<li><a href="http://www.freelancer.com/projects/all.php?sort=bid_enddate:1&biddingEnds=1">Ending Soon</a></li>
+						</ul>
+				</div>
+				</li>
+			
+					
+				<li class="c9d-nl">&nbsp;|&nbsp;</li>
+				<li class="submenu"><a href="http://www.freelancer.com/affiliates/"><span></span>Make Money</a>
+				<div class="inner-boundary">
+						<ul class="inner-border">
+						<li><a href="http://www.freelancer.com/sellers/">Bid On Projects</a></li>
+						<!-- <li><a href="">Invite Friends</a></li> -->
+						<li><a href="http://www.freelancer.com/affiliates/">Affiliate Program</a></li>
+						<!-- <li><a href="">Sell Items</a></li> -->
+						<li><a href="http://www.freelancer.com/affiliate-api.html">Affiliate API</a></li>
+						<li><a href="http://www.freelancer.com/marketplace/widgets/">Freemarket Widgets</a></li>
+						</ul>
+				</div>
+				</li>
+				<li class="c9d-nl">&nbsp;|&nbsp;</li>
+				<li class="submenu mwidt"><a href="http://www.freelancer.com/info/api.php"><span></span>API</a>
+				<div class="inner-boundary">
+						<ul class="inner-border">
+						<li><a href="http://www.freelancer.com/info/api.php">FreelancerAPI</a></li>
+						<li><a href="http://developer.freelancer.com/">Developer Wiki</a></li>
+						<li><a href="http://www.sandbox.freelancer.com/">API Sandbox</a></li>
+						<li><a href="http://groups.google.com.au/group/freelancer-api-developers/">Developer Group</a></li>
+						</ul>
+				</div>
+				</li>
+				<li class="c9d-nl">&nbsp;|&nbsp;</li>
+				<li class="submenu mwidt"><a href="http://www.freelancer.com/info/howitworks.php"><span></span>Help</a>
+				<div class="inner-boundary">
+						<ul class="inner-border">
+						<li><a href="http://www.freelancer.com/info/howitworks.php">How Freelancer Works</a></li>
+						<li><a href="http://www.freelancer.com/info/lookingforworkers.php">Looking for Workers?</a></li>
+						<li><a href="http://www.freelancer.com/info/lookingforwork.php">Looking for Work?</a></li>
+						<li><a href="http://www.freelancer.com/faq/view.php">Frequently Asked Questions</a></li>
+						<li><a href="http://www.freelancer.com/news/articles.html">Howtos & Articles</a></li>
+						<li><a href="http://www.freelancer.com/users/top_users.php">Top Users</a></li>
+						<li><a href="http://www.freelancer.com/info/codeofconduct.php">Code Of Conduct</a></li>
+						<li><a href="http://www.freelancer.com/info/about.php">About Us</a></li>
+						<li class="nav-tline"><a href="http://www.freelancer.com/report/contact.php">Contact Support</a></li>
+						</ul>
+				</div>
+				</li>
+				</ul>
+		</div>
+</div>
+</div>
+<!-- END MENU1 -->
+
+<div id="c9d-main">
+   	<div class="grid">
+	<div class="c9d-lognav">
+	
+	</div>
+	<div class="clear"></div>
+	<script type="text/javascript" src="https://secure.addthis.com/js/250/addthis_widget.js#async=1&pub=getafreelancer"></script>
+<script>document.getElementById('topheader').innerHTML='Archived projects tagged &quot;configuring hotbird satellite dreambox&quot;';</script>
+<br />
+                        <div id="siteContent">
+
+                    <div id="internalPageHeader">
+
+                    <h2 style="font-size:24px;" id="subTitle">Archived projects tagged "<a class="tag" href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.html">configuring hotbird satellite dreambox</a>"<p><small>All matching projects shown. <a class="tag" href="../../projects/by-tag/configuring-hotbird-satellite-dreambox.html">Show open only</a></small></h2>
+                    <div valign=bottom align="right">
+                    	<a href="../../users/signup.php"><img src="//cdn4.freelancer.com/img/buttons/btn_sign_up_free_now.gif" /></a>&nbsp;&nbsp;&nbsp;<a href="../../buyers/create.php"><img src="//cdn3.freelancer.com/img/buttons/btn_post_project_now.gif" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </div><br />
+<div class="addthis_toolbox addthis_default_style" style="margin:0 20px;">
+<a class="addthis_button_facebook_like" fb:like:action="recommend" fb:like:width="125"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_reddit"></a>
+<a class="addthis_button_stumbleupon"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_blogger"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_favorites"></a>
+<a class="addthis_button_print"></a>
+<span class="addthis_separator">|</span>
+<a href="https://secure.addthis.com/bookmark.php?v=250&pub=getafreelancer" class="addthis_button_expanded">More</a>
+</div>
+<script type="text/javascript">var addthis_config = {data_track_clickback: true}</script>
+                    <div style="clear:both"></div>
+                                <table cellspacing=20 cellpadding=10>
+
+<tr><td>
+
+
+			<div id="browseJobs">
+     <img src="//cdn6.freelancer.com/img/dadada.gif" alt=" " width="902" height="1" class="horizontalLine"/>
+     
+</div>
+
+
+
+
+	<form method="get" action="../../projects/search.php">
+<input type="hidden" name="action" value="search">
+<input type='hidden' name='per' value='50'>
+<input type='hidden' name='dl' value='on'>
+
+<input type='hidden' name='f' value=''>
+<input type='hidden' name='ft' value=''>
+<input type='hidden' name='searchFormat' value='short'>
+<div id="lightbox">
+			<table width="100%" cellpadding="0" cellspacing="5px">
+				<tr>
+					<td align="left" colspan="3">
+						<b>Search Project</b>&nbsp;
+<input name='keyword' value="configuring hotbird satellite dreambox" type="edit" style="width:500px;display:block"> <span  style="display: block; color: gray; font-size: 11px">Enter keywords or project ID</span>
+
+						
+<div style="padding:5px 0px 5px 0px" class="tags"><b>See more:</b>
+<a class="tag" href="../../projects/arc-tag/satellite.html">satellite</a>, <a class="tag" href="../../projects/arc-tag/dreambox.html">dreambox</a>, <a class="tag" href="../../projects/arc-tag/satellite-leads.html">satellite leads</a>, <a class="tag" href="../../projects/arc-tag/measure-roof-satellite.html">measure roof satellite</a>, <a class="tag" href="../../projects/arc-tag/satellite-roof-measurements.html">satellite roof measurements</a>, <a class="tag" href="../../projects/arc-tag/satellite-roof-measuring.html">satellite roof measuring</a>, <a class="tag" href="../../projects/arc-tag/roof-measurements-satellite.html">roof measurements satellite</a>, <a class="tag" href="../../projects/arc-tag/satellite-roof-measurement.html">satellite roof measurement</a>, <a class="tag" href="../../projects/arc-tag/satellite-gamesite-system-templates.html">satellite gamesite system templates</a>, <a class="tag" href="../../projects/arc-tag/python-dreambox.html">python dreambox</a>, <a class="tag" href="../../projects/arc-tag/satellite-roof-measuring-software.html">satellite roof measuring software</a>, <a class="tag" href="../../projects/arc-tag/satellite-provider-template-joomla.html">satellite provider template joomla</a>, <a class="tag" href="../../projects/arc-tag/dreambox-development.html">dreambox development</a>, <a class="tag" href="../../projects/arc-tag/dreambox-500s.html">dreambox 500s</a>, <a class="tag" href="../../projects/arc-tag/dreambox-epg-plugin.html">dreambox epg plugin</a>, <a class="tag" href="../../projects/arc-tag/satellite-gamesite-system.html">satellite gamesite system</a>, <a class="tag" href="../../projects/arc-tag/configuring-clipshare.html">configuring clipshare</a>, <a class="tag" href="../../projects/arc-tag/record-satellite-dvd.html">record satellite dvd</a>, <a class="tag" href="../../projects/arc-tag/red5-configuring.html">red5 configuring</a>, <a class="tag" href="../../projects/arc-tag/roofing-measurements-satellite.html">roofing measurements satellite</a>, <a class="tag" href="../../projects/arc-tag/configuring-postfix-webmin.html">configuring postfix webmin</a>, <a class="tag" href="../../projects/arc-tag/satellite-sites-seo.html">satellite sites seo</a>, <a class="tag" href="../../projects/arc-tag/satellite-measurements-roofs.html">satellite measurements roofs</a>, <a class="tag" href="../../projects/arc-tag/configuring-cisco-831.html">configuring cisco 831</a>, <a class="tag" href="../../projects/arc-tag/configuring-vicidial-asterisk.html">configuring vicidial asterisk</a>, <a class="tag" href="../../projects/arc-tag/configuring-sendmail-solaris.html">configuring sendmail solaris</a>, <a class="tag" href="../../projects/arc-tag/eagleview-roof-satellite.html">eagleview roof satellite</a>, <a class="tag" href="../../projects/arc-tag/dreambox-programming.html">dreambox programming</a>, <a class="tag" href="../../projects/arc-tag/satellite-roofing-measurements.html">satellite roofing measurements</a>, <a class="tag" href="../../projects/arc-tag/measuring-roofs-satellite.html">measuring roofs satellite</a>
+</div>
+
+
+						<input type="submit" value="Find Projects">
+						[ <a rel="nofollow" href='../../projects/search.php?searchFormat=full&keyword=configuring+hotbird+satellite+dreambox&dl=on&per=50&sort=relevance%3A2&'>Advanced Search</a> ]
+					</td>
+				</tr>
+			</table>
+</div>
+</form>
+<br>
+
+
+
+<img src="//cdn6.freelancer.com/img/dadada.gif" alt=" " width="902" height="1" class="horizontalLine" />
+<div class="clearBoth"></div>
+
+
+                    <div id="projectResults">
+
+	<br />
+	<div id="resultsHeader">
+<h3>1652 Freelance Jobs Found</h3>
+<b>Show</b>&nbsp;<select name='per' id='per' onchange='window.location="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.html?per="+this.value'>
+<option value='5' >5</option>
+<option value='10' >10</option>
+<option value='20' >20</option>
+<option value='50' selected>50</option>
+<option value='100' >100</option>
+<option value='200' >200</option>
+<option value='500' >500</option>
+</select>
+<div class="viewCount">&nbsp;</div>
+</div>
+<div id="resultsTable">
+<img src="//cdn5.freelancer.com/img/new_table_top.gif" alt="" width="901" height="7" /><table width="901"  cellspacing="0" cellpadding="0" style="table-layout:fixed; word-wrap:break-word;">
+<tr class="headerRow">
+<th align=left width=328>Project Name</th>
+<th align=right style="text-align: right;" width=55><a rel="nofollow" href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.html?sort=bid_count%3A2&">Bids</a></th>
+<th align=right style="text-align: right;" width=80>Avg (USD)</th>
+<th width=205>Job Type</th>
+<th width=90><a rel="nofollow" href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.html?sort=submitdate%3A2&">Started</a></th>
+<th width=60 nowrap><a rel="nofollow" href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.html?sort=bid_enddate%3A2&">Left</a></th>
+</tr>
+
+
+<tr bid_placed_check="1" project_id="406204" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Linux-Electronics/Dreambox-configuration.html')" title="Dreambox 7020 configuration" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Linux-Electronics/Dreambox-configuration.html">Dreambox 7020 configuration</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I am looking for a guy who can configure my <b>Dreambox</b> 7020 incl. the keys. I receive my TV programms over <b>Hotbird</b>, Nilsat and Arabsat. The Box is connected with the Internet.
+
+Payment after the job is done.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                3</td>
+<td align=right nowrap>&#36;200</td>
+<td align=left>
+<a href='../../projects/by-job/Electronics.html' class=job>Electronics</a>, <a href='../../projects/by-job/Linux.html' class=job>Linux</a>, <a href='../../projects/by-job/Video-Services.html' class=job>Video Services</a>
+</td>
+<td alight=left nowrap>Mar 22, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="984368" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/PHP-HTML/Stream-Website.html')" title="TV Stream Website" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-HTML/Stream-Website.html">TV Stream Website</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  like to create a website similar to http://www.tvcatchup.com/
+We would like to stream channels from <b>Hotbird</b> <b>satellite</b> service. We would like this done in HTML5 player ideally however we don’t mind starting with  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                4</td>
+<td align=right nowrap>&#36;662</td>
+<td align=left>
+<a href='../../projects/by-job/HTML.html' class=job>HTML5</a>, <a href='../../projects/by-job/PHP.html' class=job>PHP</a>
+</td>
+<td alight=left nowrap>Mar 14, 2011</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="420859" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Python/Dreambox-image.html')" title="Dreambox image" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Python/Dreambox-image.html">Dreambox image</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">We want an image for <b>Dreambox</b> and you must have an <b>Dreambox</b> 800 for the job or an <b>Dreambox</b> 8000 but if yu dont have it we can try it on our boxes.we dont know how much work that has to be done so we set an price</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>&#36;150</td>
+<td align=left>
+<a href='../../projects/by-job/Python.html' class=job>Python</a>
+</td>
+<td alight=left nowrap>Apr 19, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="397341" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/PHP-C-C/Dreambox-EPG-Translator.html')" title="Dreambox EPG Translator" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-C-C/Dreambox-EPG-Translator.html">Dreambox EPG Translator</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  looking for someone that is experienced with <b>dreambox</b> development.
+
+Im looking to have an  ... reading what types of programming languages the <b>dreambox</b> uses and it seems to be  ...  between Python / C/++
+
+I have a <b>Dreambox</b> 500S loaded with the latest Nabilosat  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/C-Programming.html' class=job>C Programming</a>, <a href='../../projects/by-job/Linux.html' class=job>Linux</a>, <a href='../../projects/by-job/PHP.html' class=job>PHP</a>, <a href='../../projects/by-job/Python.html' class=job>Python</a>, <a href='../../projects/by-job/XML.html' class=job>XML</a>
+</td>
+<td alight=left nowrap>Mar 6, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="563680" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/C-C-Python/Python-Programmer-Dreambox-EPG.html')" title="Python / C/C++ Programmer - Dreambox EPG Translator Plugin" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/C-C-Python/Python-Programmer-Dreambox-EPG.html">Python / C/C++ Programmer - Dreambox EPG Translator Plugin</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Looking for an experienced Python Programmer for <b>Dreambox</b> EPG Translator Plugin.
+
+Im looking to  ...  only bid if you are familar with <b>dreambox</b> development and you are sure that  ... reading what types of programming languages the <b>dreambox</b> uses and it seems to be  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Algorithm.html' class=job>Algorithm</a>, <a href='../../projects/by-job/C-Programming.html' class=job>C Programming</a>, <a href='../../projects/by-job/C-Sharp-Programming.html' class=job>C# Programming</a>, <a href='../../projects/by-job/Linux.html' class=job>Linux</a>, <a href='../../projects/by-job/Python.html' class=job>Python</a>
+</td>
+<td alight=left nowrap>Dec 3, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="472865" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Project-Management-Telemarketing/DISH-Satellite-Consumer-Leads.html')" title="DISH or Satellite -  Consumer Leads" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Project-Management-Telemarketing/DISH-Satellite-Consumer-Leads.html">DISH or Satellite -  Consumer Leads</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  to generate Consumer Leads requesting DISH or any type of <b>Satellite</b> TV contact.
+
+This project will be an ongoing project paid ...  quota
+4. Are you currently producing DISH or any <b>Satellite</b> TV Consumer Request Leads
+
+Subsequently, provide us with details  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                3</td>
+<td align=right nowrap>&#36;450</td>
+<td align=left>
+<a href='../../projects/by-job/Bulk-Marketing.html' class=job>Bulk Marketing</a>, <a href='../../projects/by-job/Marketing.html' class=job>Marketing</a>, <a href='../../projects/by-job/Project-Management.html' class=job>Project Management</a>, <a href='../../projects/by-job/Sales.html' class=job>Sales</a>, <a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>
+</td>
+<td alight=left nowrap>Jul 20, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="946738" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Internet-Marketing-Telemarketing/Satellite-Sales-per-sale.html')" title="Satellite TV Sales $100 per sale!" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Internet-Marketing-Telemarketing/Satellite-Sales-per-sale.html">Satellite TV Sales $100 per sale!</a>
+<a href="javascript:void()" onclick='window.open("http://www.freelancer.com/info/featured.html","Featured","width=600, height=550, left=100,top=100,menu=no,toolbar=no,scrollbars=yes,resizable=yes");return false;'><img src="../../img/common/icon_featured.png" width="71" height="15"></a>
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I will pay you $100 Per <b>Satellite</b> TV Lead that turns into a sale. I will provide You with a  ... . Leads must be US Based and clean! Credit score of 620 to quailfy for <b>satellite</b> tv and preferably homeowners. Customer must have credit or debit card. NO Outbound  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                11</td>
+<td align=right nowrap>&#36;100</td>
+<td align=left>
+<a href='../../projects/by-job/Advertising.html' class=job>Advertising</a>, <a href='../../projects/by-job/Internet-Marketing.html' class=job>Internet Marketing</a>, <a href='../../projects/by-job/Leads.html' class=job>Leads</a>, <a href='../../projects/by-job/Marketing.html' class=job>Marketing</a>, <a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>
+</td>
+<td alight=left nowrap>Feb 11, 2011</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="957717" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/PHP-Javascript/Satellite-Cardsharing-Website.html')" title="Satellite TV Cardsharing Website" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-Javascript/Satellite-Cardsharing-Website.html">Satellite TV Cardsharing Website</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Want to build a modern Cardsharing Website for <b>Satellite</b> TV.
+
+- User should be able to share their own cards/keys into system to get access to other cards/keys
+- User should be able to just buy access to cards/keys.
+
+System and Website should run on a ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                2</td>
+<td align=right nowrap>&#36;550</td>
+<td align=left>
+<a href='../../projects/by-job/AJAX.html' class=job>AJAX</a>, <a href='../../projects/by-job/Javascript.html' class=job>Javascript</a>, <a href='../../projects/by-job/PHP.html' class=job>PHP</a>
+</td>
+<td alight=left nowrap>Feb 21, 2011</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="549396" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Linux-Handheld-PDA/video-streaming-Video-Dreambox-PDA.html')" title="video re-streaming - Video  Dreambox to PDA WM6.1" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Linux-Handheld-PDA/video-streaming-Video-Dreambox-PDA.html">video re-streaming - Video  Dreambox to PDA WM6.1</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I would like to be able to stream my <b>dreambox</b> channels on my HTC kaiser WM6.1 like shown on this video: http://www.youtube.com/watch?v=E2ZflgE4kXs
+It looks like the video has to be restreamed to be able to be played on a PDA with the script on http:// ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                3</td>
+<td align=right nowrap>&#36;483</td>
+<td align=left>
+<a href='../../projects/by-job/Linux.html' class=job>Linux</a>, <a href='../../projects/by-job/Mobile-Phone.html' class=job>Mobile Phone</a>, <a href='../../projects/by-job/Transcription.html' class=job>Transcription</a>, <a href='../../projects/by-job/Video-Services.html' class=job>Video Services</a>, <a href='../../projects/by-job/Windows-Mobile.html' class=job>Windows Mobile</a>
+</td>
+<td alight=left nowrap>Nov 12, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="560897" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Linux-Joomla/Brazil-dreambox-programing.html')" title="Brazil dreambox 500s programing" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Linux-Joomla/Brazil-dreambox-programing.html">Brazil dreambox 500s programing</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">step by step programing for <b>dreambox</b> 500s
+
+detail explanation on all functions and how does it work
+
+preparation on how to change keys
+
+will discuss a monthly service to setup a server to maintain</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                6</td>
+<td align=right nowrap>&#36;172</td>
+<td align=left>
+<a href='../../projects/by-job/Algorithm.html' class=job>Algorithm</a>, <a href='../../projects/by-job/Cryptography.html' class=job>Cryptography</a>, <a href='../../projects/by-job/Joomla.html' class=job>Joomla</a>, <a href='../../projects/by-job/Linux.html' class=job>Linux</a>
+</td>
+<td alight=left nowrap>Nov 29, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="952307" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Flash-Video-Services/Dreambox-live-stream-Flash-Media.html')" title="Dreambox live stream to Flash Media Encoder ( FME )" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Flash-Video-Services/Dreambox-live-stream-Flash-Media.html">Dreambox live stream to Flash Media Encoder ( FME )</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ... us or develop us something for using our <b>Dreambox</b> DM 800 HD with the Adobe Flash  ... we have only a stream URL from the <b>Dreambox</b> webinterface which looks like this:
+
+http:// ... :
+
+We need the raw stream from the <b>Dreambox</b> to FME. So no virtual webcam solutions  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>&#36;100</td>
+<td align=left>
+<a href='../../projects/by-job/Flash.html' class=job>Flash</a>, <a href='../../projects/by-job/Video-Broadcasting.html' class=job>Video Broadcasting</a>, <a href='../../projects/by-job/Video-Services.html' class=job>Video Services</a>
+</td>
+<td alight=left nowrap>Feb 16, 2011</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="904445" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Linux/Cccam-Server-for-Dreambox-Setup.html')" title="Cccam Server for Dreambox Setup on Linix Ubuntu" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Linux/Cccam-Server-for-Dreambox-Setup.html">Cccam Server for Dreambox Setup on Linix Ubuntu</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">This is fot the setup of a CC server that interpret's a C-Line and can dish out F-line codes to '<b>dreambox</b>' decoders.
+
+If you don't know what CCcam is, don't bid!</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                2</td>
+<td align=right nowrap>&#36;250</td>
+<td align=left>
+<a href='../../projects/by-job/Linux.html' class=job>Linux</a>
+</td>
+<td alight=left nowrap>Jan 6, 2011</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="207996" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Linux/need-someone-port-socat-htun.html')" title="I need someone port socat and htun to my Dreambox 500s" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Linux/need-someone-port-socat-htun.html">I need someone port socat and htun to my Dreambox 500s</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I need someone help me compile socat (http://www.dest-unreach.org/socat/) and htun (http://htun.runslinux.net/) to running well under my <b>Dreambox</b> 500s (linux base DBV).
+</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>&#36;100</td>
+<td align=left>
+<a href='../../projects/by-job/Linux.html' class=job>Linux</a>
+</td>
+<td alight=left nowrap>Dec 28, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="770836" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Research-Blog/Article-Writer-Writer-Needed-Satellite.html')" title="Article Writer\Re-Writer Needed. Satellite TechnologyTopic" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Research-Blog/Article-Writer-Writer-Needed-Satellite.html">Article Writer\Re-Writer Needed. Satellite TechnologyTopic</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Are you familiar with the <b>Satellite</b> Technologies ?
+a. If NO, forget about  ... TV, <b>satellite</b> Internet and other <b>satellite</b> equipment). If you cannot meet the following requirements  ...  have a very good understanding of <b>Satellite</b> topic (maybe worked before at this  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                6</td>
+<td align=right nowrap>&#36;53</td>
+<td align=left>
+<a href='../../projects/by-job/Article-Rewriting.html' class=job>Article Rewriting</a>, <a href='../../projects/by-job/Articles.html' class=job>Articles</a>, <a href='../../projects/by-job/Blog.html' class=job>Blog</a>, <a href='../../projects/by-job/Research.html' class=job>Research</a>, <a href='../../projects/by-job/Technical-Writing.html' class=job>Technical Writing</a>
+</td>
+<td alight=left nowrap>Aug 18, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="56423" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Flash-Website-Design/Corporate-web-site-for-Satellite.html')" title="Corporate web site for Satellite and Data Communication services" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Flash-Website-Design/Corporate-web-site-for-Satellite.html">Corporate web site for Satellite and Data Communication services</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Corporate web site for <b>Satellite</b> and Data Communication services
+
+This Request for bid includes the following scope of work:
+
+1.Designing a <b>Satellite</b> and Telecommunication  3 different Mock-ups for us to choose between
+2. ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                14</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Flash.html' class=job>Flash</a>, <a href='../../projects/by-job/Graphic-Design.html' class=job>Graphic Design</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Apr 20, 2006</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="168964" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Website-Design/Satellite-products-website-design.html')" title="Satellite products website design" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Website-Design/Satellite-products-website-design.html">Satellite products website design</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  a 3 page template for a <b>Satellite</b> product website. Mostly, the website will provide information about <b>satellite</b> technologies such as TV, phone, and radio. ...  of two technologies. 
+  Example, XM <b>Satellite</b> vs. Sirius <b>Satellite</b> or Disnetwork vs DirecTV ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                9</td>
+<td align=right nowrap>&#36;91</td>
+<td align=left>
+<a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Aug 17, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="360983" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/360983.html')" title="<font color=#694E5A><b>Nonpublic</b></font> project #360983" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/360983.html"><font color=#694E5A><b>Nonpublic</b></font> project #360983</a>
+<a href="javascript:void()" onclick='window.open("http://www.freelancer.com/info/featured.html","Featured","width=600, height=550, left=100,top=100,menu=no,toolbar=no,scrollbars=yes,resizable=yes");return false;'><img src="../../img/common/icon_featured.png" width="71" height="15"></a>
+
+<a href='javascript:void()' onclick='window.open("http://www.freelancer.com/info/nonpublic.html","Nonpublic","width=600, height=450, left=100,top=100,menu=no,toolbar=no,scrollbars=yes");return false;'><img src="../../img/common/icon_non_public.png" width="71" height="15"></a>
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Please login to see the project details.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+
+</td>
+<td alight=left nowrap>Dec 22, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="746007" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Product-Design/Communications-Spacialist-Satellite.html')" title="Communications Spacialist (Satellite Interenet - Worldwide)" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Product-Design/Communications-Spacialist-Satellite.html">Communications Spacialist (Satellite Interenet - Worldwide)</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  me on how to find the Internet <b>Satellite</b> Services and Equipments for worldwide uses.  ...  more reception in remote areas.
+3. Find <b>satellite</b> services for worldwide travel or in  ...  I can use in Cambodia? What is <b>satellite</b> services in Thailand?
+
+Pleas PM your  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Product-Design.html' class=job>Product Design</a>
+</td>
+<td alight=left nowrap>Jul 22, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="31194" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Logo-Design/LogoDesign-Satellite-Image-Processing.html')" title="LogoDesign: Satellite Image Processing Co." class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Logo-Design/LogoDesign-Satellite-Image-Processing.html">LogoDesign: Satellite Image Processing Co.</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">We are a <b>satellite</b> image processing company in need of a logo ASAP.   ...  concept.
+
+About our company:  We take raw <b>satellite</b> imagery and aerial photos, geo-locate it,  ... - open source and Linux
+
+The design: The <b>satellite</b> swoosh is overused, not only in our  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                66</td>
+<td align=right nowrap>&#36;169</td>
+<td align=left>
+<a href='../../projects/by-job/Logo-Design.html' class=job>Logo Design</a>
+</td>
+<td alight=left nowrap>Oct 28, 2005</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="448580" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Website-Design-System-Admin/Need-manual-user-guide-for.html')" title="Need a manual/user guide for the admin panel of Big Fish Games' Satellite Gamesite System" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Website-Design-System-Admin/Need-manual-user-guide-for.html">Need a manual/user guide for the admin panel of Big Fish Games' Satellite Gamesite System</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  Games offers a simple website called <b>Satellite</b> Gamesite System for selling their games, ...  admin panel.
+
+You can download the <b>Satellite</b> Gamesite System from here: https://pnp ...  software and pre-existing templates
+Our <b>Satellite</b> Gamesite System (SGS)offers a  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                7</td>
+<td align=right nowrap>&#36;125</td>
+<td align=left>
+<a href='../../projects/by-job/System-Admin.html' class=job>System Admin</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Jul 19, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="2037" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/PHP-Website-Design/Satellite-Price-Comparison.html')" title="Satellite Price Comparison" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-Website-Design/Satellite-Price-Comparison.html">Satellite Price Comparison</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">We would like someone to create a template for a new website promoting <b>satellite</b> tv service.   We want a template that is easy to edit with the theme of electronics/ <b>satellite</b> tv.   We also want a form and programming done to allow our  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                22</td>
+<td align=right nowrap>&#36;89</td>
+<td align=left>
+<a href='../../projects/by-job/PHP.html' class=job>PHP</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Jun 1, 2004</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="2103" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Flash-Website-Design/Globalstar-Satellite-phone-site.html')" title="Globalstar Satellite phone site" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Flash-Website-Design/Globalstar-Satellite-phone-site.html">Globalstar Satellite phone site</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I'm looking to develop a new web site to sell GLOBALSTAR <b>satellite</b> phones.  An example of the product and what is involved is at a competitors site; www.bluecosmo.com.  bluecosmo will be in direct competition with our site .  Site must also be able to add  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                43</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Flash.html' class=job>Flash</a>, <a href='../../projects/by-job/Internet-Marketing.html' class=job>Internet Marketing</a>, <a href='../../projects/by-job/Web-Security.html' class=job>Web Security</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Jun 4, 2004</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="85098" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Website-Design/Web-designer-for-Satellite-site.html')" title="Web designer for Satellite site" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Website-Design/Web-designer-for-Satellite-site.html">Web designer for Satellite site</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I'm looking for a website designer to design a <b>satellite</b> website for me.  Just a basic one that I could sell <b>satellite</b> receiver and accessories on it.  I will use paypal to accept payment. I need a  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                43</td>
+<td align=right nowrap>&#36;86</td>
+<td align=left>
+<a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Aug 30, 2006</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="103134" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Web-Promotion-Electronics/Telemarketin-sales-for-Satellite.html')" title="Telemarketin/sales for Satellite Business" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Web-Promotion-Electronics/Telemarketin-sales-for-Satellite.html">Telemarketin/sales for Satellite Business</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Small Dish <b>Satellite</b> business is in need of people to generate sales.
+</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                12</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Electronics.html' class=job>Electronics</a>, <a href='../../projects/by-job/Internet-Marketing.html' class=job>Internet Marketing</a>, <a href='../../projects/by-job/Research.html' class=job>Research</a>, <a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>
+</td>
+<td alight=left nowrap>Nov 1, 2006</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="156350" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/PHP/Satellite-package-comparison-tool.html')" title="Satellite package comparison tool" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP/Satellite-package-comparison-tool.html">Satellite package comparison tool</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I would like a clone of the <b>satellite</b> package comparison tool found at http://www.13donuts.com/sat-tv-programming.html for use on my site at http://www.direct-vs-dish.com
+
+I prefer this to be done using PHP and optionally Smarty templates.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                4</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/PHP.html' class=job>PHP</a>
+</td>
+<td alight=left nowrap>Jul 2, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="171697" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Web-Promotion-Link-Building/Satellite-Sales.html')" title="Satellite Sales" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Web-Promotion-Link-Building/Satellite-Sales.html">Satellite Sales</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Looking to increase <b>satellite</b> sales activations (US customer and possibly abroad based on potential). Looking for qualified sales leads. Will pay more per sale for leads that are not from dialers. Dialer leads will have a lower price but will be accepted.  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                3</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Internet-Marketing.html' class=job>Internet Marketing</a>, <a href='../../projects/by-job/Link-Building.html' class=job>Link Building</a>, <a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>
+</td>
+<td alight=left nowrap>Aug 27, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="186229" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Copywriting/Dish-Network-Satellite.html')" title="Dish Network/Satellite TV" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting/Dish-Network-Satellite.html">Dish Network/Satellite TV</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Seeking copywriter for Dish Network/<b>Satellite</b> TV website.
+
+Requirements:
+
+• 25 articles of content, 600 words minimum per ...  examples of prior work when bidding. Prefer previous experience 
+writing copy for Dish Network/<b>Satellite</b> TV related websites.
+</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                4</td>
+<td align=right nowrap>&#36;100</td>
+<td align=left>
+<a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>
+</td>
+<td alight=left nowrap>Oct 15, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="273996" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Copywriting/dianaryan-satellite-quarter-horse-racing.html')" title="dianaryan98   - satellite tv   +  quarter horse racing" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting/dianaryan-satellite-quarter-horse-racing.html">dianaryan98   - satellite tv   +  quarter horse racing</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">dianaryan98   - <b>satellite</b> tv   +  quarter horse racing </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>
+</td>
+<td alight=left nowrap>Jun 12, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="276185" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Training-Market-Research/Satellite.html')" title="TV-Satellite" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Training-Market-Research/Satellite.html">TV-Satellite</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ... We are looking for Writers and online Trainers for our exclusive TV-<b>Satellite</b> Website. You will require to create not more than 75 words ...  we decide you deserve to it. You MUST interested in TV-<b>Satellite</b> to take this project.
+Due to fraud issues we can only ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>&#36;300</td>
+<td align=left>
+<a href='../../projects/by-job/Research.html' class=job>Research</a>, <a href='../../projects/by-job/Training.html' class=job>Training</a>
+</td>
+<td alight=left nowrap>Jun 18, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="348370" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Flash-Website-Design/design-satellite-referral-web-site.html')" title="design satellite tv referral web site" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Flash-Website-Design/design-satellite-referral-web-site.html">design satellite tv referral web site</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">We're looking for someone to develop a profitable site for selling <b>satellite</b> tv services - We have a decent domain name and no plan / no site.  We want someone to propose what service we resell, how we get paid, and a site design all as one. flat rate  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                5</td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Flash.html' class=job>Flash</a>, <a href='../../projects/by-job/Internet-Marketing.html' class=job>Internet Marketing</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Nov 24, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="402252" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/PHP-Engineering/Web-interface-for-home-satellite.html')" title="Web interface for home satellite tv decoders." class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-Engineering/Web-interface-for-home-satellite.html">Web interface for home satellite tv decoders.</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Software for changing/overlay advertisement between programs / movies for home <b>satellite</b> decoders.
+Also to overlay some parts of screen in realtime.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                7</td>
+<td align=right nowrap>&#36;6714</td>
+<td align=left>
+<a href='../../projects/by-job/Electronics.html' class=job>Electronics</a>, <a href='../../projects/by-job/Engineering.html' class=job>Engineering</a>, <a href='../../projects/by-job/PHP.html' class=job>PHP</a>, <a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>, <a href='../../projects/by-job/Video-Services.html' class=job>Video Services</a>
+</td>
+<td alight=left nowrap>Mar 15, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="701095" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Wireless/Satellite-Instructions.html')" title="Satellite T.V. Instructions" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Wireless/Satellite-Instructions.html">Satellite T.V. Instructions</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I need somebody who is currently getting ALL the <b>satellite</b> channels to describe the terminology and answer my questions. I want to know what the options are and what communication methods are required. Everything can be done via a chat session.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>&#36;50</td>
+<td align=left>
+<a href='../../projects/by-job/Wireless.html' class=job>Wireless</a>
+</td>
+<td alight=left nowrap>May 31, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="743163" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Engineering-Electronics/satellite-communication.html')" title="satellite communication" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Engineering-Electronics/satellite-communication.html">satellite communication</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ... for the earth stations at the two sites and the selection of a commercial <b>satellite</b> to relay transmissions between the sites.  A 100 kHz bandwidth (including any guard bands) will be leased from the commercial <b>satellite</b>.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                4</td>
+<td align=right nowrap>&#36;196</td>
+<td align=left>
+<a href='../../projects/by-job/Electrical-Engineering.html' class=job>Electrical Engineering</a>, <a href='../../projects/by-job/Electronic-Forms.html' class=job>Electronic Forms</a>, <a href='../../projects/by-job/Electronics.html' class=job>Electronics</a>, <a href='../../projects/by-job/Embedded-Software.html' class=job>Embedded Software</a>, <a href='../../projects/by-job/Engineering.html' class=job>Engineering</a>
+</td>
+<td alight=left nowrap>Jul 21, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="831984" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Internet-Marketing-Telemarketing/Set-Appointment-sell-satellite-service.html')" title="Set Appointment sell satellite tv service EASY SELL" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Internet-Marketing-Telemarketing/Set-Appointment-sell-satellite-service.html">Set Appointment sell satellite tv service EASY SELL</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ...  for an appointment setter to call US residential phone numbers to offer <b>satellite</b> TV service. We are an authorized television <b>satellite</b> dealer. You will have to get your own leads from your own residential database of ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                11</td>
+<td align=right nowrap>&#36;89</td>
+<td align=left>
+<a href='../../projects/by-job/Internet-Marketing.html' class=job>Internet Marketing</a>, <a href='../../projects/by-job/Marketing.html' class=job>Marketing</a>, <a href='../../projects/by-job/Sales.html' class=job>Sales</a>, <a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>
+</td>
+<td alight=left nowrap>Oct 23, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="844045" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Copywriting-SEO/Seeking-copywriter-for-Cable-Satellite.html')" title="Seeking copywriter for Cable/Satellite TV website" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting-SEO/Seeking-copywriter-for-Cable-Satellite.html">Seeking copywriter for Cable/Satellite TV website</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Seeking copywriter for Cable/<b>Satellite</b> TV website.
+
+Requirements:
+
+!!!This Project Pays $30.00 Firm!!!
+
+•  ...  work when bidding. Prefer previous experience 
+writing copy for Cable/<b>Satellite</b> TV related websites.
+
+!!!This Project Pays $30.00 Firm!!! ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                4</td>
+<td align=right nowrap>&#36;30</td>
+<td align=left>
+<a href='../../projects/by-job/Articles.html' class=job>Articles</a>, <a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>, <a href='../../projects/by-job/Research.html' class=job>Research</a>, <a href='../../projects/by-job/Reviews.html' class=job>Reviews</a>, <a href='../../projects/by-job/SEO.html' class=job>SEO</a>
+</td>
+<td alight=left nowrap>Nov 4, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="875840" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Technical-Writing-Report-Writing/articles-satellite-video-data.html')" title="10 articles on satellite video and data compression" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Technical-Writing-Report-Writing/articles-satellite-video-data.html">10 articles on satellite video and data compression</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ... 
+
+The topics is video and data compression relating to <b>satellite</b> transmission..
+
+Articles should be ready for submission to ezinearticles ... 
+•	you can write competently and originally on <b>satellite</b> compression technologies.
+•	you can deliver on time. ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                3</td>
+<td align=right nowrap>&#36;250</td>
+<td align=left>
+<a href='../../projects/by-job/Articles.html' class=job>Articles</a>, <a href='../../projects/by-job/Ghostwriting.html' class=job>Ghostwriting</a>, <a href='../../projects/by-job/Report-Writing.html' class=job>Report Writing</a>, <a href='../../projects/by-job/Technical-Writing.html' class=job>Technical Writing</a>
+</td>
+<td alight=left nowrap>Dec 6, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="877388" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/PHP-Javascript/SATELLITE-IMAGING-FOR-RAILWAY-NAVIGATION.html')" title="SATELLITE IMAGING FOR RAILWAY NAVIGATION" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-Javascript/SATELLITE-IMAGING-FOR-RAILWAY-NAVIGATION.html">SATELLITE IMAGING FOR RAILWAY NAVIGATION</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">SIRAN -  <b>SATELLITE</b> IMAGING FOR RAILWAY NAVIGATION
+This project is web based  purely developed for railway government of india.
+Tools and technology used - LAMP (linux,apachi,mysql,php),ssh,svg</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                5</td>
+<td align=right nowrap>&#36;738</td>
+<td align=left>
+<a href='../../projects/by-job/AJAX.html' class=job>AJAX</a>, <a href='../../projects/by-job/Javascript.html' class=job>Javascript</a>, <a href='../../projects/by-job/MySQL.html' class=job>MySQL</a>, <a href='../../projects/by-job/PHP.html' class=job>PHP</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Dec 8, 2010</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="902819" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Javascript-Website-Design/satellite-image-gallery.html')" title="satellite image gallery" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Javascript-Website-Design/satellite-image-gallery.html">satellite image gallery</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I have a growing set of <b>satellite</b> images, grouped by year, month, etc. I want to make a website where thse images can be browsed like a gallery, and images (files) can be selected for downloading by any user of the website.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                14</td>
+<td align=right nowrap>&#36;346</td>
+<td align=left>
+<a href='../../projects/by-job/HTML.1.html' class=job>HTML</a>, <a href='../../projects/by-job/Javascript.html' class=job>Javascript</a>, <a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>
+</td>
+<td alight=left nowrap>Jan 4, 2011</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="202652" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/202652.html')" title="<font color=#694E5A><b>Nonpublic</b></font> project #202652" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/202652.html"><font color=#694E5A><b>Nonpublic</b></font> project #202652</a>
+
+
+<a href='javascript:void()' onclick='window.open("http://www.freelancer.com/info/nonpublic.html","Nonpublic","width=600, height=450, left=100,top=100,menu=no,toolbar=no,scrollbars=yes");return false;'><img src="../../img/common/icon_non_public.png" width="71" height="15"></a>
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Please login to see the project details.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+
+</td>
+<td alight=left nowrap>Dec 8, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="242040" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/242040.html')" title="<font color=#694E5A><b>Nonpublic</b></font> project #242040" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/242040.html"><font color=#694E5A><b>Nonpublic</b></font> project #242040</a>
+
+
+<a href='javascript:void()' onclick='window.open("http://www.freelancer.com/info/nonpublic.html","Nonpublic","width=600, height=450, left=100,top=100,menu=no,toolbar=no,scrollbars=yes");return false;'><img src="../../img/common/icon_non_public.png" width="71" height="15"></a>
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Please login to see the project details.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+
+</td>
+<td alight=left nowrap>Mar 26, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="280554" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/XML-Website-Design/commerce-webshop-configuring.html')" title="XT-commerce webshop configuring" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/XML-Website-Design/commerce-webshop-configuring.html">XT-commerce webshop configuring</a>
+
+
+
+
+<a href='../../users/goldmembers.php'><img src="../../img/common/gold_only.gif"></a>
+
+<div style="display:none;width:365px;" class="search-snippet">Dear bidders,
+
+We are looking for someone who can help us with <b>configuring</b> our XT-Commerce webshop.
+
+At the moment we are in possession of of a webshop basic template (commcell.via.cc).
+However, some items need to be added or adapted. For example:
+
+ ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Website-Design.html' class=job>Website Design</a>, <a href='../../projects/by-job/XML.html' class=job>XML</a>
+</td>
+<td alight=left nowrap>Jun 29, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="26173" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Data-Processing-Data-Entry/Satellite-imagery.html')" title="Satellite imagery" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Data-Processing-Data-Entry/Satellite-imagery.html">Satellite imagery</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I need to have some one find and compile <b>satellite</b> data (water vapor or visible imagery) or Doppler radar images for both North America and South America during two separate years during the 1990's at 3 hour intervals into a movie type format that could be ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                18</td>
+<td align=right nowrap>&#36;251</td>
+<td align=left>
+<a href='../../projects/by-job/Data-Entry.html' class=job>Data Entry</a>, <a href='../../projects/by-job/Data-Processing.html' class=job>Data Processing</a>
+</td>
+<td alight=left nowrap>Sep 8, 2005</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="104694" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Telemarketing/Satellite.html')" title="Satellite TV" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Telemarketing/Satellite.html">Satellite TV</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Looking for quality call centers to run the <b>satellite</b> tv campaign. Great potential with great payout $100/active sale</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                5</td>
+<td align=right nowrap>&#36;21000</td>
+<td align=left>
+<a href='../../projects/by-job/Telemarketing.html' class=job>Telemarketing</a>
+</td>
+<td alight=left nowrap>Nov 6, 2006</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="163556" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/PHP/For-Nano-lab-SEO-satellite.html')" title="-                                                For Nano lab : SEO satellite pages" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP/For-Nano-lab-SEO-satellite.html">-                                                For Nano lab : SEO satellite pages</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">For Nanolab : SEO <b>satellite</b> pages</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                1</td>
+<td align=right nowrap>&#36;30</td>
+<td align=left>
+<a href='../../projects/by-job/PHP.html' class=job>PHP</a>
+</td>
+<td alight=left nowrap>Jul 30, 2007</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="257704" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Copywriting/Satellite-articles.html')" title="35 Satellite TV articles" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting/Satellite-articles.html">35 Satellite TV articles</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Need 35 articles on watching <b>satellite</b> tv on Internet/PC. Preferably with experience on the topic. Must be detailed and well researched and must pass Copyscape without any problems.
+
+$4 per article, Total $189 for 35 articles.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>N/A
+                </td>
+<td align=right nowrap>-</td>
+<td align=left>
+<a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>
+</td>
+<td alight=left nowrap>May 4, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="257706" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Copywriting/Satellite-articles.257706.html')" title="35 PC Satellite TV articles" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting/Satellite-articles.257706.html">35 PC Satellite TV articles</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Need 35 articles on watching <b>satellite</b> tv on Internet/PC. Preferably with experience on the topic. Must be detailed and well researched and must pass Copyscape without any problems.
+
+$4 per article, Total $140 for 35 articles.</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                20</td>
+<td align=right nowrap>&#36;130</td>
+<td align=left>
+<a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>
+</td>
+<td alight=left nowrap>May 4, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="337640" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Copywriting-Linux/Satellite-Receiver-with-Linux-Operating.html')" title="Satellite Receiver with Linux Operating System" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting-Linux/Satellite-Receiver-with-Linux-Operating.html">Satellite Receiver with Linux Operating System</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Want to Constract <b>Satellite</b> Receiver with Full plugins like TripleDragon..
+
+Software and Hardware will be include in price please and Full Details.  thank you</div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                2</td>
+<td align=right nowrap>&#36;250</td>
+<td align=left>
+<a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>, <a href='../../projects/by-job/Engineering.html' class=job>Engineering</a>, <a href='../../projects/by-job/Linux.html' class=job>Linux</a>
+</td>
+<td alight=left nowrap>Nov 2, 2008</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="364763" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/Copywriting/Copy-Needed-for-Satellite-Web.html')" title="Copy Needed for Satellite TV Web Site" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Copywriting/Copy-Needed-for-Satellite-Web.html">Copy Needed for Satellite TV Web Site</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">Copy needed for <b>Satellite</b> TV Web Site
+ 
+Requirements:
+
+• 30 articles of content, 600 words minimum per article
+• Must pass copyscape (100% original works)
+• Must Be SEO
+
+Keyword list for page content will be available to the winning bid. 
+
+ ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                8</td>
+<td align=right nowrap>&#36;93</td>
+<td align=left>
+<a href='../../projects/by-job/Copywriting.html' class=job>Copywriting</a>
+</td>
+<td alight=left nowrap>Jan 2, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="399946" class="search-result-project oddRow" onclick="onResultsRowClick('../../projects/Video-Services/Record-Satellite-programs.html')" title="Record Satellite TV programs" class="oddRow" onmouseout="this.className='oddRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/Video-Services/Record-Satellite-programs.html">Record Satellite TV programs</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet"> ... then have the DVDs shipped to Australia for a market research project. The video must be recorded from a broadcast/<b>satellite</b> service. Internet streamed video is not acceptable. The following programs need to be recorded at high quality (standard definition ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                3</td>
+<td align=right nowrap>&#36;583</td>
+<td align=left>
+<a href='../../projects/by-job/Video-Services.html' class=job>Video Services</a>
+</td>
+<td alight=left nowrap>Mar 11, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+<tr bid_placed_check="1" project_id="452482" class="search-result-project evenRow" onclick="onResultsRowClick('../../projects/PHP-Script-Installation/Satellite-Work-Order-Management-Script.html')" title="Satellite Work Order Management Script" class="evenRow" onmouseout="this.className='evenRow';" onmouseover="this.className='rollOverRow';">
+<td valign=center width="380px">
+<a href="../../projects/PHP-Script-Installation/Satellite-Work-Order-Management-Script.html">Satellite Work Order Management Script</a>
+
+
+
+
+
+
+<div style="display:none;width:365px;" class="search-snippet">I have a <b>Satellite</b> installation business and I'm looking for a web based Work Order Management php script that does all the criterias you can find on this website.
+
+http://www.probusinesstools.com
+
+You can login using these username and password to  ... </div>
+
+</td>
+
+<!--
+
+
+-->
+
+<td align=right nowrap>
+                15</td>
+<td align=right nowrap>&#36;638</td>
+<td align=left>
+<a href='../../projects/by-job/Accounting.html' class=job>Accounting</a>, <a href='../../projects/by-job/PHP.html' class=job>PHP</a>, <a href='../../projects/by-job/Script-Install.html' class=job>Script Install</a>, <a href='../../projects/by-job/SQL.html' class=job>SQL</a>
+</td>
+<td alight=left nowrap>Jun 16, 2009</td>
+<td alight=left nowrap> - </td> </tr>
+
+
+
+</table><img src="//cdn2.freelancer.com/img/new_table_bottom.gif" alt="" width="901" height="11" />
+
+</div>
+
+<div id="resultsFooter">
+<ul><li class="current"><a>1</a></li> <li><a href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.p1.html" title="Page 2">2</a> <li><a href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.p2.html" title="Page 3">3</a> <li><a href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.p3.html" title="Page 4">4</a> <li class='space'><a>...</a></li><li><a href="../../projects/arc-tag/configuring-hotbird-satellite-dreambox.p33.html" title="Page 34">34</a> </ul>
+</div>
+<div class="clearBoth">&nbsp;</div>
+
+
+
+	<div style="float:right; text-align: right">
+
+	Get updates via
+<a href="http://www.addthis.com/feed.php?pub=getafreelancer&h1=http%3A%2F%2Fwww.freelancer.com%2Frss%2Fsearch.xml%3Fkeyword%3Dconfiguring%2Bhotbird%2Bsatellite%2Bdreambox&t1=" onclick="//return addthis_open(this, 'feed', '')" alt="Subscribe using any feed reader!" target="_blank"><img src="https://secure.addthis.com/static/btn/sm-rss-en.gif" width="83" height="16" alt="Subscribe" style="border:0" /></a>
+
+	</div>
+	</div>
+
+	</td>
+	</tr>
+</table>
+
+
+</div>
+</div>
+<script type="text/javascript">  
+     addthis.init();
+</script>
+
+
+</div>
+</div>
+<!-- BEGIN FOOTER -->
+<div id="c9d-footer">
+                <div class="grid">
+                                <div class="rgt c9d-lnk">
+                                                <div class="twi">
+                                                                <a href="http://www.freelancer.com/info/about.php">About Us</a>
+                                                                <a href="http://www.freelancer.com/affiliates/">Affiliates</a>
+                                                                <a href="http://www.freelancer.com/info/advertise.php">Advertise with Us</a>
+                                                                <a href="http://contest.freelancer.com/">Contests</a>
+                                                                <a href="http://www.freelancer.com/info/events.php">Upcoming Events</a>
+                                                                <a href="http://www.freelancer.com/info/press.php">Press Releases</a>
+                                                                <a href="http://www.freelancer.com/info/media.php">In The News</a>
+                                                                <a href="http://www.freelancer.com/quotes/">Quotes</a>
+                                                                <a href="http://www.freelancer.com/users/top_users.php">Top Users</a>
+                                                                <a href="http://www.freelancer.com/info/careers.php">Careers</a>
+                                                                <a href="http://www.freelancer.com/page.php?p=info/terms">Terms</a>
+                                                                <a href="http://www.freelancer.com/dmca/">DMCA</a>
+                                                                <a href="http://www.freelancer.com/page.php?p=info/privacy">Privacy Policy</a>
+                                                </div>
+                                </div>
+                                <div class="rgt c9d-lnk">
+                                <div class="twi">
+						<a href="http://www.freelancer.com"><span class="COUNT-ONLINE-USER"></span> users online now.</a>
+
+						<a href="http://www.twitter.com/freelancer">Corporate Twitter<img src="//cdn5.freelancer.com/img/twitter-16x16.png" width="16" height="16" /></a>
+						<a href="http://www.twitter.com/getafreelancer">Jobs on Twitter<img src="//cdn5.freelancer.com/img/twitter-16x16.png" width="16" height="16" /></a>
+						<a href="http://blog.freelancer.com">Read Our Blog<img src="//cdn2.freelancer.com/img/blog-icon-box-orange-16.png" width="16" height="16" /></a>
+						<a href="http://www.facebook.com/pages/Freelancer/353386506511">Facebook<img src="//cdn2.freelancer.com/img/small_facebook_icon.png" width="16" height="16" /></a>
+						<a href="http://www.youtube.com/freelancerchannel">Youtube<img src="//cdn4.freelancer.com/img/youtube_16x16.png" width="16" height="16" /></a>
+                                                <a href="http://www.freelancer.com/rss.xml">Jobs via RSS<img src="//cdn6.freelancer.com/images/rss.gif" width="14" height="14" alt="rss" /></a>
+                                                <a href="http://www.google.com/coop/trust/add?user=017293852443800877047&sig=__bsH1R9i0c-Ik5F7PHhcH5-Lat0w=">Add to your Google search results</a>
+                                </div>
+                </div>
+                <div class="c9d-about">
+                    <h4 style="text-transform: uppercase;">What is Freelancer.com? <img src="//cdn3.freelancer.com/images/fl_icon_brd_sml.png" style="vertical-align: middle;" /></h4>
+
+                                <p><a href="http://www.freelancer.com">Freelancer.com <span>(formerly GetAFreelancer) is the world's largest outsourcing and crowdsourcing marketplace for small business</span></a>. We have hundreds of thousands of satisfied customers from all over the world. We connect over <span class="COUNT-REGISTERED-USER"></span> employers and freelancers globally from over 234 countries & regions. Through our website, employers can hire freelancers to do work in areas such as software, writing, data entry and design right through to engineering and the sciences, sales and marketing, and accounting & legal services. The average job is under US$200, making outsourcing for the first time extremely cost effective for small businesses. </p>
+				<p>Would you like to find freelance jobs and make money online? Just sign up to get started! We have created a safe environment for both freelancers and employers via our secure milestone payment system.  We have thousands of freelance coders, writers, programmers, designers, marketers and more. Getting the best web design, professional programming, custom writing or affordable marketing has never been easier! Try outsourcing for free today! Don't forget to bookmark our homepage for your next project or job.
+                                </p>
+                                <a href="http://www.freelancer.com/info/about.php" class="c9d-bline">READ MORE ABOUT THE COMPANY</a>
+                                <div class="c9d-copy">
+                                                <em>(c) Copyright 2011 Freelancer Technology Pty Limited. All Rights Reserved.</em>
+                                                <em>Freelancer is a trademark of Freelancer Technology Pty Limited (ACN 142 189 759)</em>
+<br />
+<br />
+<br />
+                                </div>
+                </div>
+</div>
+</div>
+<!-- END FOOTER-->
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-a2f84LLXCV-zs"
+};
+</script>
+<script type="text/javascript" src="//secure.quantserve.com/quant.js"></script>
+<noscript>
+<img src="//secure.quantserve.com/pixel/p-a2f84LLXCV-zs.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast" />
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<!-- Google Code for Visitor Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1015002772;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "mKFqCLzG6AEQlO3-4wM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1015002772/?label=mKFqCLzG6AEQlO3-4wM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+
+
+<script type="text/javascript">
+var _sf_async_config={uid:6163,domain:"freelancer.com"};
+(function(){
+	function loadChartbeat() {
+		window._sf_endpt=(new Date()).getTime();
+		var e = document.createElement('script');
+		e.setAttribute('language', 'javascript');
+		e.setAttribute('type', 'text/javascript');
+		e.setAttribute('src',
+		(("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+		"static.chartbeat.com/js/chartbeat.js");
+		document.body.appendChild(e);
+	}
+	var oldonload = window.onload;
+	window.onload = (typeof window.onload != 'function') ?
+	loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();
+</script>
+<!-- 3.5783 -->
+</div>
+
+
+<script type="text/javascript" src="//cdn3.freelancer.com/js/bid_placed_check.js"></script>
+
+<script src="/js/rotation.js?3" type="text/javascript"></script>
+
+<script src="//cdn3.freelancer.com/js/_ajax_general.js" type="text/javascript"></script>
+</body>
+</html>
+

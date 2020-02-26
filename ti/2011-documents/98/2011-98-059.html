@@ -1,0 +1,567 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Talk about ESP game with real humans - digplanet</title>
+<meta name="Keywords" content="">
+<meta name="description" content="Learn, explore, talk about ESP game with real humans, and check out ESP game on Wikipedia, Youtube, Facebook, and Twitter.  Digplanet gathers together information and people from all over the Internet, all focused on ESP game, and makes it easy to add your thoughts or join the digparty and talk to real people who are also interested in ESP game.">
+
+<meta property="og:title" content="Talk about ESP game with real humans - digplanet" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.digparty.com/wiki/ESP_game" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Digplanet" />
+<meta property="fb:admins" content="1147035171" />
+
+
+<link rel="stylesheet" href="/css/basic.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;version=20110308T014115Z" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=user&amp;only=styles&amp;skin=vector&amp;version=19700101T000001Z" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/wiki.php" type="text/css" media="screen">
+<link rel="stylesheet" href="/css/tabs.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+<!--[if IE]>
+<style type="text/css">
+.simple_overlay {
+	background-color:#333333;
+	padding:20px;
+}
+.simple_overlay .close {
+	right:-5px;
+	top:-5px;
+}
+</style>
+<![endif]-->
+<style type="text/css">
+td#digcommentscell p {
+	font-size:12px;
+}
+td#digcommentscell h2 {
+	font-size:18px;
+}
+td#digcommentscell {
+	border-top-color:#999;
+	border-top-style:solid;
+	border-top-width:3px;
+	background-color:#FFF;
+}
+</style>
+<script type="text/javascript" src="/js/jquery-ui-1.8.7.custom/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jsonutils/json2.js"></script>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+</head>
+
+<body class="mediawiki ltr skin-vector">
+
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId  : '24062123053',
+			status : true, // check login status
+			cookie : true, // enable cookies to allow the server to access the session
+			xfbml  : true  // parse XFBML
+		});
+	};
+	
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+
+function askuser(goto, title, topic) {
+	var pix = new Image();
+	pix.src = "/fb/attempt.php?r=" + topic;
+	
+	FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+			FB.ui(
+				{
+					method: 'stream.publish',
+					user_message_prompt: 'Tell your friends so that they can meet you here',
+					attachment: {
+						name: title,
+						description: ( "In Digparty you hang out with your friends in a 3D virtual world, talk " +
+							"(with your voice, like real life), watch Youtube videos (you get your own playlist), " +
+							"browse the web together, and create sprites with lives of their own. Really."
+						),
+						media: [{ 
+							'type': 'image', 
+							'src': 'http://www.digparty.com/images/feeds/girl2_90x90.png', 
+							'href': 'http://www.digparty.com/fb/'}],
+						href: 'http://www.digparty.com/fb/'
+					},
+					action_links: [
+						{ text: 'Check out Digparty!', href: 'http://www.digparty.com/fb/' }
+					]
+				},
+				function(response) {
+					location.href = goto;
+				}
+			);
+		} else {
+			// no user session available, someone you dont know
+			FB.login(function(response) {
+				if (response.session) {
+					// user successfully logged in
+					document.getElementById("loadcue").style.display = "block";
+					alert("Now that you're logged in, click the Digparty link again after the page refreshes");
+					location.reload(true);
+				} else {
+					; // user cancelled login
+				}
+			});
+		}
+	});
+}
+</script>
+<div id="loadcue" style="display:none;"></div>
+<script>
+function getStyle(oElm, strCssRule){
+	var strValue = "";
+	if(document.defaultView && document.defaultView.getComputedStyle){
+		strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+	}
+	else if(oElm.currentStyle){
+		strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+			return p1.toUpperCase();
+		});
+		strValue = oElm.currentStyle[strCssRule];
+	}
+	return strValue;
+}
+
+function toggletabs() {
+	if (document.getElementById("digtabcell").style.height != "auto") {
+		document.getElementById("digtabcell").style.height = "auto";
+		document.getElementById("tabs").style.height = "auto";
+		document.getElementById("toglink").innerHTML = "make tab area <b>smaller</b>";
+		$("div.tab_container").height("auto");
+	} else {
+		document.getElementById("digtabcell").style.height = "540px";
+		document.getElementById("tabs").style.height = "540px";
+		document.getElementById("toglink").innerHTML = "make tab area <b>bigger</b>";
+		$("div.tab_container").height("500px");
+	}
+}
+</script>
+<div id="topstripe"><a href="/wiki/" title="Go to the digplanet home, where you can start browsing through millions of topics on just about everything!" style="color:#FFF">digplanet</a><span style="float:right; margin-right:20px; font-size:14px; font-style:italic; font-family:'Times New Roman', Times, serif;">beta 1: Athena</span></div>
+<div id="header">
+	<table width="100%">
+		<tr height="20"><td colspan="3">&nbsp;</td></tr>
+		<tr valign="top">
+			<td align="left">
+				<h1 class='firstHeading' id='firstHeading'>ESP game</h1>			</td>
+			<td align="center">
+							</td>
+			<td align="right">
+				<form action="http://www.digparty.com/wiki/" method="post">
+					<label for="search">Search: </label>
+					<input name="search" type="text" value="">
+					<input type="submit" name="submit" id="submit" value="Search">
+				</form>
+				<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.digparty.com%2Fwiki%2FESP_game&layout=button_count&show_faces=true&width=200&action=recommend&font&colorscheme=light&height=21" 
+				scrolling="no" frameborder="0" 
+				style="border:none; overflow:hidden; width:200px; height:21px; float:right; margin-top:4px; margin-right:22px" 
+				allowtransparency="true"></iframe>
+			</td>
+		</tr>
+	</table>
+</div>
+<table id="digmaincontent" width="100%">
+	<tr valign="top">
+		<td width="150" id="dignavcell" class="basic_box">
+			<p class="navhead">Sections</p>
+			<p><a href="/wiki/Category:Games_with_a_purpose">Games with a purpose</a></p>
+<p><a href="/wiki/Category:Guessing_games">Guessing games</a></p>
+<p><a href="/wiki/Category:Human-based_computation">Human-based computation</a></p>
+<div style='clear:both; height:50px'>&nbsp;</div>
+<p><a href='/wiki/digplanet/Category:Agriculture'>Agriculture</a></p>
+	<p><a href='/wiki/digplanet/Category:Applied_sciences'>Applied sciences</a></p>
+	<p><a href='/wiki/digplanet/Category:Arts'>Arts</a></p>
+	<p><a href='/wiki/digplanet/Category:Belief'>Belief</a></p>
+	<p><a href='/wiki/digplanet/Category:Business'>Business</a></p>
+	<p><a href='/wiki/digplanet/Category:Chronology'>Chronology</a></p>
+	<p><a href='/wiki/digplanet/Category:Culture'>Culture</a></p>
+	<p><a href='/wiki/digplanet/Category:Education'>Education</a></p>
+	<p><a href='/wiki/digplanet/Category:Environment'>Environment</a></p>
+	<p><a href='/wiki/digplanet/Category:Geography'>Geography</a></p>
+	<p><a href='/wiki/digplanet/Category:Health'>Health</a></p>
+	<p><a href='/wiki/digplanet/Category:History'>History</a></p>
+	<p><a href='/wiki/digplanet/Category:Humanities'>Humanities</a></p>
+	<p><a href='/wiki/digplanet/Category:Language'>Language</a></p>
+	<p><a href='/wiki/digplanet/Category:Law'>Law</a></p>
+	<p><a href='/wiki/digplanet/Category:Life'>Life</a></p>
+	<p><a href='/wiki/digplanet/Category:Mathematics'>Mathematics</a></p>
+	<p><a href='/wiki/digplanet/Category:Nature'>Nature</a></p>
+	<p><a href='/wiki/digplanet/Category:People'>People</a></p>
+	<p><a href='/wiki/digplanet/Category:Politics'>Politics</a></p>
+	<p><a href='/wiki/digplanet/Category:Science'>Science</a></p>
+	<p><a href='/wiki/digplanet/Category:Society'>Society</a></p>
+	<p><a href='/wiki/digplanet/Category:Technology'>Technology</a></p>
+		</td>
+		<td valign="top" style="background-color:#F3F3F3">
+			<div id="togdiv"><a onClick="toggletabs()" style="cursor:pointer" id="toglink">make tab area <b>bigger</b></a></div>
+			<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F3F3F3">
+				<tr valign="top">
+					<td id="digtabcell" style="min-width:825px">
+						<div id="tabs">
+							<ul class="tools_tabs">
+								<li><a href="#tabs-1" class="w1" id="t1" style="width:134px">Wikipedia Pages</a></li>
+								<li><a href="#tabs-2" class="w1" id="t2" style="width:134px">Youtube</a></li>
+								<li><a href="#tabs-3" class="w1" id="t3" style="width:134px">News</a></li>
+								<li><a href="#tabs-4" class="w1" id="t4" style="width:134px">Shopping</a></li>
+								<li><a href="#tabs-5" class="w1" id="t5" style="width:134px">Facebook</a></li>
+								<li><a href="#tabs-6" class="w1" id="t6" style="width:134px">Tweets</a></li>
+							</ul>
+							<div class="panes">
+								<div id="tabs-1" class="tab_container panels">
+									<div id="content">
+										<div id="bodyContent">
+											<p>The <b>ESP Game</b> is an idea in <a href="/wiki/Computer_science">computer science</a> for addressing the problem of creating difficult <a href="/wiki/Metadata">metadata</a>. The idea behind the game is to use the <a href="/wiki/Human_computation" title="Human computation" class="mw-redirect">computational power of humans</a> to perform a task that <a href="/wiki/Computer" title="Computer">computers</a> cannot yet do (originally, <a href="/wiki/Image_recognition" class="mw-redirect" title="Image recognition">image recognition</a>) by packaging the task as a <a href="/wiki/Video_game" title="Video game">game</a>. It was originally conceived by <a href="/wiki/Luis_von_Ahn">Luis von Ahn</a> of <a href="/wiki/Carnegie_Mellon_University">Carnegie Mellon University</a>. <a href="/wiki/Google">Google</a> bought a licence to create its own version of the game in 2006 in order to return better search results for its online images.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> The licence of the data acquired by Ahn's ESP Game, or the Google version, is not clear.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Idea"><span class="tocnumber">1</span> <span class="toctext">Idea</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Rules_of_the_game"><span class="tocnumber">2</span> <span class="toctext">Rules of the game</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Cheating"><span class="tocnumber">3</span> <span class="toctext">Cheating</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=ESP_game&amp;action=edit&amp;section=1" title="Edit section: Idea">edit</a>]</span> <span class="mw-headline" id="Idea">Idea</span></h2>
+<p><a href="/wiki/Image_recognition" class="mw-redirect" title="Image recognition">Image recognition</a> is currently (as of <a href="/wiki/2009">2009</a>) a task that computers are almost incapable of. Humans are perfectly capable of it, but not necessarily willing.</p>
+<p>The applications and uses of having so many labeled images are significant; for example, more accurate image searching and accessibility for visually-impaired users (by reading out an image's labels).</p>
+<p>The idea of partnering two people to label images ensures that entered words will be accurate. Since the only thing the two partners have in common is that they both see the same image, they must enter reasonable labels to have any chance of agreeing on one.</p>
+<p>The ESP Game as it is currently implemented encourages players to assign “obvious” labels, which are most likely to lead to an agreement with the partner. But these labels can often be deduced from the labels already present using an appropriate language model and such labels therefore add only little information to the system. <a href="http://research.microsoft.com/apps/pubs/default.aspx?id=70638" class="external text" rel="nofollow">A Microsoft research project</a> assigns probabilities to the next label to be added. This model is then used in a program, which plays the ESP game without looking at the image.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=ESP_game&amp;action=edit&amp;section=2" title="Edit section: Rules of the game">edit</a>]</span> <span class="mw-headline" id="Rules_of_the_game">Rules of the game</span></h2>
+<p>Once logged in, a user is automatically matched with a random partner. The partners do not know each other's identity and they cannot communicate. Once matched, they will both be shown the same image. Their task is to agree on a word that would be an appropriate label for the image. They both enter possible words, and once a word is entered by both partners (not necessarily at the same time), that word is agreed upon, and that word becomes a label for the image. Once they agree on a word, they are shown another image. They have two and a half minutes to label 15 images.</p>
+<p>Both partners have the option to pass; that is, give up on an image. Once one partner passes, the other partner is shown a message that their partner wishes to pass. Both partners must pass for a new image to be shown.</p>
+<p>Some images have “taboo” words; that is, words that cannot be entered as possible labels. This is done automatically by the system: once an image has been labeled enough times with the same word, that word becomes taboo so that the image will get a variety of different words as labels.</p>
+<p>Occasionally, the game will be played solo, without a human partner, with the ESP Game itself acting as the opponent and delivering a series of pre-determined labels to the single human player (which have been harvested from labels given to the image during the course of earlier games played by real humans). This is necessary if there are an odd number of people playing the game.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></p>
+<p>In late 2008, the game was rebranded under the gwap.com domain (for <a href="/wiki/Game_with_a_purpose">game with a purpose</a>), with a new user interface. Some other games that were also created by Luis von Ahn, such as “Peekaboom” and “Phetch”, were discontinued at that point.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=ESP_game&amp;action=edit&amp;section=3" title="Edit section: Cheating">edit</a>]</span> <span class="mw-headline" id="Cheating">Cheating</span></h2>
+<p>Ahn has described countermeasures which prevent players from "cheating" the game, and introducing false data into the system. By giving players occasional test images for which common labels are known, it is possible to check that players are answering honestly, and a player's guesses are only stored if they successfully label the test images.<sup id="cite_ref-googletech_2-0" class="reference"><a href="#cite_note-googletech-2"><span>[</span>3<span>]</span></a></sup></p>
+<p>Furthermore, a label is only stored after a certain number of players (N) have agreed on it. At this point, all of the taboo lists<sup class="noprint Inline-Template" title="The text in the vicinity of this tag needs clarification or removal of jargon from September 2010" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Please_clarify" title="Wikipedia:Please clarify">clarification needed</a></i>]</sup> for the images are deleted and the image is returned to the game pool as if it were a fresh image. If X is probability of a label being incorrect despite a player having successfully labelled test images, then after N repetitions the probability of corruption is <span class="texhtml"><i>X</i><sup><i>N</i></sup></span>, assuming that end repetitions are independent of each other.<sup id="cite_ref-googletech_2-1" class="reference"><a href="#cite_note-googletech-2"><span>[</span>3<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=ESP_game&amp;action=edit&amp;section=4" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <span class="citation news"><a href="http://news.bbc.co.uk/1/hi/technology/7395751.stm" class="external text" rel="nofollow">"Solving the web's image problem"</a>. bbc. 2008-05-14<span class="printonly">. <a href="http://news.bbc.co.uk/1/hi/technology/7395751.stm" class="external free" rel="nofollow">http://news.bbc.co.uk/1/hi/technology/7395751.stm</a></span><span class="reference-accessdate">. Retrieved 2008-12-14</span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Solving+the+web%27s+image+problem&amp;rft.atitle=&amp;rft.date=2008-05-14&amp;rft.pub=bbc&amp;rft_id=http%3A%2F%2Fnews.bbc.co.uk%2F1%2Fhi%2Ftechnology%2F7395751.stm&amp;rfr_id=info:sid/en.wikipedia.org:ESP_game"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="citation"><a href="http://video.google.com/videoplay?docid=-8246463980976635143&amp;q=google+tech+talks" class="external text" rel="nofollow"><i>Google Tech Talk on Human Computation by creator Luis von Ahn</i></a><span class="printonly">, <a href="http://video.google.com/videoplay?docid=-8246463980976635143&amp;q=google+tech+talks" class="external free" rel="nofollow">http://video.google.com/videoplay?docid=-8246463980976635143&amp;q=google+tech+talks</a></span><span class="reference-accessdate">, retrieved 2009-10-24</span></span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Google+Tech+Talk+on+Human+Computation+by+creator+Luis+von+Ahn&amp;rft_id=http%3A%2F%2Fvideo.google.com%2Fvideoplay%3Fdocid%3D-8246463980976635143%26q%3Dgoogle%2Btech%2Btalks&amp;rfr_id=info:sid/en.wikipedia.org:ESP_game"><span style="display: none;">&#160;</span></span></li>
+<li id="cite_note-googletech-2">^ <a href="#cite_ref-googletech_2-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-googletech_2-1"><sup><i><b>b</b></i></sup></a> <a href="http://video.google.com/videoplay?docid=-8246463980976635143" class="external text" rel="nofollow">Google Tech Talk on human computation by Luis von Ahn</a></li>
+</ol>
+<h2><span class="editsection">[<a href="/w/index.php?title=ESP_game&amp;action=edit&amp;section=5" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://www.espgame.org/" class="external text" rel="nofollow">The ESP Game</a></li>
+<li><a href="http://www.cs.cmu.edu/~biglou/" class="external text" rel="nofollow">Creator's website</a></li>
+<li><a href="http://images.google.com/imagelabeler/" class="external text" rel="nofollow">Google's Image Labeler</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1472/1000000
+Post-expand include size: 9645/2048000 bytes
+Template argument size: 2943/2048000 bytes
+Expensive parser function count: 1/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:3887803-0!1!0!!en!* and timestamp 20110403175033 -->
+										</div>
+									</div>
+								</div>
+								<div id="tabs-2" class="tab_container panels">
+									<div id="youContent">
+										
+
+<!-- Got past file_get_contents() -->
+
+
+
+<!-- Got past simplexml_load_string() -->
+
+
+
+<!-- Got past you->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+<p class='youpagelinks'>28 results&nbsp;-&nbsp;Go to:&nbsp;&nbsp;<a onclick="do_you('%22ESP+game%22', 11)">Next&nbsp;&gt;</a>&nbsp;</p><table><tbody><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=K38lgrycfIc&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/K38lgrycfIc/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=K38lgrycfIc&feature=youtube_gdata_player">ESP Game Instructions - Could It Be ESP? at mathticket.com</a></p><p class='youdesc'>This video provides instructions on how to play a free online game that tests ones powers of ESP (Extra-Sensory Perception). The video also provides the name of the website with a link to the game. The game is of some interest to math students because it involves the arithmetic of calculating averages and also involves probability.</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=SU1RIvhyoHg&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/SU1RIvhyoHg/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=SU1RIvhyoHg&feature=youtube_gdata_player">2010 WORLD CUP 1st ROUND, BARCELONA ESP GAME 3 HIGHLIGHTS.wmv</a></p><p class='youdesc'>Third game Universal FC & Soccer Schools at the Academies of Football World Cup in Barcelona, Spain. Great plays/goals by both teams. www.universalfc.com</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=H3YBScHuFqk&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/H3YBScHuFqk/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=H3YBScHuFqk&feature=youtube_gdata_player">2010 WORLD CUP 1st ROUND, BARCELONA ESP GAME 4 HIGHLIGHTS.wmv.wmv</a></p><p class='youdesc'>Universal FC (USA)'s 4th game at the 2010 Academies of Football World Cup in Barcelona Spain vs Centro Europe Tecnofútbol Selección España (Team Spain). www.universalfc.com</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=9Ob6g_EhlQ4&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/9Ob6g_EhlQ4/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=9Ob6g_EhlQ4&feature=youtube_gdata_player">ESP Game</a></p><p class='youdesc'>A simple "Test your ESP" game developed with 3D Rad. No audio.</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=SkOP52xQtvo&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/SkOP52xQtvo/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=SkOP52xQtvo&feature=youtube_gdata_player">Call of Duty Black Ops - Aimbot [ Hacks]</a></p><p class='youdesc'>Hey guys, this is me using the aimbot I recently bought. Pretty sweet. (Don't flame me for hacking!!) lol Anyway, I reckon everyone should be able to use this without having to pay. So I've re uploaded the file for free to the public. You can download it here Working Link: hotfile.com Enjoy hacking! ---How to use--- To use it, simply double click the hack. Open up the game and join a lobby. Afterwards, press the [HOME] key, there will be a small menu in the top left hand corner of your screen. Navigate what options you want, eg aimbot on/off aimbot to use what button to activate, auto activate, aimbot to aim at which part of body. Stuff like that. Press enter to turn each one on or off. 1 means on, 0 means off. ok GL hacking!! --Tags-- aimbot aim bot hack black ops "black ops" "call. of" "duty. call of. of duty" "call duty" "call of duty" esp game free download ownage headshot instant prestige 15th hacks glitch boom</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=c10KJlmWShY&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/c10KJlmWShY/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=c10KJlmWShY&feature=youtube_gdata_player">Battlefield Bad Company 2-- Aimbot,Esp,Radar.. By GAMEANARCHY.NET</a></p><p class='youdesc'>JOIN US ON VENTRILO NOW!!! vent8.light-speed.com Port 9089 www.GameAnarchy.Net "" Battlefield Bad Company 2 "" "" *AIMBOT* •Auto Aim •Auto Shoot •Locked on indicator •Aim at team members (nice for raging your own team) •Auto Zoom •Visible Targets Only (choose to only aim at targets you can hit) •Aim Methods (Distance, FOV, and Closest to XHair) •Bullet Drop Correction •Prediction Modifier •Bone System Aimbot (head, chest, or choose your b1one to aim at) •Adjustable Aimkey *VISUALS* •Chams (Coming soon!) •Name ESP •DistanceESP •Health Bars •Bounding Boxes•Adjustable ESP colors *MISC* •Minimap •Custom XHairs •Clock •Master Key (Instantly disabled all hack features with one key press) •FPS Counter •Friend List (Choose to not aim at your friends or make the complainers a top priority to aim at) Punkbuster Undetected Screenshot Cleaner Tags: gameanarchy fpscheats myfpscheats elitehax elite-hax roothax roothacks ultimatehax ultimate-hax artificialaiming artificial aiming rule-de-game ruledegame public hacks free cheats public cheats free hax hackers aimbot chams esp cod4 cod5 cod5 modern warfare 2 call of duty 4 hacks call of duty 5 hack modern warfare 2 hacks x22cheats callofdutyhax callofdutyhacks ragekings rage kings mdk hacks mod development codmw2hacks rentacheat rent a cheat bc2 bad company 2 hacks bfbc2 cheats www.d3scene.com www.mpcdownloads.com mpgh thisgamesux fpshacks Flamez hdgamingguy crojo2 augmentedskills.com cheatengine bc2 bad company 2 xCallxOfxDutyxHacksx <b>...</b></p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=dtFroEJN1nI&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/dtFroEJN1nI/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=dtFroEJN1nI&feature=youtube_gdata_player">Human Computation</a></p><p class='youdesc'>Google TechTalks July 26, 2006 Luis von Ahn is an assistant professor in the Computer Science Department at Carnegie Mellon University, where he also received his Ph.D. in 2005. Previously, Luis obtained a BS in mathematics from Duke University in 2000. He is the recipient of a Microsoft Research Fellowship. ABSTRACT Tasks like image recognition are trivial for humans, but continue to challenge even the most sophisticated computer programs. This talk introduces a paradigm for utilizing human processing power to solve problems that computers cannot yet solve. Traditional approaches to solving such problems focus on improving software. I advocate a novel approach: constructively channel human...</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=Dw3h-rae3uo&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/Dw3h-rae3uo/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=Dw3h-rae3uo&feature=youtube_gdata_player">Jonathan Zittrain: "Minds for Sale"</a></p><p class='youdesc'>A new range of projects is making the application of human brainpower as purchasable over the cloud as additional server rackspace. Jonathan Zittrain, Professor of Law and co-founder of the Berkman Center for Internet & Society at Harvard, dives into the ethics and issues surrounding cloud labor in this talk from the Berkman West reception at the Computer History Museum in Mountain View, California on November 18, 2009. INDEX 0:00 Open 1:47 West Coast vs East Coast 2:05 Ubiquitous Human Computing or "Minds for Sale" 2:32 The Tween Bot 4:14 Crowdsourcing "The Future of the Internet" 7:36 A tour of the Ubiquitous Human Computing pyramid 8:37 Example 1: The X-Prize 10:24 Example 2: Innocentive 12:08 Example 3: LiveOps 15:43 Example 4: SamaSource 16:16 Example 5: Amazon's Mechanical Turk 20:13 Example 6: The ESP Game 22:47 Example 7: Human Computing for Electronic Design Automation 24:01 Example 8: Google 25:24 Why Should We be Pessimistic? 26:38 Child Labor on PBS 28:11 Laboring for a Devious Cause 29:23 US Border Webcams 30:05 Smart Drive 30:45 Internet Eyes 32:09 Identifying Protesters 33:21 A Speculative Example 35:05 Mechanical Turking your way to a Fake Reputation 39:36 Mechanical Turking your way to a Political Movement 41:20 Captchas Sweatshops 43:03 "Crowding Out" 44:41 The Future of Crowdsourcing and How to Stop It 47:14 Clickworkers of the World Unite! 50:45 Monetizing Kindness 52:25 Q&As</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=qVld-07HNps&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/qVld-07HNps/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=qVld-07HNps&feature=youtube_gdata_player">(video) Human Computation, ESP and Google Image-Labelle ...</a></p><p class='youdesc'>whatgetsmehot.posterous.com I f you haven't tried Google's image labeling game , I beg that you not try it. --Nas Raja H uman Computation and the Story of G oogle Image L abe ller Slaves ...the ESP Game, described in this talk, is an enjoyable online game -- many people play over 40 hours a week -- and when people pl ... to whatgetsmehot.posterous.com http mrjyn dogmeat sobachemyaso yt:quality=high cynophagie weirdopedia</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=vUH-eZTSTfs&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/vUH-eZTSTfs/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=vUH-eZTSTfs&feature=youtube_gdata_player">GWAP.com</a></p><p class='youdesc'>Hello World Sixteen months, 103417 lines of code, 154 meetings, 1034 cans of Mountain Dew, and GWAP.com is finally here! The Name. Yes, GWAP is a little weird as a name. Partly because we're a little weird ourselves, and partly because it's impossible to get a decent domain name. GWAP stands for "Games With A Purpose." The Purpose. The games on this site all have a common purpose: to make computers more intelligent. As you play the games, you are teaching computers things that they don't know yet. Please help them learn! The Team. The person who made this site possible is our chief engineer, Mike Crawford. He agreed to move from Australia to Pittsburgh to work on this project -- ha! In addition, Mike Brotzman, Severin Hacker (yes, his last name really is Hacker), Edith Law, Bryant Lee, and Edison Tan all spent countless hours architecting the games and the site. Ryan Staake was our ninja graphic designer. The Past. GWAP.com is brought to you by the same people who created The ESP Game (aka, the Google Image Labeler), Peekaboom and reCAPTCHA. Enjoy! Luis von Ahn Executive Producer</p></td></tr></tbody></table>									</div>
+								</div>
+								<div id="tabs-3" class="tab_container panels">
+									<div id="newsContent">
+											<div id="news_cse" style="width: 100%;" onclick="iframe_divclick(event)">Loading ...</div>
+	<form style="display:none"><input type="text" id="mynewssearch" /></form>
+	<script type="text/javascript">
+	$(document).ready(google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST}));
+	google.setOnLoadCallback(function() {
+		var customSearchControl = new google.search.CustomSearchControl('006577720217834376431:1mz97tlulrw');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var drawOptions = new google.search.DrawOptions();
+		drawOptions.setInput(document.getElementById('mynewssearch'));
+		customSearchControl.setLinkTarget("openhere");
+		customSearchControl.draw('news_cse', drawOptions);
+		customSearchControl.enableAds("pub-7523455642797450");
+		customSearchControl.execute("\"ESP game\"");
+	}, true);
+	</script>
+
+      									</div>
+								</div>
+								<div id="tabs-4" class="tab_container panels">
+									<div id="shoppingContent">
+											<div id="shopping_cse" style="width: 100%;" onclick="iframe_divclick(event)">Loading ...</div>
+	<form style="display:none"><input type="text" id="myshoppingsearch" /></form>
+	<script type="text/javascript">
+	$(document).ready(google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST}));
+	google.setOnLoadCallback(function() {
+		var customSearchControl = new google.search.CustomSearchControl('006577720217834376431:zjydbbyldce');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var drawOptions = new google.search.DrawOptions();
+		drawOptions.setInput(document.getElementById('myshoppingsearch'));
+		customSearchControl.setLinkTarget("openhere");
+		customSearchControl.draw('shopping_cse', drawOptions);
+		customSearchControl.enableAds("pub-7523455642797450");
+		customSearchControl.execute("\"ESP game\"");
+	}, true);
+	</script>
+
+      									</div>
+								</div>
+								<div id="tabs-5" class="tab_container panels">
+									<div id="fbContent">
+										<p>Oops, we seem to be having trouble contacting Facebook</p>
+									</div>
+								</div>
+								<div id="tabs-6" class="tab_container panels">
+									<div id="twitContent">
+										<p>Oops, we seem to be having trouble contacting Twitter</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td id="digcommentscell">
+<a name="digparty"></a>
+<h1 class="firstHeading" style="color:#2E6E9E">Digparty</h1><p>by <a href="http://www.digparty.com" target="_blank">Digparty&trade;</a></p>
+<p><strong>In Digparty you hang out with people, talk, watch videos, browse the web together, create sprites, and listen to music. Really.</strong></p>
+<p>You can even talk to each other (like with your voice), or chat to each other. Digparty runs on both PCs (Firefox or Internet Explorer) and Macs (Safari only), and is a small download (about 1.5MB).</p>
+<a href="http://www.youtube.com" target="_blank"><img src="/images/youtube_logo.gif" alt="" height="60" width="120" align="right" border="0" hspace="5"></a>
+<h2>Choose Your Media to Share with Your Friends</h2>
+<p>Digparty helps you find YouTube videos that you want to share with your friends at the Digparty. You'll build your own playlist, like you do on your iPod, and we'll put them up on big screens at the Digparty. They could be music videos, or whatever. You get to decide, and there's a ton of stuff to choose from<strong>.</strong></p>
+<img src="/images/headset_guy.png" alt="" height="155" width="229" align="left" border="0">
+<h2>You'll Probably Want a Headset (but it's optional)</h2>
+<p>In Digparty you can talk to your friends just like talking on the telephone. You can use the microphone and speakers in your computer, but using a headset is better. If you don't have one, <strong><a href="http://www.logitech.com/index.cfm/webcam_communications/internet_headsets_phones/%26cl=us,en" target="_blank">here's some good ones</a></strong>. <strong>Using your voice is optional.</strong>  If you'd rather just type, like in a chat room, that's ok too!</p>
+<img src="/app/sprites/images/Lego_Crystal.jpg" alt="" width="128" height="92" align="right" border="0" />
+<h2>Sprites - Adding Life to Digparty</h2>
+<p>Digparty creates a magical landscape of &quot;sprites&quot; - rocks, trees, and other things that have a life of their own. You can create sprites, and leave them behind for other people to find and comment on. Sprites can contain videos, web pages, or messages from you. <strong>Collect Digbucks&trade; to add to your sprite collection</strong>, and you can Digparty your way from &quot;Novice&quot; to &quot;Digparty Celebrity&quot;!</p>
+<img src="/images/browse.png" alt="" height="114" width="200" align="left" border="0">
+<h2>Browse With Friends</h2>
+<p>While you're at a Digparty, you can also click on one of the laptops in the house and look at web pages together. You can each send each other's browsers to pages that you want to share, and talk and chat while you're looking at them. Think gathering around a computer together while you're hanging out and you've got the idea. It's just like that.</p>
+<h2>You'll Need Shockwave</h2>
+<p>To go to a Digparty you'll need the <strong><a href="http://www.adobe.com/go/EN_US-H-GET-SHOCKWAVE" target="_blank">Adobe Shockwave plugin (Flash's big brother)</a></strong>. You'll need version 11 or better, because we turn it up to 11.</p>
+<h2>Ready to get started? Then <a href="http://www.digparty.com/fb/check.php?p=always&r=4d98b369eee9b_always&n=ESP+game&d=&q=4d98b369f1467">Digparty Now!</a></h2>
+
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td id="digpartycell" style="width:250px; vertical-align:top">
+<div class="basic_box" id="digparties">
+	<a href="#digparty" title="Join the Digparty"><img src="/images/headset_girl.png" width="229" height="155" alt="Headset Girl" border="0"></a>
+	<h3><a href="#digparty" title="Join the Digparty">Join The Digparty</a></h3>
+	<p>In Digparty you hang out with live humans, talk, watch videos, browse the web together, create sprites, and listen to music. Really.</p>
+	<div id="digplanets"></div>
+</div>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	document.getElementById("digpartycell").style.width = "300px";
+} else {
+	document.getElementById("digpartycell").style.width = "250px";
+}
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image top, created 3/31/11 */
+	google_ad_slot = "7967420047";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: top, created 3/27/11 */
+	google_ad_slot = "3541382114";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image middle, created 3/31/11 */
+	google_ad_slot = "1231032516";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: middle, created 3/27/11 */
+	google_ad_slot = "8479975984";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image bottom, created 3/31/11 */
+	google_ad_slot = "4931197721";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: bottom, created 3/27/11 */
+	google_ad_slot = "3296318126";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		</td>
+	</tr>
+</table>
+<div id="mask"></div>
+<div id="iframe_overlay_outline" class="simple_overlay">
+	<div id="iframe_overlay_content">
+		<div style="text-align:right; display:none;" id="iframe_controls">
+		<a onClick="reload_iframe()" style="cursor:pointer"><img src="/fb/ajax/refresh.gif" width="16" height="16" alt="refresh" /></a>
+		&nbsp;&nbsp;<a id="iframe_newin_link" href="" target="_blank">Open in a new window</a>
+		<a onClick="close_iframe_overlay()" style="cursor:pointer"><img src="/images/close.png" width="36" height="36" alt="close" class="close" /></a></div>
+		<div id="loadbar">
+		<img src='http://www.digparty.com/images/ajax-loader.gif' style='max-width:128px; height:15px' />
+		Loading ... <a onClick="close_iframe_overlay()" style="cursor:pointer; text-decoration:underline">cancel</a></div>
+		<iframe id="openhere" name="openhere" height="600" width="600" frameborder="0" src="http://www.digparty.com" onload="iframeload()"></iframe>
+	</div>
+</div>
+<script type="text/javascript" src="/js/graph_jsonp.js"></script>
+<script type="text/javascript" src="/js/wiki_jsonp.js"></script>
+<script type="text/javascript">
+$("ul.tools_tabs").tabs("div.panes > div");
+
+$(document).ready(do_digplanets(1, "ESP+game", "www.digparty.com"));
+
+//$(document).ready(do_you("ESP game", 1));
+$(document).ready(do_fbpages("%22ESP+game%22", ""));
+$(document).ready(do_twitter("%22ESP+game%22", ""));
+
+// adjust for small screens
+function curwidth() {
+	var w = $(window).width();
+	if (w < 1178) {
+		document.getElementById("t1").style.width = "100px";
+		document.getElementById("t2").style.width = "100px";
+		document.getElementById("t3").style.width = "100px";
+		document.getElementById("t4").style.width = "100px";
+		document.getElementById("t5").style.width = "100px";
+		document.getElementById("t6").style.width = "100px";
+		document.getElementById("digtabcell").style.minWidth = "600px";
+	} else {
+		document.getElementById("t1").style.width = "134px";
+		document.getElementById("t2").style.width = "134px";
+		document.getElementById("t3").style.width = "134px";
+		document.getElementById("t4").style.width = "134px";
+		document.getElementById("t5").style.width = "134px";
+		document.getElementById("t6").style.width = "134px";
+		document.getElementById("digtabcell").style.minWidth = "825px";
+	}
+}
+window.onresize = curwidth;
+curwidth();
+</script>
+<div id="digfooter">
+	<table width="100%" border="0" cellspacing="0" cellpadding="10" height="35">
+	<tr valign="bottom">
+		<td align="left">
+			<p class="nav">Copyright &copy; 2011 Digparty. All rights reserved.</p>
+		</td>
+		<td align="right">
+			<p class="nav"><a class="nav" href="http://www.digparty.com/" target="_blank">Digparty Home</a> 
+			| <a class="nav" href="http://www.digparty.com/app/digparty_help.php" target="_blank">Help</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Advertisers</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Investors</a> 
+			| <a class="nav" href="http://www.digparty.com/privacy.php" target="_blank">Privacy Policy</a> 
+			| <a href="http://www.digparty.com/terms.php" target="_blank">Terms of Service</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Contact Us</a>
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Feedback</a></p>
+		</td>
+	</tr>
+</table></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6384678-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- http://en.wikipedia.org/w/api.php?action=parse&amp;page=ESP_game&amp;prop=text|categories&amp;format=php -->
+
+</body>
+</html>

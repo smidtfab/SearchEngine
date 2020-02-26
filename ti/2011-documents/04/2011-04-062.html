@@ -1,0 +1,928 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head>
+<!-- Powered by Perl http://www.perl.org/ -->
+
+
+
+
+
+<link rel="home" type="text/html" title="home:heise online" href="/" />
+<link rel="author"    title="Kontakt"                    href="mailto:kontakt%40heise.de?subject=heise%20online" />
+<link rel="copyright" title="Heise Zeitschriften Verlag" href="/Impressum-4862.html" />
+<link rel="search"    title="Suche"                      href="/suche/" />
+<link rel="alternate" type="application/atom+xml" title="Aktuelle News von heise online"                                   href="http://www.heise.de/newsticker/heise-atom.xml" />
+<link rel="alternate" type="application/rss+xml"  title="Aktuelle News von heise online (für ältere RSS-Reader)" href="http://www.heise.de/newsticker/heise.rdf"      />
+
+
+    <link rel="prev" title="Vorige Meldung" href="/newsticker/meldung/12-oesterreichische-Big-Brother-Awards-auf-der-Zielgeraden-1124329.html" />
+
+
+    <link rel="next" title="Naechste Meldung" href="/newsticker/meldung/Indisches-Finanzamt-fordert-von-Vodafone-Milliardenzahlung-1124390.html" />
+
+
+<link href="/stil/standard2008.css" rel="stylesheet" type="text/css" />
+<link href="/stil/navi_top2008.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+<link href="/stil/ho/standard2008.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+    <link href="/stil/ho/glossar.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    <link href="/stil/ho/channel_tr.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/stil/drucken.css" rel="stylesheet" type="text/css" media="print" />
+
+<title>heise online - Toolkit für Amazons Crowdsourcing-Dienst</title>
+
+<meta http-equiv="Content-Type"       content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language"   content="de" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="DC.creator" content="heise online" />
+<meta name="date" content="2010-10-25T09:20:00" />
+<meta name="keywords" content="Amazon, KI, Mechanical Turk, TurKit, crowdsourcing" />
+<meta name="author" content="Ben Schwan" />
+
+
+
+
+
+
+
+
+    <meta name="fulltitle"   content="Toolkit für Amazons Crowdsourcing-Dienst" />
+    <meta name="topic"       content="News" />
+    <meta name="description" content="Mit TurKit lassen sich Mechanical Turk-Arbeitsabläufe direkt in JavaScript-Programme integrieren." />
+    <meta name="DC.title" content="Toolkit für Amazons Crowdsourcing-Dienst" />
+    <meta name="DC.description" content="Mit TurKit lassen sich Mechanical Turk-Arbeitsabläufe direkt in JavaScript-Programme integrieren." />
+    <meta name="DC.identifier" content="http://heise.de/-1124304" scheme="DCTERMS.URI" />
+    <meta name="kill_switch" content="" />
+
+
+
+
+
+    
+
+
+
+<meta name="copyright" content="Heise Zeitschriften Verlag" />
+<link href="/favicon.ico" rel="shortcut icon" />
+
+<script type="text/javascript" src="/support/lib/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/support/lib/jquery/jquery.ui-1.8.ho-teaserbundle.min.js"></script>
+<script type="text/javascript" src="/support/lib/social_bookmarks.js"></script>
+<script type="text/javascript" src="/support/lib/external.js"></script>
+<script type="text/javascript" src="/support/lib/teaser_linking.js"></script>
+
+
+
+<meta name="generator" content="InterRed V11.0, http://www.interred.de/, InterRed GmbH" />
+</head>
+
+<body>
+
+
+
+
+
+
+
+<!--googleoff: index-->
+
+<div id="navi_top_container">
+    <div id="navi_top">
+        <div class="navi_top_logo"><a href="/"><img src="/icons/ho/heise_online_min.gif" alt="" /></a></div>
+        <div class="erste_zeile">
+            <ul class="navi_top_abschnitt">
+            
+                <li class="first"><a href="/ct/" class="navi_oben_ct" title="c't">c't<span> Magazin</span></a></li>
+            
+            
+                <li><a href="/ix/" class="navi_oben_ix" title="iX">iX<span> Magazin</span></a></li>
+            
+            
+                <li><a href="/tr/" class="navi_oben_tr" title="Technology Review">Technology&nbsp;Review</a></li>
+            
+                <li><a href="/tp/" title="Telepolis" class="navi_oben_tp">Telepolis</a></li>
+            
+                <li><a href="/mobil/" class="navi_oben_mob" title="heise mobil"><span>heise </span>mobil</a></li>
+            
+            
+                <li><a href="/security/" class="navi_oben_sec" title="heise Security"><span>heise </span>Security</a></li>
+            
+            
+                <li><a href="/netze/" class="navi_oben_net" title="heise Netze"><span>heise </span>Netze</a></li>
+            
+            
+                <li><a href="/open/" class="navi_oben_op" title="heise open">Open Source</a></li>
+            
+            
+                <li><a href="/developer/" class="navi_oben_dev" title="heise Developer"><span>heise </span>Developer</a></li>
+            
+            
+                <li><a href="/resale/" class="navi_oben_res" title="heise resale"><span>heise </span>Resale</a></li>
+            
+            
+                <li><a href="/foto/" class="navi_oben_foto" title="heise Foto"><span>heise </span>Foto</a></li>
+            
+            
+                <li><a href="/autos/" class="navi_oben_aut" title="heise Autos"><span>heise </span>Autos</a></li>
+            
+            
+                <li><a href="/ct-tv/" class="navi_oben_tv" title="ctmagazin.tv">c't-TV</a></li>
+            
+            
+                <li><a href="/mac-and-i/" class="navi_oben_mac" title="Mac &amp; i">Mac &amp; i</a></li>
+            
+            </ul>
+        </div>
+        <div class="zweite_zeile">
+            <ul class="navi_top_abschnitt">
+                <li class="first"><a href="/software/" title="Software-Verzeichnis" class="navi_oben_swv"><span>Software/</span>Download</a></li>
+            
+                <li><a href="/jobs/" class="navi_oben_job" title="heise jobs">Stellenangebote</a></li>
+            
+                <li><a href="/preisvergleich/"                title="Preisvergleich"    class="navi_oben_pvg"   >Preisvergleich</a></li>
+                <li><a href="/tarifrechner/"                  title="Tarifrechner"      class="navi_oben_tarifr">Tarifrechner</a></li>
+                <li><a href="/itmarkt/"                       title="IT-Markt"          class="navi_oben_itm"   >IT-Markt</a></li>
+                <li><a href="http://www.heise-marktplatz.de/" title="heise-marktplatz"                          >heise-marktplatz</a></li>
+                <li><a href="/events/"                        title="heise Events"      class="navi_oben_eve"   ><span>heise </span>Veranstaltungen</a></li>
+                <li><a href="/whitepapers/"                   title="heise Whitepapers" class="navi_oben_whi"   ><span>heise </span>Whitepapers</a></li>
+                <li><a href="https://abo.heise.de/"           title="Zeitschriften-Abo" class="navi_oben_abo"   >Abo</a></li>
+                <li><a href="http://www.heise-shop.de/"       title="heise-shop"        class="navi_oben_shop"  >Shop</a></li>
+                <li><a href="/artikel-archiv/"                title="Artikel-Archiv"    class="navi_oben_kio"   >Archiv</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        <script type="text/javascript" src="/support/lib/doubleclicktag.js"></script>
+    
+
+
+
+
+
+<div id="container">
+    <div id="container_content">
+        <div id="logo_bereich">
+            <div id="logo">
+                <a href="/" title="heise online"><img src="/icons/ho/heise_online_logo.gif" width="200" height="51" alt="heise online" /></a>
+                
+            </div>
+            <div id="login_suche">
+                <div id="navi_login">
+                    <script type="text/javascript" src="/support/lib/login_ho.js"></script>
+                    <noscript>
+                        <p>
+                            <a href="https://www.heise.de/userdb/sso?rm=show_login&amp;dirid=1&amp;objekt=/">Einloggen</a> |
+                            <a href="https://www.heise.de/userdb/sso?rm=do_logout&amp;dirid=1">Ausloggen</a>
+                        </p>
+                    </noscript>
+                </div>
+                
+                    <form id="suchfeld" action="/suche/" method="get" accept-charset="utf-8">
+                        <h4>
+                            <input type="text" name="q" id="q" value="" class="textfield" />
+                            <input type="submit" name="search_submit" value="Suche" class="search_submit" />
+                            <input type="hidden" name="rm" value="search" class="search_hidden" />
+                        </h4>
+                    </form>
+                
+            </div>
+            
+        </div>
+        <ul id="navigation">
+            
+                
+                    
+                        <li><strong><a href="/" title="Home">Home</a></strong></li>
+                    
+                
+                    
+                        <li><strong><a href="/newsticker/classic/" title="Newsticker">Newsticker</a></strong></li>
+                    
+                
+                    
+                        <li><strong><a href="/newsticker/" title="7-Tage-News">7-Tage-News</a></strong></li>
+                    
+                
+                    
+                        <li><strong><a href="/newsticker/archiv/" title="News-Archiv">News-Archiv</a></strong></li>
+                    
+                
+                    
+                        <li><strong><a href="/foren/" title="Leserforum">Leserforum</a></strong></li>
+                    
+                
+            
+            <li class="right"><a href="/news-extern/news.html" title="RSS-Feeds" style="margin-right: 0;">RSS</a></li>
+            <li class="right"><a href="http://heise-online.mobi/" title="News mobil">News mobil</a></li>
+            <li class="right"><a href="/newsletter/" title="Newsletter">Newsletter</a></li>
+        </ul>
+
+        
+	<div id="breadcrumb">
+	
+		<a href="/" title="heise online">heise online</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<a href="/newsticker/" title="News">News</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<a href="/newsticker/archiv/?jahr=2010" title="2010">2010</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<a href="/newsticker/archiv/?jahr=2010;woche=43" title="KW 43">KW 43</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<span class="titel">Toolkit für Amazons Crowdsourcing-Dienst</span>
+		
+	
+	</div>
+
+
+
+        <div id="mitte">
+            
+                <div id="mitte_links">
+            
+            <!--googleon: index-->
+            
+
+
+<!--googleoff: all-->
+<div id="mitte_news">
+
+    <p class="news_datum">25.10.2010 09:20</p>
+    
+        <p class="news_navi">
+            <a href="/newsticker/meldung/12-oesterreichische-Big-Brother-Awards-auf-der-Zielgeraden-1124329.html"><span class="rsaquo">«</span>&nbsp;Vorige</a>
+            |
+            <a href="/newsticker/meldung/Indisches-Finanzamt-fordert-von-Vodafone-Milliardenzahlung-1124390.html">Nächste&nbsp;<span class="rsaquo">»</span></a>
+        </p>
+    
+    
+        <div class="news_logo"><a href="/tr/"><img src="/tr/icons/tr_min.gif" alt="Technology Review" width="80" height="30" /></a></div>
+    
+    <div class="clear"></div>
+    <!-- RSPEAK_START -->
+    <!--googleon: all-->
+
+    <h1> Toolkit für Amazons Crowdsourcing-Dienst</h1>
+
+<!-- RSPEAK_STOP -->
+<!--googleoff: all-->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function openWindow() {
+    window.open('/newsticker/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?view=audio', 'Vorlesen', 'width=492,height=400,left=100,top=100,menubar=no,status=no,scrollbars,resizable,toolbar=no,hotkeys,location=no');
+}
+document.write('<div class="readspeaker"><a href="javascript:openWindow()"><img src="/icons/ho/vorlesen_download.gif" alt="Meldung vorlesen und MP3-Download" width="150" height="13" class="ISI_IGNORE" /><' + '/a><' + '/div>');
+//--><!]]>
+</script>
+<noscript>
+<div class="readspeaker">
+    <a href="/newsticker/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?view=audio"><img src="/icons/ho/vorlesen_download.gif" alt="Meldung vorlesen und MP3-Download" width="150" height="13" class="ISI_IGNORE" /></a>
+</div>
+</noscript>
+<!--googleon: all-->
+<!-- RSPEAK_START -->
+
+    <div class="meldung_wrapper">
+    <p><a href="/tr/artikel/Amazons-mechanischer-Tuerke-278255.html">Mechanical Turk</a>, ein Dienst, den der E-Commerce-Riese Amazon mittlerweile seit fast fünf Jahren anbietet, erlaubt es Firmen und einzelnen Nutzern, Internet-Surfer als bezahlte Hilfsarbeiter zu engagieren. Das ist zumeist nicht besonders teuer und immer dann nützlich, wenn sich eine Aufgabe nur schlecht mittels Rechner automatisieren lässt – sei es nun die genaue Beschreibung eines Bildes oder das Verstehen komplexer Wortzusammenhänge. Dabei gilt stets: Was Künstliche Intelligenz nicht oder nur aufwendig kann, erledigt der Mensch in diesen Fällen in Sekunden.</p><!--googleoff: index-->
+<!-- RSPEAK_STOP -->
+<div  class="bcadv ISI_IGNORE"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/newsticker/news-internet;sz=300x250,336x280;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=1;ord=2314053915?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/newsticker/news-internet;sz=300x250,336x280;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=1;ord=2314053915?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/newsticker/news-internet;sz=300x250,336x280;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=1;ord=2314053915?" /></a></div></noscript>
+</div>
+<!-- RSPEAK_START -->
+<!--googleon: index-->
+<p>Die Fähigkeiten der Mechanical-Turk-Mitarbeiter, allgemein auch "Turkers" genannt, könnten in Zukunft noch einfacher angezapft werden, indem ihre Arbeit direkt in Programmabläufe integriert wird. Forscher am MIT haben dazu nun ein sogenanntes Toolkit entwickelt. Mit dem <a href="http://groups.csail.mit.edu/uid/turkit/">TurKit</a> lassen sich Algorithmen zur Koordinierung von Turkern in der Web-Sprache JavaScript erstellen und daraus mächtige Programme kreieren. Die Software habe dann "menschliche Intelligenz eingebaut", wie Greg Little, Doktorand am Labor für Computerwissenschaften und Künstliche Intelligenz an der Hochschule, sagt, der TurKit entwickelt hat. Selbst die Fehlerbereinigung von Code (Debugging) sei dabei möglich.</p>
+<p>"Mit JavaScript konnte man bislang nicht ohne großen Aufwand auf Mechanical Turk zugreifen", sagte Little. TurKit sei eine Brücke, mit der Code geschrieben werden könne, der direkt mit den Turkern interagiere. "So kann man leicht neue Methoden dieses "menschlichen Computers" ausprobieren."</p>
+<p><em>Mehr zum Thema in Technology Review online:</em><br /><ul><li><a href="/tr/artikel/Auf-dem-Weg-zu-menschlichen-Algorithmen-1124220.html">Auf dem Weg zu menschlichen Algorithmen</a></li></ul><!-- AUTHOR-DATA-MARKER-BEGIN --> (<em>Ben Schwan</em>)
+ / 
+
+<!-- RSPEAK_STOP -->
+<span class="ISI_IGNORE">(<a href="mailto:bsc@tr.heise.de" title="Ben Schwan">bsc</a>)</span>
+<br class="clear" />
+<!-- RSPEAK_START -->
+<!-- AUTHOR-DATA-MARKER-END -->
+</p>
+    </div>
+    <!--googleoff: all-->
+    <!-- RSPEAK_STOP -->
+    
+    
+        <p class="news_navi">
+        <a href="/newsticker/meldung/12-oesterreichische-Big-Brother-Awards-auf-der-Zielgeraden-1124329.html"><span class="rsaquo">«</span>&nbsp;Vorige</a>
+        |
+        <a href="/newsticker/meldung/Indisches-Finanzamt-fordert-von-Vodafone-Milliardenzahlung-1124390.html">Nächste&nbsp;<span class="rsaquo">»</span></a>
+        </p>
+    
+    <p class="news_option">
+    <a href="/newsticker/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?view=print" rel="nofollow">Version zum Drucken</a> |
+    <a href="/newsticker/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?view=mail" rel="nofollow">Per E-Mail versenden</a> |
+    <a href="/newsletter/" title="Newsletter abonnieren">Newsletter abonnieren</a>
+    </p>
+      
+		<p class="permalink">Permalink: <a href="http://heise.de/-1124304">http://heise.de/-1124304</a></p>
+		
+    <div class="news_foren">
+        
+  <p>
+	<a href="/newsticker/foren/S-Toolkit-fuer-Amazons-Crowdsourcing-Dienst/forum-188072/list/" title="Toolkit f&#xfc;r Amazons Crowdsourcing-Dienst">
+      <b>
+		
+		  
+			Kommentare lesen (13 Beitr&#xe4;ge)
+		  
+		
+      </b>
+	</a>
+	
+  </p>
+
+
+    </div>
+    
+    <div id="social_bookmarks"></div>
+    
+
+
+
+<div class="related_items">
+	<h4>Auch auf heise online:</h4>
+	<ul>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Amazon-Musik-liegt-in-der-Cloud-1216593.html/from/related" title="Amazon: Musik liegt in der Cloud">Amazon: Musik liegt in der Cloud</a></li>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Amazons-Cloud-importiert-Virtuelle-Maschinen-1202840.html/from/related" title="Amazons Cloud importiert Virtuelle Maschinen">Amazons Cloud importiert Virtuelle Maschinen</a></li>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Maschinen-ergaenzen-Medienarbeiter-1185709.html/from/related" title="Maschinen ergänzen Medienarbeiter">Maschinen ergänzen Medienarbeiter</a></li>
+	
+	    <li><a href="http://www.heise.de/tr/artikel/Der-Software-Journalist-1185705.html/from/related" title="Der Software-Journalist">Der Software-Journalist</a></li>
+	
+	    <li><a href="http://www.heise.de/tr/artikel/Auf-dem-Weg-zu-menschlichen-Algorithmen-1124220.html/from/related" title="Auf dem Weg zu menschlichen Algorithmen">Auf dem Weg zu menschlichen Algorithmen</a></li>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Amazon-setzt-auf-Menschen-statt-Maschinen-144847.html/from/related" title="Amazon setzt auf Menschen statt Maschinen">Amazon setzt auf Menschen statt Maschinen</a></li>
+	
+	</ul>
+</div>
+
+
+    
+
+
+<p class="themenseiten">
+    Mehr zum Thema
+    
+        <a href="/thema/KI" title="Themenseite KI">KI</a>
+    
+        <a href="/firma/Amazon" title="Themenseite Amazon">Amazon</a>
+    
+</p>
+
+
+    
+
+</div>
+
+            <!--googleoff: index-->
+            <div class="adbottom">			<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/newsticker/news-internet;sz=500x500;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=2;ord=2314053915?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/newsticker/news-internet;sz=500x500;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=2;ord=2314053915?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/newsticker/news-internet;sz=500x500;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=2;ord=2314053915?" /></a></div></noscript>
+</div>
+            
+                
+            
+            
+                </div>
+                <div id="mitte_rechts">
+                
+                
+                    
+                        
+                        
+                            <div id="channellayout">
+                                <h3>Technology <span style="color: #151515;">Review</span></h3>
+                                
+
+
+
+    
+    <div id="artikel">
+    
+        <div class="teaser_linker">
+            <h3><a href="/tr/artikel/Es-ist-das-Ergebnis-einer-fehlerhaften-Reparatur-1219793.html" title="„Es ist das Ergebnis einer fehlerhaften Reparatur“ ">„Es ist das Ergebnis einer fehlerhaften Reparatur“ </a></h3>
+            <p>
+                <img src="/tr/imgs/08/6/5/0/2/4/8/zitzelsberger_130x75.jpg-80bd7227d47dacb6.jpeg" width="130" height="75" alt="Horst Zitzelsberger" title="Horst Zitzelsberger" />
+                Der Strahlenbiologe Horst Zitzelsberger erklärt, warum es nicht möglich ist, einen Dosis-Schwellenwert für DNA-Schäden festzulegen, die durch radioaktive Strahlung entstehen und potentiell zu Krebs führen können.
+            </p>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="teaser_linker">
+            <h3><a href="/tr/artikel/Startschuss-fuer-ein-neues-Internet-1218929.html" title="Startschuss für ein neues Internet">Startschuss für ein neues Internet</a></h3>
+            <p>
+                <img src="/tr/imgs/08/6/4/9/7/0/1/openflow_130x75.jpg-0a74f7271c586302.jpeg" width="130" height="75" alt="" title="" />
+                In der neu gegründeten Open Networking Foundation wollen 23 IT-Unternehmen Standards für programmierbare Netzwerke entwickeln, um Datendienste schneller, effizienter und sicherer zu machen.
+            </p>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="teaser_linker">
+            <h3><a href="/tr/artikel/Verriss-des-Monats-Designpornographie-1218820.html" title="Verriss des Monats: Designpornographie">Verriss des Monats: Designpornographie</a></h3>
+            <p>
+                <img src="/tr/imgs/08/6/4/9/6/8/8/prevver130.jpg-57574c677a057f87.jpeg" width="130" height="75" alt="" title="" />
+                Wir leben in einem Zeitalter der Zeigewut. Mit technischer Hilfe kann man sich immer eingehendere Einblicke ins Private verschaffen. Ein umschnallbarer Scanner versucht das nun auch für das Körperinnere zu ermöglichen.
+            </p>
+            <div class="clear"></div>
+        </div>
+    
+    </div>
+
+
+
+                                
+
+
+
+    
+        <div class="trblog">
+            <h4><a href="/tr/blog/artikel/Themenmolekuel-Liebe-im-Labor-1218257.html" title="Themenmolekül: Liebe im Labor">Themenmolekül: Liebe im Labor</a></h4>
+            
+                <div>
+                    <img src="/imgs/02/5/3/2/9/2/6/Peter_Glaser-57e5be42520dc657.jpg" width="74" height="82" alt="" title="" />
+                    <em><a href="/tr/tr_redakteur_1023869.html">Peter Glaser</a></em>
+                </div>
+            
+            <p>Glasers gesammelte Linkwolke aus der Welt der Wissenschaft und Technologie. Heute unter anderem mit Steve Jobs, hingeschmierter Mathematik und DNS im Selbstbau.</p>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="trblog">
+            <h4><a href="/tr/blog/artikel/Die-unsichtbare-Mauer-1218219.html" title="Die unsichtbare Mauer">Die unsichtbare Mauer</a></h4>
+            
+                <div>
+                    <img src="/imgs/02/5/3/2/9/1/6/Martin_Koelling-07abffe71c41d0f0.jpg" width="74" height="82" alt="" title="" />
+                    <em><a href="/tr/tr_redakteur_1023853.html">Martin Kölling</a></em>
+                </div>
+            
+            <p>Der Atomunfall ist schrecklich, aber gestorben ist noch keiner. Die eigentliche menschliche Katastrophe spielt sich im Tsunami-Gebiet ab. Hier die ersten Lehren nach dem Beben.</p>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="trblog">
+            <h4><a href="/tr/blog/artikel/Das-Gespenst-der-Radioaktivitaet-1217652.html" title="Das Gespenst der Radioaktivität">Das Gespenst der Radioaktivität</a></h4>
+            
+                <div>
+                    <img src="/imgs/02/5/3/2/8/3/6/Veronika_Szentpetery-4d36381ab8f99d46.jpg" width="74" height="82" alt="" title="" />
+                    <em><a href="/tr/tr_redakteur_1023725.html">Veronika Szentpetery</a></em>
+                </div>
+            
+            <p>In Deutschland hat sich nach dem Reaktorunglück von Fukushima eine diffuse Angst vor Strahlenschäden breit gemacht. Wir sollten uns davon frei machen und statt Geiger-Zähler zu kaufen lieber Geld für die Katastrophen-Opfer spenden.</p>
+            <div class="clear"></div>
+        </div>
+    
+
+
+
+                                
+                                
+                                
+                                
+                                
+                                
+                                <div class="naviad"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/newsticker/news-internet;sz=336x200;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=3;ord=2314053915?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/newsticker/news-internet;sz=336x200;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=3;ord=2314053915?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/newsticker/news-internet;sz=336x200;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=3;ord=2314053915?" /></a></div></noscript>
+</div>
+                                <div class="clear"></div>
+                                <div class="online-markt">
+    <p class="left">ONLINE MARKT</p>
+    <p class="right">Werbung</p>
+    
+    <div class="teaser_unternehmen">
+	<h5>Verbundene Unternehmen</h5>
+	<a href="http://www.fotoespresso.de/" rel="external" title="dpunkt.foto - Portal für Fotografie"><img src="/icons/ho/dpunktfoto.gif" alt="dpunkt.foto - Portal für Fotografie" width="140" height="45" style="margin-left: 7px;" /></a><br class="clear" />
+	<a title="MittelstandsWiki - MittelstandsBlog, ITK Journal, Pressezentrum, Pro Journal" href="http://www.mittelstandswiki.de/" rel="external"><img src="/icons/ho/mittelstandswiki.gif" alt="MittelstandsWiki - MittelstandsBlog, ITK Journal, Pressezentrum, Pro Journal" width="280" height="30" /></a>
+    </div>
+</div>
+
+                                
+    <div class="teaser_preisvergleich">
+	<h4><a href="http://www.heise.de/preisvergleich/" title="Recherche und Preisvergleich Top 10">Top-10 Preisvergleich</a></h4>
+
+
+<ol>
+
+    <li>
+	<span class="num">1.</span>
+	<a href="http://www.heise.de/preisvergleich/a618147.html" title="OCZ Vertex 3 120GB, 2.5&quot;, SATA 6Gb/s (VTX3-25SAT3-120G)" class="top10">OCZ Vertex 3 120GB</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=3">Festplatten</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=hdssd">Solid State Drives (SSD)</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">2.</span>
+	<a href="http://www.heise.de/preisvergleich/a615532.html" title="Samsung Galaxy S2 16GB" class="top10">Samsung Galaxy S2 16GB</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=5">Telefon &amp; Co</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=39">Mobiltelefone</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=umtsover">UMTS ohne Vertrag</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">3.</span>
+	<a href="http://www.heise.de/preisvergleich/a535151.html" title="Samsung Galaxy S i9000  8GB schwarz" class="top10">Samsung Galaxy S i9000  8GB schwarz</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=5">Telefon &amp; Co</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=39">Mobiltelefone</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=umtsover">UMTS ohne Vertrag</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">4.</span>
+	<a href="http://www.heise.de/preisvergleich/a580328.html" title="Intel Core i5-2500K, 4x 3.30GHz, boxed (BX80623I52500K)" class="top10">Intel Core i5-2500K</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=4">CPUs</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=cpu1155">Intel Sockel 1155</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">5.</span>
+	<a href="http://www.heise.de/preisvergleich/a610466.html" title="Gigabyte GeForce GTX 560 Ti OC, 1024MB GDDR5, 2x DVI, Mini-HDMI (GV-N560OC-1GI)" class="top10">Gigabyte GeForce GTX 560 Ti OC</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=8">Grafikkarten</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=gra16_512">PCIe</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">6.</span>
+	<a href="http://www.heise.de/preisvergleich/a580332.html" title="Intel Core i7-2600K, 4x 3.40GHz, boxed (BX80623I72600K)" class="top10">Intel Core i7-2600K</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=4">CPUs</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=cpu1155">Intel Sockel 1155</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">7.</span>
+	<a href="http://www.heise.de/preisvergleich/a567146.html" title="Samsung EcoGreen F4 2000GB, SATA II (HD204UI)" class="top10">Samsung EcoGreen F4 2000GB</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=3">Festplatten</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=hde7s">SATA 3.5&quot;</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">8.</span>
+	<a href="http://www.heise.de/preisvergleich/a616608.html" title="ASUS P8P67 Rev 3.0, P67 (B3) (dual PC3-10667U DDR3) (90-MIBE4A-G0EAY0DZ)" class="top10">ASUS P8P67 Rev 3.0</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=9">Mainboards</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=mbp4_1155">Intel Sockel 1155 (DDR3)</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">9.</span>
+	<a href="http://www.heise.de/preisvergleich/a486924.html" title="Western Digital Caviar Green 2000GB, 64MB Cache, SATA II (WD20EARS)" class="top10">Western Digital Caviar Green 2000GB</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=3">Festplatten</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=hde7s">SATA 3.5&quot;</a>
+	</div>
+    </li>
+
+    <li>
+	<span class="num">10.</span>
+	<a href="http://www.heise.de/preisvergleich/a501508.html" title="Apple iPad Wi-Fi, 16GB (MB292)" class="top10">Apple iPad Wi-Fi</a>
+	<div>
+	    <a href="http://www.heise.de/preisvergleich/?m=1">Hardware</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?o=53">Notebooks &amp; Tablets</a>
+	    <span class="rsaquo">&rsaquo;</span>
+	    <a href="http://www.heise.de/preisvergleich/?cat=nbtabl">Tablets</a>
+	</div>
+    </li>
+
+</ol>
+
+<form method="get" action="http://www.heise.de/preisvergleich/" id="sform">
+<div>
+    <input type="text" name="fs" size="15" />
+    <select name="in">
+	<option value="">in allen Kategorien</option>
+	<option value="1">in Hardware</option>
+	<option value="2">in Software</option>
+	<option value="3">in Games</option>
+	<option value="4">in Video/Foto/TV</option>
+	<option value="5">in Telefon &amp; Co</option>
+	<option value="6">in Audio/HIFI</option>
+	<option value="7">in DVD</option>
+	<option value="8">in Haushalt</option>
+    </select>
+    <input type="submit" value="Suchen" class="submit" />
+</div>
+</form>
+
+
+    </div>
+
+
+                                <!-- ebook des tages begin -->
+<div class="teaser_ebook">
+    <div>
+        T&auml;glich neu Punkt 00:00 Uhr <br />
+        Das eBook des Tages!
+    </div>
+    <div>
+        <a href="http://www.informit.de/common/asp/pages/downloadinfo.asp?websiteID=HEISE" rel="external" style="color: #33f;">
+            Das Joomla!-Entwicklerhandbuch
+        </a>
+    </div>
+    <div>
+        Nur heute f&uuml;r &euro; 2,99!
+    </div>
+    <div>
+        <a href="http://www.informit.de/common/asp/pages/downloadinfo.asp?websiteID=HEISE" rel="external" style="color: #33f;">
+            Hier gehts direkt zum Download!
+        </a>
+    </div>
+</div>
+<!-- ebook des tages end -->
+
+                                
+                                <div class="sales"></div>
+                                <div class="contentbanner"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/newsticker/news-internet;sz=137x150;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=4;ord=2314053915?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/newsticker/news-internet;sz=137x150;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=4;ord=2314053915?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/newsticker/news-internet;sz=137x150;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=4;ord=2314053915?" /></a></div></noscript>
+</div>
+                            </div>
+                        
+                    
+                
+                </div>
+            
+        </div>
+    </div>
+    <div id="bannerzone">
+        <div class="leaderboard"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var rb = false; document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/newsticker/news-internet;sz=728x90,468x60;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=5;ord=2314053915?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/newsticker/news-internet;sz=728x90,468x60;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=5;ord=2314053915?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/newsticker/news-internet;sz=728x90,468x60;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=5;ord=2314053915?" /></a></div></noscript>
+</div>
+        <div class="heiseadvert"></div>
+        <div class="skyscraper" ><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (rb != true) document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/newsticker/news-internet;sz=120x600,120x800,160x600,160x800;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=6;ord=2314053915?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/newsticker/news-internet;sz=120x600,120x800,160x600,160x800;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=6;ord=2314053915?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/newsticker/news-internet;sz=120x600,120x800,160x600,160x800;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=6;ord=2314053915?" /></a></div></noscript>
+</div>
+    </div>
+    <div id="sitemap">
+        <ul class="navi_top_abschnitt">
+            <li><a href="/"    title="heise online"      class="navi_oben_ho">heise online</a></li>
+            <li><a href="/ct/" title="c't"               class="navi_oben_ct">c't Magazin</a></li>
+            <li><a href="/ix/" title="iX"                class="navi_oben_ix">iX Magazin</a></li>
+            <li><a href="/tr/" title="Technology Review" class="navi_oben_tr">Technology&nbsp;Review</a></li>
+            <li><a href="/tp/" title="Telepolis"         class="navi_oben_tp">Telepolis</a></li>
+        </ul>
+        <ul class="navi_top_abschnitt">
+            <li><a href="/mobil/"     title="heise mobil"     class="navi_oben_mob">heise mobil</a></li>
+            <li><a href="/security/"  title="heise Security"  class="navi_oben_sec">heise Security</a></li>
+            <li><a href="/netze/"     title="heise Netze"     class="navi_oben_net">heise Netze</a></li>
+            <li><a href="/open/"      title="heise open"      class="navi_oben_op" >Open Source</a></li>
+            <li><a href="/developer/" title="heise Developer" class="navi_oben_dev">heise Developer</a></li>
+        </ul>
+        <ul class="navi_top_abschnitt">
+            <li><a href="/resale/"    title="heise resale" class="navi_oben_res" >heise Resale</a></li>
+            <li><a href="/foto/"      title="heise Foto"   class="navi_oben_foto">heise Foto</a></li>
+            <li><a href="/autos/"     title="heise Autos"  class="navi_oben_aut" >heise Autos</a></li>
+            <li><a href="/ct-tv/"     title="ctmagazin.tv" class="navi_oben_tv"  >c't-TV</a></li>
+            <li><a href="/mac-and-i/" title="Mac &amp; i"  class="navi_oben_mac" >Mac &amp; i</a></li>
+        </ul>
+        <ul class="navi_top_abschnitt">
+            <li><a href="/software/"       title="Software-Verzeichnis" class="navi_oben_swv"   >Software/Download</a></li>
+            <li><a href="/jobs/"           title="heise jobs"           class="navi_oben_job"   >Stellenangebote</a></li>
+            <li><a href="/preisvergleich/" title="Preisvergleich"       class="navi_oben_pvg"   >Preisvergleich</a></li>
+            <li><a href="/tarifrechner/"   title="Tarifrechner"         class="navi_oben_tarifr">Tarifrechner</a></li>
+            <li><a href="/itmarkt/"        title="IT-Markt"             class="navi_oben_itm"   >IT-Markt</a></li>
+        </ul>
+        <ul class="navi_top_abschnitt">
+            <li><a href="/loseblattwerke/" title="Loseblattwerke"                         >Loseblattwerke</a></li>
+            <li><a href="/events/"         title="heise Events"      class="navi_oben_eve">heise Events</a></li>
+            <li><a href="/whitepapers/"    title="heise Whitepapers" class="navi_oben_whi">heise Whitepapers</a></li>
+            <li><a href="https://abo.heise.de/" title="Zeitschriften-Abo" class="navi_oben_abo">Abo</a></li>
+            <li><a href="http://www.heise-shop.de/" title="heise-shop" class="navi_oben_shop">Shop</a></li>
+            <li><a href="/artikel-archiv/" title="Artikel-Archiv"    class="navi_oben_kio">Artikel-Archiv</a></li>
+        </ul>
+        <ul id="navi_service">
+            <li><a href="/foren/"                                                 title="Leserforum"                              >Leserforum</a></li>
+            <li><a href="/newsletter/"                                            title="Newsletter"                              >Newsletter</a></li>
+            <li><a href="/news-extern/news.html" title="RSS"                                     >RSS</a></li>
+            <li><a href="/suche/"                                                 title="Suche"                                   >Suche</a></li>
+            <li><a href="/netze/netzwerk-tools/imonitor-internet-stoerungen/"     title="iMonitor – Internet-Störungen">iMonitor</a></li>
+        </ul>
+        <ul class="navi_international">
+            <li><strong>UK</strong></li>
+            <li><a href="http://www.h-online.com/"          title="The H"            >The H</a></li>
+            <li><a href="http://www.h-online.com/security/" title="The H Security"   >The H Security</a></li>
+            <li><a href="http://www.h-online.com/open/"     title="The H Open Source">The H Open Source</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div style="display: inline;"><img id="ivw_pixel_intern" src="/ivw-bin/ivw/CP/tr/news/1124304" width="1" height="1" alt="" /></div>
+    
+    <script type="text/javascript">
+        if (typeof(adblocker_is_off) == 'undefined')
+            {
+                var AVW = '<' + 'div style="display: inline;"><' + 'img id="avw_pixel_intern" src="/avw-bin/ivw/CP/adblock/tr/news/1124304" width="1" height="1" alt="" /><' + '/div>';
+                document.write(AVW);
+            }
+    </script>
+    
+        <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            var IVW='<div style="display: inline;"><img id="ivw_pixel" src="http://heise.ivwbox.de/cgi-bin/ivw/CP/techrev_ne;%2Ftr%2Fnews%2F1124304?r=';
+            document.write(IVW + '&amp;d=' + (Math.random()*100000) + '" width="1" height="1" alt="" /><' + '/div>');
+            //--><!]]>
+        </script>
+        <script type="text/javascript" src="/support/lib/mclient/mclient-1.0.js"></script>
+        <noscript>
+            <div style="display: inline;"><img src="http://heise.ivwbox.de/cgi-bin/ivw/CP/techrev_ne;/tr/news/1124304?r=&amp;d=" width="1" height="1" alt="" /></div>
+        </noscript>
+        <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            window.onunload=function() {};
+            //--><!]]>
+        </script>
+        
+            <!-- SZMFRABO VERSION="1.2" -->
+            <script type="text/javascript">
+                <!--//--><![CDATA[//><!--
+                var szmvars="heise//CP//techrev_ne";
+                //--><!]]>
+            </script>
+            <script src="http://heise.ivwbox.de/2004/01/survey.js" type="text/javascript"></script>
+            <!-- /SZMFRABO -->
+        
+
+
+<!-- RL -->
+
+    <!-- RL_PATH:%2Fho%2Fcms%2F5%2F2010%2F10%2F25%2F1124304 -->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var screenInfo = escape( screen.width + 'x' + screen.height + 'x' + screen.colorDepth );
+var cookiesEnabled = 0;
+if (navigator.cookieEnabled) cookiesEnabled=1;
+var referrer = escape(document.referrer);
+referrer = referrer.replace( /(\/software\/download).*$/, "$1/" );
+document.write(
+'<div style="display: inline;"><img id="rl_pixel" src="http://rl.heise.de/images/pic.gif?r=' + referrer + ';tp=1073741824%7C1073827193%7C1073838799%7C1073948625%7C1074355054;m=Heise;tid=1074390808;random=' + (Math.random()*100000) + ';con=1;json=1;tc=1073741824%7C1073827193%7C1073838799%7C1073948625%7C1074355054%7C1074390808;c=1124304;b=586738;sep=%7C;tce=1;tn=25;tpn=heise%20online%7CRedaktioneller%20Content%7CNews%7C2010%7C10%7C25;url=http%3A%2F%2Fwww.heise.de%2Fnewsticker%2Fmeldung%2FToolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html;tit=Toolkit%20f%FCr%20Amazons%20Crowdsourcing-Dienst;tpu=1;sz=' + screenInfo + ';con=' + cookiesEnabled + ';cs=1" width="1" height="1" alt="" /><' + '/div>'
+);
+//--><!]]>
+</script>
+<noscript>
+  <div style="display: inline;"><img id="rl_pixel" src="http://rl.heise.de/images/pic.gif?r=;tp=1073741824%7C1073827193%7C1073838799%7C1073948625%7C1074355054;m=Heise;tid=1074390808;random=3366072039;json=0;tc=1073741824%7C1073827193%7C1073838799%7C1073948625%7C1074355054%7C1074390808;c=1124304;b=586738;sep=%7C;tce=1;tn=25;tpn=heise%20online%7CRedaktioneller%20Content%7CNews%7C2010%7C10%7C25;url=http%3A%2F%2Fwww.heise.de%2Fnewsticker%2Fmeldung%2FToolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html;tit=Toolkit%20f%FCr%20Amazons%20Crowdsourcing-Dienst;tpu=1;con=1;cs=1" width="1" height="1" alt="" /></div>
+</noscript>
+
+<!-- /RL -->    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+        // VGWORT-CROP-MARKER
+        var vgwort_token='f45fd53f062c4d01a53b1fea2ccd7b43';
+        document.write('<div style="display: inline;"><img src="http://heise.met.vgwort.de/na/' +  vgwort_token);
+        document.write('" width="1" height="1" alt="" /><' + '/div>');
+        //--><!]]>
+    </script>
+
+
+    
+        
+
+	<ul id="navi_bottom">
+
+	
+		<li class="left"><a href="/Privacy-Policy-der-Heise-Zeitschriften-Verlag-GmbH-Co-KG-4860.html">Datenschutzhinweis</a> </li>
+	
+
+	
+		<li class="left"><a href="/Impressum-4862.html">Impressum</a> </li>
+	
+
+	
+		<li class="left"><a href="/Kontakt-4864.html">Kontakt</a> </li>
+	
+
+	
+		<li class="left"><a href="/mediadaten/">Mediadaten</a> </li>
+	
+
+
+<li class="bid_anzeige">
+586738
+</li>
+
+
+
+    <li class="right"><a href="http://www.interred.de/" rel="external" style="margin-right: 0;">Content Management</a> by <b style="margin-right: 0.5em;">Inter<span class="tx_red">Red</span></b></li>
+
+	
+		
+		<li class="right"><a href="http://www.plusline.de/">Hosted by Plus.line</a> </li>
+		
+		<li class="right"><a href="http://www.heise-medien.de/zeitschriften/">Copyright © 2011 Heise Zeitschriften Verlag</a> </li>
+		
+	
+
+	
+</ul>
+
+    
+
+</body>
+</html>
+<!-- Created with InterRed V11.0-x.x.x.x, http://www.interred.de/, by InterRed GmbH -->
+<!-- BID: 586738, iBID: 586818, CID: 1124304, iCID: 1124400 -->
+<!-- Link: $(LB586738:Linktext)$ $(LC1124304:Linktext)$ -->
+<!-- Generiert: 2010-10-25 10:00:03 -->
+

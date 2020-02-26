@@ -1,0 +1,1206 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+<head>
+<title>AWS Developer Forums: Requester w/ iframe in QuestionForm for ...</title>
+<meta http-equiv="content-type"
+    content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"
+    href="/css/forums.css"/>
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS"
+              href="https://forums.aws.amazon.com/rss/rssmessages.jspa?threadID=46385">
+        
+
+        
+        
+        
+        <script language="JavaScript" type="text/javascript" 
+                src="/resources/scripts/prototype/prototype.js;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF"></script>
+        <script language="JavaScript" type="text/javascript" 
+                src="/resources/scripts/scriptaculous/effects.js;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF"></script>
+        <script language="JavaScript" type='text/javascript'
+                src="/dwr/engine.js;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF"></script>
+        <script language="JavaScript" type='text/javascript'
+                src="/dwr/util.js;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF"></script>
+        <script language="JavaScript" type='text/javascript'
+                src="/dwr/interface/TagValidator.js;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF"></script>            
+        <script language="JavaScript" type='text/javascript'
+                src="/resources/scripts/tag-validator.js;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF"></script>
+        <script type="text/javascript">
+            // i18n error message
+            tagHandlerMessage = "The was an error with one or more of your tags. Please ensure that your tags contain only alphanumeric characters and are less than 10 characters.";
+        </script>
+</head>
+<body>
+
+<script src="/js/urchin.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+  var AWSForumsUrchin = function() {
+  var meta = document.createElement('meta');
+  meta.name = "Urchin-AWSF";
+  meta.id = "Urchin-AWSF";
+  meta.content = "OK";
+  urchinTracker();
+  document.getElementsByTagName('head')[0].appendChild( meta );
+ };
+ AWSForumsUrchin ();
+</script> 
+
+<link rel="stylesheet" href="/css/awsGlobalNav2.css" type="text/css" /> 
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" href="/css/awsGlobalNav2IE6.css" type="text/css" />
+    <link rel="stylesheet" href="/css/documentationIE6.css" type="text/css" />
+  <![endif]--> 
+   <table cellpadding="0" cellspacing="0" border="0" align="center" width="950px">
+      <tr>
+        <td valign="top">
+        <!-- header -->
+        <div id="mainNav">
+          <a href="http://aws.amazon.com/">
+          <img src="//dct5qpnx91avp.cloudfront.net/images/logo_aws.gif"
+             id="awsHeaderLogo"
+             width="164"
+             height="60"
+             alt="Amazon Web Services">
+          </a>
+        <div id="globalTopLinks">
+          <a href="https://console.aws.amazon.com/ec2/home"
+           class="signIn"><img src="//dct5qpnx91avp.cloudfront.net/images/laptop-icon-16x13.png"
+                               width="16"
+                               height="13"
+                               alt=""><span>Sign in to the AWS Management Console</span></a>
+          <a href="https://aws-portal.amazon.com/gp/aws/developer/registration/index.html"
+           class="create"><img src="//dct5qpnx91avp.cloudfront.net/images/aws-box-13x13.png"
+                               width="13"
+                               height="13"
+                               alt=""><span>Create an AWS Account</span></a>
+        </div>
+        <ul id="tabs">
+            <li class="first tab" id="awsTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/about-aws/">AWS</a>
+                </div>
+            </li>
+            <li class="tab" id="productsTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/products/">Products</a>
+                </div>
+            </li>
+
+            <li class="tab" id="developersTab">
+                <div class="liner">
+                    <span class="icon"></span>
+                    <a href="http://aws.amazon.com/resources/">Developers</a>
+                </div>
+            </li>
+            <li class="tab" id="communityTab">
+
+                <div class="liner">
+                    <span class="icon"></span>
+                    <a href="http://aws.amazon.com/resources/">Community</a>
+                </div>
+            </li>
+            <li class="tab" id="supportTab">
+                <div class="liner">
+
+                    <span class="icon"></span><a href="http://aws.amazon.com/support">Support</a>
+                </div>
+            </li>
+            <li class="last tab" id="accountTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/account/">Account</a>
+                </div>
+            </li>
+        </ul>
+        <div class="flyout">
+            <div class="liner">
+                <div class="content"></div>
+
+            <a href="#" class="close">
+                    close <img src="//dct5qpnx91avp.cloudfront.net/images/close-14x14.png" height="14" width="14" alt="">
+                </a>
+            </div>
+          </div>
+        </div>
+        </td>
+      </tr>
+    <tr><td valign="top">
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="jive-page-title">Discussion Forums</td>
+        <td nowrap align="right">
+<div id="jive-accountbox" class="clearfix">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td align="right" class="account-box-wrapper">
+Welcome, Guest                 <a class="jive-acc-login" href="/login.jspa;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF">Login</a>
+                 <a href="/help.jspa;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF" class="jive-acc-help" title="Forums Help">Forums Help</a> 
+         </td>
+    </tr>
+    </table>
+</div>
+</td>
+    </tr>
+    <tr>
+
+        <td style="padding-top: 8px;" colspan="2" valign="top">
+         <div id="jive-breadcrumbs">
+    <em>
+
+
+    <a href="/index.jspa;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF?categoryID=1">Discussion Forums</a>
+
+
+            <span class="bidi">
+            <span class="gt">&gt;</span>
+            <a href="/category.jspa;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF?categoryID=3">Category: Amazon Web Services</a>
+            </span>
+
+            <span class="bidi">
+            <span class="gt">&gt;</span>
+            <a href="/forum.jspa;jsessionid=39D2660993327FD5B8F968CC6CBAD1FF?forumID=11&start=0">Forum: Amazon Mechanical Turk (Beta)</a>
+            </span>
+
+            <span class="bidi">
+            <span class="gt">&gt;</span><span class="bctxt">Thread: Requester w/ iframe in QuestionForm for Qualification test...how possible?!</span>
+            </span>
+        
+
+    
+    
+    </em>
+</div>
+   <form action="search.jspa" id="jive-searchform">
+        <div class="jive-search-form">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="1%" nowrap class="jive-description">
+                <label for="q01"> <span
+                    style="font-weight: bold">Search Forum :</span> </label> <input type="hidden"
+                    name="objID" value="f11">
+                <input type="text" name="q" value="" size="30"
+                    maxlength="100" id="q01" accesskey="s"
+                    title="Search Forum (ALT+S)">
+
+                <input type="image" src="https://dn1lvoe5mgzdm.cloudfront.net/images/go-icon.gif"
+                    align="absmiddle"
+                    value="Go"> <a
+                    style="font-size: 8.5pt;"
+                    href="search!default.jspa?objID=f11">Advanced search options</a></td>
+                <td width="1%" class="jive-description" nowrap="nowrap"></td>
+                <td width="98%" align="right" class="jive-description"></td>
+            </tr>
+        </table>
+        </div>
+        </form>
+        
+     
+
+<table border="0" class="jive-main-layout">
+    <tr>
+        <td valign="top" width="99%">
+       
+    <div id="jive-flatpage">
+    
+        
+    
+
+ 
+    
+
+    
+    
+
+
+
+    
+        
+        
+
+        
+        
+
+    
+    
+    
+ 
+        
+        
+
+
+
+
+<table summary="Message" cellpadding="0" cellspacing="0" border="0"
+    width="100%" style="background-color: #f7f7f7; border: 1px solid #cccccc; margin-bottom: 5px">
+    <tr id="jive-message-178284" valign="top">
+        <td class="jive-first" valign="top">
+
+
+        <table class="jive-thread-messagebox" style="padding: 12px;" width="100%">
+            <tr>
+                
+                <td valign="top" width="1%"></td>
+ 
+ 
+     <td width="100%" valign="top">
+
+       <span class="jive-subject"> <a
+            name="178284"></a> Requester w/ iframe in QuestionForm for Qualification test...how possible?!
+       </span>
+        
+        
+<div style="padding-top: 5px; font-size: 11px;">
+        
+        
+        
+
+
+ 
+<div class="jive-message-info">Posted by:  <a href="profile.jspa?userID=114110"
+            title="sid_viswanathan">sid_viswanathan</a> 
+   </div>
+        
+        
+        
+        <div class="jive-message-info">
+         Posted on: 
+            
+        <font style="color: #000;">May 10, 2010 10:17 PM</font>
+        </div>
+        
+        
+        
+        
+        
+          
+
+   
+        
+
+
+
+        
+        
+        
+        
+        
+        </div>
+        </td>
+        <td align="right" valign="top">
+                
+<div class="jive-buttons">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                
+
+                
+
+                
+
+                
+                
+
+                <td>&nbsp;</td>
+                <td class="jive-icon"><a
+                    href="post!reply.jspa?messageID=178284"
+                    title="Click to reply to this thread"><img
+                    src="https://dn1lvoe5mgzdm.cloudfront.net/images/reply-16x16.gif" width="16" height="16"
+                    border="0"
+                    alt="Click to reply to this thread"></a></td>
+                <td class="jive-icon-label"><a
+                    href="post!reply.jspa?messageID=178284"
+                    title="Click to reply to this thread">Reply</a></td>
+
+                
+            </tr>
+        </table>
+        </div>
+                 
+                 
+                </td>
+            </tr>
+            
+            
+            
+       <tr style="padding: 0px;">
+            <td  style="padding: 0px;" valign="top" colspan="3">
+            
+
+      <table  style="padding: 0px;" width="100%">
+              <tr  style="padding: 0px;">
+              <td width="80%"  style="vertical-align:bottom; padding: 0px; padding-left:11px;" valign="top">
+    
+
+   
+        
+              
+              </td>
+              
+              <td  style="padding: 0px;" valign="top" align="right">
+                     
+ 
+              </td>
+              </tr>
+            </table>
+              </td>
+              </tr>
+              
+              
+    <tr><td colspan="3">
+    
+
+
+
+    <div id="jive-question-box" style="padding-bottom: 10px" class="jive-infobox">
+    <table cellpadding="2" cellspacing="0" border="0">
+    <tbody>
+        <tr valign="top">
+            <td width="1"><img src="https://dn1lvoe5mgzdm.cloudfront.net/images/question-possibly_resolved-24x24.gif" alt="" border="0"></td>
+            <td width="99%" style="vertical-align: middle;">
+                
+
+                    
+
+                        
+
+                        
+                            
+                            This question is <span class="unans">not answered</span>.
+
+                        
+
+                        
+                        
+                            
+                            Helpful answers available: <b>2</b>.
+
+                            
+                            Correct answers available: <b>1</b>.
+                        
+
+                    
+
+                
+            </td>
+       </tr>
+    </tbody>
+    </table>
+    </div>
+
+
+
+    
+        <table  border="0" cellpadding="0" cellspacing="0" width="100%"
+            class="jive-message-body-wrapper">
+            <tr>
+                <td>
+                <div class="jive-message-body">
+                <div style="line-height:1.5; padding-left: 25px;padding-right: 10px;">
+                Been struggling with this one for a while.&nbsp; The documents clearly state that iframe is not supported by QuestionForm.&nbsp; But, I&#39;ve seen a Requester post a Qualification Test using an iframe.&nbsp; By the books, this doesn&#39;t seem like it should be allowed, also b/c a qualification test does not support ExternalQuestion.<br/><br/>I contacted the Requester and he submitted some sample code in Python he is using, but doesn&#39;t make sense to me how he&#39;s able to get this Qualification to submit w/o an XHTML parsing error which is what I&#39;m getting when I introduce &lt;iframe&gt; into FormattedContent.&nbsp; <br/><br/>Appreaciate any ideas on how to get an iframe or scroll box into a Qualification Test?&nbsp; I&#39;m using the ruby-aws gem in Ruby.<br/><br/>thanks!<br/><br/><br/>________________<br/><br/>class TranscriptionQualification(&lt;div id=":2ul" class="ii gt"&gt;Qualification):<br/>&nbsp;&nbsp;&nbsp; def __init__(self):<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; super(TranscriptionQualification, self).__init__(EnumQualificationType.Values.CLARITRANS_NDA)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # === Question 1 ===<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; question1Content = EmbeddedQuestionContent(formattedContent = &#39;&#39;&#39;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src=&quot;<a href="http://www.claritrans.com/static/claritrans/images/claritrans_logo_sm.gif" target="_blank">http://www.claritrans.com/static/claritrans/images/claritrans_logo_sm.gif</a>&quot; alt=&quot;ClariTrans&quot; /&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;ClariTrans Non-Disclosure Agreement&lt;/h1&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Please read and agree to the ClariTrans non-disclosure agreement.&lt;/p&gt;&lt;div class="im"&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;iframe src=&quot;<a href="http://www.claritrans.com/static/claritrans/nda.html" target="_blank">http://www.claritrans.com/static/claritrans/nda.html</a>&quot; height=&quot;250&quot; width=&quot;650&quot;&gt;Go to <a href="http://www.claritrans.com/static/claritrans/nda.html" target="_blank">http://www.claritrans.com/static/claritrans/nda.html</a> to review the ClariTrans NDA&lt;/iframe&gt;<br/>&lt;/div&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#39;&#39;&#39;)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; question1Answer = SelectionAnswer(min = 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max = 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; style = &#39;radiobutton&#39;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selections = [(&#39;Agree to ClariTrans NDA&#39;, &#39;agree&#39;),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&#39;Do not agree to ClariTrans NDA&#39;, &#39;disagree&#39;)],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type = &#39;text&#39;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; other = False)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; self._addQuestion(identifier = &#39;ClariTransNDAQualification&#39;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content = question1Content,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; answer = question1Answer,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; correctSelection = &#39;agree&#39;)<br/><br/><br/># In Main<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; response = self.connection.updateQualificationType(qualificationTypeId = qualificationTypeId,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; description = description,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test = qualification.questionForm,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; answerKey = qualification.answerKey,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; testDurationInSeconds = 30 * 60,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retryDelayInSeconds = retryDelayInSeconds)<br/>&lt;/div&gt;<br/>
+                </div>
+                
+                </div>
+                </td>
+            </tr>
+        </table>
+       
+ 
+   
+
+        </td>
+    </tr>
+    
+</table>
+ 
+
+<div style="padding-bottom: 0px" class="jive-table-info">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <thead>
+        <tr>
+            <th>
+            <table cellpadding="0" cellspacing="0" border="0"
+                width="100%">
+                <tbody>
+                    <tr>
+                        <td width="1%"><a
+                            href="thread.jspa?threadID=46385"
+                            title="Permlink"><img style="padding-left: 12px;"
+                            src="images/permlink-16x16.gif" width="16"
+                            height="16" border="0"
+                            alt="Permlink"></a>
+                        </td>
+                        <td align="left" width="99%"> <nobr>
+                        <span class="bidi"> <b>Replies:</b> </span> 2
+                        </nobr>  |  
+
+                            
+
+                            <nobr> <span class="bidi"> <b>Pages:</b> </span> <span
+                                class="bidi"> 1
+                            </span>  
+                            </nobr>
+
+                           - <nobr> <span class="bidi"> <b><a
+                            href="thread.jspa?threadID=46385&tstart=0&messageID=179389#179389"
+                            title="by: cogdevlab">Last Post</a>:</b> </span> <span class="bidi">
+                        May 18, 2010 12:37 PM
+                        </span> 
+                        
+                        by: <a href="profile.jspa?userID=113957">cogdevlab</a> </nobr> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </th>
+        </tr>
+    </thead>
+</table>
+</div>
+
+</td></tr></table>
+
+ 
+
+  
+
+
+
+
+        <table cellpadding="3" cellspacing="0" style="padding-top: 10px;" border="0" width="100%">
+            <tr>
+
+                <td nowrap width="90%">
+                
+                    <div  style="padding-bottom: 10px;" class="jive-subheader">Replies</div>
+                    
+                </td>
+                <td nowrap align="right" width="10%">
+                        
+         
+ 
+      
+                </td>
+
+            </tr>
+         </table>
+    
+
+    
+ 
+    <div id="jive-message-holder">
+        
+
+        <div class="jive-message-list">
+            <div class="jive-table">
+
+                
+
+
+
+
+<div class="jive-messagebox">
+
+<table summary="Message" cellpadding="0" cellspacing="0" border="0"
+    width="100%">
+    <tr id="jive-message-178287" valign="top">
+        <td class="jive-first" valign="top">
+
+
+        <table class="jive-thread-messagebox" style="padding: 12px;" width="100%">
+            <tr>
+                
+                <td valign="top" width="1%"></td>
+ 
+ 
+     <td width="100%" valign="top">
+
+       <span class="jive-subject"> <a
+            name="178287"></a> Re: Requester w/ iframe in QuestionForm for Qualification test...how possible?!
+       </span>
+        
+        
+<div style="padding-top: 5px; font-size: 11px;">
+        
+        
+        
+
+
+ 
+<div class="jive-message-info">Posted by:  <a href="profile.jspa?userID=114110"
+            title="sid_viswanathan">sid_viswanathan</a> 
+   </div>
+        
+        
+        
+        <div class="jive-message-info">
+         Posted on: 
+            
+        <font style="color: #000;">May 11, 2010 12:13 AM</font>
+        </div>
+        
+        
+        
+        
+        
+          <div class="jive-message-info"><a
+            href="message.jspa?messageID=178284#178284"
+            title="in response to: sid_viswanathan"><img
+            src="images/up-10x10.gif" width="10" height="10" border="0"
+            alt="in response to: sid_viswanathan"
+            title="in response to: sid_viswanathan" /></a>
+         
+        
+        in response to: <a
+                    href="message.jspa?messageID=178284#178284"
+                    title="Go to message">sid_viswanathan</a> 
+ </div>   
+
+
+   
+        
+
+
+
+        
+        
+
+        <div class="jive-attachment-list">
+        <table cellpadding="3" cellspacing="0" border="0">
+            
+            <tr>
+                <td width="1%"><a
+                    href="servlet/JiveServlet/download/11-46385-178287-3299/worker_agreement.zip"><img
+                    src="servlet/JiveServlet?attachImage=true&amp;contentType=application%2Foctet-stream&amp;attachment=3299"
+                    border="0"
+                    alt="Attachment"></a></td>
+                <td width="99%" class="jive-description"><a
+                    href="servlet/JiveServlet/download/11-46385-178287-3299/worker_agreement.zip">worker_agreement.zip</a> (54.2 KB)</td>
+            </tr>
+            
+        </table>
+        </div>
+
+        
+        
+        
+        
+        </div>
+        </td>
+        <td align="right" valign="top">
+                
+<div class="jive-buttons">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                
+
+                
+
+                
+
+                
+                
+
+                <td>&nbsp;</td>
+                <td class="jive-icon"><a
+                    href="post!reply.jspa?messageID=178287"
+                    title="Click to reply to this thread"><img
+                    src="images/reply-16x16.gif" width="16" height="16"
+                    border="0"
+                    alt="Click to reply to this thread"></a></td>
+                <td class="jive-icon-label"><a
+                    href="post!reply.jspa?messageID=178287"
+                    title="Click to reply to this thread">Reply</a></td>
+
+                
+            </tr>
+        </table>
+        </div>
+                 
+                 
+                </td>
+            </tr>
+            
+            
+            
+       <tr style="padding: 0px;">
+            <td  style="padding: 0px;" valign="top" colspan="3">
+            
+
+      <table  style="padding: 0px;" width="100%">
+              <tr  style="padding: 0px;">
+              <td width="80%"  style="vertical-align:bottom; padding: 0px; padding-left:11px;" valign="top">
+    
+
+   
+        
+              
+              </td>
+              
+              <td  style="padding: 0px;" valign="top" align="right">
+                     
+
+ 
+                 
+
+         
+ 
+ 
+
+ 
+ 
+ 
+              </td>
+              </tr>
+            </table>
+              </td>
+              </tr>
+              
+              
+    <tr><td colspan="3">
+    
+
+    
+        <table  border="0" cellpadding="0" cellspacing="0" width="100%"
+            class="jive-message-body-wrapper">
+            <tr>
+                <td>
+                <div class="jive-message-body">
+                <div style="line-height:1.5; padding-left: 25px;padding-right: 10px;">
+                ATTACHED is an example of a requester who has been able to implement an iframe successfully inside a Qualification test.<br/><br/>Here is the code I am using via the ruby AWS gem (causes a XHTML error every time):<br/><br/>@mturk.CreateQualificationType(<br/>:Name =&gt; &quot;Worker Agreement Test 14&quot;, <br/>:Description =&gt; &quot;completing this worker agreement you will allow you to submit work for us&quot;, <br/>:QualificationTypeStatus =&gt; &quot;Active&quot;,<br/>:Test =&gt; qualification,<br/>:AnswerKey =&gt; answer,<br/>:TestDurationInSeconds =&gt; 3600)<br/><br/><br/>qualification is an xml string equal to:<br/><br/>&lt;?xml version=&quot;1.0&quot;?&gt;<br/>&lt;QuestionForm xmlns=&quot;<a class="jive-link-external" href="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd&quot;">http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd&quot;</a>&gt;<br/>&nbsp;&nbsp;&nbsp; &lt;Question&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;QuestionIdentifier&gt;agreement&lt;/QuestionIdentifier&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;QuestionContent&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;FormattedContent&gt;&lt;![CDATA[<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;iframe src =&quot;<a class="jive-link-external" href="http://www.google.com&quot;">http://www.google.com&quot;</a> width=&quot;650&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ]]&gt;&lt;/FormattedContent&gt;&nbsp;&nbsp;&nbsp; <br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/QuestionContent&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;AnswerSpecification&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;SelectionAnswer&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;StyleSuggestion&gt;radiobutton&lt;/StyleSuggestion&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;Selections&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;Selection&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;SelectionIdentifier&gt;yes&lt;/SelectionIdentifier&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Text&gt;I agree to the Project Oscar NDA/Worker Agreement&lt;/Text&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/Selection&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;Selection&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;SelectionIdentifier&gt;no&lt;/SelectionIdentifier&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Text&gt;Do not agree to Project Oscar NDA/Worker Agreement&lt;/Text&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/Selection&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;/Selections&gt;&nbsp; <br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/SelectionAnswer&gt;<br/>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/AnswerSpecification&gt;<br/>&nbsp;&nbsp;&nbsp; &lt;/Question&gt;<br/>&lt;/QuestionForm&gt;<br/>
+                </div>
+                
+                </div>
+                </td>
+            </tr>
+        </table>
+       
+ 
+
+
+        </td>
+    </tr>
+    
+</table>
+
+</td></tr></table>
+</div>
+
+
+
+            </div>
+        </div>
+
+        
+
+        <div class="jive-message-list">
+            <div class="jive-table">
+
+                
+
+
+
+
+<div class="jive-messagebox">
+
+<table summary="Message" cellpadding="0" cellspacing="0" border="0"
+    width="100%">
+    <tr id="jive-message-179389" valign="top">
+        <td class="jive-first" valign="top">
+
+
+        <table class="jive-thread-messagebox" style="padding: 12px;" width="100%">
+            <tr>
+                
+                <td valign="top" width="1%"></td>
+ 
+ 
+     <td width="100%" valign="top">
+
+       <span class="jive-subject"> <a
+            name="179389"></a> Re: Requester w/ iframe in QuestionForm for Qualification test...how possible?!
+       </span>
+        
+        
+<div style="padding-top: 5px; font-size: 11px;">
+        
+        
+        
+
+
+ 
+<div class="jive-message-info">Posted by:  <a href="profile.jspa?userID=113957"
+            title="cogdevlab">cogdevlab</a> 
+   </div>
+        
+        
+        
+        <div class="jive-message-info">
+         Posted on: 
+            
+        <font style="color: #000;">May 18, 2010 12:37 PM</font>
+        </div>
+        
+        
+        
+        
+        
+          <div class="jive-message-info"><a
+            href="message.jspa?messageID=178284#178284"
+            title="in response to: sid_viswanathan"><img
+            src="images/up-10x10.gif" width="10" height="10" border="0"
+            alt="in response to: sid_viswanathan"
+            title="in response to: sid_viswanathan" /></a>
+         
+        
+        in response to: <a
+                    href="message.jspa?messageID=178284#178284"
+                    title="Go to message">sid_viswanathan</a> 
+ </div>   
+
+
+   
+        
+
+
+
+        
+        
+        
+        
+        
+        </div>
+        </td>
+        <td align="right" valign="top">
+                
+<div class="jive-buttons">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                
+
+                
+
+                
+
+                
+                
+
+                <td>&nbsp;</td>
+                <td class="jive-icon"><a
+                    href="post!reply.jspa?messageID=179389"
+                    title="Click to reply to this thread"><img
+                    src="images/reply-16x16.gif" width="16" height="16"
+                    border="0"
+                    alt="Click to reply to this thread"></a></td>
+                <td class="jive-icon-label"><a
+                    href="post!reply.jspa?messageID=179389"
+                    title="Click to reply to this thread">Reply</a></td>
+
+                
+            </tr>
+        </table>
+        </div>
+                 
+                 
+                </td>
+            </tr>
+            
+            
+            
+       <tr style="padding: 0px;">
+            <td  style="padding: 0px;" valign="top" colspan="3">
+            
+
+      <table  style="padding: 0px;" width="100%">
+              <tr  style="padding: 0px;">
+              <td width="80%"  style="vertical-align:bottom; padding: 0px; padding-left:11px;" valign="top">
+    
+
+   
+        
+              
+              </td>
+              
+              <td  style="padding: 0px;" valign="top" align="right">
+                     
+
+ 
+                 
+
+         
+ 
+ 
+
+ 
+ 
+ 
+              </td>
+              </tr>
+            </table>
+              </td>
+              </tr>
+              
+              
+    <tr><td colspan="3">
+    
+
+    
+        <table  border="0" cellpadding="0" cellspacing="0" width="100%"
+            class="jive-message-body-wrapper">
+            <tr>
+                <td>
+                <div class="jive-message-body">
+                <div style="line-height:1.5; padding-left: 25px;padding-right: 10px;">
+                I just solved a similar issue myself, though I use the CLT.&nbsp; I found that you <em>can</em> put an iframe into a formatted content block, but it has to be the <strong>only thing in that block.&nbsp; </strong>Even a &lt;p&gt; tag seems to throw all kinds of errors.&nbsp; I used this for a HIT, but I suspect it is the same for a qualification.<br/>
+                </div>
+                
+                </div>
+                </td>
+            </tr>
+        </table>
+       
+ 
+
+
+        </td>
+    </tr>
+    
+</table>
+
+</td></tr></table>
+</div>
+
+
+
+            </div>
+        </div>
+
+        
+
+        
+
+
+            
+        <table cellpadding="3" cellspacing="0" style="padding-top: 10px;" border="0" width="100%">
+            <tr>
+
+                <td nowrap width="90%">
+                
+                <div style="padding-top: 5px"><a
+                    href="rss/rssmessages.jspa?threadID=46385"><img
+                    align="absmiddle" style="padding-right: 8px;"
+                    src="https://dn1lvoe5mgzdm.cloudfront.net/images/feed-icon-16x16.gif" width="16"
+                    height="16" border="0" alt="View Thread RSS Feed"></a>
+                <a
+                    href="rss/rssmessages.jspa?threadID=46385"><b>View
+                Thread RSS Feeds</b></a></div>
+                
+                </td>
+                <td nowrap align="right" width="10%">
+         
+
+                </td>
+
+            </tr>
+         </table>
+      
+ 
+    
+    
+    
+
+    </div>
+
+        </td>
+
+        
+        <td valign="top" width="1%">
+        
+        
+        
+
+
+
+<div id="sideNav">
+<div id="subNavB">
+<div class="decoratedBox">
+<div class="head">
+<h4>Available Actions</h4>
+</div>
+<div class="body">
+<table>
+    <tbody>
+
+
+        
+        <tr>
+            <td class="jive-icon"><a
+                href="post!reply.jspa?threadID=46385"><img
+                src="images/reply-16x16.gif" width="16" height="16"
+                border="0"
+                alt="Reply to this Thread"></a></td>
+            <td class="jive-icon-label">
+            <a id="jive-reply-thread"
+                href="post!reply.jspa?threadID=46385">Reply to this Thread</a></td>
+        </tr>
+        
+
+        
+
+    </tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+
+         
+        
+        
+        
+        
+
+
+
+
+
+
+
+<div id="sideNav">
+<div id="subNavB">
+<div class="decoratedBox">
+<div class="head">
+<h4>Icon Legend</h4>
+</div>
+<div class="body">
+<table>
+    
+
+
+    
+
+    <tr>
+        <td valign="top" class="jive-icon"><img
+            src="images/question-resolved-16x16.gif" width="16"
+            height="16" border="0" alt=""></td>
+        <td valign="top" class="jive-icon-label">
+        Answered question</td>
+    </tr>
+    <tr>
+        <td valign="top" class="jive-icon"><img
+            src="images/question-pts-available-16x16.gif" width="16"
+            height="16" border="0" alt=""></td>
+        <td valign="top" class="jive-icon-label">
+          Unanswered question with answer points still available 
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" class="jive-icon"><img
+            src="images/question-16x16.gif" width="16" height="16"
+            border="0" alt=""></td>
+        <td valign="top" class="jive-icon-label">
+        Unanswered question</td>
+    </tr>
+
+
+</table>
+
+
+        
+<div class="jive-portlet-separator"><a style="font-weight:bold;" href="recognition.jsp">AWS Forums Status Icons</a></div>
+<table cellpadding="2" cellspacing="0" border="0" width="100%">
+
+
+    
+
+        <tbody class="jive-status-legend-points">
+
+            
+                <tr>
+                    <td valign="top" class="jive-icon">
+                        <img src="images/status/ace16x16.gif" border="0" title="Ace" alt="" />
+                    </td>
+                    <td valign="top" class="jive-icon-label">
+
+                        Ace: 2000+      pts
+                    </td>
+                </tr>
+
+            
+                <tr>
+                    <td valign="top" class="jive-icon">
+                        <img src="images/status/expert16x16.gif" border="0" title="Expert" alt="" />
+                    </td>
+                    <td valign="top" class="jive-icon-label">
+
+                        Expert: 750-1999
+
+                              pts
+                    </td>
+                </tr>
+
+            
+                <tr>
+                    <td valign="top" class="jive-icon">
+                        <img src="images/status/guide16x16.gif" border="0" title="Guide" alt="" />
+                    </td>
+                    <td valign="top" class="jive-icon-label">
+
+                        Guide: 300-749
+
+                              pts
+                    </td>
+                </tr>
+
+            
+                <tr>
+                    <td valign="top" class="jive-icon">
+                        <img src="images/status/enthusiast16x16.gif" border="0" title="Enthusiast" alt="" />
+                    </td>
+                    <td valign="top" class="jive-icon-label">
+
+                        Enthusiast: 50-299
+
+                              pts
+                    </td>
+                </tr>
+
+            
+                <tr>
+                    <td valign="top" class="jive-icon">
+                        <img src="images/status/newbie16x16.gif" border="0" title="Newbie" alt="" />
+                    </td>
+                    <td valign="top" class="jive-icon-label">
+
+                        Newbie: 5-49
+
+                              pts
+                    </td>
+                </tr>
+
+            
+
+        </tbody>
+
+    
+
+    
+
+        <tbody class="jive-status-legend-groups">
+
+            
+                <tr>
+                    <td valign="top" class="jive-icon">
+                        <img src="images/status/amazonicon.gif" border="0" title="Amazonian" alt="" />
+                    </td>
+                    <td valign="top" class="jive-icon-label">
+                        Amazonian
+                    </td>
+                </tr>
+
+            
+
+        </tbody>
+
+    
+
+
+
+
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+         
+        
+        </td>
+        
+
+
+    </tr>
+</table> <br />
+        <br />
+         <hr moshade="noshade" width="100%" color="#cccccc" size="1"> 
+ 
+<style> 
+ 
+.aws-footer {
+    font-size:85%;
+    text-align:center;
+}
+ 
+.h_bar {
+  list-style-image: none;
+  list-style-position:outside;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 10px;
+}
+ 
+.h_bar li{
+  border-left: 1px solid #CCCCCC;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: inline;
+  list-style-type: none;
+}
+ 
+li.first{
+  border-left: 0px;
+}
+ 
+</style> 
+ 
+<div class="aws-footer"> 
+    <ul class="h_bar"> 
+        <li class="first"> 
+          <a target="_blank" href="http://aws.typepad.com/">AWS Blog <img src="https://dn1lvoe5mgzdm.cloudfront.net/images/amazon/icon_offsite.gif" height="13" alt="null" width="15" border="0"/></a> 
+        </li> 
+        <li> 
+          <a href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&amp;p=irol-InfoReq">Press Inquiries</a> 
+        </li> 
+        <li> 
+          <a href="http://aws.amazon.com/careers">Careers at AWS</a> 
+        </li> 
+        <li> 
+            <a href="http://aws.amazon.com/contact-us">Contact Us</a> 
+        </li> 
+        <li>    
+            <a href="/guidelines.jsp">Community Guidelines</a> 
+        </li> 
+        <li>    
+            <a href="http://aws.amazon.com/privacy">Privacy Policy</a> 
+        </li> 
+        <li>    
+            <a href="http://aws.amazon.com/terms">Terms of Use</a> 
+        </li> 
+    </ul>    
+    <br><span style="color: rgb(102, 102, 102);">&copy; 2009-2010 Amazon Web Services <span class="caps">LLC</span> or its affiliates. All rights reserved.</span> 
+ 
+    <br> 
+    <br><img src="https://dn1lvoe5mgzdm.cloudfront.net/images/amazon/logo_an_amazon_company.gif" height="21" width="160" border="0"/> 
+</div> 
+        </td>
+    </tr>
+</table>
+</body>
+</html>

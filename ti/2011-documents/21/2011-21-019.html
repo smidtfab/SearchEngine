@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>How to implement reCAPTCHA in CakePHP | Narendra</title>
+<link rel="stylesheet" href="http://narendravaghela.com/wp-content/themes/Sevim/css/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="http://narendravaghela.com/wp-content/themes/Sevim/css/print.css" type="text/css" media="print" />
+<!--[if IE]><link rel="stylesheet" href="http://narendravaghela.com/wp-content/themes/Sevim/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<link rel="stylesheet" href="http://narendravaghela.com/wp-content/themes/Sevim/style.css" type="text/css" media="screen" />
+<!--[if IE 6]>
+	<script src="http://narendravaghela.com/wp-content/themes/Sevim/js/pngfix.js"></script>
+<![endif]--> 
+<link rel="alternate" type="application/rss+xml" title="Narendra RSS Feed" href="http://narendravaghela.com/feed/" />
+<link rel="alternate" type="application/atom+xml" title="Narendra Atom Feed" href="http://narendravaghela.com/feed/atom/" />
+<link rel="pingback" href="http://narendravaghela.com/xmlrpc.php" />
+
+
+<link rel="alternate" type="application/rss+xml" title="Narendra &raquo; How to implement reCAPTCHA in CakePHP Comments Feed" href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/feed/" />
+<link rel='stylesheet' id='comfeed-css'  href='http://narendravaghela.com/wp-content/plugins/sexybookmarks/css/comfeed.css?ver=3.3.2' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SHRSB_Globals = {
+	src: "http://narendravaghela.com/wp-content/plugins/sexybookmarks/spritegen"
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://narendravaghela.com/wp-content/plugins/sexybookmarks/js/shareaholic-publishers.min.js?ver=3.3.2'></script>
+<script type='text/javascript' src='http://narendravaghela.com/wp-content/plugins/sexybookmarks/js/shareaholic-perf.js?ver=3.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://narendravaghela.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://narendravaghela.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Narendra' href='http://narendravaghela.com/' />
+<link rel='start' title='Select Next and Previous Option of Selectbox using Javascript' href='http://narendravaghela.com/javascript/select-next-and-previous-option-of-selectbox-using-javascript/' />
+<link rel='prev' title='Get elements by class name and add css to each of them using jQuery' href='http://narendravaghela.com/jquery/get-elements-by-class-name-and-add-css-to-each-of-them-using-jquery/' />
+<link rel='next' title='set/get attribute of element using Javascript' href='http://narendravaghela.com/javascript/setget-attribute-of-element-using-javascript/' />
+<meta name="generator" content="WordPress 3.0" />
+<link rel='shortlink' href='http://narendravaghela.com/?p=20' />
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[305,362] -->
+<meta name="description" content="First register your account at recaptcha.net and get your Public and Private keys. Now create recaptcha.php in your app/controller/component/ directory, and" />
+<meta name="keywords" content="recaptcha,cakephp,component" />
+<link rel="canonical" href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/" />
+<!-- /all in one seo pack -->
+<!-- All in one Webmaster by CrunchMeme.com - @CrunchMeme --><meta name="google-site-verification" content="X1J4JVF1EwbSKE5sug-TmOr_YjjQl96e2wBvfb87JuA" /> 
+<meta name="msvalidate.01" content="AD7334FBEFA2F72872A3CC625631AD64" />
+<meta name="y_key" content="61aa988c6f294d4c" />
+<meta name="alexaVerifyID" content="G_E3N4lnJyYs7YsNjEO7VihyYo4" />
+<meta name="blogcatalog" content="9BC9999446" />
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11117933-2']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- /All in one Webmaster -->	<link href="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Styles/SyntaxHighlighter.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="http://narendravaghela.com/wp-content/plugins/wp-recaptcha/recaptcha.css" /></head>
+<body>
+
+	<div id="wrapper">
+		<div id="container" class="container">  
+			<div class="span-20">
+				<div id="pagemenucontainer">
+					<ul id="pagemenu">
+						<li ><a href="http://narendravaghela.com/">Home</a></li>
+						<li class="page_item page-item-2"><a href="http://narendravaghela.com/about/" title="About">About</a></li>
+					</ul>
+				</div>
+			</div>
+            <div class="span-4 last">
+                <div class="topright">
+					<a href="http://narendravaghela.com/feed/"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/rss.png"  style="margin:0 2px 0 0; vertical-align:top;"  /> RSS Feed</a>		
+									</div>
+            </div>
+            
+				<div id="header" class="span-24">
+					<div class="span-11">
+													<h1><a href="http://narendravaghela.com">Narendra</a></h1>
+							<h2></h2>
+													
+					</div>
+					
+					<div class="span-13 last" style="padding-top: 12px; text-align:center;">
+						<script type="text/javascript"><!--
+google_ad_client = "pub-7463112709159296";
+/* 468x60, created 1/8/11 */
+google_ad_slot = "9964966647";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>					</div>
+				</div>
+			
+			<div class="span-24">
+				<div class="navcontainer">
+					<ul id="nav">
+						<li ><a href="http://narendravaghela.com">Home</a></li>
+							<li class="cat-item cat-item-8"><a href="http://narendravaghela.com/category/cakephp/" title="View all posts filed under CakePHP">CakePHP</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://narendravaghela.com/category/javascript/" title="View all posts filed under Javascript">Javascript</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://narendravaghela.com/category/jquery/" title="View all posts filed under jQuery">jQuery</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://narendravaghela.com/category/mysql/" title="View all posts filed under MySQL">MySQL</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="http://narendravaghela.com/category/wordpress/" title="View all posts filed under WordPress">WordPress</a>
+</li>
+		
+					</ul>
+					
+				</div>
+			</div>	<div class="span-24" id="contentwrap">	
+			<div class="span-16">
+				<div id="content">	
+						
+												<div class="post-20 post type-post hentry category-cakephp tag-cakephp tag-component tag-recaptcha" id="post-20">
+							<h2 class="title">How to implement reCAPTCHA in CakePHP</h2>
+							<div class="postdate">Posted by <strong>Narendra Vaghela</strong> on  June 3rd, 2010 </div>
+			
+							<div class="entry">
+                                								
+<!-- Quick Adsense Wordpress Plugin: http://techmilieu.com/quick-adsense -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7463112709159296";
+/* 468x60, created 1/1/11 */
+google_ad_slot = "9474018793";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<p>First register your account at recaptcha.net and get your Public and Private keys.</p>
+<p>Now create recaptcha.php in your app/controller/component/ directory, and copy and paste the following code,</p>
+<pre class="php">&lt;?php
+class RecaptchaComponent extends Object {
+	var $publickey = "YourPublicKey";
+	var $privatekey= "YourPrivateKey";
+
+	var $is_valid = false;
+	var $error = "";
+
+	function startup(&amp;$controller){
+		Configure::write("Recaptcha.apiServer","http://api.recaptcha.net");
+		Configure::write("Recaptcha.apiSecureServer","https://api-secure.recaptcha.net");
+		Configure::write("Recaptcha.verifyServer","api-verify.recaptcha.net");
+		Configure::write("Recaptcha.pubKey", $this-&gt;publickey);
+		Configure::write("Recaptcha.privateKey", $this-&gt;privatekey);
+
+		$this-&gt;controller =&amp; $controller;
+		$this-&gt;controller-&gt;helpers[] = "Recaptcha";
+	}
+
+	function valid($form){
+		if (isset($form['recaptcha_challenge_field']) &amp;&amp; isset($form['recaptcha_response_field'])){
+			if($this-&gt;recaptcha_check_answer(
+					$this-&gt;privatekey,
+					$_SERVER["REMOTE_ADDR"],
+					$form['recaptcha_challenge_field'],
+					$form['recaptcha_response_field']
+				) == 0)
+				return false;
+
+			if ($this-&gt;is_valid)
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	* Calls an HTTP POST function to verify if the user's guess was correct
+	* @param string $privkey
+	* @param string $remoteip
+	* @param string $challenge
+	* @param string $response
+	* @param array $extra_params an array of extra variables to post to the server
+	* @return ReCaptchaResponse
+	*/
+	function recaptcha_check_answer ($privkey, $remoteip, $challenge, $response, $extra_params = array()){
+		if ($privkey == null || $privkey == ''){
+			die ("To use reCAPTCHA you must get an API key from &lt;a href='http://recaptcha.net/api/getkey'&gt;http://recaptcha.net/api/getkey&lt;/a&gt;");
+		}
+
+		if ($remoteip == null || $remoteip == ''){
+			die ("For security reasons, you must pass the remote ip to reCAPTCHA");
+		}
+
+		//discard spam submissions
+		if ($challenge == null || strlen($challenge) == 0 || $response == null || strlen($response) == 0) {
+			$this-&gt;is_valid = false;
+			$this-&gt;error = 'incorrect-captcha-sol';
+			return 0;
+		}
+
+		$response = $this-&gt;_recaptcha_http_post(Configure::read('Recaptcha.verifyServer'), "/verify",
+						array (
+						'privatekey' =&gt; $privkey,
+						'remoteip' =&gt; $remoteip,
+						'challenge' =&gt; $challenge,
+						'response' =&gt; $response
+						) + $extra_params
+					);
+
+		$answers = explode ("\n", $response [1]);
+
+		if (trim ($answers [0]) == 'true') {
+			$this-&gt;is_valid = true;
+			return 1;
+		}else{
+			$this-&gt;is_valid = false;
+			$this-&gt;error = $answers [1];
+			return 0;
+		}
+	}
+
+	/**
+	* Submits an HTTP POST to a reCAPTCHA server
+	* @param string $host
+	* @param string $path
+	* @param array $data
+	* @param int port
+	* @return array response
+	*/
+	function _recaptcha_http_post($host, $path, $data, $port = 80) {
+
+		$req = $this-&gt;_recaptcha_qsencode ($data);
+
+		$http_request  = "POST $path HTTP/1.0\r\n";
+		$http_request .= "Host: $host\r\n";
+		$http_request .= "Content-Type: application/x-www-form-urlencoded;\r\n";
+		$http_request .= "Content-Length: " . strlen($req) . "\r\n";
+		$http_request .= "User-Agent: reCAPTCHA/PHP\r\n";
+		$http_request .= "\r\n";
+		$http_request .= $req;
+
+		$response = '';
+		if( false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
+			die ('Could not open socket');
+		}
+
+		fwrite($fs, $http_request);
+
+		while ( !feof($fs) )
+			$response .= fgets($fs, 1160); // One TCP-IP packet
+
+		fclose($fs);
+		$response = explode("\r\n\r\n", $response, 2);
+
+		return $response;
+	}
+
+	/**
+	* Encodes the given data into a query string format
+	* @param $data - array of string elements to be encoded
+	* @return string - encoded request
+	*/
+	function _recaptcha_qsencode ($data) {
+		$req = "";
+		foreach ( $data as $key =&gt; $value )
+			$req .= $key . '=' . urlencode( stripslashes($value) ) . '&amp;';
+
+		// Cut the last '&amp;'
+		$req=substr($req,0,strlen($req)-1);
+		return $req;
+	}
+
+}
+?&gt;</pre>
+<p>Then create recaptcha.php in your app/views/helper/ directory, and copy and paste the following code.</p>
+<pre class="php">&lt;?php
+class RecaptchaHelper extends AppHelper {
+	var $helpers = array('form');
+
+	function display_form($output_method = 'return', $error = null, $use_ssl = false){
+		$data = $this-&gt;__form(Configure::read("Recaptcha.pubKey"),$error,$use_ssl);
+		if($output_method == "echo")
+			echo $data;
+		else
+			return $data;
+	}
+
+	function hide_mail($email = '',$output_method = 'return'){
+		$data = $this-&gt;recaptcha_mailhide_html(Configure::read('Recaptcha.pubKey'), Configure::read('Recaptcha.privateKey'), $email);
+		if($output_method == "echo")
+			echo $data;
+		else
+			return $data;
+	}
+
+	/**
+	* Gets the challenge HTML (javascript and non-javascript version).
+	* This is called from the browser, and the resulting reCAPTCHA HTML widget
+	* is embedded within the HTML form it was called from.
+	* @param string $pubkey A public key for reCAPTCHA
+	* @param string $error The error given by reCAPTCHA (optional, default is null)
+	* @param boolean $use_ssl Should the request be made over ssl? (optional, default is false)
+
+	* @return string - The HTML to be embedded in the user's form.
+	*/
+	function __form($pubkey, $error = null, $use_ssl = false){
+		if ($pubkey == null || $pubkey == '') {
+			die ("To use reCAPTCHA you must get an API key from &lt;a href='http://recaptcha.net/api/getkey'&gt;http://recaptcha.net/api/getkey&lt;/a&gt;");
+		}
+
+		if ($use_ssl) {
+			$server = Configure::read('Recaptcha.apiSecureServer');
+		} else {
+			$server = Configure::read('Recaptcha.apiServer');
+		}
+
+		$errorpart = "";
+		if ($error) {
+			$errorpart = "&amp;amp;error=" . $error;
+		}
+		return '&lt;script type="text/javascript" src="'. $server . '/challenge?k=' . $pubkey . $errorpart . '"&gt;&lt;/script&gt;
+				&lt;noscript&gt;
+				&lt;iframe src="'. $server . '/noscript?k=' . $pubkey . $errorpart . '" height="300" width="500" frameborder="0"&gt;&lt;/iframe&gt;&lt;br/&gt;
+				&lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;
+				&lt;input type="hidden" name="recaptcha_response_field" value="manual_challenge"/&gt;
+				&lt;input type="hidden" name="recaptcha_response_field" value="manual_challenge"/&gt;
+				&lt;/noscript&gt;';
+	}
+
+	/* Mailhide related code */
+	function _recaptcha_aes_encrypt($val,$ky) {
+		if (! function_exists ("mcrypt_encrypt")) {
+			die ("To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed.");
+		}
+		$mode=MCRYPT_MODE_CBC;
+		$enc=MCRYPT_RIJNDAEL_128;
+		$val=$this-&gt;_recaptcha_aes_pad($val);
+		return mcrypt_encrypt($enc, $ky, $val, $mode, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
+	}
+
+	function _recaptcha_mailhide_urlbase64 ($x) {
+		return strtr(base64_encode ($x), '+/', '-_');
+	}
+
+	/* gets the reCAPTCHA Mailhide url for a given email, public key and private key */
+	function recaptcha_mailhide_url($pubkey, $privkey, $email) {
+		if ($pubkey == '' || $pubkey == null || $privkey == "" || $privkey == null) {
+			die ("To use reCAPTCHA Mailhide, you have to sign up for a public and private key, " .
+				 "you can do so at &lt;a href='http://mailhide.recaptcha.net/apikey'&gt;http://mailhide.recaptcha.net/apikey&lt;/a&gt;");
+		}
+
+		$ky = pack('H*', $privkey);
+		$cryptmail = $this-&gt;_recaptcha_aes_encrypt ($email, $ky);
+
+		return "http://mailhide.recaptcha.net/d?k=" . $pubkey . "&amp;c=" . $this-&gt;_recaptcha_mailhide_urlbase64 ($cryptmail);
+	}
+
+	/**
+	* gets the parts of the email to expose to the user.
+	* eg, given johndoe@example,com return ["john", "example.com"].
+	* the email is then displayed as john...@example.com
+	*/
+	function _recaptcha_mailhide_email_parts ($email) {
+		$arr = preg_split("/@/", $email );
+
+		if (strlen ($arr[0]) &lt;= 4) {
+			$arr[0] = substr ($arr[0], 0, 1);
+		} else if (strlen ($arr[0]) &lt;= 6) {
+			$arr[0] = substr ($arr[0], 0, 3);
+		} else {
+			$arr[0] = substr ($arr[0], 0, 4);
+		}
+		return $arr;
+	}
+
+	/**
+	* Gets html to display an email address given a public an private key.
+	* to get a key, go to:
+	*
+	* http://mailhide.recaptcha.net/apikey
+	*/
+	function recaptcha_mailhide_html($pubkey, $privkey, $email) {
+		$emailparts = $this-&gt;_recaptcha_mailhide_email_parts ($email);
+		$url = $this-&gt;recaptcha_mailhide_url ($pubkey, $privkey, $email);
+
+		return htmlentities($emailparts[0]) . "&lt;a href='" . htmlentities ($url) .
+				"' onclick=\"window.open('" . htmlentities ($url) . "', '',
+				'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;\"
+				title=\"Reveal this e-mail address\"&gt;...&lt;/a&gt;@" . htmlentities ($emailparts [1]);
+
+	}
+
+}
+?&gt;</pre>
+<p>Now, in controller file add component and helper,</p>
+<pre class="php">var $components = array('Recaptcha');
+var $helpers = array('Recaptcha');</pre>
+<p>Now in view file, where you want to display reCaptcha form, write the following code,</p>
+<pre class="php">$recaptcha-&gt;display_form('echo');</pre>
+<p>To check the reCaptcha is valid or not, in your action/function of controller,</p>
+<pre class="php">function check_recaptcha()
+{
+	if(!$this-&gt;Recaptcha-&gt;valid($this-&gt;params['form'])) // return true or false
+	{
+		// other stuff
+	}
+}
+</pre>
+<p>The component and helper are originally developed by someone else, please visit the following url : http://bakery.cakephp.org/articles/view/recaptcha-component-helper-for-cakephp</p>
+
+<!-- Quick Adsense Wordpress Plugin: http://techmilieu.com/quick-adsense -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7463112709159296";
+/* 468x60, created 1/1/11 */
+google_ad_slot = "4571378286";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div><div class="shr-publisher-20"></div>															</div>
+							<div class="postmeta"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/folder.png" /> Posted in <a href="http://narendravaghela.com/category/cakephp/" title="View all posts in CakePHP" rel="category tag">CakePHP</a>  <img src="http://narendravaghela.com/wp-content/themes/Sevim/images/tag.png" /> Tags: <a href="http://narendravaghela.com/tag/cakephp/" rel="tag">CakePHP</a>, <a href="http://narendravaghela.com/tag/component/" rel="tag">component</a>, <a href="http://narendravaghela.com/tag/recaptcha/" rel="tag">recaptcha</a></div>
+						
+							<div class="navigation clearfix">
+								<div class="alignleft">&laquo; <a href="http://narendravaghela.com/jquery/get-elements-by-class-name-and-add-css-to-each-of-them-using-jquery/" rel="prev">Get elements by class name and add css to each of them using jQuery</a></div>
+								<div class="alignright"><a href="http://narendravaghela.com/javascript/setget-attribute-of-element-using-javascript/" rel="next">set/get attribute of element using Javascript</a> &raquo;</div>
+							</div>
+							
+															You can skip to the end and leave a response. Pinging is currently not allowed.
+	
+													</div><!--/post-20-->
+						
+				
+<!-- You can start editing here. -->
+
+	<h3 id="comments">7 Responses to &#8220;How to implement reCAPTCHA in CakePHP&#8221;</h3>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-2">
+				<div id="div-comment-2" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/346c3f817e06dedc0ea3e59d180d3201?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://pacificwithin.blogspot.com' rel='external nofollow' class='url'>Prashant</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-2">
+			June 4, 2010 at 1:09 AM</a>		</div>
+
+		<p>Very useful code. Thanks.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3">
+				<div id="div-comment-3" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/a7788394715bbcfc5fa17e411d43df52?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.guptaanil.com' rel='external nofollow' class='url'>Anil Gupta</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-3">
+			June 7, 2010 at 8:53 AM</a>		</div>
+
+		<p>Hi Narendra,</p>
+<p>Welcome to the blogging world. I am really glad to see that you have started to contribute and share your knowledge. Great and looking forward to see lots of great ideas coming out of your mind.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-27">
+				<div id="div-comment-27" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/213e8ae97f3bac1deb347b9dd94f162d?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Kapil</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-27">
+			August 27, 2010 at 9:15 AM</a>		</div>
+
+		<p>Hi,</p>
+<p>Very useful information dude.</p>
+<p>Thanks for sharing.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-28">
+				<div id="div-comment-28" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/9ff97a2377749388a27b834056556d14?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Martin</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-28">
+			September 1, 2010 at 2:13 PM</a>		</div>
+
+		<p>Thank you very much sir, works nicely!</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-227">
+				<div id="div-comment-227" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/ed2815818a742eb0afa2c62cd4e60f26?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.paritarisme-geometre.org/forum/profile.php?id=9054' rel='external nofollow' class='url'>gadget reviews</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-227">
+			December 30, 2010 at 12:48 PM</a>		</div>
+
+		<p>Took me time to learn all of the feedback, but I actually loved the article. It proved to be Very useful to me and I&#8217;m positive to all of the commenters here! It’s always good when you can not solely be informed, but additionally entertained! I’m positive you had enjoyable penning this article.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-376">
+				<div id="div-comment-376" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/9c48bc6763773006e79068add44573df?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.thoughts.com/valentin38talley/nursing-scholarships-for-minorities-keys-to-success' rel='external nofollow' class='url'>Cristen Roshia</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-376">
+			February 24, 2011 at 4:33 AM</a>		</div>
+
+		<p>Wow, superb blog layout! How long have you been blogging for? you make blogging look easy. The overall look of your website is magnificent, let alone the content!</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-463">
+				<div id="div-comment-463" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/0f99ef750ec4611458a8f88231c2a2dd?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.brennerplan.com' rel='external nofollow' class='url'>Transport Planning</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://narendravaghela.com/cakephp/how-to-implement-recaptcha-in-cakephp/comment-page-1/#comment-463">
+			March 18, 2011 at 10:52 AM</a>		</div>
+
+		<p>Great site. A lot of useful information here. I’m sending it to some friends!</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/cakephp/how-to-implement-recaptcha-in-cakephp/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://narendravaghela.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type='hidden' name='comment_post_ID' value='20' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+		<script type='text/javascript'>
+				var RecaptchaOptions = { theme : 'clean', lang : 'en' , tabindex : 5 };
+		</script><script type="text/javascript" src="http://api.recaptcha.net/challenge?k=6LdxWrsSAAAAAKMd-__SsweD1VQUTW8L2eNs1FKC"></script>
+
+<noscript>
+<iframe src="http://api.recaptcha.net/noscript?k=6LdxWrsSAAAAAKMd-__SsweD1VQUTW8L2eNs1FKC" height="300" width="500" frameborder="0"></iframe><br/>
+<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+</noscript>				<div id="recaptcha-submit-btn-area"></div> 
+				<script type='text/javascript'>
+				var sub = document.getElementById('submit');
+				sub.parentNode.removeChild(sub);
+				document.getElementById('recaptcha-submit-btn-area').appendChild (sub);
+				document.getElementById('submit').tabIndex = 6;
+				if ( typeof _recaptcha_wordpress_savedcomment != 'undefined') {
+						document.getElementById('comment').value = _recaptcha_wordpress_savedcomment;
+				}
+				document.getElementById('recaptcha_table').style.direction = 'ltr';
+				</script>
+				<noscript>
+				 <style type='text/css'>#submit {display:none;}</style>
+				 <input name="submit" type="submit" id="submit-alt" tabindex="6" value="Submit Comment"/> 
+				</noscript>
+</form>
+
+</div>
+
+				
+							
+							</div>
+			</div>
+		<div class="span-8 last">
+	
+	<div class="sidebar">
+     
+        			<div class="addthis_toolbox">   
+    			    <div class="custom_images">
+    			            <a class="addthis_button_twitter"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/twitter.png" width="32" height="32" alt="Twitter" /></a>
+    			            <a class="addthis_button_delicious"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/delicious.png" width="32" height="32" alt="Delicious" /></a>
+    			            <a class="addthis_button_facebook"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/facebook.png" width="32" height="32" alt="Facebook" /></a>
+    			            <a class="addthis_button_digg"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/digg.png" width="32" height="32" alt="Digg" /></a>
+    			            <a class="addthis_button_stumbleupon"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/stumbleupon.png" width="32" height="32" alt="Stumbleupon" /></a>
+    			            <a class="addthis_button_favorites"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/favorites.png" width="32" height="32" alt="Favorites" /></a>
+    			            <a class="addthis_button_more"><img src="http://narendravaghela.com/wp-content/themes/Sevim/images/socialicons/more.png" width="32" height="32" alt="More" /></a>
+    			    </div>
+    			    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?pub=xa-4a65e1d93cd75e94"></script>
+    			</div>
+    			     <div id="topsearch" > 
+    		 
+<div id="search">
+    <form method="get" id="searchform" action="http://narendravaghela.com/"> 
+        <input type="text" value="Search" 
+            name="s" id="s"  onblur="if (this.value == '')  {this.value = 'Search';}"  
+            onfocus="if (this.value == 'Search') {this.value = '';}" />
+        <input type="image" src="http://narendravaghela.com/wp-content/themes/Sevim/images/search.gif" style="border:0; vertical-align: top;" /> 
+    </form>
+</div> 
+    	</div>
+           
+    		<div class="sidebaradbox">
+			<a href="http://www.ipage.com/join/index.bml?AffID=626255&LinkName=Small Square Banner" target="_new"><img class="ad125" src="http://www.ipage.com/affiliate/banners/549" /></a> 
+<a href="http://www.libertyreserve.com/?ref=U8460736" target="_new"><img class="ad125" src="https://www.libertyreserve.com/downloads/banners/240-160-4.gif" /></a> 
+		</div>
+	    
+    
+    
+	
+		<ul>
+			<li id="categories-3" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>		<ul>
+	<li class="cat-item cat-item-8"><a href="http://narendravaghela.com/category/cakephp/" title="View all posts filed under CakePHP">CakePHP</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://narendravaghela.com/category/javascript/" title="View all posts filed under Javascript">Javascript</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://narendravaghela.com/category/jquery/" title="View all posts filed under jQuery">jQuery</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://narendravaghela.com/category/mysql/" title="View all posts filed under MySQL">MySQL</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="http://narendravaghela.com/category/wordpress/" title="View all posts filed under WordPress">WordPress</a>
+</li>
+		</ul>
+</li>		<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+				<li><a href="http://narendravaghela.com/cakephp/caching-problem-with-models-in-cakephp/" title="Caching problem with models in CakePHP">Caching problem with models in CakePHP</a></li>
+				<li><a href="http://narendravaghela.com/mysql/mysql-get-next-auto-increment-value-in-a-mysql-table/" title="MySQL : Get next auto increment value in a MySQL table">MySQL : Get next auto increment value in a MySQL table</a></li>
+				<li><a href="http://narendravaghela.com/wordpress/upgrade-your-wordpress-site-or-blog-for-free/" title="Upgrade your WordPress site or blog for free..">Upgrade your WordPress site or blog for free..</a></li>
+				<li><a href="http://narendravaghela.com/cakephp/integrate-wordpress-into-cakephp/" title="Integrate WordPress into CakePHP">Integrate WordPress into CakePHP</a></li>
+				<li><a href="http://narendravaghela.com/jquery/how-to-abort-an-ajax-request-using-jquery/" title="How to abort an ajax request using jQuery">How to abort an ajax request using jQuery</a></li>
+				</ul>
+		</li><li id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div><a href='http://narendravaghela.com/tag/ajax/' class='tag-link-19' title='1 topic' style='font-size: 8pt;'>ajax</a>
+<a href='http://narendravaghela.com/tag/attribute/' class='tag-link-13' title='1 topic' style='font-size: 8pt;'>attribute</a>
+<a href='http://narendravaghela.com/tag/bind-event/' class='tag-link-16' title='1 topic' style='font-size: 8pt;'>bind event</a>
+<a href='http://narendravaghela.com/tag/cakephp/' class='tag-link-8' title='4 topics' style='font-size: 17.3333333333pt;'>CakePHP</a>
+<a href='http://narendravaghela.com/tag/component/' class='tag-link-10' title='1 topic' style='font-size: 8pt;'>component</a>
+<a href='http://narendravaghela.com/tag/csv/' class='tag-link-17' title='1 topic' style='font-size: 8pt;'>CSV</a>
+<a href='http://narendravaghela.com/tag/getattribute/' class='tag-link-12' title='1 topic' style='font-size: 8pt;'>getAttribute</a>
+<a href='http://narendravaghela.com/tag/hidden/' class='tag-link-15' title='1 topic' style='font-size: 8pt;'>hidden</a>
+<a href='http://narendravaghela.com/tag/iframe/' class='tag-link-7' title='1 topic' style='font-size: 8pt;'>iframe</a>
+<a href='http://narendravaghela.com/tag/javascript/' class='tag-link-3' title='3 topics' style='font-size: 15pt;'>Javascript</a>
+<a href='http://narendravaghela.com/tag/jquery/' class='tag-link-1' title='7 topics' style='font-size: 22pt;'>jQuery</a>
+<a href='http://narendravaghela.com/tag/models/' class='tag-link-25' title='1 topic' style='font-size: 8pt;'>models</a>
+<a href='http://narendravaghela.com/tag/my-sql/' class='tag-link-24' title='1 topic' style='font-size: 8pt;'>MySQL</a>
+<a href='http://narendravaghela.com/tag/recaptcha/' class='tag-link-9' title='1 topic' style='font-size: 8pt;'>recaptcha</a>
+<a href='http://narendravaghela.com/tag/row/' class='tag-link-6' title='1 topic' style='font-size: 8pt;'>row</a>
+<a href='http://narendravaghela.com/tag/selectbox/' class='tag-link-4' title='1 topic' style='font-size: 8pt;'>selectbox</a>
+<a href='http://narendravaghela.com/tag/setattribute/' class='tag-link-11' title='1 topic' style='font-size: 8pt;'>setAttribute</a>
+<a href='http://narendravaghela.com/tag/table/' class='tag-link-5' title='1 topic' style='font-size: 8pt;'>table</a>
+<a href='http://narendravaghela.com/tag/visible/' class='tag-link-14' title='1 topic' style='font-size: 8pt;'>visible</a>
+<a href='http://narendravaghela.com/tag/wp/' class='tag-link-22' title='1 topic' style='font-size: 8pt;'>wordpress</a></div>
+</li><li id="linkcat-18" class="widget widget_links"><h2 class="widgettitle">Useful Links</h2>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.mycakephp.in/" rel="me" title="A great CakePHP developers community site" target="_blank">MyCakePHP</a></li>
+<li><a href="http://pacificwithin.blogspot.com/" rel="friend co-worker colleague" title="Prashant&#8217;s Blog" target="_blank">PacificWithin</a></li>
+
+	</ul>
+</li>
+		</ul>
+        			</div>
+</div>
+	</div>
+    <div class="span-24">
+	<div id="footer">Copyright &copy; <a href="http://narendravaghela.com"><strong><!--Narendra-->Narendra Vaghela</strong></a><!--  - --></div>
+	<div style="margin:0 auto;text-align:center;">
+		<a href="http://www.ipage.com/green-certified/" onClick="MyWindow=window.open('http://www.ipage.com/green-certified/narendravaghela.com','greenCertified','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=550,height=700,left=50,top=50'); return false;"><img src="http://www.ipage.com/green-certified/hosting-badge-1.png" border="0"></a>
+	</div>
+        <!--<div id="footer2">Powered by <a href="http://wordpress.org/"><strong>WordPress</strong></a> | Compare & <a href="http://www.iapplyforcreditcards.com/">Apply for Credit Cards</a> Online. | Thanks to <a href="http://www.bestincreditcards.com/">BestInCreditCards.com</a>, <a href="http://rpgmusic.org">Game Music Soundtracks</a> and <a href="http://www.idate.co.uk">Internet Dating</a></div>-->
+    </div>
+</div>
+</div>
+<script src="http://static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">clicky.init(229958);</script>
+<div style="text-align: center; font-size:10px;display:none;">
+		<small>Blog WebMastered by <a href="http://crunchmeme.com/plugins/all-in-one-webmaster/" target="_blank">All in One Webmaster</a>.</small></div><script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shCore.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPhp.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJScript.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushJava.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushVb.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushSql.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushXml.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushPython.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushRuby.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCss.js"></script>
+<script class="javascript" src="http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/shBrushCpp.js"></script>
+<script class="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://narendravaghela.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+<script type="text/javascript">SHRSB_Settings = {"shr-publisher-20":{"link":"http:\/\/narendravaghela.com\/cakephp\/how-to-implement-recaptcha-in-cakephp\/","short_link":"http:\/\/tinyurl.com\/6dfws37","title":"How to implement reCAPTCHA in CakePHP","notes":"First%20register%20your%20account%20at%20recaptcha.net%20and%20get%20your%20Public%20and%20Private%20keys.%0D%0A%0D%0ANow%20create%20recaptcha.php%20in%20your%20app%2Fcontroller%2Fcomponent%2F%20directory%2C%20and%20copy%20and%20paste%20the%20following%20code%2C%0D%0A%26lt%3B%3Fphp%0D%0Aclass%20RecaptchaComponent%20extends%20Object%20%7B%0D%0A%09var%20%24publickey%20%3D%20%22YourPublicKey%22%3B%0D%0A%09var%20%24privateke","service":"2,3,24,5,74,257,207,88,6,4,40,38,10,7,54,219","apikey":"8afa39428933be41f8afdb8ea21a495c","expand":true,"src":"http:\/\/narendravaghela.com\/wp-content\/plugins\/sexybookmarks\/spritegen","localize":true,"share_src":"http:\/\/www.shareaholic.com","rel":"nofollow","target":"_blank","bgimg":"http:\/\/narendravaghela.com\/wp-content\/plugins\/sexybookmarks\/images\/share-enjoy.png","bgimg_padding":"26px 0 0 10px","center":true,"twitter_template":"${title} - ${short_link}","mode":"inject","showShareCount":"1","custom_link":{"before_0":{"li_class":"custom-comfeed","link":"http:\/\/narendravaghela.com\/cakephp\/how-to-implement-recaptcha-in-cakephp\/feed","tooltip":"Subscribe to the comments for this post?","style":"background-image:url(http:\/\/narendravaghela.com\/wp-content\/plugins\/sexybookmarks\/images\/comfeed.png);"}}}}</script><!-- Clicky Web Analytics - http://getclicky.com, WordPress Plugin by Yoast - http://yoast.com -->
+	<script type='text/javascript'>
+	function clicky_gc( name ) {
+		var ca = document.cookie.split(';');
+		for( var i in ca ) {
+			if( ca[i].indexOf( name+'=' ) != -1 )
+				return decodeURIComponent( ca[i].split('=')[1] );
+		}
+		return '';
+	}
+	var clicky_custom_session = { 
+		username: clicky_gc( 'comment_author_8ba43a68314a3e91ddf3908d2892a143' )
+	};
+  	</script>
+<script type="text/javascript">
+	var clicky = { log: function(){ return; }, goal: function(){ return; }};
+	var clicky_site_id = 229958;
+	(function() {
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com' : 'http://static.getclicky.com' ) + '/js';
+		( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+	})();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/229958ns.gif" /></p></noscript>
+<!-- End Clicky Tracking -->
+
+</body>
+</html>
+

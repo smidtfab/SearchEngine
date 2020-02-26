@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head data-layout-view="default">
+            <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Topic 2: Crowdsourcing and Motivations - Understanding Risk</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="“Can crowdsourcing be used in Risk Assessment?”… I think the answer is without a doubt, yes. That said, what a successful implementation might look like is a b…" />
+    <meta name="keywords" content="crowdsourcing, motivations, prosuming" />
+    <meta name="title" content="Topic 2: Crowdsourcing and Motivations - Understanding Risk" />
+    <script type="text/javascript">
+djConfig = { baseScriptUri: 'http://community.understandrisk.org/xn/static-6.11.8.1/js/dojo-0.3.1-ning/', isDebug: false }
+ning = {"CurrentApp":{"premium":true,"iconUrl":"http:\/\/api.ning.com\/icons\/appatar\/4687303?default=4687303&width=64&height=64","url":"http:\/\/understandingrisk.ning.com","domains":["community.understandrisk.org"],"online":true,"privateSource":true,"id":"understandingrisk","description":"","name":"Understanding Risk","owner":"1zm37xri5mfzv","createdDate":"2009-12-16T09:03:42.341Z","runOwnAds":false},"CurrentProfile":null,"maxFileUploadSize":5};
+    (function(){
+        if (!window.ning) { return; }
+
+        var age, gender, rand, obfuscated, combined;
+
+	    obfuscated = document.cookie.match(/xgdi=([^;]+)/);
+	    if (obfuscated) {
+	          var offset = 100000;
+	          obfuscated = parseInt(obfuscated[1]);
+	          rand = obfuscated / offset;
+	          combined = (obfuscated % offset) ^ rand;
+	          age = combined % 1000;
+	          gender = (combined / 1000) & 3;
+	          gender = (gender == 1 ? 'm' : gender == 2 ? 'f' : 0);
+	          ning.viewer = {"age":age,"gender":gender};
+	    }
+	 })();
+
+if (window.location.hash.indexOf('#!/') == 0) {
+    window.location.replace(window.location.hash.substr(2));
+}
+window.xg = {};
+xg.addOnRequire = function(f) { xg.addOnRequire.functions.push(f); };
+xg.addOnRequire.functions = [];
+xg.addOnFacebookLoad = function (f) { xg.addOnFacebookLoad.functions.push(f); };
+xg.addOnFacebookLoad.functions = [];
+xg._loader = {
+    p: 0,
+    loading: function(set) { xg._loader.p++; },
+    onLoad: function(set) {
+        xg._loader.p--;
+        if (xg._loader.p == 0 && typeof(xg._loader.onDone) == 'function') {
+            xg._loader.onDone();
+        }
+    }
+};
+xg._loader.loading('xnloader');
+if (window.bzplcm) {
+    window.bzplcm._profileCount = 0;
+    window.bzplcm._profileSend = function() { if (window.bzplcm._profileCount++ == 1) window.bzplcm.send(); };
+}
+xg._loader.onDone = function() {
+        if(window.bzplcm)window.bzplcm.start('ni');
+    xg.shared.util.parseWidgets();    var addOnRequireFunctions = xg.addOnRequire.functions;
+    xg.addOnRequire = function(f) { f(); };
+    try {
+        if (addOnRequireFunctions) { dojo.lang.forEach(addOnRequireFunctions, function(onRequire) { onRequire.apply(); }); }
+    } catch (e) {
+        if(window.bzplcm)window.bzplcm.ts('nx').send();
+        throw e;
+    }
+    if(window.bzplcm) { window.bzplcm.stop('ni'); window.bzplcm._profileSend(); }
+};
+window.xn = { track: { _globals: { screen_name: null, subdomain: "understandingrisk", is_owner: false, is_admin: false, is_member: false, join_date: 0, request_method: "GET", trace: "63a27714-e47f-4704-b107-c0f47dfd273e"}, event: function() {}, pageView: function() {}, registerCompletedFlow: function() {}, registerError: function() {}, timer: function() { return { lapTime: function() {} }; }, _trackingHost: "track.ning.com", _jsDebug: false } }    </script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_ning_ga._setAccount', 'UA-2270114-6']); 
+    _gaq.push(['_ning_ga._setNamespace', 'ning']);
+        _gaq.push(['_ning_ga._setCustomVar', 1,"member_type", "anonymous", 3]);
+    _gaq.push(['_ning_ga._setCustomVar', 2,"subdomain",  "understandingrisk.ning.com" ,3]); 
+    _gaq.push(['_ning_ga._setCustomVar', 3,"category",    "other" ,3]);
+    _gaq.push(['_ning_ga._setCustomVar', 4,"product_type","plus" ,3]);
+    _gaq.push(['_ning_ga._setCustomVar', 5,"member_segment","1000-4999" ,3]);
+    _gaq.push(['_ning_ga._trackPageview']);
+
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+</script>
+<meta name="medium" content="news" /><link rel="alternate" type="application/atom+xml" title="Topic 2: Crowdsourcing and Motivations - Understanding Risk" href="http://community.understandrisk.org/forum/topics/topic-2-crowdsourcing-and?groupUrl=crowdsourcingforriskassessment&amp;feed=yes&amp;xn_auth=no" /><link rel="alternate" type="application/atom+xml" title="Crowdsourcing Risk Assessments: Wisdom of the Crowds? - Understanding Risk" href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum?sort=mostRecent&amp;feed=yes&amp;xn_auth=no" />
+<style type="text/css" media="screen,projection">
+#xg_navigation ul div.xg_subtab ul li a {
+    color:#666666;
+    background:#99B0C1;
+}
+#xg_navigation ul div.xg_subtab ul li a:hover {
+    color:#333333;
+    background:#A9BCCB;
+}
+</style>
+<link rel="alternate" type="application/atom+xml" title="Blog Posts - Understanding Risk" href="http://community.understandrisk.org/profiles/blog/feed?xn_auth=no" />
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/socialnetworkmain/widgets/index/css/common.min.css?xn_version=847961647);
+@import url(http://static.ning.com/socialnetworkmain/widgets/forum/css/component.min.css?xn_version=2417483772);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/understandingrisk/instances/css/embed_1301845960.css?xn_version=201103311618);
+
+</style>
+
+<style type="text/css" media="screen,projection">
+@import url(http://static.ning.com/understandingrisk/instances/css/theme_1301615538.css?xn_version=201103311618);
+
+</style>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie6.min.css?v=201103311618" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://static.ning.com/socialnetworkmain/widgets/index/css/common-ie7.css?v=201103311618" />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://community.understandrisk.org/profiles/blog/rsd" />
+
+    </head>
+    <body>
+                <div id="xn_bar">
+            <div id="xn_bar_menu">
+                <div id="xn_bar_menu_branding" >
+                                    </div>
+
+                <div id="xn_bar_menu_more">
+                    <form id="xn_bar_menu_search" method="GET" action="http://community.understandrisk.org/main/search/search">
+                        <fieldset>
+                            <input type="text" name="q" id="xn_bar_menu_search_query" value="Search Understanding Risk" _hint="Search Understanding Risk" accesskey="4" class="text xj_search_hint" />
+                            <a id="xn_bar_menu_search_submit" href="#" onclick="document.getElementById('xn_bar_menu_search').submit();return false">Search</a>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <ul id="xn_bar_menu_tabs">
+                                            <li><a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26">Sign Up</a></li>
+                        <li><a href="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26">Sign In</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+        
+        
+        <div id="xg" class="xg_theme xg_widget_forum xg_widget_forum_topic xg_widget_forum_topic_show" data-layout-pack="classic">
+            <div id="xg_head">
+                <div id="xg_masthead">
+                    <p id="xg_sitename"><a id="application_name_header_link" href="/">Understanding Risk</a></p>
+                    <p id="xg_sitedesc" class="xj_site_desc">Innovation in Disaster Risk Assessment</p>
+                </div>
+                <div id="xg_navigation">
+                    <ul>
+    <li id="xg_tab_main" class="xg_subtab"><a href="/"><span>Main</span></a></li><li id="xg_tab_profile" class="xg_subtab"><a href="/profiles"><span>My Page</span></a></li><li id="xg_tab_groups" class="xg_subtab this"><a href="/groups"><span>Groups</span></a></li><li id="xg_tab_members" class="xg_subtab"><a href="/profiles/members/"><span>Members</span></a></li><li id="xg_tab_xn7" class="xg_subtab"><a href="/page/partners-1"><span>Partners</span></a></li><li id="xg_tab_xn11" class="xg_subtab"><a href="/page/archives-1"><span>Archives</span></a></li><li id="xg_tab_xn0" class="xg_subtab"><a href="/page/contact-1"><span>Contact Us</span></a></li></ul>
+
+                </div>
+            </div>
+            
+            <div id="xg_body">
+                
+                <div class="xg_column xg_span-16 xj_classic_canvas">
+                    <ul class="navigation easyclear">
+            <li class="right xg_lightborder navbutton"><a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fgroup%2Fcrowdsourcingforriskassessment%2Fforum%2Ftopic%2Fnew%3Ftarget%3Dhttp%253A%252F%252Fcommunity.understandrisk.org%252Fforum%252Ftopics%252Ftopic-2-crowdsourcing-and%253FgroupUrl%253Dcrowdsourcingforriskassessment%2526&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fgroup%2Fcrowdsourcingforriskassessment%2Fforum%2Ftopic%2Fnew%3Ftarget%3Dhttp%253A%252F%252Fcommunity.understandrisk.org%252Fforum%252Ftopics%252Ftopic-2-crowdsourcing-and%253FgroupUrl%253Dcrowdsourcingforriskassessment%2526&amp;groupToJoin=crowdsourcingforriskassessment" class="xg_sprite xg_sprite-add">Add</a></li>
+    </ul>
+<div class="xg_module">
+    <div class="xg_headline xg_headline-img xg_headline-2l">
+    <div class="ib">        <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/SeanConner"  title="Sean Conner"><img class=" photo"  src="http://api.ning.com:80/files/WPi7hoFJzmmdjcUoXKSLrTOJ8ahT8ZCg4peEpZg1Pm3vd2E4w9aH2sg8Hy5SvFgItQbs2Qf68PVefpON0ZPmDiDgF3Y1KBGT/SeanEvaatRVLParty.jpg?width=64&amp;height=64&amp;crop=1%3A1" height="64" width="64" alt="Sean Conner" /></a></span>
+    </div>
+    <div class="tb">
+        <h1>Topic 2: Crowdsourcing and Motivations</h1>
+        <ul class="navigation byline">
+            <li><a class="nolink">Posted by </a><a href="/profile/SeanConner">Sean Conner</a><a class="nolink"> on May 17, 2010 at 4:35am in </a><a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment">Crowdsourcing Risk Assessments: Wisdom of the Crowds?</a></li>
+            <li><a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum" class="xg_sprite xg_sprite-back">Back to Crowdsourcing Risk Assessments: Wisdom of the Crowds? Discussions</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="xg_module_body">
+        <div class="discussion">
+            <div class="description">
+                                “Can crowdsourcing be used in Risk Assessment?”… I think the answer is without a doubt, yes. That said, what a successful implementation might look like is a big question that I’d very much like to see addressed.<br/><br/>As Patrick is keenly aware, <a rel=nofollow href="http://www.ushahidi.com/platform">Ushahidi</a> is an example of a successful implementation of a crowdsourcing platform as applied to crisis mapping. But as Terry Gibson very aptly pointed out in a previous post, these are fundamentally different in several crucial respects- the most important in my opinion being the core motivations of the various ‘crowds’ that would be <a rel=nofollow href="http://en.wikipedia.org/wiki/Prosumer#Producer_and_consumer">prosuming</a> them.<br/><br/>If you can envision a way to synchronize the motivations of the would-be crowd prosuming value into the instance of whatever platform, utilizing their own personal resources to do so, then you’ve got the special sauce that could potentially make crowdsourcing work with Risk Assessment. On the other hand if you implement a solution without first balancing this equation I can just about guarantee that it won’t work very well or for very long.<br/>            </div>
+        </div>
+                    <p class="small" id="tagsList">
+                Tags: <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForTag?tag=crowdsourcing">crowdsourcing</a>, <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForTag?tag=motivations">motivations</a>, <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForTag?tag=prosuming">prosuming</a>            </p>
+                <dl id="cf" class="discussion noindent">
+            <dd>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply to This</a>
+        </p>
+    </dd>        </dl>
+    </div>
+</div>
+<div class="xg_module">
+    <div id="discussionReplies" >
+                <div class="xg_module_body">
+            <h3 id="comments" _scrollTo="cid-">Replies to This Discussion</h3>
+                            <dl class="discussion clear i0 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:5825" id="cid-4687303:Comment:5825"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/PatrickMeier"  title="Patrick Meier"><img class=" photo left"  src="http://api.ning.com:80/files/ilkEU86DVy3yjZGYaFkDoY*xy8wdtb3ffHHalDREuGoR*9D78gvUkiLwTU3tB-MCIA1zZxkQaFeE1cTufC4AP7CcvL4SOgD*/patpic.png?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Patrick Meier" /></a></span>
+    <a name="4687303Comment5825" href="http://community.understandrisk.org/xn/detail/4687303:Comment:5825" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=2glthjjdwrvpu" class="fn url">Patrick Meier</a> on <span class="timestamp">May 18, 2010 at 11:23am</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment5825">Hi Sean, many thanks for your comment, I think your point relates directly to this piece by Ankit:<br />
+<br />
+<a rel=nofollow href="http://irevolution.wordpress.com/2010/05/05/towards-a-model-for-successful-crowdsourcing/" target="_blank">http://irevolution.wordpress.com/2010/05/05/towards-a-model-for-suc...</a><br />
+<br />
+Would be very interested to know what you think!</div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+<dl class="discussion clear i1 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:5827" id="cid-4687303:Comment:5827"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/SeanConner"  title="Sean Conner"><img class=" photo left"  src="http://api.ning.com:80/files/WPi7hoFJzmmdjcUoXKSLrTOJ8ahT8ZCg4peEpZg1Pm3vd2E4w9aH2sg8Hy5SvFgItQbs2Qf68PVefpON0ZPmDiDgF3Y1KBGT/SeanEvaatRVLParty.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Sean Conner" /></a></span>
+    <a name="4687303Comment5827" href="http://community.understandrisk.org/xn/detail/4687303:Comment:5827" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=0qlzwpso4kp8w" class="fn url">Sean Conner</a> on <span class="timestamp">May 18, 2010 at 11:27am</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment5827">I knew you were going to say that! Could we re-post a few juicy highlights from that post here as a conversation starter?</div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+<dl class="discussion clear i2 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:5828" id="cid-4687303:Comment:5828"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/PatrickMeier"  title="Patrick Meier"><img class=" photo left"  src="http://api.ning.com:80/files/ilkEU86DVy3yjZGYaFkDoY*xy8wdtb3ffHHalDREuGoR*9D78gvUkiLwTU3tB-MCIA1zZxkQaFeE1cTufC4AP7CcvL4SOgD*/patpic.png?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Patrick Meier" /></a></span>
+    <a name="4687303Comment5828" href="http://community.understandrisk.org/xn/detail/4687303:Comment:5828" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=2glthjjdwrvpu" class="fn url">Patrick Meier</a> on <span class="timestamp">May 18, 2010 at 11:28am</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment5828">Haha, absolutely, go right ahead!</div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+<dl class="discussion clear i0 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:5834" id="cid-4687303:Comment:5834"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/SeanConner"  title="Sean Conner"><img class=" photo left"  src="http://api.ning.com:80/files/WPi7hoFJzmmdjcUoXKSLrTOJ8ahT8ZCg4peEpZg1Pm3vd2E4w9aH2sg8Hy5SvFgItQbs2Qf68PVefpON0ZPmDiDgF3Y1KBGT/SeanEvaatRVLParty.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Sean Conner" /></a></span>
+    <a name="4687303Comment5834" href="http://community.understandrisk.org/xn/detail/4687303:Comment:5834" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=0qlzwpso4kp8w" class="fn url">Sean Conner</a> on <span class="timestamp">May 18, 2010 at 12:29pm</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment5834">Sections Re-posted from <a rel=nofollow href="http://irevolution.wordpress.com/2010/05/05/towards-a-model-for-successful-crowdsourcing/" target="_blank">iRevolution: How to Run A Successful Crowdsourcing Project</a>:<br />
+...<br />
+The five peripheral factors above “affect the motive alignment of the crowd which is the prime determinant of success of the crowdsourcing initiative. It is assumed to directly affect user participation. The success of the initiative is expected to bring in more participation. Hence, the relationship between motive alignment and crowdsourcing success is bidirectional in the model.”<br />
+<br />
+<b>Vision and Strategy</b>: “The coherence of the initiative’s vision and strategy with the aspirations of the crowd ensures that the crowd is willing to participate in it.”<br />
+<br />
+<b>Human Capital</b>: The skills and abilities that the crowd possesses is a determinant of successful crowdsourcing. The more skillful and able the crowd is, “the less effort required by the crowd to make a meaningful contribution to the initiative.”<br />
+<br />
+<b>Infrastructure</b>: “Crowdsourcing requires abundant, reliable and cheap telephone or mobile access for its communication needs in order to ensure participation of the crowd.”<br />
+<br />
+<b>Linkages and Trust</b>: Crowdsourcing initiatives all involve a time or information cost for the crowd, which is why developing the trust factor is critical. Proper linkages can also “add a substantial trust aspect to the crowdsourcing initiative.”<br />
+<br />
+<b>External environment</b>: “The macroeconomic environment comprising of the governance support, business environment, economic environment, living environment and risk profiles are important determinants of the success of the crowdsourcing initiative.”<br />
+<br />
+<b>Motive alignment</b>: “Motive alignment of the crowd may be defined as the extent to which crowd is able to associate with long term objective of crowdsourcing initiative thereby encouraging its wider participation.” The table below explains how the peripheral factors effect the motive alignment of the crowd.”<br />
+<br />
+...<br />
+<br />
+Based on this analysis, <a rel=nofollow href="http://www.chaordix.com/blog/tag/ankit-sharma/" target="_blank">Ankit [Sharma]</a> argues that for crowdsourcing projects to succeed it is “critical that the crowd is viewed as a partner in the initiative. The needs, aspirations, motivations and incentives of the crowd to participate in the initiative must remain the most important consideration while developing the crowdsourcing initiative. The practitioners must understand the crowd motivation and align their goals according to it.” In an ideal scenario, Ankit notes that technology must be “optimally usable” without the need to provide training and assistance. Successful crowdsourcing initiatives also require an “aggressive marketing and public relations plan.”<br />
+<br />
+The main question I look forward to discussing with Ankit is this: what level of crowd participation is sufficient for a crowdsourcing initiative to be deemed successful? Should this be a percentage? e.g., the % of a given population participating in the crowdsourcing project. Or should the number be an absolute number? This is not an academic question. Who decides whether a crowdsourcing project is successful and based on what grounds?</div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+<dl class="discussion clear i1 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:6044" id="cid-4687303:Comment:6044"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/JohnAKelmelis"  title="John A. Kelmelis"><img class=" photo left"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="John A. Kelmelis" /></a></span>
+    <a name="4687303Comment6044" href="http://community.understandrisk.org/xn/detail/4687303:Comment:6044" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=3jan36eatd0mh" class="fn url">John A. Kelmelis</a> on <span class="timestamp">May 22, 2010 at 9:03am</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment6044">Some other questions to be addressed include:<br />
+<br />
+Is there some way to ensure that crowds will exist with the appropriate technology and access to the larger information infrastructure to provide needed data? For example, Iran, China, and Pakistan all have taken steps to limit access to the information infrastructure by their people. Is there some way to ensure these types of limitations do not hamper the effectiveness of crowdsourcing?<br />
+<br />
+As we develop new crowdsourcing techniques will we find a way to ensure compatibility among potentially competing commercial and non-commercial approaches?<br />
+<br />
+Will a protocol emerge that is simple and intuitive? Will there be some need for public education? What must be taught and how can that be done universally?</div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+<dl class="discussion clear i2 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:6045" id="cid-4687303:Comment:6045"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/PatrickMeier"  title="Patrick Meier"><img class=" photo left"  src="http://api.ning.com:80/files/ilkEU86DVy3yjZGYaFkDoY*xy8wdtb3ffHHalDREuGoR*9D78gvUkiLwTU3tB-MCIA1zZxkQaFeE1cTufC4AP7CcvL4SOgD*/patpic.png?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Patrick Meier" /></a></span>
+    <a name="4687303Comment6045" href="http://community.understandrisk.org/xn/detail/4687303:Comment:6045" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=2glthjjdwrvpu" class="fn url">Patrick Meier</a> on <span class="timestamp">May 22, 2010 at 9:08am</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment6045">Those are very good questions, John. How does one address the challenge of crowdsourcing in countries under authoritarian rule?<br />
+<br />
+Here's is a guide I wrote up on how to communicate securely in repressive environments:<br />
+<br />
+<a rel=nofollow href="http://irevolution.wordpress.com/2009/06/15/digital-security" target="_blank">http://irevolution.wordpress.com/2009/06/15/digital-security</a><br />
+<br />
+There's also the Guardian Project:<br />
+<br />
+<a rel=nofollow href="http://openideals.org/guardian" target="_blank">http://openideals.org/guardian</a><br />
+<br />
+But these don't get at the real challenge of scale that you get at--which by the way is even a challenge in Western industrialized liberal democracies.</div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+<dl class="discussion clear i2 xg_lightborder">
+    <dt class="byline">
+        <a name="4687303:Comment:8026" id="cid-4687303:Comment:8026"></a>                 <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/NigelSnoad"  title="Nigel Snoad"><img class=" photo left"  src="http://api.ning.com:80/files/m2hQf6qovQoshNY1ifaZgdHoSAwnFx1gqWqdJeazlFFNyKz0Z2ZvRs0E*kkH6cDtJMLafWr9FrigWK9yNrMuyPmZtiDTAwWq/NigelHaiti.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Nigel Snoad" /></a></span>
+    <a name="4687303Comment8026" href="http://community.understandrisk.org/xn/detail/4687303:Comment:8026" title="Permalink to this Reply" class="xg_icon xg_icon-permalink">Permalink</a> Reply by <a href="http://community.understandrisk.org/group/crowdsourcingforriskassessment/forum/topic/listForContributor?user=01qg52st6w0m1" class="fn url">Nigel Snoad</a> on <span class="timestamp">June 1, 2010 at 12:17pm</span>    </dt>
+        <dd>
+                        <div class="description" id="desc_4687303Comment8026">John,<br />
+<br />
+In no way would I claim to be an expert in this area, but Sanjana Hattotuwa (and many others, including Patrick) has written extensively about citizen journalism in challenging circumstances. An interesting case is where there might nominally be open access, but during a crisis communications are regularly shut down. If this impedes access to risk assessments, or the ability of individuals to contribute freely during "non-crisis" periods, then we have the same challenge: how to ensure contributions are suitably free and diverse.<br />
+<br />
+FYI: Sanjana wrote an interesting piece on how he and others published citizen media during the recent Sri Lankan elections, preparing for a variety of prescriptions on these communications <a rel=nofollow href="http://ict4peace.wordpress.com/2010/03/10/election-monitoring-using-new-media-notes-from-my-experience-in-sri-lanka/" target="_blank">http://ict4peace.wordpress.com/2010/03/10/election-monitoring-using...</a></div>
+                </dd>
+        <dd>
+        <ul class="actionlinks">
+    <li>             <p class="toggle">
+            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26&amp;groupToJoin=crowdsourcingforriskassessment"><span><!--[if IE]>&#9658;<![endif]--><![if !IE]>&#9654;<![endif]></span> Reply</a>
+        </p>
+    </li><li class="actionlink"></li>    </ul>
+</dl>
+                    </div>
+        <div class="xg_module_foot">
+                            <p class="left">
+                    <a class="xg_icon xg_icon-rss" href="http://community.understandrisk.org/forum/topics/topic-2-crowdsourcing-and?groupUrl=crowdsourcingforriskassessment&amp;feed=yes&amp;xn_auth=no">RSS</a>
+                </p>
+                    </div>
+    </div>
+</div>
+
+                </div>
+                <div class="xg_column xg_span-4 xg_last xj_classic_sidebar">
+                        <div class="xg_module" id="xg_module_account">
+        <div class="xg_module_body xg_signup xg_lightborder">
+            <p>Welcome to<br />Understanding Risk</p>
+            <p class="last-child">
+                <big><strong><a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26">Sign Up</a></strong></big><br/>
+                or <a href="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26" style="white-space:nowrap">Sign In</a>            </p>
+                    </div>
+    </div>
+<div class="xg_module module_blog indented_content">
+    <div class="xg_module_head">
+        <h2>Blog Posts</h2>
+    </div>
+    <div class="xg_module_body body_detail">
+            <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/RakhiBhavnaniSharma"  title="Rakhi Bhavnani Sharma"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Rakhi Bhavnani Sharma" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/world-reconstruction" _snid="4687303:BlogPost:12348">World Reconstruction Conference Innovation Competition</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/RakhiBhavnaniSharma">Rakhi Bhavnani Sharma</a> on February 4, 2011 at 4:34pm —                                                    <a href="http://community.understandrisk.org/profiles/blogs/world-reconstruction#comments" class="xg_lightfont">2 Comments</a>
+                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/FOROINTERNACIONALGRANDESSISMO"  title="FORO INTERNACIONAL GRANDES SISMO"><img class=" photo"  src="http://api.ning.com:80/files/LpnUyBJ8WYYjLuJqHUt6fwXGQBiyJULe3IyRQgm0rdkyAWqyNwYryFs4hJLfFOqjCfQN-TAiEfVyF2E4FCjalIE59Dh*WKyn/ImagenGrandesSismos03.09.10.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="FORO INTERNACIONAL GRANDES SISMO" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/foro-internacional-grandes" _snid="4687303:BlogPost:11261">FORO INTERNACIONAL GRANDES SISMOS, UNA AMENAZA PARA LA REGIÓN ANDINA</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/FOROINTERNACIONALGRANDESSISMO">FORO INTERNACIONAL GRANDES SISMO</a> on September 23, 2010 at 8:53pm                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/NicoleKeller"  title="Nicole Keller"><img class=" photo"  src="http://api.ning.com:80/files/udkJRr3sc1NSluSRE3KXPP6ipvyToI1FqFDV2V7liFS0wtyRjP8vWx3pf*F6jCthHxfOmwijjODClLBQFlKdn80-*PsOEduF/IMG_2750.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Nicole Keller" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/participate-in-review-of-gems" _snid="4687303:BlogPost:11245">Participate in review of GEM's Socio-Economic Impact module</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/NicoleKeller">Nicole Keller</a> on September 16, 2010 at 7:00am                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/ArealiaDenby"  title="Arealia Denby"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Arealia Denby" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/disaster-management-innercity" _snid="4687303:BlogPost:11076">Disaster Management, Inner-City Populations, Youth and The Poor</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/ArealiaDenby">Arealia Denby</a> on August 27, 2010 at 6:11pm                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/PatriciaFernandez"  title="Patricia Fern&aacute;ndez"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Patricia Fern&aacute;ndez" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/important-job-in-a-ec-regional" _snid="4687303:BlogPost:11047">IMPORTANT: Job in a EC Regional project</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/PatriciaFernandez">Patricia Fern&aacute;ndez</a> on August 18, 2010 at 3:33am                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/elenarapisardi"  title="elena rapisardi"><img class=" photo"  src="http://api.ning.com:80/files/MWi00Pnm2qcM*XUISMJljf*6Dqe4WXr7Y7EqHlpUr2mj21uZzhdOneP8Xl7pPphrpb6VPBWDm9J1DDzbuHhHuJt0B7EYsIau/860624835.png?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="elena rapisardi" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/forest-fires" _snid="4687303:BlogPost:10966">Forest Fires</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/elenarapisardi">elena rapisardi</a> on August 1, 2010 at 4:59am                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/TomGrubisich"  title="Tom Grubisich"><img class=" photo"  src="http://api.ning.com:80/files/0JrmMnjlKAmFpclPXwO2A78nP2A0lqa*SpOgu9V3uhy5wjYCG-Fwgydl30CBFnSdq6AmF*Virqg7UGHx-Fq4uQi7pxo3S98x/1e25af11.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Tom Grubisich" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/videos-of-presentations-are" _snid="4687303:BlogPost:10854">Videos of presentations are now up on the site</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/TomGrubisich">Tom Grubisich</a> on July 5, 2010 at 4:10pm —                                                    <a href="http://community.understandrisk.org/profiles/blogs/videos-of-presentations-are#comments" class="xg_lightfont">3 Comments</a>
+                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/TomGrubisich"  title="Tom Grubisich"><img class=" photo"  src="http://api.ning.com:80/files/0JrmMnjlKAmFpclPXwO2A78nP2A0lqa*SpOgu9V3uhy5wjYCG-Fwgydl30CBFnSdq6AmF*Virqg7UGHx-Fq4uQi7pxo3S98x/1e25af11.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Tom Grubisich" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/slides-summing-up-most-forum" _snid="4687303:BlogPost:10104">Slides summing up most Forum presentations are now up</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/TomGrubisich">Tom Grubisich</a> on June 29, 2010 at 11:00am —                                                    <a href="http://community.understandrisk.org/profiles/blogs/slides-summing-up-most-forum#comments" class="xg_lightfont">1 Comment</a>
+                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/OmarDCardona"  title="Omar D. Cardona (Omar Dario)"><img class=" photo"  src="http://api.ning.com:80/files/9CbumZn5Ur3WSOfC1L2PPDNsadZ7j3mpVwYi4iiautMzm53kUZ9CJ0q8mJprvBjjNm23QLv3BM0GlFPyVPU-DjqBh68FOqy6/DSC04126m.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Omar D. Cardona (Omar Dario)" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/summary-1" _snid="4687303:BlogPost:10075">Summary</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/OmarDCardona">Omar D. Cardona (Omar Dario)</a> on June 28, 2010 at 7:49pm                                            </p>
+                                    </div>
+            </div>
+                <div class="blogpost vcard">
+                <div class="ib">
+                            <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/TomGrubisich"  title="Tom Grubisich"><img class=" photo"  src="http://api.ning.com:80/files/0JrmMnjlKAmFpclPXwO2A78nP2A0lqa*SpOgu9V3uhy5wjYCG-Fwgydl30CBFnSdq6AmF*Virqg7UGHx-Fq4uQi7pxo3S98x/1e25af11.jpg?width=32&amp;height=32&amp;crop=1%3A1" height="32" width="32" alt="Tom Grubisich" /></a></span>
+                    </div>
+                <div class="tb">
+                    <h3><a href="http://community.understandrisk.org/profiles/blogs/global-reach-of-understanding" _snid="4687303:BlogPost:9854">Global reach of Understanding Risk community</a></h3>
+                                        <p class="small xg_lightfont">
+                                                    Posted by <a href="/profile/TomGrubisich">Tom Grubisich</a> on June 23, 2010 at 11:03am                                            </p>
+                                    </div>
+            </div>
+    </div>
+    <div class="xg_module_foot">
+        <ul>
+            <li class="left"><a href="http://community.understandrisk.org/profiles/blog/new" class="xg_sprite xg_sprite-add">Add a Blog Post</a></li>
+            <li class="right"><a href="http://community.understandrisk.org/profiles/blog/list">View All</a></li>        </ul>
+    </div>
+</div>
+<div class="xg_module module_members">
+    <div class="xg_module_head">
+        <h2>Members</h2>
+    </div>
+    <div class="xg_module_body body_small">
+    <ul class="clist">
+        <li>
+                <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/IdrissAitBouziad"  title="Idriss Ait-Bouziad"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Idriss Ait-Bouziad" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/ParthSarathiMahapatra"  title="Parth Sarathi Mahapatra"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Parth Sarathi Mahapatra" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/MasterBlue"  title="Master Blue"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Master Blue" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/RaymondLui"  title="Raymond Lui"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Raymond Lui" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/MindyAnderson"  title="Mindy Anderson"><img class=" photo"  src="http://api.ning.com:80/files/8Js95qJhO0LlcB2pLy2V343rxugXDR53IacVypZkUWBIKLnEHEvT5cqopKDYA3Ps2n4kK1pDSDkdrXqyqcz9LLLlNgqAyIEM/IMG_1686.jpg?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Mindy Anderson" /></a></span>
+    </li>
+
+<li>
+                <span class="xg_avatar"><a class="fn url" href="http://community.understandrisk.org/profile/AshaariRahmat"  title="Ashaari Rahmat"><img class=" photo"  src="http://api.ning.com:80/files/MvvOAsSpxhJX0G7FqkeZc98xrVhuxWGA5XYuWryQFYJjgv7lQXzyD1TQJugZUBtbqLn511pXgWKs5YL8TtshDmDjydpd9I9k/head.gif?width=48&amp;height=48&amp;crop=1%3A1" height="48" width="48" alt="Ashaari Rahmat" /></a></span>
+    </li>
+
+    </ul>
+</div>
+<div class="xg_module_foot">
+    <ul>
+                    <li class="right"><a href="http://community.understandrisk.org/profiles/members/">View All</a></li>
+            </ul>
+</div>
+</div><div class="xg_module html_module module_text xg_reset"
+        >
+        <div class="xg_module_head"><h2>Media</h2></div>
+            <div class="xg_module_body">
+            <a href="http://go.worldbank.org/GCQP4ZCHQ0" target="_blank">Latin America: Getting Better at Disaster Prevention with High Tech Support</a><br />
+<br />
+<a href="http://vector1media.com/spatialsustain/fostering-a-more-open-approach-to-disaster-risk-assessment.html" target="_blank">Vector1 Media Blog Post</a>
+        </div>
+            </div>
+
+                </div>
+            </div>
+            <div id="xg_foot">
+                <p class="left">
+    © 2011 &nbsp; Created by <a href="/xn/detail/u_1zm37xri5mfzv">Understanding Risk</a>.        &nbsp;
+    Powered by <a href="http://www.ning.com/"><img src="http://static.ning.com/socialnetworkmain/widgets/index/gfx/logo_ningbar.png?v=201103311618" width="48" height="15" alt="Ning" class="poweredbylogo" /></a>.
+    </p>
+    <p class="right xg_lightfont">
+                <a href="http://community.understandrisk.org/main/embeddable/list">Badges</a> &nbsp;|&nbsp;
+                            <a href="http://community.understandrisk.org/main/authorization/signUp?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fmain%2Findex%2Freport&amp;groupToJoin=crowdsourcingforriskassessment" dojoType="PromptToJoinLink" _joinPromptText="Like what you see in Crowdsourcing Risk Assessments: Wisdom of the Crowds?? Join Now!" _signInUrl="http://community.understandrisk.org/main/authorization/signIn?target=http%3A%2F%2Fcommunity.understandrisk.org%2Fmain%2Findex%2Freport&amp;groupToJoin=crowdsourcingforriskassessment">Report an Issue</a> &nbsp;|&nbsp;
+                <a href="http://community.understandrisk.org/main/authorization/termsOfService?previousUrl=http%3A%2F%2Fcommunity.understandrisk.org%2Fforum%2Ftopics%2Ftopic-2-crowdsourcing-and%3FgroupUrl%3Dcrowdsourcingforriskassessment%26">Terms of Service</a>
+    </p>
+
+            </div>
+        </div>
+        
+        <div id="xj_baz17246" class="xg_theme"></div>
+<div id="xg_overlay" style="display:none;">
+<!--[if lte IE 6.5]><iframe></iframe><![endif]-->
+</div>
+<!--googleoff: all--><noscript>
+	<style type="text/css" media="screen">
+        #xg { position:relative;top:120px; }
+        #xn_bar { top:120px; }
+	</style>
+	<div class="errordesc noscript">
+		<div>
+            <h3><strong>Hello, you need to enable JavaScript to use Understanding Risk.</strong></h3>
+            <p>Please check your browser settings or contact your system administrator.</p>
+			<img src="/xn_resources/widgets/index/gfx/jstrk_off.gif" height="1" width="1" />
+		</div>
+	</div>
+</noscript><!--googleon: all-->
+<script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/core.min.js?v=201103311618"></script>        <script>
+            var sources = ["http:\/\/b.scorecardresearch.com\/beacon.js","http:\/\/static.ning.com\/understandingrisk\/instances\/shared\/js\/set_common.min.js?r=1301615538","http:\/\/static.ning.com\/understandingrisk\/instances\/shared\/js\/set_shared_c0.min.js?r=1298581461","http:\/\/static.ning.com\/understandingrisk\/instances\/shared\/js\/set_sidebar_u.min.js?r=1297372212"];
+            var numSources = sources.length;
+            var heads = document.getElementsByTagName('head');
+            var node = heads.length > 0 ? heads[0] : document.body;
+            for (var i = 0; i < numSources; i++) {
+                var source = sources[i];
+                xg._loader.loading(source);
+                var script = document.createElement('script');
+                
+                script.type = 'text/javascript';
+                var cb = (function(source) { return function() { xg._loader.onLoad(source); }; })(source);
+                script.onerror = script.onload = cb;
+                script.onreadystatechange = function() {
+                    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                        cb();
+                    }
+                }
+                script.src = source;
+                node.appendChild(script);
+            }
+        </script>
+    <script type="text/javascript">
+if (!ning._) {ning._ = {}}
+ning._.compat = { encryptedToken: "<empty>" }
+ning._.CurrentServerTime = "2011-04-03T16:14:32+00:00";
+ning._.probableScreenName = "";
+ning._.domains = {
+    base: 'ning.com',
+    ports: { http: '80', ssl: '443' }
+};
+ning.loader.version = '201103311618_16'; // DEP-6475-1:662d965 26
+djConfig.parseWidgets = false;
+</script>
+<script type="text/javascript">
+    xg.token = '';
+    xg.cdnHost = 'static.ning.com';
+    xg.version = '201103311618';
+    xg.useMultiCdn = true;
+        xg.staticRoot = 'socialnetworkmain';
+    xg.xnTrackHost = "track.ning.com";
+            xg.cdnDefaultPolicyHost = 'static';
+        xg.cdnPolicy = [];
+        xg.global = xg.global||{}; xg.global.currentMozzle = 'forum';
+    xg.global.userCanInvite = false;
+    xg.global.requestBase = '';
+    xg.global.locale = 'en_US';
+    xg.num_thousand_sep = ",";
+    xg.num_decimal_sep = ".";
+        (function() {
+        dojo.addOnLoad(function() {
+            if(window.bzplcm) { window.bzplcm.ts('hr'); window.bzplcm._profileSend(); }
+                    });
+                            ning.loader.require('xg.forum.topic.DeleteCommentLink', 'xg.forum.topic.show', 'xg.profiles.embed.chatterwall', 'xg.shared.BlockMessagesLink', 'xg.profiles.embed.unfriend', 'xg.profiles.embed.publisher', function() { xg._loader.onLoad('xnloader'); });
+            })();
+</script>
+<script type="text/javascript" src="http://static.ning.com/socialnetworkmain/widgets/lib/js/thrift/xn_track.min.js?v=201103311618"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12091440-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html lang="en-CA">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <title>Jeremy Barnes - Learning to Rank Challenge: Yahoo Misses the Point</title>
+      <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8"/>
+      <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+    </meta>
+    <meta http-equiv="Content-Language" content="en-CA"/>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <div id='header'>
+        <h1>Jeremy Barnes</h1>
+      </div>
+      <div id='menu'>
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/consulting.html'>Consulting</a></li>
+          <li><a href='/publications.html'>Publications</a></li>
+          <li><a href='/software.html'>Software</a></li>
+          <li><a href='/blog.html'>Blog</a></li>
+          <li><a href='/contact.html'>Contact</a></li>
+        </ul>
+      </div>
+      <div id='content'>
+        <div class='post'>
+  <div class='postheader'>
+    <h1><a href='/2010/03/16/Yahoo_misses_the_point.html'>Learning to Rank Challenge: Yahoo Misses the Point</a></h1>
+    <div class='subtitle'><h2>Or,<br>Looking a Gift-Horse in the Mouth</h2></div>
+    <div class='date'>Tuesday 16 March, 2010</div>
+  </div>
+  <div class='abstract'>
+    In which our hero rails against the indecency of being shown a tantalizing glimpse of a dataset, only to discover that it consists of nothing but data.
+  </div>
+  <div class='postbody hyphenate'>
+    <p>A few weeks ago, Yahoo announced their <a href="http://learningtorankchallenge.yahoo.com/">Learning to Rank Challenge</a>.  Having <a href="http://github.com/jeremybarnes/github_contest/raw/master/README">recently</a> <a href="http://github.com/blog/489-github-contest-winners">done</a> a few <a href="/files/ausdm-report.pdf">similar</a> <a href="http://www.tiberius.biz/ausdm09/index.html">challenges</a>, and worked with similar data in the past, I was quite excited.  But since I&#8217;ve downloaded the data and looked at it, that&#8217;s turned into a sense of absolute apathy.  It seems like they have done everything possible to remove all value from their data before they released it; and the fact that they released it at all in such a form shows a total misunderstanding of the value of Machine Learning research and the value proposition behind such competitions.</p>
+<h2>The Million Dollar Dataset?</h2>
+<p>The dataset that Yahoo released is, at face value, a dream dataset for anyone who&#8217;s interested in information retrieval.  It is generated from about 36,000 queries and contains human relevance judgements for about 1 million URLs, or about 25 URLs per query.  To generate this dataset yourself, you would need to, at the very minimum:</p>
+<ul>
+	<li>Determine a representative list of 36,000 queries (not an easy task);</li>
+	<li>Determine a useful set of URLs to annotate for each query (again, much more complicated that you would expect);</li>
+	<li>Build an infrastructure to allow 1 million URLs to be effectively annotated;</li>
+	<li>Decide on guidelines for annotation so that the job would be as consistent as possible (this document would invariably end up with <a href="http://www.inf.unibz.it/~bernardi/Courses/CompLing/Papers/tagguide.pdf">at least 100 pages</a>);</li>
+	<li>Assuming 1 second per <span class="caps">URL</span> to tag, spend 250 hours of mind-numbing work to tag them.</li>
+</ul>
+<p>In real life (I&#8217;ve done <a href="http://www.idilia.com/">a lot of this kind of work</a>) the error rate on annotating 1 million queries with one person in 250 hours would be far too high to be useful to train Machine Learning algorithms of any precision, especially on the less common cases.  In order to do a good job, I&#8217;d expect more like 1-5 minutes per query from more than one annotator (the annotators would have to actually visit each of the URLs&#8212;it&#8217;s surprising how often the title of a page is completely unrepresentative of the content, and how often relevant material is found hiding in a completely unrelated document).</p>
+<p>In addition, the examples that provide the most information are those where the result is close to (or defines) the decision boundary: the marginal cases.  These also take a lot longer to annotate.  Finally, it is usually necessary to come back to those examples which are the most surprising to the algorithms that are learning from them to ensure that the tagging of these examples is correct&#8212;many of the more powerful machine learning algorithms can be thrown off by a relatively small amount of noise as they weight examples non-uniformly.</p>
+<p>Overall, I&#8217;d say that this dataset represents 5-20 man-years of work given the resources that Yahoo already has, and would cost anyone else somewhere between $500,000 and $2,000,000 to generate for themselves, depending upon the accuracy and how meticulously it was annotated.</p>
+<p>In addition, Yahoo is putting up $30,000 in prize money, for 8 prizes ranging from $8,000 to $1,000.  Compared to the $1 million offered by NetFlix it&#8217;s paltry, but it also reflects the paltry value of the competition to the Machine Learning community.</p>
+<h2>This Horse has Rotten Teeth</h2>
+<p>For reasons that we&#8217;ll get to in a moment, the dataset has been eviscerated of anything that could have any substantial value.  Instead of releasing a dataset that can be explored and analyzed (like NetFlix did in their competition) and contribute to the state of the art in information retrieval, Yahoo has removed almost the entire value:</p>
+<ul>
+	<li>The actual text of the queries isn&#8217;t released, only a query number.</li>
+	<li>The URLs that the documents correspond to haven&#8217;t been released either.</li>
+	<li>There is a feature set of about 600 features for each document, which have been obfuscated via rescaling and are only identified via a number.</li>
+	<li>Once the contest period has ended, you are obliged have to delete the dataset from your disk.  As a result, nobody (except Yahoo) can investigate the algorithms that others have generated at the end of the contest, nor perform follow-on work.</li>
+	<li>Instead of a typical 4-label (1=very relevant to 4=completely irrelevant) judgement labels, Yahoo have just released binary labels, without saying to which categories they belong.  This information is important as 4s are particularly unreliable.  <em>(Note: I was wrong about this point.  The dataset does include graded relevance labels, from 0 to 4.  Thanks to <a href="http://windowoffice.tumblr.com/">Jon Elsas</a> for bringing this to my attention).</em></li>
+</ul>
+<p>These restrictions completely disassociate the dataset from its problem domain (information retrieval or &#8220;Learning to Rank&#8221;), and in doing so reduce the value to something approaching zero.  In effect, Yahoo is outsourcing (or &#8220;crowdsourcing&#8221; if you will) the work of discovering which Machine Learning paradigm is most suitable for their data, information which is only really useful to Yahoo themselves as only they have this kind of data.</p>
+<h2>What is Machine Learning good for?</h2>
+<p>Having just made a value judgement, I should describe the tenets of my position.  To me, the value of Machine Learning to society is that it allows us to solve problems that we couldn&#8217;t solve without it.  This doesn&#8217;t mean that the all machine learning research should be of an <em>applied</em> nature; far from it.  But at some point, as a society, when we decide to allocate resources to Machine Learning instead of (say) to growing potatoes or curing cancer, we&#8217;re making some kind of a judgement about the value of one activity over the other.</p>
+<p>By creating this competition, Yahoo is causing resources to be allocated away from other Machine Learning research and towards their own problem, both via a price signal (&#8220;this problem is worth $30,000 for someone to solve&#8221;) and via the competitive spirits of those involved.  In my opinion, this reallocation of resources is likely to be both towards solving a dead-end problem.  In addition, the value that Yahoo is providing to Machine Learning in return is derisory (due to the restrictions enumerated above), and will not come close to compensating for the time spent on solving the problem.  As a result, it will cause a net loss to society.  And that&#8217;s a real shame.</p>
+<h2>Getting it Right</h2>
+<p>It&#8217;s instructive to compare Yahoo&#8217;s challenge with the Netflix Prize.  (I didn&#8217;t participate in the Netflix Prize, though I followed it closely, and I know <a href="http://danielharan.com/">several</a> <a href="http://xlvector.net/blog">people</a> <a href="http://pragmatictheory.blogspot.com/">who did participate</a>).  As I argued above, the effect of Yahoo in organizing their challenge will be to allocate some Machine Learning research towards improving Yahoo&#8217;s search engine, in exactly the same way as the Netflix Contest allocated (a staggering amount of) research capacity towards the goal of improving Netflix&#8217;s recommender system.</p>
+<p>There are big differences between these two competitions, however.  Improving Neflix&#8217;s recommender system also had big benefits for the broader community.  The data for Netflix was open enough that people could work directly towards the problem of recommending movies.  The availability of this dataset significantly lowered the barrier to entry for researchers in the field and allowed a <a href="http://www.wired.com/techbiz/media/magazine/16-03/mf_netflix">vulgarization of the entire field</a>.  Significant research findings were made by people with little formal training at all.  Many predictors and techniques were discovered, some specific to movies and some of a more general utility.  <a href="http://justaguyinagarage.blogspot.com/2009/07/reflections-on-netflix-competition.html">And we could go on and on</a>.  It was clearly a win both for Netflix and society due to the residual value that was left (and even despite the fact that the dataset couldn&#8217;t be donated to the machine learning community at large as was originally intended, due to privacy concerns).</p>
+<p>Compare with Yahoo&#8217;s effort.  Nothing will be learnt about ranking of search results.  Some improvement will be made on Yahoo&#8217;s dataset (I suspect by using many different classifiers and learning to blend them sparsely), but this will not aid search engine ranking in general.  At the end of the competition, only Yahoo will have benefited;  teams will not even be allowed to test other teams&#8217; solutions on the competition data.  In my opinion, it&#8217;s a net loss to society (taking researchers attention away from more useful or fruitful problems), and only Yahoo stands to benefit.  A dataset that has been neutered in this way is only really of interest to the Machine Learning community, and so there won&#8217;t be any influx of new researchers and ideas like in Netflix.</p>
+<p>So isn&#8217;t it useful to have another dataset, even if it&#8217;s just a black-box that will self-destruct after 3 months, to test algorithms on?  This is a contentious, subjective and philosophical topic, so I won&#8217;t go too much into it here.  In my opinion, the answer is no.  With no link to a problem, the value to society is lost.  That&#8217;s not to say that all research should be linked to a problem, far from it.  But this kind of dataset simply encourages more <a href="http://github.com/jeremybarnes/Thesis/raw/master/Thesis/thesis.pdf">&#8220;<span class="caps">UCI</span> papers&#8221;</a> (my phrase): egoistical papers that try the author&#8217;s algorithm of choice over a large number of datasets (normally a selection from the <a href="http://archive.ics.uci.edu/ml/"><span class="caps">UCI</span> repository</a>), with no regard for the problem that the dataset represented and only superficial analysis, and describes on which datasets the algorithm was better.  (Mercifully, these have fallen out of fashion in the last 10 years).  There is <a href="http://www.cs.toronto.edu/~hinton/science.pdf">plenty of interesting research being done by treating datasets as black boxes</a>, which has very strong links to real-world problems, and certainly no shortage of black-box data.</p>
+<h2>In Yahoo&#8217;s Defence</h2>
+<p>Yahoo, in their <a href="http://learningtorankchallenge.yahoo.com/faq.php"><span class="caps">FAQ</span> about the competition</a>, respond to this kind of criticism as follows:</p>
+<blockquote>Q. Why not release the actual queries and urls?<br/>A. For two reasons of competitive nature: <ul><li>Feature engineering is a critical component of any learning to rank system. For this reason, search engine companies rarely disclose the features they use. Releasing the queries and urls would lead to a risk of reverse engineering of our features.</li><li>Our editorial judgments are a valuable asset, and along with queries and urls, it could be used to train a ranking model. We would thus give a competitive advantage to potential competitors by allowing them to use our editorial judgments to train their model.</li><p></ul></blockquote></p>
+<p>I&#8217;m sympathetic to these concerns.  If high-tech has been a battlefield recently, the bloodiest front-line is in search, and Yahoo must be pretty battle-weary by now.  To really push the metaphor, the last thing that they want is to open a second front against an upstart that got their big break with Yahoo&#8217;s own data.  That being said, I don&#8217;t think that their arguments hold much water.</p>
+<p>Let&#8217;s deal with point number 2 first, as that&#8217;s the easiest one to debunk.  Yahoo, just like Netflix when they released their dataset, could simply state that nobody is allowed to use that dataset to train a commercial search engine.</p>
+<p>Anyone who was big enough to hope to compete with Yahoo on search would be a rather large entity, for whom two million dollars (to generate the dataset themselves) would not be such a large amount of money, and who would most likely be paranoid about tainting their service with someone else&#8217;s data (or being either sued out of existence by Yahoo or sued out of their upside by their investors).  I&#8217;ve heard that Google, for example, doesn&#8217;t want to hear <em>anything</em> about other people&#8217;s ideas (they explicitly require that people not tell them anything about their intellectual property in meetings), for fear that they&#8217;ll end up (like Microsoft in the early 2000s) with a bad reputation and bogged down in legal disputes.</p>
+<p>On point number 1, I have to admire their frankness as I couldn&#8217;t have argued the point better myself.  <strong>Feature engineering <em>is</em> a critical component of any learning to rank system</strong>.  It&#8217;s feature engineering that provides the link between the problem domain and Machine Learning.  That&#8217;s exactly why the competition they created is useless for learning to rank, as it severs this link and precludes any kind of feature engineering.</p>
+<p>Now I can imagine that they don&#8217;t want search engine optimizers to know their features for fear that they structure their sites to exploit them.  I&#8217;m also sure that Yahoo have put a lot of creative energy into designing their features, and they don&#8217;t want to give this information away for free to their competitors.  Still, it strikes me as a knee-jerk reaction.  Google had some of their most important features <a href="http://ilpubs.stanford.edu:8090/361/1/1998-8.pdf">published from the beginning</a>, and it doesn&#8217;t exactly seem to have hurt them.  Indeed, a lot of useful features these days must come from subsidiary sources of data (such as feedback from click-through data), which are only available to established players.  Finally, the ranking function just isn&#8217;t a major differentiator any more, and won&#8217;t be until someone comes up with some really new ideas.  Witness the <a href="http://www.cuil.com/">wrecks</a> <a href="http://clusty.com/">of</a> <a href="http://en.wikipedia.org/wiki/Teoma">wannabe</a> <a href="http://www.startupbin.com/2008/01/21/list-of-google-killers-search-engines-of-the-future/">Google killers</a> <a href="http://www.powerset.com/">littered</a> <a href="http://www.bing.com/">over</a> the <a href="http://en.wikipedia.org/wiki/Wikia_Search">landscape</a>, most of which added something new (and had broadly comparable ranking performance) but were obliterated in the marketplace anyway.</p>
+<p>Yahoo&#8217;s reasoning for not including the URLs and queries with the features was due to the possibility of people inferring their features from the dataset.  I think that this is a bit far-fetched, though not beyond the realm of possibility (and surely the less obvious the feature, the less likely it is to be inferred like this).  Again, one way to avoid this problem would be to not include any features that they considered to be part of their &#8220;special sauce&#8221;; then they could release the URLs and queries.</p>
+<p>And why not just leave out any features that don&#8217;t match a list of obvious or broadly known features, such as Eigenvector Centrality (or similar), TF-<span class="caps">IDF</span>, collocation of query terms, etc?  A survey of the <span class="caps">TREC</span> conferences would provide a good list of those that could be given away.</p>
+<p>Finally, I&#8217;m sure that Yahoo takes the privacy of its users very seriously, and had some serious reservations about releasing the dataset for this reason.  This is a laudable and sensible attitude; similar issues <a href="http://blog.netflix.com/2010/03/this-is-neil-hunt-chief-product-officer.html">just forced NetFlix to cancel their second competition</a> and caused <a href="http://techcrunch.com/2006/08/06/aol-proudly-releases-massive-amounts-of-user-search-data/"><span class="caps">AOL</span> all kinds of problems in 2006</a>.  However, if they were really serious about providing something of value to the community in return for free analysis of their data, 36,000 queries is not such a large number to check manually for personally identifying information.  They could be checked largely automatically with a marginal extra cost over that incurred to tag the results.  (If a query has been submitted to their search engine 1,000 times or more, then it&#8217;s almost certainly not a personal query.  These could be double-checked quickly, leaving only the tail queries to be checked thoroughly.)</p>
+<h2>Dysfunctional or Paranoid?</h2>
+<p>In my opinion, Yahoo&#8217;s Learning to Rank challenge is a wasted opportunity for Yahoo to add a bit of shine to their brand and add some creative energy to their besieged engineering team, whilst simultaneously boosting an area of research that is important to their success.  Instead, they come out looking cheap, out of touch and paranoid.</p>
+<p>Don&#8217;t get me wrong: I think that Machine Learning competitions are a positive development and have their place.  Competitions have been proved to be a powerful tool to rapidly develop a field or to pull research out of stagnation.  However, these competitions need to be designed with careful though about the value that they propose over and above the prize money.</p>
+<p>In what I&#8217;ve heard about working with Yahoo, turf wars and organizational mayhem are par for the course.  There are no doubt still many fine engineers working there; I think that it&#8217;s unlikely that their R&amp;D team decided on their own account to neuter the dataset.  This looks to me like it comes from some their organizational malaise, where maintaining the status quo (and what a status quo it is) is more important than taking a risk and allowing for innovation.  The Netflix contest had support from the Reed Hastings (the <span class="caps">CEO</span>) downwards, and they had enough vision to pull it off.  It&#8217;s hard to see where such vision could still be hiding at Yahoo.</p>
+<p>Do I think that people should stop doing this competition?  It&#8217;s not my place to say.  But think carefully about why it&#8217;s more valuable to you than whatever you would have done instead, before you start providing free contracting services to a billion dollar corporation.</p>
+  </div>
+  <a href='http://www.barneso.com//2010/03/16/Yahoo_misses_the_point.html#disqus_thread'>Comments</a>
+</div>
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <table class="post-list">
+    
+      <tr>
+        <th><a href='/2010/03/09/Recoset.html'>Recoset-Starting a Company</a></th>
+        <td>09 Mar 2010</td>
+        <td><a href='http://www.barneso.com//2010/03/09/Recoset.html#disqus_thread'>Comments</a></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="post-list-abstract">
+          <div class="post-abstract">
+            In which our hero describes the latest way that he has found to be too busy to prepare his tax return.
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <th><a href='/2009/12/05/3rd_Place_in_AUSDM_Competition.html'>3rd Place in AUSDM Competition</a></th>
+        <td>05 Dec 2009</td>
+        <td><a href='http://www.barneso.com//2009/12/05/3rd_Place_in_AUSDM_Competition.html#disqus_thread'>Comments</a></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="post-list-abstract">
+          <div class="post-abstract">
+            In which our hero ponders the reasons for his being crowned the 3rd-best netflix-model-blender in the world.
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <th><a href='/2009/11/29/Welcome.html'>Welcome</a></th>
+        <td>29 Nov 2009</td>
+        <td><a href='http://www.barneso.com//2009/11/29/Welcome.html#disqus_thread'>Comments</a></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="post-list-abstract">
+          <div class="post-abstract">
+            In which our hero attempts to see if his blog is working, but without actually writing anything entitled "test post".
+          </div>
+        </td>
+      </tr>
+    
+  </table>
+</div>
+
+<div class="related">
+  <h3>Recent Posts</h3>
+  <table class="post-list">
+    
+     
+    
+     
+      <tr>
+        <th><a href='/2010/03/09/Recoset.html'>Recoset-Starting a Company</a></th>
+        <td>09 Mar 2010</td>
+        <td><a href='http://www.barneso.com//2010/03/09/Recoset.html#disqus_thread'>Comments</a></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="post-list-abstract">
+          <div class="post-abstract">
+            In which our hero describes the latest way that he has found to be too busy to prepare his tax return.
+          </div>
+        </td>
+      </tr>
+     
+    
+     
+      <tr>
+        <th><a href='/2009/12/05/3rd_Place_in_AUSDM_Competition.html'>3rd Place in AUSDM Competition</a></th>
+        <td>05 Dec 2009</td>
+        <td><a href='http://www.barneso.com//2009/12/05/3rd_Place_in_AUSDM_Competition.html#disqus_thread'>Comments</a></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="post-list-abstract">
+          <div class="post-abstract">
+            In which our hero ponders the reasons for his being crowned the 3rd-best netflix-model-blender in the world.
+          </div>
+        </td>
+      </tr>
+     
+    
+  </table>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  var disqus_url = "http://www.barneso.com//2010/03/16/Yahoo_misses_the_point.html";
+</script>
+<div id="disqus_thread">
+</div>
+<script type="text/javascript" src="http://disqus.com/forums/jeremybarnes/embed.js"></script>
+<noscript><a href="http://disqus.com/forums/jeremybarnes/?url=ref">View the discussion thread.</a></noscript></a>
+
+        <div class='clearfix'></div>
+      </div>
+    </div>
+    <div id='footer'>
+      Copyright &copy; 2010 Jeremy Barnes.  All content on this site represents my personal opinion and not that of my employer.
+    </div>
+<script src="/scripts/Hyphenator.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+  Hyphenator.run();
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/jeremybarnes/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15141918-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+  </body>
+</html>

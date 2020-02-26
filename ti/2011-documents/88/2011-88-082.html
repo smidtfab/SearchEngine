@@ -1,0 +1,665 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	crowdsourcing - latest news
+</title><link href="http://interceder.net/css/dashboard.css" rel="stylesheet" type="text/css" />
+    <script src="http://interceder.net/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="http://interceder.net/js/SpryEffects.js" type="text/javascript"></script>
+    <script type='text/javascript' src='http://interceder.net/js/jquery.swfobject.js'></script>    
+	<script type='text/javascript' src='http://interceder.net/js/jquery.metadata.js'></script>
+    <script src="http://interceder.net/js/jquery.json-2.2.js" type="text/javascript"></script>	
+    <script src="http://interceder.net/js/flexcroll.js" type="text/javascript"></script>   
+    <script type='text/javascript' src='http://interceder.net/js/jquery.ceebox-min.js'></script>
+    <link rel="stylesheet" href="http://interceder.net/css/ceebox.css" type="text/css" media="screen" /><link rel="icon" href="http://interceder.net/favicon.ico" type="image/x-icon" /><meta name="apple-touch-fullscreen" content="YES" /><link rel="apple-touch-icon" href="http://interceder.net/images/apple-touch-icon.png" />  
+    <base href="http://interceder.net/" />
+       <script type="text/javascript">
+    
+        $(document).ready(function() {
+            debugging = true;
+            $.fn.ceebox.videos.base.param.allowScriptAccess = "sameDomain"; //added to kill the permissions problem
+            $(".stories").ceebox({width: '640px', height: '480px'});
+        });
+
+        function deleteTab(param) {
+            document.getElementById('tab' + param).style.display = 'none';
+            document.getElementById('del' + param).style.display = 'none';
+            var ck = replaceAll(GetCookie('recentSearchList1'), "recentSearchList1=", "");
+            SetCookie("recentSearchList1", replaceAll(ck, param + ',', ''), "365");
+            //SetCookie("recentSearchList1", replaceAll(ck, '"' + param + '",', ''), "365");
+        }
+        </script>
+        
+</head>
+<body onload="defaultCountry();">
+    <form name="form1" method="post" action="list.aspx?s=crowdsourcing" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzMzYwNjQ2MmRkui77XjNq+A4gRGVAULRTOAVG6pI=" />
+
+
+<script src="/ScriptResource.axd?d=B58y9J7nwpaByB-BydWAmb6SsBs-qPiRjSpAiljglk7T0KGz0MLzHpJi0H-tuFMyAU-Gk9CJh1hMX-1PMwMh3-uXgNPezoGhkdrU_0wJ6f_IEAODKgyQK5bzj2FeaeMcBJmgYkAj-mxl-2zqZwFeEw2CseqDbDO4UwuyIaTEKg_IjjD20&amp;t=514734bc" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="CallWebServiceMethods_list.js" type="text/javascript"></script>
+<script src="WebService_list.asmx/jsdebug" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwL82NrxCgLH0pL8CQKqw7nuDfC/LotPPyWp6lb563A+gMWcZlI1" />
+    
+    <div class="top">
+        <div class="header">
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_share_btn">
+                <a href="http://addthis.com/bookmark.php" class="addthis_button_compact">
+                <span>Share</span></a>
+            </div>   
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=badey"></script>
+            <script type="text/javascript">    var addthis_config = { ui_offset_top: 22, ui_offset_left: 10 };</script>
+            <!-- AddThis Button END -->
+        <table align=center cellpadding=2>
+            <tr>
+                <td align=center colspan=3>                    
+                    <a href="http://interceder.net/" title="Home"><img src="images/logo_.gif" width=188 height=57 border=0 /></a>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>
+                    <div class="searchBar">
+                        <input name="search" type="text" id="search" class="searchTextBox" onKeyPress="return checkEnter(event)" value="crowdsourcing" />
+                        <!--<div class="latestText">Recent searches:</div> <div class="latestSearches"><a href="http://interceder.net/i/crowdsourcing" class="contact">crowdsourcing</a>, <a href="http://interceder.net/i/Newtown" class="contact">Newtown</a>, <a href="http://interceder.net/i/kindle-3" class="contact">kindle 3</a>, <a href="http://interceder.net/i/Millis" class="contact">Millis</a>, <a href="http://interceder.net/i/Carphone-Warehouse" class="contact">Carphone Warehouse</a>, <a href="http://interceder.net/i/images" class="contact">images</a>, <a href="http://interceder.net/i/pompeo" class="contact">pompeo</a>, <a href="http://interceder.net/i/university-of-waterloo" class="contact">university of waterloo</a>, <a href="http://interceder.net/i/Robert-Logan" class="contact">Robert Logan</a>, <a href="http://interceder.net/i/Teaser" class="contact">Teaser</a>, <a href="http://interceder.net/i/seeman" class="contact">seeman</a>...</div>-->
+                    </div>
+                </td>
+                <td align=left>
+                    <a href="javascript:search();" title="Click to search" class="btnSearch"><img src="images/blank.gif" width=73 height=26 /></a>
+                </td>
+                <td align=left>
+                    <a href="#" class="switch_thumb1" title="Switch to Dashboard View">Switch Thumb</a>
+                </td>                
+            </tr>
+        </table>
+        </div>
+ 
+    </div>
+    <div class="tabBarOuter" style="text-align:center;">
+        <div class="tabBar" style="width:1010px;">
+                                <div class="tabs" id="tabs">
+                                    <div class="searches">RECENT</div>
+                                    <div class="tabOn">crowdsourcing</div> 
+                                    <div style="clear: both;"></div>
+                                </div>         
+        </div>
+    </div>                            
+    <br /><br />
+    <div class="container">
+    <div style="margin-bottom:20px;margin-top: -10px;width:100%; text-align:center;">
+            <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-1335813618323898";
+                /* Horizontal Image */
+                google_ad_slot = "3166519208";
+                google_ad_width = 728;
+                google_ad_height = 90;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+     
+    </div>  
+    <table width="990" align=center>
+        <tr valign=top>
+            <td align=left width=30%>
+               <div class="newsVolume"><table><tr><td><img style="margin-right:5px;" align="left" src="http://freebase.com/api/trans/image_thumb/en/crowdsourcing"></td><td><div class="highlight" id="title">Crowdsourcing</div></div></td></tr></table><div class="links" id="links"></div><br><div id="wiki">Crowdsourcing is the act of outsourcing tasks, traditionally performed by an employee or contractor, to an undefined, large group of people or community (a "crowd"), through an open call.
+Jeff Howe, one of first authors to employ the term, established that the concept of crowdsourcing depends essentially on the fact that because it is an open call to an undefined group of people, it gathers those who are most fit to perform tasks, solve complex problems and contribute with the most relevant and fresh ideas.
+For example, the public may be invited to develop a new technology, carry out a design task (also known as community-based design and distributed participatory design), refine or...</div><br><table><tr valign=center><td><img src="http://www.freebase.com/policies/freebase-cc-by-61x23.png"/></td><td><div style="font-size:x-small;margin-left:3px;">Source: <a class=blue href="http://www.freebase.com/view/en/crowdsourcing" title="Crowdsourcing on Freebase">Crowdsourcing</a> on <a class=blue href="http://www.freebase.com">Freebase</a>, licensed under <a class=blue href="http://www.freebase.com/view/common/license/cc_attribution_25">CC-BY</a>.</div></td></tr></table></div><br><div class="newsVolume"><script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1335813618323898";
+    /* Left Block */
+    google_ad_slot = "2352813464";
+    google_ad_width = 300;
+    google_ad_height = 250;
+ //-->
+ </script>
+ <script type="text/javascript"
+ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+ </script></div>
+ <br /><br />
+               
+               
+               <span id="calais">
+                    <div class="highlight1" style="width:100%;">Explore key people and companies</div>
+                    <div class="newsVolume">
+                        <div class="secHeader">
+                        </div>
+                        <span id="ResultId" style="background-color: #25292c;"><img src="images/freebase-loader.gif" align="absmiddle" border="0" /> Analysing news. Please wait...</span>
+                
+                    </div>
+
+                    <br />
+                </span>
+               <div class="newsVolume">
+<script type="text/javascript"><!-- 
+    google_ad_client = "pub-1335813618323898"; 
+    /* 200x90, created 8/11/10  */ 
+    google_ad_slot = "3712689659"; 
+    google_ad_width = 200; 
+    google_ad_height = 90; 
+     //--> 
+</script> 
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> 
+</div> 
+                
+                <div style="text-align: center;">
+                    <br><script type="text/javascript" src="http://videos.video-loader.com/sp/62418615128753123072159.js"></script> 
+                 </div>               
+            </td>
+            <td width=20><img src="images/blank.gif" width=20 height=1 /></td>
+            <td width=69%>
+                <table cellpadding="0" cellspacing="0" width="100%">
+                 <tr id="Tr1" valign="top">
+	<td width="702" align="left">
+                    
+                    
+                    <div class="highlight1">Latest news for crowdsourcing</div>
+                    <br />
+                    <div class="stories">
+                       <table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">2 to 4 hours old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="0"><a title="NEWS (summary) : This morning, as I was reviewing my notes on three different scandals now afflicting Halifax, I thought, "Just how much scandal can be wedged into one town? Are we at Peak Scandal?"… [ Read more ] [ Subscribe to the comments on this story ]" id="link0" href="http://www.thecoast.ca/RealityBites/archives/2011/04/02/has-halifax-hit-peak-scandal" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from The Coast" src="http://www.google.com/s2/favicons?domain=www.thecoast.ca"> Has Halifax hit Peak Scandal? - The Coast</a><span style="display:none">Has Halifax hit Peak Scandal? This morning, as I was reviewing my notes on three different scandals now afflicting Halifax, I thought, "Just how much scandal can be wedged into one town? Are we at Peak Scandal?"… [ Read more ] [ Subscribe to the comments on this story ]03 Apr 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br><table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">12 to 24 hours old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="1"><a title="NEWS (summary) : # libya Some reports stating that Muammar Ghaddafi was using missiles made in Israel against his people turned out to be very wrong, thanks to some crowdsourcing done by NPR reporter Andy Carvin. More »" id="link1" href="http://gizmodo.com/5788292/npr-reporter-has-twitter-followers-debunk-libyan+israeli-missile-rumors" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Gizmodo" src="http://www.google.com/s2/favicons?domain=gizmodo.com"> NPR Reporter Has Twitter Followers Debunk Libyan-Israeli Missile Rumors [Libya] - Gizmodo</a><span style="display:none">NPR Reporter Has Twitter Followers Debunk Libyan-Israeli Missile Rumors [Libya] # libya Some reports stating that Muammar Ghaddafi was using missiles made in Israel against his people turned out to be very wrong, thanks to some crowdsourcing done by NPR reporter Andy Carvin. More »02 Apr 2011 </span></div><div id="2"><a title="NEWS (summary) : Anyone on the East Coast can tell you, this has not been a good March. Rain, cold, more rain … isn’t this supposed to be spring? Yet…" id="link2" href="http://mashable.com/2011/04/02/digital-media-resources-9/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> 46 New Digital Media Resources You May Have Missed - Mashable</a><span style="display:none">46 New Digital Media Resources You May Have Missed Anyone on the East Coast can tell you, this has not been a good March. Rain, cold, more rain … isn’t this supposed to be spring? Yet…02 Apr 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br><table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">1 to 3 days old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="3"><a title="NEWS (summary) : share: digg facebook twitter [...] a wave of new startups is taking a stab at making it easier to organize a trip online, using elements such as social networking and crowdsourcing to help travelers pick a destination and find activities to do. In addition to Menlo Park, Calif.'s Gogobot, the latest entrants to the $100 million online travel industry include Hipmunk, a new search engine for ..." id="link3" href="http://www.mysanantonio.com/business/article/Gogobot-takes-off-on-social-travel-planning-1318816.php" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from San Antonio Express-News" src="http://www.google.com/s2/favicons?domain=www.mysanantonio.com"> Gogobot takes off on social travel planning - San Antonio Express-News</a><span style="display:none">Gogobot takes off on social travel planning share: digg facebook twitter [...] a wave of new startups is taking a stab at making it easier to organize a trip online, using elements such as social networking and crowdsourcing to help travelers pick a destination and find activities to do. In addition to Menlo Park, Calif.'s Gogobot, the latest entrants to the $100 million online travel industry include Hipmunk, a new search engine for ...02 Apr 2011 </span></div><div id="4"><a title="NEWS (summary) : Crowdsourcing points the finger at two senators for killing a popular bill." id="link4" href="http://blogcritics.org/politics/article/kyl-or-sessions-killed-whistleblower-protection/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Blogcritics.org" src="http://www.google.com/s2/favicons?domain=blogcritics.org"> Kyl or Sessions Killed Whistleblower Protection Law, Says Journalist - Blogcritics.org</a><span style="display:none">Kyl or Sessions Killed Whistleblower Protection Law, Says Journalist Crowdsourcing points the finger at two senators for killing a popular bill.01 Apr 2011 </span></div><div id="5"><a title="NEWS (summary) : Home Depot just launched a campaign on Facebook allowing users to decide where the company should spend its grant dollars and volunteer hours. T…" id="link5" href="http://mashable.com/2011/04/01/home-depot-crowdsourced/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> Home Depot Tries Crowdsourced Philanthropy on Facebook - Mashable</a><span style="display:none">Home Depot Tries Crowdsourced Philanthropy on Facebook Home Depot just launched a campaign on Facebook allowing users to decide where the company should spend its grant dollars and volunteer hours. T…01 Apr 2011 </span></div><div id="6"><a title="NEWS (summary) : The need to just do something is a real reason people aggregate data from real-time sensors, create maps and share their findings online. Crowdsourcing is a manifestation of that desire to contribute in a way that helps us understand and better define the overwhelming amount of data available. In Japan, crowdsourcing is emerging as a way for people to keep track of the radiation levels around ..." id="link6" href="http://www.readwriteweb.com/cloud/2011/04/ow-the-internet-of-things-help.php" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from ReadWriteWeb" src="http://www.google.com/s2/favicons?domain=www.readwriteweb.com"> How the Internet of Things Helps Us Understand Radiation Levels - ReadWriteWeb</a><span style="display:none">How the Internet of Things Helps Us Understand Radiation Levels The need to just do something is a real reason people aggregate data from real-time sensors, create maps and share their findings online. Crowdsourcing is a manifestation of that desire to contribute in a way that helps us understand and better define the overwhelming amount of data available. In Japan, crowdsourcing is emerging as a way for people to keep track of the radiation levels around ...01 Apr 2011 </span></div><div id="7"><a title="NEWS (summary) : With the rapid rise of crowdsourcing over the last five years since the term was coined by Jeff Howe in Wired , there has been a lot of coverage…" id="link7" href="http://mashable.com/2011/04/01/make-money-crowdworking/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> 18 Ways to Earn Money From Crowdworking - Mashable</a><span style="display:none">18 Ways to Earn Money From Crowdworking With the rapid rise of crowdsourcing over the last five years since the term was coined by Jeff Howe in Wired , there has been a lot of coverage…01 Apr 2011 </span></div><div id="8"><a title="NEWS (summary) : The launch of social online learning service Learnable.com is set to revolutionize the way we gain skills and knowledge. (PRWeb April 01, 2011) Read the full story at http://www.prweb.com/releases/social-online-learning/learnable/prweb8257623.htm" id="link8" href="http://www.prweb.com/releases/social-online-learning/learnable/prweb8257623.htm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PRWeb" src="http://www.google.com/s2/favicons?domain=www.prweb.com"> Learnable Launch Marks Turning Point For Social Online Education - PRWeb</a><span style="display:none">Learnable Launch Marks Turning Point For Social Online Education The launch of social online learning service Learnable.com is set to revolutionize the way we gain skills and knowledge. (PRWeb April 01, 2011) Read the full story at http://www.prweb.com/releases/social-online-learning/learnable/prweb8257623.htm01 Apr 2011 </span></div><div id="9"><a title="NEWS (summary) : ITT Residential & Commercial Water along with foundation partner ITT Watermark, has launched a $5,000 Ideation Challenge on Innocentive's website to help address water problems worldwide. Morton Grove, IL (Vocus/PRWEB) March 31, 2011 ITT Residential & Commercial Water along with its foundation partner ITT Watermark , has launched an Ideation Challenge on InnoCentive to help address water ..." id="link9" href="http://www.redorbit.com/news/business/2022374/itt_launches_ideation_challenge_to_help_solve_global_water_issues/index.html?source=r_general" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from redOrbit" src="http://www.google.com/s2/favicons?domain=www.redorbit.com"> ITT Launches “Ideation Challenge” to Help Solve Global Water Issues - redOrbit</a><span style="display:none">ITT Launches “Ideation Challenge” to Help Solve Global Water Issues ITT Residential & Commercial Water along with foundation partner ITT Watermark, has launched a $5,000 Ideation Challenge on Innocentive's website to help address water problems worldwide. Morton Grove, IL (Vocus/PRWEB) March 31, 2011 ITT Residential & Commercial Water along with its foundation partner ITT Watermark , has launched an Ideation Challenge on InnoCentive to help address water ...01 Apr 2011 </span></div><div id="10"><a title="NEWS (summary) : Crowdsourcing--outsourcing using crowds--has been employed to tackle all kinds of problems, from helping SETI probe radio signals for alien life to establishing where the best burger in town can be found. But, according to a presentation from Stanford University professor Jennifer Lynn Aakers at the Web 2.0 Expo, it can also have much more important, [...]" id="link10" href="http://techland.time.com/2011/03/31/social-media-can-save-your-life-move-corporations-for-good/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Techland" src="http://www.google.com/s2/favicons?domain=techland.com"> Social Media Can Save Your Life, Move Corporations For Good - Techland</a><span style="display:none">Social Media Can Save Your Life, Move Corporations For Good Crowdsourcing--outsourcing using crowds--has been employed to tackle all kinds of problems, from helping SETI probe radio signals for alien life to establishing where the best burger in town can be found. But, according to a presentation from Stanford University professor Jennifer Lynn Aakers at the Web 2.0 Expo, it can also have much more important, [...]01 Apr 2011 </span></div><div id="11"><a title="NEWS (summary) : Record Store Day, the annual event to promote independent music-retail, has been going from strength to strength. This year it boasts its own official film, an affectionate tribute to the workings of one such institution and the characters that frequent it." id="link11" href="http://www.independent.co.uk/arts-entertainment/music/features/sound-it-out-teessides-own-spin-city-2258474.html" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Independent" src="http://www.google.com/s2/favicons?domain=www.independent.co.uk"> Sound It Out: Teesside's own spin city - Independent</a><span style="display:none">Sound It Out: Teesside's own spin city Record Store Day, the annual event to promote independent music-retail, has been going from strength to strength. This year it boasts its own official film, an affectionate tribute to the workings of one such institution and the characters that frequent it.31 Mar 2011 </span></div><div id="12"><a title="NEWS (summary) : Update: the link should be working fine now. While Zero Hedge ploughs through 25,000 or so pages of just declassified information focusing on the Discount Window, but containing previously undisclosed information on the entire alphabet soup of systemic rescue facilities, and prepare to present our findings shortly, we would like to facilitate the crowdsourcing effort in perusing the data which ..." id="link12" href="http://www.zerohedge.com/article/presenting-complete-fed-discount-window-data-dump" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Zero Hedge" src="http://www.google.com/s2/favicons?domain=www.zerohedge.com"> Presenting The Complete Fed Discount Window Data Dump - Zero Hedge</a><span style="display:none">Presenting The Complete Fed Discount Window Data Dump Update: the link should be working fine now. While Zero Hedge ploughs through 25,000 or so pages of just declassified information focusing on the Discount Window, but containing previously undisclosed information on the entire alphabet soup of systemic rescue facilities, and prepare to present our findings shortly, we would like to facilitate the crowdsourcing effort in perusing the data which ...31 Mar 2011 </span></div><div id="13"><a title="NEWS (summary) : You may not have been able to score a ticket for LCD Soundsystem’s final show at Madison Square Gardens this Saturday, but thanks to the m…" id="link13" href="http://mashable.com/2011/03/31/lcd-soundsystem-clouds/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> LCD Soundsystem Crowdsourcing Effects for Last Show - Mashable</a><span style="display:none">LCD Soundsystem Crowdsourcing Effects for Last Show You may not have been able to score a ticket for LCD Soundsystem’s final show at Madison Square Gardens this Saturday, but thanks to the m…31 Mar 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br><table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">3 to 7 days old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="14"><a title="NEWS (summary) : At my current startup, we recently confronted an interesting challenge: How do you grow a two-sided marketplace without frustrating early users…" id="link14" href="http://mashable.com/2011/03/31/grow-startup-market/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> 7 Tips For Growing a Two-Sided Online Marketplace - Mashable</a><span style="display:none">7 Tips For Growing a Two-Sided Online Marketplace At my current startup, we recently confronted an interesting challenge: How do you grow a two-sided marketplace without frustrating early users…31 Mar 2011 </span></div><div id="15"><a title="NEWS (summary) : ITT Residential & Commercial Water along with foundation partner ITT Watermark, has launched a $5,000 Ideation Challenge on Innocentive's website to help address water problems worldwide. (PRWeb March 31, 2011) Read the full story at http://www.prweb.com/releases/2011/3/prweb8256221.htm" id="link15" href="http://www.prweb.com/releases/2011/3/prweb8256221.htm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PRWeb" src="http://www.google.com/s2/favicons?domain=www.prweb.com"> ITT Launches “Ideation Challenge” to Help Solve Global Water Issues - PRWeb</a><span style="display:none">ITT Launches “Ideation Challenge” to Help Solve Global Water Issues ITT Residential & Commercial Water along with foundation partner ITT Watermark, has launched a $5,000 Ideation Challenge on Innocentive's website to help address water problems worldwide. (PRWeb March 31, 2011) Read the full story at http://www.prweb.com/releases/2011/3/prweb8256221.htm31 Mar 2011 </span></div><div id="16"><a title="NEWS (summary) : Outlines a group buying roadmap, defines the tenets of a mobile retail strategy, offers collaborative design, crowdsourcing and social media monitoring advice (PRWeb March 31, 2011) Read the full story at http://www.prweb.com/releases/ParkerAvery/Retail/prweb5208634.htm" id="link16" href="http://www.prweb.com/releases/ParkerAvery/Retail/prweb5208634.htm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PRWeb" src="http://www.google.com/s2/favicons?domain=www.prweb.com"> The Parker Avery Group Publishes Papers on Group Buying, Mobile Retail and Retail Product Development - PRWeb</a><span style="display:none">The Parker Avery Group Publishes Papers on Group Buying, Mobile Retail and Retail Product Development Outlines a group buying roadmap, defines the tenets of a mobile retail strategy, offers collaborative design, crowdsourcing and social media monitoring advice (PRWeb March 31, 2011) Read the full story at http://www.prweb.com/releases/ParkerAvery/Retail/prweb5208634.htm31 Mar 2011 </span></div><div id="17"><a title="NEWS (summary) : Companies are turning to crowdsourcing middlemen to make "good" crowds. In 2009, Kraft Foods wanted a catchy name for its new version of Vegemite, a yeast-based spread popular in Australia. Instead of hiring a branding agency, the company decided to crowdsource the task. Kraft asked people in Australia to submit and vote on potential names for the new product. After 48,000 entrants made ..." id="link17" href="http://www.technologyreview.com/business/37078/?ref=rss" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Technology Review" src="http://www.google.com/s2/favicons?domain=www.technologyreview.com"> Crowds of Workers, on Demand - Technology Review</a><span style="display:none">Crowds of Workers, on Demand Companies are turning to crowdsourcing middlemen to make "good" crowds. In 2009, Kraft Foods wanted a catchy name for its new version of Vegemite, a yeast-based spread popular in Australia. Instead of hiring a branding agency, the company decided to crowdsource the task. Kraft asked people in Australia to submit and vote on potential names for the new product. After 48,000 entrants made ...31 Mar 2011 </span></div><div id="18"><a title="NEWS (summary) : In anticipation of selling a company, it may be advantageous to identify new market needs and have a number of attractive opportunities in the development pipeline to sweeten the deal." id="link18" href="http://www.huffingtonpost.com/larry-macdonald/ma-increasing-your-compan_b_842673.html" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from The Huffington Post" src="http://www.google.com/s2/favicons?domain=www.huffingtonpost.com"> Larry MacDonald: M&A: Increasing Your Company's Sales Price With New Products - The Huffington Post</a><span style="display:none">Larry MacDonald: M&A: Increasing Your Company's Sales Price With New Products In anticipation of selling a company, it may be advantageous to identify new market needs and have a number of attractive opportunities in the development pipeline to sweeten the deal.30 Mar 2011 </span></div><div id="19"><a title="NEWS (summary) : Popular maps that have helped bikers and regular drivers now direct electric vehicle owners to the n" id="link19" href="http://blogs.forbes.com/eco-nomics/2011/03/30/electric-vehicle-charging-stations-now-on-google-maps/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Forbes" src="http://www.google.com/s2/favicons?domain=www.forbes.com"> Electric vehicle charging stations now on Google Maps - Forbes</a><span style="display:none">Electric vehicle charging stations now on Google Maps Popular maps that have helped bikers and regular drivers now direct electric vehicle owners to the n30 Mar 2011 </span></div><div id="20"><a title="NEWS (summary) : Written by Melissa Hincha-Ownby" id="link20" href="http://blogs.forbes.com/eco-nomics/?p=536" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Forbes" src="http://www.google.com/s2/favicons?domain=www.forbes.com"> Electric vehicle charging stations now on Google Maps - Forbes</a><span style="display:none">Electric vehicle charging stations now on Google Maps Written by Melissa Hincha-Ownby30 Mar 2011 </span></div><div id="21"><a title="NEWS (summary) : During a visit to Tamura, one of most devastated Japanese cities to be affected by the Fukushima nuclear disaster, Softbank CEO Masayoshi Son announced that Softbank will offer a year's worth of living costs, including food and commute, along with job positions to the 1,200 people in need of relocation. Read the full story here." id="link21" href="http://www.mobileburn.com/news.jsp?Id=13821" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mobile Burn" src="http://www.google.com/s2/favicons?domain=www.mobileburn.com"> Softbank CEO goes above, beyond to aid in Japanese relief - Mobile Burn</a><span style="display:none">Softbank CEO goes above, beyond to aid in Japanese relief During a visit to Tamura, one of most devastated Japanese cities to be affected by the Fukushima nuclear disaster, Softbank CEO Masayoshi Son announced that Softbank will offer a year's worth of living costs, including food and commute, along with job positions to the 1,200 people in need of relocation. Read the full story here.30 Mar 2011 </span></div><div id="22"><a title="NEWS (summary) : Computerworld - As a history buff, Richard Merkin says he sees merit in innovation contests, noting that past ones have led to the creation of canned food, saved Napoleon's troops from malnutrition and spurred Charles Lindbergh to make his trans-Atlantic flight." id="link22" href="http://www.computerworld.com/s/article/9215356/Health_care_network_offers_3M_for_illness_prediction_algorithm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Computerworld" src="http://www.google.com/s2/favicons?domain=www.computerworld.com"> Health care network offers $3M for illness-prediction algorithm - Computerworld</a><span style="display:none">Health care network offers $3M for illness-prediction algorithm Computerworld - As a history buff, Richard Merkin says he sees merit in innovation contests, noting that past ones have led to the creation of canned food, saved Napoleon's troops from malnutrition and spurred Charles Lindbergh to make his trans-Atlantic flight.30 Mar 2011 </span></div><div id="23"><a title="NEWS (summary) : The Web Development Series is supported by Rackspace , the better way to do hosting. Learn more about Rackspace’s hosting solutions here . F…" id="link23" href="http://mashable.com/2011/03/30/crowdsourcing-logo-design/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> Why Trends & Crowdsourcing Remain Logo Design’s Hot Button Issues - Mashable</a><span style="display:none">Why Trends & Crowdsourcing Remain Logo Design’s Hot Button Issues The Web Development Series is supported by Rackspace , the better way to do hosting. Learn more about Rackspace’s hosting solutions here . F…30 Mar 2011 </span></div><div id="24"><a title="NEWS (summary) : SoftBank CEO Masayoshi Son has said on Twitter, on his company's crowdsourcing page, and in the news from Taiwan's EDN that he would implement a major relief campaign to help those affected by the Tohoku-area earthquake in Japan. Among the gestures will include free iPhones for those whose were broken or lost in the 9.0-scale disaster as well as free phones and service for any child orphaned by ..." id="link24" href="http://www.macnn.com/articles/11/03/30/softbank.ceo.promises.free.phones.to.quake.victims/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from MacNN" src="http://www.google.com/s2/favicons?domain=www.macnn.com"> SoftBank chief vows replacement iPhones, more post-quake - MacNN</a><span style="display:none">SoftBank chief vows replacement iPhones, more post-quake SoftBank CEO Masayoshi Son has said on Twitter, on his company's crowdsourcing page, and in the news from Taiwan's EDN that he would implement a major relief campaign to help those affected by the Tohoku-area earthquake in Japan. Among the gestures will include free iPhones for those whose were broken or lost in the 9.0-scale disaster as well as free phones and service for any child orphaned by ...30 Mar 2011 </span></div><div id="25"><a title="NEWS (summary) : AudioDraft, the provider of innovative crowdsourced audio design contests, today announced that it has launched a contest, at www.audiodraft.com/helpjapan, to select the five best songs associated with relief and healing to be published through online music stores, including iTunes, Amazon, and others. The proceeds will go toward tsunami and earthquake relief efforts ..." id="link25" href="http://www.allaboutjazz.com/php/news.php?id=78854" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from All About Jazz" src="http://www.google.com/s2/favicons?domain=www.allaboutjazz.com"> CONTEST/GIVEAWAY: Audiodraft Crowdsources Japan Relief Songs - All About Jazz</a><span style="display:none">CONTEST/GIVEAWAY: Audiodraft Crowdsources Japan Relief Songs AudioDraft, the provider of innovative crowdsourced audio design contests, today announced that it has launched a contest, at www.audiodraft.com/helpjapan, to select the five best songs associated with relief and healing to be published through online music stores, including iTunes, Amazon, and others. The proceeds will go toward tsunami and earthquake relief efforts ...30 Mar 2011 </span></div><div id="26"><a title="NEWS (summary) : Citizen scientists armed with Geiger counters are helping to map the spread of radiation from Japan" id="link26" href="http://feeds.newscientist.com/c/749/f/10897/s/13c29636/l/0L0Snewscientist0N0Cblogs0Conepercent0C20A110C0A30Ccrowdsourced0Eradiation0Emaps0Bhtml0DDCMP0FOTC0Erss0Gnsref0Fonline0Enews/story01.htm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from New Scientist" src="http://www.google.com/s2/favicons?domain=www.newscientist.com"> Japan's crowdsourced radiation maps - New Scientist</a><span style="display:none">Japan's crowdsourced radiation maps Citizen scientists armed with Geiger counters are helping to map the spread of radiation from Japan30 Mar 2011 </span></div><div id="27"><a title="NEWS (summary) : Six teams will now move on to the Global Final in NYC on April 28 to compete for the $1 million prize, which will be made available to Water.org, and the opportunity to meet former President Bill Clinton." id="link27" href="http://www.consultant-news.com/article_display.aspx?p=adp&id=7749" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Consultant News" src="http://www.google.com/s2/favicons?domain=www.consultant-news.com"> Hult Global Case Challenge taps into broader online community through virtual crowdsourcing competition - Consultant News</a><span style="display:none">Hult Global Case Challenge taps into broader online community through virtual crowdsourcing competition Six teams will now move on to the Global Final in NYC on April 28 to compete for the $1 million prize, which will be made available to Water.org, and the opportunity to meet former President Bill Clinton.30 Mar 2011 </span></div><div id="28"><a title="NEWS (summary) : This morning Cord posted a startling chart about BP's oil spill accounting in their latest Sustainability Review . The chart shows BP's "volume of oil spilled" in 2006, 2008, and 2010, and was pretty infuriating as it didn't include numbers from the Gulf oil spill. Which, obviously, changes things. Here are the numbers that the graph was culled from: Right below the chart, BP makes this ..." id="link28" href="http://www.good.is/post/drilling-deeper-into-bp-s-sustainability-review/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from GOOD" src="http://www.google.com/s2/favicons?domain=www.good.is"> Drilling Deeper Into BP's Sustainability Review - GOOD</a><span style="display:none">Drilling Deeper Into BP's Sustainability Review This morning Cord posted a startling chart about BP's oil spill accounting in their latest Sustainability Review . The chart shows BP's "volume of oil spilled" in 2006, 2008, and 2010, and was pretty infuriating as it didn't include numbers from the Gulf oil spill. Which, obviously, changes things. Here are the numbers that the graph was culled from: Right below the chart, BP makes this ...30 Mar 2011 </span></div><div id="29"><a title="NEWS (summary) : # media Pop music thingamajig Lady Gaga has announced that she'll have a monthly column in arty fashion mag V beginning in May. One more magazine writing job taken up by a dilettante! She's even crowdsourcing artwork . Now she's a blogger, too? More »" id="link29" href="http://gawker.com/5787190/lady-gaga-is-now-a-magazine-writer-too" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Gawker" src="http://www.google.com/s2/favicons?domain=gawker.com"> Lady Gaga Is Now a Magazine Writer, Too [Media] - Gawker</a><span style="display:none">Lady Gaga Is Now a Magazine Writer, Too [Media] # media Pop music thingamajig Lady Gaga has announced that she'll have a monthly column in arty fashion mag V beginning in May. One more magazine writing job taken up by a dilettante! She's even crowdsourcing artwork . Now she's a blogger, too? More »30 Mar 2011 </span></div><div id="30"><a title="NEWS (summary) : Ideavibes exhibiting at Web2.0 with their Crowd Engagement Platform, and announces Pathways2Sustainability Success Story and Partnership with Sustainability Systems (PRWeb March 30, 2011) Read the full story at http://www.prweb.com/releases/2011/03/prweb5211544.htm" id="link30" href="http://www.prweb.com/releases/2011/03/prweb5211544.htm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PRWeb" src="http://www.google.com/s2/favicons?domain=www.prweb.com"> Ideavibes Announcing Partners – Customer Success – Engage4change Contest - PRWeb</a><span style="display:none">Ideavibes Announcing Partners – Customer Success – Engage4change Contest Ideavibes exhibiting at Web2.0 with their Crowd Engagement Platform, and announces Pathways2Sustainability Success Story and Partnership with Sustainability Systems (PRWeb March 30, 2011) Read the full story at http://www.prweb.com/releases/2011/03/prweb5211544.htm30 Mar 2011 </span></div><div id="31"><a title="NEWS (summary) : Transitioning to a Server - How to move a small business from an ad hoc to a server based network. What Is a Server? – For the small business owner, adding a server to your network doesn’t need to be a daunting task" id="link31" href="http://www.itbusiness.ca/it/client/en/home/News.asp?id=61894" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from ITBusiness.ca" src="http://www.google.com/s2/favicons?domain=www.itbusiness.ca"> Boost crowdsourcing potentials with Facebook Questions - ITBusiness.ca</a><span style="display:none">Boost crowdsourcing potentials with Facebook Questions Transitioning to a Server - How to move a small business from an ad hoc to a server based network. What Is a Server? – For the small business owner, adding a server to your network doesn’t need to be a daunting task30 Mar 2011 </span></div><div id="32"><a title="NEWS (summary) : Entrepreneurship is about ideas, lots and lots of them. But it’s also about putting those ideas into action. So, what ideas do you have as you embark on your entrepreneurial adventure? And what ideas do you need? We hope this roundup inspires and empowers." id="link32" href="http://www.businessinsider.com/small-business-news-ideas-for-adventurous-entrepreneurs-2011-3" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Business Insider" src="http://www.google.com/s2/favicons?domain=www.businessinsider.com"> Small Business News: Ideas for Adventurous Entrepreneurs - Business Insider</a><span style="display:none">Small Business News: Ideas for Adventurous Entrepreneurs Entrepreneurship is about ideas, lots and lots of them. But it’s also about putting those ideas into action. So, what ideas do you have as you embark on your entrepreneurial adventure? And what ideas do you need? We hope this roundup inspires and empowers.30 Mar 2011 </span></div><div id="33"><a title="NEWS (summary) : Ideavibes launches Engage4change at Web2.0 using their Crowd Engagement Platform to crowdsource solutions for affordable housing and transportation in San Francisco. Ottawa, ON and San Francisco, CA (PRWEB) March 28, 2011 Ideavibes today launched Engage4change – an idea generation and crowdsourcing contest which will run for 14 days. The destination website ( http://www ..." id="link33" href="http://www.redorbit.com/news/politics/2020683/ideavibes_to_engage_san_francisco_with_crowdsourcing_contest/index.html?source=r_general" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from redOrbit" src="http://www.google.com/s2/favicons?domain=www.redorbit.com"> Ideavibes to Engage San Francisco with Crowdsourcing Contest - redOrbit</a><span style="display:none">Ideavibes to Engage San Francisco with Crowdsourcing Contest Ideavibes launches Engage4change at Web2.0 using their Crowd Engagement Platform to crowdsource solutions for affordable housing and transportation in San Francisco. Ottawa, ON and San Francisco, CA (PRWEB) March 28, 2011 Ideavibes today launched Engage4change – an idea generation and crowdsourcing contest which will run for 14 days. The destination website ( http://www ...30 Mar 2011 </span></div><div id="34"><a title="NEWS (summary) : We have Wikipedia for facts. Why can't we have Wikipedia for maps? Turns out, we do–for the murals, galleries, statues, wheatpastes, museums, graffiti, and architectural landmarks that pervade the city of D.C. Yesterday's RedesignDC forum marked the public launch of theartaround.us , a form of crowdsourced public art mapping that organizers hope will help people discover creative expression in a ..." id="link34" href="http://www.washingtoncitypaper.com/blogs/housingcomplex/2011/03/29/theres-more-art-hidden-in-d-c-s-cityscape-than-you-realize/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Washington City Paper" src="http://www.google.com/s2/favicons?domain=www.washingtoncitypaper.com"> There’s More Art Hidden in D.C.’s Cityscape Than You Realize - Washington City Paper</a><span style="display:none">There’s More Art Hidden in D.C.’s Cityscape Than You Realize We have Wikipedia for facts. Why can't we have Wikipedia for maps? Turns out, we do–for the murals, galleries, statues, wheatpastes, museums, graffiti, and architectural landmarks that pervade the city of D.C. Yesterday's RedesignDC forum marked the public launch of theartaround.us , a form of crowdsourced public art mapping that organizers hope will help people discover creative expression in a ...29 Mar 2011 </span></div><div id="35"><a title="NEWS (summary) : Alerts and Updates From Fellow Commuters Combined With Maps, Delays and Schedules Provide Users With Accurate Conditions Instantly for Any Subway, Bus or Car in NYC" id="link35" href="http://www.marketwire.com/mw/release.do?id=1419080&sourceType=3" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Marketwire" src="http://www.google.com/s2/favicons?domain=www.marketwire.com"> Roadify Adds a Social Element to Transit and Traffic Reports to Create NYC's First Dynamic Commuting Platform - Marketwire</a><span style="display:none">Roadify Adds a Social Element to Transit and Traffic Reports to Create NYC's First Dynamic Commuting Platform Alerts and Updates From Fellow Commuters Combined With Maps, Delays and Schedules Provide Users With Accurate Conditions Instantly for Any Subway, Bus or Car in NYC29 Mar 2011 </span></div><div id="36"><a title="NEWS (summary) : The Digital Marketing Series is supported by HubSpot , which offers inbound marketing software that helps small and medium sized businesses get f …" id="link36" href="http://mashable.com/2011/03/29/innovative-digital-marketing-agencies/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Mashable" src="http://www.google.com/s2/favicons?domain=mashable.com"> Top 5 Innovative Digital Marketing Agencies - Mashable</a><span style="display:none">Top 5 Innovative Digital Marketing Agencies The Digital Marketing Series is supported by HubSpot , which offers inbound marketing software that helps small and medium sized businesses get f …29 Mar 2011 </span></div><div id="37"><a title="NEWS (summary) : ( New York Academy of Sciences ) Scientists Without Borders, a public/private partnership dedicated to developing, advancing, and sharing innovative approaches to solve pressing global development challenges, today announced three winning solutions in the $10,000 Scientists Without Borders Maternal Health and Nutrition open innovation challenge." id="link37" href="http://www.eurekalert.org/pub_releases/2011-03/nyao-swb032511.php" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from EurekAlert!" src="http://www.google.com/s2/favicons?domain=www.eurekalert.org"> Scientists Without Borders awards $10,000 to solvers of maternal health and nutrition challenge - EurekAlert!</a><span style="display:none">Scientists Without Borders awards $10,000 to solvers of maternal health and nutrition challenge ( New York Academy of Sciences ) Scientists Without Borders, a public/private partnership dedicated to developing, advancing, and sharing innovative approaches to solve pressing global development challenges, today announced three winning solutions in the $10,000 Scientists Without Borders Maternal Health and Nutrition open innovation challenge.29 Mar 2011 </span></div><div id="38"><a title="NEWS (summary) : Facebook Questions lets you gather information about what your customers might and might not like, but crowdsourcing can go way beyond that." id="link38" href="http://www.pcworld.com/businesscenter/article/223553/facebook_questions_can_work_but_creative_crowdsourcing_can_dazzle.html" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PC World" src="http://www.google.com/s2/favicons?domain=www.pcworld.com"> Facebook Questions Can Work, But Creative Crowdsourcing Can Dazzle - PC World</a><span style="display:none">Facebook Questions Can Work, But Creative Crowdsourcing Can Dazzle Facebook Questions lets you gather information about what your customers might and might not like, but crowdsourcing can go way beyond that.29 Mar 2011 </span></div><div id="39"><a title="NEWS (summary) : Last week, four U.S. Senators expressed outrage over smartphone apps designed to reveal the location of DUI checkpoints. As they said in letters to Apple, Google, and Blackberry, "Giving drunk drivers a free tool to evade checkpoints, putting innocent families and children at risk, is a matter of public concern". We hate to break it to 'em, but..." id="link39" href="http://www.thecarconnection.com/marty-blog/1057434_more-things-lawmakers-will-hate-cobra-iradar-for-android-debuts-april-4" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from The Car Connection" src="http://www.google.com/s2/favicons?domain=www.thecarconnection.com"> More Things Lawmakers Will Hate: Cobra iRadar for Android Debuts April 4 - The Car Connection</a><span style="display:none">More Things Lawmakers Will Hate: Cobra iRadar for Android Debuts April 4 Last week, four U.S. Senators expressed outrage over smartphone apps designed to reveal the location of DUI checkpoints. As they said in letters to Apple, Google, and Blackberry, "Giving drunk drivers a free tool to evade checkpoints, putting innocent families and children at risk, is a matter of public concern". We hate to break it to 'em, but...28 Mar 2011 </span></div><div id="40"><a title="NEWS (summary) : News from several areas: a new audit on open government, an interview with former deputy CTO Beth Noveck, crowdsourcing on environmental research, and a National Library of Medicine video contest." id="link40" href="http://fcw.com/blogs/gov-2/2011/03/federal-agencies-still-falling-short-on-transparency-watchdog-says.aspx" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Federal Computer Week" src="http://www.google.com/s2/favicons?domain=www.fcw.com"> Federal agencies still fall short on transparency, watchdog says - Federal Computer Week</a><span style="display:none">Federal agencies still fall short on transparency, watchdog says News from several areas: a new audit on open government, an interview with former deputy CTO Beth Noveck, crowdsourcing on environmental research, and a National Library of Medicine video contest.28 Mar 2011 </span></div><div id="41"><a title="NEWS (summary) : What if the government did Earth Hour and turned off all the lights for an hour? Millions of people all around the world made the..." id="link41" href="http://www.huffingtonpost.com/mark-belinsky/disaster-preparation-meets-earth-hour_b_841053.html" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from The Huffington Post" src="http://www.google.com/s2/favicons?domain=www.huffingtonpost.com"> Mark Belinsky: Disaster Preparation Meets Earth Hour - The Huffington Post</a><span style="display:none">Mark Belinsky: Disaster Preparation Meets Earth Hour What if the government did Earth Hour and turned off all the lights for an hour? Millions of people all around the world made the...28 Mar 2011 </span></div><div id="42"><a title="NEWS (summary) : When legal issues light up the Internet, people turn to EFF for answers." id="link42" href="http://www.eff.org/deeplinks/2011/03/where-s-eff-why-eff-sometimes-quiet-about" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Electronic Frontier Foundations" src="http://www.google.com/s2/favicons?domain=www.eff.org"> Where’s EFF? Why EFF Is Sometimes Quiet About Important Cases - Electronic Frontier Foundations</a><span style="display:none">Where’s EFF? Why EFF Is Sometimes Quiet About Important Cases When legal issues light up the Internet, people turn to EFF for answers.28 Mar 2011 </span></div><div id="43"><a title="NEWS (summary) : Ideavibes launches Engage4change at Web2.0 using their Crowd Engagement Platform to crowdsource solutions for affordable housing and transportation in San Francisco. (PRWeb March 28, 2011) Read the full story at http://www.prweb.com/releases/2011/03/prweb5203354.htm" id="link43" href="http://www.prweb.com/releases/2011/03/prweb5203354.htm" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PRWeb" src="http://www.google.com/s2/favicons?domain=www.prweb.com"> Ideavibes to Engage San Francisco with Crowdsourcing Contest - PRWeb</a><span style="display:none">Ideavibes to Engage San Francisco with Crowdsourcing Contest Ideavibes launches Engage4change at Web2.0 using their Crowd Engagement Platform to crowdsource solutions for affordable housing and transportation in San Francisco. (PRWeb March 28, 2011) Read the full story at http://www.prweb.com/releases/2011/03/prweb5203354.htm28 Mar 2011 </span></div><div id="44"><a title="NEWS (summary) : Q&A websites are plagued with problems that few have yet to solve. Social Media Q&A is all the rage: Facebook just upgraded its questions feature , TED launched a website for its own community, Quora has culled a suprising response from experts, and firebrand Congressman Anthony Weiner held a marathon Twitter session on the anniversary of the new healthcare law. The sheer diversity of platforms ..." id="link44" href="http://www.fastcompany.com/1742550/qa-platforms-still-await-an-industry-leader?partner=rss" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Fast Company Magazine" src="http://www.google.com/s2/favicons?domain=www.fastcompany.com"> Q: Who's Dominating Q&A Sites? A: No One - Fast Company Magazine</a><span style="display:none">Q: Who's Dominating Q&A Sites? A: No One Q&A websites are plagued with problems that few have yet to solve. Social Media Q&A is all the rage: Facebook just upgraded its questions feature , TED launched a website for its own community, Quora has culled a suprising response from experts, and firebrand Congressman Anthony Weiner held a marathon Twitter session on the anniversary of the new healthcare law. The sheer diversity of platforms ...28 Mar 2011 </span></div><div id="45"><a title="NEWS (summary) : Premium Brand Identity Website Logolance Launches March 28th, 2011" id="link45" href="http://www.marketwire.com/mw/release.do?id=1418425&sourceType=3" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Marketwire" src="http://www.google.com/s2/favicons?domain=www.marketwire.com"> Chicago Startup Connects Businesses With Top Freelance Logo Designers - Marketwire</a><span style="display:none">Chicago Startup Connects Businesses With Top Freelance Logo Designers Premium Brand Identity Website Logolance Launches March 28th, 201128 Mar 2011 </span></div><div id="46"><a title="NEWS (summary) : So, what are NFL players doing while the ongoing lockout makes the forthcoming football season more of a question than a certainty? Some are finding new and unique ways to fulfill their sponsorship commitments, all while potentially picking up some new trade skills like talent evaluation and photography in the process. Last week, NFL stars Reggie Bush, Eric Berry, Prince Amukamara and Titus ..." id="link46" href="http://sports.yahoo.com/highschool/blog/prep_rally/post/Out-of-work-NFL-stars-surprise-teens-at-spring-f?urn=highschool-wp430" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Prep Rally" src="http://www.google.com/s2/favicons?domain=rivals.yahoo.comhighschoolblogprep_rally"> Out-of-work NFL stars surprise teens at spring football practice - Prep Rally</a><span style="display:none">Out-of-work NFL stars surprise teens at spring football practice So, what are NFL players doing while the ongoing lockout makes the forthcoming football season more of a question than a certainty? Some are finding new and unique ways to fulfill their sponsorship commitments, all while potentially picking up some new trade skills like talent evaluation and photography in the process. Last week, NFL stars Reggie Bush, Eric Berry, Prince Amukamara and Titus ...28 Mar 2011 </span></div><div id="47"><a title="NEWS (summary) : Where, wondered Maggie Bankson, should she go on her honeymoon? There were a couple of factors to consider. Her fiance wanted to spend some time relaxing at the beach. Bankson, a travel lover who prefers hostels over..." id="link47" href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/03/26/BUP11I7D0D.DTL" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from San Francisco Chronicle" src="http://www.google.com/s2/favicons?domain=www.sfgate.com"> Gogobot takes off on social travel planning - San Francisco Chronicle</a><span style="display:none">Gogobot takes off on social travel planning Where, wondered Maggie Bankson, should she go on her honeymoon? There were a couple of factors to consider. Her fiance wanted to spend some time relaxing at the beach. Bankson, a travel lover who prefers hostels over...28 Mar 2011 </span></div><div id="48"><a title="NEWS (summary) : HP, Logoworks, Logoyes , 99 Designs, Impact Logos, The Battle for the Logo Dollar West New York, NJ (PRWEB) March 27, 2011 Have the online Logo wars become the modern day Battle of Alamo? Emerging Logo Design Company Impact Logos sees the almost monthly change in big name players as an immense challenge for marketers in the industry. Editor at Impact Logos Paul Gonzales explains “Logoworks was ..." id="link48" href="http://www.redorbit.com/news/entertainment/2019083/the_battle_for_the_logo_dollar__the_modern_day/index.html?source=r_science" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from redOrbit" src="http://www.google.com/s2/favicons?domain=www.redorbit.com"> The Battle for the Logo Dollar - The Modern Day Alamo - redOrbit</a><span style="display:none">The Battle for the Logo Dollar - The Modern Day Alamo HP, Logoworks, Logoyes , 99 Designs, Impact Logos, The Battle for the Logo Dollar West New York, NJ (PRWEB) March 27, 2011 Have the online Logo wars become the modern day Battle of Alamo? Emerging Logo Design Company Impact Logos sees the almost monthly change in big name players as an immense challenge for marketers in the industry. Editor at Impact Logos Paul Gonzales explains “Logoworks was ...28 Mar 2011 </span></div><div id="49"><a title="NEWS (summary) : Logolance Provides a Solution in an Industry Ablaze With Controversy" id="link49" href="http://www.marketwire.com/mw/release.do?id=1417987&sourceType=3" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Marketwire" src="http://www.google.com/s2/favicons?domain=www.marketwire.com"> Chicago Startup Combats the Evils of Logo Design Crowdsourcing - Marketwire</a><span style="display:none">Chicago Startup Combats the Evils of Logo Design Crowdsourcing Logolance Provides a Solution in an Industry Ablaze With Controversy27 Mar 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br>                       
+                    </div>
+                    <div style="clear:both"></div>
+                             
+                    </td>
+</tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+  
+    </div>
+    <br /><br />
+   <div style="width:100%;background-color:#25292c;border-top:solid 1px #141618;border-bottom:solid 1px #141618;text-align:center;-webkit-box-shadow: 2px 2px 1px #121619;-moz-box-shadow:2px 2px 1px #121619;">
+        <br /><br />
+        
+        <div class="footerLinks">
+            <table align=center width=92%>
+                <tr valign=top>
+                    <td align=left  nowrap=nowrap style="text-align:left;">                        
+                        <div class="footerTabs">
+                            <h1 style="background-image:url('images/bar-chart.gif');float:left;margin-left: 8px;">Trending News</h1>
+                            <a href="javascript:void(0);" onclick="fade('us')" style="margin-right: 15px;" id=linkus class="footerTab"><img border=0 src="images/us.gif" /> United States</a>
+                            <a href="javascript:void(0);" onclick="fade('uk')" id=linkuk class="footerTab"><img border=0 src="images/uk.gif" /> United Kingdom</a>
+                            <a href="javascript:void(0);" onclick="fade('ca')" id=linkca class="footerTab"><img border=0 src="images/ca.gif" /> Canada</a>
+                            <a href="javascript:void(0);" onclick="fade('au')"  id=linkau class="footerTab"><img border=0 src="images/au.gif" /> Australia</a>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="popular">
+                            <table cellpadding=3 cellspacing=3 width=100% id="us" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Show latest news on Muammar Gaddafi" href="http://interceder.net/list/Muammar-Gaddafi">Muammar Gaddafi</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Bashar al-Assad" href="http://interceder.net/list/Bashar-al-Assad">Bashar al-Assad</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Google" href="http://interceder.net/list/Google">Google</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Fulham" href="http://interceder.net/list/Fulham">Fulham</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Foreign Office" href="http://interceder.net/list/Foreign-Office">Foreign Office</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Premier League" href="http://interceder.net/list/Premier-League">Premier League</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Taliban" href="http://interceder.net/list/Taliban">Taliban</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Japans government" href="http://interceder.net/list/Japans-government">Japans government</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Ai Weiwei" href="http://interceder.net/list/Ai-Weiwei">Ai Weiwei</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Ali Abdullah Saleh" href="http://interceder.net/list/Ali-Abdullah-Saleh">Ali Abdullah Saleh</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <img border="0" src="images/sad.gif" align="absmiddle"/><br>Error!<br> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Katy Perry" href="http://interceder.net/list/Katy-Perry">Katy Perry</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Justin Bieber" href="http://interceder.net/list/Justin-Bieber">Justin Bieber</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Susan Boyle" href="http://interceder.net/list/Susan-Boyle">Susan Boyle</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Warner Bros." href="http://interceder.net/list/Warner-Bros.">Warner Bros.</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Academy of Country Music Awards" href="http://interceder.net/list/Academy-of-Country-Music-Awards">Academy of Country Music Awards</a></td></tr><tr><td>7. </td><td><a title="Show latest news on UK Film Council" href="http://interceder.net/list/UK-Film-Council">UK Film Council</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Snoop Dogg" href="http://interceder.net/list/Snoop-Dogg">Snoop Dogg</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Lyudmila Gurchenko" href="http://interceder.net/list/Lyudmila-Gurchenko">Lyudmila Gurchenko</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Elizabeth Taylor" href="http://interceder.net/list/Elizabeth-Taylor">Elizabeth Taylor</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Show latest news on New York Yankees" href="http://interceder.net/list/New-York-Yankees">New York Yankees</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Magners League" href="http://interceder.net/list/Magners-League">Magners League</a></td></tr><tr><td>3. </td><td><a title="Show latest news on New York Jets" href="http://interceder.net/list/New-York-Jets">New York Jets</a></td></tr><tr><td>4. </td><td><a title="Show latest news on St. Louis Cardinals" href="http://interceder.net/list/St.-Louis-Cardinals">St. Louis Cardinals</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Premier League" href="http://interceder.net/list/Premier-League">Premier League</a></td></tr><tr><td>6. </td><td><a title="Show latest news on San Francisco Giants" href="http://interceder.net/list/San-Francisco-Giants">San Francisco Giants</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Bobby Zamora" href="http://interceder.net/list/Bobby-Zamora">Bobby Zamora</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Sachin Tendulkar" href="http://interceder.net/list/Sachin-Tendulkar">Sachin Tendulkar</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Dominique Wilkins" href="http://interceder.net/list/Dominique-Wilkins">Dominique Wilkins</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Emile Griffith" href="http://interceder.net/list/Emile-Griffith">Emile Griffith</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>                        
+                            <table cellpadding=3 cellspacing=3 width=100% id="ca" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Show latest news on Stephen Harper" href="http://interceder.net/list/Stephen-Harper">Stephen Harper</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Michael Ignatieff" href="http://interceder.net/list/Michael-Ignatieff">Michael Ignatieff</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Jack Layton" href="http://interceder.net/list/Jack-Layton">Jack Layton</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Sydney Morning Herald" href="http://interceder.net/list/Sydney-Morning-Herald">Sydney Morning Herald</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Toronto Sun" href="http://interceder.net/list/Toronto-Sun">Toronto Sun</a></td></tr><tr><td>7. </td><td><a title="Show latest news on CNN International" href="http://interceder.net/list/CNN-International">CNN International</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Washington Post" href="http://interceder.net/list/Washington-Post">Washington Post</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Adel Safar" href="http://interceder.net/list/Adel-Safar">Adel Safar</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Moammar Gadhafi" href="http://interceder.net/list/Moammar-Gadhafi">Moammar Gadhafi</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <img border="0" src="images/sad.gif" align="absmiddle"/><br>Error!<br> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Leonard Cohen" href="http://interceder.net/list/Leonard-Cohen">Leonard Cohen</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Robbie Robertson" href="http://interceder.net/list/Robbie-Robertson">Robbie Robertson</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Luc Plamondon" href="http://interceder.net/list/Luc-Plamondon">Luc Plamondon</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Los Angeles Times" href="http://interceder.net/list/Los-Angeles-Times">Los Angeles Times</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Montreal Gazette" href="http://interceder.net/list/Montreal-Gazette">Montreal Gazette</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Toronto Sun" href="http://interceder.net/list/Toronto-Sun">Toronto Sun</a></td></tr><tr><td>8. </td><td><a title="Show latest news on William Shatner" href="http://interceder.net/list/William-Shatner">William Shatner</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Toronto Star" href="http://interceder.net/list/Toronto-Star">Toronto Star</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Glee" href="http://interceder.net/list/Glee">Glee</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Create a dashboard on New Jersey Devils" href="http://interceder.net/list/New-Jersey-Devils">New Jersey Devils</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Chicago Bulls" href="http://interceder.net/list/Chicago-Bulls">Chicago Bulls</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Vancouver Canucks" href="http://interceder.net/list/Vancouver-Canucks">Vancouver Canucks</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Toronto Maple Leafs" href="http://interceder.net/list/Toronto-Maple-Leafs">Toronto Maple Leafs</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Edmonton Oilers" href="http://interceder.net/list/Edmonton-Oilers">Edmonton Oilers</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Toronto Blue Jays" href="http://interceder.net/list/Toronto-Blue-Jays">Toronto Blue Jays</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Kyle Drabek" href="http://interceder.net/list/Kyle-Drabek">Kyle Drabek</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Ottawa Senators" href="http://interceder.net/list/Ottawa-Senators">Ottawa Senators</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Minnesota Twins" href="http://interceder.net/list/Minnesota-Twins">Minnesota Twins</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Toronto FC" href="http://interceder.net/list/Toronto-FC">Toronto FC</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>                            
+                            <table cellpadding=3 cellspacing=3 width=100% id="uk" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Show latest news on Ronan Kerr" href="http://interceder.net/list/Ronan-Kerr">Ronan Kerr</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Muammar Gaddafi" href="http://interceder.net/list/Muammar-Gaddafi">Muammar Gaddafi</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Musa Kusa" href="http://interceder.net/list/Musa-Kusa">Musa Kusa</a></td></tr><tr><td>5. </td><td><a title="Show latest news on William Hague" href="http://interceder.net/list/William-Hague">William Hague</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Two Japan" href="http://interceder.net/list/Two-Japan">Two Japan</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Omagh police" href="http://interceder.net/list/Omagh-police">Omagh police</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Scottish police" href="http://interceder.net/list/Scottish-police">Scottish police</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Elizabeth Taylor" href="http://interceder.net/list/Elizabeth-Taylor">Elizabeth Taylor</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Barack Obama" href="http://interceder.net/list/Barack-Obama">Barack Obama</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Google" href="http://interceder.net/list/Google">Google</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Facebook" href="http://interceder.net/list/Facebook">Facebook</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Apple" href="http://interceder.net/list/Apple">Apple</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Microsoft" href="http://interceder.net/list/Microsoft">Microsoft</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on iPhone" href="http://interceder.net/list/iPhone">iPhone</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Motorola" href="http://interceder.net/list/Motorola">Motorola</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Twitter" href="http://interceder.net/list/Twitter">Twitter</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Samsung" href="http://interceder.net/list/Samsung">Samsung</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on YouTube" href="http://interceder.net/list/YouTube">YouTube</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on National Aeronautics and Space Administration" href="http://interceder.net/list/National-Aeronautics-and-Space-Administration">National Aeronautics and Space Administration</a></td></tr></table> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Joan Miró" href="http://interceder.net/list/Joan-Miró">Joan Miró</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Norah Jones" href="http://interceder.net/list/Norah-Jones">Norah Jones</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Keren Ann Zeidel" href="http://interceder.net/list/Keren-Ann-Zeidel">Keren Ann Zeidel</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Dan" href="http://interceder.net/list/Dan">Dan</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Penelope Cruz" href="http://interceder.net/list/Penelope-Cruz">Penelope Cruz</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Bob Dylan" href="http://interceder.net/list/Bob-Dylan">Bob Dylan</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Wild Bill Austin" href="http://interceder.net/list/Wild-Bill-Austin">Wild Bill Austin</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Brooke Mueller" href="http://interceder.net/list/Brooke-Mueller">Brooke Mueller</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Terry Gilliam" href="http://interceder.net/list/Terry-Gilliam">Terry Gilliam</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Mario Balotelli" href="http://interceder.net/list/Mario-Balotelli">Mario Balotelli</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Carlos Tevez" href="http://interceder.net/list/Carlos-Tevez">Carlos Tevez</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Wayne Rooney" href="http://interceder.net/list/Wayne-Rooney">Wayne Rooney</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Lee Cattermole" href="http://interceder.net/list/Lee-Cattermole">Lee Cattermole</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Steven Gerrard" href="http://interceder.net/list/Steven-Gerrard">Steven Gerrard</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Roberto Mancini" href="http://interceder.net/list/Roberto-Mancini">Roberto Mancini</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Peter Murphy" href="http://interceder.net/list/Peter-Murphy">Peter Murphy</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Bobby Zamora" href="http://interceder.net/list/Bobby-Zamora">Bobby Zamora</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Alex Ferguson" href="http://interceder.net/list/Alex-Ferguson">Alex Ferguson</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Glen Johnson" href="http://interceder.net/list/Glen-Johnson">Glen Johnson</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table cellpadding=3 cellspacing=3 width=100% id="au" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Labor" href="http://interceder.net/list/Labor">Labor</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Keli Lane" href="http://interceder.net/list/Keli-Lane">Keli Lane</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Pauline Hanson" href="http://interceder.net/list/Pauline-Hanson">Pauline Hanson</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Colin Barnett" href="http://interceder.net/list/Colin-Barnett">Colin Barnett</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Anthony Albanese" href="http://interceder.net/list/Anthony-Albanese">Anthony Albanese</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on John Robertson" href="http://interceder.net/list/John-Robertson">John Robertson</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Campbell Newman" href="http://interceder.net/list/Campbell-Newman">Campbell Newman</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on New South Wales Education Department" href="http://interceder.net/list/New-South-Wales-Education-Department">New South Wales Education Department</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Sydney police" href="http://interceder.net/list/Sydney-police">Sydney police</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Google" href="http://interceder.net/list/Google">Google</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Microsoft" href="http://interceder.net/list/Microsoft">Microsoft</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Twitter" href="http://interceder.net/list/Twitter">Twitter</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Facebook" href="http://interceder.net/list/Facebook">Facebook</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Rolls-Royce" href="http://interceder.net/list/Rolls-Royce">Rolls-Royce</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on James Franco" href="http://interceder.net/list/James-Franco">James Franco</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Paul Baran" href="http://interceder.net/list/Paul-Baran">Paul Baran</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Scott Watters" href="http://interceder.net/list/Scott-Watters">Scott Watters</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on YouTube" href="http://interceder.net/list/YouTube">YouTube</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on CSC" href="http://interceder.net/list/CSC">CSC</a></td></tr></table> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Katy Perry" href="http://interceder.net/list/Katy-Perry">Katy Perry</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Britney Spears" href="http://interceder.net/list/Britney-Spears">Britney Spears</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Snoop Dogg" href="http://interceder.net/list/Snoop-Dogg">Snoop Dogg</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Justin Bieber" href="http://interceder.net/list/Justin-Bieber">Justin Bieber</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Jennifer Lopez" href="http://interceder.net/list/Jennifer-Lopez">Jennifer Lopez</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Lindsay Lohan" href="http://interceder.net/list/Lindsay-Lohan">Lindsay Lohan</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Sex and the City" href="http://interceder.net/list/Sex-and-the-City">Sex and the City</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Chris Hemsworth" href="http://interceder.net/list/Chris-Hemsworth">Chris Hemsworth</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Michael Lohan" href="http://interceder.net/list/Michael-Lohan">Michael Lohan</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Sydney Roosters" href="http://interceder.net/list/Sydney-Roosters">Sydney Roosters</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Jorge Lorenzo" href="http://interceder.net/list/Jorge-Lorenzo">Jorge Lorenzo</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on the World Cup" href="http://interceder.net/list/the-World-Cup">the World Cup</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Casey Stoner" href="http://interceder.net/list/Casey-Stoner">Casey Stoner</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Emily Seebohm" href="http://interceder.net/list/Emily-Seebohm">Emily Seebohm</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Alan Hutton" href="http://interceder.net/list/Alan-Hutton">Alan Hutton</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Robbie Farah" href="http://interceder.net/list/Robbie-Farah">Robbie Farah</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on the Spanish Grand Prix" href="http://interceder.net/list/the-Spanish-Grand-Prix">the Spanish Grand Prix</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Berrick Barnes" href="http://interceder.net/list/Berrick-Barnes">Berrick Barnes</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Southern Steel" href="http://interceder.net/list/Southern-Steel">Southern Steel</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="20"><img width=20 src="images/blank.gif"></td>
+                    <td width="200" align=left nowrap=nowrap style="text-align:left;">
+                        <div class="footerTabs">
+                            <h1 style="background-image:url('images/light.gif');margin: 4px;margin-left: 8px;"> Current</h1>
+                        </div>
+                        <div class="popular flexcroll" style="overflow:auto;overflow-x: hidden;padding:0px;padding-top:4px;width: 200px;height: 230px;">
+                            <a href="http://interceder.net/list/crowdsourcing" title="Show latest news on crowdsourcing" class="recent">crowdsourcing</a><a href="http://interceder.net/dashboard/Tony-Abbott" title="Create a dashboard on Tony Abbott" class="recent">Tony Abbott</a><a href="http://interceder.net/list/Newtown" title="Show latest news on Newtown" class="recent">Newtown</a><a href="http://interceder.net/dashboard/Trevor-William-Rankin" title="Create a dashboard on Trevor William Rankin" class="recent">Trevor William Rank...</a><a href="http://interceder.net/list/kindle-3" title="Show latest news on kindle 3" class="recent">kindle 3</a><a href="http://interceder.net/dashboard/haughton" title="Create a dashboard on haughton" class="recent">haughton</a><a href="http://interceder.net/list/Millis" title="Show latest news on Millis" class="recent">Millis</a><a href="http://interceder.net/list/Carphone-Warehouse" title="Show latest news on Carphone Warehouse" class="recent">Carphone Warehouse</a><a href="http://interceder.net/dashboard/Cornwall" title="Create a dashboard on Cornwall" class="recent">Cornwall</a><a href="http://interceder.net/dashboard/FOXBORO" title="Create a dashboard on FOXBORO" class="recent">FOXBORO</a><a href="http://interceder.net/dashboard/COURT" title="Create a dashboard on COURT" class="recent">COURT</a><a href="http://interceder.net/list/pompeo" title="Show latest news on pompeo" class="recent">pompeo</a><a href="http://interceder.net/list/Robert-Logan" title="Show latest news on Robert Logan" class="recent">Robert Logan</a><a href="http://interceder.net/dashboard/Lawson-Software" title="Create a dashboard on Lawson Software" class="recent">Lawson Software</a><a href="http://interceder.net/list/Teaser" title="Show latest news on Teaser" class="recent">Teaser</a><a href="http://interceder.net/list/seeman" title="Show latest news on seeman" class="recent">seeman</a><a href="http://interceder.net/list/skadden" title="Show latest news on skadden" class="recent">skadden</a><a href="http://interceder.net/dashboard/SATYAM" title="Create a dashboard on SATYAM" class="recent">SATYAM</a><a href="http://interceder.net/list/soles" title="Show latest news on soles" class="recent">soles</a><a href="http://interceder.net/dashboard/laptop" title="Create a dashboard on laptop" class="recent">laptop</a><a href="http://interceder.net/list/kempton" title="Show latest news on kempton" class="recent">kempton</a><a href="http://interceder.net/list/Adel-Safar" title="Show latest news on Adel Safar" class="recent">Adel Safar</a><a href="http://interceder.net/dashboard/%22natural-gas%22" title="Create a dashboard on "natural gas"" class="recent">"natural gas"</a><a href="http://interceder.net/list/I-75-South" title="Show latest news on I 75 South" class="recent">I 75 South</a><a href="http://interceder.net/dashboard/millennium-development" title="Create a dashboard on millennium development" class="recent">millennium developm...</a><a href="http://interceder.net/dashboard/ROBERTO-MARONI" title="Create a dashboard on ROBERTO MARONI" class="recent">ROBERTO MARONI</a><a href="http://interceder.net/list/Sandpoint-Idaho" title="Show latest news on Sandpoint Idaho" class="recent">Sandpoint Idaho</a><a href="http://interceder.net/list/Venice" title="Show latest news on Venice" class="recent">Venice</a><a href="http://interceder.net/list/west-memphis" title="Show latest news on west memphis" class="recent">west memphis</a><a href="http://interceder.net/list/university-of-waterloo" title="Show latest news on university of waterloo" class="recent">university of water...</a><a href="http://interceder.net/dashboard/black-hills" title="Create a dashboard on black hills" class="recent">black hills</a><a href="http://interceder.net/list/waverly" title="Show latest news on waverly" class="recent">waverly</a><a href="http://interceder.net/list/Barnes-" title="Show latest news on Barnes " class="recent">Barnes </a><a href="http://interceder.net/list/%22kyron-Horman%22" title="Show latest news on "kyron Horman"" class="recent">"kyron Horman"</a><a href="http://interceder.net/dashboard/Ken-Miller" title="Create a dashboard on Ken Miller" class="recent">Ken Miller</a><a href="http://interceder.net/dashboard/water-front" title="Create a dashboard on water front" class="recent">water front</a><a href="http://interceder.net/list/crash-near" title="Show latest news on crash near" class="recent">crash near</a><a href="http://interceder.net/dashboard/Ibrahim-Tatlises" title="Create a dashboard on Ibrahim Tatlises" class="recent">Ibrahim Tatlises</a><a href="http://interceder.net/list/microfit" title="Show latest news on microfit" class="recent">microfit</a><a href="http://interceder.net/dashboard/Ilagan" title="Create a dashboard on Ilagan" class="recent">Ilagan</a><a href="http://interceder.net/list/Fordham-university" title="Show latest news on Fordham university" class="recent">Fordham university</a><a href="http://interceder.net/list/OLIECH" title="Show latest news on OLIECH" class="recent">OLIECH</a><a href="http://interceder.net/list/emily" title="Show latest news on emily" class="recent">emily</a><a href="http://interceder.net/list/ShoBox%3a-The-New-Generation" title="Show latest news on ShoBox: The New Generation" class="recent">ShoBox: The New Gen...</a><a href="http://interceder.net/list/umair" title="Show latest news on umair" class="recent">umair</a><a href="http://interceder.net/list/CALVIN" title="Show latest news on CALVIN" class="recent">CALVIN</a><a href="http://interceder.net/list/pilling" title="Show latest news on pilling" class="recent">pilling</a><a href="http://interceder.net/list/John-Carlson" title="Show latest news on John Carlson" class="recent">John Carlson</a><a href="http://interceder.net/dashboard/Iain-Dowie" title="Create a dashboard on Iain Dowie" class="recent">Iain Dowie</a><a href="http://interceder.net/dashboard/PetroChina-Ltd" title="Create a dashboard on PetroChina Ltd" class="recent">PetroChina Ltd</a><a href="http://interceder.net/dashboard/United-States-Anti-Doping-Agency" title="Create a dashboard on United States Anti Doping Agency" class="recent">United States Anti ...</a><a href="http://interceder.net/list/utube" title="Show latest news on utube" class="recent">utube</a><a href="http://interceder.net/list/Shawn-Hogan" title="Show latest news on Shawn Hogan" class="recent">Shawn Hogan</a><a href="http://interceder.net/list/ryan-center" title="Show latest news on ryan center" class="recent">ryan center</a><a href="http://interceder.net/list/bucharest" title="Show latest news on bucharest" class="recent">bucharest</a><a href="http://interceder.net/list/MOUNT-AIRY" title="Show latest news on MOUNT AIRY" class="recent">MOUNT AIRY</a><a href="http://interceder.net/list/reid-brignac" title="Show latest news on reid brignac" class="recent">reid brignac</a><a href="http://interceder.net/list/Cancellara" title="Show latest news on Cancellara" class="recent">Cancellara</a><a href="http://interceder.net/list/portz" title="Show latest news on portz" class="recent">portz</a><a href="http://interceder.net/list/2010-Winter-olympics" title="Show latest news on 2010 Winter olympics" class="recent">2010 Winter olympics</a><a href="http://interceder.net/list/Snowden" title="Show latest news on Snowden" class="recent">Snowden</a><a href="http://interceder.net/list/ANDREA-RODRIGUEZ" title="Show latest news on ANDREA RODRIGUEZ" class="recent">ANDREA RODRIGUEZ</a><a href="http://interceder.net/dashboard/Noble-Energy" title="Create a dashboard on Noble Energy" class="recent">Noble Energy</a><a href="http://interceder.net/list/Stephen-Harper" title="Show latest news on Stephen Harper" class="recent">Stephen Harper</a><a href="http://interceder.net/list/david-ward" title="Show latest news on david ward" class="recent">david ward</a><a href="http://interceder.net/list/April-14--2009" title="Show latest news on April 14  2009" class="recent">April 14  2009</a><a href="http://interceder.net/list/bisyo" title="Show latest news on bisyo" class="recent">bisyo</a><a href="http://interceder.net/dashboard/Tonga" title="Create a dashboard on Tonga" class="recent">Tonga</a><a href="http://interceder.net/list/unidentified-victim" title="Show latest news on unidentified victim" class="recent">unidentified victim</a><a href="http://interceder.net/list/zarlenga" title="Show latest news on zarlenga" class="recent">zarlenga</a><a href="http://interceder.net/list/Lincoln-Day-Dinner" title="Show latest news on Lincoln Day Dinner" class="recent">Lincoln Day Dinner</a><a href="http://interceder.net/dashboard/Kylie-Palmer" title="Create a dashboard on Kylie Palmer" class="recent">Kylie Palmer</a><a href="http://interceder.net/list/chante" title="Show latest news on chante" class="recent">chante</a><a href="http://interceder.net/dashboard/Port-Port-Adelaide" title="Create a dashboard on Port Port Adelaide" class="recent">Port Port Adelaide</a><a href="http://interceder.net/list/pancake-breakfast" title="Show latest news on pancake breakfast" class="recent">pancake breakfast</a><a href="http://interceder.net/list/CD-RELEASE-PARTY" title="Show latest news on CD RELEASE PARTY" class="recent">CD RELEASE PARTY</a><a href="http://interceder.net/list/Mexico-city" title="Show latest news on Mexico city" class="recent">Mexico city</a><a href="http://interceder.net/list/Chris-Brown" title="Show latest news on Chris Brown" class="recent">Chris Brown</a><a href="http://interceder.net/list/body-of-missing-man" title="Show latest news on body of missing man" class="recent">body of missing man</a><a href="http://interceder.net/list/breast-exam" title="Show latest news on breast exam" class="recent">breast exam</a><a href="http://interceder.net/list/images" title="Show latest news on images" class="recent">images</a><a href="http://interceder.net/list/kenny-jones" title="Show latest news on kenny jones" class="recent">kenny jones</a>
+                        </div>
+                   
+                    </td>                                        
+                </tr>
+            </table>
+
+        </div>
+        <br /><br />
+    </div>    
+        <input type="hidden" name="hiddenEntity" id="hiddenEntity" />  
+
+    <div class="end" style="margin-top: 45px;>
+        <a href="#" class="contact" onclick="installOpenSearch(); return false;">Install Search Plugin</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <img src="images/mail.gif" align="absmiddle" /><a class="contact" href="mailto:info@interceder.net">Contact</a><br /><br />
+    </div>        
+        <br /><br />
+
+    <script type="text/javascript">GetXmlDocument('crowdsourcing');</script>
+    <!-- FREEBASING -->
+    <script type="text/javascript">
+    var Metaweb = {};                               
+    Metaweb.HOST = "http://www.freebase.com";       
+    Metaweb.QUERY_SERVICE = "/api/service/mqlread"; 
+    Metaweb.counter = 0;                           
+    Metaweb.read = function(q, f) {
+    var callbackName = "_" + Metaweb.counter++ 
+    Metaweb[callbackName] = function(outerEnvelope) {
+        var innerEnvelope = outerEnvelope.qname;         
+        if (innerEnvelope.code.indexOf("/api/status/ok") != 0) {  
+          var error = innerEnvelope.messages[0]          
+          throw error.code + ": " + error.message      
+        }
+        var result = innerEnvelope.result;   
+        document.body.removeChild(script);   
+        delete Metaweb[callbackName];        
+        f(result);                           
+    };
+    envelope = {qname: {query: q}}
+    var querytext = encodeURIComponent(JSON.serialize(envelope));
+    var url = Metaweb.HOST + Metaweb.QUERY_SERVICE +  
+        "?queries=" + querytext + "&callback=Metaweb." + callbackName
+    var script = document.createElement("script");
+    script.src = url
+    document.body.appendChild(script);
+};
+var JSON = {}; 
+JSON.parse = function(s) {
+    try {
+        return !(/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(
+                                   s.replace(/"(\\.|[^"\\])*"/g, ''))) &&
+            eval('(' + s + ')');
+    }
+    catch (e) {
+        return false;
+    }
+};
+
+(function () {
+    var m = {  
+            '\b': '\\b', '\t': '\\t',  '\n': '\\n', '\f': '\\f',
+            '\r': '\\r', '"' : '\\"',  '\\': '\\\\'
+        },
+        s = {
+            'boolean': function (x) { return String(x); },
+            'null': function (x) { return "null"; },
+            number: function (x) { return isFinite(x) ? String(x) : 'null'; },
+            string: function (x) {
+                if (/["\\\x00-\x1f]/.test(x)) {
+                    x = x.replace(/([\x00-\x1f\\"])/g, function(a, b) {
+                        var c = m[b];
+                        if (c) {
+                            return c;
+                        }
+                        c = b.charCodeAt();
+                        return '\\u00' +
+                            Math.floor(c / 16).toString(16) +
+                            (c % 16).toString(16);
+                    });
+                }
+                return '"' + x + '"';
+            },
+            array: function (x) {
+                var a = ['['], b, f, i, l = x.length, v;
+                for (i = 0; i < l; i += 1) {
+                    v = x[i];
+                    f = s[typeof v];
+                    if (f) {
+                        v = f(v);
+                        if (typeof v == 'string') {
+                            if (b) {
+                                a[a.length] = ',';
+                            }
+                            a[a.length] = v;
+                            b = true;
+                        }
+                    }
+                }
+                a[a.length] = ']';
+                return a.join('');
+            },
+            object: function (x) {
+                if (x) {
+                    if (x instanceof Array) {
+                        return s.array(x);
+                    }
+                    var a = ['{'], b, f, i, v;
+                    for (i in x) {
+                        v = x[i];
+                        f = s[typeof v];
+                        if (f) {
+                            v = f(v);
+                            if (typeof v == 'string') {
+                                if (b) {
+                                    a[a.length] = ',';
+                                }
+                                a.push(s.string(i), ':', v);
+                                b = true;
+                            }
+                        }
+                    }
+                    a[a.length] = '}';
+                    return a.join('');
+                }
+                return 'null';
+            }
+        };
+    JSON.serialize = function(o) { return s.object(o); };
+})(); 
+function showimage(entity) 
+{
+        var query = {
+        "/common/topic/image" : [
+          {
+            "id" : null
+          }
+        ],
+        "name" : entity,
+        "type" : "/common/topic",
+        "limit" : 1
+        };        
+        Metaweb.read(query, display);
+        function display(result) 
+        {  
+            var link = document.getElementById(entity);
+            var imagelink = document.getElementById('imageLink' + entity);
+            if (!result || !result["/common/topic/image"][0].id) 
+            {
+                link.style.backgroundImage = 'url(images/noperson.gif)';
+                link.title=entity;
+            }
+            try
+            {
+                var id = result["/common/topic/image"][0].id; 
+                link.style.backgroundImage = 'url(http://freebase.com/api/trans/image_thumb' + id + ')';
+                //imagelink.href = 'http://www.freebase.com/view' + id;                
+                //link.title=entity;
+            } 
+            catch (e)
+            {
+                link.style.backgroundImage = 'url(images/noperson.gif)';
+                imagelink.href = 'images/noperson.gif';
+                //link.title=entity;
+            }
+        }
+}
+    
+        if (GetCookie('sort') != null) {
+            var sort = $.evalJSON(GetCookie('sort'));
+            sort = sort["items"];
+            var previous = "";
+            for (var key in sort) 
+            {
+                if (sort[key]["order"] == "0") 
+                {
+                    $('#' + sort[key]["id"]).appendTo("#" + sort[key]["column"]);
+                }  
+                else
+                {
+                    $('#' + sort[key]["id"]).insertAfter('#' + previous);
+                }
+                            
+                previous = sort[key]["id"];
+            }
+        }
+
+       jQuery(document).ready(function() {
+//            $(window).resize(resizeWindow).resize()
+//            function resizeWindow(e) {
+
+//                var width = ($(window).width() - 90) / 3;
+//                $(".film, object, embed").width(width - 10);
+//                $('.dragbox').width(width);
+//                $('#ResultId').width(width);
+//                $.youtubeResize();
+//            }
+
+           $("a.switch_thumb1").toggle(function() {
+                $(this).addClass("swap1");
+
+            }, function() {
+                $(this).removeClass("swap1");
+            });
+
+        });        
+//    
+//        window.onresize = function(event) {
+//		    $.youtubeResize();
+//		}
+        function checkEnter(e) { //e is event object passed from function invocation
+
+            var character //Code literal character code will be stored in this variable
+            if (e && e.which) { //if which property of event object is supported (NN4)
+                e = e
+                characterCode = e.which //character code is contained in NN4's which property
+            }
+            else {
+                e = event
+                characterCode = e.keyCode //character code is contained in IE's keyCode property
+            }
+
+            if (characterCode == 13) { //if character code is equal to ascii 13 (if enter key)
+                search();
+                return false; //return false to the event handler
+            }
+            else {
+                return true //return true to the event handler
+            }
+        }
+
+		function search() {
+		    if (document.getElementById('search').value != '') {
+		        window.location.href = 'http://interceder.net/list/' + replaceAll(document.getElementById('search').value, " ", "-");
+		    }
+		}
+
+		function loopCalais() {
+		    for (i = 0; i < 150; i++) {
+		        //try
+		        //{
+		        if (document.getElementById('name' + i) != null) {
+		            showimage(document.getElementById('name' + i).innerHTML);
+		        }
+		        //} 
+		        //catch(e) {}
+		    }
+		}
+		function replaceAll(text, strA, strB) {
+		    while (text.indexOf(strA) != -1) {
+		        text = text.replace(strA, strB);
+		    }
+		    return text;
+		}
+
+		function processResult(response) {
+		    var result = response.q1.result;
+		    var html = '';
+		    if (result[0]) {
+		        for (var i = 0; i != result[0]["/common/topic/webpage"].length; i++) {
+
+		            if (result[0]["/common/topic/webpage"][i].description != null)
+		                document.getElementById('links').innerHTML = '<a href="' + result[0]["/common/topic/webpage"][i].uri + '" target="_blank" class="contact">' + trim(result[0]["/common/topic/webpage"][i].description) + '</a><br>' + document.getElementById('links').innerHTML;
+		            else
+		                document.getElementById('links').innerHTML = '<a href="' + result[0]["/common/topic/webpage"][i].uri + '" target="_blank" class="contact">' + trim(result[0]["/common/topic/webpage"][i].uri) + '</a><br>' + document.getElementById('links').innerHTML;
+		        }
+		    }
+		}
+
+		function trim(link) {
+
+		    if (link.length > 35)
+		        link = link.substring(0, 34) + "...";
+		    return link;
+		}
+		function goLink(entity) {
+		    window.location.href = 'http://interceder.net/list/' + replaceAll(entity, " ", "-");
+
+
+		}      
+		function SetCookie(cookieName, cookieValue, nDays) {
+		    var today = new Date();
+		    var expire = new Date();
+		    if (nDays == null || nDays == 0) nDays = 1;
+		    expire.setTime(today.getTime() + 3600000 * 24 * nDays);
+		    document.cookie = cookieName + "=" + cookieValue + ";expires=" + expire.toGMTString() + ";path=/";
+		}
+
+		function GetCookie(cookieName) {
+		    var theCookie = "" + document.cookie;
+		    var ind = theCookie.indexOf(cookieName);
+		    if (ind == -1 || cookieName == "") return "";
+		    var ind1 = theCookie.indexOf(';', ind);
+		    if (ind1 == -1) ind1 = theCookie.length;
+		    return unescape(theCookie.substring(ind + cookieName.length + 1, ind1));
+		}
+		if (GetCookie('background') != null && GetCookie('background') == 'white') {
+		    document.styleSheets[0].disabled = true;
+		    document.styleSheets[1].disabled = false;
+		}		
+
+		function hide(name) {
+		    var lastname = GetCookie('lastName');
+		    if (document.getElementById('name' + name) != null && document.getElementById('name' + name).className == 'selectedEntity') {
+		        document.getElementById('name' + name).className = 'bar';
+		        document.getElementById('name' + name).style.backgroundImage = "url('images/bar.gif')";
+		        hide(' ', '');
+
+		    }
+		    else {
+		        for (i = 0; i < 400; i++) {
+
+		            if (document.getElementById(i) != null && document.getElementById(i).innerHTML.toLowerCase().indexOf(name.toLowerCase()) < 0) {
+		                if (document.getElementById(i).innerHTML.indexOf('blank.gif') > -1) {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 40, toggle: false });
+		                }
+		                else {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 40, toggle: false });
+		                }
+		            }
+		            else if (document.getElementById(i) != null) {
+		                if (document.getElementById(i).innerHTML.indexOf('blank.gif') > -1) {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 100, toggle: false });
+		                }
+		                else {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 100, toggle: false });
+		                }
+		            }
+		        }
+
+		        if (document.getElementById('name' + lastname) != null) {
+		            document.getElementById('name' + lastname).className = 'bar';
+		            document.getElementById('name' + lastname).style.backgroundImage = "url('images/bar.gif')";
+		        }
+		        var entity = document.getElementById('hiddenEntity').value;
+		        if (document.getElementById('name' + name) != null) {
+		            document.getElementById('name' + name).className = 'selectedEntity';
+		            //alert(document.getElementById('name' + name).style.background);
+		            document.getElementById('name' + name).style.backgroundImage = "url('images/bar2.gif')";
+		            SetCookie('lastName', name, 1);
+		        }
+
+		    }
+		}
+		function defaultCountry() {
+		    var c = GetCookie("dash_country1");
+		    if (c != '')
+		        fade(c);
+		    else
+		        fade('us');
+
+
+		    //        if(document.getElementById('box1').innerHTML.length < 3050)
+		    //        {
+		    //            document.getElementById('box1').innerHTML = '<table align=center height=350><tr><td align=center><img src=images/sad.gif><br>Nothing found on Twitter</td></tr></table>';
+		    //            document.getElementById('box1').style.backgroundColor = '#3d4346';
+		    //        }
+
+		}
+		function fade(loc) {
+		    $('#au, #uk, #us, #ca').hide();
+		    $('#' + loc).fadeIn("slow");
+
+		    $('#linkau, #linkus, #linkuk, #linkca').removeClass('footerTab');
+		    $('#linkau, #linkus, #linkuk, #linkca').removeClass('footerTabOn');
+		    $('#linkau, #linkus, #linkuk, #linkca').addClass('footerTab');
+		    $('#link' + loc).removeClass('footerTab');
+		    $('#link' + loc).addClass('footerTabOn');
+		    SetCookie("dash_country1", loc, 365);
+		}
+
+		function installOpenSearch() { if ((typeof window.external == "object") && ((typeof window.external.AddSearchProvider == "unknown") || (typeof window.external.AddSearchProvider == "function"))) { window.external.AddSearchProvider("http://interceder.net/opensearch_d.xml"); } else { alert("This plugin requires a browser that supports OpenSearch."); } }
+    </script>
+     <script type="text/javascript">jQuery(document).ready(function() { $("a.switch_thumb1").click(function() { window.location = 'http://interceder.net/dashboard/crowdsourcing'; });});</script>
+    <script type="text/javascript" src='http://www.freebase.com/api/service/mqlread?queries={"q1":{"query":[{"/common/topic/webpage" : [ { "description" : null, "uri" : null}],"id" : "/en/crowdsourcing","type" : "/common/topic"}]}}&amp;callback=processResult'></script>
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+
+    <!-- Start GA -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-723152-2");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+    </script>
+    <!-- End GA -->
+</body>
+</html>

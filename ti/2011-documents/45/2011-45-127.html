@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>require CAPTCHA to edit</title>
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css" type="text/css" />
+
+
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://ikiwiki.info/ikiwiki.cgi?page=todo%2Frequire_CAPTCHA_to_edit&amp;do=edit" />
+
+
+<link rel="vcs-git" href="git://git.ikiwiki.info/" title="wiki git repository" />
+<link rel="vcs-git" href="ssh://git.ikiwiki.info/srv/git/ikiwiki.info/" title="wiki git repository" />
+<link rel="vcs-git" href="git://github.com/joeyh/ikiwiki.git" title="wiki git repository" />
+
+</head>
+<body><script src="../../ikiwiki/ikiwiki.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../ikiwiki/relativedate.js" type="text/javascript" charset="utf-8"></script>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">todo</a>/ 
+
+</span>
+<span class="title">
+require CAPTCHA to edit
+
+</span>
+</span>
+
+<form method="get" action="http://ikiwiki.info/ikiwiki.cgi" id="searchform">
+<div>
+<input type="text" id="searchbox" name="P" value="" size="16"
+ />
+</div>
+</form>
+
+
+</div>
+
+
+<div class="actions">
+<ul>
+
+<li><a href="http://ikiwiki.info/ikiwiki.cgi?page=todo%2Frequire_CAPTCHA_to_edit&amp;do=edit" rel="nofollow">Edit</a></li>
+
+
+<li><a href="../../recentchanges/">RecentChanges</a></li>
+
+
+<li><a href="http://git.ikiwiki.info/?p=ikiwiki;a=history;f=doc/todo/require_CAPTCHA_to_edit.mdwn">History</a></li>
+
+
+
+<li><a href="http://ikiwiki.info/ikiwiki.cgi?do=prefs">Preferences</a></li>
+
+
+
+
+<li><span class="createlink"><a href="http://ikiwiki.info/ikiwiki.cgi?page=discussion&amp;from=todo%2Frequire_CAPTCHA_to_edit&amp;do=create" rel="nofollow">?</a>Discussion</span></li>
+
+
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+
+<div id="content">
+<p>I don't necessarily trust all OpenID providers to stop bots.  I note that ikiwiki allows <a href="../../banned_users/">banned users</a>, and that there are other todos such as <a href="../openid_user_filtering/">openid user filtering</a> that would extend this.  However, it might be nice to have a CAPTCHA system.</p>
+
+<p>I imagine a plugin that modifies the login screen to use <a href="http://recaptcha.net/">http://recaptcha.net/</a>.  You would then be required to fill in the captcha as well as log in in the normal way.</p>
+
+<p>-- <a href="../../users/Will/">Will</a></p>
+
+<blockquote>
+  <p>I hate CAPTCHAs with a passion. Someone else is welcome to write such a
+  plugin.</p>
+  
+  <p>If spam via openid (which I have never ever seen yet) becomes
+  a problem, a provider whitelist/blacklist seems like a much nicer
+  solution than a CAPTCHA. --<a href="../../users/joey/">Joey</a></p>
+  
+  <blockquote>
+    <p>Apparently there has been openid spam (you can google for it).  But as for
+    white/black lists, were you thinking of listing the openids, or the content?
+    Something like the moinmoin global <a href="http://master.moinmo.in/BadContent">http://master.moinmo.in/BadContent</a>
+    list?</p>
+    
+    <blockquote>
+      <p>OpenID can be thought of as pushing the problem of determining if
+      someone is a human or a spambot back from the openid consumer to the
+      openid provider. So, providers that make it possible for spambots to
+      use their openids, or that are even set up explicitly for use in
+      spamming, would be the ones to block. Or, providers that are known to
+      use very good screening for humans would be the ones to allow.
+      (Openid delegation makes it a bit harder than just looking at the
+      openid url though.) --<a href="../../users/joey/">Joey</a></p>
+      
+      <blockquote>
+        <p>Well, OpenID only addresses authentication issues, not authorisation issues.
+        Given that it is trivial to set up your own OpenID provider (a full provider, not
+        just a forward to another provider), I can't see a
+        blacklist working in the long term (it would be like blacklisting email).
+        A whitelist might work (it would not be quite as bad as whitelisting email).  In any case,
+        there is now a captcha plugin for those that want it.  It is accessible
+        (there is an audio option) and serves a social purpose along with
+        keeping bots out (the captcha is used to help digitise hard to read
+        words in books for <a href="http://www.cs.cmu.edu/">Carnegie Mellon University</a> and
+        <a href="http://www.archive.org/">The Internet Archive</a> ).  Finally, because the actual captcha is outsourced
+        it means that someone else is taking care of keeping it ahead of
+        the bot authors.</p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>Okie - I have a first pass of this.  There are still some issues.</p>
+
+<p>Currently the code verifies the CAPTCHA.  If you get it right then you're fine.
+If you get the CAPTCHA wrong then the current code tells formbuilder that
+one of the fields is invalid.  This stops the login from going through.
+Unfortunately, formbuilder is caching this validity somewhere, and I haven't
+found a way around that yet.  This means that if you get the CAPTCHA
+wrong, it will continue to fail.  You need to load the login page again so
+it doesn't have the error message on the screen, then it'll work again.</p>
+
+<blockquote>
+  <p>fixed this - updated code is attached.</p>
+</blockquote>
+
+<p>A second issue is that the OpenID login system resets the 'required' flags
+of all the other fields, so using OpenID will cause the CAPTCHA to be
+ignored.</p>
+
+<blockquote>
+  <p>This is still not fixed.  I would have thought the following patch would
+  have fixed this second issue, but it doesn't.</p>
+</blockquote>
+
+<p>(code snipped as a working <a href="../../patch/">patch</a> is below)</p>
+
+<blockquote>
+  <blockquote>
+    <p>What seems to be happing here is that the openid plugin defines a
+    validate hook for openid_url that calls validate(). validate() in turn
+    redirects the user to the openid server for validation, and exits. If
+    the openid plugins' validate hook is called before your recaptcha
+    validator, your code never gets a chance to run. I don't know how to
+    control the other that FormBuilder validates fields, but the only fix I
+    can see is to somehow influence that order. </p>
+    
+    <p>Hmm, maybe you need to move your own validation code out of the validate
+    hook. Instead, just validate the captcha in the formbuilder_setup hook.
+    The problem with this approach is that if validation fails, you can't
+    just flag it as invalid and let formbuilder handle that. Instead, you'd
+    have to hack something in to redisplay the captcha by hand. --<a href="../../users/joey/">Joey</a></p>
+    
+    <blockquote>
+      <p>Fixed this.  I just modified the OpenID plugin to check if the captcha
+      succeeded or failed.  Seeing as the OpenID plugin is the one that is
+      abusing the normal validate method, I figured it was best to keep
+      the fix in the same place.  I also added a config switch so you can set if
+      the captcha is needed for OpenID logins. OpenID defaults to ignoring
+      the captcha.
+      Patch is inline below.
+      I think this whole thing is working now.</p>
+      
+      <blockquote>
+        <p>Ok, glad it's working. Not thrilled that it needs to modify the
+        openid plugin, especially as I'm not sure if i I will integrate the
+        captcha plugin into mainline. Also because it's not very clean to have
+        the oprnid plugin aware of another plugin like that. I'd like to
+        prusue my idea of not doing the captcha validation in the validate
+        hook.</p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>--- a/IkiWiki/Plugin/openid.pm
++++ b/IkiWiki/Plugin/openid.pm
+@@ -18,6 +18,7 @@ sub getopt () {
+    error($@) if $@;
+    Getopt::Long::Configure('pass_through');
+    GetOptions("openidsignup=s" =&gt; \$config{openidsignup});
++   GetOptions("openidneedscaptcha=s" =&gt; \$config{openidneedscaptcha});
+ }</p>
+
+<p>sub formbuilder_setup (@) {
+@@ -61,6 +62,7 @@ sub formbuilder_setup (@) {
+            # Skip all other required fields in this case.
+            foreach my $field ($form-&gt;field) {
+                next if $field eq "openid_url";
++               next if $config{openidneedscaptcha} &amp;&amp; $field eq "recaptcha";
+                $form-&gt;field(name =&gt; $field, required =&gt; 0,
+                    validate =&gt; '/.*/');
+            }
+@@ -96,6 +98,18 @@ sub validate ($$$;$) {
+        }
+    }</p>
+
+<ul>
+<li>if ($config{openidneedscaptcha} &amp;&amp; defined $form-&gt;field("recaptcha")) {</li>
+<li>foreach my $field ($form-&gt;field) {</li>
+<li>next unless ($field eq "recaptcha");</li>
+<li>if (! $field-&gt;validate) {</li>
+<li># if they didn't get the captcha right,</li>
+<li># then just claim we validated ok so the</li>
+<li># captcha can cause a fail</li>
+<li>return 1;</li>
+<li>}</li>
+<li>}</li>
+<li>}
++
+my $check_url = $claimed_identity-&gt;check_url(
+    return_to =&gt; IkiWiki::cgiurl(do =&gt; "postsignin"),
+    trust_root =&gt; $config{cgiurl},</li>
+</ul>
+
+<h1>Instructions</h1>
+
+<p>You need to go to <a href="http://recaptcha.net/api/getkey">http://recaptcha.net/api/getkey</a> and get a key set.
+The keys are added as options.</p>
+
+<pre><code>reCaptchaPubKey =&gt; "LONGPUBLICKEYSTRING",
+reCaptchaPrivKey =&gt; "LONGPRIVATEKEYSTRING",
+</code></pre>
+
+<p>You can also use "signInSSL" if you're using ssl for your login screen.</p>
+
+<p>The following code is just inline.  It will probably not display correctly, and you should just grab it from the page source.</p>
+
+<hr />
+
+<h1>!/usr/bin/perl</h1>
+
+<h1>Ikiwiki password authentication.</h1>
+
+<p>package IkiWiki::Plugin::recaptcha;</p>
+
+<p>use warnings;
+use strict;
+use IkiWiki 2.00;</p>
+
+<p>sub import {
+    hook(type =&gt; "formbuilder_setup", id =&gt; "recaptcha", call =&gt; \&amp;formbuilder_setup);
+}</p>
+
+<p>sub getopt () {
+    eval q{use Getopt::Long};
+    error($@) if $@;
+    Getopt::Long::Configure('pass_through');
+    GetOptions("reCaptchaPubKey=s" =&gt; \$config{reCaptchaPubKey});
+    GetOptions("reCaptchaPrivKey=s" =&gt; \$config{reCaptchaPrivKey});
+}</p>
+
+<p>sub formbuilder_setup (@) {
+    my %params=@_;</p>
+
+<pre><code>my &#036;form=&#036;params{form};
+my &#036;session=&#036;params{session};
+my &#036;cgi=&#036;params{cgi};
+my &#036;pubkey=&#036;config{reCaptchaPubKey};
+my &#036;privkey=&#036;config{reCaptchaPrivKey};
+debug("Unknown Public Key.  To use reCAPTCHA you must get an API key from http://recaptcha.net/api/getkey")
+    unless defined &#036;config{reCaptchaPubKey};
+debug("Unknown Private Key.  To use reCAPTCHA you must get an API key from http://recaptcha.net/api/getkey")
+    unless defined &#036;config{reCaptchaPrivKey};
+my &#036;tagtextPlain=&lt;&lt;EOTAG;
+    &lt;script type="text/javascript"
+        src="http://api.recaptcha.net/challenge?k=&#036;pubkey"&gt;
+    &lt;/script&gt;
+
+    &lt;noscript&gt;
+        &lt;iframe src="http://api.recaptcha.net/noscript?k=&#036;pubkey"
+            height="300" width="500" frameborder="0"&gt;&lt;/iframe&gt;&lt;br&gt;
+        &lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;
+        &lt;input type="hidden" name="recaptcha_response_field" 
+            value="manual_challenge"&gt;
+    &lt;/noscript&gt;
+</code></pre>
+
+<p>EOTAG</p>
+
+<pre><code>my &#036;tagtextSSL=&lt;&lt;EOTAGS;
+    &lt;script type="text/javascript"
+        src="https://api-secure.recaptcha.net/challenge?k=&#036;pubkey"&gt;
+    &lt;/script&gt;
+
+    &lt;noscript&gt;
+        &lt;iframe src="https://api-secure.recaptcha.net/noscript?k=&#036;pubkey"
+            height="300" width="500" frameborder="0"&gt;&lt;/iframe&gt;&lt;br&gt;
+        &lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;
+        &lt;input type="hidden" name="recaptcha_response_field" 
+            value="manual_challenge"&gt;
+    &lt;/noscript&gt;
+</code></pre>
+
+<p>EOTAGS</p>
+
+<pre><code>my &#036;tagtext;
+
+if (&#036;config{signInSSL}) {
+    &#036;tagtext = &#036;tagtextSSL;
+} else {
+    &#036;tagtext = &#036;tagtextPlain;
+}
+
+if (&#036;form-&gt;title eq "signin") {
+    # Give up if module is unavailable to avoid
+    # needing to depend on it.
+    eval q{use LWP::UserAgent};
+    if (&#036;@) {
+        debug("unable to load LWP::UserAgent, not enabling reCaptcha");
+        return;
+    }
+
+    die("To use reCAPTCHA you must get an API key from http://recaptcha.net/api/getkey")
+        unless &#036;pubkey;
+    die("To use reCAPTCHA you must get an API key from http://recaptcha.net/api/getkey")
+        unless &#036;privkey;
+    die("To use reCAPTCHA you must know the remote IP address")
+        unless &#036;session-&gt;remote_addr();
+
+    &#036;form-&gt;field(
+        name =&gt; "recaptcha",
+        label =&gt; "",
+        type =&gt; 'static',
+        comment =&gt; &#036;tagtext,
+        required =&gt; 1,
+        message =&gt; "CAPTCHA verification failed",
+    );
+
+    # validate the captcha.
+    if (&#036;form-&gt;submitted &amp;&amp; &#036;form-&gt;submitted eq "Login" &amp;&amp;
+            defined &#036;form-&gt;cgi_param("recaptcha_challenge_field") &amp;&amp; 
+            length &#036;form-&gt;cgi_param("recaptcha_challenge_field") &amp;&amp;
+            defined &#036;form-&gt;cgi_param("recaptcha_response_field") &amp;&amp; 
+            length &#036;form-&gt;cgi_param("recaptcha_response_field")) {
+
+        my &#036;challenge = "invalid";
+        my &#036;response = "invalid";
+        my &#036;result = { is_valid =&gt; 0, error =&gt; 'recaptcha-not-tested' };
+
+        &#036;form-&gt;field(name =&gt; "recaptcha",
+            message =&gt; "CAPTCHA verification failed",
+            required =&gt; 1,
+            validate =&gt; sub {
+                if (&#036;challenge ne &#036;form-&gt;cgi_param("recaptcha_challenge_field") or
+                        &#036;response ne &#036;form-&gt;cgi_param("recaptcha_response_field")) {
+                    &#036;challenge = &#036;form-&gt;cgi_param("recaptcha_challenge_field");
+                    &#036;response = &#036;form-&gt;cgi_param("recaptcha_response_field");
+                    debug("Validating: ".&#036;challenge." ".&#036;response);
+                    &#036;result = check_answer(&#036;privkey,
+                            &#036;session-&gt;remote_addr(),
+                            &#036;challenge, &#036;response);
+                } else {
+                    debug("re-Validating");
+                }
+
+                if (&#036;result-&gt;{is_valid}) {
+                    debug("valid");
+                    return 1;
+                } else {
+                    debug("invalid");
+                    return 0;
+                }
+            });
+    }
+}
+</code></pre>
+
+<p>}</p>
+
+<h1>The following function is borrowed from</h1>
+
+<h1>Captcha::reCAPTCHA by Andy Armstrong and are under the PERL Artistic License</h1>
+
+<p>sub check_answer {
+    my ( $privkey, $remoteip, $challenge, $response ) = @_;</p>
+
+<pre><code>die
+  "To use reCAPTCHA you must get an API key from http://recaptcha.net/api/getkey"
+  unless &#036;privkey;
+
+die "For security reasons, you must pass the remote ip to reCAPTCHA"
+  unless &#036;remoteip;
+
+if (! (&#036;challenge &amp;&amp; &#036;response)) {
+    debug("Challenge or response not set!");
+    return { is_valid =&gt; 0, error =&gt; 'incorrect-captcha-sol' };
+}
+
+my &#036;ua = LWP::UserAgent-&gt;new();
+
+my &#036;resp = &#036;ua-&gt;post(
+    'http://api-verify.recaptcha.net/verify',
+    {
+        privatekey =&gt; &#036;privkey,
+        remoteip   =&gt; &#036;remoteip,
+        challenge  =&gt; &#036;challenge,
+        response   =&gt; &#036;response
+    }
+);
+
+if ( &#036;resp-&gt;is_success ) {
+    my ( &#036;answer, &#036;message ) = split( /\n/, &#036;resp-&gt;content, 2 );
+    if ( &#036;answer =~ /true/ ) {
+        debug("CAPTCHA valid");
+        return { is_valid =&gt; 1 };
+    }
+    else {
+        chomp &#036;message;
+        debug("CAPTCHA failed: ".&#036;message);
+        return { is_valid =&gt; 0, error =&gt; &#036;message };
+    }
+}
+else {
+    debug("Unable to contact reCaptcha verification host!");
+    return { is_valid =&gt; 0, error =&gt; 'recaptcha-not-reachable' };
+}
+</code></pre>
+
+<p>}</p>
+
+<p>1;</p>
+
+</div>
+
+
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="../anti-spam_protection/">anti-spam protection</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="relativedate" title="Thu, 12 Nov 2009 10:17:24 -0500">Thu, 12 Nov 2009 10:17:24 -0500</span>
+<!-- Created <span class="relativedate" title="Thu, 19 Jun 2008 20:44:05 -0400">Thu, 19 Jun 2008 20:44:05 -0400</span> -->
+</div>
+
+</div>
+
+
+<!-- from ikiwiki -->
+</div>
+
+</div>
+
+</body>
+</html>

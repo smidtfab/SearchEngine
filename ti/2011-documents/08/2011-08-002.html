@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+			<head>
+				<title>Re: How to use reCaptcha through a proxy server? - James - com.googlegroups.recaptcha - MarkMail</title>
+				<link rel="search" type="application/opensearchdescription+xml" title="MarkMail" href="/BrowserPlugins/markmail.xml"/><link href="http://markmail.org/css/base_1298425443.css" rel="stylesheet" type="text/css"/><link href="http://markmail.org/css/canvas_1298425443.css" rel="stylesheet" type="text/css"/><link href="http://markmail.org/css/print_message_1298425443.css" rel="stylesheet" media="print" type="text/css"/>
+				<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+				<script type="text/javascript">
+						var _gaq = _gaq || [];
+						var w = window.innerWidth | document.documentElement.clientWidth;
+						_gaq.push(
+							['_setAccount', 'UA-2762294-1'],
+							['_setCustomVar', 1, "Page-width", "" + w, 2],
+							['_trackPageview']
+						);
+						(function() {
+							var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+							ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+						})();
+					</script>
+			</head>
+			<body>
+				<div id="header">
+					<div style="position: absolute; top: 0px; left: 0px; float: left; width: 1000px;"> </div>
+					<div style="float: right; padding-top: 12px; padding-right: 12px;"><form name="searchbox" action="/search/"><div>Search for:<input id="templatesearch" type="text" size="50" name="q" value=""/><input class="submit" type="image" src="/images/search_red.gif" value="Search" onclick="document.searchbox.submit(); return false;"/><img class="help section-searchhelp" src="/images/help_red.png"/></div></form></div>
+					<div class="logo"><a href="http://markmail.org/"><img src="/images/logo_white.gif" alt="MarkMail"/></a></div>
+				</div>
+				<div id="nav">
+					<div style="position: absolute; left: 0px; width: 98%; z-index:100;">
+						<div style="margin-left: auto; margin-right: auto; width: 25em; text-align: center; font-size: 0.9em; margin-top: 3px;">
+							<a href="/survey/" style="color: white; text-decoration: none;">Want your own MarkMail? Tell us about it.</a>
+						</div>
+					</div>
+					<div id="loginlinks" style="position: relative; z-index: 100;">
+						<span style="display: none">
+							<span>Hello <a class="username mklink" href="http://markmail.org/account/profile.xqy" title="Your Account">Nobody</a></span>
+							<span class="userctl logout mklink">Logout</span>
+						</span>
+						<span style="display: inline">
+							<span class="userctl login mklink refresh">Sign In</span> or <span class="userctl signup mklink">Sign Up</span> (<a class="help section-why">Why?</a>)
+						</span>
+					</div>
+					<div id="homebutton" style="position: relative; z-index: 100;"><a href="/"><img src="/images/home_arrow.gif" alt="Home"/></a><span><a href="/">Home</a></span></div><div id="slideleft" style="position: relative; z-index: 100;"><img src="/images/slide_left.gif" alt="Refine Search"/><span>Refine Search</span></div><div id="slideright" style="position: relative; z-index: 100;"><img src="/images/slide_right.gif" alt="View Message"/></div>
+				</div>
+				<div id="main"><div id="window"><div id="please"><div id="facetscol" style="display: none;"><div class="container"><div id="facets"><div id="dateholder"><div class="label"><div class="rbg"> </div><div id="cleardates"> </div><div class="lbg"> </div><div class="title">Messages per Month</div></div><div id="dates"><span id="dateschild" title=""> </span></div></div><table cellspacing="5" id="matrix"><tr class="matrixrow"><td class="facet"> </td><td class="facet"> </td></tr><tr class="matrixrow"><td class="facet"> </td><td class="facet"> </td></tr></table></div></div></div><div id="resultscol" style="display: none;"><div class="container"><div id="results"><div class="label"><img class="loading" src="/images/arrow_loader.gif" alt=""/><a target="_blank" class="atom" href=""><img width="14" height="14" src="/images/feed-icon-14x14.png" alt="atom feed" title="Atom RSS feed for this search"/></a><a target="_blank" class="setlink actions" href="#" onclick="return false;"><img width="16" height="10" src="/images/set.gif" alt="sets" title="Save, include, or exclude this search to/from a set..."/></a><a target="_blank" class="permalink" href=""><img width="17" height="8" src="/images/permalink.gif" alt="permalink" title="Permalink for this search"/></a><span class="info"> </span><span>Sort by </span><select id="orderoption"><option class="relevance" value="">
+									Relevance </option><option class="date-forward" value="">
+									Date, Forward </option><option class="date-backward" value="">
+									Date, Backward </option></select><div id="searchactions" class="actionsdropdown"><table width="90%"><tr><td class="icon"><img width="16" height="10" src="/images/set.gif"/></td><td><a id="start-set" class="setlinksave">Start a set with this search</a></td></tr><tr><td class="icon"><img width="16" height="10" src="/images/set_include.gif"/></td><td><a id="add-to-set" class="setlinkinc">Include this search in one of my sets</a></td></tr><tr><td class="icon"><img width="16" height="10" src="/images/set_exclude.gif"/></td><td><a id="exclude-from-set" class="setlinkexc">Exclude this search from one of my sets</a></td></tr></table><div class="close"><img src="/images/close.gif"/></div></div></div><div class="values"><div class="noresults">
+									 
+								</div></div></div></div></div><div id="messagecol"><div class="container"><div id="thread"><div class="label"><img class="loading" src="/images/arrow_loader.gif" alt=""/><a id="atom-link" target="_blank" class="atom" href="http://markmail.org/atom/thread:6a4uqgimko7yjzui"><img width="14" height="14" src="/images/feed-icon-14x14.png" alt="atom feed" title="Atom RSS feed for this thread"/></a><a id="thread-link" target="_blank" class="permalink" href="http://markmail.org/thread/6a4uqgimko7yjzui"><img width="17" height="8" src="/images/permalink.gif" alt="permalink" title="Permalink for this thread"/></a><span class="info">2 messages in com.googlegroups.recaptcha</span><span class="subject">Re: How to use reCaptcha through a pr...</span></div><div class="values"><table><tbody><tr><th>From</th><th>Sent On</th><th>Attachments</th></tr><tr id="row-6a4uqgimko7yjzui" class="threadmessage othermessage"><td><a href="/message/6a4uqgimko7yjzui" onclick="return false">AIP Dev Team</a></td><td>Jul  7, 2008  7:58 am</td><td> </td></tr><tr id="row-bcp76oihannpddck" class="threadmessage currentmessage"><td><a href="/message/bcp76oihannpddck" onclick="return false">James</a></td><td>Jul 20, 2008  9:00 pm</td><td> </td></tr></tbody></table></div></div><div class="sep"><!-- empty --></div><div id="message"><div class="values"><div><table id="headers"><tbody><tr><th>Subject:</th><td><a class="subject" href="http://markmail.org/message/bcp76oihannpddck">Re: How to use reCaptcha through a proxy server?</a></td><td class="actions"><a id="perma-link" target="_blank" class="permalink" href="http://markmail.org/message/bcp76oihannpddck"><img width="17" height="8" src="/images/permalink.gif" alt="permalink" title="Permalink for this message"/></a></td></tr><tr><th>From:</th><td colspan="2">James (<span>jpri<a class="email mklink">...</a>@gmail.com</span>)</td></tr><tr><th>Date:</th><td colspan="2">Jul 20, 2008  9:00:29 pm</td></tr><tr><th>List:</th><td colspan="2"><span>com.googlegroups.recaptcha</span></td></tr></tbody></table><div id="body" class="messagebody"><div class="pws"><p>There is a new article in the reCaptcha wiki relating to proxy
+configuration on Windows servers...
+<a class="exlink mklink" href="http://wiki.recaptcha.net/index.php/Using_reCaptcha_on_IIS_through_a_proxy" rel="nofollow">http://wiki.recaptcha.net/index.php/Using_reCaptcha_on_IIS_through_a_proxy</a>
+
+</p><p>This solution doens't require any changes to your code!!
+Hope this helps.
+
+</p><div class="footer signature"><p>Regards,
+James.
+
+</p></div><p>On Jul 8, 12:58 am, AIP Dev Team &lt;<span>thri<a class="email mklink">...</a>@gmail.com</span>&gt; wrote:
+</p><div class="quote quote-1"><p>We setup our reCaptcha on our webserver using Java/JSP. When I call
+the reCaptcha.checkAnswer() function, we received the following error
+code after a long wait:
+
+</p><p>net.tanesha.recaptcha.ReCaptchaException: Cannot load URL: Tried all:
+'1' addresses, but could not connect over HTTP to server: 'api-
+verify.recaptcha.net', port: '80'
+
+</p><p>CODE:
+    String remoteAddr = request.getRemoteAddr();
+    ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+    reCaptcha.setPrivateKey(PRIVATEKEY);
+    ReCaptchaResponse reCaptchaResponse =
+reCaptcha.checkAnswer(remoteAddr, challenge, capresponse);
+
+</p><p>Our network administrators suggested defining a localproxyaddress to
+send the request to the reCaptcha server for form validation.
+
+</p><p>Are there any methods in the reCaptcha API that allow me to specify
+theproxyaddress to send from, so that we can go around our load
+</p></div></div></div></div></div></div></div></div><div id="sidebarcol" style="width:0"/></div></div></div>
+				<div id="footer">
+					<span id="copy"><span style="display: none">Sun 09:16:12 | cache-2.a | 0.03 seconds |</span> 
+						© 2007-2011 MarkLogic Corporation. All rights reserved.
+					</span>
+					<span id="links"><span><a href="http://markmail.org/">Home</a> |
+		<a href="http://markmail.org/browse">Browse</a> |
+		<span><a href="/docs/faq.xqy">FAQ</a> |
+				<a href="/docs/advertising.xqy">Advertising</a> |
+				<a href="http://markmail.blogspot.com/">Blog</a> |
+				<a href="/docs/feedback.xqy">Feedback</a> |
+				<a href="/docs/terms-of-use.xqy">MarkMail™ Legalese</a> |
+			</span><a href="http://www.marklogic.com/products/mmoverview.html">About MarkLogic Server</a></span></span>
+				</div>
+				<script type="text/javascript">var MochiKit = {__export__: false};</script><script src="http://markmail.org/js/mk_1298425443.js" type="text/javascript"> </script><script src="http://markmail.org/js/base_1298425443.js" type="text/javascript"> </script><script type="text/javascript">mm.version = "1298425443"</script><script type="text/javascript">mm.isLoggedIn = false</script><script src="http://markmail.org/js/rsh_1298425443.js" type="text/javascript"> </script><script src="http://markmail.org/js/so_1298425443.js" type="text/javascript"> </script><script src="http://markmail.org/js/canvas_1298425443.js" type="text/javascript"> </script><script src="http://markmail.org/js/attachment_1298425443.js" type="text/javascript"> </script><script src="http://markmail.org/js/DragAndDrop_1298425443.js" type="text/javascript"> </script><script type="text/javascript">
+					_gaq.push(['_trackEvent', "list", 'com.googlegroups.recaptcha', 'bcp76oihannpddck']);
+				</script>
+			</body>
+		</html>

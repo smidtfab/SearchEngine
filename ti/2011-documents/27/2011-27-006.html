@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>CodeRack: rack-recaptcha</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Rack middleware directory">
+    <meta name="keywords" content="coderack, rack contest, rack competition, rack, middleware, contest, ruby">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <link href="http://coderack.org/middlewares.xml" rel="alternate" title="Latest middlewares feed (Atom)" type="application/atom+xml" />
+    <link href="/stylesheets/all.css?1284373444" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all.js?1284373444" type="text/javascript"></script>
+      <script type="text/javascript" src="http://cdn.topsy.com/topsy.js?init=topsyWidgetCreator"></script>
+
+    <meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="K5vGihAXQQn45a+nNcFXL+6SIf3GqooPxZgJwc+hl+o="/>
+
+
+    <!--[if IE]>
+      <link href="/stylesheets/legacy.css?1284373444" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="main" class="container_12 clearfix">
+      <div id="header" class="grid_12">
+        <ul class="subnav">
+            <a href="/users/login">Sign in</a>
+
+        </ul>
+        <div class="nav">
+          <a href="/" class="logo">
+            <span class="title">CodeRack</span>
+            <span class="subtitle">Rack middleware directory</span>
+          </a>
+          <ul>
+            <li><a href="/" class="menuitem ">Home</a></li>
+<li>
+  <a href="/middlewares" class="menuitem active">Middlewares</a>
+  <ul class="submenu" style="display: none">
+    <li><a href="/middlewares">Browse all</a></li>
+    <li><a href="/middlewares/mine">My middlewares</a></li>
+    <li><a href="/middlewares/new">Add middleware</a></li>
+  </ul>
+</li>
+<li>
+  <a href="/about" class="menuitem ">About</a>
+  <ul class="submenu" style="display: none">
+    <li><a href="/about">What is this?</a></li>
+    <li><a href="/archive">Contest archive</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </div>
+      </div>
+      <div id="content" class="grid_12">
+        
+        
+        
+        
+<div class="middleware" data-middleware-id="118-rack-recaptcha">
+  <div class="retweet">
+    <div class="topsy_widget_data">
+      <!--
+        {
+          "style": "big",
+          "theme": "blue",
+          "nick": "coderack",
+          "title": "rack-recaptcha - CodeRack middleware directory",
+          "url": "http://coderack.org/users/achiu/middlewares/118-rack-recaptcha",
+          "shorturl_service": "bit.ly"
+        }
+      -->
+    </div>
+  </div>
+  <h3>
+    <a href="/users/achiu/middlewares/118-rack-recaptcha">rack-recaptcha</a>
+    
+  </h3>
+  <div class="info">
+    Added by <a href="/users/achiu">achiu</a>
+    at August 12, 2010 19:24
+    <span class="static_rating" title="No votes yet"><img alt="Star_small_gray" src="/images/star_small_gray.png?1284373444" /><img alt="Star_small_gray" src="/images/star_small_gray.png?1284373444" /><img alt="Star_small_gray" src="/images/star_small_gray.png?1284373444" /><img alt="Star_small_gray" src="/images/star_small_gray.png?1284373444" /><img alt="Star_small_gray" src="/images/star_small_gray.png?1284373444" /></span>
+    <span class="tags"><a href="/middlewares/tagged?tag=rack">rack</a>, <a href="/middlewares/tagged?tag=recaptcha">recaptcha</a>, <a href="/middlewares/tagged?tag=captcha">captcha</a></span>
+  </div>
+  <div class="rating">
+  <label>Your rating:</label>
+    <input type="radio" name="rating" class="voting-star" value="1"
+            />
+    <input type="radio" name="rating" class="voting-star" value="2"
+            />
+    <input type="radio" name="rating" class="voting-star" value="3"
+            />
+    <input type="radio" name="rating" class="voting-star" value="4"
+            />
+    <input type="radio" name="rating" class="voting-star" value="5"
+            />
+</div>
+
+  <div class="github_stats">
+    GitHub stats:
+    <div>
+      <img alt="Magnifier" src="/images/icons/magnifier.png?1284373444" />
+      <span class="watchers"></span> watcher(s)
+    </div>
+    <div>
+      <img alt="Arrow_branch" src="/images/icons/arrow_branch.png?1284373444" />
+      <span class="forks"></span> fork(s)
+    </div>
+    <div>
+      <img alt="Wrench" src="/images/icons/wrench.png?1284373444" />
+      <span class="last_update"></span>
+    </div>
+  </div>
+  <div class="details">
+    <div class="actions">
+        <a href="http://github.com/achiu/rack-recaptcha" class="github"><img alt="Cog" src="/images/icons/cog.png?1284373444" /> GitHub page</a>
+        <a href="http://rubygems.org/gems/rack-recaptcha"><img alt="Ruby" src="/images/icons/ruby.png?1284373444" /> Gem info</a>
+    </div>
+
+    <div class="description">
+      <h2>About</h2>
+      <p>Rack middleware Captcha verification using Recaptcha <span class="caps">API</span>.</p>
+        <h2>Details</h2>
+        <p>Drop this Rack middleware in your web application to enable CAPTCHA verification via Recaptcha API.</p>
+
+      <h2>Usage</h2>
+      <h2>How to Use</h2>
+
+<h3>Configuration</h3>
+
+<p>First, install the library with:</p>
+
+<pre><code>[sudo] gem install rack-recaptcha
+</code></pre>
+
+<p>You have to require 'rack-recaptcha' in your gemfile.</p>
+
+<pre><code>## Gemfile
+gem 'rack-recaptcha', :require =&gt; 'rack/recaptcha'
+
+
+Available options for `Rack::Recaptcha` middleware are:
+
+* :public_key -- your ReCaptcha API public key *(required)*
+* :private_key -- your ReCaptcha API private key *(required)*
+* :paths -- where user goes to login or access the recaptcha (array of paths or single path)
+</code></pre>
+
+<p>Now configure your app to use the middleware. This might be different across each web framework.</p>
+
+<h4>Sinatra</h4>
+
+<p>   ## app.rb</p>
+
+<pre><code>use Rack::Recaptcha, :public_key =&gt; 'KEY', :private_key =&gt; 'SECRET', :paths =&gt; 'PATH'
+helpers Rack::Recaptcha::Helpers
+</code></pre>
+
+<h4>Padrino</h4>
+
+<pre><code>## app/app.rb
+use Rack::Recaptcha, :public_key =&gt; 'KEY', :private_key =&gt; 'SECRET', :paths =&gt; 'PATH'
+helpers Rack::Recaptcha::Helpers
+</code></pre>
+
+<h4>Rails</h4>
+
+<pre><code>## environment.rb:
+config.gem 'rack-recaptcha', :lib =&gt; 'rack/recaptcha'
+config.middleware.use Rack::Recaptcha, :public_key =&gt; 'KEY', :private_key =&gt; 'SECRET', :paths =&gt; 'PATH'
+
+## application_controller.rb
+include Rack::Recaptcha::Helpers
+</code></pre>
+
+<h3>Helpers</h3>
+
+<p>The <code>Rack::Recaptcha::Helpers</code> module (for Sinatra, Rails, Padrino) adds these methods to your app:</p>
+
+<ul>
+<li><p><code>recaptcha_tag(type,options={})</code> -- generates the appropriate recaptcha scripts. must be included in a form_tag</p>
+
+<ul>
+<li>recaptcha_tag(:challenge) => generates a recaptcha script</li>
+<li>recaptcha_tag(:ajax) => generates an ajax recaptcha script
+
+<ul>
+<li>if passed in a :display option, you can further alter the recaptcha_tag
+
+<ul>
+<li>recaptcha_tag(:ajax, :display => {:theme => 'white'}) - recaptcha tag in white theme.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>recaptcha_tag(:noscript) => generates a recaptcha noscript</li>
+<li>you can also pass in :public_key manually as well.
+
+<ul>
+<li>recaptcha_tag(:challenge,:public_key => 'PUBLIC')</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>recaptcha_valid?</code> -- returns whether or not the verification passed.</p></li>
+</ul>
+
+
+<h4>Example</h4>
+
+<p>In Padrino, here's how you would use the helpers.</p>
+
+<pre><code>## new.haml
+- form_tag '/login', :class =&gt; 'some_form', :method =&gt; 'post' do
+  = text_field_tag :email
+  = password_field_tag :password
+  = recaptcha_tag(:challenge)
+  = submit_tag "Submit"
+
+## sessions.rb
+post :create, :map =&gt; '/login' do
+  if recaptcha_valid?
+    "passed!"
+    else
+    "failed!"
+  end
+end
+</code></pre>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script src="http://disqus.com/forums/coderack/embed.js" type="text/javascript"></script>
+
+    <noscript>
+      <a href="http://coderack.disqus.com/?url=ref">View the discussion thread.</a>
+    </noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+      </div>
+      <div id="footer" class="grid_12">
+        <strong>
+          <span class="copy">&copy; 2009</span>
+          <a class="llp" href="http://lunarlogicpolska.com">Lunar Logic Polska</a>
+        </strong>
+
+        <ul>
+          <li>Need help or more information? Contact us at
+            <a href="mailto: info@coderack.org">info@coderack.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(
+    unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")
+  );
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-1447285-17");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+    <!-- Woopra Code Start -->
+<script type="text/javascript">
+var _wh = ((document.location.protocol=='https:') ? "https://sec1.woopra.com" : "http://static.woopra.com");
+document.write(unescape("%3Cscript src='" + _wh + "/js/woopra.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- Woopra Code End -->
+  </body>
+</html>

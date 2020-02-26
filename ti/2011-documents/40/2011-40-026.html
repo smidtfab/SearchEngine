@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Talk about CrowdFlower with real humans - digplanet</title>
+<meta name="Keywords" content="">
+<meta name="description" content="Learn, explore, talk about CrowdFlower with real humans, and check out CrowdFlower on Wikipedia, Youtube, Facebook, and Twitter.  Digplanet gathers together information and people from all over the Internet, all focused on CrowdFlower, and makes it easy to add your thoughts or join the digparty and talk to real people who are also interested in CrowdFlower.">
+
+<meta property="og:title" content="Talk about CrowdFlower with real humans - digplanet" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.digparty.com/wiki/CrowdFlower" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Digplanet" />
+<meta property="fb:admins" content="1147035171" />
+
+
+<link rel="stylesheet" href="/css/basic.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;version=20110308T014115Z" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=user&amp;only=styles&amp;skin=vector&amp;version=19700101T000001Z" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/wiki.php" type="text/css" media="screen">
+<link rel="stylesheet" href="/css/tabs.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+<!--[if IE]>
+<style type="text/css">
+.simple_overlay {
+	background-color:#333333;
+	padding:20px;
+}
+.simple_overlay .close {
+	right:-5px;
+	top:-5px;
+}
+</style>
+<![endif]-->
+<style type="text/css">
+td#digcommentscell p {
+	font-size:12px;
+}
+td#digcommentscell h2 {
+	font-size:18px;
+}
+td#digcommentscell {
+	border-top-color:#999;
+	border-top-style:solid;
+	border-top-width:3px;
+	background-color:#FFF;
+}
+</style>
+<script type="text/javascript" src="/js/jquery-ui-1.8.7.custom/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/jsonutils/json2.js"></script>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+</head>
+
+<body class="mediawiki ltr skin-vector">
+
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId  : '24062123053',
+			status : true, // check login status
+			cookie : true, // enable cookies to allow the server to access the session
+			xfbml  : true  // parse XFBML
+		});
+	};
+	
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+
+function askuser(goto, title, topic) {
+	var pix = new Image();
+	pix.src = "/fb/attempt.php?r=" + topic;
+	
+	FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+			FB.ui(
+				{
+					method: 'stream.publish',
+					user_message_prompt: 'Tell your friends so that they can meet you here',
+					attachment: {
+						name: title,
+						description: ( "In Digparty you hang out with your friends in a 3D virtual world, talk " +
+							"(with your voice, like real life), watch Youtube videos (you get your own playlist), " +
+							"browse the web together, and create sprites with lives of their own. Really."
+						),
+						media: [{ 
+							'type': 'image', 
+							'src': 'http://www.digparty.com/images/feeds/girl2_90x90.png', 
+							'href': 'http://www.digparty.com/fb/'}],
+						href: 'http://www.digparty.com/fb/'
+					},
+					action_links: [
+						{ text: 'Check out Digparty!', href: 'http://www.digparty.com/fb/' }
+					]
+				},
+				function(response) {
+					location.href = goto;
+				}
+			);
+		} else {
+			// no user session available, someone you dont know
+			FB.login(function(response) {
+				if (response.session) {
+					// user successfully logged in
+					document.getElementById("loadcue").style.display = "block";
+					alert("Now that you're logged in, click the Digparty link again after the page refreshes");
+					location.reload(true);
+				} else {
+					; // user cancelled login
+				}
+			});
+		}
+	});
+}
+</script>
+<div id="loadcue" style="display:none;"></div>
+<script>
+function getStyle(oElm, strCssRule){
+	var strValue = "";
+	if(document.defaultView && document.defaultView.getComputedStyle){
+		strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+	}
+	else if(oElm.currentStyle){
+		strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+			return p1.toUpperCase();
+		});
+		strValue = oElm.currentStyle[strCssRule];
+	}
+	return strValue;
+}
+
+function toggletabs() {
+	if (document.getElementById("digtabcell").style.height != "auto") {
+		document.getElementById("digtabcell").style.height = "auto";
+		document.getElementById("tabs").style.height = "auto";
+		document.getElementById("toglink").innerHTML = "make tab area <b>smaller</b>";
+		$("div.tab_container").height("auto");
+	} else {
+		document.getElementById("digtabcell").style.height = "540px";
+		document.getElementById("tabs").style.height = "540px";
+		document.getElementById("toglink").innerHTML = "make tab area <b>bigger</b>";
+		$("div.tab_container").height("500px");
+	}
+}
+</script>
+<div id="topstripe"><a href="/wiki/" title="Go to the digplanet home, where you can start browsing through millions of topics on just about everything!" style="color:#FFF">digplanet</a><span style="float:right; margin-right:20px; font-size:14px; font-style:italic; font-family:'Times New Roman', Times, serif;">beta 1: Athena</span></div>
+<div id="header">
+	<table width="100%">
+		<tr height="20"><td colspan="3">&nbsp;</td></tr>
+		<tr valign="top">
+			<td align="left">
+				<h1 class='firstHeading' id='firstHeading'>CrowdFlower</h1>			</td>
+			<td align="center">
+							</td>
+			<td align="right">
+				<form action="http://www.digparty.com/wiki/" method="post">
+					<label for="search">Search: </label>
+					<input name="search" type="text" value="">
+					<input type="submit" name="submit" id="submit" value="Search">
+				</form>
+				<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.digparty.com%2Fwiki%2FCrowdFlower&layout=button_count&show_faces=true&width=200&action=recommend&font&colorscheme=light&height=21" 
+				scrolling="no" frameborder="0" 
+				style="border:none; overflow:hidden; width:200px; height:21px; float:right; margin-top:4px; margin-right:22px" 
+				allowtransparency="true"></iframe>
+			</td>
+		</tr>
+	</table>
+</div>
+<table id="digmaincontent" width="100%">
+	<tr valign="top">
+		<td width="150" id="dignavcell" class="basic_box">
+			<p class="navhead">Sections</p>
+			<p><a href="/wiki/Category:Crowdsourcing">Crowdsourcing</a></p>
+<p><a href="/wiki/Category:Outsourcing_companies">Outsourcing companies</a></p>
+<div style='clear:both; height:50px'>&nbsp;</div>
+<p><a href='/wiki/digplanet/Category:Agriculture'>Agriculture</a></p>
+	<p><a href='/wiki/digplanet/Category:Applied_sciences'>Applied sciences</a></p>
+	<p><a href='/wiki/digplanet/Category:Arts'>Arts</a></p>
+	<p><a href='/wiki/digplanet/Category:Belief'>Belief</a></p>
+	<p><a href='/wiki/digplanet/Category:Business'>Business</a></p>
+	<p><a href='/wiki/digplanet/Category:Chronology'>Chronology</a></p>
+	<p><a href='/wiki/digplanet/Category:Culture'>Culture</a></p>
+	<p><a href='/wiki/digplanet/Category:Education'>Education</a></p>
+	<p><a href='/wiki/digplanet/Category:Environment'>Environment</a></p>
+	<p><a href='/wiki/digplanet/Category:Geography'>Geography</a></p>
+	<p><a href='/wiki/digplanet/Category:Health'>Health</a></p>
+	<p><a href='/wiki/digplanet/Category:History'>History</a></p>
+	<p><a href='/wiki/digplanet/Category:Humanities'>Humanities</a></p>
+	<p><a href='/wiki/digplanet/Category:Language'>Language</a></p>
+	<p><a href='/wiki/digplanet/Category:Law'>Law</a></p>
+	<p><a href='/wiki/digplanet/Category:Life'>Life</a></p>
+	<p><a href='/wiki/digplanet/Category:Mathematics'>Mathematics</a></p>
+	<p><a href='/wiki/digplanet/Category:Nature'>Nature</a></p>
+	<p><a href='/wiki/digplanet/Category:People'>People</a></p>
+	<p><a href='/wiki/digplanet/Category:Politics'>Politics</a></p>
+	<p><a href='/wiki/digplanet/Category:Science'>Science</a></p>
+	<p><a href='/wiki/digplanet/Category:Society'>Society</a></p>
+	<p><a href='/wiki/digplanet/Category:Technology'>Technology</a></p>
+		</td>
+		<td valign="top" style="background-color:#F3F3F3">
+			<div id="togdiv"><a onClick="toggletabs()" style="cursor:pointer" id="toglink">make tab area <b>bigger</b></a></div>
+			<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F3F3F3">
+				<tr valign="top">
+					<td id="digtabcell" style="min-width:825px">
+						<div id="tabs">
+							<ul class="tools_tabs">
+								<li><a href="#tabs-1" class="w1" id="t1" style="width:134px">Wikipedia Pages</a></li>
+								<li><a href="#tabs-2" class="w1" id="t2" style="width:134px">Youtube</a></li>
+								<li><a href="#tabs-3" class="w1" id="t3" style="width:134px">News</a></li>
+								<li><a href="#tabs-4" class="w1" id="t4" style="width:134px">Shopping</a></li>
+								<li><a href="#tabs-5" class="w1" id="t5" style="width:134px">Facebook</a></li>
+								<li><a href="#tabs-6" class="w1" id="t6" style="width:134px">Tweets</a></li>
+							</ul>
+							<div class="panes">
+								<div id="tabs-1" class="tab_container panels">
+									<div id="content">
+										<div id="bodyContent">
+											<table class="infobox vcard" cellspacing="5" style="width:22em;">
+<caption class="fn org" style="">CrowdFlower</caption>
+<tr class="">
+<th scope="row" style="text-align:left;">Industry</th>
+<td class="category" style="">crowdsourcing</td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;">Founded</th>
+<td class="" style="">December, 2007</td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;">Founder(s)</th>
+<td class="agent" style="">Lukas Biewald and Chris Van Pelt</td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;">Headquarters</th>
+<td class="adr" style=""><span class="locality"><a href="/wiki/San_Francisco,_California" class="mw-redirect" title="San Francisco, California">San Francisco, California</a></span>, <span class="country-name">USA</span></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;">Website</th>
+<td class="" style=""><a href="http://crowdflower.com/" class="external free" rel="nofollow">http://crowdflower.com/</a></td>
+</tr>
+</table>
+<p><b>CrowdFlower</b> was founded in 2007 by Lukas Biewald<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> to create tools to manage internet <a href="/wiki/Crowdsourcing">crowdsourcing</a>. Crowdsourcing is ideal for large-scale, repetitive yet hard to automate tasks which require an always-on, scalable workforce to rapidly complete.</p>
+<p>To demonstrate the power of crowdsourcing, CrowdFlower created <i>facestat</i><sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup>, to show how a simple task can be quickly outsourced around the world</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Products"><span class="tocnumber">1</span> <span class="toctext">Products</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#CrowdSifter"><span class="tocnumber">1.1</span> <span class="toctext">CrowdSifter</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#CrowdFlower"><span class="tocnumber">1.2</span> <span class="toctext">CrowdFlower</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#People"><span class="tocnumber">2</span> <span class="toctext">People</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Customers"><span class="tocnumber">3</span> <span class="toctext">Customers</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=1" title="Edit section: Products">edit</a>]</span> <span class="mw-headline" id="Products">Products</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=2" title="Edit section: CrowdSifter">edit</a>]</span> <span class="mw-headline" id="CrowdSifter">CrowdSifter</span></h3>
+<p><i>CrowdSifter</i> for content moderation tasks like tagging nude images or obscenities.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=3" title="Edit section: CrowdFlower">edit</a>]</span> <span class="mw-headline" id="CrowdFlower">CrowdFlower</span></h3>
+<p><i>CrowdFlower</i>, is a general-purpose crowdsourcing app that allows customers to upload their own tasks to be carried out by users of <a href="/wiki/Amazon_Mechanical_Turk">Amazon Mechanical Turk</a> or <a href="/wiki/Samasource">Samasource</a> (a social entreprise that connects women, youth, and refugees in the poorest parts of the world to microwork). Small payments are paid per completed tasks, typically a few cents per task. CrowdFlower was nominated for the <a href="/wiki/TechCrunch50">TechCrunch50</a> in September, 2009.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=4" title="Edit section: People">edit</a>]</span> <span class="mw-headline" id="People">People</span></h2>
+<p>CrowdFlower was founded as "Dolores Labs" in 2007 by Lukas Biewald—former member of <a href="/wiki/Yahoo!">Yahoo!</a>'s search relevance team and the senior scientist of the ranking and metrics team at Powerset (acquired by Microsoft) — and Chris Van Pelt, a web engineer. The founding investor was <a href="/wiki/Gary_Kremen">Gary Kremen</a>, the founder of <a href="/wiki/Match.com">Match.com</a> and <a href="/wiki/Sex.com">sex.com</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=5" title="Edit section: Customers">edit</a>]</span> <span class="mw-headline" id="Customers">Customers</span></h2>
+<p>After the Haitian earthquake CrowdFlower's technology made it possible to route thousands of text messages to the proper aid workers, to get them translated quickly, and to ensure that the people sending the texts had the best chance of getting what they needed. Once CrowdFlower's technology was implemented, the average time to translate, map, geocode, and categorize a text fell to less than two minutes. Though beneficial, many users who have taken surveys for earnings generated by CrowdFlower have voiced extreme displeasure at the length, complexity, and vagueness of the surveys. <sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=6" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://www.forbes.com/forbes/2009/0330/048-you-know-it.html" class="external text" rel="nofollow">Forbes</a>, March 11, 2009.</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://blogs.wsj.com/buzzwatch/2008/04/24/do-people-think-you-look-trustworthy-here%E2%80%99s-a-new-way-to-find-out/" class="external text" rel="nofollow">Wall Street Journal Blog</a>, April 24, 2008.</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> Samasource and CrowdFlower in Haiti: Rebuilding After a Crisis. Huffingtonpost, 17 Jan. 2010. Web. 4 May 2010. &lt;<a href="http://www.huffingtonpost.com/leila-chirayath-janah/samasource-in-haiti-rebui_b_426311.html" class="external free" rel="nofollow">http://www.huffingtonpost.com/leila-chirayath-janah/samasource-in-haiti-rebui_b_426311.html</a>&gt;.</li>
+</ol>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=CrowdFlower&amp;action=edit&amp;section=7" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://www.crowdflower.com" class="external text" rel="nofollow">CrowdFlower</a></li>
+<li><a href="http://www.crowdsifter.com/" class="external text" rel="nofollow">CrowdSifter</a></li>
+<li><a href="http://www.techcrunch50.com/2009/" class="external text" rel="nofollow">TechCrunch50 site for the 2009 named companies</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 2009/1000000
+Post-expand include size: 4788/2048000 bytes
+Template argument size: 894/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:24027777-0!*!0!!en!* and timestamp 20110403165813 -->
+										</div>
+									</div>
+								</div>
+								<div id="tabs-2" class="tab_container panels">
+									<div id="youContent">
+										
+
+<!-- Got past file_get_contents() -->
+
+
+
+<!-- Got past simplexml_load_string() -->
+
+
+
+<!-- Got past you->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+
+
+<!-- Got past entry->children -->
+
+<p class='youpagelinks'>807 results&nbsp;-&nbsp;Go to:&nbsp;&nbsp;<a onclick="do_you('%22CrowdFlower%22', 11)">Next&nbsp;&gt;</a>&nbsp;</p><table><tbody><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=sohzHF0vixM&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/sohzHF0vixM/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=sohzHF0vixM&feature=youtube_gdata_player">How Do Samasource & CrowdFlower Use Mobile iPhones to "Give Work" to Refugees in Africa?</a></p><p class='youdesc'>envisionGood.com "Give Work" is a mobile phone app developed by partners Samasource and CrowdFlower. In this video interview, Leila Janah, Founder of Samasource, and Lukas Biewald, Founder of CrowdFlower, talk about this amazing app that lets you helps refugees in Kenya, Africa by completing quick tasks on your iPhone while on-the-go. Nice!</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=U4O8RYtcGc4&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/U4O8RYtcGc4/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=U4O8RYtcGc4&feature=youtube_gdata_player">Crowdflower helps you earn extra bucks</a></p><p class='youdesc'>Interview with Crowdflower CEO and co-founder Lukas Biewald on providing jobsEven though the economy is looking up, jobs are still tough to find. And, for companies, particularly startups, hiring full-time workers, particularly for simple tasks, is a tough proposition. What's a startup or the unemployed to do? Check out Crowdflower, a startup that recently raised $5 million in funding in January from Bessemer Ventures and Trinity Ventures. In this interview, Crowdflower co-founder and CEO Lukas Biewald talks about how 200000 workers have found simple tasks on Crowdflower. The type of worker runs the gamut, Lukas said. Many of the workers have college degrees. At the same time, Crowdflower is working with Samasource, which helps "marginalized people from refugees in Kenya to women in rural Pakistan" to get small jobs.The jobs seem ... [vator.tv read more]</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=gdfltGZTGhs&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/gdfltGZTGhs/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=gdfltGZTGhs&feature=youtube_gdata_player">Rackspace Cloud Customer, CrowdFlower, launches at TechCrunch50</a></p><p class='youdesc'></p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=mgsGcI0IKi0&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/mgsGcI0IKi0/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=mgsGcI0IKi0&feature=youtube_gdata_player">Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 1</a></p><p class='youdesc'>Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers' reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it's possible to build robust quality-control mechanisms in order to standardize the results that come back from the crowd. The important thing to remember is that crowdsourcing provides channels that allow researchers, businesses, or even armchair social scientists to gather data. Topics for any discipline that focuses on quantitative or technical data have always depended on the datasets that were available at the time. For example, the Brown Corpus is a dataset compiled in the 1960s that has served as the basis for thousands of linguistics studies. Graduate students would center entire research plans on the availability of previously collected data. As a result, generations of papers on word disambiguation were tailored to the constraints of old data. By contrast, almost every grad student in the Stanford linguistics department is using crowdsourcing platforms for their studies. Using crowdsourcing tools, it's possible to conduct experiments that replicate the World Color Survey, test Benford's Law (aka, the "first digit law"), explore age and gender stereotypes, or even pose philosophical problems — in a fraction of the time that such experiments used to take, while yielding tons of data. Brought <b>...</b></p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=POqhn35HijU&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/POqhn35HijU/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=POqhn35HijU&feature=youtube_gdata_player">Lukas Biewald - Crowdflower</a></p><p class='youdesc'></p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=6uZc2Jwrk1A&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/6uZc2Jwrk1A/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=6uZc2Jwrk1A&feature=youtube_gdata_player">Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 2</a></p><p class='youdesc'>Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers' reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it's possible to build robust quality-control mechanisms in order to standardize the results that come back from the crowd. The important thing to remember is that crowdsourcing provides channels that allow researchers, businesses, or even armchair social scientists to gather data. Topics for any discipline that focuses on quantitative or technical data have always depended on the datasets that were available at the time. For example, the Brown Corpus is a dataset compiled in the 1960s that has served as the basis for thousands of linguistics studies. Graduate students would center entire research plans on the availability of previously collected data. As a result, generations of papers on word disambiguation were tailored to the constraints of old data. By contrast, almost every grad student in the Stanford linguistics department is using crowdsourcing platforms for their studies. Using crowdsourcing tools, it's possible to conduct experiments that replicate the World Color Survey, test Benford's Law (aka, the "first digit law"), explore age and gender stereotypes, or even pose philosophical problems — in a fraction of the time that such experiments used to take, while yielding tons of data. Brought <b>...</b></p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=QVvYauvydac&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/QVvYauvydac/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=QVvYauvydac&feature=youtube_gdata_player">Mission 4636: Emergency Response for Haiti | FrontlineSMS, Ushahidi, Samasource, CrowdFlower</a></p><p class='youdesc'>envisionGood.com In this video interview, Brian Herbert of Ushahidi, Robert Munro of FrontlineSMS, Lukas Biewald of CrowdFlower, and Leila Janah of Samasource share background on how they came together, with the support of inSTEDD, DigiCel, local radio stations, and local NGOs, to deploy a critical emergency communications system to help save lives and provide emergency care to people in Haiti, following the catastrophic 7.0 earthquake that hit the country on January 12, 2010. Learn how people in Haiti and around the world tapped the power of mobile text messages, crowdsourcing, social media and technology to come together in support of Haiti. For more info on Mission 4636, see samasource.org ushahidi.org http frontlinesms.com Join envisionGood on the web twitter.com facebook.com</p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=ZwHTH7CQ0HI&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/ZwHTH7CQ0HI/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=ZwHTH7CQ0HI&feature=youtube_gdata_player">Interview with Lukas Biewald of CrowdFlower</a></p><p class='youdesc'>CrowdFlower uses crowdsourcing to harness a round-the-clock workforce that spans more than 70 countries, multiple languages, and can access up to half-a-million workers to dispatch diverse tasks and provide near-real time answers.</p></td></tr><tr valign='top'><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=lzxP8Wlsq1M&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/lzxP8Wlsq1M/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=lzxP8Wlsq1M&feature=youtube_gdata_player">elephant micah at crowdflower</a></p><p class='youdesc'></p></td><td width='50%'><a target='_blank' href="http://www.youtube.com/watch?v=df4Jv-IgKIQ&feature=youtube_gdata_player" border='0'><img src='http://i.ytimg.com/vi/df4Jv-IgKIQ/0.jpg' class='youthm' width='320' height='240' /></a><p class='youtitle'><a target='_blank' href="http://www.youtube.com/watch?v=df4Jv-IgKIQ&feature=youtube_gdata_player">joseph childress at crowdflower</a></p><p class='youdesc'>sorry it's so dark!</p></td></tr></tbody></table>									</div>
+								</div>
+								<div id="tabs-3" class="tab_container panels">
+									<div id="newsContent">
+											<div id="news_cse" style="width: 100%;" onclick="iframe_divclick(event)">Loading ...</div>
+	<form style="display:none"><input type="text" id="mynewssearch" /></form>
+	<script type="text/javascript">
+	$(document).ready(google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST}));
+	google.setOnLoadCallback(function() {
+		var customSearchControl = new google.search.CustomSearchControl('006577720217834376431:1mz97tlulrw');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var drawOptions = new google.search.DrawOptions();
+		drawOptions.setInput(document.getElementById('mynewssearch'));
+		customSearchControl.setLinkTarget("openhere");
+		customSearchControl.draw('news_cse', drawOptions);
+		customSearchControl.enableAds("pub-7523455642797450");
+		customSearchControl.execute("\"CrowdFlower\"");
+	}, true);
+	</script>
+
+      									</div>
+								</div>
+								<div id="tabs-4" class="tab_container panels">
+									<div id="shoppingContent">
+											<div id="shopping_cse" style="width: 100%;" onclick="iframe_divclick(event)">Loading ...</div>
+	<form style="display:none"><input type="text" id="myshoppingsearch" /></form>
+	<script type="text/javascript">
+	$(document).ready(google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST}));
+	google.setOnLoadCallback(function() {
+		var customSearchControl = new google.search.CustomSearchControl('006577720217834376431:zjydbbyldce');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var drawOptions = new google.search.DrawOptions();
+		drawOptions.setInput(document.getElementById('myshoppingsearch'));
+		customSearchControl.setLinkTarget("openhere");
+		customSearchControl.draw('shopping_cse', drawOptions);
+		customSearchControl.enableAds("pub-7523455642797450");
+		customSearchControl.execute("\"CrowdFlower\"");
+	}, true);
+	</script>
+
+      									</div>
+								</div>
+								<div id="tabs-5" class="tab_container panels">
+									<div id="fbContent">
+										<p>Oops, we seem to be having trouble contacting Facebook</p>
+									</div>
+								</div>
+								<div id="tabs-6" class="tab_container panels">
+									<div id="twitContent">
+										<p>Oops, we seem to be having trouble contacting Twitter</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td id="digcommentscell">
+<a name="digparty"></a>
+<h1 class="firstHeading" style="color:#2E6E9E">Digparty</h1><p>by <a href="http://www.digparty.com" target="_blank">Digparty&trade;</a></p>
+<p><strong>In Digparty you hang out with people, talk, watch videos, browse the web together, create sprites, and listen to music. Really.</strong></p>
+<p>You can even talk to each other (like with your voice), or chat to each other. Digparty runs on both PCs (Firefox or Internet Explorer) and Macs (Safari only), and is a small download (about 1.5MB).</p>
+<a href="http://www.youtube.com" target="_blank"><img src="/images/youtube_logo.gif" alt="" height="60" width="120" align="right" border="0" hspace="5"></a>
+<h2>Choose Your Media to Share with Your Friends</h2>
+<p>Digparty helps you find YouTube videos that you want to share with your friends at the Digparty. You'll build your own playlist, like you do on your iPod, and we'll put them up on big screens at the Digparty. They could be music videos, or whatever. You get to decide, and there's a ton of stuff to choose from<strong>.</strong></p>
+<img src="/images/headset_guy.png" alt="" height="155" width="229" align="left" border="0">
+<h2>You'll Probably Want a Headset (but it's optional)</h2>
+<p>In Digparty you can talk to your friends just like talking on the telephone. You can use the microphone and speakers in your computer, but using a headset is better. If you don't have one, <strong><a href="http://www.logitech.com/index.cfm/webcam_communications/internet_headsets_phones/%26cl=us,en" target="_blank">here's some good ones</a></strong>. <strong>Using your voice is optional.</strong>  If you'd rather just type, like in a chat room, that's ok too!</p>
+<img src="/app/sprites/images/Lego_Crystal.jpg" alt="" width="128" height="92" align="right" border="0" />
+<h2>Sprites - Adding Life to Digparty</h2>
+<p>Digparty creates a magical landscape of &quot;sprites&quot; - rocks, trees, and other things that have a life of their own. You can create sprites, and leave them behind for other people to find and comment on. Sprites can contain videos, web pages, or messages from you. <strong>Collect Digbucks&trade; to add to your sprite collection</strong>, and you can Digparty your way from &quot;Novice&quot; to &quot;Digparty Celebrity&quot;!</p>
+<img src="/images/browse.png" alt="" height="114" width="200" align="left" border="0">
+<h2>Browse With Friends</h2>
+<p>While you're at a Digparty, you can also click on one of the laptops in the house and look at web pages together. You can each send each other's browsers to pages that you want to share, and talk and chat while you're looking at them. Think gathering around a computer together while you're hanging out and you've got the idea. It's just like that.</p>
+<h2>You'll Need Shockwave</h2>
+<p>To go to a Digparty you'll need the <strong><a href="http://www.adobe.com/go/EN_US-H-GET-SHOCKWAVE" target="_blank">Adobe Shockwave plugin (Flash's big brother)</a></strong>. You'll need version 11 or better, because we turn it up to 11.</p>
+<h2>Ready to get started? Then <a href="http://www.digparty.com/fb/check.php?p=always&r=4d98a72564c29_always&n=CrowdFlower&d=&q=4d98a7256745f">Digparty Now!</a></h2>
+
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td id="digpartycell" style="width:250px; vertical-align:top">
+<div class="basic_box" id="digparties">
+	<a href="#digparty" title="Join the Digparty"><img src="/images/headset_girl.png" width="229" height="155" alt="Headset Girl" border="0"></a>
+	<h3><a href="#digparty" title="Join the Digparty">Join The Digparty</a></h3>
+	<p>In Digparty you hang out with live humans, talk, watch videos, browse the web together, create sprites, and listen to music. Really.</p>
+	<div id="digplanets"></div>
+</div>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	document.getElementById("digpartycell").style.width = "300px";
+} else {
+	document.getElementById("digpartycell").style.width = "250px";
+}
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image top, created 3/31/11 */
+	google_ad_slot = "7967420047";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: top, created 3/27/11 */
+	google_ad_slot = "3541382114";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image middle, created 3/31/11 */
+	google_ad_slot = "1231032516";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: middle, created 3/27/11 */
+	google_ad_slot = "8479975984";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+<script type="text/javascript">
+w = $(window).width();
+if (w > 1200) {
+	google_ad_client = "pub-7523455642797450";
+	/* 300x250 image bottom, created 3/31/11 */
+	google_ad_slot = "4931197721";
+	google_ad_width = 300;
+	google_ad_height = 250;
+} else {
+	google_ad_client = "pub-7523455642797450";
+	/* 250x250 dig top: bottom, created 3/27/11 */
+	google_ad_slot = "3296318126";
+	google_ad_width = 250;
+	google_ad_height = 250;
+}
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		</td>
+	</tr>
+</table>
+<div id="mask"></div>
+<div id="iframe_overlay_outline" class="simple_overlay">
+	<div id="iframe_overlay_content">
+		<div style="text-align:right; display:none;" id="iframe_controls">
+		<a onClick="reload_iframe()" style="cursor:pointer"><img src="/fb/ajax/refresh.gif" width="16" height="16" alt="refresh" /></a>
+		&nbsp;&nbsp;<a id="iframe_newin_link" href="" target="_blank">Open in a new window</a>
+		<a onClick="close_iframe_overlay()" style="cursor:pointer"><img src="/images/close.png" width="36" height="36" alt="close" class="close" /></a></div>
+		<div id="loadbar">
+		<img src='http://www.digparty.com/images/ajax-loader.gif' style='max-width:128px; height:15px' />
+		Loading ... <a onClick="close_iframe_overlay()" style="cursor:pointer; text-decoration:underline">cancel</a></div>
+		<iframe id="openhere" name="openhere" height="600" width="600" frameborder="0" src="http://www.digparty.com" onload="iframeload()"></iframe>
+	</div>
+</div>
+<script type="text/javascript" src="/js/graph_jsonp.js"></script>
+<script type="text/javascript" src="/js/wiki_jsonp.js"></script>
+<script type="text/javascript">
+$("ul.tools_tabs").tabs("div.panes > div");
+
+$(document).ready(do_digplanets(1, "CrowdFlower", "www.digparty.com"));
+
+//$(document).ready(do_you("CrowdFlower", 1));
+$(document).ready(do_fbpages("%22CrowdFlower%22", ""));
+$(document).ready(do_twitter("%22CrowdFlower%22", ""));
+
+// adjust for small screens
+function curwidth() {
+	var w = $(window).width();
+	if (w < 1178) {
+		document.getElementById("t1").style.width = "100px";
+		document.getElementById("t2").style.width = "100px";
+		document.getElementById("t3").style.width = "100px";
+		document.getElementById("t4").style.width = "100px";
+		document.getElementById("t5").style.width = "100px";
+		document.getElementById("t6").style.width = "100px";
+		document.getElementById("digtabcell").style.minWidth = "600px";
+	} else {
+		document.getElementById("t1").style.width = "134px";
+		document.getElementById("t2").style.width = "134px";
+		document.getElementById("t3").style.width = "134px";
+		document.getElementById("t4").style.width = "134px";
+		document.getElementById("t5").style.width = "134px";
+		document.getElementById("t6").style.width = "134px";
+		document.getElementById("digtabcell").style.minWidth = "825px";
+	}
+}
+window.onresize = curwidth;
+curwidth();
+</script>
+<div id="digfooter">
+	<table width="100%" border="0" cellspacing="0" cellpadding="10" height="35">
+	<tr valign="bottom">
+		<td align="left">
+			<p class="nav">Copyright &copy; 2011 Digparty. All rights reserved.</p>
+		</td>
+		<td align="right">
+			<p class="nav"><a class="nav" href="http://www.digparty.com/" target="_blank">Digparty Home</a> 
+			| <a class="nav" href="http://www.digparty.com/app/digparty_help.php" target="_blank">Help</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Advertisers</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Investors</a> 
+			| <a class="nav" href="http://www.digparty.com/privacy.php" target="_blank">Privacy Policy</a> 
+			| <a href="http://www.digparty.com/terms.php" target="_blank">Terms of Service</a> 
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Contact Us</a>
+			| <a class="nav" href="http://www.digparty.com/contactus.php" target="_blank">Feedback</a></p>
+		</td>
+	</tr>
+</table></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6384678-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- http://en.wikipedia.org/w/api.php?action=parse&amp;page=CrowdFlower&amp;prop=text|categories&amp;format=php -->
+
+</body>
+</html>

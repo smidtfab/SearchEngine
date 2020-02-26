@@ -1,0 +1,2770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="before-content" type="text/javascript">
+var pageload = {
+	pagemark: '180188345270769646',
+	before_content: (new Date).getTime()
+};
+function pageload_done( $, console, maybe ){
+	pageload.after_readycode	= (new Date).getTime();
+	pageload.content_ready_time	= pageload.content_ready - pageload.before_content;
+	pageload.script_ready_time	= pageload.after_readycode - pageload.content_ready;
+	pageload.ready_time		= pageload.after_readycode - pageload.before_content;
+	// Only report 1% of cases.
+	maybe || (Math.random()>0.01) || $.ajax({ data: {
+		op: 'page_profile',
+		pagemark: pageload.pagemark,
+		dom: pageload.content_ready_time,
+		js: pageload.script_ready_time
+	} });
+}
+</script>
+
+    <title>MIT and the DARPA Network Challenge - Slashdot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="description" content="mit_team writes &#34;As you might have heard, DARPA has announced a network challenge in the vein of the DARPA Grand Challenge. In this challenge, participants are tasked with finding 10 red weather balloons distributed throughout the continental US for 8 hours on December 5. The idea is to get this to ...">
+
+
+    <meta property="fb:admins" content="100000696822412">
+    <meta property="fb:page_id" content="267995220856">
+
+
+
+    <link rel="image_src" href="http://a.fsdn.com/sd/topics/internet_64.png">
+
+
+<link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/classic.css?T_2_5_0_307c" >
+<!--[if gte IE 8]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie8-classic.css?T_2_5_0_307c" ><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie7-classic.css?T_2_5_0_307c" ><![endif]-->
+
+
+
+
+<!--  -->
+
+
+
+
+
+
+<script src="//a.fsdn.com/sd/all-minified.js?T_2_5_0_307c" type="text/javascript"></script>
+
+
+<!--[if lt IE 9]><script src="//a.fsdn.com/sd/html5.js"></script><![endif]--><link rel="top"       title="News for nerds, stuff that matters" href="//slashdot.org/" >
+<link rel="search"    title="Search Slashdot" href="//science.slashdot.org/search.pl">
+<link rel="alternate" title="Slashdot RSS" href="http://rss.slashdot.org/Slashdot/slashdotScience" type="application/rss+xml">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<!-- DoubleClick Random Number -->
+<script type="text/javascript">
+   dfp_ord=Math.random()*10000000000000000;
+   dfp_tile = 1;
+</script>
+<!-- End DoubleClick Random Number -->
+
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-32013-5";
+
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32013-5']);
+  _gaq.push(['_trackPageview'],['_setDomainName', 'slashdot.org']);
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body class="anon firehose ">
+
+	<div id="top_parent"></div>
+	<a name="topothepage"></a>
+        <div id="tophat"><div class="ad1 advertisement"><!-- ad position 1 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad1">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'science,internet,slashdot,science,technology';
+		var parent = 'http://science.slashdot.org/science/09/12/04/2047229.shtml';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/infotech_p1_leader;pg=article;sid=09/12/04/2047229;logged_in=0;tile='+dfp_tile+';sz=728x90;tpc=internet;tpc=slashdot;tpc=science;tpc=technology;u=20091204_MIT-and-the-DARPA-Network-Challenge_internet;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div></div>
+	<header class="col_wrapper container clearfix h">
+            <hgroup>
+                <section class="grid_11">
+			<div id="logo" >
+				<a href="//slashdot.org"><span>Slashdot</span></a>
+        			<div id="jump" class="hide">
+                			<a href="#main-articles">Stories</a><br>
+                			<a href="#blocks">Slash Boxes</a><br>
+                			<a href="#comments">Comments</a>
+        			</div>
+			</div>
+		
+
+
+			<form id="search" method="get" action="//science.slashdot.org/index2.pl">
+				<input type="text" name="fhfilter" value="" id="searchquery">
+				<span class="ui-icon search"></span>
+				<input type="submit" value="Search">
+				
+			</form>
+			
+			
+                </section>
+                <nav role="top-navigation" class="grid_13">
+		
+			<a href="//slashdot.org/my/newuser" onclick="javascript:getModalPrefs('newUserModal', 'Create Account', 1); $('#modal_box').addClass('join'); return false;" class="btn link">Join</a> 
+			<a href="//slashdot.org/my/login" onclick="show_login_box(); $('#modal_box').addClass('login'); return false;" class="btn link">Log In</a> 
+		
+		
+                        <a href="//slashdot.org/submission" onclick="show_submit_box('','submission'); $('#modal_box').addClass('submit'); return false;" title="Submit a story to Slashdot" class="btn link">Submit<span class="opt"> Story</span></a>
+
+                </nav>
+                
+            </hgroup>
+        </header>
+	<section>
+                
+		<a name="main-articles"></a><!-- body begin -->
+
+
+
+
+
+
+	
+
+	<style type="text/css">
+menu, menu * {
+	text-decoration:none;
+}
+
+menu[type=context] {
+	display:none;
+	position:absolute;
+	z-index:10000;
+	background-color:#dfdfdf;
+	margin:0;
+	padding:2px 0.5em;
+	border-style:solid;
+	border-width:1px;
+	border-color:#eeeeee #aaaaaa #aaaaaa #eeeeee;
+}
+
+menu[type=context] {
+	-moz-border-radius-topright:.7em;
+	-webkit-border-top-right-radius: 0.7em 0.7em;
+}
+
+menu[type=context] > a.slash-hover:first-child {
+	-moz-border-radius-topright:.6em;
+	-webkit-border-top-right-radius: 0.6em 0.6em;
+}
+
+
+/* #tag-menu a, #feedback-menu a  { */
+menu.tag-menu a {
+	display:list-item;
+	list-style:none;
+	text-align:left;
+	font-weight:bold;
+	color:black;
+	padding:0.1em 0.5em;
+	margin:-0.1em -0.5em;
+	cursor:pointer;
+}
+
+
+.tags .edit-bar { position:relative; }
+article aside .share .addthis_toolbox { display:block; width:60px; float:left; }
+article aside.view_mode .share { min-width:120px; padding-top:.5em; }
+#firehose.list article header h2 {padding-left: 20px; !important}
+.novote .vote { display:none; }
+.vote > a, .votedup > a, .voteddown > a {border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.25); display:block; height:22px; width:22px; margin:-2px 3px 0 0; color:rgb(255,255,255); text-decoration:none; line-height:22px; text-align:center; font-weight:bold; font-size:14px; float:left; border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.5); }
+.vote > a, .votedup > a, .voteddown > a {color:rgb(0,0,0);}
+article.fhitem-submission h2 .vote > a, article.fhitem-submission h2 .votedup > a, article.fhitem-submission h2 .voteddown > a { border-color:rgba(0,0,0,0.15); }
+.vote .up, .vote .down, .votedup .up, .votedup .down, .voteddown .up, .voteddown .down { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; text-shadow:0 0 2px #000000; } 
+article:not(.fhitem-story) .vote .up,article:not(.fhitem-story) .vote .down,article:not(.fhitem-story) .votedup .up,article:not(.fhitem-story) .votedup .down,article:not(.fhitem-story) .voteddown .up,article:not(.fhitem-story) .voteddown .down { text-shadow:none !important; }
+.voteddown .down, .votedup .up { text-indent:2px; line-height:24px; }
+article:not(.fhitem-story) .votedup .up,article:not(.fhitem-story) .voteddown .down {background: rgb(174,174,174);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(174,174,174)), to(rgb(193,193,193)));background-image: -moz-linear-gradient(100% 100% 90deg,rgb(193,193,193), rgb(174,174,174) 100%);color:rgb(0,0,0);}
+article.fhitem-story .votedup .up,article.fhitem-story .voteddown .down {background: rgb(0,66,66);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0,53,53)), to(rgb(0,102,102)));background-image: -moz-linear-gradient(100% 100% 90deg,rgb(0,102,102), rgb(0,53,53) 100%);}
+
+
+
+
+
+#tag-menu span.var-tag {
+font-weight:normal;
+color:#444444;
+}
+
+menu.reasons-menu a {
+padding:0 .25em 0 .25em;
+font-size:80%;
+-moz-border-radius:.5em;
+-webkit-border-radius:.5em;
+cursor:pointer;
+}
+
+menu.reasons-menu a:hover {
+background:rgb(153,153,153);
+background:-moz-linear-gradient(100% 100% 90deg, rgb(102,102,102), rgb(153,153,153) 70%) repeat scroll 0 0 rgb(102,102,102);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(153,153,153)), to(rgb(102,102,102)));
+color:#fff;
+text-decoration:none;
+font-weignt:normal;
+}
+
+article.fhitem-story menu.reasons-menu a:hover {
+background:#002323 !important;
+background:-moz-linear-gradient(100% 100% 90deg, #002323, #005353 70%) repeat scroll 0 0 #002323 !important;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#005353), to(#002323)) !important;
+}
+
+
+menu.reasons-menu {
+	display:none;
+	margin:0;
+	padding:0;
+}
+
+div.fhitem h3 menu.reasons-menu {
+margin:0.25em 0 0;
+}
+
+div.fhitem h3 menu.reasons-menu a.tag {
+font-size:.8em;
+}
+
+#tag-menu a.slash-hover,
+#feedback-menu a.slash-hover,
+
+.tag-display span.tag:hover,
+.tag-display span.tag.trigger {
+	color:white;
+	background-color:rgb(0, 85, 85);
+}
+
+#tag-menu a.slash-hover span.var-tag {
+	color:#eee;
+}
+
+.tag-entry.default {
+        color:#ccc;
+}
+
+</style>
+
+<menu id="nix-reasons" style="display:none">
+	<a class="tag">binspam</a><a class="tag">dupe</a><a class="tag">notthebest</a><a class="tag">offtopic</a><a class="tag">slownewsday</a><a class="tag">stale</a><a class="tag">stupid</a>
+</menu>
+<menu id="nod-reasons" style="display:none">
+	<a class="tag">fresh</a><a class="tag">funny</a><a class="tag">insightful</a><a class="tag">interesting</a><a class="tag">maybe</a>
+</menu>
+<menu id="comment-nix-reasons" style="display:none">
+	<a class="tag">offtopic</a><a class="tag">flamebait</a><a class="tag">troll</a><a class="tag">redundant</a><a class="tag">overrated</a>
+</menu>
+<menu id="comment-nod-reasons" style="display:none">
+	<a class="tag">insightful</a><a class="tag">interesting</a><a class="tag">informative</a><a class="tag">funny</a><a class="tag">underrated</a>
+</menu>
+
+<menu id="tag-nod-reasons" style="display:none">
+	<a class="tag">descriptive</a>
+</menu>
+<menu id="feedback-menu" class="tag-menu" type="context">
+	<a class="tag">typo</a><a class="tag">dupe</a><a class="tag">error</a>
+</menu>
+<menu id="tag-menu" class="tag-menu" type="context">
+
+	<a data-op="-">delete <span class="var-tag"></span></a>
+	<a data-op="!">not <span class="var-tag"></span></a>
+	<a data-op="="><span class="var-tag"></span> in <span class="var-view"></span></a>
+</menu>
+
+<script type="text/javascript">
+$(function(){
+var $CURRENT_MENU, $TAG_MENU=$('#tag-menu'), NOTNOT=/^!!/, IE7=/^7\.0/, TAG_PREFIX=/^\/tag\//;
+
+function get_tag_name( $tag ){
+	return ($tag.attr('href') || '').replace(TAG_PREFIX, '') || $tag.text().toLowerCase();
+}
+
+function trigger_menu( e, selector, $menu, menu_content ){
+	var $target=$(original_target(e, selector)), in_use=$target.is('.trigger');
+	if ( $CURRENT_MENU ) {
+		$CURRENT_MENU.menu('cancel', e);
+		$CURRENT_MENU = null;
+	}
+
+	if ( !in_use ) {
+		menu_content && $menu.stop(true, true).hide().html(menu_content);
+		($CURRENT_MENU=$menu).menu('context', e);
+	}
+	return !in_use;
+}
+
+function open_menu( trigger, $menu ){
+	var $trigger=$(trigger), $fhitem=$trigger.closest('.fhitem');
+	$fhitem.length && user_intent('interest', $fhitem[0]);
+
+	$menu.appendTo(document.body).css({ opacity:0 }).show();
+
+	var 	right	= $fhitem.offset().left + $fhitem.width(),
+		global	= $trigger.offset(),
+		local	= $menu.offsetParent().offset();
+
+	// Ugly IE position hack required:
+	$.browser.msie && IE7.test($.browser.version) && (local.top = 0);
+
+	// pin the menu (horizontally) on-screen
+	global.left = Math.min(global.left, right-$menu.width());
+
+	$trigger.addClass('trigger');
+	$menu.css({
+		position:	'absolute',
+		top:		global.top - local.top + $trigger.height(),
+		left:		global.left - local.left,
+		opacity:	1
+	});
+}
+
+function close_menu( trigger, $menu ){
+	$menu.hide();
+	$(trigger).removeClass('trigger');
+	($CURRENT_MENU===$menu) && ($CURRENT_MENU=false);
+}
+
+
+
+/* T2 tag context-menu */
+
+var $TAG_MENU=$('#tag-menu'), NOTNOT=/^!!/;
+$('a[rel=tag]').
+	live('mousedown', function( e ){
+		var unhandled=true;
+		if ( logged_in || $(original_target(e)).is('.fhitem-editor *') ) {
+			unhandled = trigger_menu(e, 'a[rel=tag]', $TAG_MENU);
+		}
+		return unhandled;
+	}).
+	live('click', function( e ){
+		if ( !logged_in ) {
+			var	target	= original_target(e),
+				tag	= $(target).text();
+			addfhfilter(tag);
+		}
+		e.preventDefault();
+		return false;
+	});
+
+$TAG_MENU.menu({
+	cssNamespace: 'slash',
+	liveTriggers: true,
+	clickDuration: 300,
+
+	start: function( e, ui ){
+		var	$tag	= $(ui.trigger),
+			tag	= get_tag_name($tag),
+			context	= firehose_settings && firehose_settings.viewtitle;
+
+		// Insert the tagname into the menu items where needed.
+		$TAG_MENU.find('span.var-tag').text(tag);
+
+			// non-admins may only delete their own tags
+		$TAG_MENU.find('a:[data-op="-"]').toggle($tag.is('.my'));
+	
+
+		// *tagname* in *viewtitle*
+		$TAG_MENU.find('a:[data-op="="]').toggle(!!context);
+		context && $TAG_MENU.find('span.var-view').text(context);
+
+		open_menu($tag, $TAG_MENU);
+	},
+
+	select: function( e, ui ){
+		var	$tag	= $(ui.trigger),
+			tag	= get_tag_name($tag),
+			op	= $(ui.select).attr('data-op'),
+			fhitem,
+			command;
+
+		// Global for positioning other things.
+		$related_trigger = $tag;
+
+		switch ( op ) {
+			case '=':
+				addfhfilter(tag);
+				break;
+
+			default:
+				fhitem = $tag.closest('.fhitem')[0];
+				command = (op + tag).replace(NOTNOT, '');
+				try { Tags.submit(fhitem, command); } catch ( err ) {  }
+				break;
+		}
+	},
+
+	stop: function( e, ui ){ close_menu(ui.trigger, $TAG_MENU); }
+});
+
+
+
+
+/* T2 feedback context-menu */
+
+
+
+/* T2 datatype context-menu (admin-only) */
+
+
+
+
+
+
+});
+</script>
+
+	
+			
+
+								  <div class="col_1">
+									<nav role="sections" id="links" class="left_menu">
+										 
+										 <ul class="menu" id="fhtablist_new">
+
+			
+				
+				
+				
+
+				
+				
+					
+				
+				
+				<li class="active Stories">
+				
+				
+				
+				<a href="//slashdot.org/stories">Stories</a>
+				<span></span>
+				</li>
+				
+				
+				
+				
+				
+				<li class="Recent">
+				
+				<a href="//slashdot.org/recent">Recent</a>
+				
+				</li>
+				
+				
+				
+				
+				
+				<li class="Popular">
+				
+				<a href="//slashdot.org/popular">Popular</a>
+				
+				</li>
+
+		
+	</ul>
+										 
+										<h4 class="hide" id="links-sections-title" >
+			
+				<a class="data-title" href="//slashdot.org" >Slashdot</a>
+				
+				
+				<script type="data">{ color: "", viewname: "stories", filter: "", name: "Main", id: 13 }</script>
+
+			
+		</h4>
+	
+	
+	
+	
+		<ul id="firehose-sections" role="sections" class="left_menu">
+	
+
+	<li class="spacer"></li>
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-askslashdot">
+			<a id="fhsectiontitle-4" class="data-title" href="//ask.slashdot.org">Ask Slashdot</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-bookreview">
+			<a id="fhsectiontitle-6" class="data-title" href="//books.slashdot.org">Book Reviews</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-games">
+			<a id="fhsectiontitle-10" class="data-title" href="//games.slashdot.org">Games</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-idle">
+			<a id="fhsectiontitle-28" class="data-title" href="//idle.slashdot.org">Idle</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-yro">
+			<a id="fhsectiontitle-17" class="data-title" href="//yro.slashdot.org">YRO</a>
+			
+		</li>
+		
+	
+	<li class="spacer"></li>
+	 
+				
+
+		
+		
+		
+		<li class="" id="fhsection-cloud">
+			<a id="fhsectiontitle-cloud" class="data-title" href="//slashdot.org/stories/cloud">Cloud</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-hardware">
+			<a id="fhsectiontitle-21" class="data-title" href="//hardware.slashdot.org">Hardware</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-linux">
+			<a id="fhsectiontitle-19" class="data-title" href="//linux.slashdot.org">Linux</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-it">
+			<a id="fhsectiontitle-18" class="data-title" href="//it.slashdot.org">Management</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-mobile">
+			<a id="fhsectiontitle-29" class="data-title" href="//mobile.slashdot.org">Mobile</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="active" id="fhsection-science">
+			<a id="fhsectiontitle-14" class="data-title" href="//science.slashdot.org">Science</a>
+			<span></span>
+		</li>
+		
+	 
+				
+
+		
+		
+		
+		<li class="" id="fhsection-security">
+			<a id="fhsectiontitle-security" class="data-title" href="//slashdot.org/stories/security">Security</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		
+		<li class="" id="fhsection-storage">
+			<a id="fhsectiontitle-storage" class="data-title" href="//slashdot.org/stories/storage">Storage</a>
+			
+		</li>
+		
+	
+	</ul>
+									</nav>
+								  </div>
+								  
+								  <div class="col_2">
+								     <section id="content" class="grid_24 a2">
+									<section id="firehose" class="nothumbs">
+									    <div id="firehoselist" class="fhroot fleft  grid_24">
+										 <article id="firehose-7547556" data-fhid="7547556" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">7547556</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+						
+						
+						
+	<header>
+		
+			
+			<span class="topic" id="topic-7547556">
+				<a href="//science.slashdot.org/index2.pl?fhfilter=internet" onclick="return addfhfilter('internet');">
+			
+				<img src="//a.fsdn.com/sd/topics/internet_64.png" width="64" height="64" alt="The Internet" title="The Internet">
+			
+		</a>
+		
+	
+		
+		
+		
+		
+
+		
+		<a href="//science.slashdot.org/index2.pl?fhfilter=science" onclick="return addfhfilter('science');">
+			
+				<img src="//a.fsdn.com/sd/topics/science_64.png" width="64" height="64" alt="Science" title="Science">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-7547556"> <a   href="//science.slashdot.org/story/09/12/04/2047229/MIT-and-the-DARPA-Network-Challenge">MIT and the DARPA Network Challenge</a></span>
+			
+			
+			<span class="comments commentcnt-7547556">68</span>
+                        
+		</h2>
+		<div class="details" id="details-7547556">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="http://slashdot.org/~ScuttleMonkey/" rel="nofollow">ScuttleMonkey</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-7547556" datetime="on Friday December 04 2009, @06:37PM">on Friday December 04 2009, @06:37PM</time>
+	
+	
+		<br>from the 99-red-baboons dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-7547556">
+
+		
+
+			<div id="text-7547556" class="p">
+			mit_team writes <i>"As you might have heard, DARPA has announced a network challenge in the vein of the DARPA Grand Challenge. In this challenge, participants are tasked with finding 10 red weather balloons distributed throughout the continental US for 8 hours on December 5. The idea is to get this to be a crowd-sourcing kind of activity, where people will use social media tools to solve this problem. Our group, the MIT Red Balloon Challenge Team, based out of the MIT Media Lab, has created a system where you get money not just for finding balloons, but for <a href="http://balloon.mit.edu/">getting people to join the hunt</a> who find the balloons, or for getting people who get people who find balloons, etc. First you have to sign up. Then you can send invitations to others to join through your own unique URL, crediting you with recruiting them. While our team is interested in winning the contest, we are also interested in studying information diffusion in social networks. Does Twitter spread information faster than blogs? Is your blog effective at spreading information?  We could use your help in getting out the word.  If you sign up and blog about us you will be able to see the impact that your blog has on getting out the word in real time.  Win money, help science, and help charity! Kind regards, The MIT Red Balloon Challenge Team."</i></div>
+			
+
+		
+	</div>
+	<aside class="grid_24 view_mode">
+	
+                <h3>Share this story</h3>
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                        <a class="addthis_button_email"></a>
+                        <a class="addthis_button_twitter" addthis:url="http://science.slashdot.org/story/09/12/04/2047229/" addthis:title="MIT and the DARPA Network Challenge" addthis:description="MIT and the DARPA Network Challenge"></a>
+                        <a class="addthis_button_facebook"></a>
+                </div>
+                <script type="text/javascript">var addthis_config = {"data_track_clickback":true,"ui_click": true};</script>
+                <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#username=slashdot"></script>
+                <!-- AddThis Button END -->
+                <br>
+		<h3>This story has <a href="#comments"><span id="commentcount" class="commentcnt-7547556">68</span> Comments</a></h3>
+        <br>
+        <h3>Read similar stories with these tags</h3>
+                <menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="/my/login/" onclick="show_login_box(); $('#modal_box').addClass('login'); return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-7547556" class="tag-bar"><a class="topic tag" rel="statictag" href="/tag/" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="/tag/balloon" target="_blank">balloon</a>
+<a class="popular tag" rel="statictag" href="/tag/darpa" target="_blank">darpa</a>
+<a class="popular tag" rel="statictag" href="/tag/internet" target="_blank">internet</a>
+</span>
+		
+
+
+	<div class="spinner">
+	<span class="tag-server-busy spinner" style="display:none">*</span>
+	</div>
+
+
+</menu>
+		<br>
+		<h3>You may also like to read,</h3><div class="briefarticle" id="art1">
+	
+	
+	
+
+	<span class="section"><a href="//news.slashdot.org/">News</a>:</span> <span class="storytitle"><a href="//news.slashdot.org/story/09/11/02/0056236/Find-DARPAs-Balloons-Win-40K">Find DARPA's Balloons, Win $40K</a></span>  252 comments 
+	
+	
+</div><p><a href="//science.slashdot.org/submission/1128102/MIT-and-the-DARPA-Network-Challenge">Submission: MIT and the DARPA Network Challenge</a></p><div class="briefarticle" id="art2">
+	
+	
+	
+
+	<span class="storytitle"><a href="//science.slashdot.org/story/09/12/06/0356232/DARPA-Network-Challenge-Lasts-All-of-9-Hours">DARPA Network Challenge Lasts All of 9 Hours</a></span>  129 comments 
+	
+	
+</div>
+
+		
+	
+	</aside>
+	
+	
+
+</article>
+									    </div>
+									    
+									    
+									</section>
+									
+									<aside id="slashboxes">
+									     
+										  <div class="railad"><div class="ad83 advertisement"><!-- ad position 83 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad83">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'science,internet,slashdot,science,technology';
+		var parent = 'http://science.slashdot.org/science/09/12/04/2047229.shtml';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/infotech_p83_medrec;pg=article;sid=09/12/04/2047229;logged_in=0;tile='+dfp_tile+';sz=300x250,300x600;tpc=internet;tpc=slashdot;tpc=science;tpc=technology;u=20091204_MIT-and-the-DARPA-Network-Challenge_internet;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div></div>
+										  <div id="slashboxesin" class="yui-b">
+										    
+										    
+										    
+										  </div>
+									     
+									</aside>
+									
+									<section id="comments" class="a2commentwrap">
+									   <div>
+    									   <a name="comments"></a>
+<div class="commentwrap">
+<div class="commentBox notice">
+			
+
+		
+			
+				This discussion has been archived.
+			
+			No new comments can be posted.
+		
+	
+</div>
+</div><a name="comments"></a>
+<section class="d2incommentspl">
+<div class="commentwrap" id="commentwrap">
+
+<div class="commentBox">
+<div class="title hide">	
+	<h4>
+<span class="escape-link"><a href="//science.slashdot.org/story/09/12/04/2047229/MIT-and-the-DARPA-Network-Challenge" title="Back to Article - MIT and the DARPA Network Challenge">MIT and the DARPA Network Challenge</a></span>
+<span class="commentBoxLinks"><a href="#" onclick="D2.ajaxFetchComments(0,1); return false"><span id="more_comments_num_d"></span> More</a>
+
+
+
+
+
+	<a class="login"  href="//science.slashdot.org/login.pl" onclick="show_login_box(); return false">Login</a></span>
+	</h4>
+</div>
+</div>
+
+
+
+        <h2 class="commentspl"><a title="Back to Article - MIT and the DARPA Network Challenge" href="//science.slashdot.org/story/09/12/04/2047229/MIT-and-the-DARPA-Network-Challenge">MIT and the DARPA Network Challenge</a></h2>
+
+
+	<div class="commentBox grid_9">
+		<h3 title="Comments on MIT and the DARPA Network Challenge">Comments
+
+    <a class="ui-icon prefs" title="Comment Prefs" onclick="show_login_box(); $('#modal_box').addClass('login'); return false;" href="//science.slashdot.org/users.pl">Log In/Create an Account</a>
+
+
+<a class="ui-icon search" href="//science.slashdot.org/search.pl?op=comments&amp;sid=1467482">Search Discussion</a>
+
+                </h3>
+<h4>50</h4><br>
+	       
+<noscript><br><small>Without JavaScript enabled, you might want to
+use <span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;no_d2=1&amp;pid=0">the classic discussion system</a> instead.  If you <a href="//science.slashdot.org/login.pl">login</a>, you can remember this preference.
+</small></noscript>
+	</div>
+	 
+	
+	<div id="d2out" class="horizontal rooted grid_15">
+		<div id="d2act" class="hide">
+			<div class="loki" id="gods">
+<script type="text/javascript">
+$(function(){
+	D2.slider = new D2.Slider(
+		D2.user_threshold(),
+		D2.user_highlightthresh(),
+		'x'
+	);
+});
+</script>
+				<div id="bones" class="grid_12">
+					<div class="ccw-count-container grid_24">
+						<span id="ccw-full-count-text" class="grid_8 ccw-count-text tcenter"><span></span><span id="ccw-full-phrase">&nbsp;Full</span></span>
+						<span id="ccw-abbr-count-text" class="grid_8 ccw-count-text"><span></span><span id="ccw-abbr-phrase">&nbsp;Abbreviated</span></span>
+						<span id="ccw-hide-count-text" class="grid_8 ccw-count-text tleft"><span></span><span id="ccw-hide-phrase">&nbsp;Hidden</span></span>
+					</div>
+					<div id="ccw">
+						<div id="ccw-body" class="ccw-core">
+							<div id="ccw-panel-container" class="ccw-core">
+								<div id="ccw-full-panel" class="ccw-panel">
+									<div class="ccw-panel-border"></div>
+									<div id="ccw-full-count-pos" class="ccw-core-pos ccw-count-pos"></div>
+								</div>
+								<div id="ccw-abbr-panel" class="ccw-panel">
+									<div class="ccw-panel-border"></div>
+									<div id="ccw-abbr-count-pos" class="ccw-core-pos ccw-count-pos"></div>
+								</div>
+								<div id="ccw-hide-panel" class="ccw-panel">
+									<div id="ccw-hide-count-pos" class="ccw-core-pos ccw-count-pos"></div>
+								</div>
+							</div>								
+							<div id="ccw-control" class="ccw-core">
+								<div id="ccw-centering-rail" class="ccw-core">
+									<div id="ccw-hide-bar-pos" class="ccw-core-pos">
+										<div id="ccw-hide-bar" class="ccw-bar">
+											<div id="ccw-hide-bar-tab" class="ccw-bar-tab"></div>
+											<div class="ccwa"></div>
+											<div class="ccwb"></div>
+											<div id="ccw-hide-bar-upzone" class="ccw-upzone" onclick="D2.slider.stepTHT(HIDE_BAR, +1)"></div>
+											<div id="ccw-hide-bar-downzone" class="ccw-downzone" onclick="D2.slider.stepTHT(HIDE_BAR, -1)"></div>
+										</div>
+									</div>
+									<div id="ccw-abbr-bar-pos" class="ccw-core-pos">
+										<div id="ccw-abbr-bar" class="ccw-bar">
+											<div id="ccw-abbr-bar-tab" class="ccw-bar-tab"></div>
+											<div class="ccwa"></div>
+											<div class="ccwb"></div>
+											<div id="ccw-abbr-bar-upzone" class="ccw-upzone" onclick="D2.slider.stepTHT(ABBR_BAR, +1)"></div>
+											<div id="ccw-abbr-bar-downzone" class="ccw-downzone" onclick="D2.slider.stepTHT(ABBR_BAR, -1)"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ccw-score-label grid_24">
+							<div class="grid_3"><span class="sc">Score:</span></div>
+							<div class="grid_3">5<span class="lg"></span></div>
+							<div class="grid_3">4<span class="lg"></span></div>
+							<div class="grid_3">3<span class="lg"></span></div>
+							<div class="grid_3">2<span class="lg"></span></div>
+							<div class="grid_3">1<span class="lg"></span></div>
+							<div class="grid_3">0<span class="lg"></span></div>
+							<div class="grid_3">-1<span class="lg"></span></div>
+						</div>
+					</div>
+				</div>
+				<div class="commentControlFooter"><a href="#" onclick="D2.ajaxFetchComments(0,1); return false"><span id="more_comments_num_c"></span> More</a>
+
+
+
+
+
+	<a class="login"  href="//science.slashdot.org/login.pl" onclick="show_login_box(); return false">Login</a><div id="login_cover" class="hide" onclick="hide_login_box()"></div>
+<div id="login_box" class="hide">
+	<div id="login_box_content">
+		<form action="//slashdot.org/login.pl" method="post">
+		<label for="unickname">Username</label> 
+		<input type="text" name="unickname"> 
+		<label for="upasswd">Password</label> 
+		<input type="text" name="upasswd"> 
+	<label><input type="checkbox" name="login_temp" value="yes"> Public terminal</label> 
+	<hr>
+        <fieldset>
+		<input type="submit" name="userlogin" value="Log in"> 
+		<a href="//slashdot.org/my/newuser" class="btn">Join</a>
+		<a href="//slashdot.org/my/mailpassword" class="btn link">Forgot password?</a> 
+	<input type="hidden" name="returnto" value="//science.slashdot.org/comments.pl?sid=1467482">
+	<input type="hidden" name="op" value="userlogin">
+        </fieldset>
+</form>
+<!--
+<form action="//slashdot.org/login.pl" method="post">
+	<input type="hidden" name="slash_returnto" value="//science.slashdot.org/comments.pl?sid=1467482">
+	<input type="hidden" name="op" value="claim_openid">
+	<input type="hidden" name="openid_login" value="1">
+	<label for="openid_url" class="openid_url">
+	<input type="text" name="openid_url" value="http://" size="32" maxlength="255">
+	</label>
+	<input type="submit" value="Log in with OpenID" class="button">
+</form>
+-->
+		<div class="actions">
+			<a class="ico close" href="#" onclick="hide_login_box(); return false"><span>Close</span></a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">logged_in = 0</script></div>
+				<div id="commentControlBoxStatus" class="hide"><span class="ui-icon"></span><b>Loading... please wait.</b></div>
+			</div>
+		</div>
+	
+	</div>
+<a name="topcomment"></a>
+<p class="grid_24">
+	<small><strong>The Fine Print:</strong> The following comments are owned by whoever posted them.  We are not responsible for them in any way.</small>
+</p><script src="//a.fsdn.com/sd/comments-minified.js?T_2_5_0_307c" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+<!--
+D2.d2_keybindings_disable()[191] = 1;
+D2.boxStatus(1);
+D2.comments({ 30330798: { uid: 1670420, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 30330874: { uid: 1668397, pid: 30330600, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 2, kids: [  ], opid: 30330600 }, 30333156: { uid: undefined, pid: 0, read: 0, points: -2, kids: [ 30334072, 30335338, 30341536 ], opid: undefined }, 30330332: { uid: 1184251, pid: 0, read: 0, points: 3, kids: [  ], opid: 0 }, 30330584: { uid: 6067, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 30334556: { uid: 601767, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 30330600: { uid: 655143, pid: 30330312, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 2, kids: [ 30330874, 30330956 ], opid: 30330312 }, 30330292: { uid: 959816, pid: 0, read: 0, points: 3, kids: [ 30330398 ], opid: 0 }, 30330582: { uid: 1630681, pid: 30330274, subject: "Re:3rd", read: 0, points: 1, kids: [  ], opid: 30330274 }, 30330434: { uid: 980487, pid: 30330382, read: 0, points: 2, kids: [  ], opid: 30330382 }, 30330274: { uid: undefined, pid: 0, read: 0, points: -2, kids: [ 30330582 ], opid: undefined }, 30332772: { uid: 234846, pid: 30331056, subject: "Re:And some red paint?", read: 0, points: 2, kids: [  ], opid: 30331056 }, 30336482: { uid: undefined, pid: 30334072, read: 0, points: -2, kids: [ 30351410 ], opid: undefined }, 30331412: { uid: 638617, pid: 30330282, subject: "Re:\"Read This Notice\"", read: 0, points: 2, kids: [  ], opid: 30330282 }, 30330824: { uid: 1344385, pid: 30330170, subject: "Re:Sounds like", read: 0, points: 3, kids: [  ], opid: 30330170 }, 30340606: { uid: 448595, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 30330170: { uid: 698417, pid: 0, read: 0, points: 2, kids: [ 30330824, 30334520 ], opid: 0 }, 30330884: { uid: 261182, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 30331896: { uid: 736903, pid: 0, read: 0, points: 3, kids: [ 30332788 ], opid: 0 }, 30330438: { uid: 67780, pid: 0, read: 0, points: 4, kids: [ 30334148 ], opid: 0 }, 30330930: { uid: 1290638, pid: 0, read: 0, points: 3, kids: [ 30331056 ], opid: 0 }, 30330920: { uid: 1670420, pid: 30330608, subject: "Re:What about doing it for charity?", read: 0, points: 1, kids: [  ], opid: 30330608 }, 30330956: { uid: 192996, pid: 30330600, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 1, kids: [ 30332130 ], opid: 30330600 }, 30351410: { uid: 13165, pid: 30336482, subject: "Re:DARPA is mapping society.", read: 0, points: 2, kids: [  ], opid: 30336482 }, 30330282: { uid: 980487, pid: 0, read: 0, points: 5, kids: [ 30331412 ], opid: 0 }, 30342708: { uid: 414242, pid: 30330312, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 2, kids: [  ], opid: 30330312 }, 30334520: { uid: 601767, pid: 30330170, subject: "Re:Sounds like", read: 0, points: 2, kids: [  ], opid: 30330170 }, 30330382: { uid: 849181, pid: 0, read: 0, points: 1, kids: [ 30330434 ], opid: 0 }, 30335338: { uid: 736903, pid: 30333156, read: 0, points: 2, kids: [  ], opid: 30333156 }, 30331210: { uid: 12921, pid: 0, read: 0, points: 3, kids: [  ], opid: 0 }, 30332788: { uid: 234846, pid: 30331896, read: 0, points: 2, kids: [  ], opid: 30331896 }, 30330304: { uid: 668253, pid: 0, read: 0, points: 3, kids: [  ], opid: 0 }, 30341478: { uid: 317433, pid: 30330312, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 2, kids: [  ], opid: 30330312 }, 30330608: { uid: 711564, pid: 0, read: 0, points: 2, kids: [ 30330920 ], opid: 0 }, 30331056: { uid: 15916, pid: 30330930, read: 0, points: 3, kids: [ 30332772 ], opid: 30330930 }, 30334072: { uid: 13165, pid: 30333156, subject: "Re:DARPA is mapping society.", read: 0, points: 2, kids: [ 30336482 ], opid: 30333156 }, 30330616: { uid: 655143, pid: 30330536, subject: "Re:Blondie", read: 0, points: 4, kids: [  ], opid: 30330536 }, 30330536: { uid: 1429933, pid: 0, read: 0, points: 1, kids: [ 30330616, 30330628 ], opid: 0 }, 30330280: { uid: undefined, pid: 0, read: 0, points: -2, kids: [ 30330484 ], opid: undefined }, 30330218: { uid: 1670420, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 30330628: { uid: 1256188, pid: 30330536, subject: "Re:Blondie", read: 0, points: 1, kids: [  ], opid: 30330536 }, 30331242: { uid: 786894, pid: 0, read: 0, points: 5, kids: [  ], opid: 0 }, 30331664: { uid: 90044, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 30332130: { uid: 172727, pid: 30330956, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 1, kids: [  ], opid: 30330956 }, 30330312: { uid: 1149581, pid: 0, read: 0, points: 5, kids: [ 30330414, 30330600, 30341478, 30342708 ], opid: 0 }, 30330414: { uid: 22995, pid: 30330312, subject: "Re:'Scuse the Nasty, Paranoid Mind", read: 0, points: 1, kids: [  ], opid: 30330312 }, 30330368: { uid: 1628283, pid: 0, read: 0, points: 4, kids: [  ], opid: 0 }, 30340974: { uid: 414242, pid: 0, read: 0, points: 2, kids: [  ], opid: 0 }, 30341536: { uid: 317433, pid: 30333156, subject: "Re:DARPA is mapping society.", read: 0, points: 2, kids: [  ], opid: 30333156 }, 30330398: { uid: 1201159, pid: 30330292, subject: "Re:ponzi?", read: 0, points: 4, kids: [  ], opid: 30330292 }, 30331706: { uid: 1615959, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 }, 30334148: { uid: 750216, pid: 30330438, subject: "Re:Oh, great, now MIT has a spam club", read: 0, points: 2, kids: [  ], opid: 30330438 }, 30330484: { uid: 21727, pid: 30330280, subject: "Re:Pyramid Scheme", read: 0, points: 2, kids: [  ], opid: 30330280 }, 30332286: { uid: 1017786, pid: 0, read: 0, points: 1, kids: [  ], opid: 0 } });
+
+D2.thresh_totals({6:{6:{1:50,3:0,2:0}},4:{6:{1:43,3:3,2:4},4:{1:43,3:7,2:0},5:{1:43,3:5,2:2}},1:{6:{1:0,3:3,2:47},4:{1:0,3:13,2:37},1:{1:0,3:50,2:0},3:{1:0,3:21,2:29},2:{1:0,3:44,2:6},5:{1:0,3:5,2:45}},3:{6:{1:35,3:3,2:12},4:{1:35,3:13,2:2},3:{1:35,3:15,2:0},5:{1:35,3:5,2:10}},0:{6:{1:0,3:3,2:47},4:{1:0,3:13,2:37},1:{1:0,3:50,2:0},3:{1:0,3:21,2:29},0:{1:0,3:50,2:0},2:{1:0,3:44,2:6},5:{1:0,3:5,2:45}},2:{6:{1:14,3:3,2:33},4:{1:14,3:13,2:23},3:{1:14,3:21,2:15},2:{1:14,3:36,2:0},5:{1:14,3:5,2:31}},5:{6:{1:47,3:3,2:0},5:{1:47,3:3,2:0}},"-1":{6:{1:0,3:3,2:47},4:{1:0,3:13,2:37},1:{1:0,3:50,2:0},3:{1:0,3:21,2:29},0:{1:0,3:50,2:0},2:{1:0,3:44,2:6},5:{1:0,3:5,2:45},"-1":{1:0,3:50,2:0}}});
+
+D2.root_comment(0);
+D2.root_comments([30330170,30330218,30330282,30330292,30330304,30330312,30330332,30330368,30330382,30330438,30330536,30330584,30330608,30330798,30330884,30330930,30331210,30331242,30331664,30331706,30331896,30332286,30334556,30340606,30340974,30330280,30330274,30333156]);
+D2.root_comments_hash({30330332:1,30334556:1,30330584:1,30330292:1,30340606:1,30330170:1,30330438:1,30330930:1,30330382:1,30330304:1,30330608:1,30330536:1,30330218:1,30331664:1,30340974:1,30330368:1,30333156:1,30330798:1,30330274:1,30331896:1,30330884:1,30330282:1,30331210:1,30330280:1,30331242:1,30330312:1,30331706:1,30332286:1});
+
+D2.d2_comment_order(0);
+D2.user_uid(666);
+D2.user_is_anon(1);
+D2.user_is_admin(0);
+D2.user_is_subscriber(0);
+D2.user_smallscreen(0);
+D2.user_threshold(1);
+D2.user_highlightthresh(4);
+D2.user_d2asp(0);
+
+D2.discussion_id(1467482);
+
+D2.d2_seen('30330170,48,64,10,12,8,20,36,14,16,16,20,4,46,52,46,2,16,8,8,12,170,26,50,10,36,10,26,100,154,32,170,252,42,190,234,156,486,16,1284,76,372,36,782,5268,368,504,58,1172,8702');
+D2.more_comments_num(18);
+
+
+//-->
+</script>
+
+
+
+
+	
+	
+	
+	
+		<ul id="commentlisting" class="d2">
+			<li id="tree_30330170" class="comment oneline">
+<div id="comment_status_30330170" class="commentstatus"></div>
+<div id="comment_30330170">
+	<div id="comment_top_30330170" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330170" name="comment_link_30330170" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330170" onclick="return D2.setFocusComment(30330170)" >Sounds like</a>
+
+
+		 	<span id="comment_score_30330170" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330170); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Pulse_Instance">Pulse_Instance <span class="uid">(698417)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330170"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330170">Sounds like the URLs people use to try and get the "free" iPods and stuff. I expect to see this all over forums soon.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330170">
+
+</div>
+</div>
+
+<div id="replyto_30330170"></div>
+
+<ul id="group_30330170">
+	<li id="hiddens_30330170" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330170"><li id="tree_30330824" class="comment oneline">
+<div id="comment_status_30330824" class="commentstatus"></div>
+<div id="comment_30330824">
+	<div id="comment_top_30330824" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330824" name="comment_link_30330824" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330824" onclick="return D2.setFocusComment(30330824)" >Re:</a>
+
+
+		 	<span id="comment_score_30330824" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330824); return false">Score:3</a>, Insightful)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~calmofthestorm">calmofthestorm <span class="uid">(1344385)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330824"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330824"><p>Precisely what it is, except with a brand that is likely to be more trusted to many of us.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330824">
+
+</div>
+</div>
+
+<div id="replyto_30330824"></div>
+
+<ul id="group_30330824">
+	<li id="hiddens_30330824" class="hide"></li>
+</ul>
+
+</li><li id="tree_30334520" class="comment oneline">
+<div id="comment_status_30334520" class="commentstatus"></div>
+<div id="comment_30334520">
+	<div id="comment_top_30334520" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30334520" name="comment_link_30334520" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30334520" onclick="return D2.setFocusComment(30334520)" >Re:</a>
+
+
+		 	<span id="comment_score_30334520" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30334520); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~pontifier">pontifier <span class="uid">(601767)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30334520"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30334520">I promise not to send iPods to people who enter at my Network Challenge website <a href="http://red40k.com/" title="red40k.com">http://red40k.com/</a> [red40k.com] unless we win, and that's how someone wants their $3000.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30334520">
+
+</div>
+</div>
+
+<div id="replyto_30334520"></div>
+
+<ul id="group_30334520">
+	<li id="hiddens_30334520" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330218" class="comment oneline">
+<div id="comment_status_30330218" class="commentstatus"></div>
+<div id="comment_30330218">
+	<div id="comment_top_30330218" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330218" name="comment_link_30330218" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330218" onclick="return D2.setFocusComment(30330218)" >How about</a>
+
+
+		 	<span id="comment_score_30330218" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330218); return false">Score:2</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~starbugs">starbugs <span class="uid">(1670420)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330218"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330218"><p>By sending this message out to as many people as possible, Microsoft will pay you...</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330218">
+
+</div>
+</div>
+
+<div id="replyto_30330218"></div>
+
+<ul id="group_30330218">
+	<li id="hiddens_30330218" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330282" class="comment full contain">
+<div id="comment_status_30330282" class="commentstatus"></div>
+<div id="comment_30330282">
+	<div id="comment_top_30330282" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330282" name="comment_link_30330282" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330282" onclick="return D2.setFocusComment(30330282)" >"Read This Notice"</a>
+
+
+		 	<span id="comment_score_30330282" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330282); return false">Score:5</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~TaoPhoenix">TaoPhoenix <span class="uid">(980487)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330282">		 &lt;<a href="mailto:TaoPhoenix%40yahoo.com">TaoPhoenix@yahoo.com</a>&gt;
+		on Friday December 04 2009, @06:48PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330282">#30330282</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330282"><p>Dear esteemed Sir and Madam.</p><p>The University of MIT has lost its Identified Flying Baloons(IFB). We need you to locate them for us.</p><p>Join this work from home opportunity and you can earn part of $40,000 from your one bedroom apartment! *</p><p>If you don't forward this to 100 of your next best friends you will lose out on your chance to have a big enough Multi Level Network to get the reward!</p><p>Tetimonial:<br>"Once that happens, we send Dave $2000 for finding the balloon. Carol gets $1000 for inviting Dave, Bob gets $500 for inviting Carol, and Alice gets $250 for inviting Bob. The remaining $250 is donated to charity."</p><p>*(Chances not representative of all entrants. Some terms and conditions apply. See site for details.)</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330282">
+
+</div>
+</div>
+
+<div id="replyto_30330282"></div>
+
+<ul id="group_30330282">
+	<li id="hiddens_30330282" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330282"><li id="tree_30331412" class="comment oneline">
+<div id="comment_status_30331412" class="commentstatus"></div>
+<div id="comment_30331412">
+	<div id="comment_top_30331412" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331412" name="comment_link_30331412" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331412" onclick="return D2.setFocusComment(30331412)" >Re:</a>
+
+
+		 	<span id="comment_score_30331412" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331412); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Wannabe+Code+Monkey">Wannabe Code Monkey <span class="uid">(638617)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331412"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331412"><a href="http://balloon.mit.edu/media/images/how_it_works.jpg" title="mit.edu">http://balloon.mit.edu/media/images/how_it_works.jpg<span class="substr"> </span></a> [mit.edu]
+<p>I really like this triangular based scheme they've got going there. Everyone knows triangles are the sturdiest shape, so this is a good basis for the transfer of money. These techies should let some investment types in on their cool ideas.</p><p>Also, let's say I sign up directly from MIT and find one balloon, I get $2,000. Awesome, go me. MIT is out $2,000 for that balloon. If my friend Fred had referred me, I get my $2,000 and Fred gets $1,000. Now MIT is out</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331412">
+
+</div>
+</div>
+
+<div id="replyto_30331412"></div>
+
+<ul id="group_30331412">
+	<li id="hiddens_30331412" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330292" class="comment full contain">
+<div id="comment_status_30330292" class="commentstatus"></div>
+<div id="comment_30330292">
+	<div id="comment_top_30330292" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330292" name="comment_link_30330292" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330292" onclick="return D2.setFocusComment(30330292)" >ponzi?</a>
+
+
+		 	<span id="comment_score_30330292" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330292); return false">Score:3</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~j00r0m4nc3r">j00r0m4nc3r <span class="uid">(959816)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330292">		
+		on Friday December 04 2009, @06:49PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330292">#30330292</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330292"><i>Our group, the MIT Red Balloon Challenge Team, based out of the MIT Media Lab, has created a system where you get money not just for finding balloons, but for getting people to join the hunt who find the balloons, or for getting people who get people who find balloons, etc.</i> <br> <br>
+Maybe you could get Bernie Madoff to help.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330292">
+
+</div>
+</div>
+
+<div id="replyto_30330292"></div>
+
+<ul id="group_30330292">
+	<li id="hiddens_30330292" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330292"><li id="tree_30330398" class="comment full contain">
+<div id="comment_status_30330398" class="commentstatus"></div>
+<div id="comment_30330398">
+	<div id="comment_top_30330398" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330398" name="comment_link_30330398" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330398" onclick="return D2.setFocusComment(30330398)" >Re:ponzi?</a>
+
+
+		 	<span id="comment_score_30330398" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330398); return false">Score:4</a>, Informative)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~mea37">mea37 <span class="uid">(1201159)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330398">		
+		on Friday December 04 2009, @07:00PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330398">#30330398</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330398"><p>Not every MLM scheme is a ponzi scheme.  They do lend themselves to shadiness, but there are some distinctions (which is why Amway, or whatever they call themselves these days, doesn't get prosecuted into oblivion).</p><p>The major distinction is, the flow of money is linked to production of something that serves a goal outside the system.  In Amway's case, that would be a sale; in this case, it would be knowledge of the location of a balloon.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330398">
+<span class="ind"></span><a class="btn link" href="//science.slashdot.org/comments.pl?sid=1467482&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;cid=30330292" onclick="return D2.selectParent(30330292)">Parent</a>
+</div>
+</div>
+
+<div id="replyto_30330398"></div>
+
+<ul id="group_30330398">
+	<li id="hiddens_30330398" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330304" class="comment full contain">
+<div id="comment_status_30330304" class="commentstatus"></div>
+<div id="comment_30330304">
+	<div id="comment_top_30330304" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330304" name="comment_link_30330304" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330304" onclick="return D2.setFocusComment(30330304)" >missing boy?</a>
+
+
+		 	<span id="comment_score_30330304" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330304); return false">Score:3</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Aeros">Aeros <span class="uid">(668253)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330304">		
+		on Friday December 04 2009, @06:51PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330304">#30330304</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330304">Will there be a little boy trapped inside each one?</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330304">
+
+</div>
+</div>
+
+<div id="replyto_30330304"></div>
+
+<ul id="group_30330304">
+	<li id="hiddens_30330304" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330312" class="comment full contain">
+<div id="comment_status_30330312" class="commentstatus"></div>
+<div id="comment_30330312">
+	<div id="comment_top_30330312" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330312" name="comment_link_30330312" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330312" onclick="return D2.setFocusComment(30330312)" >'Scuse the Nasty, Paranoid Mind</a>
+
+
+		 	<span id="comment_score_30330312" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330312); return false">Score:5</a>, Interesting)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~hyades1">hyades1 <span class="uid">(1149581)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330312">		 &lt;<a href="mailto:hyades1%40hotmail.com">hyades1@hotmail.com</a>&gt;
+		on Friday December 04 2009, @06:51PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330312">#30330312</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330312"><p> Of course, these charming folks would never dream of using the project to map out, in a loose but enlightening way, the contacts of some of the more net-savvy people around.  And keeping that info for future reference, of course. </p><p> Vonnegut would loved it. </p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330312">
+
+</div>
+</div>
+
+<div id="replyto_30330312"></div>
+
+<ul id="group_30330312">
+	<li id="hiddens_30330312" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330312"><li id="tree_30330414" class="comment oneline">
+<div id="comment_status_30330414" class="commentstatus"></div>
+<div id="comment_30330414">
+	<div id="comment_top_30330414" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330414" name="comment_link_30330414" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330414" onclick="return D2.setFocusComment(30330414)" >Re:</a>
+
+
+		 	<span id="comment_score_30330414" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330414); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~maxume">maxume <span class="uid">(22995)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330414"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330414"><p>They could just check Facebook (I don't mean everybody on Facebook, I mean they could set some net-savvy roots and work from there).</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330414">
+
+</div>
+</div>
+
+<div id="replyto_30330414"></div>
+
+<ul id="group_30330414">
+	<li id="hiddens_30330414" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330600" class="comment oneline">
+<div id="comment_status_30330600" class="commentstatus"></div>
+<div id="comment_30330600">
+	<div id="comment_top_30330600" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330600" name="comment_link_30330600" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330600" onclick="return D2.setFocusComment(30330600)" >Re:</a>
+
+
+		 	<span id="comment_score_30330600" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330600); return false">Score:2</a>, Flamebait)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Sporkinum">Sporkinum <span class="uid">(655143)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330600"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330600"><p>The more net-savvy people around don't use twitter or facebook, etc.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330600">
+
+</div>
+</div>
+
+<div id="replyto_30330600"></div>
+
+<ul id="group_30330600">
+	<li id="hiddens_30330600" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330600"><li id="tree_30330874" class="comment oneline">
+<div id="comment_status_30330874" class="commentstatus"></div>
+<div id="comment_30330874">
+	<div id="comment_top_30330874" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330874" name="comment_link_30330874" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330874" onclick="return D2.setFocusComment(30330874)" >Re:</a>
+
+
+		 	<span id="comment_score_30330874" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330874); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~realityimpaired">realityimpaired <span class="uid">(1668397)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330874"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330874"><blockquote><div><p>The more net-savvy people around don't use twitter or facebook, etc.</p></div></blockquote><p>Depends. I know several people who could easily be called "net-savvy" who use Facebook to keep in touch with family/friends. And when I say "net-savvy" I'm not talking about people who know how to use Google or Wikipedia to find information, I'm talking about people who administer servers/networks, and participate in "grey hat" operations involving the security of other servers. Contrary to popular stereotypes, most of the sysadmins and peo<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330874">
+
+</div>
+</div>
+
+<div id="replyto_30330874"></div>
+
+<ul id="group_30330874">
+	<li id="hiddens_30330874" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330956" class="comment oneline">
+<div id="comment_status_30330956" class="commentstatus"></div>
+<div id="comment_30330956">
+	<div id="comment_top_30330956" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330956" name="comment_link_30330956" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330956" onclick="return D2.setFocusComment(30330956)" >Re:</a>
+
+
+		 	<span id="comment_score_30330956" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330956); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~ckedge">ckedge <span class="uid">(192996)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330956"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330956"><p>So we can identify them by exclusion!</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330956">
+
+</div>
+</div>
+
+<div id="replyto_30330956"></div>
+
+<ul id="group_30330956">
+	<li id="hiddens_30330956" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330956"><li id="tree_30332130" class="comment oneline">
+<div id="comment_status_30332130" class="commentstatus"></div>
+<div id="comment_30332130">
+	<div id="comment_top_30332130" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30332130" name="comment_link_30332130" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30332130" onclick="return D2.setFocusComment(30332130)" >Re:</a>
+
+
+		 	<span id="comment_score_30332130" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30332130); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~dissy">dissy <span class="uid">(172727)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30332130"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30332130"><p><i>So we can identify them by exclusion!</i><nobr> <wbr></nobr>...</p><p>Well played sir!</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30332130">
+
+</div>
+</div>
+
+<div id="replyto_30332130"></div>
+
+<ul id="group_30332130">
+	<li id="hiddens_30332130" class="hide"></li>
+</ul>
+
+</li></ul></li></ul></li><li id="tree_30341478" class="comment oneline">
+<div id="comment_status_30341478" class="commentstatus"></div>
+<div id="comment_30341478">
+	<div id="comment_top_30341478" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30341478" name="comment_link_30341478" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30341478" onclick="return D2.setFocusComment(30341478)" >Re:</a>
+
+
+		 	<span id="comment_score_30341478" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30341478); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~slcdb">slcdb <span class="uid">(317433)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30341478"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30341478"><p>No, but they might try to use what they learn to figure out the best strategy for finding something else... or someone else... they'd like to find. *Cough* Osama bin Laden, et. al. *Cough*</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30341478">
+
+</div>
+</div>
+
+<div id="replyto_30341478"></div>
+
+<ul id="group_30341478">
+	<li id="hiddens_30341478" class="hide"></li>
+</ul>
+
+</li><li id="tree_30342708" class="comment oneline">
+<div id="comment_status_30342708" class="commentstatus"></div>
+<div id="comment_30342708">
+	<div id="comment_top_30342708" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30342708" name="comment_link_30342708" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30342708" onclick="return D2.setFocusComment(30342708)" >Re:</a>
+
+
+		 	<span id="comment_score_30342708" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30342708); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~John+Hasler">John Hasler <span class="uid">(414242)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30342708"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30342708"><p>&gt;<nobr> <wbr></nobr>...these charming folks would never dream of using the project to map out,<br>&gt; in a loose but enlightening way, the contacts of some of the more net-savvy<br>&gt; people around.</p><p>It's all part of the plan these evil geniuses hatched forty years ago when they invented the Internet.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30342708">
+
+</div>
+</div>
+
+<div id="replyto_30342708"></div>
+
+<ul id="group_30342708">
+	<li id="hiddens_30342708" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330332" class="comment full contain">
+<div id="comment_status_30330332" class="commentstatus"></div>
+<div id="comment_30330332">
+	<div id="comment_top_30330332" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330332" name="comment_link_30330332" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330332" onclick="return D2.setFocusComment(30330332)" >This sounds way to much like Amway!</a>
+
+
+		 	<span id="comment_score_30330332" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330332); return false">Score:3</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~richardkelleher">richardkelleher <span class="uid">(1184251)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330332">		
+		on Friday December 04 2009, @06:53PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330332">#30330332</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330332">The description of the payouts sounds so much like Amway, I almost ran screaming from the room and torched my computer.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330332">
+
+</div>
+</div>
+
+<div id="replyto_30330332"></div>
+
+<ul id="group_30330332">
+	<li id="hiddens_30330332" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330368" class="comment full contain">
+<div id="comment_status_30330368" class="commentstatus"></div>
+<div id="comment_30330368">
+	<div id="comment_top_30330368" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330368" name="comment_link_30330368" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330368" onclick="return D2.setFocusComment(30330368)" >Well now...</a>
+
+
+		 	<span id="comment_score_30330368" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330368); return false">Score:4</a>, Interesting)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~war4peace">war4peace <span class="uid">(1628283)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330368">		
+		on Friday December 04 2009, @06:57PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330368">#30330368</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330368">Although it sounds like fun, I can see some flaws in this approach. First off, I think that whatever you don't ask for and lands in your Inbox/IM windows is SPAM if it contains this kind of URLs. People don't ask if you want to participate, they simply assume you would <i>love</i> to participate and will endlessly spam you with mass messages, e-mails and even calls.<br>
+Last time I have encountered such an URL sharing spree was no earlier than a week ago, due to a stupid site that promised that people would win whatever items if they get a certain number of clicks on an unique generated URL, just like it's the case here. All I can say is that I had to sign out from all my IM accounts because of that, and after things cooled down and I started my Yahoo messenger again, it froze due to the sheer amount of offline messages. Turned out that some people sent their bloody link over 1000 times via mass messages. So it's not funny at all, because people all get heated up about it and apply every dirty trick in the book to get an edge over the others:<br>
+- Make redirecting web pages and give you a false link by advertising other stuff.<br>
+- Threaten you to click on the link<br>
+- Beg you<br>
+- Send the link every 10 seconds or so<br><nobr> <wbr></nobr>...and so on<br> <br>
+In this particular case, I'm safe (not in the US) but I've had my share in the past. And I don't like it.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330368">
+
+</div>
+</div>
+
+<div id="replyto_30330368"></div>
+
+<ul id="group_30330368">
+	<li id="hiddens_30330368" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330382" class="comment oneline">
+<div id="comment_status_30330382" class="commentstatus"></div>
+<div id="comment_30330382">
+	<div id="comment_top_30330382" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330382" name="comment_link_30330382" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330382" onclick="return D2.setFocusComment(30330382)" >A DARPA Network?</a>
+
+
+		 	<span id="comment_score_30330382" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330382); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~gyrogeerloose">gyrogeerloose <span class="uid">(849181)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330382"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330382"><p> <b>Bah!</b> Whatever could come of that?</p><p>All I can say is those damned balloons better stay the heck off my lawn.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330382">
+
+</div>
+</div>
+
+<div id="replyto_30330382"></div>
+
+<ul id="group_30330382">
+	<li id="hiddens_30330382" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330382"><li id="tree_30330434" class="comment oneline">
+<div id="comment_status_30330434" class="commentstatus"></div>
+<div id="comment_30330434">
+	<div id="comment_top_30330434" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330434" name="comment_link_30330434" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330434" onclick="return D2.setFocusComment(30330434)" >Re: Off</a>
+
+
+		 	<span id="comment_score_30330434" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330434); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~TaoPhoenix">TaoPhoenix <span class="uid">(980487)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330434"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330434"><p>They will. But they'll get stuck in your crab-apple tree.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330434">
+
+</div>
+</div>
+
+<div id="replyto_30330434"></div>
+
+<ul id="group_30330434">
+	<li id="hiddens_30330434" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330438" class="comment full contain">
+<div id="comment_status_30330438" class="commentstatus"></div>
+<div id="comment_30330438">
+	<div id="comment_top_30330438" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330438" name="comment_link_30330438" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330438" onclick="return D2.setFocusComment(30330438)" >Oh, great, now MIT has a spam club</a>
+
+
+		 	<span id="comment_score_30330438" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330438); return false">Score:4</a>, Interesting)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~mtrachtenberg">mtrachtenberg <span class="uid">(67780)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330438">		
+		on Friday December 04 2009, @07:05PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330438">#30330438</a>)
+		<small><a href="http://www.mitchtrachtenberg.com/" title="http://www.mitchtrachtenberg.com/" class="user_homepage_display" rel="nofollow">Homepage</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330438"><p>It's not just spam, it's a spam pyramid scheme.  If this doesn't say something about our culture, I don't know what would.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330438">
+
+</div>
+</div>
+
+<div id="replyto_30330438"></div>
+
+<ul id="group_30330438">
+	<li id="hiddens_30330438" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330438"><li id="tree_30334148" class="comment oneline">
+<div id="comment_status_30334148" class="commentstatus"></div>
+<div id="comment_30334148">
+	<div id="comment_top_30334148" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30334148" name="comment_link_30334148" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30334148" onclick="return D2.setFocusComment(30334148)" >Re:</a>
+
+
+		 	<span id="comment_score_30334148" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30334148); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~smoker2">smoker2 <span class="uid">(750216)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30334148"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30334148">The whole 'giving of money' thing is the giveaway. Demonstrate our social networking skills by paying people - yeah that's really healthy.</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30334148">
+
+</div>
+</div>
+
+<div id="replyto_30334148"></div>
+
+<ul id="group_30334148">
+	<li id="hiddens_30334148" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330536" class="comment oneline">
+<div id="comment_status_30330536" class="commentstatus"></div>
+<div id="comment_30330536">
+	<div id="comment_top_30330536" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330536" name="comment_link_30330536" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330536" onclick="return D2.setFocusComment(30330536)" >Blondie</a>
+
+
+		 	<span id="comment_score_30330536" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330536); return false">Score:1</a>, Interesting)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Ssherby">Ssherby <span class="uid">(1429933)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330536"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330536">99 red balloons go by....</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330536">
+
+</div>
+</div>
+
+<div id="replyto_30330536"></div>
+
+<ul id="group_30330536">
+	<li id="hiddens_30330536" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330536"><li id="tree_30330616" class="comment full contain">
+<div id="comment_status_30330616" class="commentstatus"></div>
+<div id="comment_30330616">
+	<div id="comment_top_30330616" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330616" name="comment_link_30330616" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330616" onclick="return D2.setFocusComment(30330616)" >Re:Blondie</a>
+
+
+		 	<span id="comment_score_30330616" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330616); return false">Score:4</a>, Informative)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Sporkinum">Sporkinum <span class="uid">(655143)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330616">		
+		on Friday December 04 2009, @07:22PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330616">#30330616</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330616"><p>Nena..</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330616">
+<span class="ind"></span><a class="btn link" href="//science.slashdot.org/comments.pl?sid=1467482&amp;threshold=1&amp;commentsort=0&amp;mode=thread&amp;cid=30330536" onclick="return D2.selectParent(30330536)">Parent</a>
+</div>
+</div>
+
+<div id="replyto_30330616"></div>
+
+<ul id="group_30330616">
+	<li id="hiddens_30330616" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330628" class="comment oneline">
+<div id="comment_status_30330628" class="commentstatus"></div>
+<div id="comment_30330628">
+	<div id="comment_top_30330628" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330628" name="comment_link_30330628" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330628" onclick="return D2.setFocusComment(30330628)" >Re:</a>
+
+
+		 	<span id="comment_score_30330628" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330628); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~fucket">fucket <span class="uid">(1256188)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330628"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330628">You mean <a href="http://en.wikipedia.org/wiki/Nena" title="wikipedia.org" rel="nofollow">Nena</a> [wikipedia.org].</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330628">
+
+</div>
+</div>
+
+<div id="replyto_30330628"></div>
+
+<ul id="group_30330628">
+	<li id="hiddens_30330628" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330584" class="comment oneline">
+<div id="comment_status_30330584" class="commentstatus"></div>
+<div id="comment_30330584">
+	<div id="comment_top_30330584" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330584" name="comment_link_30330584" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330584" onclick="return D2.setFocusComment(30330584)" >Slashdot vs. all-comers... FIGHT!</a>
+
+
+		 	<span id="comment_score_30330584" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330584); return false">Score:1</a>, Offtopic)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~John+Whitley">John Whitley <span class="uid">(6067)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330584"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330584"><p><a href="http://balloon.media.mit.edu/evilwombat/" title="mit.edu">http://balloon.media.mit.edu/evilwombat/</a> [mit.edu]<nobr> <wbr></nobr>;-)</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330584">
+
+</div>
+</div>
+
+<div id="replyto_30330584"></div>
+
+<ul id="group_30330584">
+	<li id="hiddens_30330584" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330608" class="comment oneline">
+<div id="comment_status_30330608" class="commentstatus"></div>
+<div id="comment_30330608">
+	<div id="comment_top_30330608" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330608" name="comment_link_30330608" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330608" onclick="return D2.setFocusComment(30330608)" >What about doing it for charity?</a>
+
+
+		 	<span id="comment_score_30330608" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330608); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~dncsky1530">dncsky1530 <span class="uid">(711564)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330608"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330608">I know it's easy to motivate people by the prospect of making a dollar or two however the money would have a greater impact to a charity.
+<br> <br>
+We've created a <a href="http://www.windarpa.com/" title="windarpa.com">team</a> [windarpa.com] to win this prize and we need your help.  However we don't offer a dollar or two, just that you get a say in which charity the prize money will go too.
+<br> <br>
+Find us on <a href="http://www.facebook.com/group.php?gid=186546786754" title="facebook.com">facebook!</a> [facebook.com]</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330608">
+
+</div>
+</div>
+
+<div id="replyto_30330608"></div>
+
+<ul id="group_30330608">
+	<li id="hiddens_30330608" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330608"><li id="tree_30330920" class="comment oneline">
+<div id="comment_status_30330920" class="commentstatus"></div>
+<div id="comment_30330920">
+	<div id="comment_top_30330920" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330920" name="comment_link_30330920" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330920" onclick="return D2.setFocusComment(30330920)" >Re:</a>
+
+
+		 	<span id="comment_score_30330920" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330920); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~starbugs">starbugs <span class="uid">(1670420)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330920"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330920"><p>"RED" would be an excellent charity.<br>It would work if it was only MIT.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330920">
+
+</div>
+</div>
+
+<div id="replyto_30330920"></div>
+
+<ul id="group_30330920">
+	<li id="hiddens_30330920" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330798" class="comment oneline">
+<div id="comment_status_30330798" class="commentstatus"></div>
+<div id="comment_30330798">
+	<div id="comment_top_30330798" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330798" name="comment_link_30330798" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330798" onclick="return D2.setFocusComment(30330798)" >Why not 99 Red ballons?</a>
+
+
+		 	<span id="comment_score_30330798" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330798); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~starbugs">starbugs <span class="uid">(1670420)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330798"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330798"><p>99 Red balloons<br>Floating in the winter sky<br>Twittering till fingers hurt<br>Darpa money going somewhere else<br>Web 2 Point O springs to life<br>As our tax-dollars slowly fly<br>Focusing eyes on the sky<br>As ninety-nine red balloons go by</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330798">
+
+</div>
+</div>
+
+<div id="replyto_30330798"></div>
+
+<ul id="group_30330798">
+	<li id="hiddens_30330798" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330884" class="comment oneline">
+<div id="comment_status_30330884" class="commentstatus"></div>
+<div id="comment_30330884">
+	<div id="comment_top_30330884" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330884" name="comment_link_30330884" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330884" onclick="return D2.setFocusComment(30330884)" >...and the winner is</a>
+
+
+		 	<span id="comment_score_30330884" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330884); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~tomcode">tomcode <span class="uid">(261182)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330884"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330884"><p>Spamford Wallace!</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330884">
+
+</div>
+</div>
+
+<div id="replyto_30330884"></div>
+
+<ul id="group_30330884">
+	<li id="hiddens_30330884" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330930" class="comment full contain">
+<div id="comment_status_30330930" class="commentstatus"></div>
+<div id="comment_30330930">
+	<div id="comment_top_30330930" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330930" name="comment_link_30330930" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330930" onclick="return D2.setFocusComment(30330930)" >Anyone know where I can buy weather balloons?</a>
+
+
+		 	<span id="comment_score_30330930" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330930); return false">Score:3</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~PolygamousRanchKid+">PolygamousRanchKid  <span class="uid">(1290638)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330930">		
+		on Friday December 04 2009, @07:54PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330930">#30330930</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330930"><p>I mean, bulk rate.  Like, buttloads of 'em.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330930">
+
+</div>
+</div>
+
+<div id="replyto_30330930"></div>
+
+<ul id="group_30330930">
+	<li id="hiddens_30330930" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330930"><li id="tree_30331056" class="comment oneline">
+<div id="comment_status_30331056" class="commentstatus"></div>
+<div id="comment_30331056">
+	<div id="comment_top_30331056" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331056" name="comment_link_30331056" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331056" onclick="return D2.setFocusComment(30331056)" >And some red paint?</a>
+
+
+		 	<span id="comment_score_30331056" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331056); return false">Score:3</a>, Interesting)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Gavin+Scott">Gavin Scott <span class="uid">(15916)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331056"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331056"><p>Not like anyone would even contemplate such a thing of course...</p><p>G.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331056">
+
+</div>
+</div>
+
+<div id="replyto_30331056"></div>
+
+<ul id="group_30331056">
+	<li id="hiddens_30331056" class="hide"></li>
+</ul>
+
+<ul id="commtree_30331056"><li id="tree_30332772" class="comment oneline">
+<div id="comment_status_30332772" class="commentstatus"></div>
+<div id="comment_30332772">
+	<div id="comment_top_30332772" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30332772" name="comment_link_30332772" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30332772" onclick="return D2.setFocusComment(30332772)" >Re:</a>
+
+
+		 	<span id="comment_score_30332772" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30332772); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~goodmanj">goodmanj <span class="uid">(234846)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30332772"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30332772"><p>Actually <a href="http://www.scientificsales.com/8233-Weather-Balloon-100-Grams-Red-p/8233.htm" title="scientificsales.com">red is a standard weather balloon color</a> [scientificsales.com], it's easier to see against a cloudy sky.  But the really big ones don't seem to come in red very often.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30332772">
+
+</div>
+</div>
+
+<div id="replyto_30332772"></div>
+
+<ul id="group_30332772">
+	<li id="hiddens_30332772" class="hide"></li>
+</ul>
+
+</li></ul></li></ul></li><li id="tree_30331210" class="comment full contain">
+<div id="comment_status_30331210" class="commentstatus"></div>
+<div id="comment_30331210">
+	<div id="comment_top_30331210" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331210" name="comment_link_30331210" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331210" onclick="return D2.setFocusComment(30331210)" >The future...</a>
+
+
+		 	<span id="comment_score_30331210" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331210); return false">Score:3</a>, Interesting)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~seifried">seifried <span class="uid">(12921)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331210">		
+		on Friday December 04 2009, @08:27PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331210">#30331210</a>)
+		<small><a href="http://www.seifried.org/" title="http://www.seifried.org/" class="user_homepage_display">Homepage</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331210"><p>"All citizens, a murderer is on the loose. At exactly 4:23pm everyone needs to go outside and look for this man (picture shown on the TV), if you see him call 911 immediately." - paraphrased from Farenheit 451 f memory serves</p><p>This type of thing, if it works would be an incredibly powerful tool in an emergency (you need to find a specific car, a truck with a shipping container, etc.). I'm glad to see DARPA embracing the future they themselves helped create 40 years ago!</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331210">
+
+</div>
+</div>
+
+<div id="replyto_30331210"></div>
+
+<ul id="group_30331210">
+	<li id="hiddens_30331210" class="hide"></li>
+</ul>
+
+</li><li id="tree_30331242" class="comment full contain">
+<div id="comment_status_30331242" class="commentstatus"></div>
+<div id="comment_30331242">
+	<div id="comment_top_30331242" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331242" name="comment_link_30331242" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331242" onclick="return D2.setFocusComment(30331242)" >MIT versus the world</a>
+
+
+		 	<span id="comment_score_30331242" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331242); return false">Score:5</a>, Informative)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~courtarro">courtarro <span class="uid">(786894)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331242">		
+		on Friday December 04 2009, @08:31PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331242">#30331242</a>)
+		<small><a href="http://www.hydrous.net/" title="http://www.hydrous.net/" class="user_homepage_display">Homepage</a> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331242"><p>MIT's strategy is very interesting. Several groups (like <a href="http://ispyaredballoon.com/" title="ispyaredballoon.com">our team</a> [ispyaredballoon.com]) have been forming their teams for weeks, but MIT appeared on the scene just today, and it's fascinating that they got a front-page Slashdot plug. I give them lots of credit for flooding the scene with mentions in such a short time. Whereas some teams give their winnings to charity (like ours), others entice balloon spotters with cash portions of the earnings, and MIT has decided to do a little of both.
+
+</p><p>DARPA is the sole decider of how difficult this competition will be. Will they place the balloons in dense urban areas, or will the launch them in small rural communities?
+
+</p><p>Best of luck to all the teams tomorrow, MIT included. I hope that the contest winner will write a paper describing their strategy, both in network-building and in launch-day data collection.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331242">
+
+</div>
+</div>
+
+<div id="replyto_30331242"></div>
+
+<ul id="group_30331242">
+	<li id="hiddens_30331242" class="hide"></li>
+</ul>
+
+</li><li id="tree_30331664" class="comment oneline">
+<div id="comment_status_30331664" class="commentstatus"></div>
+<div id="comment_30331664">
+	<div id="comment_top_30331664" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331664" name="comment_link_30331664" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331664" onclick="return D2.setFocusComment(30331664)" >Luftballon</a>
+
+
+		 	<span id="comment_score_30331664" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331664); return false">Score:1</a>, Offtopic)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~kindbud">kindbud <span class="uid">(90044)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331664"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331664"><p>Did you ever wonder how many English speakers think "luft" is German for "red" thanks to the English lyrics of Nena's song?</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331664">
+
+</div>
+</div>
+
+<div id="replyto_30331664"></div>
+
+<ul id="group_30331664">
+	<li id="hiddens_30331664" class="hide"></li>
+</ul>
+
+</li><li id="tree_30331706" class="comment oneline">
+<div id="comment_status_30331706" class="commentstatus"></div>
+<div id="comment_30331706">
+	<div id="comment_top_30331706" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331706" name="comment_link_30331706" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331706" onclick="return D2.setFocusComment(30331706)" >Satellite?</a>
+
+
+		 	<span id="comment_score_30331706" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331706); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Tibia1">Tibia1 <span class="uid">(1615959)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331706"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331706">Somehow hack some satellites and create a perfect algorithm to locate balloons? No big deal, right?</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331706">
+
+</div>
+</div>
+
+<div id="replyto_30331706"></div>
+
+<ul id="group_30331706">
+	<li id="hiddens_30331706" class="hide"></li>
+</ul>
+
+</li><li id="tree_30331896" class="comment full contain">
+<div id="comment_status_30331896" class="commentstatus"></div>
+<div id="comment_30331896">
+	<div id="comment_top_30331896" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30331896" name="comment_link_30331896" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331896" onclick="return D2.setFocusComment(30331896)" >What I want to know is ....</a>
+
+
+		 	<span id="comment_score_30331896" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30331896); return false">Score:3</a>, Funny)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~PPH">PPH <span class="uid">(736903)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30331896">		
+		on Friday December 04 2009, @09:56PM (<span class="ind"></span><a href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30331896">#30331896</a>)
+		<small> </small>
+</span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30331896">... what will our government be doing while we're all looking up in the air?</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30331896">
+
+</div>
+</div>
+
+<div id="replyto_30331896"></div>
+
+<ul id="group_30331896">
+	<li id="hiddens_30331896" class="hide"></li>
+</ul>
+
+<ul id="commtree_30331896"><li id="tree_30332788" class="comment oneline">
+<div id="comment_status_30332788" class="commentstatus"></div>
+<div id="comment_30332788">
+	<div id="comment_top_30332788" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30332788" name="comment_link_30332788" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30332788" onclick="return D2.setFocusComment(30332788)" >High tech vs low tech contest?</a>
+
+
+		 	<span id="comment_score_30332788" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30332788); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~goodmanj">goodmanj <span class="uid">(234846)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30332788"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30332788"><p>Laughing at you for not RTFA: the balloons are on the ground.</p><p>But seriously, I think what they'll be doing is looking for the red balloons using satellite surveillance.  As I've <a href="http://slashdot.org/comments.pl?sid=1426938&amp;cid=29947702" title="slashdot.org">posted before</a> [slashdot.org], I think this is the non-secret half of a cameras-vs-eyeballs contest: can satellites find objects of interest faster than a motivated network of humans?</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30332788">
+
+</div>
+</div>
+
+<div id="replyto_30332788"></div>
+
+<ul id="group_30332788">
+	<li id="hiddens_30332788" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30332286" class="comment oneline">
+<div id="comment_status_30332286" class="commentstatus"></div>
+<div id="comment_30332286">
+	<div id="comment_top_30332286" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30332286" name="comment_link_30332286" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30332286" onclick="return D2.setFocusComment(30332286)" >Had to try...</a>
+
+
+		 	<span id="comment_score_30332286" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30332286); return false">Score:1</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~Godskitchen">Godskitchen <span class="uid">(1017786)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30332286"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30332286">I wonder if it will spread through<nobr> <wbr></nobr>/....<nobr> <wbr></nobr>;)
+
+<a href="http://balloon.media.mit.edu/tkhamilton" title="mit.edu" rel="nofollow">http://balloon.media.mit.edu/tkhamilton</a> [mit.edu]</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30332286">
+
+</div>
+</div>
+
+<div id="replyto_30332286"></div>
+
+<ul id="group_30332286">
+	<li id="hiddens_30332286" class="hide"></li>
+</ul>
+
+</li><li id="tree_30334556" class="comment oneline">
+<div id="comment_status_30334556" class="commentstatus"></div>
+<div id="comment_30334556">
+	<div id="comment_top_30334556" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30334556" name="comment_link_30334556" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30334556" onclick="return D2.setFocusComment(30334556)" >Other teams</a>
+
+
+		 	<span id="comment_score_30334556" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30334556); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~pontifier">pontifier <span class="uid">(601767)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30334556"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30334556">Of course I hope people will send me balloon entries at <a href="http://red40k.com/" title="red40k.com">http://red40k.com/</a> [red40k.com] but there is a wiki that lists many other teams.<br>
+it is at <a href="http://redballoon.wikispaces.com/Groups" title="wikispaces.com">http://redballoon.wikispaces.com/Groups</a> [wikispaces.com].</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30334556">
+
+</div>
+</div>
+
+<div id="replyto_30334556"></div>
+
+<ul id="group_30334556">
+	<li id="hiddens_30334556" class="hide"></li>
+</ul>
+
+</li><li id="tree_30340606" class="comment oneline">
+<div id="comment_status_30340606" class="commentstatus"></div>
+<div id="comment_30340606">
+	<div id="comment_top_30340606" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30340606" name="comment_link_30340606" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30340606" onclick="return D2.setFocusComment(30340606)" >MIT Won</a>
+
+
+		 	<span id="comment_score_30340606" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30340606); return false">Score:2</a>, Informative)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~sciencewhiz">sciencewhiz <span class="uid">(448595)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30340606"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30340606"><p>Congratulations to MIT for winning. <a href="https://networkchallenge.darpa.mil/" title="darpa.mil" rel="nofollow">https://networkchallenge.darpa.mil/</a> [darpa.mil]</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30340606">
+
+</div>
+</div>
+
+<div id="replyto_30340606"></div>
+
+<ul id="group_30340606">
+	<li id="hiddens_30340606" class="hide"></li>
+</ul>
+
+</li><li id="tree_30340974" class="comment oneline">
+<div id="comment_status_30340974" class="commentstatus"></div>
+<div id="comment_30340974">
+	<div id="comment_top_30340974" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30340974" name="comment_link_30340974" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30340974" onclick="return D2.setFocusComment(30340974)" >Would have been amusing...</a>
+
+
+		 	<span id="comment_score_30340974" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30340974); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~John+Hasler">John Hasler <span class="uid">(414242)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30340974"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30340974"><p>...had it been won by a group that did not use the Internet at all.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30340974">
+
+</div>
+</div>
+
+<div id="replyto_30340974"></div>
+
+<ul id="group_30340974">
+	<li id="hiddens_30340974" class="hide"></li>
+</ul>
+
+</li><li id="tree_30330280" class="comment hidden">
+<div id="comment_status_30330280" class="commentstatus"></div>
+<div id="comment_30330280">
+</div>
+
+<div id="replyto_30330280"></div>
+
+<ul id="group_30330280">
+	<li id="hiddens_30330280" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330280"><li id="tree_30330484" class="comment oneline">
+<div id="comment_status_30330484" class="commentstatus"></div>
+<div id="comment_30330484">
+	<div id="comment_top_30330484" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330484" name="comment_link_30330484" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330484" onclick="return D2.setFocusComment(30330484)" >Re:</a>
+
+
+		 	<span id="comment_score_30330484" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330484); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~eln">eln <span class="uid">(21727)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330484"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330484">It's not a pyramid scheme...it's a pyramid scheme OF SCIENCE!</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330484">
+
+</div>
+</div>
+
+<div id="replyto_30330484"></div>
+
+<ul id="group_30330484">
+	<li id="hiddens_30330484" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30330274" class="comment hidden">
+<div id="comment_status_30330274" class="commentstatus"></div>
+<div id="comment_30330274">
+</div>
+
+<div id="replyto_30330274"></div>
+
+<ul id="group_30330274">
+	<li id="hiddens_30330274" class="hide"></li>
+</ul>
+
+<ul id="commtree_30330274"><li id="tree_30330582" class="comment oneline">
+<div id="comment_status_30330582" class="commentstatus"></div>
+<div id="comment_30330582">
+	<div id="comment_top_30330582" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30330582" name="comment_link_30330582" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30330582" onclick="return D2.setFocusComment(30330582)" >Re:</a>
+
+
+		 	<span id="comment_score_30330582" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30330582); return false">Score:1</a>, Offtopic)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~NoYob">NoYob <span class="uid">(1630681)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30330582"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30330582"><p><div class="quote"><p>3rd post! weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!</p></div><p>What time zone are you in? If you're in the States - East Coast, well, starting the party early?</p><p>England, it's what, 11:13PM now? And you're pretty piss drunk about now. </p><p>Now, if you're on the West coast, it's 3:14PM - off work early?</p><p>If you're in the Midwest, I'd be pretty drunk too at this time every day.</p><p>Over in Hawaii, dude, having a hell of a lunch are we?</p><p>Japan. Ah, drunkedsan! An eye opener for your Saturday before you go into work?</p><p>China - what, the government has put a gun to your head and you <i>have</i> to dr<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30330582">
+
+</div>
+</div>
+
+<div id="replyto_30330582"></div>
+
+<ul id="group_30330582">
+	<li id="hiddens_30330582" class="hide"></li>
+</ul>
+
+</li></ul></li><li id="tree_30333156" class="comment hidden">
+<div id="comment_status_30333156" class="commentstatus"></div>
+<div id="comment_30333156">
+</div>
+
+<div id="replyto_30333156"></div>
+
+<ul id="group_30333156">
+	<li id="hiddens_30333156" class="hide"></li>
+</ul>
+
+<ul id="commtree_30333156"><li id="tree_30334072" class="comment oneline">
+<div id="comment_status_30334072" class="commentstatus"></div>
+<div id="comment_30334072">
+	<div id="comment_top_30334072" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30334072" name="comment_link_30334072" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30334072" onclick="return D2.setFocusComment(30334072)" >Re:</a>
+
+
+		 	<span id="comment_score_30334072" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30334072); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~shaka">shaka <span class="uid">(13165)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30334072"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30334072"><p>Yeah, spot on.</p><p>Except, of course, the only information being submitted to DARPA is the location of the ten balloons.</p><p>The ones "mapping society" and whatnot are MIT, and all the other teams that participate - teams that are nothing else than loosely connected people trying to accomplish something together.</p><p>So, it's a number of groups of loosely connected people mapping their respective interconnections. It's a true threat to society, I tell you!</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30334072">
+
+</div>
+</div>
+
+<div id="replyto_30334072"></div>
+
+<ul id="group_30334072">
+	<li id="hiddens_30334072" class="hide"></li>
+</ul>
+
+<ul id="commtree_30334072"><li id="tree_30336482" class="comment hidden">
+<div id="comment_status_30336482" class="commentstatus"></div>
+<div id="comment_30336482">
+</div>
+
+<div id="replyto_30336482"></div>
+
+<ul id="group_30336482">
+	<li id="hiddens_30336482" class="hide"></li>
+</ul>
+
+<ul id="commtree_30336482"><li id="tree_30351410" class="comment oneline">
+<div id="comment_status_30351410" class="commentstatus"></div>
+<div id="comment_30351410">
+	<div id="comment_top_30351410" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30351410" name="comment_link_30351410" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30351410" onclick="return D2.setFocusComment(30351410)" >Re:</a>
+
+
+		 	<span id="comment_score_30351410" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30351410); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~shaka">shaka <span class="uid">(13165)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30351410"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30351410"><p>I'm sure you read the fine article.</p><p>The MIT may reserve whichever rights they want, and it still won't be DARPA secretly mapping society.</p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30351410">
+
+</div>
+</div>
+
+<div id="replyto_30351410"></div>
+
+<ul id="group_30351410">
+	<li id="hiddens_30351410" class="hide"></li>
+</ul>
+
+</li></ul></li></ul></li><li id="tree_30335338" class="comment oneline">
+<div id="comment_status_30335338" class="commentstatus"></div>
+<div id="comment_30335338">
+	<div id="comment_top_30335338" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30335338" name="comment_link_30335338" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30335338" onclick="return D2.setFocusComment(30335338)" >The Red Menace</a>
+
+
+		 	<span id="comment_score_30335338" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30335338); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~PPH">PPH <span class="uid">(736903)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30335338"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30335338">You're looking for <b>red</b> balloons, you say? Red balloons secretly distributed across our nation by members of our own defense department? Just how deep does this conspiracy run?</div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30335338">
+
+</div>
+</div>
+
+<div id="replyto_30335338"></div>
+
+<ul id="group_30335338">
+	<li id="hiddens_30335338" class="hide"></li>
+</ul>
+
+</li><li id="tree_30341536" class="comment oneline">
+<div id="comment_status_30341536" class="commentstatus"></div>
+<div id="comment_30341536">
+	<div id="comment_top_30341536" class="commentTop newcomment">
+		<div class="title">
+			<h4><a id="comment_link_30341536" name="comment_link_30341536" href="//science.slashdot.org/comments.pl?sid=1467482&amp;cid=30341536" onclick="return D2.setFocusComment(30341536)" >Re:</a>
+
+
+		 	<span id="comment_score_30341536" class="score"> (<a href="#" onclick="getModalPrefs('modcommentlog', 'Moderation Comment Log', 30341536); return false">Score:2</a>)</span></h4>
+		</div>
+		<div class="details">
+			<span class="by"><span class="byby">by </span><a href="//slashdot.org/~slcdb">slcdb <span class="uid">(317433)</span></a></span><span class="writes" style="display:none"> writes:</span> 
+			<span class="otherdetails" id="comment_otherdetails_30341536"></span>
+		</div>
+	</div>
+	<div class="commentBody">
+		<div id="comment_body_30341536"><p>Allow me to posit an alternative interpretation. DARPA is not interested in mapping our society. They're interested in learning what the most effective strategies are for quickly locating things that they *know* exist and are "out there", but don't know their exact locations. Perhaps the application of such a strategy could be useful for one of DoD's other pet projects. You know, the one where they're trying to find Osama bin Waldo and his Al Quaedian friends.</p><p>Nah, clearly that would just be too far-fetched<span class="substr"> </span></p></div>
+	</div>
+
+	<div class="commentSub" id="comment_sub_30341536">
+
+</div>
+</div>
+
+<div id="replyto_30341536"></div>
+
+<ul id="group_30341536">
+	<li id="hiddens_30341536" class="hide"></li>
+</ul>
+
+</li></ul></li>
+			<li id="roothiddens" class="hide"></li>
+		</ul>
+	
+	
+	
+	
+
+<noscript><p><b>There may be more comments in this discussion. Without JavaScript enabled, you might want to <a href="//science.slashdot.org/users.pl?op=editcomm">turn on Classic Discussion System</a> in your preferences instead.</b></p></noscript>
+<div id="discussion_buttons" class="clearfix">
+
+<span class="nbutton btn hide" id="more_comments_button"><a href="#" onclick="D2.ajaxFetchComments(0,1); return false"><span id="more_comments_num_a" class="hide">Get More Comments</span>
+<span class="busy spinner">*</span>
+</a>
+</span>
+
+
+
+
+
+
+
+</div>
+
+
+<div class="newcmnt"><div id="replyto_0"></div></div>
+
+
+	<script type="text/javascript">
+<!--
+		D2.currents()['hidden']   = 0;
+		D2.currents()['full']     = 13;
+		D2.currents()['oneline']  = 37;
+		// D2.currents_total(50);
+
+		D2.abbrev_comments({30330874:558,30330582:654,30331412:131,30341536:521});
+		D2.noshow_comments([30330280,30330274,30333156,30336482]);
+		D2.pieces_comments([30330170,30330824,30334520,30330218,30331412,30330414,30330600,30330874,30330956,30332130,30341478,30342708,30330382,30330434,30334148,30330536,30330628,30330584,30330608,30330920,30330798,30330884,30331056,30332772,30331664,30331706,30332788,30332286,30334556,30340606,30340974,30330484,30330582,30334072,30351410,30335338,30341536]);
+		D2.init_hiddens([]);
+
+		D2.finishLoading();
+
+
+
+//-->
+	</script>
+
+
+</div>
+
+</section>
+									   </div>
+									</section>
+									   <div class="grid_24 random">
+									      <center>
+										  <blockquote class="quote">A real friend isn't someone you use once and then throw away.
+A real friend is someone you can use over and over again.</blockquote>
+									      </center>
+									   </div>
+								     </section>
+								  </div>
+
+	
+
+<script type="text/javascript">
+$(function(){
+$('#firehose-filter').
+	focus(function(event){
+		gFocusedText = this;
+	}).
+	blur(function(event){
+		if ( gFocusedText === this ) {
+			gFocusedText = null;
+		}
+	});
+
+
+apply_updates_when(		'at-end', true);
+});
+</script>
+
+<!-- body end --></section>
+
+	<footer class="grid_24">
+		<nav class="grid_10" role="footer">
+		    <ul>
+			<li><a href="//slashdot.org/faq">FAQ</a></li>
+			<li><a href="//slashdot.org/hof.shtml">Hall of Fame</a></li>
+			<li><a href="http://geek.net/advertising">Advertising</a></li>
+			<li><a href="http://geek.net/terms.php">Terms</a></li>
+			<li><a href="http://geek.net/privacy-statement">Privacy</a></li>
+			<li><a href="//slashdot.org/faq/slashmeta.shtml">About</a></li>
+		    </ul>
+		</nav>
+                
+		<div class="grid_14 tright"><span class="nobr">Trademarks property of their respective owners.</span> <span class="nobr">Comments owned by the poster.</span> <span class="nobr">&copy; 2011 All Rights Reserved. <a href="http://geek.net" title="The Mother Ship">Geeknet, Inc.</a></span></div>
+	</footer>
+ 
+<div id="modal_cover" class="hide" onclick="hide_modal_box(); return false;"></div>
+<div id="modal_box" class="hide">
+        <h3><div id="logo"><a href="//slashdot.org">Slashdot</a></div><span id="preference_title"></span></h3><br>
+        <div id="modal_box_content"></div>
+        <div class="actions">
+		<a class="ico close" href="#" onclick="hide_modal_box(); return false;"><span>Close</span></a>
+        </div>
+</div>
+
+<script type="text/javascript">
+COMSCORE.beacon({
+  c1:2,
+  c2:6035546,
+  c3:"",
+  c4:"",
+  c5:"",
+  c6:"",
+  c15:""
+});
+</script>
+<noscript><img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035546&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cj=1" alt="comScore2"></noscript>
+<script id="after-content" type="text/javascript">
+(function( $, fn, console ){
+	$ && fn && $(function(){ fn($, console); });
+})(window.jQuery, window.pageload_done, window.console);
+</script>
+
+</body>
+</html>

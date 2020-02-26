@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Captcha::reCAPTCHA</title>
+<meta name="description" content="A Perl implementation of the reCAPTCHA API" />
+<meta name="created" content="Sat Jul  3 20:37:19 2010" />
+<meta name="generator" content="Pod::Xhtml 1.59" />
+
+</head>
+<link rel="stylesheet" href="../../cpan.css" type="text/css" /><body>
+<a name="-top-"></a>
+<h1>Captcha::reCAPTCHA - A Perl implementation of the reCAPTCHA API</h1>
+
+
+<hr /><table width="100%"><tr>
+<td align="left"><a href="../../Captcha-reCAPTCHA/">Captcha-reCAPTCHA documentation</a>
+</td><td align="right">
+Contained in the <a href="http://cpan.uwinnipeg.ca/dist/Captcha-reCAPTCHA">Captcha-reCAPTCHA</a> distribution.</td>
+</tr></table>
+<hr />
+<div class="pod">
+<!-- INDEX START -->
+<h3 id="TOP">Index</h3>
+
+<ul><li><a href="#NAME">NAME</a></li>
+<li><a href="#VERSION">VERSION</a></li>
+<li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+<li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+<li><a href="#INTERFACE">INTERFACE</a></li>
+<li>
+<ul>
+<li><a href="#code_new_code"><code>new</code></a></li>
+<li><a href="#code_get_html_pubkey_error_use_ssl_o"><code>get_html( $pubkey, $error, $use_ssl, $options )</code></a></li>
+<li>
+<ul>
+<li><a href="#code_pubkey_code"><code>$pubkey</code></a></li>
+<li><a href="#code_error_code"><code>$error</code></a></li>
+<li><a href="#code_use_ssl_code"><code>$use_ssl</code></a></li>
+<li><a href="#code_options_code"><code>$options</code></a>
+</li>
+</ul></li>
+<li><a href="#code_get_options_setter_options_code"><code>get_options_setter( $options )</code></a></li>
+<li>
+<ul>
+<li><a href="#code_theme_code"><code>theme</code></a></li>
+<li><a href="#code_tabindex_code"><code>tabindex</code></a>
+</li>
+</ul></li>
+<li><a href="#code_check_answer_code"><code>check_answer</code></a></li>
+<li>
+<ul>
+<li><a href="#code_privkey_code"><code>$privkey</code></a></li>
+<li><a href="#code_remoteip_code"><code>$remoteip</code></a></li>
+<li><a href="#code_challenge_code"><code>$challenge</code></a></li>
+<li><a href="#code_response_code"><code>$response</code></a>
+</li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#CONFIGURATION_AND_ENVIRONMENT">CONFIGURATION AND ENVIRONMENT</a></li>
+<li><a href="#DEPENDENCIES">DEPENDENCIES</a></li>
+<li><a href="#INCOMPATIBILITIES">INCOMPATIBILITIES</a></li>
+<li><a href="#BUGS_AND_LIMITATIONS">BUGS AND LIMITATIONS</a></li>
+<li><a href="#AUTHOR">AUTHOR</a></li>
+<li><a href="#LICENCE_AND_COPYRIGHT">LICENCE AND COPYRIGHT</a></li>
+<li><a href="#DISCLAIMER_OF_WARRANTY">DISCLAIMER OF WARRANTY</a>
+</li>
+</ul><hr />
+<!-- INDEX END -->
+<h2>Code Index:</h2>
+<!-- BEGIN CODE INDEX --><a name="code-index"></a>
+<ul>
+<li><a href="#package-Captcha::reCAPTCHA-">package Captcha::reCAPTCHA</a>
+<ul>
+<li><a href="#new-">new</a></li>
+<li><a href="#_initialize-">_initialize</a></li>
+<li><a href="#_html-">_html</a></li>
+<li><a href="#get_options_setter-">get_options_setter</a></li>
+<li><a href="#get_html-">get_html</a></li>
+<li><a href="#_post_request-">_post_request</a></li>
+<li><a href="#check_answer-">check_answer</a></li>
+</ul>
+</li>
+<li><a href="#__END__-">__END__</a></li>
+<li><a href="#EOF-">EOF</a></li>
+</ul>
+<!-- END CODE INDEX -->
+
+<h1 id="NAME">NAME</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="NAME_CONTENT">
+<p>Captcha::reCAPTCHA - A Perl implementation of the reCAPTCHA API</p>
+
+</div>
+<h1 id="VERSION">VERSION</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="VERSION_CONTENT">
+<p>This document describes Captcha::reCAPTCHA version 0.93</p>
+
+</div>
+<h1 id="SYNOPSIS">SYNOPSIS</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="SYNOPSIS_CONTENT">
+<pre>    use Captcha::reCAPTCHA;
+
+    my $c = Captcha::reCAPTCHA-&gt;new;
+
+    # Output form
+    print $c-&gt;get_html( 'your public key here' );
+
+    # Verify submission
+    my $result = $c-&gt;check_answer(
+        'your private key here', $ENV{'REMOTE_ADDR'},
+        $challenge, $response
+    );
+
+    if ( $result-&gt;{is_valid} ) {
+        print &quot;Yes!&quot;;
+    }
+    else {
+        # Error
+        $error = $result-&gt;{error};
+    }
+
+</pre>
+<p>For complete examples see the /examples subdirectory</p>
+
+</div>
+<h1 id="DESCRIPTION">DESCRIPTION</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="DESCRIPTION_CONTENT">
+<p>reCAPTCHA is a hybrid mechanical turk and captcha that allows visitors
+who complete the captcha to assist in the digitization of books.</p>
+<p>From <a href="http://recaptcha.net/learnmore.html">http://recaptcha.net/learnmore.html</a>:</p>
+<pre>    reCAPTCHA improves the process of digitizing books by sending words that
+    cannot be read by computers to the Web in the form of CAPTCHAs for
+    humans to decipher. More specifically, each word that cannot be read
+    correctly by OCR is placed on an image and used as a CAPTCHA. This is
+    possible because most OCR programs alert you when a word cannot be read
+    correctly.
+
+</pre>
+<p>This Perl implementation is modelled on the PHP interface that can be
+found here:</p>
+<p><a href="http://recaptcha.net/plugins/php/">http://recaptcha.net/plugins/php/</a></p>
+<p>To use reCAPTCHA you need to register your site here:</p>
+<p><a href="#https://www.google.com/recaptcha/admin/create">https://www.google.com/recaptcha/admin/create</a></p>
+
+</div>
+<h1 id="INTERFACE">INTERFACE</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="INTERFACE_CONTENT">
+<dl>
+	<dt id="code_new_code"><code>new</code></dt>
+	<dd>
+		<p>Create a new <code>Captcha::reCAPTCHA</code>.</p>
+	</dd>
+	<dt id="code_get_html_pubkey_error_use_ssl_o"><code>get_html( $pubkey, $error, $use_ssl, $options )</code></dt>
+	<dd>
+		<p>Generates HTML to display the captcha.</p>
+<pre>    print $captcha-&gt;get_html( $PUB, $err );
+
+</pre>
+		<p>
+			<dl>
+				<dt id="code_pubkey_code"><code>$pubkey</code></dt>
+				<dd>
+					<p>Your reCAPTCHA public key, from the API Signup Page</p>
+				</dd>
+				<dt id="code_error_code"><code>$error</code></dt>
+				<dd>
+					<p>Optional. If set this should be either a string containing a reCAPTCHA
+status code or a result hash as returned by <code>check_answer</code>.</p>
+				</dd>
+				<dt id="code_use_ssl_code"><code>$use_ssl</code></dt>
+				<dd>
+					<p>Optional. Should the SSL-based API be used? If you are displaying a page
+to the user over SSL, be sure to set this to true so an error dialog
+doesn't come up in the user's browser.</p>
+				</dd>
+				<dt id="code_options_code"><code>$options</code></dt>
+				<dd>
+					<p>Optional. A reference to a hash of options for the captcha. See 
+<code>get_options_setter</code> for more details.</p>
+				</dd>
+			</dl>
+		</p>
+		<p>Returns a string containing the HTML that should be used to display
+the captcha.</p>
+	</dd>
+	<dt id="code_get_options_setter_options_code"><code>get_options_setter( $options )</code></dt>
+	<dd>
+		<p>You can optionally customize the look of the reCAPTCHA widget with some
+JavaScript settings. <code>get_options_setter</code> returns a block of Javascript
+wrapped in &lt;script&gt; .. &lt;/script&gt; tags that will set the options to be used
+by the widget.</p>
+		<p><code>$options</code> is a reference to a hash that may contain the following keys:</p>
+		<p>
+			<dl>
+				<dt id="code_theme_code"><code>theme</code></dt>
+				<dd>
+					<p>Defines which theme to use for reCAPTCHA. Possible values are 'red',
+'white' or 'blackglass'. The default is 'red'.</p>
+				</dd>
+				<dt id="code_tabindex_code"><code>tabindex</code></dt>
+				<dd>
+					<p>Sets a tabindex for the reCAPTCHA text box. If other elements in the
+form use a tabindex, this should be set so that navigation is easier for
+the user. Default: 0.</p>
+				</dd>
+			</dl>
+		</p>
+	</dd>
+	<dt id="code_check_answer_code"><code>check_answer</code></dt>
+	<dd>
+		<p>After the user has filled out the HTML form, including their answer for
+the CAPTCHA, use <code>check_answer</code> to check their answer when they
+submit the form. The user's answer will be in two form fields,
+recaptcha_challenge_field and recaptcha_response_field. The reCAPTCHA
+library will make an HTTP request to the reCAPTCHA server and verify the
+user's answer.</p>
+		<p>
+			<dl>
+				<dt id="code_privkey_code"><code>$privkey</code></dt>
+				<dd>
+					<p>Your reCAPTCHA private key, from the API Signup Page.</p>
+				</dd>
+				<dt id="code_remoteip_code"><code>$remoteip</code></dt>
+				<dd>
+					<p>The user's IP address, in the format 192.168.0.1.</p>
+				</dd>
+				<dt id="code_challenge_code"><code>$challenge</code></dt>
+				<dd>
+					<p>The value of the form field recaptcha_challenge_field</p>
+				</dd>
+				<dt id="code_response_code"><code>$response</code></dt>
+				<dd>
+					<p>The value of the form field recaptcha_response_field.</p>
+				</dd>
+			</dl>
+		</p>
+		<p>Returns a reference to a hash containing two fields: <code>is_valid</code>
+and <code>error</code>.</p>
+<pre>    my $result = $c-&gt;check_answer(
+        'your private key here', $ENV{'REMOTE_ADDR'},
+        $challenge, $response
+    );
+
+    if ( $result-&gt;{is_valid} ) {
+        print &quot;Yes!&quot;;
+    }
+    else {
+        # Error
+        $error = $result-&gt;{error};
+    }
+
+</pre>
+		<p>See the /examples subdirectory for examples of how to call <code>check_answer</code>.</p>
+	</dd>
+</dl>
+
+</div>
+<h1 id="CONFIGURATION_AND_ENVIRONMENT">CONFIGURATION AND ENVIRONMENT</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="CONFIGURATION_AND_ENVIRONMENT_CONTEN">
+<p>Captcha::reCAPTCHA requires no configuration files or environment
+variables.</p>
+<p>To use reCAPTCHA sign up for a key pair here:</p>
+<p><a href="#https://www.google.com/recaptcha/admin/create">https://www.google.com/recaptcha/admin/create</a></p>
+
+</div>
+<h1 id="DEPENDENCIES">DEPENDENCIES</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="DEPENDENCIES_CONTENT">
+<p>LWP::UserAgent,
+HTML::Tiny</p>
+
+</div>
+<h1 id="INCOMPATIBILITIES">INCOMPATIBILITIES</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="INCOMPATIBILITIES_CONTENT">
+<p>None reported .</p>
+
+</div>
+<h1 id="BUGS_AND_LIMITATIONS">BUGS AND LIMITATIONS</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="BUGS_AND_LIMITATIONS_CONTENT">
+<p>No bugs have been reported.</p>
+<p>Please report any bugs or feature requests to
+<code>bug-captcha-recaptcha@rt.cpan.org</code>, or through the web interface at
+<a href="http://rt.cpan.org">http://rt.cpan.org</a>.</p>
+
+</div>
+<h1 id="AUTHOR">AUTHOR</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="AUTHOR_CONTENT">
+<p>Andy Armstrong  <code>&lt;andy@hexten.net&gt;</code></p>
+
+</div>
+<h1 id="LICENCE_AND_COPYRIGHT">LICENCE AND COPYRIGHT</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="LICENCE_AND_COPYRIGHT_CONTENT">
+<p>Copyright (c) 2007, Andy Armstrong <code>&lt;andy@hexten.net&gt;</code>. All rights reserved.</p>
+<p>This module is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself. See <cite>perlartistic</cite>.</p>
+
+</div>
+<h1 id="DISCLAIMER_OF_WARRANTY">DISCLAIMER OF WARRANTY</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="DISCLAIMER_OF_WARRANTY_CONTENT">
+<p>BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE SOFTWARE &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE
+ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH
+YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
+NECESSARY SERVICING, REPAIR, OR CORRECTION.</p>
+<p>IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE
+LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL,
+OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE
+THE SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
+RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
+FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
+SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+</p>
+
+</div>
+</div>
+<hr /><table width="100%"><tr>
+<td align="left"><a href="../../Captcha-reCAPTCHA/">Captcha-reCAPTCHA documentation</a>
+</td><td align="right">
+Contained in the <a href="http://cpan.uwinnipeg.ca/dist/Captcha-reCAPTCHA">Captcha-reCAPTCHA</a> distribution.</td>
+</tr></table>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7071947-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<hr /><pre><a name="package-Captcha::reCAPTCHA-"></a><span class="k">package </span><span class="i">Captcha::reCAPTCHA</span><span class="sc">;</span>
+
+<span class="k">use</span> <span class="w">warnings</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">strict</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">Carp</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">LWP::UserAgent</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">HTML::Tiny</span><span class="sc">;</span>
+
+<span class="k">our</span> <span class="i">$VERSION</span> = <span class="q">&#39;0.93&#39;</span><span class="sc">;</span>
+
+<span class="k">use</span> <span class="w">constant</span> <span class="i">API_SERVER</span> <span class="cm">=&gt;</span> <span class="q">&#39;http://www.google.com/recaptcha/api&#39;</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">constant</span> <span class="i">API_SECURE_SERVER</span> <span class="cm">=&gt;</span>
+ <span class="q">&#39;https://www.google.com/recaptcha/api&#39;</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">constant</span> <span class="i">API_VERIFY_SERVER</span> <span class="cm">=&gt;</span> <span class="q">&#39;http://www.google.com&#39;</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">constant</span> <span class="i">SERVER_ERROR</span>      <span class="cm">=&gt;</span> <span class="q">&#39;recaptcha-not-reachable&#39;</span><span class="sc">;</span>
+
+<a name="new-"></a><span class="k">sub </span><span class="m">new</span> <span class="s">{</span>
+  <span class="k">my</span> <span class="i">$class</span> = <span class="k">shift</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="i">$self</span> = <span class="k">bless</span> <span class="s">{</span><span class="s">}</span><span class="cm">,</span> <span class="i">$class</span><span class="sc">;</span>
+  <span class="i">$self</span><span class="i">-&gt;_initialize</span><span class="s">(</span> <span class="i">@_</span> <span class="s">)</span><span class="sc">;</span>
+  <span class="k">return</span> <span class="i">$self</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<a name="_initialize-"></a><span class="k">sub </span><span class="m">_initialize</span> <span class="s">{</span>
+  <span class="k">my</span> <span class="i">$self</span> = <span class="k">shift</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="i">$args</span> = <span class="k">shift</span> || <span class="s">{</span><span class="s">}</span><span class="sc">;</span>
+
+  <span class="w">croak</span> <span class="q">&quot;new must be called with a reference to a hash of parameters&quot;</span>
+   <span class="k">unless</span> <span class="q">&#39;HASH&#39;</span> <span class="k">eq</span> <span class="k">ref</span> <span class="i">$args</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<a name="_html-"></a><span class="k">sub </span><span class="m">_html</span> <span class="s">{</span> <span class="k">shift</span>-&gt;{<span class="w">_html</span>} ||= <span class="w">HTML::Tiny</span><span class="w">-&gt;new</span> <span class="s">}</span>
+
+<a name="get_options_setter-"></a><span class="k">sub </span><span class="m">get_options_setter</span> <span class="s">{</span>
+  <span class="k">my</span> <span class="i">$self</span> = <span class="k">shift</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="i">$options</span> = <span class="k">shift</span> || <span class="k">return</span> <span class="q">&#39;&#39;</span><span class="sc">;</span>
+
+  <span class="w">croak</span> <span class="q">&quot;The argument to get_options_setter must be a hashref&quot;</span>
+   <span class="k">unless</span> <span class="q">&#39;HASH&#39;</span> <span class="k">eq</span> <span class="k">ref</span> <span class="i">$options</span><span class="sc">;</span>
+
+  <span class="k">my</span> <span class="i">$h</span> = <span class="i">$self</span><span class="i">-&gt;_html</span><span class="sc">;</span>
+
+  <span class="k">return</span> <span class="i">$h</span><span class="i">-&gt;script</span><span class="s">(</span>
+    <span class="s">{</span> <span class="w">type</span> <span class="cm">=&gt;</span> <span class="q">&#39;text/javascript&#39;</span> <span class="s">}</span><span class="cm">,</span>
+    <span class="q">&quot;\n//&lt;![CDATA[\n&quot;</span>
+     . <span class="q">&quot;var RecaptchaOptions = &quot;</span>
+     . <span class="i">$h</span><span class="i">-&gt;json_encode</span><span class="s">(</span> <span class="i">$options</span> <span class="s">)</span>
+     . <span class="q">&quot;;\n//]]&gt;\n&quot;</span>
+  <span class="s">)</span> . <span class="q">&quot;\n&quot;</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<a name="get_html-"></a><span class="k">sub </span><span class="m">get_html</span> <span class="s">{</span>
+  <span class="k">my</span> <span class="i">$self</span> = <span class="k">shift</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="s">(</span> <span class="i">$pubkey</span><span class="cm">,</span> <span class="i">$error</span><span class="cm">,</span> <span class="i">$use_ssl</span><span class="cm">,</span> <span class="i">$options</span> <span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+
+  <span class="w">croak</span>
+   <span class="q">&quot;To use reCAPTCHA you must get an API key from https://www.google.com/recaptcha/admin/create&quot;</span>
+   <span class="k">unless</span> <span class="i">$pubkey</span><span class="sc">;</span>
+
+  <span class="k">my</span> <span class="i">$h</span> = <span class="i">$self</span><span class="i">-&gt;_html</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="i">$server</span> = <span class="i">$use_ssl</span> ? <span class="i">API_SECURE_SERVER</span> <span class="co">:</span> <span class="i">API_SERVER</span><span class="sc">;</span>
+
+  <span class="k">my</span> <span class="i">$query</span> = <span class="s">{</span> <span class="w">k</span> <span class="cm">=&gt;</span> <span class="i">$pubkey</span> <span class="s">}</span><span class="sc">;</span>
+  <span class="k">if</span> <span class="s">(</span> <span class="i">$error</span> <span class="s">)</span> <span class="s">{</span>
+    <span class="c"># Handle the case where the result hash from check_answer</span>
+    <span class="c"># is passed.</span>
+    <span class="k">if</span> <span class="s">(</span> <span class="q">&#39;HASH&#39;</span> <span class="k">eq</span> <span class="k">ref</span> <span class="i">$error</span> <span class="s">)</span> <span class="s">{</span>
+      <span class="k">return</span> <span class="q">&#39;&#39;</span> <span class="k">if</span> <span class="i">$error</span>-&gt;{<span class="w">is_valid</span>}<span class="sc">;</span>
+      <span class="i">$error</span> = <span class="i">$error</span>-&gt;{<span class="w">error</span>}<span class="sc">;</span>
+    <span class="s">}</span>
+    <span class="i">$query</span>-&gt;{<span class="w">error</span>} = <span class="i">$error</span><span class="sc">;</span>
+  <span class="s">}</span>
+  <span class="k">my</span> <span class="i">$qs</span> = <span class="i">$h</span><span class="i">-&gt;query_encode</span><span class="s">(</span> <span class="i">$query</span> <span class="s">)</span><span class="sc">;</span>
+
+  <span class="k">return</span> <span class="k">join</span><span class="s">(</span>
+    <span class="q">&#39;&#39;</span><span class="cm">,</span>
+    <span class="i">$self</span><span class="i">-&gt;get_options_setter</span><span class="s">(</span> <span class="i">$options</span> <span class="s">)</span><span class="cm">,</span>
+    <span class="i">$h</span><span class="i">-&gt;script</span><span class="s">(</span>
+      <span class="s">{</span>
+        <span class="w">type</span> <span class="cm">=&gt;</span> <span class="q">&#39;text/javascript&#39;</span><span class="cm">,</span>
+        <span class="w">src</span>  <span class="cm">=&gt;</span> <span class="q">&quot;$server/challenge?$qs&quot;</span><span class="cm">,</span>
+      <span class="s">}</span>
+    <span class="s">)</span><span class="cm">,</span>
+    <span class="q">&quot;\n&quot;</span><span class="cm">,</span>
+    <span class="i">$h</span><span class="i">-&gt;noscript</span><span class="s">(</span>
+      <span class="s">[</span>
+        <span class="i">$h</span><span class="i">-&gt;iframe</span><span class="s">(</span>
+          <span class="s">{</span>
+            <span class="w">src</span>         <span class="cm">=&gt;</span> <span class="q">&quot;$server/noscript?$qs&quot;</span><span class="cm">,</span>
+            <span class="w">height</span>      <span class="cm">=&gt;</span> <span class="n">300</span><span class="cm">,</span>
+            <span class="w">width</span>       <span class="cm">=&gt;</span> <span class="n">500</span><span class="cm">,</span>
+            <span class="w">frameborder</span> <span class="cm">=&gt;</span> <span class="n">0</span>
+          <span class="s">}</span>
+        <span class="s">)</span><span class="cm">,</span>
+        <span class="i">$h</span><span class="i">-&gt;textarea</span><span class="s">(</span>
+          <span class="s">{</span>
+            <span class="w">name</span> <span class="cm">=&gt;</span> <span class="q">&#39;recaptcha_challenge_field&#39;</span><span class="cm">,</span>
+            <span class="w">rows</span> <span class="cm">=&gt;</span> <span class="n">3</span><span class="cm">,</span>
+            <span class="w">cols</span> <span class="cm">=&gt;</span> <span class="n">40</span>
+          <span class="s">}</span>
+        <span class="s">)</span><span class="cm">,</span>
+        <span class="i">$h</span><span class="i">-&gt;input</span><span class="s">(</span>
+          <span class="s">{</span>
+            <span class="w">type</span>  <span class="cm">=&gt;</span> <span class="q">&#39;hidden&#39;</span><span class="cm">,</span>
+            <span class="w">name</span>  <span class="cm">=&gt;</span> <span class="q">&#39;recaptcha_response_field&#39;</span><span class="cm">,</span>
+            <span class="w">value</span> <span class="cm">=&gt;</span> <span class="q">&#39;manual_challenge&#39;</span>
+          <span class="s">}</span>
+        <span class="s">)</span>
+      <span class="s">]</span>
+    <span class="s">)</span><span class="cm">,</span>
+    <span class="q">&quot;\n&quot;</span>
+  <span class="s">)</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<a name="_post_request-"></a><span class="k">sub </span><span class="m">_post_request</span> <span class="s">{</span>
+  <span class="k">my</span> <span class="i">$self</span> = <span class="k">shift</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="s">(</span> <span class="i">$url</span><span class="cm">,</span> <span class="i">$args</span> <span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+
+  <span class="k">my</span> <span class="i">$ua</span> = <span class="w">LWP::UserAgent</span><span class="w">-&gt;new</span><span class="s">(</span><span class="s">)</span><span class="sc">;</span>
+  <span class="k">return</span> <span class="i">$ua</span><span class="i">-&gt;post</span><span class="s">(</span> <span class="i">$url</span><span class="cm">,</span> <span class="i">$args</span> <span class="s">)</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<a name="check_answer-"></a><span class="k">sub </span><span class="m">check_answer</span> <span class="s">{</span>
+  <span class="k">my</span> <span class="i">$self</span> = <span class="k">shift</span><span class="sc">;</span>
+  <span class="k">my</span> <span class="s">(</span> <span class="i">$privkey</span><span class="cm">,</span> <span class="i">$remoteip</span><span class="cm">,</span> <span class="i">$challenge</span><span class="cm">,</span> <span class="i">$response</span> <span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+
+  <span class="w">croak</span>
+   <span class="q">&quot;To use reCAPTCHA you must get an API key from https://www.google.com/recaptcha/admin/create&quot;</span>
+   <span class="k">unless</span> <span class="i">$privkey</span><span class="sc">;</span>
+
+  <span class="w">croak</span> <span class="q">&quot;For security reasons, you must pass the remote ip to reCAPTCHA&quot;</span>
+   <span class="k">unless</span> <span class="i">$remoteip</span><span class="sc">;</span>
+
+  <span class="k">return</span> <span class="s">{</span> <span class="w">is_valid</span> <span class="cm">=&gt;</span> <span class="n">0</span><span class="cm">,</span> <span class="w">error</span> <span class="cm">=&gt;</span> <span class="q">&#39;incorrect-captcha-sol&#39;</span> <span class="s">}</span>
+   <span class="k">unless</span> <span class="i">$challenge</span> &amp;&amp; <span class="i">$response</span><span class="sc">;</span>
+
+  <span class="k">my</span> <span class="i">$resp</span> = <span class="i">$self</span><span class="i">-&gt;_post_request</span><span class="s">(</span>
+    <span class="i">API_VERIFY_SERVER</span> . <span class="q">&#39;/recaptcha/api/verify&#39;</span><span class="cm">,</span>
+    <span class="s">{</span>
+      <span class="w">privatekey</span> <span class="cm">=&gt;</span> <span class="i">$privkey</span><span class="cm">,</span>
+      <span class="w">remoteip</span>   <span class="cm">=&gt;</span> <span class="i">$remoteip</span><span class="cm">,</span>
+      <span class="w">challenge</span>  <span class="cm">=&gt;</span> <span class="i">$challenge</span><span class="cm">,</span>
+      <span class="w">response</span>   <span class="cm">=&gt;</span> <span class="i">$response</span>
+    <span class="s">}</span>
+  <span class="s">)</span><span class="sc">;</span>
+
+  <span class="k">if</span> <span class="s">(</span> <span class="i">$resp</span><span class="i">-&gt;is_success</span> <span class="s">)</span> <span class="s">{</span>
+    <span class="k">my</span> <span class="s">(</span> <span class="i">$answer</span><span class="cm">,</span> <span class="i">$message</span> <span class="s">)</span> = <span class="k">split</span><span class="s">(</span> <span class="q">/\n/</span><span class="cm">,</span> <span class="i">$resp</span><span class="i">-&gt;content</span><span class="cm">,</span> <span class="n">2</span> <span class="s">)</span><span class="sc">;</span>
+    <span class="k">if</span> <span class="s">(</span> <span class="i">$answer</span> =~ <span class="q">/true/</span> <span class="s">)</span> <span class="s">{</span>
+      <span class="k">return</span> <span class="s">{</span> <span class="w">is_valid</span> <span class="cm">=&gt;</span> <span class="n">1</span> <span class="s">}</span><span class="sc">;</span>
+    <span class="s">}</span>
+    <span class="k">else</span> <span class="s">{</span>
+      <span class="k">chomp</span> <span class="i">$message</span><span class="sc">;</span>
+      <span class="k">return</span> <span class="s">{</span> <span class="w">is_valid</span> <span class="cm">=&gt;</span> <span class="n">0</span><span class="cm">,</span> <span class="w">error</span> <span class="cm">=&gt;</span> <span class="i">$message</span> <span class="s">}</span><span class="sc">;</span>
+    <span class="s">}</span>
+  <span class="s">}</span>
+  <span class="k">else</span> <span class="s">{</span>
+    <span class="k">return</span> <span class="s">{</span> <span class="w">is_valid</span> <span class="cm">=&gt;</span> <span class="n">0</span><span class="cm">,</span> <span class="w">error</span> <span class="cm">=&gt;</span> <span class="i">SERVER_ERROR</span> <span class="s">}</span><span class="sc">;</span>
+  <span class="s">}</span>
+<span class="s">}</span>
+
+<span class="n">1</span><span class="sc">;</span>
+<a name="__END__-"></a><span class="k">__END__</span>
+
+</pre><pre><a name="EOF-"></a></pre></body>
+</html>

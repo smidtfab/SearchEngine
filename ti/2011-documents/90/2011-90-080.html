@@ -1,0 +1,1428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      
+        xmlns:media="http://search.yahoo.com/searchmonkey/media/" xmlns:dc="http://purl.org/dc/terms/"
+      
+      xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      >
+
+<head>
+  
+    <title>Amazon Mechanical Turk: Best Practices Guide</title>
+    <meta name="verify-v1" content="L4NJcP1bTYOJFMHbpoh8ERVHKc1WzM7/WG+vA6ZncWs=" />
+    <meta http-equiv="Content-Type" content="text/HTML; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+        <meta name="title" content="Amazon Mechanical Turk: Best Practices Guide" />
+    
+    
+        <meta property="og:description" content="Scribd is the world's largest social reading and publishing site." />
+    
+	<meta name="keywords" content="Guide, amazon, best practice, mechanical turk" />
+					<link rel="canonical" class="SL_norewrite" href="http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide" />
+	
+	
+	<script src="http://s6.scribdassets.com/javascripts/scribd_options.js" type="text/javascript"></script>
+	
+    
+
+    
+        
+            <link rel="alternate" type="application/json+oembed"
+                  href="http://www.scribd.com/services/oembed?url=http%3A%2F%2Fwww.scribd.com%2Fdoc%2F21829328%2FAmazon-Mechanical-Turk-Best-Practices-Guide&format=json"
+                  title="Amazon Mechanical Turk: Best Practices Guide oEmbed Profile" />
+        
+            <link rel="alternate" type="application/xml+oembed"
+                  href="http://www.scribd.com/services/oembed?url=http%3A%2F%2Fwww.scribd.com%2Fdoc%2F21829328%2FAmazon-Mechanical-Turk-Best-Practices-Guide&format=xml"
+                  title="Amazon Mechanical Turk: Best Practices Guide oEmbed Profile" />
+        
+        
+        
+            <link rel="image_src" href="http://imgv2-2.scribdassets.com/img/word_document/21829328/164x212/f166e1d307/1301379829" />
+            <meta property="og:image" content="http://imgv2-2.scribdassets.com/img/word_document/21829328/164x212/f166e1d307/1301379829" />
+        
+        <meta property="og:type" content="article" />
+    
+
+    <link href="http://yui.yahooapis.com/combo?2.8.0r4/build/assets/skins/sam/skin.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+
+
+    <link href="http://s6.scribdassets.com/aggregated/css/base.css?1301601738" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://s7.scribdassets.com/aggregated/css/web.css?1301601738" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://s7.scribdassets.com/aggregated/css/fragments.css?1301601738" media="screen" rel="stylesheet" type="text/css" />
+
+    
+      <meta name="csrf-param" content="authenticity_token" />
+      <meta name="csrf-token" content="38c809a719941935f3e5f655ef6e7ba9df2877ff" />
+    
+
+    <!--[if lte IE 6]>
+		<link href="http://s5.scribdassets.com/aggregated/css/ie.css?1301601738" media="screen" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+    <!--[if gte IE 7]>
+		<link href="http://s5.scribdassets.com/aggregated/css/ie7.css?1301601738" media="screen" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+    
+
+    
+    
+
+    <script type="text/javascript">
+        
+        if (!window.Scribd) var Scribd = new Object();
+        Scribd.cdn_path = 'http://s6.scribdassets.com/';
+        Scribd.rails_env = 'production';
+	Scribd.logged_in = false;
+	
+	
+        var perfStart = new Date();
+    </script>
+    <script src="http://s6.scribdassets.com/javascripts/detect_errors.js" type="text/javascript"></script>
+    
+        <script src="http://s6.scribdassets.com/aggregated/javascript/doc_view.js?1301601738" type="text/javascript"></script>
+    
+
+	<script src="http://s5.scribdassets.com/options/exposed_to_client.js?1301704800" type="text/javascript"></script>
+
+		    <script type="text/javascript">
+	Scribd.Boomerang.install(
+		false,
+		"word/show",
+				'cached_action_remote_ip',
+				true,
+		".scribd.com",
+		{"scribd_action_name":"show","scribd_code_sha1":"0d4ad17b93afcff5d1e4b5746298083f52553a91","scribd_controller_name":"word","scribd_user_id":"0","scribd_id":"21829328"}
+	);
+	
+    </script>
+
+	
+    
+        <meta property="fb:app_id" content="136494494209" />
+				
+    
+
+    <script type="text/javascript">
+        window['$rat'] = ratInit(
+                ["http://rs1.scribd.com/","http://rs2.scribd.com/","http://rs3.scribd.com/","http://rs4.scribd.com/","http://rs5.scribd.com/","http://rs6.scribd.com/","http://rs7.scribd.com/","http://rs8.scribd.com/"],
+                {"doc_id":21829328,"user_id":null},
+                false
+        );
+    </script>
+ 
+    
+        
+    
+
+    
+    
+
+    
+        <link rel="alternate" type="application/rss+xml" title="Scribd RSS feed" href="http://www.scribd.com/feeds/rss" />
+    
+
+    <link rel="shortcut icon" href="http://s6.scribdassets.com/favicon.ico" />
+
+    
+
+    
+
+    <script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js"></script>
+<script type="text/javascript">
+  GS_googleAddAdSenseService("ca-pub-7291399211842501");
+  GS_googleEnableAllServices();
+</script>
+<script type="text/javascript">
+  GA_googleFetchAds();
+
+  if (!window.Scribd) var Scribd = new Object();
+  if (!Scribd.Ads) Scribd.Ads = new Object();
+
+  Scribd.Ads.attributes = {
+    Controller: 'word',
+    Action: 'show',
+    UserState: 'Out',
+		FourGen: 'False'
+  };
+
+  Scribd.Ads.addUnit = function(name) {
+    
+    $H(Scribd.Ads.attributes).each(function(pair) {
+      GA_googleAddAttr(pair.key, pair.value);
+    });
+    GA_googleAddSlot("ca-pub-7291399211842501", name);
+    GA_googleFillSlot(name);
+  };
+
+  Scribd.Ads.addAttribute = function(name, value) {
+    Scribd.Ads.attributes[name] = value;
+  };
+</script>
+
+<!-- Start Quantcast User Segmentation -->
+<script type="text/javascript">
+  var quantSegs = [];
+  function qc_results(result) {
+    for (var i = 0; i < result.segments.length; i++)
+      quantSegs.push(result.segments[i].id);
+    Scribd.Ads.addAttribute("QuantSegs", quantSegs.join(";"));
+  }
+</script>
+<script type="text/javascript" src="http://pixel.quantserve.com/api/segments.json?a=p-13DPpb-yg8ofc&callback=qc_results"></script>
+<!-- End Quantcast User Segmentation -->
+
+
+    <link rel="media:document"
+href="http://d1.scribdassets.com/ScribdViewer.swf?document_id=21829328&amp;access_key=key-t1z6b6y3nzckfdpek2s&amp;version=1&amp;viewMode=" 
+xmlns:media="http://search.yahoo.com/searchmonkey/media/" 
+xmlns:dc="http://purl.org/dc/terms/" />
+
+<meta property="dc:creator" content="newtonapple" /> 
+<meta property="dc:description" content="Amazon Mechanical Turk best practices." /> 
+<meta property="media:title" content="Amazon Mechanical Turk: Best Practices Guide" /> 
+<meta property="dc:type" content="Text" /> 
+
+
+
+	<link rel="media:thumbnail" href="http://imgv2-2.scribdassets.com/img/word_document/21829328/54x70/c0fe76704f/1301379829" /> 
+
+
+
+<!--
+<PageMap>
+	<DataObject type="document">
+		<Attribute name="title">Amazon Mechanical Turk: Best Practices Guide</Attribute>
+		<Attribute name="author">newtonapple</Attribute>
+		<Attribute name="description">Amazon Mechanical Turk best practices.</Attribute>
+		<Attribute name="page_count">14</Attribute>
+		<Attribute name="view_count">3200</Attribute>
+		<Attribute name="time_ago">10 / 30 / 2009</Attribute>
+		
+		
+		<Attribute name="category">How&ndashTo Guides/Manuals</Attribute>
+		
+		<Attribute name="filetype_image">http://s5.scribdassets.com/images/filetypes/pdf_16x16.gif?1301601738</Attribute>
+	</DataObject>
+	
+	<DataObject type="thumbnail">
+		<Attribute name="src" value="http://imgv2-2.scribdassets.com/img/word_document/21829328/54x70/c0fe76704f/1301379829"/>
+	</DataObject>
+	
+	
+	<DataObject type="action">
+		<Attribute name="label" value="Download"/>
+		<Attribute name="url" value="http://www.scribd.com/document_downloads/21829328?extension=pdf"/>
+		<Attribute name="class" value="download"/>
+	</DataObject>
+	
+	<DataObject type="action">
+		<Attribute name="label" value="Fullscreen View"/>
+		<Attribute name="url" value="http://d1.scribdassets.com/ScribdViewer.swf?document_id=21829328&access_key=key-t1z6b6y3nzckfdpek2s&version=1&viewMode=fullscreen"/>
+		<Attribute name="class" value="fullscreen"/>
+	</DataObject>
+</PageMap>
+-->
+
+
+    
+    
+<!-- BEGIN Asynchronous Google Analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-443684-2']);
+_gaq.push(['_setCustomVar', 1, 'logged_in', 'false', 1]);
+_gaq.push(['_setCustomVar', 3, 'domain', document.location.host, 3]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- END Asynchronous Google Analytics -->
+
+</head>
+
+<body class="loc_word loc_word_show " data-revision="0d4ad17b93afcff5d1e4b5746298083f52553a91">
+	
+	<div class="autogen_class_views_shared_facebook_fake_blue_bar" id="autogen_id_541764595"></div>
+
+	<div id="template_main_content" >
+    	<div id="global_header" aptureNoHighlight="true">
+    <div class="inner clearfix">
+        <a href="/" class="logo" title="Scribd Home">Scribd</a>
+
+        <div class="left_bar head_sep"></div>
+
+        <a href="/upload-document" class="upload_button" id="global_header_upload_button" onclick="trackEvent('upload','click','topbar_non_docview')" title="Upload &amp; share documents.">Upload a Document</a>
+
+        <div class="right_bar head_sep"></div>
+
+        
+<form action="/search" autocomplete="off" class="global_search" method="get">
+    <input class="search_input" id="query_header" name="query" type="text" />
+    <a href="#" class="search_button">Search Documents</a>
+    
+        <div class="autogen_class_views_shared_search_autocompleter" id="autogen_id_541765692"><div class="search_autocompleter" id="autocompleter" style="display:none"><div class="ac_section ac_document_collections" id="autocompleter_document_collections"><div class="ac_white_border"><div class="ac_main"></div><div class="ac_sidebar"><img alt="document collections icon" src="http://s7.scribdassets.com/images/search/ac_collection_12x15.png?1301601738" /></div></div></div><div class="ac_section ac_publishers" id="autocompleter_publishers"><div class="ac_white_border"><div class="ac_main"></div><div class="ac_sidebar"><img alt="publishers icon" src="http://s7.scribdassets.com/images/search/ac_pub_15x15.png?1301601738" /></div></div></div><div class="ac_section ac_documents" id="autocompleter_documents"><div class="ac_white_border"><div class="ac_main"></div><div class="ac_sidebar"><img alt="documents icon" src="http://s5.scribdassets.com/images/search/ac_doc_10x14.png?1301601738" /></div></div></div><div class="ac_section ac_scribd_pages" id="autocompleter_scribd_pages"><div class="ac_white_border"><div class="ac_main"></div><div class="ac_sidebar"><img alt="scribd pages icon" src="http://s5.scribdassets.com/images/search/ac_scribd_15x15.png?1301601738" /></div></div></div><div class="ac_section ac_users" id="autocompleter_users"><div class="ac_white_border"><div class="ac_main"></div><div class="ac_sidebar"><img alt="users icon" src="http://s5.scribdassets.com/images/search/ac_people_12x12.png?1301601738" /></div></div></div></div></div>
+    
+</form>
+
+
+        <div class="right_bar head_sep"></div>
+
+        <div class="hover_menu" id="primary_menu"><a href="/explore" class="menu_control">Explore</a><div class="sub_menu clearfix"><div class="tail"><img alt="Tri_11x6" src="http://s7.scribdassets.com/images/global_header/tri_11x6.gif?1301601738" /></div><div class="menu_content clearfix"><div class="menu_left menu_column"><h3><img src="http://s7.scribdassets.com/images/global_header/icon_doc_14x16.png?1301601738" /><a href="/explore">Documents</a></h3><ul><li><a href="/explore/Books-Fiction">Books - Fiction</a></li><li><a href="/explore/Books-Nonfiction">Books - Non-fiction</a></li><li><a href="/explore/Health-Medicine">Health &amp; Medicine</a></li><li><a href="/explore/BrochuresCatalogs">Brochures/Catalogs</a></li><li><a href="/explore/Government-Docs">Government Docs</a></li><li><a href="/explore/HowTo-GuidesManuals">How-To Guides/Manuals</a></li><li><a href="/explore/MagazinesNewspapers">Magazines/Newspapers</a></li><li><a href="/explore/RecipesMenus">Recipes/Menus</a></li><li><a href="/explore/School-Work">School Work</a></li><li class="dem"><a href="/explore">+ all categories</a></li><li class="sep"></li><li class="em"><a href="/explore">Featured</a></li><li class="em"><a href="/explore/Most-Recent">Recent</a></li></ul></div><div class="menu_right menu_column"><h3><img src="http://s7.scribdassets.com/images/global_header/icon_user_17x16.png?1301601738" /><a href="/community">People</a></h3><ul><li><a href="/community/authors">Authors</a></li><li><a href="/community/students">Students</a></li><li><a href="/community/researchers">Researchers</a></li><li><a href="/community/publishers">Publishers</a></li><li><a href="/community/government-%26-nonprofits">Government &amp; Nonprofits</a></li><li><a href="/community/businesses">Businesses</a></li><li><a href="/community/musicians">Musicians</a></li><li><a href="/community/artists-%26-designers">Artists &amp; Designers</a></li><li><a href="/community/teachers">Teachers</a></li><li class="dem"><a href="/community">+ all categories</a></li><li class="sep"></li><li class="em"><a href="/community">Most Followed</a></li><li class="em"><a href="/community?t=trending">Popular</a></li></ul></div></div></div></div>
+
+
+        
+            <ul id="header_login" class="utilities logged_out_utilities clearfix" >
+                <!-- <li class="header_fb_login l1">
+                  
+                </li> -->
+                
+                <li class="signup l1"><a class="signup_button" href="/login" onclick="; Scribd.login.open({&quot;context&quot;:&quot;join&quot;,&quot;next_url&quot;:&quot;/doc/21829328&quot;}); return false;" title="Sign up for a free account to publish and download documents.">Sign Up</a></li>
+                <li class="v_bar head_sep l1"><span>|</span></li>
+                <li class="l1"><a href="/login" onclick="; Scribd.login.open({&quot;context&quot;:&quot;join2&quot;,&quot;next_url&quot;:&quot;/doc/21829328&quot;}); return false;" title="Login to your account.">Log In</a></li>
+            </ul>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    	
+
+        
+
+        <div id="wrap" class="clearfix">
+            
+                <script type="text/javascript">
+    var view_page = new ViewPage();
+</script>
+
+<div class="header_wrap">
+    <div class="header clearfix">
+                                    <div id="doc_top_leaderboard_ad" style="text-align: left; margin: 0; width: 728px; overflow: hidden;">
+                              <script type="text/javascript">
+                                if (!Scribd.showAggressiveAds()) {
+                                  GA_googleFillSlot("DocPage_ATF_728x90");
+                                }
+                              </script>
+                            </div>
+
+
+        
+
+        
+
+        
+
+        
+            
+            <div id="ipaper_uploader_info_container">
+                <div class="uploader_info clearfix" id="ipaper_uploader_info">
+    
+        <a href="http://www.scribd.com/newtonapple" class="profile_image"><img alt="1301371536" src="http://imgv2-4.scribdassets.com/img/word_user/1159588/48x48/d75c97388b/1301371536" /></a>
+    
+    
+    <div class="user_container">
+        <div class="username_container">From: <a href="http://www.scribd.com/newtonapple" class="username notranslate">David Dai</a></div>
+        
+    
+
+        <span class="follow_button">
+        
+            <a class="inner_follow_button" href="/login" onclick="trackEvent('Follow', 'Follow', 'document_page - Logged Out'); Scribd.login.open({&quot;context&quot;:&quot;follow&quot;,&quot;next_url&quot;:&quot;/doc/21829328&quot;,&quot;callback&quot;:&quot;new Ajax.Request('http://www.scribd.com/friends?followship%5Bpublisher_id%5D=1159588&amp;followship%5Bsource%5D=document_page', {asynchronous:true, evalScripts:true, onComplete:function(request){window.location = 'http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide'}, parameters:'authenticity_token=' + encodeURIComponent('38c809a719941935f3e5f655ef6e7ba9df2877ff')})&quot;}); return false;" rel="nofollow">+ Subscribe</a>
+        
+    	</span>
+
+    
+
+
+    </div>
+    
+</div>
+
+            </div>
+        
+
+        <div id="ipaper_title_container">
+            <div id="ipaper_title_wrapper">
+    <div id="doc_title_display">
+        
+        <h1 class="title" id="">
+            Amazon Mechanical Turk: Best Practices Guide
+        </h1>
+    </div>
+
+    
+</div>
+
+        </div>
+
+        <div style="text-align: left; margin-bottom: 15px;"><div id="div-google-leaderboard" style="margin-left: 0; margin-right: auto;">      <script type="text/javascript">
+        var googleData;
+        function google_ad_request_done(google_ads) {
+          if (google_ads.length == 0) {
+            
+            return;
+          };
+          if (google_ads[0].type == 'flash') {
+            
+          } else if (google_ads[0].type == 'image') {
+                    placementHTML = "                        <div>\n                          <a href=\"" + google_ads[0].url + "\" onmouseout=\"window.status=''\" onmouseover=\"window.status='" + google_ads[0].visible_url + "'\"><img src=\"" + google_ads[0].image_url + "\" /></a>\n                          <p style=\"text-align: right\"><a href=\"" + google_info.feedback_url + "\" style=\"font-weight: bold; color: black; text-decoration: none\">Ads by Google</a></p>\n                        </div>\n";
+      document.getElementById("div-google-leaderboard").innerHTML = placementHTML;
+      document.getElementById("div-google-leaderboard").visible = true;
+
+          } else {
+            var totalUnitAds, adsHTML, placementHTML;
+            var curAd = 0;
+                  totalUnitAds = 0;
+      placementHTML = '';
+      adsHTML = '';
+      for (var i=0; i < view_page.ipaper_width > 730 ? 3 : 2; i++) {
+        if (curAd >= google_ads.length) break;
+        if (!google_ads[curAd]) break;
+                line2 = google_ads[curAd].line2;
+        line3 = google_ads[curAd].line3;
+        adsHTML += "" + "                          <td style=\"margin-top: 8px; margin-bottom: 8px; vertical-align: top;padding-right:10px;\">\n";
+adsHTML += "" + "                            <a style=\"font-size:10pt; font-weight: bold; cursor: pointer; line-height: 10px; text-decoration:underline; color: #0000ff\"\n";
+adsHTML += "" + "                              onmouseout=\"window.status=''\" onmouseover=\"window.status='" + google_ads[curAd].visible_url + "'\" href=\"" + google_ads[curAd].url + "\">" + google_ads[curAd].line1 + "\n";
+adsHTML += "" + "                            </a><br/ >\n";
+adsHTML += "" + "                            " + (line2 ? line2 : '') + "<br />\n";
+adsHTML += "" + "                            "; if (line3) { adsHTML += "" + (line3 ? line3 : '') + "<br />"; } adsHTML += "\n";
+adsHTML += "" + "                            <span style=\"font-size: 11.5px;\"><a style=\"text-decoration:underline; color: #0000ff\" href=\"" + google_ads[curAd].url + "\">" + google_ads[curAd].visible_url + "</a></span>\n";
+adsHTML += "" + "                          </td>\n";
+
+        totalUnitAds++;
+        curAd++;
+      }
+
+      if (totalUnitAds > 0) {
+        placementHTML += "" + "                        <table style=\"border: 0px solid #eeeeee; text-align: left; padding: 2px;margin-left: 0px; margin-right: auto;font-family: courier new,verdana; 	font-style: normal; font-variant: normal; font-size:9pt; position:static;\" NOWRAP >\n";
+placementHTML += "" + "                          <tr style=\"padding-top:40px; padding-bottom: 40px;\">\n";
+placementHTML += "" + "                          <td colspan=\"" + totalUnitAds + "\" style=\"text-align: left; font-size: 11.5px; font-weight: bold; padding-top: 3px; padding-bottom: 3px;\">\n";
+placementHTML += "" + "                            <a href=\"" + google_info.feedback_url + "\" style=\"margin: 0pt 0pt 4px; padding-bottom: 5px; padding-left: 0px; padding-top: 5px; color: rgb(97, 97, 97); font-weight:700;\">Ads by Google</a>\n";
+placementHTML += "" + "                          </td>\n";
+placementHTML += "" + "                          </tr>\n";
+placementHTML += "" + "                          <tr>\n";
+placementHTML += "" + "                            \n";
+        placementHTML += adsHTML;
+        placementHTML += "" + "\n";
+placementHTML += "" + "                          </tr>\n";
+placementHTML += "" + "                          <tr>\n";
+placementHTML += "" + "                          </tr>\n";
+placementHTML += "" + "                        </table>\n";
+        document.getElementById("div-google-leaderboard").innerHTML = placementHTML;
+        document.getElementById("div-google-leaderboard").visible = true;
+      }
+
+          }
+        }
+
+        google_ad_client = 'pub-7291399211842501';
+        google_ad_channel = '4247945267';
+        google_ad_output = 'js';
+        google_max_num_ads = '' + view_page.ipaper_width > 730 ? 3 : 2;
+        google_ad_type = 'text';
+        
+        google_feedback = 'on';
+        
+        google_skip = ((0)) + '';
+      </script>
+        <script type="text/javascript">
+          if (Scribd.showAggressiveAds()) {
+            Scribd.staticLoadScript('http://pagead2.googlesyndication.com/pagead/show_ads.js');
+          } else {
+            google_ad_request_done = undefined;
+            google_ad_client = undefined;
+            google_ad_channel = undefined;
+            google_ad_output = undefined;
+            google_max_num_ads = undefined;
+            google_ad_type = undefined;
+            google_image_size = undefined;
+            google_feedback = undefined;
+            google_hints = undefined;
+            google_skip = undefined;
+          }
+        </script>
+</div></div>
+
+        <div id="ipaper_top_toolbar_container">
+            
+            <div id="ipaper_top_toolbar_inner_container">
+    <div class="top_toolbar clearfix" id="ipaper_top_toolbar">
+
+        
+            <a href="javascript:void(0)" class="download_button" id="toolbar_download" onclick="Scribd.ipaperToolbar.downloadButtonClick()"></a>
+        
+
+        
+            <a href="javascript:void(0)" class="mobile_button" id="toolbar_mobile" onclick="Scribd.ipaperToolbar.mobileButtonClick()"></a>
+        
+
+        
+            <a href="javascript:void(0)" class="print_button lb_button" id="toolbar_print"></a>
+        
+
+        <a href="javascript:void(0)" class="fullscreen_button" id="toolbar_fullscreen"></a>
+        <a href="javascript:void(0)" class="share_button lb_button" id="toolbar_share"></a>
+
+        
+    </div>
+
+    <div class="toolbar_lightboxes">
+        
+        <div class="lightbox " id="toolbar_download_lightbox" style="display:none;"><div class="content"></div><div class="footer"></div></div>
+        <div class="lightbox " id="toolbar_print_lightbox" style="display:none;"><div class="content"></div><div class="footer"></div></div>
+        <div class="lightbox " id="toolbar_share_lightbox" style="display:none;"><div class="content"></div><div class="footer"></div></div>
+        <div class="lightbox " id="toolbar_mobile_lightbox" style="display:none;"><div class="content"></div><div class="footer"></div></div>
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+        </div>
+
+        
+    </div>
+</div>
+
+
+<div id="view_container" class="clearfix">
+    <script type="text/javascript">
+        view_page.set_view_container();
+
+        var analytics = new Analytics();
+        var seo_query = null, seo_keywords = null;
+        if (analytics.isSearchEngineVisitor()) {
+            seo_query = analytics.getSearchEngineQuery();
+            seo_keywords = analytics.getSearchEngineKeywords();
+        }
+        if (seo_query && $('disable_highlighting')) {
+            $('query_highlighting').innerHTML = seo_query.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            $('disable_highlighting').show();
+            $('ipaper_highlighting_box').show();
+        }
+    </script>
+
+    <div id="view_main">
+        <script type="text/javascript">
+            view_page.set_view_main();
+        </script>
+
+        
+
+            <div id="viewer">
+                <div id="viewer_document">
+    
+
+    
+
+</div>
+
+            </div>
+
+        
+    </div>
+    
+        
+            
+                <div class="autogen_class_views_shared_sharing_blank_dialog" id="autogen_id_541763924"><div class="blank_readcast_popup" id="readcast_popup_outer" style="display: none;"><div id="arrow"><img src="/images/readcast/triangle_8x16.png" /></div><div id="readcast_popup"><a class="close_button" href="#"></a><img src="/images/readcast/readcast_logo_112x23.png" /><div id="readcast_status"></div><div id="readcast_content"><div class="autogen_class_views_shared_sharing_blank_control" id="autogen_id_541760144"><div class="controls first_time" id="control"><div id="intro_text">Reading should be social! Post a message on your social networks to let others know what you're reading. Select the sites below and start sharing.</div><div class="content_box clearfix"><div class="pref_item network" id="scribd_pref" style="height: 29px;"><img src="/images/readcast/icon_scribd_25x25.gif" /></div><div class="pref_item network" id="facebook_pref" style="height: 29px;"><img src="/images/readcast/icon_fb_25x25.gif" /></div><div class="pref_item network" id="twitter_pref" style="height: 29px;"><img src="/images/readcast/icon_twitter_25x25.gif" /></div><div class="pref_item last" style="height: 29px;"><a class="readcast_now_button logged_out_readcast_button" href="#" onclick="javascript: $rat('analytics.search.document.readcast', {})" style="height: 29px;" title="Readcast this Document">Readcast this Document<img alt="Transparent" src="http://s5.scribdassets.com/images/buttons/transparent.gif?1301601738" /></a></div></div></div></div></div></div></div></div>
+            
+        
+    
+    <div id="view_bar">
+        
+        
+
+        
+            
+        
+
+        <div id="sideboard_ads"><div id="div-google-sideboard-4247945267">      <script type="text/javascript">
+        var googleData;
+        function google_ad_request_done(google_ads) {
+          if (google_ads.length == 0) {
+            
+            return;
+          };
+          if (google_ads[0].type == 'flash') {
+            
+          } else if (google_ads[0].type == 'image') {
+                    placementHTML = "                                  <div>\n                                    <a href=\"" + google_ads[0].url + "\" onmouseout=\"window.status=''\" onmouseover=\"window.status='" + google_ads[0].visible_url + "'\"><img src=\"" + google_ads[0].image_url + "\" /></a>\n                                    <p style=\"text-align: right\"><a href=\"" + google_info.feedback_url + "\" style=\"font-weight: bold; color: black; text-decoration: none\">Ads by Google</a></p>\n                                  </div>\n";
+      document.getElementById("div-google-sideboard-4247945267").innerHTML = placementHTML;
+      document.getElementById("div-google-sideboard-4247945267").visible = true;
+
+          } else {
+            var totalUnitAds, adsHTML, placementHTML;
+            var curAd = 0;
+                  totalUnitAds = 0;
+      placementHTML = '';
+      adsHTML = '';
+      for (var i=0; i < 8; i++) {
+        if (curAd >= google_ads.length) break;
+        if (!google_ads[curAd]) break;
+                line2 = google_ads[curAd].line2;
+        line3 = google_ads[curAd].line3;
+        adsHTML += "" + "                                  <tr>\n";
+adsHTML += "" + "                                    <td style=\"width: 99%;\">\n";
+adsHTML += "" + "                                      <p style=\"margin-top: 8px; margin-bottom: 8px\">\n";
+adsHTML += "" + "                                        <a style=\"font-size:12pt; font-weight: bold; cursor: pointer; line-height: 14px; text-decoration:underline; color: #0000ff\" href=\"" + google_ads[curAd].url + "\">" + google_ads[curAd].line1 + "</a>\n";
+adsHTML += "" + "                                        <br />\n";
+adsHTML += "" + "                                        <span style=\"font-weight:normal; font-size:10.5pt; width=290px\">" + (line2 ? line2 : '') + "<br />\n";
+adsHTML += "" + "                                          "; if (line3) { adsHTML += "" + (line3 ? line3 : '') + "<br />"; } adsHTML += "</span>\n";
+adsHTML += "" + "                                        <a href=\"" + google_ads[curAd].url + "\" style=\"text-decoration:underline; color: #0000ff\">" + google_ads[curAd].visible_url + "</a>\n";
+adsHTML += "" + "                                      </p>\n";
+adsHTML += "" + "                                    </td>\n";
+adsHTML += "" + "                                  </tr>\n";
+
+        totalUnitAds++;
+        curAd++;
+      }
+
+      if (totalUnitAds > 0) {
+        placementHTML += "" + "                                  <div style=\"border: 0px solid #eeeeee; text-align: left; padding: 2px; width: 295px; position: relative; line-height: 14px; font-family: courier new,verdana; font-style: normal; font-variant: normal; font-size=10.5pt\">\n";
+placementHTML += "" + "                                     <div style=\"text-align: left;position: absolute; top: 0; left: 0; padding: 2px\">\n";
+placementHTML += "" + "                                         <a href=\"" + google_info.feedback_url + "\" style=\"margin: 0pt 0pt 4px; padding: 0pt; color: rgb(97, 97, 97); font-weight:700;\">Ads by Google</a>\n";
+placementHTML += "" + "                                      </div><br/>\n";
+placementHTML += "" + "                                      <table style=\"height: 355px; width: 100%\">\n";
+placementHTML += "" + "                                      \n";
+        placementHTML += adsHTML;
+        placementHTML += "" + "\n";
+placementHTML += "" + "                                      </table>\n";
+placementHTML += "" + "                                  </div>\n";
+        document.getElementById("div-google-sideboard-4247945267").innerHTML = placementHTML;
+        document.getElementById("div-google-sideboard-4247945267").visible = true;
+      }
+
+          }
+        }
+
+        google_ad_client = 'pub-7291399211842501';
+        google_ad_channel = '4247945267';
+        google_ad_output = 'js';
+        google_max_num_ads = '8';
+        google_ad_type = 'text';
+        
+        google_feedback = 'on';
+        
+        google_skip = (view_page.ipaper_width > 730 ? 3 : 2) + '';
+      </script>
+        <script type="text/javascript">
+          if (Scribd.showAggressiveAds()) {
+            Scribd.staticLoadScript('http://pagead2.googlesyndication.com/pagead/show_ads.js');
+          } else {
+            google_ad_request_done = undefined;
+            google_ad_client = undefined;
+            google_ad_channel = undefined;
+            google_ad_output = undefined;
+            google_max_num_ads = undefined;
+            google_ad_type = undefined;
+            google_image_size = undefined;
+            google_feedback = undefined;
+            google_hints = undefined;
+            google_skip = undefined;
+          }
+        </script>
+</div>                              <script type="text/javascript">
+                                  if (!Scribd.showAggressiveAds()) {
+                                      GA_googleFillSlot("DocPage_ATF_300x250");
+                                  }
+                              </script>
+</div>
+
+        
+        <div class="autogen_class_views_shared_fourgen_ipaper_nag autogen_class_views_shared_fourgen_nag" id="autogen_id_541761670"></div>
+        <div class="fb_like">
+            <div class="autogen_class_views_shared_facebook_like_button" id="autogen_id_541766506"><div id="facebook_like_button" style="display:none"></div></div>
+        </div>
+        <div id="activity_feed">
+            <h3>Recent Activity</h3>
+                    </div>
+
+        
+
+        <div id="exposed_share_panel"><h3>Share &amp; Embed</h3><div class="share_button_container"><a class="fb_btn " href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.scribd.com%2Fdoc%2F21829328%2FAmazon-Mechanical-Turk-Best-Practices-Guide%23source%3Afacebook" rel="nofollow"></a><a class="twtr_btn " href="http://twitter.com/home?source=scribd.com&amp;status=Reading%20%22Amazon%20Mechanical%20Turk%3A%20Best%20Practices%20Guide%22%20on%20Scribd%20http%3A%2F%2Fwww.scribd.com%2Fdoc%2F21829328%20%23Readcast" rel="nofollow"></a><a class="bz_btn " href="http://www.google.com/buzz/post?url=http%3A%2F%2Fwww.scribd.com%2Fdoc%2F21829328%2FAmazon-Mechanical-Turk-Best-Practices-Guide&amp;message=Amazon%20Mechanical%20Turk%20best%20practices." rel="nofollow"></a><div class="more_share_options"><a class="pseudoLink embed_btn" href="#"></a></div></div></div>
+
+        
+
+
+        
+<div id="other_documents">
+    
+<div id="related_docs_outer_container">
+<h3>Related Documents</h3><div class="small_shelf" id="related_docs"><div class="shelf_edge shelf_outer_left arrows"><div class="arrow_aligner"><a class="carousel-control arrow left_arrow" rel="prev" src="#" title="Previous">Previous</a><a class="carousel-control arrow right_arrow" rel="next" src="#" title="Next">Next</a></div></div><div class="shelf_container" id="related_docs_carousel" style="width: 248px"><div class="carousel_content"><ol class="document_slider"><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="amt-gsg-20080802" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/22330028/amt-gsg-20080802"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/22330028/72x93/f342147926/1294295672" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Mturk-SimpleOnlineTasks" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/46939981/Mturk-SimpleOnlineTasks"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/46939981/72x93/4163acdad0/1298615390" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Artificial Artificial Intelligence: Using Amazon Mechanical Turk and .NET to Create a Create a New Breed of Web App" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/13595883/Artificial-Artificial-Intelligence-Using-Amazon-Mechanical-Turk-and-NET-to-Create-a-Create-a-New-Breed-of-Web-App"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/13595883/72x93/6969e79ff8/1301381249" /><span class="no_of_pages"> p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="What is Amazon Mechanical Turk and How Can You Make Money With Mechanical Turk" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/27742446/What-is-Amazon-Mechanical-Turk-and-How-Can-You-Make-Money-With-Mechanical-Turk"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/27742446/72x93/d34622c349/1288895785" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Amazon Mechanical Turk - Office Hours January 2011 (3)" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/48780840/Amazon-Mechanical-Turk-Office-Hours-January-2011-3"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/48780840/72x93/e2a389181d/1299631569" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Mturk Process Notes Shapiro 4_2010" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/30012531/Mturk-Process-Notes-Shapiro-4-2010"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/30012531/72x93/b2ea21a4fd/1289274472" /><span class="no_of_pages"> p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Result Log" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/7029294/Result-Log"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/7029294/72x93/44d987aed2/1288667722" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Sites Like Hits4pay" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/2166832/Hits4pay-is-a-scam-or-is-it"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/2166832/72x93/03312e7cdc/1301455023" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Assignment(A4 Times)" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/38893941/Assignment-A4-Times"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/38893941/72x93/72993abd2a/1290181764" /><span class="no_of_pages"> p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Secrets to Peak Performance Fitness2" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/3943452/Secrets-to-Peak-Performance-Fitness2"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/3943452/72x93/d7649bdd3e/1301373010" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="The Modern Man" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/6166887/The-Modern-Man"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/6166887/72x93/426f66af72/1288712158" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Aranda Hotel CAD History Two (2) Years Call Type Priority Duration Disposition Report No" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/47898990/Aranda-Hotel-CAD-History-Two-2-Years-Call-Type-Priority-Duration-Disposition-Report-No"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/47898990/72x93/f78148bbcb/1296502576" /><span class="no_of_pages"> p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Aranda Hotel CAD History Two (2) Years Call Type Priority Duration Disposition Report No" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/47679013/Aranda-Hotel-CAD-History-Two-2-Years-Call-Type-Priority-Duration-Disposition-Report-No"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/47679013/72x93/1577bcc54a/1296930942" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Aranda Hotel CAD History Two (2) Years Call Type Priority Duration Disposition Report No" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/47555356/Aranda-Hotel-CAD-History-Two-2-Years-Call-Type-Priority-Duration-Disposition-Report-No"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/47555356/72x93/e6d8509c9a/1298363990" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Aranda Hotel CAD History Two (2) Years Call Type Priority Duration Disposition Report No" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/47330328/Aranda-Hotel-CAD-History-Two-2-Years-Call-Type-Priority-Duration-Disposition-Report-No"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/47330328/72x93/f713a257d9/1295639798" /><span class="no_of_pages"> p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="LID:DUC - RNAV (GPS) RWY 17 (1009)" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/36739588/LID-DUC-RNAV-GPS-RWY-17-1009"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/36739588/72x93/dd23d0ad16/1294293860" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="LID:61C - RNAV (GPS) RWY 21 (1009)" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/36746770/LID-61C-RNAV-GPS-RWY-21-1009"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/36746770/72x93/e1fd361086/1288838372" /><span class="no_of_pages"> p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Attar - Conference of the Birds (Fitzgerald Trans)" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/36778716/Attar-Conference-of-the-Birds-Fitzgerald-Trans"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/36778716/72x93/6c7a702041/1294293956" /><span class="no_of_pages"> p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Open Document" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow"><a href="http://www.scribd.com/doc/36884590/Open-Document"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/36884590/72x93/d642f4a4c2/1288691348" /><span class="no_of_pages"> p.</span></div></a></div></div></li></ol></div></div><div class="shelf_edge shelf_outer_right"></div><div class="clearfix"></div></div><script type="text/javascript">
+      Scribd['related_docs_carousel'] = new Scribd.carousel('related_docs_carousel', $$('#related_docs li'), $$('#related_docs a.arrow'), {
+        circular: false,
+        duration: 0.5,
+        wheel: false,
+        initial: $$('#related_docs li').first(),
+        afterMove: function() {
+           Scribd.carouselUtil.disableButton('related_docs_carousel');
+        }
+      });
+    </script>
+</div>
+
+    
+        
+<div id="user_docs_holder">
+
+    <div id="latest_user_docs">
+        <h3>More from this user</h3>
+        
+        <div class="side_doc_list">
+            <div class="small_shelf autogen_id_797228200 "><div class="shelf_edge shelf_outer_left arrows"><div class="arrow_aligner"><a class="carousel-control arrow left_arrow" rel="prev" src="#" title="Previous">Previous</a><a class="carousel-control arrow right_arrow" rel="next" src="#" title="Next">Next</a></div></div><div class="shelf_container" id="autogen_id_797228200_carousel" style="width: 248px"><div class="carousel_content gainlayout"><ol class="document_slider"><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Think Stats:  Probability and Statist..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/51065663/Think-Stats-Probability-and-Statistics-for-Programmers" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/51065663/72x93/df31252eaf/1301374512" /><span class="no_of_pages notranslate">122 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Piston Rod" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/50223193/Piston-Rod" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/50223193/72x93/a460955338/1301372232" /><span class="no_of_pages notranslate">1 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Floor Plan" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/50223192/Floor-Plan" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/50223192/72x93/1b86a2ca8e/1301375673" /><span class="no_of_pages notranslate">3 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Commercial Addition Proposal" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/50223189/Commercial-Addition-Proposal" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/50223189/72x93/16d897379a/1301376392" /><span class="no_of_pages notranslate">1 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Pump Station 3D" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/50223185/Pump-Station-3D" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/50223185/72x93/0a9e05c1e6/1301376392" /><span class="no_of_pages notranslate">1 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Brake Assembly Work Instructions" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/50223181/Brake-Assembly-Work-Instructions" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/50223181/72x93/e631475647/1301376392" /><span class="no_of_pages notranslate">1 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Turbine Engine 3D" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/50222755/Turbine-Engine-3D" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/50222755/72x93/bd3f1ad607/1301376392" /><span class="no_of_pages notranslate">1 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Cuckoo Hashing for Undergraduates" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/49305575/Cuckoo-Hashing-for-Undergraduates" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/49305575/72x93/5b599bcd99/1301376392" /><span class="no_of_pages notranslate">6 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Cuckoo Hashing" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/49305446/Cuckoo-Hashing" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/49305446/72x93/5149b2f2d2/1301375317" /><span class="no_of_pages notranslate">27 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="A Cool And Practical Alternative To T..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/49296055/A-Cool-And-Practical-Alternative-To-Traditional-Hash-Tables" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/49296055/72x93/2785378090/1301375247" /><span class="no_of_pages notranslate">6 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="The &quot;Original&quot; Coca-Cola Recipe Uncov..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/49049473/The-Original-Coca-Cola-Recipe-Uncovered-By-This-American-Life" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/49049473/72x93/c7f0cb0527/1301376392" /><span class="no_of_pages notranslate">3 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Building Watson: An Overview of the D..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/48939067/Building-Watson-An-Overview-of-the-DeepQA-Project" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/48939067/72x93/c2773e2d87/1301376046" /><span class="no_of_pages notranslate">21 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="2010 Y Combinator Companies' Hosting ..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/46483149/2010-Y-Combinator-Companies-Hosting-Decisions" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/46483149/72x93/28b93d1e80/1301376392" /><span class="no_of_pages notranslate">6 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Toward Better Crowdsourced Transcript..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/45479647/Toward-Better-Crowdsourced-Transcription-Transcription-of-A-year-of-The-Let-s-Go-Bus-Information-System-Data" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/45479647/72x93/912123b6b8/1301376392" /><span class="no_of_pages notranslate">6 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="A Practical Scalable Distributed B-Tree" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/A-Practical-Scalable-Distributed-B-Tree/d/42238507" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/42238507/72x93/57b047ac34/1301372547" /><span class="no_of_pages notranslate">12 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Netflix’s Transition to High-Availabi..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/40225102/Netflix%E2%80%99s-Transition-to-High-Availability-Storage-Systems" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/40225102/72x93/5307f9e9ee/1301376392" /><span class="no_of_pages notranslate">9 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Ant Colony Optimisation" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/40103025/Ant-Colony-Optimisation" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/40103025/72x93/166e058ac4/1301374613" /><span class="no_of_pages notranslate">16 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Dynamic Ant Colony Optimisation" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/40102839/Dynamic-Ant-Colony-Optimisation" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/40102839/72x93/1db9d6b975/1301376392" /><span class="no_of_pages notranslate">10 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="The Case for Determinism in Database ..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39979014/The-Case-for-Determinism-in-Database-Systems" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/39979014/72x93/465d613f99/1301383526" /><span class="no_of_pages notranslate">11 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="VoltDB: an SQL Developer's Perspective" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39978986/VoltDB-an-SQL-Developer-s-Perspective" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/39978986/72x93/eb857d1f5a/1301382723" /><span class="no_of_pages notranslate">5 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Thrift: Scalable Cross-Language Servi..." style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39807059/Thrift-Scalable-Cross-Language-Services-Implementation" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/39807059/72x93/093b7eb00f/1301408451" /><span class="no_of_pages notranslate">8 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Webvention v.s. Novartis" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39362416/Webvention-v-s-Novartis" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-3.scribdassets.com/img/word_document/39362416/72x93/667d8a7ef5/1301404966" /><span class="no_of_pages notranslate">26 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="The Netty Project 3.2 User Guide" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39237234/The-Netty-Project-3-2-User-Guide" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-2.scribdassets.com/img/word_document/39237234/72x93/346a0b589b/1301381463" /><span class="no_of_pages notranslate">25 p.</span></div></a></div></div><div class="shelf_document" data-tip-bottom="Scala Reference" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39218228/Scala-Reference" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-4.scribdassets.com/img/word_document/39218228/72x93/5579d4bfd1/1301372837" /><span class="no_of_pages notranslate">191 p.</span></div></a></div></div></li><li class="shelf_segment" style="width: 248px"><div class="shelf_document" data-tip-bottom="Scala Overview" style="width: 78px; margin: 0 2px"><div class="shelf_small_thumbnail_shadow gainlayout"><a class="notranslate" href="http://www.scribd.com/doc/39218225/Scala-Overview" rel="nofollow"><div class="thumbnail"><img src="http://imgv2-1.scribdassets.com/img/word_document/39218225/72x93/c3ab59a1fd/1301383213" /><span class="no_of_pages notranslate">20 p.</span></div></a></div></div></li></ol></div></div><div class="shelf_edge shelf_outer_right"></div><div class="clearfix"></div></div><script type="text/javascript">
+//<![CDATA[
+
+      Scribd['autogen_id_797228200_carousel'] = new Scribd.carousel('autogen_id_797228200_carousel', $$('.autogen_id_797228200 li'), $$('.autogen_id_797228200 a.arrow'), {
+        circular: false,
+        duration: 0.5,
+        wheel: false,
+        initial: $$('.autogen_id_797228200 li')[0],
+        afterMove: function() {
+           Scribd.carouselUtil.disableButton('autogen_id_797228200_carousel');
+        }
+      });
+    
+  
+//]]>
+</script>
+            
+        </div>
+    </div>
+
+
+<!-- Served by app02 in 0.166 secs. cpu: 0.070 -->
+</div>
+    
+    
+    
+        
+<div id="featured_docs_container">
+<div class="autogen_class_views_word_view_featured_docs" id="autogen_id_344049848"><h2>Featured on Scribd</h2><div class="side_doc_list"><div class="autogen_class_views_shared_documents_carousel autogen_class_views_shared_carousel_base" id="autogen_id_344050556"><div class="carousel_content_container" id="autogen_id_344050556_carousel"><div class="carousel_content"><ol><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344051287"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344052224"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/52012817/Joyce-Sidman-s-Welcome-to-the-Night" orig="http://imgv2-2.scribdassets.com/img/word_document/52012817/54x70/857d82b79a/1301597796" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Joyce Sidman's &quot;Welcome to the Night&quot;"><span class="no_of_pages notranslate">3 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/52012817/Joyce-Sidman-s-Welcome-to-the-Night" title="Joyce Sidman's &quot;Welcome to the Night&quot;">Joyce Sidman's &quot;Welcome to...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/hmhbooks" class="username notranslate">hmhbooks</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">852</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344053945"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/43902028/Growing-Up-with-Tamales-Los-tamales-de-Ana-by-Gwendolyn-Zepeda-Illustrated-by-April-Ward" orig="http://imgv2-3.scribdassets.com/img/word_document/43902028/54x70/b8e2d7a939/1301376361" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Growing Up with Tamales / Los tamales de Ana by Gwendolyn Zepeda, Illustrated by April Ward"><span class="no_of_pages notranslate">12 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/43902028/Growing-Up-with-Tamales-Los-tamales-de-Ana-by-Gwendolyn-Zepeda-Illustrated-by-April-Ward" title="Growing Up with Tamales / Los tamales de Ana by Gwendolyn Zepeda, Illustrated by April Ward">Growing Up with Tamales / Los t...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/ArtePublico" class="username notranslate">Arte Público Press</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">857</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344054167"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51336606/The-Little-Mermaid-by-Hans-Christian-Andersen" orig="http://imgv2-2.scribdassets.com/img/word_document/51336606/54x70/d3827bade1/1301372006" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="The Little Mermaid, by Hans Christian Andersen "><span class="no_of_pages notranslate">22 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51336606/The-Little-Mermaid-by-Hans-Christian-Andersen" title="The Little Mermaid, by Hans Christian Andersen ">The Little Mermaid, by Hans Chr...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/Mariko" class="username notranslate">Mariko</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">1,122</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344055321"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344056435"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/12900968/The-Princess-and-the-Pea" orig="http://imgv2-3.scribdassets.com/img/word_document/12900968/54x70/0548cd82a9/1301708813" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="The Princess and the Pea"><span class="no_of_pages notranslate">2 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/12900968/The-Princess-and-the-Pea" title="The Princess and the Pea">The Princess and the Pea</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/bresail4" class="username notranslate">bresail4</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">744</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344057126"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/14289501/Andersens-Fairy-Tales" orig="http://imgv2-2.scribdassets.com/img/word_document/14289501/54x70/723de25ade/1301380716" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Andersens' Fairy Tales"><span class="no_of_pages notranslate">101 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/14289501/Andersens-Fairy-Tales" title="Andersens' Fairy Tales">Andersens' Fairy Tales</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/Bookwarm2009" class="username notranslate">Bookwarm2009</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">1,895</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344058534"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/52078604/T-S-Eliot-The-Art-of-Poetry-No-1" orig="http://imgv2-4.scribdassets.com/img/word_document/52078604/54x70/4520f39aa3/1301674271" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="T. S. Eliot, The Art of Poetry No. 1"><span class="no_of_pages notranslate">25 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/52078604/T-S-Eliot-The-Art-of-Poetry-No-1" title="T. S. Eliot, The Art of Poetry No. 1">T. S. Eliot, The Art of Poetry ...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/TheParisReview" class="username notranslate">TheParisReview</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">2,948</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344059573"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344060076"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/33855501/Mudsailor-s-Practical-Jokes-for-Kids" orig="http://imgv2-2.scribdassets.com/img/word_document/33855501/54x70/d40329af44/1301388603" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Mudsailor's Practical Jokes for Kids"><span class="no_of_pages notranslate">8 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/33855501/Mudsailor-s-Practical-Jokes-for-Kids" title="Mudsailor's Practical Jokes for Kids">Mudsailor's Practical Jokes for...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/mudsailor" class="username notranslate">mudsailor</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">2,010</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344061182"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51993041/Japan-Radiation-could-stay-awhile" orig="http://imgv2-3.scribdassets.com/img/word_document/51993041/54x70/90bd700b74/1301582443" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Japan: Radiation could stay awhile"><span class="no_of_pages notranslate">1 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51993041/Japan-Radiation-could-stay-awhile" title="Japan: Radiation could stay awhile">Japan: Radiation could stay awhile</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/lfpress" class="username notranslate">lfpress</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,020</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344062966"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51962059/The-Truth-About-the-Economy-We-re-Heading-Back-Toward-a-Double-Dip" orig="http://imgv2-4.scribdassets.com/img/word_document/51962059/54x70/e4661818c5/1301553919" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="The Truth About the Economy: We're Heading Back Toward a Double Dip"><span class="no_of_pages notranslate">4 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51962059/The-Truth-About-the-Economy-We-re-Heading-Back-Toward-a-Double-Dip" title="The Truth About the Economy: We're Heading Back Toward a Double Dip">The Truth About the Economy: We...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/RobertReich" class="username notranslate">RobertReich</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">2,148</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344063827"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344032383"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51903416/Fukushima-Daiichi-Nuclear-Accident-An-Update-Log" orig="http://imgv2-4.scribdassets.com/img/word_document/51903416/54x70/36a99efbbf/1301665046" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Fukushima Daiichi Nuclear Accident - An Update Log"><span class="no_of_pages notranslate">43 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51903416/Fukushima-Daiichi-Nuclear-Accident-An-Update-Log" title="Fukushima Daiichi Nuclear Accident - An Update Log">Fukushima Daiichi Nuclear Accid...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/IAEABulletin" class="username notranslate">IAEABulletin</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">2,948</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344033012"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51907097/Obama-Energy-Policy-Remarks-March-30-2011" orig="http://imgv2-1.scribdassets.com/img/word_document/51907097/54x70/1549721135/1301501517" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Obama Energy Policy Remarks, March 30, 2011"><span class="no_of_pages notranslate">8 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51907097/Obama-Energy-Policy-Remarks-March-30-2011" title="Obama Energy Policy Remarks, March 30, 2011">Obama Energy Policy Remarks, Ma...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/thestate" class="username notranslate">The State Newspaper</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">1,580</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344034234"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51815583/Libya-s-unrest" orig="http://imgv2-3.scribdassets.com/img/word_document/51815583/54x70/ed7523c1ad/1301418824" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Libya's unrest"><span class="no_of_pages notranslate">1 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51815583/Libya-s-unrest" title="Libya's unrest">Libya's unrest</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/lfpress" class="username notranslate">lfpress</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,811</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344035358"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344036359"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51808023/Take-action-for-Japan" orig="http://imgv2-2.scribdassets.com/img/word_document/51808023/54x70/ffe9481da4/1301412543" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Take action for Japan"><span class="no_of_pages notranslate">1 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51808023/Take-action-for-Japan" title="Take action for Japan">Take action for Japan</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/unicefusa" class="username notranslate">unicefusa</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">1,484</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344037741"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51804420/Obama-on-Libya-3-28-2011" orig="http://imgv2-3.scribdassets.com/img/word_document/51804420/54x70/3efba7f7ee/1301409889" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Obama on Libya 3/28/2011"><span class="no_of_pages notranslate">7 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51804420/Obama-on-Libya-3-28-2011" title="Obama on Libya 3/28/2011">Obama on Libya 3/28/2011</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/NYDNDailyPolitics" class="username notranslate">NYDNDailyPolitics</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">1,608</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344038805"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51568519/How-to-support-Earth-Hour-in-your-community-2011" orig="http://imgv2-4.scribdassets.com/img/word_document/51568519/54x70/da10bf12e6/1301371485" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="How to support Earth Hour in your community, 2011"><span class="no_of_pages notranslate">2 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51568519/How-to-support-Earth-Hour-in-your-community-2011" title="How to support Earth Hour in your community, 2011">How to support Earth Hour in yo...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/exit_exit" class="username notranslate">exit_exit</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">5,656</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344039573"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344040669"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51559388/The-Death-of-the-Hired-Man-by-Robert-Frost" orig="http://imgv2-3.scribdassets.com/img/word_document/51559388/54x70/2e270e211a/1301371484" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="The Death of the Hired Man, by Robert Frost"><span class="no_of_pages notranslate">3 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51559388/The-Death-of-the-Hired-Man-by-Robert-Frost" title="The Death of the Hired Man, by Robert Frost">The Death of the Hired Man, by ...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/TheNewRepublic" class="username notranslate">TheNewRepublic</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,281</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344041227"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51501837/For-the-love-of-Liz" orig="http://imgv2-2.scribdassets.com/img/word_document/51501837/54x70/df05914783/1301371484" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="For the love of Liz"><span class="no_of_pages notranslate">1 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51501837/For-the-love-of-Liz" title="For the love of Liz">For the love of Liz</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/lfpress" class="username notranslate">lfpress</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">4,144</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344042482"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51406736/Tuberculosis-Factsheet-2010-11" orig="http://imgv2-3.scribdassets.com/img/word_document/51406736/54x70/d111a90d37/1301371495" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Tuberculosis Factsheet, 2010/11"><span class="no_of_pages notranslate">2 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51406736/Tuberculosis-Factsheet-2010-11" title="Tuberculosis Factsheet, 2010/11">Tuberculosis Factsheet, 2010/11</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/exit_exit" class="username notranslate">exit_exit</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,577</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344043330"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344044297"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/19253572/Harry-Houdini" orig="http://imgv2-2.scribdassets.com/img/word_document/19253572/54x70/18d5abd382/1301371501" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Harry Houdini"><span class="no_of_pages notranslate">82 p.</span><span class="thumb_buy_banner_small">&nbsp;</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/19253572/Harry-Houdini" title="Harry Houdini">Harry Houdini</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/Campfire%20Graphic%20Novels" class="username notranslate">Graphic Novels Ca...</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">5,691</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344045698"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51413343/Liz-Taylor-reviews" orig="http://imgv2-3.scribdassets.com/img/word_document/51413343/54x70/8bace60e50/1301371495" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Liz Taylor reviews"><span class="no_of_pages notranslate">9 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51413343/Liz-Taylor-reviews" title="Liz Taylor reviews">Liz Taylor reviews</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/newsday" class="username notranslate">newsday</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">2,194</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344046213"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51378057/Towards-a-tuberculosis-free-world" orig="http://imgv2-3.scribdassets.com/img/word_document/51378057/54x70/7c21dc810d/1301371484" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Towards a tuberculosis-free world"><span class="no_of_pages notranslate">24 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51378057/Towards-a-tuberculosis-free-world" title="Towards a tuberculosis-free world">Towards a tuberculosis-free world</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/icrcdocs" class="username notranslate">International Com...</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,681</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344047380"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344016874"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51337738/Qaddafi-Spells-Chaos-March-7-1981" orig="http://imgv2-1.scribdassets.com/img/word_document/51337738/54x70/398ca09272/1301371484" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Qaddafi Spells Chaos, March 7, 1981"><span class="no_of_pages notranslate">7 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51337738/Qaddafi-Spells-Chaos-March-7-1981" title="Qaddafi Spells Chaos, March 7, 1981">Qaddafi Spells Chaos, March 7, ...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/TheNewRepublic" class="username notranslate">TheNewRepublic</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">4,459</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344017825"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51182739/Navigating-Life-By-Ingrid-Ricks" orig="http://imgv2-4.scribdassets.com/img/word_document/51182739/54x70/9c29c5fee2/1301371484" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Navigating Life: By Ingrid Ricks"><span class="no_of_pages notranslate">4 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51182739/Navigating-Life-By-Ingrid-Ricks" title="Navigating Life: By Ingrid Ricks">Navigating Life: By Ingrid Ricks</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/iricks" class="username notranslate">Ingrid Ricks</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,191</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344018221"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/51331062/Google-Settlement-Rejection-Filing" orig="http://imgv2-4.scribdassets.com/img/word_document/51331062/54x70/f767528c09/1301371501" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Google Settlement Rejection Filing"><span class="no_of_pages notranslate">48 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/51331062/Google-Settlement-Rejection-Filing" title="Google Settlement Rejection Filing">Google Settlement Rejection Filing</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/PublishersWeekly" class="username notranslate">PublishersWeekly</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">5,042</span></p></div></div></div></div></li><li><div class="autogen_class_views_shared_documents_basic_list" id="autogen_id_344019647"><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344020370"><div class="clearfix inner "><div class="document_thumbnail"><div class="tiny_letter_thumbnail word_document_thumbnail"><a href="http://www.scribd.com/doc/24935114/Manual-on-the-Right-to-Water-and-Sanitation" orig="http://imgv2-4.scribdassets.com/img/word_document/24935114/54x70/668f413962/1301371501" rel="nofollow" style="background-image: url('http://s6.scribdassets.com/images/blank_thumbnails/tiny_letter.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title="Manual on the Right to Water and Sanitation"><span class="no_of_pages notranslate">224 p.</span><span class='outer_border'></span></a></div></div><div class="metadata" style="margin-left: 62px"><p class="title notranslate"><a href="http://www.scribd.com/doc/24935114/Manual-on-the-Right-to-Water-and-Sanitation" title="Manual on the Right to Water and Sanitation">Manual on the Right to Water an...</a></p><p class="secondary"><span class="metadata_label">From: </span><a href="http://www.scribd.com/UN-HABITAT" class="username notranslate">UN-HABITAT</a></p><p class="secondary"><span class="metadata_label">Reads: </span><span class="notranslate">3,642</span></p></div></div></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344021486"></div><div class="autogen_class_views_shared_documents_basic" id="autogen_id_344022954"></div></div></li></ol></div></div><div class="see_more_container clearfix"><div class="arrows"><a class="carousel-control left_arrow" rel="prev"></a><a class="carousel-control right_arrow" rel="next"></a></div></div><script type="text/javascript">
+// <![CDATA[
+
+          new Scribd.SharedCarouselManager({
+            container: $('autogen_id_344050556'),
+            pages: 9,
+            carousel_dom_id: 'autogen_id_344050556_carousel'
+          });
+        
+// ]]>
+</script>
+</div></div></div>
+</div>
+    
+    
+    
+</div>
+
+
+                                    <script type="text/javascript">
+                              if (!Scribd.showAggressiveAds()) {
+                                GA_googleFillSlot("DocPage_BTF_300x250");
+                              }
+                            </script>
+
+    </div>
+
+    
+        <div id="plaintext_wrapper" class="plain notranslate">
+          <p><b><b><h1>Amazon Mechanical Turk</h1></b><br/>Best Practices Guide</b></p><p><b><b>Amazon Mechanical Turk Best Practices Guide</b></b></p><p><b><b>Amazon Mechanical Turk: Best Practices Guide</b><br/>Copyright © 2008, 2009 Amazon Web Services LLC or its affiliates.</b></p><p><b><b>Amazon Mechanical Turk Best Practices Guide Planning Stage</b></b></p><p><b><b>Guidelines for Planning, Designing and Testing Your HITs</b></b></p><p>Topics • Planning Stage (p. 1) • HIT Content (p. 4) • Get work done faster (p. 6) • Preflight Checklist (p. 9) Amazon Mechanical Turk is a web service that uses human thinking and consensus as resources. The service provides a virtual marketplace where requesters advertise micro tasks and human workers complete them. Amazon Mechanical Turk is based on the idea that there are still many things that human beings do more efficiently than computers, such as giving opinions, making judgments, and extracting facts. Amazon Mechanical Turk gives businesses immediate access to a diverse, geographically dispersed, on-demand, scalable workforce and gives workers a selection of thousands of tasks to complete whenever and wherever it's convenient. We recognize that there is an art to using Amazon Mechanical Turk effectively. This guide helps you learn this art more quickly. Use this guide as you plan, design, and test your Amazon Mechanical Turk HITs.</p><p><b>Planning Stage</b><br/>Topics • Break your work into HITs (p. 2) • Keep HITs simple (p. 2) • Tailor the workforce (p. 2) • Make the most of the results (p. 3) • Leverage the knowledge of the community (p. 3)</p><p><b>Amazon Mechanical Turk Best Practices Guide Break your work into HITs</b></p><p>• Test your HITs (p. 3) • Designate an Owner (p. 3) This section presents topics to complete before creating your HITs.</p><p><b>Break your work into HITs</b><br/>In the planning stage, you must define the goal of your HITs and specify exactly what the Workers will do to help you achieve your goal. Each Worker task typically becomes one HIT. For example, to create a restaurant guide you could request that Workers categorize a list of restaurants. A better approach, however, would be to break each task into a separate HIT. For example, you could present the name of only one restaurant in a HIT and ask the Worker to categorize it.</p><p><b>Tip</b><br/>Think of each HIT as a row in a spreadsheet. Each answer in a HIT is a column in the row. Multiple answers in a single HIT correspond to multiple columns in a single row.</p><p><b>Keep HITs simple</b><br/>A single HIT can ask for more than one answer. For example, you might present four photos for a Worker to tag in one HIT. In this case, however, the Worker should be looking for the same thing in all of the photos. If you find that you are asking the Workers to perform multiple tasks in a single HIT, such as asking the Worker to look for different things in the four photos, break the tasks into multiple HITs. For example, if your HIT asks Workers to specify if there are restaurants and historic sites in photos, break the HITs into two HITs: one about tagging photos showing restaurants, another about tagging photos showing historic sites.</p><p><b>Tip</b><br/>Remember that you pay the same amount for each HIT so keep the work across HITs consistent.</p><p><b>Tailor the workforce</b><br/>Amazon Mechanical Turk gives you the opportunity to qualify your workforce. For example, if your HIT requires special knowledge, such as the ability to accurately classify artwork, you can create a qualification test and select only Workers that categorize artwork correctly. You can create qualification tests with answer keys that automatically score the tests or create qualification tests that require you to review the tests and approve the Workers. Amazon Mechanical Turk automatically maintains some statistics on Workers, such as the percentage of assignments approved and the Worker’s country. You can use these statistics to qualify Workers. For a complete list of system Qualifications or to create your own, go to &quot;Qualification Requirement&quot; or the command line tool, respectively, in the Amazon Mechanical Turk Developer Guide (http:// docs.amazonwebservices.com/AWSMechTurk/latest/AWSMechanicalTurkRequester/).</p><p><b>Tip</b><br/>To get the best selection of Workers, we suggest using Workers that have an approval rating of 95% or higher. If you conduct a survey and need Workers to respond only once, create HITs with multiple assignments. Amazon Mechanical Turk ensures that each Worker can accept only a single assignment in a HIT.</p><p><b>Amazon Mechanical Turk Best Practices Guide Make the most of the results</b></p><p><b>Make the most of the results</b><br/>Amazon Mechanical Turk presents HIT results in several ways depending on the way in which you create the HITs. To review the results in Excel, use the web interface to create your HITs and download the results in CSV format. To get XML results, use the API to create HITs and download results. For information about the API, go to the Amazon Mechanical Turk Developer Guide.</p><p><b>Tip</b><br/>If you use the web interface to create your HITs, you can review and approve or reject work offline. To do so, export your results, mark the answers you want to reject, and upload the file back to the web interface.</p><p><b>Leverage the knowledge of the community</b><br/>Some Workers like to share their thoughts about your HITs. Often times, Workers have great insight into ways to improve your HITs. Providing a comment box like the following on each HIT lets Workers provide thoughts on each task they complete.</p><p><b>Tip</b><br/>Many Workers communicate with each other through an online message board, for example, www.turkernation.com. Consider introducing yourself in the message board and asking for feedback and suggestions.</p><p><b>Test your HITs</b><br/>Testing your HITs helps you discover technical errors, inconsistencies in instructions, and potential improvements to your HIT. Before publishing 10,000 new HITs, consider publishing 10. This gives you an opportunity to revise your HIT based on feedback from Workers. You can also see if the format of the answer is acceptable. Publish the full set of HITs once you are comfortable with your HIT design and test results.</p><p><b>Tip</b><br/>After publishing your test HITs you may not be able to find them on the website. Often, this is because Workers have already completed or have accepted your HITs. If you would like to see your HITs as Workers see them, use the sandbox (https://requestersandbox.mturk.com) for testing. You won’t be charged and there aren't any Workers. To view your HIT as a Worker, go to https://workersandbox.mturk.com and search for your HIT. Test your HITs in all major browsers (Internet Explorer and Firefox) to make sure your HIT has the same functionality.</p><p><b>Designate an Owner</b><br/>Our most effective and successful Requesters have one thing in common: an Amazon Mechanical Turk administrator. The administrator interacts with the Turker community, receives feedback about</p><p><b><b>Amazon Mechanical Turk Best Practices Guide HIT Content</b></b></p><p>the HITs, responds to questions, designs new HITs, and organizes the results. Investing in an administrator pays off because Workers become more involved, do the work quicker and go the extra mile for these administrators.</p><p><b>Tip</b><br/>If you use the Amazon Mechanical Turk API, plan to dedicate approximately 1 hour for every 10,000 published HITs. Using the web interface often involves more time. Test your HITs in small batches to get an accurate estimate of how much time it takes to manage your work.</p><p><b>HIT Content</b><br/>Topics • Write a clear and compelling title and description (p. 4) • Write effective instructions (p. 4) This section gives tips about creating effective HIT content.</p><p><b>Write a clear and compelling title and description</b><br/>The HIT title and description are the first items a Worker sees when searching for HITs. Take time to make the title and description concise, engaging, and descriptive. For example, if your HIT asks workers to give opinions about movies, a vague title would be, &quot;Survey.&quot; A better title would be &quot;A Quick Movie Survey.&quot; Follow it with a clear description, such as “Give us your opinion on two questions about a movie based on its summary.”</p><p><b>Write effective instructions</b><br/>The answers you receive from Workers are only as good as the instructions you provide. The following tips help you create effective instructions.</p><p><b>Make instructions simple and concise</b><br/>Short sentences that contain a single idea increase their readability and help you get the answers you want. Work to streamline your instructions without losing clarity. The following is an example of long, complicated, and poorly conceived instructions:<br/>Your job is to go to any resource you like and find restaurant reviewers in the specified area, include their names, addresses, and any other contact information you can find, and then specify whether they work for a particular publisher and, if so, for how long.</p><p><b>The following instructions are better:</b><br/>1. Go to this link to view an article in the Food and Dining section of the NY Times. 2. Copy the name of the reviewer from the by-line and paste it into the following box. 3. Click on the name of the reviewer to see a list of his or her reviews.</p><p><b><b>Amazon Mechanical Turk Best Practices Guide Write effective instructions</b></b></p><p><b>4. Copy the URL of the list and paste the URL into the following box.</b></p><p><b>Tip</b><br/>Think of your instructions as a recipe that leads Workers step by step through the tasks they must perform. Number the instructions to show your Workers how many steps they must complete for each HIT and the exact order in which to complete them.</p><p><b>Include sample answers</b><br/>Include a sample answer for each task. Examples help make your expectations clear. Here's an example: &quot;Tag each photo with the name of the city, state and country where the photo was taken, for example, Seattle, Washington, USA.&quot; In this example, if you expect to see the state abbreviation (“WA”) instead, be explicit in your instructions.</p><p><b>Identify things you do not want in the answers</b><br/>Specify things you do not want in the answers to clarify what you do want. For example, &quot;Do not put the name of the structure in the photo in the response, for example, Eiffel Tower, Paris, France.&quot; Use negative examples sparingly. Using one negative example to prevent a common mistake is helpful. Using lots of negative examples often confuses Workers.</p><p><b>Examples of improved instructions</b><br/>The following examples show a poor and well written set of instructions. The following shows a poor instruction set.<br/>Transcribe Newspaper Article Type the newspaper article below, including capitalization, spaces and punctuation.</p><p><b>The following is a better instruction set.</b><br/>Transcribe a Short Section of a Newspaper Article Type the snippet of newspaper article below, accurately reproducing capitalization, spaces and punctuation. Click the Instructions link to expand the list of instruction. Instructions Join words that start at the end of one line and finish at the start of the next line. 1.Type each paragraph on a single line. Start a new paragraph on a new line. 2. Do not enter any blank lines. 3. Put a space between initials: e.g., N.Y. -&gt; N. Y. 4. Use -- for a long dash, e.g., Jan 21. -- New York. Also, 6-2 should be 6 -- 2. 5. Use - for a hyphen, e.g., ex-member. 6. Return or skip the HIT if you cannot read the text. Payment Answers are graded automatically as follows 1. Each article is typed by three different workers. 2. We automatically compare the answers against each other using an &quot;edit distance&quot; algorithm.</p><p><b>Amazon Mechanical Turk Best Practices Guide Get work done faster</b></p><p>3. Only the two answers closest to each other will be paid. If there is a tie, all answers will be paid.</p><p><b>Get work done faster</b><br/>Workers appreciate Requesters who help them be more efficient. Making Workers more efficient effectively increases their pay rate. This section discusses ways to make your HITs more efficient and appealing to Workers.</p><p><b>Use relevant keywords</b><br/>You should associate keywords with your HITs. Keywords help Workers find your HITs faster when searching for work. Keywords should be relevant to the HIT. Use your Requester name as a keyword. The following is an example of poorly chosen keywords.</p><p><b><b>The following is an example of well chosen keywords.</b></b></p><p><b><b>Avoid redundancy</b><br/>Make sure you ask a question only once.</b></p><p><b>Tip</b><br/>To increase Worker efficiency, use radio buttons instead of drop down menus to present the answers. The following example is poor because the questions are redundant.</p><p>To remove the redundancy, eliminate the first set of radio buttons and include a “No car in the picture” option.</p><p><b>Amazon Mechanical Turk Best Practices Guide Don’t make Workers scroll</b></p><p><b>Don’t make Workers scroll</b><br/>Scrolling reduces Worker efficiency and effectively reduces their pay rate. Find a way to make your HIT fit on one page. Make long instructions collapsible and keep them collapsed by default.</p><p><b>Open web pages in a new window</b><br/>If a Worker must open a new window to complete your HIT, open it in a new browser window so that the Worker can continue working on the HIT in the current window while referring to the data in the new window.</p><p><b>Tip</b><br/>To make a hyperlink open in a new window, include the target attribute in the HTML. For example: &lt;a href='http://www.mturk.com' 'target=_blank'&gt;Amazon Mechanical Turk&lt;/a&gt;</p><p><b>Position answer fields strategically</b><br/>If you want to associate an answer with content on the page, such as an image or text, place the answer field close to the content. By placing answer fields adjacent to the images they're associated with, you reduce the possibility of Workers entering answers in incorrect answer fields. If your HIT does not have images or other content associated with each answer field, consider placing the answer fields and Submit button in close proximity to reduce the amount of mousing required thereby increasing a Worker's efficiency.</p><p><b>Provide separate answer fields for each answer</b><br/>When using the web interface, Amazon Mechanical Turk stores each answer as a separate column in an Excel spreadsheet (a CSV file). By breaking Worker's answers across multiple columns you can more easily review results. Below are examples of using separate answer fields versus a single answer field.</p><p><b>Tip</b><br/>If you use the web interface to create HITs, remember to give each answer field a unique name. Amazon Mechanical Turk merges fields with the same name into a single column in the results.</p><p><b>Example of separate answer fields using different column names</b><br/>WorkTimeInSeconds 25 615 73 Answer.Q1FirstName Larry Roger Jane Answer.Q2LastName Jones Evans Smith Answer.Q3Employer Widgets, Inc. Widgets, Incorporated Widgets</p><p><b>Amazon Mechanical Turk Best Practices Guide Give Workers enough time to do the work</b></p><p><b><b>WorkTimeInSeconds 104 104</b></b></p><p><b><b>Answer.Q1FirstName Joan Bill</b></b></p><p><b><b>Answer.Q2LastName White Bradley</b></b></p><p><b><b>Answer.Q3Employer Gadgets, LLC Gadgets</b></b></p><p><b>Example of single answer field</b><br/>WorkTimeInSeconds 25 615 73 104 104 Answer.Q1Name Larry Jones Widgets, Inc Roger Evans Widgets, Incorporated Jane Smith Widgets Joan White Gadgets, LLC Bill Bradley Gadgets</p><p><b>Give Workers enough time to do the work</b><br/>The HIT property, Time Allotted, is not the time you think it should take to do the work; it is the time a Worker can hold onto a HIT before it is taken away so another Worker can work on it. Workers get frustrated if an assignment is taken away from them because the Time Allotted value is impractically short.</p><p><b>Tip</b><br/>If you need results in near real-time, set Time Allotted to 2 or 3 minutes. In general, use a 30 or 60 minute setting for quick (but not real time) results.</p><p><b>Set equal work for equal pay</b><br/>All HITs within a group of HITs that pay the same should require approximately the same amount of work. If a HIT in a group pays one cent to answer one question, another HIT in that group should not ask the Worker to answer four questions for the same reward. Following this guideline, don’t make the amount of work dependent on an answer in the HIT, as shown in the following example.</p><p>Instead, create two separate HITs: one that asks if there is a car in the picture and a second HIT for pictures that include cars in order to collect the additional information.</p><p><b>Pay fairly</b><br/>We highly recommend that you look at HITs similar to yours to determine an appropriate reward. Remember that Amazon Mechanical Turk is a marketplace and that Workers decide what work to do</p><p><b>Amazon Mechanical Turk Best Practices Guide Be clear whether you want an opinion, judgment, or fact</b></p><p>based on what other work is available. Don’t expect a Worker to complete a 1 hour video transcription for $0.07 when 5 minute audio transcriptions offer $0.05. Think of the reward as an hourly rate instead of a reward per HIT.</p><p><b>Tip</b><br/>Use the following formula to determine your reward per HIT based on a target hourly rate:<br/>(Minutes to complete HIT) X ((Rate per hour)/60 minutes) = Reward per HIT</p><p>For example, to pay $8/hr for a HIT that takes approximately 2 minutes, the reward should be 2 minutes X $8 / 60 = $0.25 per HIT. Remember to include in your time estimates per HIT the amount of time it takes to load the page and navigate through your HITs.</p><p>Be clear whether you want an opinion, judgment, or fact<br/>In general, there are three kinds of questions you can ask of Workers: • Opinion—For example &quot;Did you enjoy the film The Godfather?&quot; When asking for a Worker's opinion, as long as the answer is relevant to the question, the Worker should get paid. • Judgment—For example, &quot;Is the film The Godfather worthy of an oscar?&quot; If you are asking a judgment question and use multiple assignments (plurality) to help adjudicate results do not automatically reject work that does not meet the majority. Automatic rejection frustrates Workers who may not have agreed with others. Consider granting bonuses to Workers who agree with the majority. • Fact—For example, “What is the MPAA rating (X, R, PG, G) for the film The Godfather?” When you are asking for a fact, make clear that you do not give rewards for inaccurate answers.</p><p><b>Tip</b><br/>Provide clear guidelines to Workers for getting paid. Advise Workers if you will use plurality or multiple answers to review results.</p><p><b><b>Preflight Checklist</b><br/>Use the tips in this section as a final checklist before launching your HITs.</b></p><p><b>Make sure your instructions are clear and concise</b><br/>Before publishing your HITs, give your instructions, without explanation, to a fellow worker and make them follow them. See if the worker proceeds in the way you intend. Make sure your instructions are clear, specific, and unambiguous.</p><p><b>Check your links</b><br/>If you have links to pictures or videos in your HITs, make sure the links work. The best way to check the links is to actually complete some of your HITs using the Amazon Mechanical Turk sandbox.</p><p>Amazon Mechanical Turk Best Practices Guide Use the Amazon Mechanical Turk sandbox to test your HITs</p><p>Use the Amazon Mechanical Turk sandbox to test your HITs<br/>Test your HITs yourself end-to-end. Use the Amazon Mechanical Turk sandbox to test the workflow of your HIT, complete some assignments, and view the results. Consider whether the results enable you to achieve the overall goal of your project.</p><p><b>Do a trial run!</b><br/>Completing HITs yourself is good but having real Workers complete HITs can reveal subtle errors. Publish ten HITs, review the results, and increase the number of published HITs as your confidence in the results increases. Don’t launch with hundreds or thousands of HITs without testing. Testing can be a real time and cost-saver!</p><p><b>10</b></p><p><b><b>Amazon Mechanical Turk Best Practices Guide Worker Based Acceptance</b></b></p><p><b>Guidelines for Managing Your HITs</b><br/>Topics • Worker Based Acceptance (p. 11) • Response Speed Acceptance (p. 11) • Building a Group of Loyal Workers (p. 12) After you publish your batch of HITs, you, as the Requester, should monitor the results for a number of reasons, including taking action to reject work that fails to meet your standards before that work is automatically approved and thus the Worker is compensated. This guide gives you insights for managing your HITs.</p><p><b>Worker Based Acceptance</b><br/>After inspecting many results completed by one Worker you can form an opinion about the quality of their work. You might come to know the Worker through the current batch of HITs or from a previous batch. When you know a Worker typically does good work, the user interface enables you to approve all of their assignments at once. Conversely, when you find a Worker who typically submits substandard results, you can reject all of their assignments at once. You can also block that Worker from working on any more of your HITs. You can guard against Workers submitting substandard work by setting up a qualification requirement. For example, you can set the qualification that only Workers that have a HIT approval rate greater than 95% can view your HITs.</p><p><b>Response Speed Acceptance</b><br/>One of your most important tasks is to determine whether the work completed is good or not. One way to do that is to check the speed with which an assignment is completed. The generalization is that assignments completed quickly were either done by a machine or by a Worker who didn't care enough</p><p><b>11</b></p><p><b>Amazon Mechanical Turk Best Practices Guide Building a Group of Loyal Workers</b></p><p>to enter correct answers. The Amazon Mechanical Turk User Interface Guide explains how to filter results based on response speed, called Velocity, in the Filter Results page, as shown.</p><p>There are no hard and fast rules when it comes to determining how fast is too fast. Some Workers are fast and good. Some are fast because they're entering substandard results. Look at the work performed by Workers who respond quickly to make sure their work is satisfactory.</p><p><b>Building a Group of Loyal Workers</b><br/>Building a group of Workers loyal to you benefits you, the Requester, in several ways. First, Workers who like working with you will accept your HITs readily and thus you won't have to pay more to encourage Workers to complete your HITs. Second, you can count on good Workers to give you good results. But how do you build a group of loyal Workers? Use the following series of tips to build a positive working relationship with Workers. • Pay quickly.—Workers appreciate getting paid in a timely manner for completing work. • Give bonuses—Workers deserve bonuses when they accurately complete a great amount of work in a good amount of time. If the worker is someone you'd want to work with again, consider giving them a bonus. • Give feedback—When a worker does a good job tell them. When a worker doesn't do a good job, explain to them what was wrong with the work so they can do better in the future. • Tell your workers what the goal of the batch of HITs is—When workers feel like they are participating in an important project they take more pride in their work and are more likely to want to work with you again. Include, in your HIT description, the goal of your project.</p><p><b>12</b></p>
+        </div>
+    
+
+    <div id="view_meta">
+        <script type="text/javascript">
+            view_page.set_view_meta();
+        </script>
+
+        <div id="below_ipaper">
+            <div class="below_ipaper_ad"><div id="center comment_ad" style="padding: 0px 20px 20px 20px">      <script type="text/javascript">
+        var googleData;
+        function google_ad_request_done(google_ads) {
+          if (google_ads.length == 0) {
+            
+            return;
+          };
+          if (google_ads[0].type == 'flash') {
+            
+          } else if (google_ads[0].type == 'image') {
+                    placementHTML = "                                      <div>\n                                        <a href=\"" + google_ads[0].url + "\" onmouseout=\"window.status=''\" onmouseover=\"window.status='" + google_ads[0].visible_url + "'\"><img src=\"" + google_ads[0].image_url + "\" /></a>\n                                        <p style=\"text-align: right\"><a href=\"" + google_info.feedback_url + "\" style=\"font-weight: bold; color: black; text-decoration: none\">Ads by Google</a></p>\n                                      </div>\n";
+      document.getElementById("center comment_ad").innerHTML = placementHTML;
+      document.getElementById("center comment_ad").visible = true;
+
+          } else {
+            var totalUnitAds, adsHTML, placementHTML;
+            var curAd = 0;
+                  totalUnitAds = 0;
+      placementHTML = '';
+      adsHTML = '';
+      for (var i=0; i < view_page.ipaper_width > 730 ? 3 : 2; i++) {
+        if (curAd >= google_ads.length) break;
+        if (!google_ads[curAd]) break;
+                line2 = google_ads[curAd].line2;
+        line3 = google_ads[curAd].line3;
+        adsHTML += "" + "                                                      <td style=\"margin-top: 8px; margin-bottom: 8px; vertical-align: top;padding-right:10px;\">\n";
+adsHTML += "" + "                                                        <a style=\"font-size:10pt; font-weight: bold; cursor: pointer; line-height: 10px; text-decoration:underline; color: #0000ff\"\n";
+adsHTML += "" + "                                                          onmouseout=\"window.status=''\" onmouseover=\"window.status='" + google_ads[curAd].visible_url + "'\" href=\"" + google_ads[curAd].url + "\">" + google_ads[curAd].line1 + "\n";
+adsHTML += "" + "                                                        </a><br/ >\n";
+adsHTML += "" + "                                                        " + (line2 ? line2 : '') + "<br />\n";
+adsHTML += "" + "                                                        "; if (line3) { adsHTML += "" + (line3 ? line3 : '') + "<br />"; } adsHTML += "\n";
+adsHTML += "" + "                                                        <span style=\"font-size: 11.5px;\"><a style=\"text-decoration:underline; color: #0000ff\" href=\"" + google_ads[curAd].url + "\">" + google_ads[curAd].visible_url + "</a></span>\n";
+adsHTML += "" + "                                                      </td>\n";
+
+        totalUnitAds++;
+        curAd++;
+      }
+
+      if (totalUnitAds > 0) {
+        placementHTML += "" + "                                      <table style=\"border: 0px solid #eeeeee; text-align: left; padding: 2px;margin-left: 0px; margin-right: auto;font-family: courier new,verdana; 	font-style: normal; font-variant: normal; font-size:9pt; position:static;\" NOWRAP >\n";
+placementHTML += "" + "                                        <tr style=\"padding-top:40px; padding-bottom: 40px;\">\n";
+placementHTML += "" + "                                        <td colspan=\"" + totalUnitAds + "\" style=\"text-align: left; font-size: 11.5px; font-weight: bold; padding-top: 3px; padding-bottom: 3px;\">\n";
+placementHTML += "" + "                                          <a href=\"" + google_info.feedback_url + "\" style=\"margin: 0pt 0pt 4px; padding-bottom: 5px; padding-left: 0px; padding-top: 5px; color: rgb(97, 97, 97); font-weight:700;\">Ads by Google</a>\n";
+placementHTML += "" + "                                        </td>\n";
+placementHTML += "" + "                                        </tr>\n";
+placementHTML += "" + "                                        <tr>\n";
+placementHTML += "" + "                                          \n";
+        placementHTML += adsHTML;
+        placementHTML += "" + "\n";
+placementHTML += "" + "                                        </tr>\n";
+placementHTML += "" + "                                        <tr>\n";
+placementHTML += "" + "                                        </tr>\n";
+placementHTML += "" + "                                      </table>\n";
+        document.getElementById("center comment_ad").innerHTML = placementHTML;
+        document.getElementById("center comment_ad").visible = true;
+      }
+
+          }
+        }
+
+        google_ad_client = 'pub-7291399211842501';
+        google_ad_channel = '4247945267';
+        google_ad_output = 'js';
+        google_max_num_ads = '' + view_page.ipaper_width > 730 ? 3 : 2;
+        google_ad_type = 'text';
+        
+        google_feedback = 'on';
+        
+        google_skip = (8 + (view_page.ipaper_width > 730 ? 3: 2)) + '';
+      </script>
+        <script type="text/javascript">
+          if (Scribd.showAggressiveAds()) {
+            Scribd.staticLoadScript('http://pagead2.googlesyndication.com/pagead/show_ads.js');
+          } else {
+            google_ad_request_done = undefined;
+            google_ad_client = undefined;
+            google_ad_channel = undefined;
+            google_ad_output = undefined;
+            google_max_num_ads = undefined;
+            google_ad_type = undefined;
+            google_image_size = undefined;
+            google_feedback = undefined;
+            google_hints = undefined;
+            google_skip = undefined;
+          }
+        </script>
+</div>                                <script type="text/javascript">
+                                    if (!Scribd.showAggressiveAds()) {
+                                        GA_googleFillSlot("DocPage_BTF_468x60");
+                                    }
+                                </script>
+</div>
+
+            <div id="docinfo_wrapper">
+    <ul class="content_tabs" id="docinfo_tabs">
+        
+        <li class="current"><a href="#about">About</a></li>
+    </ul>
+
+	<div id="docinfo_container" class="clearfix">
+        <div id="metadata-about">
+    <ul class="clearfix data">
+        <li class="stats" id="document_stats">
+            <h4>Reads:</h4>
+            3,200
+        </li>
+
+        
+
+        <li>
+            <div id="rating_container">
+    <h4>Rated:  </h4>
+    <div id="rating"></div>
+</div>
+
+        </li>
+
+        <li>
+            <h4>Published:</h4>
+            10 / 30 / 2009
+        </li>
+
+        <li class="last">
+            <h4>Category:</h4>
+            <div id="doc_cat_container">
+                
+<div id="">
+  
+		<div>
+			
+			
+			<nobr><a href="http://www.scribd.com/explore/HowTo-GuidesManuals">How-To Guides/Manuals</a></nobr>
+
+		</div>
+	
+</div>
+
+
+
+            </div>
+        </li>
+
+    </ul>
+
+    
+        <div id="manage_collection" class="manage_collection clearfix">
+            <div class="read_add utilities">
+                <a class="add_to_collection" href="/login" id="add_to_collection" onclick="; Scribd.login.open({&quot;context&quot;:&quot;add_to_collections&quot;,&quot;next_url&quot;:&quot;http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide&quot;,&quot;fallback_url&quot;:&quot;http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide&quot;}); return false;" rel="nofollow">Add to Collections</a> 
+            </div>
+        </div>
+        <a href="/login" id="flag_document_link" onclick="; Scribd.login.open({&quot;context&quot;:&quot;flag_document&quot;,&quot;next_url&quot;:&quot;http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide&quot;,&quot;fallback_url&quot;:&quot;http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide&quot;}); return false;" rel="nofollow">Report this document</a>
+    
+
+    
+        <div id="document_description_short" class="document_description_short">
+            <h4>Description:</h4>
+            <p>Amazon Mechanical Turk best practices.</p>
+        </div>
+    
+
+    
+
+<div class="autogen_class_views_shared_containers_revealer" id="autogen_id_541767449"><div class="revealer clearfix"><div class="inner"><a class="plus" href="javascript:void(0)"><span class="show_more" style="display:none">Show More</span></a></div></div><div class="to_reveal" style="display:none">
+    
+    <div id="document_description_full_container" class="clearfix">
+		<h4>
+	Description:
+</h4>
+
+
+<div id="document_description_full">
+    
+        	
+            <p>Amazon Mechanical Turk best practices.</p>
+            
+    
+</div>		
+
+
+
+	</div>
+    <div class="other_info">
+
+        <div class="info_row clearfix">
+            <h4>Tags:</h4>
+            <div id="document_tags_view">
+    <p>
+        
+            <a href="http://www.scribd.com/tag/Guide">Guide</a>, <a href="http://www.scribd.com/tag/amazon">amazon</a>, <a href="http://www.scribd.com/tag/best%20practice">best practice</a>, <a href="http://www.scribd.com/tag/mechanical%20turk">mechanical turk</a>, <span style='relevant_term'>turk csv</span>, <span style='relevant_term'>turk best</span>, <span style='relevant_term'>worker guide</span>, <span style='relevant_term'>working</span>, <span style='relevant_term'>batch hits</span>, <span style='relevant_term'>mturk qualification</span>, <span style='relevant_term'>file</span>, <span style='relevant_term'>hits amazon</span>, <span style='relevant_term'>csv upload</span>, <span style='relevant_term'>examples</span>, <span style='relevant_term'>use mturk</span>, <span style='relevant_term'>columns</span>, <span style='relevant_term'>mturk best</span>
+        
+    </p>
+
+    
+</div>
+
+        </div>
+
+        
+
+        
+            <div class="info_row uneditable">
+                <h4>Copyright:</h4>
+                    <p>
+                        <a href="http://creativecommons.org/licenses/by-nc/3.0/" onclick="window.open(this.href,'new_window','height=800,width=800,left=100,top=100,scrollbars=yes');return false;" rel="license nofollow">Attribution Non-commercial</a>
+                    </p>
+            </div>
+        
+
+        
+
+        
+    </div>
+    <a class="less"><span class="minus">-</span> <span class="show_less">Show less</span></a>
+    
+</div></div>
+</div>
+    
+
+
+
+
+	</div>
+</div>
+
+
+
+
+            <div id="comments_section">
+    
+	
+	
+		
+		
+            <form action="http://www.scribd.com/documents/21829328/comments" class="form clearfix" id="document_comment" method="post" name="document_comment"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="38c809a719941935f3e5f655ef6e7ba9df2877ff" /></div>
+                    <div class="tiny_thumbnail thumbnail_outer"><a href="/doc/21829328" style="background-image: url('http://s5.scribdassets.com/images/blank/default/tiny.gif?1301601738'); background-repeat: no-repeat; background-position: center center;" title=""></a></div>
+                    <h3 class="first scribble_signup"><a href="/login" onclick="; Scribd.login.open({&quot;context&quot;:&quot;comment&quot;,&quot;next_url&quot;:&quot;/doc/21829328&quot;}); return false;">Login</a> to Add a Comment</h3>
+					<textarea class="scribble_input" cols="40" disabled="disabled" id="scribble_input" name="event_status_base[text]" rows="20"></textarea>
+                    <button class="standard_submit standard_submit_brn" disabed="true" id="post_document_comment_button" type="submit"><span class="inner">Submit</span></button> 
+    		</form>
+
+        
+	
+
+	<div id="document_activity">
+		
+
+
+
+        
+	</div>
+
+
+    
+</div>
+
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+            
+        </div>
+
+        
+
+
+        
+
+<div id="lightboxes">
+    
+        <div class="autogen_class_views_login_login_lightbox" id="autogen_id_541770853"><div class="lightbox " id="login_lb" style="display:none;"><div class="content"><a class="close_button"></a><div class="login_section"><h3 class="first login_lb_header">Sign up</h3><p class="muted">Use your Facebook login and see what your friends are reading and sharing.</p><div id="aggro_fb_login"><h4>Other login options</h4><span class="autogen_class_views_facebook_login_button autogen_class_views_shared_javascript_widget" id="autogen_id_541771343"><a class="fb_button fb_button_large notranslate" href="javascript:void(0);" onclick="javascript: $rat('analytics.search.signup.facebook', {}); $rat.root().flushEvents();"><span class="fb_button_text">Login with Facebook</span></a><img alt="Spinner_mac_white" class="in_process login_button_spinner" src="http://s5.scribdassets.com/images/spinner_mac_white.gif?1301601738" style="display:none" /><form action="http://www.scribd.com/facebook_session" class="posted_form login_add_hidden_form_fields_for_options" method="post" style="display:none"><input id="on_success_redirect_to" name="on_success_redirect_to" type="hidden" value="http://www.scribd.com/doc/21829328" /><input id="on_error_redirect_to" name="on_error_redirect_to" type="hidden" value="http://www.scribd.com/doc/21829328?no_cache=1301704961" /><div class="facebook_session_elements"></div></form></span></div></div><div class="signup_header" style="display:none;"><h3>Signup</h3></div><p class="signup_toggle"><a>I don't have a Facebook account</a></p>
+
+<div class="global_signup_form clearfix" style="display:none">
+
+    <div class="other_options_container clearfix"></div>
+
+    <div style="width:240px" class="form_col">
+        
+        <form action="/login/signup?from=login_lb" class="lightbox_form form" method="post" name="signup_form_login_lb"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="38c809a719941935f3e5f655ef6e7ba9df2877ff" /></div>
+
+            <div class="hidden" id="signup_form_inner_login_lb" style="display:none">
+                
+                    <input id="login_params_context" name="login_params[context]" type="hidden" value="default" />
+                
+            </div>
+
+            
+                <label class="first" for="email_address_email_login_lb">email address (required)</label>
+                <input type="text" name="email_address[email]" id="email_address_email_login_lb" class="input signup_input" onblur="Scribd.login.checkField('/people/check_availability?from=login_lb&amp;icon=true&amp;invalid=true', this);">
+                <div id="availability_email_login_lb" class="alert signup_alert">
+                                    </div>
+            
+    
+                <label for="word_user_login_login_lb">create username (required)</label>
+                <input type="text" maxlength="20" id="word_user_login_login_lb" class="input last signup_input" name="word_user[login]"  onblur="Scribd.login.checkField('/people/check_availability?from=login_lb&amp;icon=true', this);">
+        
+                
+        
+                <div id="availability_login_login_lb" class="alert signup_alert">
+                                    </div>
+        
+            <label for="word_user_password_login_lb">password (required)</label>
+            <input type="password" class="input signup_input" name="word_user[password]" id="word_user_password_login_lb">
+            <div class="alert signup_alert">
+                            </div>
+            
+            <div class="signup_optin">
+                <table><tr><td style="padding:0">
+                    <input type="checkbox" name="optin" class="checkbox" id="optin_login_lb" value="y" checked>
+                </td><td style="padding:0; padding-left:6px">
+                    Send me the Scribd Newsletter, and occasional account related communications.
+                </td></tr></table>
+            </div>
+
+            <div class="button_container">
+                <button class="standard_submit standard_submit_brn" name="sa" onclick="$(&quot;signup_spinner&quot;).show(); try{signup_tracking();}catch(e){};" style="margin-right: 10px" type="submit"><span class="inner">Sign Up</span></button>             
+                <span class="privacy"><a href="/privacy" onclick="window.open(this.href);return false;">Privacy policy</a></span>
+
+                <img alt="Spinner_mac_white" class="spinner" id="signup_spinner" src="http://s5.scribdassets.com/images/spinner_mac_white.gif?1301601738" style="display:none; float: none" />
+            </div>
+
+            <div class="signup_disclosure">
+            You will receive email notifications regarding your account activity.  You can manage these notifications in your account settings.
+            We promise to respect your privacy.
+            </div>
+        </form>
+    </div>
+    
+    <div class="why">
+        <h3>Why Sign up?</h3>
+        
+        <table>
+            <tr>
+                <td class="whyspacer"><img alt="Num_1" src="http://s5.scribdassets.com/images/signup/num_1.png?1301601738" /></td>
+                <td class="whyrightcol whyspacer">Discover and connect with people of similar interests.</td>
+            </tr>
+            <tr>
+                <td class="whyspacer"><img alt="Num_2" src="http://s7.scribdassets.com/images/signup/num_2.png?1301601738" /></td>
+                <td class="whyrightcol whyspacer">Publish your documents quickly and easily.</td>
+            </tr>
+            <tr>
+                <td><img alt="Num_3" src="http://s6.scribdassets.com/images/signup/num_3.png?1301601738" /></td>
+                <td class="whyrightcol">Share your reading interests on Scribd and social sites.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="padding-left:10px; padding-top:5px"><img alt="Social-icons" src="http://s5.scribdassets.com/images/signup/social-icons.png?1301601738" /></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="emptyclear"></div>
+    
+    <div class="other_options_container_small clearfix"></div>
+    
+</div>
+<p class="login_toggle"><a>Already have a Scribd account?</a></p>
+
+<div class="global_login_form form clearfix" style="display:none">
+	
+	
+
+    <form action="/login?from=login_lb" class="lightbox_form clearfix" method="post" name="login_lb_form_login_lb"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="38c809a719941935f3e5f655ef6e7ba9df2877ff" /></div>
+
+        <div class="hidden" id="login_form_inner_login_lb">
+            
+        </div>
+
+        <div class="clearfix">
+            <div class="login_input_container">
+                <label for="login_or_email">email address or username</label>
+                <input type="text" id="login_or_email" class="input" size="20" name="login_or_email">
+            </div>
+        
+            <div class="password_input_container">
+                <label for="word_user_password_login_lb">password</label>
+                <input type="password" id="word_user_password_login_lb" class="input" name="login_password" size="20">
+            </div>
+        </div>
+    	
+        <div class="button_container">
+            <button class="standard_submit login_submit standard_submit_brn" style="margin-right: 10px" type="submit"><span class="inner">Log In</span></button>
+            <img alt="Spinner_mac_white" class="spinner" src="http://s5.scribdassets.com/images/spinner_mac_white.gif?1301601738" style="display:none; float:none" />
+            <a href="javascript:void(0);" class="trouble" onclick="Scribd.Lightbox.close(&quot;login_lb&quot;);Scribd.Lightbox.open(&quot;forgot_password_lb&quot;);">Trouble logging in?</a>
+        </div>
+    </form>
+    
+</div>
+</div><div class="footer"></div></div><div class="lightbox " id="login_successful_lb" style="display:none;"><div class="content"><h3>Login Successful</h3><p>Now bringing you back...</p><br /><img alt="Spinner_large_mac_white" src="http://s6.scribdassets.com/images/spinner_large_mac_white.gif?1301601738" /></div><div class="footer"></div></div><div class="lightbox " id="forgot_password_lb" style="display:none;"><div class="content"><p id="forgot_password_lb_back" class="right"><a href="#" onclick="Scribd.Lightbox.close(&quot;forgot_password_lb&quot;); Scribd.Lightbox.open(&quot;login_lb&quot;);; return false;">&laquo; Back to Login</a></p>
+
+<h3>Reset your password</h3>
+
+<p id="embedded_error" class="error"></p>
+
+
+<div id="reset_form">
+	<p>Please enter your email address below to reset your password. We will send you an email with instructions on how to continue.</p>
+	
+	<form action="/password/forgot" method="post" name="lb_forgot_password_form"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="38c809a719941935f3e5f655ef6e7ba9df2877ff" /></div>
+	
+	<table>
+	<tr>
+		<td><p style="margin-right:10px;"><b>Email address:</b></p></td>
+		<td>
+			<input type="text" name="email" onblur="new Ajax.Request('/passwords/check_login_required', {asynchronous:true, evalScripts:true, parameters:'email='+escape(this.value) + '&authenticity_token=' + encodeURIComponent('38c809a719941935f3e5f655ef6e7ba9df2877ff')})">
+		</td>
+	</tr>
+	
+	<tr id="login_required" style="display:none">
+		<td colspan="2">
+			<p>You need to provide a login for this account as well.</p>
+		</td>
+	</tr>
+	
+	<tr id="login_required_2" style="display:none">
+		<td><p><strong>Login:</strong></p></td> 
+		<td><p><input id="login" name="login" type="text" /></p></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td>
+			<button class="standard_submit reset_password_button standard_submit_brn" type="submit"><span class="inner">Submit</span></button>
+            
+		</td>
+	</tr>
+	</table>
+	
+	</form>
+	
+</div>
+</div><div class="footer"></div></div></div>
+        
+    
+</div>
+
+        <div aptureNoHighlight="true" id="footer"><div id="content"><div id="upload_search"><a href="/upload-document" class="upload_button" id="global_footer_upload_button" onclick="trackEvent('upload','click','footer_navbar_non_docview')" title="Upload &amp; share documents.">Upload a Document</a>
+<form action="/search" autocomplete="off" class="global_search" method="get">
+    <input class="search_input" id="query_footer" name="query" type="text" />
+    <a href="#" class="search_button">Search Documents</a>
+    
+</form>
+</div><ul id="follow_us"><li><span>Follow Us!</span></li><li><a class="scribd" href="/scribd" title="Subscribe to Scribd's Scribd profile">scribd.com/scribd</a></li><li><a class="twitter" href="http://twitter.com/scribd" rel="nofollow" title="Follow Scribd on Twitter">twitter.com/scribd</a></li><li class="last"><a class="facebook" href="http://www.facebook.com/pages/Scribd/6978454082" rel="nofollow" title="Fan Scribd on Facebook">facebook.com/scribd</a></li></ul><ul class="clearfix" id="links"><li><a href="/about" rel="nofollow">About</a></li><li><a href="/static/press" rel="nofollow">Press</a></li><li><a href="http://blog.scribd.com/">Blog</a></li><li><a href="/partners" rel="nofollow">Partners</a></li><li><a href="/scribd101" rel="nofollow">Scribd 101</a></li><li><a href="/webstuff" rel="nofollow">Web Stuff</a></li><li><a href="/store/about" rel="nofollow">Scribd Store</a></li><li><a href="http://support.scribd.com" rel="nofollow">Support</a></li><li><a href="/faq" rel="nofollow">FAQ</a></li><li><a href="/developers" rel="nofollow">Developers / API</a></li><li><a href="/jobs" rel="nofollow">Jobs</a></li><li><a href="/terms" rel="nofollow">Terms</a></li><li><a href="/copyright" rel="nofollow">Copyright</a></li><li class="last"><a href="/privacy" rel="nofollow">Privacy</a></li></ul><div class="autogen_class_views_layouts_footer_language_selector autogen_class_views_shared_javascript_widget" id="autogen_id_541768986"><div class="top_row clearfix"><div class="copyright">Copyright &copy; 2011 Scribd Inc.</div><div class="language_label">Language:</div><div class="language notranslate"><a href="#" onclick="trackEvent('smartling','lang_selector_open');"></a></div></div><div class="language_selector SL_norewrite clearfix" style="display:none"><div>Choose the language in which you want to experience Scribd:</div><ul class="notranslate"><li data-id="en" onclick="trackEvent('smartling','lang_click','en');"><a href="/language?destination=http%3A%2F%2Fwww.scribd.com%2Fdoc%2F21829328&amp;id=en" class="change_language">English</a></li><li data-id="es" onclick="trackEvent('smartling','lang_click','es');"><a href="/language?destination=http%3A%2F%2Fes.scribd.com%2Fdoc%2F21829328&amp;id=es" class="change_language">Español</a></li><li data-id="pt" onclick="trackEvent('smartling','lang_click','pt-br');"><a href="/language?destination=http%3A%2F%2Fpt.scribd.com%2Fdoc%2F21829328&amp;id=pt" class="change_language">Português (Brasil)</a></li></ul></div></div></div></div>
+    </div>
+
+    
+
+	
+<script type="text/javascript">
+		if (typeof(_gaq) != 'undefined') {
+	    _gaq.push(function() {
+	      _gaq._createAsyncTracker('UA-443684-17', 'pageTrackerPerf');
+	    });
+
+	    _gaq.push(['pageTrackerPerf._trackPageview']);
+		} else {
+			console.warn('_gaq undefined');
+		}
+
+    document.observe('dom:loaded', function() {
+        if (typeof(perfStart) != 'undefined') {
+            trackPerfAnalytics(null, perfStart, new Date(), false);
+        }
+    });
+
+    Event.observe(window, 'load', function() {
+        if (typeof(perfStart) != 'undefined') {
+            trackPerfAnalytics(null, perfStart, new Date(), true);
+        }
+    });
+</script>
+
+
+
+<!-- Start Quantcast tag -->
+
+  <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+  <script type="text/javascript">_qacct="p-13DPpb-yg8ofc";quantserve();</script>
+  <noscript>
+    <a href="http://www.quantcast.com/p-13DPpb-yg8ofc" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-13DPpb-yg8ofc.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/></a>
+  </noscript>
+
+<!-- End Quantcast tag -->
+
+<!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "9304646" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=9304646&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+
+  
+
+    <script style="text/javascript">
+    Scribd.Facebook.scribdSessionActive = false;
+    Scribd.Facebook.serverEnableInstantConnect = Scribd.getOption("FBAutoLoginEnabled", false);
+    Scribd.Facebook.sessionEnableInstantConnect = true;
+    Scribd.Facebook.requestEnableInstantConnect = true;
+    Scribd.Facebook.beforeFacebookInitialize();
+
+	Scribd.Request = {
+		referrer: '',
+		controller: 'word',
+		action: 'show'
+	};
+	
+    // This calls the initialization once Facebook libraries are loaded
+    window.fbAsyncInit = Scribd.Facebook.initializeConnect.bind(Scribd.Facebook);
+</script>
+
+<div id="fb-root"></div>	
+
+
+    
+    
+    
+
+    
+        <script type="text/javascript">
+            
+        Scribd.ipaperToolbar = new Scribd.ipaperToolbarManager({
+            container: $('ipaper_top_toolbar'),
+            document_id: 21829328,
+            secret_password: 'nil',
+            logged_in: false
+        });
+     new Scribd.LikeButtonManager(null, 'facebook_like_button', "http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide", 300, "standard", "show_faces=\"true\""); 
+
+      $('exposed_share_panel').down('.more_share_options').down('.pseudoLink').observe('click', function(e){
+        e.stop();
+        Scribd.ipaperToolbar.lbButtonClick($('toolbar_share'), $('toolbar_share_lightbox'));
+        $rat('sharebox.default.more_share_options');
+      });
+      $$('#exposed_share_panel a.disabled').invoke('observe', 'click', function(e) {
+        e.stop();
+        Scribd.Alerts.error('flashes_placeholder', "Sharing is disabled for this document.");
+      });
+    
+
+        Scribd.setDocInfoReveal();
+    
+		function ratingLogin(event) {
+			//console.log('Current user was NOT found');
+            Scribd.login.open({"next_url":"http://www.scribd.com/doc/21829328/Amazon-Mechanical-Turk-Best-Practices-Guide","fallback_url":"/","context":"rate"});
+		}
+
+		function saveRating(event) {
+			//console.log('Current user was found');
+			new Ajax.Request(["/", "r", "a", "t", "i", "n", "g", "s", "?", "w", "o", "r", "d", "_", "d", "o", "c", "u", "m", "e", "n", "t", "_", "i", "d", "=", "2", "1", "8", "2", "9", "3", "2", "8"].join(''), {
+				parameters: event.memo,
+				onComplete: function(xhr) {
+					new Ajax.Request(["/", "w", "o", "r", "d", "/", "d", "o", "c", "u", "m", "e", "n", "t", "_", "u", "p", "d", "a", "t", "e", "/", "2", "1", "8", "2", "9", "3", "2", "8"].join(''));
+				}
+			});
+		}
+
+		function enableRating() {
+			if($('rating')) {
+				if (!Scribd.Facebook.isSessionTransitioned()) {
+					
+						//console.log('Setting ratingLogin');
+						$('rating').observe('starbox:rated', ratingLogin);
+		            
+				}
+				else {
+					//console.log('Setting saveRating');
+					$('rating').observe('starbox:rated', saveRating);
+				}
+			}
+		}
+
+		update_document_view(21829328);
+		setRatingBox(0.0, null, null, true);
+
+		if (document.loaded) {
+			enableRating();
+		}
+		else {
+			document.observe('dom:loaded', enableRating);
+		}
+    
+    var metadata_tabs = new Scribd.tabber($$("#docinfo_tabs li"), "metadata", "about", {});
+
+Scribd.Facebook.isReadPage = true;
+Scribd.Facebook.setPageTransitionURL('/session_transition/new_read_page_content/21829328');
+Scribd.SharedLink.trackDocumentLink('21829328');
+Event.observe(window, 'load', function() {
+    var header_ad = $$('.header_wrap').first()
+    //if(header_ad) FlashHeed.heed(header_ad);
+    //FlashHeed.heed($('view_bar'));
+});
+
+      Scribd.Tracker.run(21829328, "flash");
+    
+
+    Scribd.Lightbox.initialize();
+
+                    $('word_user_login_login_lb').observe('keypress', Scribd.restrictCharactersForUsername);
+                
+	Event.observe(window, 'load', function(){
+		$(document.forms.lb_forgot_password_form).observe('submit', Scribd.login.sendForm);
+	});
+	
+            Scribd.login = new Scribd.loginManager();
+        
+	// Load the FB JS API Asychronously
+	document.observe('dom:loaded', function() {
+		var e = document.createElement('script'); 
+		e.async = true;
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+
+        if (document.cookie.match('user_forced_logout=true')) {
+            $$('.facepile_wrap').invoke('hide');
+        }
+	});
+	
+	// Handle DOM updates to re-parse FBML tags
+    document.observe('Scribd:dom_updated', function(e){
+        var el = e.element();
+        if(window.FB && FB.XFBML)
+            FB.XFBML.parse(el);
+    });
+    document.observe(Scribd.Facebook.EVENTS.loaded, Scribd.blueBarUtil.onLoadHandler);
+
+      var facebookUser = false;
+    
+
+        Event.observe(window, 'load', function() {
+            new Scribd.AdHider();
+        });
+        Scribd.Smartling = new Scribd.SmartlingManager();
+    
+        </script>
+    
+
+    
+        <script type="text/javascript">
+            Event.observe(document, 'dom:loaded', function(event) {
+            (new Scribd.Facebook.LoginButton({"widget_dom_id":"autogen_id_541771343"})).onDomLoaded(event);
+(new Scribd.Layouts.Footer.LanguageSelector({"widget_dom_id":"autogen_id_541768986"})).onDomLoaded(event);
+
+                Event.fire(document, 'Scribd:widgets_loaded', event);
+            });
+        </script>
+	
+
+    
+
+    
+</body>
+</html>
+
+<!-- Served by app08 in 0.474 secs. cpu: 0.210 -->

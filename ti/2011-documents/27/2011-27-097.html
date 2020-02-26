@@ -1,0 +1,791 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title> Cep News Photos Videos - Rediff.com</title>
+<meta name="keywords" content="Cep news, Cep photos, Cep videos, Cep,Cep images," />
+<meta name="description" content="Latest news - Cep, Photos - Cep, Videos - Cep.Cep updates on Rediff News" />
+<link rel="stylesheet" href="http://imworld.rediff.com/worldrediff/style_3_8/web.css" />
+
+<style type="text/css">
+.bigleftarrowactive{border-top: 10px solid #fff; border-right:15px solid #A8A8A8; border-bottom:10px solid  #fff; font-size: 0px; line-height:0%;width:0px;position:absolute;top:35px;}
+.bigrightarrowactive{border-top:10px solid #fff; border-left:15px solid #A8A8A8; border-bottom:10px solid  #fff; font-size: 0px; line-height:0%;width:0px;position:absolute;right:0;top:35px;}
+.bigleftarrowdis{border-top: 10px solid #fff; border-right:15px solid #F0F0F0 ; border-bottom:10px solid  #fff; font-size: 0px; line-height:0%;width:0px;position:absolute;top:35px;}
+.bigrightarrowdis{border-top:10px solid #fff; border-left:15px solid #F0F0F0 ; border-bottom:10px solid  #fff; font-size: 0px; line-height:0%;width:0px;position:absolute;right:0;top:35px;}
+/* display the individual items next to each other, not one-per-line */
+.tag-cloud{padding:0;margin:15px 0 15px 0;}
+.tag-cloud LI{display: inline;}
+.tag0{font-size:24px}.tag1{font-size:22px;}.tag2{font-size:20px;}.tag3{font-size:18px;}.tag4{font-size:16px;}.tag5{font-size:14px;}.tag6{font-size:12px;}
+.tag7 .tag8 .tag9 .tag10 .tag11 .tag12 .tag13 .tag14 .tag15 .tag16 .tag17 .tag18 .tag19{font-size:10px;}
+.tagsTab{font-family:arial, FreeSans;list-style:none;padding:0;margin:0;font-size:14px;}
+.tagsTab li{display:inline;margin:0 20px 0 8px;padding:5px 10px;line-height:25px;}
+.tagsTabsel{background:#ffffff;color:#929292;cursor:text;}
+.tagsTabnormal{color:#0055CC;cursor:pointer;cursor:hand;}
+.tagthumb{float:left;display:inline;width:90px;height:70px;overflow:hidden;margin:0 10px 10px 0;}
+.socialthumb{float:left;display:inline;width:45px;height:45px;overflow:hidden;margin:0 10px 10px 0;}
+.tagsectiontxt{float:left;width:75%;}
+.tagsectiontxt1{float:left;width:95%;}
+.socialfeed{float:left;width:80%;}
+.w30{float:left;display:inline;height:50px;width:50px;background:#F2F3ED;overflow:hidden;margin-right:5px;text-align:center;}
+.curr_page{color:#000;background:#E8E8E8;padding:2px 5px;}
+#div_sldphoto_main{position:relative;width:630px;height:120px;overflow:hidden;margin:0 0 0 20px;}
+.qnauserthumb{width:60px;height:50px;overflow:hidden;float:left;}
+</style>
+
+<script language="JavaScript">
+<!--
+var glb_newstabcount = 7 ;
+var glb_peopletabcount = 5 ;
+var vdtime ;
+var leftlimit= -1025 ;
+function slidePhotoLeft(dvnm)
+{
+	var curpos = parseInt(document.getElementById(dvnm).style.left) ;
+   	curpos =  curpos - 3
+	if( curpos >= leftlimit)
+	{
+		document.getElementById(dvnm).style.left = curpos ;
+        document.getElementById("div_photochangeleft").className="bigleftarrowactive";
+		vdtime = window.setTimeout("slidePhotoLeft('"+dvnm+"')",20);		
+	}
+    else
+    {
+        document.getElementById("div_photochangeright").className="bigrightarrowdis";
+    }
+}
+function slidePhotoRight(dvnm)
+{
+	var curpos = parseInt(document.getElementById(dvnm).style.left) ;
+	curpos =  curpos + 3
+    if( curpos <= 0 )
+	{
+		document.getElementById(dvnm).style.left = curpos ;
+        document.getElementById("div_photochangeright").className="bigrightarrowactive";
+        vdtime = window.setTimeout("slidePhotoRight('"+dvnm+"')",20);		
+	}
+    else
+    {
+        document.getElementById("div_photochangeleft").className="bigleftarrowdis";
+    }
+}
+function slideVideoLeft(dvnm)
+{
+	var curpos = parseInt(document.getElementById(dvnm).style.left) ;
+   	curpos =  curpos - 3
+	if( curpos >= leftlimit)
+	{
+		document.getElementById(dvnm).style.left = curpos ;
+        document.getElementById("div_videochangeleft").className="bigleftarrowactive";
+		vdtime = window.setTimeout("slideVideoLeft('"+dvnm+"')",20);		
+	}
+    else
+    {
+        document.getElementById("div_videochangeright").className="bigrightarrowdis";
+    }
+}
+function slideVideoRight(dvnm)
+{
+	var curpos = parseInt(document.getElementById(dvnm).style.left) ;
+	curpos =  curpos + 3
+    if( curpos <= 0 )
+	{
+		document.getElementById(dvnm).style.left = curpos ;
+        document.getElementById("div_videochangeright").className="bigrightarrowactive";
+        vdtime = window.setTimeout("slideVideoRight('"+dvnm+"')",20);		
+	}
+    else
+    {
+        document.getElementById("div_videochangeleft").className="bigleftarrowdis";
+    }
+}
+function showNewsTab(n,tabname,dvnm,count)
+{
+    //var newString = n.substr(7);
+    //n = (parseInt(newString));
+   	if(n==0)
+	{
+		if(document.getElementById(tabname+n))document.getElementById(tabname+n).className='tagsTabsel';
+		for(i=1; i<=count ; i++)
+		{
+			if(document.getElementById(dvnm+i))showDiv(dvnm+i);
+			if(document.getElementById(tabname+i))document.getElementById(tabname+i).className='tagsTabnormal';
+		}
+	}
+	else
+	{
+		if(document.getElementById(tabname+'0'))document.getElementById(tabname+'0').className='tagsTabnormal';
+		for(i=1; i<=count; i++)
+		{
+			if(i==n)
+			{
+                if(document.getElementById(dvnm+n))showDiv(dvnm+n);
+				if(document.getElementById(tabname+n))document.getElementById(tabname+n).className='tagsTabsel';
+			}
+			else
+			{
+				if(document.getElementById(dvnm+i))hideDiv(dvnm+i);
+				if(document.getElementById(tabname+i))document.getElementById(tabname+i).className='tagsTabnormal';
+			}
+		}
+	}
+}
+//-->
+</script>
+
+</head>
+<body>
+
+
+<div id="bubbletiptop" class="bubbletip" onmouseover="showDiv('bubbletiptop');" onmouseout="hideDiv('bubbletiptop');" ><div class="homesprite topl"></div><div class="topmid"></div><div class="homesprite topr"></div><div class="clear"></div><div class="bubblecontent"></div><div class="clear"></div><div class="homesprite botl"></div><div class="botmid"></div><div class="homesprite botr"></div><div class="homesprite botarr1"></div></div>
+<div id="bubbletipbot" class="bubbletip" onmouseover="showDiv('bubbletipbot');" onmouseout="hideDiv('bubbletipbot');"><div class="homesprite toparr1"></div><div class="homesprite topl"></div><div class="topmid"></div><div class="homesprite topr"></div><div class="clear"></div><div class="bubblecontent"></div><div class="clear"></div><div class="homesprite botl"></div><div class="botmid"></div><div class="homesprite botr"></div></div><!-- wrapper starts -->
+<div id="wrapper">
+	<style type="text/css">.inline{display:inline;}</style>
+<div class="floatL">
+<a href="http://www.rediff.com/" title="Rediff.com Home">rediff.com</a></br><a href="http://www.rediff.com/news" title="Rediff News" ><img src="http://imworld.rediff.com/worldrediff/pix/blank.gif" class="othersprite halflogo" alt="Latest India News" /><img src="http://imworld.rediff.com/worldrediff/pix/blank.gif" class="othersprite newslogo" alt="India Breaking News" /></a></div>
+<div class="toptabsdiv">
+<ul class="tabsul">
+		<li><h2 class="inline f14 normal"><a href="http://www.rediff.com/news" class="tabsel" >News</a></h2></li>
+	<li><h2 class="inline f14 normal"><a href="http://www.rediff.com/business" class="tabnormal" >Business</a></h2></li>
+<li><h2 class="inline f14 normal"><a href="http://www.rediff.com/movies" class="tabnormal" >Movies</a></h2></li>
+<li><h2 class="inline f14 normal"><a href="http://www.rediff.com/sports" class="tabnormal" >Sports</a></h2></li>
+<li><h2 class="inline f14 normal"><a href="http://www.rediff.com/getahead" class="tabnormal" >Get Ahead</a></h2></li>
+</ul>
+</div>
+<div class="toprightlinks"><span id="username">Hi Guest</span><br/><span id="signin_info"> <a href='https://mail.rediff.com/cgi-bin/login.cgi'>Sign in</a>  &nbsp;|&nbsp; <a href='http://register.rediff.com/register/register.php?FormName=user_details'>Create a Rediffmail account</a></span>
+<iframe src="" name="metric_iframe" id="metric_iframe" width="1" height="1" frameborder="0" class="hide" ></iframe>
+
+<script type="text/javascript">
+var querystring	= "";
+var path	= "";
+var Rkey_data	= "";
+var Rkey	= Math.floor(Math.random() * 1000000);
+querystring	= window.location.search;
+path		= window.location.pathname;
+domain		= window.location.host;
+
+if (querystring == "")
+Rkey_data = "?rkey="+Rkey;
+else
+Rkey_data = "&rkey="+Rkey;
+
+document.getElementById('metric_iframe').src = 'http://metric.us.rediff.com/'+domain+path+querystring+Rkey_data;
+
+</script>
+
+
+
+<script language="JavaScript" type="text/javascript">
+var endyear 	= "2011";
+var  cdn_domain = "http://www.rediff.com";
+var  org_domain = "http://mypage.rediff.com";
+var  imgpath	= "http://imworld.rediff.com/worldrediff/pix";
+var  ishare_domain	= "http://ishare.rediff.com";
+var OAS_sitepage = "" ;
+var OAS_listpos = "" ;
+
+
+var ck=document.cookie;
+
+function getcookie(n){var ar=n+"=";var al=ar.length;var cl=ck.length;var i=0;while(i<cl)
+{j=i+al;if(ck.substring(i,j)==ar)
+{e=ck.indexOf(";",j);if(e==-1)
+e=ck.length;return unescape(ck.substring(j,e));}
+i=ck.indexOf(" ",i)+1;if(i==0)break;}return "";
+}
+
+var Rlo="";
+var Rl = "";
+Rlo	=	getcookie("Rlo");
+Rlo =	unescape(Rlo).replace(/\+/g," ");
+Rl	=	getcookie("Rl");
+
+if(Rlo != "" || Rl!="")
+{
+	if(Rlo != "" )
+	{
+		document.getElementById('username').innerHTML = "Hi <a href='"+org_domain+"/profile/myprofile' class='proper'>"+Rlo+"</a>" ;
+	}
+	else
+	{
+		Rl = Rl.substring(0,Rl.lastIndexOf('@'));
+		document.getElementById('username').innerHTML	= "Hi <a href='"+org_domain+"/profile/myprofile'>"+Rl+"</a>" ;
+	}
+	if(document.getElementById('signin_info'))document.getElementById('signin_info').innerHTML = "" ;
+}
+else
+{
+	if(document.getElementById('signin_info')){document.getElementById('signin_info').innerHTML = " <a href='https://mail.rediff.com/cgi-bin/login.cgi' onclick=\"signin();document.getElementById('c_uname').focus();return false;\" title='Already a user? Sign in' >Sign in</a>  &nbsp;|&nbsp; <a href='http://register.rediff.com/register/register.php?FormName=user_details'>Create a Rediffmail account</a>";}
+
+	if(Rlo != "" && Rl != "" )
+	{
+		if(document.getElementById('signin_info')){document.getElementById('signin_info').innerHTML += "&nbsp;|&nbsp;";}
+	}
+}
+if (Rlo != "" || Rl != "")
+{
+	if(document.getElementById('signin_info')){document.getElementById('signin_info').innerHTML += "<a href='"+org_domain+"/signout' title='Sign out'>Sign out</a>";}
+}
+
+
+</script></div>
+<span class="clear"></span>
+<div id="topsrch"><center><form name="srchform" id="queryTop" onsubmit="return submitNewsSearch()" action="" method="POST"><input type="text" id="srchword" value="" class="srchbox" /><input id="srch_in" type="radio" name="srch_in" value="rediff" class="vmiddle" checked /><span class="vmiddle" >rediff.com &nbsp;</span><input id="srch_in" type="radio" name="srch_in"  value="web" class="vmiddle" /><span class="vmiddle" >web&nbsp; </span><input type="submit" value="Search" class="srchbtn"  /></form></center></div><span class="ht5"></span><center><div id="world_top"><iframe id="ieiframe" src="about:blank" scrolling="no" frameborder="0" class="ieiframe" style="position:absolute;left:0px;top:0px;float:left;filter:alpha(opacity=0);background-color:transparent;width:100%;height:800px;border:none;z-index:100;display:none;"></iframe>
+<div id="trans_div"></div>
+<div class="popupcontainer"><div id="div_shareframe"></div><div id="div_signup"></div><div id="div_signin"></div><div id="div_confirm"></div></div>
+<center><div id="world_top" class="topadddiv"></div></center>
+
+</div></center>
+<!-- leftcontainer start -->
+<div id="leftcontainer">
+<h1>Cep</h1><span class="ht5"></span> 
+<div class="floatR sm1"><a href="http://ia.rediff.com/tags/cep?rss=1"><b>Subscribe via RSS</b></a></div>
+<div class="sm1 grey1" ><a href="http://www.rediff.com">Rediff.com</a>&nbsp; &raquo; &nbsp;<a href="http://www.rediff.com/news">News</a>&nbsp; &raquo; &nbsp; <b>Cep</b></div><span class="clear ht5"></span> 
+<div class="bggrey1"><span class="ht5"></span><h2 class="normal f14">&nbsp;&nbsp;News for <b>Cep</b></h2>
+    <span class="ht10"></span>
+    <ul class="tagsTab">
+                <li id="tagnews1" class="tagsTabsel" onclick="showNewsTab(1,'tagnews','news_div',glb_newstabcount);" ><b>News</b></li>
+                        <li id="tagnews2" class="tagsTabnormal" onclick="showNewsTab(2,'tagnews','news_div',glb_newstabcount);"><b>Business</b></li>
+                            </ul>
+</div>
+<span class="ht20"></span>
+<div id="news_div1">
+
+	        <div>
+	<div class="tagsectiontxt"><a title="India tells UNSC to stay out of Haiti politics - Rediff.com India News" href="http://www.rediff.com/news/report/india-tells-unsc-to-stay-out-of-haiti-politics/20110122.htm"><h2 class="f12 normal"><b>India tells UNSC to stay out of Haiti politics - Rediff.com India News</b></h2></a> that the CEP be allowed to carry out its work without political interference," Le Roy said. Tensions... 
+	</div><span class="clear ht10"></span>
+	</div>
+    	        <div>
+	<div class="tagsectiontxt1"><a title="Strategic command test fires 2 Prithvi-II missiles - Rediff.com India News" href="http://www.rediff.com/news/report/prithvi-two-missile-test-fired/20101222.htm"><h2 class="f12 normal">Strategic command test fires 2 Prithvi-II missiles - Rediff.com India News</h2></a>
+     achieved single digit accuracy reaching close to zero circular error probability (CEP)," the sources said...
+	</div><span class="clear ht10"></span>
+	</div>
+    	        <div>
+	<div class="tagsectiontxt1"><a title="Rediff On The NeT: Prithvi: The Case for 'No-First-Deployment'" href="http://www.rediff.com/news/jul/10kamp.htm"><h2 class="f12 normal">Rediff On The NeT: Prithvi: The Case for 'No-First-Deployment'</h2></a>
+     probability kill ratio. DRDO has argued that the CEP is acceptable for two reasons. First, the missile will be able to saturate an area of 300 meters and override the constraints imposed by a CEP......
+	</div><span class="clear ht10"></span>
+	</div>
+    	        <div>
+	<div class="tagsectiontxt1"><a title="Ashok K Mehta: Lessons from the New Romans" href="http://www.rediff.com/news/2003/may/15ashok.htm"><h2 class="f12 normal">Ashok K Mehta: Lessons from the New Romans</h2></a>
+     precision-guided munitions, were delivered over Iraq. Some of them achieved the incredible accuracy of a CEP (Circle of Error...
+	</div><span class="clear ht10"></span>
+	</div>
+    	        <div>
+	<div class="tagsectiontxt1"><a title="Rediff On The NeT: 2,500-km plus Agni-II almost ready" href="http://www.rediff.com/news/1998/sep/04agni.htm"><h2 class="f12 normal">Rediff On The NeT: 2,500-km plus Agni-II almost ready</h2></a>
+     a CEP of 40 metres. CEP is the measurement used to define the accuracy of a missile in hitting...
+	</div><span class="clear ht10"></span>
+	</div>
+    	    <span class="ht10"></span>
+</div>
+<div id="news_div2">
+            <div>
+	<div class="tagsectiontxt"><a title="Rediff On The NeT Business News: Reliance sales up 11 per cent at Rs 109 bn, net Rs 13.23 bn" href="http://www.rediff.com/business/1999/jan/18rel.htm"><h2 class="f12 normal"><b>Rediff On The NeT Business News: Reliance sales up 11 per cent at Rs 109 bn, net Rs 13.23 bn</b></h2></a>
+     is Rs 14 and cash earnings per share is Rs 20.5 as against the annualised EPS and CEPS of Rs 18.7 and Rs... 
+	</div><span class="clear ht10"></span>
+	</div>
+    	        <div>
+	<div class="tagsectiontxt1"><a title="Rediff On The NeT: Fundamental analysis beats random walking" href="http://www.rediff.com/business/1999/nov/02datta.htm"><h2 class="f12 normal">Rediff On The NeT: Fundamental analysis beats random walking</h2></a>'m a lazy sort of guy. I picked three common ratios - the Cash Earnings Per Share (CEPS), the Return by ranking on the Compounded Annual Growth rate (CAGR) in CEPS from financial year 1995-96 to Q3......
+	</div><span class="clear ht10"></span>
+	</div>
+    	        <div>
+	<div class="tagsectiontxt1"><a title="Rediff On The NeT Business News: Reliance 98-99 net up 3 pc to Rs 17.04 bn, production up 26 pc" href="http://www.rediff.com/business/1999/apr/22rel.htm"><h2 class="f12 normal">Rediff On The NeT Business News: Reliance 98-99 net up 3 pc to Rs 17.04 bn, production up 26 pc</h2></a>.34 billion. Earnings per share or EPS is Rs 18 and cash earnings per share or CEPS is Rs 27.10 The company...
+	</div><span class="clear ht10"></span>
+	</div>
+    	    <span class="ht10"></span>
+</div>
+<span class="ht15"></span>
+<div class="bggrey1 f14"><span class="ht5"></span>&nbsp;&nbsp;Images for <b>Cep</b><span class="ht5"></span></div>
+<span class="ht20"></span>
+<div>
+    <div class="relative"><a href="javascript:;;" onmouseover="slidePhotoRight('div_sldphoto')" onmouseout="window.clearTimeout(vdtime)"><div id="div_photochangeleft" class="bigleftarrowdis"></div></a><a href="javascript:;;" onmouseover="slidePhotoLeft('div_sldphoto');" onmouseout="window.clearTimeout(vdtime)"><div id="div_photochangeright" class="bigrightarrowactive"></div></a></div>
+	<div id="div_sldphoto_main">
+		<div id="div_sldphoto" style="position:absolute;left:0;width:2100px;">
+                
+				                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/world-cup-victory-32jpg-jpg/3089183"><img src="http://datastore.rediff.com/briefcase/59586359616559606B64596B6D606A616660/kshw8bh3jcxaat4t.D.0.world_cup_victory.32jpg.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/world-cup-victory8-jpg/3089182"><img src="http://datastore.rediff.com/briefcase/59586359616559606B64596B6D606A616660/mdm86vazgdsxor2f.D.0.world_cup_victory8.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/gobaydh5ioblzrr8-d-0-katrina-kaif-130a/3089120"><img src="http://datastore.rediff.com/briefcase/67265D5B6E2D363532/7qf1fvs0ik9m0bmp.D.0.gobaydh5ioblzrr8.D.0.katrina-kaif-130a.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/cricket-world-cup-trophy/3088411"><img src="http://datastore.rediff.com/briefcase/61566F5866645F645F656371/9cp7u2la6z33q560.D.0.Cricket_World_Cup_trophy.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/team-india-world-cup-2011-champions-photo/3088174"><img src="http://datastore.rediff.com/briefcase/5F535C62575E586A6D635A2E2D2F2F/bicc3wjm2cf65xvb.D.0.Team_India_World_cup_2011_Champions_photo.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/india-wins-t20-world-cup/3088131"><img src="http://datastore.rediff.com/briefcase/5254556157665C6C5769685A6E635D6B6760/kb4bx89lkzidin97.D.0.india-wins-t20-world-cup.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/salman-khan-katrina-kaif/3088114"><img src="http://datastore.rediff.com/briefcase/50545E5C585C655D5E542A2636705961696A2A606D6C/mfp8fyd0daha6my2.D.0.salman-khan-katrina-kaif.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/237883-xcitefun-world-cup-india-1-jpg/3087736"><img src="http://datastore.rediff.com/briefcase/625460236660666D6F5A2D36362F/tnye96n5nxohuacq.D.0.237883_xcitefun-world-cup-india-1.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/photo/entertainment/237876-xcitefun-world-cup-india-8-jpg/3087724"><img src="http://datastore.rediff.com/briefcase/625460236660666D6F5A2D36362F/1g6hwo7v50nthjbd.D.0.237876_xcitefun-world-cup-india-8.jpg" alt="cep image" class="featuvdthumb"></a></div> 
+                                <span class="clear"></span>
+		</div>
+	</div>
+    <span class="ht10"></span>
+    <div class="floatL"><a href="http://search.rediff.com/imgsrch/default.php?MT=cep"><b>See All</b></a></div>
+    <span class="ht10"></span>
+</div>
+<span class="ht20"></span>
+<div class="bggrey1 f14"><span class="ht5"></span>&nbsp;&nbsp;Videos for <b>Cep</b><span class="ht5"></span></div>
+<span class="ht20"></span>
+<div>
+    <div class="relative"><a href="javascript:;;" onmouseover="slideVideoRight('div_sldvideo')" onmouseout="window.clearTimeout(vdtime)"><div id="div_videochangeleft" class="bigleftarrowdis"></div></a><a href="javascript:;;" onmouseover="slideVideoLeft('div_sldvideo');" onmouseout="window.clearTimeout(vdtime)"><div id="div_videochangeright" class="bigrightarrowactive"></div></a></div>
+	<div id="div_sldvideo_main">
+		<div id="div_sldvideo" style="position:absolute;left:0;width:2100px;">
+				                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/entertainment/india-vs-srilanka-world-cup-final-2011-highlights/3087462"><img src="http://datastore.rediff.com/briefcase/68586F5A6E5A2D2D3630/gf1tcaqh26j9lx82.D.1119190.India_VS_Srilanka_World_Cup_Final_2011_Highlights.3gp-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/news-politics/sonia-gandhi-celebrates-world-cup-victory/3087314"><img src="http://datastore.rediff.com/briefcase/53615D675B5B615F706460626D72/chvibqgqdi8c9yd6.D.117920.Sonia_Gandhi_celebrates_World_Cup_victory.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/news-politics/world-cup-2011-kin-of-sehwag-raina-celebrate-team-indias-win/3087300"><img src="http://datastore.rediff.com/briefcase/53615D675B5B615F706460626D72/y6m4ec8t2gvyk081.D.76120.World_Cup_2011_Kin_of_Sehwag_Raina_celebrate_team_Indias_win.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/entertainment/winnig-world-cup-india/3087205"><img src="http://datastore.rediff.com/briefcase/69596F635A2F2E3434/5tta3awxwh3twtbe.D.258720.slidesong-seddsaawsddekkfot-my_slide_show.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/cricket/berserk-celebrations-all-over-after-india-win-world-cup/3085752"><img src="http://datastore.rediff.com/briefcase/53615D675B5B615F706460626D72/xqjt7x7a64fd0tiu.D.96959.Berserk_celebrations_all_over_after_India_win_World_Cup.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/cricket/world-cup-2011-indian-soldiers-celebrate-world-cup-win/3085799"><img src="http://datastore.rediff.com/briefcase/53615D675B5B615F706460626D72/oto53uojflsaqb53.D.71879.World_Cup_2011_Indian_soldiers_celebrate_world_cup_win.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/cricket/world-cup-2011-indians-in-london-celebrate-world-cup-win/3085819"><img src="http://datastore.rediff.com/briefcase/53615D675B5B615F706460626D72/da5qqd5h2se5ted2.D.115680.World_Cup_2011_Indians_in_London_celebrate_World_Cup_win.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/cricket/world-cup-2011-politicians-hail-team-indias-world-cup-victory/3085835"><img src="http://datastore.rediff.com/briefcase/53615D675B5B615F706460626D72/jeomw96j14nihjde.D.105280.World_Cup_2011_Politicians_hail_Team_Indias_World_Cup_victory.mpg-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                                <div class="featuvddiv floatL"><a href="http://ishare.rediff.com/video/others/shakira-waka-waka-official-2010-fifa-world-cup/3086254"><img src="http://datastore.rediff.com/briefcase/56485E4A585E55634F5A655E5365242636666A646F6F2A606D6C/vqmzjvqpw48vzykf.D.210699.Shakira_-__Waka_Waka_-_Official_2010_FIFA_World_Cup.3gp-0001.png" alt="cep video" class="featuvdthumb" /></a></div>
+                				<span class="clear"></span>
+		</div>
+	</div>
+    <span class="ht10"></span>
+    <div class="floatL"><a href="http://videosearch.rediff.com/video.php?query=cep"><b>See All</b></a></div>
+    <span class="ht10"></span>
+</div>
+<span class="ht20"></span>
+<div class="bggrey1">
+<span class="ht5"></span><h2 class="normal f14">&nbsp;&nbsp;People speak  for <b>cep</b></h2><span class="ht10"></span>
+<ul class="tagsTab">
+<li id="peopletab1" class="tagsTabsel" onclick="showNewsTab(1,'peopletab','div_social',glb_peopletabcount);"><b>All</b></li>
+<li id="peopletab2" class="tagsTabnormal" onclick="showNewsTab(2,'peopletab','div_social',glb_peopletabcount);"><b>Twitter</b></li>
+<li id="peopletab5" class="tagsTabnormal" onclick="showNewsTab(5,'peopletab','div_social',glb_peopletabcount);"><b>QNA</b></li>
+</ul>
+</div>
+<span class="ht20"></span>
+<div id="div_social1">
+                                                <div>
+            <div class="socialfeed">
+                <a title="New Exclusive StrUng Organic MushRoom CApS kn0wn Worldwide as cEP Bolete Borowiki http://r.ebay.com/TQCVQ4 100g Luxury Chefs @wildmushrooms" href="http://twitter.com/GrowTweets/statuses/54573449456267264"><b>GrowTweets</b></a>:New Exclusive StrUng Organic MushRoom CApS kn0wn Worldwide as cEP Bolete Borowiki http://r.ebay.com/TQCVQ4 100g Luxury Chefs @wildmushrooms
+                <br>Jahhh,, ngapa lu.. Cep cep cep RT @muthiandhika : my tears dropped easily : (... 
+            <p class="grey1"><span class="green">http://twitter.com/GrowTweets/statuses/54573449456267264</span> - more than 1 hr ago</p>
+            </div>
+            <span class="clear ht10"></span>
+        </div>
+                                            <div>
+            <div class="socialfeed">
+                <a title="Jahhh,, ngapa lu.. Cep cep cep RT @muthiandhika: my tears dropped easily :'(" href="http://twitter.com/creonaryo/statuses/54595792178118656"><b>creonaryo</b></a>:Jahhh,, ngapa lu.. Cep cep cep RT @muthiandhika: my tears dropped easily :'(
+                <br>ikam nangis banjir smd cep RT @destaHTM : Sediih bacanya --- http ://bit.ly/g2U5yM cc: @HouseOfRevival â¹ â¹ â¹... 
+            <p class="grey1"><span class="green">http://twitter.com/creonaryo/statuses/54595792178118656</span> - 25 min ago</p>
+            </div>
+            <span class="clear ht10"></span>
+        </div>
+                                                                <div>
+            <div class="socialfeed">
+                <a title="ikam nangis banjir smd cep  RT @destaHTM: Sediih bacanya ---> http://bit.ly/g2U5yM cc: @HouseOfRevival â¹ â¹ â¹" href="http://twitter.com/tommy_culun/statuses/54595957546946560"><b>tommy_culun</b></a>:ikam nangis banjir smd cep  RT @destaHTM: Sediih bacanya ---> http://bit.ly/g2U5yM cc: @HouseOfRevival â¹ â¹ â¹
+                <br>LONDON (Reuters) - Private equity firm PAI Partners has launched a 800 million-1 billion euro ($1.34 billion) auction for French insurance broker...... 
+            <p class="grey1"><span class="green">http://twitter.com/tommy_culun/statuses/54595957546946560</span> - 23 min ago</p>
+            </div>
+            <span class="clear ht10"></span>
+        </div>
+                                                <div>
+            <div class="socialfeed"><a rel="nofollow" title="" href=""></a><br>... 
+            <p class="grey1"><span class="green"></span> - </p>
+            </div>
+            <span class="clear ht10"></span>
+        </div>
+                                            <div>
+            <div class="socialfeed">
+                <div class="qnauserthumb"><a href="http://mypage.rediff.com/joyesh-chakraborty/1338196"><img width="50" src="http://socialimg.rediff.com/image.php?uid=1338196&type=thumb" alt="joyesh chakraborty" style="vertical-align:text-top;" /></a></div>
+                <div class="flaotL"><b>Q.</b>&nbsp;What is SA 8000?<br /><a href="http://mypage.rediff.com/joyesh-chakraborty/1338196">Joyesh Chakraborty</a>:<b>&nbsp; A.</b>&nbsp;Social Accountability 8000 (SA8000) has been developed by Social Accountability International (SAI), known until recently as the Council on......                <a rel="nofollow" href="http://qna.rediff.com/questions-and-answers/what-is-sa-8000/16245076/answers/16245128">more</a></div>
+                <span class="clear"></span>
+                <p class="green">http://qna.rediff.com/questions-and-answers/what-is-sa-8000/16245076/answers/16245128</p>
+            </div>
+            <span class="clear ht15"></span>
+        </div>
+                                                                        <span class="ht10"></span>
+</div>
+<div id="div_social2">
+    	<div>
+		<div class="socialfeed">
+            <a title="ikam nangis banjir smd cep  RT @destaHTM: Sediih bacanya ---> http://bit.ly/g2U5yM cc: @HouseOfRevival â¹ â¹ â¹" href="http://twitter.com/tommy_culun/statuses/54595957546946560"><b>tommy_culun</b></a>:ikam nangis banjir smd cep  RT @destaHTM: Sediih bacanya ---> http://bit.ly/g2U5yM cc: @HouseOfRevival â¹ â¹ â¹
+            <br>LONDON (Reuters) - Private equity firm PAI Partners has launched a 800 million-1 billion euro ($1.34 billion) auction for French insurance broker...... 
+		<p class="grey1"><span class="green">http://twitter.com/tommy_culun/statuses/54595957546946560</span> - 23 min ago</p>
+		</div>
+		<span class="clear ht10"></span>
+	</div>
+    	<div>
+		<div class="socialfeed">
+            <a title="Jahhh,, ngapa lu.. Cep cep cep RT @muthiandhika: my tears dropped easily :'(" href="http://twitter.com/creonaryo/statuses/54595792178118656"><b>creonaryo</b></a>:Jahhh,, ngapa lu.. Cep cep cep RT @muthiandhika: my tears dropped easily :'(
+            <br>ikam nangis banjir smd cep RT @destaHTM : Sediih bacanya --- http ://bit.ly/g2U5yM cc: @HouseOfRevival â¹ â¹ â¹... 
+		<p class="grey1"><span class="green">http://twitter.com/creonaryo/statuses/54595792178118656</span> - 25 min ago</p>
+		</div>
+		<span class="clear ht10"></span>
+	</div>
+    	<div>
+		<div class="socialfeed">
+            <a title="New Exclusive StrUng Organic MushRoom CApS kn0wn Worldwide as cEP Bolete Borowiki http://r.ebay.com/TQCVQ4 100g Luxury Chefs @wildmushrooms" href="http://twitter.com/GrowTweets/statuses/54573449456267264"><b>GrowTweets</b></a>:New Exclusive StrUng Organic MushRoom CApS kn0wn Worldwide as cEP Bolete Borowiki http://r.ebay.com/TQCVQ4 100g Luxury Chefs @wildmushrooms
+            <br>Jahhh,, ngapa lu.. Cep cep cep RT @muthiandhika : my tears dropped easily : (... 
+		<p class="grey1"><span class="green">http://twitter.com/GrowTweets/statuses/54573449456267264</span> - more than 1 hr ago</p>
+		</div>
+		<span class="clear ht10"></span>
+	</div>
+    	<div>
+		<div class="socialfeed">
+            <a title="RT @kimives13: CEP results rumor: of 82.2% tallies w/ 17% out for fraud,1.68% blank. Martelly 47.04% (won W, S, N) Manigat 51.28% (other 7 depts)..." href="http://twitter.com/Stone020/statuses/54565060202340353"><b>Stone020</b></a>:RT @kimives13: CEP results rumor: of 82.2% tallies w/ 17% out for fraud,1.68% blank. Martelly 47.04% (won W, S, N) Manigat 51.28% (other 7 depts)...
+            <br>New Exclusive StrUng Organic MushRoom CApS kn0wn Worldwide as cEP Bolete Borowiki http ://r.ebay.com/TQCVQ4 100g Luxury Chefs @wildmushrooms... 
+		<p class="grey1"><span class="green">http://twitter.com/Stone020/statuses/54565060202340353</span> - more than 1 hr ago</p>
+		</div>
+		<span class="clear ht10"></span>
+	</div>
+    	<div>
+		<div class="socialfeed">
+            <a title="NEP will be in Aarhus, Denmark, CEP in Krakow, Poland and SEEP in Isik, Turkey. In this AGM only SWEP and WEP will be elected #agmbudapest" href="http://twitter.com/ESN_Int/statuses/54558007178182656"><b>ESN_Int</b></a>:NEP will be in Aarhus, Denmark, CEP in Krakow, Poland and SEEP in Isik, Turkey. In this AGM only SWEP and WEP will be elected #agmbudapest
+            <br>RT @kimives13 : CEP results rumor: of 82.2% tallies w/ 17% out for fraud,1.68% blank. Martelly 47.04% (won W, S, N) Manigat 51.28% (other 7 depts)...... 
+		<p class="grey1"><span class="green">http://twitter.com/ESN_Int/statuses/54558007178182656</span> - more than 1 hr ago</p>
+		</div>
+		<span class="clear ht10"></span>
+	</div>
+        <span class="ht10"></span>
+</div>
+<div id="div_social5">
+	    <div>
+        <div class="socialfeed">
+        	<div class="qnauserthumb"><a href="http://mypage.rediff.com/joyesh-chakraborty/1338196"><img width="50" src="http://socialimg.rediff.com/image.php?uid=1338196&type=thumb" alt="joyesh chakraborty" style="vertical-align:text-top;" /></a></div>
+			<div class="flaotL"><b>Q.</b>&nbsp;What is SA 8000?<br /><a href="http://mypage.rediff.com/joyesh-chakraborty/1338196">Joyesh Chakraborty</a>:<b>&nbsp; A.</b>&nbsp;Social Accountability 8000 (SA8000) has been developed by Social Accountability International (SAI), known until recently as the Council on......            <a rel="nofollow" href="http://qna.rediff.com/questions-and-answers/what-is-sa-8000/16245076/answers/16245128">more</a></div>
+			<span class="clear"></span>
+            <p class="green">http://qna.rediff.com/questions-and-answers/what-is-sa-8000/16245076/answers/16245128</p>
+		</div>
+        <span class="clear ht15"></span>
+    </div>
+        <div>
+        <div class="socialfeed">
+        	<div class="qnauserthumb"><a href="http://mypage.rediff.com/deleeph/16553769"><img width="50" src="http://socialimg.rediff.com/image.php?uid=16553769&type=thumb" alt="deleeph" style="vertical-align:text-top;" /></a></div>
+			<div class="flaotL"><b>Q.</b>&nbsp;what do you consider your positive strengths as a person<br /><a href="http://mypage.rediff.com/deleeph/16553769">Deleeph</a>:<b>&nbsp; A.</b>&nbsp;bi-ceps!            <a rel="nofollow" href="http://qna.rediff.com/questions-and-answers/what-do-you-consider-your-positive-strengths-as-a-person/15970069/answers/15970101">more</a></div>
+			<span class="clear"></span>
+            <p class="green">http://qna.rediff.com/questions-and-answers/what-do-you-consider-your-positive-strengths-as-a-person/15970069/answers/15970101</p>
+		</div>
+        <span class="clear ht15"></span>
+    </div>
+        <div>
+        <div class="socialfeed">
+        	<div class="qnauserthumb"><a href="http://mypage.rediff.com/rajesh-parashar/12148380"><img width="50" src="http://socialimg.rediff.com/image.php?uid=12148380&type=thumb" alt="Rajesh Parashar" style="vertical-align:text-top;" /></a></div>
+			<div class="flaotL"><b>Q.</b>&nbsp;Cn any1 tell me abt IMI,CHENNAI /Institution of Motor Industries/ . . . ?<br /><a href="http://mypage.rediff.com/rajesh-parashar/12148380">Rajesh Parashar</a>:<b>&nbsp; A.</b>&nbsp;The &quot;Institute of Motor Industry&quot;(India),Chennai.Course duly Approved by A.I.C.T.E-CEP,Govt.of IndiaThe Institute is purely a Technical......            <a rel="nofollow" href="http://qna.rediff.com/questions-and-answers/cn-any1-tell-me-abt-imichennai-institution-of-motor-industri/12562624/answers/12562662">more</a></div>
+			<span class="clear"></span>
+            <p class="green">http://qna.rediff.com/questions-and-answers/cn-any1-tell-me-abt-imichennai-institution-of-motor-industri/12562624/answers/12562662</p>
+		</div>
+        <span class="clear ht15"></span>
+    </div>
+        <div>
+        <div class="socialfeed">
+        	<div class="qnauserthumb"><a href="http://mypage.rediff.com//"><img width="50" src="http://socialimg.rediff.com/image.php?uid=&type=thumb" alt="" style="vertical-align:text-top;" /></a></div>
+			<div class="flaotL"><b>Q.</b>&nbsp;quotes on production management<br /><a href="http://mypage.rediff.com//"></a>:<b>&nbsp; A.</b>&nbsp;www.iitb.ac.in/~cep/brochures/2006/asb-pm-bro.htmwww.knoah.com/images/pdf/operation/productionmanagement.pdf en.wikipedia.org/wiki/Production_Manager            <a rel="nofollow" href="http://qna.rediff.com/questions-and-answers/quotes-on-production-management/13729857/answers/13729893">more</a></div>
+			<span class="clear"></span>
+            <p class="green">http://qna.rediff.com/questions-and-answers/quotes-on-production-management/13729857/answers/13729893</p>
+		</div>
+        <span class="clear ht15"></span>
+    </div>
+        <div>
+        <div class="socialfeed">
+        	<div class="qnauserthumb"><a href="http://mypage.rediff.com/manish-gandhi/7437019"><img width="50" src="http://socialimg.rediff.com/image.php?uid=7437019&type=thumb" alt="manish gandhi" style="vertical-align:text-top;" /></a></div>
+			<div class="flaotL"><b>Q.</b>&nbsp;why oscar investments (501179) is not moving up even after the net profit of rs.600+ in cash on sale of ranabaxy shares. i.e.company has earned cash profit of (ceps 600+) but share is trading at mere rs.190/- why ????????<br /><a href="http://mypage.rediff.com/manish-gandhi/7437019">Manish Gandhi</a>:<b>&nbsp; A.</b>&nbsp;it may fall more buy around 89 rs to 109 rs and hold for long term            <a rel="nofollow" href="http://qna.rediff.com/questions-and-answers/why-oscar-investments-501179-is-not-moving-up-even-after-the/13683202/answers/13683452">more</a></div>
+			<span class="clear"></span>
+            <p class="green">http://qna.rediff.com/questions-and-answers/why-oscar-investments-501179-is-not-moving-up-even-after-the/13683202/answers/13683452</p>
+		</div>
+        <span class="clear ht15"></span>
+    </div>
+        <span class="ht10"></span>
+</div>
+
+<span class="ht15"></span>
+<div class="bggrey1 f14"><span class="ht5"></span>&nbsp;&nbsp;Web results for <b>Cep</b></b><span class="ht5"></span></div>
+<span class="ht20"></span>
+<div><a href="http://feeds.hindustantimes.com/~r/HT-HomePage-TopStories/~3/R52CeP8ug4M/Article1-666372.aspx" rel="nofollow" class="f14">Govt changed original draft of JPC after BJP objection</a><p>A day before the motion to set up a JPC to probe the 2G spectrum scam was introduced in the Lok Sabha, the government reportedly faced an... ...</p><span class="green">http://feeds.hindustantimes.com/~r/HT-HomePage-TopStories/~3/R52CeP8ug4M/Article1-666372.aspx</span><span class="ht15"></span>
+</div>
+<div><a href="http://www.channelnewsasia.com/stories/singaporebusinessnews/view/1112562/1/.html" rel="nofollow" class="f14">Firms urged to start community programmes</a><p>SINGAPORE: A slew of initiatives has been announced to get more companies to kickstart Community Engagement Programmes (CEP) which aim to build... ...</p><span class="green">http://www.channelnewsasia.com/stories/singaporebusinessnews/view/1112562/1/.html</span><span class="ht15"></span>
+</div>
+<div><a href="http://www.prweb.com/releases/2011/02/prweb5072834.htm" rel="nofollow" class="f14">Cleantech Crowdsourcing and Social Media Platform Skipso Unites Fragmented MIT Clean Energy Prize Community Under A Single Virtual Environment</a><p>Massachusetts Institute of Technology (MIT) Clean Energy Prize has partnered with London's Skipso for a customized crowdsourcing and social media... ...</p><span class="green">http://www.prweb.com/releases/2011/02/prweb5072834.htm</span><span class="ht15"></span>
+</div>
+<div><a href="http://feeds.reuters.com/~r/reuters/privateequityNews/~3/8X0D32sYmng/pai-sales-idUSLDE7122F020110207" rel="nofollow" class="f14">DEALTALK-PAI clearout to set French firm up for new fund</a><p>* Selling Yoplait, CEP, Kwik Fit and Gruppo Coin -sources   ...</p><span class="green">http://feeds.reuters.com/~r/reuters/privateequityNews/~3/8X0D32sYmng/pai-sales-idUSLDE7122F020110207</span><span class="ht15"></span>
+</div>
+<div><a href="http://feeds.reuters.com/~r/reuters/dealsNews/~3/tF14uEvNEEM/idUSTRE70G0CV20110117" rel="nofollow" class="f14">PAI Partners starts 1 bln euro auction for CEP: report</a><p>LONDON (Reuters) - Private equity firm PAI Partners has launched a 800 million-1 billion euro ($1.34 billion) auction for French insurance broker... ...</p><span class="green">http://feeds.reuters.com/~r/reuters/dealsNews/~3/tF14uEvNEEM/idUSTRE70G0CV20110117</span><span class="ht15"></span>
+</div>
+<div class="floatL"><a href="http://search.rediff.com/dirsrch/default.asp?src=web&MT=cep"><b>See All</b></a></div>
+</div>
+<!-- leftcontainer ends -->
+<!-- rightcontainer starts -->
+<div id="rightcontainer">
+    <span class="ht10"></span>
+    <div id="world_right1"></div>
+<span class="ht10"></span>
+<div id="world_right2"></div>
+        <div>
+	<span class="ht10"></span>
+	<div><h1>Related Tags</h1><hr class="hrline" noshade /></div>
+    <ol class='tag-cloud'>
+                <li><a class="tag13" href="http://www.rediff.com/tags/mumbai">mumbai</a></li>
+                <li><a class="tag14" href="http://www.rediff.com/tags/lalit-modi">lalit modi</a></li>
+                <li><a class="tag12" href="http://www.rediff.com/tags/naresh-goyal">naresh goyal</a></li>
+                <li><a class="tag16" href="http://www.rediff.com/tags/india">india</a></li>
+                <li><a class="tag3" href="http://www.rediff.com/tags/bcci">bcci</a></li>
+                <li><a class="tag10" href="http://www.rediff.com/tags/jet-airways">jet airways</a></li>
+                <li><a class="tag20" href="http://www.rediff.com/tags/ipl">ipl</a></li>
+                <li><a class="tag11" href="http://www.rediff.com/tags/a-350-800">a-350-800</a></li>
+                <li><a class="tag2" href="http://www.rediff.com/tags/eulogising-prime-minister-manmohan-singh">eulogising prime minister manmohan singh</a></li>
+                <li><a class="tag10" href="http://www.rediff.com/tags/mirlande-manigat">mirlande manigat</a></li>
+                <li><a class="tag12" href="http://www.rediff.com/tags/airbus-industrie-cep-tom-enders">airbus industrie cep tom enders</a></li>
+                <li><a class="tag13" href="http://www.rediff.com/tags/a-350-900">a-350-900</a></li>
+                <li><a class="tag17" href="http://www.rediff.com/tags/organisation-of-american-states">organisation of american states</a></li>
+                <li><a class="tag17" href="http://www.rediff.com/tags/atf">atf</a></li>
+                <li><a class="tag10" href="http://www.rediff.com/tags/wsgm">wsgm</a></li>
+                <li><a class="tag17" href="http://www.rediff.com/tags/n-srinivasan">n srinivasan</a></li>
+                <li><a class="tag10" href="http://www.rediff.com/tags/german-chancellor-angela-merkel">german chancellor angela merkel</a></li>
+                <li><a class="tag15" href="http://www.rediff.com/tags/security-council">security council</a></li>
+                <li><a class="tag3" href="http://www.rediff.com/tags/unsc">unsc</a></li>
+                <li><a class="tag9" href="http://www.rediff.com/tags/a-330-200">a 330-200</a></li>
+                <li><a class="tag13" href="http://www.rediff.com/tags/a-330-200">a-330-200</a></li>
+                <li><a class="tag15" href="http://www.rediff.com/tags/board-of-control-for-cricket-in-india">board of control for cricket in india</a></li>
+                <li><a class="tag1" href="http://www.rediff.com/tags/a-350-xwb">a-350 xwb</a></li>
+                <li><a class="tag9" href="http://www.rediff.com/tags/provisional-electoral-council">provisional electoral council</a></li>
+                <li><a class="tag19" href="http://www.rediff.com/tags/jean-claude-duvalier">jean claude duvalier</a></li>
+                <li><a class="tag7" href="http://www.rediff.com/tags/alain-le-roy">alain le roy</a></li>
+                <li><a class="tag13" href="http://www.rediff.com/tags/seamus-o--brien">seamus o '' brien</a></li>
+                <li><a class="tag11" href="http://www.rediff.com/tags/boeing">boeing</a></li>
+                <li><a class="tag4" href="http://www.rediff.com/tags/berlin-airshow-ila">berlin airshow ila</a></li>
+                <li><a class="tag7" href="http://www.rediff.com/tags/united-nations">united nations</a></li>
+            </ol>	
+    </div>
+    	<span class="ht10"></span>
+        <span class="ht10"></span>
+            <div><h1>Top Coverage News</h1><hr class="hrline" noshade /></div>
+        <span class="ht10"></span>
+                <div>
+        <div class="tagsectiontxt1">
+            <a title=" World Cup 2011: Coverage, Live score, Schedule" href="http://www.rediff.com/cricket/world-cup-2011.html"><h2 class="f12 normal"> World Cup 2011: Coverage, Live score, Schedule</h2></a>
+             
+            </div><span class="clear ht10"></span>
+        </div>
+                <div>
+        <div class="tagsectiontxt1">
+            <a title="The Godhra Verdict 2011 - complete coverage" href="http://www.rediff.com/news/gohdra-verdict-coverage-2011.html"><h2 class="f12 normal">The Godhra Verdict 2011 - complete coverage</h2></a>
+            
+            </div><span class="clear ht10"></span>
+        </div>
+                <div>
+        <div class="tagsectiontxt1">
+            <a title="Union Budget 2011-2012 - Rediff Business" href="http://www.rediff.com/business/budget-2011"><h2 class="f12 normal">Union Budget 2011-2012 - Rediff Business</h2></a>
+            
+            </div><span class="clear ht10"></span>
+        </div>
+                <div>
+        <div class="tagsectiontxt1">
+            <a title=" Live cricket score" href="http://www.rediff.com/cricket"><h2 class="f12 normal"> Live cricket score</h2></a>
+             
+            </div><span class="clear ht10"></span>
+        </div>
+            </div>
+<!-- rightcontainer ends -->
+<span class="clear"></span>
+
+<script language="javascript">
+	var OAS_sitepage = "usnews.rediff.com/news-article.htm";
+	var OAS_listpos = "LB01,BOX01,BOX02";
+</script>
+<span class="ht20"></span>
+<div class="sm2 alignC">Broswe by: <a href="http://www.rediff.com/tags/browse/a">A</a> <a href="http://www.rediff.com/tags/browse/b">B</a> <a href="http://www.rediff.com/tags/browse/c">C</a> <a href="http://www.rediff.com/tags/browse/d">D</a> <a href="http://www.rediff.com/tags/browse/e">E</a> <a href="http://www.rediff.com/tags/browse/f">F</a> <a href="http://www.rediff.com/tags/browse/g">G</a> <a href="http://www.rediff.com/tags/browse/h">H</a> <a href="http://www.rediff.com/tags/browse/i">I</a> <a href="http://www.rediff.com/tags/browse/j">J</a> <a href="http://www.rediff.com/tags/browse/k">K</a> <a href="http://www.rediff.com/tags/browse/l">L</a> <a href="http://www.rediff.com/tags/browse/m">M</a> <a href="http://www.rediff.com/tags/browse/n">N</a> <a href="http://www.rediff.com/tags/browse/o">O</a> <a href="http://www.rediff.com/tags/browse/p">P</a> <a href="http://www.rediff.com/tags/browse/q">Q</a> <a href="http://www.rediff.com/tags/browse/r">R</a> <a href="http://www.rediff.com/tags/browse/s">S</a> <a href="http://www.rediff.com/tags/browse/t">T</a> <a href="http://www.rediff.com/tags/browse/u">U</a> <a href="http://www.rediff.com/tags/browse/v">V</a> <a href="http://www.rediff.com/tags/browse/w">W</a> <a href="http://www.rediff.com/tags/browse/x">X</a> <a href="http://www.rediff.com/tags/browse/y">Y</a> <a href="http://www.rediff.com/tags/browse/z">Z</a></div>
+	
+<style type="text/css">#footerLinks {border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1;padding:5px 0;margin:25px 0 0 0;text-align:center;}
+#footerLinks span{font-family:arial,verdana,sans-serif,FreeSans;font-size:10px;margin:0px 7px;}
+.footer{margin:10px 0 0 0;border:none;padding:0 0 10px 0;}</style>
+
+<div id="footerLinks"><span><a href="http://www.rediff.com/news/">News</a></span><span><a href="http://www.rediff.com/">Rediffmail</a></span><span><a href="http://mobile.rediff.com/">Mobile</a></span><span><a href="http://blogs.rediff.com/">Blogs</a></span><span><a href="http://books.rediff.com/">Books</a></span><span><a href="http://www.rediff.com/cricket">Cricket</a></span><span><a href="http://songbuzz.rediff.com/">SongBuzz</a></span><span><a href="http://money.rediff.com/">Money</a></span><span><a href="http://www.rediffmailpro.com/">Rediffmail Pro</a></span><span><a href="http://ishare.rediff.com/">iShare</a></span><span><a href="http://qna.rediff.com/">Q&A</a></span><span><a href="http://localads.rediff.com/">Local Ads</a></span><span><a href="http://shopping.rediff.com/shopping/index.html">Shopping</a></span><span><a href="http://astrology.rediff.com/">Astrology</a></span><span><a href="http://www.rediff.com/newshound/hottopics">Buzz</a></span><span><a href="http://www.rediff.com/cricket/world-cup-2011.html">World Cup 2011</a></span></div><center>
+<div class="footer">
+
+
+<span class="ht5"></span>
+&#169; 2011 Rediff.com<span class="grey1"> - <a href="http://investor.rediff.com/">Investors</a> - <a href="http://clients.rediff.com/rediff_advertisewithus/contact.htm">Advertise</a> - <a href="http://www.rediff.com/disclaim.htm">Disclaimer</a> - <a href="http://www.rediff.com/w3c/policy.html">Privacy</a> - <a href="http://careers.rediff.com/jobs/">Careers</a> - <a href="http://mypage.rediff.com/feedback">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://us.rediff.com/us/what.htm">India Abroad weekly</a></span>
+
+
+</div>
+</center>
+
+
+<script language="JavaScript">
+	<!--
+	function resize()
+	{
+		var winW = 1024 ;
+		if (navigator.appName=="Netscape" || navigator.appName=="Opera"  ) 
+		{
+			winW = window.innerWidth;
+		}
+		if (navigator.appName.indexOf("Microsoft")!=-1) 
+		{
+			winW = document.body.offsetWidth;
+  		}
+		if(winW > 1000)
+		{
+			if(document.getElementById('wrapper'))document.getElementById('wrapper').style.width='990px' ;
+			if(document.getElementById('leftcontainer'))document.getElementById('leftcontainer').style.width='670px' ;
+			if(document.getElementById('midContainer'))document.getElementById('midContainer').style.width='630px' ;
+			if(document.getElementById('div_sldvideo_main'))
+			{
+				document.getElementById('div_sldvideo_main').style.width='630px' ;
+				leftlimit= -1345 ;
+			}
+		}
+		else
+		{
+			if(document.getElementById('wrapper'))document.getElementById('wrapper').style.width='778px' ;
+			if(document.getElementById('leftcontainer'))document.getElementById('leftcontainer').style.width='465px' ;
+			if(document.getElementById('midContainer'))document.getElementById('midContainer').style.width='418px' ;
+			if(document.getElementById('div_sldvideo_main'))
+			{
+				document.getElementById('div_sldvideo_main').style.width='405px' ;
+				leftlimit= -1420 ;
+			}
+			if(document.getElementById("div_samsung")){document.getElementById("div_samsung").style.display='none';}
+		}
+	}
+
+
+	resize();
+	window.onresize = resize ;
+	//-->
+</script>
+
+<script language="JavaScript" src="http://imworld.rediff.com/worldrediff/js_2_5/signinout.js"></script>
+
+<script language="JavaScript" src="http://im.rediff.com/uim/common/realmedia_banner_1_2.js"></script>
+
+<div id=world_top_hidden class="hide">
+	
+	<script LANGUAGE=JavaScript TYPE=text/javascript>
+	if(document.getElementById('world_top'))
+	{
+		OAS_loc=getCookie('RLOC');
+		if (!(OAS_loc))
+		{
+			document.write("<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0><TR><TD><IMG SRC=\"http://ads.rediff.com/cgi-bin/AdWorks/setup/blank.gif\" BORDER=0 HSPACE=0 VSPACE=0></TD></TR></TABLE>");
+		}
+		OAS_AD('LB01');
+	}
+	</script>
+	
+</div>
+<div id=world_top_hidden1 class="hide">
+	
+	<script LANGUAGE=JavaScript TYPE=text/javascript>
+	if(document.getElementById('world_top1'))
+	{
+		OAS_loc=getCookie('RLOC');
+		if (!(OAS_loc))
+		{
+			document.write("<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0><TR><TD><IMG SRC=\"http://ads.rediff.com/cgi-bin/AdWorks/setup/blank.gif\" BORDER=0 HSPACE=0 VSPACE=0></TD></TR></TABLE>");
+		}
+		OAS_AD('LB01');
+	}
+	</script>
+	
+</div>
+
+
+
+<div id=world_right1_hidden class="hide">
+	<script LANGUAGE=JavaScript TYPE=text/javascript>
+	
+	if(document.getElementById("world_right1")){OAS_AD('BOX01');}
+	
+	</script>
+</div>
+
+<DIV id=world_right2_hidden class="hide">
+		<SCRIPT language=JavaScript type=text/javascript>
+	
+	if(document.getElementById("world_right2")){OAS_AD('BOX02');}
+	
+	</SCRIPT>
+	</DIV>
+
+<DIV id=Top1_hidden class="hide">
+<SCRIPT language=JavaScript type=text/javascript>
+
+if(document.getElementById("Top1")){OAS_AD('Top1');}
+
+</SCRIPT>
+</DIV>
+
+
+<script LANGUAGE=JavaScript TYPE=text/javascript>
+if(document.getElementById("world_top"))
+{
+	document.getElementById("world_top").innerHTML = document.getElementById("world_top_hidden").innerHTML;
+	document.getElementById("world_top_hidden").innerHTML="";
+}
+if(document.getElementById("world_top1"))
+{
+	document.getElementById("world_top1").innerHTML = document.getElementById("world_top_hidden1").innerHTML;
+	document.getElementById("world_top_hidden1").innerHTML="";
+}
+if(document.getElementById("world_right1"))
+{
+	document.getElementById("world_right1").innerHTML = document.getElementById("world_right1_hidden").innerHTML;
+	document.getElementById("world_right1_hidden").innerHTML="";
+}
+if(document.getElementById("world_right2"))
+{
+	document.getElementById("world_right2").innerHTML = document.getElementById("world_right2_hidden").innerHTML;
+	document.getElementById("world_right2_hidden").innerHTML="";
+}
+if(document.getElementById("Top1"))
+{
+	document.getElementById("Top1").innerHTML = document.getElementById("Top1_hidden").innerHTML;
+	document.getElementById("Top1_hidden").innerHTML="";
+}
+</script>
+
+
+
+
+
+<script LANGUAGE=JavaScript TYPE=text/javascript>
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3 9(a){2 b=e.f.u(\';\');2 d=a+"=";w(2 i=0;i<b.4;i++){2 c=b[i];y(c.z(0)==\' \')c=c.g(1,c.4);h(c.A(d)==0)j c.g(d.4,c.4)}j 7}3 5(n,v,x,p,d){2 a=(v==7||v==\'\')?(((k l).m())*8)+o.B(o.C()*8):D(v);e.f=n+"="+a+((x)?"; E="+x:"")+"; F=/; G=.H.I;"}3 q(a){2 b=k l();b.J(b.m()+(-1*K*r*r*8));5(a,"",b)}3 s(){2 a=9(\'6\');2 b="L, M-N-O P:t:t Q";h((a!=7)&&(a!=\'\')){q(\'6\');5(\'6\',a,b)}R{5(\'6\',a,b)}}s();',54,54,'||var|function|length|crtCk|RuW|null|1000|rdCk|||||document|cookie|substring|if||return|new|Date|getTime||Math||delCk|60|chkUVCk|59|split||for||while|charAt|indexOf|round|random|escape|expires|path|domain|rediff|com|setTime|24|Wed|31|Dec|2031|23|GMT|else'.split('|'),0,{}))
+
+</script>
+
+
+
+<script type="text/javascript">
+
+function metriccall_img(sldcounter)
+{
+	var querystring	= "";
+	var path	= "";
+	var Rkey_data	= "";
+	var domain		= "";
+	var Rkey	= Math.floor(Math.random() * 1000000);
+	querystring	= window.location.search;
+	path		= window.location.pathname;
+	domain		= window.location.host;
+
+
+	if (querystring == "")
+		Rkey_data = "?rkey="+Rkey;
+	else
+		Rkey_data = "&rkey="+Rkey;
+
+	document.getElementById("metric_iframe").src = 'http://metric.us.rediff.com/'+domain+path+"/"+sldcounter+querystring+Rkey_data;
+}
+</script>
+
+
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "6035613" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035613&cv=2.0&cj=1" />
+</noscript>
+<script language="JavaScript" type="text/javascript">showNewsTab(1,'peopletab','div_social',glb_peopletabcount)</script>
+
+
+
+<script language="JavaScript" type="text/javascript">showNewsTab(1,'tagnews','news_div',glb_newstabcount);</script>
+
+
+</div><!-- wrapper ends -->
+</body>
+</html>

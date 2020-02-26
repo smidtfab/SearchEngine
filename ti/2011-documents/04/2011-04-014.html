@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Crowdsourcing Content Management - Blog: Krish Krishnan - BeyeNETWORK</title>
+<meta name="keywords" content="business intelligence, data warehousing, data management, analytics, claudia
+imhoff, bill inmon, data quality, data integration, knowledge management,
+crm, data marts, data mining, business performance management, bpm, data
+modeling, meta data, enterprise application management, erp, rfid, storage,
+supply chain, real time enterprise, query and reporting, data acquisition,
+government, financial services" />
+<meta name="classification" content="Business Intelligence" /> 
+<meta name="distribution" content="Global" /> 
+<meta name="description" content="business intelligence, data warehousing, data management, analytics, claudia
+imhoff, bill inmon, data quality, data integration, knowledge management,
+crm, data marts, data mining, business performance management, bpm, data
+modeling, meta data, enterprise application management, erp, rfid, storage,
+supply chain, real time enterprise, query and reporting, data acquisition,
+government, financial services" /> 
+<meta name="subject" content="business intelligence, data warehousing, data management, analytics, claudia
+imhoff, bill inmon, data quality, data integration, knowledge management,
+crm, data marts, data mining, business performance management, bpm, data
+modeling, meta data, enterprise application management, erp, rfid, storage,
+supply chain, real time enterprise, query and reporting, data acquisition,
+government, financial services"> 
+<meta name="rating" content="General"> 
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=ISO-8859-1">
+<style type="text/css" media="all"> 
+@import "http://www.b-eye-network.com/libs/css/base.css"; <!-- note: keep exact syntax for import -->
+	</style>
+<!--[if IE]>
+<style type="text/css" media="all"> @import "http://www.b-eye-network.com/libs/css/ie.css"; </style>
+<![endif]-->
+<!--[if lt IE 7]>
+<style type="text/css" media="all"> @import "http://www.b-eye-network.com/libs/css/ie6.css"; </style>
+<![endif]-->
+<!-- CUSTOM CSS HERE -->
+<script type="text/javascript" src="http://www.b-eye-network.com/libs/js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="http://www.b-eye-network.com/libs/js/global.js"></script>
+
+<script language="JavaScript">
+   <!--
+// DART Code for new TT ads syetem
+
+   function getURLParamValue(param) {
+           var paramValue = param + "=";
+           var searchValue = window.location.search.toLowerCase();
+           var searchValueParam = "";
+           if (searchValue.indexOf(paramValue) != -1) {
+                 searchValueParam = window.location.search.substring(searchValue.indexOf(paramValue),searchValue.length);
+                 if (searchValueParam.indexOf("&") != -1) searchValueParam = searchValueParam.substring(0,searchValueParam.indexOf("&"));
+           }
+           searchValueParam = searchValueParam.substring((param.length)+1,searchValueParam.length);
+           return searchValueParam;
+     }
+
+    var beye_site = "beye";
+	
+	if(1 == 1 && "/home/ben/public_html/blogs/krishnan/index.php" == "/home/ben/public_html/index.php")
+		var beye_zone = "homepage";	
+	else
+		var beye_zone = "beye";
+	    //examples: "home", "channel", "beyeuniversity", "beyresearch", "beyeblogs", "beyeconnect", failover = "beye"
+	//window.alert(beye_zone);
+
+   //initialize at top of page
+   if (typeof adPTile == "undefined") var adPTile = 1;
+   if (typeof adDcopt == "undefined") var adDcopt = ""; //old style interstitial, default off
+   if (typeof adSiteValue == "undefined") var adSiteValue = beye_site; //we can replace this with a site abbreviation from above
+   if (typeof adZoneValue == "undefined") var adZoneValue = beye_zone; //represents the sections within beye website.Referred to earlier at beye_zone;
+   if (typeof adKW == "undefined") var adKW = "";
+   if (typeof adRandom == "undefined") var adRandom = Math.round(Math.random() * 10000000); //cache buster
+   var beye_ses = getURLParamValue('ses');
+   var prestitial_flag = "";
+   // -->
+   
+</script>	
+
+	<!-- google code -->
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11990997-1'],['_setDomainName', 'none'],['_setAllowLinker', true],['_setCustomVar', 1, 'contenttype_c', '1547', 3],['_trackPageview']);
+  _gaq.push(["global._setAccount", "UA-19047342-11"], ["global._trackPageview"]);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	
+<!-- CUSTOM JAVASCRIPT HERE -->
+
+<script type="text/javascript" src="http://www.b-eye-network.com/blogs/krishnan/mt.js"></script>
+<script type="text/javascript" src="http://www.b-eye-network.com/libs/js/videoplayer.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+	//toggle view of desc
+  $(".titlebar-button").click(function()
+  {
+    $(".titlebar-content").slideToggle(600);
+  });
+	$("h5").click(function()
+	{
+		$(this).next(".blogsidebar-content").slideToggle(600);
+	});
+	
+});
+</script></head>
+<!-- CUSTOM BODY TAG HERE -->
+<body id="blogs" class="layout-2col-viewbody"><!-- Note: page identification for css -->
+<div id="container">
+	<div id="pg">
+    	<div id="pg-header">
+        	<div class="ad-top">
+			<script type="text/javascript">
+	adSize="728x90"; //examples, "728x90" or multiples "120x600,160x600"
+	
+	var beye_adString = "http://ad.doubleclick.net/adi/" + adSiteValue + "/" + adZoneValue + ";pos=0;kw=" + adKW + ";sz=" + adSize + ";ptile=" + adPTile + ";ses=" + beye_ses + ";tax=" + 1386 + ";ord=" + adRandom + "?";
+      
+	document.write("<iframe src="+ beye_adString + " width='728' height='90' border='0' frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>");
+	//document.write(beye_adString);
+	if (getURLParamValue('adString') == 'on') window.alert(beye_adString);
+        adDcopt ="";
+	adPTile++;
+</script>
+			</div>
+			
+            <div id="branding"><a href="http://www.b-eye-network.com/"><img src="http://www.b-eye-network.com/images/global/logo-beye-header.gif" style="padding-left:35px;" alt="BeyeNETWORK business intelligence and data warehousing resources" title="BeyeNETWORK business intelligence and data warehousing resources"/></a>
+            <div id="toolbox-top"><span>				<a href="http://www.b-eye-network.com/login/index.php?redirect_to=http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php">Login</a>&nbsp; | &nbsp; <a href="http://www.b-eye-network.com/login/signup.php?content_id=&redirect_to=http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php">
+				Become a member!				
+				</a>
+				</span><br /><form id="searchform" action="http://www.b-eye-network.com/search/" method="get"><input type="hidden" name="domains" value="www.b-eye-network.com" /><input type="hidden" name="client" value="pub-6050985421795229" /><input type="hidden" name="sitesearch" value="www.b-eye-network.com" /><input type="hidden" name="channel" value="b-eye-network.com" /><input type="hidden" name="forid" value="1" /><input type="hidden" name="ie" value="ISO-8859-1" /><input type="hidden" name="sa" /><input type="hidden" name="oe" value="ISO-8859-1" /><input type="hidden" name="flav" value="0000" /><input type="hidden" name="cof" value="GALT:#000000;GL:1;DIV:#999999;VLC:336633;AH:center;BGC:FFFFFF;LBGC:FF9900;ALC:0066CC;LC:0066CC;T:000000;GFNT:666666;GIMP:666666;FORID:11" /><input type="hidden" name="hl" value="en" /><input name="q" size="20" maxlength="255" type="text" value="" id="searchfield" class="cleardefault" /><input type="submit" name="btnG" value="search" id="searchsubmit" title="Search"/></form></div><!-- /toolbox-top --></div>
+        <!-- /branding -->
+				
+        </div><!-- /pg-head -->
+        <div id="pg-body">
+		
+
+		
+		
+        	<div id="navigationbox">
+            <ul id="navigation" class="navigation">
+                	<li id="navigation-home"><a href="http://www.b-eye-network.com/">Home</a></li>
+					
+<li id="navigation-channels-expert"><a href="#" class="collapsed">Channels by Expert</a>
+	<ul>
+	<li><a href="http://www.b-eye-network.com/channels/experts/">Index</a></li><li id="n1568"><a href="http://www.b-eye-network.com/channels/1568/">Lou Agosta</a></li>
+<li id="n1546"><a href="http://www.b-eye-network.com/channels/1546/">Leslie Ament</a></li>
+<li id="n1550"><a href="http://www.b-eye-network.com/channels/1550/">John Bair</a></li>
+<li id="n5567"><a href="http://www.b-eye-network.com/channels/5567/">Frank Buytendijk</a></li>
+<li id="n1395"><a href="http://www.b-eye-network.com/channels/1395/">Malcolm Chisholm</a></li>
+<li id="n1244"><a href="http://www.b-eye-network.com/channels/1244/">Maureen Clarry</a></li>
+<li id="n1235"><a href="http://www.b-eye-network.com/channels/1235/">Barry. Devlin</a></li>
+<li id="n1536"><a href="http://www.b-eye-network.com/channels/1536/">Steve Dine</a></li>
+<li id="n1204"><a href="http://www.b-eye-network.com/channels/1204/">Jill Dych�</a></li>
+<li id="n5557"><a href="http://www.b-eye-network.com/channels/5557/">Jim Gallo</a></li>
+<li id="n1544"><a href="http://www.b-eye-network.com/channels/1544/">Larry Goldman</a></li>
+<li id="n1394"><a href="http://www.b-eye-network.com/channels/1394/">Seth Grimes</a></li>
+<li id="n1217"><a href="http://www.b-eye-network.com/channels/1217/">Richard Hackathorn</a></li>
+<li id="n1531"><a href="http://www.b-eye-network.com/channels/1531/">Richard Herschel</a></li>
+<li id="n1263"><a href="http://www.b-eye-network.com/channels/1263/">Cindi Howson</a></li>
+<li id="n1127"><a href="http://www.b-eye-network.com/channels/1127/">Claudia Imhoff</a></li>
+<li id="n1134"><a href="http://www.b-eye-network.com/channels/1134/">Bill Inmon</a></li>
+<li id="n5407"><a href="http://www.b-eye-network.com/channels/5407/">Derick Jose</a></li>
+<li id="n5088"><a href="http://www.b-eye-network.com/channels/5088/">Chuck Kelley</a></li>
+<li id="n1415"><a href="http://www.b-eye-network.com/channels/1415/">Eric King</a></li>
+<li id="n1386"><a href="http://www.b-eye-network.com/channels/1386/">Krish Krishnan</a></li>
+<li id="n5084"><a href="http://www.b-eye-network.com/channels/5084/">Janet Kuster</a></li>
+<li id="n1148"><a href="http://www.b-eye-network.com/channels/1148/">David Loshin</a></li>
+<li id="n1405"><a href="http://www.b-eye-network.com/channels/1405/">Mark Madsen</a></li>
+<li id="n5095"><a href="http://www.b-eye-network.com/channels/5095/">Susan Major</a></li>
+<li id="n1231"><a href="http://www.b-eye-network.com/channels/1231/">William McKnight</a></li>
+<li id="n1385"><a href="http://www.b-eye-network.com/channels/1385/">Dan Power</a></li>
+<li id="n1149"><a href="http://www.b-eye-network.com/channels/1149/">Craig Schiff</a></li>
+<li id="n1251"><a href="http://www.b-eye-network.com/channels/1251/">Robert S. Seiner</a></li>
+<li id="n1572"><a href="http://www.b-eye-network.com/channels/1572/">Rick Sherman</a></li>
+<li id="n1430"><a href="http://www.b-eye-network.com/channels/1430/">James Taylor</a></li>
+<li id="n5087"><a href="http://www.b-eye-network.com/channels/5087/">Rick van der Lans</a></li>
+<li id="n1138"><a href="http://www.b-eye-network.com/channels/1138/">Colin White</a></li>
+<li id="n1381"><a href="http://www.b-eye-network.com/channels/1381/">Nancy Williams</a></li>
+<li id="n1543"><a href="http://www.b-eye-network.com/channels/1543/">Lyndsay Wise</a></li>
+</ul></li> <!-- make sure no space between </ul> and </li> -->
+<li id="navigation-channels-industry"><a href="#" class="collapsed">Channels by Industry</a>
+	<ul>
+	<li><a href="http://www.b-eye-network.com/channels/industries/">Index</a></li><li id="n1278"><a href="http://www.b-eye-network.com/channels/1278/">Health & Life Sciences</a></li>
+<li id="n1020"><a href="http://www.b-eye-network.com/channels/1020/">Government</a></li>
+<li id="n1021"><a href="http://www.b-eye-network.com/channels/1021/">Healthcare</a></li>
+<li id="n1022"><a href="http://www.b-eye-network.com/channels/1022/">Manufacturing</a></li>
+<li id="n1112"><a href="http://www.b-eye-network.com/channels/1112/">Pharmaceutical</a></li>
+<li id="n1024"><a href="http://www.b-eye-network.com/channels/1024/">Retail</a></li>
+<li id="n1016"><a href="http://www.b-eye-network.com/channels/1016/">Telecom</a></li>
+<li id="n5085"><a href="http://www.b-eye-network.com/channels/5085/">Higher Education</a></li>
+<li id="n1290"><a href="http://www.b-eye-network.com/channels/1290/">Energy</a></li>
+<li id="n1025"><a href="http://www.b-eye-network.com/channels/1025/">Transportation</a></li>
+<li id="n1014"><a href="http://www.b-eye-network.com/channels/1014/">Financial Services</a></li>
+</ul></li> <!-- make sure no space between </ul> and </li> -->
+<li id="navigation-channels-topic"><a href="#" class="collapsed">Channels by Topic</a>
+	<ul>
+	<li><a href="http://www.b-eye-network.com/channels/topics/">Index</a></li><li id="n5557"><a href="http://www.b-eye-network.com/channels/5557/">Agile BI</a></li>
+<li id="n5084"><a href="http://www.b-eye-network.com/channels/5084/">Applied Analytics</a></li>
+<li id="n1138"><a href="http://www.b-eye-network.com/channels/1138/">BI & Integration</a></li>
+<li id="n1543"><a href="http://www.b-eye-network.com/channels/1543/">BI For the Mid-Market</a></li>
+<li id="n1381"><a href="http://www.b-eye-network.com/channels/1381/">BI Impact</a></li>
+<li id="n1536"><a href="http://www.b-eye-network.com/channels/1536/">BI In The Trenches</a></li>
+<li id="n1263"><a href="http://www.b-eye-network.com/channels/1263/">BI Scorecard</a></li>
+<li id="n1149"><a href="http://www.b-eye-network.com/channels/1149/">BPM</a></li>
+<li id="n1127"><a href="http://www.b-eye-network.com/channels/1127/">Business Intelligence</a></li>
+<li id="n1204"><a href="http://www.b-eye-network.com/channels/1204/">CDI, MDM & Data Governance</a></li>
+<li id="n1550"><a href="http://www.b-eye-network.com/channels/1550/">Cloud Computing</a></li>
+<li id="n5083"><a href="http://www.b-eye-network.com/channels/5083/">Competing on Decisions</a></li>
+<li id="n1546"><a href="http://www.b-eye-network.com/channels/1546/">Customer Analytics & Insight</a></li>
+<li id="n5087"><a href="http://www.b-eye-network.com/channels/5087/">Data Delivery Platform</a></li>
+<li id="n1572"><a href="http://www.b-eye-network.com/channels/1572/">Data Integration</a></li>
+<li id="n1415"><a href="http://www.b-eye-network.com/channels/1415/">Data Mining & Predictive Analytics</a></li>
+<li id="n1386"><a href="http://www.b-eye-network.com/channels/1386/">Data Warehouse Appliances and Architecture</a></li>
+<li id="n1134"><a href="http://www.b-eye-network.com/channels/1134/">Data Warehousing</a></li>
+<li id="n5088"><a href="http://www.b-eye-network.com/channels/5088/">Database Design Techniques</a></li>
+<li id="n1430"><a href="http://www.b-eye-network.com/channels/1430/">Decision Management</a></li>
+<li id="n1385"><a href="http://www.b-eye-network.com/channels/1385/">Decision Support</a></li>
+<li id="n1531"><a href="http://www.b-eye-network.com/channels/1531/">Education</a></li>
+<li id="n1395"><a href="http://www.b-eye-network.com/channels/1395/">Enterprise Information Management</a></li>
+<li id="n1217"><a href="http://www.b-eye-network.com/channels/1217/">Global BI</a></li>
+<li id="n1231"><a href="http://www.b-eye-network.com/channels/1231/">Information Management</a></li>
+<li id="n1148"><a href="http://www.b-eye-network.com/channels/1148/">IQ & Integration</a></li>
+<li id="n1244"><a href="http://www.b-eye-network.com/channels/1244/">Leadership & Management</a></li>
+<li id="n1251"><a href="http://www.b-eye-network.com/channels/1251/">Non-Invasive Data Governance</a></li>
+<li id="n1405"><a href="http://www.b-eye-network.com/channels/1405/">Open Source BI</a></li>
+<li id="n1568"><a href="http://www.b-eye-network.com/channels/1568/">Reengineering Healthcare Using IT</a></li>
+<li id="n1544"><a href="http://www.b-eye-network.com/channels/1544/">Sales & Marketing Analytics</a></li>
+<li id="n5095"><a href="http://www.b-eye-network.com/channels/5095/">Sales Performance Management</a></li>
+<li id="n1394"><a href="http://www.b-eye-network.com/channels/1394/">Text Analytics</a></li>
+<li id="n5567"><a href="http://www.b-eye-network.com/channels/5567/">The Machiavellian CIO - Strategy, Analytics, Philosophy & More</a></li>
+<li id="n1542"><a href="http://www.b-eye-network.com/channels/1542/">Trends in DW and BI</a></li>
+</ul></li> <!-- make sure no space between </ul> and </li> -->                    <li id="navigation-articles"><a href="http://www.b-eye-network.com/articles/">Articles</a></li>
+					<li id="navigation-web_seminars"><a href="http://www.b-eye-network.com/webseminars/">Web Seminars</a></li>
+                    <li id="navigation-whitepapers"><a href="http://research.b-eye-network.com/">Research Library</a></li>
+					<!--
+                    <li id="navigation-whitepapers"><a href="http://www.b-eye-network.com/whitepapers/">Resource Library</a></li>-->
+                    <li id="navigation-events"><a href="http://www.b-eye-network.com/events/">Events</a></li>
+					
+			
+										
+					
+<li id="navigation-blogs"><a href="#" class="collapsed">Blogs</a>
+	<ul><li><a href="http://www.b-eye-network.com/blogs/i_research/">Industry Research </a></li>
+<li><a href="http://www.b-eye-network.com/blogs/agosta/">Lou Agosta</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/brooks/">Mike Brooks</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/buytendijk/">Frank Buytendijk</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/damhof/">Ronald Damhof</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/devlin/">Barry Devlin</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/dine/">Steve Dine</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/dyche/">Jill Dyche</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/eckerson/">Wayne Eckerson</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/gallo/">Jim Gallo</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/grimes/">Seth Grimes</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/hackathorn/">Richard Hackathorn</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/heizenberg/">Jorgen Heizenberg</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/imhoff/">Claudia Imhoff</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/">Krish Krishnan</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/linstedt/">Dan Linstedt</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/loshin/">David Loshin</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/lmadsen/">Laura Madsen</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/madsen/">Mark Madsen</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/major/">Susan Major</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/mcknight/">William McKnight</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/myers/">John Myers</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/powell/">Ron Powell</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/power/">Dan Power</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/raden/">Neil Raden</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/schiff/">Craig Schiff</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/seiner/">Robert S. Seiner</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/sherman/">Rick Sherman</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/taylor/">James Taylor</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/vanderlans/">Rick van der Lans</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/wanless/">Scott Wanless</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/white/">Colin White</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/williams/">Nancy Williams</a></li>
+<li><a href="http://www.b-eye-network.com/blogs/wise/">Lyndsay Wise</a></li>
+</ul></li> <!-- make sure no space between </ul> and </li> -->                    <li id="navigation-spotlights"><a href="http://www.b-eye-network.com/spotlights/">Spotlights</a></li>
+                    <li id="navigation-podcasts"><a href="http://www.b-eye-network.com/podcasts/">Podcasts</a></li>
+					<li id="navigation-beyeperspectives"><a href="http://www.b-eye-network.com/BeyePERSPECTIVE/">Expert Round Table</a></li>					
+                    <li id="navigation-videos"><a href="http://www.b-eye-network.com/videos/">Videos</a></li>
+					<li id="navigation-sdm"><span style="font-size:11px"><a href="http://searchdatamanagement.techtarget.com/">SearchDataManagement.com</a></span></li>
+					<li id="navigation-sda"><span style="font-size:11px;"><a href="http://searchbusinessanalytics.techtarget.com/">SearchBusinessAnalytics.com</a></span></li>
+					<li id="navigation-research"><a href="http://www.beyeuniversity.com/">BeyeUNIVERSITY</a></li>
+					<li id="navigation-research"><a href="http://www.beyeresearch.com/">BeyeRESEARCH</a></li>
+					<li id="navigation-beyeblogs"><a href="http://www.beyeblogs.com/">BeyeBLOGS</a></li>
+					<li id="navigation-connect"><a href="http://beyeconnect.com/">BeyeCONNECT</a></li>					
+                    <li id="navigation-news"><a href="http://www.b-eye-network.com/news/">News</a></li>
+					<li id="navigation-archive"><a href="http://www.b-eye-network.com/archive/">Content Archive</a></li>
+					<!-- removed on 11.18.2009><li id="navigation-search"><a href="http://www.beyesearch.com/">BeyeSEARCH</a></li>-->																													
+                    <li id="navigation-resources"><a href="#" class="collapsed">Resources</a>
+						<ul>
+							<li id="navigation-jobs"><a href="http://www.b-eye-network.com/jobs/">Jobs</a></li>
+							<li id="navigation-resources"><a href="http://www.b-eye-network.com/links/">Links</a></li>
+							<li id="navigation-vendor_articles"><a href="http://www.b-eye-network.com/vendorarticles/">Vendor Articles</a></li>
+							<li id="navigation-on24"><a href="http://www.b-eye-network.com/insight24/">Partner Events & Video</a></li>
+						</ul>
+					</li>
+                    <li id="navigation-stayinformed"><a href="#" class="collapsed">Stay Informed</a>
+						<ul>
+							<li id="navigation-newsletters"><a href="http://www.b-eye-network.com/newsletters/">Newsletters</a></li>
+							<li id="navigation-rss"><a href="http://www.b-eye-network.com/rss/">RSS Feeds</a></li>
+						</ul>
+					</li>
+                    <li id="navigation-about"><a href="#" class="collapsed">About BeyeNETWORK</a>
+						<ul>
+							<li id="navigation-websites"><a href="http://www.b-eye-network.com/oursites.php">Our Websites</a></li>
+							<li id="navigation-team"><a href="http://www.b-eye-network.com/ourteam.php">Our Team</a></li>
+							<li id="navigation-mediakit"><a href="http://www.b-eye-network.com/mediakit.php">Media Kit</a></li>
+							<li id="navigation-visionaward"><a href="http://www.b-eye-network.com/visionaward">Vision Award</a></li>
+							<li id="navigation-link-to-us"><a href="http://www.b-eye-network.com/link_to_us.php">Link To Us</a></li>
+							<li id="navigation-press-releases"><a href="http://www.b-eye-network.com/press_releases/">Press Releases</a></li>
+							<li id="navigation-contact"><a href="http://www.b-eye-network.com/contact.php">Contact Info</a></li>
+						</ul>
+					</li>
+                </ul>            </div><!-- /navigationbox -->
+        	<div id="contentbox">
+			 <div class="pageview">
+                	<div class="pageview-top"></div>
+                    <div class="pageview-content">
+                    	<div class="breadcrumb"></div>
+		
+		<div align="center"><br /><script type="text/javascript">
+
+adSize="550x45,550x33"; //examples, "728x90" or multiples "120x600,160x600"
+
+var beye_adString = "http://ad.doubleclick.net/adi/" + adSiteValue + "/" + adZoneValue + ";pos=0;kw=" + adKW + ";sz=" + adSize + ";ptile=" + adPTile + ";ses=" + beye_ses + ";tax=" + 1386 + ";ord=" + adRandom + "?";
+     
+document.write("<iframe src="+ beye_adString + " width='550' height='45' border='0' frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>");
+//document.write(beye_adString);
+if (getURLParamValue('adString') == 'on') window.alert(beye_adString);
+       adDcopt ="";
+adPTile++;
+
+</script>
+
+
+<br /></div>			
+		
+		
+    
+
+
+
+<h2><a href="http://www.b-eye-network.com/blogs/krishnan/">Blog: Krish Krishnan</a> <a href="http://www.b-eye-network.com/blogs/krishnan/rss_feed.php"><img src="http://www.b-eye-network.com/images/global/icon-rss-14x14.png" alt="Subscribe to this blog's RSS feed!" /></a></h2>
+<div class="titlebar">
+                        
+	<p><img src="http://www.b-eye-network.com/images/authors/krish_krishnan_40_50.png" alt="Krish Krishnan" /></p>
+	 
+                        	
+<div class="marginbox">
+                            
+<p><p>"If we knew what it was we were doing, it would not be called research, would it?" - Albert Einstein.</p>
+
+<p>Hello, and welcome to my blog. </p>
+
+<p>I would like to use this blog to have constructive communication and exchanges of ideas in the business intelligence community on topics from data warehousing to SOA to governance, and all the topics in the umbrella of these subjects. </p>
+
+<p>To maximize this blog's value, it must be an interactive venue. This means your input is vital to the blog's success. All that I ask from this audience is to treat everybody in this blog community and the blog itself with respect. </p>
+
+<p>So let's start blogging and share our ideas, opinions, perspectives and keep the creative juices flowing! </p></p>
+
+ 
+ <p><strong><a href="#" class="titlebar-button">About the author &gt;</a></strong></p>
+                            
+<div class="titlebar-content">
+                     
+ <p>
+<p>Krish is a recognized expert worldwide in the strategy, architecture and implementation of high performance data warehousing solutions. He is a visionary data warehouse thought leader and an independent analyst, writing and speaking at industry leading conferences, user groups and trade publications.� He has authored two eBooks, more than 75 articles, viewpoints and case studies on business intelligence, data warehousing, and data warehouse appliances and architectures. In his 19 plus years of professional experience, he has been solving complex architecture problems spanning all aspects of data warehousing and business intelligence for Fortune 1000 clients. He has designed and tuned some of the world�s largest data warehouses. </p>
+<p>He is the president of Sixth Sense Advisors Inc., a Chicago-based company providing management, strategy, technology and analyst consulting services in data warehousing and business intelligence. He teaches regularly at TDWI, DAMA, IRM UK and other conferences, and is helping drive and mature the data warehouse appliance market. Krish also serves as Associate Vice President of Programs for DAMA Chicago and is Ethics and Governance Advisor to DAMA International. </p>
+<p><strong>Editor's Note:</strong> More articles and resources�are available in <a target="_blank" href="http://www.b-eye-network.com/krishnan">Krish's BeyeNETWORK Expert Channel</a>. Be sure to visit today! </p></p>
+
+</div><!-- /titlebar-content -->
+ 
+</div><!-- /marginbox -->
+</div><!-- /titlebar -->
+
+           		<div class="col-main">
+					<div class="marginbox">
+
+
+
+                            <div id="entry-11403" class="entry-asset asset hentry">
+								 <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php"
+    trackback:ping="http://www.b-eye-network.com/blogs/mt/mt-tb.cgi/5920"
+    dc:title="Crowdsourcing Content Management"
+    dc:identifier="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php"
+    dc:subject=""
+    dc:description="It is alarming that electronic content is growing more by the second both inside and outside the enterprise. While 75% of this content may become &quot;zero-value&quot; over a period of time (depends on type of content - emails, documents, contracts,..."
+    dc:creator="Krish Krishnan"
+    dc:date="2011-02-25T08:51:05-07:00" />
+</rdf:RDF>
+-->
+
+<div id="entry-11403" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h3><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php" rel="bookmark">Crowdsourcing Content Management</a></h3>
+    </div>
+	
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            It is alarming that electronic content is growing more by the second both inside and outside the enterprise. While 75% of this content may become "zero-value" over a period of time (depends on type of content - emails, documents, contracts, user guides), we need to understand which of these artifacts will make business sense and how to preserve the same. This is where tapping into the internal crowd becomes a necessity. Similar to how you have people providing ranking and scoring on the web about products, services and more, the internal crowd needs to rank and score content (internal and external) with the focus on its business relevance and value. Such and effort will lead to organizations gaining more efficiency in managing content and making such content more relevant.<br /><br />There are a few "specific" applications that can do this, and they come with built in "content management" and "knowledge management" techniques and workflows. A whitepaper on one "up-start" will be available in about 2 weeks on my channel. If you are interested in specific details or more insights into this process, your comments and feedback are welcome.<br /> 
+        </div>
+
+
+
+
+
+		<span class="publishdate">
+  <br>
+                Posted February 25, 2011  8:51 AM
+
+
+<br /><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php">Permalink</a> | <a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php#comments">No Comments</a>  | <br>
+		</span>
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+                                <div class="asset-footer">
+
+    
+
+
+                                </div>
+                            </div>
+
+
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+			
+            <form method="post" action="http://www.b-eye-network.com/blogs/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="11403" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+			<table cellpadding="0" cellspacing="5" align="left">
+				<tr>
+                        <td align="right"><label for="comment-author">Name</label></td>
+                        <td align="left"><input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" /></td>
+				</tr>
+                    </div>
+                    <div id="comment-form-email">
+				<tr>
+                        <td align="right"><label for="comment-email">Email Address</label></td>
+                        <td align="left"><input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" /></td>
+				</tr>	
+                    </div>
+                    <div id="comment-form-url">
+				<tr>	
+                        <td align="right"><label for="comment-url">URL</label></td>
+                        <td align="left"><input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" /></td>
+				</tr>							
+                    </div>
+                    <div id="comment-form-remember-me">
+				<tr>
+                        <td align="right"><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" /></td>
+                        <td align="left"><label for="comment-bake-cookie">Remember personal info?</label></td>
+				</tr>	
+			</table>	
+                    </div>
+                </div>
+				
+                <div id="comment-form-reply" style="display:none">
+                   <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>		
+                <div id="comments-open-text">
+			<table cellpadding="0" cellspacing="5" align="left">
+				<tr>
+                    <td colspan="2"><label for="comment-text">Comments
+                    (You may use HTML tags for style)</label></td>
+				</tr>
+				<tr>
+                    <td colspan="2"><textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea></td>
+				</tr>	
+                </div>
+                <div id="comments-open-captcha"></div>
+				
+                <tr>
+					<td colspan="2">
+				<script type="text/javascript">var commenter_name;</script>              
+<script type="text/javascript" src="/blogs/mt/plugins/captcha/captcha_js.cgi?blog_id=21">
+</script>
+					</td>
+				</tr>				
+				
+                <div id="comments-open-footer">
+				<tr>
+                    <td colspan="2"><input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" /></td>
+				</tr>	
+			</table>
+                </div>
+            </form>
+
+			
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+
+                     </div><!-- /marginbox -->
+				</div><!-- /col-main -->
+
+<div class="col-sidebar">
+<div class="marginbox">
+<div id="blogsidebar">
+<div id="beta">
+    <div id="beta-inner">
+&nbsp;&nbsp; <a href="http://www.b-eye-network.com/krishnan"><b>VISIT MY EXPERT CHANNEL</b></a><br>
+<br>
+    
+    <h5><a href="#">Search this blog</a></h5>
+
+	<div class="blogsidebar-content" style="display:block;">
+        <form method="get" action="http://www.b-eye-network.com/blogs/mt/mt-search.cgi">
+            <input type="text" id="search" size="12" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="21" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="Go" />
+        </form>
+
+    </div>
+
+<h5><a href="#">Categories &rsaquo;</a></h5>
+    
+<div class="blogsidebar-content">
+    
+        
+        <ul>
+        
+        
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/data_warehouse/">Data Warehouse (2)</a>
+        
+        
+            </li>
+        
+        </ul>
+        
+    
+</div>
+
+ <h5><a href="#">Archives &rsaquo;</a></h5>
+<div class="blogsidebar-content">
+<a href="http://www.b-eye-network.com/blogs/krishnan/archives.php">Archive Index</a>
+<ul class="nobullet">
+
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/">February 2011 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/01/">January 2011 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/12/">December 2010 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/09/">September 2010 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/08/">August 2010 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/07/">July 2010 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/06/">June 2010 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/05/">May 2010 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/04/">April 2010 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/03/">March 2010 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/02/">February 2010 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/01/">January 2010 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/10/">October 2009 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/09/">September 2009 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/08/">August 2009 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/07/">July 2009 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/04/">April 2009 (1)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/03/">March 2009 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/02/">February 2009 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2009/01/">January 2009 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/12/">December 2008 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/11/">November 2008 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/10/">October 2008 (6)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/09/">September 2008 (5)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/08/">August 2008 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/07/">July 2008 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/06/">June 2008 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/05/">May 2008 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/04/">April 2008 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/03/">March 2008 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/02/">February 2008 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2008/01/">January 2008 (5)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2007/12/">December 2007 (4)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2007/11/">November 2007 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2007/10/">October 2007 (3)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2007/09/">September 2007 (2)</a></li>
+ 
+<li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2007/08/">August 2007 (7)</a></li>
+ 
+</ul>
+<br />
+</div>
+
+<h5><a href="#">Recent Entries &rsaquo;</a></h5>
+	<div class="blogsidebar-content">
+        <ul class="nobullet">
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/content_and_con.php">Content and Context</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/crowdsourcing_c.php">Crowdsourcing Content Management</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/the_value_from.php">The Value from Enterprise BI</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/02/the_emergence_o.php">The Emergence of Social Analytics</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2011/01/the_dw_applianc.php">The DW Appliance Still Makes Sense</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/12/why_a_database.php">Why a database still makes sense for a DW</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/09/oracle_unveils.php">Oracle Unveils Exalogic Elastic Cloud</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/08/teradata_acquir.php">Teradata Acquires Kickfire ???</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/07/your_business_i.php">Your Business is Going Social</a></li>
+		
+            <li><a href="http://www.b-eye-network.com/blogs/krishnan/archives/2010/07/emc_to_acquire.php">EMC to Acquire Greenplum</a></li>
+		
+        </ul>
+	</div>
+    
+<ul class="nobullet">
+            <li> <a href="http://www.b-eye-network.com/blogs/krishnan/rss_feed.php">Subscribe to this blog's feed <img src="http://www.b-eye-network.com/images/global/icon-rss-14x14.png" alt="Subscribe to feed" /></a></li>
+        </ul>
+
+
+
+    </div>
+</div>
+
+
+
+    
+<div id="gamma">
+    <div id="gamma-inner">
+    
+    </div>
+</div>
+
+
+
+</div><!-- /blogsidebar -->
+                              
+&nbsp;
+</div><!-- /marginbox -->
+</div><!-- /col-sidebar -->
+
+                    </div><!-- /pageview-content -->
+                    <div class="pageview-bottom"></div><!-- css fills with rounded edge -->
+                </div><!-- /pageview -->
+ </div><!-- /contentbox -->
+        </div><!-- /pg-body -->
+		<!-- country version nav, positioned in header -->
+		<ul id="siteversionlist">
+			 <li id="country-us"><a href="http://www.b-eye-network.com/" class="currentsite" onMouseOver="document.dropbutton.src='http://www.b-eye-network.com/images/global/button-siteversion-dropdown-on.png';"  onmouseout="document.dropbutton.src='http://www.b-eye-network.com/images/global/button-siteversion-dropdown.png';">US EDITION &nbsp;<img name="dropbutton" src="http://www.b-eye-network.com/images/global/button-siteversion-dropdown.png" style="padding-bottom:1px;" alt="select country" /></a> 
+<ul>
+	<li id="country-uk"><a href="http://www.b-eye-network.co.uk/">UK</a></li>
+	<li id="country-de"><a href="http://www.beyenetwork.de/">GERMANY</a></li>
+	<li id="country-fr"><a href="http://www.decideo.fr/">FRANCE</a></li>
+	<li id="country-cn"><a href="http://www.b-eye-network.cn/">CHINA</a></li>
+	<li id="country-in"><a href="http://www.b-eye-network.in/">INDIA</a></li>
+	<li id="country-es"><a href="http://www.beyenetwork.es/">SPAIN</a></li>
+	<li id="country-nl"><a href="http://www.beyenetwork.nl/">NETHERLANDS</a></li>	
+	<li id="country-be"><a href="http://www.beyenetwork.be/">BELGIUM</a></li>
+	<li id="country-benu"><a href="http://www.beyeuniversity.com/">UNIVERSITY</a></li>
+	<li id="country-connect"><a href="http://www.beyeconnect.com/">CONNECT</a></li>	
+	<li id="country-sdm"><a href="http://searchdatamanagement.techtarget.com/">SearchDataManagement.com</a></li>
+	<li id="country-sba"><a href="http://searchbusinessanalytics.techtarget.com/">SearchBusinessAnalytics.com</a></li>
+</ul>
+</li>		</ul>
+    </div><!-- /pg -->
+    <div id="pg-footer">
+    	<div id="pg-footer-content"><a href="http://www.b-eye-network.com/">
+        <img src="http://www.b-eye-network.com/images/global/logo-eyecon-footer.gif" border="0" alt="BeyeNETWORK" title="BeyeNETWORK" style="float:right;padding:0.25em 6px 0;" /></a>
+        <p style="font-size:16px;font-weight:bold;margin-bottom:0;padding-bottom:0;">Comprehensive resources for business intelligence and data warehousing professionals.</p>
+    	<p style="padding:3px 0;margin-top:0;">NETWORK WEBSITES: <a href="http://www.beyeuniversity.com/">BeyeUNIVERSITY</a> | <a href="http://www.beyeresearch.com/">BeyeRESEARCH</a> | <a href="http://www.beyeblogs.com/">BeyeBLOGS</a> | <a href="http://www.beyesurvey.com/">BeyeSURVEY</a> | <a href="http://www.b-eye-network.com/">BeyeNETWORK</a> | <a href="http://searchdatamanagement.techtarget.com/">SearchDataManagement.com</a> | <a href="http://searchbusinessanalytics.techtarget.com/">SearchBusinessAnalytics.com</a>		<br>
+		PARTNER SITES:				
+		<a href="http://www.tdan.com">TDAN.com</a> |  <a href="http://www.dssresources.com/">DSSResources.com</a> |  <a href="http://www.datagovernance.com/">DataGovernance.com</a> <!--| <a href="http://www.datagovernancesoftware.com/">DataGovernanceSoftware.com</a> -->|  <a href="http://www.decideo.fr/">Decideo.fr</a>		<br><br />
+        &nbsp;<a href="http://www.b-eye-network.com/"><img src="http://www.b-eye-network.com/images/global/icon-flag-us-sm.gif" alt="BeyeNETWORK USA" title="BeyeNETWORK USA" /></a>
+        &nbsp;<a href="http://www.b-eye-network.co.uk/"><img src="http://www.b-eye-network.com/images/global/icon-flag-uk-sm.gif" alt="BeyeNETWORK UK" title="BeyeNETWORK UK" /></a> 
+        &nbsp;<a href="http://www.beyenetwork.de/"><img src="http://www.b-eye-network.com/images/global/icon-flag-de-sm.gif" alt="BeyeNETWORK Germany" title="BeyeNETWORK Germany" /></a> 
+        &nbsp;<a href="http://www.b-eye-network.in/"><img src="http://www.b-eye-network.com/images/global/icon-flag-in-sm.gif" alt="BeyeNETWORK India" title="BeyeNETWORK India" /></a>
+        &nbsp;<a href="http://www.b-eye-network.cn/"><img src="http://www.b-eye-network.com/images/global/icon-flag-cn-sm.gif" alt="BeyeNETWORK China" title="BeyeNETWORK China" /></a>
+        &nbsp;<a href="http://www.beyenetwork.es/"><img src="http://www.b-eye-network.com/images/global/icon-flag-es-sm.gif" alt="BeyeNETWORK Spain" title="BeyeNETWORK Spain" /></a>
+		&nbsp;<a href="http://www.beyenetwork.nl/"><img src="http://www.b-eye-network.com/images/global/icon-flag-nl-sm.gif" alt="BeyeNETWORK Netherlands" title="BeyeNETWORK Netherlands" /></a>
+		&nbsp;<a href="http://www.beyenetwork.be/"><img src="http://www.b-eye-network.com/images/global/icon-flag-be-sm.gif" alt="BeyeNETWORK Belgium" title="BeyeNETWORK Belgium" /></a>
+        &nbsp;<a href="http://www.decideo.fr/"><img src="http://www.b-eye-network.com/images/global/icon-flag-fr-sm.gif" alt="Decideo.fr" title="Decideo.fr" /></a>        <br><br><a style="text-decoration: none;" href="http://twitter.com/BeyeNETWORK" target="_blank"><img src="http://www.b-eye-network.com/images/social/twitter-mini-icon.png" border="0" />&nbsp;Twitter &nbsp;</a>
+
+&nbsp;&nbsp;<a style="text-decoration: none;" href="http://www.linkedin.com/e/vgh/2630569/" target="_blank"><img src="http://www.b-eye-network.com/images/social/linkedin-mini-icon.png" border="0" />&nbsp;LinkedIn &nbsp;</a>
+
+&nbsp;&nbsp;<a style="text-decoration: none;" href="http://www.youtube.com/user/BeyeNETWORK" target="_blank"><img src="http://www.b-eye-network.com/images/social/youtube-mini-icon.png" border="0" />&nbsp;YouTube &nbsp;</a>
+
+
+      
+	</p>
+			        <p><a href="http://www.b-eye-network.com/press_releases/">Press Releases</a>  |  <a href="http://www.b-eye-network.com/about.php">About Us</a>  |  <a href="http://www.b-eye-network.com/contact.php">Contact Us</a>  |  <a href="http://www.b-eye-network.com/archive/">Content Archive</a>  |  <a href="http://www.techtarget.com/html/privacy_policy.html">Privacy Policy</a>  |  <a href="http://www.b-eye-network.com/mediakit.php">Media Kit</a><br />
+	        <em>All Rights Reserved. Copyright 2004 &mdash; 2011, TechTarget<br />
+	        BeyeNETWORK&trade;, a TechTarget company</em>
+			</p>
+		        </div>
+    </div><!-- /pg-footer -->
+    <p><br /><br /></p>
+</div><!-- /container -->
+
+
+<script type="text/javascript">
+
+//var beye_ses = 'beyeprestitial';
+
+adSize="2x1"; //examples, "728x90" or multiples "120x600,160x600"
+
+var beye_adString = "http://ad.doubleclick.net/adj/" + adSiteValue + "/" + adZoneValue + ";pos=0;dcopt=ist;kw=" + adKW + ";sz=" + adSize + ";ptile=" + adPTile + ";ses=" + beye_ses + ";tax=;ord=" + adRandom ;
+
+var beye_scriptString = '<scr' + 'ipt src="' + beye_adString + '"></scr' + 'ipt>';
+
+document.write(beye_scriptString);
+
+if (getURLParamValue('adString') == 'on') window.alert(beye_adString);
+
+//document.write(beye_adString);
+//window.alert(beye_adString);
+adDcopt ="";
+adPTile++;
+
+</script>	
+<!--<script type="text/javascript">document.write(beye_adString);</script>-->
+
+</body>
+</html>	
+
+
+

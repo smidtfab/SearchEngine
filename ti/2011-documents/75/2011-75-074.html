@@ -1,0 +1,127 @@
+
+<HTML>
+<HEAD>
+<TITLE>Print Article</TITLE>
+<STYLE>
+DIV { position: relative; }
+</STYLE>
+
+<SCRIPT type="text/javascript">
+//<!--
+function printArticle()
+{
+	hideForm();
+	window.print();
+	showForm();
+}
+
+function hideForm()
+{
+	if (document.all) {
+		var divs = document.all.tags('DIV');
+		for (var d=0; d<divs.length; d++)
+			if (divs[d] == document.all['print_form']) divs[d].style.display='none';
+	}
+	else if (document.layers) {
+		for (var l=0; l<document.layers.length; l++)
+			if (document.layers[l] != document['article_content']) document.layers[l].visibility = 'hide';
+	}
+	else {
+		var printForm =	document.getElementById('print_form');
+		printForm.style.visibility = 'hidden';
+	}
+}
+
+function showForm()
+{
+	if (document.all) {
+		var divs = document.all.tags('DIV');
+		for (var d=0; d<divs.length; d++)
+			divs[d].style.display='block';
+	}
+	else if (document.layers) {
+		for (var l=0; l<document.layers.length; l++)
+			document.layers[l].visibility = 'show';
+	}		
+	else {
+		var printForm =	document.getElementById('print_form');
+		printForm.style.visibility = 'visible';
+	}		
+}
+//-->
+</SCRIPT>
+
+</HEAD>
+<link rel="stylesheet" href="/styles/sn.css">
+<body bgcolor="#FFFFFF">
+<DIV align="center" id="print_form">
+<FORM name="print" action="/scripts/printthis.asp" method="POST">
+<INPUT type="button" name="btnPrint" value="Print Article" onClick="printArticle();">
+<INPUT type="button" name="btnClose" value="Close Window" onClick="window.close();">
+</FORM>
+</DIV>
+<DIV id="article_content">
+
+<!-- ### BEGIN ARTICLE CONTENT ### -->
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td valign="top">
+<p class="titles">Games with a Purpose</p>
+<p class="normal">Emily Sohn</p>
+
+<div class="normal">There's a new kind of game on the Internet. When you play it, you do more than simply rack up points or have fun. As you play, you help computers develop new skills.
+<p class="normal">Computer scientist Luis von Ahn created the games as a way to solve problems that are difficult for computers, even though the problems may seem simple to us. Computers, for example, have a hard time identifying a cat in a photo, while we can spot a cat at a glance.
+<p class="normal">
+<p><div align="center"><table width="1" border="0" cellpadding="0" cellspacing="0"><tr><td><img src="/articles/20070221/a1384_1575.jpg" alt="Most people would have no trouble identifying the kitten and two puppies in this photo&#151;a task that a computer can't yet accomplish." border="0"></td></tr><tr><td><p class="normal"><em>Most people would have no trouble identifying the kitten and two puppies in this photo&#151;a task that a computer can't yet accomplish.</em></p></td></tr><tr><td><p class="normalgray"></p></td></tr></table></div></p>
+<p class="normal">The idea is to invent online games that people enjoy playing. Then, as people play, they provide data that researchers can use to improve computers. The players don't know that they're helping out. They're just having fun.
+<p class="normal">&quot;The potential is huge,&quot; says computer scientist Manuel Blum, one of von Ahn's colleagues at Carnegie Mellon University in Pittsburgh. &quot;These 'games with a purpose' make use of humans in a wonderful way.&quot;
+<p class="normal">By harnessing the brainpower of thousands of people playing games on the Internet, computers may learn how to identify pictures, translate Web pages into forms that blind people can use, develop common sense, understand foreign languages, and more.
+<p class="normal"><strong>Seeing things</strong>
+<p class="normal">Our brains are wired to collect and process lots of information about what we see, von Ahn says.
+<p class="normal">Computers, on the other hand, simply &quot;see&quot; a grid of dark and light dots, called pixels. It's not obvious to a machine that a certain blob is a cat. Likewise a computer doesn't know that a tiger, a cartoon feline, and a kitty curled up on a couch all belong in the same category: cat.
+<p class="normal">&quot;If you give me an image of some common animal, I can tell if you if it's a cat or a dog,&quot; von Ahn says. &quot;Computers can't do that yet.&quot;
+<p class="normal">Because computers can't make such distinctions, search engines have a hard time finding images on the Internet. And getting people to label each image doesn't work well. There are billions of images, and the job is pretty boring.
+<p class="normal">The ESP Game (see <a class="line" href="http://www.espgame.org/" target="_blank">www.espgame.org</a>), invented by von Ahn and his coworkers, provides a quick, fun way to label images.
+<p class="normal">
+<p><div align="center"><table width="1" border="0" cellpadding="0" cellspacing="0"><tr><td><img src="/articles/20070221/a1384_2597.jpg" alt="The ESP Game has collected more than 20 million labels for images since it debuted in late 2003." border="0"></td></tr><tr><td><p class="normal"><em>The ESP Game has collected more than 20 million labels for images since it debuted in late 2003.</em></p></td></tr><tr><td><p class="normalgray"></p></td></tr></table></div></p>
+<p class="normal">When you play the ESP Game, you get randomly paired with another player. Both of you see the same image on the screen, but you can't communicate in any way. You type in a word that describes the image. As soon as your partner types in exactly the same word, you both earn some points and another image appears. You can keep typing in new words until you again get a match, or you can pass and go on to the next image. Each round lasts 180 seconds and includes up to 15 images.
+<p class="normal">The first time I played the ESP Game, my Internet partner and I had a score that was better than the scores earned by only 40 percent of people who had played before us. We did better on the next round, though. And the next. It was hard to stop.
+<p class="normal">Although I should have been working, I played without feeling guilty. I knew I was doing something useful. Every match became a label for an image.
+<p class="normal">
+<p><div align="center"><table width="1" border="0" cellpadding="0" cellspacing="0"><tr><td><img src="/articles/20070221/a1384_3182.jpg" alt="After each round of the ESP Game, you and your partner can find out where you stand." border="0"></td></tr><tr><td><p class="normal"><em>After each round of the ESP Game, you and your partner can find out where you stand.</em></p></td></tr><tr><td><p class="normalgray"></p></td></tr></table></div></p>
+<p class="normal">So far, von Ahn's game program has collected more than 20 million descriptions. And the game appears to do its intended job.
+<p class="normal">&quot;The labels given by the ESP Game are as accurate as ones generated by someone paid to label images,&quot; von Ahn says. Players also come up with about the same number of words for an image as paid professionals do, he adds.
+<p class="normal">Google has now developed Google Image Labeler (see <a class="line" href="http://images.google.com/imagelabeler/" target="_blank">images.google.com/imagelabeler</a>), its own version of the ESP Game.
+<p class="normal"><strong>Where's Waldo?</strong>
+<p class="normal">The labels provided by the ESP Game tell you what's in an image. But the game doesn't tell you <em>where</em> in an image a certain object might be.
+<p class="normal">To help solve this problem, von Ahn and his coworkers invented the two-player game Peekaboom (<a class="line" href="http://www.peekaboom.org/" target="_blank">www.peekaboom.org</a>).
+<p class="normal">
+<p><div align="center"><table width="1" border="0" cellpadding="0" cellspacing="0"><tr><td><img src="/articles/20070221/a1384_4861.jpg" alt="In Peekaboom, one player tries to guess a word as another player reveals more and more of an image." border="0"></td></tr><tr><td><p class="normal"><em>In Peekaboom, one player tries to guess a word as another player reveals more and more of an image.</em></p></td></tr><tr><td><p class="normalgray"></p></td></tr></table></div></p>
+<p class="normal">One player sees an image&#151;say, a cat playing with a dog&#151;along with a word related to the picture. The other player sees a blank screen. By clicking on the image, the first player reveals a small piece of the image. The goal is to get the second player to guess the word in as few clicks as possible. After the second player correctly guesses the word or passes, the two players trade places. Each round lasts 4 minutes.
+<p class="normal">With each correct guess, the computer collects data about where things are within a picture. &quot;That's exactly the type of information needed to train computers to see,&quot; von Ahn says.
+<p class="normal">Another image-labeling game, called Phetch (<a class="line" href="http://www.peekaboom.org/phetch/" target="_blank">www.peekaboom.org/phetch</a>), goes even farther. Instead of entering a single word, the first player writes a description of an image. Given that description, three other players then race to pick the right image out of a million or more possibilities. The program collects the descriptions that lead to quick results.
+<p class="normal">
+<p><div align="center"><table width="1" border="0" cellpadding="0" cellspacing="0"><tr><td><img src="/articles/20070221/a1384_5578.jpg" alt="The game Phetch is an online treasure hunt that matches descriptions with images." border="0"></td></tr><tr><td><p class="normal"><em>The game Phetch is an online treasure hunt that matches descriptions with images.</em></p></td></tr><tr><td><p class="normalgray"></p></td></tr></table></div></p>
+<p class="normal">Programmed with such descriptions, computers might eventually be able to describe images to people who can't see. Software already exists that can read aloud words on computer screens, but these &quot;screen readers&quot; can't yet explain pictures.
+<p class="normal"><strong>Having fun</strong>
+<p class="normal">As useful as these games are, they won't work unless people play them. That means the games must be fun. And figuring out what's going to be fun is easier said than done.
+<p class="normal">Like game manufacturers, von Ahn tests his games on people. On the basis of how long people play, what they say about the games, and which ones they choose to play again, von Ahn makes changes until he comes up with something that works.
+<p class="normal">&quot;Nobody knows what makes games fun,&quot; von Ahn says, just like there aren't any rules for what makes a movie popular. &quot;There's no formula,&quot; he says. &quot;It's still an art.&quot;
+<p class="normal">Still, von Ahn has noticed some patterns. Randomness and unpredictability help, he says.
+<p class="normal">Players like to be able to get strategy tips that improve performance, Blum adds. Large point bonuses can't hurt. People like games that are competitive too. Displaying lists of top scores helps keep people playing.
+<p class="normal">Do you have thoughts about what makes a game great? Send them in, and we'll share them with the researchers. Your ideas could become part of a future formula for fun.
+<p class="normal"><hr>
+<p class="normal"><a class="line" href="/articles/20070221/refs.asp">Additional Information</a>
+<p class="normal"><a class="line" href="/articles/20070221/TZWorksheet.asp">Questions about the Article</a>
+<p class="normal"><a class="line" href="/articles/20070221/wordfind.asp">Word Find: Internet Games</a>
+<p class="normal"></div></td></tr>
+
+<tr valign="top"><td align="left" colspan="2"><nobr><p class="citation">http://www.sciencenewsforkids.org/articles/20070221/Feature1.asp</p></nobr></td></tr>
+
+<tr valign="top"><td align="left" colspan="2"><nobr><p class="citation">From <span style="font-style: italic">Science News for Kids</span>&nbsp;Feb.&nbsp;21,&nbsp;2007.</p></nobr></td></tr>
+
+<tr valign="top"><td align="left" colspan="2"><nobr><p class="citation">Copyright (c) 2007 Science Service.  All rights reserved.</p></nobr></td></tr>
+
+</tr>
+</table>
+
+</DIV>
+</body>

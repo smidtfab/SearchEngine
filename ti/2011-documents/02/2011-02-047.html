@@ -1,0 +1,1117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:fb="http://www.facebook.com/2008/fbml"
+	xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:cito="http://purl.org/net/cito/">
+<head>
+<title>CiteULike: Multimedia Reasoning with Natural Language Support</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, chrome=1" />
+<meta name="description" content="Stamatia Dasiopoulou, Johannes Heinecke, Carsten Saathoff, Michael G. Strintzis. International Conference on Semantic Computing, Vol. 0 (2007), pp. 413-420. In this paper we present an approach that combines multimedia  reasoning and natural language processing for the  semantic integration of automatic and manual image annotations  based on domain ontologies. We discuss how to apply  natural language processing to transform natural language  descriptions and queries into an ontological representation  that allows users to formulate formal semantics in  an intuitive manner, without the need to cope with complex  ontological structures and unwieldy user interfaces. Illustrative  experimental examples demonstrate the added value. semantic nlp multimedia" />
+<meta property="dc:title" content="Multimedia Reasoning with Natural Language Support" />
+<meta property="dc:creator" content="Stamatia Dasiopoulou" />
+<meta property="dc:creator" content="Johannes Heinecke" />
+<meta property="dc:creator" content="Carsten Saathoff" />
+<meta property="dc:creator" content="Michael G. Strintzis" />
+<meta property="dc:identifier" content="10.1109/ICSC.2007.28" />
+<meta property="dc:source" content="International Conference on Semantic Computing, Vol. 0 (2007), pp. 413-420." />
+<meta property="dc:date" content="2010-06-22T19:00:53-00:00" />
+<meta property="prism:publicationYear" content="2007" />
+<meta property="prism:publicationName" content="International Conference on Semantic Computing" />
+<meta property="prism:volume" content="0" />
+<meta property="prism:startingPage" content="413" />
+<meta property="prism:endingPage" content="420" />
+<meta property="prism:publisher" content="IEEE Computer Society" />
+<meta property="prism:category" content="multimedia" />
+<meta property="prism:category" content="nlp" />
+<meta property="prism:category" content="semantic" />
+
+
+<!--css_include href="/3rdparty/960css/text.css"-->
+<link rel="stylesheet" type="text/css" media="all" href="/static/jquery-ui/css/mytheme/jquery-ui-1.8.6.custom.e489d0d8902c78910c2197275582d974.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/static/3rdparty/tipsy-0.1.7/stylesheets/tipsy.b5d47844a5d90d83e958c3ea16293144.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/static/3rdparty/jQuery/stars/jquery.ui.stars.7f0f889a94c6c8243eeab2ac5a82cf2b.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/static/3rdparty/jQuery/fancybox-1.3.1/jquery.fancybox-1.3.1.3be4a3aa1bb4ef20d2405720fbb05342.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/static/citeulike-ads.2b33cf266111d1910d39816ef672ddc8.css" />
+
+<style type="text/css">
+<!--
+/**<FANCYBOX>*******************************************************************/
+/* bug/feature http://groups.google.com/group/fancybox/browse_thread/thread/8530478044b9f586#
+ AlphaImageLoader loads relative to DOCUMENT
+*/
+/* IE */
+
+#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_loading.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_close.png', sizingMethod='scale'); }
+
+.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_title_left.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_title_main.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_title_right.png', sizingMethod='scale'); }
+
+.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_nav_left.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_nav_right.png', sizingMethod='scale'); }
+
+.fancybox-ie .fancy-bg { background: transparent !important; }
+
+.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_n.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_ne.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_e.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_se.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_s.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_sw.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_w.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/3rdparty/jQuery/fancybox-1.3.1//fancy_shadow_nw.png', sizingMethod='scale'); }
+-->
+
+img.pngfix { behavior: url(/static/img/iepngfix.htc) }
+</style>
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+document.domain = "citeulike.org";
+
+var __init__ = [];
+
+var GLOBAL = {
+	staticRoot   : "/static",
+	imgRoot      : "/static/img",
+	jsRoot       : "/static",
+	cookieDomain : ".citeulike.org",
+	username     : "",
+	can_show_ctxmenu: 1,
+	is_gold_user: 0
+};
+
+var ADVERTS = [];
+
+var LOG = function(s) {};
+var ERROR = function(e) {};
+
+
+
+var facebookAppId = '118594761528526';
+var loginType = "none";
+
+
+//]]>
+</script>
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.citeulike.org/rss/group/4225/article/7349637"/>
+
+
+
+<!-- Dependency source files -->
+
+<!-- jquery -->
+
+<script type="text/javascript" src="/static/COMBO.min.36b8c8ad75c5e69f5c775f63d0643937.js"></script>
+
+
+
+
+<!-- custom JS -->
+<script type="text/javascript" src="/static/js/head.f9ddae182f6e6534d068d4decbc2d47e.js"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+	jQuery(function() {
+		for (var i=0; i<__init__.length; i++) { // >
+			LOG("Initializing: "+__init__[i].name);
+			__init__[i].func();
+		}
+	});
+
+//]]>
+</script>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var GOOGLE_AC = 'UA-55349-1';
+
+//]]>
+</script>
+
+
+
+
+
+
+
+	<style type="text/css">
+		#navright {
+			top: 122px;
+		}
+	</style>
+
+
+
+
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script type="text/javascript" src="/static/js/facebook.dbe66972ab39a98bc0376bb7c80a2665.js"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var GOOGLE_AC = 'UA-55349-1';
+
+//]]>
+</script>
+
+
+
+
+			<script type="text/javascript">//<![CDATA[
+
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', GOOGLE_AC]);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+			  })();
+
+			//]]></script>
+		
+
+
+
+<div id="dialog" title="Search CiteULike" style="display:none">
+	<form action="/search/all" id="search_form" onsubmit="return submit_search()">
+		<input type="text" name="q" id="q"
+			class="ui-widget-content ui-corner-all"
+			style="width:90%; display:block"
+			value="" />
+	<div>
+	Search all the public and <a id="search-hint" class="tipsy-hint-n" href="#"
+		title="These are articles that CiteULike has directly imported from approved sources, e.g., publishers' websites, rather than manually entered.">authenticated</a>
+		articles in CiteULike.
+	<br /><input type="checkbox" id="srch_unch" name="unch" value="yes"
+	onchange="setSearchUnchecked()"/><label for="srch_unch">Include unauthenticated results too (may include "spam")</label>
+	<br /><br />Enter a search phrase.   You can also specify
+		<div style="margin-left:1em">
+			<div>a CiteULike article id (<i>123456</i>),</div>
+			<div>a DOI (<i>doi:10.1234/12345678</i>)</div>
+			<div>or a PubMed Id (<i>pmid:12345678</i>).</div>
+		</div>
+
+
+	<br /> Click <a style="text-decoration:none" href="#"
+	onclick="show_search_help(); return false;">Help</a> for advanced usage.
+	</div>
+	</form>
+
+</div>
+
+
+
+<div style="position:absolute; top: 5px; left: 20px; padding: 0px; z-index:100">
+	<div class="logo">
+		<img
+		src="/static/img/slogo-med.png"
+		style="cursor:pointer" onclick="document.location.href='/home'"
+		alt="CiteULike" title="Home"/>
+
+
+	</div>
+</div>
+
+
+
+
+<div style="height:84px; width:1px"></div>
+<div class="topright" id="topright">
+
+
+	<div id="ad_top">
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-4762058803856771";
+	/* Head 468x60 banner */
+	google_ad_slot = "6789468549";
+	google_ad_width = 468;
+	google_ad_height = 60;
+	//-->
+	</script>
+	<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+	</div>
+	
+</div>
+
+
+
+
+
+<table class="menu leftindent">
+	<tr>
+		<td><img src="/static/img/menu/lhs.png" /></td>
+
+		<!-- td id="cul-menu" class="item" >CiteULike</td -->
+		<td id="cul-menu" class="item" style="cursor:default"><span class="cultxt">CiteULike</span></td>
+		<td><img src="/static/img/menu/bar.png" /></td>
+
+		<td id="group-cul-menu" class="item"><span class="cultxt">Group: NETS</span></td>
+		<td><img src="/static/img/menu/bar.png" /></td>
+	
+
+		<td class="filler" ></td>
+
+	<td><img src="/static/img/menu/bar.png" /></td>
+	<td class="item">
+		<img style="vertical-align:middle" src="/static/img/search-icon.png"/><a href="#" onclick="search_modal(); return false">Search</a>
+	</td>
+	<td><img src="/static/img/menu/bar.png" /></td>
+
+
+		<td class="item">
+			<a href="/register">Register</a>
+		</td>
+		<td><img src="/static/img/menu/bar.png" /></td>
+		<td class="item">
+			<a accesskey="l" href="/login?from=%2fgroup%2f4225%2farticle%2f7349637">Log in</a>
+		</td>
+	
+
+		<td><img src="/static/img/menu/rhs.png" /></td>
+	</tr>
+</table>
+
+<div style="height:9px; zindex:0"></div>
+
+<div style="display:none" id="doc">
+
+<div class="megamenu" id="citeulike">
+	<div class="column">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="http://blog.citeulike.org/">News/Blog</a></li>
+			<li><a href="/citegeist">Citegeist</a></li>
+			<li><a href="/all">Everyone's Library</a></li>
+
+
+		</ul>
+	</div>
+	<div class="column">
+		<ul>
+			<li><a href="/groups/browse">Browse Groups</a></li>
+			<li><a href="/groups/search/go">Search Groups</a></li>
+			<li><a href="/journals">Journals</a></li>
+			<li><a href="/profile_get_research_area_table">Research Fields</a><sup style="color:red">NEW</sup>
+			</li>
+		</ul>
+	</div>
+	<div class="column">
+		<ul>
+			<li><a href="http://wiki.citeulike.org/">Help/FAQ</a></li>
+			<li><a href="/discuss">Discussion</a></li>
+			<li><a href="/contact_us.adp">Contact Us</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	jkmegamenu.definemenu("cul-menu", "citeulike", "mouseover");
+//	jQuery(function() {
+		jQuery("#cul-menu").hover(
+			function() {
+				menu_on("#cul-menu");
+			},
+			function() {
+				menu_off("#cul-menu");
+			}
+		);
+		jQuery("#citeulike").hover(
+			function() { menu_on("#cul-menu"); },
+			function() { menu_off("#cul-menu");}
+		);
+
+//	});
+</script>
+
+
+<div class="megamenu" id="group-citeulike">
+
+
+	<div class="column">
+		<ul>
+			<li><a href="/group/4225">Library</a></li>
+			<li><a href="/group/4225/order/to_read">Recommended</a></li>
+			<li><a href="/groupfunc/4225/search">Search</a><img style="vertical-align:-3px" src="/static/img/search-icon.png" /></li>
+			<li><a href="/group/4225/authors">Authors</a></li>
+			<li><a href="/group/4225/tags">Tags</a></li>
+			<li><a href="/groupfunc/4225/export">Export</a></li>
+
+		</ul>
+	</div>
+	<div class="column">
+		<ul>
+			<li><a href="/groupfunc/4225/home">Info</a></li>
+			<li><a href="/groupfunc/4225/prefs">Preferences</a></li>
+
+			<li><a href="/groupfunc/4225/members">Members</a></li>
+
+
+		</ul>
+	</div>
+	<div class="column">
+		<ul>
+			<li><a href="/groupfunc/4225/messages">Messages</a></li>
+			<li><a href="/groupfunc/4225/forums">Forum</a></li>
+			<li><a href="/groupblog/4225">Blog</a></li>
+		</ul>
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+	jkmegamenu.definemenu("group-cul-menu", "group-citeulike", "mouseover");
+
+//	jQuery(function() {
+		jQuery("#group-cul-menu").hover(
+			function() { menu_on("#group-cul-menu"); },
+			function() { menu_off("#group-cul-menu");}
+		);
+		jQuery("#group-citeulike").hover(
+			function() { menu_on("#group-cul-menu"); },
+			function() { menu_off("#group-cul-menu");}
+		);
+
+//	});
+
+</script>
+
+
+
+</div>
+<!-- pre-load image to avoid delay-->
+<img style="display:none" src="/static/img/menu/body-hi.png" />
+<!-- end menus -->
+
+
+<div id="navleft">
+	<!--img src="/static/img/ad_grey_160x600.jpg"/-->
+
+	<div class="campaigns" id="campaigns_div">
+
+
+	</div>
+
+
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-4762058803856771";
+		/* Head 160x600, wide skyscaper */
+		google_ad_slot = "3412285308";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	
+
+</div> <!-- Navleft -->
+
+
+
+
+<div style="background-color: #FFC; border: 1px solid black; padding: 0.5em" class="contentmain">
+		<div><b>CiteULike is a free online bibliography manager. <a rel="nofollow" href="/register">Register</a>
+		and you can start organising your references online.</b></div>
+		</div>
+<div id="maindiv" class="contentonly no-top-border">
+
+	<div id="tagbutton">Tags</div>
+
+
+
+<script type="text/javascript" src="/static/ARTICLE-PACK.min.5400c713e0c5c540ddcfbca22b9e4480.js"></script>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+	var ARTICLE = {
+		user_article_id : "5758436",
+		article_id      : "7349637",
+		url_stem        : "/group/4225",
+		username        : "group:4225",
+		group_id        : "4225",
+		is_owner	: "0",
+		user_id         : "86781"
+	};
+	// N.B. ARTICLE .doi & is_springerimages defined later
+
+	// These are defined later
+	var ARTICLE_TAGS;
+
+	var isSuperUser = 0;
+
+//]]>
+</script>
+
+
+<script type="text/javascript" src="/static/js/article.3de0a55520d5e95b3d24cf0c2b6a4dd1.js"></script>
+
+
+
+
+<!-- google_ad_section_start -->
+<h1><span id="article_title">Multimedia Reasoning with Natural Language Support</span>
+
+</h1>
+
+<div class="vague">by: <a class="author" href="/group/4225/author/Dasiopoulou:S">Stamatia Dasiopoulou</a>, <a class="author" href="/group/4225/author/Heinecke:J">Johannes Heinecke</a>, <a class="author" href="/group/4225/author/Saathoff:C">Carsten Saathoff</a>, <a class="author" href="/group/4225/author/Strintzis:MG">Michael G. Strintzis</a></div>
+
+	<div id="export" style="display:none">
+		<table>
+			<tr>
+				<td><a rel="nofollow" href="/endnote/group/4225/article/7349637">RIS</a></td>
+				<td>Export as RIS which can be imported into most citation managers</td>
+			</tr>
+			<tr>
+				<td><a rel="nofollow" href="/bibtex_options/group/4225/article/7349637">BibTeX</a></td>
+				<td>Export as BibTeX which can be imported into most citation/bibliography managers</td></tr>
+			<tr>
+				<td><a rel="nofollow" href="/pdf_options/group/4225/article/7349637?fmt=pdf">PDF</a></td>
+				<td>Export formatted citations as PDF</td></tr>
+			<tr>
+				<td><a rel="nofollow" href="/pdf_options/group/4225/article/7349637?fmt=rtf">RTF</a></td>
+				<td>Export formatted citations as RTF which can be imported into most word processors</td></tr>
+			<tr>
+				<td><a rel="nofollow" href="/delicious/group/4225/article/7349637">Delicious</a> <img src="/static/img/delicious8x8.png" /></td>
+				<td>Export in format suitable for direct import into delicious.com. <span style="display:none">(<a href="/delicious::sync::config">Setup</a> a permanent sync to delicious)</span>
+				</td>
+			</tr>
+			<tr>
+				<td><a rel="nofollow" href="/pdf_options/group/4225/article/7349637?fmt=txt">Formatted&nbsp;Text</a></td>
+				<td>Export formatted citations as plain text</td>
+			</tr>
+		</table>
+
+
+		<hr />
+		<p>To insert individual citation into a bibliography in a word-processor,
+		select your preferred citation style below and drag-and-drop it into the document.
+		</p>
+	
+</div>
+
+
+<!-- google_ad_section_end -->
+
+
+
+
+<div style="margin-top: 15px;">
+
+
+
+</div>
+
+	<!-- google_ad_section_start -->
+	<div>
+	<div id="citation-plain" class="vague" style="display:inline"><span><i>International Conference on Semantic Computing</i>, Vol. 0 (2007), pp. 413-420.&nbsp;<span id='citation-doi' style="display:none"></span><span> Key: citeulike:7349637</span></span></div>
+	</div>
+	<!-- google_ad_section_end -->
+
+
+<!-- START BUTTONS -->
+<div id="article-manage" style="display:block; margin-top:20px; margin-bottom:15px;">
+
+	<button title="Show posting summary page for this article" class="tipsy-hint-s"
+	onclick="location.href='/article-posts/7349637'">Posts</button>
+
+
+		<script type="text/javascript">
+			var likesCount = 0;
+		</script>
+	
+
+
+<button id="export-menu" title="Export this article" class="tipsy-hint-s">Export</button>
+<button id="show-formatted-citation-button" title="Show formatted citation"
+	onclick="showCitation()"
+	class="tipsy-hint-s">Citation</button>
+<button id="find-similar-button" onclick="genSimilarSearch()"
+	title="Title &amp; abstract search for similar articles"
+	class="tipsy-hint-s">Find Similar</button>
+</div>
+<!-- END BUTTONS -->
+
+
+
+	<div style="text-align:left; margin-top:10px; display:block" class="vague" id="citation-div">
+	<form id='citation-form' action="#">
+	<h2 style="display:block">Formatted Citation</h2>
+	<div id="citation" style="margin: 10px 0px"></div>
+	<h2 style="display:block">Style</h2>
+	<select style="display:inline" class="uiwidget" name="citation_format" id="citation_format" onchange="document.getElementById('citation-form').submit()">
+
+<option value="plain" selected='selected'>Plain</option>
+<option value="achemso" >ACS - American Chemical Society</option>
+<option value="apa" >APA - American Psychological Association</option>
+<option value="apsrev" >APS - American Physical Society (RevTeX)</option>
+<option value="cbe" >CBE - Council of Biology Editors</option>
+<option value="chicago" >Chicago</option>
+<option value="elsart-harv" >Elsevier</option>
+<option value="harvard" >Harvard</option>
+<option value="IEEEtran" >IEEE</option>
+<option value="ama" >JAMA - Journal of American Medical Association</option>
+<option value="mla" >MLA - Modern Language Association</option>
+<option value="naturemag" >Nature</option>
+<option value="oxford_en" >Oxford</option>
+<option value="science" >Science</option>
+<option value="turabian" >Turabian</option>
+<option value="vancouver" >Vancouver</option>
+<option value="apa-good" >APA (Reed)</option>
+
+	</select>
+	<div>
+		<input type="checkbox" id="citation-show-url"  name="skipurl" value="true" onchange="reloadCitation()"/> Don't include URL. Some citation styles add the source URL, which you may not want.
+	</div>
+	</form>
+	</div>
+
+<div id="likes-div"><h2 style="margin-top:0px">Likes
+		<span style="color:red">(beta)</span></h2>
+	<div>
+<span id="likes_text">This copy of the article hasn't been liked by anyone yet.</span>
+</div></div>
+<div style="clear:right"></div><br/>
+<div style="clear:right; border: 1px solid black; padding: 0.5em; background-color: #FFC">
+
+
+<h3>View FullText article
+
+</h3>
+
+<span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info:ofi/fmt:kev:mtx:journal&amp;rfr_id=info:sid/citeulike.org:citeulike&amp;rft_dat=group/4225/article/7349637&amp;rft_id=info:doi/10%2e1109%2fICSC%2e2007%2e28&amp;rft.date=2007&amp;rft.epage=420&amp;rft.title=International+Conference+on+Semantic+Computing&amp;rft.aufirst=Stamatia&amp;rft.aulast=Dasiopoulou&amp;rft.atitle=Multimedia+Reasoning+with+Natural+Language+Support&amp;rft.spage=413&amp;rft.volume=0&amp;rft.isbn=0%2d7695%2d2997%2d6&amp;rft.au=Heinecke%2c+Johannes&amp;rft.au=Saathoff%2c+Carsten&amp;rft.au=Strintzis%2c+Michael&amp;rft.genre=article&amp;genre=article"></span>
+
+<ul>
+<li class="menu">
+
+	<span id="linkouts" class="black"><a class="linkout {type: 'IEEE Digital Library', track_type: 'IEEEDigitalLibrary'}" accesskey="1" href="http://doi.ieeecomputersociety.org/10.1109/ICSC.2007.28" rel="nofollow">IEEE Digital Library</a>, <a class="linkout {type: 'DOI', track_type: 'DOI/csdl/10.1109'}" accesskey="2" href="http://dx.doi.org/10.1109/ICSC.2007.28" rel="nofollow">DOI</a><span
+	id="deepdyve" style="display:none">, <img
+	src="/static/img/deepdyve_16x16.png" /><a class="tipsy-hint-n linkout {type: 'DEEPDYVE', track_type: 'DOI/DEEPDYVE/10.1109'}"
+	id="dd_href" href="#" target="_new" title="Rent this article for 99¢ at deepdyve.com" ><b>Rent at DeepDyve</b></a></span>, <a class="linkout tipsy-hint-s {type: 'DOI', track_type: 'Pubget/DOI'}"
+			title="View PDF on Pubget. This is only likely if this is a life science article and you may need institutional access to view the PDF"
+			href="http://pubget.com/search?q=doi:10.1109%2FICSC.2007.28" rel="nofollow">Pubget</a>, <a class="linkout tipsy-hint-s {type: 'DOI', track_type: 'PubMed/DOI'}"
+			title="Search for this article on PubMed"
+			href="http://www.ncbi.nlm.nih.gov/pubmed?term=10.1109%2FICSC.2007.28[aid]&amp;cmd=DetailsSearch" rel="nofollow">PubMed (Search)</a></span>
+
+
+</li></ul>
+</div>
+<br/>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+	ARTICLE.doi ="10.1109/ICSC.2007.28";
+	ARTICLE.pmid ="";
+	ARTICLE.is_springerimages = "0";
+	GLOBAL.ipaddr = "163.117.147.80";
+	GLOBAL.openurl_location = ""
+	ARTICLE.citation_format = "plain"
+
+//]]>
+</script>
+
+
+
+
+
+<div style="clear:left"></div>
+
+
+
+<div id="openurlResolver" style="margin-bottom:10px; display:none">
+<h3>Find this article at <span id="openurlResolverName"></span><h3>
+<a class="nohilight" id="openurlResolverLink"><img id="openurlResolverImage" style="vertical-align:middle" /></a>
+<a id="openurlchoice" onclick="saveOpenurlChoice('163.117.147.80')"
+	class="tipsy-hint-s" title="If you move off-campus, you can save your current location for future library lookups" style="cursor:pointer"> (Save current location: 163.117.147.80)</a>
+</div>
+
+
+			<h3>Abstract</h3>
+			<div id="abstract-body" class="not-too-wide">
+			<blockquote>
+			<!-- google_ad_section_start -->
+			<p>In this paper we present an approach that combines multimedia reasoning and natural language processing for the semantic integration of automatic and manual image annotations based on domain ontologies. We discuss how to apply natural language processing to transform natural language descriptions and queries into an ontological representation that allows users to formulate formal semantics in an intuitive manner, without the need to cope with complex ontological structures and unwieldy user interfaces. Illustrative experimental examples demonstrate the added value.</p>
+			<!-- google_ad_section_end -->
+			</blockquote>
+			</div>
+			<br/>
+		
+<h3 style="clear:right">NETS's  tags for this article</h3>
+<ul id="articleTagList"><li class='menu'>
+<a class="tag" rel="tag" href="/group/4225/tag/semantic">semantic</a>
+<a class="tag" rel="tag" href="/group/4225/tag/nlp">nlp</a>
+<a class="tag" rel="tag" href="/group/4225/tag/multimedia">multimedia</a>
+</li></ul>
+
+	<div id="cites" style="margin-top:10px">
+	<h3 style="clear:right">Citations (CiTO)
+
+
+	</h3>
+	<div id="citesList">No CiTO tags defined</div>
+	</div>
+
+<br/>
+
+	<h3><a href="javascript:clexpand('reviews')" class="plain"><img alt="X" id="reviews-arrow"
+		src="/static/img/arrow-collapsed.gif"/> There are no reviews yet</a>
+		
+	</h3>
+	<div id="reviews-body" style="display:none">
+
+<blockquote>There are no reviews of this article</blockquote>
+</div>
+
+		<h3><a class="plain" href="javascript:clexpand('posters')"><img alt="X"
+		id="posters-arrow" src="/static/img/arrow-open.gif"/>
+		Find related articles from these CiteULike users</a></h3>
+	
+<div id="posters-body" class="store-state" style="display:none"><ul><li class="menu"><span class="black"><a  href="/group/2072">NETS-UAM (group)</a>, <a  href="/group/4225">NETS (group)</a>, <a  href="/user/dvallet">dvallet</a></span></li></ul></div>
+
+		<h3><a href="javascript:clexpand('tags')" class="plain"><img alt="X" id="tags-arrow"
+			src="/static/img/arrow-collapsed.gif"/>
+			Find related articles with these CiteULike tags</a></h3>
+		<div id="tags-body" class="store-state" style="display:none">
+		<ul>
+		<li class="menu"><span class="black"><a class="tag" rel="tag" href="/tag/multimedia">multimedia</a>, <a class="tag" rel="tag" href="/tag/nlp">nlp</a>, <a class="tag" rel="tag" href="/tag/semantic">semantic</a></span></li></ul>
+		</div>
+	
+
+		<h3><a href="javascript:void(0)" class="plain" onclick="toggle_history(); return false"><img
+			alt="X" id="history-arrow" src="/static/img/arrow-collapsed.gif"/>
+		Posting History</a></h3>
+		<div id="history"></div>
+	
+
+	<br />
+	<h3 style="clear:right" id="export-records-title"><a href="javascript:void(0)"
+		id="bibtex_link" onclick="getBibtex('group:4225','4225','7349637'); return false"
+		class="plain"><img alt="X" id="combo-arrow"
+		src="/static/img/arrow-collapsed.gif"/> Export records</a></h3>
+	<div id="combo-body" style="display:none">
+	</div>
+
+
+<div id="search_term" style="display:none; color:red; border: 1px solid black; background-color:#fdd; margin:10px; padding:5px; padding:10px">
+	<form action="/search/all" method="post" id="find-similar-form">
+		<textarea rows="4" style="width:90%; margin:10px;background-color:#fdd; " id="search_text" name="q"></textarea>
+		<input type="hidden" name="similar" value="Multimedia Reasoning with Natural Language Support" />
+	</form>
+</div>
+
+</div>
+<div id='tagsbox' style='display:none'>
+
+<div id="navright">
+
+<div style="position:relative">
+	<div style="position:absolute; top:-10px; left: -10px">
+		<span id="tags-pins">
+		<img id="tags-pins-off" src="/static/img/icons/pin-off.gif" />
+		<img id="tags-pins-on" src="/static/img/icons/pin-on.gif" style="display:none" />
+		</span>
+	</div>
+</div>
+
+<div id="always_show_tags_help" style="display:none">
+	<h2>Always show this tags box</h2>
+	<ul>
+		<li>this may affect the page loading speed if checked.</li>
+		<li>changes to this setting will only be in effect after next page load</li>
+	</ul>
+</div>
+
+<h2 style="margin-top:20px">Group Tags</h2>
+<div class="vague">All tags in the group NETS</div>
+
+
+
+
+		<div style="white-space:nowrap; padding:5px">
+		<span class="tipsy-hint-s" title='You can use "regular expressions" here. For example "^r" will limit to tags starting with "r".'>Filter: </span>
+		<form action="#" onsubmit="return false;" name="right_tag_search" style="display:inline">
+		<input autocomplete="off" name="q" value="" type="text" size="10" onkeyup="tag_search_key_up();" />
+		</form>
+		</div>
+
+		<a id="cloudCloudLink" href="#" onclick="showCloud(true)" style="display:none">[Display as Cloud]</a>
+		<a id="cloudListLink" href="#" onclick="showCloud(false)" style="display:none">[Display as List]</a>
+		<a id="citoHide" href="#" onclick="toggleCito(false)" style="display:none">[Hide Cito Tags]</a>
+		<a id="citoShow" href="#" onclick="toggleCito(true)" style="display:none">[Show Cito Tags]</a>
+		<br />
+		<br />
+	
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+	GLOBAL.tags = null;
+	GLOBAL.tags_loaded = true;
+	// Pass in via ADP args
+	GLOBAL.tags_load_url = "";
+
+	var TAGS_CLOUD = false;
+	var TAGS_TABLE = false;
+
+	function loadTags(callback) {
+		if (GLOBAL.tags_loaded) {
+			if (callback) {
+				callback();
+			}
+		}
+		GLOBAL.tags_loaded = true;
+		if (callback) {
+			callback();
+		}
+	}
+
+
+	function showCloud(state) {
+		_showCloud(state)
+		setUIOption("showCloud", state);
+	}
+	function _showCloud(state) {
+		jQuery("#tagcloud").toggle(state);
+		jQuery("#taglist").toggle(!state);
+		jQuery("#cloudListLink").toggle(state);
+		jQuery("#cloudCloudLink").toggle(!state);
+		if (state) {
+			_genTagsCloud();
+		} else {
+			_genTagsTable();
+		}
+
+	}
+
+	function tagSort(a, b) {
+		var ta = a.tag.replace("*","");
+		var tb = b.tag.replace("*","");
+		return ta < tb ? -1 : (ta == tb ? 0 : 1)
+	}
+
+
+	function _genTagsCloud() {
+		// loadTags(_genTagsCloud);
+		if (TAGS_CLOUD) {
+			return;
+		}
+		TAGS_CLOUD = true;
+		jQuery("#tagcloud").tagCloud(
+			GLOBAL.tags,
+			{click : null, sort : tagSort},
+			"/group/4225"
+		);
+		jQuery(".tagcloudlink").addClass("tag");
+		jQuery(".tagcloudlink:contains('*')").removeClass("tag").addClass("ptag");
+		jQuery(".tagcloudlink:contains('cito--')").addClass("is_cito");
+
+
+	}
+
+	function _genTagsTable() {
+		// loadTags(_genTagsTable);
+		if (TAGS_TABLE) {
+			return;
+		}
+		TAGS_TABLE = true;
+		var table = jQuery("#taglist table").empty();
+		for (var i=0; i<GLOBAL.tags.length; i++) {
+			var t = GLOBAL.tags[i];
+			var tr = jQuery("<tr></tr>").attr("id","tr_"+t.tag);
+			if (t.tag.match("^cito--")=="cito--") {
+				tr.addClass("is_cito");
+			}
+			var td1 = jQuery("<td></td>")
+				.addClass("tag_l")
+				.append(jQuery("<a></a>")
+					.addClass(t.cls)
+					.attr("href","/group/4225/tag/"+t.tag)
+					.text(t.tag)
+				);
+			var td2 = jQuery("<td></td>").addClass("tag_r").text(t.count);
+			tr.append(td1).append(td2);
+			table.append(tr);
+		}
+		adjustTagsDims();
+	}
+
+	function populateTagsTable() {
+		var state;
+		if (IE6()) {
+			state = false;
+		} else {
+			state = getUIOption("showCloud");
+		}
+		jQuery("#tags-loading").hide();
+		jQuery("#navright_inner").show();
+		_showCloud(state);
+		if (jQuery(".is_cito").length) {
+			jQuery("#citoHide").show();
+		}
+	}
+
+	function toggleCito(state) {
+		jQuery(".is_cito").toggle(state);
+		jQuery("#citoHide").toggle(state);
+		jQuery("#citoShow").toggle(!state);
+
+	}
+
+
+
+//]]>
+</script>
+
+
+<div id="tags-loading" style="display:block">
+<img src="/static/img/ajax-loader-large.gif" />
+</div>
+<div id="navright_inner" style="display:block">
+<div id="taglist">
+<table>
+
+
+<tr style="display:none"><td></td></tr>
+</table>
+</div>
+<div id="tagcloud" style="overflow:hidden; display:none"></div>
+</div>
+
+	<script type="text/javascript">
+	GLOBAL.tags = [
+	{tag: "semantic", count: 67, cls: "tag"},
+{tag: "ir", count: 64, cls: "tag"},
+{tag: "mir", count: 62, cls: "tag"},
+{tag: "personalization", count: 59, cls: "tag"},
+{tag: "ontology", count: 35, cls: "tag"},
+{tag: "context", count: 33, cls: "tag"},
+{tag: "folksonomy", count: 29, cls: "tag"},
+{tag: "study", count: 27, cls: "tag"},
+{tag: "representative", count: 21, cls: "tag"},
+{tag: "multimedia", count: 21, cls: "tag"},
+{tag: "interactive", count: 20, cls: "tag"},
+{tag: "rank_aggregation", count: 20, cls: "tag"},
+{tag: "user_modelling", count: 19, cls: "tag"},
+{tag: "video", count: 18, cls: "tag"},
+{tag: "trecvid", count: 16, cls: "tag"},
+{tag: "implicit_feedback", count: 16, cls: "tag"},
+{tag: "mapping", count: 15, cls: "tag"},
+{tag: "recommendation", count: 14, cls: "tag"},
+{tag: "evaluation", count: 13, cls: "tag"},
+{tag: "web_search", count: 13, cls: "tag"},
+{tag: "audio", count: 13, cls: "tag"},
+{tag: "journal", count: 13, cls: "tag"},
+{tag: "query_prediction", count: 12, cls: "tag"},
+{tag: "unfinished", count: 11, cls: "tag"},
+{tag: "cbir", count: 11, cls: "tag"},
+{tag: "diversity", count: 11, cls: "tag"},
+{tag: "search", count: 11, cls: "tag"},
+{tag: "early_work", count: 10, cls: "tag"},
+{tag: "collaborative", count: 10, cls: "tag"},
+{tag: "web", count: 10, cls: "tag"},
+{tag: "query", count: 9, cls: "tag"},
+{tag: "review", count: 8, cls: "tag"},
+{tag: "sigir", count: 8, cls: "tag"},
+{tag: "external_kb", count: 8, cls: "tag"},
+{tag: "ui", count: 7, cls: "tag"},
+{tag: "mobile", count: 7, cls: "tag"},
+{tag: "text", count: 6, cls: "tag"},
+{tag: "relevance_feedback", count: 6, cls: "tag"},
+{tag: "annotation", count: 5, cls: "tag"},
+{tag: "simulation", count: 4, cls: "tag"},
+{tag: "measure", count: 4, cls: "tag"},
+{tag: "i3media", count: 4, cls: "tag"},
+{tag: "wordnet", count: 3, cls: "tag"},
+{tag: "tv", count: 3, cls: "tag"},
+{tag: "tag", count: 3, cls: "tag"},
+{tag: "nlp", count: 3, cls: "tag"},
+{tag: "collaborative_filtering", count: 3, cls: "tag"},
+{tag: "adaptive", count: 3, cls: "tag"},
+{tag: "tois", count: 2, cls: "tag"},
+{tag: "graph_based", count: 2, cls: "tag"},
+{tag: "survey", count: 2, cls: "tag"},
+{tag: "learning", count: 2, cls: "tag"},
+{tag: "long_short_term", count: 2, cls: "tag"},
+{tag: "wikipedia", count: 2, cls: "tag"},
+{tag: "novelty", count: 2, cls: "tag"},
+{tag: "www", count: 2, cls: "tag"},
+{tag: "tool", count: 2, cls: "tag"},
+{tag: "model", count: 2, cls: "tag"},
+{tag: "feature", count: 2, cls: "tag"},
+{tag: "collaborative_search", count: 2, cls: "tag"},
+{tag: "aspect", count: 2, cls: "tag"},
+{tag: "exploratory_search", count: 2, cls: "tag"},
+{tag: "patent", count: 2, cls: "tag"},
+{tag: "news", count: 2, cls: "tag"},
+{tag: "probabilistic", count: 2, cls: "tag"},
+{tag: "best_paper", count: 2, cls: "tag"},
+{tag: "book", count: 2, cls: "tag"},
+{tag: "lscom", count: 2, cls: "tag"},
+{tag: "hci", count: 2, cls: "tag"},
+{tag: "low-level", count: 2, cls: "tag"},
+{tag: "user", count: 2, cls: "tag"},
+{tag: "image", count: 2, cls: "tag"},
+{tag: "90", count: 2, cls: "tag"},
+{tag: "clickthrough", count: 2, cls: "tag"},
+{tag: "csa", count: 2, cls: "tag"},
+{tag: "recomendation", count: 1, cls: "tag"},
+{tag: "subqueries", count: 1, cls: "tag"},
+{tag: "image_analysis", count: 1, cls: "tag"},
+{tag: "ontogy", count: 1, cls: "tag"},
+{tag: "statistics", count: 1, cls: "tag"},
+{tag: "crowdsourcing", count: 1, cls: "tag"},
+{tag: "synchronous", count: 1, cls: "tag"},
+{tag: "multiple", count: 1, cls: "tag"},
+{tag: "concept_drift", count: 1, cls: "tag"},
+{tag: "social", count: 1, cls: "tag"},
+{tag: "ranksum", count: 1, cls: "tag"},
+{tag: "research", count: 1, cls: "tag"},
+{tag: "bayesian", count: 1, cls: "tag"},
+{tag: "social_search", count: 1, cls: "tag"},
+{tag: "awareness", count: 1, cls: "tag"},
+{tag: "portfolio", count: 1, cls: "tag"},
+{tag: "sift", count: 1, cls: "tag"},
+{tag: "sketch", count: 1, cls: "tag"},
+{tag: "cvir", count: 1, cls: "tag"},
+{tag: "query_length", count: 1, cls: "tag"},
+{tag: "user_centered", count: 1, cls: "tag"},
+{tag: "similarity", count: 1, cls: "tag"},
+{tag: "tkde", count: 1, cls: "tag"},
+{tag: "query_log", count: 1, cls: "tag"},
+{tag: "logs", count: 1, cls: "tag"},
+{tag: "calendar", count: 1, cls: "tag"},
+{tag: "language_model", count: 1, cls: "tag"},
+{tag: "high-level", count: 1, cls: "tag"},
+{tag: "infap", count: 1, cls: "tag"},
+{tag: "ranking", count: 1, cls: "tag"},
+{tag: "e-commerce", count: 1, cls: "tag"},
+{tag: "reference", count: 1, cls: "tag"},
+{tag: "long_term", count: 1, cls: "tag"},
+{tag: "adaptive_hypermedia", count: 1, cls: "tag"},
+{tag: "contextual_search", count: 1, cls: "tag"},
+{tag: "cultural_heritage", count: 1, cls: "tag"},
+{tag: "aspec", count: 1, cls: "tag"},
+{tag: "similarity_measures", count: 1, cls: "tag"},
+{tag: "usage_history", count: 1, cls: "tag"},
+{tag: "search_behavior", count: 1, cls: "tag"},
+{tag: "pervasive_computing", count: 1, cls: "tag"},
+{tag: "fol", count: 1, cls: "tag"},
+{tag: "preference", count: 1, cls: "tag"},
+{tag: "impl", count: 1, cls: "tag"},
+{tag: "query_expansion", count: 1, cls: "tag"},
+{tag: "personalized", count: 1, cls: "tag"},
+{tag: "ambiguity", count: 1, cls: "tag"},
+{tag: "youtube", count: 1, cls: "tag"},
+{tag: "trec", count: 1, cls: "tag"},
+{tag: "explore", count: 1, cls: "tag"},
+{tag: "fo", count: 1, cls: "tag"},
+{tag: "ontlology", count: 1, cls: "tag"},
+{tag: "lsi", count: 1, cls: "tag"},
+{tag: "ontolgy", count: 1, cls: "tag"},
+{tag: "semantic_knowledge", count: 1, cls: "tag"},
+{tag: "ndcg", count: 1, cls: "tag"},
+{tag: "query_reformulation", count: 1, cls: "tag"},
+{tag: "toread", count: 1, cls: "tag"},
+{tag: "collaborative_strategies", count: 1, cls: "tag"},
+{tag: "reasoning", count: 1, cls: "tag"},
+{tag: "user_profile", count: 1, cls: "tag"},
+{tag: "visual", count: 1, cls: "tag"},
+{tag: "entity", count: 1, cls: "tag"},
+{tag: "personaliz", count: 1, cls: "tag"},
+{tag: "lsa", count: 1, cls: "tag"},
+{tag: "poster", count: 1, cls: "tag"},
+{tag: "filtering", count: 1, cls: "tag"},
+{tag: "bm25", count: 1, cls: "tag"},
+{tag: "ostensive_model", count: 1, cls: "tag"},
+{tag: "term_selection", count: 1, cls: "tag"}
+	];
+	</script>
+	
+
+</div>
+</div>
+
+<div style="display:none">
+	<form id="deleteform" action="/delete" method="post" style="display:none">
+	<div>
+	<input type="hidden" name="user_article_id" value="5758436"/>
+	<input type="hidden" name="from" value="/group/4225"/>
+	</div>
+	</form>
+</div>
+
+
+
+<div style="display:none">
+	<form id="yahooform" action="/invalid">
+		<div>
+		<input type="text" name="appid" value="66ZibHHV34HmhPKjhYiT2870Hn9tcLQD9KbZ.VgwFI47gVe286SogncUuiBgDn6ojnBTKQ--"/>
+		<input type="text" name="output" value="json"/>
+		<input type="text" name="context" value="Multimedia Reasoning with Natural Language Support. In this paper we present an approach that combines multimedia  reasoning and natural language processing for the  semantic integration of automatic and manual image annotations  based on domain ontologies. We discuss how to apply  natural language processing to transform natural language  descriptions and queries into an ontological representation  that allows users to formulate formal semantics in  an intuitive manner, without the need to cope with complex  ontological structures and unwieldy user interfaces. Illustrative  experimental examples demonstrate the added value."/>
+		</div>
+	</form>
+</div>
+
+<form id="showtexform" action="/do_jsmath_popup" method="post" target="jsmath_popup" style="display:none">
+	<div>
+	<input type="hidden" name="abstract" value="In this paper we present an approach that combines multimedia  reasoning and natural language processing for the  semantic integration of automatic and manual image annotations  based on domain ontologies. We discuss how to apply  natural language processing to transform natural language  descriptions and queries into an ontological representation  that allows users to formulate formal semantics in  an intuitive manner, without the need to cope with complex  ontological structures and unwieldy user interfaces. Illustrative  experimental examples demonstrate the added value."/>
+	<input type="hidden" name="title" value="Multimedia Reasoning with Natural Language Support"/>
+	</div>
+</form>
+
+
+<div style="text-align:center">
+	<a href="/privacy">Privacy Statement</a> | <a href="/terms">Terms &amp; Conditions</a>
+</div>
+<div style="display:none">
+<!-- google_ad_section_start -->
+CiteULike organises scholarly (or academic) papers or literature and provides bibliographic
+(which means it makes bibliographies) for universities and higher education establishments.
+It helps undergraduates and postgraduates. People studying for PhDs or in postdoctoral (postdoc) positions.
+The service is similar in scope to EndNote or RefWorks or any other reference manager
+like BibTeX, but it is a social bookmarking service for scientists and humanities researchers.
+<!-- google_ad_section_end -->
+</div>
+
+	</body>
+</html>
+

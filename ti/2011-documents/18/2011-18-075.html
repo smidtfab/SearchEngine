@@ -1,0 +1,531 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="The CrowdFlower Blog covers all things crowdsourcing: Labor-on-demand, research, and more from a variety of authors from the crowdsourcing industry.">
+  <meta name="google-site-verification" content="ts085V1FF2dg9kNMGWEMKdocyK7ue5QSIC4vELhXS6I">
+
+  <title>AMT is fast, cheap, and good for machine learning data | The CrowdFlower Blog</title>
+
+  <link rel="shortcut icon" href="http://crowdflower.com/images/favicon.png" />
+  <link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog RSS Feed" href="http://feeds.feedburner.com/crowdflower" />
+
+  <!-- Production mode -->
+      <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="http://crowdflower.com/stylesheets/bundles/marketing_master.css" />
+    <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="http://crowdflower.com/stylesheets/bundles/marketing.css" />
+    <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="http://crowdflower.com/stylesheets/bundles/blog.css" />
+    
+   
+  <script type="text/javascript" src="http://crowdflower.com/javascripts/bundles/mootools.js"></script>
+  <script type="text/javascript" src="http://crowdflower.com/javascripts/bundles/crowdflower_base.js"></script>
+  
+      <script src="http://www.google-analytics.com/ga.js" type="text/javascript" charset="utf-8" async="true"></script>
+    <script type="text/javascript" charset="utf-8">
+      <!--
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3841988-8']);
+      _gaq.push(['_trackPageview']);
+      //-->
+    </script>
+    
+  <script type="text/javascript" src="http://use.typekit.com/vyd2clc.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog &raquo; Feed" href="http://blog.crowdflower.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog &raquo; Comments Feed" href="http://blog.crowdflower.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog &raquo; AMT is fast, cheap, and good for machine learning data Comments Feed" href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.crowdflower.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.crowdflower.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='The CrowdFlower Blog' href='http://blog.crowdflower.com/' />
+<link rel='start' title='The Manifesto' href='http://blog.crowdflower.com/2008/03/the-manifesto/' />
+<link rel='prev' title='Fleshmap: crowdsourcing sex' href='http://blog.crowdflower.com/2008/08/fleshmap-crowdsourcing-sex/' />
+<link rel='next' title='CrowdSifter' href='http://blog.crowdflower.com/2008/10/crowdsifter/' />
+<meta name="generator" content="WordPress 3.0.4" />
+<link rel='shortlink' href='http://blog.crowdflower.com/?p=109' />
+
+<!-- All in One SEO Pack 1.6.13.1 by Michael Torbert of Semper Fi Web Design[479,570] -->
+<meta name="description" content="Update 9/19: Final PDF version has been uploaded. See also the comments below for updates -- our released data is already being used by others! We recently" />
+<link rel="canonical" href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/" />
+<!-- /all in one seo pack -->
+</head>
+<body class="marketing blog">
+  <div id="login_panel"> 
+    <div id="login_container"> 
+        <a href="#login_form" id="login_panel_tab">Login</a> 
+        <form action="http://crowdflower.com/login" method="post" id="login_form" accept-charset="utf-8"> 
+          <h2>Login
+            <a class="signup" href="http://crowdflower.com/account/new">(or Signup)</a> 
+          </h2> 
+          <input type="hidden" name="_method" value="put"> 
+          <label for="email">Email:</label> <input class="login_input" type="text" name="email" value=""> 
+          <label for="password">Password:</label> <input class="login_input" type="password" name="password" value=""> 
+          
+          <input class="button" type="submit" value="Login" id="login_button"> 
+        </form>
+    </div>
+  </div>
+  <div id="header">
+    <div id="logo">
+      <a href="http://crowdflower.com">CrowdFlower</a>
+    </div>
+     <ul id="main-nav">
+        <li><a href='http://crowdflower.com/solutions'>Solutions</a></li>
+        <li><a href='http://crowdflower.com/self_service'>Self Service</a></li>
+        <li><a href='http://crowdflower.com/news'>News &amp; Events</a></li>
+        <li class="current no_sub_nav"><a href="http://blog.crowdflower.com/">Blog</a></li>
+      </ul>
+  </div>
+  <div id="content">
+    <h1><a href="/">The CrowdFlower Blog</a></h1>
+  
+  <div class="span-9">
+
+  	
+  		<div class="post-109 post type-post hentry category-misc category-wisdom single" id="post-109">
+  			<h2 class="top">AMT is fast, cheap, and good for machine learning data</h2>
+			
+  			<p class="post-subtitle">
+  			  <span class="post-date">September 9th, 2008</span>
+  			  <span class="post-attribution">by <span class="post-author"><a href="http://blog.crowdflower.com/author/brendano/" title="Posts by Brendan O&#039;Connor">Brendan O'Connor</a></span></span>
+  			</p>
+
+  			<div class="entry">
+  				<p><b>Update 9/19:</b> <a href="http://blog.doloreslabs.com/wp-content/uploads/2008/09/amt_emnlp08_final.pdf">Final PDF version</a> has been uploaded.  See also the comments below for updates &#8212; our <a href="http://ai.stanford.edu/~rion/annotations/">released data</a> is already being used by others!</p>
+<hr />
+We recently teamed up with <a href="http://ai.stanford.edu/~rion/">Rion Snow</a>, <a href="http://www.stanford.edu/~jurafsky/">Prof. Dan Jurafsky</a>, and <a href="http://ai.stanford.edu/~ang/">Prof. Andrew Ng</a>  from the <a href="http://sail.stanford.edu">Stanford AI Lab</a> to try using Amazon Mechanical Turk to generate data sets for Machine Learning research.  Many AI tasks require a large amount of training data, and to build natural language systems, researchers traditionally pay linguistic experts for millions of annotations.  Search engine companies employ hundreds or thousands of annotators for their classification, ranking, and other statistically trained systems, but their data is private and is not available for research.  AMT is a potential tool to create high quality data sets accessible to everyone.</p>
+<p>We rigorously tested the quality of AMT responses for several classic human language problems, and found that the quality was the same or better than the expert data that most researchers use.  We wrote a paper, <a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/amt_emnlp08_final.pdf' title='amt_emnlp08_accepted.pdf'>&#8220;Cheap and Fast &#8212; But is it Good?  Evaluating Non-Expert Annotations for Natural Language Tasks,&#8221;</a> that will be presented in an upcoming conference, <a href="http://conferences.inf.ed.ac.uk/emnlp08/">EMNLP-2008</a>.</p>
+<p><b>Our findings:</b></p>
+<p><b>1. Turker-generated data is good.</b>  AMT makes it easy to ask many people for judgments, so for several tasks, we looked at accuracy rates for how well the averaged Turker judgments correlate to the expert gold standard.  With more judgments per example, accuracy increases.  For comparison, on each graph the horizontal dotted line indicates the rate at which a single expert agrees with their gold standard.  Enough non-experts can match or often beat experts&#8217; reliability.</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/k-acc3.png' title='k-acc3.png'><img class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/09/k-acc3.png' alt='k-acc3.png' /></a></p>
+<p><b>2. Turker-generated data is cheap and fast.</b>  We can collect thousands of labels per dollar and per hour.  </p>
+<p><span id="more-109"></span> </p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/costs.png' title='costs.png'><img class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/09/costs.png' alt='costs.png' /></a></p>
+<p><b>3. Expert data enhances individual Turker data.</b>  First off, individual workers have differing accuracy rates:</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/worker-acc.png' title='worker-acc.png'><img class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/09/worker-acc.png' alt='worker-acc.png' /></a></p>
+<p>So we implemented a statistical technique where we test their accuracy on a portion of the experts&#8217; gold standard data, then reweight votes by worker reliability.  This yields higher aggregated accuracy.  (Also see our related <a href="http://blog.doloreslabs.com/2008/06/aggregate-turker-judgments-threshold-calibration/">threshold calibration post</a>.)</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/goldcalib.png' title='goldcalib.png'><img class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/09/goldcalib.png' alt='goldcalib.png' /></a></p>
+<p><b>4. Turker data enhances NLP systems.</b>  For one of the tasks, predicting the emotions elicited by a newspaper headline, we wrote a simple machine-learned classifier and trained it on the Turker data.  It easily outperforms one trained on expert data.  (There&#8217;s a subtle effect here; see the paper for details.)</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/classifier-perf.png' title='classifier-perf.png'><img  class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/09/classifier-perf.png' alt='classifier-perf.png' /></a></p>
+<p>We&#8217;ll update this blog post with a link to the final version of the paper in the coming weeks.  Many thanks to our friend <a href="http://ai.stanford.edu/~rion/">Rion</a>, who spearheaded this collaboration.  The current version of the paper is here:</p>
+<ul>
+<li><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/09/amt_emnlp08_final.pdf'>Rion Snow, Brendan O&#8217;Connor, Daniel Jurafsky, Andrew Y. Ng.  &#8220;Cheap and Fast &#8212; But is it Good?  Evaluating Non-Expert Annotations for Natural Language Tasks.&#8221;  EMNLP-2008.</a></ul>
+<p>[ This article is part of a series, <a href="/topics/wisdom/">Wisdom of Small Crowds</a>, on crowdsourcing methodology. ]</p>
+
+  				  			</div>
+			
+  	  	<div class="span-7">
+  				<div class="post-meta">
+  				    				  <span class="meta-title">Categories:</span> <a href="http://blog.crowdflower.com/topics/misc/" title="View all posts in Miscellaneous" rel="category tag">Miscellaneous</a>, <a href="http://blog.crowdflower.com/topics/wisdom/" title="View all posts in Wisdom of Small Crowds" rel="category tag">Wisdom of Small Crowds</a>  				</div>
+  			</div>
+  			<div class="span-2 last"></div>
+  			<br class="clear">
+  		</div>
+
+  		<div class="navigation">
+  			<div class="older"><span class="button">&laquo; <a href="http://blog.crowdflower.com/2008/08/fleshmap-crowdsourcing-sex/" rel="prev">Fleshmap: crowdsourcing sex</a></span></div>
+  			<div class="newer"><span class="button"><a href="http://blog.crowdflower.com/2008/10/crowdsifter/" rel="next">CrowdSifter</a> &raquo;</span></div>
+  		</div>
+
+  	
+<!-- You can start editing here. -->
+
+<div class="comments">
+
+    	<h2>Comments</h2>
+
+  	<ol class="commentlist">
+  	     <li class="comment even thread-even depth-1" id="li-comment-541">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://lingpipe-blog.com/' rel='external nofollow' class='url'>Bob Carpenter</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-541">09/10/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-541">
+                <p>Awesomely cool paper.</p>
+<p>We&#8217;ve been annotating data ourselves (at Alias-i) and arguing that it&#8217;s really not as hard as all the machine learning folks doing adaptation and semi-supervised learning would have us believe.  Named entity data, in particular, is very easy to annotate. </p>
+<p>I&#8217;m stunned by how cheap it was.  3500 annotations per US$?    I kept looking for units in the tables like in financial reports (e.g. &#8220;all numbers in 1000s&#8221;).  It looks like your programmer and task design time&#8217;s going to dominate the cost of just about any annotation task.</p>
+<p>The tasks you chose are not ones where linguistic expertise seems important.  So I&#8217;m guessing at least some of your effects stem more from worker carelessness, lack of calibration in their training, or some kind of unwritten training or collusion among the &#8220;expert&#8221; annotators.  Some standards also undergo adjudication of votes, which brings annotators closer together; it&#8217;d be interesting to know if there was any of that in your &#8220;gold standard&#8221; data sets.</p>
+<p>I&#8217;d love to see the results of using the Bayesian posterior category estimates in place of Dawid and Skene&#8217;s point-based EM results.  Then again, that may not be necessary as you are just doing ML over the gold standard rather than applying Dawid and Skene&#8217;s inference mechanism for annotator sensitivity and specificity.  (Laplace&#8217;s prior isn&#8217;t going to be optimal here where there&#8217;s clearly some prior information about annotator accuracies that could be used.)</p>
+<p>At the very least, you&#8217;ll get posterior intervals on which to base expectation-based judgments of acceptance.  It&#8217;d be nice to see if the predictions are better correlated with the gold standard than simple voting; I&#8217;m guessing they&#8217;ll be substantially more so.  In particular, it&#8217;d be nice to see these results used in lieu of simple voting in the article de-duplication task mentioned in the previous  blog post.  </p>
+<p>I&#8217;d be happy to run the data through <a href="http://lingpipe-blog.com/2008/09/05/hierarchical-bayesian-models-of-categorical-data-annotation/" rel="nofollow">the Bayesian model</a> for you if you can share the data.   I&#8217;d really like to see what happens if you estimate the annotator sensitivity and specificity without reference to the gold standard.</p>
+<p>I liked the idea of measuring how many generic workers you needed to equal one &#8220;expert&#8221;.  I&#8217;d like to see the worker accuracy&#8217;s compared pairwise.  My guess is that there&#8217;s substantial variance among them.  Just a table of the kappas, or even better, pairs of sensitivities/specificities taking one annotator as the gold standard.  All the annotation data I&#8217;ve ever seen has been highly skewed with lots of inter-annotator variation in accuracy.</p>
+<p>PS:  That&#8217;s &#8220;Skene&#8221; not &#8220;Skeene&#8221; (your bib&#8217;s right but the inline citation in section 5.1 is a typo).</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment byuser comment-author-brendano bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-542">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://anyall.org/' rel='external nofollow' class='url'>brendano</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-542">09/11/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-542">
+                <p>Thanks for all the comments!</p>
+<p>Thanks a lot for the offer to run our data through your system (I&#8217;ve been half-successful getting BUGS going, but not entirely there yet!) &#8212; it&#8217;s all at <a href="http://ai.stanford.edu/~rion/annotations/" rel="nofollow">http://ai.stanford.edu/~rion/annotations/</a> .</p>
+<p>There are some odd details with how we did subsampling and cross-validation that didn&#8217;t fit into the paper, so I&#8217;ll spell them out here:</p>
+<p>First of all, if you want to run any sort of worker modelling with the total 10 annotators per example, that&#8217;s easy, just use the data as it is.</p>
+<p>However, as you know we were really interested in varying the #anno/example parameter, and simulated this effect by subsampling from that data.  In the first part of the paper, which does simple averaging (for continuous problems) and simple majority voting (for categorical problems), this is straightforward.  (In fact it goes over all possible permutations.)</p>
+<p>But for worker modelling, subsampling is trickier.  If you simply subsample down to k annos per example, this artificially decreases the number of workers shared across the train/test split.  In real life, AMT works by having the requester specify a maximum number of assn/HIT.  Workers come in, do as many HITs as they want, then stop.  A HIT stops being offered in the work pool once it&#8217;s reached the maximum #assn/HIT. So if you decreased #assn/HIT for a new job, a single worker who was inclined to do say 50 examples, would still do that many.  But if you independently subsample down to k annotations per example, you see only (k/10)*50 annotations from that worker.</p>
+<p>Anyway, maybe this is worrying too much now, but what I did was build up the entire anno subsample by iteratively sampling without replacement a single worker at a time; upon picking one, I added their annotations to the set of annos, and discarded per-example overflows.  This should simulate a Turker choosing to do the experiment, and doing as much work as they can/want.  This is in &#8220;anno_sample_via_workers()&#8221; in <a href="http://github.com/brendano/dlanalysis/tree/master/main.R" rel="nofollow">http://github.com/brendano/dlanalysis/tree/master/main.R</a> .  (All the code for the worker modelling experiments is in that codebase, but it&#8217;s rather messy and may not completely work at the moment.)</p>
+<p>*Then*, within this anno subsample, we do 20-fold cross-validation among *examples*.  So sometimes workers are shared across the train/test split, sometimes they&#8217;re not.  Worker modeling is only useful when a worker has done examples on both sides of the train/test split.  This is not guaranteed because the worker/example contingency table is sparse: lots of workers only annotated several examples, and only a few workers did all.  Quick&#8217;n'dirty graph of this for one of the affect tasks <a href=http://assets.doloreslabs.com/images/turker-unit-interaction.png rel="nofollow">here</a> and <a href=http://assets.doloreslabs.com/images/turker-unit-interaction.txt rel="nofollow">here</a>.</p>
+<p>I hope that sounded reasonable and hopefully can be ignored at first pass :)</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment even thread-even depth-1" id="li-comment-546">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://lingpipe-blog.com/' rel='external nofollow' class='url'>Bob Carpenter</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-546">09/11/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-546">
+                <p>Thanks so much for sharing the data and the extra details of how the data was collected.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-551">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://vision.cs.uiuc.edu/annotation' rel='external nofollow' class='url'>Alexander Sorokin</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-551">09/12/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-551">
+                <p>Hi! That&#8217;s great work! I&#8217;ve been doing similar things in the vision domain (<a href="http://vision.cs.uiuc.edu/annotation/" rel="nofollow">http://vision.cs.uiuc.edu/annotation/</a>). I had my findings published at the Internet Vision workshop at CVPR 08.</p>
+<p>I think MTurk is a great and heavily under-utilized resource in the research community.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment byuser comment-author-brendano bypostauthor even thread-even depth-1" id="li-comment-552">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://anyall.org/' rel='external nofollow' class='url'>brendano</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-552">09/13/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-552">
+                <p>Alexander &#8212; wow, very exciting.  I&#8217;ve definitely been thinking that vision ML data sets are a pretty obvious win &#8212; Turkers really like image problems, perhaps more so than text.  We&#8217;ve done a number of image labelling tasks, and they are often even cheaper than linguistic tasks &#8212; I think because many of them are fun, and the cognitive load is often lower.  (Human vision processing systems evolutionarily predate language processing; there&#8217;s been more time for optimization :) )</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-566">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://lingpipe-blog.com/' rel='external nofollow' class='url'>Bob Carpenter</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-566">09/15/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-566">
+                <p>I posted a blog entry with the analysis on our blog under the title<br />
+<a href="http://lingpipe-blog.com/2008/09/15/dolores-labs-text-entailment-data-from-amazon-mechanical-turk/" rel="nofollow">Dolores Labs Text Entailment Data from the Amazon Mechanical Turk</a>.</p>
+<p>The model does pretty well, especially given the four or five high volume noise generators among the Turkers.    </p>
+<p>From Panos&#8217;s post about <a href="http://behind-the-enemy-lines.blogspot.com/2008/03/why-people-participate-on-mechanical.html" rel="nofollow">why Turkers work</a>, it&#8217;s perhaps not surprising that most folks bailed on what looked like a GRE verbal test after 20 examples.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment byuser comment-author-brendano bypostauthor even thread-even depth-1" id="li-comment-582">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://anyall.org/' rel='external nofollow' class='url'>brendano</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-582">09/19/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-582">
+                <p>CORRECTION to my comment #2 up there &#8212; I reviewed all the code and it turns out, that fancy subsampling process was NOT used for the results in the paper.  Just the simplest version.  Oops.  Sorry for any confusion.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment byuser comment-author-brendano bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-583">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://anyall.org/' rel='external nofollow' class='url'>brendano</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-583">09/19/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-583">
+                <p>Bob, sorry I didn&#8217;t respond earlier &#8212; this is really exciting.  Congrats on getting the model to work so well.</p>
+<p>Since we didn&#8217;t include the exact numbers for worker modelling/correction in the paper, to make this complete, here are exact numbers from both of our experiments so far (plus a new one I just did):</p>
+<p>Accuracy rates at Turker ensembles matching the gold standard, RTE with 10 judgments/example:</p>
+<p>89.7%  &#8211;  naïve voting<br />
+92.6%  &#8211;  hidden labels, inferred worker prior  [MAP via Gibbs sampler] <a href="http://lingpipe-blog.com/2008/09/15/dolores-labs-text-entailment-data-from-amazon-mechanical-turk/" rel="nofollow">[link]</a><br />
+92.9%  &#8211;  hidden labels, uniform worker prior  [MAP via Gibbs sampler] <a href="http://lingpipe-blog.com/2008/09/15/dolores-labs-text-entailment-data-from-amazon-mechanical-turk/" rel="nofollow">[link]</a><br />
+92.6%  &#8211;  known labels (LOO), add-1 worker prior  [MAP via direct inference]<br />
+92.9%  &#8211;  known labels (LOO), non-bayesian: drop workers with &lt;67% accuracy then naïve vote the rest</p>
+<p>Yes, that last one is way less principled than the others, and wasn’t in the paper, though probably should have been.  (My fault; I’ll blame a deadline rush I suppose.)</p>
+<p>Anyway, I think it’s impressive that the hidden label model does exactly as well as any system using known labels.</p>
+<p>I’d be interested to see how things do for smaller numbers of annotators per example, since there’s more headroom down there -- e.g. at 3 anno/example, naïve accuracy is only 80.5%.</p>
+<p>I’m also wondering if a model with per-item difficulty will start becoming useful.  When I do RTE myself, I feel there’s large variance in difficulty.  Of course this highlights why the BUGS approach makes progress much easier...</p>
+<p>[[<br />
+More on these new experiments.  (1) The thresholding technique: In practice it will work a little less well, because I iterated the threshold parameter and took the best one, and the space was a little bumpy.  Though no lower than 92% for all reasonable thresholds; what’s key is eliminating the several noisy+prolific workers.  In fact, the 67% threshold drops nearly half of all judgments (!).  Though in practice with the AMT feedback cycle you wouldn’t pay for all those bad judgments, just pretest and eliminate bad workers early on, and pay good workers for more work.</p>
+<p>(2) Unlike the paper, I used here leave-one-out instead of 20-fold cross-validation.  (I have a faster implementation now; I think I'm starting to hit the pain points of R so went back to python ... <a href="http://github.com/brendano/dlanalysis/tree/master/workers.py" rel="nofollow">http://github.com/brendano/dlanalysis/tree/master/workers.py</a> )<br />
+]]</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment even thread-even depth-1" id="li-comment-606">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://timconverse.wordpress.com/' rel='external nofollow' class='url'>Tim Converse</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-606">09/25/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-606">
+                <p>This is a really nice paper  &#8211; the section on judge bias was helpful for us at Powerset where we worry about some of the same AM Turk data-quality issues.  Thanks for putting it out there.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-611">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://lingpipe-blog.com/' rel='external nofollow' class='url'>Bob Carpenter</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-611">09/28/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-611">
+                <p>I do think there&#8217;s more headroom with fewer annos.  What I&#8217;m interested in is getting the posterior estimate of accuracy so we can decide which items need more annotation.</p>
+<p>I have exactly the same feeling about difficulty, but I haven&#8217;t been able to fit any of the logistic models with a latent difficulty predictor.   The basic model is just  p(anno[i,j]) = inverseLogit(accuracy[j] &#8211; difficulty[i]), just like the items response model.  I&#8217;m going to send some mail to the epidemiologists fitting these models &#8212; some of the more recent paper discuss the instability of the model fitting.  Even with the true category known, I&#8217;m having trouble fitting the models.</p>
+<p>The problem seems to be that there&#8217;s two ways to account for variability in an annotation, either that it&#8217;s difficulty or that the annotators are error-prone.  If I crank prior variance on difficulty down close to zero, it fits, but there&#8217;s not much of a difficulty effect.  If I let variance even approach 1, different chains don&#8217;t mix well at all and I just can&#8217;t infer the difficulties reliably.  I&#8217;ve tried this with both real and simulated data.</p>
+<p>I did manage to fit the binary mixture of easy/hard items, but that seems less relevant with more and more annotators and especially with very noisy annotators.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment even thread-even depth-1" id="li-comment-621">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://anyall.org' rel='external nofollow' class='url'>Brendan O'Connor</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-621">10/22/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-621">
+                <p>Oh, I just realized I&#8217;ve used item difficulty modelling in a different context, to figure out the tradeoff between more annotations and accuracy under naive voting:</p>
+<p>With a gold standard set of true examples, get a high #annos/example, and get per-item error rates (1-sensitivity) err_i.  This is to make a high recall system, so &#8220;yes&#8221; decisions must be unanimous (single dissenter causes &#8220;no&#8221; decision), meaning that all annotators must make an error to get an aggregate error.  Then for k annotations per example the expected number of errors is \sum_i (err_i)^k.</p>
+<p>This can be viewed as a model where all workers have equal capability, but items have a difficulty parameter.  It gives a more pessimistic error estimate than most naive model where all items have the same difficulty, whose expected errors is n * (err)^k.  I believe the estimates are different because hard items don&#8217;t get solved too well by throwing more and more annotators at them.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-3905">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://www.spargrube.de' rel='external nofollow' class='url'>Kiketireber</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/09/amt-fast-cheap-good-machine-learning/#comment-3905">03/28/11</a></p>
+     </div>
+      <div class="span-7 last" id="comment-3905">
+                <p>many thanks for the article, I love it</p>
+      </div>
+      <br class="clear">
+</li>
+  	</ol>
+	
+   
+
+  
+  <div id="respond">
+
+  <h3>Leave a Reply</h3>
+
+  <div class="cancel-comment-reply">
+  	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/09/amt-fast-cheap-good-machine-learning/#respond" style="display:none;">Click here to cancel reply.</a></small>
+  </div>
+
+  
+  <form action="http://blog.crowdflower.com/wp-comments-post.php" method="post" id="commentform">
+
+      
+    <table class="form form_comment">
+      <tr>
+        <th><label for="author">Name <span class='tip'>(required)</span></label></th>
+        <td><input class="text" type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' /></td>
+      </tr>
+      <tr>
+        <th><label for="email">Mail <span class="tip">(not public) (required)</span> </label></th>
+        <td><input class="text" type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true'</td>
+      </tr>
+      <tr>
+        <th><label for="url">Website</label></th>
+        <td><input class="text" type="text" name="url" id="url" value="" size="22" tabindex="3" /></td>
+      </tr>
+
+    
+  <tr>
+    <th>Comment</th>
+    <td><textarea class="textarea" name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></td>
+  </tr>
+  <tr class="submit">
+    <td colspan="2">
+      <input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+    </td>
+  </tr>
+  </table>
+  
+  <input type='hidden' name='comment_post_ID' value='109' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+  
+  <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="66ff5a412c" /></p>
+  </form>
+
+    </div>
+  
+</div>
+
+
+  	  </div>
+
+
+<div class="span-3 last">
+	<div class="sidebar" id="blog-sidebar" role="complementary">
+		<ul>
+			
+					
+		  <li class="search"><h2 class="top">Search the blog</h2>
+		    <ul>
+		      <li>
+    		    <form role="search" method="get" id="blog-search-form" action="/" > 
+            	<label class="hide" for="s">Search for:</label> 
+            	<input type="text" value="" name="s" id="s" />
+              <input type="submit" id="searchsubmit" value="Search" />
+            </form>
+    		  </li>
+    		</ul>
+    	</li>
+    </ul>
+    
+		<ul role="navigation" class="bottom">
+			<li><h2>Archives</h2>
+				<ul>
+					<li><a href='http://blog.crowdflower.com/2011/' title='2011'>2011</a>&nbsp;(8)</li>
+	<li><a href='http://blog.crowdflower.com/2010/' title='2010'>2010</a>&nbsp;(38)</li>
+	<li><a href='http://blog.crowdflower.com/2009/' title='2009'>2009</a>&nbsp;(24)</li>
+	<li><a href='http://blog.crowdflower.com/2008/' title='2008'>2008</a>&nbsp;(27)</li>
+				</ul>
+			</li>
+
+			<li class="categories"><h2>Categories</h2><ul>	<li class="cat-item cat-item-87"><a href="http://blog.crowdflower.com/topics/art/" title="View all posts filed under Art">Art</a> (6)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blog.crowdflower.com/topics/colors/" title="View all posts filed under Colors">Colors</a> (5)
+</li>
+	<li class="cat-item cat-item-85"><a href="http://blog.crowdflower.com/topics/disaster-relief/" title="View all posts filed under Disaster Relief">Disaster Relief</a> (2)
+</li>
+	<li class="cat-item cat-item-58"><a href="http://blog.crowdflower.com/topics/economics/" title="View all posts filed under Economics">Economics</a> (8)
+</li>
+	<li class="cat-item cat-item-91"><a href="http://blog.crowdflower.com/topics/events/" title="View all posts filed under Events">Events</a> (6)
+<ul class='children'>
+	<li class="cat-item cat-item-93"><a href="http://blog.crowdflower.com/topics/events/conference/" title="View all posts filed under Conference">Conference</a> (2)
+</li>
+	<li class="cat-item cat-item-92"><a href="http://blog.crowdflower.com/topics/events/meetup-events/" title="View all posts filed under Meetup">Meetup</a> (4)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-54"><a href="http://blog.crowdflower.com/topics/experiments/" title="View all posts filed under Experiments">Experiments</a> (13)
+<ul class='children'>
+	<li class="cat-item cat-item-78"><a href="http://blog.crowdflower.com/topics/experiments/motivation-experiments/" title="View all posts filed under Motivation">Motivation</a> (2)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://blog.crowdflower.com/topics/faces/" title="View all posts filed under Faces">Faces</a> (8)
+</li>
+	<li class="cat-item cat-item-57"><a href="http://blog.crowdflower.com/topics/human-behavior/" title="View all posts filed under Human Behavior">Human Behavior</a> (2)
+</li>
+	<li class="cat-item cat-item-72"><a href="http://blog.crowdflower.com/topics/labor-law/" title="View all posts filed under Labor Law">Labor Law</a> (1)
+</li>
+	<li class="cat-item cat-item-70"><a href="http://blog.crowdflower.com/topics/law-2/" title="View all posts filed under Law">Law</a> (1)
+</li>
+	<li class="cat-item cat-item-13"><a href="http://blog.crowdflower.com/topics/media/" title="View all posts filed under Media">Media</a> (5)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.crowdflower.com/topics/misc/" title="View all posts filed under Miscellaneous">Miscellaneous</a> (78)
+</li>
+	<li class="cat-item cat-item-98"><a href="http://blog.crowdflower.com/topics/office-life/" title="View all posts filed under Office Life">Office Life</a> (1)
+</li>
+	<li class="cat-item cat-item-71"><a href="http://blog.crowdflower.com/topics/regulation/" title="View all posts filed under Regulation">Regulation</a> (1)
+</li>
+	<li class="cat-item cat-item-95"><a href="http://blog.crowdflower.com/topics/sports/" title="View all posts filed under Sports">Sports</a> (2)
+</li>
+	<li class="cat-item cat-item-74"><a href="http://blog.crowdflower.com/topics/translation/" title="View all posts filed under Translation">Translation</a> (3)
+</li>
+	<li class="cat-item cat-item-11"><a href="http://blog.crowdflower.com/topics/wisdom/" title="View all posts filed under Wisdom of Small Crowds">Wisdom of Small Crowds</a> (9)
+</li>
+</ul></li>		</ul>
+
+			</div>
+	
+	<div class="sidebar" id="extras-sidebar" role="complementary">
+	  <ul class="bottom">
+	   <li>
+	     <h2 class="top">Subscribe</h2>
+	     <a id="subscribe-rss" href="#">RSS feed</a>
+	   </li>
+	  </ul>
+	</div>
+</div>
+
+
+    <br class="clear">
+  </div>
+  <div id="footer">
+    <div class="span-2">
+      <h2>About</h2>
+      <a href="http://crowdflower.com/about">About CrowdFlower</a>
+      <a href="http://crowdflower.com/about/team/index">Team</a>
+      <a href="http://crowdflower.com/about/jobs">Jobs</a>
+    </div>
+    <div class="span-2">
+      <h2>API</h2>
+      <a href="http://crowdflower.com/docs/interface">Requester Interface</a>
+      <a href="http://crowdflower.com/docs/gold">Gold</a>
+      <a href="http://crowdflower.com/docs/api">CrowdFlower API</a>
+      <a href="http://crowdflower.com/docs/cml">CML</a>
+      <a href="http://crowdflower.com/docs/channel_api">Channel API</a>
+    </div>
+    <div class="span-2">
+      <h2>Solutions</h2>
+      <a href="http://crowdflower.com/solutions/blv/index">Business Listing Verification</a>
+      <a href="http://crowdflower.com/solutions/search_rel/index">Search Relevance</a>
+      <a href="http://crowdflower.com/solutions/prod_cat/index">Product Categorization</a>
+      <a href="http://crowdflower.com/solutions/custom/index">Custom Solutions</a>
+    </div>
+    <div class="span-2">
+      <h2>Self-Service</h2>
+      <a href="http://crowdflower.com/self_service/faq">FAQ</a>
+      <a href="http://crowdflower.com/self_service">Overview</a>
+    </div>
+    <div class="span-2">
+      <h2>News / Events</h2>
+      <a href="http://crowdflower.com/news">Coverage</a>
+      <a href="http://crowdflower.com/news/press_releases">Press Releases</a>
+      <a href="http://crowdflower.com/news/videos">Videos</a>
+      <a href="http://crowdflower.com/news/events">Events</a>
+      <a href="http://crowdflower.com/news/publications">Publications</a>
+    </div>
+    <div class="span-2 last">
+      <h2>Social Media</h2>
+      <a href="http://blog.crowdflower.com/">Blog</a>
+      <a href="http://twitter.com/CrowdFlower">Twitter</a>
+      <a href="http://facebook.com/CrowdFlower">Facebook</a>
+      
+      <h2>Law Talk</h2>
+      <a href="http://crowdflower.com/general/privacy">Privacy Policy</a>
+      <a href="http://crowdflower.com/general/terms_of_service">Terms of Service</a>
+      <a href="http://www.crowdflower.com">&copy;2011 CrowdFlower</a>
+    </div>
+    <br class="clear">
+  </div>
+  
+    
+  <script src="http://rtlpxk9h.appmetrx.com/t/rtlpxk9h.js" type="text/javascript"></script> 
+   <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script> 
+   <script type="text/javascript"> 
+     document.addEvent('load', function() {
+       mktoMunchkin("890-IJH-613")
+     });
+   </script>
+   
+</body>
+</html>

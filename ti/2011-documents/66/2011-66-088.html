@@ -1,0 +1,383 @@
+<!doctype html>  
+ 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]--> 
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]--> 
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]--> 
+<head>
+		<base href="http://www.addictaddons.com/" />
+	
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+ 
+	<title>Addict Add-ons&nbsp;&bull;&nbsp;Formojo ReCAPTCHA Support</title>
+	<meta name="description" content="Add-ons for ExpressionEngine, MojoMotor, and PyroCMS."> 
+	<meta name="author" content="Addict Add-ons"> 
+	<meta name="language" content="en" />
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="shortcut icon" href="favicon.ico"> 
+	<link rel="apple-touch-icon" href="apple-touch-icon.png"> 
+	
+	<link href="http://www.addictaddons.com/addons/themes/addict/css/style.css?v=2" type="text/css" rel="stylesheet" />
+
+	<script type="text/javascript" src="http://www.addictaddons.com/addons/themes/addict/js/libs/modernizr-1.6.min.js"></script>
+
+	<script type="text/javascript" src="http://www.addictaddons.com/addons/themes/addict/js/libs/jquery-1.4.2.min.js"></script>
+
+	
+		
+	
+				<script type="text/javascript">
+					var APPPATH_URI = "/system/pyrocms/";
+					var BASE_URI = "/";
+				</script>
+		<link rel="canonical" href="http://www.addictaddons.com/formojo/docs/additional-functionality/recaptcha" />
+		<link rel="alternate" type="application/rss+xml" title="Addict Add-ons" href="http://www.addictaddons.com/blog/rss/all.rss" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		
+				<style type="text/css">
+					
+					
+				</style>
+				<script type="text/javascript">
+					
+					
+				</script>
+
+	<!-- BEGIN FOXYCART FILES -->
+	<!-- jQuery already loaded -->
+	<script src="http://cdn.foxycart.com/addict/foxycart.complete.2.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="http://static.foxycart.com/scripts/colorbox/1.3.9/style2/colorbox.css" type="text/css" media="screen" charset="utf-8" />
+	<!-- END FOXYCART FILES -->
+	
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21544944-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+</head>
+
+<body>
+
+	    <header> 
+ 
+    	<div class="push"> 
+    	
+    		<a href=""><img src="http://www.addictaddons.com/addons/themes/addict/img/elements/logo.gif" alt="Addict Add-ons Logo" id="logo" />
+</a>
+
+	    	<div id="header_menu">
+	    	
+	    		<ul id="header_main_nav">
+								<li><a href="mojoblocks">MojoBlocks</a></li>
+								<li><a href="panel">Panel</a></li>
+								<li><a href="pyrostreams">PyroStreams</a></li>
+				
+				</ul>
+
+	    		<ul id="header_sub_nav">
+	    		<li><a href="http://addictaddons.com/forums" target="" class=" first">Forums</a></li>
+&nbsp;&bull;&nbsp;<li><a href="http://addictaddons.com/about-us" target="" class="">About</a></li>
+&nbsp;&bull;&nbsp;<li><a href="http://addictaddons.com/open-source" target="" class="">Open Source</a></li>
+&nbsp;&bull;&nbsp;<li><a href="http://addictaddons.com/contact" target="" class=" last">Contact</a></li>
+
+	    		</ul>
+	    		
+	    		<div id="user_info">
+	
+		    								<a href="users/register">Register</a> | <a href="users/login">Login</a>
+					    		
+	    		<div id="fc_minicart">
+					<a href="http://addict.foxycart.com/cart?cart=view">
+						 | <span id="fc_quantity"> You have 0</span> item(s) in your cart</a>
+				</div>
+				
+				</div><!--#user_info-->
+
+	    	
+	    	</div>
+
+    	</div><!--push-->     	
+ 
+    </header>
+	
+	<div id="page_tabs">
+		
+		<ul id="addon_menu">
+			<li><a href="http://www.addictaddons.com/formojo" target="" class=" first">Overview</a></li>
+<li><a href="http://www.addictaddons.com/formojo/docs" target="" class="">Documentation</a></li>
+<li><a href="http://www.addictaddons.com/formojo/download" target="" class="">Download</a></li>
+<li><a href="http://www.addictaddons.com/formojo/buy" target="" class="do_action last">Buy - $15</a></li>
+
+	    </ul><!--addon_menu-->
+	
+	</div><!--page_tabs-->
+	
+	<div id="page_top"></div>
+
+	<div id="page_content">
+
+				
+		<div class="portion border" id="addon_header">
+		
+		  <div class="push text">
+		    
+		    <div class="six-col">
+		      
+				<h1>Formojo</h1>
+				<h2>Serious forms for MojoMotor.</h2>
+		      
+		    </div><!--six-col-->
+		    
+		    <div class="six-col">
+		      
+		     	<img src="http://www.addictaddons.com/uploads/files/mojomotor.gif" alt="MojoMotor" class="cms_addon_icon" />
+		      
+		    </div><!--six-col-->
+		    
+		  </div><!--push-->
+		  
+		</div><!--portion-->
+		
+		
+
+		<!-- Page layout: Addon Documentation -->
+<div class="portion border">
+
+<div class="four-col">
+            
+<div id="doc_nav">
+
+	<h3>Documentation</h3>
+
+	
+<ul>
+	<li>Getting Started
+	<ul>
+		<li><a href="http://www.addictaddons.com/formojo/docs/getting-started/installation">Installation</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/getting-started/change-log">Change Log</a></li>
+	</ul>
+	</li>
+	<li>Creating Forms
+	<ul>
+		<li><a href="http://www.addictaddons.com/formojo/docs/creating-forms/form-basics">Form Basics</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/creating-forms/input-parameters">Input Parameters</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/creating-forms/core-input-types">Core Input Types</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/creating-forms/multi-value-inputs">Multi-Value Inputs</a></li>
+	</ul>
+	</li>
+	<li>Additional Functionality
+	<ul>
+		<li><a href="http://www.addictaddons.com/formojo/docs/additional-functionality/email-notifications">Email Notifications</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/additional-functionality/recaptcha">reCAPTCHA</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/additional-functionality/setting-the-error-markup">Setting the Error Markup</a></li>
+	</ul>
+	</li>
+	<li>Input Helpers
+	<ul>
+		<li><a href="http://www.addictaddons.com/formojo/docs/input-helpers/input-helper-basics">Input Helper Basics</a></li>
+		<li><a href="http://www.addictaddons.com/formojo/docs/input-helpers/list-of-bundled-input-helpers">List of Bundled Input Helpers</a></li>
+	</ul>
+	</li>
+	<li>Samples
+	<ul>
+		<li><a href="http://www.addictaddons.com/formojo/docs/samples/bug-report-form">Bug Report Form</a></li>
+	</ul>
+	</li>
+</ul>
+
+
+</div><!--doc_nav-->
+                               
+</div>
+        
+<div class="eight-col text">
+        
+<div class="docs">
+  
+<h2 class="doc_title">reCAPTCHA</h2>
+
+<p>Rather than using a home-grown CAPTCHA system, Formojo offers support for the fantastic reCAPTCHA system. It is free, and really easy to implement.</p>
+
+<p>First, <a href="http://www.google.com/recaptcha" target="_blank">register your site with reCAPTCHA</a>, and grab your <strong>public</strong> and <strong>private</strong> keys. Then, set the following parameters:</p>
+
+<table cellpadding="0" cellspacing="0" class="docs_table"> 
+ <thead> 
+  <tr> 
+   <th width="100"> 
+    Parameter</th> 
+   <th width="100"> 
+    Default</th> 
+   <th> 
+    Description</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>use_recaptcha</td> 
+   <td>no</td> 
+   <td>Set this to "yes" to activate reCAPTCHA.</td> 
+  </tr> 
+  <tr> 
+   <td>public_key</td> 
+   <td></td> 
+   <td>Your public key.</td> 
+  </tr> 
+  <tr> 
+   <td>private_key</td> 
+   <td></td> 
+   <td>Your private key.</td> 
+  </tr> 
+  <tr> 
+   <td>theme</td> 
+   <td>red</td> 
+   <td>The reCAPTCHA theme to use. Values can be red, white, blackglass, and clean.</td> 
+  </tr> 
+</tbody> 
+</table> 
+
+<h3>Adding reCAPTCHA</h3>
+
+<p>After setting the above parameters, simply add in the following tag where you want reCAPTCHA to appear:</p>
+
+<pre><code>{recaptcha}</code></pre>
+
+<h3>Showing the reCAPTCHA error</h3>
+
+<p>Use the following error tag to show a reCAPTCHA error. It works the same as all other errors:</p>
+
+<pre><code>{recaptcha_error}</code></pre>
+  
+</div>       
+
+</div>
+
+</div>
+
+	
+		<div class="portion">
+		
+				    	
+		    	<div class="four-col">
+		    	<p><strong>Current Version: </strong> 1.0</p>
+		    	</div>
+		    	
+		    	<div class="four-col">
+		     	<strong>CMS:</strong> MojoMotor</p>
+		     	</div>
+		    	
+		
+		
+		</div><!--portion-->
+	
+	</div><!--page_content-->	
+
+	<div id="page_bottom"></div>
+
+	<footer>
+
+	<div class="portion" id="footer_info">
+
+	<div class="push">
+	
+		<div class="two-col">
+		
+			<p>&copy;2011 Addict Add-ons<br />All Rights Reserved</p>
+		
+		</div>
+
+		<div class="two-col">
+
+			<ul>
+				<li><a href="http://addictaddons.com/forums" target="" class=" first">Forums</a></li>
+<li><a href="http://addictaddons.com/about-us" target="" class="">About</a></li>
+<li><a href="http://addictaddons.com/open-source" target="" class="">Open Source</a></li>
+<li><a href="http://addictaddons.com/contact" target="" class=" last">Contact</a></li>
+
+			</ul>
+
+		</div>	
+
+		<div class="two-col">
+
+			<a href="http://github.com/addict-addons"><img src="http://www.addictaddons.com/addons/themes/addict/img/elements/github_footer_icon.gif" alt="Addict Add-ons on GitHub" id="github_footer_img" />
+</a>
+		
+			<a href="http://twitter.com/addictaddons"><img src="http://www.addictaddons.com/addons/themes/addict/img/elements/twitter_footer_icon.gif" alt="Addict Add-ons on Twitter" />
+</a>
+
+		</div>	
+
+		<div class="two-col">
+
+			<ul>
+				<li><strong>ExpressionEngine 2</strong></li>
+								<li><a href="panel">Panel</a></li>
+				
+			</ul>
+
+		</div>	
+
+		<div class="two-col">
+
+			<ul>
+				<li><strong>MojoMotor</strong></li>
+								<li><a href="formojo">Formojo</a></li>
+								<li><a href="mojoblocks">MojoBlocks</a></li>
+				
+			</ul>
+
+		</div>	
+
+		<div class="two-col">
+
+			<ul>
+				<li><strong>PyroCMS</strong></li>
+								<li><a href="pyrostreams">PyroStreams</a></li>
+				
+			</ul>
+
+		</div>	
+	
+	</div><!--.push-->
+	
+	</div><!--.portion-->
+
+	<div class="portion" id="sub_info">
+
+	<div class="push">
+	
+		<div class="two-col">
+
+			<p>Friends of Addict<br />Add-ons:</p>
+
+		</div>
+
+		<div class="four-col">
+
+			<p><strong><a href="http://mojomotorist.com/" target="_blank">The Motorist</a></strong></p>
+			
+			<p>The definitive listing of MojoMotor add-ons (free and commercial), MojoMotor news and tips. You can even try MojoMotor in a <a href="http://mojo.motori.st/" target="_blank">live demo</a>.</p>
+
+		</div>
+
+	</div><!--.push-->
+	
+	</div><!--.portion-->
+
+</footer>
+
+</body>
+
+</html>

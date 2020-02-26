@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- base_content.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Crowdsourcing solution: Amazon MTurk vs. Crowdflower - MetaOptimize Q+A</title>
+        <meta name="description" content="Suppose I am interested in using crowdsourcing to annotate my data. What are the main services for this, and what are the pros/cons of each? 
+Amazon&#39;s Mechanical Turk appears to be most popular. But recently I&#39;ve heard of CrowdFlower (which seems nice in that it includes Amazon MTurk&#39;s labor force a">
+        <meta name="keywords" content="crowdsourcing,amazon,mturk,crowdflower">
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        <meta name="google-site-verification" content="sONAb-6Xbtujk9JDogBGa8dEyUQy0EScWPeO5995TsA" />
+        
+        <link rel="shortcut icon" href="/upfiles/trainingexamples.ico" />
+        <link href="/m/default/media/style/style.css" rel="stylesheet" type="text/css" />
+        
+        
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">google.load("jquery", "1.4.2");</script>
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            var i18nLang = 'en';
+            var scriptUrl = '/'
+            var osqaSkin = 'default';
+
+            var messages = {
+                username: '',
+                confirm: "Are you sure?",
+                yes: "Yes",
+                no: "No",
+                message: "Message:",
+                cancel: "Cancel",
+                close: "Close",
+                ok: "Ok"
+            }
+        /* ]] */
+        </script>
+        <script type='text/javascript' src='/m/default/media/js/osqa.main.js'></script>
+        
+        <style type="text/css">
+            body { margin-top:2.4em; }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var element = $('#validate_email_alert');
+                element.click(function(){notify.close(true);})
+                notify.show();
+            });
+        </script>
+        
+        
+            <script type="text/javascript" src="http://cdn.topsy.com/topsy.js?init=topsyWidgetCreator">
+    var topsy_streaming = "on";
+    var topsy_nick = "turian";
+</script>
+        
+        
+        <link rel="canonical" href="http://metaoptimize.com/qa/qa/questions/1446/crowdsourcing-solution-amazon-mturk-vs-crowdflower" />
+        
+        <script type='text/javascript' src='/m/default/media/js/wmd/showdown.js'></script>
+        <script type='text/javascript' src='/m/default/media/js/wmd/wmd.js'></script>
+        <link rel="stylesheet" type="text/css" href="/m/default/media/js/wmd/wmd.css" />
+        
+
+        <script type="text/javascript">
+        $().ready(function(){
+            $("#nav_questions").attr('className',"on");
+            var answer_sort_tab = "votes";
+
+            if (answer_sort_tab) {
+                $("#" + answer_sort_tab).attr('className',"on");
+            }
+
+            $('#editor').TextAreaResizer();
+            
+            //toggle preview of editor
+            var display = true;
+            var txt = "[hide preview]";
+            $('#pre-collapse').text(txt);
+            $('#pre-collapse').bind('click', function(){
+                txt = display ? "[show preview]" : "[hide preview]";
+                display = !display;
+                $('#previewer').toggle();
+                $('#pre-collapse').text(txt);
+            });
+        });
+        </script>
+        <noscript>
+            <style>
+                .comment.not_top_scorer {
+                    display: block;
+                }
+                .comment-form-container {
+                    display: block;
+                }
+                .div.comment-tools {
+                    display: none;
+                }
+            </style>
+        </noscript>
+
+        <link rel="search" type="application/opensearchdescription+xml" href="/qa/opensearch.xml" title="MetaOptimize Q+A Search" />
+    </head>
+    <body>
+        <div class="notify" style="display:none">
+            
+                
+                    
+                          <p>Welcome!</p>
+                    
+                
+            
+            <a id="close-notify" onclick="notify.close(true)">&times;</a>
+        </div>
+        
+        <!-- template header.html -->
+
+
+	<div id="roof">
+		<div id="navBar">
+			<div id="top">
+			     <a href="/qa/account/signin/" >login</a>  <a href="/qa/learn-more/" >learn more</a> 
+			</div>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+				<td width="23%">
+					<div id="logo">
+						<a href="/qa/">
+							<img src="/upfiles/metaoptimize-questionanswer.png" title="back to home page" alt="MetaOptimize Q+A - machine learning, natural language processing, artificial intelligence, text analysis, information retrieval, search, data mining, statistical modeling, and data visualization logo"/>
+						</a>
+					</div>
+            	</td>
+				<td width="77%" valign="bottom">
+                <div class="nav">
+                    <a id="nav_questions" href="/qa/questions/" >questions</a><a id="nav_tags" href="/qa/tags/" >tags</a><a id="nav_users" href="/qa/users/" >users</a><a id="nav_badges" href="/qa/kudos/" >kudos</a><a id="nav_unanswered" href="/qa/questions/unanswered/" >unanswered</a>
+                    <div class="focus">
+                    <a id="nav_ask" href="/qa/questions/ask/" class="special">ask a question</a>
+                    </div>
+                </div>
+
+              </td>
+			  </tr>
+			</table>
+		</div>
+		<div id="searchBar">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="content">
+            <tr>
+                <td align="center" valign="middle">
+                    <form action="/qa/search/" method="get">
+                        <div>
+                            <input type="text" class="searchInput" value="" name="q" id="keywords" />
+                            <input type="submit" name="Submit" value="search" class="searchBtn" />
+                        </div>
+                        <div class="options">
+                            <input id="type-question" type="radio" value="question" name="t" 
+                                checked="checked" /><label for="type-question">questions</label>
+                            <input id="type-tag" type="radio" value="tag" name="t" /><label for="type-tag">tags</label>
+                            <input id="type-user" type="radio" value="user" name="t" /><label for="type-user">users</label>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+			</table>
+		</div>
+		
+        <div id="announcement">
+            
+        </div>
+        
+	</div>                 
+<!-- end template header.html -->
+
+        
+<div id="wrapper">
+    <div id="room">
+        <div id="CALeft">
+            
+<div class="headNormal">
+    <h1><a href="/qa/questions/1446/crowdsourcing-solution-amazon-mturk-vs-crowdflower">Crowdsourcing solution: Amazon MTurk vs. Crowdflower</a></h1>
+</div>
+<div id="main-body" class="">
+    <div id="askform">
+            <table style="width:100%;" id="question-table" >
+                <tr>
+                    <td style="width:30px;vertical-align:top">
+                        <div class="vote-buttons">
+                            
+
+<a id="post-1446-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/qa/vote/1446/up/" rel="nofollow"> </a>
+<div id="post-1446-score" class="post-score"
+    title="current number of votes">
+    7
+</div>
+<a id="post-1446-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/qa/vote/1446/down/" rel="nofollow"> </a>
+                            
+
+<a id="favorite-mark" title="mark/unmark this question as favorite (click again to cancel)"
+    class="ajax-command favorite-mark "
+    href="/qa/mark_favorite/1446/" rel="nofollow"> </a>
+<div id="favorite-count" class="favorite-count">
+   2
+</div>
+                            
+                        </div>
+                    </td>
+                    <td>
+                        <div id="item-right">
+                            <div class="question-body">
+                                <p>Suppose I am interested in using crowdsourcing to annotate my data. What are the main services for this, and what are the pros/cons of each? </p>
+<p>Amazon's Mechanical Turk appears to be most popular. But recently I've heard of CrowdFlower (which seems nice in that it includes Amazon MTurk's labor force and also provides more visualization and feedback of results). In your experience/opinion, which is more recommended? Or are there other even better services? I appreciate any tips on this!</p>
+                            </div>
+                            <div id="question-tags" class="tags-container tags">
+                                
+                                    <a href="/qa/tags/crowdsourcing/" class="post-tag"
+                                        title="see questions tagged 'crowdsourcing'" rel="tag">crowdsourcing</a>
+                                
+                                    <a href="/qa/tags/amazon/" class="post-tag"
+                                        title="see questions tagged 'amazon'" rel="tag">amazon</a>
+                                
+                                    <a href="/qa/tags/mturk/" class="post-tag"
+                                        title="see questions tagged 'mturk'" rel="tag">mturk</a>
+                                
+                                    <a href="/qa/tags/crowdflower/" class="post-tag"
+                                        title="see questions tagged 'crowdflower'" rel="tag">crowdflower</a>
+                                
+                            </div>
+                            <div id="question-controls" class="post-controls">                            
+                                
+
+                                
+
+                            </div>
+                            <div class="post-update-info-container">
+                                    
+<div class='post-update-info'>
+    <p style="line-height:12px;">
+        asked
+        <strong>Jul 23 '10 at 09:33</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/094b5b24a4edbd71b5fc581a9f8c889f?s=32&amp;d=identicon&amp;r=PG" alt="Kevin%20Duh's gravatar image" />
+    <p><a href="/qa/users/250/kevin-duh/">Kevin Duh</a><br/>
+    <span class="score" title="181 karma">181</span><span title="2 kudos"><span class="badge1">&#9679;</span><span class="badgecount">2</span></span><span title="4 kudos"><span class="silver">&#9679;</span><span class="badgecount">4</span></span><span title="8 kudos"><span class="bronze">&#9679;</span><span class="badgecount">8</span></span></p>
+</div>
+
+
+                            </div>
+                            
+
+
+<div class="comments-container" id="comments-container-1446">
+    
+</div>
+<div id="comment-tools-1446" class="comment-tools">
+    
+    
+</div>
+<div id="comment-1446-form-container" class="comment-form-container">
+    
+</div>
+    
+                        </div>
+                        
+                    </td>
+                </tr>
+            </table>
+            
+            
+                <hr/>
+                <div class="tabBar">
+                    <a name="sort-top"></a>
+                    <div class="headQuestions">
+                    
+                    4 Answers:
+                    
+                    </div>
+                    <div class="tabsA">
+                         <a id="oldest" href="/qa/questions/1446/crowdsourcing-solution-amazon-mturk-vs-crowdflower?sort=oldest#sort-top"
+                            title="oldest answers will be shown first">oldest</a>
+                        <a id="latest" href="/qa/questions/1446/crowdsourcing-solution-amazon-mturk-vs-crowdflower?sort=latest#sort-top"
+                            title="newest answers will be shown first">newest</a>
+                        <a id="votes" href="/qa/questions/1446/crowdsourcing-solution-amazon-mturk-vs-crowdflower?sort=votes#sort-top" 
+                            title="most voted answers will be shown first">most voted</a>   
+                    </div>
+                </div>
+                <!-- paginator.html -->
+<div class="paginator"></div>
+<!-- end paginator.html -->
+
+  
+                
+                    <a name="1525"></a>
+                    <div id="answer-container-1525" class="answer   ">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-1525-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/qa/vote/1525/up/" rel="nofollow"> </a>
+<div id="post-1525-score" class="post-score"
+    title="current number of votes">
+    4
+</div>
+<a id="post-1525-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/qa/vote/1525/down/" rel="nofollow"> </a>
+                                        
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I have used AMT extensively and only started using Crowdflower recently.  That being said, I think that Crowdflower is better.  It allows you to post jobs on many different sites (including AMT).  The real selling point for Crowdflower is the integrated ability for incorporating "gold" answers (questions where you know the answer).  It uses the gold answers to rate users, give feedback to users, and to identify problems with questions/instructions.  Of course, you can do the same with AMT with a fancy iFrame application on your own server, but that's a pain (at least the way we did it).</p>
+<p>Beyond that, the differences are trivial (both can handle the same CSV IO scheme).  Crowdflower has a slightly nicer interface and AMT has a better command line API.  Crowdflower also has a little higher overhead, but this is balanced by nice money saving features like automatically pausing your jobs if workers aren't getting any gold answers right.</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class='post-update-info'>
+    <p style="line-height:12px;">
+        answered
+        <strong>Jul 26 '10 at 20:24</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/af069b3a0ad8e75468c8416d31100f39?s=32&amp;d=identicon&amp;r=PG" alt="Jordan%20BoydGraber's gravatar image" />
+    <p><a href="/qa/users/771/jordan-boydgraber/">Jordan BoydGraber</a><br/>
+    <span class="score" title="61 karma">61</span><span title="1 kudos"><span class="silver">&#9679;</span><span class="badgecount">1</span></span><span title="2 kudos"><span class="bronze">&#9679;</span><span class="badgecount">2</span></span></p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-1525">
+    
+        <a name="1526"></a>
+        <div class="comment" id="comment-1526">
+            <div id="post-1526-score" class="comment-score"></div>
+            <div class="comment-text"><p>Thanks! Very helpful comparison!</p></div>
+            <div class="comment-info" id="comment-1526-info">
+                
+                
+                
+                <span class="comment-age">(Jul 26 '10 at 21:26)</span>
+                <a class="comment-user userinfo" href="/qa/users/250/kevin-duh/">Kevin Duh</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-1525" class="comment-tools">
+    
+    
+</div>
+<div id="comment-1525-form-container" class="comment-form-container">
+    
+</div>
+    
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <a name="1538"></a>
+                    <div id="answer-container-1538" class="answer   ">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-1538-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/qa/vote/1538/up/" rel="nofollow"> </a>
+<div id="post-1538-score" class="post-score"
+    title="current number of votes">
+    2
+</div>
+<a id="post-1538-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/qa/vote/1538/down/" rel="nofollow"> </a>
+                                        
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I have started using MTurk to do some NLP tasks. One of the advantages of MTurk is the API and <a href="http://groups.csail.mit.edu/uid/turkit/">MIT Turkit</a> which allows you to do quality assurance recursively and as a part of your project. Alternatively you can integrate their API with your own codes (they have a Python, JAVA wrapper and also a command line tool)</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class='post-update-info'>
+    <p style="line-height:12px;">
+        answered
+        <strong>Jul 27 '10 at 07:48</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/46c83b6cafe5077dfdc0cd6b818e7e4f?s=32&amp;d=identicon&amp;r=PG" alt="Mark%20Alen's gravatar image" />
+    <p><a href="/qa/users/312/mark-alen/">Mark Alen</a><br/>
+    <span class="score" title="923 karma">923</span><span title="14 kudos"><span class="badge1">&#9679;</span><span class="badgecount">14</span></span><span title="25 kudos"><span class="silver">&#9679;</span><span class="badgecount">25</span></span><span title="33 kudos"><span class="bronze">&#9679;</span><span class="badgecount">33</span></span></p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-1538">
+    
+</div>
+<div id="comment-tools-1538" class="comment-tools">
+    
+    
+</div>
+<div id="comment-1538-form-container" class="comment-form-container">
+    
+</div>
+    
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <a name="1498"></a>
+                    <div id="answer-container-1498" class="answer   ">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-1498-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/qa/vote/1498/up/" rel="nofollow"> </a>
+<div id="post-1498-score" class="post-score"
+    title="current number of votes">
+    1
+</div>
+<a id="post-1498-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/qa/vote/1498/down/" rel="nofollow"> </a>
+                                        
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I used MTurk for a collaborative drawing project, I feel once you get past understanding the system, it works rather well. Be sure to be overly descriptive, possibly, in the instructions. People will take longer reading the first time, but the quality overall is worth it (you can put a notice like "if this is your first time with this HIT, read this link..." or some such). I haven't seen many others, only in passing, and this possibly because MTurk has the highest viewership. </p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class='post-update-info'>
+    <p style="line-height:12px;">
+        answered
+        <strong>Jul 26 '10 at 01:00</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/ab8c5425b3a3a1ae62efec60c18eec0d?s=32&amp;d=identicon&amp;r=PG" alt="th0ma5's gravatar image" />
+    <p><a href="/qa/users/489/th0ma5/">th0ma5</a><br/>
+    <span class="score" title="46 karma">46</span><span title="3 kudos"><span class="bronze">&#9679;</span><span class="badgecount">3</span></span></p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-1498">
+    
+</div>
+<div id="comment-tools-1498" class="comment-tools">
+    
+    
+</div>
+<div id="comment-1498-form-container" class="comment-form-container">
+    
+</div>
+    
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <a name="1496"></a>
+                    <div id="answer-container-1496" class="answer   ">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-1496-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/qa/vote/1496/up/" rel="nofollow"> </a>
+<div id="post-1496-score" class="post-score"
+    title="current number of votes">
+    0
+</div>
+<a id="post-1496-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/qa/vote/1496/down/" rel="nofollow"> </a>
+                                        
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I've not posted jobs to either, I have undertaken some work in MTurk to figure out the process (and earned $0.08 for 30 mins work). One of the two jobs I did was posted by CrowdFlower - they were looking for ideas on how people could use crowdsourcing (I kid you not).</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class='post-update-info'>
+    <p style="line-height:12px;">
+        answered
+        <strong>Jul 25 '10 at 18:09</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/bd45e4c2fdab9aee2323e0350f4476e4?s=32&amp;d=identicon&amp;r=PG" alt="Ian%20Ozsvald's gravatar image" />
+    <p><a href="/qa/users/226/ian-ozsvald/">Ian Ozsvald</a><br/>
+    <span class="score" title="46 karma">46</span><span title="1 kudos"><span class="badge1">&#9679;</span><span class="badgecount">1</span></span><span title="1 kudos"><span class="silver">&#9679;</span><span class="badgecount">1</span></span><span title="5 kudos"><span class="bronze">&#9679;</span><span class="badgecount">5</span></span></p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-1496">
+    
+</div>
+<div id="comment-tools-1496" class="comment-tools">
+    
+    
+</div>
+<div id="comment-1496-form-container" class="comment-form-container">
+    
+</div>
+    
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                <div class="paginator-container-left">
+                    <!-- paginator.html -->
+<div class="paginator"></div>
+<!-- end paginator.html -->
+
+                </div>
+            
+        <form id="fmanswer" action="/qa/questions/1446/answer/" method="post">
+            <div style="clear:both">
+            </div>
+            
+            
+                <div style="padding:10px 0 0 0;">
+                    <div class="headNormal">
+                        
+                            Your answer
+                        
+                    </div>
+                </div>
+                
+
+                <div id="description" class="" >
+                    <div id="wmd-button-bar" class="wmd-panel"></div>
+                    <textarea rows="10" cols="40" name="text" id="editor"></textarea>
+                    <div class="preview-toggle">
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <span id="pre-collapse" 
+                                        title="Toggle the real time Markdown editor preview">
+                                            toggle preview
+                                    </span>
+                                </td>
+                                
+                                <td style="text-align:right;">
+                                    <input type="checkbox" name="wiki" id="id_wiki" /> 
+                                    <span style="font-weight:normal;cursor:help" 
+                                        title="if you choose community wiki option, the question and answer do not generate points and name of author will not be shown">
+                                            <label for="id_wiki">community wiki</label> 
+                                    </span>
+                                </td>
+                                
+                            </tr>
+                        
+                        </table>  
+                    </div>
+                    
+                    <div id="previewer" class="wmd-preview"></div>                    
+                </div>
+                <p><span class="form-error"></span></p>
+                <input type="submit" 
+                    
+                        value="Login/Signup to Post Your Answer" 
+                    
+                    class="submit" style="float:left"/>
+            
+        </form>
+    </div>
+</div>
+
+
+        </div>
+        <div id="CARight">
+            
+<div class="boxC" id="subscription_box">
+    
+
+<h3 class="subtitle">Subscription:</h3>
+
+    <p>Once you sign in you will be able to subscribe for any updates here</p>
+
+
+</div>
+
+
+<div class="boxC">
+    <p>
+		Tags:
+    </p>
+    <p class="tags" >
+        
+        	<a href="/qa/tags/amazon/" 
+			title="see questions tagged'amazon'using tags" 
+			rel="tag">amazon</a> <span class="tag-number">&#215;3</span><br/>
+        
+        	<a href="/qa/tags/crowdflower/" 
+			title="see questions tagged'crowdflower'using tags" 
+			rel="tag">crowdflower</a> <span class="tag-number">&#215;2</span><br/>
+        
+        	<a href="/qa/tags/crowdsourcing/" 
+			title="see questions tagged'crowdsourcing'using tags" 
+			rel="tag">crowdsourcing</a> <span class="tag-number">&#215;2</span><br/>
+        
+        	<a href="/qa/tags/mturk/" 
+			title="see questions tagged'mturk'using tags" 
+			rel="tag">mturk</a> <span class="tag-number">&#215;1</span><br/>
+        
+    </p>
+    <p>
+        Asked: <strong title="2010-07-23 09:33:52.109955">Jul 23 '10 at 09:33</strong>
+    </p>
+    <p> 
+     	Seen: <strong>935 times</strong>
+    </p>
+    <p> 
+        Last updated: <strong title="2010-07-27 07:48:29.940055">Jul 27 '10 at 07:48</strong>
+    </p>
+</div>
+
+
+<div class="boxC">
+    <h3 class="subtitle">Related questions</h3>
+    <div class="questions-related">
+
+        
+        <p>
+            <a href="/qa/questions/1785/crowdflower-for-nlp-data-what-format">CrowdFlower for NLP data: What format?</a>
+        </p>
+        
+        <p>
+            <a href="/qa/questions/2672/clojurecrane-for-elastic-mapreduce">Clojure/Crane for Elastic MapReduce?</a>
+        </p>
+        
+
+    </div>
+</div>
+
+
+
+        </div>
+        <div id="tail" style="clear:both;">
+            
+            
+        </div>
+    </div>
+    <div class="spacer3"></div>
+</div>
+
+        
+            <div id="ground">
+                
+
+  <div id="aboveground">
+  </div>
+
+<div>
+    <div class="footerLinks" >
+         <a href="/qa/learn-more/" >learn more</a> <span class="link-separator"> |</span> <a href="/qa/privacy/" >privacy</a> <span class="link-separator"> |</span> <a href="/qa/contact/?next=/qa/questions/1446/crowdsourcing-solution-amazon-mturk-vs-crowdflower" >contact</a> 
+    </div>
+  <p>
+     <a href="http://osqa.net" target="_blank" title="OSQA Development Build (SVN-unknown)">
+        powered by OSQA
+     </a>
+  </p>
+</div>
+ <div id="licenseLogo">
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+            <img src="/m/default/media/images/cc-wiki.png" title="Creative Commons: Attribution - Share Alike" alt="cc-wiki" width="50" height="68" />
+  </a>
+ </div>
+  User submitted content is under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons: Attribution - Share Alike</a>; Other things copyright (C) 2010, MetaOptimize LLC.
+
+  <div id="belowground">
+  </div>
+
+
+            </div>
+        
+        
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-8035005-1']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        
+    </body>
+
+            <script language=javascript src="/js/awstats_misc_tracker.js"></script> 
+</html>
+<!-- end template base_content.html -->

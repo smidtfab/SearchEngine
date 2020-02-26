@@ -1,0 +1,623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta id="metaLanguage" http-equiv="Content-Language" content="en" />
+<title>PHP - What Is Inn The ReCaptcha Script The &#39;is_valid&#39; Text? Is It An Array Key?</a>- AnswerLeaks</title>
+<meta name="keywords" content="What is inn the reCaptcha script the &#39;is_valid&#39; text? Is it an array key?</a>" />
+<meta name="description" content="What is inn the reCaptcha script the &#39;is_valid&#39; text? Is it an array key?</a>. Please don't mind my use of English." /><link rel="Stylesheet" type="text/css" href="http://answerleaks.com/answerleaks.css" />       
+<link rel="Stylesheet" type="text/css" href="http://answerleaks.com/Prettify.css" />
+    <script language="javascript" type="text/javascript" src="http://answerleaks.com/Prettify.js"></script>
+</head><body onload='prettyPrint()'>
+<basefont size="2" color="black" />
+   
+   <div id="header">
+        
+
+<div id="headerContent">
+    <div id="logo">
+        <a href="http://answerleaks.com/" title="Answer Quest Ends Here">
+	    <img src='http://answerleaks.com/logo.png' alt='AnswerLeaks' />	
+        </a>
+        <h3 id="logoTitle">Answer Quest Ends Here</h3>
+    </div>
+    <div id="headerRight">
+    	
+<form action="http://www.google.com/cse" id="cse-search-box" target="_blank">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-0599709616239589:1nhxab-jio4" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+    
+    <div id="nav"><a href="http://answerleaks.com/questions/it/0/">Questions</a> | <a href="http://answerleaks.com/tags/0/">Tags</a> | <a title="Give us your feedback, good or bad!" style="color: Red;" href="mailto:answerleaks@gmail.com?subject=[Insert%20Title%20Here]&amp;body=[Insert%20Feedback%20Here]">Contact Us</a> | <a href='http://answerleaks.com/About/'> About Us </a> | <a href='http://twitter.com/answerleaks'> Follow us on Twitter </a></div>
+AnswerLeaks.com is now a certified domain by GoDaddy. Check the Domain Seal.
+    </div>
+</div>
+</div>
+   
+    <div id="content">
+        <div id="mainContent">
+            
+    <div id="questionTemplate">
+
+
+<h2 id="questionTitle">PHP - What Is Inn The ReCaptcha Script The &#39;is_valid&#39; Text? Is It An Array Key?</a></h2><div id="questionArea">
+	
+    <div id="fullQuestion">
+        <div id="fullQuestionBody"><p>Please don't mind my use of English.
+In the reCaptcha script you'll find this piece of code:</p>
+
+<pre class='prettyprint'><code>$recaptcha_response->is_valid = false;
+</code></pre>
+
+<p>I wonder what the <code>-></code> does/means.
+Is it an alternative way to assign an key (with a value) to a string?</p></div>
+    </div>
+
+    <div id="questionCredit">This question and answers originated from <a id="hypQuestionCredit" rel="" href="http://stackoverflow.com/questions/4683745" target="_blank">stackoverflow.com</a></div>
+    <div id="questionUserCredit">Question by <a id="hypQuestionAuthor" rel="me" href="http://stackoverflow.com/users/305423/Ben" target="_blank">Ben</a> </div>
+
+</div>
+<div id="answerHeader">
+    <table style="width: 100%;">
+    <tbody><tr>
+    <td style="width: 260px;"><div id="answerCaption" style="top: -6px;"><h4>Other Answers</h4></div></td>
+    </tr>
+    </tbody></table>
+</div>
+ 
+<div id="fullAnswer">
+     		
+    <h4>Answer >> Re: What Is Inn The ReCaptcha Script The &#39;is_valid&#39; Text? Is It An Array Key?</a></h4><br/><div id="fullAnswerBody"><p>That's actually php's object notation, you should see the object <code>$recaptcha_response</code> declared somewhere else in the script.  It is calling the <code>is_valid</code> method of that object/class. </p>
+</div><hr/>
+
+		
+    <h4>Answer >> Re: What Is Inn The ReCaptcha Script The &#39;is_valid&#39; Text? Is It An Array Key?</a></h4><br/><div id="fullAnswerBody"><p><code>$recaptcha_response</code> is an instance of a object.</p>
+
+<p><code>is_valid</code> is a public property of the object.</p>
+
+<p><code>$recaptcha_response-> = false</code> assign a boolean values (false) at the property <code>is_valid</code>.</p>
+
+<p>Later you can use it like 
+<code>if ($recaptcha_response->is_valid)</code>//Do something</p>
+</div><hr/>
+
+</div>
+    <div id="questionTopics">
+        <div id="questionTopicsTitle">Related Tags<span id="lblQuestionTopics">&nbsp;&nbsp;
+		<a class="topicBoxSmall" href="/tag/php/0/">php</a>&nbsp;&nbsp;<a class="topicBoxSmall" href="/tag/recaptcha/0/">recaptcha</a>&nbsp;&nbsp;		</span></div>
+    </div>
+
+    <div id="relatedQuestionsTitle">Related Questions about "What Is Inn The ReCaptcha Script The &#39;is_valid&#39; Text? Is It An Array Key?</a>"</div>
+	
+    <div id="relatedQuestions"><ul>
+<li><div><h2><a href="#ReCAPTCHA - JSON Form">ReCAPTCHA - JSON Form</a></h2><li><div><h2><a href="#Django : Recaptcha : Error In Firefox Works In IE &amp; Chrome : RecaptchaState Error">Django : Recaptcha : Error In Firefox Works In IE &amp; Chrome : RecaptchaState Error</a></h2><li><div><h2><a href="#ReCaptcha: Hooking To TextBox&#39;s OnKeyDown From Script">ReCaptcha: Hooking To TextBox&#39;s OnKeyDown From Script</a></h2><li><div><h2><a href="#How To Use Python Plugin ReCaptcha Client For Validation?">How To Use Python Plugin ReCaptcha Client For Validation?</a></h2><li><div><h2><a href="#Getting ReCaptcha To Work Over Ajax With JQuery">Getting ReCaptcha To Work Over Ajax With JQuery</a></h2><li><div><h2><a href="#ReCAPTCHA Ajax API + Custom Theme Not Working">ReCAPTCHA Ajax API + Custom Theme Not Working</a></h2><li><div><h2><a href="#ReCaptcha Values Not Appearing In $_POST">ReCaptcha Values Not Appearing In $_POST</a></h2><li><div><h2><a href="#Is ReCAPTCHA&#39;s Data Used To Improve Any OCR Software?">Is ReCAPTCHA&#39;s Data Used To Improve Any OCR Software?</a></h2><li><div><h2><a href="#Zend Framework And ReCaptcha">Zend Framework And ReCaptcha</a></h2><li><div><h2><a href="#Recaptcha Login Page">Recaptcha Login Page</a></h2><li><div><h2><a href="#About Recaptcha Validation">About Recaptcha Validation</a></h2><li><div><h2><a href="#[PHP/JavaScript]: How To Refresh A Captcha?">[PHP/JavaScript]: How To Refresh A Captcha?</a></h2><li><div><h2><a href="#PHP JQuery Validation">PHP JQuery Validation</a></h2><li><div><h2><a href="#Should A Honeypot Captcha Be More Complicated Than &#39;display: None;&#39;?">Should A Honeypot Captcha Be More Complicated Than &#39;display: None;&#39;?</a></h2><li><div><h2><a href="#JQuery Form Validation Problem.">JQuery Form Validation Problem.</a></h2><li><div><h2><a href="#Recaptcha - Form Customization">Recaptcha - Form Customization</a></h2><li><div><h2><a href="#Testing ReCaptcha Dynamically?">Testing ReCaptcha Dynamically?</a></h2><li><div><h2><a href="#What&#39;s The Best Way To Present An E-mail Address On My Website Without Being Attacked By Spammers?">What&#39;s The Best Way To Present An E-mail Address On My Website Without Being Attacked By Spammers?</a></h2><li><div><h2><a href="#Captcha Non PHP">Captcha Non PHP</a></h2><br/><li><div><h2><a name="ReCAPTCHA - JSON Form" href="http://answerleaks.com/question/it/5046418/recaptcha-json-form"><b>reCAPTCHA</b> - JSON Form</a></h2>I have a form which is validated via jQuery, then ajaxed to a php file to send the email.
+
+However, due to a lot of spamming I now require a reCAPTCHA in place. I have registered with http://www.google.com/recaptcha.
+
+Now I have no clue how to implement it. I which to be able to ajax to a php file and get the response of either "correct" or "incorrect" then display the appropriate message via jQuery.
+
+So far I have managed to get the reCAPTCHA displaying by using this code:
+
+
+
+
+
+
+
+
+
+
+
+
+Now I just do not know where to go from here. I am very new to all this reCAPTCHA stuff so please be specific with me. Thanks a lot!?</div><br/></li><li><div><h2><a name="Django : Recaptcha : Error In Firefox Works In IE &amp; Chrome : RecaptchaState Error" href="http://answerleaks.com/question/it/2211754/django-recaptcha-error-in-firefox-works-in-ie-amp-chrome-recaptchastate-error">Django : <b>recaptcha</b> : Error In Firefox Works In IE &amp; Chrome : <b>Recaptcha</b>State Error</a></h2>I have integrated Recaptcha with dJango.
+dJango Snippet - Recaptcha
+
+The view which is showing the page is -
+from baseapp.recaptcha import captcha    
+
+def showHome(request):    
+    if(request.user.is_authenticated()):    
+        tempEmail = request.session.get('id')    
+        return render_to_response('logreg/login-register.html',   {'emailFromForm':tempEmail}, context_instance=RequestContext(request));    
+    else:    
+        request.session.set_test_cookie()    
+        form = RegistrationForm()    
+        loginForm = LoginForm()    
+        html_captcha = captcha.displayhtml(settings.RECAPTCHA_PUB_KEY)    
+        print "Captcha HTML is : %s" % html_captcha    
+        return render_to_response('logreg/login-register.html', {'form': form, 'loginForm':loginForm, 'html_captcha':html_captcha})    `
+
+
+Here is the code in html -
+
+    
+  All form fields are required.    
+  {% if error %}    
+  {{ error }}    
+  {% endif %}    
+      
+      {{ form.as_p }}    
+      {{ html_captcha }}    
+      
+
+
+
+It works great in IE & Chrome, but firefox shows me an exception at line 451 in recaptcha.
+Here is the code at that line var $ST = RecaptchaState;
+
+Any thoughts are appreciated !
+
+Note : Firefox version - 3.6; IE - 8; Chrome - 4.0
+?</div><br/></li><li><div><h2><a name="ReCaptcha: Hooking To TextBox&#39;s OnKeyDown From Script" href="http://answerleaks.com/question/it/4869797/recaptcha-hooking-to-textbox-39-s-onkeydown-from-script"><b>ReCaptcha</b>: Hooking To TextBox&#39;s OnKeyDown From Script</a></h2>Hello,
+
+I'm working with ReCaptcha, ASP.NET and Gaia Ajax. It took me some time to use the ReCaptcha AJAX APIs combined with Gaia to retrieve the contents of the recaptcha_response_field text box in AJAX postback through a patch.
+
+This was just to introduce you to the subject. Now I would like to apply another patch to ReCaptcha, without reimplementing it (a comprehensive open source library that works better than current ASP.NET implementation would be desirable, but I have no time for that): this question explains which.
+
+Basically,
+
+I need, after calling ReCaptcha.Create(), which renders the CAPTCHA during an AJAX postback, to hook to the OnKeyDown event of recaptcha_response_field and inject my Javascript snippet that prevents the form from being submitted.
+
+You understand that since I don't render the  tag (I don't have control over it), I must hook from the external.
+
+In general,
+
+I think you may actually answer the general question: "how to set JavaScript event handlers programmatically?" because this surely applies to all classes of events.
+
+Thank you?</div><br/></li><li><div><h2><a name="How To Use Python Plugin ReCaptcha Client For Validation?" href="http://answerleaks.com/question/it/1440239/how-to-use-python-plugin-recaptcha-client-for-validation">How To Use Python Plugin <b>reCaptcha</b> Client For Validation?</a></h2>Hi all,
+
+I want to make a captcha validation.
+
+I get the key from the recaptcha website and already succeed to put the public key to load the webpage with the challenge.
+
+
+
+
+
+   
+   
+   
+   
+
+
+
+I download the reCaptcha Python plugin but I can not find any documentation on how to use it. 
+
+Does anyone have any idea on how to use this Python plugin? recaptcha-client-1.0.4.tar.gz (md5)
+?</div><br/></li><li><div><h2><a name="Getting ReCaptcha To Work Over Ajax With JQuery" href="http://answerleaks.com/question/it/5468220/getting-recaptcha-to-work-over-ajax-with-jquery">Getting <b>reCaptcha</b> To Work Over Ajax With JQuery</a></h2>I have a form that validates and posts with Ajax, or more specifically, with $.post().
+
+At one point, there is a reCaptcha. This form worked fine when I did not use $.post() but posted the old-fashioned way (with a page refresh), just for reference.
+
+Converting the form requires that I changed all $_POST's to $_REQUEST's. However, this doesn't remedy the reCaptcha problem, so I've left that intact. Here is the reCaptcha PHP code inside registerPost.php:
+
+  require_once('recaptchalib.php');
+  $privatekey = "dropbeatsnotbombs";
+  $resp = recaptcha_check_answer ($privatekey,
+                            $_SERVER["REMOTE_ADDR"],
+                            $_POST["recaptcha_challenge_field"],
+                            $_POST["recaptcha_response_field"]);
+
+ if (!$resp->is_valid) {
+// What happens when the CAPTCHA was entered incorrectly
+echo "Error";
+}
+else {
+   //post form
+}
+
+
+Here's the jQuery handling the form posting:
+
+$.post('php/registerPost.php', $('#registerPost').serialize(), function(data){
+                if(data == "Error")
+                {
+                    $('#caErr').show();
+                }
+                else
+                {
+                    window.location.replace("//main page");
+                }
+            });
+
+
+
+  Note: the reCaptcha seems to return as false, since the form will not submit when everything is filled in correctly.
+
+
+What I want to do is show an error if the reCaptcha was entered wrong, and post if it was entered right, all asynchronously. 
+
+Any help??</div><br/></li><li><div><h2><a name="ReCAPTCHA Ajax API + Custom Theme Not Working" href="http://answerleaks.com/question/it/2458187/recaptcha-ajax-api-custom-theme-not-working"><b>reCAPTCHA</b> Ajax API + Custom Theme Not Working</a></h2>I can't see where I'm going wrong. I've tried everything I could think of, reCAPTCHA is just not working with the Ajax API. Here's what my code looks like:
+
+
+
+
+
+$(document).ready(function() {
+    Recaptcha.create("my key here", "recaptcha_widget", {
+        "theme": "custom",
+        "lang": "en",
+        "callback": function() { console.log("callback"); } // this doesn't get called
+    });
+});
+
+
+
+    
+    
+        get another &bull;
+        switch to audio
+        switch to image &bull;
+        help
+    
+    Type the words
+    
+
+
+?</div><br/></li><li><div><h2><a name="ReCaptcha Values Not Appearing In $_POST" href="http://answerleaks.com/question/it/902627/recaptcha-values-not-appearing-in-post"><b>reCaptcha</b> Values Not Appearing In $_POST</a></h2>Hey everyone,
+
+I am trying to use reCaptcha on my site, and recaptcha_challenge_field, and recaptcha_response_field are not being added to the $_POST array on the backend - but the rest of the variables from my form are.
+
+Any ideas? I have double checked the public/private keys.
+
+Here is the generated HTML:
+
+ 
+    
+      Name:
+
+      
+        
+      
+    
+    
+      Email:
+      
+        
+
+      
+    
+    
+      Message:
+      
+        
+      
+    
+
+    
+      Are you human?
+      
+        
+
+    
+    	
+    	
+    	
+    
+      
+    
+
+    
+      
+      &nbsp;
+      
+      
+        
+      
+    
+  
+
+
+Here is my handler so far:
+
+print_r($_POST);
+
+
+require_once('inc/recaptchalib.php');
+$privatekey = "MY_PRIVATE_KEY";
+$resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
+
+print_r($resp);
+
+if (!$resp->is_valid) {
+  die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+       "(reCAPTCHA said: " . $resp->error . ")");
+}
+
+
+Any help would be really appreciated.
+Thank you,
+?</div><br/></li><li><div><h2><a name="Is ReCAPTCHA&#39;s Data Used To Improve Any OCR Software?" href="http://answerleaks.com/question/it/5525902/is-recaptcha-39-s-data-used-to-improve-any-ocr-software">Is <b>reCAPTCHA</b>&#39;s Data Used To Improve Any OCR Software?</a></h2>reCAPTCHA is used in lots of places and no doubt has a massive amount of data of 'bad looking image' to 'word'. This sort of data could be used to make really good OCR software. So is there any OCR software that is using this data??</div><br/></li><li><div><h2><a name="Zend Framework And ReCaptcha" href="http://answerleaks.com/question/it/1890622/zend-framework-and-recaptcha">Zend Framework And <b>ReCaptcha</b></a></h2>I need to insert ReCaptcha in a form in my ZF application. I'm trying to follow the official documentation, but the ReCaptcha service return me always the error 'incorrect-captcha-sol'.
+The code I'm using:
+
+(In the form)
+
+// configure the captcha service
+        $privateKey = 'XXXXXXXXXXXXXXXXXXX';
+        $publicKey = 'YYYYYYYYYYYYYYYYYYYY';
+        $recaptcha = new Zend_Service_ReCaptcha($publicKey, $privateKey);
+
+    // create the captcha control
+    $captcha = new Zend_Form_Element_Captcha('captcha',
+        array('captcha'        => 'ReCaptcha',
+    	'captchaOptions' => array('captcha' => 'ReCaptcha', 'service' => $recaptcha)));
+
+
+$this->addElement($captcha);
+
+(In the controller)
+
+$recaptcha = new Zend_Service_ReCaptcha('YYYYYYYYYYYYY', 'XXXXXXXXXXXXXXX');
+
+$result = $recaptcha->verify($this->_getParam('recaptcha_challenge_field'),
+                                             $this->_getParam('recaptcha_response_field'));
+
+            if (!$result->isValid()) {
+                //ReCaptcha validation error
+           }
+
+
+Any help please?
+?</div><br/></li><li><div><h2><a name="Recaptcha Login Page" href="http://answerleaks.com/question/it/4832102/recaptcha-login-page"><b>Recaptcha</b> Login Page</a></h2>I would like to know how to merge these two Javascript ajax scripts.  So that my login info will check my DB for user name and password match as well as recaptcha will work. I have very little javascript experience. Thank you. Two different PHP pages that need to work for each i think because these both echo the answer. 
+
+Login script.
+
+
+$(document).ready(function()
+{
+    $("#login_form").submit(function()
+    {
+        //remove all the class add the messagebox classes and start fading
+        $("#msgbox").removeClass().addClass('messagebox').text('Validating....').fadeIn(1000);
+        //check the username exists or not from ajax
+    $.post("ajax_login.php",{ user_name:$('#username').val(),password:$('#password').val(),rand:Math.random() } ,function(data)
+        {
+          if(data=='yes') //if correct login detail
+          {
+            $("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
+            { 
+              //add message and change the class of the box and start fading
+              $(this).html('Logging in.....').addClass('messageboxok').fadeTo(900,1,
+              function()
+              { 
+                 //redirect to secure page
+                 document.location='edujob.php';
+              });
+            });
+          }
+          else 
+          {
+            $("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+            { 
+              //add message and change the class of the box and start fading
+              $(this).html('incorrect').addClass('messageboxerror').fadeTo(900,1);
+            });     
+          }
+
+        });
+        return false; //not to post the  form physically
+    });
+    //now call the ajax also focus move from 
+
+});
+
+
+
+Recaptcha script
+
+    function validateCaptcha()
+{
+    challengeField = $("input#recaptcha_challenge_field").val();
+    responseField = $("input#recaptcha_response_field").val();
+    //alert(challengeField);
+    //alert(responseField);
+    //return false;
+    var html = $.ajax({
+    type: "POST",
+    url: "ajax.recaptcha.php",
+     data: "recaptcha_challenge_field=" + challengeField + "&recaptcha_response_field=" + responseField,
+    async: false
+    }).responseText;
+
+    if(html == "success")
+    {
+        $("#captchaStatus").html("YES");
+        // Uncomment the following line in your application
+        return false;
+    }
+    else
+    {
+        $("#captchaStatus").html("Your captcha is incorrect. Please try again");
+        Recaptcha.reload();
+        return false;
+    }
+}
+?</div><br/></li><li><div><h2><a name="About Recaptcha Validation" href="http://answerleaks.com/question/it/5204044/about-recaptcha-validation">About <b>recaptcha</b> Validation</a></h2>Im working with a php form validation, which involves reCAPTCHA as well. 
+Once the form is submitted, I validate the form fields, and store the error messages like
+
+if( !$this-> valid_username($username) ){
+            $this->error = "username is invalid ";    
+    }
+
+
+and similarly other fields.
+    Now, How can I access the $response->is_valid in my validation class so that I can display the captcha error sth like
+
+if( !$response->is_valid ){
+            $this->error .= "Invalid captcha. ";  
+    }
+
+
+The idea is to display all fields errors at once.
+    I hope my question is clear, I'd appriciate any help.?</div><br/></li><li><div><h2><a name="[PHP/JavaScript]: How To Refresh A Captcha?" href="http://answerleaks.com/question/it/1630609/php-javascript-how-to-refresh-a-captcha">[<b>PHP</b>/JavaScript]: How To Refresh A Captcha?</a></h2>I am showing Captcha in this way:
+
+
+
+
+I have a hyperlink named "Reload" near it. I want to recall that PHP file without refreshing my page. Probably, AJAX is involved in it. Please assist.
+?</div><br/></li><li><div><h2><a name="PHP JQuery Validation" href="http://answerleaks.com/question/it/5111301/php-jquery-validation"><b>PHP</b> JQuery Validation</a></h2>Been struggling with this for a couple days now. Here's the set up - I have a parent page "support.php" there are tabs, and when you click a tab it brings in the appropriate form via ajax. 
+(the relevant code for each section:)
+
+form input's on the AJAX page
+
+
+
+
+
+The parent page - support.php calls for "validation.js" which is my jQuery.validate script. 
+
+...
+SupportMath: {
+    required: true,
+    equal: "" 
+}
+
+
+There is a .get command on the parent page for a file "random.php"
+
+$.get('PHP/random.php', function (data){
+    $("#SupportNumbers").val(data);
+});
+
+
+
+
+which generates two random numbers so you can add them together. The validation checks to make sure
+the two numbers that are generated are added correctly. I just can't seem to get all these pieces to use the same numbers, i can get the text box "SupportNumbers" to populate with two random numbers say "2 + 5" but when I enter "7" into "#SupportMath" it displays the error msg. It should be $randomNumTotal but I can't get that to the page, and have the validation script check against that.
+HELP.?</div><br/></li><li><div><h2><a name="Should A Honeypot Captcha Be More Complicated Than &#39;display: None;&#39;?" href="http://answerleaks.com/question/it/5213723/should-a-honeypot-captcha-be-more-complicated-than-39-display-none-39">Should A Honeypot Captcha Be More Complicated Than &#39;display: None;&#39;?</a></h2>I'm needing to implement some form of captcha support for comments on my blog. I would really prefer a mostly passive approach, as in, no ReCaptcha. I'm thinking about doing a combination of honeypot and this. I don't exactly plan for my site to be specifically targeted by any spammers, but I want to definitely stop all the drive-by spam attacks. 
+
+So on to my question: With spam bots advancing in technology all the time, should I use something more complicated for hiding the hidden field than display: none? If so, then what would you suggest??</div><br/></li><li><div><h2><a name="JQuery Form Validation Problem." href="http://answerleaks.com/question/it/1681061/jquery-form-validation-problem">JQuery Form Validation Problem.</a></h2>I'm using the following code (via 'Dark Side of the Carton') to validate a reCAPTCHA field, before submitting the rest of a form that includes the captcha field.
+
+The validation works fine, the 'recaptchavalidate' page is called, returns True or False correctly and the JavaScript picks this all up (I test this via alert(html);).
+
+However, when True, the form doesn't continue to be sumbitted as you would expect. In fact, even worse, the reCAPTCHA refreshes as if the response was wrong.
+
+I think it's my JavaScript at fault rather than the reCAPTCHA ... but where am I going wrong? 
+
+
+    $(function(){
+    	function validateCaptcha()
+    	{
+    	    challengeField = $("input#recaptcha_challenge_field").val();
+    	    responseField = $("input#recaptcha_response_field").val();
+    	    // alert(challengeField);
+    	    // alert(responseField);
+    	    //return false;
+    	    var html = $.ajax({
+    	    type: "POST",
+    	    url: "recaptchavalidate",
+    	    data: "recaptcha_challenge_field="+challengeField+ "&amp;recaptcha_response_field="+responseField,
+    	    async: false
+    	    }).responseText;
+
+    	    if(html == "True")
+
+    	    {
+    	        $("#captchaStatus").html(" ");
+    			alert(html);//test
+    	        return true;
+    	    }
+    	    else
+    	    {
+    	        $("#captchaStatus").html("Your captcha is incorrect. Please try again");
+    			alert(html);//test
+    	        Recaptcha.reload();
+    	        return false;
+    	    }
+    	}
+
+
+    	$("#signup").submit(function(){
+    		return validateCaptcha();
+    });
+    });
+
+    
+
+
+EDIT: This is used only to check there are no errors before submitting. The reCAPTCHA is checked properly after submitting (via Python, not JS). So is not as big a security hole as some users have pointed out.
+?</div><br/></li><li><div><h2><a name="Recaptcha - Form Customization" href="http://answerleaks.com/question/it/1715575/recaptcha-form-customization"><b>Recaptcha</b> - Form Customization</a></h2>Does anyone know if recaptcha can be fully customize without the default frame. I need the recaptcha image to only be a certain width as well as the input field. Has anyone done this before with success.
+?</div><br/></li><li><div><h2><a name="Testing ReCaptcha Dynamically?" href="http://answerleaks.com/question/it/2052409/testing-recaptcha-dynamically">Testing <b>ReCaptcha</b> Dynamically?</a></h2>I've got recaptcha working in it's fundamental form - requiring a captcha code and displaying a basic error when it's wrong. But I want to make it more usable, and I'd really appreciate your help.
+
+Is there any way to ajaxically send a test/request to see if the captcha code is correct, and if it's not, pre-emptively prompt the user for another attempt?
+
+Failing that possibility - is there any way to ensure that all the fields keep their values if I were to php redirect the user back to the form page?
+
+Thanks!
+?</div><br/></li><li><div><h2><a name="What&#39;s The Best Way To Present An E-mail Address On My Website Without Being Attacked By Spammers?" href="http://answerleaks.com/question/it/4794286/what-39-s-the-best-way-to-present-an-e-mail-address-on-my-website-without-being-attacked-by-spammers">What&#39;s The Best Way To Present An E-mail Address On My Website Without Being Attacked By Spammers?</a></h2>What's the best way to present an e-mail address on my website without being attacked by spammers?
+
+The approach foo at fooland dot com is not exactly what I'm looking for. I need to present it in a way that is comprehensible for normal people.
+
+EDIT
+
+The displaying e-mails are dynamic?</div><br/></li><li><div><h2><a name="Captcha Non PHP" href="http://answerleaks.com/question/it/5398649/captcha-non-php">Captcha Non <b>PHP</b></a></h2>Does anyone know of any good solutions to implement CAPTCHA on a form that cannot use php?
+
+I am able to use PHP but only in an external file.
+Javascript anywhere?</div><br/></li>	
+	</ul></div>
+			
+<h1>Recently Added Questions</h1><hr/><br/><ul><li><div><h2><a href="http://answerleaks.com/question/superuser/265584/what-kind-of-blank-dvds-do-i-need-for-my-specific-burner">What Kind Of Blank DVDs Do I Need For My Specific Burner?</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/superuser/265220/cp-file-named-starting-with">Cp File Named Starting With .</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/superuser/265957/grub-rescue-unknown-file-system-can-39-t-boot-into-windows-7">Grub Rescue, Unknown File System. Can&#39;t Boot Into Windows 7.</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/superuser/266067/windows-ldquo-windows-key-rdquo-d-shortcut-for-mac-os">Windows &ldquo;Windows Key&rdquo; + D Shortcut For Mac OS</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/superuser/170338/flash-alternative-for-mac">Flash Alternative For Mac?</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/superuser/252174/windows-offline-files-where-39-s-the-information-stored">Windows Offline Files - Where&#39;s The Information Stored?</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5441049/common-errors-while-writing-android-project">Common Errors While Writing Android Project</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5433991/eclipse-webtools-project-wtp-and-its-performance-quality">Eclipse Webtools Project (WTP) And Its Performance / Quality</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/webmasters/10624/royalty-free-templates-for-website">Royalty Free Templates For Website</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5323186/writing-a-functional-and-yet-functional-image-processing-library-in-scala">Writing A Functional And Yet Functional Image Processing Library In Scala</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5276574/is-2gb-really-my-maximum">Is 2GB Really My Maximum?</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5301683/historical-question-about-java">Historical Question About JAVA</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5478933/vim-move-around-quickly-inside-of-long-line">Vim: Move Around Quickly Inside Of Long Line</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/webmasters/11402/sql-server-and-hosting">SQL Server And Hosting</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5473107/operator-precedence-vs-order-of-evaluation">Operator Precedence Vs Order Of Evaluation</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/webmasters/11370/how-can-i-get-an-ldquo-official-site-rdquo-banner-area-on-bing">How Can I Get An &ldquo;Official Site&rdquo; Banner/area On Bing?</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/webmasters/11383/alternative-to-pingdom-website-monitoring-service">Alternative To Pingdom Website Monitoring Service</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5506937/jquery-attr-39-value-39-39-new-value-39-not-working">JQuery .attr(&#39;value&#39;, &#39;new_value&#39;) Not Working?</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5492526/choose-the-closest-k-points-from-given-n-points">Choose The Closest K Points From Given N Points</a></h2></div></li><li><div><h2><a href="http://answerleaks.com/question/it/5488057/c-mark-enum-value-as-deprecated">C++ Mark Enum Value As Deprecated?</a></h2></div></li></ul> </div>
+
+</div>
+
+         </div>
+
+<div id="footer">
+               <div class="links">
+			   <ul>
+			    <li class="top"><a href="http://answerleaks.com" >Programming Questions &amp; Answers</a></li>
+
+			    <li><a href="http://answerleaks.com/tags/0/">Browse Tags</a></li>
+			    
+                            <li class="top"><a href="http://answerleaks.com/questions/ubuntu/0/">Ubuntu Questions</a></li>
+                            <li class="top"><a href="http://answerleaks.com/questions/webmasters/0/">Webmaster Questions</a></li>
+			   </ul>
+		</div>
+		 <div class="links">
+                           <ul>
+                            <li class="top"><a href="http://answerleaks.com/questions/superuser/0/">SuperUser Questions</a></li>
+                                <li class="top"><a href="http://answerleaks.com/questions/server/0/">Server Questions</a></li>
+                                <li class="top"><a href="http://answerleaks.com/questions/it/0/">Programming Questions</a></li>
+                                <li class="top"><a href="http://answerleaks.com/recentquestions/0/">Recently Added Questions</a></li>
+                                </ul>
+                </div>
+		<div class="links">
+			   <ul>
+			    <li class="top"><a href="http://answerleaks.com/About/">About Us</a></li>
+				<li class="top"><a href="mailto:admin@answerleaks.com?subject=[Insert%20Title%20Here]&amp;body=[Insert%20Feedback%20Here]">Contact Us</a></li>
+				<li class="top"><a href="http://twitter.com/answerleaks">Follow Us on Twitter</a></li>
+				</ul>
+	        </div>
+</div>
+<div id="attribution">The <a href="http://answerleaks.com/questions/it/0/">questions</a>, <a href="http://answerleaks.com/tags/0/">tags</a> and answers come from <a href="http://serverfault.com/" target="_blank" rel="nofollow">serverfault.com</a>, <a href="http://stackoverflow.com/" target="_blank" rel="nofollow">stackoverflow.com</a>
+
+and <a href="http://superuser.com/" target="_blank" rel="nofollow">superuser.com</a>, and are licensed under the <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="nofollow">cc-wiki</a> license.
+<p>Logo, design and layout by AnswerLeaks.com</p></div>
+<p></p>
+<center><p>
+<script id="cdSiteSeal2" type="text/javascript" src="//tracedseals.starfieldtech.com/siteseal/get?scriptId=cdSiteSeal2&amp;cdSealType=Seal2&amp;sealId=55e4ye7y7mb7395d55ff80d940f07e1b1zy7mb7355e4ye7d1ce1d033af9f6169"></script> 
+</p>
+ </center>
+<!---  Google Analytics code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20436380-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+        
+    </body></html>

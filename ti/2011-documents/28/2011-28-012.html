@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/default/files/favicon.png" type="image/x-icon" />
+      <title>Customize ReCaptcha theme | Code LAB</title>
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/codefilter/codefilter.css?N" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/default/files/css/css_1e2239caba7604fc5d0805e1eed7230f.css" />
+      
+<!--[if lt IE 7.0]><link rel="stylesheet" href="/sites/all/themes/sky/css/ie-6.css" type="text/css" media="all" charset="utf-8" /><![endif]-->
+<!--[if IE 7.0]><link rel="stylesheet" href="/sites/all/themes/sky/css/ie-7.css" type="text/css" media="all" charset="utf-8" /><![endif]-->
+      <script type="text/javascript" src="/sites/default/files/js/js_f10eebfcfc0144fd772ef9ff52bb40e3.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "fivestar": { "titleUser": "Your rating: ", "titleAverage": "Average: ", "feedbackSavingVote": "Saving your vote...", "feedbackVoteSaved": "Your vote has been saved.", "feedbackDeletingVote": "Deleting your vote...", "feedbackVoteDeleted": "Your vote has been deleted." } });
+//--><!]]>
+</script>
+    </head>
+  <body class="page-node page-blog section-blog page-node-view anonymous-user no-sidebars" id="page-node-7">
+    <div id="wrapper">
+    <div id="header" class="layout-region name-slogan">
+      <div id="header-inner">
+                        <span id="site-name"> <a href="/" title="Code LAB">Code LAB</a> </span>
+                          <span id="site-slogan">Welcome To My Code Lab</span>
+              </div>
+    </div>
+          <div id="navigation"><del class="wrap-center"><ul><li class="leaf first"><a href="/" title="Home">Home</a></li>
+<li class="leaf"><a href="/blogs/manjula" title="My Blog">Blog</a></li>
+<li class="leaf"><a href="/downloads" title="">Downloads</a></li>
+<li class="leaf"><a href="/category/categories/free-scripts" title="">Free Scripts</a></li>
+<li class="leaf"><a href="/links" title="Links">Links</a></li>
+<li class="leaf"><a href="/about" title="About Me">About</a></li>
+<li class="leaf last"><a href="/contact" title="">Contact</a></li>
+</ul></del></div>
+        <div id="container" class="layout-region">
+            <div id="main">
+        <div class="main-inner">
+                                                              <h1 class="title">Customize ReCaptcha theme</h1>
+                                        <div id="content" class="clearfix" style="min-height:280px">
+            <div id="node-7" class="node clearfix node-blog node-full published promoted not-sticky without-photo ">
+    <div class="meta">
+                                      <p>Posted <abbr class="created" title="2009-10-26T20:09:15+0530">Mon, 10/26/2009 - 20:09</abbr> by manjula</p>
+                </div>
+  <div class="content clearfix">
+    <p>ReCaptcha is a widely use Captcha generation web service which is owned by Google. Yesterday I had the opportunity to use ReCaptcha for one of my project. But there was a problem. Since ReCaptcha is generated to a certain style, width and height using a webservice request, it was hard to put it into the design of the form which I was trying to integrate ReCaptcha.<br />
+But finally I could solve the problem using some tricks. This is how I did it.<br />
+For using ReCaptcha, first you have to create an account ( account and service is free) in <a href="http://recaptcha.net/">http://recaptcha.net/</a> and generate a public key and a private key for accessing ReCaptcha web service. You can choose two option when generating those keys, default is generated keys can only be used in provided ( when generating keys) web site. Other one is you can use generated keys in any server and you have to select the checkbox saying some global key enabling ( I can't remember it) for using this second option.<br />
+Then download the ReCaptcha library. It contains recaptchalib.php files and an example page. What do you want is recaptchalib.php.  To use recaptcha, add following php codes in to the top of your php page.<br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">require_once(</span><span style="color: #DD0000">'recaptchalib.php'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$publickey </span><span style="color: #007700">= </span><span style="color: #DD0000">"your_public_key"</span><span style="color: #007700">; </span><span style="color: #FF8000">// get this from the signup page<br /></span><span style="color: #0000BB">$privatekey </span><span style="color: #007700">= </span><span style="color: #DD0000">"your_private_key"</span><span style="color: #007700">;</span><span style="color: #FF8000">// get this from the signup page<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div></p>
+<p>Since you are looking for custom theme for ReCaptcha, add this javascript code to head section of the your php page.<br />
+<div class="codeblock"><code>&lt;script type= &quot;text/javascript&quot;&gt;<br /><br />var RecaptchaOptions = {<br />theme: &#039;custom&#039;,<br />lang: &#039;en&#039;,<br />custom_theme_widget: &#039;recaptcha_widget&#039;<br />};<br /><br />&lt;/script&gt;</code></div><br />
+Value of "custom_theme_widget" which is 'recaptcha_widget' in above code is the name of the div which your recaptcha gadget will put into.<br />
+Then add a div with the above mentioned id 'recaptcha_widget' in to the place where you need your recaptcha. All other recaptcha related divs will reside in this created div. Add another div named 'recaptcha_image' inside 'recaptcha_widget' for holding the recaptcha image. You also need to add a input text field named 'recaptcha_response_field' for typing the letters in the captcha image. There are lot of other things you can put as your requirements as a link for audio recaptcha, for error messages, for refreshing recaptcha etc, and I'm not going to put all those things in my example. In addition to that, you also have to put code for getting recaptcha with your publick key (two parts of code, if javascript is disabled, there is an iframe to include).</p>
+<p>So this is the code I finally got as ReCaptcha widget,<br />
+<div class="codeblock"><code>&lt;div id=&quot;recaptcha_widget&quot; style=&quot;display: none;&quot;&gt;<br />&lt;div id=&quot;recaptcha_image&quot;&gt;&lt;/div&gt;<br />&lt;div class=&quot;recaptcha_only_if_incorrect_sol&quot; style=&quot;color: red;&quot;&gt;Incorrect please try again&lt;/div&gt;<br />&lt;span class=&quot;recaptcha_only_if_image&quot;&gt;Enter the words above:&lt;/span&gt;<br />&lt;span class=&quot;recaptcha_only_if_audio&quot;&gt;Enter the numbers you hear:&lt;/span&gt;<br />&lt;input id=&quot;recaptcha_response_field&quot; name=&quot;recaptcha_response_field&quot; type=&quot;text&quot;&gt;<br />&lt;strong style=&quot;font-size: 10px;&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Get another CAPTCHA&lt;/a&gt;&lt;/strong&gt;<br /><br />&lt;!--div class=&quot;recaptcha_only_if_image&quot;&gt;&lt;a href=&quot;javascript:Recaptcha.switch_type(&#039;audio&#039;)&quot;&gt;Get an audio CAPTCHA&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;<br />&lt;div class=&quot;recaptcha_only_if_audio&quot;&gt;&lt;a href=&quot;javascript:Recaptcha.switch_type(&#039;image&#039;)&quot;&gt;Get an image CAPTCHA&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;<br />&lt;div&gt;&lt;a href=&quot;javascript:Recaptcha.showhelp()&quot;&gt;Help&lt;/a&gt;&lt;br /&gt;<br />&lt;/div--&gt;<br /><br />&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.recaptcha.net/challenge?k=<span style="color: #000000"><span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">$publickey</span><span style="color: #007700">;</span><span style="color: #0000BB">?&gt;</span></span>&amp;lang=en&quot;&gt;&lt;/script&gt;<br /><br />&lt;noscript&gt;<br />&lt;iframe src=&quot;http://api.recaptcha.net/noscript?k=<span style="color: #000000"><span style="color: #0000BB">&lt;?php </span><span style="color: #007700">echo </span><span style="color: #0000BB">$publickey</span><span style="color: #007700">;</span><span style="color: #0000BB">?&gt;</span></span>&amp;lang=en&quot; height=&quot;200&quot; width=&quot;500&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;<br />&lt;textarea name=&quot;recaptcha_challenge_field&quot; rows=&quot;3&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;<br />&lt;input type=&quot;&#039;hidden&#039;&quot; name=&quot;&#039;recaptcha_response_field&#039;&quot; value=&quot;&#039;manual_challenge&#039;&quot;&gt;<br />&lt;/noscript&gt;<br /><br />&lt;/div&gt;</code></div><br />
+I commented out some fields I did not want to use in this code. After coding to this point, there was another problem came. That is the image generated by ReCaptcha is a standarad size of 300px X 57px. By adding a little css code, I could change the size of the recaptcha image as I wanted. I added following CSS code into the head section ( between head tags) of my php page.<br />
+<div class="codeblock"><code>&lt;style type=&quot;text/css&quot;&gt;<br />div#recaptcha_image &gt; img{<br />height:46px;<br />width:240px;<br />}<br />&lt;/style&gt;</code></div><br />
+This is the final output of the code.<br />
+<img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 210px; height: 110px;" src="http://silversurferslab.com/sites/default/files/Screenshot-edited.png" alt="" id="BLOGGER_PHOTO_ID_5393827053227246978" border="0" /></p>
+<div class="service-links"><div class="service-label">Bookmark/Search this post with: </div><ul class="links"><li class="service_links_delicious first"><a href="http://del.icio.us/post?url=http%3A%2F%2Fsilversurferslab.com%2Fblogs%2F1%2Fcustomize-recaptcha-theme-7.html&amp;title=Customize+ReCaptcha+theme" title="Bookmark this post on del.icio.us." rel="nofollow"><img src="/sites/all/modules/service_links/images/delicious.png" alt="Delicious" /></a></li>
+<li class="service_links_digg"><a href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fsilversurferslab.com%2Fblogs%2F1%2Fcustomize-recaptcha-theme-7.html&amp;title=Customize+ReCaptcha+theme" title="Digg this post on digg.com." rel="nofollow"><img src="/sites/all/modules/service_links/images/digg.png" alt="Digg" /></a></li>
+<li class="service_links_stumbleupon"><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fsilversurferslab.com%2Fblogs%2F1%2Fcustomize-recaptcha-theme-7.html&amp;title=Customize+ReCaptcha+theme" title="Thumb this up at StumbleUpon." rel="nofollow"><img src="/sites/all/modules/service_links/images/stumbleit.png" alt="StumbleUpon" /></a></li>
+<li class="service_links_reddit"><a href="http://reddit.com/submit?url=http%3A%2F%2Fsilversurferslab.com%2Fblogs%2F1%2Fcustomize-recaptcha-theme-7.html&amp;title=Customize+ReCaptcha+theme" title="Submit this post on reddit.com." rel="nofollow"><img src="/sites/all/modules/service_links/images/reddit.png" alt="Reddit" /></a></li>
+<li class="service_links_facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fsilversurferslab.com%2Fblogs%2F1%2Fcustomize-recaptcha-theme-7.html&amp;t=Customize+ReCaptcha+theme" title="Share on Facebook." rel="nofollow"><img src="/sites/all/modules/service_links/images/facebook.png" alt="Facebook" /></a></li>
+<li class="service_links_technorati last"><a href="http://technorati.com/cosmos/search.html?url=http%3A%2F%2Fsilversurferslab.com%2Fblogs%2F1%2Fcustomize-recaptcha-theme-7.html" title="Search Technorati for links to this post." rel="nofollow"><img src="/sites/all/modules/service_links/images/technorati.png" alt="Technorati" /></a></li>
+</ul></div><form action="/blogs/1/customize-recaptcha-theme-7.html"  accept-charset="UTF-8" method="post" id="fivestar-form-node-7" class="fivestar-widget">
+<div><div class="fivestar-form-vote-7 clear-block"><input type="hidden" name="content_type" id="edit-content-type" value="node"  />
+<input type="hidden" name="content_id" id="edit-content-id" value="7"  />
+<div class="fivestar-form-item  fivestar-combo-text fivestar-average-stars fivestar-labels-hover"><div class="form-item form-item-fivestar" id="edit-vote-wrapper">
+ <input type="hidden" name="vote_count" id="edit-vote-count" value="5"  />
+<input type="hidden" name="vote_average" id="edit-vote-average" value="96"  />
+<input type="hidden" name="auto_submit_path" id="edit-auto-submit-path" value="/fivestar/vote/node/7/vote"  class="fivestar-path" />
+<select name="vote" class="form-select" id="edit-vote-1" ><option value="-">Select rating</option><option value="20">Poor</option><option value="40">Okay</option><option value="60">Good</option><option value="80">Great</option><option value="100" selected="selected">Awesome</option></select><input type="hidden" name="auto_submit_token" id="edit-auto-submit-token" value="deb2fd6fdd1f60a71e7af8709b8f0cd3"  class="fivestar-token" />
+
+ <div class="description"><div class="fivestar-summary fivestar-summary-combo fivestar-feedback-enabled"><span class="user-rating">Your rating: <span>None</span></span> <span class="average-rating">Average: <span>4.8</span></span> <span class="total-votes">(<span>5</span> votes)</span></div></div>
+</div>
+</div><input type="hidden" name="destination" id="edit-destination" value="node/7"  />
+<input type="submit" name="op" id="edit-fivestar-submit" value="Rate"  class="form-submit fivestar-submit" />
+<input type="hidden" name="form_build_id" id="form-8c2f83e0ef53d5461e1c0a023604e3f3" value="form-8c2f83e0ef53d5461e1c0a023604e3f3"  />
+<input type="hidden" name="form_id" id="edit-fivestar-form-node-7" value="fivestar_form_node_7"  />
+</div>
+</div></form>
+  </div>
+      <div class="links">
+      <ul><li class="blog_usernames_blog first"><a href="/blogs/manjula" title="Read manjula&#039;s latest blog entries.">manjula&#039;s blog</a></li>
+<li class="comment_add"><a href="/comment/reply/7#comment-form" title="Share your thoughts and opinions related to this posting.">Add new comment</a></li>
+<li class="statistics_counter last"><span>1315 reads</span></li>
+</ul>    </div>
+  </div><div id="comment-wrapper" class="  clearfix">
+      <h3>Comments</h3>
+    1 comment posted  <a id="comment-1"></a>
+<div class="comment  clearfix ">
+<!-- start comment.tpl.php -->
+  <div class="inner">
+    <span class="title"> <a href="/blogs/1/customize-recaptcha-theme-7.html#comment-1" class="active">Ado</a>        </span>
+    <div class="content"><p>Ela ela ohoma yang..</p>
+</div>
+      <div class="info"> Posted by Anonymous on Tue, 11/03/2009 - 11:20 </div>
+    </div>
+<ul class="links"><li class="comment_reply first last"><a href="/comment/reply/7/1">reply</a></li>
+</ul></div>
+<!-- end comment.tpl.php --></div>
+          </div>
+          <!-- END CONTENT -->
+                            </div>
+        <!-- END MAIN INNER -->
+      </div>
+      <!-- END MAIN -->
+          </div>
+    <!-- END CONTAINER -->
+    <div class="push">&nbsp;</div>
+  </div>
+  <!-- END WRAPPER -->
+  <div id="footer" class="layout-region">
+    <div id="footer-inner">
+            <a href="http://silversurferslab.com/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://silversurferslab.com/about">About  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      <a href="http://silversurferslab.com/contact">Contact    </div>
+  </div>
+    </body>
+</html>

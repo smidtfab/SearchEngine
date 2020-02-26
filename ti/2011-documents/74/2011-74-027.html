@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Channelography</title>
+  <link href="/stylesheets/reset.css?1294001162" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/application.css?1294001162" media="screen" rel="stylesheet" type="text/css" />
+	
+		<script src="/javascripts/jquery-1.3.2.min.js?1294001162" type="text/javascript"></script>
+		<script type="text/javascript">
+		$(function(){
+			// Resizes bar chart bars to correct widths
+			// LARGEST VALUE BAR MUST APPEAR FIRST!
+			var max_bar_width = 228;
+			var half_bar_width = max_bar_width/2;
+			var half_bar_width_adjust = 0;
+			var min_bar_width = 6;
+			$('.bar-charts').each(function(){
+				var factor = max_bar_width/parseInt($(this).find('.bar-chart-representation .representation strong').eq(0).text());
+				$(this).find('.bar-chart-representation .representation strong').each(function(){
+					var bar_width = parseInt($(this).text())*factor;
+					$(this).css('width',bar_width+'px');
+					if(bar_width<min_bar_width) $(this).css('width',min_bar_width+'px'); // Prevents the smallest bars getting too small (or dissappearing completely)
+					else if(bar_width>max_bar_width) $(this).css('width',max_bar_width+'px'); // Prevents the biggest bars getting too big (or going over the edge)		
+					if(bar_width<(half_bar_width-half_bar_width_adjust)) { $(this).after('<span class="after">'+$(this).text()+'</span>'); $(this).html('&nbsp;');}
+				});
+			});   
+		});
+		</script>
+	
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	
+			
+	
+	<link href="http://channelography.rattlecentral.com/programmes/b00v1v8d.xml" rel="alternate" type="application/xml" />
+</head>
+<body id="channelography_rattlecentral_com">
+
+	<ul id="access">
+		<li><a href="#navigation">Skip to navigation</a></li>
+		<li><a href="#body">Skip to content</a></li>
+		<li><a href="#footer">Skip to footer</a></li>
+	</ul>
+
+	<div id="message"><p>Note: this service is currently <i>Alpha</i>. Please send any feedback to <a href="mailto:channelography@rattlecentral.com">channelography@rattlecentral.com</a>.</p></div>
+
+
+<div id="page"><div id="content_wrapper">
+	
+	<div id="header" class="header">
+    <h1 class="page-title"><a href="/">Channelography</a></h1>
+    
+    <div id="navigation" class="nav">
+        <ul>
+            <li class="you-are-here"><a href="/channels">Channels</a></li>
+            <li ><a href="/browse">Browse</a></li>
+        </ul>
+    </div> <!-- /navigation -->
+	</div>
+	<div id="body">
+		<div class="aside">
+	<h2>External Links</h2>
+	<div class="nav">
+	  <ul>
+      <li><a href="http://www.bbc.co.uk/programmes/b00v1v8d">BBC page</a></li>
+      
+	  </ul>
+ </div>
+</div>
+
+<div id="data_sections">
+	<div class="section title-section" id="section_entity">
+		<div class="title"><h1>Hoaxes</h1><p>Episode 3 of <a href="/series/b00ttsl6">Series 8</a> of <a href="/shows/b006ml0g">QI</a></p></div>
+
+		
+	</div>
+
+	      
+	  <div class="section" id="section_mentioned">
+			<h2>People mentioned:</h2>
+			<ul class="data-list">
+				
+					<li>
+					<a href="/entities/Jesus">Jesus</a>
+					
+						<p>...day and was bigger than the Queen, as it were. Had a higher rank than queen. <b>Jesus</b>. <b>Jesus</b>… <b>Jesus</b> isn't really a rank. He's famous, though, <b>Jesus</b>. It's a...than queen. <b>Jesus</b>. <b>Jesus</b>… <b>Jesus</b> isn't really a rank. He's famous, though, <b>Jesus</b>. It's a rank.</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Stephen_Jay_Gould">Stephen Jay Gould</a>
+					
+						<p>...the most famous house in London. What conclusion did the great biologist <b>Stephen Jay Gould</b> draw from a lifetime's study of fish? Oh. Yeah? They haven't...to do with each other at all. So after a lifetime's study of fish, biologist <b>Stephen Jay Gould</b> con</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Louis_Walsh">Louis Walsh</a>
+					
+						<p>...and went, "They haven't got any legs." Starfish don't have brains. It's the <b>Louis Walsh</b> of the aquatic world. They don't have brains, starfish. And they're...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Patrick_Moore">Patrick Moore</a>
+					
+						<p>...talking about the angle of light and the shadows but then I did an advert with <b>Patrick Moore</b> and I said, "So, Patrick, did they land on the moon?" and he...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Will_Rogers">Will Rogers</a>
+					
+						<p>...Thanks to David, Danny, Sean and Alan. I leave you with an observation from <b>Will Rogers</b>. The trouble with practical jokes is that very often they get...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Charles_Babbage">Charles Babbage</a>
+					
+						<p>...that there was a grand master inside? Yeah. OK. They thought it was a machine. <b>Charles Babbage</b> was beaten by it. He's the father of computing. He invented the...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Benjamin_Franklin">Benjamin Franklin</a>
+					
+						<p>...this machine. So, yeah. And many others were beaten, you might like to know. <b>Benjamin Franklin</b>, who was in Paris at the time as ambassador for the newly...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Allyce_Beasley">Allyce Beasley</a>
+					
+						<p>...Oh, that would be sweet. This was a bet that took place in 1810 between Samuel <b>Beasley</b> and Theodore Hook, that Hook could make any house he chose the most...Street, "the most famous house in London." Theodore Hook bet a man called <b>Beasley</b> that he could</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Herbert_Hoover">Herbert Hoover</a>
+					
+						<p>...name the machine. Me. Are you the most famous person? Yeah, I got beaten by a <b>Hoover</b>. Is that right? Yes. Somebody left it on and it moved the pieces around...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Sean_Lock">Sean Lock</a>
+					
+						<p>...horde of hornswogglers. With ten top tips to increase your manhood, it's <b>Sean Lock</b>. Thank you. And joining him, the esteemed president of the Bank of...tonight… Wow! A-ha! The winner tonight with an impressive minus one is <b>Sean Lock</b>. Oh, I won? You w</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Adolf_Hitler">Adolf Hitler</a>
+					
+						<p>...And a lot of idiots… Because even the people now who said, "That predicts <b>Hitler</b> or that predicts 9/11," would think, if you bought that in 1530, that's...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Nostradamus">Nostradamus</a>
+					
+						<p>...of Nostradamus? I've heard of him. I've no idea where he lived. His name was <b>Michel de Nostredame</b>. He lived from 1503 to 1566. He was a Provencal apothecary...</p>
+					
+					</li>
+				
+					<li>
+					<a href="/entities/Alan_Davies">Alan Davies</a>
+					
+						<p>...at the university of the internet, David Mitchell. And believe it or not, <b>Alan Davies</b>. Now, in keeping with our theme tonight, one of our buzzers is a...good minus 14, Danny Baker. And last with a surprisingly convincing minus 38, <b>Alan Davies</b>. Thank yo</p>
+					
+					</li>
+				
+			</ul>
+	  </div>
+	
+
+	      
+	  <div class="section" id="section_mentioned">
+			<h2>Organisations mentioned:</h2>
+			<ul class="data-list">
+				
+				<li>
+				<a href="/entities/Led_Zeppelin">Led Zeppelin</a>
+				
+					<p>...What do you think of that? It's a hoax! We did! That's real? It looks like a <b>Led Zeppelin</b> cover. Oh, you've failed, I'm afraid, it was real. Almost within...</p>
+				
+				</li>				
+			</ul>
+	  </div>
+	
+
+	      
+	  <div class="section" id="section_mentioned">
+			<h2>Places mentioned:</h2>
+			<ul class="data-list">
+				
+				<li>
+				<a href="/entities/Paris">Paris</a>
+				
+					<p>...many others were beaten, you might like to know. Benjamin Franklin, who was in <b>Paris</b> at the time as ambassador for the newly formed United States. What was...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/United_States">United States</a>
+				
+					<p>...Franklin, who was in Paris at the time as ambassador for the newly formed <b>United States</b>. What was the deal with it? They were unaware that there was a...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/London">London</a>
+				
+					<p>...Hook, that Hook could make any house he chose the most famous residence in <b>London</b> in one week. He had a week in which to do it. He prepared over the week...different tradesmen and services in all the commercial directories all over <b>London</b>. He ordered c</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Stonehenge">Stonehenge</a>
+				
+					<p>...stealing. Grave robbing. Grave robbing's always… They drew something rude on <b>Stonehenge</b>. They drew something rude on <b>Stonehenge</b>. Crop circles! Oh, Alan,...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Soviet_Union">Soviet Union</a>
+				
+					<p>...clinching one is that America's enemy at the time in the space race was the <b>Soviet Union</b> and not once did they suggest that America hadn't done it. They...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Carlisle,_Cumbria">Carlisle, Cumbria</a>
+				
+					<p>...not living in those palaces any more." You're living in 3 Ironside Crescent, <b>Carlisle</b>. OK. Those would work. Those would work. Some sort of spectacular...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Spanish_Empire">Spanish Empire</a>
+				
+					<p>...comes from or what the original word was? It's naranja. Naranja. That's the <b>Spanish</b> for orange. The original naranja is Sanskrit and what happened, as...</p>
+				
+				</li>				
+			</ul>
+	  </div>
+	
+
+	      
+	  <div class="section" id="section_mentioned">
+			<h2>Other things mentioned:</h2>
+			<ul class="data-list">
+				
+				<li>
+				<a href="/entities/Millionaire">Millionaire</a>
+				
+					<p>...I was thinking of being generous but no. At the pilot of Who Wants To Be A <b>Millionaire</b>, did somebody go, "And if we get one wrong, that's OK, is it?"...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Britain">Britain</a>
+				
+					<p>...closer to home. How would you make your house the most famous house in <b>Britain</b>? That's easy. Yeah? You murder lots and lots of people, dismember them...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/The_Turk">The Turk</a>
+				
+					<p>...It was an automaton and it was unbelievably clever. It was called the <b>Mechanical Turk</b> and the Turk was made of machinery and you would open the...engine. Exactly. But it was the sensation of the age, a remarkable thing. The <b>Mechanical Turk</b>. A manned au</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Indefinite_pronoun">Indefinite pronoun</a>
+				
+					<p>...hour of it being completed and the dawn rising, we were contacted by people… <b>Someone</b> wanted to know, "Is it real or is it man-made?" To which the answer...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Theodore_Hook">Theodore Hook</a>
+				
+					<p>...be sweet. This was a bet that took place in 1810 between Samuel Beasley and <b>Theodore Hook</b>, that Hook could make any house he chose the most famous..."I can make that house, 54 Berners Street, "the most famous house in London." <b>Theodore Hook</b> bet a man c</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/NASA">NASA</a>
+				
+					<p>...But conversely, would you believe that they put a man on the moon? Who? <b>NASA</b>. Oh. <b>NASA</b>. Yes, I believe so. You believe that? I believe it, yes. Good....and he looked so annoyed. He explained how he had helped map the moon for <b>NASA</b> and the landing site </p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Garry_Kasparov">Garry Kasparov</a>
+				
+					<p>...not a famous chess player? No. Very well worked out. There is… The Queen. <b>Garry Kasparov</b>, the great grand master… He lost to… Deep Blue. But that...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/John_Lundberg">John Lundberg</a>
+				
+					<p>...where the engine blasts off back into space. Where are our three here? Is that <b>John Lundberg</b>? There you are. There's John. Can you tell me how you did yours?...all hoaxers like you? Absolutely. They've been ringing your production office. <b>John Lundberg</b></p>
+				
+				</li>				
+				<li>
+				<a href="/entities/David_Mitchell">David Mitchell</a>
+				
+					<p>...Baker. By his side, professor of hoaxology at the university of the internet, <b>David Mitchell</b>. And believe it or not, Alan Davies. Now, in keeping with our...You won this discredited show. …second with an improbable minus 13, is <b>David Mitchell</b>. Yeah! </p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Deep_Blue">Deep Blue</a>
+				
+					<p>...There is… The Queen. Garry Kasparov, the great grand master… He lost to… <b>Deep Blue</b>. But that wasn't… The Queen is the most famous person in the world....</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Napoleon_I_of_France">Napoleon I of France</a>
+				
+					<p>...handle the truth. Jesus plays chess sounds like an indie band or it will be. <b>Napoleon</b>. <b>Napoleon</b> is the right answer. Do you know what the machine might have...astonishing piece of machinery that unfortunately burned in a fire in 1854. <b>Napoleon</b> rather f</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Queen_regnant">Queen regnant</a>
+				
+					<p>...lots of people, dismember them and bury them in the garden. That… Marry the <b>Queen</b>. You marry the <b>Queen</b>… Yes? …and you say, "No, love, you're not living...It's not a famous chess player? No. Very well worked out. There is… The <b>Queen</b>. Garry Kaspa</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Danny_Baker">Danny Baker</a>
+				
+					<p>...Thank you. And joining him, the esteemed president of the Bank of Nigeria, <b>Danny Baker</b>. By his side, professor of hoaxology at the university of the...minus 13, is David Mitchell. Yeah! Yeah! Third with a pretty good minus 14, <b>Danny Baker</b>. And last wit</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Lost">Lost</a>
+				
+					<p>...was no hoax. GROANING This… This is an outrage. This is like the end of <b>Lost</b>. It's endearing how much it matters to them. So everything you heard was...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Bank_of_England">Bank of England</a>
+				
+					<p>...boot makers, butcher's boys, a dozen pianos arrived. The governor of the <b>Bank of England</b> turned up to what the fuss was about. It was in Berners Street,...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/ZX80">ZX80</a>
+				
+					<p>...wasn't… The Queen is the most famous person in the world. Did she lose to a <b>ZX80</b>? This was someone who was more famous than the Queen in his day and was...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Marriage">Marriage</a>
+				
+					<p>...lots and lots of people, dismember them and bury them in the garden. That… <b>Marry</b> the Queen. You marry the Queen… Yes? …and you say, "No, love, you're...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Wiltshire">Wiltshire</a>
+				
+					<p>...stealing the property of aged people? No. If I told you that this was in <b>Wiltshire</b>, would that help? Cathedral stealing. Grave robbing. Grave robbing's...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Apollo_12">Apollo 12</a>
+				
+					<p>...it's a vacuum again, it coheres. And the other thing with the mirrors, that <b>Apollo 12</b> astronauts put on the moon, which are now used for bouncing lasers...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Richard_Wagner">Richard Wagner</a>
+				
+					<p>...of having a travelling aerial shot. Music: "The Ride of the Valkyries" by <b>Wagner</b>.. What do you think of that? It's a hoax! We did! That's real? It looks...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Balloon">Balloon</a>
+				
+					<p>...people would work better. I was trying to make it sad. But this is… <b>Balloons</b>. You tie loads of balloons and your house goes… Oh, that would be...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Nobel_Prize">Nobel Prize</a>
+				
+					<p>...on that fish. The small print. Is that him? Yes, he's dead now. He won the <b>Nobel Prize</b>, he was a palaeontologist and a biologist and he came to the...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/American">American</a>
+				
+					<p>...studio." You've got me started now but there are a lot of conspiracies. 6% of <b>Americans</b> believe that man didn't land on the moon but 25% of Britons believe...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Ride_of_the_Valkyries">Ride of the Valkyries</a>
+				
+					<p>...it. We went to the expense of having a travelling aerial shot. Music: "The <b>Ride of the Valkyries</b>" by Wagner.. What do you think of that? It's a hoax! We...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Sanskrit">Sanskrit</a>
+				
+					<p>...It's naranja. Naranja. That's the Spanish for orange. The original naranja is <b>Sanskrit</b> and what happened, as words do, it loses the N. So you get an orange,...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Oxford_Street">Oxford Street</a>
+				
+					<p>...turned up to what the fuss was about. It was in Berners Street, just north of <b>Oxford Street</b>, and er… There it is. That sign doesn't fit that bit of wall....</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Provençal">Provençal</a>
+				
+					<p>...lived. His name was Michel de Nostredame. He lived from 1503 to 1566. He was a <b>Provencal</b> apothecary and he did many things, including writing hundreds of...</p>
+				
+				</li>				
+				<li>
+				<a href="/entities/Soup_Dragon">Soup Dragon</a>
+				
+					<p>...moving a bit strangely. You know what I mean? You're expecting to meet the <b>Soup Dragon</b>. "OK, he's not there." The flag moves a bit strangely… I can go...</p>
+				
+				</li>				
+			</ul>
+	  </div>
+	
+
+
+	      
+	  <div class="section" id="section_mentioned">
+			<h2>Genres:</h2>
+			<ul class="data-list">
+				
+					<li><a href="/genres/entertainment">Entertainment</a></li>
+				
+			</ul>
+	  </div>
+	
+
+	      
+	  <div class="section" id="">
+			<h2>Formats:</h2>
+			<ul class="data-list">
+				
+					<li><a href="/formats/gamesandquizzes">Games &amp; Quizzes</a></li>
+				
+			</ul>
+	  </div>
+	
+
+	      
+	  <div class="section" id="">
+			<h2>3 broadcasts:</h2>
+			<ul class="data-list">
+				
+					<li><a href="/channels/bbcone/yorkshire/2010/10/01"> 1 Oct 2010, 20:30—21:00</a>, <a href="/channels/bbcone/yorkshire">BBC One</a> </li>
+				
+					<li><a href="/channels/bbchd/2010/10/01"> 1 Oct 2010, 20:30—21:00</a>, <a href="/channels/bbchd">BBC HD</a> </li>
+				
+					<li><a href="/channels/bbchd/2010/12/21">21 Dec 2010, 23:50—00:20</a>, <a href="/channels/bbchd">BBC HD</a> <abbr title="repeat">(r)</abbr></li>
+				
+			</ul>
+	  </div>
+	
+
+
+</div>
+
+
+	</div>
+		
+	<div id="footer">	
+		<p class="rattle">Commissioned by <a href="http://backstage.bbc.co.uk">backstage.bbc.co.uk</a>. Produced by <a href="http://www.rattlecentral.com"><img alt="Rattle" src="/images/rattle.gif?1294001162" /></a></p>
+		<p class="left">Follow us on Twitter: <a href="http://twitter.com/channelography">@channelography</a>.</p>
+	</div>
+</div></div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11389263-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

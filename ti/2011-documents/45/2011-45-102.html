@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>
+	
+		Pushing Squares
+	
+	
+		- Mechanical Turk in Ruby
+	</title>
+<meta name="verify-v1" content="v3RQMG6ZGmj9k6zbuPaPmQqKKXmVlKNmEvvuJgmnuLs=" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/960/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/960/text.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/960/960.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/master.css" />
+<link rel="stylesheet" href="/stylesheets/prettify.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/stylesheets/squarepush.css" type="text/css" media="screen, projection" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/squarepush" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/prettify.js"></script>
+<script type="text/javascript" src="/js/squarepush.js"></script>
+<script type="text/javascript" src="/highlight/highlight.pack.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="/highlight/styles/ir_black.css" />
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-10399741-1");
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+</head>
+<body>
+  <div id='header'>
+    <div class="container_12">
+      <div id='nav' class='grid_7'>
+        	<ul>
+        		<li><a href='/articles/'>Articles</a></li>
+        		<li><a href='/projects.html'>Projects</a></li>
+        		<li><a href='/about.html'>About</a></li>
+        		<li><a href='/contact.html'>Contact</a></li>
+        	</ul>
+      </div>
+      <div class="grid_5">
+        <div id="logo">
+    	    <h1><a href='/'>SquarePush - Mechanical Turk in Ruby</a></h1>
+    	  </div>
+    	</div>
+    </div>
+  	<div class='clear'></div>
+	</div>
+	<div class="container_12" id="content">
+    <script type="text/javascript">
+
+    var disqus_developer = true; 
+
+</script>
+
+<div id="post" class='span-18 last'>
+	<h2><a href='/articles/2009/08/11/mechanical-turk-in-ruby'>Mechanical Turk in Ruby</a></h2>
+	<div class='note'>published 11 Aug 2009 by Mark Percival</div>
+	<div class='note'>filed under: Code</div>
+  <p><p class="note">This is part of a series of Mechanical Turk blog posts &#8211; check out more at <a href="/ps/2009/08/26/the-economics-of-mechanical-turk/">Economics of Mechanical Turk</a>, <a href="/ps/2009/08/11/mechanical-turk-and-jquery-external-pages/">Mechanical Turk Pages in JQuery</a>, and Building Mechanical Turk into Rails(coming soon).</p>
+<p>If you&#8217;ve used Mechanical Turk, you already understand some of the initial challenges of getting a successful process in place. Even without getting into the development side of it, Mechanical Turk involves a great deal more than a technical problem that can be solved by a good <span class="caps">API</span>.</p>
+<p>There&#8217;s the issue of payment, task design, and processing the results. It&#8217;s actually an incredibly challenging problem, which we&#8217;ve had fun solving. The variable list is huge, and eventually you start asking yourself questions like &#8220;What&#8217;s the best time to request a task if the ideal worker is in the Phillipines?&#8221;</p>
+<p>I&#8217;m going to first touch the basics, then move into code and development using our <a href="http://github.com/markpercival/rturk">RTurk ruby gem</a>.</p>
+<h2>What is Mechanical Turk</h2>
+<p>Simply, it&#8217;s a service where you can ask a human worker to perform a task. It can be anything, quite literally. You can ask them to verify a picture is not vulgar, or call and do phone number verification. So when I go through some of the details I&#8217;m going to give some easy sample problems we can solve and narrow down the complexity.</p>
+<h3>How it works &#8211; Worker side</h3>
+<p>When a worker logs in, he sees a list of tasks available to him, the price and a basic description of the task to be performed. He clicks on one that he prefers and looks at the actual task. He can then choose to accept it, or go back to the list and choose a different task. At this point if he accepts the <acronym title="Human Intelligence Task"><span class="caps">HIT</span></acronym> he&#8217;s perform it and submits the answer.</p>
+<p>Let&#8217;s have an example:</p>
+<p>The task is to look at a picture and select if it&#8217;s vulgar or inappropriate. On his end all he sees is the Mechnical Turk website with a page framed with the question. It&#8217;s a simple iframe with the page inside detailing the task, showing the picture and asking for a response and submission. It&#8217;s your basic <span class="caps">HTML</span> form and it can be hosted on Amazon or offsite. Surround the the frame is the MTurk site with information like how much you&#8217;ve made and other metrics.</p>
+<h3>How it works &#8211; Requester side</h3>
+<p>You can use Amazons question builder, which uses a template and a simple web <span class="caps">GUI</span> editor to build a question for a worker, but we&#8217;re developers and doing this in Ruby, so lets ignore that since it&#8217;s quite trivial.</p>
+<p>What you need to know is that there are two ways to submit a <span class="caps">HIT</span>. Submit an <span class="caps">XML</span> document with the questions, requirements and layout information, which Amazon will transform into an <span class="caps">HTML</span> form which they host locally. Or submit a <span class="caps">URL</span> which Amazon will place via iframe inside their own site.</p>
+<p>I&#8217;m not even going to touch the <span class="caps">XML</span> route. In my opinion it&#8217;s far more complicated than it needs to be and doesn&#8217;t give you near the freedom to build the form how you wish. The &#8216;external <span class="caps">HIT</span>&#8217;, as Amazon refers to it, gives you an incredible amount of freedom to craft the task page and even use javascript UI tweaks.</p>
+<p>When you make a request, you&#8217;ll send up the external <span class="caps">HIT</span> url, the requirements, and reward amount in a restful request. Your external page should include a form, obviously, that posts to Amazon&#8217;s external hit submission url, and one of your fields should include the AssignmentID so Amazon knows who it&#8217;s from.(It&#8217;ll be passed to you in the <span class="caps">URL</span>)</p>
+<h2>Let get to the code</h2>
+<p>I&#8217;m going to keep this simple, so the example task will be to flag a picture if it&#8217;s vulgar. And I&#8217;m going to use static page external <span class="caps">HIT</span>. In this case we are going to drop the Turker(Amazon&#8217;s term for the workers) to a page hosted on s3 at http://s3.amazonaws.com/squarepush.com/turk/picturerate.html</p>
+<h3>On the request side</h3>
+<p>It&#8217;s as simple and writing up the properties and creating the <span class="caps">HIT</span>.</p>
+<p>Some things to note</p>
+<ol>
+	<li>We are passing the picture_url parameter along with the <span class="caps">URL</span></li>
+	<li>MaxAssignments lets more that one person perform this task(ie. let 3 people rate the same picture)</li>
+	<li>You&#8217;ll see we have a reward and qualifications of 90% approval rate</li>
+	<li>In this case the turker will be directed to http://s3.amazonaws.com/squarepush.com/turk/picturerate.html?picture_url=example.jpg&amp;AssignmentId=abcd12345 where you&#8217;ll be able to get the AssignmentID from the <span class="caps">URL</span> and place it in the form to be submitted.</li>
+</ol>
+<pre class='prettyprint lang-ruby'>
+require 'rturk'
+
+props = {:Title=&gt;"Tell me if this picture is safe for general audiences", 
+         :MaxAssignments=&gt;1, :LifetimeInSeconds=&gt;3600, 
+         :Reward=&gt;{:Amount=&gt;0.05, :CurrencyCode=&gt;"USD"}, 
+         :Keywords=&gt;"twitter, blogging, writing, english", 
+         :Description=&gt;"I need to know if this picture is vulgar or adult only",
+         :RequesterAnnotation=&gt;"Example1",
+         :AssignmentDurationInSeconds=&gt;3600, :AutoApprovalDelayInSeconds=&gt;3600, 
+         :QualificationRequirement=&gt;[{
+           # Approval rate of greater than 90%
+           :QualificationTypeId=&gt;"000000000000000000L0", 
+           :IntegerValue=&gt;90, 
+           :Comparator=&gt;"GreaterThan", 
+           :RequiredToPreview=&gt;"false"
+           }]
+        }
+
+@turk = RTurk::Requester.new(AWSAccessKeyId, AWSAccessKey, :sandbox =&gt; true)
+page = RTurk::ExternalQuestionBuilder.build(
+  "http://s3.amazonaws.com/squarepush.com/turk/picturerate.html", :picture_url =&gt; 'example.jpg')
+
+# Turkers will be directed to http://s3.amazonaws.com/squarepush.com/turk/picturerate.html?picture_url=example.jpg&amp;AssignmentId=abcd12345
+
+@turk.create_hit(props, page)
+
+</pre>
+<p>Want to know more about the landing page for the Turker &#8211; I put it in a separate article &#8211; &#8220;Mechanical Turk External <span class="caps">HIT</span> Pages with JQuery&#8221;</p>
+<h3>Getting the results</h3>
+<p>After you&#8217;ve created your HIT&#8217;s it becomes a waiting game. Turkers will look for promising HIT&#8217;s that they believe are worth their time, open them up to preview them, then accept and complete them.</p>
+<p>If you&#8217;re having multiple Turkers do a single task(getting more than one opinion of the picture for example), you&#8217;ll have multiple assignments attached to that <span class="caps">HIT</span>.</p>
+<p>Amazon has what I consider to be a pretty goofy format for the answers, which come in the form of escaped <span class="caps">XML</span>, inside of a wrapper <span class="caps">XML</span> document. Yes, you read correctly &#8211; an escaped <span class="caps">XML</span> document inside of an <span class="caps">XML</span> document. I&#8217;ve taken the liberty of having the RTurk library go ahead and unescape it and pull it in as a hash. I hope you don&#8217;t mind.</p>
+<p>Again, lets have an example (You&#8217;ll need to have saved each <span class="caps">HIT</span> id from the creation, which I usually put in a database, but I won&#8217;t go into that now)</p>
+<pre class='prettyprint lang-ruby'>
+@turk = RTurk::Requester.new(aws['AWSAccessKeyId'], aws['AWSAccessKey'], :sandbox =&gt; false)
+
+answers = []
+@turk.get_assignments_for_hit("ABCDEFG1234356789").each do |assignment|
+   answers &lt;&lt; assignment['Answer']
+end
+</pre>
+<p>You should get answers that look something like this:<br />
+<pre class='prettyprint lang-ruby'> [&#8216;inappropriate&#8217; =&gt; &#8216;yes&#8217;, &#8216;assignmentId&#8217; =&gt; &#8216;12345abcde&#8217;]</pre></p>
+<p>At this point you can decline to pay the worker if you feel the task wasn&#8217;t completed correctly, or let the worker get paid automatically (set via the &#8216;AutoApprovalDelayInSeconds&#8217;).</p>
+<h3>Tips and Tricks</h3>
+<ol>
+	<li>Keep it external and build your own submission page. This could be a page on a rails app, or a simple <span class="caps">HTML</span> page with javascript. But keeping it external gives you the ability to customize as you see fit.</li>
+	<li>Pass a unique record id with each <span class="caps">HIT</span>. You can&#8217;t assume that every incoming Turker completes the task, in fact many return it. Pass in an identifier to each <span class="caps">HIT</span> created and let Amazon deal with the messy details of returned HIT&#8217;s and previews.</li>
+	<li>Make sure the page is easy to read and loads quickly. This will encourage Turkers to select and complete the <span class="caps">HIT</span>, and at lower prices.</li>
+</ol>
+<h3>Other Reading</h3>
+<ul>
+	<li><a href="http://github.com/markpercival/rturk">RTurk gem on github</a></li>
+	<li><a href="http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2008-08-02/">The Amazon Mechanical Turk <span class="caps">API</span></a></li>
+</ul>
+<h3 class="note">Need Help?</h3>
+<p class="note">Although we wrote and open sourced the RTurk gem with the intention of giving everyone easier access to Mechanical Turk, it&#8217;s still a complex system with a steep learning curve. <a href="/contact.html">Give us a call</a> if you need help &#8211; we&#8217;re the Ruby experts when it comes to Mechanical Turk.</p></p>
+  <hr />
+<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/pushingsquares/embed.js"></script><noscript><a href="http://pushingsquares.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+  </div>
+  <div class='clear'></div>
+  <div id="footer" class="dark">
+    <div class="container_12">
+    	<div class='grid_12'>
+      	<small>Copyright 2009, SquarePush LLC</small>
+    	</div>
+    </div>
+  </div>
+</div>    
+</body>
+</html>

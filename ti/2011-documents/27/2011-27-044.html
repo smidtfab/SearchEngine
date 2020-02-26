@@ -1,0 +1,1892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head profile="http://purl.org/uF/2008/03/">
+  <title>Andytn's soup</title>
+  <meta name="description" content="大雜匯的恩之湯" />
+
+  <link href="http://static.soup.io/stylesheets/global.css?e00691e05d1119f058c56b149a07a79b981e8650" media="screen" rel="stylesheet" title="" type="text/css"  />
+<link href="/appearance/css/12426?e00691e05d1119f058c56b149a07a79b981e8650" media="screen" rel="stylesheet" title="" type="text/css" id="skin_css" />
+  <style id="after_skin_css"></style>
+  
+  <link href="http://soup.andytn.tw/rss" rel="alternate" title="Andytn's soup" type="application/rss+xml" /><link href="http://soup.andytn.tw/rss/original" rel="alternate" title="Andytn's soup (without imported items)" type="application/rss+xml" /><link href="webcal://soup.andytn.tw/ics" rel="alternate" title="Calendar for Andytn's soup" type="text/calendar" />
+
+  
+    <link href="http://asset.soup.io/asset/0016/8539_2cbc_16.jpeg" rel="shortcut icon" type="image/png" />
+  
+
+  
+
+  
+    <script src="http://static.soup.io/javascripts/squeezed/visitor.js?1286213114" type="text/javascript"></script>
+  
+
+  
+
+  
+</head>
+
+<body class="not_edit">
+<script type="text/javascript">var SOUP_Referer = "/";</script>
+
+
+
+<script type="text/javascript">
+  //JS Localization
+  if (!SOUP.Text) SOUP.Text = {}
+
+  
+    SOUP.Text['skin_loading'] = 'Loading skin';
+    SOUP.Text['skin_preview'] = 'Unsaved skin preview';
+    SOUP.Text['skin_save'] = 'Save now';
+    SOUP.Text['skin_cancel'] = 'Revert';
+    SOUP.Text['skin_change_confirm'] = 'This will reset your Custom CSS. There is no undo. Are you sure?';
+    SOUP.Text['unsaved_detected'] = 'You have an unsaved draft';
+    SOUP.Text['unsaved_restore'] = 'Restore';
+    SOUP.Text['unsaved_discard'] = 'Discard';
+    SOUP.Text['months'] = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    SOUP.Text['backup_restore_error'] = 'Sorry, unable to restore backup';
+    SOUP.Text['date_format'] = 'mdy';
+    SOUP.Text['date_styles'] = {'d': 'd', 'm': 'm', 'y': 'y'};
+    SOUP.Text['dismiss'] = 'Dismiss';
+    SOUP.Text['reposting'] = 'Reposting...';
+    SOUP.Text['cal_month_prev'] = 'Previous month';
+    SOUP.Text['cal_month_next'] = 'Next month';
+    SOUP.Text['just_a_moment'] = 'Just a moment...';
+    SOUP.Text['im'] = 'I\'m';
+    SOUP.Text['my'] = 'my';
+    SOUP.Text['is'] = 'is';
+    SOUP.Text['bookmarklet_button'] = 'Don\'t click me, drag this button to your browser toolbar!';
+    SOUP.Text['tutorial_bmlet'] = 'simply drag this button up to your browser\'s bookmark toolbar:';
+    SOUP.Text['tutorial_bmlet_ie'] = 'right-click this button, select \"<b>Add to favorites<\/b>\" and save it to the ' + SOUP.Text['tutorial_bmlet_ie'+SOUP.Public.browser.IEversion()] + '. Don\'t worry, it\'s perfectly safe.';
+    SOUP.Text['bookmarklet'] = Prototype.Browser.IE ? SOUP.Text['tutorial_bmlet_ie'] : SOUP.Text['tutorial_bmlet'];
+    SOUP.Text['tutorial_bmlet_ie7'] = '\"<b>Links<\/b>\" folder (make sure it\'s set to visible in Tools &gt; Toolbars)';
+    SOUP.Text['tutorial_bmlet_ie8'] = '\"<b>Favorites Bar<\/b>\" folder';
+    SOUP.Text['tutorial_invitation'] = '<p>If you like, I can briefly walk you through the main functionality.<\/p><p class=\"btns\"><a class=\"btn\" href=\"#nojs\" onclick=\"return SOUP.Admin.tutorial.step(1)\">Yes please, continue<\/a> <a class=\"btn skip\" href=\"#nojs\" onclick=\"return SOUP.Admin.tutorial.step(-1)\">No, skip this<\/a><\/p>';
+    SOUP.Text['tutorial_end'] = '<h3>Your turn...<\/h3><p><b>That\'s it for now.<\/b> Feel free to play around some more and explore all the other things Soup can do.<\/p>';
+    SOUP.Text['tutorial_initialusername'] = 'What\'s your username on $1?';
+    SOUP.Text['tutorial_initialimport'] = '<h3>Soup &hearts; $1<\/h3><p>Hi <strong>$2<\/strong>! This is your brand new demo account at Soup.io.<\/p><p>We\'ve started importing your public data from $1 in the background &ndash; it should start appearing within minutes and will sync automatically in the future.<\/p><p>That should get you off to a great start here, now try sharing other aspects of your digital life at Soup.io!<\/p>'+SOUP.Text['tutorial_invitation'];
+    SOUP.Text['tutorial'] = [
+      '<h3>Welcome to Soup!<\/h3>'+SOUP.Text['tutorial_invitation'],
+      'Click the \"Add\" button to make your <strong>first post<\/strong>',
+      '<h3>Post types<\/h3><p>These are the types of stuff you can post to your Soup.<br />Go ahead and pick one!<\/p><p>If you can\'t think of anything, how about sharing a favorite quotation, or something funny a friend recently said?',
+      'Just hit \"Save\" when you\'re done.',
+      'Click here to switch to <strong>edit mode<\/strong> to add an \"about me\" text',
+      '<h3>Edit mode<\/h3><p>In edit mode, you can change the title and description of your Soup, as well as edit and delete posts.<\/p><p>Why not <strong>add a short \"about\" text<\/strong>, maybe with your name and location, and how to contact you?<a href=\"#nojs\" class=\"next\" onclick=\"SOUP.Admin.edit_toggle(); return SOUP.Admin.tutorial.step(6)\">Skip this<\/a><\/p>',
+      
+      '<h3>Bookmarklet<\/h3><p>You can use a little browser tool to post cool stuff you find on other websites to Soup.<\/p><p>To set it up, '+SOUP.Text['bookmarklet']+'<\/p><p class=\"bmlet\"><a href=\"#nojs\" class=\"next\" onclick=\"return SOUP.Admin.tutorial.step(8)\">Continue / skip this<\/a>\n<a class=\"bmlet\" href=\"javascript:%0Avar%20es=[\'body\',\'frameset\',\'head\'];%0Avar%20u=document.location.protocol+\'//www.soup.io/\';%0Avar%20fn=\'soup_bookmarklet_\'+(Math.floor(Math.random()*100000));%0A%0Awindow.open(u+\'bookmarklet-loading.html\',fn,\'toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=400\');%0A%0Atry%0A%7B%0A%20%20var%20s=document.createElement(\'script\');%0A%20%20s.setAttribute(\'src\',u+\'bookmarklet/js/\'+%20fn%20+\'/5\');%0A%20%20for%20(var%20i=0;i%3Ces.length;i++)%7B%0A%20%20%20%20var%20e=document.getElementsByTagName(es[i])[0];%0A%20%20%20%20if(e)%7B%0A%20%20%20%20%20%20e.appendChild(s);%0A%20%20%20%20%20%20break;%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0Acatch(e)%0A%7B%0A%20%20alert(%22This%20doesn\'t%20work%20here.%22);%0A%7D%0Avoid(0);%0A\" onmouseup=\"return SOUP.Admin.bookmarklet_button()\">\n <img src=\"/images/bookmarklet.png\" alt=\"Post to Soup\" title=\"Post to Soup\" />\n<\/a>\n<\/p>',
+      '<p>The next time you\'re on a web page and see something you want to share, you can just click <b>Post to Soup<\/b> to post a quote, an image or a video from that page to your Soup.<\/p><p class=\"btns\"><a href=\"#nojs\" class=\"next\" onclick=\"return SOUP.Admin.tutorial.step(6)\">Dragging didn\'t work? Try again...<\/a><a class=\"btn\" href=\"#nojs\" onclick=\"return SOUP.Admin.tutorial.step(8)\">Continue<\/a><\/p>',
+      'Click here to open the <strong>options panel<\/strong> and customize your Soup',
+      '<h3>Customization<\/h3><p>Pick a skin and choose colors you like. Don\'t forget to hit <strong>Save<\/strong> afterwards!<\/p>'
+    ];
+    SOUP.Text['tutorial_end'] = 'Exit the tutorial';
+    SOUP.Text['tutorial_confirm_end'] = 'Do you want to end the tutorial?';
+
+    SOUP.Text['nothing_more_to_play'] = 'Nothing more to play';
+    SOUP.Text['nothing_to_play'] = 'Nothing to play';
+    SOUP.Text['tv_switching_to_everyone'] = 'Nothing more to play, now showing videos by everyone';
+    SOUP.Text['tv_fetch_failed'] = 'Failed to fetch more videos to play';
+    SOUP.Text['tv_fetch_one_failed'] = 'Failed to fetch video';
+
+    SOUP.Text['flag_thanks'] = 'Thank you for flagging this Soup! It will be reviewed.';
+
+  
+    SOUP.Text['tutorial'].push(SOUP.Text['tutorial_end']+'<p style=\"padding-right:65px\">Soup is more fun with friends &ndash; we can now check to see if anyone you know is here already.<\/p><p class=\"btns\"><a class=\"btn\" href=\"http://www.soup.io/friendfinder\">Find &amp; invite friends<\/a><a href=\"#nojs\" class=\"next\" onclick=\"return SOUP.Admin.tutorial.step(-1)\">Skip this and close tutorial<\/a><\/p>');
+  
+
+  // Skin name
+  
+
+  
+
+  
+    SOUP.Public.ignored_user_ids = SOUP.Public.ignored_user_ids.concat(new Array());
+  
+
+  SOUP.Public.open_links_in_new_windows = true;
+
+  // Calendar picker
+  var A_TCALDEF = {
+        'months': SOUP.Text['months'],
+        'weekdays': ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        'yearscroll': false, // show year scroller
+        'weekstart': 1, // first day of week: 0-Su or 1-Mo
+        'centyear': 70, // 2 digit years less than 'centyear' are in 20xx, othewise in 19xx.
+        'imgpath': '/images/calendar/' // directory with calendar images
+  }
+</script>
+
+<script type="text/javascript">
+SOUP.CrossFrame.subscribe(SOUP.Public.process_message_event);
+
+SOUP.Public.storefront_host = 'www.soup.io';
+
+if (!window.postMessage) {
+  document.body.appendChild(new Element('iframe', {'class': 'hidden', 'src': 'http://www.soup.io/iframe-proxy.html'}));
+  
+  
+    document.body.appendChild(new Element('iframe', {'class': 'hidden', 'src': 'http://soup.andytn.tw/iframe-proxy.html'}));
+  
+}
+</script>
+
+<div id="remote-iframe-container">
+  
+  <iframe src="http://www.soup.io/remote/toggle/frame?blog_id=12426&amp;origin_host=soup.andytn.tw"
+          id="toggle-iframe"
+          name="toggle"
+          scrolling="no"
+          frameborder="0"
+          border="0"
+          allowtransparency="true"></iframe>
+
+
+<iframe src="http://www.soup.io/remote/repost/frame?c=dcc4d76e8f59c688d96514f9b35d8639c2ac00d2#host=soup.andytn.tw"
+        scrolling="no"
+        id="repost-iframe"
+        name="repost"
+        frameborder="0"
+        border="0"
+        allowtransparency="true"
+        onmouseover="if (SOUP.Public.over_post_id) SOUP.Public.post_mouseover($('post' + SOUP.Public.over_post_id), event);"
+        onmouseout="if (SOUP.Public.over_post_id) SOUP.Public.post_mouseout($('post' + SOUP.Public.over_post_id), event);"></iframe>
+
+</div>
+
+<div id="reaction-iframe-container"></div>
+
+
+  <div id="soup">
+    <a href="http://www.soup.io"><img alt="Tumblelog by Soup.io" src="http://static.soup.io/images/soup_badge.png?1271267496" title="Tumblelog by Soup.io" /></a>
+  </div>
+
+
+<div id="barcontainer">
+  
+</div>
+
+<div id="admin">
+  <ul id="admin-hot">
+  
+
+
+  <li id="toggle-buttons">
+    <div id="toggle-caption"></div>
+  </li>
+
+
+</ul>
+
+
+
+<div id="admin-sidebar">
+  
+</div>
+</div>
+
+    <div id="lightbox-bg"></div>
+    <div id="lightbox" title="click to return"></div>
+
+    <div id="bubble" onmouseover="SOUP.Public.bubble_over()" onmouseout="SOUP.Public.bubble_out()">
+      <div id="bubblebit"></div>
+      <div id="bubblepost"></div>
+    </div>
+    <script type="text/javascript">
+    SOUP.Public.content_width = 500;
+    SOUP.Public.environment = 'production';
+    </script>
+
+    <img src="http://static.soup.io/images/small_arrow_up.gif" id="actionbar_arrow_up" />
+
+
+
+
+
+
+<div id="contentcontainer2">
+<div id="contentcontainer" class="groups_empty">
+<div id="content" class="multiple-authors friends">
+
+<div id="headercontainer2" class="">
+<div id="headercontainer" class="">
+  <div id="header" class="">
+
+    <div id="title">
+
+      <div id="avatarcontainer" class="vcard">
+        
+          <a id="avatar" href="http://soup.andytn.tw/" class="url ">
+            <img src="http://asset.soup.io/asset/0016/8539_2cbc_48-square.jpeg" alt="andytn" class="fn nickname user12425 photo" width="48" height="48" />
+          </a>
+        
+      </div>
+
+      <div id="h1">
+            <h1 class=""><a href="http://soup.andytn.tw/" name="options[title]">Andytn's soup</a></h1>
+
+    
+      </div>
+
+    </div>
+
+    <div id="userinfo">
+
+      <div id="description_search">
+
+        
+        <div id="descriptioncontainer2">
+          <h4>About</h4>
+          <div id="descriptioncontainer">
+            <div class="description">
+  <div class="description-inner">
+  大雜匯的恩之湯
+  </div>
+</div>
+
+
+
+          </div>
+        </div>
+        
+
+        
+
+          </div><!-- description_search -->
+
+      
+      <div id="accountcontainer">
+        <h4>Accounts</h4>
+        <ul id="accounts">
+          
+          
+              
+                <li><a href="http://www.43things.com/person/andytn" class="feed" rel="me" title="43 Things: andytn"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.43things.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://del.icio.us/andytn" class="feed" rel="me" title="Delicious/andytn"><img alt="Delicious" height="16" onerror="SOUP.Public.default_image(this)" src="http://static.soup.io/images/favicons/delicious.png" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://blog.andytn.tw/" class="feed" rel="me" title="恩的領域"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://blog.andytn.tw/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.flickr.com/photos/andytn/" class="feed" rel="me" title="Uploads from Andytn"><img alt="Flickr" height="16" onerror="SOUP.Public.default_image(this)" src="http://static.soup.io/images/favicons/flickr.png" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://funp.com/push/rss.php?push&amp;postedby=andytn" class="feed" rel="me" title="funP.com - 由andytn張貼的按推文數排序文章"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://funp.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://andytn.tumblr.com/" class="feed" rel="me" title="Tumblr / 恩的雜念"><img alt="Tumblr" height="16" onerror="SOUP.Public.default_image(this)" src="http://static.soup.io/images/favicons/tumblr.png" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.youtube.com/user/andytn" class="feed" rel="me" title="Uploads by andytn"><img alt="Youtube" height="16" onerror="SOUP.Public.default_image(this)" src="http://static.soup.io/images/favicons/youtube.png" width="16" /></a></li>
+              
+          
+        </ul>
+      </div>
+      
+
+      <div id="groups_friends">
+        
+
+        
+
+      </div><!-- groups_friends -->
+
+    </div><!-- userinfo -->
+
+    
+      <div id="filtercontainer">
+        <ul id="filter">
+          <li><a href="http://soup.andytn.tw/">My stream</a></li>
+          <li class="tv"><a href="http://soup.andytn.tw/tv">My TV</a></li>
+          
+            <li class="friends sel"><a href="http://soup.andytn.tw/friends">My friends</a></li>
+          
+        </ul>
+      </div>
+    
+
+  </div><!--/header-->
+</div><!--/headercontainer-->
+</div><!--/headercontainer2-->
+
+<div id="maincontainer">
+<div id="main">
+  
+    <ul id="friendslist">
+    
+      <li class="vcard"><span class="user_container  user2206" ><a class="url" href="http://gkojax.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0009/6848_c58a_32-square.jpeg" alt="gkojax" title="gkojax" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user8728" ><a class="url" href="http://www.iamvista.net" rel="contact"><img src="http://asset.soup.io/asset/0018/6047_a9d8_32-square.jpeg" alt="vista" title="vista" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user9542" ><a class="url" href="http://nei.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0124/6356_fb45_32-square.jpeg" alt="nei" title="nei" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user10606" ><a class="url" href="http://thecarol.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0032/3140_405c_32-square.jpeg" alt="thecarol" title="thecarol" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user10610" ><a class="url" href="http://Erix.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0011/0295_1abb_32-square.jpeg" alt="Erix" title="Erix" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user10701" ><a class="url" href="http://haze.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0020/5064_6e3a_32-square.jpeg" alt="haze" title="haze" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11140" ><a class="url" href="http://isaac.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0027/8661_ec70_32-square.jpeg" alt="isaac" title="isaac" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11480" ><a class="url" href="http://QienKuen.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0017/5605_bbaa_32-square.png" alt="QienKuen" title="QienKuen" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11619" ><a class="url" href="http://mountain.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0014/7257_c938_32-square.jpeg" alt="mountain" title="mountain" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11650" ><a class="url" href="http://momizi.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0014/8147_8e62_32-square.gif" alt="momizi" title="momizi" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11658" ><a class="url" href="http://alice425.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0014/8218_4554_32-square.gif" alt="alice425" title="alice425" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11662" ><a class="url" href="http://soup.tenz.net" rel="contact"><img src="http://asset.soup.io/asset/0014/8238_bc0e_32-square.png" alt="tenz" title="tenz" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11663" ><a class="url" href="http://kovis.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0014/8309_5b28_32-square.jpeg" alt="kovis" title="kovis" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11666" ><a class="url" href="http://kenworker.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0020/3635_4e2f_32-square.jpeg" alt="kenworker" title="kenworker" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11671" ><a class="url" href="http://swpave.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0014/8374_10bb_32-square.jpeg" alt="swpave" title="swpave" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11695" ><a class="url" href="http://robbin.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0015/4062_d04c_32-square.jpeg" alt="robbin" title="robbin" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11703" ><a class="url" href="http://angelsmileoo.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0124/1393_e25a_32-square.jpeg" alt="angelsmileoo" title="angelsmileoo" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user11777" ><a class="url" href="http://jenhsiou.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0178/3244_b90d_32-square.jpeg" alt="jenhsiou" title="jenhsiou" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user12200" ><a class="url" href="http://zeroone.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0016/7864_23c2_32-square.jpeg" alt="zeroone" title="zeroone" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user12304" ><a class="url" href="http://orca.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0021/8675_4298_32-square.png" alt="orca" title="orca" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user12311" ><a class="url" href="http://Jiyun.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0016/5448_4899_32-square.jpeg" alt="Jiyun" title="Jiyun" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user12441" ><a class="url" href="http://esorhjy.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0114/9824_4c82_32-square.jpeg" alt="esorhjy" title="esorhjy" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user13755" ><a class="url" href="http://soup.schee.info" rel="contact"><img src="http://asset.soup.io/asset/0019/5739_1bb0_32-square.jpeg" alt="schee" title="schee" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user13955" ><a class="url" href="http://u83jp6.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0211/7872_fbd5_32-square.jpeg" alt="u83jp6" title="u83jp6" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user13970" ><a class="url" href="http://rway.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0020/0465_d2fa_32-square.gif" alt="rway" title="rway" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14219" ><a class="url" href="http://taoyanni.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/8288_a2cb_32-square.jpeg" alt="taoyanni" title="taoyanni" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14440" ><a class="url" href="http://htchien.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0020/7665_c234_32-square.gif" alt="htchien" title="htchien" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14634" ><a class="url" href="http://x.fredjame.com" rel="contact"><img src="http://asset.soup.io/asset/0337/5675_5a52_32-square.jpeg" alt="ffred" title="ffred" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14641" ><a class="url" href="http://asimo118.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/0729_2d24_32-square.jpeg" alt="asimo118" title="asimo118" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14851" ><a class="url" href="http://Cait.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0022/0055_e977_32-square.jpeg" alt="Cait" title="Cait" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14941" ><a class="url" href="http://bibicall.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0021/9097_a65d_32-square.jpeg" alt="bibicall" title="bibicall" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15440" ><a class="url" href="http://markwu.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/1120_0a69_32-square.png" alt="markwu" title="markwu" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15476" ><a class="url" href="http://jeph.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/1818_0d8d_32-square.gif" alt="jeph" title="jeph" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15480" ><a class="url" href="http://christabelle.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/1991_d9e9_32-square.jpeg" alt="christabelle" title="christabelle" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15505" ><a class="url" href="http://jonxberg.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/2292_606f_32-square.jpeg" alt="jonxberg" title="jonxberg" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15629" ><a class="url" href="http://macdog.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/3261_56cd_32-square.jpeg" alt="macdog" title="macdog" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15723" ><a class="url" href="http://flypig.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/4594_aba1_32-square.jpeg" alt="flypig" title="flypig" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15842" ><a class="url" href="http://fine.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0023/5107_a951_32-square.png" alt="fine" title="fine" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user16011" ><a class="url" href="http://Egist.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0000/4696_default_avatar_32-square.png" alt="Egist" title="Egist" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user19720" ><a class="url" href="http://bestguy.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0031/3805_a334_32-square.jpeg" alt="bestguy" title="bestguy" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user15253" ><a class="url" href="http://x.tuna.to" rel="contact"><img src="http://asset.soup.io/asset/0023/4038_1953_32-square.jpeg" alt="tuna" title="tuna" class="photo fn" width="32" height="32" /></a></span></li>
+    
+      <li class="vcard"><span class="user_container  user14852" ><a class="url" href="http://ascent.soup.io" rel="contact"><img src="http://asset.soup.io/asset/0021/6929_dc57_32-square.jpeg" alt="ascent" title="ascent" class="photo fn" width="32" height="32" /></a></span></li>
+    
+  </ul>
+  
+  
+  <div id="searchbox">
+
+  </div>
+  <noscript>
+  
+    <div class="pagination paginationtop">
+      <a href="http://soup.andytn.tw/friends" class="front keephash" name="front">&laquo;</a>
+      <a href="/since/70760866?mode=friends&amp;sessid=e3d23a7df0b1b5f5077c024ac56ba98d" class="back keephash" name="back">&larr; Newer</a>
+    </div>
+  
+  
+</noscript>
+
+
+  
+
+  <div id="posts">
+
+  
+    
+
+  <script type="text/javascript">
+      SOUP.Endless.next_url = '/since/70733785?mode=friends&sessid=e3d23a7df0b1b5f5077c024ac56ba98d';
+  </script>
+        <div id="scroll-contents" style="position: absolute; left: -1000px; visibility: hidden"></div>
+  <div id="reload_notice" class="endlessnotice">
+    <strong>Newer posts are loading.</strong><br />
+  </div>
+        <div id="top_notice" class="endlessnotice">
+                <strong>You are at the newest post.</strong><br/>
+    <a href="/since/70807591?mode=friends&newer=1&sessid=e3d23a7df0b1b5f5077c024ac56ba98d" id="endless_top_post"
+             onclick="SOUP.Endless.getMoreAbove(); return false;">Click here</a>
+     to check if anything new just came in.
+  </div>
+  <div id="more_history"><div id="first_batch">
+    
+  <div id="new-future" class="new-container"></div>
+
+
+
+  
+    <h2 class="date">
+      
+    <span class="m">August</span>
+    <span class="d">13</span>
+    <span class="y">2010</span>
+    </h2>
+  
+
+
+
+  <div id="new-today" class="new-container"></div>
+
+
+<div id="post70807591" class="post post_regular imported twitter  author-friend authorid-19720  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://bestguy.soup.io/post/70807591/9-25" title="咦？「安全地帶」9／25在香港辦演唱會"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user19720" ><a class="url" href="http://bestguy.soup.io"><img src="http://asset.soup.io/asset/0031/3805_a334_32-square.jpeg" alt="bestguy" title="bestguy" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://bestguy.soup.io/post/70807591/9-25">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:49:11 UTC">14:49</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  咦？「安全地帶」9／25在香港辦演唱會
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://bestguy.soup.io/post/70807591/9-25" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70807591&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70747234" class="post post_regular imported feeds-feedburner-com long author-friend authorid-10606  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://thecarol.soup.io/post/70747234/CloudCrowd-Raises-5-1-Million-To-Outsource" title="CloudCrowd Raises $5.1 Million To Outsource Labor To The Cloud"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user10606" ><a class="url" href="http://thecarol.soup.io"><img src="http://asset.soup.io/asset/0032/3140_405c_32-square.jpeg" alt="thecarol" title="thecarol" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://thecarol.soup.io/post/70747234/CloudCrowd-Raises-5-1-Million-To-Outsource">
+              <img src="http://www.techcrunch.com/favicon.ico" width="16" height="16" title="Imported from feedburner.com" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:47:58 UTC">14:47</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content tag-tc tag-featured tag-cloudcrowd">
+  
+
+  
+  <h3><a href="http://feedproxy.google.com/~r/Techcrunch/~3/SvkEDut-_qI/"><a href="http://feedproxy.google.com/~r/Techcrunch/~3/SvkEDut-_qI/">CloudCrowd Raises $5.1 Million To Outsource Labor To The Cloud</a></a></h3>
+
+
+<div class="body">
+
+
+  
+  <p><img class="shot2" src="http://tctechcrunch.files.wordpress.com/2010/03/cloud.png?w=320" />Labor as a service startup <a href="http://www.cloudcrowd.com/">CloudCrowd</a> has just raised $5.1 million in funding, according to an <a href="http://www.sec.gov/Archives/edgar/data/1472761/000144693310000007/xslFormDX01/primary_doc.xml">recent SEC filing.</a> We’ve confirmed the funding with the startup, which had previously raised $1.5 million in seed funding.  This recent round of funding was led by <a href="http://www.crunchbase.com/financial-organization/draper-fisher-jurvetson">DFJ</a> with and the startup’s co-founder and CEO <a href="http://www.crunchbase.com/person/alex-edelstein">Alex Edelstein</a> participating in the round.</p>
+<p>Like <a href="http://crowdflower.com/">CrowdFlower</a> and Amazon’s <a href="https://www.mturk.com/mturk/welcome">Mechanical Turk</a>, CloudCrowd is trying to <a href="http://techcrunch.com/2010/03/19/cloudcrowd-outsources-labor-to-the-cloud/">bring</a> labor into the cloud, by creating a vast network of workers around the globe. The startup has roughly 25,000 workers, who have completed more than a million tasks since the site’s launch in October 2009. You can read our recent coverage and video interview with CloudCrowd<a href="http://techcrunch.com/2010/07/13/inside-cloudcrowd-betting-on-credibility-video/"> here.</a>  </p>
+<p>The <a href="http://techcrunch.com/2010/03/19/cloudcrowd-outsources-labor-to-the-cloud/">bulk</a> of CloudCrowd’s business are client-driven tasks: a company submits tasks to CloudCrowd and the service will farm that out to eligible workers. Workers can also access CloudCrowd through a Facebook app, where they can pick available tasks and arrange payment.The tasks can be as simple as checking the quality of an image or involve the translation of entire web pages. Because pricing is determined by the level of difficulty, the payouts range from one penny to several dollars. Once a task is completed, a different user will check the finished product for an additional fee, creating a level of quality control.</p>
+<p>With each task completed, a worker earn a credibility rating that determines the types of tasks they are offered. Workers who don’t have a rating yet are assigned basic tasks until they develop a reputation. Workers are able to see how much each separate task pays, and earnings are distributed through PayPal.</p>
+<p>CloudCrown also has a consumer facing business. The company offers EditZen, a simple web site, where consumers can submit pages for editing at $4 a page. The also plans to launch TranslationZen, which will offer translation services with a similar labor model. </p>
+<p>And the model is seeing success. The company is on track to complete 2 million tasks, and this round of funding should help scale the business further. </p>
+<div class="cbw snap_nopreview"><div class="cbw_header"><div class="cbw_header_text"><a href="http://www.crunchbase.com/">CrunchBase Information</a></div></div><div class="cbw_content"><div class="cbw_subheader"><a href="http://www.crunchbase.com/company/cloudcrowd">CloudCrowd</a></div><div class="cbw_subcontent"></div><div class="cbw_footer">Information provided by <a href="http://www.crunchbase.com/">CrunchBase</a></div></div></div>
+<br />  <a href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/comments/tctechcrunch.wordpress.com/207356/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/delicious/tctechcrunch.wordpress.com/207356/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gofacebook/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/facebook/tctechcrunch.wordpress.com/207356/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gotwitter/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/twitter/tctechcrunch.wordpress.com/207356/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/stumble/tctechcrunch.wordpress.com/207356/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/digg/tctechcrunch.wordpress.com/207356/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch.wordpress.com/207356/"><img src="http://feeds.wordpress.com/1.0/reddit/tctechcrunch.wordpress.com/207356/" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=techcrunch.com&amp;blog=11718616&amp;post=207356&amp;subd=tctechcrunch&amp;ref=&amp;feed=1" alt="" />
+<p><a href="http://feedads.g.doubleclick.net/~at/FPvf6QXox5-fFJ3__Dwv9s_dtSo/0/da"><img src="http://feedads.g.doubleclick.net/~at/FPvf6QXox5-fFJ3__Dwv9s_dtSo/0/di" /></a><br />
+<a href="http://feedads.g.doubleclick.net/~at/FPvf6QXox5-fFJ3__Dwv9s_dtSo/1/da"><img src="http://feedads.g.doubleclick.net/~at/FPvf6QXox5-fFJ3__Dwv9s_dtSo/1/di" /></a></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=SvkEDut-_qI:YiE5d3y919c:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=SvkEDut-_qI:YiE5d3y919c:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=SvkEDut-_qI:YiE5d3y919c:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=SvkEDut-_qI:YiE5d3y919c:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=SvkEDut-_qI:YiE5d3y919c:-BTjWOF_DHI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=SvkEDut-_qI:YiE5d3y919c:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=SvkEDut-_qI:YiE5d3y919c:D7DqB2pKExk" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=SvkEDut-_qI:YiE5d3y919c:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" /></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/SvkEDut-_qI" height="1" width="1" />
+  
+
+
+</div>
+
+
+
+  
+    <div class="tags">
+      Tags: 
+      <a href="http://thecarol.soup.io/tag/TC">TC</a> <a href="http://thecarol.soup.io/tag/featured">featured</a> <a href="http://thecarol.soup.io/tag/cloudcrowd">cloudcrowd</a>
+    </div>
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://thecarol.soup.io/post/70747234/CloudCrowd-Raises-5-1-Million-To-Outsource" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70747234&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post71050516" class="post post_image long author-friend authorid-2206  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://gkojax.soup.io/post/71050516/konnyagayamada" title="konnyagayamada:"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user2206" ><a class="url" href="http://gkojax.soup.io"><img src="http://asset.soup.io/asset/0009/6848_c58a_32-square.jpeg" alt="gkojax" title="gkojax" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:37:37 UTC">14:37</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70795778" class="post post_regular imported twitter  author-friend authorid-2206  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://gkojax.soup.io/post/70795778/hanako" title="生まれて初めて王冠さんと推しがかぶった #hanako"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user2206" ><a class="url" href="http://gkojax.soup.io"><img src="http://asset.soup.io/asset/0009/6848_c58a_32-square.jpeg" alt="gkojax" title="gkojax" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://gkojax.soup.io/post/70795778/hanako">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:35:51 UTC">14:35</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  生まれて初めて王冠さんと推しがかぶった #<a href="http://search.twitter.com/search?q=%23hanako">hanako</a>
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://gkojax.soup.io/post/70795778/hanako" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70795778&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70747236" class="post post_regular imported feeds-feedburner-com long author-friend authorid-10606  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://thecarol.soup.io/post/70747236/CourseSmart-For-iPad-Free-App-With-90" title="CourseSmart For iPad: Free App With 90 Percent Of ‘Core Textbooks’ Available"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user10606" ><a class="url" href="http://thecarol.soup.io"><img src="http://asset.soup.io/asset/0032/3140_405c_32-square.jpeg" alt="thecarol" title="thecarol" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://thecarol.soup.io/post/70747236/CourseSmart-For-iPad-Free-App-With-90">
+              <img src="http://www.techcrunch.com/favicon.ico" width="16" height="16" title="Imported from feedburner.com" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:33:30 UTC">14:33</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content tag-tc tag-ebooks tag-ipad tag-ereaders">
+  
+
+  
+  <h3><a href="http://feedproxy.google.com/~r/Techcrunch/~3/h879gacA6nQ/"><a href="http://feedproxy.google.com/~r/Techcrunch/~3/h879gacA6nQ/">CourseSmart For iPad: Free App With 90 Percent Of ‘Core Textbooks’ Available</a></a></h3>
+
+
+<div class="body">
+
+
+  
+  <p><a href="http://techcrunch.com/2010/04/13/realtime-media-sharing-service-tweetphoto-raises-2-6-million-series-a/172536-revision-7/"><img class="aligncenter size-full wp-image-172543" title="coursesmart" src="http://www.crunchgear.com/wp-content/uploads/2010/08/coursesmart.jpg" height="373" alt="" width="500" /></a></p>
+<p>Students have another choice when it comes to electronic textbooks. <a href="http://www.coursesmart.com/go/mobile/#">CourseSmart</a> has released <a href="http://itunes.apple.com/us/app/etextbooks-for-the-ipad/id364903557?mt=8#">an iPad App</a> [iTunes link], and the company <a href="http://www.wired.com/gadgetlab/2010/08/coursesmart-launches-e-textbooks-for-ipad/">says</a>  that 90 percent of the “core textbooks” out there are available.</p>
+<p>CourseSmart already sells e-textbooks for view on a laptop or the <a href="http://www.crunchgear.com/tag/iphone/">iPhone</a>, but I think you’ll agree that reading a textbook on an <a href="http://www.crunchgear.com/tag/ipad/">iPad</a> is another experience entirely. The large, color screen could come in handy for, off the top of my head, biology books, or maybe if you’re buying a photography book for an introductory class.<span></span></p>
+<br />  <a href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/comments/tctechcrunch.wordpress.com/207357/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/delicious/tctechcrunch.wordpress.com/207357/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gofacebook/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/facebook/tctechcrunch.wordpress.com/207357/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gotwitter/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/twitter/tctechcrunch.wordpress.com/207357/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/stumble/tctechcrunch.wordpress.com/207357/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/digg/tctechcrunch.wordpress.com/207357/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch.wordpress.com/207357/"><img src="http://feeds.wordpress.com/1.0/reddit/tctechcrunch.wordpress.com/207357/" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=techcrunch.com&amp;blog=11718616&amp;post=207357&amp;subd=tctechcrunch&amp;ref=&amp;feed=1" alt="" />
+<p><a href="http://feedads.g.doubleclick.net/~at/HlX65s3YFygSAFa1-Z-mjyOKvxY/0/da"><img src="http://feedads.g.doubleclick.net/~at/HlX65s3YFygSAFa1-Z-mjyOKvxY/0/di" /></a><br />
+<a href="http://feedads.g.doubleclick.net/~at/HlX65s3YFygSAFa1-Z-mjyOKvxY/1/da"><img src="http://feedads.g.doubleclick.net/~at/HlX65s3YFygSAFa1-Z-mjyOKvxY/1/di" /></a></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=h879gacA6nQ:icf-I8D6Ceg:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=h879gacA6nQ:icf-I8D6Ceg:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=h879gacA6nQ:icf-I8D6Ceg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=h879gacA6nQ:icf-I8D6Ceg:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=h879gacA6nQ:icf-I8D6Ceg:-BTjWOF_DHI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=h879gacA6nQ:icf-I8D6Ceg:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=h879gacA6nQ:icf-I8D6Ceg:D7DqB2pKExk" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=h879gacA6nQ:icf-I8D6Ceg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" /></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/h879gacA6nQ" height="1" width="1" />
+  
+
+
+</div>
+
+
+
+  
+    <div class="tags">
+      Tags: 
+      <a href="http://thecarol.soup.io/tag/TC">TC</a> <a href="http://thecarol.soup.io/tag/ebooks">ebooks</a> <a href="http://thecarol.soup.io/tag/ipad">ipad</a> <a href="http://thecarol.soup.io/tag/ereaders">ereaders</a>
+    </div>
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://thecarol.soup.io/post/70747236/CourseSmart-For-iPad-Free-App-With-90" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70747236&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70807597" class="post post_regular imported twitter  author-friend authorid-19720  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://bestguy.soup.io/post/70807597/" title="還有這一句＂拍照不總是在創作，而是發現那些已存在的瑰麗＂"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user19720" ><a class="url" href="http://bestguy.soup.io"><img src="http://asset.soup.io/asset/0031/3805_a334_32-square.jpeg" alt="bestguy" title="bestguy" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://bestguy.soup.io/post/70807597/">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:30:13 UTC">14:30</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  還有這一句＂拍照不總是在創作，而是發現那些已存在的瑰麗＂
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://bestguy.soup.io/post/70807597/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70807597&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70807598" class="post post_regular imported twitter  author-friend authorid-19720  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://bestguy.soup.io/post/70807598/iPhone" title="正在讀「iPhone影像隨行」，有幾句話頗有意思：＂至少有十張偉大的照片在你所處之地方圓十里之內，它們正等著你去拍攝＂"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user19720" ><a class="url" href="http://bestguy.soup.io"><img src="http://asset.soup.io/asset/0031/3805_a334_32-square.jpeg" alt="bestguy" title="bestguy" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://bestguy.soup.io/post/70807598/iPhone">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:26:12 UTC">14:26</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  正在讀「iPhone影像隨行」，有幾句話頗有意思：＂至少有十張偉大的照片在你所處之地方圓十里之內，它們正等著你去拍攝＂
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://bestguy.soup.io/post/70807598/iPhone" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70807598&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70964497" class="post post_image long author-friend authorid-2206  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://gkojax.soup.io/post/70964497/kirin91" title="kirin91:"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user2206" ><a class="url" href="http://gkojax.soup.io"><img src="http://asset.soup.io/asset/0009/6848_c58a_32-square.jpeg" alt="gkojax" title="gkojax" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:19:56 UTC">14:19</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70765278" class="post post_link imported delicious author-friend authorid-8728  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://www.iamvista.net/post/70765278/foursquare" title="foursquare :: 金石堂書店（民生店） :: 松山區, 台北市"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user8728" ><a class="url" href="http://www.iamvista.net"><img src="http://asset.soup.io/asset/0018/6047_a9d8_32-square.jpeg" alt="vista" title="vista" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://www.iamvista.net/post/70765278/foursquare">
+              <img src="http://static.soup.io/images/favicons/delicious.png" width="16" height="16" title="Imported from Delicious" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:19:35 UTC">14:19</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  <h3>
+
+<a href="http://foursquare.com/venue/3186948">foursquare :: 金石堂書店（民生店） :: 松山區, 台北市</a>
+</h3>
+
+<span class="body">I'm at 金石堂書店（民生店） (民生東路五段119號, 新中街, 松山區). <a href="http://4sq.com/bTfals">http://4sq.com/bTfals</a></span>
+
+
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://www.iamvista.net/post/70765278/foursquare" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70765278&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70757389" class="post post_regular imported twitter  author-friend authorid-8728  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://www.iamvista.net/post/70757389/Im-at-119-http-4sq-com-bTfals" title="I'm at 金石堂書店（民生店） (民生東路五段119號, 新中街, 松山區). http://4sq.com/bTfals"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user8728" ><a class="url" href="http://www.iamvista.net"><img src="http://asset.soup.io/asset/0018/6047_a9d8_32-square.jpeg" alt="vista" title="vista" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://www.iamvista.net/post/70757389/Im-at-119-http-4sq-com-bTfals">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:19:35 UTC">14:19</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  I'm at 金石堂書店（民生店） (民生東路五段119號, 新中街, 松山區). <a href="http://4sq.com/bTfals">http://4sq.com/bTfals</a>
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://www.iamvista.net/post/70757389/Im-at-119-http-4sq-com-bTfals" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70757389&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70733781" class="post post_link imported lastfmrecent author-friend authorid-11741  musictrack hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70733781/" title="蔡依林 – 無言以對"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70733781/">
+              <img src="http://static.soup.io/images/favicons/lastfmrecent.png" width="16" height="16" title="Imported from LastFMRecent" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:18:25 UTC">14:18</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  <h3>
+
+  <span class="note">&#9835;</span>
+
+<a href="http://www.last.fm/music/%E8%94%A1%E4%BE%9D%E6%9E%97/_/%E7%84%A1%E8%A8%80%E4%BB%A5%E5%B0%8D">蔡依林 – 無言以對</a>
+</h3>
+
+<span class="body"></span>
+
+
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70733781/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70733781&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70763417" class="post post_regular imported twitter  author-friend authorid-11741  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70763417/v-youku-com" title="蔡依林專輯跑到中國去辦發片記者會，結果找來一個跟他根本不熟的主持人，效果真的很差啊，總覺得這種大場還是非陶子莫屬！v.youku.com/..."></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70763417/v-youku-com">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:15:45 UTC">14:15</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  蔡依林專輯跑到中國去辦發片記者會，結果找來一個跟他根本不熟的主持人，效果真的很差啊，總覺得這種大場還是非陶子莫屬！<a href="http://v.youku.com/v_show/id_XMTk3NzA2MDA4.html" title="http://bit.ly/atLJGo">v.youku.com/...</a>
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70763417/v-youku-com" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70763417&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70763418" class="post post_regular imported twitter  author-friend authorid-11741  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70763418/RT-songshinan-www-penisland-net-pen-island" title="RT @songshinan: 看来一枚冷笑话：www.penisland.net 原本是卖钢笔的，意为 pen island(钢笔岛)；结果大家乍一看却..."></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70763418/RT-songshinan-www-penisland-net-pen-island">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:11:39 UTC">14:11</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  RT @<a href="http://twitter.com/songshinan">songshinan</a>: 看来一枚冷笑话：<a href="http://www.penisland.net">www.penisland.net</a> 原本是卖钢笔的，意为 pen island(钢笔岛)；结果大家乍一看却是 penis land(鸡巴大陆)
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70763418/RT-songshinan-www-penisland-net-pen-island" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70763418&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70763420" class="post post_regular imported twitter  author-friend authorid-11741  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70763420/" title="我一直以為趙又廷剃平頭是要加入新兵日記"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70763420/">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:09:23 UTC">14:09</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  我一直以為趙又廷剃平頭是要加入新兵日記
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70763420/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70763420&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70964501" class="post post_image long author-friend authorid-2206  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://gkojax.soup.io/post/70964501/kirin91" title="kirin91:"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user2206" ><a class="url" href="http://gkojax.soup.io"><img src="http://asset.soup.io/asset/0009/6848_c58a_32-square.jpeg" alt="gkojax" title="gkojax" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 14:02:33 UTC">14:02</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70728806" class="post post_regular imported techmeme-com long author-friend authorid-10606  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://thecarol.soup.io/post/70728806/Facebook-Launching-Official-Live-Streaming-Channel-Facebook" title="Facebook Launching Official Live Streaming Channel: Facebook Live (Sarah Perez/ReadWriteWeb)"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user10606" ><a class="url" href="http://thecarol.soup.io"><img src="http://asset.soup.io/asset/0032/3140_405c_32-square.jpeg" alt="thecarol" title="thecarol" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://thecarol.soup.io/post/70728806/Facebook-Launching-Official-Live-Streaming-Channel-Facebook">
+              <img src="http://www.techmeme.com/favicon.ico" width="16" height="16" title="Imported from techmeme.com" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 13:55:00 UTC">13:55</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+  <h3><a href="http://www.techmeme.com/100813/p21#a100813p21"><a href="http://www.techmeme.com/100813/p21#a100813p21">Facebook Launching Official Live Streaming Channel: Facebook Live (Sarah Perez/ReadWriteWeb)</a></a></h3>
+
+
+<div class="body">
+
+
+  
+  <a href="http://www.readwriteweb.com/archives/facebook_launching_official_live_streaming_channel_facebook_live.php"><img src="http://www.techmeme.com/100813/i21.jpg" /></a>
+<p><a href="http://www.techmeme.com/100813/p21#a100813p21" title="Techmeme permalink"><img src="http://www.techmeme.com/img/pml.png" height="12" width="11" /></a> Sarah Perez / <a href="http://www.readwriteweb.com/">ReadWriteWeb</a>:<br />
+<span><b><a href="http://www.readwriteweb.com/archives/facebook_launching_official_live_streaming_channel_facebook_live.php">Facebook Launching Official Live Streaming Channel: Facebook Live</a></b></span>  —  Today at 3 PM PST (6 EST), Facebook will unveil its new official live video streaming channel, Facebook Live.  To kick off the launch, actress America Ferrera will stop by Facebook's headquarters in Palo Alto … </p>
+  
+
+
+</div>
+
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://thecarol.soup.io/post/70728806/Facebook-Launching-Official-Live-Streaming-Channel-Facebook" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70728806&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70733783" class="post post_link imported lastfmrecent author-friend authorid-11741  musictrack hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70733783/" title="蔡依林 – 玩愛之徒"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70733783/">
+              <img src="http://static.soup.io/images/favicons/lastfmrecent.png" width="16" height="16" title="Imported from LastFMRecent" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 13:51:11 UTC">13:51</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  <h3>
+
+  <span class="note">&#9835;</span>
+
+<a href="http://www.last.fm/music/%E8%94%A1%E4%BE%9D%E6%9E%97/_/%E7%8E%A9%E6%84%9B%E4%B9%8B%E5%BE%92">蔡依林 – 玩愛之徒</a>
+</h3>
+
+<span class="body"></span>
+
+
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70733783/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70733783&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70733784" class="post post_link imported lastfmrecent author-friend authorid-11741  musictrack hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70733784/" title="蔡依林 – 美人計"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70733784/">
+              <img src="http://static.soup.io/images/favicons/lastfmrecent.png" width="16" height="16" title="Imported from LastFMRecent" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 13:47:08 UTC">13:47</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  <h3>
+
+  <span class="note">&#9835;</span>
+
+<a href="http://www.last.fm/music/%E8%94%A1%E4%BE%9D%E6%9E%97/_/%E7%BE%8E%E4%BA%BA%E8%A8%88">蔡依林 – 美人計</a>
+</h3>
+
+<span class="body"></span>
+
+
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70733784/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70733784&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70764066" class="post post_regular imported twitter  author-friend authorid-14641  hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://asimo118.soup.io/post/70764066/" title="靠北！這時候收到出貨通知是怎樣！怎麼剛好我都不會在的時候發生這種事情！？"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user14641" ><a class="url" href="http://asimo118.soup.io"><img src="http://asset.soup.io/asset/0023/0729_2d24_32-square.jpeg" alt="asimo118" title="asimo118" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://asimo118.soup.io/post/70764066/">
+              <img src="http://static.soup.io/images/favicons/twitter.png" width="16" height="16" title="Imported from Twitter" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 13:45:54 UTC">13:45</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  
+
+<div class="body">
+<div>
+
+  
+  靠北！這時候收到出貨通知是怎樣！怎麼剛好我都不會在的時候發生這種事情！？
+  
+
+</div>
+</div>
+<div class="extra"></div>
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://asimo118.soup.io/post/70764066/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70764066&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+<div id="post70733785" class="post post_link imported lastfmrecent author-friend authorid-11741  musictrack hide-tags" onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Ken.soup.io/post/70733785/" title="蔡依林 – 即時生效"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user11741" ><a class="url" href="http://Ken.soup.io"><img src="http://asset.soup.io/asset/0147/4508_985c_32-square.jpeg" alt="Ken" title="Ken" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Ken.soup.io/post/70733785/">
+              <img src="http://static.soup.io/images/favicons/lastfmrecent.png" width="16" height="16" title="Imported from LastFMRecent" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 13 2010 13:43:50 UTC">13:43</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content ">
+  
+
+  <h3>
+
+  <span class="note">&#9835;</span>
+
+<a href="http://www.last.fm/music/%E8%94%A1%E4%BE%9D%E6%9E%97/_/%E5%8D%B3%E6%99%82%E7%94%9F%E6%95%88">蔡依林 – 即時生效</a>
+</h3>
+
+<span class="body"></span>
+
+
+
+
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Ken.soup.io/post/70733785/" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=70733785&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+  </div></div>
+  <script type="text/javascript">
+    document.observe('dom:loaded', function() { SOUP.Public.fixup($('first_batch')); });
+  </script>
+  <input autocomplete="false" id="history_index" name="history_index" type="hidden" value="2" />
+  <input id="page_id" name="page_id" type="hidden" value="1301848958" />
+
+  
+          <div id="load_more" class="endlessnotice">
+            <strong><a href="/since/70733785?mode=friends&amp;sessid=e3d23a7df0b1b5f5077c024ac56ba98d" onclick="SOUP.Endless.getMoreBelow(); return false;">Older posts are this way</a></strong>
+            If this message doesn't go away, click anywhere on the page to continue loading posts.
+            <noscript><br/>Note: If you enable JavaScript, we will load old posts automatically</noscript>
+                </div>
+          <div id="endless_error" class="endlessnotice">
+      <strong>Could not load more posts</strong><br />
+      Maybe Soup is currently being updated? I'll try again automatically in a few seconds...
+          </div>
+          <div id="more_loading" class="endlessnotice">
+            <strong>Just a second, loading <a href="/since/70733785?mode=friends&amp;sessid=e3d23a7df0b1b5f5077c024ac56ba98d">more posts</a>...</strong>
+          </div>
+          <div id="page_end" class="endlessnotice">
+            You've reached the end.
+          </div>
+  
+  <div style="position:absolute;top:0px;left:0px;visibility:hidden;" id="spacer">&nbsp;</div>
+
+
+  
+
+    <div id="overlay"></div>
+
+  </div><!--/posts-->
+
+  <noscript>
+  
+  
+    <div class="pagination paginationbottom">
+      
+        <a href="/since/70760866?mode=friends&amp;sessid=e3d23a7df0b1b5f5077c024ac56ba98d" class="back keephash" name="back">&larr; Newer</a>
+        <a href="/since/70733785?mode=friends&amp;sessid=e3d23a7df0b1b5f5077c024ac56ba98d" class="more keephash" name="more">More &rarr;</a>
+      
+    </div>
+  
+</noscript>
+
+
+</div><!--/main-->
+</div><!--/maincontainer-->
+
+<div id="footercontainer">
+  <div id="footer">
+  </div>
+</div>
+
+</div><!--/content-->
+</div><!--/contentcontainer-->
+</div><!--/contentcontainer2-->
+
+
+      <script type="text/javascript">
+        _qoptions = { qacct:"p-e4h_-nY6rysa2" };
+      </script>
+      <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+      <noscript>
+        <img src="http://pixel.quantserve.com/pixel/p-e4h_-nY6rysa2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+      </noscript>
+
+
+<script type="text/javascript">
+  SOUP.Public.actionbar_enabled = true;
+
+  
+  
+    SOUP.Endless.init();
+  
+</script>
+
+
+
+</body>
+</html>

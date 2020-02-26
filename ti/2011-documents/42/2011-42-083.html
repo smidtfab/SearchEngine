@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- base_content.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Crowd Sourcing, can it be used with an AI Answer Bot? - Crowdsourcing Questions &amp; Answers</title>
+        <meta name="description" content="I was wondering if someone could take the results of a huge crowd-sourcing Questions &amp;amp; Answer database and feed it to an AI Bot (like the ones found on the net) so users could interact with the bot to get the best answers provided by the net?
+Seems like a brilliant idea, what do you guys think?">
+        <meta name="keywords" content="resource,new-technology,idea,answers,crowdsourcing,artifical,questions,new,bots">
+        
+        <link rel="canonical" href="http://lockergnome.net/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot" />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot?type=rss">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        <meta name="google-site-verification" content="CuOn8xGoi8oW2KDg__TcAJvGLqXmPxbQChxUwt17-bs" />
+        
+        <link rel="shortcut icon" href="/upfiles/favicon.ico" />
+        <link href="/m/default/media/style/style.css" rel="stylesheet" type="text/css" />
+        
+        
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">google.load("jquery", "1.4.2");</script>
+        <script type="text/javascript">
+        /* <![CDATA[ */
+            var i18nLang = 'en';
+            var scriptUrl = '/'
+            var osqaSkin = 'default';
+
+            var messages = {
+                username: '',
+                confirm: "Are you sure?",
+                yes: "Yes",
+                no: "No",
+                message: "Message:",
+                cancel: "Cancel",
+                close: "Close",
+                ok: "Ok",
+                matching_tags_url: "/matching_tags/",
+                word: "word",
+                words: "words",
+                character: "character",
+                characters: "characters"
+            }
+        /* ]] */
+        </script>
+        <script type='text/javascript' src='/m/default/media/js/osqa.main.js'></script>
+        
+        <style type="text/css">
+            body { margin-top:2.4em; }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var element = $('#validate_email_alert');
+                element.click(function(){notify.close(true);})
+                notify.show();
+            });
+        </script>
+        
+        
+        
+        
+        <script type='text/javascript' src='/m/default/media/js/osqa.question.js'></script>
+        <script type='text/javascript' src='/m/default/media/js/wmd/showdown.js'></script>
+        <script type='text/javascript' src='/m/default/media/js/wmd/wmd.js'></script>
+        <link rel="stylesheet" type="text/css" href="/m/default/media/js/wmd/wmd.css" />
+        
+
+        <script type="text/javascript">
+        $().ready(function(){
+            $("#nav_questions").attr('className',"on");
+            var answer_sort_tab = "";
+
+            if (answer_sort_tab) {
+                $("#" + answer_sort_tab).attr('className',"on");
+            }
+
+            $('#editor').TextAreaResizer();
+
+            //toggle preview of editor
+            var display = true;
+            var txt = "[hide preview]";
+            $('#pre-collapse').text(txt);
+            $('#pre-collapse').bind('click', function(){
+                txt = display ? "[show preview]" : "[hide preview]";
+                display = !display;
+                $('#previewer').toggle();
+                $('#pre-collapse').text(txt);
+            });
+        });
+
+        function submitClicked(e, f) {
+            if(!(browserTester('chrome') || browserTester('safari'))) {
+                $("input.submit")[0].disabled=true;
+            }
+            window.removeEventListener('beforeunload', beforeUnload, true);
+            if (f) {
+                f.submit();
+            }
+        }
+
+        function beforeUnload(e) {
+
+            if($("textarea#editor")[0].value != "") {
+                return yourWorkWillBeLost(e);
+            }
+
+            var commentBoxes = $("textarea.commentBox");
+            for(var index = 0; index < commentBoxes.length; index++) {
+                if(commentBoxes[index].value != "") {
+                    return yourWorkWillBeLost(e);
+                }
+            }
+        }
+        window.addEventListener('beforeunload', beforeUnload, true);
+        </script>
+        <noscript>
+            <style>
+                .comment.not_top_scorer {
+                    display: block;
+                }
+                .comment-form-container {
+                    display: block;
+                }
+                .div.comment-tools {
+                    display: none;
+                }
+            </style>
+        </noscript>
+
+        <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Crowdsourcing Questions &amp; Answers Search" />
+        
+    </head>
+    <body>
+        <div class="notify" style="display:none">
+            
+                
+                    
+                          <p class="darkred">First time here? Check out the <a href="/faq/">FAQ</a>!</p>
+                    
+                
+            
+            <a id="close-notify" onclick="notify.close(true)">&times;</a>
+        </div>
+        
+            <div id="custom_header">
+                <p><center>
+<div style="align: right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7561297527511227";
+/* LockerGnome.net - Leaderboard */
+google_ad_slot = "8961320797";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+</center></p>
+            </div>
+        
+        <!-- template header.html -->
+
+
+	<div id="roof">
+	  
+		<div id="logo">
+			<a href="/">
+				<img src="/upfiles/logo_.png" title="back to home page" alt="Crowdsourcing Questions &amp; Answers logo"/>
+			</a>
+		</div>
+	  
+		<div id="top">
+		     <a href="/account/signin/" >login</a>  <a href="/about/" >about</a>  <a href="/faq/" >faq</a> 
+		</div>
+
+    <div id="nav">
+        <a id="nav_questions" class="on" href="/questions/" >questions</a><a id="nav_tags" href="/tags/" >tags</a><a id="nav_users" href="/users/" >users</a><a id="nav_badges" href="/badges/" >badges</a><a id="nav_unanswered" href="/questions/unanswered/" >unanswered</a>
+        <a id="nav_ask" href="/questions/ask/" class="special">ask a question</a>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+  
+	<div id="searchBar">
+    <form action="/search/" method="get">
+        <div>
+            <input type="text" class="searchInput" value="" name="q" id="keywords" />
+            <input type="submit" name="Submit" value="search" class="searchBtn" />
+        </div>
+        <div class="options">
+            <input id="type-question" type="radio" value="question" name="t" 
+                checked="checked" /><label for="type-question">questions</label>
+            <input id="type-tag" type="radio" value="tag" name="t" /><label for="type-tag">tags</label>
+            <input id="type-user" type="radio" value="user" name="t" /><label for="type-user">users</label>
+        </div>
+    </form>	
+	</div>
+
+	
+
+<!-- end template header.html -->
+
+        
+
+
+
+<div id="wrapper">
+    
+    
+    <div id="room">
+        <div id="CALeft">
+            
+<div class="headNormal">
+    <h1><a href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot">Crowd Sourcing, can it be used with an AI Answer Bot?</a></h1>
+</div>
+<div id="main-body" class="">
+    <div id="askform">
+            <table style="width:100%;" id="question-table" >
+                <tr>
+                    <td style="width:30px;vertical-align:top">
+                        <div class="vote-buttons">
+                            
+
+<a id="post-123819-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/vote/123819/up/" rel="nofollow"> </a>
+<div id="post-123819-score" class="post-score"
+    title="current number of votes">
+    0
+</div>
+<a id="post-123819-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/vote/123819/down/" rel="nofollow"> </a>
+                            
+
+<a id="favorite-mark" title="mark/unmark this question as favorite (click again to cancel)"
+    class="ajax-command favorite-mark "
+    href="/mark_favorite/123819/" rel="nofollow"> </a>
+<div id="favorite-count" class="favorite-count">
+   
+</div>
+                            
+                        </div>
+                    </td>
+                    <td>
+                        <div id="item-right">
+                            <div class="question-body">
+                                <p>I was wondering if someone could take the results of a huge crowd-sourcing Questions &amp; Answer database and feed it to an AI Bot (like the ones found on the net) so users could interact with the bot to get the best answers provided by the net?</p>
+<p>Seems like a brilliant idea, what do you guys think?</p>
+                            </div>
+                            <div id="question-tags" class="tags-container tags">
+                                
+                                    <a href="/tags/resource/" class="post-tag tag-link-resource"
+                                        title="see questions tagged 'resource'" rel="tag">resource</a>
+                                
+                                    <a href="/tags/new-technology/" class="post-tag tag-link-new-technology"
+                                        title="see questions tagged 'new-technology'" rel="tag">new-technology</a>
+                                
+                                    <a href="/tags/idea/" class="post-tag tag-link-idea"
+                                        title="see questions tagged 'idea'" rel="tag">idea</a>
+                                
+                                    <a href="/tags/answers/" class="post-tag tag-link-answers"
+                                        title="see questions tagged 'answers'" rel="tag">answers</a>
+                                
+                                    <a href="/tags/crowdsourcing/" class="post-tag tag-link-crowdsourcing"
+                                        title="see questions tagged 'crowdsourcing'" rel="tag">crowdsourcing</a>
+                                
+                                    <a href="/tags/artifical/" class="post-tag tag-link-artifical"
+                                        title="see questions tagged 'artifical'" rel="tag">artifical</a>
+                                
+                                    <a href="/tags/questions/" class="post-tag tag-link-questions"
+                                        title="see questions tagged 'questions'" rel="tag">questions</a>
+                                
+                                    <a href="/tags/new/" class="post-tag tag-link-new"
+                                        title="see questions tagged 'new'" rel="tag">new</a>
+                                
+                                    <a href="/tags/bots/" class="post-tag tag-link-bots"
+                                        title="see questions tagged 'bots'" rel="tag">bots</a>
+                                
+                            </div>
+                            <div id="question-controls" class="post-controls">                            
+                                
+
+                                
+
+                            </div>
+                            <div class="post-update-info-container">
+                                    
+<div class='post-update-info post-update-info-user'>
+    <p style="line-height:12px;">
+        asked
+        <strong>Feb 25 at 19:09</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/65035139d643d3f686790178b50315fa?s=32&amp;d=wavatar&amp;r=pg" alt="_GTech's gravatar image" />
+    <p><a href="/users/5270/_gtech/">_GTech</a><br/>
+    <span class="score" title="1136 karma"><span class="">1.1k</span></span><span title="9 badges"><span class="badge1">&#9679;</span><span class="badgecount">9</span></span><span title="20 badges"><span class="silver">&#9679;</span><span class="badgecount">20</span></span><span title="37 badges"><span class="bronze">&#9679;</span><span class="badgecount">37</span></span></p>
+</div>
+
+
+                            </div>
+                            
+
+
+<div class="comments-container" id="comments-container-123819">
+    
+</div>
+<div id="comment-tools-123819" class="comment-tools">
+    
+    
+</div>
+<div id="comment-123819-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                        </div>
+                        
+                    </td>
+                </tr>
+            </table>
+            
+            
+                <hr/>
+                <div class="tabBar">
+                    <a name="sort-top"></a>
+                    <div class="headQuestions">
+                    One Answer:
+                    </div>
+                    
+<div class="tabsA"><a href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot?sort=oldest" title="oldest answers will be shown first">oldest</a><a href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot?sort=newest" title="newest answers will be shown first">newest</a><a href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot?sort=votes" class="on" title="most voted answers will be shown first">most voted</a></div>
+
+                </div>
+                
+  
+                
+                    <a name="123856"></a>
+                    <div id="answer-container-123856" class="answer ">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-123856-upvote" title="I like this post (click again to cancel)"
+    class="ajax-command post-vote up "
+     href="/vote/123856/up/" rel="nofollow"> </a>
+<div id="post-123856-score" class="post-score"
+    title="current number of votes">
+    0
+</div>
+<a id="post-123856-downvote" title="I dont like this post (click again to cancel)"
+    class="ajax-command post-vote down"
+     href="/vote/123856/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>It can be done sure but i don't think it would be best to try to do an ai script on a website. You would need to integrate it to like irc or something like the tcl eggdrop bots. Most coding on a website ai would give mixed answers IMO and it would take forever to search the database to find the answer. However, search engines are set up pretty much in the same way.</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class='post-update-info post-update-info-user'>
+    <p style="line-height:12px;">
+        answered
+        <strong>Feb 25 at 22:26</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="http://www.gravatar.com/avatar/08c36b2ed503f228df1c194dc9656d03?s=32&amp;d=wavatar&amp;r=pg" alt="in3t's gravatar image" />
+    <p><a href="/users/5395/in3t/">in3t</a><br/>
+    <span class="score" title="86 karma">86</span><span title="2 badges"><span class="silver">&#9679;</span><span class="badgecount">2</span></span><span title="6 badges"><span class="bronze">&#9679;</span><span class="badgecount">6</span></span></p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-123856">
+    
+        <a name="123877"></a>
+        <div class="comment" id="comment-123877">
+            <div id="post-123877-score" class="comment-score"></div>
+            <div class="comment-text"><p>SQL is lightning fast mate, truly...</p>
+<p>Only the best answer will be used...</p>
+<p>The AI bot would simply verify if they have the question correct, an ask them to rephrase the questions in the event that they have the question wrong, I just thought it would be a neat idea, that's all..</p>
+<p>But your point has validity to it..</p></div>
+            <div class="comment-info" id="comment-123877-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(Feb 25 at 23:44)</span>
+                <a class="comment-user userinfo" href="/users/5270/_gtech/">_GTech</a>
+                <img class="gravatar" width="18" height="18" src="http://www.gravatar.com/avatar/65035139d643d3f686790178b50315fa?s=18&amp;d=wavatar&amp;r=pg" alt="_GTech's gravatar image" />
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-123856" class="comment-tools">
+    
+    
+</div>
+<div id="comment-123856-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                <div class="paginator-container-left">
+                    
+                </div>
+            
+        <form id="fmanswer" action="/questions/123819/answer/" method="post">
+            <div style="clear:both">
+            </div>
+            
+            
+                <div style="padding:10px 0 0 0;">
+                    <div class="headNormal">
+                        
+                            Your answer
+                        
+                    </div>
+                </div>
+                
+
+                <div id="description" class="" >
+                    <div id="wmd-button-bar" class="wmd-panel"></div>
+                    <textarea rows="10" cols="40" name="text" id="editor"></textarea>
+                    <div class="preview-toggle">
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <span id="pre-collapse" 
+                                        title="Toggle the real time Markdown editor preview">
+                                            toggle preview
+                                    </span>
+                                </td>
+                                <td style="text-align: right;" id="editor-metrics"></td>
+                                
+                                <td style="text-align:right;">
+                                    <input type="checkbox" name="wiki" id="id_wiki" /> 
+                                    <span style="font-weight:normal;cursor:help" 
+                                        title="if you choose community wiki option, the question and answer do not generate points and name of author will not be shown">
+                                            <label for="id_wiki">community wiki</label> 
+                                    </span>
+                                </td>
+                                
+                            </tr>
+                        
+                        </table>  
+                    </div>
+                    
+                    <div id="previewer" class="wmd-preview"></div>
+                </div>
+
+	            
+                
+                <p><span class="form-error"></span></p>
+                <input type="button"
+                    
+                        value="Login/Signup to Post Your Answer" 
+                    
+                    class="submit" style="float:left" onclick="submitClicked(event, this.form)"/>
+            
+        </form>
+    </div>
+</div>
+
+
+        </div>
+        <div id="CARight">
+            
+<div class="boxC" id="subscription_box">
+    <h3 class="subtitle">Follow this question</h3><strong>By Email:</strong><p>Once you sign in you will be able to subscribe for any updates here</p><strong>By RSS:</strong><p><a class="feed-icon" style="background-image:url('/m/default/media/images/feed-icon-small.png');"
+        href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot?type=rss" title="subscribe to answers"></a>
+    Answers
+</p><p><a class="feed-icon" style="background-image:url('/m/default/media/images/feed-icon-small.png');"
+        href="/questions/123819/crowd-sourcing-can-it-be-used-with-an-ai-answer-bot?type=rss&comments=yes" title="subscribe to comments and answers"></a>
+    Answers and Comments
+</p>
+
+</div>
+
+
+<div class="boxC" id="editor_side_bar">
+    <p class="subtitle darkred">Markdown Basics</p>
+    <ul class="list-item">
+        <li>
+            *italic* or __italic__
+        </li>
+        <li>
+			**bold** or __bold__
+        </li>
+        <li>
+            <b>link</b>:[text](http://url.com/ "title")
+
+        </li>
+
+        <li>
+            <b>image</b>?![alt text](/path/img.jpg "title")
+
+        </li>
+        <li>
+			numbered list:
+            1.  Foo
+            2.  Bar
+        </li>
+        <li>
+			to add a line break simply add two spaces to where you would like the new line to be.
+        </li>
+        <li>
+			basic HTML tags are also supported
+        </li>
+    </ul>
+    <p class='info-box-follow-up-links'>
+        <a href="/markdown_help/" target="_blank">learn more about Markdown </a>
+    </p>
+</div>
+
+
+
+
+
+
+        <script type="text/javascript"><!--
+google_ad_client = "ca-pub-7561297527511227";
+/* LockerGnome.net - Sidebar Links */
+google_ad_slot = "9942724293";
+google_ad_width = 180;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<p><iframe src="http://www.facebook.com/plugins/like.php?href=http://lockergnome.net&amp;layout=standard&amp;show_faces=true&amp;width=250&amp;action=recommend&amp;font=lucida%2Bgrande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;margin-top:25px" allowTransparency="true"></iframe></p>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7561297527511227";
+/* LockerGnome.net - Sidebar */
+google_ad_slot = "3294919104";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+     
+
+
+
+
+<div class="boxC">
+    <p>
+		Tags:
+    </p>
+    <p class="tags" >
+        
+        	<a href="/tags/new/"
+            class="tag-link-new"
+			title="see questions tagged'new'using tags"
+			rel="tag">new</a> <span class="tag-number">&#215;201</span><br/>
+        
+        	<a href="/tags/questions/"
+            class="tag-link-questions"
+			title="see questions tagged'questions'using tags"
+			rel="tag">questions</a> <span class="tag-number">&#215;131</span><br/>
+        
+        	<a href="/tags/answers/"
+            class="tag-link-answers"
+			title="see questions tagged'answers'using tags"
+			rel="tag">answers</a> <span class="tag-number">&#215;68</span><br/>
+        
+        	<a href="/tags/idea/"
+            class="tag-link-idea"
+			title="see questions tagged'idea'using tags"
+			rel="tag">idea</a> <span class="tag-number">&#215;28</span><br/>
+        
+        	<a href="/tags/bots/"
+            class="tag-link-bots"
+			title="see questions tagged'bots'using tags"
+			rel="tag">bots</a> <span class="tag-number">&#215;4</span><br/>
+        
+        	<a href="/tags/crowdsourcing/"
+            class="tag-link-crowdsourcing"
+			title="see questions tagged'crowdsourcing'using tags"
+			rel="tag">crowdsourcing</a> <span class="tag-number">&#215;4</span><br/>
+        
+        	<a href="/tags/artifical/"
+            class="tag-link-artifical"
+			title="see questions tagged'artifical'using tags"
+			rel="tag">artifical</a> <span class="tag-number">&#215;3</span><br/>
+        
+        	<a href="/tags/new-technology/"
+            class="tag-link-new-technology"
+			title="see questions tagged'new-technology'using tags"
+			rel="tag">new-technology</a> <span class="tag-number">&#215;2</span><br/>
+        
+        	<a href="/tags/resource/"
+            class="tag-link-resource"
+			title="see questions tagged'resource'using tags"
+			rel="tag">resource</a> <span class="tag-number">&#215;2</span><br/>
+        
+    </p>
+    <p>
+        Asked: <strong title="2011-02-25 19:09:33.961043">Feb 25 at 19:09</strong>
+    </p>
+    <p> 
+     	Seen: <strong>244 times</strong>
+    </p>
+    <p> 
+        Last updated: <strong title="2011-02-25 23:46:40.382535">Feb 25 at 23:46</strong>
+    </p>
+</div>
+
+
+
+
+
+        <ul>
+<li><a href="http://www.facebook.com/chrispirillo">Join our community on Facebook</a></li>
+<li><a target="_blank" href="http://twitter.com/chrispirillo">Start  following us on Twitter</a></li>
+<li><a target="_blank" href="http://youtube.com/lockergnome">Watch our videos on YouTube</a></li>
+<li><a target="_blank" href="http://coupons.lockergnome.com/">Save money with our coupons</a></li>
+<li><a target="_blank" href="http://chris.pirillo.com/">Good questions are promoted here</a></li>
+<li><a target="_blank" href="http://www.lockergnome.com/">We recruit bloggers for our blog network</a></li>
+</ul>
+
+<p><a href="live"></a><br />
+<center>
+<object height="200" width="250" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="utv60023">
+<param name="flashvars" value="viewcount=false&amp;autoplay=false&amp;brand=embed" />
+<param name="allowfullscreen" value="true" />
+<param name="allowscriptaccess" value="always" />
+<param name="src" value="http://www.ustream.tv/flash/live/553" />
+<param name="name" value="utv_n_571286" />
+<param name="wmode" value="opaque" /><embed height="200" width="250" wmode="opaque" name="utv_n_571286" src="http://www.ustream.tv/flash/live/553" allowscriptaccess="always" allowfullscreen="true" flashvars="viewcount=false&amp;autoplay=false&amp;brand=embed" id="utv60023" type="application/x-shockwave-flash"></embed>
+</object>
+<div style="font-size: smaller;"><a href="http://live.pirillo.com/">Join Us in the Chat Room</a></div>
+</center></p>
+     
+
+
+<div class="boxC">
+    <h3 class="subtitle">Related questions</h3>
+    <div class="questions-related">
+
+        
+        <p>
+            <a href="/questions/121883/what-could-improve-crowd-sourcing-what-could-it-be-used-for">What could improve Crowd-Sourcing &amp; what could it be used for?</a>
+        </p>
+        
+        <p>
+            <a href="/questions/40856/why-don-t-people-vote-up-a-question-if-they-take-the-time-to-answer-it">Why don&#39;t people vote up a question if they take the time to answer it?</a>
+        </p>
+        
+        <p>
+            <a href="/questions/72261/spamming-rules-and-irreverent-links-to-referral-sites">Spamming Rules and Irreverent Links to Referral Sites</a>
+        </p>
+        
+        <p>
+            <a href="/questions/76086/happy-10-000-questions-asked-on-lockergnome-net">[closed] Happy 10,000 Questions Asked on Lockergnome.net!!!!</a>
+        </p>
+        
+        <p>
+            <a href="/questions/83322/how-many-e-mail-s-do-you-get-from-lockergnome-net-a-day">How many E-Mail&#39;s do you get from lockergnome.net a day?</a>
+        </p>
+        
+        <p>
+            <a href="/questions/82402/where-do-you-go-for-tech-advice">Where do you go for tech advice?</a>
+        </p>
+        
+        <p>
+            <a href="/questions/15696/are-you-addicted-to-lockergnome-net-yet">Are you addicted to LockerGnome.net yet?</a>
+        </p>
+        
+        <p>
+            <a href="/questions/93178/would-a-premium-lockergnome-net-q-a-business-model-succeed">Would a Premium LockerGnome.net Q&amp;A Business Model succeed?</a>
+        </p>
+        
+        <p>
+            <a href="/questions/104198/quick-question-about-karma">[closed] Quick Question About Karma</a>
+        </p>
+        
+        <p>
+            <a href="/questions/14588/what-questions-are-you-answering">what questions are you answering</a>
+        </p>
+        
+
+    </div>
+</div>
+
+
+
+        </div>
+        <div id="tail" style="clear:both;">
+            
+            
+        </div>
+    </div>
+    <div class="spacer3"></div>
+</div>
+
+        
+            
+            <div id="ground">
+                
+                    <div class="footerLinks">
+        <a href="/about/">about</a><span class="link-separator"> |</span>
+        <a href="/faq/">faq</a><span class="link-separator"> |</span>
+        <a href="/privacy/">privacy</a><span class="link-separator"> |</span>
+        <a href="/contact/?next=/admin/settings/headandfoot/">
+            contact us
+        </a>
+<span class="link-separator"> |</span>
+     <a href="http://osqa.net" target="_blank" title="OSQA Development Build (SVN-413)">
+        powered by OSQA
+     </a>
+</div>
+
+<!-- Kontera ContentLink(TM);-->
+<script type='text/javascript'>
+var dc_AdLinkColor = 'blue' ; 
+var dc_PublisherID = 128998 ; 
+</script>
+<script type='text/javascript' src='http://kona.kontera.com/javascript/lib/KonaLibInline.js'>
+</script>
+
+<script src="http://cdn.wibiya.com/Toolbars/dir_0354/Toolbar_354043/Loader_354043.js" type="text/javascript"></script>
+                
+            </div>
+            
+        
+        
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-97431-18']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        
+    </body>
+</html>
+<!-- end template base_content.html -->

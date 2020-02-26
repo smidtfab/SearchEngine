@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=UTF-8" http-equiv="content-Type"/><link href="/resources/css/style.css" type="text/css" rel="stylesheet"/><link href="/resources/css/faq.css" type="text/css" rel="stylesheet"/><link type="image/png" href="/resources/image/favicon.png" rel="icon"/><script src="/resources/javascript/jquery_142_min.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/jquery_corner.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/localized_strings_en.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/functions.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/tooltip.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/style.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/chrome.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/jquery.textarearesizer.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/jquery.sidebarresizer.js" type="text/javascript">&nbsp;</script><script src="/resources/javascript/logging.js" type="text/javascript">&nbsp;</script><script type="text/javascript">
+						log_setUsername("");
+				  </script><meta content="webmaster@bibsonomy.org" name="email"/><meta name="author" content="Knowledge and Data Engineering Group, University of Kassel, Germany" lang="en"/><meta name="copyright" content="Knowledge and Data Engineering Group, University of Kassel, Germany" lang="en"/><meta name="keywords" content="BibTeX, bookmarks, knowledge discovery, folksonomy, tagging, knowledge management, data mining, computer science, University of Kassel" lang="en"/><meta name="description" content="Webapplication of the Knowledge and Data Engineering Group, University of Kassel, Germany" lang="en"/><link href="http://bibsonomy.blogspot.com/feeds/posts/default" title=" Blog - Atom" type="application/atom+xml" rel="alternate"/><link href="http://bibsonomy.blogspot.com/feeds/posts/default?alt=rss" title=" Blog - RSS" type="application/rss+xml" rel="alternate"/><title>BibSonomy :: publication :: Crowd-sourcing world models with OpenRoomMap.</title><link href="/publrss/bibtex/17f8cceeed77f29ad9333667ee0b06677" title="Publication RSS feed for /bibtex/17f8cceeed77f29ad9333667ee0b06677" type="application/rss+xml" rel="alternate"/><link href="/burst/bibtex/17f8cceeed77f29ad9333667ee0b06677" title="Burst RSS feed for /bibtex/17f8cceeed77f29ad9333667ee0b06677" type="application/rss+xml" rel="alternate"/></head><body><div id="topNavBar"><a href="/login">sign in</a> &middot; <a href="/help_en">help</a> &middot; <a href="http://bibsonomy.blogspot.com/">news</a> &middot; <a href="/help_en/contact">about</a> &middot; <a href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?lang=de"><img src="/resources/image/lang_de.png" alt="de"/></a><a href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?lang=en"><img src="/resources/image/lang_en.png" alt="en"/></a></div><div id="main"><div id="main_header"><div id="mainHeaderRightBox"><script type="text/javascript">
+		// store number of different authentication methods for later use
+		var authMethodsCount = 2;
+		
+		
+			$(document).ready(function(e) {
+				//
+				// make iconized dropdown list
+				//
+				try {
+					$("#loginSelect").msDropDown();
+				} catch(e) {
+					alert(e.message);
+				}
+			});
+
+			/**
+			 * show selected login form and hide all others
+			 */
+			function quickSelectAuthMethod(authIndex) {
+				// activate selected login form and hide all others
+				for (var i=1; i<=authMethodsCount; i++) {
+					if (authIndex==i) {
+						// selected login form
+						$('#headLogin'+i).addClass('loginVisible');
+						$('#headLogin'+i).removeClass('loginInvisible');
+					} else {
+						// non-selected login form
+						$('#headLogin'+i).addClass('loginInvisible');
+						$('#headLogin'+i).removeClass('loginVisible');
+					}
+				}
+			}
+		</script><script src="/resources/javascript/uncompressed.jquery.dd.js" type="text/javascript">&nbsp;</script><link href="/resources/css/login_style.css" type="text/css" rel="stylesheet"/><link href="/resources/css/dd.css" type="text/css" rel="stylesheet"/><style type="text/css">
+		.dd .ddTitle span.arrow {
+			background:url(/resources/image/dd_arrow.png) no-repeat 0 0; float:right; display:inline-block;width:16px; height:16px; cursor:pointer; 
+		}
+		
+		/* show selected login form */
+		.loginVisible {
+			display: block;
+		}
+		
+		/* hide unselected login form */
+		.loginInvisible {
+			display: none;
+		}
+	</style><div class="login" id="loginParts"><div id="loginParts_INTERNAL"><div id="headLogin1" class="headlogin loginVisible"><form id="command" action="/login_internal" method="POST"><input tabindex="1" id="un" name="username" size="15" type="text"/>&nbsp;<span style="font-weight: bold; font-size:150%">&nbsp;:&nbsp;</span><input tabindex="2" autocomplete="off" id="pw" style="width:150px; position:absolute;" name="password" size="15" type="password"/><input autocomplete="off" style="position:relative;" name="" id="pw_form_copy" type="text"/><input alt="sign in" src="/resources/image/grey.png" type="image"/></form></div></div><div id="loginParts_OPENID"><div id="headLogin2" class="headlogin loginInvisible"><form id="command" action="/login_openid" method="POST"><input name="openID" value="" size="32" class="openid" id="openID" type="text"/><input id="headloginMethodopenid" name="loginMethod" type="hidden" value=""/></form></div></div></div><select onchange="quickSelectAuthMethod(this.value);" id="loginSelect" name="loginSelect"><option title="/resources/image/login_logo_INTERNAL.png" value="1">1&nbsp;&nbsp;</option><option title="/resources/image/login_logo_OPENID.png" value="2">2&nbsp;&nbsp;</option></select></div><h1 id="heading"><a href="/">BibSonomy</a> :: <a href="#" rel="path_menu"><img src="/resources/image/box_arrow.png" alt=""/>&nbsp;publication</a> :: 
+			<form class="smallform" method="get" action="/search"><input value="Crowd-sourcing world models with OpenRoomMap." name="search" size="20" type="text"/></form></h1><div class="dropmenudiv" id="path_menu"><a style="cursor:pointer" onclick="naviSwitchSpecial('tag')">tag</a><a style="cursor:pointer" onclick="naviSwitchSpecial('user')">user</a><a style="cursor:pointer" onclick="naviSwitchSpecial('group')">group</a><a style="cursor:pointer" onclick="naviSwitchSpecial('author')">author</a><a style="cursor:pointer" onclick="naviSwitchSpecial('concept/tag')">concept</a><a style="cursor:pointer" onclick="naviSwitchSpecial('bibtexkey')">BibTeX key</a><a style="cursor:pointer" onclick="naviSwitchSpecial('search')">search:all</a></div><script type="text/javascript">
+					  cssdropdown.startchrome("heading");
+					</script><div id="welcomeTop">A blue social bookmark and publication sharing system.</div></div><div id="nice_tnav"><ul><li><a href="/" id="nav_home">Home</a></li><li><a href="/tags" id="nav_tags">tags</a></li><li><a href="/authors" id="nav_authors">authors</a></li><li><a href="/relations" id="nav_relations">relations</a></li><li><a rel="grp_menu" href="/groups" id="nav_groups">groups</a></li><li><a href="/popular" id="nav_popular">popular</a></li></ul></div><script type="text/javascript">
+	  		cssdropdown.startchrome("nice_tnav");
+			if ("" != "" ) {
+				document.getElementById("").className = "checked";
+			}
+	  	</script><div id="outer"><div id="general_100"></div><div id="bibtexList" class="bookbox"><div class="bboxheader"><div class="listhButtons"><a href="/publrss/bibtex/17f8cceeed77f29ad9333667ee0b06677">RSS</a>&nbsp;<a href="/bib/bibtex/17f8cceeed77f29ad9333667ee0b06677">BibTeX</a>&nbsp;<a href="/burst/bibtex/17f8cceeed77f29ad9333667ee0b06677">RDF</a>&nbsp;<a href="/export/bibtex/17f8cceeed77f29ad9333667ee0b06677">more</a></div><h2 class="listh">publications</h2><div class="listh">&nbsp;<span title="total:  1 publications" id="ttlctr">(1)</span></div></div><div class="kiste"><span class="nextprev"><a rel="First" title="go to the first page" href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.start=0">&lt;&lt;</a> &lt; 1 &gt; <a rel="Last" title="go to the last page" href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.start=0">&gt;&gt;</a></span>&nbsp;</div><ul id="bibtex"><li class="bm"><div class="bmtitle"><a href="/bibtex/218b74197209d1f7a0dd58d7877ecff4f/dblp">Crowd-sourcing world models with OpenRoomMap.</a> </div><div class="bmdesc"><span style="color:#555555;">Andrew Colin <a href="http://www.bibsonomy.org/author/Rice">Rice</a>,  and Oliver J. <a href="http://www.bibsonomy.org/author/Woodman">Woodman</a> </span><em>PerCom Workshops, </em><em>page 764-767. </em><em>IEEE, </em>(<em>2010</em>) </div><span class="bmmeta">to <span class="bmtags"><a href="/user/dblp/dblp">dblp</a> </span> by <a href="/user/dblp" name="dblp">dblp</a> on Aug 23, 2010, 12:00 AM</span><div class="bmfoot"><span class="bmaction"><a title="this publication contains a URL which is linked here" href="http://dblp.uni-trier.de/db/conf/percom/percomw2010.html#RiceW10">URL</a> | <a title="show this publication in BibTeX format" href="/bib/bibtex/218b74197209d1f7a0dd58d7877ecff4f/dblp">BibTeX</a> | <abbr title="18b74197209d1f7a0dd58d7877ecff4f/dblp" class="unapi-id"> </abbr><a title="Mark this post as spam" href="javascript:;" id="spam_bib_dblp_18b74197209d1f7a0dd58d7877ecff4f">spam</a></span>&nbsp;</div></li></ul><div class="kiste"><span class="nextprev"><a rel="First" title="go to the first page" href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.start=0">&lt;&lt;</a> &lt; 1 &gt; <a rel="Last" title="go to the last page" href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.start=0">&gt;&gt;</a></span><span class="actions">publications&nbsp;per page:&nbsp;<a href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.entriesPerPage=5">5</a>&nbsp;<a href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.entriesPerPage=10">10</a>&nbsp;20&nbsp;<a href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.entriesPerPage=50">50</a>&nbsp;<a href="/bibtex/17f8cceeed77f29ad9333667ee0b06677?bibtex.entriesPerPage=100">100</a>&nbsp;</span>&nbsp;</div></div></div><div id="sidebarroundcorner"><img src="/resources/image/grip.png" border="0" id="sidebarGrip"/><div id="sidebox" class="sidebarBoxOuter"><div class="sidebarBoxInner"><ul id="sidebar"><li><span class="sidebar_h">tags</span><script type="text/javascript">tagbox_minfreq_style = 'none';</script><ul id="tagbox" class="tagcloud"><li class="taghuge"><a href="/tag/dblp" title="1 post">dblp</a></li> </ul></li></ul></div></div></div><div id="footer">BibSonomy is offered by the <a href="http://www.kde.cs.uni-kassel.de/">Knowledge and Data Engineering Group</a> of the University of Kassel, Germany. Contact: <script type="text/javascript">
+    	{at="@"; q='"'; l = String.fromCharCode(60); r = String.fromCharCode(62); document.write(l + "a href=" + q + "mailto:webmaster" + at + "bibsonomy.org" + q + r + "webmaster" + at + "bibsonomy.org" + l + "\/a" + r); }
+    	</script><noscript>webmaster at bibsonomy.org</noscript> - 
+					<a href="/help_en/Privacy">Privacy & Terms of Use</a>.<script type="text/javascript">
+					    $(document).ready(
+					    		function() {
+					    			$('textarea').TextAreaResizer();
+								    $("#sidebarroundcorner").corner("round bottom 15px").corner("round tl 15px");
+								    $("#sidebarroundcorner").SideBarResizer('#sidebarGrip');
+					    			init(0, 0, 0, "", "", "", "BibSonomy");
+					    		}
+					    );					    
+					  </script></div></div></body></html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='Af/SSK/PeZp6fjDJu4Gm6kYO4NWxZT6yVrnKueK01TM=' name='verify-v1'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(d,i,e){e=e!=undefined?e:(new Date).getTime();this.t[d]=[e,i]};this.tick("start",null,b)}var f=new c;a.jstiming={Timer:c,load:f};try{var g=null;if(a.chrome&&a.chrome.csi)g=Math.floor(a.chrome.csi().pageT);if(g==null)if(a.gtbExternal)g=a.gtbExternal.pageT();if(g==null)if(a.external)g=a.external.pageT;if(g)a.jstiming.pt=g}catch(h){};a.tickAboveFold=function(b){var d=0;if(b.offsetParent){do d+=b.offsetTop;while(b=b.offsetParent)}b=d;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+<link href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_06.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Mechanistician - Atom" href="http://mechanistician.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Mechanistician - RSS" href="http://mechanistician.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Mechanistician - Atom" href="http://www.blogger.com/feeds/6475416749449483556/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=6475416749449483556" />
+<link rel="alternate" type="application/atom+xml" title="Mechanistician - Atom" href="http://mechanistician.blogspot.com/feeds/8052112300121720411/comments/default" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Mechanistician: Large-Scale Machine Learning with Mahout - Part 2</title>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/987282334-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=6475416749449483556&zx=16841d73-6849-4f5c-92c0-e2cb28b49463"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+/*
+* Blogger Template Style
+*
+* Sand Dollar
+* by Jason Sutter
+* Updated by Blogger Team
+*/
+/* Variable definitions
+====================
+<Variable name="textcolor" description="Text Color"
+type="color" default="#000">
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#f6f6f6">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#F5DEB3">
+<Variable name="pagetitlebgcolor" description="Blog Title Background Color"
+type="color" default="#DE7008">
+<Variable name="descriptionColor" description="Blog Description Color"
+type="color" default="#9E5205" />
+<Variable name="descbgcolor" description="Description Background Color"
+type="color" default="#F5E39e">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#9E5205">
+<Variable name="datecolor" description="Date Header Color"
+type="color" default="#777777">
+<Variable name="footercolor" description="Post Footer Color"
+type="color" default="#444444">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#DE7008">
+<Variable name="footerlinkcolor" description="Post Footer Link Color"
+type="color" default="#968a0a">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#DE7008">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#B8A80D">
+<Variable name="sidebarlinkcolor" description="Sidebar Link Color"
+type="color" default="#999999">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#e0ad12">
+<Variable name="bodyfont" description="Text Font"
+type="font"
+default="normal normal 100% 'Trebuchet MS',Trebuchet,Verdana,Sans-Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal bold 150% Verdana,Sans-serif">
+<Variable name="dateHeaderFont" description="Date Header Font"
+type="font"
+default="normal bold 105% 'Trebuchet MS',Trebuchet,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font" default="normal bold 300% Verdana,Sans-Serif">
+<Variable name="titlefont" description="Post Title Font"
+type="font" default="normal bold 160% Verdana,Sans-Serif">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+body {
+margin:0px;
+padding:0px;
+background:#f6f6f6;
+color:#000000;
+font-size: small;
+}
+#outer-wrapper {
+font:normal normal 100% 'Trebuchet MS',Trebuchet,Verdana,Sans-Serif;
+}
+a {
+color:#DE7008;
+}
+a:hover {
+color:#9E5205;
+}
+a img {
+border-width: 0;
+}
+#content-wrapper {
+padding-top: 0;
+padding-right: 1em;
+padding-bottom: 0;
+padding-left: 1em;
+}
+@media all  {
+div#main {
+float:right;
+width:66%;
+padding-top:30px;
+padding-right:0;
+padding-bottom:10px;
+padding-left:1em;
+border-left:dotted 1px #e0ad12;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+div#sidebar {
+margin-top:20px;
+margin-right:0px;
+margin-bottom:0px;
+margin-left:0;
+padding:0px;
+text-align:left;
+float: left;
+width: 31%;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+}
+@media handheld  {
+div#main {
+float:none;
+width:90%;
+}
+div#sidebar {
+padding-top:30px;
+padding-right:7%;
+padding-bottom:10px;
+padding-left:3%;
+}
+}
+#header {
+padding-top:0px;
+padding-right:0px;
+padding-bottom:0px;
+padding-left:0px;
+margin-top:0px;
+margin-right:0px;
+margin-bottom:0px;
+margin-left:0px;
+border-bottom:dotted 1px #e0ad12;
+background:#F5E39e;
+}
+h1 a:link  {
+text-decoration:none;
+color:#F5DEB3
+}
+h1 a:visited  {
+text-decoration:none;
+color:#F5DEB3
+}
+h1,h2,h3 {
+margin: 0;
+}
+h1 {
+padding-top:25px;
+padding-right:0px;
+padding-bottom:10px;
+padding-left:5%;
+color:#F5DEB3;
+background:#DE7008;
+font:normal bold 300% Verdana,Sans-Serif;
+letter-spacing:-2px;
+}
+h3.post-title {
+color:#9E5205;
+font:normal bold 160% Verdana,Sans-Serif;
+letter-spacing:-1px;
+}
+h3.post-title a,
+h3.post-title a:visited {
+color: #9E5205;
+}
+h2.date-header  {
+margin-top:10px;
+margin-right:0px;
+margin-bottom:0px;
+margin-left:0px;
+color:#777777;
+font: normal bold 105% 'Trebuchet MS',Trebuchet,Verdana,Sans-serif;
+}
+h4 {
+color:#aa0033;
+}
+#sidebar h2 {
+color:#B8A80D;
+margin:0px;
+padding:0px;
+font:normal bold 150% Verdana,Sans-serif;
+}
+#sidebar .widget {
+margin-top:0px;
+margin-right:0px;
+margin-bottom:33px;
+margin-left:0px;
+padding-top:0px;
+padding-right:0px;
+padding-bottom:0px;
+padding-left:0px;
+font-size:95%;
+}
+#sidebar ul {
+list-style-type:none;
+padding-left: 0;
+margin-top: 0;
+}
+#sidebar li {
+margin-top:0px;
+margin-right:0px;
+margin-bottom:0px;
+margin-left:0px;
+padding-top:0px;
+padding-right:0px;
+padding-bottom:0px;
+padding-left:0px;
+list-style-type:none;
+font-size:95%;
+}
+.description {
+padding:0px;
+margin-top:7px;
+margin-right:12%;
+margin-bottom:7px;
+margin-left:5%;
+color:#9E5205;
+background:transparent;
+font:bold 100% Verdana,Sans-Serif;
+}
+.post {
+margin-top:0px;
+margin-right:0px;
+margin-bottom:30px;
+margin-left:0px;
+}
+.post strong {
+color:#000000;
+font-weight:bold;
+}
+pre,code {
+color:#999999;
+}
+strike {
+color:#999999;
+}
+.post-footer  {
+padding:0px;
+margin:0px;
+color:#444444;
+font-size:80%;
+}
+.post-footer a {
+border:none;
+color:#968a0a;
+text-decoration:none;
+}
+.post-footer a:hover {
+text-decoration:underline;
+}
+#comments {
+padding:0px;
+font-size:110%;
+font-weight:bold;
+}
+.comment-author {
+margin-top: 10px;
+}
+.comment-body {
+font-size:100%;
+font-weight:normal;
+color:black;
+}
+.comment-footer {
+padding-bottom:20px;
+color:#444444;
+font-size:80%;
+font-weight:normal;
+display:inline;
+margin-right:10px
+}
+.deleted-comment  {
+font-style:italic;
+color:gray;
+}
+.comment-link  {
+margin-left:.6em;
+}
+.profile-textblock {
+clear: both;
+margin-left: 0;
+}
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+border: 2px solid #DE7008;
+}
+#sidebar a:link  {
+color:#999999;
+text-decoration:none;
+}
+#sidebar a:active  {
+color:#ff0000;
+text-decoration:none;
+}
+#sidebar a:visited  {
+color:sidebarlinkcolor;
+text-decoration:none;
+}
+#sidebar a:hover {
+color:#B8A80D;
+text-decoration:none;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.clear {
+clear: both;
+}
+.widget-content {
+margin-top: 0.5em;
+}
+/** Tweaks for layout editor preview */
+body#layout #outer-wrapper {
+margin-top: 0;
+}
+body#layout #main,
+body#layout #sidebar {
+margin-top: 10px;
+padding-top: 0;
+}
+
+--></style>
+<link href='http://8296241635750553491-a-1802744773732722657-s-sites.googlegroups.com/site/syntaxhighlightersite/Home/SyntaxHighlighter.css' rel='stylesheet' type='text/css'/>
+<script language='javascript' src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shCore.js'></script>
+<script language='javascript' src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shBrushPython.js'></script>
+<script src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shBrushJava.js' type='text/javascript'></script>
+<script src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shBrushCpp.js' type='text/javascript'></script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+    function showRelatedContent(args) {
+      var el = document.getElementById('related-iframe');
+      if (el.parentNode.style.display != 'none') {
+        el.parentNode.style.display = 'none';
+        document.onclick = showRelatedContent.prevOnClick;
+        return;
+      }
+      
+      var match = /(?:^[?]|&)c=([0-9]+)(?:&|(?!.))/.exec(args);
+      if (match !== null) {
+        document.getElementById('related-loading').style.left = match[1] + 'px';
+        el.style.left = Math.max(0, match[1] - parseInt(el.width) / 2) + 'px';
+      }
+      el.src = "http://www.blogger.com"
+          + '/related-content.g?q='
+          + "http://mechanistician.blogspot.com/"
+          + '&id=' + "6475416749449483556";
+      el.parentNode.style.display = 'block';
+      showRelatedContent.prevOnClick = document.onclick;
+
+      // Hide related-content dropdown when clicking anywhere but on it.
+      document.onclick = function() {
+        var el = document.getElementById('related-iframe');
+        if (el.parentNode.style.display != 'none') {
+          el.parentNode.style.display = 'none';
+        }
+        document.onclick = showRelatedContent.prevOnClick;
+      };
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=6475416749449483556&amp;blogName=Mechanistician&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLUE&amp;layoutType=LAYOUTS&amp;searchRoot=http%3A%2F%2Fmechanistician.blogspot.com%2Fsearch&amp;blogLocale=en&amp;homepageUrl=http%3A%2F%2Fmechanistician.blogspot.com%2F&amp;targetPostID=8052112300121720411" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+
+<div></div></div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='http://mechanistician.blogspot.com/'>Mechanistician</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol section' id='crosscol'></div>
+</div>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Tuesday, July 6, 2010</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='8052112300121720411'></a>
+<h3 class='post-title entry-title'>
+Large-Scale Machine Learning with Mahout - Part 2
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-8052112300121720411'>
+Following up on the previous post, today we examine a map-reduce-based job that does a bit more than count how many times each word occurs in a document.  You'll wanna already be familiar with Hadoop and have it installed and running on your computer, and for that you can use the references described previously.<br /><br /><a href="https://svn.apache.org/repos/asf/mahout/tags/mahout-0.3/core/src/main/java/org/apache/mahout/cf/taste/hadoop/item/RecommenderJob.java">RecommenderJob</a> runs a collaborative filtering algorithm that is fairly easy to distribute compared with others (such as the predominantly online SVD algorithms popularized in the recent <a href="http://www.netflixprize.com/">Netflix challenge</a>, see <a href="http://sifter.org/%7Esimon/journal/20061211.html">here</a> and <a href="http://jmlr.csail.mit.edu/papers/volume10/takacs09a/takacs09a.pdf">here</a>).  You can check <a href="http://www.manning.com/owen/">Mahout In Action</a> for a more detailed description, but briefly, 2 main data structures are computed:<br /><ol><li>The coocurrence matrix</li><li>The user preference vector</li></ol>The coocurrence matrix is a symmetric matrix of items by items, where the intersection of an item row and an item column holds the count of how many times that item pair was present in the set of rated items of a given user.  The user preference vector is simply a vector of all the items, each user having its own preference vector.  The only non-zero items in a user's preference vector are those which the user has rated, and the rating is the value for that item in the vector.<br /><br />To compute recommendations for a given user, the coocurrence matrix is multiplied on the right by the user preference vector, and the result is another vector with the same dimensions as the user preference vector, let's call it the "recommendation vector."  What you'll wanna do then is recommend to the user the highest-valued items in their recommendation vector (presumably excluding those items the user has already rated).<br /><br />One simple dataset to use is the 100k GroupLens dataset, which can be downloaded from here, and which has the following tab-separated format: user id | item id | rating | timestamp.  RecommenderJob expects a comma-separated file and you can either write a script to convert it to the format expected by the RecommenderJob or edit the the RecommenderJob to process that format (you could also create a map-reduce task with an IdentityReducer to do the preprocessing).<br /><br />For starters, the job can be run from the IDE as a junit unit test, similar to the one shown below:<br /><br /><pre name="code" class="java"><br />package dr.item_rec;<br /><br />import org.apache.hadoop.fs.FileSystem;<br />import org.apache.hadoop.fs.Path;<br />import org.apache.hadoop.mapred.JobConf;<br />import org.junit.Test;<br />import org.junit.Assert;<br /><br />public class RecommenderJob_Tester {<br />    @Test<br />    public void MainTest() throws Exception {<br />        JobConf conf = new JobConf();<br />        conf.set("fs.default.name", "file:///");<br />        conf.set("mapred.job.tracker", "local");<br /><br />        Path input = new Path("/Users/mario/Desktop/fastcf/data/rec_job");<br />        Path output = new Path("/Users/mario/Desktop/fastcf/data/rec_job_out");<br />        Path usersFile = new Path("/Users/mario/Desktop/fastcf/data/recs/users");<br /><br />        FileSystem fs = FileSystem.getLocal(conf);<br />        // delete output dirs, including those defined in AbstractJob,<br />        // RecommenderJob's parent class<br />        fs.delete(output, true);<br />        fs.delete(new Path("/Users/mario/Desktop/fastcf/distributed_recommender/temp/userVectors"), true);<br />        fs.delete(new Path("/Users/mario/Desktop/fastcf/distributed_recommender/temp/itemIDIndex"), true);<br />        fs.delete(new Path("/Users/mario/Desktop/fastcf/distributed_recommender/temp/cooccurrence"), true);<br /><br />        RecommenderJob driver = new RecommenderJob();<br />        driver.setConf(conf);<br /><br />        int exitCode = driver.run(new String[]{<br />                "--input",<br />                input.toString(),<br />                "--output",<br />                output.toString(),<br />                "--usersFile",<br />                usersFile.toString()<br />        });<br />        <br />        Assert.assertEquals(0, exitCode);<br />    }<br />}<br /></pre><br /><br />The source for the project can be downloaded from <a href="http://dl.dropbox.com/u/4681937/distributed_recommender.zip">here</a>.  A couple of modifications to the project since the last post include (these details would only be relevant to those not terribly familiar with the Java tools used here):<br /><ol><li>Adding junit as a dependency to the pom.xml file.</li><li>Under module settings - libraries, look for he mahout-core:0.3 library and attach its source by going to the directory where you downloaded Mahout to (the same can be done with the Hadoop jar).  This is convenient for being able to step into Mahout and Hadoop code from within you project while debugging within the IDE.</li></ol>Other details include the input and output files, which can be deduced by reading the source for RecommenderJob (/Users/mario/Desktop/fastcf/data/recs/users can be a file as simple as having a single userID).  We'll continue this next time.
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Mechanistician</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_06.html' rel='bookmark' title='permanent link'><abbr class='published' title='2010-07-06T21:29:00-07:00'>9:29 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-control blog-admin pid-1980294930'>
+<a href='http://www.blogger.com/post-edit.g?blogID=6475416749449483556&postID=8052112300121720411' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='http://www.blogger.com/share-post.g?blogID=6475416749449483556&postID=8052112300121720411&target=email' target='_blank' title='Email This'>
+<span class='share-button-link-text'>Email This</span>
+</a><a class='goog-inline-block share-button sb-blog' href='http://www.blogger.com/share-post.g?blogID=6475416749449483556&postID=8052112300121720411&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'>
+<span class='share-button-link-text'>BlogThis!</span>
+</a><a class='goog-inline-block share-button sb-twitter' href='http://www.blogger.com/share-post.g?blogID=6475416749449483556&postID=8052112300121720411&target=twitter' target='_blank' title='Share to Twitter'>
+<span class='share-button-link-text'>Share to Twitter</span>
+</a><a class='goog-inline-block share-button sb-facebook' href='http://www.blogger.com/share-post.g?blogID=6475416749449483556&postID=8052112300121720411&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'>
+<span class='share-button-link-text'>Share to Facebook</span>
+</a><a class='goog-inline-block share-button sb-buzz' href='http://www.blogger.com/share-post.g?blogID=6475416749449483556&postID=8052112300121720411&target=buzz' onclick='window.open(this.href, "_blank", "height=415,width=690"); return false;' target='_blank' title='Share to Google Buzz'>
+<span class='share-button-link-text'>Share to Google Buzz</span>
+</a>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'></div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+0
+comments:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='' id='comments-block'>
+</dl>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>Post a Comment</h4>
+<p>
+</p>
+<a href='http://www.blogger.com/comment-iframe.g?blogID=6475416749449483556&postID=8052112300121720411' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<script type="text/javascript">
+        if (!window.google || !google.friendconnect) {
+          document.write('<script type="text/javascript"' +
+              'src="http://www.google.com/friendconnect/script/friendconnect.js">' +
+              '</scr' + 'ipt>');
+        }
+      </script>
+<script type="text/javascript">
+      if (!window.registeredBloggerCallbacks) {
+        window.registeredBloggerCallbacks = true;
+
+        
+
+        
+        gadgets.rpc.register('requestReload', function() {
+          document.location.reload();
+        });
+
+        
+        gadgets.rpc.register('requestSignOut', function(siteId) {
+          
+          google.friendconnect.container.openSocialSiteId = siteId;
+          google.friendconnect.requestSignOut();
+        });
+      }
+    </script>
+<script type="text/javascript">
+    
+    function registerGetBlogUrls() {
+      gadgets.rpc.register('getBlogUrls', function() {
+        var holder = {};
+        
+          
+            
+            
+              holder.currentPost = "http://www.blogger.com/feeds/6475416749449483556/posts/default/8052112300121720411";
+            
+            
+            
+              holder.currentComments = "http://www.blogger.com/feeds/6475416749449483556/8052112300121720411/comments/default";
+            
+            holder.currentPostUrl = "";
+            holder.currentPostId = 8052112300121720411
+          
+          
+          
+            holder.postFeed = "http://www.blogger.com/feeds/6475416749449483556/posts/default";
+          
+          
+          
+            holder.commentFeed = "http://www.blogger.com/feeds/6475416749449483556/comments/default";
+          
+          holder.currentBlogUrl = "http://mechanistician.blogspot.com/";
+          holder.currentBlogId = "6475416749449483556";
+        
+        return holder;
+      });
+    }
+  </script>
+<script type="text/javascript">
+  if (!window.registeredCommonBloggerCallbacks) {
+    window.registeredCommonBloggerCallbacks = true;
+
+    gadgets.rpc.register('resize_iframe', function(height) {
+      var el = document.getElementById(this['f']);
+      if (el) {
+        el.style.height = height + 'px';
+      }
+    });
+
+    
+    gadgets.rpc.register('set_pref', function() {});
+
+    registerGetBlogUrls();
+  }
+  </script>
+<script type="text/javascript" src="http://www.blogger.com/static/v1/jsbin/3868580601-comment_from_post_iframe.js"></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('http://www.blogger.com/rpc_relay.html', '15941264696815646313');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+<div id="latency-8052112300121720411"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-8052112300121720411")); } </script>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_07.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://mechanistician.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://mechanistician.blogspot.com/feeds/8052112300121720411/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget Profile' id='Profile2'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link' href='http://www.blogger.com/profile/04405962471175755507' rel='author'>
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='http://www.blogger.com/profile/04405962471175755507' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6475416749449483556&widgetType=Profile&widgetId=Profile2&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile2"));' target='configProfile2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget LinkList' id='LinkList1'>
+<h2>Links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://news.ycombinator.com/'>Hacker News</a></li>
+<li><a href='http://highscalability.com/'>High Scalability</a></li>
+<li><a href='http://www.kdnuggets.com/'>KDnuggets</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6475416749449483556&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target='configLinkList1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' id='BlogArchive2'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive2_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/search?updated-min=2011-01-01T00%3A00%3A00-08%3A00&updated-max=2012-01-01T00%3A00%3A00-08%3A00&max-results=3'>2011</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2011_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2011/03/ibms-watson.html'>IBM&#39;s Watson</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2011_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2011/01/scala.html'>Scala</a></li>
+<li><a href='http://mechanistician.blogspot.com/2011/01/diversity-complexity-and-regularization.html'>Talk on Ensemble methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/search?updated-min=2010-01-01T00%3A00%3A00-08%3A00&updated-max=2011-01-01T00%3A00%3A00-08%3A00&max-results=22'>2010</a>
+<span class='post-count' dir='ltr'>(22)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/12/gamma-database-machine.html'>Gamma database machine</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/12/blast-from-past-titanium-dbms.html'>Blast from the past: Titanium DBMS</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/10/crowdconf-2010.html'>CrowdConf 2010</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/10/adding-new-keyword-to-postgresql.html'>Adding a new operator to PostgreSQL</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/10/how-to-start-social-movement.html'>How to start a social movement</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/09/crowdsourcing.html'>Crowdsourcing</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/08/mapreduce-algorithm-design-book.html'>MapReduce algorithm design book</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/07/architecture-for-highly-concurrent.html'>Architecture for Highly Concurrent Server Apps</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_07.html'>Large-Scale Machine Learning with Mahout - Part 3</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_06.html'>Large-Scale Machine Learning with Mahout - Part 2</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with.html'>Large-Scale Machine Learning with Mahout - Part 1</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/06/bayesian-statistics.html'>Bayesian statistics</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/05/bayesian-methods-for-large-datasets.html'>Bayesian Methods for Large Datasets</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/05/sign-of-times.html'>A sign of the times</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/05/java-vs-c.html'>Java vs C++</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/04/handling-uncertainty-and-complexity-in.html'>Handling uncertainty and complexity in AI</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/03/enhancing-video-resolution-with-stills.html'>Enhancing Video Resolution With Stills</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/03/data-modeling-vs-algorithmic-modeling.html'>Data Modeling vs Algorithmic Modeling</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/02/regularized-least-squares-for-image.html'>Least-Squares For Image Restoration</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/02/markov-logic.html'>Markov Logic</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2010_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2010/01/boosting-bayesian-networks.html'>Boosting Bayesian Networks</a></li>
+<li><a href='http://mechanistician.blogspot.com/2010/01/bayes-rule.html'>Probabilistic Reasoning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/search?updated-min=2009-01-01T00%3A00%3A00-08%3A00&updated-max=2010-01-01T00%3A00%3A00-08%3A00&max-results=50'>2009</a>
+<span class='post-count' dir='ltr'>(52)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/12/boosting.html'>Boosting</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/12/best-data-mining-algorithm.html'>Best Data Mining Algorithm</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/11/easy-learning-of-bayesian-networks.html'>Easy Learning of Bayesian Networks</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/10/reactive-vs-deliberative-agents.html'>Reactive vs Deliberative Agents</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/09/singularity-university.html'>Singularity University</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/09/bayesian-network-approximate-inference.html'>Bayesian Network Approximate Inference</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/09/probabilistic-graphical-models.html'>Probabilistic Graphical Models</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/08/machine-learning-and-computational.html'>Machine Learning and Computational Finance</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/08/trading-strategy-implementation.html'>Trading Strategy Implementation</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/08/interactive-brokers-activex-matlab.html'>Interactive Brokers, ActiveX &amp; Matlab</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/08/automated-trading-systems.html'>Automated Trading Systems</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/08/cognitive-reflection-test.html'>Cognitive Reflection Test</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/08/time-series-modelling-forecasting.html'>Time Series Modeling, Forecasting &amp; Control II</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(5)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/07/time-series-modeling-forecasting.html'>Time Series Modeling, Forecasting &amp; Control</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/07/capital-asset-pricing-model.html'>Capital Asset Pricing Model</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/07/markowitz-portfolio-optimization.html'>Markowitz Portfolio Optimization</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/07/stock-returns.html'>Stock Returns</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/07/supervised-learning-method-comparison.html'>Supervised Learning Method Comparison</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/06/strategy-optimization.html'>Strategy Optimization</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(11)</span>
+<ul class='posts'>
+<li><a href='http://mechanistician.blogspot.com/2009/05/lec17-fitted-value-iteration_31.html'>Lec17 - Fitted Value Iteration</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/05/pacman-and-reinforcement-learning.html'>Pacman and Reinforcement Learning</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/05/lec16-value-and-policy-iteration.html'>Lec16 - Value and Policy Iteration</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/05/lec16-reinforcement-learning.html'>Lec16 - Reinforcement Learning</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/05/hidden-markov-model-iii.html'>Hidden Markov Model III</a></li>
+<li><a href='http://mechanistician.blogspot.com/2009/05/hidden-markov-model-ii.html'>Hidden Markov Model II</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://mechanistician.blogspot.com/2009_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6475416749449483556&widgetType=BlogArchive&widgetId=BlogArchive2&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive2"));' target='configBlogArchive2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+</div></div>
+<!-- end outer-wrapper -->
+<script language='javascript'>  
+ function start() {  
+ dp.SyntaxHighlighter.BloggerMode();  
+ dp.SyntaxHighlighter.HighlightAll('code');  
+ }   
+ window.onload = start;  
+ </script>
+<script type='text/javascript'>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type='text/javascript'>
+try {
+var pageTracker = _gat._getTracker("UA-10610386-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/1019049897-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '6475416749449483556';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=6475416749449483556','http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_06.html','6475416749449483556');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=6475416749449483556','APq4FmBta0a_hwBMPiXi01e6ID2eQtRQkKQt0lfgtFNw3XLAChWrtgV7BUgidvse90nlNQVo4IVZXjuOb5ZsFwi5OYzyff0Hd_eaQ1CXmqhc7Q1hbxW2-Ns=','AOuZoY4cCnoqrox4cFLOTSDlXjxXe98PHA:1301854426334');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'Mechanistician', 'pageType': 'item', 'url': 'http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_06.html', 'canonicalUrl': 'http://mechanistician.blogspot.com/2010/07/large-scale-machine-learning-with_06.html', 'homepageUrl': 'http://mechanistician.blogspot.com/', 'faviconUrl': 'http://www.blogger.com/favicon.ico', 'enabledCommentProfileImages': false, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Large-Scale Machine Learning with Mahout - Part 2', 'pageTitle': 'Mechanistician: Large-Scale Machine Learning with Mahout - Part 2', 'encoding': 'UTF-8', 'locale': 'en', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Mechanistician - Atom\42 href\75\42http://mechanistician.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Mechanistician - RSS\42 href\75\42http://mechanistician.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Mechanistician - Atom\42 href\75\42http://www.blogger.com/feeds/6475416749449483556/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0756475416749449483556\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Mechanistician - Atom\42 href\75\42http://mechanistician.blogspot.com/feeds/8052112300121720411/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(d,i,e){e\75e!\75undefined?e:(new Date).getTime();this.t[d]\75[e,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;if(a.chrome\46\46a.chrome.csi)g\75Math.floor(a.chrome.csi().pageT);if(g\75\75null)if(a.gtbExternal)g\75a.gtbExternal.pageT();if(g\75\75null)if(a.external)g\75a.external.pageT;if(g)a.jstiming.pt\75g}catch(h){};a.tickAboveFold\75function(b){var d\0750;if(b.offsetParent){do d+\75b.offsetTop;while(b\75b.offsetParent)}b\75d;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){if(!j){j\75true;a.jstiming.load.tick(\42firstScrollTime\42)}}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': ''}}]);
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile2', 'sidebar', null, document.getElementById('Profile2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive2', 'sidebar', null, document.getElementById('BlogArchive2'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

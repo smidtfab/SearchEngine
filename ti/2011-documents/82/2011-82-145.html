@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head>
+<!-- Powered by Perl http://www.perl.org/ -->
+
+
+
+
+
+<link rel="home" type="text/html" title="home:heise Developer" href="/developer/" />
+<link rel="author" title="Kontakt" href="mailto:developer@heise.de" />
+<link rel="copyright" title="Copyright" href="/developer/Impressum-5196.html" />
+<link rel="search" title="Suche" href="http://www.heise.de/developer/suche/" />
+<link rel="alternate" type="application/atom+xml" title="Neueste Meldungen von heise Developer" href="http://www.heise.de/developer/rss/news-atom.xml" />
+<link rel="alternate" type="application/atom+xml" title="Developer-Blog: Babel-Bulletin" href="http://www.heise.de/developer/rss/babel-bulletin/blog-atom.xml" />
+<link rel="alternate" type="application/rss+xml"  title="Developer-Blog: Babel-Bulletin (für ältere RSS-Reader)" href="http://www.heise.de/developer/rss/babel-bulletin/blog.rdf" />
+<link rel="alternate" type="application/atom+xml" title="Developer-Blog: Der Dotnet-Doktor" href="http://www.heise.de/developer/rss/dotnet-doktor/blog-atom.xml" />
+<link rel="alternate" type="application/rss+xml"  title="Developer-Blog: Der Dotnet-Doktor (für ältere RSS-Reader)" href="http://www.heise.de/developer/rss/dotnet-doktor/blog.rdf" />
+<link rel="alternate" type="application/atom+xml" title="Developer-Blog: Kais bewegtes Web" href="http://www.heise.de/developer/rss/kais-bewegtes-web/blog-atom.xml" />
+<link rel="alternate" type="application/rss+xml"  title="Developer-Blog: Kais bewegtes Web (für ältere RSS-Reader)" href="http://www.heise.de/developer/rss/kais-bewegtes-web/blog.rdf" />
+<link rel="alternate" type="application/atom+xml" title="Developer-Blog: Bernds Management-Welt" href="http://www.heise.de/developer/rss/bernds-management-welt/blog-atom.xml" />
+<link rel="alternate" type="application/rss+xml"  title="Developer-Blog: Bernds Management-Welt (für ältere RSS-Reader)" href="http://www.heise.de/developer/rss/bernds-management-welt/blog.rdf" />
+<link rel="alternate" type="application/atom+xml" title="Developer-Blog: The World of IT" href="http://www.heise.de/developer/rss/world-of-it/blog-atom.xml" />
+<link rel="alternate" type="application/rss+xml"  title="Developer-Blog: The World of IT (für ältere RSS-Reader)" href="http://www.heise.de/developer/rss/world-of-it/blog.rdf" />
+<link rel="alternate" type="application/rss+xml"  title="Developer-Podcast: SoftwareArchitekTOUR" href="http://www.heise.de/developer/podcast/itunes/heise-developer-podcast-softwarearchitektour.rss" />
+
+
+    <link rel="prev" title="Vorige Meldung" href="/developer/meldung/Android-3-0-offenbar-fertiggestellt-1124252.html" />
+
+
+    <link rel="next" title="Naechste Meldung" href="/developer/meldung/Petition-fordert-Apple-zur-Freigabe-seiner-Java-Implementierung-auf-1124437.html" />
+
+
+<link href="/stil/standard2008.css" rel="stylesheet" type="text/css" />
+<link href="/stil/navi_top2008.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<link href="/stil/developer/standard.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<link href="/stil/drucken.css" rel="stylesheet" type="text/css" media="print" />
+
+<title>Toolkit für Amazons Crowdsourcing-Dienst | heise Developer</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="de" />
+<meta name="DC.creator" content="heise Developer" />
+<meta name="date" content="2010-10-25T09:20:00" />
+<meta name="keywords" content="Amazon, KI, Mechanical Turk, TurKit, crowdsourcing" />
+<meta name="author" content="Ben Schwan" />
+
+
+
+
+
+
+    <meta name="fulltitle" content="Toolkit für Amazons Crowdsourcing-Dienst" />
+    <meta name="topic" content="News" />
+    <meta name="description" content="Mit TurKit lassen sich Mechanical Turk-Arbeitsabläufe direkt in JavaScript-Programme integrieren." />
+    <meta name="DC.title" content="Toolkit für Amazons Crowdsourcing-Dienst" />
+    <meta name="DC.description" content="Mit TurKit lassen sich Mechanical Turk-Arbeitsabläufe direkt in JavaScript-Programme integrieren." />
+    <meta name="DC.identifier" content="http://heise.de/-1124304" scheme="DCTERMS.URI" />
+    <meta name="kill_switch" content="true" />
+
+
+
+
+
+
+<meta name="copyright" content="Heise Zeitschriften Verlag" />
+<link href="/favicon_developer.ico" rel="shortcut icon" />
+
+<script type="text/javascript" src="/support/lib/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/support/lib/social_bookmarks.js"></script>
+<script type="text/javascript" src="/support/lib/external.js"></script>
+<script type="text/javascript" src="/support/lib/teaser_linking.js"></script>
+
+
+
+<meta name="generator" content="InterRed V11.0, http://www.interred.de/, InterRed GmbH" />
+</head>
+
+<body>
+
+
+
+
+
+
+
+<!--googleoff: index-->
+<!--googleoff: snippet-->
+
+<div id="navi_top_container">
+    <div id="navi_top">
+        <div class="navi_top_logo"><a href="/"><img src="/icons/ho/heise_online_min.gif" alt="" /></a></div>
+        <div class="erste_zeile">
+            <ul class="navi_top_abschnitt">
+            
+                <li class="first"><a href="/ct/" class="navi_oben_ct" title="c't">c't<span> Magazin</span></a></li>
+            
+            
+                <li><a href="/ix/" class="navi_oben_ix" title="iX">iX<span> Magazin</span></a></li>
+            
+            
+                <li><a href="/tr/" class="navi_oben_tr" title="Technology Review">Technology&nbsp;Review</a></li>
+            
+                <li><a href="/tp/" title="Telepolis" class="navi_oben_tp">Telepolis</a></li>
+            
+                <li><a href="/mobil/" class="navi_oben_mob" title="heise mobil"><span>heise </span>mobil</a></li>
+            
+            
+                <li><a href="/security/" class="navi_oben_sec" title="heise Security"><span>heise </span>Security</a></li>
+            
+            
+                <li><a href="/netze/" class="navi_oben_net" title="heise Netze"><span>heise </span>Netze</a></li>
+            
+            
+                <li><a href="/open/" class="navi_oben_op" title="heise open">Open Source</a></li>
+            
+            
+                <li><a href="/developer/" class="navi_oben_dev" title="heise Developer"><span>heise </span>Developer</a></li>
+            
+            
+                <li><a href="/resale/" class="navi_oben_res" title="heise resale"><span>heise </span>Resale</a></li>
+            
+            
+                <li><a href="/foto/" class="navi_oben_foto" title="heise Foto"><span>heise </span>Foto</a></li>
+            
+            
+                <li><a href="/autos/" class="navi_oben_aut" title="heise Autos"><span>heise </span>Autos</a></li>
+            
+            
+                <li><a href="/ct-tv/" class="navi_oben_tv" title="ctmagazin.tv">c't-TV</a></li>
+            
+            
+                <li><a href="/mac-and-i/" class="navi_oben_mac" title="Mac &amp; i">Mac &amp; i</a></li>
+            
+            </ul>
+        </div>
+        <div class="zweite_zeile">
+            <ul class="navi_top_abschnitt">
+                <li class="first"><a href="/software/" title="Software-Verzeichnis" class="navi_oben_swv"><span>Software/</span>Download</a></li>
+            
+                <li><a href="/jobs/" class="navi_oben_job" title="heise jobs">Stellenangebote</a></li>
+            
+                <li><a href="/preisvergleich/"                title="Preisvergleich"    class="navi_oben_pvg"   >Preisvergleich</a></li>
+                <li><a href="/tarifrechner/"                  title="Tarifrechner"      class="navi_oben_tarifr">Tarifrechner</a></li>
+                <li><a href="/itmarkt/"                       title="IT-Markt"          class="navi_oben_itm"   >IT-Markt</a></li>
+                <li><a href="http://www.heise-marktplatz.de/" title="heise-marktplatz"                          >heise-marktplatz</a></li>
+                <li><a href="/events/"                        title="heise Events"      class="navi_oben_eve"   ><span>heise </span>Veranstaltungen</a></li>
+                <li><a href="/whitepapers/"                   title="heise Whitepapers" class="navi_oben_whi"   ><span>heise </span>Whitepapers</a></li>
+                <li><a href="https://abo.heise.de/"           title="Zeitschriften-Abo" class="navi_oben_abo"   >Abo</a></li>
+                <li><a href="http://www.heise-shop.de/"       title="heise-shop"        class="navi_oben_shop"  >Shop</a></li>
+                <li><a href="/artikel-archiv/"                title="Artikel-Archiv"    class="navi_oben_kio"   >Archiv</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        <script type="text/javascript" src="/support/lib/doubleclicktag.js"></script>
+    
+
+
+
+<div id="container">
+    <div id="container_content">
+        <div id="logo_bereich">
+            <div id="logo">
+                <a href="/developer/" title="heise Developer"><img src="/developer/icons/heise_developer_logo.gif"       width="267" height="40" alt="heise Developer" /></a>
+            </div>
+            <ul id="navigation_meta">
+                <li><a href="/developer/foren/" title="heise Developer Foren">Foren</a></li>
+                <li><a href="/newsletter/manage/developer" title="heise Developer Newsletter">Newsletter</a></li>
+                <li><a href="/developer/rss/news-atom.xml" title="heise Developer RSS">RSS</a></li>
+                <li><a href="/developer/kontakt/" title="Kontakt zur Redaktion">Kontakt</a></li>
+            </ul>
+            <div id="navigation">
+                <form id="suchfeld" action="/developer/suche/?sort=d;channel=developer" method="get" accept-charset="utf-8">
+                    <h4>
+                        <input type="text" name="q" id="q" value="" class="textfield" />
+                        <input type="submit" name="search_submit" value="Suche" class="search_submit" />
+                        <input type="hidden" name="rm" value="search" class="search_hidden" />
+                    </h4>
+                </form>
+                <div id="navi_login">
+                    <script type="text/javascript" src="/support/lib/login_ho.js"></script>
+                    <noscript>
+                        <p>
+                            <a href="https://www.heise.de/userdb/sso?rm=show_login&amp;dirid=1&amp;objekt=/developer/">Einloggen</a> |
+                            <a href="https://www.heise.de/userdb/sso?rm=do_logout&amp;dirid=1">Ausloggen</a>
+                        </p>
+                    </noscript>
+                </div>
+                <ul>
+                
+                    <li class="aktiv">
+                        <b><a href="/developer/" title="News">News</a></b>
+                        
+                            <div>
+                            
+                                <a href="/developer/news/" title="7-Tage-News">7-Tage-News</a>
+                            
+                                <a href="/developer/news/archiv/" title="News-Archiv">News-Archiv</a>
+                            
+                            </div>
+                        
+                    </li>
+                
+                    <li >
+                        <b><a href="/developer/rubriken/" title="Rubriken">Rubriken</a></b>
+                        
+                    </li>
+                
+                    <li >
+                        <b><a href="/developer/blog/" title="Blogs">Blogs</a></b>
+                        
+                    </li>
+                
+                    <li >
+                        <b><a href="/developer/podcast/" title="Podcast">Podcast</a></b>
+                        
+                    </li>
+                
+                    <li >
+                        <b><a href="/developer/veranstaltungsberichte/" title="Szene">Szene</a></b>
+                        
+                    </li>
+                
+                    <li >
+                        <b><a href="/developer/software/" title="Software">Software</a></b>
+                        
+                    </li>
+                
+                    <li >
+                        <b><a href="/developer/FAQ-Liste-2442.html" title="FAQ-Liste">FAQ-Liste</a></b>
+                        
+                    </li>
+                
+                </ul>
+                <div class="zweite_ebene">
+                
+                    
+                        
+                            <a href="/developer/news/" title="7-Tage-News">7-Tage-News</a>
+                        
+                            <a href="/developer/news/archiv/" title="News-Archiv">News-Archiv</a>
+                        
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                </div>
+            </div>
+        </div>
+
+        
+	<div id="breadcrumb">
+	
+		<a href="/developer/" title="heise Developer">heise Developer</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<a href="/developer/news/" title="News">News</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<a href="/developer/news/archiv/?jahr=2010" title="2010">2010</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<a href="/developer/news/archiv/?jahr=2010;woche=43" title="KW 43">KW 43</a>
+		<span class="bread_gt">&gt;</span>
+	
+		<span class="titel">Toolkit für Amazons Crowdsourcing-Dienst</span>
+		
+	
+	</div>
+
+
+
+        <div id="mitte">
+        
+            <div id="mitte_links">
+        
+        <!--googleon: index-->
+        
+
+
+<div id="mitte_news">
+
+	
+    
+	<p class="news_navi">
+	<a href="/developer/meldung/Android-3-0-offenbar-fertiggestellt-1124252.html"><span class="rsaquo">«</span>&nbsp;Vorige</a>
+	|
+	<a href="/developer/meldung/Petition-fordert-Apple-zur-Freigabe-seiner-Java-Implementierung-auf-1124437.html">Nächste&nbsp;<span class="rsaquo">»</span></a>
+	</p>
+    
+    <p class="news_datum">25.10.2010 09:20</p>
+    <!-- RSPEAK_START -->
+    <!--googleon: all-->
+    <h1> Toolkit für Amazons Crowdsourcing-Dienst</h1>
+    <div class="meldung_wrapper">
+	<p><a href="/tr/artikel/Amazons-mechanischer-Tuerke-278255.html">Mechanical Turk</a>, ein Dienst, den der E-Commerce-Riese Amazon mittlerweile seit fast fünf Jahren anbietet, erlaubt es Firmen und einzelnen Nutzern, Internet-Surfer als bezahlte Hilfsarbeiter zu engagieren. Das ist zumeist nicht besonders teuer und immer dann nützlich, wenn sich eine Aufgabe nur schlecht mittels Rechner automatisieren lässt – sei es nun die genaue Beschreibung eines Bildes oder das Verstehen komplexer Wortzusammenhänge. Dabei gilt stets: Was Künstliche Intelligenz nicht oder nur aufwendig kann, erledigt der Mensch in diesen Fällen in Sekunden.</p><!--googleoff: index-->
+<!-- RSPEAK_STOP -->
+<div  class="bcadv ISI_IGNORE"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/developer/dev-inhalt;sz=300x250,336x280;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=1;ord=2393428323?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/developer/dev-inhalt;sz=300x250,336x280;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=1;ord=2393428323?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/developer/dev-inhalt;sz=300x250,336x280;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=1;ord=2393428323?" /></a></div></noscript>
+</div>
+<!-- RSPEAK_START -->
+<!--googleon: index-->
+<p>Die Fähigkeiten der Mechanical-Turk-Mitarbeiter, allgemein auch "Turkers" genannt, könnten in Zukunft noch einfacher angezapft werden, indem ihre Arbeit direkt in Programmabläufe integriert wird. Forscher am MIT haben dazu nun ein sogenanntes Toolkit entwickelt. Mit dem <a href="http://groups.csail.mit.edu/uid/turkit/">TurKit</a> lassen sich Algorithmen zur Koordinierung von Turkern in der Web-Sprache JavaScript erstellen und daraus mächtige Programme kreieren. Die Software habe dann "menschliche Intelligenz eingebaut", wie Greg Little, Doktorand am Labor für Computerwissenschaften und Künstliche Intelligenz an der Hochschule, sagt, der TurKit entwickelt hat. Selbst die Fehlerbereinigung von Code (Debugging) sei dabei möglich.</p>
+<p>"Mit JavaScript konnte man bislang nicht ohne großen Aufwand auf Mechanical Turk zugreifen", sagte Little. TurKit sei eine Brücke, mit der Code geschrieben werden könne, der direkt mit den Turkern interagiere. "So kann man leicht neue Methoden dieses "menschlichen Computers" ausprobieren."</p>
+<p><em>Mehr zum Thema in Technology Review online:</em><br /><ul><li><a href="/tr/artikel/Auf-dem-Weg-zu-menschlichen-Algorithmen-1124220.html">Auf dem Weg zu menschlichen Algorithmen</a></li></ul><!-- AUTHOR-DATA-MARKER-BEGIN --> (<em>Ben Schwan</em>)
+ / 
+
+<!-- RSPEAK_STOP -->
+<span class="ISI_IGNORE">(<a href="mailto:bsc@tr.heise.de" title="Ben Schwan">bsc</a>)</span>
+<br class="clear" />
+<!-- RSPEAK_START -->
+<!-- AUTHOR-DATA-MARKER-END -->
+</p>
+    </div>
+    <!--googleoff: all-->
+    <!-- RSPEAK_STOP -->
+    <div id="social_bookmarks"></div>
+    <div class="news_fuss">
+	<p class="news_option">
+	    <a href="/developer/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?view=print" rel="nofollow">Version zum Drucken</a> |
+	    <a href="/developer/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?view=mail" rel="nofollow">Per E-Mail versenden</a> |
+	    <a href="/newsletter/manage/developer" title="Newsletter abonnieren">Newsletter abonnieren</a>
+	</p>
+
+	
+	    <p class="news_navi">
+		<a href="/developer/meldung/Android-3-0-offenbar-fertiggestellt-1124252.html"><span class="rsaquo">«</span>&nbsp;Vorige</a>
+		|
+		<a href="/developer/meldung/Petition-fordert-Apple-zur-Freigabe-seiner-Java-Implementierung-auf-1124437.html">Nächste&nbsp;<span class="rsaquo">»</span></a>
+	    </p>
+	
+		  
+		<p class="permalink">Permalink: <a href="http://heise.de/-1124304">http://heise.de/-1124304</a></p>
+		
+	<div class="news_foren">
+	    
+  <p>
+	<a href="/newsticker/foren/S-Toolkit-fuer-Amazons-Crowdsourcing-Dienst/forum-188072/list/" title="Toolkit f&#xfc;r Amazons Crowdsourcing-Dienst">
+      <b>
+		
+		  
+			Kommentare lesen (13 Beitr&#xe4;ge)
+		  
+		
+      </b>
+	</a>
+	
+  </p>
+
+
+	</div>
+				
+
+	
+
+
+    
+
+
+
+<div class="related_items">
+	<h4>Auch auf heise online:</h4>
+	<ul>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Amazon-Musik-liegt-in-der-Cloud-1216593.html/from/related" title="Amazon: Musik liegt in der Cloud">Amazon: Musik liegt in der Cloud</a></li>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Amazons-Cloud-importiert-Virtuelle-Maschinen-1202840.html/from/related" title="Amazons Cloud importiert Virtuelle Maschinen">Amazons Cloud importiert Virtuelle Maschinen</a></li>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Maschinen-ergaenzen-Medienarbeiter-1185709.html/from/related" title="Maschinen ergänzen Medienarbeiter">Maschinen ergänzen Medienarbeiter</a></li>
+	
+	    <li><a href="http://www.heise.de/tr/artikel/Der-Software-Journalist-1185705.html/from/related" title="Der Software-Journalist">Der Software-Journalist</a></li>
+	
+	    <li><a href="http://www.heise.de/tr/artikel/Auf-dem-Weg-zu-menschlichen-Algorithmen-1124220.html/from/related" title="Auf dem Weg zu menschlichen Algorithmen">Auf dem Weg zu menschlichen Algorithmen</a></li>
+	
+	    <li><a href="http://www.heise.de/newsticker/meldung/Amazon-setzt-auf-Menschen-statt-Maschinen-144847.html/from/related" title="Amazon setzt auf Menschen statt Maschinen">Amazon setzt auf Menschen statt Maschinen</a></li>
+	
+	</ul>
+</div>
+
+
+    </div>
+</div>
+
+        <!--googleoff: index-->
+        <div class="adbottom"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/developer/dev-inhalt;sz=500x500;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=2;ord=2393428323?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/developer/dev-inhalt;sz=500x500;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=2;ord=2393428323?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/developer/dev-inhalt;sz=500x500;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=2;ord=2393428323?" /></a></div></noscript>
+</div>
+        
+        
+            </div>
+            <div id="mitte_rechts">
+            
+            
+                
+                
+                
+
+
+
+    <div class="teaser_podcast">
+	<h4><a href="/developer/podcast/">SoftwareArchitekTOUR-Podcast</a></h4>
+	
+    <div class="anriss">
+        <h3><a href="/developer/artikel/Episode-29-Cloud-Computing-mit-Windows-Azure-1211445.html" title="Episode 29: Cloud Computing mit Windows Azure">Episode 29: Cloud Computing mit Windows Azure</a></h3>
+        <p>
+            <a href="/developer/podcast/" rel="nofollow"><img src="/developer/icons/podcast_teaser.gif" alt="Developer-Podcast" /></a>
+            Eine Episode über das Cloud Computing mit Microsofts Cloud-Plattform Windows Azure, die zunehmend besser wird. <span class="mehr_schnipsel">Mehr…</span>
+        </p>
+    </div>
+	
+    </div>
+
+
+
+                
+
+
+
+    <div class="teaser_blogs">
+	<h4><a href="/developer/blog/">Developer Blogs</a></h4>
+	<div>
+        
+        <a href="/developer/developer_redakteur_403101.html"><img src="/developer/imgs/06/2/9/7/4/2/0/autoren_je-53a1662395e2babe.jpg" width="50" height="63" alt="Jutta Eckstein" /></a>
+        
+        <a href="/developer/developer_redakteur_403097.html"><img src="/developer/imgs/06/2/9/7/4/1/8/autoren_nj-1b984e2b6ba55108.jpg" width="50" height="63" alt="Nicolai Josuttis" /></a>
+        
+        <a href="/developer/developer_redakteur_403105.html"><img src="/developer/imgs/06/2/9/7/4/2/2/autoren_kk-e2619b6705251068.jpg" width="50" height="63" alt="Kai König" /></a>
+        
+        <a href="/developer/developer_redakteur_403109.html"><img src="/developer/imgs/06/2/9/7/4/2/4/autoren_hs-c9ef5c1af71ea44a.jpg" width="50" height="63" alt="Dr. Holger Schwichtenberg" /></a>
+        
+        <a href="/developer/developer_redakteur_437673.html"><img src="/developer/imgs/06/3/0/8/6/3/9/autoren_bo-28dc62ba18a6d3ee.jpg" width="50" height="63" alt="Bernd Oestereich" /></a>
+        
+        <a href="/developer/developer_redakteur_964686.html"><img src="/developer/imgs/06/5/0/1/1/4/5/mw-blog.jpg-effa762534bfc3e0.jpeg" width="50" height="63" alt="Michael Wiedeking" /></a>
+        
+    </div>
+    
+    <div class="anriss">
+        <h3><a href="/developer/artikel/Release-Candidate-fuer-ADO-NET-Entity-Framework-4-1-1218572.html" title="Release Candidate für ADO.NET Entity Framework 4.1">Release Candidate für ADO.NET Entity Framework 4.1</a></h3>
+        <p>
+            Außerhalb des Veröffentlichungszyklus des .NET Framework wird Microsoft neue Funktionen für das ADO.NET Entity Framework freigeben. <span class="mehr_schnipsel">Mehr…</span>
+        </p>
+    </div>
+    
+    <div class="anriss">
+        <h3><a href="/developer/artikel/Mehr-Demokratie-durch-soziale-Medien-1216524.html" title="Mehr Demokratie durch soziale Medien?">Mehr Demokratie durch soziale Medien?</a></h3>
+        <p>
+            Soziale Medien feiern derzeit einen Sieg nach dem anderen - vorwiegend im Mittleren und Nahen Osten. Doch um welchen Preis?. <span class="mehr_schnipsel">Mehr…</span>
+        </p>
+    </div>
+    
+    </div>
+
+
+
+                
+
+
+
+
+<div class="teaser_frei">
+    
+	<h4>Heise Developer meets iX 4/2011</h4>
+    
+    
+	<h3><a href="/ix/artikel/Sonnenfinsternis-1209680.html">Ein Jahr Sun bei Oracle</a></h3>
+    
+    <p>
+	
+	    <img alt="" src="/developer/imgs/06/4/7/3/3/2/2/ix.0411.096-099.neu2_Seite_1_Bild_0001.jpg-8f66b74f7fd9b12a-0eb013a7d32c7d9c.jpg" />
+	
+	Rund ein Jahr nach Abschluss der Sun-Übernahme ist es Zeit für eine Zwischenbilanz. Das Ergebnis fällt ernüchternd aus, war jedoch zu erwarten. Denn das Geschäftsgebaren Oracles war hinreichend bekannt.
+    </p>
+</div>
+
+
+
+                <div class="naviad"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/developer/dev-inhalt;sz=336x200;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=3;ord=2393428323?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/developer/dev-inhalt;sz=336x200;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=3;ord=2393428323?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/developer/dev-inhalt;sz=336x200;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=3;ord=2393428323?" /></a></div></noscript>
+</div>
+                
+
+
+
+
+<div class="teaser_frei">
+    
+	<h4>Sonderheft</h4>
+    
+    
+	<h3><a href="http://www.heise-shop.de/_pid_234.html">iX kompakt 1/2011 Softwarequalität</a></h3>
+    
+    <p>
+	
+	    <img alt="" src="/developer/imgs/06/4/7/4/7/1/1/4038858087801_CBILD_124x175-ID62062-dbac3075c5b682752b687c43e8164a39-76c773b2d7ae14ee.jpg" />
+	
+	Das Sonderheft stellt das breite Spektrum der Qualitätsaspekte vor: Von guter Oberfächengestaltung und Barrierefreiheit über angemessene Wartung, der richtigen Migrationsstrategie bis hin zum Testen von eingebetteten Systemen. 
+    </p>
+</div>
+
+
+
+                
+            
+            </div>
+        
+        </div>
+    </div>
+    
+
+
+<div id="sitemap">
+    <ul>
+	<li>
+	    <b><a href="/developer/" title="News">News</a></b>
+	    <div>
+		<a href="/developer/news/" title="7-Tage-News">7-Tage-News</a>
+		<a href="/developer/news/archiv/" title="News-Archiv">News-Archiv</a>
+	    </div>
+	</li>
+	<li class="sitemap_rubriken">
+	    <b><a href="/developer/rubriken/" title="Rubriken">Rubriken</a></b>
+	    <div>
+		<div>
+		    <a href="/developer/sprachen-1037.html" title="Sprachen">Sprachen</a>
+		    <a href="/developer/architektur-methoden-1031.html" title="Architektur/Methoden">Architektur/Methoden</a>
+		    <a href="/developer/werkzeuge-1041.html" title="Werkzeuge">Werkzeuge</a>
+		</div>
+		<div>
+		    <a href="/developer/know-how-1033.html" title="Know-how">Know-how</a>
+		    <a href="/developer/standards-1039.html" title="Standards">Standards</a>
+		    <a href="/developer/literatur-1035.html" title="Literatur">Literatur</a>
+		</div>
+	    </div>
+	</li>
+	<li class="sitemap_blogs">
+	    <b><a href="/developer/blog/" title="Blogs">Blogs</a></b>
+	    <div>
+		<a href="/developer/der-dotnet-doktor-1292.html" title="">Der Dotnet-Doktor</a>
+		<a href="/developer/kais-bewegtes-web-1294.html" title="">Kais bewegtes Web</a>
+		<a href="/developer/bernds-management-welt-1290.html" title="">Bernds Management-Welt</a>
+		<a href="/developer/the-world-of-it-1296.html" title="">The World of IT</a>
+	    </div>
+	</li>
+	<li>
+	    <b><a href="/developer/veranstaltungsberichte/" title="Szene">Szene</a></b>
+	    <div>
+		<a href="/developer/veranstaltungsberichte/" title="Veranstaltungsberichte">Veranstaltungsberichte</a>
+		<a href="/developer/termine/" title="Termine">Termine</a>
+		<a href="/developer/Newsgroups-und-Mailinglisten-fuer-Software-Entwickler-2464.html" title="Newsgroups">Newsgroups</a>
+	    </div>
+	</li>
+	<li class="sitemap_service">
+	    <b><a href="/developer/podcast/" title="Podcast">Podcast</a></b>
+	    <b><a href="/developer/software/" title="Software">Software</a></b>
+	    <b><a href="/developer/FAQ-Liste-2442.html" title="FAQ-Liste">FAQ-Liste</a></b>
+	    <b><a href="/developer/foren/" title="Foren">Foren</a></b>
+	    <b><a href="/newsletter/manage/developer" title="Newsletter">Newsletter</a></b>
+	</li>
+    </ul>
+</div>
+
+    <div id="bannerzone">
+        <div class="leaderboard"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var rb = false; document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/developer/dev-inhalt;sz=728x90,468x60;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=4;ord=2393428323?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/developer/dev-inhalt;sz=728x90,468x60;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=4;ord=2393428323?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/developer/dev-inhalt;sz=728x90,468x60;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=4;ord=2393428323?" /></a></div></noscript>
+</div>
+        <div class="heiseadvert"></div>
+        <div class="skyscraper"><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (rb != true) document.write('<script src="http://ad-emea.doubleclick.net/N6514/adj/developer/dev-inhalt;sz=120x600,120x800,160x600,160x800;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=5;ord=2393428323?" type="text/javascript"><\/script>');
+//--><!]]>
+</script>
+<noscript><div><a href="http://ad-emea.doubleclick.net/N6514/jump/developer/dev-inhalt;sz=120x600,120x800,160x600,160x800;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=5;ord=2393428323?" target="_blank"><img alt="" src="http://ad-emea.doubleclick.net/N6514/ad/developer/dev-inhalt;sz=120x600,120x800,160x600,160x800;kw=Amazon,KI,Mechanical%20Turk,TurKit,crowdsourcing;tile=5;ord=2393428323?" /></a></div></noscript>
+</div>
+    </div>
+</div>
+
+
+
+
+
+<div style="display: inline;"><img id="ivw_pixel_intern" src="/ivw-bin/ivw/CP/developer/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html" width="1" height="1" alt="" /></div>
+    
+    <script type="text/javascript">
+        if (typeof(adblocker_is_off) == 'undefined')
+            {
+                var AVW = '<' + 'div style="display: inline;"><' + 'img id="avw_pixel_intern" src="/avw-bin/ivw/CP/adblock/developer/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html" width="1" height="1" alt="" /><' + '/div>';
+                document.write(AVW);
+            }
+    </script>
+    
+        <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            var IVW='<div style="display: inline;"><img id="ivw_pixel" src="http://heise.ivwbox.de/cgi-bin/ivw/CP/dev;%2Fdeveloper%2Fmeldung%2FToolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?r=';
+            document.write(IVW + '&amp;d=' + (Math.random()*100000) + '" width="1" height="1" alt="" /><' + '/div>');
+            //--><!]]>
+        </script>
+        <script type="text/javascript" src="/support/lib/mclient/mclient-1.0.js"></script>
+        <noscript>
+            <div style="display: inline;"><img src="http://heise.ivwbox.de/cgi-bin/ivw/CP/dev;/developer/meldung/Toolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html?r=&amp;d=" width="1" height="1" alt="" /></div>
+        </noscript>
+        <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            window.onunload=function() {};
+            //--><!]]>
+        </script>
+        
+            <!-- SZMFRABO VERSION="1.2" -->
+            <script type="text/javascript">
+                <!--//--><![CDATA[//><!--
+                var szmvars="heise//CP//dev";
+                //--><!]]>
+            </script>
+            <script src="http://heise.ivwbox.de/2004/01/survey.js" type="text/javascript"></script>
+            <!-- /SZMFRABO -->
+        
+
+
+<!-- RL -->
+
+    <!-- RL_PATH:%2Fho%2Fcms%2F94%2F95%2F2010%2F10%2F25%2F1124304 -->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var screenInfo = escape( screen.width + 'x' + screen.height + 'x' + screen.colorDepth );
+var cookiesEnabled = 0;
+if (navigator.cookieEnabled) cookiesEnabled=1;
+var referrer = escape(document.referrer);
+referrer = referrer.replace( /(\/software\/download).*$/, "$1/" );
+document.write(
+'<div style="display: inline;"><img id="rl_pixel" src="http://rl.heise.de/images/pic.gif?r=' + referrer + ';tp=1073741824%7C1073827193%7C1073843731%7C1073843867%7C1073975186%7C1074355685;m=Heise;tid=1074390837;random=' + (Math.random()*100000) + ';con=1;json=1;tc=1073741824%7C1073827193%7C1073843731%7C1073843867%7C1073975186%7C1074355685%7C1074390837;c=1074390838;b=586738;sep=%7C;tce=1;tn=25;tpn=heise%20online%7CRedaktioneller%20Content%7CDeveloper%7CNews%7C2010%7C10%7C25;url=http%3A%2F%2Fwww.heise.de%2Fdeveloper%2Fmeldung%2FToolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html;tit=Toolkit%20f%FCr%20Amazons%20Crowdsourcing-Dienst;tpu=1;sz=' + screenInfo + ';con=' + cookiesEnabled + ';cs=1" width="1" height="1" alt="" /><' + '/div>'
+);
+//--><!]]>
+</script>
+<noscript>
+  <div style="display: inline;"><img id="rl_pixel" src="http://rl.heise.de/images/pic.gif?r=;tp=1073741824%7C1073827193%7C1073843731%7C1073843867%7C1073975186%7C1074355685;m=Heise;tid=1074390837;random=3249758229;json=0;tc=1073741824%7C1073827193%7C1073843731%7C1073843867%7C1073975186%7C1074355685%7C1074390837;c=1074390838;b=586738;sep=%7C;tce=1;tn=25;tpn=heise%20online%7CRedaktioneller%20Content%7CDeveloper%7CNews%7C2010%7C10%7C25;url=http%3A%2F%2Fwww.heise.de%2Fdeveloper%2Fmeldung%2FToolkit-fuer-Amazons-Crowdsourcing-Dienst-1124304.html;tit=Toolkit%20f%FCr%20Amazons%20Crowdsourcing-Dienst;tpu=1;con=1;cs=1" width="1" height="1" alt="" /></div>
+</noscript>
+
+<!-- /RL -->    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+        // VGWORT-CROP-MARKER
+        var vgwort_token='f45fd53f062c4d01a53b1fea2ccd7b43';
+        document.write('<div style="display: inline;"><img src="http://heise.met.vgwort.de/na/' +  vgwort_token);
+        document.write('" width="1" height="1" alt="" /><' + '/div>');
+        //--><!]]>
+    </script>
+
+
+    
+
+	<ul id="navi_bottom">
+
+	
+		<li class="left"><a href="/Privacy-Policy-der-Heise-Zeitschriften-Verlag-GmbH-Co-KG-4860.html">Datenschutzhinweis</a> </li>
+	
+
+	
+		<li class="left"><a href="/developer/Impressum-5196.html">Impressum</a></li>
+	
+
+	
+		<li class="left"><a href="/developer/Kontakt-zur-Redaktion-5198.html">Kontakt</a></li>
+	
+
+	
+		<li class="left"><a href="/mediadaten/online/">Mediadaten</a> </li>
+	
+
+
+<li class="bid_anzeige">
+586738
+</li>
+
+
+
+    <li class="right"><a href="http://www.interred.de/" rel="external" style="margin-right: 0;">Content Management</a> by <b style="margin-right: 0.5em;">Inter<span class="tx_red">Red</span></b></li>
+
+	
+		
+		<li class="right"><a href="http://www.heise-medien.de/zeitschriften/">Copyright © 2011 Heise Zeitschriften Verlag</a></li>
+		
+	
+
+	
+		<li class="international"><span class="international">International: <a href="http://www.h-online.com/">The H</a>, <a href="http://www.h-online.com/security/">The H Security</a>, <a href="http://www.h-online.com/open/">The H Open Source</a> </span></li>
+	
+</ul>
+
+
+
+</body>
+</html>
+<!-- Created with InterRed V11.0-x.x.x.x, http://www.interred.de/, by InterRed GmbH -->
+<!-- BID: 586738, iBID: 586818, CID: 1124304, iCID: 1124400 -->
+<!-- Link: $(LB586738:Linktext)$ $(LC1124304:Linktext)$ -->
+<!-- Generiert: 2010-10-25 10:00:03 -->
+

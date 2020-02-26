@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>xml - MTurk: getQualificationScore returning &quot;QualificationType does not Exist&quot; for Base Qualifications Type (approval rate, etc) - Stack Overflow</title>
+<link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+<link rel="apple-touch-icon" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+<link rel="stylesheet" type="text/css" href="http://sstatic.net/stackoverflow/all.css?v=f023310c4326">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://sstatic.net/js/master.min.js?v=c6108f3b6409"></script>
+
+
+    <link rel="canonical" href="http://stackoverflow.com/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'MTurk: getQualificationScore returning &quot;QualificationType does not Exist&quot; for Base Qualifications Type (approval rate, etc)'" href="/feeds/question/3993794">
+    <script src="http://sstatic.net/js/question.js?v=92b74bed1a42" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({questionId:3993794});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"de76675dcd0f81aa32f15be8bc6ef8f2","inboxUnviewedCount":-1}});
+    </script>
+
+</head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" href="http://stackexchange.com">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="/users/login?returnurl=%2fquestions%2f3993794%2fmturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com">meta</a>
+ <span class="lsep">|</span>
+<a href="/about">about</a>
+ <span class="lsep">|</span>
+<a href="/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="140" size="28" value="search">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="/tags">Tags</a></li>
+                        <li><a id="nav-users" href="/users">Users</a></li>
+                        <li><a id="nav-badges" href="/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion"  href="/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas" class="question-hyperlink">MTurk: getQualificationScore returning &ldquo;QualificationType does not Exist&rdquo; for Base Qualifications Type (approval rate, etc)</a></h1>
+</div>
+
+<div id="mainbar">
+
+
+<div id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1">
+    </div>
+
+    
+    <table>
+    <tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input type="hidden" value="3993794">
+    <a class="vote-up-off" title="This question is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This question is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>    
+
+</div>
+
+    </td>
+    <td class="postcell">
+        <div>          
+            <div class="post-text">
+                <p>I've got a bunch of results from a Mechanical Turk HIT that I had done, and I want to try and rank all my answers by how trustworthy that Worker was. To do that, I'm trying to get each submitting worker's accept rate from MTurk.</p>
+
+<p>I do this using the <a href="http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2007-06-21/ApiReference_QualificationRequirementDataStructureArticle.html" rel="nofollow">MTurk API QualificationRequirement</a> type, "Worker_PercentAssignmentsApproved", whose type_id is 000000000000000000L0.  </p>
+
+<p>To get the worker's rating for percent approved, I call <a href="http://docs.amazonwebservices.com/AWSMechTurk/latest/AWSMturkAPI/index.html?ApiReference_GetQualificationScoreOperation.html" rel="nofollow">GetQualificationScore</a>, which returns to me this very angry message:</p>
+
+<pre><code> &lt;GetQualificationScoreResponse&gt;
+   &lt;OperationRequest&gt;
+     &lt;RequestId&gt;e5a68cbf-f8a4-4fc6-8d47-8198a138fe12&lt;/RequestId&gt;
+   &lt;/OperationRequest&gt;
+   &lt;Qualification&gt;
+     &lt;Request&gt;
+       &lt;IsValid&gt;False&lt;/IsValid&gt;
+       &lt;Errors&gt;
+         &lt;Error&gt;
+           &lt;Code&gt;AWS.MechanicalTurk.QualificationTypeDoesNotExist&lt;/Code&gt;
+           &lt;Message&gt;
+             QualificationType 000000000000000000L0 does not exist (1287717938474) 
+           &lt;/Message&gt;
+         &lt;/Error&gt;
+       &lt;/Errors&gt;
+     &lt;/Request&gt;
+   &lt;/Qualification&gt;
+ &lt;/GetQualificationScoreResponse&gt;
+</code></pre>
+
+<p>Perhaps I had some formatting issues and was calling the method wrong. </p>
+
+<p>To test that, I called <a href="http://docs.amazonwebservices.com/AWSMechTurk/latest/AWSMturkAPI/index.html?ApiReference_GetQualificationTypeOperation.html" rel="nofollow">GetQualificationType</a> (which takes the same type of argument for the type: (QualificationTypeId, The ID of the Qualification type, String)).</p>
+
+<p>Here's the thing: that works perfectly.</p>
+
+<p><strong>So, here's my question:</strong> Does Amazon just not permit access to base qualification/stats  about workers that have done HITs for requesters? Or is there a way to get at this data that I haven't thought of?  </p>
+
+<p><strong>Note</strong> I'm using a slightly-modified version of boto to make these calls, but have found boto to be buggy/lacking for this particular stuff. At this point I'm +/- working on the XML call level.</p>
+
+            </div>            
+            <div class="post-taglist">
+                <a href="/questions/tagged/xml" class="post-tag" title="show questions tagged 'xml'" rel="tag">xml</a> <a href="/questions/tagged/amazon-web-services" class="post-tag" title="show questions tagged 'amazon-web-services'" rel="tag">amazon-web-services</a> <a href="/questions/tagged/mechanicalturk" class="post-tag" title="show questions tagged 'mechanicalturk'" rel="tag">mechanicalturk</a> 
+            </div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/q/3993794" title="short permalink to this question">link</a><span class="lsep">|</span><a href="/posts/3993794/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-3993794" title="flag this post for serious problems or moderator attention">flag</a></div>
+            </td>
+                        
+
+            <td class="post-signature owner">
+            <div class="user-info"><div class="user-action-time">asked <span title="2010-10-22 04:05:25Z" class="relativetime">Oct 22 '10 at 4:05</span></div><div class="user-gravatar32"><a href="/users/5021/alexeymk"><img src="http://www.gravatar.com/avatar/a8ab6d0cd8c5a400758b8ba2ef2fd468?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/5021/alexeymk">AlexeyMK</a><br><span class="reputation-score" title="reputation score">553</span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="20 bronze badges"><span class="badge3"></span><span class="badgecount">20</span></span></div></div>
+                <br class="cbt">
+                <div class="accept-rate accept-answer-link" title="this user has accepted an answer for 19 of 21 eligible questions">90% accept rate</div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </td>
+    </tr>
+
+    
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3993794" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    
+    </table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>1 Answer</h2>
+            <div id="tabs">
+                <a href="/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas?tab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas?tab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas?tab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <a name="3994028"></a>
+    
+    <div id="answer-3994028" class="answer">
+        
+        <table>
+        <tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input type="hidden" value="3994028">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Oct 24 '10 at 16:50">accepted</span>
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><blockquote>
+  <p>Correct, you can't query a Worker's
+  system Qualifications directly.  You
+  can create HITs with Qualification
+  requirements based on system
+  Qualifications, but that's it. </p>
+  
+  <p>Currently, the only way to gather
+  specific data about a Worker is to
+  analyze your own results for HITs and
+  Qualification tests.  You can store
+  the results of your own analysis in
+  Quals you create yourself and update
+  them over time, and use those Quals as
+  the basis for Qual requirements for
+  your HITs.your HITs. </p>
+</blockquote>
+
+<p>-DAN@AWS, Amazon, <a href="http://developer.amazonwebservices.com/connect/thread.jspa?messageID=46629" rel="nofollow">responding to this question</a> back in 2006. </p>
+
+<p>So, it looks like this can't be done directly.  Sadface.</p>
+</div>
+            <table class="fw">
+            <tr>
+            <td class="vt">
+                <div class="post-menu"><a href="/questions/3993794/mturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas/3994028#3994028" title="permalink to this answer">link</a><span class="lsep">|</span><a href="/posts/3994028/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-3994028" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td align="right" class="post-signature owner">   
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-10-22 05:04:20Z" class="relativetime">Oct 22 '10 at 5:04</span></div><div class="user-gravatar32"><a href="/users/5021/alexeymk"><img src="http://www.gravatar.com/avatar/a8ab6d0cd8c5a400758b8ba2ef2fd468?s=32&amp;d=identicon&amp;r=PG" height="32" width="32" alt=""></a></div><div class="user-details"><a href="/users/5021/alexeymk">AlexeyMK</a><br><span class="reputation-score" title="reputation score">553</span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="20 bronze badges"><span class="badge3"></span><span class="badgecount">20</span></span></div></div>
+            </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3994028" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </table>
+    </div>
+    
+    <a name='new-answer'></a>
+    <form id="post-form" action="/questions/3993794/answer/submit" method="post" >
+        <h2 class="space">Your Answer</h2>
+        
+<script type="text/javascript">
+    $(function() {
+     
+        initTagRenderer("".split(" "), "".split(" "));
+
+        lazyEditorReady('answer', true/* confirm navigation after wmd keypress */, "http://sstatic.net/Js/wmd.js?v=8cc0678d8147");
+    });  
+</script>
+
+
+
+
+<div id="post-editor">  
+
+    
+    <div id="wmd-container">
+        <div id="wmd-button-bar"></div>
+        <textarea id="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+
+    <div id="wmd-preview"></div>
+
+
+    <div id="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="de76675dcd0f81aa32f15be8bc6ef8f2">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+           
+    <div class="form-item">
+        <table>
+        <tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="/users/login?returnurl=%2fquestions%2f3993794%2fmturk-getqualificationscore-returning-qualificationtype-does-not-exist-for-bas">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+            </div>
+        </td>
+    
+        </tr>
+        </table>
+    </div>
+    
+           
+        
+        
+        <div class="form-submit cbt"><input id="submit-button" type="submit" value="Post Your Answer" tabindex="110"></div>
+    </form>
+
+
+    <h2 class="bottom-notice">
+        Not the answer you're looking for? 
+        Browse other questions tagged <a href="/questions/tagged/xml" class="post-tag" title="show questions tagged 'xml'" rel="tag">xml</a> <a href="/questions/tagged/amazon-web-services" class="post-tag" title="show questions tagged 'amazon-web-services'" rel="tag">amazon-web-services</a> <a href="/questions/tagged/mechanicalturk" class="post-tag" title="show questions tagged 'mechanicalturk'" rel="tag">mechanicalturk</a> 
+        or <a href="/questions/ask">ask your own question</a>.
+    </h2>
+
+</div>
+</div>
+<div id="sidebar">
+
+<div class="module newuser newuser-greeting" style="display:none">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar"><a href="/about">about &raquo;</a>&nbsp;&nbsp;&nbsp;<a href="/faq">faq &raquo;</a></p>
+    </div>
+</div>    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="/questions/tagged/xml" class="post-tag" title="show questions tagged 'xml'" rel="tag">xml</a>&nbsp;<span class="item-multiplier">&times;&nbsp;20431</span><br>
+<a href="/questions/tagged/amazon-web-services" class="post-tag" title="show questions tagged 'amazon-web-services'" rel="tag">amazon-web-services</a>&nbsp;<span class="item-multiplier">&times;&nbsp;646</span><br>
+<a href="/questions/tagged/mechanicalturk" class="post-tag" title="show questions tagged 'mechanicalturk'" rel="tag">mechanicalturk</a>&nbsp;<span class="item-multiplier">&times;&nbsp;42</span><br>
+</div> 
+        <p class="label-key">asked</p>
+        <p class="label-value" title="2010-10-22 04:05:25Z">5 months ago</p>
+        <p class="label-key">viewed</p>
+        <p class="label-value">124 times</p>
+        <p class="label-key">latest activity</p>
+        <p class="label-value"><a href="?lastactivity" class="lastactivity-link" title="2010-10-22 05:04:20Z">5 months ago</a></p>
+    </div>
+    
+    
+        <script type="text/javascript">
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45?keywords=xml,amazon-web-services,mechanicalturk"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2">
+    </div>
+
+    
+    <div>
+        <script type="text/javascript">
+            (function(){var q="http://careers.stackoverflow.com/Ad/js",g=location.search=="?golarge",a,d=100,c=location.hash.indexOf("#ninjas")>-1,f="Pretty",h="#adzerk2",b="#adzerk1",i="#herebeninjas";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html())})();$(function(){setTimeout(r,2e3);a=setTimeout(e,d)});var e=function(){clearTimeout(a);if(m()&&!k()){a=setTimeout(e,d);return}c=c||n();c&&$(b).css("height",$(b).outerHeight()).attr("id","stop-adzerk");if(l()&&!j()){a=setTimeout(e,d);return}g=g||o();f=g?"Large":f;p()},r=function(){clearTimeout(a);var b=$("div.hireme, "+i);b.each(function(){var a=$(this),d=a.html().replace(/\s+/g,"").length==0;if(d){var c=a,b=a.parents(".everyonelovesstackoverflow").first();if(b.length>0)c=b;c.remove()}})},l=function(){return $(h).length>0},j=function(){var a=$(h);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},o=function(){return $("#careersadsdoublehigh").length>0},m=function(){return $(b).length>0},k=function(){var a=$(b);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},n=function(){return $(i).length>0},p=function(){$.ajax({url:s(),dataType:"script",cache:true})},s=function(){return q+"?style="+f+"&gobanner="+c.toString()}})();
+        </script>
+    </div>
+
+      
+
+
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="/questions/193426/have-you-made-interesting-use-of-mechanical-turk" class="question-hyperlink">Have you made interesting use of Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/478426/using-amazon-mechanicalturk-if-location-us" class="question-hyperlink">Using Amazon MechanicalTurk if location != US?</a>
+</div>
+<div class="spacer">
+<a href="/questions/651613/are-there-alternatives-to-amazons-mechanical-turk-not-restricted-to-us" class="question-hyperlink">Are there alternatives to Amazon&#39;s Mechanical Turk not restricted to US?</a>
+</div>
+<div class="spacer">
+<a href="/questions/701093/how-can-i-fix-netamazonmechanicalturks-failing-tests" class="question-hyperlink">How can I fix Net::Amazon::MechanicalTurk&#39;s failing tests?</a>
+</div>
+<div class="spacer">
+<a href="/questions/1020187/mechanical-turk-tutorials-or-how-to-guides" class="question-hyperlink">Mechanical Turk tutorials or how-to guides</a>
+</div>
+<div class="spacer">
+<a href="/questions/2572881/knowing-the-selections-made-on-a-multichooser-box-in-a-mechanical-turk-hit-usi" class="question-hyperlink">Knowing the selections made on a &#39;multichooser&#39; box in a mechanical turk hit (using Command Line Tools)</a>
+</div>
+<div class="spacer">
+<a href="/questions/2835915/in-mechanical-turk-how-do-you-limit-to-one-hit-per-worker" class="question-hyperlink">In Mechanical Turk, how do you limit to one HIT per worker</a>
+</div>
+<div class="spacer">
+<a href="/questions/2906585/how-do-i-accept-a-file-upload-on-mechanical-turk" class="question-hyperlink">How do I accept a file upload on Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2916994/how-do-you-specify-the-requesters-workerid-in-a-mechanical-turk-hit" class="question-hyperlink">How do you specify the requester&#39;s workerID in a mechanical turk HIT?</a>
+</div>
+<div class="spacer">
+<a href="/questions/2936154/how-to-dynamically-control-the-size-of-a-hit-in-amazon-mechanical-turk" class="question-hyperlink">How to dynamically control the size of a HIT in Amazon Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3194211/what-would-be-a-reasonable-expectation-for-job-turnaround-on-mechanical-turk" class="question-hyperlink">What would be a reasonable expectation for job turnaround on Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3238934/is-there-a-utility-to-help-me-make-lists-with-mechanical-turk" class="question-hyperlink">Is there a utility to help me make lists with Mechanical Turk?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3348029/mechanical-turk-cmd-line-tools-qualification-set-and-foreach-in-xml" class="question-hyperlink">Mechanical Turk / Cmd line tools / Qualification / #set and #foreach in xml</a>
+</div>
+<div class="spacer">
+<a href="/questions/3424680/returning-more-amazon-ws-results" class="question-hyperlink">Returning more Amazon WS results</a>
+</div>
+<div class="spacer">
+<a href="/questions/3740257/what-php-code-will-help-me-parse-html-data-in-an-xml-form" class="question-hyperlink">What PHP code will help me parse html data in an xml form?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3740776/how-do-i-serialize-dom-into-xml-using-php" class="question-hyperlink">How do I serialize DOM into XML using PHP?</a>
+</div>
+<div class="spacer">
+<a href="/questions/3979928/in-mturk-how-can-i-use-participation-in-a-previous-hit-or-series-of-hits-as-a" class="question-hyperlink">In mTurk, how can I use participation in a previous HIT (or series of HITs) as a qualification?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4091059/required-fields-in-mechanical-turk" class="question-hyperlink">Required fields in Mechanical Turk</a>
+</div>
+<div class="spacer">
+<a href="/questions/4146491/does-mechanical-turk-work" class="question-hyperlink">Does Mechanical Turk Work?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4661960/amazon-mechanical-turk-hit-request-from-outside-the-us" class="question-hyperlink">Amazon Mechanical Turk HIT Request from outside the US ?</a>
+</div>
+<div class="spacer">
+<a href="/questions/4694780/creating-a-search-type-hit-on-mturk-without-access-to-prior-hit-data-to-avoid-red" class="question-hyperlink">Creating a search type HIT on MTurk without access to prior HIT data to avoid redundancy</a>
+</div>
+<div class="spacer">
+<a href="/questions/4918069/mechanical-turk" class="question-hyperlink">Mechanical Turk</a>
+</div>
+<div class="spacer">
+<a href="/questions/5125506/storing-html-or-xml-code-in-javascript-variables" class="question-hyperlink">Storing HTML or XML code in javascript variables</a>
+</div>
+<div class="spacer">
+<a href="/questions/5230330/how-long-does-metrics-data-in-aws-cloudwatch-maintained" class="question-hyperlink">How long does metrics data in AWS cloudwatch maintained</a>
+</div>
+<div class="spacer">
+<a href="/questions/5297784/amazon-mechanical-turk-better-user-interface" class="question-hyperlink">Amazon Mechanical Turk - better user interface?</a>
+</div>
+
+    </div>
+    </div>
+
+</div>
+
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="/feeds/question/3993794" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+
+
+<script type="text/javascript" src="/posts/3993794/ivc/e8d1"></script>
+<noscript>
+    <div><img src="/posts/3993794/ivc/e8d1" class="dno" alt=""></div>
+</noscript>
+
+<div style="display:none" id="prettify-lang">lang-xml</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="/about">about</a> |
+                <a href="/faq">faq</a> |
+                 <a href="http://blog.stackoverflow.com">blog</a> |
+                    <a href="http://chat.stackoverflow.com">chat</a> |
+                <a href="http://data.stackexchange.com">data</a> |
+                <a href="http://itc.conversationsnetwork.org/series/stackoverflow.html">podcast</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com">feedback always welcome</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackoverflow.com">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackapps.com">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://careers.stackoverflow.com">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">&#9632;</span>&nbsp;<a href="http://serverfault.com">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">&#9632;</span>&nbsp;<a href="http://superuser.com">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">&#9632;</span>&nbsp;<a href="http://meta.stackoverflow.com">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">&#9632;</span>&nbsp;<a href="http://area51.stackexchange.com">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">&#9632;</span>&nbsp;<a href="http://webapps.stackexchange.com">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">&#9632;</span>&nbsp;<a href="http://gaming.stackexchange.com">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">&#9632;</span>&nbsp;<a href="http://askubuntu.com">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">&#9632;</span>&nbsp;<a href="http://webmasters.stackexchange.com">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">&#9632;</span>&nbsp;<a href="http://cooking.stackexchange.com">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">&#9632;</span>&nbsp;<a href="http://gamedev.stackexchange.com">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">&#9632;</span>&nbsp;<a href="http://math.stackexchange.com">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">&#9632;</span>&nbsp;<a href="http://photo.stackexchange.com">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">&#9632;</span>&nbsp;<a href="http://stats.stackexchange.com">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">&#9632;</span>&nbsp;<a href="http://tex.stackexchange.com">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">&#9632;</span>&nbsp;<a href="http://english.stackexchange.com">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">&#9632;</span>&nbsp;<a href="http://cstheory.stackexchange.com">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">&#9632;</span>&nbsp;<a href="http://programmers.stackexchange.com">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">&#9632;</span>&nbsp;<a href="http://unix.stackexchange.com">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">&#9632;</span>&nbsp;<a href="http://apple.stackexchange.com">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">&#9632;</span>&nbsp;<a href="http://wordpress.stackexchange.com">wordpress</a>&nbsp;
+                        <span style="color:#b5cda4;font-size:140%">&#9632;</span>&nbsp;<a href="http://physics.stackexchange.com">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">&#9632;</span>&nbsp;<a href="http://diy.stackexchange.com">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">&#9632;</span>&nbsp;<a href="http://gis.stackexchange.com">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">&#9632;</span>&nbsp;<a href="http://electronics.stackexchange.com">electronics</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">&#9632;</span>&nbsp;<a href="http://android.stackexchange.com">android</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.4.2.1</div>
+            </div>
+            <div id="copyright">
+                site design / logo &copy; 2011 stack exchange inc; 
+                <a href="/questions-all">user contributions</a> licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+    
+</body>
+</html>

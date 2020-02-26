@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="http://www.typepad.com/" />
+	
+	<meta name="description" content="We've just rolled out some enhancements to the Mechanical Turk API; the new API version is 2006-01-16. New features include the use of HIT Types to simplify the process of creating new HITs, better handling of reviewable HITs, the ability..." />
+	<link rel="stylesheet" href="http://aws.typepad.com/aws/styles.css?v=6" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/themes/common/print.css" type="text/css" media="print" />
+	<link rel="alternate" type="application/atom+xml" title="Posts on 'Amazon Web Services Blog' (Atom)" href="http://aws.typepad.com/aws/atom.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'Amazon Web Services Blog' (RSS 1.0)" href="http://aws.typepad.com/aws/index.rdf" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'Amazon Web Services Blog' (RSS 2.0)" href="http://aws.typepad.com/aws/rss.xml" />
+	<script type="text/javascript">
+		var TPApp = {};
+		TPApp.app_uri = "http://www.typepad.com/";
+	</script>
+	<script type="text/javascript" src="http://static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/js/yui/yahoo-dom-event.js,/js/app/thumbnail-gallery-min.js,/js/sixatrack-loader.js,/js/app/flyouts-min.js"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['t2._setAccount', 'UA-225723-36']);
+		_gaq.push(['t2._setDomainName', 'none']);
+		_gaq.push(['t2._setAllowLinker', true]);
+        _gaq.push(['t2._setCustomVar', 1, 'Blog', '6a00d8341c534853ef00d83451ba1569e2', 3]);
+        _gaq.push(['t2._setCustomVar', 2, 'Page Type', 'Individual', 3]);
+		_gaq.push(['t2._trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+	<title>Amazon Web Services Blog: Updates to the Mechanical Turk API</title>
+	<link rel="start" href="http://aws.typepad.com/aws/" title="Home" />
+	<link rel="prev" href="http://aws.typepad.com/aws/2006/03/price_compariso.html?no_prefetch=1" title="Price Comparison Add-On for Amazon Product Feeds" />
+	<link rel="next" href="http://aws.typepad.com/aws/2006/03/aws_developer_c.html?no_prefetch=1" title="AWS Developer Connection Launched" />
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://aws.typepad.com/aws/2006/03/updates_to_the_.html"
+    trackback:ping="http://www.typepad.com/services/trackback/6a00d8341c534853ef00d8355d62ca69e2"
+    dc:title="Updates to the Mechanical Turk API"
+    dc:identifier="http://aws.typepad.com/aws/2006/03/updates_to_the_.html"
+    dc:description="We&#39;ve just rolled out some enhancements to the Mechanical Turk API; the new API version is 2006-01-16. New features include the use of HIT Types to simplify the process of creating new HITs, better handling of reviewable HITs, the ability..."
+    dc:creator="AWS Evangelist"
+    dc:date="2006-03-06T13:25:27-08:00" />
+</rdf:RDF>
+-->
+
+</head>
+
+<body class="layout-three-column">
+
+	<script src="http://4839.hittail.com/mlt.js" type="text/javascript">
+        </script>
+        <script type="text/javascript" src="http://s25.sitemeter.com/js/counter.js?site=s25awsblog">
+        </script>
+        <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+         _uacct = "UA-1142536-1";
+        urchinTracker();
+         </script>
+
+        
+	<div id="container">
+		<div id="container-inner" class="pkg">
+			
+			<!-- banner -->
+<div id="banner">
+	<div id="banner-inner" class="pkg">
+		
+		<h1 id="banner-header"><a href="http://aws.typepad.com/aws/" accesskey="1">Amazon Web Services Blog</a></h1>
+		<h2 id="banner-description">
+			Amazon Web Services, Products, Tools, and Developer Information...
+		</h2>
+	</div>
+</div>
+
+
+
+			<div id="pagebody">
+				<div id="pagebody-inner" class="pkg">
+					<div id="alpha">
+						<div id="alpha-inner" class="pkg">
+							<!-- sidebar1 -->
+
+
+<!-- user photo -->
+
+	<div class="module-photo module">
+		<div class="module-content"><img src="http://aws.typepad.com/.a/6a00d8341c534853ef00e54ff18b618833-150wi" alt="My Photo" /></div>
+	</div>
+
+
+	<div class="module-archives module">
+		<h2 class="module-header">Recent Posts</h2>
+		<div class="module-content">
+			<ul class="module-list">
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/adding-a-second-availability-zone-in-tokyo.html">Adding a Second AWS Availability Zone in Tokyo</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/amazon-ec2-dedicated-instances.html">Amazon EC2 Dedicated Instances</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/build-a-cluster-computing-environment-in-under-10-minutes.html">Build a Cluster Computing Environment in Under 10 minutes</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/updated-amazon-linux-ami-201102-released.html">Updated Amazon Linux AMI (2011.02) Released</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/upcoming-webinar-orchestrating-the-cloud.html">Upcoming Webinar: Orchestrating the Cloud</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/now-available-windows-2008-r2-on-amazon-ec2.html">Now Available: Windows Server 2008 R2 on Amazon EC2</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/new-approach-amazon-ec2-networking.html">A New Approach to Amazon EC2 Networking</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/iam-now-available-for-amazon-cloudfront.html">IAM Now Available for Amazon CloudFront</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/building-powerful-web-applications-in-the-aws-cloud-a-love-story.html">Building Powerful Web Applications in the AWS Cloud: A Love Story</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+<div class="module-recent-comments module">
+	<h2 class="module-header">Recent Comments</h2>
+	<div class="module-content">
+		<ul class="module-list">
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e6052341a970c">Alan Williams</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef0147e3acdf48970b">Son, I am disappoint</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e6051440f970c">Jay</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e872bdb3a970d">Gamedude007</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e6050a55e970c">Andy</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/03/up-up-and-away-cloud-computing-reaches-for-the-sky.html#comment-6a00d8341c534853ef0147e3ab9112970b">Cttripp</a> on <a href="http://aws.typepad.com/aws/2009/03/up-up-and-away-cloud-computing-reaches-for-the-sky.html">Up, Up, and Away - Cloud Computing Reaches for the Sky</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e872af0cd970d">Peter Bowen</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e604f131c970c">Chris Moyer</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef0147e3aa0b60970b">Jeff Lomax</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+				<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html#comment-6a00d8341c534853ef014e604ebcf0970c">Andy, CloudBerry Lab</a> on <a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">Announcing AWS $NAME</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://feeds.delicious.com/v2/js/awsbuzz?title=AWS%20Buzz%20on%20Delicious&icon=rss&count=10&sort=date"></script>
+
+<!-- 
+<div class="module-typelist module">
+	<h2 class="module-header">Recent Links</h2>
+	<div class="module-content">
+		<ul class="module-list">
+							<li class="module-list-item"><a title="" href="http://krow.livejournal.com/442461.html">Brian "Krow" Aker's Idle Thoughts - S3, JungleDisk, and where did I put my tape drive?</a></li>
+							<li class="module-list-item"><a title="" href="http://www.ddj.com/dept/database/191601621">Dr. Dobb's | Synchronize Now! | August 2, 2006</a></li>
+							<li class="module-list-item"><a title="" href="http://tsandhol.blogspot.com/2006/08/backupy-goodness.html">tsandhol's boring crap: Backupy Goodness</a></li>
+							<li class="module-list-item"><a title="" href="http://blog.einfach-firefox.de/index.php/alexa-traffic-rank-what-it-is-and-why-you-should-care-or-not/">Make Money Online » Alexa traffic rank: what it is and why you should care (or not)</a></li>
+							<li class="module-list-item"><a title="" href="http://www.birddogdigital.com/blog/2006/07/von-kempelen-home-great-idea.html">birdDog digital Blog & Podcast - Mac Sales & Support for Small Businesses & Creative Firms: von Kempelen - Home - Great idea</a></li>
+							<li class="module-list-item"><a title="" href="http://www.juliogarcia.org/2006/07/28/i-hate-hard-drives/">I hate hard drives » Julio Garcia dot org - Now with more 'Whaaaaaaa?'</a></li>
+							<li class="module-list-item"><a title="" href="http://www.stairways.com/blog/2006-08-01-amazon-s3-interarchy">Stairways Software: How Do I Make An Amazon S3 Hosted Website Using Interarchy</a></li>
+							<li class="module-list-item"><a title="" href="http://akatsuki.co.uk/article/backup-in-the-age-of-the-terabyte">akatsuki.co.uk: Backup in the Age of the Terabyte</a></li>
+							<li class="module-list-item"><a title="" href="http://www.pardonthedisruption.com/2006/08/10_ways_web_20_.html">Chip Griffin: Pardon the Disruption: 10 Ways Web 2.0 Promises to Change the Way We Live and Work</a></li>
+							<li class="module-list-item"><a title="" href="http://mechanical-turk.blogspot.com/2006/07/happy-monday-turkers.html">Mechanical Turk Monitor: Happy Monday Turkers!</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="module-wishlist module">
+	
+		<h2 class="module-header"><a href="http://www.amazon.com/exec/obidos/redirect?tag=8a9yhb4-20&amp;path=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fregistry%2F2AT7V3BAJ69DX">Web Services Wish List</a></h2>
+	
+	<div class="module-content"><a href="http://www.amazon.com/exec/obidos/redirect?tag=8a9yhb4-20&amp;path=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fregistry%2F2AT7V3BAJ69DX"
+		title="Visit this Wish List at Amazon.com"><img
+		src="http://www.typepad.com/t/content?src=TiledWishlist:183837,73998"
+		alt="Visit this Wish List at Amazon.com" /></a></div>
+</div>
+
+-->
+
+<!--
+
+<script type="text/javascript" defer="true" src="http://blueorganizer.adaptiveblue.com/js/bluelink-window.js"></script>
+
+    <div style="max-width: 170px">
+        <a href="http://www.amazon.com/E-Commerce-Service-AWS-home-page/b/ref=sc_fe_c_0_15763381_1/103-8605431-4007801?ie=UTF8&node=12738641&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8cmaSujw9XXQDxdYnZ_gbMRgV0Of5kgNbzZqGO_q%22rN5pVvENV8Vofw144rvluDkQtDEZCInELnq6GJlfzaLqiQEjIRXK3p64cVSJt6p_xbL1gAL6st35d9w8hIunA5hYE60zIZFwdXMQdmN7GLwPAA_qGK124Vu8pxgoHvGHH3hfP6p">E-Commerce Service</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon E-Commerce Service (ECS) exposes Amazon's product data and e-commerce functionality.</span></div><br>
+        <a href="http://www.amazon.com/b/ref=sc_fe_c_0_15763381_2/103-8605431-4007801?ie=UTF8&node=201590011&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8feqOELwPN1RsuJ2g1kKqqJd7U0aOkt2xPp1Y0_0RBsSj98%2225HQkcBaJPKGqgCC8PTEJFJ4CWv1TBZUbAafqqU_iI7HLIZFOlR8Itc%22_vDLJfBG_Boh7t12Px%22bFyysZmZbm">Elastic Compute Cloud</a><br>
+
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon Elastic Compute Cloud is a web service that provides resizable compute capacity in the cloud.</span></div><br>
+        <a href="http://www.amazon.com/Historical-Pricing-AWS-home-page/b/ref=sc_fe_c_0_15763381_3/103-8605431-4007801?ie=UTF8&node=15811391&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8pCeOpbM691lDEdcnKsxeMFMV0Of5kgNbzZqGO_q%22rN5pVvENV8Vofw144rvluDkQtDEZCInELnq6GRlfzaLqiQEjIRXK3p64cVSJt6p_xbL1gAL6st35d9w8hIunAL3XCEKyVZFwdXMQdmN7GLwPAA_qGK124Vu8pxgoHvGHH3hfP6p">Historical Pricing</a>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Amazon Historical Pricing web service gives developers programmatic access to over three years of actual sales data for books, music, videos, and DVDs.</span></div><br>
+        <a href="http://www.amazon.com/Mechanical-Turk-AWS-home-page/b/ref=sc_fe_c_0_15763381_4/103-8605431-4007801?ie=UTF8&node=15879911&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8kSeSt5M991lDEdcmJ_wgIIMRQzX_wgZcBgrHIRXSupTyOXQ05Opwqo1495MqOLCR7a_YyATEj8W9oMlcfG1rvE_jH7HIWlQ%22bpSJvMFOdiLYx2WPaYhSbq2OsJbmCvNXCE0D4kQqCydOeuN6UTgSpllwS8a01h08rIYF5meLH7c">Mechanical Turk</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">One of the best ways to understand Amazon Mechanical Turk is to complete a HIT and see what the experience is like.</span></div><br>
+        <a href="http://www.amazon.com/S3-AWS-home-page-Money/b/ref=sc_fe_c_0_15763381_5/103-8605431-4007801?ie=UTF8&node=16427261&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8u0H%22AH365yREFJwAMYxfQtcT2vL9aohdzorGJl07vpQDOvjJvKkwhpWIOiqqpK8X5KFYB2TzU1a6k2lcz0urvkojQ%22HL7V%22Ql7OYc7V7iaW2gALRqAs7sndQsVGzeeNZyg0zL7%22rCuI_xThULXM_Bo_v58eJRMrRcd">Simple Storage Service</a><br>
+
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon S3 is storage for the Internet. It is designed to make web-scale computing easier for developers.</span></div><br>
+        <a href="http://www.amazon.com/Simple-Queue-Service-home-page/b/ref=sc_fe_c_0_15763381_6/103-8605431-4007801?ie=UTF8&node=13584001&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8uCKVlnw%2258kyxJxi772f9%22hS65LVroZatZeLKJr_z65p%229AI3PozPcv2bjvlhCAQ5eUZy29CNrM7qI7cB0ustkUjMZHLPBQ%22gZSHuE%229pOGGw_r_EstSku2_EZXoEr3YDAeyWpkeqiJOfaN6Lj2PeQlaW1v1VsH%22x6gEGSXXQxcf">Simple Queue Service</a>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">Amazon Simple Queue Service offers a reliable, highly scalable hosted queue for storing messages as they travel between computers.</span></div><br>
+        <a href="http://www.amazon.com/b/ref=sc_fe_c_0_15763381_7/103-8605431-4007801?ie=UTF8&node=236156011&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8feqOELwPN1RsuJ2g1kKqqJd7U0aOkt2xPB1Y0_0RBsSj98%2225HQkcBaJPKGqgCC8PTEJFJ4CWv1TBZUbAm1ruEEjI7HLIZFOlR8Itc%22_vDLJfBG_Boh7t12Px%22bFyysZmZbm">Alexa Thumbnails</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">All thumbnail images are accessible via web services, using SOAP or REST.</span></div><br>
+        <a href="http://www.amazon.com/Alexa-Top-Sites-home-page/b/ref=sc_fe_c_0_15763381_8/103-8605431-4007801?ie=UTF8&node=14248821&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8giKTd5wTGfBzF6xlIIxaIgMT05LVj2tct7KHQ2q_qh8yUvzIVymzPAW4VqqrbS8Q0C_PtgSEMHq9h_7cDqLqu_%22jI%22bK8l6%22jl52zolVaCvMnsW_d%22I7rnJQBxHoAPwKcVeyJRFsEaZRdagTZC29rgEc0Ha1TVqRr2JzYa">Alexa Top Sites</a><br>
+
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Alexa Top Sites web service provides ranked lists of the top sites on the Internet.</span></div><br>
+        <a href="http://www.amazon.com/Alexa-Web-Information-Service-home/b/ref=sc_fe_c_0_15763381_9/103-8605431-4007801?ie=UTF8&node=12782661&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8giKTd5wTJT7DFsMkWkhaIJwRWrv%22u%22YceFrJMRrSEpzFOvEJLTUyqUWZ95gfsD6_tz_PAUnFGHW6hIlzr8eqvgUpQNXLXBA%22hBTIuA%22%22E9LJClG_BE2QdKdUnkeBoeNZFguAKVFsCus_DTh6J1gOrsEx8PXI8xKPqQgyQv0X%22ZZhX7VRPb">Alexa Web Information Service</a><br>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Alexa Web Information Service makes Alexa's vast repository of information about the traffic and structure of the web available to developers.</span></div><br>
+        <a href="http://www.amazon.com/b/ref=sc_fe_c_0_15763381_10/103-8605431-4007801?ie=UTF8&node=269962011&no=15763381&me=A36L942TSJ2AJA" blueKey="Q%22zCU7M61tR7gyytH4f6KEIVtRgeAOwZhYTWJFbutYsFOnJrsK5jDvZtn2z8feqOELwPN1RsuJ2g1kKqqJd7U0aOkt2xPdf1Q6eRfgnk7OV2_PQnBlaJUyGshK8PLnBXERzlU1HTq3Uxvi1rCUEjG%22HL1tlOzA8JrgV%22vX1Hs3K8d%22IVwDJ8ANHoF8tLFEXo3c">Alexa Web Search</a><br/>
+        <div style="margin-top: 5px;"><span style="font-size: 11px; line-height: 13px">The Alexa Web Search web service offers programmatic access to Alexa's web search engine.</span></div>
+    </div>
+
+-->
+
+
+
+						</div>
+					</div>
+					<div id="beta">
+						<div id="beta-inner" class="pkg">
+							<!-- content nav -->
+<p class="content-nav">
+	<a href="http://aws.typepad.com/aws/2006/03/price_compariso.html">&laquo; Price Comparison Add-On for Amazon Product Feeds</a> |
+	<a href="http://aws.typepad.com/aws/">Main</a>
+	| <a href="http://aws.typepad.com/aws/2006/03/aws_developer_c.html">AWS Developer Connection Launched &raquo;</a>
+</p>
+
+<!-- entry -->
+
+
+<div class="entry-category-announcements entry-author-aws_evangelist entry-type-post entry" id="entry-9313618">
+			<h3 class="entry-header">Updates to the Mechanical Turk API</h3>
+	
+	<div class="entry-content">
+		<div class="entry-body">
+			<p>We've just rolled out some enhancements to the Mechanical Turk API; the new API version is 2006-01-16.</p>
+
+<p>New features include the use of HIT Types to simplify the process of creating new HITs, better handling of reviewable HITs, the ability to update a Qualification test, and additional information provided to the Requester as part of a Qualification request from a potential worker.</p>
+
+<p>More information can be found in the <a href="http://developer.amazonwebservices.com/forums/ann.jspa?annID=9">discussion board post</a>.</p>
+		</div>
+		
+		
+	</div>
+	<div class="entry-footer">
+			<p class="entry-footer-info">
+				<span class="post-footers">March 06, 2006 in <a href="http://aws.typepad.com/aws/announcements/">Announcements</a> </span> <span class="separator">|</span> <a class="permalink" href="http://aws.typepad.com/aws/2006/03/updates_to_the_.html">Permalink</a>
+			</p>
+		
+		<!-- technorati tags -->
+	
+
+
+		<!-- post footer links -->
+
+	</div>
+</div>
+
+		<div class="trackbacks">
+		<a id="trackback"></a>
+		<h3 class="trackbacks-header">TrackBack</h3>
+		<div class="trackbacks-info">
+			<p>TrackBack URL for this entry:<br /><span class="trackbacks-link">http://www.typepad.com/services/trackback/6a00d8341c534853ef00d8355d62ca69e2</span></p>
+			<p>Listed below are links to weblogs that reference <a href="http://aws.typepad.com/aws/2006/03/updates_to_the_.html">Updates to the Mechanical Turk API</a>:</p>
+		</div>
+		<div class="trackbacks-content">
+			
+		</div>
+	</div>
+
+
+
+
+
+
+
+        
+        <a id="comments"></a>
+	<div class="comments" id="all-comments">
+		<h3 class="comments-header">Comments</h3>
+		
+		<div class="comments-content" id="comments-content">
+                <!-- comment list -->
+
+		</div>
+        
+	</div>
+    	<!-- comment-form-atp -->
+
+	
+<div id="atp-comments">
+    
+        <div id="comment-preview" class="hiddenBox">
+	<h3 id="header-verify-comment" class="comments-header hiddenBox">Verify your Comment</h3>
+    <h3 id="header-preview-comment" class="comments-header hiddenBox">Previewing your Comment</h3>
+	<div class="comments-content">
+		<div class="comment comment-has-avatar">
+			<div id="comment-preview-content" class="comment-content">
+			</div>
+			<p class="comment-footer">
+				Posted by: 
+				<span id="comment-preview-author"></span>&nbsp;|&nbsp;<span id="comment-preview-datetime"></span>
+			</p>
+		</div>
+	</div>
+</div>
+<div id="comment-preview-confirmation" class="hiddenBox yellowBox">
+    <p>This is only a preview. Your comment has not yet been posted.</p>
+   	<form id="comment-preview-form"
+   		method="post"
+   		onsubmit="atpComments.interceptPost(); return false;">
+		<input type="submit" name="post" id="comment-confirm-post" value="&nbsp;Post&nbsp;" onclick="atpComments.interceptPost(); return false;"/>		    
+		<input type="submit" name="edit" id="comment-edit" value="&nbsp;&nbsp;Edit&nbsp;&nbsp;" onclick="atpComments.previewOnly(2); return false;"/>
+        <span id="previewFormSpinner" class="hiddenBox"><img src="/.shared/images/spinner.gif" alt="Working..." /></span>
+	</form>
+</div>
+<div id="comment-error" class="hiddenBox redBox">	    
+   Your comment could not be posted. Error type: <span id="comment-error-msg"></span> 
+</div>	
+<div id="comment-complete" class="hiddenBox redBox">
+    Your comment has been saved. Comments are moderated and will not appear until approved by the author. <a href="javascript:void 0;" onclick="window.location.hash='#comment-form';window.location.reload(false)">Post another comment</a>
+</div>	
+<div id="comment-captcha" class="hiddenBox yellowBox">	
+    <div id="captchaText">
+	    <p id="captchaFailMsg" class="captchaErrorText hiddenBox">The letters and numbers you entered did not match the image. Please try again.</p>	    	        
+	    <p>As a final step before posting your comment, enter the letters and numbers you see in the image below. This prevents automated programs from posting comments.</p>
+	    <p><span id="comment-captcha-viewalt">Having trouble reading this image? <a href="#comment-captcha" onClick="atpComments.generateCaptcha();">View an alternate.</a></span></p>
+    </div>
+    <p class=""><img id="captchaImg" /></p>		
+    <form id="comment-captcha-form" 
+		  method="post"
+		  onsubmit="atpComments.submitWithCaptcha(); return false;">
+		<input type="hidden" name="captcha_chal" id="comment-captcha-chal" value="" />
+        <p>
+	        <input id="comment-captcha-text" name="captcha_text" size="10" />
+        </p>
+        <p>
+            <input type="submit" name="continue" id="captcha-continue" value="&nbsp;Continue&nbsp;" />
+            <span id="captchaFormSpinner" class="commentSpinner hiddenBox"><img src="/.shared/images/spinner.gif" alt="Working..." /></span>
+        </p>
+    </form>
+</div>
+
+    
+	<div id="primary-comment-form" class="comment-form">
+    	<form id="comment-form" action="http://aws.typepad.com/.services/comments"
+    		method="post">
+    		<input type="hidden" name="entry_xid" id="comment-entry-xid" value="6a00d8341c534853ef00d8355d62ca69e2" />
+                <input type="hidden" name="token" value="1301852362-594f3cea66426901e9a789583a69867a5dc59a64:l1GIWJaHPYHsit7R" />
+    		<div class="comments-open">
+    			<h2 class="comments-open-header" id="comment-title">Post a comment</h2>
+    			<div id="comments-open-content" class="comments-open-content">
+    									
+    				    <p class="comments-open-moderated">
+    						Comments are moderated, and will not appear until the author has approved them.
+    					</p>
+    				
+				
+    									
+    					<div id="comments-open-login" style="display: none;">
+                  <div class="login-list">
+                      
+                      <span class="first">Comment below or sign in with</span> <span class="typepad"><a href="https://www.typekey.com/t/typekey/login?v=1.0&t=618447e98f8e2b479a743ec43449738b5297b192&lang=en_US&_return=http%3A%2F%2Faws.typepad.com%2Faws%2F2006%2F03%2Fupdates_to_the_.html&_portal=typepad">TypePad</a></span> <span class="facebook"><a href="https://www.typekey.com/t/typekey/login?v=1.0&t=618447e98f8e2b479a743ec43449738b5297b192&lang=en_US&_return=http%3A%2F%2Faws.typepad.com%2Faws%2F2006%2F03%2Fupdates_to_the_.html&_portal=typepad&service=facebook">Facebook</a></span> <span class="twitter"><a href="https://www.typekey.com/t/typekey/login?v=1.0&t=618447e98f8e2b479a743ec43449738b5297b192&lang=en_US&_return=http%3A%2F%2Faws.typepad.com%2Faws%2F2006%2F03%2Fupdates_to_the_.html&_portal=typepad&service=twitter">Twitter</a></span> <span>and <a href="https://www.typekey.com/t/typekey/login?v=1.0&t=618447e98f8e2b479a743ec43449738b5297b192&lang=en_US&_return=http%3A%2F%2Faws.typepad.com%2Faws%2F2006%2F03%2Fupdates_to_the_.html&_portal=typepad&service=openid">more...</a></span>
+                      
+                  </div>
+                  <div class="clr"></div>
+    					</div>
+    					<div id="comments-open-logout" style="display: none;">
+    						You are currently signed in as
+    						<span id="commenter-name">(nobody)</span>.
+    						<a href="http://aws.typepad.com/.services/sitelogout?to=https%3A%2F%2Fwww.typekey.com%2Ft%2Ftypekey%2F%3F__mode%3Dlogout%26_return%3Dhttp%253A%252F%252Faws.typepad.com%252Faws%252F2006%252F03%252Fupdates_to_the_.html">Sign Out</a>
+    					</div>
+    				
+                    	<div id="comments-open-text" style="display:none;">
+        					<textarea id="comment-text" name="text" rows="10" cols="30" onkeyup="atpComments.maxTextArea(this, 64000);"></textarea>
+            				
+            				<p class="comments-open-subtext">
+            				    (URLs automatically linked.)
+            				</p>			
+            				                    					
+        				</div>
+    				    <div id="comments-open-data" style="display:none;">
+                            <p>Your Information</p>
+                            <p>
+                                (Name and email address are required. Email address will not be displayed with the comment.)
+                            
+                            </p>
+    						<p>
+    							<input id="comment-author" at:default="Name" name="author" size="30" value="Name" onfocus="if(this.value==this.getAttribute('at:default')) this.value='';"  onBlur="if(this.value=='') this.value=this.getAttribute('at:default');" class="grayText"/>
+    							<label for="comment-author" id="comment-author-error" class="comment-error hiddenBox">Name is required to post a comment</label>
+    						</p>
+    						<p>
+    							<input id="comment-email" at:default="Email Address" name="email" size="30" value="Email Address" onfocus="if(this.value==this.getAttribute('at:default')) this.value='';"  onBlur="if(this.value=='') this.value=this.getAttribute('at:default');" class="grayText"/>
+    							<label for="comment-email" id="comment-email-error" class="comment-error hiddenBox">Please enter a valid email address</label>
+    						</p>
+    						<p>
+    							<input id="comment-url" at:default="Web Site URL" name="url" size="30" value="Web Site URL" onfocus="if(this.value==this.getAttribute('at:default')) this.value='';"  onBlur="if(this.value=='') this.value=this.getAttribute('at:default');" class="grayText"/>
+    							<label for="comment-url" id="comment-url-error" class="comment-error hiddenBox">Invalid URL</label>
+    						</p>
+    					</div>
+    			</div>
+                <div id="comments-open-footer" class="comments-open-footer" style="display:none;">
+    				<input type="submit" name="post" id="comment-post-button" value="&nbsp;Post&nbsp;" onclick="atpComments.interceptPost(); return false;" disabled="true" />
+    				<input type="submit" name="preview" id="comment-preview-button" value="&nbsp;Preview&nbsp;" onclick="atpComments.previewOnly(1); return false;" disabled="true" />
+    				<span id="commentEntryFormSpinner" class="commentSpinner hiddenBox"><img src="/.shared/images/spinner.gif" alt="Working..." /></span>
+    			</div>
+    		</div>
+    	</form>
+        <noscript>
+            
+			<div id="comments-open-noscript" class="comments-open-noscript">
+		        <form action="http://aws.typepad.com/.services/comments" method="post">
+		            <input type="hidden" name="entry_xid" id="comment-entry-xid" value="6a00d8341c534853ef00d8355d62ca69e2" />
+                            <input type="hidden" name="token" value="1301852362-109c1d3c9813170f289be40830ac018b27e4f04b:5FkQKKyl3kIZ96ha" />
+		            Name:<br /><input type="text" name="author" size="30" /><br />
+		            Email address:<br /><input type="text" name="email" size="30" /><br />
+		            URL:<br /><input type="text" name="url" size="30" /><br /><br />
+		            Comment:<br /><textarea name="text" cols="40" rows="4"></textarea><br />
+		            
+		            <input type="submit" name="submit" value="Submit" />
+		        </form>
+			</div>
+			
+		</noscript>
+	</div>
+</div>
+
+
+
+    	
+
+
+						</div>
+					</div>
+					<div id="gamma">
+						<div id="gamma-inner" class="pkg">
+							<!-- sidebar2 -->
+
+<!--    #include virtual="/lists/rss_feed/module.inc"-->
+
+<div class="module-content">
+  <h2 class="module-header">RSS Feed</h2>
+  <div style="text-align:center;">
+    <a href="http://feeds.feedburner.com/AmazonWebServicesBlog">
+      <img src="http://media.amazonwebservices.com/blog/Newspaper_Feed_add_128x128.png" />
+    </a>
+    <ul class="module-list">
+      <li class="module-list-item">
+        <a href="http://feeds.feedburner.com/AmazonWebServicesBlog">
+          Subscribe to this blog's feed
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="module-content">
+  <h2 class="module-header">Coming Soon</h2>
+  <ul  class="module-list">
+
+    <li class="module-list-item">March 23 - Portland, OR: <a href="http://aws.amazon.com/about-aws/events/home">AWS User Group </a></li>
+
+<li class="module-list-item">April 13 - Webinar: <a href="https://www2.gotomeeting.com/register/623363291">AWS Cloud Strategies for Advertising Agencies </a></li>
+
+<li class="module-list-item">Full List of AWS Events (through the end of March 2011): <a href="http://aws.typepad.com/aws/2011/03/aws-events-for-march-2011.html">View all March Events</a></li>
+
+<!--    <li class="module-list-item">January 19 - <a href=""></a></li> -->
+ 
+  </ul>
+</div>
+
+<div class="module-content">
+  <h2 class="module-header">Email Subscription</h2>
+  <form
+   style="border:1px solid #ccc;padding:3px;text-align:center;"
+   action="http://feedburner.google.com/fb/a/mailverify"
+   method="post" target="popupwindow"
+   onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=AmazonWebServicesBlog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p> Enter your email address:</p>
+    <p><input type="text" style="width:140px" name="email"/></p>
+    <input type="hidden" value="AmazonWebServicesBlog" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" />
+    <p>Delivered by <a href="http://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+<div class="module-typelist module">
+	<h2 class="module-header">Useful Links</h2>
+	<div class="module-content">
+		<ul class="module-list">
+							<li class="module-list-item"><a title="" href="http://aws.amazon.com">Amazon Web Services</a></li>
+							<li class="module-list-item"><a title="" href="http://aws.amazon.com/solutions/aws-solutions/">AWS Solutions</a></li>
+							<li class="module-list-item"><a title="" href="http://aws.amazon.com/products/">AWS Products</a></li>
+							<li class="module-list-item"><a title="" href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a></li>
+							<li class="module-list-item"><a title="" href="http://developer.amazonwebservices.com/connect/forumindex.jspa">AWS Developer Forums</a></li>
+							<li class="module-list-item"><a title="" href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&amp;p=irol-InfoReq">Media/Analyst Inquiries</a></li>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="module-subscribe module">
+	<div class="module-content">
+		<a onclick="window.open(this.href, 'blogroll', 'width=550,height=600,scrollbars=yes'); return false;" href="http://www.typepad.com/t/app/lists?__mode=quickpost&amp;is_qp=1&amp;type=1&amp;qp_href=http%3A%2F%2Faws.typepad.com%2Faws%2F">Add me to your TypePad People list</a>
+	</div>
+</div>
+<div class="module-calendar module">
+	<h2 class="module-header">April 2011</h2>
+	<div class="module-content">
+		<table summary="Monthly calendar with links to each day's posts">
+			<tr>
+				
+					<th>Sun</th>
+				
+					<th>Mon</th>
+				
+					<th>Tue</th>
+				
+					<th>Wed</th>
+				
+					<th>Thu</th>
+				
+					<th>Fri</th>
+				
+					<th>Sat</th>
+				
+			</tr>
+			
+				<tr>
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td>&nbsp;</td>
+				
+			
+				
+					<td><a href="http://aws.typepad.com/aws/2011/04/announcing-aws-name.html">1</a></td>
+				
+			
+				
+					<td>2</td>
+				</tr>
+			
+				<tr>
+					<td>3</td>
+				
+			
+				
+					<td>4</td>
+				
+			
+				
+					<td>5</td>
+				
+			
+				
+					<td>6</td>
+				
+			
+				
+					<td>7</td>
+				
+			
+				
+					<td>8</td>
+				
+			
+				
+					<td>9</td>
+				</tr>
+			
+				<tr>
+					<td>10</td>
+				
+			
+				
+					<td>11</td>
+				
+			
+				
+					<td>12</td>
+				
+			
+				
+					<td>13</td>
+				
+			
+				
+					<td>14</td>
+				
+			
+				
+					<td>15</td>
+				
+			
+				
+					<td>16</td>
+				</tr>
+			
+				<tr>
+					<td>17</td>
+				
+			
+				
+					<td>18</td>
+				
+			
+				
+					<td>19</td>
+				
+			
+				
+					<td>20</td>
+				
+			
+				
+					<td>21</td>
+				
+			
+				
+					<td>22</td>
+				
+			
+				
+					<td>23</td>
+				</tr>
+			
+				<tr>
+					<td>24</td>
+				
+			
+				
+					<td>25</td>
+				
+			
+				
+					<td>26</td>
+				
+			
+				
+					<td>27</td>
+				
+			
+				
+					<td>28</td>
+				
+			
+				
+					<td>29</td>
+				
+			
+				
+					<td>30</td>
+				</tr>
+			
+		</table>
+	</div>
+</div>
+
+	<div class="module-archives module">
+		<h2 class="module-header"><a
+			href="http://aws.typepad.com/aws/archives.html">Archives</a></h2>
+		<div class="module-content">
+			<ul class="module-list">
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/04/index.html">April 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/03/index.html">March 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/02/index.html">February 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2011/01/index.html">January 2011</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/12/index.html">December 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/11/index.html">November 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/10/index.html">October 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/09/index.html">September 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/08/index.html">August 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/07/index.html">July 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/06/index.html">June 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/05/index.html">May 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/04/index.html">April 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/03/index.html">March 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/02/index.html">February 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2010/01/index.html">January 2010</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/12/index.html">December 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/11/index.html">November 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/10/index.html">October 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/09/index.html">September 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/08/index.html">August 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/07/index.html">July 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/06/index.html">June 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/05/index.html">May 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/04/index.html">April 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/03/index.html">March 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/02/index.html">February 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2009/01/index.html">January 2009</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/12/index.html">December 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/11/index.html">November 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/10/index.html">October 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/09/index.html">September 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/08/index.html">August 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/07/index.html">July 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/06/index.html">June 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/05/index.html">May 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/04/index.html">April 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/03/index.html">March 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/02/index.html">February 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2008/01/index.html">January 2008</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/12/index.html">December 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/11/index.html">November 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/10/index.html">October 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/09/index.html">September 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/08/index.html">August 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/07/index.html">July 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/06/index.html">June 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/05/index.html">May 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/04/index.html">April 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/03/index.html">March 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/02/index.html">February 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2007/01/index.html">January 2007</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/12/index.html">December 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/11/index.html">November 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/10/index.html">October 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/09/index.html">September 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/08/index.html">August 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/07/index.html">July 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/06/index.html">June 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/05/index.html">May 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/04/index.html">April 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/03/index.html">March 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/02/index.html">February 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2006/01/index.html">January 2006</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/12/index.html">December 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/11/index.html">November 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/10/index.html">October 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/09/index.html">September 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/08/index.html">August 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/07/index.html">July 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/06/index.html">June 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/05/index.html">May 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/04/index.html">April 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/03/index.html">March 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/02/index.html">February 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2005/01/index.html">January 2005</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2004/12/index.html">December 2004</a></li>
+				
+					<li class="module-list-item"><a href="http://aws.typepad.com/aws/2004/11/index.html">November 2004</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+<div class="module-typelist module">
+	<h2 class="module-header">Useful Books</h2>
+	<div class="typelist-thumbnailed module-content">
+		<ul class="module-list">
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0980798000/1n9867a-20"><img alt="Frank Munz: Middleware and Cloud Computing: Oracle on Amazon Web Services (AWS), Rackspace Cloud and RightScale" src="http://a5.typepad.com/6a00d8341c534853ef0147e1aa9bc5970b-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0980798000/1n9867a-20">Frank Munz: Middleware and Cloud Computing: Oracle on Amazon Web Services (AWS), Rackspace Cloud and RightScale</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/0980576830/sixapart-22"><img alt="Jeff Barr: Host Your Web Site on the Cloud: Amazon Web Services Made Easy" src="http://a4.typepad.com/6a00d8341c534853ef013488d5abd4970c-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/0980576830/sixapart-22">Jeff Barr: Host Your Web Site on the Cloud: Amazon Web Services Made Easy</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0596156367/1n9867a-20"><img alt="George Reese: Cloud Application Architectures: Building Applications and Infrastructure in the Cloud (Theory in Practice (O'Reilly))" src="http://a2.typepad.com/6a00d8341c534853ef0115708fca3a970b-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0596156367/1n9867a-20">George Reese: Cloud Application Architectures: Building Applications and Infrastructure in the Cloud (Theory in Practice (O'Reilly))</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0596515812/1n9867a-20"><img alt="James Murty: Programming Amazon Web Services: S3, EC2, SQS, FPS, and SimpleDB (Programming)" src="http://a6.typepad.com/6a00d8341c534853ef00e55174e08e8833-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0596515812/1n9867a-20">James Murty: Programming Amazon Web Services: S3, EC2, SQS, FPS, and SimpleDB (Programming)</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0470097779/1n9867a-20"><img alt="Francis Shanahan: Amazon.com Mashups" src="http://a5.typepad.com/6a00d8341c534853ef00e54fe32f258834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0470097779/1n9867a-20">Francis Shanahan: Amazon.com Mashups</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0471768588/1n9867a-20"><img alt="Jason  Bloomberg: Service Orient or Be Doomed! : How Service Orientation Will Change Your Business" src="http://a6.typepad.com/6a00d8341c534853ef00e54fdd758e8834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0471768588/1n9867a-20">Jason  Bloomberg: Service Orient or Be Doomed! : How Service Orientation Will Change Your Business</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0425190390/1n9867a-20"><img alt="Tom  Standage: The Turk : The Life and Times of the Famous Eighteenth-Century Chess-Playing Machine" src="http://a4.typepad.com/6a00d8341c534853ef00e5501478148834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0425190390/1n9867a-20">Tom  Standage: The Turk : The Life and Times of the Famous Eighteenth-Century Chess-Playing Machine</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/0764543555/1n9867a-20"><img alt="Theodore W.  Leung: Professional XML Development with Apache Tools : Xerces, Xalan, FOP, Cocoon, Axis, Xindice (Wrox Professional Guides)" src="http://a3.typepad.com/6a00d8341c534853ef00e550026f938833-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/0764543555/1n9867a-20">Theodore W.  Leung: Professional XML Development with Apache Tools : Xerces, Xalan, FOP, Cocoon, Axis, Xindice (Wrox Professional Guides)</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/141162551X/1n9867a-20"><img alt="Jason Levitt: The Web Developer's Guide to Amazon E-Commerce Service: Developing Web Applications Using Amazon Web Services and PHP" src="http://a0.typepad.com/6a00d8341c534853ef00e54fee32f88834-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/141162551X/1n9867a-20">Jason Levitt: The Web Developer's Guide to Amazon E-Commerce Service: Developing Web Applications Using Amazon Web Services and PHP</a></p></li>
+							<li class="module-list-item"><div class="typelist-thumbnail"><a href="http://www.amazon.com/exec/obidos/ASIN/059600642X/1n9867a-20"><img alt="Will Iverson: Real World Web Services" src="http://a7.typepad.com/6a00d8341c534853ef00e54fd7bf3f8833-75hi" /></a></div><p class="typelist-description"><a href="http://www.amazon.com/exec/obidos/ASIN/059600642X/1n9867a-20">Will Iverson: Real World Web Services</a></p></li>
+			
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="http://www.typepad.com/t/stats?blog_id=73998&amp;user_id=183837&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qoptions = { tags:"typepad.core" }; _qacct="p-fcYWUmj5YbYKM"; quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-fcYWUmj5YbYKM" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-fcYWUmj5YbYKM.gif?tags=typepad.core" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+<script type="text/javascript">
+var captchaImgAttempts = 0;
+var allowAnonComments = '0';
+var registrationRequired = 0;
+var registrationOptional = 1;
+var emailRequired = 1;
+var useAvatars = 1;
+
+var showSignInMessaging = 0;
+var jsonURL = "/.services/json-rpc";
+
+var captchaSrc = "/.services/captcha?code_encrypted=";
+var alertCommentCannotBeBlank = "You can not leave an empty comment. Please enter some text in the Comment field.";
+var alertEditingExpired = "Sorry, you're no longer allowed to edit this comment. You may have taken too much time before submitting your edit or someone may have already replied to it.";
+
+var alertAuthorCannotBeBlank = "Name must not be blank.";
+var alertEmailCannotBeBlank = "Email Address must not be blank.";
+var alertAuthorAndEmailCannotBeBlank = "Name and email address are both required!";
+var alertEmailIsInvalid = "The Email Address you entered is invalid. Please enter a valid email address.";
+var alertUnauthorizedAction = "The comments on this post are closed.";
+var msgPostReplyTo = "Reply to ";  
+var msgInReplyTo = "In reply to ";
+var msgPostAComment = "Post a comment ";
+var atpCommentsPath = "/.shared/js/atpcomments_yui.js?v=5";
+var hasChanged = 0;
+var hostName = ".typepad.com";
+var tp_comment_token = "1301852363-283baacd13c6a6099253ae9ce51aae13950c43e1:M7Um0LkY685gt4m5";
+
+var isPage = 0;
+var blog_xid = "6a00d8341c534853ef00d83451ba1569e2";
+var xid = "";
+var injectCode = '<div id=\"comment-preview\" class=\"hiddenBox\">\n\t<h3 id=\"header-verify-comment\" class=\"comments-header hiddenBox\">Verify your Comment<\/h3>\n    <h3 id=\"header-preview-comment\" class=\"comments-header hiddenBox\">Previewing your Comment<\/h3>\n\t<div class=\"comments-content\">\n\t\t<div class=\"comment comment-has-avatar\">\n\t\t\t<div id=\"comment-preview-content\" class=\"comment-content\">\n\t\t\t<\/div>\n\t\t\t<p class=\"comment-footer\">\n\t\t\t\tPosted by: \n\t\t\t\t<span id=\"comment-preview-author\"><\/span>&nbsp;|&nbsp;<span id=\"comment-preview-datetime\"><\/span>\n\t\t\t<\/p>\n\t\t<\/div>\n\t<\/div>\n<\/div>\n<div id=\"comment-preview-confirmation\" class=\"hiddenBox yellowBox\">\n    <p>This is only a preview. Your comment has not yet been posted.<\/p>\n   \t<form id=\"comment-preview-form\"\n   \t\tmethod=\"post\"\n   \t\tonsubmit=\"atpComments.interceptPost(); return false;\">\n\t\t<input type=\"submit\" name=\"post\" id=\"comment-confirm-post\" value=\"&nbsp;Post&nbsp;\" onclick=\"atpComments.interceptPost(); return false;\"/>\t\t    \n\t\t<input type=\"submit\" name=\"edit\" id=\"comment-edit\" value=\"&nbsp;&nbsp;Edit&nbsp;&nbsp;\" onclick=\"atpComments.previewOnly(2); return false;\"/>\n        <span id=\"previewFormSpinner\" class=\"hiddenBox\"><img src=\"/.shared/images/spinner.gif\" alt=\"Working...\" /><\/span>\n\t<\/form>\n<\/div>\n<div id=\"comment-error\" class=\"hiddenBox redBox\">\t    \n   Your comment could not be posted. Error type: <span id=\"comment-error-msg\"><\/span> \n<\/div>\t\n<div id=\"comment-complete\" class=\"hiddenBox redBox\">\n    Your comment has been saved. Comments are moderated and will not appear until approved by the author. <a href=\"javascript:void 0;\" onclick=\"window.location.hash=\'#comment-form\';window.location.reload(false)\">Post another comment<\/a>\n<\/div>\t\n<div id=\"comment-captcha\" class=\"hiddenBox yellowBox\">\t\n    <div id=\"captchaText\">\n\t    <p id=\"captchaFailMsg\" class=\"captchaErrorText hiddenBox\">The letters and numbers you entered did not match the image. Please try again.<\/p>\t    \t        \n\t    <p>As a final step before posting your comment, enter the letters and numbers you see in the image below. This prevents automated programs from posting comments.<\/p>\n\t    <p><span id=\"comment-captcha-viewalt\">Having trouble reading this image? <a href=\"#comment-captcha\" onClick=\"atpComments.generateCaptcha();\">View an alternate.<\/a><\/span><\/p>\n    <\/div>\n    <p class=\"\"><img id=\"captchaImg\" /><\/p>\t\t\n    <form id=\"comment-captcha-form\" \n\t\t  method=\"post\"\n\t\t  onsubmit=\"atpComments.submitWithCaptcha(); return false;\">\n\t\t<input type=\"hidden\" name=\"captcha_chal\" id=\"comment-captcha-chal\" value=\"\" />\n        <p>\n\t        <input id=\"comment-captcha-text\" name=\"captcha_text\" size=\"10\" />\n        <\/p>\n        <p>\n            <input type=\"submit\" name=\"continue\" id=\"captcha-continue\" value=\"&nbsp;Continue&nbsp;\" />\n            <span id=\"captchaFormSpinner\" class=\"commentSpinner hiddenBox\"><img src=\"/.shared/images/spinner.gif\" alt=\"Working...\" /><\/span>\n        <\/p>\n    <\/form>\n<\/div>\n'; 
+var entryPermalink = "http://aws.typepad.com/aws/2006/03/updates_to_the_.html";
+var inlineReply = document.createElement("div");
+var commentFooterLinks;
+var commentHeader;
+var commentReplyXID;
+var commentReplyAuthor;
+var commentReplyComplete;
+var inlineReplyLoaded = 0;
+var commentFormNum = undefined; /* Deprecated but still exists in advanced template sets, so must be defined */
+
+function xidToCommentPermalink (entryUrl, xid) {
+    return entryUrl + "?cid=" + xid + "#comment-" + xid;
+}
+
+
+/* Deprecated advanced template functions */
+function handleSubmit() { return true; };
+function handleChange() { return true; };
+</script>
+<script type="text/javascript" src="/.shared/js/yui/yuiloader-beta-min.js"></script>
+<script type="text/javascript" src="/.shared/js/atpcomments.js?v=5"></script>
+
+
+
+ 
+
+<!-- Blogside Toolbar -->
+<script type="text/javascript">
+    var TPToolbar = {
+        src:   "http://www.typepad.com/services/toolbar?blog_id=6a00d8341c534853ef00d83451ba1569e2&asset_id=6a00d8341c534853ef00d8355d62ca69e2&atype=Individual&to=http%3A%2F%2Faws.typepad.com%2Faws%2F2006%2F03%2Fupdates_to_the_.html&autofollowed=0",
+        asset_xid: "6a00d8341c534853ef00d8355d62ca69e2",
+    
+        bookmarklet_uri: "http://static.typepad.com/.shared/js/qp/loader-combined-min.js"
+    };
+    var TYPEPAD___bookmarklet_domain = "http://www.typepad.com/";
+</script>
+<script type="text/javascript" src="/.shared/js/toolbar/blogside-toolbar-combined-min.js"></script>
+<!-- End Blogside Toolbar -->
+<!-- Begin comScore Tag -->
+<script>
+document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js'%3E%3C/script%3E"));
+</script>
+<script>
+COMSCORE.beacon({
+  c1: 2,
+  c2: "6035669",
+  c3: "",
+  c4: "http://aws.typepad.com/aws/2006/03/updates_to_the_.html",
+  c5: "",
+  c6: "",
+  c15: ""
+});
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&c2=6035669&c3=&c4=http%3A%2F%2Faws.typepad.com%2Faws%2F2006%2F03%2Fupdates_to_the_.html&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+</body>
+</html>
+<!-- ph=1 -->

@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.4" />
+		<meta name="keywords" content="How to evaluate product search quality: metrics, plan and research" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="WisdomBase (zh-cn)" />
+		<link rel="alternate" type="application/rss+xml" title="WisdomBase的RSS订阅" href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="WisdomBase的Atom订阅" href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+		<title>How to evaluate product search quality: metrics, plan and research - WisdomBase</title>
+		<link rel="stylesheet" href="/wiki/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/wiki/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="/wiki/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/wiki/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/wiki/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/wiki/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/wiki/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="/wiki/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/wiki/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/wiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/wiki/skins";
+		var wgArticlePath = "/wiki/index.php?title=$1";
+		var wgScriptPath = "/wiki";
+		var wgScript = "/wiki/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wisdombase.net";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "How_to_evaluate_product_search_quality:_metrics,_plan_and_research";
+		var wgTitle = "How to evaluate product search quality: metrics, plan and research";
+		var wgAction = "view";
+		var wgArticleId = "37";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "zh-cn";
+		var wgContentLanguage = "zh-cn";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1479;
+		var wgVersion = "1.15.4";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="/wiki/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/wiki/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="/wiki/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-How_to_evaluate_product_search_quality_metrics_plan_and_research skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">How to evaluate product search quality: metrics, plan and research</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">出自WisdomBase</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>			<!-- start content -->
+			<p>Summary of Evaluation Metrics draft:
+</p>
+<pre>For each query:
+ Precision @ Top K products in Top 1 category.
+ Precision @ Top K products in Top 2 category.
+ Precision @ Top K products in Top 3 category.
+ Precision @ Top 3 Category.
+ Number of results.
+ Data Quality.
+ Time of each response: x seconds.
+</pre>
+<p>For Comparsion:
+</p>
+<pre>Number of results in google, yahoo, bing shopping.
+Response time in google, yahoo, bing shopping.
+</pre>
+<p>For the set of queris:
+</p>
+<pre>Averaged metric of the above-mentioned.
+</pre>
+<p>Note:
+	1. number K,Y in Precision @ Top K products in Top Y category could be adjusted by different result displaying style.
+	2. This Evaluation only focus on relevance.
+	3. Other evaluation like: Functions, Data Quality, it is easy to evaluate by a engineer in a short time by compare with other search engines. In fact, that's a software designer's job.
+		At current stage, our search engine lack advanced search options, more filters, 
+		our data quality is also lower than 3 famous search engines.
+</p>
+<pre>       4. Data quality is evaluated by a over all impression which include (images, clean title name ...)
+</pre>
+<p>Comments on metrics in excel:
+1. DataQuality: include data repeat, image unavailable, title or description is noises
+Scale: 0, 0.5, 1
+</p><p>2. How to read the metrics in spreadsheets.
+</p>
+<pre>Evaluation1: (used for current XX search display style, products with categories)
+ Prec@TopKinCate1:  Precision = #(relevant items retrieved)/ #(retrieved Top K items in Top 1 Cateogry) 
+ Prec@TopKinCate2:  Precision = #(relevant items retrieved)/ #(retrieved Top K items in Top 2 Cateogry) 
+ Prec@TopKinCate3:  Precision = #(relevant items retrieved)/ #(retrieved Top K items in Top 3 Cateogry) 
+ Prec@Top3Cate:     Precision = #(relevant categories retrieved)/ #(retrieved Top 3 categories)
+ NumOfResults:      Number of search results
+ ResponseTime:      Length of time (is specified in seconds) for which the server spended on a search.
+ ResponseTime2:     Length of time (is specified in seconds) for after click "Products" in XX search.
+ DataQuality:       Measure for information quality of retrieved results, include repeating, image, title or description. scale:0, 0.5, 1  
+</pre>
+<pre>Evaluation2: (used for google shopping search result display style)
+ Prec@TopK:         Precision = #(relevant items retrieved)/ #(retrieved Top K items) 
+ Prec@Top3Cate:     Precision = #(relevant categories retrieved)/ #(retrieved Top 3 categories)
+ NumOfResults:      Number of search results
+ ResponseTime:      Length of time (is specified in seconds) for which the server spended on a search.
+ DataQuality:       Measure for information quality of retrieved results, include repeating, image, title or description. scale:0, 0.5, 1  
+</pre>
+<p><br />
+If result number is lower than 3 other search engines, means recall is low. At the same the prec is high , that means ours search strategies is too strict.
+</p><p><br />
+</p><p><br />
+Plan v0.5:
+Stage I:
+</p>
+<pre>0. prepare classified queries to represent users' information need.
+1. training for QA, 
+2. Evaluation by QA.
+3. Statistics, analysis, summary and report periodically.
+   key points: different type of queries&nbsp;; precision,recall; performance; data quality; 4 product search engine comparsion.
+</pre>
+<p>Stage II:
+</p>
+<pre>1. development of TERC techniques or join OpenRelevance Project to help construct corpus and infrustructure.
+2. apply techniques on evaluations.
+3.  statistics and report periodically. 
+</pre>
+<p>The following is my research process on evaluation in information retrieval:
+</p><p>	The key measure for a search engine is user happiness, which included the following factors: 
+Speed of response, Size of index, Uncluttered UI, Most important: relevance. 
+So the problem equals to how to measure relevance. Standard methodology in information retrieval consists of three elements.
+</p>
+<pre>   A benchmark document collection
+   A benchmark suite of queries
+   An assessment of the relevance of each query-document pair. (information needs must be representative as queries)
+</pre>
+<p>How ever, the procedure is expensive, time-consuming, and judges must be representative of the users we expect to see in reality.
+</p><p><br />
+The most famous standard relevance benchmark in IR field is TREC,
+</p>
+<pre>TREC = Text Retrieval Conference (TREC) Organized by the U.S. National Institute of Standards and Technology (NIST) TREC is actually a set of several different relevance benchmarks.
+</pre>
+<p>TREC use a kind of method called pooling to the set of relevant document for each topic/query.
+</p>
+<pre>For TREC, Only binary judgments ("relevant" or "not relevant") are made, and a document is judged relevant if any piece of it is relevant (regardless of how small the piece is in relation to the rest of the document).
+Judging is done using a pooling technique (described in the Overview papers in the TREC proceedings) on the set of documents used  for the task that year. The relevance judgments are considered "complete" for that particular set of documents.
+However the TREC is not open or free, and the topic is far from the needs of our system, pooling technique is impossible to implement for us. 
+</pre>
+<pre>Precision/recall/F are measures for unranked sets. For information retrieval system, 
+We can easily turn set measures into measures of ranked lists.  Due to most people only pay attention to top K result. and we have  no resources to collect collections to compute recall, Mean Average Precision (MAP), F-measure, relevant Curve...
+Recall is difficult to measure, on the web Search engines often use precision at top k. Some researchers also suggest to use P@N as evaluation measures.
+</pre>
+<pre>To simplify the process, I use Precision @ N  to represent the precision of the search engine. that's relevant items returned at top N
+</pre>
+<pre>due to all the results return by search engine also include categoris.
+we should also consider the category factors, so 
+</pre>
+<pre>For each query:
+ Precision @ Top K products in Top 1 category.
+ Precision @ Top K products in Top 2 category.
+ Precision @ Top K products in Top 3 category.
+ Precision @ Top 3 Category.
+Number of results.
+ Time of each response: x seconds.
+</pre>
+<pre>To evaluate the whole search engine's search quality, for the set of queris, we need summary to get average measures:
+Averaged metric of the above-mentioned.
+</pre>
+<pre>Relevance of each returned item will be judged by assessors. (QA engineer). scale will be binary or three level.
+Due to limited human resources, we only consider consistent or inter-judge agreement (by Kappa measure) in the future.
+Now we have to pay much attention on improving search quality, evlauation's goal is also to promote search quality.
+</pre>
+<p><br />
+</p>
+<pre>We can also compare the same query's results return by google shopping , bing.com, yahoo shopping.
+for a each query submited to our search engine, the judger will also record the following metrics in google, yahoo, bing shopping:
+number of results,
+response time,
+relevance judgement is a hard problem to compare. 
+for example, input "apple ipod" to search in google, yahoo, bing, they return the following result respectively:
+Apple iPod touch 8 GB Digital player - 8 GB flash - Black
+Apple iPod Shuffle 4GB MP3 Player
+Apple iPod Nano 2GB MP3 Player
+</pre>
+<pre>the specific Top K results depend on type of query and different ranking algorithm and settings in 3 search engines.
+</pre>
+<p>QA can only get consistent and ideal judgement baseline by result comparsion with google, yahoo, bing shopping. 
+Comparsion between ours and google should be a promotion to improve search quality, not a specific metric to evaluate.
+</p>
+<pre>In fact, Evaluation in information retrieval is still a research field.
+I also investigated OpenRelevance project hosted at Apache. <a href="http://wiki.apache.org/lucene-java/OpenRelevance" class="external free" title="http://wiki.apache.org/lucene-java/OpenRelevance" rel="nofollow">http://wiki.apache.org/lucene-java/OpenRelevance</a>
+</pre>
+<p>The Open Relevance Project (ORP) is a new Apache Lucene sub-project aimed at making materials for doing relevance testing for Information Retrieval (IR),
+it Kickoff on 25 June 2009. The project's initial focus is on creating collections, judgments, queries and corresponding infrastructure, tools.
+But now we can't utilize it due to few resources, maybe we can join the project to promote development speed in product searching area.
+</p>
+<pre>For a objective evaluation as much as possible, in the next step's plan, we can utilize Technique for Evaluating Relevance by Crowdsourcing (TERC), in which many online users, drawn from a large community, each performs a small evaluation task. But now, with the help of our judger( QA engineer) is enough. we can pay much attention on improving.
+</pre>
+<p><br />
+Reference:
+</p>
+<pre>Crowdsourcing for relevance evaluation, Alonso, O.; Rose, D. E. &amp; Stewart, B. SIGIR Forum,Vol. 42,pp. 9-15,2008
+Relevance judgments between TREC and Non-TREC assessors, Al-Maskari, A.; Sanderson, M. &amp; Clough, P.SIGIR '08: Proceedings of the 31st annual international ACM SIGIR conference on Research and development in information retrieval,pp. 683-684,2008
+Introduction to Information Retrieval,Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Cambridge University Press. 2008.
+<a href="http://wiki.apache.org/lucene-java/OpenRelevance" class="external free" title="http://wiki.apache.org/lucene-java/OpenRelevance" rel="nofollow">http://wiki.apache.org/lucene-java/OpenRelevance</a>
+<a href="http://trec.nist.gov/data/reljudge_eng.html" class="external free" title="http://trec.nist.gov/data/reljudge_eng.html" rel="nofollow">http://trec.nist.gov/data/reljudge_eng.html</a>
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key knowledg_wikidb:pcache:idhash:37-0!1!0!!zh-cn!2!edit=0 and timestamp 20110403052731 -->
+<div class="printfooter">
+取自“<a href="http://wisdombase.net/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research">http://wisdombase.net/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research</a>”</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research" title="查看页面内容 [c]" accesskey="c">页面</a></li>
+				 <li id="ca-talk" class="new"><a href="/wiki/index.php?title=%E8%AE%A8%E8%AE%BA:How_to_evaluate_product_search_quality:_metrics,_plan_and_research&amp;action=edit&amp;redlink=1" title="关于页面正文的讨论 [t]" accesskey="t">讨论</a></li>
+				 <li id="ca-viewsource"><a href="/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research&amp;action=edit" title="该页面已被保护。你可以查看该页源码。 [e]" accesskey="e">查看源代码</a></li>
+				 <li id="ca-history"><a href="/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research&amp;action=history" title="此页面的早前修订版本 [h]" accesskey="h">历史</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=How_to_evaluate_product_search_quality:_metrics,_plan_and_research" title="我们鼓励您登录，但这并不是必须的 [o]" accesskey="o">登录</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/wiki/images/9/90/Sitelogo2.gif);" href="/wiki/index.php?title=%E9%A6%96%E9%A1%B5" title="访问首页 [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/index.php?title=%E9%A6%96%E9%A1%B5">首页</a></li>
+				<li id="n-Change-Life-Guide"><a href="/wiki/index.php?title=Change_Life_Guide">Change Life Guide</a></li>
+				<li id="n-portal"><a href="/wiki/index.php?title=WisdomBase:%E7%A4%BE%E5%8C%BA" title="关于本计划，您可以做什么，应该如何做">社区入口</a></li>
+				<li id="n-currentevents"><a href="/wiki/index.php?title=WisdomBase:%E5%BD%93%E5%89%8D%E4%BA%8B%E4%BB%B6" title="查找当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="列出该网站的最近修改 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机载入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="/wiki/index.php?title=%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助">帮助</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="特殊:Search"/>
+				<input id="searchInput" name="search" type="text" title="搜索该网站 [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="进入" title="如果相同的标题存在的话便直接前往该页面" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="搜索" title="搜索该文字的页面" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/How_to_evaluate_product_search_quality:_metrics,_plan_and_research" title="列出所有与此页相链的页面 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/How_to_evaluate_product_search_quality:_metrics,_plan_and_research" title="从此页链出的所有页面的更改 [k]" accesskey="k">链出更改</a></li>
+<li id="t-specialpages"><a href="/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">所有特殊页面</a></li>
+				<li id="t-print"><a href="/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research&amp;printable=yes" rel="alternate" title="这个页面的可打印版本 [p]" accesskey="p">可打印版</a></li>				<li id="t-permalink"><a href="/wiki/index.php?title=How_to_evaluate_product_search_quality:_metrics,_plan_and_research&amp;oldid=1479" title="这个页面修订版本的永久链接">永久链接</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/wiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> 此页面最后修订于2010年9月25日 (星期六) 08:14。</li>
+					<li id="viewcount">此页面已被浏览过249次。</li>
+					<li id="privacy"><a href="/wiki/index.php?title=WisdomBase:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="WisdomBase:隐私政策">隐私政策</a></li>
+					<li id="about"><a href="/wiki/index.php?title=WisdomBase:%E5%85%B3%E4%BA%8E" title="WisdomBase:关于">关于WisdomBase</a></li>
+					<li id="disclaimer"><a href="/wiki/index.php?title=WisdomBase:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="WisdomBase:免责声明">免责声明</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.187 secs. --></body></html>

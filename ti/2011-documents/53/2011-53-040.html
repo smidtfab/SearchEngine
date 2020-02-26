@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>recaptchalib.php at Jcow SNS - Free PHP Code</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="Description" content="View recaptchalib.php source code at Jcow SNS online." />
+        <meta name="keywords" content="php scripts, php projects, php tips, php web hosting, php software, php source, php code" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <script type="text/javascript" src="/media/js/syntaxhighlighter/scripts/shCore.js"></script>
+        <script type="text/javascript" src="/media/js/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+        <link type="text/css" rel="stylesheet" href="/media/js/syntaxhighlighter/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="/media/js/syntaxhighlighter/styles/shThemeDefault.css"/>
+        <script type="text/javascript">
+            SyntaxHighlighter.config.clipboardSwf = '/media/js/syntaxhighlighter/scripts/clipboard.swf';
+            SyntaxHighlighter.all();
+        </script>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                color: #2e2e2e;
+                font-family: Tahoma, Geneva, sans-serif;
+                font-size: 14px;
+                line-height: 18px;
+                background-color: #FFF;
+            }
+            #wrapper {
+                width: 100%;
+                margin: 0 auto;
+                background-color: #FFF;
+            }
+            .source_title {
+                font-size: 12px;
+                text-indent: 5px;
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+                border-bottom-color: #CCC;
+                height: 22px;
+                padding-top: 6px;
+                padding-right: 2px;
+                padding-left: 2px;
+                margin-bottom: 4px;
+                background-color: #EEE;
+            }
+            .status {
+                font-size: 12px;
+                text-indent: 5px;
+                border-top-width: 2px;
+                border-top-style: solid;
+                border-top-color: #CCC;
+                height: 22px;
+                padding-top: 6px;
+                padding-right: 6px;
+                padding-left: 2px;
+                margin-top: 4px;
+                text-align: right;
+                background-color: #EEE;
+            }
+            .title {
+                text-transform: capitalize;
+            }
+            pre {
+                margin: 0px;
+                padding: 0px;
+            }
+            .txtads {
+                text-align:left;
+                float:left;
+                background-image: url(/media/images/icon_ad.gif);
+                background-repeat: no-repeat;
+                background-position: 2px 5px;
+                padding-left: 22px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="source_title"> Location:  <a href="http://www.phpkode.com/" target="_parent">PHPKode</a> &gt; <a href="http://www.phpkode.com/projects/" target="_parent" class="title">projects</a> &gt; <a href="http://www.phpkode.com/projects/item/jcow-sns/" target="_parent">Jcow SNS</a> &gt; includes/captcha/recaptchalib.php</div>
+            <div style="height: 530px; overflow: auto;position:relative;"><pre class="brush: php; ">&lt;?php
+/*
+ * This is a PHP library that handles calling reCAPTCHA.
+ *    - Documentation and latest version
+ *          http://recaptcha.net/plugins/php/
+ *    - Get a reCAPTCHA API Key
+ *          https://www.google.com/recaptcha/admin/create
+ *    - Discussion group
+ *          http://groups.google.com/group/recaptcha
+ *
+ * Copyright (c) 2007 reCAPTCHA -- http://recaptcha.net
+ * AUTHORS:
+ *   Mike Crawford
+ *   Ben Maurer
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+/**
+ * The reCAPTCHA server URL&#39;s
+ */
+define(&quot;RECAPTCHA_API_SERVER&quot;, &quot;http://www.google.com/recaptcha/api&quot;);
+define(&quot;RECAPTCHA_API_SECURE_SERVER&quot;, &quot;https://www.google.com/recaptcha/api&quot;);
+define(&quot;RECAPTCHA_VERIFY_SERVER&quot;, &quot;www.google.com&quot;);
+
+/**
+ * Encodes the given data into a query string format
+ * @param $data - array of string elements to be encoded
+ * @return string - encoded request
+ */
+function _recaptcha_qsencode ($data) {
+        $req = &quot;&quot;;
+        foreach ( $data as $key =&gt; $value )
+                $req .= $key . &#39;=&#39; . urlencode( stripslashes($value) ) . &#39;&amp;&#39;;
+
+        // Cut the last &#39;&amp;&#39;
+        $req=substr($req,0,strlen($req)-1);
+        return $req;
+}
+
+
+
+/**
+ * Submits an HTTP POST to a reCAPTCHA server
+ * @param string $host
+ * @param string $path
+ * @param array $data
+ * @param int port
+ * @return array response
+ */
+function _recaptcha_http_post($host, $path, $data, $port = 80) {
+
+        $req = _recaptcha_qsencode ($data);
+
+        $http_request  = &quot;POST $path HTTP/1.0\r\n&quot;;
+        $http_request .= &quot;Host: $host\r\n&quot;;
+        $http_request .= &quot;Content-Type: application/x-www-form-urlencoded;\r\n&quot;;
+        $http_request .= &quot;Content-Length: &quot; . strlen($req) . &quot;\r\n&quot;;
+        $http_request .= &quot;User-Agent: reCAPTCHA/PHP\r\n&quot;;
+        $http_request .= &quot;\r\n&quot;;
+        $http_request .= $req;
+
+        $response = &#39;&#39;;
+        if( false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
+                die (&#39;Could not open socket&#39;);
+        }
+
+        fwrite($fs, $http_request);
+
+        while ( !feof($fs) )
+                $response .= fgets($fs, 1160); // One TCP-IP packet
+        fclose($fs);
+        $response = explode(&quot;\r\n\r\n&quot;, $response, 2);
+
+        return $response;
+}
+
+
+
+/**
+ * Gets the challenge HTML (javascript and non-javascript version).
+ * This is called from the browser, and the resulting reCAPTCHA HTML widget
+ * is embedded within the HTML form it was called from.
+ * @param string $pubkey A public key for reCAPTCHA
+ * @param string $error The error given by reCAPTCHA (optional, default is null)
+ * @param boolean $use_ssl Should the request be made over ssl? (optional, default is false)
+
+ * @return string - The HTML to be embedded in the user&#39;s form.
+ */
+function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false)
+{
+	if ($pubkey == null || $pubkey == &#39;&#39;) {
+		die (&quot;To use reCAPTCHA you must get an API key from &lt;a href=&#39;https://www.google.com/recaptcha/admin/create&#39;&gt;https://www.google.com/recaptcha/admin/create&lt;/a&gt;&quot;);
+	}
+	
+	if ($use_ssl) {
+                $server = RECAPTCHA_API_SECURE_SERVER;
+        } else {
+                $server = RECAPTCHA_API_SERVER;
+        }
+
+        $errorpart = &quot;&quot;;
+        if ($error) {
+           $errorpart = &quot;&amp;amp;error=&quot; . $error;
+        }
+        return &#39;&lt;script type=&quot;text/javascript&quot; src=&quot;&#39;. $server . &#39;/challenge?k=&#39; . $pubkey . $errorpart . &#39;&quot;&gt;&lt;/script&gt;
+
+	&lt;noscript&gt;
+  		&lt;iframe src=&quot;&#39;. $server . &#39;/noscript?k=&#39; . $pubkey . $errorpart . &#39;&quot; height=&quot;300&quot; width=&quot;500&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;br/&gt;
+  		&lt;textarea name=&quot;recaptcha_challenge_field&quot; rows=&quot;3&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+  		&lt;input type=&quot;hidden&quot; name=&quot;recaptcha_response_field&quot; value=&quot;manual_challenge&quot;/&gt;
+	&lt;/noscript&gt;&#39;;
+}
+
+
+
+
+/**
+ * A ReCaptchaResponse is returned from recaptcha_check_answer()
+ */
+class ReCaptchaResponse {
+        var $is_valid;
+        var $error;
+}
+
+
+/**
+  * Calls an HTTP POST function to verify if the user&#39;s guess was correct
+  * @param string $privkey
+  * @param string $remoteip
+  * @param string $challenge
+  * @param string $response
+  * @param array $extra_params an array of extra variables to post to the server
+  * @return ReCaptchaResponse
+  */
+function recaptcha_check_answer ($privkey, $remoteip, $challenge, $response, $extra_params = array())
+{
+	if ($privkey == null || $privkey == &#39;&#39;) {
+		die (&quot;To use reCAPTCHA you must get an API key from &lt;a href=&#39;https://www.google.com/recaptcha/admin/create&#39;&gt;https://www.google.com/recaptcha/admin/create&lt;/a&gt;&quot;);
+	}
+
+	if ($remoteip == null || $remoteip == &#39;&#39;) {
+		die (&quot;For security reasons, you must pass the remote ip to reCAPTCHA&quot;);
+	}
+
+	
+	
+        //discard spam submissions
+        if ($challenge == null || strlen($challenge) == 0 || $response == null || strlen($response) == 0) {
+                $recaptcha_response = new ReCaptchaResponse();
+                $recaptcha_response-&gt;is_valid = false;
+                $recaptcha_response-&gt;error = &#39;incorrect-captcha-sol&#39;;
+                return $recaptcha_response;
+        }
+
+        $response = _recaptcha_http_post (RECAPTCHA_VERIFY_SERVER, &quot;/recaptcha/api/verify&quot;,
+                                          array (
+                                                 &#39;privatekey&#39; =&gt; $privkey,
+                                                 &#39;remoteip&#39; =&gt; $remoteip,
+                                                 &#39;challenge&#39; =&gt; $challenge,
+                                                 &#39;response&#39; =&gt; $response
+                                                 ) + $extra_params
+                                          );
+
+        $answers = explode (&quot;\n&quot;, $response [1]);
+        $recaptcha_response = new ReCaptchaResponse();
+
+        if (trim ($answers [0]) == &#39;true&#39;) {
+                $recaptcha_response-&gt;is_valid = true;
+        }
+        else {
+                $recaptcha_response-&gt;is_valid = false;
+                $recaptcha_response-&gt;error = $answers [1];
+        }
+        return $recaptcha_response;
+
+}
+
+/**
+ * gets a URL where the user can sign up for reCAPTCHA. If your application
+ * has a configuration page where you enter a key, you should provide a link
+ * using this function.
+ * @param string $domain The domain where the page is hosted
+ * @param string $appname The name of your application
+ */
+function recaptcha_get_signup_url ($domain = null, $appname = null) {
+	return &quot;https://www.google.com/recaptcha/admin/create?&quot; .  _recaptcha_qsencode (array (&#39;domains&#39; =&gt; $domain, &#39;app&#39; =&gt; $appname));
+}
+
+function _recaptcha_aes_pad($val) {
+	$block_size = 16;
+	$numpad = $block_size - (strlen ($val) % $block_size);
+	return str_pad($val, strlen ($val) + $numpad, chr($numpad));
+}
+
+/* Mailhide related code */
+
+function _recaptcha_aes_encrypt($val,$ky) {
+	if (! function_exists (&quot;mcrypt_encrypt&quot;)) {
+		die (&quot;To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed.&quot;);
+	}
+	$mode=MCRYPT_MODE_CBC;   
+	$enc=MCRYPT_RIJNDAEL_128;
+	$val=_recaptcha_aes_pad($val);
+	return mcrypt_encrypt($enc, $ky, $val, $mode, &quot;\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0&quot;);
+}
+
+
+function _recaptcha_mailhide_urlbase64 ($x) {
+	return strtr(base64_encode ($x), &#39;+/&#39;, &#39;-_&#39;);
+}
+
+/* gets the reCAPTCHA Mailhide url for a given email, public key and private key */
+function recaptcha_mailhide_url($pubkey, $privkey, $email) {
+	if ($pubkey == &#39;&#39; || $pubkey == null || $privkey == &quot;&quot; || $privkey == null) {
+		die (&quot;To use reCAPTCHA Mailhide, you have to sign up for a public and private key, &quot; .
+		     &quot;you can do so at &lt;a href=&#39;http://www.google.com/recaptcha/mailhide/apikey&#39;&gt;http://www.google.com/recaptcha/mailhide/apikey&lt;/a&gt;&quot;);
+	}
+	
+
+	$ky = pack(&#39;H*&#39;, $privkey);
+	$cryptmail = _recaptcha_aes_encrypt ($email, $ky);
+	
+	return &quot;http://www.google.com/recaptcha/mailhide/d?k=&quot; . $pubkey . &quot;&amp;c=&quot; . _recaptcha_mailhide_urlbase64 ($cryptmail);
+}
+
+/**
+ * gets the parts of the email to expose to the user.
+ * eg, given hide@address.com,com return [&quot;john&quot;, &quot;example.com&quot;].
+ * the email is then displayed as hide@address.com
+ */
+function _recaptcha_mailhide_email_parts ($email) {
+	$arr = preg_split(&quot;/@/&quot;, $email );
+
+	if (strlen ($arr[0]) &lt;= 4) {
+		$arr[0] = substr ($arr[0], 0, 1);
+	} else if (strlen ($arr[0]) &lt;= 6) {
+		$arr[0] = substr ($arr[0], 0, 3);
+	} else {
+		$arr[0] = substr ($arr[0], 0, 4);
+	}
+	return $arr;
+}
+
+/**
+ * Gets html to display an email address given a public an private key.
+ * to get a key, go to:
+ *
+ * http://www.google.com/recaptcha/mailhide/apikey
+ */
+function recaptcha_mailhide_html($pubkey, $privkey, $email) {
+	$emailparts = _recaptcha_mailhide_email_parts ($email);
+	$url = recaptcha_mailhide_url ($pubkey, $privkey, $email);
+	
+	return htmlentities($emailparts[0]) . &quot;&lt;a href=&#39;&quot; . htmlentities ($url) .
+		&quot;&#39; onclick=\&quot;window.open(&#39;&quot; . htmlentities ($url) . &quot;&#39;, &#39;&#39;, &#39;toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300&#39;); return false;\&quot; title=\&quot;Reveal this e-mail address\&quot;&gt;...&lt;/a&gt;@&quot; . htmlentities ($emailparts [1]);
+
+}
+
+
+?&gt;
+</pre></div>
+            <div class="status"><div class="txtads"><a href="http://00cf9zm3hvkvf-1804v6smfw95.hop.clickbank.net/" target="_blank">Learn Html, Css, Php, Python, Ruby on Rails, JavaScript & jQuery in 10-12 hours.</a></div><div style="float:right;">Return current item: <a href="http://www.phpkode.com/projects/item/jcow-sns/" target="_parent">Jcow SNS</a></div></div>
+        </div>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-18505574-1']);
+            _gaq.push(['_setDomainName', '.phpkode.com']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

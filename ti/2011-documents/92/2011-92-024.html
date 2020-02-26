@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>UCL Discovery - Galaxy Zoo: reproducing galaxy morphologies via machine learning star</title>
+    <script src="http://discovery.ucl.ac.uk/javascript/auto.js" type="text/javascript"><!-- nope --></script>
+    <style type="text/css" media="screen">@import url(http://discovery.ucl.ac.uk/style/auto.css);</style>
+    <style type="text/css" media="print">@import url(http://discovery.ucl.ac.uk/style/print.css);</style>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="Top" href="http://discovery.ucl.ac.uk/" />
+    <link rel="Search" href="http://discovery.ucl.ac.uk/cgi/search" />
+    <link rel="alternate" href="http://blogs.ucl.ac.uk/ucl-discovery/feed/" title="UCL Discovery Blog" type="application/rss+xml" />
+    <link rel="alternate" href="http://discovery.ucl.ac.uk/latest.xml" title="Latest additions" type="application/rss+xml" />
+    <meta content="Banerji, M" name="eprints.creators_name" />
+<meta content="Lahav, O" name="eprints.creators_name" />
+<meta content="Lintott, CJ" name="eprints.creators_name" />
+<meta content="Abdalla, FB" name="eprints.creators_name" />
+<meta content="Schawinski, K" name="eprints.creators_name" />
+<meta content="Bamford, SP" name="eprints.creators_name" />
+<meta content="Andreescu, D" name="eprints.creators_name" />
+<meta content="Murray, P" name="eprints.creators_name" />
+<meta content="Raddick, MJ" name="eprints.creators_name" />
+<meta content="Slosar, A" name="eprints.creators_name" />
+<meta content="Szalay, A" name="eprints.creators_name" />
+<meta content="Thomas, D" name="eprints.creators_name" />
+<meta content="Vandenberg, J" name="eprints.creators_name" />
+<meta content="article" name="eprints.type" />
+<meta content="2010-10-29 13:10:21" name="eprints.datestamp" />
+<meta content="2011-02-01 12:20:40" name="eprints.lastmod" />
+<meta content="show" name="eprints.metadata_visibility" />
+<meta content="Galaxy Zoo: reproducing galaxy morphologies via machine learning star" name="eprints.title" />
+<meta content="none" name="eprints.full_text_status" />
+<meta content="methods: data analysis, galaxies: general, DIGITAL-SKY-SURVEY, ARTIFICIAL NEURAL-NETWORKS, ESTIMATING PHOTOMETRIC REDSHIFTS, AUTOMATED CLASSIFICATION, STELLAR SPECTRA, COLOR" name="eprints.keywords" />
+<meta content="We present morphological classifications obtained using machine learning for objects in the Sloan Digital Sky Survey DR6 that have been classified by Galaxy Zoo into three classes, namely early types, spirals and point sources/artefacts. An artificial neural network is trained on a subset of objects classified by the human eye, and we test whether the machine-learning algorithm can reproduce the human classifications for the rest of the sample. We find that the success of the neural network in matching the human classifications depends crucially on the set of input parameters chosen for the machine-learning algorithm. The colours and parameters associated with profile fitting are reasonable in separating the objects into three classes. However, these results are considerably improved when adding adaptive shape parameters as well as concentration and texture. The adaptive moments, concentration and texture parameters alone cannot distinguish between early type galaxies and the point sources/artefacts. Using a set of 12 parameters, the neural network is able to reproduce the human classifications to better than 90 per cent for all three morphological classes. We find that using a training set that is incomplete in magnitude does not degrade our results given our particular choice of the input parameters to the network. We conclude that it is promising to use machine-learning algorithms to perform morphological classification for the next generation of wide-field imaging surveys and that the Galaxy Zoo catalogue provides an invaluable training set for such purposes." name="eprints.abstract" />
+<meta content="2010-07-21" name="eprints.date" />
+<meta content="MON NOT R ASTRON SOC" name="eprints.publication" />
+<meta content="406" name="eprints.volume" />
+<meta content="1" name="eprints.number" />
+<meta content="WILEY-BLACKWELL PUBLISHING, INC" name="eprints.publisher" />
+<meta content="342 - 353" name="eprints.pagerange" />
+<meta content="0035-8711" name="eprints.issn" />
+<meta content="Banerji, M and Lahav, O and Lintott, CJ and Abdalla, FB and Schawinski, K and Bamford, SP and Andreescu, D and Murray, P and Raddick, MJ and Slosar, A and Szalay, A and Thomas, D and Vandenberg, J (2010) Galaxy Zoo: reproducing galaxy morphologies via machine learning star. MON NOT R ASTRON SOC , 406 (1) , 342 - 353. 10.1111/j.1365-2966.2010.16713.x &lt;http://dx.doi.org/10.1111/j.1365-2966.2010.16713.x&gt;." name="eprints.citation" />
+<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/" />
+<meta content="Galaxy Zoo: reproducing galaxy morphologies via machine learning star" name="DC.title" />
+<meta content="Banerji, M" name="DC.creator" />
+<meta content="Lahav, O" name="DC.creator" />
+<meta content="Lintott, CJ" name="DC.creator" />
+<meta content="Abdalla, FB" name="DC.creator" />
+<meta content="Schawinski, K" name="DC.creator" />
+<meta content="Bamford, SP" name="DC.creator" />
+<meta content="Andreescu, D" name="DC.creator" />
+<meta content="Murray, P" name="DC.creator" />
+<meta content="Raddick, MJ" name="DC.creator" />
+<meta content="Slosar, A" name="DC.creator" />
+<meta content="Szalay, A" name="DC.creator" />
+<meta content="Thomas, D" name="DC.creator" />
+<meta content="Vandenberg, J" name="DC.creator" />
+<meta content="We present morphological classifications obtained using machine learning for objects in the Sloan Digital Sky Survey DR6 that have been classified by Galaxy Zoo into three classes, namely early types, spirals and point sources/artefacts. An artificial neural network is trained on a subset of objects classified by the human eye, and we test whether the machine-learning algorithm can reproduce the human classifications for the rest of the sample. We find that the success of the neural network in matching the human classifications depends crucially on the set of input parameters chosen for the machine-learning algorithm. The colours and parameters associated with profile fitting are reasonable in separating the objects into three classes. However, these results are considerably improved when adding adaptive shape parameters as well as concentration and texture. The adaptive moments, concentration and texture parameters alone cannot distinguish between early type galaxies and the point sources/artefacts. Using a set of 12 parameters, the neural network is able to reproduce the human classifications to better than 90 per cent for all three morphological classes. We find that using a training set that is incomplete in magnitude does not degrade our results given our particular choice of the input parameters to the network. We conclude that it is promising to use machine-learning algorithms to perform morphological classification for the next generation of wide-field imaging surveys and that the Galaxy Zoo catalogue provides an invaluable training set for such purposes." name="DC.description" />
+<meta content="methods: data analysis, galaxies: general, DIGITAL-SKY-SURVEY, ARTIFICIAL NEURAL-NETWORKS, ESTIMATING PHOTOMETRIC REDSHIFTS, AUTOMATED CLASSIFICATION, STELLAR SPECTRA, COLOR" name="DC.subject" />
+<meta content="WILEY-BLACKWELL PUBLISHING, INC" name="DC.publisher" />
+<meta content="2010-07-21" name="DC.date" />
+<meta content="Article" name="DC.type" />
+<meta content="http://discovery.ucl.ac.uk/152259/" name="DC.identifier" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/HTML/loepucl-eprint-152259.html" title="HTML Citation" type="text/html; charset=utf-8" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/Text/loepucl-eprint-152259.txt" title="ASCII Citation" type="text/plain; charset=utf-8" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/EndNote/loepucl-eprint-152259.enw" title="EndNote" type="text/plain" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/BibTeX/loepucl-eprint-152259.bib" title="BibTeX" type="text/plain" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/COinS/loepucl-eprint-152259.txt" title="OpenURL ContextObject in Span" type="text/plain" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/MODS/loepucl-eprint-152259.xml" title="MODS" type="text/xml" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/DIDL/loepucl-eprint-152259.xml" title="DIDL" type="text/xml" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/RIS/loepucl-eprint-152259.ris" title="Reference Manager" type="text/plain" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/NEEO/loepucl-eprint-152259.xml" title="NEEO" type="text/xml" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/Simple/loepucl-eprint-152259.txt" title="Simple Metadata" type="text/plain" />
+<link rel="alternate" href="http://discovery.ucl.ac.uk/cgi/export/152259/Refer/loepucl-eprint-152259.refer" title="Refer" type="text/plain" />
+
+
+<!--[if lte IE 8]>
+  <style type="text/css">
+        body { text-align:center }
+        .ep_tm_header, .ep_toolbox_content, div#container { text-align:left }
+	div#menuBrowseBy {min-height:60px;}
+	.ep_doc_icon { float:left; }
+  </style>
+<![endif]-->
+<!--[if lte IE 6]>
+  <style type="text/css">
+  	#homeSearchPub .home_searchTextBox { width:176px; }
+  	#homeSearchPub .home_searchButton { height:29px; }
+	#leftcol .left-nav a, #leftcol .left-nav a:visited { display:inline; }
+	div#ResFeatured { height:145px; }
+	img#homeImage { margin-bottom:-10px; }
+	table { width:98%; }
+	#lastMonthDownloads { width:670px; }
+	.mysite_content1 li { margin-left:0px; padding-left:0px; font-weight:normal; }
+  </style>
+<![endif]-->
+
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6712251-11']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </head>
+  <body bgcolor="#ffffff" text="#000000">
+<div id="container">
+    <div class="ep_noprint"><noscript><style type="text/css">@import url(http://discovery.ucl.ac.uk/style/nojs.css);</style></noscript></div>
+    
+
+<!-- New UCL header -->
+
+<div id="ucl-header"> 
+  <a href="http://www.ucl.ac.uk" title="UCL home page"><img src="/images/ucl0004.gif" alt="UCL logo" /></a> 
+  <h1>UCL Discovery</h1> 
+</div> 
+<div id="ucl-breadcrumb"> 
+  <a href="http://www.ucl.ac.uk">UCL home</a> » <a href="http://www.ucl.ac.uk/library">Library Services</a> » <a href="http://www.ucl.ac.uk/library/eresources.shtml">Electronic resources</a> » <a href="http://discovery.ucl.ac.uk">UCL Discovery</a> 
+</div>
+
+<div id="main" class="homeMain">
+
+<div id="leftcol">
+  <div class="padding">
+
+<!-- SEARCH AND BROWSE -->
+<!-- ORIGINAL FORM  
+        <form id="homeSearchPub" action="{$config{perl_url}}/search" method="get" name="search" accept-charset="utf-8">
+          <label for="kw">Enter your search terms</label>
+          <div class="home_searchTextBox">
+                <input id="kw" accept-charset="utf-8" type="text" name="q" value="Search publications" onclick="document.search.kw.value=''" />
+          </div>
+          <input type="hidden" name="_order" value="bytitle" />
+          <input type="hidden" name="basic_srchtype" value="ALL" />
+          <input type="hidden" name="_satisfyall" value="ALL" />
+          <input type="hidden" name="_action_search" value="Search" />
+          <input type="submit" class="home_searchButton" value="Go" />
+        </form>
+-->
+<!-- NEW FORM WITH 'Everything' AND 'Author' RADIO BUTTONS -->
+        <form id="homeSearchPub" action="http://www.ucl.ac.uk/ls/eprints/discovery-search.php" method="post" name="search" accept-charset="utf-8">
+          <label for="kw">Enter your search terms</label>
+          <div class="home_searchTextBox">
+                <input id="kw" accept-charset="utf-8" type="text" name="q" value="Search publications" onclick="document.search.kw.value=''" />
+          </div>
+          <input type="submit" class="home_searchButton" value="Go" />
+          <div class="homeSearchRadio" style="margin-top:2px;">
+		<input type="radio" name="type" value="simple" id="search-simp" checked="checked" /> <label for="search-simp" style="display:inline !important; margin-right:35px;">Everything</label>
+		<input type="radio" name="type" value="advanced" id="search-adv" /> <label for="search-adv" style="display:inline !important">Author</label>
+	  </div>
+	</form>
+
+        <div id="menuBrowseBy">
+          <ul class="top">
+                <li><a href="http://discovery.ucl.ac.uk/cgi/search/advanced">Detailed search</a></li>
+                <li>
+		   <dl class="sub">
+			<dt>Browse by:</dt>
+                        <dd><a href="http://discovery.ucl.ac.uk/departments.html">Department</a> <span>|</span> 
+			    <a href="http://discovery.ucl.ac.uk/view/year">Year</a> <span>|</span>
+			    <a href="http://discovery.ucl.ac.uk/latest.html">Latest</a> <a href="http://discovery.ucl.ac.uk/latest.xml"><img src="/images/rss-feed.gif" title="Latest additions RSS feed" alt="RSS feed" /></a>
+			</dd>
+                   </dl>
+                </li>
+          </ul>
+        </div>
+
+<!-- LEFT MENU 'FOR EVERYONE' -->
+        <h3 class="everyone">For everyone</h3>
+          <ul class="left-nav">
+		<li><a href="http://discovery.ucl.ac.uk/about.html">About UCL Discovery</a></li>
+                <li><a href="http://discovery.ucl.ac.uk/open_access.html">Open Access</a></li>
+		<li>Using UCL Discovery:
+		    <ul class="ev">
+			<li><a href="http://discovery.ucl.ac.uk/find_research.html">Finding research</a></li>
+                	<li><a href="http://discovery.ucl.ac.uk/find_research.html#using">Using research</a></li>
+		    </ul>
+		</li>
+		<li>Statistics:
+		    <ul class="ev">
+			<li><a href="http://discovery.ucl.ac.uk/last-month.html">Top 20 most downloaded</a></li>
+                	<li><a href="http://discovery.ucl.ac.uk/past-statistics.html">Previous statistics</a></li>
+		    </ul>
+		</li>
+		<li><a href="http://discovery.ucl.ac.uk/faqs.html">FAQ</a></li>
+          </ul>
+          <ul class="left-social">
+                <li><a target="_blank" href="http://twitter.com/ucl_discovery">Follow us on Twitter</a> <img src="/images/twitter_icon.gif" alt="Twitter" /></li>
+                <li><a target="_blank" href="http://blogs.ucl.ac.uk/ucl-discovery/">UCL Discovery Blog</a> <a title="Subscribe to the UCL Discovery blog" href="http://blogs.ucl.ac.uk/ucl-discovery/feed/"><img src="/images/rss-feed.gif" alt="Subscribe to the UCL Discovery blog" /></a></li>
+          </ul>
+
+<!-- LEFT MENU 'FOR AUTHORS' -->
+        <h3 class="authors">For UCL authors</h3>
+          <ul class="left-nav">
+                <li><a href="http://rps.ucl.ac.uk">Maintain your publications (RPS)</a></li>
+                <li><a href="http://www.ucl.ac.uk/iris">View your IRIS profile</a></li>
+                <li><a href="http://www.ucl.ac.uk/library/publications-policy.shtml">UCL Publications Policy</a></li>
+                <li><a href="http://discovery.ucl.ac.uk/deposit.html">How to deposit</a></li>
+		<li><a href="http://www.ucl.ac.uk/library/funders/">Research funders' policies</a></li>
+                <li>Tools:</li>
+		    <ul class="auth">
+			<li><a class="inline" href="http://discovery.ucl.ac.uk/author_tools.html#personal">Personal publication lists</a></li>
+			<li><a class="inline" href="http://discovery.ucl.ac.uk/author_tools.html#webmasters">Webmaster tools</a></li>
+                        <li><a class="inline" href="http://discovery.ucl.ac.uk/author_tools_stats.html">Explore your statistics</a></li>
+                    </ul>
+	        <!-- li>Explore your statistics: 
+		    <ul class="auth">
+			<li><a class="inline" href="https://www.ucl.ac.uk/ls/irstats/">Login</a> <span>|</span> <a class="inline" href="{$config{base_url}}/author_tools.html#statistics">Help</a></li>
+		    </ul>
+		</li -->
+		<li><a href="http://discovery.ucl.ac.uk/contact.html">Any questions?</a></li>
+          </ul>
+
+<!-- SHARE/BOOKMARK -->
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style">
+          <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=libraryservices" class="addthis_button_compact">Bookmark &amp; Share</a>
+          <span class="addthis_separator"> </span>
+          <a class="addthis_button_preferred_1"></a>
+          <a class="addthis_button_preferred_2"></a>
+          <a class="addthis_button_preferred_3"></a>
+          <a class="addthis_button_preferred_4"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?username=libraryservices"></script>
+        <!-- AddThis Button END -->
+
+  </div>
+</div>  <!-- #leftcol -->
+
+<div id="contentcol">
+  <div class="padding">
+
+<!--  <epc:pin ref="toolbar" /> -->
+
+<script type="text/javascript">
+if (window.location.href == "http://discovery.ucl.ac.uk/" || window.location.href == "http://discovery.ucl.ac.uk/index.html"  || window.location.href == "http://eprints.ucl.ac.uk/") {
+	document.write('<img id="homeImage" src="/images/dna.jpg" alt="DNA" />');
+}
+</script>
+
+    <a name="top"></a>
+
+    <h2>Galaxy Zoo: reproducing galaxy morphologies via machine learning star</h2>
+
+    <div class="ep_summary_content"><div class="ep_summary_content_left"></div><div class="ep_summary_content_right"></div><div class="ep_summary_content_top"></div><div class="ep_summary_content_main"><p style="margin-bottom: 1em" class="ep_block"><!-- basic creators and date --><span class="person_name">Banerji, M</span> and <span class="person_name">Lahav, O</span> and <span class="person_name">Lintott, CJ</span> and <span class="person_name">Abdalla, FB</span> and <span class="person_name">Schawinski, K</span> and <span class="person_name">Bamford, SP</span> and <span class="person_name">Andreescu, D</span> and <span class="person_name">Murray, P</span> and <span class="person_name">Raddick, MJ</span> and <span class="person_name">Slosar, A</span> and <span class="person_name">Szalay, A</span> and <span class="person_name">Thomas, D</span> and <span class="person_name">Vandenberg, J</span><!-- title --><!-- cite:linkhere><xhtml:em><print expr="title" opts="magicstop"/></xhtml:em></cite:linkhere --><!-- print type info where required --><!-- print subtype info where required --><!-- publication details --> (2010) Galaxy Zoo: reproducing galaxy morphologies via machine learning star. <strong>MON NOT R ASTRON SOC</strong> , 406 (1) , 342 - 353. <a href="http://dx.doi.org/10.1111/j.1365-2966.2010.16713.x">10.1111/j.1365-2966.2010.16713.x</a>.</p><p style="margin-bottom: 1em" class="ep_block">Full text not available from this repository.</p><div class="ep_block"><h2>Abstract</h2><p style="text-align: left; margin: 1em auto 0em auto">We present morphological classifications obtained using machine learning for objects in the Sloan Digital Sky Survey DR6 that have been classified by Galaxy Zoo into three classes, namely early types, spirals and point sources/artefacts. An artificial neural network is trained on a subset of objects classified by the human eye, and we test whether the machine-learning algorithm can reproduce the human classifications for the rest of the sample. We find that the success of the neural network in matching the human classifications depends crucially on the set of input parameters chosen for the machine-learning algorithm. The colours and parameters associated with profile fitting are reasonable in separating the objects into three classes. However, these results are considerably improved when adding adaptive shape parameters as well as concentration and texture. The adaptive moments, concentration and texture parameters alone cannot distinguish between early type galaxies and the point sources/artefacts. Using a set of 12 parameters, the neural network is able to reproduce the human classifications to better than 90 per cent for all three morphological classes. We find that using a training set that is incomplete in magnitude does not degrade our results given our particular choice of the input parameters to the network. We conclude that it is promising to use machine-learning algorithms to perform morphological classification for the next generation of wide-field imaging surveys and that the Galaxy Zoo catalogue provides an invaluable training set for such purposes.</p></div><table style="margin-bottom: 1em" cellpadding="3" class="ep_block" border="0"><tr><th valign="top" class="ep_row">Type:</th><td valign="top" class="ep_row">Article</td></tr><tr><th valign="top" class="ep_row">Title:</th><td valign="top" class="ep_row">Galaxy Zoo: reproducing galaxy morphologies via machine learning star</td></tr><tr><th valign="top" class="ep_row">DOI:</th><td valign="top" class="ep_row"><a href="http://dx.doi.org/10.1111/j.1365-2966.2010.16713.x">10.1111/j.1365-2966.2010.16713.x</a></td></tr><tr><th valign="top" class="ep_row">Keywords:</th><td valign="top" class="ep_row">methods: data analysis, galaxies: general, DIGITAL-SKY-SURVEY, ARTIFICIAL NEURAL-NETWORKS, ESTIMATING PHOTOMETRIC REDSHIFTS, AUTOMATED CLASSIFICATION, STELLAR SPECTRA, COLOR</td></tr><tr><th valign="top" class="ep_row">UCL classification:</th><td valign="top" class="ep_row"><a href="http://discovery.ucl.ac.uk/view/UCL/MJ.html">UCL &gt; School of BEAMS &gt; Faculty of Maths and Physical Sciences &gt; Physics and Astronomy</a></td></tr></table><p align="right">Archive Staff Only: <a href="http://discovery.ucl.ac.uk/cgi/users/home?screen=EPrint::View&amp;eprintid=152259">edit this record</a></p></div><div class="ep_summary_content_bottom"></div><div class="ep_summary_content_after"></div></div>
+
+
+  </div><!-- .padding -->
+</div>  <!-- #contentcol -->
+
+<div class="ep_tm_footer ep_noprint">
+
+</div>
+
+</div>	<!-- #main -->
+
+<div id="footer">	
+	<ul>
+		<li><a href="http://www.ucl.ac.uk/disclaimer/">Disclaimer</a></li>
+		<li><a href="http://www.ucl.ac.uk/foi/">Freedom of Information</a></li>
+		<li><a href="http://www.ucl.ac.uk/accessibility/">Accessibility</a></li>
+		<li><a href="http://www.ucl.ac.uk/privacy/">Privacy</a></li>
+		<li><a href="http://search.ucl.ac.uk/search?entqr=1&amp;access=p&amp;as_dt=i&amp;sort=date%3AD%3AL%3Ad1&amp;ie=UTF-8&amp;btnG=Search+UCL&amp;as_lq=&amp;as_oq=&amp;ud=1&amp;as_q=&amp;oe=UTF-8&amp;as_ft=i&amp;output=xml_no_dtd&amp;entsp=a&amp;as_filetype=&amp;lr=&amp;as_sitesearch=&amp;client=default_frontend&amp;as_epq=&amp;as_eq=&amp;num=10&amp;site=default_collection&amp;proxystylesheet=default_frontend&amp;as_occt=any&amp;proxycustom=%3CADVANCED/%3E">Advanced Search</a></li>
+		<li><a href="http://www.ucl.ac.uk/contact-list/">Contact Us</a></li>
+	</ul>
+	<div>
+		<address class="vcard">
+			<span class="adr">
+			  <span class="fn org">University College London</span>, 
+			  <span class="street-address">Gower Street</span>, 
+			  <span class="region">London</span>, 
+			  <span class="postal-code">WC1E 6BT</span>
+			</span>
+			<span class="tel">
+			  <span class="type"><span class="value-title" title="work"> </span>Tel</span>: 
+			  <span class="value">+44</span> (0) <span class="value">20 7679 2000</span>
+			</span>
+		</address>
+
+		<p>© UCL 1999–<script type="text/javascript">var today=new Date(); document.write(today.getFullYear());</script></p>
+	</div>
+</div>	<!-- #footer -->
+
+</div>	<!-- #container -->
+
+  </body>
+</html>

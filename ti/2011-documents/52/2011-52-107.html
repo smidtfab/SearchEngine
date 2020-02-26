@@ -1,0 +1,111 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="mcontent-Type" content="text/html; charset=UTF-8" />
+	<title>Adding Human Intelligence to Software - Technology Review</title>
+	<meta http-equiv="mcontent-Type" content="text/html; charset=utf-8" />
+	<meta content="Technology, Review, MIT, magazine, nanotechnology, nanotech, biotechnology, biotech, information technology, infotech, business, business technology, biz tech" name="keywords" />
+	<meta content="TurKit lets programmers combines code with input from an army of online human workers. - " name="description" />
+	<meta content="Technology Review Web Development Team" name="author" />
+	<meta content="Adding Human Intelligence to Software - Technology Review" name="title" />
+
+	<meta content="" name="pages" />
+	<meta content="" name="collection" />
+	<meta content="Cambridge, MA" name="geo.placename" />
+	<meta content="US-MA" name="geo.region" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="icon" href="/favicon.ico" />
+	
+	<link href="/css/style.css?634356870886187822" rel="stylesheet" type="text/css" />
+
+<!--[if IE]><link rel="stylesheet" href="/css/ie.css?634280969475877728" type="text/css" media="all" /><![endif]-->
+<!--[if lt IE 8]><link rel="stylesheet" href="/css/ie7.css?634296529933105922" type="text/css" media="all" /><![endif]-->
+
+<!-- JQuery Library -->
+<script type="text/javascript" src="/scripts/jquery-1.4.2.js?634177217785666350"></script>
+<script type="text/javascript" src="/scripts/scripts.js?634218726740561183"></script>
+<script type="text/javascript" src="/scripts/jsScroller.js?634176559459234440"></script>
+<script type="text/javascript" src="/scripts/jsScrollbar3.js?634176560155340124"></script>
+<script type="text/javascript">
+var scroller  = null;
+var scrollbar = null;
+window.onload = function () {
+	if (document.getElementById("Scroller-3")) {
+  scroller  = new jsScroller(document.getElementById("Scroller-3"), 330, 230);
+  scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+  	}
+}
+</script>
+
+<script type="text/javascript" src="/scripts/MobileCompatibilityScript.js?634093656220000000"></script>
+
+<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script> 
+
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script> 
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var randartnum = Math.random()*10000000000000000;
+//--><!]]>
+</script>
+</head>
+<body class="printer">
+
+
+
+<div class="content">
+
+<div class="header">
+	<h1><img src="/images/logo-in.png" width="197" height="60" alt="Technology Review" /></h1>
+	<p class="pub">Published by MIT</p>
+</div>
+
+<div class="close">
+	<a href="#" onclick="close(); return false;">Close Window</a>
+</div>
+
+<div class="clear"></div>
+
+<div class="maincontent">
+
+<p class="date">Monday, October 18, 2010</p>
+
+<h2>Adding Human Intelligence to Software</h2>
+<p class="dek">TurKit lets programmers combines code with input from an army of online human workers.</p>
+	
+<p class="byline">By John Pavlus</p>
+	
+
+<div class="mainBody">
+<p>Amazon's Mechanical Turk service has long provided a cheap source of labor, when the job is simple for humans but difficult for computers. Tasks such as describing a picture, for example, can be completed online by remote, human workers. Programmers already use groups of these workers, called turkers, to do many such tasks at the same time. But Mechanical Turk offers no easy way for programmers developing new software applications to combine and coordinate the turkers' efforts. Now computer scientists at MIT have developed a toolkit that does just that. Called <a href="http://groups.csail.mit.edu/uid/turkit/" target="_blank">TurKit</a>, the tool lets software engineers write algorithms to coordinate online workers using the Javascript programming language, and create powerful applications that have human intelligence built in. The software can also be debugged like normal code. </p>
+<p>"Usually in Javascript, you wouldn't be able to access Mechanical Turk without a lot of work," explains Greg Little, a PhD candidate at MIT's <a href="http://www.csail.mit.edu/" target="_blank">Computer Science and Artificial Intelligence Laboratory</a>, who created TurKit. "This is a bridge for writing code that interacts with the workers on Mechanical Turk, so we can easily explore new methods of human computation."</p>
+<p>With TurKit, human input is stored in a database. That way, anytime the software under development crashes, the turkers don't have to start over from scratch. Instead, once the program has been fixed, it can pick right up where it left off. "If you wait an hour for the humans to finish their task, and then the program throws an error, you don't want to wait another hour just to see if your bug fix works," says Little. TurKit also prevents the human input from changing unpredictably during the debugging process. "If I got different behavior every time I ran (a program), I could never debug that moving target," says Michael Bernstein, a PhD candidate at MIT, who used TurKit to create a word-processing application called <a href="http://projects.csail.mit.edu/soylent/" target="_blank">Soylent</a>.</p>
+<p>Thanks to TurKit, researchers have already created human computation algorithms stable enough to incorporate into functioning software. Soylent uses groups of three to seven turkers to do on-demand proofreading and paragraph shortening in Microsoft Word, with an algorithm called Find-Fix-Verify. In the Find stage, turkers simply highlight errors without correcting them. Soylent compares the results from several workers for consistency, then sends the filtered output to another group of turkers who correct the errors. Finally, a third group checks the corrections for quality; substandard results are flagged and Soylent displays only the vetted corrections. "If you just set turkers loose on your paragraph, around 30 percent of the work you get back is unusable," says Bernstein. "We wanted to treat that as inherent noise in the system while guaranteeing quality to the end user." </p>
+<p>Another Mechanical Turk application, called <a href="http://www.cs.rochester.edu/u/jbigham/vizwiz/video/" target="_blank">VizWiz</a>, is being developed to allow blind users to identify objects, such as street signs or pantry items, with the help of their smart phone cameras and sighted turkers. Ideally, VizWiz will work fast, so that users get results when they need them most. University of Rochester computer scientist <a href="http://www.cs.rochester.edu/~jbigham/" target="_blank">Jeffrey Bigham</a> and his team used TurKit to create an algorithm, called quikTurkit, that reduces lag time by queueing up groups of turkers before they are needed. When a user activates VizWiz's camera, quikTurkit signals turkers that a new query is imminent--either recruiting new workers on demand or sending the request to a pool of eight turkers already engaged in answering previous queries. The former method returns results to the user within a couple of minutes; the latter averages less than 30 seconds. "If you're running an expensive optical character recognition app on your phone, it might take that long to give you an answer anyway," says Bigham, "whereas VizWiz is smarter and could be cheaper." </p>
+<p>Both Bigham and Bernstein say they see human computation as a rich field for future applications--with open-source tools like TurKit as the best means of prototyping and refining them. "Human algorithms are fundamentally different from the ones we're used to, and TurKit lets us explore ways of optimizing them," says Bernstein. "If we start wiring human crowds successfully into these systems, we can produce an end product which is way more powerful, and do so at low cost with high reliability."</p>
+
+</div>
+
+<p>Copyright Technology Review 2011.</p>
+
+	
+	
+</div>
+
+</div>
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+var s_pageName = "\/printer_friendly_article.aspx?id=26535&amp;channel=computing&amp;section=";
+
+//--><!]]>
+</script>
+<script type="text/javascript" src="/scripts/omniture.js"></script>
+
+
+
+</body>
+</html>
+

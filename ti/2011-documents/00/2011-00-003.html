@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+ <title>Overview | Requester | Amazon Mechanical Turk</title>
+ <link href="/stylesheets/reset.css?1301671379" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/text.css?1301671379" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/960.css?1301671379" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/layout.css?1301671379" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/fixed_layout.css?1301671379" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/nav.css?1301671379" media="screen" rel="stylesheet" type="text/css" />
+  <!--[if IE 6]><link rel="stylesheet" type="text/css" href="stylesheets/ie6.css" media="screen" /><![endif]-->
+ <!--[if IE 7]><link rel="stylesheet" type="text/css" href="stylesheets/ie.css" media="screen" /><![endif]-->
+
+ <link href="https://images-na.ssl-images-amazon.com/images/G/01/browser-scripts/mergedCore/mergedCore-5699720663.css._V192084966_.css" rel="stylesheet" type="text/css" />
+
+ <script src="/javascripts/prototype.js?1301671379" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1301671379" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1301671379" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1301671379" type="text/javascript"></script>
+<script src="/javascripts/application.js?1301671379" type="text/javascript"></script>
+ <script src="/javascripts/fckeditor/fckeditor.js?1301671379" type="text/javascript"></script>
+
+ <link rel="shortcut_icon" href="/images/favicon.ico?1301671379" />
+ <link rel="icon" href="/images/favicon.ico?1301671379" />
+</head>
+
+<body>
+
+       <script type="text/javascript">
+    window.AmazonPopoverImages = {
+        snake: 'https://images-na.ssl-images-amazon.com/images/G/01/javascripts/lib/popover/images/snake._V192571611_.gif',
+        btnClose: 'https://images-na.ssl-images-amazon.com/images/G/01/javascripts/lib/popover/images/btn_close._V192188154_.gif',
+        closeTan: 'https://images-na.ssl-images-amazon.com/images/G/01/nav2/images/close-tan-sm._V192185930_.gif',
+        closeTanDown: 'https://images-na.ssl-images-amazon.com/images/G/01/nav2/images/close-tan-sm-dn._V192185961_.gif',
+        loadingBar: 'https://images-na.ssl-images-amazon.com/images/G/01/javascripts/lib/popover/images/loading-bar-small._V192188123_.gif',
+        pixel: 'https://images-na.ssl-images-amazon.com/images/G/01/icons/blank-pixel._V192192429_.gif'
+    };
+    var container = document.createElement("DIV");
+    container.id = "ap_container";
+    if (document.body.childNodes.length) {
+        document.body.insertBefore(container, document.body.childNodes[0]);
+    } else {
+        document.body.appendChild(container);
+    }
+  </script>
+  <script src="https://images-na.ssl-images-amazon.com/images/G/01/browser-scripts/mergedCore/mergedCore-4093274263.js._V190605144_.js" type="text/javascript" />
+  <script type="text/javascript">
+    jQuery.noConflict();
+  </script>
+
+<!-- MTURK.COM HEADER -->
+
+<div id="toolbar-wrapper" class="sandbox">
+  <div id="toolbar">
+    <div id="toolbar-left">
+      <a href="http://www.mturk.com/">&larr; go to MTurk.com</a>
+    </div>
+    <div id="toolbar-right">
+  <a href="/begin_signin" class="button_sml">Create an Account</a>
+  Already have an account? Sign In: <a href="/begin_signin" id="lnkRequesterSignin">Requester</a>
+    </div>
+    <div id="toolbar-center">
+      <span class=”sandbox-title”>Mechanical Turk Developer Sandbox</span>
+      <p>This site is for test and development only. <a href="/developer/sandbox">Learn more &raquo;</a></p>
+    </div>
+  </div>
+</div>
+
+<div id="header">
+  <div id="logo">
+    <a href="/">Requester Home | Amazon Mechanical Turk</a>
+  </div>
+</div>
+
+<div id="page_body" class="container_main box-shadow">
+
+<div id="nav">
+<ul>
+<li id="home_tab" class="active"><a href="/">Home</a></li>
+<li id="developer_tab"><a href="/developer">Developer</a></li>
+<li id="help_tab"><a href="/help">Help</a></li>
+</ul>
+
+</div>
+<div id="sub-nav">
+  <ul>
+                            <li class="active"><a href="/">Overview</a></li>
+                                <li><a href="/tour">Tour</a></li>
+                                <li><a href="/case_studies">Case Studies</a></li>
+                                <li><a href="/applications">Applications</a></li>
+                                <li><a href="/solution_provider">Solution Providers</a></li>
+                    </ul>
+
+</div>
+<div id="alt-nav">
+</div>
+<div class="clear"></div>
+
+<!-- MESSAGING -->
+
+<div id="messaging">
+  <p class='flash' id='remote_message' style='display:none'></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="page_content" class="container_16">
+
+
+<div class="grid_16">
+  <h1 class="home">Work Distribution Made Easy</h1>
+</div>
+<div class="grid_7">
+  <h2 class="home">Mechanical Turk gives businesses and developers access to an on-demand, scalable workforce</h2>
+  <ul class="checkmark">
+    <li><strong>Flexibility:</strong> Scale your workforce up and down quickly</li>
+    <li><strong>Accuracy:</strong> Get high-quality, cost-effective results</li>
+    <li><strong>Price:</strong> Pay only when you are satisfied with the results</li>
+    <li><strong>Speed:</strong> Start receiving results in minutes</li>
+  </ul>
+
+  <ul>
+    <li class="button"><a href="begin_signin" class="account">Create an Account</a></li>
+    <li class="button"><a href="tour" class="tour">Take the Tour</a></li>
+  </ul>
+  <div class="clear"></div>
+  <p class="note push_signin"><a href="begin_signin">If you have an account, sign in now &raquo;</a></p>
+</div>
+<div class="grid_9">
+  <img src="images/graphic_home.png" width="520" height="260" alt="" />
+</div>
+<div class="clear"></div>
+<div class="grid_16 hr"> </div>
+<div class="clear"></div>
+<div class="grid_11">
+  <h2>Your business can use Mechanical Turk to:</h2>
+            <div class="grid_5 alpha">
+                <ul class="icon-list">
+                    <li class="clean">
+                        <h3><a href="tour/data_cleansing">Clean Your Data</a></h3>
+                        <ul>
+                            <li>Data Verification &amp; de-duplication</li>
+                            <li>Data entry &amp; collection</li>
+                            <li>Algorithm training</li>
+                            <a href="tour/data_cleansing" class="more">Learn more &raquo;</a>
+                        </ul>
+                    </li>
+                    <li class="moderate">
+                        <h3><a href="tour/content_creation_moderation">Create &amp; Moderate Content</a></h3>
+                        <ul>
+                            <li>Moderate photos &amp; content</li>
+                            <li>Content creation &amp; editing</li>
+                            <li>Transcription</li>
+                            <a href="tour/content_creation_moderation" class="more">Learn more &raquo;</a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid_5 omega suffix_1">
+                <ul class="icon-list">
+                    <li class="categorize">
+                        <h3><a href="tour/categorization">Categorize Items</a></h3>
+                        <ul>
+                            <li>Classification</li>
+                            <li>Sentiment analysis</li>
+                            <li>Tagging</li>
+                            <a href="tour/categorization" class="more">Learn more &raquo;</a>
+                        </ul>
+                    </li>
+                    <li class="optimize">
+                        <h3><a href="tour/business_feedback">Get Feedback</a></h3>
+                        <ul>
+                            <li>Test search relevancy</li>
+                            <li>Product usability testing</li>
+                            <li>Research</li>
+                            <a href="tour/business_feedback" class="more">Learn more &raquo;</a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="grid_11 hr alpha"></div>
+            <div class="grid_11 alpha">
+                <h3>Looking for an Application or Solution Provider?</h3>
+                <p>Mechanical Turk supports a robust ecosystem of companies that are built on top of the Mechanical Turk platform. <a href="applications">Applications</a> solve specific use cases, such as transcription or tagging. <a href="solution_provider">Solution Providers</a> develop custom services and solutions to fit your business needs.</p>
+            </div>
+            <div class="clear"></div>
+            <div class="grid_3 alpha top_space">
+                <h4>Featured Application:</h4>
+            </div>
+            <div class="grid_7 omega suffix_1 top_space">
+                <h4>Featured Solution Providers:</h4>
+            </div>
+            <div class="clear"></div>
+            <div class="grid_3 alpha">
+                <a href="applications/app/Tagasauris"><img src="images/feat_tagasauris.png" width="160" height="50" alt="" class="featured" /></a>
+            </div>
+            <div class="grid_3">
+                <a href="solution_provider/sp/Freedom_OSS"><img src="images/feat_freedom_oss.png" width="160" height="50" alt="" class="featured" /></a>
+            </div>
+            <div class="grid_3 omega suffix_2">
+                <a href="solution_provider/sp/Statera"><img src="images/feat_statera.png" width="160" height="50" alt="" class="featured" /></a>
+            </div>
+            <div class="clear"></div>
+            <div class="grid_3 alpha">
+                <a href="applications" class="more">Explore Applications &raquo;</a>
+            </div>
+            <div class="grid_7 omega">
+                <a href="solution_provider" class="more">Explore Solution Providers &raquo;</a>
+            </div>
+        </div>
+        <div class="grid_5">
+            <h3>What Our Customers Say</h3>
+ <p class="quote">Mechanical Turk makes the impossible possible.<br />
+            <span class="credit"><strong>Joel Simpson</strong><br />
+            Principal, Cloud, Open Source and Emerging Technologies practice, <a href="case_studies/cs/statera">Statera</a></span></p>
+ <p class="quote">Overall, we estimate saving 50% over other outsourcing methods.<br />
+            <span class="credit"><strong>George Grey</strong><br />
+            CEO, <a href="case_studies/cs/snapmylife">SnapMyLife</a></span></p>
+            <a href="case_studies" class="more">Explore Case Studies &raquo;</a>
+            <div class="ad_space"><a href="http://mechanicalturk.typepad.com" target="_blank"><img src="images/placeholder_adspace.png" width="280" height="140" alt="" /></a></div>
+</div>
+<div class="clear"></div>
+
+<div class="clear"></div>
+
+
+</div> <!-- end page_content -->
+<div class="clear"></div>
+
+</div> <!-- end page_body -->
+
+<div class="clear"></div>
+
+<!-- POPOVER CONTENT -->
+<script type="text/javascript">
+  function bindPopovers() {
+    
+  }
+  amznJQ.available('popover', bindPopovers);
+</script>
+
+<!-- MTURK.COM FOOTER -->
+
+
+
+
+<div id="footer">
+  <div id="footer-left">
+    <ul>
+      <li class="first"><a href="/help">Help</a></li>
+      <li><a href="/contactus">Contact Us</a></li>
+      <li><a href="/policies">Policies</a></li>
+      <li><a href="/press_inquiries">Press Inquiries</a></li>
+      <li><a href="http://mechanicalturk.typepad.com/" target="_blank">Blog</a></li>
+    </ul>
+    <ul>
+      <li class="first"><a href="http://www.mturk.com/">MTurk.com</a></li>
+      <li><a href="/">Requesters</a></li>
+      <li><a href="https://www.mturk.com/mturk/welcome?variant=worker">Workers</a></li>
+      <li><a href="/developer">Developers</a></li>
+    </ul>
+  </div>
+  <div id="footer-right">
+    <ul>
+      <li><a href="http://twitter.com/amazonmturk" target="_blank"><img src="/images/icon_twitter.png" width="13" height="12" border="0" alt="Logo - Twitter" /> Follow Us on Twitter</a></li>
+      <li><a href="http://facebook.com/amazonmturk" target="_blank"><img src="/images/icon_facebook.png" width="12" height="12" border="0" alt="Logo - Facebook" /> Become a Fan on Facebook</a></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+  <div id="copyright">
+    &copy;2005-2011 Amazon.com, Inc. or its Affiliates. All rights reserved. <br />
+    <a href="http://www.amazon.com"><img alt="Logo - Amazon.com" border="0" height="21" src="https://images-na.ssl-images-amazon.com/images/G/01/webservices/mechanical-turk/an_amazon_company-medium.gif" width="160" /></a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,4449 @@
+
+
+											
+
+
+
+			
+					
+					
+		
+
+
+
+         
+
+
+
+
+
+                
+    
+    
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html class=" ext-strict" xmlns="http://www.w3.org/1999/xhtml"> 
+<head>  
+    
+
+																																							
+
+
+
+   
+
+
+    
+         
+    
+        
+    
+
+    
+    
+    
+    
+        
+        
+    
+
+     
+<script type="text/javascript" language="javascript">
+        
+        var ads = new Array();
+        
+        // this is called from the COM_ad_load  script which is included just before the /body tag
+        function writeAds() 
+        {
+         
+            for (var i = 0; i < ads.length; i++)
+    	    {   
+    	        var ad 		 = ads[i];    
+		var div 	 = ad.div;
+		var position 	 = ad.position;
+		var width 	 = ad.width;
+		var height 	 = ad.height;
+		var site 	 = ad.site;
+		var id		 = ad.id;
+		var zone	 = ad.zone;
+		var tmpDiv  	 = 'tmp_' + div;
+		var frame   	 = 'frame_' + div;
+		var isrc 	 = '"/templates/common_ad_iframe.html?timer=0&position=' + position 
+						+ '&height=' + height 
+						+ '&width=' + width
+						+ '&site=' + site
+						+ '&id=' + id
+						+ '&zone=' + zone    
+					        +  '"';
+		var onloadFn = '';
+		if(position.toLowerCase() != "t2")
+		{
+			onloadFn = 'onload="squashFrame(this);"';
+		}
+		
+		document.write('<div id="'+tmpDiv+'">'+
+		    '<iframe id="'+frame+'" name="'+frame+'" '+
+		    onloadFn +
+		    'src='+ isrc +
+		    'width="'+ width +'" height="'+height+'" noresize scrolling="no" '+
+		    'frameborder="0" marginheight="0" marginwidth="0" '+
+		    'allowTransparency="true" style="background:transparent"></iframe></div>');
+		
+		document.getElementById(div).appendChild(document.getElementById(tmpDiv));
+            }
+        }
+        
+        function squashFrame(frame) {
+    		var theIFrame = frame.contentWindow || frame.contentDocument;
+    		if (theIFrame.document) {
+        		theIFrame = theIFrame.document;
+    		}
+    		var content = theIFrame.documentElement.innerHTML;
+    		if (content.indexOf("817-grey.gif") != -1) {
+        		frame.style.height = "1px";
+    		}
+	}
+       	
+       	// extracts the id parameter from the iframe src query string params,
+       	// replaces it with a new contentID value, and reloads the iframe with 
+       	// the updated src
+       	function reloadAd(frameID, contentID)
+       	{
+       		var frame = document.getElementById(frameID);
+       		if (frame == undefined) return;
+       		var d    = frame.src;
+       		if (d == undefined) return;
+		var pos1  = d.indexOf("&video_id=");
+		
+		if (pos1 == -1)
+		{
+		    pos1 = d.indexOf("&id=");
+		    pos2 = d.indexOf('&', ++pos1);
+		    var s1 = d.substr(0, --pos2);
+		    var s2 = d.substr(pos2);
+		}
+		else
+		{
+		    var pos2 = d.indexOf('&', ++pos1);
+		    var s1 = d.substr(0, --pos1);
+		    var s2 = d.substr(pos2);
+		}
+		
+		var newSrc = s1 + '&video_id=' + contentID + s2;
+		document.getElementById(frameID).src = newSrc;
+       	}
+        
+        <!--
+        var accipiterAds = new Array();
+        var AD_SOURCE = "site=gt/area=_technology_MIT-Team-Wins-DARPA-Network-Challenge.html";
+        
+        // url: http://www.govtech.com/technology/MIT-Team-Wins-DARPA-Network-Challenge.html
+        
+        function hideAdZone(elem)
+        {
+             var ad_content = elem.innerHTML;
+             if (ad_content.indexOf('-grey.gif') != -1)
+             {
+             	elem.style.width = 0;
+              	elem.style.height = 0;
+              	elem.style.display = 'none';
+             }
+        
+        }
+                
+                
+                
+        function readCookie(c_name)
+	{
+	    if (document.cookie.length>0)
+	    {
+	        c_start=document.cookie.indexOf(c_name + "=");
+	        if (c_start!=-1)
+	        {
+	            c_start=c_start + c_name.length+1;
+	            c_end=document.cookie.indexOf(";",c_start);
+	            if (c_end==-1) 
+	            {
+	               c_end=document.cookie.length;
+	            }
+	            return unescape(document.cookie.substring(c_start,c_end));
+	        }
+	     }
+	     return "";
+	}
+        
+        
+        function setRequestorIP()
+        {
+    	    var randomnumber=Math.floor(Math.random()*1000000);
+    	    document.write('<scr'+'ipt language="JavaScript" type="text/javascript" src="http://www.govtech.com/templates/common_set_ip.js?c=n&ran=' + randomnumber + ' "></scr' + 'ipt>');
+	}
+	
+	var requestorIP = readCookie("requestorIP");
+	if(requestorIP == "")
+	{ 
+	    setRequestorIP(); 
+        }
+        //alert(requestorIP); //debug
+        //-->
+</script>
+    
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+   
+            
+            	        
+    <title>MIT Team Wins DARPA Network Challenge</title>
+    
+        
+                <meta content="Ten-day experiment in networking ends in only nine hours." name="description">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/govtech/topics/green"> 
+        <link href="http://www.govtech.com/includes/gt.css" rel="stylesheet" type="text/css"  >    
+        <link href="http://www.govtech.com/includes/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css"  >    
+    <!--[if lt IE 7]><link rel="stylesheet" href="http://www.govtech.com/includes/gt_ie.css" type="text/css" media="screen, projection"><![endif]-->   
+    <link rel="icon" href="http://media2.govtech.com/designimages/gt_favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://media2.govtech.com/designimages/gt_favicon.ico" type="image/x-icon">
+    
+
+    <!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+
+
+    <script type="text/javascript" src="http://www.govtech.com/includes/gt_common.js"></script>
+    <script type="text/javascript" src="http://cdn.topsy.com/topsy.js?init=topsyWidgetCreator"></script>    
+    <script type="text/javascript" src="http://www.govtech.com/includes/common_interstitial.js"></script>
+    <!--[if IE 6]><script type="text/javascript" src="http://www.govtech.com/includes/gov_png_fix.js"></script><![endif]-->     
+            <script type="text/javascript">
+            var content_id = 99264469;
+        </script>
+            
+        	<meta name="google-site-verification" content="YGeeEDFGk0P1HO8tlyROBmRbQvw1H3jzQqXhn0Q55a8" />
+    </head> 
+ 
+<body class="  ext-gecko ext-gecko3"> 
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-732206-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+function trackAnalytics(link)
+{
+    pageTracker._trackPageview(link);
+}
+</script>
+
+<script language="Javascript" >var js="0.0";</script><script language="Javascript1.0" >js="1.0";</script><script language="Javascript1.1">js="1.1";</script><script language="Javascript1.2" >js="1.2";</script><script language="Javascript1.3">js="1.3";</script><script language="Javascript1.4" >js="1.4";</script><script language="Javascript1.5">js="1.5";</script><script language="Javascript1.6">js="1.6";</script><script language="Javascript1.7">js="1.7";</script><script language="Javascript1.8">js="1.8";</script><script language="Javascript1.9">js="1.9";</script><script language="javascript1.1" type="text/javascript"> 
+<!-- 
+var bb=new Image();var _ti=910;var _q="";var na=(navigator.appName=="Netscape");var ns=(navigator.appName.substring(0,9)=="Microsoft");var _qDate=new Date();var _r=(document.referrer.indexOf(getdomain(location))>-1?"":document.referrer);_q+="&5="+parseInt(_qDate.getTimezoneOffset());_q+="&35="+parseInt(_qDate.toString().indexOf("aylight")>-1?1:0);_q+="&6=99264469";_q+="&7=667639";_q+="&8="+encodeURIComponent(document.location);_q+="&9="+encodeURIComponent(_r);_q+="&10="+encodeURIComponent(document.title);_q+="&11="+encodeURIComponent(navigator.userAgent);_q+="&12="+encodeURIComponent((na?navigator.language:navigator.userLanguage));_q+="&13="+((navigator.javaEnabled()?'1':'0'));_q+="&14="+encodeURIComponent(js);if(document.cookie.indexOf("cc")==-1)document.cookie="cc=t;";_q+="&15="+((document.cookie.indexOf("cc")==-1)?"0":"1");_q+="&16="+encodeURIComponent((screen.width+'x'+screen.height));_q+="&17="+encodeURIComponent(((ns)?screen.colorDepth:screen.pixelDepth));_q+="&18="+encodeURIComponent(Math.random());_q+="&19="+_ti;bb.src="http://s.clickability.com/s?"+_q;
+function setonclicks(a,b){var i=0;var retval=true;while(document.links[i]!=a){i++;}if(b.li[i])retval=b.li[i].oldonclick();bye(a);return retval;}
+function newonld(){if(hasonload)oldonld();lnks=new Object();var sze=document.links.length;lnks.li=new Array(sze);for (var i=0; i<sze; i++){if(document.links[i].onclick){lnks.li[i]=document.links[i];lnks.li[i].oldonclick=document.links[i].onclick;}eval("document.links[i].onclick=function(){return setonclicks(this,lnks);}");}}function bye(a){if(a.href.toLowerCase().indexOf('http')!=0)return true;if(getdomain(location)==getdomain(a))return true;if(a.href.toLowerCase().indexOf('http')!=0)return true;var _qc="http://s.clickability.com/s?19=912";_qc+="&6=99264469";_qc+="&7=667639";_qc+="&18="+encodeURIComponent(Math.random());_qc+="&100="+a.href;_qc+="&101="+encodeURIComponent(a.text);var cc=new Image();if(na){cc.src=_qc;pc(100);}else cc.src=_qc;return true;}function pc(a){d = new Date(); while (1){m =new Date(); df = m-d;if( df > a ) {break;}}}function getdomain(a){var i=a.host.indexOf(":");return (i>=0)?a.host.substring(0,i):a.host;}if(self['setupalready']){var dosetup = false;alert('There are two $imware.tracker calls on this page. Please alert Client Services');}else{var dosetup = true;var hasonload=false;}if(dosetup && ((window.screen)||((new Array()).toSource)||((new Array()).shift&&ns))&&(navigator.userAgent.indexOf('Mac')<0)){if(window.onload){oldonld=window.onload;hasonload=true;}window.onload=newonld;var setupalready = true;}//-->
+</script><noscript>
+<img width="1" height="1" src="http://s.clickability.com/s?19=990&14=0&6=99264469&7=667639&18=0.024140863369281784">
+</noscript>
+
+<div id="global-container"> 
+<!-- INTERSTITIAL AD -->
+	    	    
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_I1"   style="width:=1px; height=:1px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "I1"; 
+	var width = "1";
+	var height = "1";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_I1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+    	    
+<!--- ADS TOP --->        
+	<div id="ads-top" style="z-index: 300;">  
+		<style type="text/css"> 
+	            #small, #large {position: absolute; right:0; top:0;}
+	            #small {z-index: 121;}
+	            #large {z-index: 120;}
+	        </style> 
+        
+	        	    	    
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_T1"   style="width:=500px; height=:500px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "T1"; 
+	var width = "500";
+	var height = "500";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_T1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+	    	                
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_T2" class="f-left mr-10"   style="width:=728px; height=:90px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "T2"; 
+	var width = "728";
+	var height = "90";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+ 
+                                
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_T3"   style="width:=120px; height=:90px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "T3"; 
+	var width = "120";
+	var height = "90";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+  
+	</div> 
+<!--- END - ADS TOP --->     
+    
+<!--- SMALL GOVTECH --->            	   
+    <a href="http://www.govtech.com" style="float: right;"> 
+        <img src="http://media2.govtech.com/designimages/gt_logo_sm.gif" alt="Government Technology" style="height: 14px; margin:0px!important; padding:0px!important;"> 
+    </a> 
+<!--- END - SMALL GOVTECH ---> 
+ 
+ 
+        <!--- TOP NAV ---> 
+                <div id="top-nav" class="spcr"> 
+            <ul>            
+                <li ><a href="/">Home</a></li> 
+                <li ><a href="/topics">News Topics</a></li>            
+                <li ><a href="/jobs">Jobs</a></li> 
+                <li><a href="http://www.digitalcommunities.com">Digital Communities</a></li> 
+                <li ><a href="/videos">Video</a></li> 
+                <li ><a href="http://events.govtech.com/events">Events</a></li> 
+                <li ><a href="/webinars">Webinars</a></li> 
+                <li ><a href="/grants">Grants</a></li> 
+                <li ><a href="/magazines">Magazines</a></li> 
+                <li><a href="http://www.erepublic.com/advertise/govtech">Advertise</a></li> 
+            </ul> 
+        </div> 
+        
+    <!---END - TOP NAV ---> 
+	<div class="masthead-top"></div> 
+<!--- MASTHEAD ---> 
+    	<div id="masthead">
+	         <a href="/" onclick="trackAnalytics('homepage_logo_big');" class="f-left mr-10"> 
+        <img class="ml-10" src="http://media2.govtech.com/designimages/gt_logo.gif" alt="" align="bottom"></a> 
+<!--- SEARCH / LOGIN ---> 
+        <div id="mygt-login">        
+            <form action="/search" method="get" id="search_form">                 
+                <input name="k" id="search-field" class="search-field color3" value=" Search" type="text"> 
+                <input id="top-submit" src="http://media2.govtech.com/designimages/gt_go.gif" alt="Search" type="image"> 
+            </form> 
+            <br> 
+        </div> 
+<!--- END - SEARCH / LOGIN ---> 
+    </div> 
+<!--- END - MASTHEAD  ---> 
+ 
+<div class="rounded-bottom-980"></div> 
+
+<div class="rounded-top-980 mt-10 hd" id="body-round-top"> </div>
+<div id="content-container"> <!-- the end tag is in gt_foot -->
+
+
+
+
+
+
+    	    				    	    																																																																																					
+
+
+
+
+	                                
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+  
+
+
+
+
+    	    																																					
+
+
+
+
+			
+					
+					
+					
+		
+
+
+
+<!-- Left Column-->
+<div id="l-col" class="w-170 f-left">
+    
+
+				
+<div class="nav-left">
+    <div class="nav-left-top-bg"></div>
+    <ul>                    
+        <li><span><a href="http://www.govtech.com/news" >News Topics</a></span></li>
+                                                                                                                        	        <li><a href="http://www.govtech.com/e-government">E-Government</a></li>            
+                                                    	        <li><a href="http://www.govtech.com/technology">Emerging and Sustainable Technology</a></li>            
+                                                                                                                	        <li><a href="http://www.govtech.com/health">Health and Community Services</a></li>            
+                                                    	        <li><a href="http://www.govtech.com/policy-management">IT Policy/Mgmt/Enterprise Tech</a></li>            
+                                                    	        <li><a href="http://www.govtech.com/public-safety">Justice and Public Safety</a></li>            
+                                                                                                                                                                            	        <li><a href="http://www.govtech.com/products">Products</a></li>            
+                                                                                                                                                                                                                                                            	        <li><a href="http://www.govtech.com/wireless">Wireless/Mobile/Broadband</a></li>            
+                            <li><a href="http://www.govtech.com/topics">View All News Topics...</a></li>
+
+        <li><span>GT Network of Sites:</span></li>
+        <li><a href="http://www.digitalcommunities.com">Digital Communities</a></li>  
+        <li><a href="http://www.emergencymgmt.com">Emergency Management</a></li> 
+        <li><a href="http://www.govtech.com/pcio">Public CIO</a></li> 
+        
+        <li>
+            <a href="http://www.govtech.com/videos"><img src="http://media2.govtech.com/designimages/gt_video-icon.png" class="icon"/> Videos</a> 
+        </li>
+        
+        <li class="last pb-10"><a href="http://www.govtech.com/newsletters">Newsletters</a></li> 
+           
+        <li class="interest last">
+
+            <!--- MAGAZINE ISSUE --->
+            <span>Magazine</span>
+            
+    	    				    	    																													
+
+
+
+
+                        
+            
+
+
+    
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                        <a href="http://www.govtech.com/magazines/gt/Government-Technology-April-2011.html">View the Current Issue</a>
+            <a href="http://www.govtech.com/magazines/gt/Government-Technology-April-2011.html"><img src="http://media2.govtech.com/images/GT_Mag_Apr11cvr.jpg" alt="" class="" 
+                style="background:url(http://media2.govtech.com/designimages/gt_magshadow.jpg); padding:0 7px 8px 0; margin:10px 10px 0px 12px;" /></a>
+                                                                    <center><a href="http://www.govtech.com/magazines/gt/subscribe/">Subscribe</a></center>
+            <br />
+            
+            <!--- NEWSLETTER --->
+            
+                        
+             <div id="NewsletterBox">
+                    <form id="enews_form_Leftnav" action="http://now.eloqua.com/e/f2.aspx" method="post" class="pl-10" onSubmit="return validateEmail('enews_form_Leftnav');">
+                        <h4><img src="http://media2.govtech.com/designimages/gt_smallarrowblue.gif" class="icon"/>Daily Newsletter</h4>
+                        <input type="hidden" value="GTNewslettersShortLeftNav" name="elqFormName" />
+                        <input type="hidden" value="1222"  name="elqSiteID" />
+                        <input class="search-field color3" name="C_EmailAddress" id="C_EmailAddress" type="text" style="padding-left:3px;" value="Enter Email Address">
+                        <input id="nav-signup" alt="Signup" src="http://media2.govtech.com/designimages/gt_go.gif" type="image" onClick="this.submit()" />
+                        
+                        <a href="http://media2.govtech.com/documents/Govtech-Today-sample.htm" target="_blank" style="line-height: 20px; margin-left:1px;">view sample</a>
+                    </form>
+             </div>            
+                          
+        </li>
+        <li><span><a href="http://www.govtech.com/library">Industry Perspectives</a></span></li>
+        <li><a href="http://www.govtech.com/library/case-studies">Case Studies</a></li>
+        <li><a href="http://www.govtech.com/library/papers">White Papers</a></li>
+        <li><a href="http://www.govtech.com/library/solutions">Contributed Solutions</a></li>       
+        <li><a href="http://govtech.firstlightera.com/" target="_blank">Partner Sites</a></li>
+    </ul>  
+	<div class="nav-left-bottom-bg" style="border-left: 1px solid #cccccc; width: 171px; height: 30px;"></div>      
+</div>
+
+
+
+
+
+			
+					
+		
+
+
+
+
+    
+               
+    	    				    	    																																																									    
+      
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_L1" class="admargin"   style="width:=160px; height=:600px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "L1"; 
+	var width = "160";
+	var height = "600";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_L1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_L2" class="admargin"   style="width:=160px; height=:120px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "L2"; 
+	var width = "160";
+	var height = "120";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_L2');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_L3" class="admargin"   style="width:=160px; height=:90px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "L3"; 
+	var width = "160";
+	var height = "90";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_L3');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_L4" class="admargin"   style="width:=160px; height=:600px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "L4"; 
+	var width = "160";
+	var height = "600";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_L4');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                       
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+ 
+
+</div>
+
+<!-- CENTER COLUMN -->
+<div id="center-col" class="base w-480 ml-10">
+            
+        
+            <h1>MIT Team Wins DARPA Network Challenge </h1>
+    
+    
+    <div class="article-tools base mb-10">
+                <div class="related-head">You May Also Like</div>
+        <ul class="related-list">
+                                                                                                                                                                                                  <li class="dk"><a href="http://www.digitalcommunities.com/articles/DARPA-to-Award-Funding-for-Projects.html">DARPA to Award Funding for Projects Increasing High-Tech Education</a></li>
+                                                                                                                                                                              <li class="dk"><a href="http://www.govtech.com/technology/DARPA-Announces-40000-Network-Challenge.html">DARPA Announces $40,000 Network Challenge</a></li>
+                                    </ul>
+
+        <div class='clear'></div>
+        <br/>
+        
+        
+    	    								
+                                            
+
+
+
+			
+					
+					
+		
+
+
+
+                                <script language="JavaScript" type="text/javascript">
+                var era_rc = {
+                	Width: 125, 
+                	Height: 0,
+                	StyleId : 1, 
+                	MaxRelatedItems : 3,
+                	UseIFrame: 'false',
+                	ERADomain: 'govtech.firstlightera.com', 
+                	OverrideCss: 'http://ext.govtech.com/common/themes/2008/gt.css'
+                };
+        </script>
+        
+        <link rel="stylesheet" href="http://govtech.firstlightera.com/ERA/Custom/GovernmentTechnology/Css/altHtmlRelatedLinks.css" type="text/css"/>   
+        <script src="http://govtech.firstlightera.com/era/era_rl.aspx" language="JavaScript" type="text/javascript"></script>
+       
+        <div class='clear'></div>
+        <div id="sponsor-block" >          	       
+            <div id="ad_S1" > 
+                                
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_S1"   style="width:=120px; height=:90px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "S1"; 
+	var width = "120";
+	var height = "90";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_S1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+   
+            </div>
+        </div>
+    </div>              
+
+            
+    <p><i>December 8, 2009
+                
+    	    				    	    																																											
+
+
+    	    																																																			
+
+
+            
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                                
+                                                                                            
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                                                            
+
+
+
+			
+					
+					
+					
+					
+					
+		
+
+
+                                                                                
+
+
+
+			
+					
+					
+					
+					
+		
+
+        By <a href='http://www.govtech.com/authors/98567509.html'>News Report</a>
+    </i>
+    </p>
+    
+    <div id="pageContent" class="bullets">
+        <p>The Defense Advanced Research Projects Agency (DARPA) declared the Massachusetts Institute of Technology (MIT) the winner in a challenge that began -- and ended -- on Saturday Dec. 5.</p>
+<p>The <a href="http://www.govtech.com/gt/734299">DARPA Network Challenge</a> was designed to "explore the roles the Internet and social networking play in the timely communication, wide-area team-building, and urgent mobilization required to solve broad-scope, time-critical problems." To do so, the agency hid 10, 8-foot red balloons in various locations around the country. Any person or organization that, between Dec. 5 and 14, submitted to DARPA the correct longitude and latitude of each balloon's location would win $40,000.</p>
+<p>The event kicked off at 10:00 a.m. ET on Dec. 5, and a mere nine hours later the MIT Red Balloon Challenge Team had successfully located all 10 balloons. Despite the brevity of the experiment, it seems to have effectively examined the power of networking, as the MIT team recruited people from across the nation the find and deliver the coordinates.</p>
+<p>By crafting an efficient and monetary-based network, the MIT team was able to quickly track down each coordinate. The institute said it would award $2,000 to the first person to submit the correct coordinates for a balloon. The institute would also award $1,000 to the person who invited the successful seeker to the competition, as well as $500 to the person who invited the inviter.</p>
+<p>"The challenge has captured the imagination of people around the world, is rich with scientific intrigue, and, we hope, is part of a growing 'renaissance of wonder' throughout the nation," said DARPA Director Regina E. Dugan in a press release. "DARPA salutes the MIT team for successfully completing this complex task less than nine hours after balloon launch."</p>
+<br/><a href='http://www.digitalcommunities.com/articles/MIT-Team-Wins-DARPA-Network-Challenge.html' target='_blank'>View Full Story</a>
+        
+            </div>
+    
+    	    <br clear="all" />
+	    <div class="attribution-line"><p><i>You may use or reference this story with attribution and a link to<br /> http://www.govtech.com/technology/MIT-Team-Wins-DARPA-Network-Challenge.html</i></p></div>
+        
+    <br clear="all" />
+        
+    	    																														
+
+
+<div id="Shareicons">
+    <div style="float:left">
+    	<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.govtech.com/technology/MIT-Team-Wins-DARPA-Network-Challenge.html&amp;layout=button_count&amp;show_faces=true&amp;width=75&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:75px; height:21px; margin-top:0;" allowTransparency="true"></iframe>
+    </div>
+                            <div class="topsy_widget_data" style="float: left;"><!--
+        {
+            "url": "http://www.govtech.com/technology/MIT-Team-Wins-DARPA-Network-Challenge.html",
+            "title": "MIT Team Wins DARPA Network Challenge",
+            "style": "small",
+            "theme": "blue",
+            "nick": "govtechnews"
+        }
+    --></div>
+
+    <script language="javascript1.2">var trkcid=99264469;var partnerID=667639; var _hb=1;</script><script language="javascript1.2" src="http://www.govtech.com/g/g/button/button_1.js"></script>
+    <script src="http://stage.www.governing.com/g/button/button_1.js" language="javascript1.2"></script>
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style">
+        <a class="addthis_button_email"></a>
+        
+
+ 
+ 
+        <A style="float: left;" HREF="#" ONCLICK='window.open("/templates/gov_print_article?id=99264469", "print","width=600,height=600,scrollbars=1");' onMouseOver="return(PTMouseOver());"
+        onMouseOut="return(PTMouseOut());"><img src="http://media2.govtech.com/designimages/gov_ico_print.gif" title="Print"/></a>       
+        <a class="addthis_button_twitter"></a>
+        <a class="addthis_button_delicious"></a>
+        <a class="addthis_button_google"></a>
+        <a class="addthis_button_linkedin"></a>      
+        <span class="addthis_separator">|</span>
+    <a href="http://addthis.com/bookmark.php?v=250&amp;username=govtech" class="addthis_button_expanded">More</a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=govtech"></script>
+    <!-- AddThis Button END -->
+</div>
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+    <div class='clear'></div>
+
+            
+    	    																																					
+                        
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                                
+                                                                                                        
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                                        <script type="text/javascript">
+    var disable_flyin = false;
+    var slide_in = false;
+    var slide_out = false;
+    $(document).ready(function() {
+        $("#flyin").css("left", $(window).width() + $("#flyin").outerWidth(true))
+        $("#flyin").show();
+        $("#flyin").css("height", $("#flyin").css("height"))
+        $("#flyin").css("top", $(window).height() - $("#flyin").outerHeight(true))
+  
+        $(window).scroll(function() {
+            if (disable_flyin == true)
+            {
+                return false;
+            }
+            var contentEl = "#pageContent";
+            el_bottom = $(contentEl).outerHeight(true) + $(contentEl).offset().top;
+            portal_bottom = $(window).scrollTop() + $(window).height()
+
+	    if (el_bottom < portal_bottom)
+            {
+                if(slide_in == false)
+		{
+		    slide_in = true;
+  		    $("#flyin").show().animate({
+                        left: $(window).width() - $("#flyin").outerWidth(true),
+                        queue: false
+                    }, 1000, function() { slide_in = false; });
+		}
+            }
+            else
+            {
+                if(slide_out == false)
+		{
+		    slide_out = true;
+  		    $("#flyin").animate({
+                        left: $(window).width() + $("#flyin").outerWidth(true),
+                        queue: false
+                    }, 1000, function() { slide_out = false; });
+		}
+            }
+        });
+
+        $(window).bind("resize", function(e) {
+            $("#flyin").css("left", $(window).width() + $("#flyin").outerWidth(true))
+            $("#flyin").css("top", $(window).height() - $("#flyin").outerHeight(true))
+        });
+    });
+    </script>
+    <div id="flyin" class="flyin">
+    	<div class="flyinhead">You May Also Like</div>
+        <div class="flyincontent">
+                                           	<h3 class="title"><a href="http://www.govtech.com/education/DARPA-to-Award-Funding-for-Projects.html?utm_source=related&utm_medium=direct&utm_campaign=DARPA-to-Award-Funding-for-Projects">DARPA to Award Funding for Projects Increasing High-Tech Education</a></h3>
+        	<p class="content"><a href="http://www.govtech.com/education/DARPA-to-Award-Funding-for-Projects.html?utm_source=related&utm_medium=direct&utm_campaign=DARPA-to-Award-Funding-for-Projects">Read More »</a></p>
+        </div>
+        <button type="button" onClick="$('#flyin').hide();disable_flyin=true;">Close</button>
+        <br style="clear: both;">
+    </div>
+
+
+
+
+			
+					
+					
+					
+		
+
+
+
+     
+    
+    	    								
+
+<style type="text/css">
+.submission {
+	display: none;
+}
+</style>
+ 
+<script type="text/javascript">
+var Clickability = Clickability || {};
+Clickability.Comment = {
+	Private : {
+		kP : 0,
+		aT : 0,
+		myInterval : null,
+		xPos : -1,
+		yPos : -1,
+		firstX : -1,
+		firstY : -1,
+		intervals : 0,
+		req : null,
+		cid :  99264469 ,
+		did :  667639 ,
+		cP :  30 ,
+		cD : "2010-07-26 13:42:12.0",
+		d : 0,
+		mT : 0
+	},
+	name : null,
+	website : null,
+	title : null,
+	comment : null,
+	email : null,
+	rating : null,
+	ratingType : null,
+	commentType : null,
+	flagged : false,
+	isAuthor : false,
+	error : null,
+	status : null,
+	level : 0,
+	parentID : 0,
+	threadID : 0,
+	id : 0,
+	extID : null
+};
+Clickability.Comment.Private.myInterval = window.setInterval(timedMousePos,250);
+
+var name = null;
+var website = null;
+var title = null;
+var comment = null;
+var email = null;
+var rating = null;
+var ratingType = null;
+var commentType = null;
+var flagged = false;
+var isAuthor = false;
+var error = null;
+var status = null;
+
+var kP = 0;
+var aT = 0;
+var myInterval = Clickability.Comment.Private.myInterval;
+var xPos = -1;
+var yPos = -1;
+var firstX = -1;
+var firstY = -1;
+var intervals = 0;
+var req = null;
+var cid =  99264469 ;
+var did =  667639 ;
+var cP =  30 ;
+var cD = "2010-07-26 13:42:12.0";
+var d = 0;
+var mT = 0;
+
+document.onkeypress = lK;
+window.onload = rAT;
+
+function checkField(field) {
+	
+	var button = document.getElementById("btSubmit");
+	
+	if(field.value.length > 0) {
+		CM_btnEnable(button);
+	}
+	else {
+		CM_btnDisable(button);
+	}
+}
+
+function lK() {
+	Clickability.Comment.Private.kP++;
+}
+
+function rAT() {
+	Clickability.Comment.Private.aT = new Date();
+}
+
+function CM_btnDisable (which) {
+	which.disabled = true;
+	if (document.all){
+		which.filters.alpha.opacity = 25;
+	}else {
+		which.style.MozOpacity = 0.25;
+	}	
+	which.style.cursor = "default";
+}
+
+function CM_btnEnable (which) {
+	which.disabled = false;
+	if (document.all){
+		which.filters.alpha.opacity = 100;
+		which.style.cursor = "hand";
+	}else {
+		which.style.MozOpacity = 1;
+		which.style.cursor = "pointer";
+	}
+}
+
+
+function submitForm(formObj) {
+
+    if(formObj.action == ""){
+    	formObj.action = "/c";
+    }
+	addFieldsToForm(formObj);
+    formObj.submit();
+}
+
+function addFieldsToForm(formObj, redirect) {
+	var mTField = document.createElement('input');
+	var dField = document.createElement('input');
+	var kPField = document.createElement('input');
+  	var cidField = document.createElement('input');
+  	var didField = document.createElement('input');
+  	
+  	
+	mTField.setAttribute('name','mT');
+	mTField.setAttribute('type', 'hidden');
+  	  
+	dField.setAttribute('name', 'd');
+	dField.setAttribute('type', 'hidden');
+  	  
+	kPField.setAttribute('name', 'kP');
+	kPField.setAttribute('type', 'hidden');
+  	
+	cidField.setAttribute('name', 'cid');
+	cidField.setAttribute('type', 'hidden');
+  	
+  	didField.setAttribute('name', 'did');
+  	didField.setAttribute('type', 'hidden');	
+  	
+  	if(redirect != null) {
+  		var pathField = document.createElement('input');
+  		pathField.setAttribute('name', 'path');
+  		pathField.setAttribute('type', 'hidden');
+  		pathField.value = redirect;
+  		formObj.appendChild(pathField);
+  	}
+  	  
+	mTField.value = Clickability.Comment.Private.mT;
+	dField.value = Clickability.Comment.Private.d;
+	kPField.value = Clickability.Comment.Private.kP;
+	cidField.value = Clickability.Comment.Private.cid;
+	didField.value = Clickability.Comment.Private.did;
+  		
+	formObj.appendChild(dField);
+	formObj.appendChild(kPField);
+	formObj.appendChild(mTField);
+	formObj.appendChild(cidField);
+	formObj.appendChild(didField);
+}
+
+function getMousePos(p) {
+	if (!p) var p = window.event;
+	if (p.pageX || p.pageY) {
+		Clickability.Comment.Private.xPos = p.pageX;
+		Clickability.Comment.Private.yPos = p.pageY;
+	} else if (p.clientX || p.clientY) {
+		Clickability.Comment.Private.xPos = p.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+		Clickability.Comment.Private.yPos = p.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+	}
+}
+
+function timedMousePos() {
+	document.onmousemove = getMousePos;
+	if (Clickability.Comment.Private.xPos >= 0 && Clickability.Comment.Private.yPos >= 0) {
+	var newX = Clickability.Comment.Private.xPos;
+	var newY = Clickability.Comment.Private.yPos;
+	Clickability.Comment.Private.intervals++;
+	}
+	if (Clickability.Comment.Private.intervals == 1) {
+		Clickability.Comment.Private.firstX = Clickability.Comment.Private.xPos;
+		Clickability.Comment.Private.firstY = Clickability.Comment.Private.yPos;
+	} else if (Clickability.Comment.Private.intervals == 2) {
+		clearInterval(Clickability.Comment.Private.myInterval);
+		calcDistance(Clickability.Comment.Private.firstX,Clickability.Comment.Private.firstY,newX,newY);
+	}
+}
+
+function calcDistance(aX,aY,bX,bY) {
+	Clickability.Comment.Private.mT = Math.round(Math.sqrt(Math.pow(aX-bX,2)+Math.pow(aY-bY,2)));
+}
+
+function getXmlRequestObject() {
+	if(Clickability.Comment.Private.req == null){
+		if(window.XMLHttpRequest){
+			Clickability.Comment.Private.req = new XMLHttpRequest();
+		}else if(window.ActiveXObject){
+			try{
+				Clickability.Comment.Private.req = new ActiveXObject("Msxml2.XMLHTTP");
+			}catch(e){
+				try{
+					Clickability.Comment.Private.req = new ActiveXObject("Microsoft.XMLHTTP");
+				}catch(e){
+                	return null;
+				}
+			}
+		}
+    }
+    return Clickability.Comment.Private.req;
+}
+
+function insertComment(formObj, isAjax, responseHandler){
+	var sT = new Date();
+	Clickability.Comment.Private.d = sT - Clickability.Comment.Private.aT;
+	if((isAjax == true) && (responseHandler != null)) {
+		Clickability.Comment.Private.req = getXmlRequestObject();
+		if(Clickability.Comment.Private.req != null) {
+			var formVars = getFormValues(formObj);
+ 			var handlerFunction = getReadyStateHandler(Clickability.Comment.Private.req, responseHandler);
+			Clickability.Comment.Private.req.onreadystatechange = handlerFunction;
+			var url = "/c";
+            var params = "ajax=true&" + formVars;
+ 
+            Clickability.Comment.Private.req.open("POST", url, true);
+            Clickability.Comment.Private.req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            
+     
+            Clickability.Comment.Private.req.send(params);
+            return false;
+    	}
+    	else {
+    		return false;
+    	}
+	}
+	else {
+		addFieldsToForm(formObj);
+ 		submitForm(formObj);
+	}
+}
+   
+function postForm(formObj, isAjax, responseHandler) {
+	return insertComment(formObj, isAjax, responseHandler);
+}
+
+function getFormValues(fobj) {
+   var str = "";
+   var valueArr = null;
+   var val = "";
+   var cmd = "";	
+   var ampRegex = new RegExp("&", "g");
+   var replaceAmpStr = escape("&#38;");
+   var percentRegex = new RegExp("%", "g"); 
+   var replacePerStr = escape("&#37;");
+
+   for(var i = 0;i < fobj.elements.length;i++)
+   {
+   		var field = fobj.elements[i];
+   		if(field.tagName === "TEXTAREA" || (field.tagName === "INPUT" && field.type != "submit" && field.type != "button")){ 
+			var fieldStr = field.value;
+			fieldStr = fieldStr.replace(percentRegex, replacePerStr);
+            fieldStr = fieldStr.replace(ampRegex, replaceAmpStr);
+   			str += field.name + "=" + fieldStr + "&";
+       		field.value = "";
+       	}
+   }
+   str += "mT=" + Clickability.Comment.Private.mT;
+   str += "&d=" + Clickability.Comment.Private.d;
+   str += "&kP=" + Clickability.Comment.Private.kP;
+   str += "&cid=" + Clickability.Comment.Private.cid;
+   str += "&did=" + Clickability.Comment.Private.did;
+ 
+   return str;
+}
+
+function getReadyStateHandler(ajaxreq, responseHandler) {
+
+  // Return an anonymous function that listens to the 
+  // XMLHttpRequest instance
+  return function () {
+
+    // If the request's status is "complete"
+    if (ajaxreq.readyState == 4) {
+      
+      // Check that a successful server response was received
+      if (ajaxreq.status == 200) {
+
+        // Pass the XML payload of the response to the 
+        // handler function
+        gatherResponse(ajaxreq.responseText);
+        responseHandler();
+
+      } else {
+
+        // An HTTP problem has occurred
+        alert("HTTP error: "+ajaxreq.status);
+      }
+    }
+  }
+}
+
+function gatherResponse(commentObject) {
+		name = null;
+	website = null;
+	title = null;
+	comment = null;
+	email = null;
+	rating = null;
+	ratingType = null;
+	commentType = null;
+	flagged = false;
+	isAuthor = false;
+	error = null;
+	status = null;
+	
+	Clickability.Comment.name = null;
+	Clickability.Comment.website = null;
+	Clickability.Comment.title = null;
+	Clickability.Comment.comment = null;
+	Clickability.Comment.email = null;
+	Clickability.Comment.rating = null;
+	Clickability.Comment.ratingType = null;
+	Clickability.Comment.commentType = null;
+	Clickability.Comment.flagged = false;
+	Clickability.Comment.isAuthor = false;
+	Clickability.Comment.error = null;
+	Clickability.Comment.status = null;
+	Clickability.Comment.level = 0;
+	Clickability.Comment.parentID = 0;
+	Clickability.Comment.threadID = 0;
+	Clickability.Comment.id = 0;
+	Clickability.Comment.extID = null;
+
+ 	var jsonExpression = "(" + commentObject+ ")";
+    var commentData = eval(jsonExpression);
+    error = commentData.error;
+    name = commentData.name;
+    comment = commentData.comment;
+    commentType = commentData.commentType
+    rating = commentData.ratingScore;
+    ratingType = commentData.ratingType;
+    email = commentData.email;
+    website = commentData.website;
+    title = commentData.title;
+    isAuthor = false;
+    flagged = false;
+    status = commentData.status;
+    if(status == "AUTHOR") {
+    	isAuthor = true;
+    }
+    else if(status != "APPROVED") {
+        flagged = true;
+    }
+    
+    Clickability.Comment.error = commentData.error;
+    Clickability.Comment.name = commentData.name;
+    Clickability.Comment.comment = commentData.comment;
+    Clickability.Comment.commentType = commentData.commentType
+    Clickability.Comment.rating = commentData.ratingScore;
+    Clickability.Comment.ratingType = commentData.ratingType;
+    Clickability.Comment.email = commentData.email;
+    Clickability.Comment.website = commentData.website;
+    Clickability.Comment.title = commentData.title;
+    Clickability.Comment.isAuthor = false;
+    Clickability.Comment.flagged = false;
+    Clickability.Comment.status = commentData.status;
+    if(Clickability.Comment.status == "AUTHOR") {
+    	Clickability.Comment.isAuthor = true;
+    }
+    else if(Clickability.Comment.status != "APPROVED") {
+        Clickability.Comment.flagged = true;
+    }
+    Clickability.Comment.id = commentData.id;
+    Clickability.Comment.threadID = commentData.threadID;
+    Clickability.Comment.parentID = commentData.parentID;
+    Clickability.Comment.level = commentData.level;
+    Clickability.Comment.extID = commentData.extID;
+}
+</script>
+
+<script type="text/javascript" src="http://www.govtech.com/includes/gov_utils.js"></script>
+
+<div> 
+    <a name="Comments"></a>
+    <div class="contents">
+	<h3 style="margin:20px 0">Comments</h3>
+        <a name="comments"></a>
+        <div id="comments" style="margin: 5px 20px;">
+            <script type="text/javascript">
+            $(function() {
+                getComments();
+                            });
+            </script>
+
+            
+    	    								
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+
+        </div>
+
+        <div class="boxstyle1" id="comment-form-container" style="background:#ffffff;">
+            <h3>Add Your Comment</h3> 
+            <div class="form-container">
+                <div >
+
+                
+                    <form name="comment" onsubmit="return processComment(this);">                  
+                        <fieldset> 
+                            <legend></legend>
+                            <div>
+                                <label for="name">Name <em>*</em></label>
+                                <input id="name" type="text" name="name" value="" />
+                            </div>
+                            <div>
+                                <label for="email">Email </label> 
+                                <input id="email" type="text" name="email" value="" />
+                            </div>
+                            <div>
+                                <label for="field">Comment <em>*</em></label> 
+                                <textarea id="field" name="field" rows="2"></textarea>
+                            </div>                       
+                            <div>
+                                <label for="field"></label> 
+                    <div class="font_small" style="width: 335px; margin-left: 90px;">
+                    You are solely responsible for the content of your comments. We reserve the right to remove comments that are considered profane, vulgar, obscene, factually inaccurate, off-topic, or considered a personal attack.</div>
+                            </div>  
+                        </fieldset>
+
+                        <div class="buttonrow">
+                            <input type="submit" value="Submit Comment" class="button" />
+                        </div>                                                          
+                    </form>
+                    <script type="text/javascript">
+                     $(document).ready(function(){
+                        $("#field").focus(function() {
+                            $("#field").animate({height: 175}, 500);
+                        });
+                     })
+                    </script>                    
+                </div> 
+            </div> <!-- form-container -->         
+        </div> <!-- boxstyle1 -->
+    </div> <!-- comments content -->
+</div> <!-- boxstyle1 --> 
+
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+    
+    <!--- CENTER COLUMN MODULES--->
+           
+    	    				    	    																																																									    
+      
+                                                  <div    >      
+                            
+
+<div id="latest_from_section" class="mb-10">
+    <h2>Latest From Emerging and Sustainable Technology</h2>
+        
+    
+    
+        <ul>
+                
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                                
+                                                                                            
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                <li><a href="http://www.govtech.com/technology/Amazon-Consumer-Cloud-033011.html">Amazon Makes Play for the Consumer Cloud Crowd </a></li>
+                
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                <li><a href="http://www.govtech.com/technology/NYC-Public-Schools-Hope-Analytics-Will-Help-Cut-Power-Consumption.html">NYC Public Schools Hope Analytics Will Help Cut Power Consumption</a></li>
+                
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                                
+                                                                                            
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                <li><a href="http://www.govtech.com/technology/Bar-Code-Inventorying-Dallas-032111.html">Bar-Code Inventorying Pays Off for Dallas City Department</a></li>
+                
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                    
+                                                                                        
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                <li><a href="http://www.govtech.com/technology/President-Obamas-Brazil-Trip-to-Showcase-World-Cup-Tech-Prep-Opinion.html">President Obama’s Brazil Trip to Showcase World Cup Tech Prep (Opinion)</a></li>
+                
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                                
+                                                                                            
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                <li><a href="http://www.govtech.com/technology/Phases-Private-Government-Cloud-031711.html">The 3 Phases to Starting a Private Government Cloud </a></li>
+            </ul>
+</div>
+
+
+
+
+			
+					
+					
+					
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                            
+
+<div class="mt-10 f-left mb-10">
+    <h2>GovTech Papers and Case Studies</h2>
+     <ul>
+        	        
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+	        	        <li class="w-120 f-left">
+	            <div style="height: 140px;">
+	            <a href="http://www.govtech.com/library/papers/i-Future-Revisiting-Information-Sharing-Exchange-and-Interoperability.html">
+	            <img src="http://media2.govtech.com/images/CDG11-Informatica_77x100.jpg" alt="" class="border" height="125" /></a>
+	            </div>
+	            
+	            <a href="http://www.govtech.com/library/papers/i-Future-Revisiting-Information-Sharing-Exchange-and-Interoperability.html" style="padding: 0 5px; display:block;"><b>White Paper:</b><br />i-Future: Revisiting Information Sharing, Exchange and Interoperability</a>
+	        </li>
+        	        
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+	        	        <li class="w-120 f-left">
+	            <div style="height: 140px;">
+	            <a href="http://www.govtech.com/library/papers/Playing-the-Hand-You-Have-Been-Dealt.html">
+	            <img src="http://media2.govtech.com/images/CDG11-TLP-POKER_100x77.jpg" alt="" class="border" height="125" /></a>
+	            </div>
+	            
+	            <a href="http://www.govtech.com/library/papers/Playing-the-Hand-You-Have-Been-Dealt.html" style="padding: 0 5px; display:block;"><b>White Paper:</b><br />Playing the Hand You Have Been Dealt</a>
+	        </li>
+        
+        	        
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+	        	        <li class="w-120 f-left">
+	            <div style="height: 140px">
+	            <a href="http://www.govtech.com/library/case-studies/Services-for-a-Thriving-Community.html"><img src="http://media2.govtech.com/images/Cisco+thumb.jpg" alt="" class="border" height="125" />
+	            </div>
+	            <a href="http://www.govtech.com/library/case-studies/Services-for-a-Thriving-Community.html" style="padding: 0 5px; display:block;"><b>Case Study:</b><br />Services for a Thriving Community</a>
+	        
+	        </li>
+        	        
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+	        	        <li class="w-120 f-left">
+	            <div style="height: 140px">
+	            <a href="http://www.govtech.com/library/case-studies/Georgias-Big-Win.html"><img src="http://media2.govtech.com/images/ATT+thumb.jpg" alt="" class="border" height="125" />
+	            </div>
+	            <a href="http://www.govtech.com/library/case-studies/Georgias-Big-Win.html" style="padding: 0 5px; display:block;"><b>Case Study:</b><br />Georgia’s Big Win</a>
+	        
+	        </li>
+             </ul>
+     <a href="/library/" class="btn"><i></i><span><span></span><i></i>View Library</span></a>           
+</div>
+<br clear="both" />
+
+
+
+
+			
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                                            
+    	    				    	    				    	    																																										
+
+
+        <div class="base f-left mt-20 ">
+        <h2 style="margin-bottom: 0px">Sponsored Links</h2>
+        <ul>
+            <li> 
+	    	                
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_tl1"   style="width:=1px; height=:1px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "tl1"; 
+	var width = "1";
+	var height = "1";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_tl1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+ 
+ 	    </li>
+        </ul>
+        <br class="clear">
+    </div>
+    
+         <br class="clear">    
+
+
+
+
+			
+					
+					
+					
+					
+		
+
+
+
+         </div>
+                       
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+ 
+
+</div>
+
+<!-- Right Column-->
+<div id="r-col" class="w-300 ml-10"> 
+    
+               
+    	    				    	    																																																									    
+      
+                                                  <div    >      
+                            
+    	    				    	    																																																																
+
+<div class="mt-5">
+    
+    <div class="bluemodule300 base w-280">
+                        <h2 style="margin:0px; line-height: 20px;">Government Technology Videos</h2>
+        <div id="ArticleList">
+                        
+            
+            
+         
+                        	                                                                                                                                    
+                                                                                                                                                        
+                                                                                
+                                                                                
+                                                                                                                                                        
+                                                                                                                    
+                                                                                                                    
+                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                            
+                                                                                                                                                                                                                                
+                                                                                                                                                        
+                                                            
+            
+            
+            <ul>
+                                    
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                                        <li>
+                                        <div class="w-50 f-left" style="margin: 3px 0 8px 0;"> 
+                                        	 <a href="http://www.govtech.com/education/iPads-In-The-Classroom.html">
+                                         <img src="http://img.delvenetworks.com/dFBq9FdQTuIhfNKZEZv5WU/gfCtlKwDRFkpB-azUYM8Vk/hpw.120x66.jpeg" width="90" height="50" style="margin-right: -90px;" />
+                    <img src="http://media2.govtech.com/designimages/gt_video_arrow_90x50.png" alt="Play" />
+			</a>                                  
+                    </div>
+                    		<div class="f-left w-180">
+                        <a href="http://www.govtech.com/education/iPads-In-The-Classroom.html">iPads in the Classroom</a> <br />
+                        <!-- span class="nowrap font_small" style="color: #cccccc;">March 29, 2011</span -->
+                </div>                    
+                <br clear="all"/>
+                    </li>
+                                    
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                                    
+                                                                                        
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                                        <li>
+                                        <div class="w-50 f-left" style="margin: 3px 0 8px 0;"> 
+                                        	 <a href="http://www.govtech.com/transportation/Smart-Highways-Smarter-Drivers.html">
+                                         <img src="http://img.delvenetworks.com/dFBq9FdQTuIhfNKZEZv5WU/kfEXJJD3R9MnlvDlkiDDyQ/RT7.120x66.jpeg" width="90" height="50" style="margin-right: -90px;" />
+                    <img src="http://media2.govtech.com/designimages/gt_video_arrow_90x50.png" alt="Play" />
+			</a>                                  
+                    </div>
+                    		<div class="f-left w-180">
+                        <a href="http://www.govtech.com/transportation/Smart-Highways-Smarter-Drivers.html">Smart Highways, Smarter Drivers</a> <br />
+                        <!-- span class="nowrap font_small" style="color: #cccccc;">January 4, 2011</span -->
+                </div>                    
+                <br clear="all"/>
+                    </li>
+                                    
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                                        <li>
+                                        <div class="w-50 f-left" style="margin: 3px 0 8px 0;"> 
+                                        	 <a href="http://www.govtech.com/public-safety/Los-Angeles-County-Nuclear-Explosion.html">
+                                         <img src="http://img.delvenetworks.com/dFBq9FdQTuIhfNKZEZv5WU/N_lfTmN5RK4hx30g7b4npA/7ZP.120x66.jpeg" width="90" height="50" style="margin-right: -90px;" />
+                    <img src="http://media2.govtech.com/designimages/gt_video_arrow_90x50.png" alt="Play" />
+			</a>                                  
+                    </div>
+                    		<div class="f-left w-180">
+                        <a href="http://www.govtech.com/public-safety/Los-Angeles-County-Nuclear-Explosion.html">Los Angeles County Prepares for a Nuclear Explosion</a> <br />
+                        <!-- span class="nowrap font_small" style="color: #cccccc;">November 17, 2010</span -->
+                </div>                    
+                <br clear="all"/>
+                    </li>
+                            </ul>
+                       <br clear="all" style="margin-bottom:-10px;">          
+        </div> 
+    </div>
+    <img src="http://media2.govtech.com/designimages/gt_bluemodule300_btm.gif" style="padding: 0; margin: 0;">
+</div>
+
+<br clear="all"> 
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_R1" class="admargin"   style="width:=300px; height=:180px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "R1"; 
+	var width = "300";
+	var height = "180";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_R1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_R2" class="admargin"   style="width:=300px; height=:250px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "R2"; 
+	var width = "300";
+	var height = "250";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_R2');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                            
+
+<div id="most_popular" class="mt-10">
+    <dl class="tabs" id="dlist">        
+        <dt class=" clicker selected clicker">Most Viewed</dt>        
+        <dd>
+            <div class="byline color1 top"><strong><a href="javascript: void(0);" onclick='$(".whole-site").css("display", "none");$(".section").css("display", "block");'>This Section</a> &nbsp;&nbsp;<span class="color3"> | </span>&nbsp;&nbsp; <a href="javascript: void(0);" onclick='$(".whole-site").css("display", "block");$(".section").css("display", "none");'>Whole Site</a></strong></div>            <ul class="large section">
+                                                                                    <li>
+                            <a href="http://www.govtech.com/technology/Amazon-Consumer-Cloud-033011.html">
+                                Amazon Makes Play for the Consumer Cloud Crowd 
+                        
+                                                            </a>                        
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/technology/Phases-Private-Government-Cloud-031711.html">
+                                The 3 Phases to Starting a Private Government Cloud 
+                        
+                                                            </a>                        
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/technology/Federal-Zero-Energy-Building.html">
+                                Net Zero Energy: Inside the Federal Government's Most Energy-Efficient Building
+                        
+                                                                    <img src="http://media2.govtech.com/designimages/gt_video-icon.png" alt="video" style="float: none; margin-left: 8px; margin-bottom: -3px;" />
+                                                            </a>                        
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/technology/Bar-Code-Inventorying-Dallas-032111.html">
+                                Bar-Code Inventorying Pays Off for Dallas City Department
+                        
+                                                            </a>                        
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/technology/NYC-Public-Schools-Hope-Analytics-Will-Help-Cut-Power-Consumption.html">
+                                NYC Public Schools Hope Analytics Will Help Cut Power Consumption
+                        
+                                                            </a>                        
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                           </ul>
+           <ul class="large whole-site" style="display: none;">
+                                                                                    <li>
+                            <a href="http://www.govtech.com/technology/Amazon-Consumer-Cloud-033011.html">
+                                
+                                Amazon Makes Play for the Consumer Cloud Crowd 
+                                
+                                                            </a>
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/e-government/iPad-Apps-Government-Workers.html">
+                                
+                                iPad Apps That Government Workers Use on the Job
+                                
+                                                            </a>
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/pcio/Melodie-Mayberry-Stewart-Resigns.html">
+                                
+                                New York State CIO Melodie Mayberry-Stewart Resigns
+                                
+                                                            </a>
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/geospatial/Law-Enforcement-Cell-Phone-Data-Citizens.html">
+                                
+                                Should Law Enforcement Use Cell Phone Data to Track Citizens?
+                                
+                                                            </a>
+                        </li>
+                                                                                                                                    <li>
+                            <a href="http://www.govtech.com/e-government/319-Million-Jackpot-NY-State-IT-Workers.html">
+                                
+                                $319 Million Jackpot May Have Been Won by N.Y. State IT Workers
+                                
+                                                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                            </ul>		
+        </dd>
+        <dt class="clicker clicker">Most Commented</dt>        
+        <dd>
+            <ul class="large">
+                                    </ul>
+        </dd>
+
+     </dl>  
+    <br clear="all">
+</div>
+
+<script type="text/javascript">
+    // show first one to begin and always show one (in the document flow, below the list) 
+    function switchNext2(el,tname,first) {
+        var selcn="selected";
+        var parent=el.parentNode;
+        var tags=parent.getElementsByTagName(tname);
+        var next=el.nextSibling;
+        var last=parent.lastChild;
+        while(last.nodeType != 1) last = last.previousSibling;
+        while(next.nodeType != 1) next = next.nextSibling;
+        next.style.display="none";
+        if (first!=1){
+            for (i=0; i<tags.length; i++) {
+                var tohide=tags[i].nextSibling;
+                while(tohide.nodeType != 1) tohide = tohide.nextSibling;
+                if (tohide!=next){tohide.style.display="none";}
+                tags[i].className=tags[i].className.replace(new RegExp(selcn+"\\b"), "");
+                if (tags[i]==el){
+                    var rEx = new RegExp("(^|\\s)" + selcn + "(\\s|$)");
+                    if (rEx.test(tags[i].className)==false) {tags[i].className+=" "+selcn;}
+                }
+            }   
+            var clone=next.cloneNode(true);
+            clone.style.display="block";
+            parent.removeChild(last);
+            parent.appendChild(clone);
+        }
+        else {
+            var firstone=tags[0].nextSibling;
+            while(firstone.nodeType != 1) firstone = firstone.nextSibling;
+            var clone=firstone.cloneNode(true);
+            clone.style.display="block";
+            if (last.innerHTML!=clone.innerHTML){parent.appendChild(clone);}
+            var rEx = new RegExp("(^|\\s)" + selcn + "(\\s|$)");
+            if (rEx.test(tags[0].className)==false) {tags[0].className+=" "+selcn;}
+        }
+    }
+    
+    function switchNextByIdAndTag2(el,tname) {
+        var ccn="clicker";
+        if (document.getElementById(el))
+        {
+            clickers=document.getElementById(el).getElementsByTagName(tname);
+            for (i=0; i<clickers.length; i++) {
+                clickers[i].className+=" "+ccn;
+                clickers[i].onclick=function() {switchNext2(this,tname)}
+                switchNext2(clickers[i],tname,1);
+            }
+        }
+    }
+    switchNextByIdAndTag2('dlist','dt');
+</script>  
+
+
+
+
+			
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_R3" class="admargin"   style="width:=300px; height=:180px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "R3"; 
+	var width = "300";
+	var height = "180";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_R3');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_R4" class="admargin"   style="width:=300px; height=:250px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "R4"; 
+	var width = "300";
+	var height = "250";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_R4');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_R5" class="admargin"   style="width:=160px; height=:600px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "R5"; 
+	var width = "160";
+	var height = "600";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_R5');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                            
+                                                  <div    >      
+                         
+    	    																														
+
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_R8" class="admargin"   style="width:=300px; height=:250px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "R8"; 
+	var width = "300";
+	var height = "250";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_R8');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+			
+					
+					
+		
+
+
+
+         </div>
+                       
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+ 
+
+</div>
+
+<div class="rounded-bottom-980" style="margin-left:-1px;"  id="body-round-bottom"> </div> 
+</div> <!-- content_container -->
+<br clear="all" />
+   
+
+<!--- Links --->
+<div id="Linkbox" class="border w-170 f-right p-10" >
+    <ul style="line-height: 20px;" class="mb-20">
+                <li><a href="http://www.govtech.com/GT-about.html" class="ml-20">About</a></li>
+                <li><a href="http://www.govtech.com/GT-Contact.html" class="ml-20">Contact</a></li>
+        <li><a href="http://www.govtech.com/sitemap" class="ml-20">Sitemap</a></li>
+        <li>
+            <img src="http://media2.govtech.com/designimages/gt_icon_rss.gif" alt="rss" />            
+            <a href="http://www.govtech.com/rss">RSS</a>
+        </li>
+        <li><a href="http://forms.erepublic.com/content/privacy" class="ml-20" target="_blank">Privacy</a></li>
+        <li>
+            <img src="http://media2.govtech.com/designimages/gt_icon_twitter.gif" alt="Twitter" />            
+            
+    	    								
+                                            
+
+
+
+			
+					
+					
+		
+
+
+
+            
+                                    <a href="http://twitter.com/govtechnews" target="_blank">Follow us on Twitter</a>
+       </li>
+    </ul>
+    <span style="font-size: 11px;">Govtech.com  is a part of <a href="http://www.erepublic.com">e.Republic</a> &#169; 2011. All rights reserved.</span>                                                         
+</div> 
+                 
+                 
+<!--- Publications --->
+ <div id="Publications">
+                
+    	    				    	    																																																									
+
+
+
+
+    
+
+
+
+    
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                
+      	            <div class="f-left m-10 magshadow">
+                <a href="http://www.govtech.com/magazines/gt/Government-Technology-April-2011.html">Government Technology</a>
+                <a href="http://www.govtech.com/magazines/gt/Government-Technology-April-2011.html"><img src="http://media2.govtech.com/images/GT_Mag_Apr11cvr.jpg" class="border" width="125" height="150" /></a><br />
+                <a href="http://www.govtech.com/magazines/gt/Government-Technology-April-2011.html"><img src="http://media2.govtech.com/designimages/gt_btn_currentissue.gif" class="ml-20 mr-20 mt-10" /></a>
+            </div>
+        
+                
+    	    				    	    																																																									
+
+
+
+
+    
+
+
+
+    
+    	    				    	    																																																																														
+
+
+                        
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+              	            <div class="f-left m-10 magshadow">
+                <a href="http://www.govtech.com/magazines/pcio/Public-CIO-February-2011.html">Public CIO</a>
+                <a href="http://www.govtech.com/magazines/pcio/Public-CIO-February-2011.html"><img src="http://media2.govtech.com/images/125*150/PCIOcoverFebMar11.jpg" class='border' /></a><br />
+                <a href="http://www.govtech.com/magazines/pcio/Public-CIO-February-2011.html"><img src="http://media2.govtech.com/designimages/gt_btn_currentissue.gif" class="ml-20 mr-20 mt-10" /></a>
+            </div>
+        
+         	            <div class="f-left m-10 magshadow">
+                <a href="http://media.navigatored.com/documents/EM_Mag_Mar11.pdf">Emergency Management</a>
+                <a href="http://media.navigatored.com/documents/EM_Mag_Mar11.pdf"><img src="http://media.navigatored.com/images/EMcover_Mar11.jpg" class="border" /></a><br />
+                <a href="http://media.navigatored.com/documents/EM_Mag_Mar11.pdf"><img src="http://media2.govtech.com/designimages/gt_btn_currentissue.gif" class="ml-20 mr-20 mt-10" /></a>
+            </div>
+        
+              	            
+    	    				    	    																																																									
+
+    	    				    	    																																																																														
+
+
+                
+                                                                                    
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+
+
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+		
+
+
+
+                        <div class="f-left m-10 magshadow">
+                <a href="http://www.digitalcommunities.com/magazine/Digital-Communities-December-2010.html">Digital Communities</a>
+                <a href="http://www.digitalcommunities.com/magazine/Digital-Communities-December-2010.html"><img src="http://media2.govtech.com/images/125*150/DCDec2010.jpg" class='border' /></a><br />
+                <a href="http://www.digitalcommunities.com/magazine/Digital-Communities-December-2010.html"><img src="http://media2.govtech.com/designimages/gt_btn_currentissue.gif" class="ml-20 mr-20 mt-10" /></a>
+            </div>
+         </div>
+
+
+
+	<div id="ads-bottom"> 
+	    <br style="height: 10px; clear: both;">          
+	    	    	    
+	    	    
+    	    				    	    																																																																																																			
+
+	
+
+
+<div id="ad_B1" class="bottom-ad"   style="width:=728px; height=:90px;" > 
+    <div class="img_nopad">
+    <script type="text/javascript">
+    
+        var site = "d.site285.opus";
+	var zone = "/technology"; 
+	var position = "B1"; 
+	var width = "728";
+	var height = "90";
+	var id = "99264469";
+	var newsletterID = "false";
+	
+	if (newsletterID != 'false')
+	{
+	    id += ";nlid=" + newsletterID;
+	}
+	
+	if (typeof(DELVE_ID) != "undefined")
+	{
+	    id += ";video_id=" + DELVE_ID;
+	}
+	
+	
+	
+		    if( requestorIP == "209.63.134.99" || requestorIP == "198.67.17.9")
+	    {
+	        if (site != "i.site285.opus")
+	        {
+	    	    zone = '/nolog' + zone;
+	        }   
+	    }
+		
+		
+	if(typeof(cachebuster) == "undefined") {var cachebuster = Math.floor(Math.random()*10000000000)}
+	if(typeof(dcopt) == "undefined") {var dcopt = "dcopt=ist;"} else {var dcopt = ""}
+	if(typeof(tile) == "undefined") {var tile = 1} else {tile++}
+	
+	var srcUrl = '<scr'+'ipt src="http://ad.doubleclick.net/adj/'
+		   + site
+		   + zone
+		   + ';pos='
+		   + position
+		   + ';tile='
+		   + tile + ';'
+		   + dcopt
+		   + 'sz='
+		   + width + 'x' + height
+		   + ';id='
+		   + id
+		   + ';ord='
+		   + cachebuster
+		   + '?"></scr'+'ipt>';
+	
+			
+		if ((position == 'R4') || (position == 'T1') || (position == 'I1') 
+			|| (position == 'T4') || (position.indexOf('tl') != -1) 
+			|| (position == 'T2' && zone.indexOf('videos') == -1))
+		{
+			document.write(srcUrl);
+		}
+		else
+		{
+			var ad 		= {};
+			ad.div		= 'ad_' + position;
+			ad.position	= position;
+			ad.height	= height;
+			ad.width	= width;
+			ad.site		= site;
+			ad.newsletterID = newsletterID;
+			ad.requestorIP	= requestorIP;
+			ad.id		= id;
+			ad.zone		= zone;
+			ads.push(ad);	
+		}
+	         
+    </script>
+    
+    </div>
+</div>
+<script type="text/javascript"> 
+   var ad_div = document.getElementById('ad_B1');
+   hideAdZone(ad_div);
+</script>
+
+
+
+
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+
+ 
+	    	</div>     
+
+</div>
+<!-- Eloqua -->
+<script src="http://www.govtech.com/includes/elqCfg.js" type="text/javascript"></script>
+<script src="http://www.govtech.com/includes/elqImg.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    addInputDefaultToggle("#C_EmailAddress");
+    addInputDefaultToggle("#search-field");
+});
+</script>
+  <script type="text/javascript">
+<!--
+    writeAds();   
+// -->
+</script>
+
+
+<!-- START Nielsen//NetRatings SiteCensus V5.3 -->
+<!-- COPYRIGHT 2007 Nielsen//NetRatings -->
+<script type="text/javascript">
+var _rsCI="us-bpaww";
+var _rsCG="0";
+var _rsDN="//secure-us.imrworldwide.com/";
+var _rsPLfl=0;
+var _rsSE=1;
+var _rsSM=1.0;
+var _rsCL=1;
+</script>
+<script type="text/javascript" src="//secure-us.imrworldwide.com/v53.js"></script>
+<noscript>
+<div><img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-bpaww&cg=0&cc=1" alt=""/></div>
+</noscript>
+<!-- END Nielsen//NetRatings SiteCensus V5.3 -->
+
+</body>  
+</html>
+

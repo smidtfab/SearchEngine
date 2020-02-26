@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xmlns:fb='http://www.facebook.com/2008/fbml'>
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>October &laquo; 2009 &laquo;  Hypios &#8211; Thinking</title>
+
+<link rel="stylesheet" href="http://www.hypios.com/thinking/wp-content/themes/hypios/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://www.hypios.com/thinking/xmlrpc.php" />
+<link rel="shortcut icon" href="http://www.hypios.com/thinking/wp-content/themes/hypios/favicon.ico" />
+
+<style type="text/css" media="screen">
+
+</style>
+<script type="text/javascript" src="http://www.hypios.com/js/scriptaculous/prototype.js"></script>
+<script src="http://www.hypios.com/js/yui/yahoo/yahoo-min.js" type="text/javascript"></script>
+<script src="http://www.hypios.com/js/yui/event/event-min.js" type="text/javascript"></script>
+<script src="http://www.hypios.com/js/yui/connection/connection-min.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Hypios - Thinking &raquo; Feed" href="http://www.hypios.com/thinking/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Hypios - Thinking &raquo; Comments Feed" href="http://www.hypios.com/thinking/comments/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.hypios.com/thinking/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.hypios.com/thinking/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Hypios - Thinking' href='http://www.hypios.com/thinking' />
+<meta name="generator" content="WordPress 2.9.2" />
+	<link rel="stylesheet" href="http://www.hypios.com/thinking/wp-content/plugins/add-to-facebook-plugin/facebook.css" type="text/css" media="screen" />
+	</head>
+<body class="archive date">
+<div id="page">
+<div id="top-box">
+</div>
+<div class="header" id="hypiosheader">
+</div>
+<script type="text/javascript">
+
+	generateHeader = function(){
+		var url = 'http://www.hypios.com/ajax/generateHeader/underline/thinking';
+		var myAjax = new Ajax.Request(url, { method: 'get', 
+											onSuccess: generateHeaderSuccess,
+											onFailure: function(response){
+													dijit.byId("onFailError").show();
+											}
+										})
+	}
+	
+	function generateHeaderSuccess(response){
+		
+		var header = eval("(" + response.responseText + ")");
+		var hypiosHeader = document.getElementById("hypiosheader");
+		hypiosHeader.innerHTML = header.data;
+		if(!header.hidden){
+			var topBox = document.getElementById("top-box");
+			topBox.innerHTML = header.topBox;
+		}
+
+				FB.init(header.fb_app_key, "http://www.hypios.com/xd_receiver.htm", { "doNotUseCachedConnectState": true });
+			
+		if(header.user == "facebook"){
+			onload = checkFbLogin;
+		}
+	}
+
+	function emptySearchBar() {
+		var headerSearchInput = document.getElementById("headerSearchInput");
+		if (headerSearchInput.value == " Search")
+			headerSearchInput.value = "";
+	}
+	
+	function searchMsgBar() {
+		var headerSearchInput = document.getElementById("headerSearchInput");
+		if (headerSearchInput.value == "")
+			headerSearchInput.value =  " Search";
+	}
+
+	function handleFinishLogoutSuccess() {
+		window.location.replace("http://www.hypios.com/auth/logout");
+	}
+
+	function handleFinishLogoutFailure() {
+		window.location.replace("http://www.hypios.com/auth/logout");
+	}
+
+	var finishLogoutCallback = {
+		success: handleFinishLogoutSuccess,
+		failure: handleFinishLogoutFailure
+	};
+
+	function handleLogoutThinkingBlogSuccess() {
+		// This code is never called because wp-login.php?action=logout
+		// requires a code as a GET parameter. So this url always brings
+		// a 403 status code.
+		// Do nothing
+	}
+
+	function handleLogoutThinkingBlogFailure(o) {
+		if (o.responseText !== undefined) {
+			var matchPos = o.responseText.search(/_wpnonce/);
+			var logoutCode = o.responseText.substring(matchPos + 9, matchPos + 9 + 10);
+			logoutCode = new String(logoutCode);
+			var request = YAHOO.util.Connect.asyncRequest('GET',
+				'http://www.hypios.com/thinking/wp-login.php?action=logout&_wpnonce=' + logoutCode,
+				finishLogoutCallback);
+		}
+	}
+
+	var callback = {
+		success: handleLogoutThinkingBlogSuccess,
+		failure: handleLogoutThinkingBlogFailure
+	};
+
+	function wordpressLogout() {
+		var request = YAHOO.util.Connect.asyncRequest('GET',
+			'http://www.hypios.com/thinking/wp-login.php?action=logout', callback);
+	}
+	
+	function loginCallBack(){
+		var numargs = arguments.length;
+		var length = "";
+		if (numargs > 0){
+			length = arguments[0];
+		} else {
+			length = "short";
+		}
+		FB.Connect.pollLoginStatus(0, 0, loginCallBack2(length));	
+	}
+	function loginCallBack2(length){
+		
+		FB.Connect.requireSession(loginCallBack3(length));
+		FB.Connect.requireSession(null,
+			function() {
+				var text = "Connect with Facebook";
+				if(length == "long"){
+					text = "Connect to hypios with Facebook";
+				}	
+				var div = document.getElementById("facebookDiv");
+				div.innerHTML = '<fb:login-button v="2" size="medium" onlogin="loginCallBack()">'+text+'</fb:login-button>';
+				window.location.href = "http://www.hypios.com/";
+			});
+	}
+	
+	function loginCallBack3(){
+		
+		FB.Facebook.get_sessionState().waitUntilReady(function(session){
+			var url = 'http://www.hypios.com/auth/login_fb_success';
+			var myAjax = new Ajax.Request(url, { method: 'get',
+													onSuccess: function(response){
+			 var api = FB.Facebook.apiClient;  
+			 api.fql_query("SELECT publish_stream,offline_access,email FROM permissions WHERE uid =" + session["uid"], 
+				function(result, ex) {
+					var res = new Array();
+					if(!result[0]["publish_stream"])
+						 res.push('publish_stream');
+						 
+					if(!result[0]["offline_access"])
+						 res.push('offline_access');
+					
+					if(!result[0]["email"])
+						 res.push('email');
+					
+					if(res.length > 0){
+						showPermission(res);
+					} else {
+						window.location.href = "http://www.hypios.com/thinking/";
+						//FB.Connect.inviteConnectUsers ();
+					}
+				} );
+			}
+			//TODO onFailure
+			//onFailure: window.errorInformationMessage
+			});	
+		});
+	}
+	
+	function showPermission(perms) {
+		
+        FB.Connect.showPermissionDialog(perms, 
+            function GrantAccess(status) {
+        		//TODO check the permssion first
+        		var url = 'http://www.hypios.com/auth/fb_signup_feed';
+    			var myAjax = new Ajax.Request(url, { method: 'get',
+    													onSuccess: function(response){
+    													window.location.href = "http://www.hypios.com/thinking/";
+    													}
+    			});
+            } 
+    	);  
+	}
+		
+	function onFbCancelCallback(){
+
+		var logoutLink = document.getElementById("fbLogoutLink");
+										
+		logoutLink.innerHTML = '<a href="http://www.hypios.com/auth/logout" class="grey">Logout</a>';
+	}
+								
+	var checkFbLogin = function(){
+		FB.Connect.get_status().waitUntilReady(function(status) {
+			switch(status) {
+				case FB.ConnectState.connected:
+					break;
+				case FB.ConnectState.appNotAuthorized:
+					FB.Connect.logoutAndRedirect('http://www.hypios.com/auth/logout');
+					break;
+				case FB.ConnectState.userNotLoggedIn:
+					FB.Connect.requireSession(null,onFbCancelCallback());
+					break;
+			}
+		});
+	}
+
+	function hidden() {
+		var topBox = document.getElementById("top-box");
+		topBox.style.display = "none";
+		var url = 'http://www.hypios.com/index/top_hidden';
+		
+		var myAjax = new Ajax.Request(url, { method: 'get',
+												onSuccess:hiddenSuccess
+												//TODO onFailure
+												//onFailure: window.errorInformationMessage
+			});
+		}
+
+	var hiddenSuccess = function(){}
+
+	YAHOO.util.Event.onDOMReady(generateHeader);							
+</script>
+<hr />
+
+	<div id="content" class="narrowcolumn" role="main">
+
+		
+ 	   	  		<h2 class="pagetitle">Archive for October, 2009</h2>
+ 	  
+
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+
+				<div class="post-395 post hentry category-book-review category-controversy category-innovation category-internet-issues category-network-graph-theory tag-brown-socks tag-collaboration tag-crowsourcing tag-democratizing-innovation tag-diversity tag-how-the-power-of-the-crowd-is-driving-the-future-of-business tag-hypios tag-jeff-howe tag-mensa tag-netflix tag-networking tag-open-innovation">
+				<h3 id="post-395"><a href="http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/" rel="bookmark" title="Permanent Link to Rethinking Crowdsourcing (beyond Howe)">Rethinking Crowdsourcing (beyond Howe)</a></h3>
+				<small>Monday, October 26th, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/&amp;shorturl=http://bit.ly/dtv9Ti&amp;title=Rethinking+Crowdsourcing+%28beyond+Howe%29&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><div><strong><img class="aligncenter size-medium wp-image-567" title="crowd" src="http://hypios.files.wordpress.com/2009/10/crowd3.jpg?w=195" alt="crowd" width="195" height="300" /></strong></div>
+<div>
+<p><strong>Jeff Howe&#8217;s <em>Crowdsourcing</em> Re-Visited</strong><br />
+hypios has sometimes been called a crowdsourcing platform. We always felt like this comparison was missing an important point about hypios and crowdsourcing. So we took a closer look at the concept. A major contribution to the discussion surrounding crowdsourcing is <em>Wired</em> editor Jeff Howe&#8217;s book <em>Crowdsourcing:  How the Power of the Crowd is Driving the Future of Business </em>(2008). We took his contribution as a starting point for our own thoughts.</p>
+<p>Howe&#8217;s book seeks to show the internal connection between a dispersed family of phenomena cropping up all over the web.  He urges us to see the profileration of wikis, a <a onclick="javascript:pageTracker._trackPageview('/outgoing/threadless.com/');" title="threadless.com"  href="http://threadless.com/">threadless.com</a> T-shirt design contest, and the collective search for alien life via spare computer cycles as aspects of a single phenomenon: crowdsourcing.</p>
+<p>Now one of Howe&#8217;s main examples, in working out the meaning and significance of crowdsourcing, is the (recently-concluded) <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.netflixprize.com/');" title="Netflix Prize"  href="http://www.netflixprize.com/">Netflix Prize</a>, which has spurred a lot of commentary <a onclick="javascript:pageTracker._trackPageview('/outgoing/tiny.cc/5Pehs');"  href="http://tiny.cc/5Pehs">here</a> as elsewhere.  For those who don&#8217;t know, in 2006, Netflix offered $1 million to the first solver(s) who could improve their film recommendation algorithm by 10%.   The actual outcome of the Netflix challenge, coming about a year after the book&#8217;s publication, invites us to take a more critical stance towards some of Howe&#8217;s (widely-accepted) arguments.</p>
+<p><strong>What is crowdsourcing?</strong><br />
+Crowdsourcing, according to Howe, is an umbrella term for diverse phenomena.  It can involve:</p>
+<ul>
+<li>Tapping spare time (or procrastination propensity) to rate content.</li>
+<li>Knowledge-transfer across disciplines or research silos.</li>
+<li>Innovation through incremental improvement, where the quality of the outcome is indexed to the sheer diversity of the solvers involved. (The Netflix challenge is one example.)</li>
+</ul>
+<p><strong>Diversity and crowdsourcing</strong><br />
+Howe takes diversity as the key reason crowdsourcing is a <em>superior</em> mode of sourcing. And for him, diversity of solvers&#8217; backgrounds and abilities is more important than anything else.  There are two levels of diversity that Howe sees as relevant to crowdsourcing:</p>
+<ul>
+<li>Diversity of fields represented.  Here Howe&#8217;s reference is primarily the work of Harvard B. Prof <a onclick="javascript:pageTracker._trackPageview('/outgoing/hbswk.hbs.edu/item/5544.html');" title="Harvard B. PhD student"  href="http://hbswk.hbs.edu/item/5544.html">Lakhani</a>, who discovered that those most likely to crack a thorny problem were solvers from a field peripheral to the problem&#8217;s domain. These peripheral solvers could easily see a solution because, in their field, the problem had already received a standard treatment or solution.  Diversity of solvers was critical for this sort of knowledge transfer.</li>
+<li>Cases where the solution to the problem does not involve a transfer.  If no solution exists, finding it will require a diverse set of solvers, not just from different fields but also of varying cognitive abilities.  This is probably the boldest of the book&#8217;s claims.</li>
+</ul>
+<p><strong>Team Mensa vs. Team Brown Socks: Howe&#8217;s view</strong><br />
+The diverse crowd will almost always beat the team that R&amp;D directors would likely choose themselves.  This is because the latter would always go for the &#8220;Mensa team&#8221; (the society for people with high IQs)—the team recruited from, say, the top 5% of MIT engineers.  According to Howe, this is because diversity in terms of distinction and ability will yield greater creativity in terms of analytic orientations.  Howe&#8217;s amusing image for stocking Team Diversity is randomly rapturing all the profs wearing brown socks from a mid-tier American university faculty lounge.   His Exhibit A for this type of crowdsourcing is the Netflix competition.</p>
+<p><strong>What  really happened</strong><br />
+The only problem with Howe&#8217;s analysis is that it doesn&#8217;t describe what actually happened.  From Howe&#8217;s argument, it seems like the winning team should be a (relative) band of losers.</p>
+<p>Howe&#8217;s analysis has suggested that, through collaboration, improvement would be incremental (all about the tweak) and come from the darndest place (e.g. <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.wired.com/techbiz/media/magazine/16-03/mf_netflix');" title="unemployed psychologists"  href="http://www.wired.com/techbiz/media/magazine/16-03/mf_netflix">unemployed psychologists</a>), leading to a cinematic triumph of the underdog.  Instead, when you look at the two top teams, it ended up looking a lot more like a battle of the Mensa teams. On the one hand was <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.research.att.com/~volinsky/netflix/bpc.html');" title="Pragmatic Chaos"  href="http://www.research.att.com/~volinsky/netflix/bpc.html">Pragmatic Chaos</a>, a joint effort of the two previously highest scoring teams from AT&amp;T&#8217;s Belkor Labs.  On the other was ENSEMBLE, a mash up of lower-ranked teams. Members of the former write articles theorizing <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.research.att.com/~volinsky/papers/ieeecomputer.pdf');" title="theorizing matrix factorization techniques"  href="http://www.research.att.com/~volinsky/papers/ieeecomputer.pdf">matrix factorization techniques</a> for IEEE, while the latter, judging by its roster, is nothing but a <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.the-ensemble.com/content/meet-team');" title="giant geek-agglomeration"  href="http://www.the-ensemble.com/content/meet-team">giant geek-agglomeration</a>, stocked full of well-credentialed computer scientists and statiscians.  Not so &#8220;brown socks&#8221; after all.</p>
+<p><strong>Team-building and networking are more important than diversity</strong><br />
+So what happened to the diverse crowd? In fact, the way hypios sees it, the right way to think about crowdsourcing is less Howe&#8217;s  &#8216;it takes a village&#8217; than it &#8216;takes a well-developed network.&#8217;  (We&#8217;ve already argued for this <a onclick="javascript:pageTracker._trackPageview('/outgoing/hello.hypios.com/02_essay_1a.php');"  href="http://hello.hypios.com/02_essay_1a.php">here</a> and <a onclick="javascript:pageTracker._trackPageview('/outgoing/hello.hypios.com/02_essay_2b.php');"  href="http://hello.hypios.com/02_essay_2b.php">here</a>). Better networking and collaboration tools allow the strongest solvers and teams of solvers to self-identify out of the crowd.  Theories about crowdsourcing have correctly emphasized the fact that a marketplace for ideas is essentially <em>social; </em>however, they tend to over-emphasize the democratizing aspects<em>.</em> Crowdsourcing is an alternative, and superior, method for identifying exactly what Howe calls the MENSA team—highly-qualified and highly-trained specialists—by gleaning them from a much larger crowd.</p>
+<p>According to <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.netflixprize.com/leaderboard');" title="Netflix stats"  href="http://www.netflixprize.com/leaderboard">Netflix stats</a>, it took three years, over 44,000 valid submissions (from 180 different countries) and 5,169 different teams to best the CineMatch algorithm by a little more than 10%. Clearly, the most notable trend is that participants chose to collaborate by merging into larger and larger teams. As one PhD solver <a onclick="javascript:pageTracker._trackPageview('/outgoing/keithsawyer.wordpress.com/2009/08/12/the-netflix-prize/');" title="notes"  href="http://keithsawyer.wordpress.com/2009/08/12/the-netflix-prize/">notes</a>, the contest was all about team &#8220;agglomeration&#8221; where yesterday&#8217;s top losers banded up to tag-team today&#8217;s winners.</p>
+<p>This capacity for iterative-rounds of team building, rather than the diversity of solvers, is probably the factor to isolate when we think about why various types of crowdsourcing work.  Howe is surely right when he says that crowdsourcing yields a superior, more diverse team.  The team is not superior because of its diversity, though, but because it was assembled in the course of the problem-solving process. This allows the problem itself to determine the competency profile of the team needed to solve it, not some ousider&#8217;s ideas about what competencies will be needed.</p>
+<p><strong>Crowdsourcing actually identifies the best people</strong><br />
+If the Netflix contest actually created a super-mechanism for creating self-selecting Mensa teams, then what Howe is describing looks less like a hierarchy-demolishing, collaborative mode of production and more like the new type of market mechanism that hypios&#8217; platform represents—one that <em>intensifies</em> competition in ideas. Howe himself emphasizes that embracing &#8220;crowdsourcing&#8221; involves embracing the principles that &#8220;the best people are always working for somebody else&#8221; and &#8220;you don&#8217;t know who they are.&#8221;  What he doesn&#8217;t seem to want to say, however, is that crowdsourcing is in fact a new (and surprisingly direct) means for identifying who and where these best people are.</p>
+<p>Debbie Goldgaber</p>
+</div>
+<p>Share this post! <a onclick="javascript:pageTracker._trackPageview('/outgoing/del.icio.us/post?url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/;title= Rethinking Crowdsourcing (beyond Howe)');" style="margin-right: 10px;"  href="http://del.icio.us/post?url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/;title= Rethinking Crowdsourcing (beyond Howe)"><img title="del.icio.us: Rethinking Crowdsourcing (beyond Howe)" src="http://sunburntkamel.files.wordpress.com/2006/11/delicious.gif" alt="add to del.icio.us" /></a><a onclick="javascript:pageTracker._trackPageview('/outgoing/digg.com/submit?phase=2&amp;url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/');" style="margin-right: 10px;"  href="http://digg.com/submit?phase=2&amp;url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/"><img title="Digg it: Rethinking Crowdsourcing (beyond Howe)" src="http://sunburntkamel.files.wordpress.com/2006/11/digg.gif" alt="Digg it" /></a><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.stumbleupon.com/submit?url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/;title= Rethinking Crowdsourcing (beyond Howe)');" style="margin-right: 10px;"  href="http://www.stumbleupon.com/submit?url=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/;title= Rethinking Crowdsourcing (beyond Howe)"><img title="Stumble it: Rethinking Crowdsourcing (beyond Howe)" src="http://sunburntkamel.files.wordpress.com/2006/11/stumbleit.gif" alt="Stumble It!" /></a></p>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/brown-socks/" rel="tag">Brown Socks</a>, <a href="http://www.hypios.com/thinking/tag/collaboration/" rel="tag">collaboration</a>, <a href="http://www.hypios.com/thinking/tag/crowsourcing/" rel="tag">Crowsourcing</a>, <a href="http://www.hypios.com/thinking/tag/democratizing-innovation/" rel="tag">democratizing innovation</a>, <a href="http://www.hypios.com/thinking/tag/diversity/" rel="tag">diversity</a>, <a href="http://www.hypios.com/thinking/tag/how-the-power-of-the-crowd-is-driving-the-future-of-business/" rel="tag">How the Power of the Crowd is Driving the Future of Business</a>, <a href="http://www.hypios.com/thinking/tag/hypios/" rel="tag">hypios</a>, <a href="http://www.hypios.com/thinking/tag/jeff-howe/" rel="tag">Jeff Howe</a>, <a href="http://www.hypios.com/thinking/tag/mensa/" rel="tag">MENSA</a>, <a href="http://www.hypios.com/thinking/tag/netflix/" rel="tag">netflix</a>, <a href="http://www.hypios.com/thinking/tag/networking/" rel="tag">networking</a>, <a href="http://www.hypios.com/thinking/tag/open-innovation/" rel="tag">Open Innovation</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/book-review/" title="View all posts in Book Review" rel="category tag">Book Review</a>,  <a href="http://www.hypios.com/thinking/category/controversy/" title="View all posts in Controversy" rel="category tag">Controversy</a>,  <a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts in Innovation" rel="category tag">Innovation</a>,  <a href="http://www.hypios.com/thinking/category/internet-issues/" title="View all posts in Internet Issues" rel="category tag">Internet Issues</a>,  <a href="http://www.hypios.com/thinking/category/network-graph-theory/" title="View all posts in Network &amp; Graph Theory" rel="category tag">Network &amp; Graph Theory</a> |   <a href="http://www.hypios.com/thinking/2009/10/26/rethinking-crowdsourcing/#comments" title="Comment on Rethinking Crowdsourcing (beyond Howe)">3 Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-486 post hentry category-intellectual-figures category-mechanism-design tag-ansari-prize tag-candle-problem tag-competition-and-collaboration tag-creative-tasks tag-daniel-pink tag-incentives tag-mechanical-tasks tag-motivation-theory tag-netflix tag-ted tag-x-prize">
+				<h3 id="post-486"><a href="http://www.hypios.com/thinking/2009/10/22/motivating-creativity/" rel="bookmark" title="Permanent Link to Motivating Creativity: Incentives and Innovation">Motivating Creativity: Incentives and Innovation</a></h3>
+				<small>Thursday, October 22nd, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/&amp;shorturl=http://bit.ly/gWMEHR&amp;title=Motivating+Creativity%3A+Incentives+and+Innovation&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><p style="text-align:center;"><!--copy and paste--><object width="446" height="326"><param name="movie" value="http://video.ted.com/assets/player/swf/EmbedPlayer.swf"></param><param name="allowFullScreen" value="true" /><param name="wmode" value="transparent"></param><param name="bgColor" value="#ffffff"></param><param name="flashvars" value="vu=http://video.ted.com/talks/dynamic/DanielPink_2009G-medium.flv&#038;su=http://images.ted.com/images/ted/tedindex/embed-posters/DanielPink-2009G.embed_thumbnail.jpg&#038;vw=432&#038;vh=240&#038;ap=0&#038;ti=618&#038;introDuration=16500&#038;adDuration=4000&#038;postAdDuration=2000&#038;adKeys=talk=dan_pink_on_motivation;year=2009;theme=the_creative_spark;theme=not_business_as_usual;theme=new_on_ted_com;theme=speaking_at_tedglobal2009;event=TEDGlobal+2009;&#038;preAdTag=tconf.ted/embed;tile=1;sz=512x288;" /><embed src="http://video.ted.com/assets/player/swf/EmbedPlayer.swf" pluginspace="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" bgColor="#ffffff" width="446" height="326" allowFullScreen="true" flashvars="vu=http://video.ted.com/talks/dynamic/DanielPink_2009G-medium.flv&#038;su=http://images.ted.com/images/ted/tedindex/embed-posters/DanielPink-2009G.embed_thumbnail.jpg&#038;vw=432&#038;vh=240&#038;ap=0&#038;ti=618&#038;introDuration=16500&#038;adDuration=4000&#038;postAdDuration=2000&#038;adKeys=talk=dan_pink_on_motivation;year=2009;theme=the_creative_spark;theme=not_business_as_usual;theme=new_on_ted_com;theme=speaking_at_tedglobal2009;event=TEDGlobal+2009;"></embed></object></p>
+<p><em><strong>Dysfunctional Incentives?</strong></em></p>
+<p>Former Al Gore speechwriter turned business-world bestseller, Dan Pink recently gave an excellent 19 minutes talk at <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.ted.com/talks/dan_pink_on_motivation.html');" title="Pink at the TED2009"  href="http://www.ted.com/talks/dan_pink_on_motivation.html" target="_blank">TED2009</a>.   (For those of you not familiar with TED, hasten to their website—it offers an extensive video archive of important contemporary thinkers on technology, design and innovation).</p>
+<p>In this talk, Pink tells us that most of our ideas about what motivates performance are wrong—or at least not well-adapted to important tasks of our times. His main point: our beliefs about incentives come from attempts to motivate tasks that we no longer do.</p>
+<p>The mechanical, rule-following tasks of the 20th century have been replaced by those requiring open-ended, creative thinking.  For creative tasks, contingent incentives (if you do X, you will get Y), have a <em>negative </em>impact on performance.</p>
+<p>Correlatively, studies show a negative effect with the addition of a competitive element to a &#8220;task environment&#8221;.  A contingent-reward structure often involves setting a solver against his or her peers performing similiar tasks (only some of them will get Y for doing X).</p>
+<p>Pink highlights two studies which clarify the interdependence of contingent reward and competition.  In one experiment, participants are asked to complete a challenging cognitive task, i.e. to solve it, participants need to operate what can be called a change of a perspective, (<a onclick="javascript:pageTracker._trackPageview('/outgoing/en.wikipedia.org/wiki/Functional_fixedness#Candle_Box');"  href="http://en.wikipedia.org/wiki/Functional_fixedness#Candle_Box">&#8220;the candle problem&#8221;</a>). They are divided into two groups.  One group is told that their work will be used to set a &#8220;norm&#8221; or performance median.  The other group is told that they will be timed and rewarded according to their performance (relative to their peers).  Not only did the norm-setting group do better at their task than the pay-for-performance group, but the more that was on the line (in terms of reward), the worse participants performed the task.  When the task was slightly changed, implying less creativity and more <em>mechanical</em> behavior (what Pink calls &#8220;the candle problem for dummies&#8221;) contingent incentives <em>do</em> work.  Study after study appear to corroborate this evidence.</p>
+<p>Pink does not spend too much time speculating on <em>why</em> contingent rewards would have this effect.  Instead he uses his time to discuss the lessons we ought to learn from this research: pay incentives don&#8217;t work when tasks are cognitively challenging;  people do better in less competitive, more autonomous environments. So whereas payment is the best incentive for mechanical tasks like those performed on <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mturk.com/mturk/welcome');" title="Mechanical Turk"  href="http://www.mturk.com/mturk/welcome" target="_blank">mturk</a>, payment alone would not seem the best motivation for more complex tasks like those performed on hypios. There has to be some intrinsic motivation: Solvers have to  feel like solving problems &#8220;for their own sake&#8221; is rewarding.</p>
+<p>I think Pink is largely right.  In fact, the work environment he describes, ROWE (<a onclick="javascript:pageTracker._trackPageview('/outgoing/www.time.com/time/business/article/0,8599,1810690,00.html');"  href="http://www.time.com/time/business/article/0,8599,1810690,00.html">results-only</a> work environment)—which allows for relative work autonomy—is what we&#8217;ve adopted here at hypios.  What I&#8217;d like to do here is to speculate a little about why solvers might have reacted in the way that they did in the experiments and try to show that we shouldn&#8217;t be too quick to draw conclusions about the efficacy of either financial incentives or competition<em> in general</em>.</p>
+<p><strong><em><img title="More..." src="http://hypios.wordpress.com/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif" alt="" />The Creativity Jam</em></strong></p>
+<p>Pink focuses on what he calls <em>contingent</em> incentives.  Studies that Pink cites show that an incentive tied directly to the outcome of a single (timed) task cause worse performance for cognitive tasks.</p>
+<p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www3.interscience.wiley.com/journal/113475198/abstract?CRETRY=1&amp;SRETRY=0');"  href="http://www3.interscience.wiley.com/journal/113475198/abstract?CRETRY=1&amp;SRETRY=0">Studies</a> have also found that setting specific and difficult goals significantly <em>increases</em> solver performance <em>even when the goals are out of reach</em>.  These same studies have found that, in the context of these specific and difficult goals, adding competition hurts performance when competition comes in the form of measurement against peers in view of reward.  Correlatively, studies have shown that cooperative environments were superior to competive ones for enhancing task performance.</p>
+<p>So it appears that competition and contingent reward work together to <em>jam</em> creative thought, at least under conditions where the reward was directly tied to the performance of a specific task.  You might say that together they seem to create a virtual axe over your head, which is counter productive to creative results. Working in an autonomous environment where you set your own specific goals is most conducive to them.  What none of these studies have shown (and they acknowledge this) is what happens when competition and incentives are on the horizon of an activity rather than directly tied to it.</p>
+<p><strong><em>Challenging Pink:  Not all competition is zero-sum</em></strong></p>
+<p>If Pink is right, why do prize competitions—<em>competitions</em> that involve pay for <em>winning </em>performance—like the <a href="http://www.hypios.com/thinking/2009/09/01/244/">Netflix prize</a> seem to work so well as creative-solution generators?  Does offering payment for solution (as hypios does) discourage or &#8220;de-motivate&#8221; solvers?  Can&#8217;t a little friendly competition (against a rival institution, say) be an added driver (even if it may not be as important as collaboration with peers)?</p>
+<p>Pink is surely right when he says that intrinsic motivation (say, finding a task interesting) is more important than most anything else when it comes to the performance of high-level cognitive tasks.  But it is hard to imagine an intrinsically motivating task withdrawn from a horizon of competition and reward.  What makes it worth doing is exactly what makes it valuable to others.  There will always be rewards (in the form of glory and gold) and competition for any genuinely worthwhile task.  And people often (though by no means exclusively) get clues about what tasks are worthwhile from the array of incentives that surround a given task-environment.  How can we put these sorts of intuitions together with the finding that Pink highlights in his talk?</p>
+<p>Just as in economic theory, the price of something is thought of as a signal sending a message to a consumer or producer: financial incentives send messages that something has value for a seeker and even for a society as a whole.  As such they focus attention on certain types of problems, issues, tasks, marking certian ones as valuable.  Indeed, the<a onclick="javascript:pageTracker._trackPageview('/outgoing/www.xprize.org/about');"  href="http://www.xprize.org/about"> X Prize foundation</a>, which runs prize competitions with purses exceeding 1o million USD, uses these large sums to counteract what they see as a market failure, to signal attention to a series of goals that they see as undervalorized (by the market) but that they have identified as key for social advanacement.  If there is only one winner, this does not seem to discourage pariticpants nor limit personal investment in pursuit of the prize.</p>
+<p>The <a onclick="javascript:pageTracker._trackPageview('/outgoing/space.xprize.org/ansari-x-prize');"  href="http://space.xprize.org/ansari-x-prize">Ansari X prize</a>, promoting civilian space travel, had dozens of participants investing millions of their own funds in pursuit of the goal.  This is because the competition is not viewed as a zero-sum game.  Competitors gain from the competition in terms of early entry into a promising market, experience and technology exposure.  Here the award money structures the horizon, but is not linked to strategy development nor to the completion of individual tasks.  How a solver gets to the winning solution is set by that solver or team, and not prescribed by a carrot-wielding outsider with a stopwatch.</p>
+<p>Now let&#8217;s think a little more about competition.  Is collaboration really the only game in town?  I would say (and for reasons that Pink is willing to call &#8220;ideological&#8221; and &#8220;lazy&#8221;) collaboration has traditionally gotten short shrift.  But, there&#8217;s evidence from <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.mitpressjournals.org/doi/abs/10.1162/0033553053970214');"  href="http://www.mitpressjournals.org/doi/abs/10.1162/0033553053970214">studies</a> of  organizational competition that show that organizations that are &#8220;neck to neck&#8217;&#8221; spur innovation.   In the Netflix competition we saw two teams—agglomerations of single players and smaller teams—that were, in the end, competing neck-and-neck.  Neither the competitive element nor the prize money ($1 million) seemed to create a dysfunctional task environment among the leaders.</p>
+<p>Let me offer a  reason why.   Netflix created something called a <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.netflixprize.com/leaderboard');"  href="http://www.netflixprize.com/leaderboard">leaderboard</a>, which showed the performance of all pariticpants and thus allowed participants to gauge their performance against their peers in relative &#8220;real time.&#8221;  In the cited studies (and in many real &#8220;task environments&#8221;) participants are in the dark about others&#8217; performance, causing them to feel a loss of control and autonomy with respect to their task.</p>
+<p>In the Netflix case, the reward was tied to a specific and challenging goal (10% increase in the quality of the algorithm) and contest rules made it so that teams were given time to match or catch up with the winning team.  Basically, this mimics the information that rival firms would get about their competition in a more or less free market.  Now it&#8217;s important to not generalize (as I&#8217;ve been doing) too quickly between the response of  individuals and teams in a task environment.  This deserves much more study.</p>
+<p>Pink points us towards some very important insights into the nature of motivation.  Financial incentives not only cannot replace intrinsic motivation, they can acutally inhibit it.  Intrinsic motivation, which comes from internal values and goals matching external problems and tasks, is decreased when factors of reward and punishment change the task environment and make the participant feel like they are no longer in control of the situation.  With the solver in control, goal, guts, glory and gold all factor into what challenges he or she will take up.  Watch Pink&#8217;s video (if you feel motivated to do so) and then let us know your thoughts. We promise, we won&#8217;t pay you for it <img src='http://www.hypios.com/thinking/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
+<p>Share this post! <a onclick="javascript:pageTracker._trackPageview('/outgoing/del.icio.us/post?url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/;title= Motivating Creativity: Incentives and Innovation');" style="margin-right:10px;"  href="http://del.icio.us/post?url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/;title= Motivating Creativity: Incentives and Innovation"><img src="http://sunburntkamel.files.wordpress.com/2006/11/delicious.gif" alt="add to del.icio.us" title="del.icio.us: Motivating Creativity: Incentives and Innovation" /></a><a onclick="javascript:pageTracker._trackPageview('/outgoing/digg.com/submit?phase=2&amp;url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/');" style="margin-right:10px;"  href="http://digg.com/submit?phase=2&amp;url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/"><img src="http://sunburntkamel.files.wordpress.com/2006/11/digg.gif" alt="Digg it" title="Digg it: Motivating Creativity: Incentives and Innovation" /><a onclick="javascript:pageTracker._trackPageview('/outgoing/digg.com/submit?phase=2&amp;url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/');" style="margin-right:10px;"  href="http://www.stumbleupon.com/submit?url=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/;title= Motivating Creativity: Incentives and Innovation"><img src="http://sunburntkamel.files.wordpress.com/2006/11/stumbleit.gif" alt="Stumble It!" title="Stumble it: Motivating Creativity: Incentives and Innovation" /></a></p>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/22/motivating-creativity/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/ansari-prize/" rel="tag">Ansari prize</a>, <a href="http://www.hypios.com/thinking/tag/candle-problem/" rel="tag">candle problem</a>, <a href="http://www.hypios.com/thinking/tag/competition-and-collaboration/" rel="tag">competition and collaboration</a>, <a href="http://www.hypios.com/thinking/tag/creative-tasks/" rel="tag">creative tasks</a>, <a href="http://www.hypios.com/thinking/tag/daniel-pink/" rel="tag">Daniel Pink</a>, <a href="http://www.hypios.com/thinking/tag/incentives/" rel="tag">incentives</a>, <a href="http://www.hypios.com/thinking/tag/mechanical-tasks/" rel="tag">mechanical tasks</a>, <a href="http://www.hypios.com/thinking/tag/motivation-theory/" rel="tag">motivation theory</a>, <a href="http://www.hypios.com/thinking/tag/netflix/" rel="tag">netflix</a>, <a href="http://www.hypios.com/thinking/tag/ted/" rel="tag">TED</a>, <a href="http://www.hypios.com/thinking/tag/x-prize/" rel="tag">X Prize</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/intellectual-figures/" title="View all posts in Intellectual Figures" rel="category tag">Intellectual Figures</a>,  <a href="http://www.hypios.com/thinking/category/economics/mechanism-design/" title="View all posts in Mechanism Design" rel="category tag">Mechanism Design</a> |   <a href="http://www.hypios.com/thinking/2009/10/22/motivating-creativity/#comments" title="Comment on Motivating Creativity: Incentives and Innovation">5 Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-428 post hentry category-innovation category-intellectual-figures tag-antibiotics tag-chemistry tag-nobel-prize tag-ribosome tag-translation tag-x-ray-crystallography">
+				<h3 id="post-428"><a href="http://www.hypios.com/thinking/2009/10/15/x-rays-ribosomes-and-dead-sea-bacteria-the-2009-nobel-prize-in-chemistry/" rel="bookmark" title="Permanent Link to X-rays, ribosomes, and Dead Sea bacteria: the 2009 Nobel Prize in Chemistry">X-rays, ribosomes, and Dead Sea bacteria: the 2009 Nobel Prize in Chemistry</a></h3>
+				<small>Thursday, October 15th, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/15/x-rays-ribosomes-and-dead-sea-bacteria-the-2009-nobel-prize-in-chemistry/&amp;title=X-rays%2C+ribosomes%2C+and+Dead+Sea+bacteria%3A+the+2009+Nobel+Prize+in+Chemistry&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Translation isn&#8217;t just how Herta Müller&#8217;s books become available to non-Germanophones.  It&#8217;s how genetic information is turned into the materials that make life possible.  After the instructions from DNA are transcribed into RNA, ribosomes use sections of this code to assemble the chains of amino acids that fold into proteins.  This year&#8217;s Nobel laureates in chemistry all used X-ray crystallography to map the location of each atom in ribosomes, showing how these organelles work at the lowest level.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">The project began in the 1970s when Ada Yonath, an Israeli X-ray crystallographer working at the Weizmann Institute, decided to investigate ribosomes using X-ray crystallography.  This process involves crystallizing a specimen, firing X-rays through the crystal, and analyzing the pattern they produce (using the CCD sensors honored by this year&#8217;s Nobel Prize in physics).  Yonath&#8217;s first challenge, then, was to crystallize ribosomes&#8211;a challenge she pursued even when her colleagues &#8220;treated [her] like the village fool,&#8221; according to a profile in the Jerusalem Post.  She ended up using organelles from the most resilient bacteria she could find, figuring that if they could survive a harsh habitat like hot springs or the Dead Sea, they could stand up to crystallization.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">When Yonath finally produced quality crystals in the early 1990s, however, she faced the &#8220;phase problem.&#8221;  In order to analyze her X-rays, she needed to deduce the phase angle at which the rays hit the sensors, a process that usually involves coating crystals with heavy metals.  The ribosomes could stand up to hot water or intense salinity, but they couldn&#8217;t withstand mercury.  Luckily, Thomas Steitz, an American biophysicist and biochemist working at Yale, had the same problem&#8211;and decided to look to another field, electron microscopy, for a solution.  By comparing images of ribosomes from electron microscopes with those from the X-ray crystallography, Steitz was able to calculate the phase angle.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Meanwhile, Venkatraman Ramakrishnan, an Indian-American scientist-of-all-trades, was working on the same problem in his US and UK labs.  (He has a PhD in physics, did graduate work in biology and postdoctoral fellowships in chemistry, and spent his Guggenheim fellowship on learning X-ray crystallography.)  Though he tried to model entire ribosomes, he also focused on the problem of ribosomal accuracy.  If the ribosome incorrectly translates information, the proteins it makes will either function incorrectly or not at all, spelling disaster for the cell.  Ramakrishnan discovered that a subunit of the ribosome uses a kind of molecular ruler to double check each protein as it&#8217;s manufactured.  If the protein doesn&#8217;t measure up, it&#8217;s discarded and the ribosome tries again.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">This summer, after years of slow, incremental improvements, Yonath, Steitz, and Ramakrishnan finally modeled the location of each atom in the ribosome, publishing their results within weeks of each other.  Their work has implications beyond satisfying scientists&#8217; curiosity about how this organelle works, though.  Over 50% of antibiotics work by blocking bacterial ribosome activity, and these three researchers all produced 3D models of antibiotics attaching to ribosomes in different ways.  If bacteria become resistant to certain antibiotics, scientists may now be able to analyze what&#8217;s happening at an atomic level, and then design drugs that will actually work.  Perhaps we won&#8217;t face drug-resistant epidemics after all.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">We&#8217;re sure these discoveries will continue to have an impact, and can&#8217;t wait to hear and read the laureates&#8217; lectures in December.  We hope you&#8217;ll be inspired by the work of these scientists, and maybe even inspired to make your own contribution&#8211;perhaps by solving some problems on hypios.  We can&#8217;t promise a medal or a trip to Scandinavia, but we certainly can offer the satisfaction of finding a solution.</div>
+<p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.flickr.com/photos/laprimadonna/');"  href="http://www.flickr.com/photos/laprimadonna/"><img class="aligncenter" title="Blue Room, site of the Nobel Prize dinner" src="http://farm3.static.flickr.com/2468/3756303920_2ef15dd083.jpg" alt="" width="500" height="385" /></a></p>
+<p>Translation isn&#8217;t just how <a onclick="javascript:pageTracker._trackPageview('/outgoing/nobelprize.org/nobel_prizes/literature/laureates/2009/');" title="Herta Muller, 2009 Nobel laureate in literature"  href="http://nobelprize.org/nobel_prizes/literature/laureates/2009/">Herta Müller&#8217;s</a> books become available to non-Germanophones.  It&#8217;s how genetic information is turned into the materials that make life possible.  After the instructions from DNA are transcribed into RNA, ribosomes use sections of this code to assemble the chains of amino acids that fold into proteins.  This year&#8217;s Nobel laureates in chemistry all used X-ray crystallography to map the location of each atom in ribosomes, showing how these organelles work at an atomic level. <a href="http://www.hypios.com/thinking/2009/10/15/x-rays-ribosomes-and-dead-sea-bacteria-the-2009-nobel-prize-in-chemistry/#more-428" class="more-link">(more&#8230;)</a></p>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/15/x-rays-ribosomes-and-dead-sea-bacteria-the-2009-nobel-prize-in-chemistry/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/15/x-rays-ribosomes-and-dead-sea-bacteria-the-2009-nobel-prize-in-chemistry/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/antibiotics/" rel="tag">antibiotics</a>, <a href="http://www.hypios.com/thinking/tag/chemistry/" rel="tag">chemistry</a>, <a href="http://www.hypios.com/thinking/tag/nobel-prize/" rel="tag">Nobel Prize</a>, <a href="http://www.hypios.com/thinking/tag/ribosome/" rel="tag">ribosome</a>, <a href="http://www.hypios.com/thinking/tag/translation/" rel="tag">translation</a>, <a href="http://www.hypios.com/thinking/tag/x-ray-crystallography/" rel="tag">X-ray crystallography</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts in Innovation" rel="category tag">Innovation</a>,  <a href="http://www.hypios.com/thinking/category/intellectual-figures/" title="View all posts in Intellectual Figures" rel="category tag">Intellectual Figures</a> |   <a href="http://www.hypios.com/thinking/2009/10/15/x-rays-ribosomes-and-dead-sea-bacteria-the-2009-nobel-prize-in-chemistry/#respond" title="Comment on X-rays, ribosomes, and Dead Sea bacteria: the 2009 Nobel Prize in Chemistry">No Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-425 post hentry category-innovation category-intellectual-figures tag-ccd tag-competition tag-curiosity tag-digital-imaging tag-fiber-optics tag-nobel-prize tag-physics tag-telecommunications">
+				<h3 id="post-425"><a href="http://www.hypios.com/thinking/2009/10/14/spurring-a-communications-revolution-the-2009-nobel-prize-in-physics/" rel="bookmark" title="Permanent Link to Spurring a communications revolution: the 2009 Nobel Prize in Physics">Spurring a communications revolution: the 2009 Nobel Prize in Physics</a></h3>
+				<small>Wednesday, October 14th, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/14/spurring-a-communications-revolution-the-2009-nobel-prize-in-physics/&amp;title=Spurring+a+communications+revolution%3A+the+2009+Nobel+Prize+in+Physics&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><p><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.flickr.com/photos/thalamus/2069479457/');"  href="http://www.flickr.com/photos/thalamus/2069479457/"><img class="aligncenter" title="fiber optic dress" src="http://farm3.static.flickr.com/2088/2069479457_6236076699.jpg" alt="" width="333" height="500" /></a></p>
+<p>The 2009 Nobel Prize in Physics <a onclick="javascript:pageTracker._trackPageview('/outgoing/nobelprize.org/nobel_prizes/physics/laureates/2009/press.html');" id="ldky" style="color:#551a8b;" title="2009 Nobel Prize in Physics announcement"  href="http://nobelprize.org/nobel_prizes/physics/laureates/2009/press.html"><span style="color:#000000;">goes to three scientists</span></a> who, working with light, helped start a telecommunications revolution.  It&#8217;s split between Charles K. Kao, for his work on fiber optic communications, and the team of Willard S. Boyle and George E. Smith, for their work on digital imaging.  Without Kao&#8217;s improvements to communications technology, the data gathered by Boyle and Smith&#8217;s device could never have been transmitted around the world.  <a href="http://www.hypios.com/thinking/2009/10/14/spurring-a-communications-revolution-the-2009-nobel-prize-in-physics/#more-425" class="more-link">(more&#8230;)</a></p>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/14/spurring-a-communications-revolution-the-2009-nobel-prize-in-physics/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/14/spurring-a-communications-revolution-the-2009-nobel-prize-in-physics/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/ccd/" rel="tag">CCD</a>, <a href="http://www.hypios.com/thinking/tag/competition/" rel="tag">competition</a>, <a href="http://www.hypios.com/thinking/tag/curiosity/" rel="tag">curiosity</a>, <a href="http://www.hypios.com/thinking/tag/digital-imaging/" rel="tag">digital imaging</a>, <a href="http://www.hypios.com/thinking/tag/fiber-optics/" rel="tag">fiber optics</a>, <a href="http://www.hypios.com/thinking/tag/nobel-prize/" rel="tag">Nobel Prize</a>, <a href="http://www.hypios.com/thinking/tag/physics/" rel="tag">physics</a>, <a href="http://www.hypios.com/thinking/tag/telecommunications/" rel="tag">telecommunications</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts in Innovation" rel="category tag">Innovation</a>,  <a href="http://www.hypios.com/thinking/category/intellectual-figures/" title="View all posts in Intellectual Figures" rel="category tag">Intellectual Figures</a> |   <a href="http://www.hypios.com/thinking/2009/10/14/spurring-a-communications-revolution-the-2009-nobel-prize-in-physics/#comments" title="Comment on Spurring a communications revolution: the 2009 Nobel Prize in Physics">3 Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-422 post hentry category-innovation category-intellectual-figures tag-cancer-vaccine tag-curiosity tag-medicine tag-nobel-prize tag-replication tag-telomerase tag-telomere">
+				<h3 id="post-422"><a href="http://www.hypios.com/thinking/2009/10/13/from-telomeres-to-cancer-vaccines-the-2009-nobel-prize-in-medicine/" rel="bookmark" title="Permanent Link to From telomeres to cancer vaccines: the 2009 Nobel Prize in Medicine">From telomeres to cancer vaccines: the 2009 Nobel Prize in Medicine</a></h3>
+				<small>Tuesday, October 13th, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/13/from-telomeres-to-cancer-vaccines-the-2009-nobel-prize-in-medicine/&amp;title=From+telomeres+to+cancer+vaccines%3A+the+2009+Nobel+Prize+in+Medicine&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">It&#8217;s that time of year again: leaves are falling, the days are getting shorter, and anxious researchers wait by their phones for the call of a lifetime.  That&#8217;s right&#8211;it&#8217;s Nobel Prize season!  This week, hypios takes a look at this year&#8217;s winners, who will be awarded their medals, diplomas, and grants in Stockholm and Oslo on December 10th.  We&#8217;re sure they&#8217;re too busy fielding calls from reporters and working on their Nobel lectures to solve any of our problems&#8211;and besides, they&#8217;ve already made great contributions to science!  But if you&#8217;re still waiting for your call, may we suggest that you spend the next year solving some problems on hypios.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">We&#8217;re starting off with medicine, the first prize to be announced.  &#8221;Cervical cancer vaccines&#8221; like Gardasil and Cervarix have been on the market&#8211;and marketed&#8211;since 2006, with taglines like &#8220;One less!&#8221; or &#8220;We chose to protect ourselves!&#8221;  Millions of women have been vaccinated, and researchers hope to dramatically reduce rates of cervical, vulvar, and anal cancer.  These particular vaccines, however, work by creating immunity against the HPV virus, which can cause certain types of cancer, rather than attacking cancer itself.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Creating a cancer vaccine is an entirely different task&#8211;and one that might be possible, thanks to research by this year&#8217;s Nobel Prize in Medicine recipients.  Elizabeth Blackburn, Carol Greider, and Jack Szostak are sharing the prize for their work on telomeres and telomerase.  Thanks to their discoveries, researchers have been able to develop and test new cancer treatments, including a cancer vaccine that targets telomerase.  Even if these don&#8217;t work or produce unwanted side effects, the possibilities are exciting and &#8220;a continued flow of new data is expected,&#8221; as this article from the Nobel organization explains.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Chromosome replication is a long-standing problem in biology.  If DNA doesn&#8217;t replicate itself exactly when a cell divides, the new cell lacks the necessary information to function, and may not be viable.  In Szostak&#8217;s experiments with yeast, cells without telomeres divided poorly and eventually stopped functioning.  Telomeres protect chromosomes from degradation during replication.  They&#8217;re small segments of DNA that, positioned on the ends of chromosomes like tiny magnets, attract proteins to form protective caps.  Blackburn, an Australian-born biologist, and Szostak, an American, discovered this after meeting at a conference in 1980 and collaborating on an experiment involving two different organisms.  The fact that telomeres from one organism were effective in another, entirely different species hinted that there was a very basic biological mechanism at work.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">In 1984, Blackburn and her Californian then-grad student, Greider, isolated telomerase.  They discovered that this enzyme, which contains both proteins and RNA, actually extends the telomeres so the ends of chromosomes are not snipped off during replication.  The RNA in telomerase serves as a template or platform for the DNA being built.  The more telomerase activity a cell shows, the more genomic stability and viability it has.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Cancer cells have lots of telomerase activity, so their genomes remain intact through multiple divisions.  This means they can divide over and over without degradation&#8211;they&#8217;ll function just as well after the fifteenth division as on the fifth or the first.  If treatments could target telomerase activity, they could stop tumor growth and treat cancers.  The research of Blackburn, Greider, and Szostak may also be used to develop treatments for inheritable diseases and to investigate stem cell behavior.</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Blackburn in particular credits curiosity and an open mind for her success.  As a child in Tasmania, she wallpapered her bedroom with drawings of amino acids, and as a teenager, once used her chemistry set to make explosives, according to a 2009 interview with Clinical Chemistry.  As a doctoral student at Cambridge, she became interested in the molecular side of biology.  There, she learned from biologists like Francis Crick and Max Delbruck, who were former physicists and worked by trying to &#8216;leap&#8217; to ideas, placing &#8220;huge value on the elegant solution.&#8221;  This approach inspired Blackburn to move away from the strictly &#8216;quantitative thinking&#8217; traditionally used to solve problems in biochemistry.  Later, she tried to give her students the same freedom to explore, allowing grad students and post-docs in her lab to work on their own projects rather than doing legwork for her own investigations.  Asked to reflect on her success as a woman in science in the same interview, she said that perhaps men and women think about things differently, but &#8220;that&#8217;s great because [it's] how you solve problems&#8211;you have different minds, different ways of thinking about problems.&#8221;</div>
+<div id="_mcePaste" style="position:absolute;left:-10000px;top:0;width:1px;height:1px;">Given our hope that Solvers will collaborate across fields and contribute solutions to problems beyond their specialties, we couldn&#8217;t agree more.  Obviously, this attitude has paid off for Blackburn and her colleagues in their scientific investigations.</div>
+<p style="text-align:center;"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.flickr.com/photos/glyn_nelson/3565498691/');"  href="http://www.flickr.com/photos/glyn_nelson/3565498691/"><img class="aligncenter" title="Cells dividing" src="http://farm4.static.flickr.com/3303/3565498691_d2c44c149b.jpg" alt="" width="500" height="233" /></a></p>
+<p>It&#8217;s that time of year again: leaves are falling, the days are getting shorter, and anxious researchers wait by their phones for the <a onclick="javascript:pageTracker._trackPageview('/outgoing/nobelprize.org/prize_announcements/magic_call.html');" title="&quot;The Magic Call&quot;"  href="http://nobelprize.org/prize_announcements/magic_call.html">call of a lifetime</a>.  That&#8217;s right—it&#8217;s Nobel Prize season!  This week, hypios takes a look at this year&#8217;s winners, who will be awarded their medals, diplomas, and grants in Stockholm and Oslo on December 10th.  We&#8217;re sure they&#8217;re too busy fielding calls from reporters and working on their Nobel lectures to solve any of our problems—and besides, they&#8217;ve already made great contributions to science!  But if you&#8217;re still waiting for your call, may we suggest that you spend the next year solving some problems on hypios.</p>
+<p>We&#8217;re starting off with medicine, the first prize to be announced. <a href="http://www.hypios.com/thinking/2009/10/13/from-telomeres-to-cancer-vaccines-the-2009-nobel-prize-in-medicine/#more-422" class="more-link">(more&#8230;)</a></p>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/13/from-telomeres-to-cancer-vaccines-the-2009-nobel-prize-in-medicine/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/13/from-telomeres-to-cancer-vaccines-the-2009-nobel-prize-in-medicine/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/cancer-vaccine/" rel="tag">cancer vaccine</a>, <a href="http://www.hypios.com/thinking/tag/curiosity/" rel="tag">curiosity</a>, <a href="http://www.hypios.com/thinking/tag/medicine/" rel="tag">medicine</a>, <a href="http://www.hypios.com/thinking/tag/nobel-prize/" rel="tag">Nobel Prize</a>, <a href="http://www.hypios.com/thinking/tag/replication/" rel="tag">replication</a>, <a href="http://www.hypios.com/thinking/tag/telomerase/" rel="tag">telomerase</a>, <a href="http://www.hypios.com/thinking/tag/telomere/" rel="tag">telomere</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts in Innovation" rel="category tag">Innovation</a>,  <a href="http://www.hypios.com/thinking/category/intellectual-figures/" title="View all posts in Intellectual Figures" rel="category tag">Intellectual Figures</a> |   <a href="http://www.hypios.com/thinking/2009/10/13/from-telomeres-to-cancer-vaccines-the-2009-nobel-prize-in-medicine/#respond" title="Comment on From telomeres to cancer vaccines: the 2009 Nobel Prize in Medicine">No Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-379 post hentry category-innovation category-intellectual-property category-open-source-theory category-the-economics-of-knowledge tag-accenture tag-bug-labs tag-diy tag-open-innovation tag-product-development tag-prototypes">
+				<h3 id="post-379"><a href="http://www.hypios.com/thinking/2009/10/08/the-apple-and-the-bug-part-ii-fast-track-prototyping/" rel="bookmark" title="Permanent Link to The Apple and the Bug (Part II) : Fast-track Prototyping">The Apple and the Bug (Part II) : Fast-track Prototyping</a></h3>
+				<small>Thursday, October 8th, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/08/the-apple-and-the-bug-part-ii-fast-track-prototyping/&amp;title=The+Apple+and+the+Bug+%28Part+II%29+%3A+Fast-track+Prototyping&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><div style="text-align:center;"><strong><img class="alignnone size-medium wp-image-380" title="apple_bug" src="http://hypios.files.wordpress.com/2009/10/apple_bug_2.jpg?w=300" alt="apple_bug" width="300" height="220" /></strong></div>
+<div><strong> </strong></div>
+<div><strong>Fast-Track Prototyping, the nail in the coffin for the &#8220;Apple-Model?&#8221;</strong></div>
+<div><strong><br />
+</strong></div>
+<div><strong> </strong></div>
+<div>In the <a id="q_yd" title="last post" href="http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/">last post</a>, we talked about how the product development life-cycle might look different in the future as a result of certain trends in open innovation. In particular, we discussed a change in the prototyping model that might, someday soon, put a wrench in the Apple-style secrecy machine.</div>
+<p>There we mentioned a young company, <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.buglabs.net/');" id="pbv1" title="Bug labs"  href="http://www.buglabs.net/">Bug labs</a>, based in NYC, that makes open source modular components  allowing DIYers to build their own gadgets. The idea, anway, was that they were for DIYers. According to this <a onclick="javascript:pageTracker._trackPageview('/outgoing/electronicdesign.com/Articles/ArticleID/21429/21429.html');" id="sx-l" title="article"  href="http://electronicdesign.com/Articles/ArticleID/21429/21429.html">article</a> in <em>Electronic Design</em>, however, most of its sales are actually going to corporate entities building prototypes or small production runs. &#8220;The open nature of BUGbase makes it easy to add a custom module at significantly lower cost and risk than a completely unique prototype&#8221; they say.</p>
+<div> <a href="http://www.hypios.com/thinking/2009/10/08/the-apple-and-the-bug-part-ii-fast-track-prototyping/#more-379" class="more-link">(more&#8230;)</a></div>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/08/the-apple-and-the-bug-part-ii-fast-track-prototyping/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/08/the-apple-and-the-bug-part-ii-fast-track-prototyping/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/accenture/" rel="tag">Accenture</a>, <a href="http://www.hypios.com/thinking/tag/bug-labs/" rel="tag">Bug Labs</a>, <a href="http://www.hypios.com/thinking/tag/diy/" rel="tag">DIY</a>, <a href="http://www.hypios.com/thinking/tag/open-innovation/" rel="tag">Open Innovation</a>, <a href="http://www.hypios.com/thinking/tag/product-development/" rel="tag">product development</a>, <a href="http://www.hypios.com/thinking/tag/prototypes/" rel="tag">prototypes</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts in Innovation" rel="category tag">Innovation</a>,  <a href="http://www.hypios.com/thinking/category/intellectual-property/" title="View all posts in Intellectual Property" rel="category tag">Intellectual Property</a>,  <a href="http://www.hypios.com/thinking/category/open-source-theory/" title="View all posts in Open Source Theory" rel="category tag">Open Source Theory</a>,  <a href="http://www.hypios.com/thinking/category/economics/the-economics-of-knowledge/" title="View all posts in The Economics of Knowledge" rel="category tag">The Economics of Knowledge</a> |   <a href="http://www.hypios.com/thinking/2009/10/08/the-apple-and-the-bug-part-ii-fast-track-prototyping/#respond" title="Comment on The Apple and the Bug (Part II) : Fast-track Prototyping">No Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-353 post hentry category-controversy category-essay category-innovation category-mechanism-design category-open-source-theory category-the-economics-of-knowledge tag-apple tag-application-development tag-bug-labs tag-ce tag-design tag-modularity tag-ndas tag-oi tag-open-innovation tag-open-manufacturing tag-product-design tag-prototypes">
+				<h3 id="post-353"><a href="http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/" rel="bookmark" title="Permanent Link to The Apple and the Bug: Secret product design vs. open prototyping">The Apple and the Bug: Secret product design vs. open prototyping</a></h3>
+				<small>Friday, October 2nd, 2009</small>
+
+				<div class="entry">
+					
+<div class="topsy_widget_data topsy_theme_blue" style="float: right;margin-left: 0.75em;"><script type="text/javascript" src="http://button.topsy.com/widget/retweet-big?url=http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/&amp;title=The+Apple+and+the+Bug%3A+Secret+product+design+vs.+open+prototyping&amp;theme=blue&amp;txt_tweet=tweet&amp;txt_retweet=retweet"></script></div><p>(First in a two-post series)</p>
+<p style="text-align:center;"><img class="size-medium wp-image-365 aligncenter" title="apple_bug" src="http://hypios.files.wordpress.com/2009/10/apple_bug6.jpg?w=300" alt="apple_bug" width="300" height="220" /></p>
+<p><strong>Secrecy, Apple-Style</strong></p>
+<p>Apple is famous for the secrecy of its product development. It claims not to believe in market research, relying instead on its designers (and executives) to come up with products that will stun and awe the community, beginning with a set of hip early adopters. It has, however, welcomed outside innovation when it comes to its iPhone.</p>
+<p>The iPhone Apps store sells thousands of special applications that are developed externally. Not only does Apple pull in tons of revenue (<a onclick="javascript:pageTracker._trackPageview('/outgoing/online.wsj.com/article/SB121842341491928977.html');" id="aq-e" title="according to Jobs"  href="http://online.wsj.com/article/SB121842341491928977.html">according to Jobs</a>, at least $1 million/day) through the sale of these apps, but some credit the apps and their buzz with iPhone&#8217;s competitive advantage. Brad Stone, from the New York Times&#8217; <a onclick="javascript:pageTracker._trackPageview('/outgoing/bits.blogs.nytimes.com/2009/09/28/apple-apps-store-crosses-another-threshold/');" id="ng6t" title="Brad Stone, from the NYT's bits blog"  href="http://bits.blogs.nytimes.com/2009/09/28/apple-apps-store-crosses-another-threshold/">bits blog</a> writes, &#8220;The breadth and depth of Apple’s app store is a big reason why the iPhone continues to maintain its lead against up-and-comers like the <a onclick="javascript:pageTracker._trackPageview('/outgoing/bits.blogs.nytimes.com/2009/06/24/palm-app-catalog-hits-a-million-downloads/');"  href="http://bits.blogs.nytimes.com/2009/06/24/palm-app-catalog-hits-a-million-downloads/">Palm Pre</a> and the phones running <a onclick="javascript:pageTracker._trackPageview('/outgoing/topics.nytimes.com/top/news/business/companies/google_inc/index.html?inline=nyt-org');" title="More information about Google Inc"  href="http://topics.nytimes.com/top/news/business/companies/google_inc/index.html?inline=nyt-org">Google</a>’s Android operating system.&#8221;</p>
+<p>Even so, the process for approval is by all accounts strenuous, <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.businessweek.com/technology/content/jul2009/tc20090731_732921_page_2.htm');" id="nss4" title="even censoring"  href="http://www.businessweek.com/technology/content/jul2009/tc20090731_732921_page_2.htm">even censoring</a>, and there are some who, choosing to bypass it completely, market their apps through third-party sites.  Running these apps requires the iPhone to have been <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.nytimes.com/2009/05/13/technology/13jailbreak.html?_r=1&amp;fta=y');" id="am5d" title="&quot;jailbreaking&quot;"  href="http://www.nytimes.com/2009/05/13/technology/13jailbreak.html?_r=1&amp;fta=y">&#8220;jailbroken&#8221;</a> (downloading a small piece of code).  Apple is vehemently opposed to this, claiming that it strains and breaks the iphone operating system.  Others counter that Apple is just being a control freak and ungrateful to the thousands of app producers that have worked to make the iPhone into a sort of Swiss Army knife of consumer electronic (CE) devices. In short, some outsiders applaud this sort of hacking, claiming that the process of application innovation and end-user specialization should be more open and symbiotic than the Apple-model allows.   <a href="http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/#more-353" class="more-link">(more&#8230;)</a></p>
+<p class="facebook"><a onclick="javascript:pageTracker._trackPageview('/outgoing/www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/');"  href="http://www.facebook.com/share.php?u=http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/" target="_blank" title="Share on Facebook">Share on Facebook</a></p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.hypios.com/thinking/tag/apple/" rel="tag">Apple</a>, <a href="http://www.hypios.com/thinking/tag/application-development/" rel="tag">application development</a>, <a href="http://www.hypios.com/thinking/tag/bug-labs/" rel="tag">Bug Labs</a>, <a href="http://www.hypios.com/thinking/tag/ce/" rel="tag">CE</a>, <a href="http://www.hypios.com/thinking/tag/design/" rel="tag">design</a>, <a href="http://www.hypios.com/thinking/tag/modularity/" rel="tag">modularity</a>, <a href="http://www.hypios.com/thinking/tag/ndas/" rel="tag">NDAs</a>, <a href="http://www.hypios.com/thinking/tag/oi/" rel="tag">OI</a>, <a href="http://www.hypios.com/thinking/tag/open-innovation/" rel="tag">Open Innovation</a>, <a href="http://www.hypios.com/thinking/tag/open-manufacturing/" rel="tag">open manufacturing</a>, <a href="http://www.hypios.com/thinking/tag/product-design/" rel="tag">product design</a>, <a href="http://www.hypios.com/thinking/tag/prototypes/" rel="tag">prototypes</a><br /> Posted in <a href="http://www.hypios.com/thinking/category/controversy/" title="View all posts in Controversy" rel="category tag">Controversy</a>,  <a href="http://www.hypios.com/thinking/category/essay/" title="View all posts in Essay" rel="category tag">Essay</a>,  <a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts in Innovation" rel="category tag">Innovation</a>,  <a href="http://www.hypios.com/thinking/category/economics/mechanism-design/" title="View all posts in Mechanism Design" rel="category tag">Mechanism Design</a>,  <a href="http://www.hypios.com/thinking/category/open-source-theory/" title="View all posts in Open Source Theory" rel="category tag">Open Source Theory</a>,  <a href="http://www.hypios.com/thinking/category/economics/the-economics-of-knowledge/" title="View all posts in The Economics of Knowledge" rel="category tag">The Economics of Knowledge</a> |   <a href="http://www.hypios.com/thinking/2009/10/02/the-apple-and-the-bug-secret-product-design-vs-open-prototyping/#comments" title="Comment on The Apple and the Bug: Secret product design vs. open prototyping">4 Comments &#187;</a></p>
+
+			</div>
+
+		
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+	
+	</div>
+
+	<div id="sidebar" role="complementary">
+		<ul>
+			<li id="text-4" class="widget widget_text">			<div class="textwidget"><a href="http://www.facebook.com/pages/Hypioscom/52603799270" title="Become a fan"><img src="http://hypios.files.wordpress.com/2009/07/facebook_icon1.gif" alt="Facebook icon" style="position:relative;top:3px;" /> Become a fan</a></div>
+		</li><li id="text-5" class="widget widget_text">			<div class="textwidget"><!-- AddThis Button BEGIN -->
+<div><a href="http://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4a53a5720f17e913" title="Bookmark and Share" target="_blank"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share"></a></div>
+<!-- AddThis Button END -->
+</div>
+		</li><li id="text-6" class="widget widget_text">			<div class="textwidget"><a href="http://technorati.com/faves?sub=addfavbtn&amp;add=http://blog.hypios.com"><img src="http://static.technorati.com/pix/fave/btn-fave2.png" alt="Add to Technorati Favorites" /></a></div>
+		</li><li id="text-7" class="widget widget_text">			<div class="textwidget"><p><a href="http://www.hypios.com/thinking/feed" rel="alternate"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt=""></a>&nbsp;<a href="http://www.hypios.com/thinking/feed" onclick="pageTracker._trackEvent('rss', 'thinking' , window.location.href);" rel="alternate"> Subscribe to the Thinking feed</a></p>
+
+</div>
+		</li><li id="categories-3" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>		<ul>
+	<li class="cat-item cat-item-255"><a href="http://www.hypios.com/thinking/category/best-of/" title="View all posts filed under Best of">Best of</a> (8)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.hypios.com/thinking/category/blog-review/" title="View all posts filed under Blog Review">Blog Review</a> (7)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.hypios.com/thinking/category/book-review/" title="View all posts filed under Book Review">Book Review</a> (3)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.hypios.com/thinking/category/controversy/" title="View all posts filed under Controversy">Controversy</a> (7)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.hypios.com/thinking/category/deeper-into/" title="View all posts filed under Deeper Into&#8230;">Deeper Into&#8230;</a> (15)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.hypios.com/thinking/category/economics/" title="View all posts filed under Economics">Economics</a> (4)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.hypios.com/thinking/category/essay/" title="View all posts filed under Essay">Essay</a> (18)
+</li>
+	<li class="cat-item cat-item-377"><a href="http://www.hypios.com/thinking/category/excerpted/" title="View all posts filed under Excerpted">Excerpted</a> (11)
+</li>
+	<li class="cat-item cat-item-256"><a href="http://www.hypios.com/thinking/category/fiveforfriday/" title="View all posts filed under FiveforFriday">FiveforFriday</a> (15)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.hypios.com/thinking/category/hypios-news/" title="View all posts filed under Hypios News">Hypios News</a> (30)
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.hypios.com/thinking/category/innovation/" title="View all posts filed under Innovation">Innovation</a> (40)
+</li>
+	<li class="cat-item cat-item-12"><a href="http://www.hypios.com/thinking/category/intellectual-figures/" title="View all posts filed under Intellectual Figures">Intellectual Figures</a> (13)
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.hypios.com/thinking/category/intellectual-property/" title="View all posts filed under Intellectual Property">Intellectual Property</a> (4)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.hypios.com/thinking/category/internet-issues/" title="View all posts filed under Internet Issues">Internet Issues</a> (30)
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.hypios.com/thinking/category/life-hypios/" title="View all posts filed under Life @ Hypios">Life @ Hypios</a> (4)
+</li>
+	<li class="cat-item cat-item-18"><a href="http://www.hypios.com/thinking/category/economics/mechanism-design/" title="View all posts filed under Mechanism Design">Mechanism Design</a> (5)
+</li>
+	<li class="cat-item cat-item-19"><a href="http://www.hypios.com/thinking/category/network-graph-theory/" title="View all posts filed under Network &amp; Graph Theory">Network &amp; Graph Theory</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="http://www.hypios.com/thinking/category/open-source-theory/" title="View all posts filed under Open Source Theory">Open Source Theory</a> (8)
+</li>
+	<li class="cat-item cat-item-21"><a href="http://www.hypios.com/thinking/category/philosophy/" title="View all posts filed under Philosophy">Philosophy</a> (4)
+</li>
+	<li class="cat-item cat-item-423"><a href="http://www.hypios.com/thinking/category/research-and-development/" title="View all posts filed under Research and Development">Research and Development</a> (14)
+</li>
+	<li class="cat-item cat-item-347"><a href="http://www.hypios.com/thinking/category/semantic-web/" title="View all posts filed under Semantic Web">Semantic Web</a> (7)
+</li>
+	<li class="cat-item cat-item-174"><a href="http://www.hypios.com/thinking/category/social-media/" title="View all posts filed under Social Media">Social Media</a> (6)
+</li>
+	<li class="cat-item cat-item-23"><a href="http://www.hypios.com/thinking/category/sociology/" title="View all posts filed under Sociology">Sociology</a> (3)
+</li>
+	<li class="cat-item cat-item-24"><a href="http://www.hypios.com/thinking/category/statistics/" title="View all posts filed under Statistics">Statistics</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="http://www.hypios.com/thinking/category/study/" title="View all posts filed under Study">Study</a> (6)
+</li>
+	<li class="cat-item cat-item-26"><a href="http://www.hypios.com/thinking/category/economics/the-economics-of-knowledge/" title="View all posts filed under The Economics of Knowledge">The Economics of Knowledge</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.hypios.com/thinking/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a> (15)
+</li>
+		</ul>
+</li><li id="archives-3" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>		<ul>
+			<li><a href='http://www.hypios.com/thinking/2011/01/' title='January 2011'>January 2011</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/09/' title='September 2010'>September 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/08/' title='August 2010'>August 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/07/' title='July 2010'>July 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/06/' title='June 2010'>June 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/05/' title='May 2010'>May 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/04/' title='April 2010'>April 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/03/' title='March 2010'>March 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/02/' title='February 2010'>February 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2010/01/' title='January 2010'>January 2010</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/12/' title='December 2009'>December 2009</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/11/' title='November 2009'>November 2009</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/10/' title='October 2009'>October 2009</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/09/' title='September 2009'>September 2009</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/08/' title='August 2009'>August 2009</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/07/' title='July 2009'>July 2009</a></li>
+	<li><a href='http://www.hypios.com/thinking/2009/06/' title='June 2009'>June 2009</a></li>
+		</ul>
+</li>		</ul>
+	</div>
+
+
+
+<hr />
+<script type="text/javascript">
+
+	generateHeader = function(){
+		var url = 'http://www.hypios.com/ajax/generatefooter/poweredby/Open Source Softwares/picture/1/';
+		var myAjax = new Ajax.Request(url, { method: 'get', 
+											onSuccess: generateFooterSuccess,
+											onFailure: function(response){
+													dijit.byId("onFailError").show();
+											}
+										})
+	}
+	
+	function generateFooterSuccess(response){
+
+		var footer = eval("(" + response.responseText + ")");
+		var blogFooter = document.getElementById("hypiosFooter");
+		blogFooter.innerHTML = footer.data;
+	}
+	YAHOO.util.Event.onDOMReady(generateHeader);
+</script>
+<div class="footer" id="hypiosFooter"></div>
+<!-- Gorgeous design by hypios - https://www.hypios.com/ -->
+
+		
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-7386295-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	<script src="https://ssl.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+	<meta property="fb:page_id" content="52603799270" />
+	<meta property="fb:admins" content="607438761" />
+</body>
+</html>

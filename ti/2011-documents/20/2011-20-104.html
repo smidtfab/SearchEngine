@@ -1,0 +1,460 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Research_Online@UCD: Using crowdsourcing and active learning to track sentiment in online media</title>
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-2956678-32");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="/dspace/styles.css.jsp" type="text/css" />
+        <link rel="stylesheet" href="/dspace/print.css" media="print" type="text/css" />
+        <link rel="shortcut icon" href="/dspace/favicon.ico" type="image/x-icon"/>
+
+	<script type="text/javascript" src="/dspace/utils.js"></script>
+	
+	
+	<script type="text/javascript" src="/dspace/validation.js"></script>
+	
+    </head>
+
+    
+    
+    <body>
+
+        
+        
+        <table class="pageBanner" width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            
+            <tr>
+            	
+                <td id="enovation_header_logo">
+                    
+                    <a href="/dspace/"><img src="/dspace/image/research_online_2.gif" alt="DSpace" width="950" height="70" border="0"/></a></td>
+                    
+                <td nowrap="nowrap" valign="middle">
+                </td>
+            </tr>
+            <tr class="stripe"> 
+                <td colspan="3">&nbsp;</td>
+            </tr>
+        </table>
+    
+        
+        <table class="pageBanner" width="100%" border="0" cellpadding="0" cellspacing="0">
+        	<tr>        		
+        		        		
+        		<td width="10%" class="enovation_nav_button" onmouseover="this.className = 'enovation_nav_button_over';" 
+        			onmouseout="this.className = 'enovation_nav_button';"
+        			onclick="document.location = '/dspace';">HOME</td>
+        			
+        		<td width="65%" class="enovation_nav_bar"></td>
+        			
+        		<td width="25%" class="enovation_nav_bar">
+      			
+        		<form action="/dspace/simple-search" method="get" onsubmit="return check_blank('topquery', 'Please enter a value to search for!');">
+	        		
+					<input type="hidden" name="advanced" value="true"/>
+					
+					<input type="hidden" name="field1" value="all"/>
+					
+					<input type="hidden" name="num_search_field" value="1"/>
+	        		<span style="color:white;">Search:</span><input type="text" name="query1" size="20" id="topquery" />&nbsp;
+	                <input type="submit" name="submit" value="Go" />
+        		</form>
+        		</td>
+        	</tr>
+        </table>
+
+        
+
+
+
+
+
+        
+
+        
+        <table class="centralPane" width="100%" border="0" cellpadding="3" cellspacing="1">
+
+            
+            <tr valign="top">
+
+            
+
+            <td class="navigationBar">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  
+
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td nowrap="nowrap" colspan="2" class="navigationBarSublabel">Browse</td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/community-list">Collections</a>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16" />
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/browse-title">Titles</a>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/browse-author">Authors</a>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16" />
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/browse-subject">Subjects</a>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/browse-date">By Date</a>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td nowrap="nowrap" colspan="2" class="navigationBarSublabel">Sign on to:</td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/subscribe">Receive email<br/>updates</a>
+    </td>
+  </tr>
+
+  
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/mydspace">My DSpace</a><br/>
+      <small>authorized users</small>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/profile">Edit Profile</a>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <script type="text/javascript">
+<!-- Javascript starts here
+document.write('<a href="#" onClick="var popupwin = window.open(\'/dspace/help/index.html\',\'dspacepopup\',\'height=600,width=550,resizable,scrollbars\');popupwin.focus();return false;">Help<\/a>');
+// -->
+</script><noscript><a href="/dspace/help/index.html" target="dspacepopup">Help</a></noscript>
+    </td>
+  </tr>
+
+    
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="http://www.ucd.ie/library/repository">About this service</a>
+    </td>
+  </tr>
+  
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="http://www.ucd.ie/library/repository/instructions.html">Deposit your research</a>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="http://www.ucd.ie/library/repository/copyright.html">Copyright</a>
+    </td>
+  </tr>
+
+  
+  <tr class="navigationBarItem">
+    <td>
+      <img alt="" src="/dspace/image/arrow.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <a href="/dspace/stats">Statistics</a>
+    </td>
+  </tr>
+
+</table>
+
+            </td>
+
+            
+
+            
+            
+            
+            <td class="pageContents" width="100%">
+
+                
+
+                
+
+
+
+
+  
+
+
+<p class="locationBar">
+
+<a href="/dspace/">Research_Online@UCD</a>&nbsp;&gt;
+<br/>
+<a href="/dspace/handle/10197/1799">College of Engineering, Mathematical & Physical Sciences</a>&nbsp;&gt;
+<br/>
+<a href="/dspace/handle/10197/849">School of Computer Science and Informatics</a>&nbsp;&gt;
+<br/>
+<a href="/dspace/handle/10197/853">CSI Research Collection</a>&nbsp;&gt;
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <table align="center" class="miscTable">
+        <tr>
+            <td class="evenRowEvenCol" align="center">
+                
+                <strong>Please use this identifier to cite or link to this item:
+                <code>http://hdl.handle.net/10197/2028</code></strong>                
+                
+					<br /><strong>This item was peer reviewed</strong>&nbsp;<img src="/dspace/image/tick.png" alt="Item was peer reviewed" />
+				
+            </td>
+
+        </tr>
+    </table>
+    <br />
+
+    
+    <table align="center" class="miscTable"><tr><td class="evenRowEvenCol">
+<table cellpadding="6"><tr><th id="t1" class="standard_small">File</th>
+<th id="t2" class="standard_small">Description</th>
+<th id="t3" class="standard_small">Size</th><th id="t4" class="standard_small">Format</th></tr>
+<tr><td headers="t1" class="standard_small"><a target="_blank" href="/dspace/bitstream/10197/2028/1/PAIS-2010-Open.pdf">PAIS-2010-Open.pdf</a></td></td><td headers="t2" class="standard_small"></td><td headers="t3" class="standard_small">389Kb</td><td headers="t4" class="standard_small">Adobe PDF</td><td class="standard_small" align="center"><form name="download" action="/dspace/bitstream/10197/2028/1/PAIS-2010-Open.pdf" method="get" target="_blank" style="padding:0px"><input type="submit" value="Download" /></form></td></tr></table>
+</td></tr></table>
+<script type="text/javascript">statsLink();</script>
+<center><table class="itemDisplayTable">
+<tr><td class="metadataFieldLabel">Title:&nbsp;</td><td class="metadataFieldValue">Using crowdsourcing and active learning to track sentiment in online media</td></tr>
+<tr><td class="metadataFieldLabel">Author:&nbsp;</td><td class="metadataFieldValue"><a href="http://irserver.ucd.ie/dspace/items-by-author?author=Brew%2C Anthony">Brew, Anthony</a><br /><a href="http://irserver.ucd.ie/dspace/items-by-author?author=Greene%2C Derek">Greene, Derek</a><br /><a href="http://irserver.ucd.ie/dspace/items-by-author?author=Cunningham%2C Pádraig">Cunningham, Pádraig</a></td></tr>
+<tr><td class="metadataFieldLabel">Date:&nbsp;</td><td class="metadataFieldValue">16-Aug-2010 </td></tr>
+<tr><td class="metadataFieldLabel">Publisher:&nbsp;</td><td class="metadataFieldValue">IOS Press</td></tr>
+<tr><td class="metadataFieldLabel">Is part of:&nbsp;</td><td class="metadataFieldValue">Coelho, H., Studer, R., Wooldridge, M. (eds.). ECAI 2010 19th European Conference on Artificial Intelligence : Volume 215, Frontiers in Artificial Intelligence and Applications</td></tr>
+<tr><td class="metadataFieldLabel">Type of material:&nbsp;</td><td class="metadataFieldValue">Conference Publication</td></tr>
+<tr><td class="metadataFieldLabel">Abstract:&nbsp;</td><td class="metadataFieldValue">Tracking sentiment in the popular media has long been of interest to media analysts and pundits. With the availability of news content via online syndicated feeds, it is now possible to automate some aspects of this process. There is also great potential to crowdsource much of the annotation work that is required to train a machine learning system to perform sentiment scoring. We describe such a system for tracking economic sentiment in online media that has been deployed since August 2009. It uses annotations provided by a cohort of non-expert annotators to train a learning system to classify a large body of news items. We report on the design challenges addressed in managing the effort of the annotators and in making annotation an interesting experience.</td></tr>
+<tr><td class="metadataFieldLabel">Conference details:&nbsp;</td><td class="metadataFieldValue">6th Conference on the Prestigious Applications of Intelligent Systems (PAIS 2010), a sub-conference of the 19th European Conference on Artificial Intelligence (ECAI 2010), 16-20 August, Lisbon, Portugal.</td></tr>
+<tr><td class="metadataFieldLabel">Web link to reference this item:&nbsp;</td><td class="metadataFieldValue">http://hdl.handle.net/10197/2028</td></tr>
+<tr><td class="metadataFieldLabel">ISBN:&nbsp;</td><td class="metadataFieldValue">978-1-60750-605-8</td></tr>
+<tr><td class="metadataFieldLabel">DOI:&nbsp;</td><td class="metadataFieldValue"><a href="http://dx.doi.org/10.3233/978-1-60750-606-5-145" target="newWindow">10.3233/978-1-60750-606-5-145</a></td></tr>
+<tr><td class="metadataFieldLabel">Keywords:&nbsp;</td><td class="metadataFieldValue"><a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Sentiment analysis">Sentiment analysis</a>;&nbsp;<a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Machine learning">Machine learning</a>;&nbsp;<a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Crowdsourcing">Crowdsourcing</a>;&nbsp;<a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Social media">Social media</a>;&nbsp;</td></tr>
+<tr><td class="metadataFieldLabel">Subject Heading:&nbsp;</td><td class="metadataFieldValue"><a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Mass media criticism--Data processing">Mass media criticism--Data processing</a>;&nbsp;<a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Machine learning">Machine learning</a>;&nbsp;<a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=Social media">Social media</a>;&nbsp;<a href="http://irserver.ucd.ie/dspace/items-by-subject?subject=News Web sites">News Web sites</a>;&nbsp;</td></tr>
+<tr><td class="metadataFieldLabel">Other web versions:&nbsp;</td><td class="metadataFieldValue"><a href="http://dx.doi.org/10.3233/978-1-60750-606-5-145" target="newWindow">Publisher's version</a></td></tr>
+<tr><td class="metadataFieldLabel">Status of Item:&nbsp;</td><td class="metadataFieldValue">Peer reviewed</td></tr>
+<tr><td class="metadataFieldLabel">Availability:&nbsp;</td><td class="metadataFieldValue">Full text available</td></tr>
+<tr><td class="metadataFieldLabel">Appears in Collections:</td><td class="metadataFieldValue"><a href="/dspace/handle/10197/853">CSI Research Collection</a><br/></td></tr>
+</table></center><br/>
+<br/><br/>
+<table align="center" class="attentionTable"><tr>
+<td class="attentionCell"><p><strong>This item is protected by original copyright</strong></p>
+<div align="center" class="standard"><strong><a target="_blank" href="/dspace/retrieve/4618/license.txt">View License</a></strong></div></td></tr></table>
+
+
+
+    <div align="center">
+
+    <form method="get" action="/dspace/handle/10197/2028">
+        <input type="hidden" name="mode" value="full"/>
+        
+        
+	        <input type="submit" name="submit_more" value="View more details" />
+	        <input type="submit" name="submit_full" value="Show full Metadata record" />
+	    
+    </form>
+
+    </div>
+
+
+
+
+    
+
+    
+
+    <p class="submitFormHelp">If you are a publisher or author and have copyright concerns for any item, please see our <a href="http://www.ucd.ie/library/repository/copyright.html">copyright</a> page.<br/> All items in UCD Research Repository are protected by copyright, with all rights reserved.<br />  No item may be reproduced for commercial purposes.<br />  For other possible restrictions on use please refer to the publisher's URL where this is made available, or to notes contained in the item itself.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                    <p>&nbsp;</p>
+                </td>
+
+            
+
+            </tr>
+
+            
+             <tr class="pageFooterBar">
+                <td colspan="2" class="pageFootnote">
+                    <table class="pageFooterBar" width="100%">
+                        <tr>
+                            <td>
+                                <a href="http://validator.w3.org/check?uri=referer"><img
+                                    src="/dspace/image/valid-xhtml10.png"
+                                    alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+                            </td>
+                            <td class="pageFootnote">
+                                Research Online @ UCD is maintained by <a href="http://www.ucd.ie/library/">UCD Library</a>.  Powered by <a href="http://www.dspace.org/">DSpace Software</a> Copyright&nbsp;&copy;&nbsp;2002-2006.  <a href="http://www.ucd.ie/library/forms/research_online_form.html" target="newWindow">Feedback and Queries</a>
+                                
+                            </td>
+                            <td nowrap="nowrap" valign="middle"> 
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

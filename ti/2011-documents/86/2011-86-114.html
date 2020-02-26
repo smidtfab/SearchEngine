@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  
+
+  <head>
+    <title>
+      /trunk/reCaptcha/reCaptcha.pl –
+      mtplugins
+    </title>
+        <link rel="search" href="/trac/mtplugins/search" />
+        <link rel="help" href="/trac/mtplugins/wiki/TracGuide" />
+        <link rel="alternate" href="/trac/mtplugins/browser/trunk/reCaptcha/reCaptcha.pl?format=txt" type="text/plain" title="Plain Text" /><link rel="alternate" href="/trac/mtplugins/export/1589/trunk/reCaptcha/reCaptcha.pl" type="text/x-perl; charset=iso-8859-15" title="Original Format" />
+        <link rel="up" href="/trac/mtplugins/browser/trunk/reCaptcha" title="Parent directory" />
+        <link rel="start" href="/trac/mtplugins/wiki" />
+        <link rel="stylesheet" href="/trac/mtplugins/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/mtplugins/chrome/common/css/code.css" type="text/css" /><link rel="stylesheet" href="/trac/mtplugins/pygments/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/mtplugins/chrome/common/css/browser.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/mtplugins/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/mtplugins/chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="/trac/mtplugins/search/opensearch" title="Search mtplugins" />
+    <script type="text/javascript" src="/trac/mtplugins/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/mtplugins/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/mtplugins/chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/mtplugins/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#jumploc input").hide();
+        $("#jumploc select").change(function () {
+          this.parentNode.parentNode.submit();
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="http://code.sixapart.com/"><img src="/common/sixapart_banner.png" alt="" /></a>
+      </div>
+      <form id="search" action="/trac/mtplugins/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/mtplugins/about">About Trac</a></li><li class="last"><a href="/trac/mtplugins/prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="/trac/mtplugins/timeline">Timeline</a></li><li class="active"><a href="/trac/mtplugins/browser">Browse Source</a></li><li class="last"><a href="/trac/mtplugins/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><a href="/trac/mtplugins/changeset/885/trunk/reCaptcha/reCaptcha.pl">Last Change</a></li><li><a href="/trac/mtplugins/browser/trunk/reCaptcha/reCaptcha.pl?annotate=blame&amp;rev=885" title="Annotate each line with the last changed revision (this can be time consuming...)">Annotate</a></li><li class="last"><a href="/trac/mtplugins/log/trunk/reCaptcha/reCaptcha.pl">Revision Log</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="browser">
+      <h1>
+    <a class="pathentry first" title="Go to root directory" href="/trac/mtplugins/browser">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View trunk" href="/trac/mtplugins/browser/trunk">trunk</a><span class="pathentry sep">/</span><a class="pathentry" title="View reCaptcha" href="/trac/mtplugins/browser/trunk/reCaptcha">reCaptcha</a><span class="pathentry sep">/</span><a class="pathentry" title="View reCaptcha.pl" href="/trac/mtplugins/browser/trunk/reCaptcha/reCaptcha.pl">reCaptcha.pl</a>
+    <br style="clear: both" />
+  </h1>
+      <div id="jumprev">
+        <form action="" method="get">
+          <div>
+            <label for="rev">
+              View revision:</label>
+            <input type="text" id="rev" name="rev" size="6" />
+          </div>
+        </form>
+      </div>
+      <div id="jumploc">
+        <form action="" method="get">
+          <div class="buttons">
+            <label for="preselected">Visit:</label>
+            <select id="preselected" name="preselected">
+              <option selected="selected"></option>
+              <optgroup label="branches">
+                <option value="/trac/mtplugins/browser/trunk">trunk</option><option value="/trac/mtplugins/browser/branches/ActionStreams">branches/ActionStreams</option><option value="/trac/mtplugins/browser/branches/ActionStreams-atomext">branches/ActionStreams-atomext</option><option value="/trac/mtplugins/browser/branches/ActionStreams-jb">branches/ActionStreams-jb</option><option value="/trac/mtplugins/browser/branches/ActionStreams-motion">branches/ActionStreams-motion</option><option value="/trac/mtplugins/browser/branches/ActionStreams-table-rename">branches/ActionStreams-table-rename</option><option value="/trac/mtplugins/browser/branches/AssetGallery-MT4.1-compat">branches/AssetGallery-MT4.1-compat</option><option value="/trac/mtplugins/browser/branches/CustomFieldsUpgradeAssistant-bugfix">branches/CustomFieldsUpgradeAssistant-bugfix</option><option value="/trac/mtplugins/browser/branches/Elsewhere-new-ui">branches/Elsewhere-new-ui</option><option value="/trac/mtplugins/browser/branches/Elsewhere-registry">branches/Elsewhere-registry</option><option value="/trac/mtplugins/browser/branches/mixiComment">branches/mixiComment</option><option value="/trac/mtplugins/browser/branches/MultiBlog-2.1">branches/MultiBlog-2.1</option><option value="/trac/mtplugins/browser/branches/openid-server-1.2">branches/openid-server-1.2</option><option value="/trac/mtplugins/browser/branches/RebuildQueue-Schwartzed">branches/RebuildQueue-Schwartzed</option><option value="/trac/mtplugins/browser/branches/StyleCatcher-2.1-dev">branches/StyleCatcher-2.1-dev</option><option value="/trac/mtplugins/browser/branches/WidgetManager-refactor">branches/WidgetManager-refactor</option><option value="/trac/mtplugins/browser/branches/YahooOpenId">branches/YahooOpenId</option>
+              </optgroup><optgroup label="tags">
+                <option value="/trac/mtplugins/browser/tags/ActionStreams?rev=1578">tags/ActionStreams</option><option value="/trac/mtplugins/browser/tags/ActionStreams-1.0?rev=476">tags/ActionStreams-1.0</option><option value="/trac/mtplugins/browser/tags/ActionStreams-2.1?rev=1537">tags/ActionStreams-2.1</option><option value="/trac/mtplugins/browser/tags/CommentEmailFilter-1.11?rev=941">tags/CommentEmailFilter-1.11</option><option value="/trac/mtplugins/browser/tags/FacebookCommenters-1.0?rev=1569">tags/FacebookCommenters-1.0</option><option value="/trac/mtplugins/browser/tags/FacebookCommenters-1.1?rev=1576">tags/FacebookCommenters-1.1</option><option value="/trac/mtplugins/browser/tags/openid-server-1.0?rev=351">tags/openid-server-1.0</option><option value="/trac/mtplugins/browser/tags/openid-server-1.2?rev=363">tags/openid-server-1.2</option><option value="/trac/mtplugins/browser/tags/Order?rev=1587">tags/Order</option><option value="/trac/mtplugins/browser/tags/Order-1.0?rev=1469">tags/Order-1.0</option><option value="/trac/mtplugins/browser/tags/Podcasting-1.0?rev=560">tags/Podcasting-1.0</option><option value="/trac/mtplugins/browser/tags/PowerRebuild-1.0?rev=937">tags/PowerRebuild-1.0</option><option value="/trac/mtplugins/browser/tags/PowerRebuild-1.1?rev=937">tags/PowerRebuild-1.1</option><option value="/trac/mtplugins/browser/tags/StyleCatcher-2.1?rev=1121">tags/StyleCatcher-2.1</option><option value="/trac/mtplugins/browser/tags/StyleCatcher-2.1-sandbox?rev=1118">tags/StyleCatcher-2.1-sandbox</option><option value="/trac/mtplugins/browser/tags/StyleCatcher-2.2?rev=1124">tags/StyleCatcher-2.2</option>
+              </optgroup>
+            </select>
+            <input type="submit" value="Go!" title="Jump to the chosen preselected path" />
+          </div>
+        </form>
+      </div>
+      <table id="info" summary="Revision info">
+        <tr>
+          <th scope="col">
+            Revision <a href="/trac/mtplugins/changeset/885">885</a>, <span title="1530 bytes">1.5 kB</span>
+            (checked in by fumiakiy, <a class="timeline" href="/trac/mtplugins/timeline?from=2008-07-24T06%3A50%3A13Z%2B0000&amp;precision=second" title="2008-07-24T06:50:13Z+0000 in Timeline">3 years</a> ago)
+          </th>
+        </tr>
+        <tr>
+          <td class="message searchable">
+              <p>
+reCaptcha plugin now supports default templates of 4.0x/4.1x and 4.2.<br />
+</p>
+          </td>
+        </tr>
+      </table>
+      <div id="preview" class="searchable">
+    <table class="code"><thead><tr><th class="lineno" title="Line numbers">Line</th><th class="content"> </th></tr></thead><tbody><tr><th id="L1"><a href="#L1">1</a></th><td><span class="c1"># Movable Type (r) Open Source (C) 2005-2008 Six Apart, Ltd.</span></td></tr><tr><th id="L2"><a href="#L2">2</a></th><td><span class="c1"># This program is distributed under the terms of the</span></td></tr><tr><th id="L3"><a href="#L3">3</a></th><td><span class="c1"># GNU General Public License, version 2.</span></td></tr><tr><th id="L4"><a href="#L4">4</a></th><td><span class="c1">#</span></td></tr><tr><th id="L5"><a href="#L5">5</a></th><td><span class="c1"># $Id: reCaptcha.pl 1174 2008-01-08 21:02:50Z bchoate $</span></td></tr><tr><th id="L6"><a href="#L6">6</a></th><td></td></tr><tr><th id="L7"><a href="#L7">7</a></th><td><span class="c1"># reCaptcha plugin for Movable Type</span></td></tr><tr><th id="L8"><a href="#L8">8</a></th><td><span class="c1"># Author: Six Apart (http://www.sixapart.com)</span></td></tr><tr><th id="L9"><a href="#L9">9</a></th><td><span class="c1"># Released under the Artistic and GPLv2 License</span></td></tr><tr><th id="L10"><a href="#L10">10</a></th><td></td></tr><tr><th id="L11"><a href="#L11">11</a></th><td><span class="nb">package</span> <span class="nn">MT::Plugin::</span>reCaptcha<span class="p">;</span></td></tr><tr><th id="L12"><a href="#L12">12</a></th><td></td></tr><tr><th id="L13"><a href="#L13">13</a></th><td><span class="k">use</span> strict<span class="p">;</span></td></tr><tr><th id="L14"><a href="#L14">14</a></th><td><span class="k">use</span> warnings<span class="p">;</span></td></tr><tr><th id="L15"><a href="#L15">15</a></th><td></td></tr><tr><th id="L16"><a href="#L16">16</a></th><td><span class="k">use</span> MT<span class="p">;</span></td></tr><tr><th id="L17"><a href="#L17">17</a></th><td><span class="k">use</span> base <span class="sx">qw(MT::Plugin)</span><span class="p">;</span></td></tr><tr><th id="L18"><a href="#L18">18</a></th><td></td></tr><tr><th id="L19"><a href="#L19">19</a></th><td><span class="k">my</span> <span class="nv">$plugin</span> <span class="o">=</span> <span class="nn">MT::Plugin::</span>reCaptcha<span class="o">-&gt;</span><span class="k">new</span><span class="p">({</span></td></tr><tr><th id="L20"><a href="#L20">20</a></th><td>    description <span class="o">=&gt;</span> <span class="s">'CAPTCHA plugin powered by reCaptcha.  Follow the instruction specified in README to use reCaptcha on your published blog.'</span><span class="p">,</span></td></tr><tr><th id="L21"><a href="#L21">21</a></th><td>    name <span class="o">=&gt;</span> <span class="s">'reCaptcha'</span><span class="p">,</span></td></tr><tr><th id="L22"><a href="#L22">22</a></th><td>    author_name <span class="o">=&gt;</span> <span class="s">'Six Apart, Ltd.'</span><span class="p">,</span></td></tr><tr><th id="L23"><a href="#L23">23</a></th><td>    author_link <span class="o">=&gt;</span> <span class="s">'http://www.movabletype.com/'</span><span class="p">,</span></td></tr><tr><th id="L24"><a href="#L24">24</a></th><td>        blog_config_template <span class="o">=&gt;</span> <span class="o">&lt;&lt;</span>TMPL<span class="p">,</span></td></tr><tr><th id="L25"><a href="#L25">25</a></th><td><span class="s-Regexp">&lt;dl&gt;</span></td></tr><tr><th id="L26"><a href="#L26">26</a></th><td><span class="s-Regexp">&lt;dt&gt;</span>reCaptcha public key<span class="s-Regexp">&lt;/dt&gt;</span></td></tr><tr><th id="L27"><a href="#L27">27</a></th><td><span class="s-Regexp">&lt;dd&gt;</span><span class="o">&lt;</span>input name<span class="o">=</span><span class="s">"recaptcha_publickey"</span> size<span class="o">=</span><span class="s">"40"</span> value<span class="o">=</span><span class="s">"&lt;mt:var name="</span>recaptcha_publickey<span class="s">"&gt;"</span> <span class="sr">/&gt;&lt;/</span>dd<span class="o">&gt;</span></td></tr><tr><th id="L28"><a href="#L28">28</a></th><td><span class="s-Regexp">&lt;dt&gt;</span>reCaptcha private key<span class="s-Regexp">&lt;/dt&gt;</span></td></tr><tr><th id="L29"><a href="#L29">29</a></th><td><span class="s-Regexp">&lt;dd&gt;</span><span class="o">&lt;</span>input name<span class="o">=</span><span class="s">"recaptcha_privatekey"</span> size<span class="o">=</span><span class="s">"40"</span> value<span class="o">=</span><span class="s">"&lt;mt:var name="</span>recaptcha_privatekey<span class="s">"&gt;"</span> <span class="sr">/&gt;&lt;/</span>dd<span class="o">&gt;</span></td></tr><tr><th id="L30"><a href="#L30">30</a></th><td><span class="s-Regexp">&lt;/dl&gt;</span></td></tr><tr><th id="L31"><a href="#L31">31</a></th><td>TMPL</td></tr><tr><th id="L32"><a href="#L32">32</a></th><td>    settings <span class="o">=&gt;</span> <span class="k">new</span> <span class="nn">MT::</span>PluginSettings<span class="p">([</span></td></tr><tr><th id="L33"><a href="#L33">33</a></th><td>        <span class="p">[</span><span class="s">'recaptcha_publickey'</span><span class="p">,</span> <span class="p">{</span> Scope   <span class="o">=&gt;</span> <span class="s">'blog'</span> <span class="p">}],</span></td></tr><tr><th id="L34"><a href="#L34">34</a></th><td>        <span class="p">[</span><span class="s">'recaptcha_privatekey'</span><span class="p">,</span> <span class="p">{</span> Scope   <span class="o">=&gt;</span> <span class="s">'blog'</span> <span class="p">}],</span></td></tr><tr><th id="L35"><a href="#L35">35</a></th><td>    <span class="p">]),</span></td></tr><tr><th id="L36"><a href="#L36">36</a></th><td>    version <span class="o">=&gt;</span> <span class="s">'0.22'</span><span class="p">,</span></td></tr><tr><th id="L37"><a href="#L37">37</a></th><td><span class="p">});</span></td></tr><tr><th id="L38"><a href="#L38">38</a></th><td></td></tr><tr><th id="L39"><a href="#L39">39</a></th><td>MT<span class="o">-&gt;</span>add_plugin<span class="p">(</span><span class="nv">$plugin</span><span class="p">);</span></td></tr><tr><th id="L40"><a href="#L40">40</a></th><td><span class="k">sub </span><span class="nf">instance</span> <span class="p">{</span> <span class="nv">$plugin</span> <span class="p">}</span></td></tr><tr><th id="L41"><a href="#L41">41</a></th><td></td></tr><tr><th id="L42"><a href="#L42">42</a></th><td><span class="k">sub </span><span class="nf">init_registry</span> <span class="p">{</span></td></tr><tr><th id="L43"><a href="#L43">43</a></th><td>    <span class="k">my</span> <span class="nv">$plugin</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span></td></tr><tr><th id="L44"><a href="#L44">44</a></th><td>    <span class="nv">$plugin</span><span class="o">-&gt;</span>registry<span class="p">({</span></td></tr><tr><th id="L45"><a href="#L45">45</a></th><td>        <span class="s">'captcha_providers'</span> <span class="o">=&gt;</span> <span class="p">{</span></td></tr><tr><th id="L46"><a href="#L46">46</a></th><td>            <span class="s">'sixapart_rc'</span> <span class="o">=&gt;</span> <span class="p">{</span></td></tr><tr><th id="L47"><a href="#L47">47</a></th><td>                <span class="s">'label'</span> <span class="o">=&gt;</span> <span class="s">'reCaptcha'</span><span class="p">,</span></td></tr><tr><th id="L48"><a href="#L48">48</a></th><td>                                <span class="s">'class'</span> <span class="o">=&gt;</span> <span class="s">'reCaptcha'</span><span class="p">,</span></td></tr><tr><th id="L49"><a href="#L49">49</a></th><td>            <span class="p">},</span></td></tr><tr><th id="L50"><a href="#L50">50</a></th><td>        <span class="p">},</span></td></tr><tr><th id="L51"><a href="#L51">51</a></th><td>    <span class="p">});</span></td></tr><tr><th id="L52"><a href="#L52">52</a></th><td><span class="p">}</span></td></tr><tr><th id="L53"><a href="#L53">53</a></th><td></td></tr><tr><th id="L54"><a href="#L54">54</a></th><td><span class="mi">1</span><span class="p">;</span></td></tr></tbody></table>
+      </div>
+      <div id="help">
+        <strong>Note:</strong> See <a href="/trac/mtplugins/wiki/TracBrowser">TracBrowser</a>
+        for help on using the browser.
+      </div>
+      <div id="anydiff">
+        <form action="/trac/mtplugins/diff" method="get">
+          <div class="buttons">
+            <input type="hidden" name="new_path" value="/trunk/reCaptcha/reCaptcha.pl" />
+            <input type="hidden" name="old_path" value="/trunk/reCaptcha/reCaptcha.pl" />
+            <input type="hidden" name="new_rev" value="885" />
+            <input type="hidden" name="old_rev" value="885" />
+            <input type="submit" value="View changes..." title="Select paths and revs for Diff" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="/trac/mtplugins/browser/trunk/reCaptcha/reCaptcha.pl?format=txt">Plain Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="/trac/mtplugins/export/1589/trunk/reCaptcha/reCaptcha.pl">Original Format</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/trac/mtplugins/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="/trac/mtplugins/about"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

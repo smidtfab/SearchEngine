@@ -19,7 +19,7 @@ public class SearchEngine
      *
      * @param args the raw command-line arguments.
      * @throws Exception if an error occurs during the process.
-     */
+     */	
     protected static void doIndex(String[] args) throws Exception
     {
         if (args.length < 3 || args.length > 4) {
@@ -46,6 +46,7 @@ public class SearchEngine
 
         // Build index
         DocumentProcessor docProcessor = new SimpleProcessor();
+        //DocumentProcessor docProcessor = new HtmlProcessor(File stopwords.txt);
         Indexer indexer = new Indexer(pathToIndex, pathToCollection, docProcessor);
         indexer.run();
 

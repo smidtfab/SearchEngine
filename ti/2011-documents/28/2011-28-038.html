@@ -1,0 +1,200 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.1//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta id="viewport" name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<title>Technology Review: The Authority on the Future of Technology</title>
+	<script src="/scripts/script.js" type="text/javascript"></script>	
+	<script language="javascript" type="text/javascript">
+
+
+var randartnum = RanNow();
+
+
+</script>
+
+	
+
+	<link rel="stylesheet" href="/css/mobile.css" type="text/css" />
+</head>
+<body>
+<div class="banner" >
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td align="center">
+<a href="/"><img src="/images/TR_smartphone_logo.gif" alt="Technology Review - Published by MIT" width="186" height="60" border="0" /></a></td></tr></table></div>
+
+
+
+<script language="javascript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+var randartnum = RanNow();
+
+//--><!]]>
+</script>
+
+
+<div id="story">
+
+
+	<p class="date"><a name="top"></a>Monday, October 18, 2010</p>
+	<h1>Adding Human Intelligence to Software</h1>
+	<h2>TurKit lets programmers combines code with input from an army of online human workers.</h2>
+	<p class="byline">John Pavlus</p>
+	
+		<table border="0" cellpadding="0" cellspacing="0" class="toolbar" width="100%">
+		<tr><td>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="70"><div style="padding:3px 10px 3px 10px; border:1px solid #ccc; width:70px; margin-right:3px;"><span style="font-size:11px;"><a href="http://www.audiodizer.com/technologyreview/mobile/computing/26535.mp3"><img src="/images/clearpix.gif" width="1" height="14" border="0" /><img src="/images/icon_audio.gif" alt="Audio: " width="12" height="11" border="0" /> Audio</a></span></div></td><td width="70"><div style="padding:3px 10px 3px 10px; border:1px solid #ccc; width:70px; margin-right:3px;"><span style="font-size:11px;"><a href="/share.aspx?id=26535"><img src="/images/clearpix.gif" width="1" height="14" border="0"/><img src="/images/icon_share.gif" alt="Share: " width="16" height="12" border="0" /> Share &raquo;</a></span></div></td><!--<td><div style="padding:3px 10px 3px 10px; border:1px solid #ccc; width:70px; margin-right:3px;"><span style="font-size:11px;"><a href=""><img src="/images/clearpix.gif" width="1" height="14" border="0" /><img src="/images/icon_fave.gif" alt="Favorite: " width="19" height="14" border="0" /> Favorite</a></span></div></td>-->
+				<td align="right">
+				
+
+				
+		
+				</td>
+			</tr>
+		</table></td></tr></table>
+
+	
+<div style="padding:8px; background:#eee; width:220px; font-size:90%;">
+<img src="/files/47685/humanmacro_x220.jpg" border="0" width="220" height="210" /> <br />
+<b>Software with brains:</b> The word processing add-on, Soylent, shown above, was built with TurKit. Turkit helps developers write algorithms that integrate the work of humans recruited through Mechanical Turk.
+							
+</div>
+	<div class="storyBody">
+	
+<p>Amazon's Mechanical Turk service has long provided a cheap source of labor, when the job is simple for humans but difficult for computers. Tasks such as describing a picture, for example, can be completed online by remote, human workers. Programmers already use groups of these workers, called turkers, to do many such tasks at the same time. But Mechanical Turk offers no easy way for programmers developing new software applications to combine and coordinate the turkers' efforts. Now computer scientists at MIT have developed a toolkit that does just that. Called <a href="http://groups.csail.mit.edu/uid/turkit/" target="_blank">TurKit</a>, the tool lets software engineers write algorithms to coordinate online workers using the Javascript programming language, and create powerful applications that have human intelligence built in. The software can also be debugged like normal code. </p>
+<p>"Usually in Javascript, you wouldn't be able to access Mechanical Turk without a lot of work," explains Greg Little, a PhD candidate at MIT's <a href="http://www.csail.mit.edu/" target="_blank">Computer Science and Artificial Intelligence Laboratory</a>, who created TurKit. "This is a bridge for writing code that interacts with the workers on Mechanical Turk, so we can easily explore new methods of human computation."</p>
+<p>With TurKit, human input is stored in a database. That way, anytime the software under development crashes, the turkers don't have to start over from scratch. Instead, once the program has been fixed, it can pick right up where it left off. "If you wait an hour for the humans to finish their task, and then the program throws an error, you don't want to wait another hour just to see if your bug fix works," says Little. TurKit also prevents the human input from changing unpredictably during the debugging process. "If I got different behavior every time I ran (a program), I could never debug that moving target," says Michael Bernstein, a PhD candidate at MIT, who used TurKit to create a word-processing application called <a href="http://projects.csail.mit.edu/soylent/" target="_blank">Soylent</a>.</p>
+<p>Thanks to TurKit, researchers have already created human computation algorithms stable enough to incorporate into functioning software. Soylent uses groups of three to seven turkers to do on-demand proofreading and paragraph shortening in Microsoft Word, with an algorithm called Find-Fix-Verify. In the Find stage, turkers simply highlight errors without correcting them. Soylent compares the results from several workers for consistency, then sends the filtered output to another group of turkers who correct the errors. Finally, a third group checks the corrections for quality; substandard results are flagged and Soylent displays only the vetted corrections. "If you just set turkers loose on your paragraph, around 30 percent of the work you get back is unusable," says Bernstein. "We wanted to treat that as inherent noise in the system while guaranteeing quality to the end user." </p>
+<p>Another Mechanical Turk application, called <a href="http://www.cs.rochester.edu/u/jbigham/vizwiz/video/" target="_blank">VizWiz</a>, is being developed to allow blind users to identify objects, such as street signs or pantry items, with the help of their smart phone cameras and sighted turkers. Ideally, VizWiz will work fast, so that users get results when they need them most. University of Rochester computer scientist <a href="http://www.cs.rochester.edu/~jbigham/" target="_blank">Jeffrey Bigham</a> and his team used TurKit to create an algorithm, called quikTurkit, that reduces lag time by queueing up groups of turkers before they are needed. When a user activates VizWiz's camera, quikTurkit signals turkers that a new query is imminent--either recruiting new workers on demand or sending the request to a pool of eight turkers already engaged in answering previous queries. The former method returns results to the user within a couple of minutes; the latter averages less than 30 seconds. "If you're running an expensive optical character recognition app on your phone, it might take that long to give you an answer anyway," says Bigham, "whereas VizWiz is smarter and could be cheaper." </p>
+<p>Both Bigham and Bernstein say they see human computation as a rich field for future applications--with open-source tools like TurKit as the best means of prototyping and refining them. "Human algorithms are fundamentally different from the ones we're used to, and TurKit lets us explore ways of optimizing them," says Bernstein. "If we start wiring human crowds successfully into these systems, we can produce an end product which is way more powerful, and do so at low cost with high reliability."</p>
+
+	
+	</div>
+	
+	
+
+
+
+
+
+
+
+<div style="background:#eee; font-size:110%; font-family:Arial, Helvetica, sans-serif; padding:2px 8px 2px 8px;"><strong>Top Stories Of The Day</strong></div>
+
+<div style="font-size:93%; padding-left:20px; margin-top:10px;">
+			
+					
+			
+					<p style="padding:0; margin:0"><a href="/energy/37210/">Using Heat to Cool Buildings</a></p>
+					
+					 
+					
+			
+					<p style="padding:0; margin:0"><a href="/communications/37159/">Crisis Mapping Meets Check-in</a></p>
+					
+					 
+					
+			
+					<p style="padding:0; margin:0"><a href="/web/37162/">New Protocol Turbocharges the Web</a></p>
+					
+					 
+					
+			
+					<p style="padding:0; margin:0"><a href="/computing/37208/">Can Google Reinvent Web Video?</a></p>
+					
+					 
+					
+			
+					<p style="padding:0; margin:0"><a href="/computing/37164/">Robots to the Rescue in Japan</a></p>
+					
+					 
+					
+			
+					<p style="padding:0; margin:0"><a href="/business/37160/">SharePoint Tries to Keep Up</a></p>
+					
+					 
+				</div>
+				</div>
+				</div>
+			</div>
+
+
+<div id="footer">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="55%">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/Computing/">Computing</a></li>
+<li><a href="/Web/">Web</a></li>
+<li><a href="/Communications/">Communications</a></li>
+</ul>
+</td>
+<td width="45%">
+<ul>
+<li><a href="/Energy/">Energy</a></li>
+<li><a href="/Materials/">Materials</a></li>
+<li><a href="/Biomedicine/">Biomedicine</a></li>
+<li><a href="/Business/">Business</a></li>
+</ul>
+</td>
+</table>
+
+<div id="footer2">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="55%">
+<ul>
+<li><a href="https://www.pubservice.com/MISubNewMobile1.aspx">Subscribe</a></li>
+<li><a href="/cust/">Customer Service</a></li>
+<li><a href="/corp/about.aspx">About Us</a></li>
+<li><a href="/search.aspx">Search</a></li>
+</ul>
+</td>
+<td width="45%">
+<ul>
+<li><a href="/events/">Events</a></li>
+<li><a href="/corp/privacy.aspx">Privacy</a></li>
+<li><a href="/corp/terms.aspx">Terms of Use</a></li>
+<li><a href="/cust/feedback.aspx">Feedback</a></li>
+</ul>
+</td>
+</table>
+</div>
+</div>
+
+<div align="center" class="advert" style="padding:8px 0 8px 0;">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td><div align="center"><img src="/images/ad_legend_h.gif" width="79" height="17" /><br />
+      <!-- START DART AD -->
+  <script type="text/javascript">
+			var browser_type=navigator.appName
+									var browser_version=parseInt(navigator.appVersion)
+									document.write('<SCR' + 'IPT LANGUAGE="JavaScript" SRC="http://ad.doubleclick.net/adj/mk3.technologyreview.com/mobilehomefoot;!category=Homepageexc;channel=mobilecomputing;section=;at=mobilehomefoot;page=home;s=mobilehomefoot;dcopt=ist;ord=' + randartnum + '?"><\/SCRIPT>')
+			</script>
+  <noscript>
+    <a href="http://ad.doubleclick.net/jump/mk3.technologyreview.com/mobilehomefoot;!category=Homepageexc;channel=mobilecomputing;section=;at=mobilehomefoot;page=home;s=mobilehomefoot;;ord=' + randartnum + '?" target="_blank">
+      <img SRC="http://ad.doubleclick.net/ad/mk3.technologyreview.com/mobilehomefoot;!category=Homepageexc;channel=mobilecomputing;section=;at=mobilehomefoot;page=home;s=mobilehomefoot;;ord=' + randartnum + '?" border="0" alt="click here..." />
+      </a>
+    </noscript>
+          <!-- END DART AD -->
+</div></td></tr></table>
+</div><div class="banner">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td><img src="/images/clearpix.gif" width="1" height="60" /></td><td align="center">
+      <a href="http://www.technologyreview.com" style="color:#FFFFFF; text-decoration:none">VIEW FULL SITE</a></td>
+</tr></table></div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var s_channel = "mobilecomputing";
+//--><!]]>
+</script>
+<script type="text/javascript" src="/scripts/omniture.js"></script>
+</body>
+</html>

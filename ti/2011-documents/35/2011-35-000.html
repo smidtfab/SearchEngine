@@ -1,0 +1,807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ESP game</title>
+<link rel="stylesheet" href="/stylesheets/stylelocal.css" type="text/css" media="screen" />
+		<script type="text/javascript"> var GB_ROOT_DIR = "/stylesheets/";</script>
+		<script type="text/javascript" src="http://cloud2.domotica.net/AJS.js"></script>
+		<script type="text/javascript" src="http://cloud3.domotica.net/AJS_fx.js"></script>
+		<script type="text/javascript" src="http://cloud0.domotica.net/gb_scripts.js"></script>
+		<script type="text/javascript" src="http://cloud1.domotica.net/jquery-1.2.2.pack.js"></script>
+		<script type="text/javascript" src="http://cloud3.domotica.net/animatedcollapse.js"></script>
+		<script type="text/javascript" src="http://cloud3.domotica.net/flashobject.js"></script>
+		<script type="text/javascript" src="http://cloud1.domotica.net/add.js"></script>
+		<script type="text/javascript" src="http://cloud0.domotica.net/clippad.js"></script>
+		<link href="http://cloud1.domotica.net/gb_styles.css" rel="stylesheet" type="text/css" />
+<body leftmargin="0" topmargin="0" alink="#000033" link="#000033" marginheight="0" marginwidth="0" vlink="#000033">
+   <div id="search-login-bar">
+   <form action="http://domotica.net/searchresults.php" id="search-form">
+        <input type="hidden" name="cx" value="partner-pub-0974924727787272:bkgfb3-6ywe" />
+        <input type="hidden" name="cof" value="FORID:10" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+                        <input type="text" id="search-terms" name="q" value="" />
+                        <input type="submit" name="sa" id="search-submit" value="Search" />
+                        <input type="hidden" id="_wpnonce" name="_wpnonce" value="b52701a994" />
+                </form>
+                <form name="login-form" id="login-form" action="http://domotica.net/wp-login.php" method="post">
+                        <input type="text" name="log" id="user_login" value="User" onfocus="if (this.value == 'User') {this.value = '';}" onblur="if (this.value == '') {this.value = 'User';}" />
+                        <input type="password" name="pwd" id="user_pass" class="input" value="" />
+                        <input type="checkbox" name="rememberme" id="rememberme" value="forever"  />
+                        <input type="submit" name="wp-submit" id="wp-submit" value="Sign in"  />
+                        <input type="button" name="signup-submit" id="signup-submit" value="Register" onclick="location.href='http://domotica.net/register'" />
+                        <input type="hidden" name="testcookie" value="1" />
+                                        </form>
+                        <div class="clear"></div>
+        </div>
+<table><tr><td><a href="http://www.domotica.net/" title="Domotica.Net"><img src="http://domotica.net/wp-content/themes/facebuddyhome/images/logo.png" align=left valign=top></a></td><td>&nbsp;&nbsp;&nbsp;</td><td width=768>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0974924727787272";
+/* 728x90, created 9/8/09 */
+google_ad_slot = "6785962484";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr></table>
+        <div id="header">
+                <ul id="nav">
+                        <li><a href="http://domotica.net/" >Home</a></li>
+                        <li><a href="http://domotica.net/hogardigital" >Categories</a></li>
+<li><a href="http://domotica.net/events" >Events</a></li>
+                        <li><a href="http://domotica.net/members" >Users</a></li>
+                                                        <li><a href="http://domotica.net/groups" >Groups</a></li>
+                                                                                <li><a href="http://domotica.net/blogs" >Blogs</a></li>
+                                                <li ><a href="http://www.domotica.org.es">Forums</a></li>
+                                <li><a href="http://www.domotica.es" >Wiki</a></li>
+                                <li><a href="http://www.domotica.com.es">Shop</a></li>
+                                <li><a href="http://www.domotica.name" >Library</a></li>               
+		            <li class=selected><a href="#" >Directory</a></li>
+                </ul>
+        </div>
+       <script>var page_sets = [{'caption':  'Embed this mindmap in your website', 'url': '/stylesheets/embed.php?Topic=ESP+game&lang=en'},{'caption':  'Contact', 'url': '/stylesheets/contact.php?Topic=ESP+game'},{'caption':  'Privacy Policy', 'url': '/stylesheets/terms.php'},{'caption':  'The ESP Game', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=10s5pvipg/**http%3A//www.espgame.org/'},{'caption':  'gwap.com - ESP Game', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=11j0j0m2p/**http%3A//www.gwap.com/gwap/gamesPreview/espgame/'},{'caption':  'ESP game - Wikipedia, the free encyclopedia', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=11a81k31h/**http%3A//en.wikipedia.org/wiki/ESP_game'},{'caption':  'ESP-Games', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=10uvjkhik/**http%3A//www.esp-games.com/'},{'caption':  'Esp game - Shop sales, stores &amp; prices at TheFind.com', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=11gu1qudc/**http%3A//www.thefind.com/family/info-esp-game'},{'caption':  'Labeling Images with a Computer Game', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=11ac04lvn/**http%3A//www.cs.cmu.edu/~biglou/ESP.pdf'},{'caption':  'Scrum Alliance - Scrum GamesParticipatory Activities that ...', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=11e910mid/**http%3A//www.scrumalliance.org/articles/111'},{'caption':  'Entertainment Software Publishing - Wikipedia, the free ...', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=123vrp4pl/**http%3A//en.wikipedia.org/wiki/Entertainment_Software_Publishing'},{'caption':  'esp game', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=1154n8map/**http%3A//www.shopwiki.com/esp-game'},{'caption':  'ESP Game - Respiratory System', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrbnFsdmNsBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDQmE1TUVHS0ljcm8zRlZvLjBySEJUQmx4UUVBTGtVMkVPMUVBQl9IbQ--/SIG=11p06t0k1/**http%3A//msjensen.cehd.umn.edu/webanatomy/timed/36.HTM'},{'caption': 'Rafael Nadal and BNP Paribas Day 9: Matches to Watch', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=13298nlhq/**http%3A//bleacherreport.com/articles/638833-rafael-nadal-and-bnp-paribas-day-9-matches-to-watch'},{'caption': 'Raiders rebound to win Game 3', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=11uqa84ok/**http%3A//delhinewsrecord.ca/ArticleDisplay.aspx%3Fe=3012816'},{'caption': 'Northern Trust Open 2011 Live Stream', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10r3iatd0/**http%3A//pitch.pe/125961'},{'caption': 'Find the Best Nursing Homes in Pennsylvania', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10r1u04n3/**http%3A//pitch.pe/125963'},{'caption': 'Infernal Engine Authorized for Nintendo 3DS Development', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10rhnrp7c/**http%3A//pitch.pe/125913'},{'caption': 'American Idol 2011 Top 24 Confirmed Tonight With The Green Mile Episode', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10rj55i25/**http%3A//pitch.pe/127724'},{'caption': 'Arsenal vs Barcelona 2011 Highlights', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10r84ekbr/**http%3A//pitch.pe/125957'},{'caption': 'Cricket World Cup 2011 Opening Ceremony Live Stream', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10rlib77v/**http%3A//pitch.pe/125958'},{'caption': 'MASTERCARD SPONSORS NEW MEDIA LAUNCH WITHIN THE HOTEL SECTOR', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=10rjdfmab/**http%3A//pitch.pe/127731'},{'caption': 'Menezes axes Robinho for friendly', 'url': 'http://lrd.yahooapis.com/_ylc=X3oDMTVrdG82ZWpiBF9TAzIwMjMxNTI3MDIEYXBwaWQDZ1NuanR3blYzNEZyTnZRUXczQ2JBd3pGTEJib0ZySWNUd3N1S0NwUm9fUWZOOFBpN08ydzVlRFdXbG8xU1RFWXlUd19uSEtqMjFJLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDUG9NQlpXS0ljcnFKZ19lZFljcWpvRTNnUUVBTGtVMkVPMUVBQ0o0NA--/SIG=12knblf37/**http%3A//www.fifa.com/worldfootball/news/newsid=1392151.html%3Fcid=rssfeed%26att='},{'caption':  'Game JPG', 'url': 'http://its-random.com/images/Game.JPG'},{'caption':  '920569 20041028 screen003 jpg', 'url': 'http://img.gamespot.com/gamespot/images/2004/screen0/920569_20041028_screen003.jpg'},{'caption':  '5669 jpg w=500 sq=Y b=Y', 'url': 'http://www.magiccastleauctions.com/thumbnail.php?pic=http:/www.granhoudini.net/5669.jpg&amp;w=500&amp;sq=Y&amp;b=Y'},{'caption':  'taboo per game png', 'url': 'http://nrl.iis.sinica.edu.tw/GWAP/ESPLite/picture/taboo_per_game.png'},{'caption':  'plr pipeline0021 jpg', 'url': 'http://i21.photobucket.com/albums/b270/tonyK1/plr_pipeline0021.jpg'},{'caption':  '2j4euf9 jpg', 'url': 'http://i43.tinypic.com/2j4euf9.jpg'},{'caption':  'esp1 jpg', 'url': 'http://many.corante.com/images/esp1.jpg'},{'caption':  '3luhj4r9 png', 'url': 'http://s1b.directupload.net/images/090414/3luhj4r9.png'},{'caption':  'drinkgame jpg', 'url': 'http://i282.photobucket.com/albums/kk243/espiotr/blog/drinkgame.jpg'},{'caption':  'pic78850 md jpg', 'url': 'http://images.boardgamegeek.com/images/pic78850_md.jpg'},{'caption': 'Modern Warfare 2 Hacks Aimbot ESP Bounding Boxs No Recoil No Spread [Update Mar 18, 2011]', 'url': 'http://www.youtube.com/v/Ej9k7Xb7ySY'},{'caption': 'Instantly get CrossFire Wallhack ESP Chams Zip file With Lots of Hacks [Update Mar 18, 2011]', 'url': 'http://www.youtube.com/v/uedjbDr0hUs'},{'caption': 'Call Of Duty Modern Warfare 2 WallHackName Tags ESP Box Hack [Update Mar 18, 2011]', 'url': 'http://www.youtube.com/v/nD-YYg7-AY4'},{'caption': 'EnhancedAim - Team Fortress 2 - VAC3 Proof *Download*', 'url': 'http://www.youtube.com/v/Dwo71-fRT8M'},{'caption': 'Call of Duty Black Ops Aimbot Wallhack ESP Free & Undetected!', 'url': 'http://www.youtube.com/v/4NeVpvIU9sU'},{'caption': 'UNDETECTED CoD2 Wallhack Aimbot Chams Name ESP Muti Hack 2011 UNDETECTABLE [Update Mar 15, 2011]', 'url': 'http://www.youtube.com/v/K_Rku_dckCo'},{'caption': 'Call Of Duty Modern Warfare 2 WallHackName Tags ESP Box Hack [Update Mar 13, 2011]', 'url': 'http://www.youtube.com/v/3Gr2aPtmavY'},{'caption': 'Call of Duty Black Ops Multi Hack [Aimbot/Wallhack/ESP] VAC UNDETECTED FREE DOWNLOAD', 'url': 'http://www.youtube.com/v/j3zvZxFBIwc'},{'caption': 'Modern Warfare 2 Hacks Aimbot ESP Bounding Boxs No Recoil No Spread [Update Mar 13, 2011]', 'url': 'http://www.youtube.com/v/JLbOroAPbWM'},{'caption': 'Crysis 2 Multiplayer Hack - Free Undetectable Wallhack', 'url': 'http://www.youtube.com/v/iJRvX4A-T_8'},{'caption': 'Undetected MW2 Modern Warfare 2 AIMBOT WALLHACK ESP - All [Update Mar 11, 2011]', 'url': 'http://www.youtube.com/v/DFkVp_bOgNY'},{'caption': 'Instantly get CrossFire Wallhack ESP Chams Zip file With Lots of Hacks [Update Mar 11, 2011]', 'url': 'http://www.youtube.com/v/dvN8uqkb7cU'},{'caption': 'UNDETECTED CoD2 Wallhack Aimbot Chams Name ESP Muti Hack 2011 UNDETECTABLE [Update Mar 11, 2011]', 'url': 'http://www.youtube.com/v/eYxay0RXK0Y'},{'caption': 'Call of Duty Black Ops MultiHack UNDETECTED FREE DOWNLOAD', 'url': 'http://www.youtube.com/v/8Ce72JrYvaw'},{'caption': 'Call Of Duty Modern Warfare 2 WallHackName Tags ESP Box Hack [Update Mar 8, 2011]', 'url': 'http://www.youtube.com/v/5IeZS76VQMI'},{'caption': 'Instantly get CrossFire Wallhack ESP Chams Zip file With Lots of Hacks [Update Mar 8, 2011]', 'url': 'http://www.youtube.com/v/hT6iRfvXBD8'},{'caption': 'Download Free VIP Private Combat Arms Hack Aimbot Wallhack Speedhack God No Smoke Fly DOWNLOAD!!!', 'url': 'http://www.youtube.com/v/bRgdxUcqjQY'},{'caption': 'Dead Space 2 - GamePlay #1 (Esp)', 'url': 'http://www.youtube.com/v/6sV_Qeif2h8'},{'caption': 'Call of Duty [COD] Black Ops Aimbot, Wallhack, ESP, AND MORE!', 'url': 'http://www.youtube.com/v/KB3YQQuFV-0'},{'caption': 'Call of Duty Black Ops Aimbot Wallhack ESP (New Download)', 'url': 'http://www.youtube.com/v/zqjkx4m4CPs'},{'caption': 'pc fifa11 esp vs cro 02.26.2011.', 'url': 'http://www.youtube.com/v/LfX7cJ5ET1U'},{'caption': 'Call of Duty Black Ops Aimbot Wallhack ESP - Free & Undetected!', 'url': 'http://www.youtube.com/v/Y5reGusmGzU'},{'caption': '[HD] Catalyst-Hax Call of Duty 4 AutoWall Hack Update', 'url': 'http://www.youtube.com/v/2h8mOLoMpv4'},{'caption': 'New COD Black Ops Aimbot Released FEBRUARY 2011 - Undetected UFO hack', 'url': 'http://www.youtube.com/v/fb9W-RUURoU'},{'caption': 'New Halo Reach Aimbot - Updated for FEBRUARY 2011 - not detected yet', 'url': 'http://www.youtube.com/v/utlkNiElZ1E'},{'caption': 'Psychic and Other Esp Party Games Funk & Wagnalls Co', 'url': 'http://www.amazon.com/Psychic-Other-Esp-Party-Games/dp/030890043X%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D030890043X'},{'caption': 'Night Game (GhostWalkers, Book 3) Jove', 'url': 'http://www.amazon.com/Night-Game-GhostWalkers-Book-3/dp/0739459821%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0739459821'},{'caption': 'ESP Party Games: Psychic Tests for Everyone Major Books', 'url': 'http://www.amazon.com/ESP-Party-Games-Psychic-Everyone/dp/0890410712%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0890410712'},{'caption': 'Cave Games: Esp Ra.de., Dodonpachi, Dodonpachi Dai ou Jou, Donpachi, Progear, Do-Don-Pachi Dai-Fukkatsu, Ketsui: Kizuna Jigoku Tachi Books LLC', 'url': 'http://www.amazon.com/Cave-Games-Ra-Do-Don-Pachi-Dai-Fukkatsu/dp/1155661419%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1155661419'},{'caption': 'Games theory: online play can help researchers tackle tough computational problems.: An article from: Science News Thomson Gale', 'url': 'http://www.amazon.com/Games-theory-researchers-computational-problems/dp/B000PC6Q8S%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB000PC6Q8S'},{'caption': 'Cassandra\'s Psychic Party Games Piatkus Books', 'url': 'http://www.amazon.com/Cassandras-Psychic-Party-Games-Cassandra/dp/074992635X%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D074992635X'},{'caption': 'Youth Leadership in Action: A Guide to Cooperative Games and Group Activities Kendall Hunt Pub Co', 'url': 'http://www.amazon.com/Youth-Leadership-Action-Cooperative-Activities/dp/0787201073%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0787201073'},{'caption': 'Are You Psychic?: Tests & Games to Measure Your Powers Prion', 'url': 'http://www.amazon.com/Are-You-Psychic-Measure-Powers/dp/1853751952%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1853751952'},{'caption': 'Koda\'s Psychic Party Games PsyCom/Psychic Publishing', 'url': 'http://www.amazon.com/Kodas-Psychic-Party-Games-Koda/dp/0971140804%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0971140804'},{'caption': 'Mind Games Ravenous Romance', 'url': 'http://www.amazon.com/Mind-Games-ebook/dp/B001XURNBA%3FSubscriptionId%3DAKIAIFKA7FDL6GI37ELQ%26tag%3Dyourdirectory-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001XURNBA'},{'caption': 'DC -IKARUGA- RARE !! SEGA Dreamcast Japan Import ESP JP', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/DC-IKARUGA-RARE-SEGA-Dreamcast-Japan-Import-ESP-JP_W0QQitemZ160551603480QQcategoryZ139973QQcmdZViewItem'},{'caption': 'Vintage 1966 KRESKIN\'S ESP Game Milton Bradley', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/Vintage-1966-KRESKINS-ESP-Game-Milton-Bradley_W0QQitemZ150577934506QQcategoryZ2533QQcmdZViewItem'},{'caption': 'MindFlex Mental Game MIND FLEX Brain Power ESP Mattel', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/MindFlex-Mental-Game-MIND-FLEX-Brain-Power-ESP-Mattel_W0QQitemZ330521831352QQcategoryZ38266QQcmdZViewItem'},{'caption': 'The Ball Game - Commodore Amiga - ESP 3.5\" Disks', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/The-Ball-Game-Commodore-Amiga-ESP-3-5-Disks_W0QQitemZ130402730309QQcategoryZ4598QQcmdZViewItem'},{'caption': '1967 kreskin\'s esp game milton bradley ', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/1967-kreskins-esp-game-milton-bradley_W0QQitemZ290545315397QQcategoryZ2533QQcmdZViewItem'},{'caption': '1966 KRESKIN\'S ESP  BOARD GAME Milton Bradley', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/1966-KRESKINS-ESP-BOARD-GAME-Milton-Bradley_W0QQitemZ200587968664QQcategoryZ2533QQcmdZViewItem'},{'caption': 'KRESKIN\'S ESP psychic game by Milton Bradley 1966 4722', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/KRESKINS-ESP-psychic-game-by-Milton-Bradley-1966-4722_W0QQitemZ260753549289QQcategoryZ2530QQcmdZViewItem'},{'caption': '1967 \"Kreskin\'s ESP\"Board Game! Psychic?? Look!', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/1967-Kreskins-ESP-Board-Game-Psychic-Look_W0QQitemZ260752012744QQcategoryZ30QQcmdZViewItem'},{'caption': 'Vintage Milton Bradley Board Game Kreskin\'s ESP Good ', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/Vintage-Milton-Bradley-Board-Game-Kreskins-ESP-Good_W0QQitemZ280590362944QQcategoryZ2533QQcmdZViewItem'},{'caption': '1960s KRESKIN\'S ESP game box magnet - new!', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/1960s-KRESKINS-ESP-game-box-magnet-new_W0QQitemZ140376013070QQcategoryZ2533QQcmdZViewItem'},{'caption': '1967 Milton Bradley Game Kreskin\'s ESP; 99% complete!', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/1967-Milton-Bradley-Game-Kreskins-ESP-99-complete_W0QQitemZ310305135025QQcategoryZ2533QQcmdZViewItem'},{'caption': 'Vtech Child Laptop Numbers Letters Games Music Eng/Esp', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/Vtech-Child-Laptop-Numbers-Letters-Games-Music-Eng-Esp_W0QQitemZ250650843108QQcategoryZ158689QQcmdZViewItem'},{'caption': 'Vintage 1967 KRESKIN\'s ESP Game Pieces and Parts', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/Vintage-1967-KRESKINs-ESP-Game-Pieces-and-Parts_W0QQitemZ200585337177QQcategoryZ2533QQcmdZViewItem'},{'caption': 'Vintage RARE Beyond The Senses ESP game weird 1976 L@@K', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/Vintage-RARE-Beyond-The-Senses-ESP-game-weird-1976-L-K_W0QQitemZ200587567787QQcategoryZ234QQcmdZViewItem'},{'caption': 'Milton Bradley KRESKIN\'S ESP Vintage Board Game 1967', 'url': 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5335838240&customid=1&toolid=10012&mpre=http://cgi.ebay.com/Milton-Bradley-KRESKINS-ESP-Vintage-Board-Game-1967_W0QQitemZ400201512658QQcategoryZ2533QQcmdZViewItem'},];</script>      <div id="content" class="narrowcolumn">
+<script type="text/javascript"><!--
+google_ad_client = "pub-0974924727787272";
+/* 300x250, created 4/11/10 */
+google_ad_slot = "2048169940";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<script type="text/javascript"><!--
+google_ad_client = "pub-0974924727787272";
+/* 300x250, created 4/11/10 */
+google_ad_slot = "2048169940";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+                        <div class="widget" id="latest-news">
+ <h2 class="widgettitle"><a href="javascript:wiki();">Wiki</a> | 
+ <a href="javascript:webs();">Webs</a> | <a href="javascript:videos();">Videos</a> | <a href="javascript:books();">Blogs</a> | <a href="javascript:images();">Images</a> | <a href="javascript:news();">News</a> | 	<a href="javascript:map();">Mindmap off</a> ESP game</h2><br>
+               
+<div id=flashcontent align=left valign=top> 
+				<embed type="application/x-shockwave-flash" src="/stylesheets/get.swf" width="640" height="550" style=""  bgcolor="#ffffff" quality="high" flashvars="openUrl=_self&amp;initLoadFile=/stylesheets/get.php?Topic=ESP game&amp;startCollapsedToLevel=1"> 
+
+			</div> <div class=pedia id='wiki0'>
+				 The ESP Game is an idea in computer science for addressing the problem of creating difficult metadata. The idea behind the game is to use the computational power of humans to perform a task that computers cannot yet do (originally image recognition) by packaging the task as a game. It was originally conceived by Luis von Ahn of Carnegie Mellon University. Google bought a licence to create its own version of the game in 2006 in order to return better search results for its online images.1 The licence of the data acquired by Ahn's ESP Game or the Google version is not clear.
+
+
+
+
+Contents
+
+
+1 Idea
+2 Rules of the game
+3 Cheating
+4 References
+5 External links
+
+
+
+
+ Idea
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news0' onMouseOver="to(14);" onMouseOut="to(14);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 14)">Rafael Nadal and BNP Paribas Day 9: Matches to Watch</a><br/>Juan Martin Del Potro (ARG) vs.  Tommy Robredo (ESP) – Del Potro just keeps right on charging through the field like he didn’t miss nearly all of 2010, and what a heart-warming thing it is to see. We forget just how young he is until we remember he upset  Roger Federer  at the 2009 US Open a few days before his 20th birthday. At 17-4 on the season, he’s one win better than the 16-4 Robredo, who ...<br/><small><i></i></small><div id="minilinks14" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 14)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 14)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 14)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 14)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 14)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links14" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 14)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 14)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 14)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 14)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 14)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images0' onMouseOver="to(24);" onMouseOut="to(24);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 24)"><img style="padding:3px;"  align="left" src=http://thm-a01.yimg.com/nimage/b32efd40e762788a></a><br/>Play Solo or with Family and Friends Contents 56 large beautiful cards 1 die 7 tokens rules For 1 or more players aged 8 +<br/><small><i>http://www.its-random.com/</i></small><div id="minilinks24" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 24)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 24)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 24)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 24)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 24)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links24" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 24)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 24)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 24)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 24)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 24)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos0' onMouseOver="to(34);" onMouseOut="to(34);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 34)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/Ej9k7Xb7ySY/default.jpg><br>Modern Warfare 2 Hacks Aimbot ESP Bounding Boxs No Recoil No Spread [Update Mar 18, 2011]</a><br><div id="minilinks34" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 34)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 34)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 34)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 34)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 34)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links34" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 34)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 34)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 34)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 34)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 34)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs1' onMouseOver="to(5);" onMouseOut="to(5);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 5)">gwap.com - ESP Game</a><br/>When you play a <b>game</b> at Gwap, you aren't just having fun. You're helping the world become a better place. By playing our <b>games</b>, you're training computers to solve <b>...</b><br/><small><i></i></small><div id="minilinks5" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 5)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 5)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 5)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 5)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 5)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links5" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 5)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 5)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 5)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 5)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 5)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons1' onMouseOver="to(60);" onMouseOut="to(60);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 60)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/41SP7BS02TL._SL75_.jpg><br>Night Game (GhostWalkers, Book 3) Jove</a><br><div id="minilinks60" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 60)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 60)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 60)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 60)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 60)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links60" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 60)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 60)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 60)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 60)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 60)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki1'>Image recognition is currently (as of 2009) a task that computers are almost incapable of. Humans are perfectly capable of it but not necessarily willing.
+ The applications and uses of having so many labeled images are significant; for example more accurate image searching and accessibility for visually-impaired users (by reading out an image's labels).
+ The idea of partnering two people to label images ensures that entered words will be accurate. Since the only thing the two partners have in common is that they both see the same image they must enter reasonable labels to have any chance of agreeing on one.
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news1' onMouseOver="to(15);" onMouseOut="to(15);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 15)">Raiders rebound to win Game 3</a><br/>With their OFSAA tournament run dangling by a thread, the Delhi Raiders summoned some of the magic they used in the Norfolk playoffs to continue on to the final day.<br/><small><i></i></small><div id="minilinks15" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 15)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 15)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 15)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 15)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 15)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links15" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 15)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 15)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 15)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 15)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 15)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images1' onMouseOver="to(25);" onMouseOut="to(25);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 25)"><img style="padding:3px;"  align="left" src=http://thm-a02.yimg.com/nimage/381cbbcd18f975f4></a><br/>The incredibles los increbles es un juego de accin y plataformas en el que el jugador podr asumir el rol de los cuatro integrantes de esta peculiar familia de superhroes creada por<br/><small><i>http://gayousonline.blogspot.com/2008_03_01_archive.html</i></small><div id="minilinks25" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 25)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 25)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 25)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 25)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 25)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links25" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 25)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 25)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 25)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 25)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 25)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos1' onMouseOver="to(35);" onMouseOut="to(35);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 35)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/uedjbDr0hUs/default.jpg><br>Instantly get CrossFire Wallhack ESP Chams Zip file With Lots of Hacks [Update Mar 18, 2011]</a><br><div id="minilinks35" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 35)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 35)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 35)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 35)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 35)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links35" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 35)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 35)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 35)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 35)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 35)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs2' onMouseOver="to(6);" onMouseOut="to(6);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 6)">ESP game - Wikipedia, the free encyclopedia</a><br/>The <b>ESP</b> <b>Game</b> is an idea in computer science for addressing the problem of creating difficult metadata. <b>...</b> The <b>ESP</b> <b>Game</b> as it is currently implemented encourages players to <b>...</b><br/><small><i></i></small><div id="minilinks6" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 6)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 6)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 6)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 6)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 6)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links6" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 6)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 6)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 6)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 6)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 6)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons2' onMouseOver="to(61);" onMouseOut="to(61);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 61)"><img style="padding:3px;" align="left" boder=0 src=/stylesheets/vacio.gif><br>ESP Party Games: Psychic Tests for Everyone Major Books</a><br><div id="minilinks61" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 61)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 61)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 61)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 61)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 61)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links61" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 61)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 61)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 61)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 61)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 61)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki2'>The ESP Game as it is currently implemented encourages players to assign obvious labels which are most likely to lead to an agreement with the partner. But these labels can often be deduced from the labels already present using an appropriate language model and such labels therefore add only little information to the system. A Microsoft research project assigns probabilities to the next label to be added. This model is then used in a program which plays the ESP game without looking at the image.
+ Rules of the game
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news2' onMouseOver="to(16);" onMouseOut="to(16);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 16)">Northern Trust Open 2011 Live Stream</a><br/>Watch Northern Trust Open 2011 golf live streaming online on February 17, 2011 to be held live at Riviera CC golf course in Pacific Palisades in California, USA for the Northern Trust Open 2011 PGA Tour golf tournament in another exciting professional golf match where the defending champion is Steve Stricker.Look for streaming of the opening ceremony of the cricket world cup 2011 free online for ...<br/><small><i></i></small><div id="minilinks16" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 16)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 16)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 16)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 16)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 16)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links16" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 16)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 16)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 16)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 16)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 16)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images2' onMouseOver="to(26);" onMouseOut="to(26);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 26)"><img style="padding:3px;"  align="left" src=http://thm-a01.yimg.com/nimage/fa8c64ee260148fc></a><br/><br/><small><i>http://www.magiccastleauctions.com/auction_details.php?auction_id=104680</i></small><div id="minilinks26" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 26)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 26)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 26)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 26)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 26)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links26" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 26)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 26)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 26)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 26)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 26)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos2' onMouseOver="to(36);" onMouseOut="to(36);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 36)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/nD-YYg7-AY4/default.jpg><br>Call Of Duty Modern Warfare 2 WallHackName Tags ESP Box Hack [Update Mar 18, 2011]</a><br><div id="minilinks36" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 36)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 36)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 36)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 36)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 36)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links36" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 36)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 36)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 36)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 36)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 36)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs3' onMouseOver="to(7);" onMouseOut="to(7);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 7)">ESP-Games</a><br/>If you've seen the credits in-<b>game</b>, you'll know that Gareth has also made the UI window graphics used throughout, as well as the <b>ESP</b> <b>Games</b> and Miasma logos. <b>...</b><br/><small><i></i></small><div id="minilinks7" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 7)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 7)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 7)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 7)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 7)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links7" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 7)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 7)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 7)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 7)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 7)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons3' onMouseOver="to(62);" onMouseOut="to(62);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 62)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/510a1s3KeCL._SL75_.jpg><br>Cave Games: Esp Ra.de., Dodonpachi, Dodonpachi Dai ou Jou, Donpachi, Progear, Do-Don-Pachi Dai-Fukkatsu, Ketsui: Kizuna Jigoku Tachi Books LLC</a><br><div id="minilinks62" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 62)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 62)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 62)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 62)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 62)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links62" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 62)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 62)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 62)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 62)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 62)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki3'>Once logged in a user is automatically matched with a random partner. The partners do not know each other's identity and they cannot communicate. Once matched they will both be shown the same image. Their task is to agree on a word that would be an appropriate label for the image. They both enter possible words and once a word is entered by both partners (not necessarily at the same time) that word is agreed upon and that word becomes a label for the image. Once they agree on a word they are shown another image. They have two and a half minutes to label 15 images.
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news3' onMouseOver="to(17);" onMouseOut="to(17);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 17)">Find the Best Nursing Homes in Pennsylvania</a><br/>Getting old is an unavoidable part of our lives. And with the busy lives that we lead today, the day will come when we have to decide which of the best nursing homes in Pennsylvania we would like to put our aged parents in. Its not something that we love doing but there doesnt seem to be much else if we are to make sure that they have constant attention and care. But then the least we can do...<br/><small><i></i></small><div id="minilinks17" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 17)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 17)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 17)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 17)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 17)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links17" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 17)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 17)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 17)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 17)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 17)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images3' onMouseOver="to(27);" onMouseOut="to(27);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 27)"><img style="padding:3px;"  align="left" src=http://thm-a02.yimg.com/nimage/9a091cf824da4a26></a><br/><br/><small><i>http://nrl.iis.sinica.edu.tw/GWAP/ESPLite/statistics.php</i></small><div id="minilinks27" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 27)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 27)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 27)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 27)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 27)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links27" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 27)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 27)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 27)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 27)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 27)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos3' onMouseOver="to(37);" onMouseOut="to(37);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 37)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/Dwo71-fRT8M/default.jpg><br>EnhancedAim - Team Fortress 2 - VAC3 Proof *Download*</a><br><div id="minilinks37" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 37)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 37)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 37)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 37)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 37)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links37" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 37)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 37)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 37)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 37)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 37)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs4' onMouseOver="to(8);" onMouseOut="to(8);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 8)">Esp game - Shop sales, stores &amp; prices at TheFind.com</a><br/><b>Esp</b> <b>game</b> - 625 results from 155 stores, including Cromagnon (<b>ESP</b>) - Cave Rock, Magic Makers Bicycle <b>ESP</b> Test Deck with Rudy T Hunter - Includes Teaching <b>...</b><br/><small><i></i></small><div id="minilinks8" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 8)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 8)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 8)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 8)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 8)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links8" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 8)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 8)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 8)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 8)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 8)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons4' onMouseOver="to(63);" onMouseOut="to(63);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 63)"><img style="padding:3px;" align="left" boder=0 src=/stylesheets/vacio.gif><br>Games theory: online play can help researchers tackle tough computational problems.: An article from: Science News Thomson Gale</a><br><div id="minilinks63" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 63)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 63)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 63)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 63)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 63)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links63" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 63)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 63)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 63)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 63)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 63)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki4'>Both partners have the option to pass; that is give up on an image. Once one partner passes the other partner is shown a message that their partner wishes to pass. Both partners must pass for a new image to be shown.
+ Some images have taboo words; that is words that cannot be entered as possible labels. This is done automatically by the system: once an image has been labeled enough times with the same word that word becomes taboo so that the image will get a variety of different words as labels.
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news4' onMouseOver="to(18);" onMouseOut="to(18);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 18)">Infernal Engine Authorized for Nintendo 3DS Development</a><br/>LEWISVILLE, TX Terminal Reality www.terminalreality.com, maker of the Infernal Engine and award-winning titles like Ghostbusters: The Videogame and Def Jam: Rapstar, is announcing the Infernal Engines recent authorization for Nintendo 3DS TM development. On March 27, Nintendo will introduce portable, glasses-free 3D to North America and the Infernal Engine is poised to ...<br/><small><i></i></small><div id="minilinks18" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 18)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 18)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 18)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 18)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 18)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links18" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 18)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 18)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 18)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 18)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 18)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images4' onMouseOver="to(28);" onMouseOut="to(28);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 28)"><img style="padding:3px;"  align="left" src=http://thm-a01.yimg.com/nimage/ee8ccef9b9bf1e50></a><br/>my tf2 hack<br/><small><i>http://forum.gamedeception.net/showthread.php?p=113214</i></small><div id="minilinks28" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 28)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 28)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 28)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 28)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 28)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links28" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 28)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 28)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 28)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 28)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 28)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos4' onMouseOver="to(38);" onMouseOut="to(38);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 38)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/4NeVpvIU9sU/default.jpg><br>Call of Duty Black Ops Aimbot Wallhack ESP Free & Undetected!</a><br><div id="minilinks38" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 38)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 38)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 38)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 38)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 38)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links38" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 38)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 38)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 38)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 38)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 38)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs5' onMouseOver="to(9);" onMouseOut="to(9);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 9)">Labeling Images with a Computer Game</a><br/>From the player's perspective, the goal of the <b>ESP</b> <b>game</b> is <b>...</b> if the users playing the <b>ESP</b> <b>game</b> were all students at that. university, they might input <b>...</b><br/><small><i></i></small><div id="minilinks9" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 9)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 9)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 9)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 9)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 9)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links9" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 9)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 9)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 9)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 9)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 9)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons5' onMouseOver="to(64);" onMouseOut="to(64);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 64)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/51pRuoMssVL._SL75_.jpg><br>Cassandra's Psychic Party Games Piatkus Books</a><br><div id="minilinks64" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 64)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 64)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 64)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 64)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 64)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links64" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 64)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 64)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 64)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 64)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 64)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki5'>Occasionally the game will be played solo without a human partner with the ESP Game itself acting as the opponent and delivering a series of pre-determined labels to the single human player (which have been harvested from labels given to the image during the course of earlier games played by real humans). This is necessary if there are an odd number of people playing the game.2
+ In late 2008 the game was rebranded under the gwap.com domain (for game with a purpose) with a new user interface. Some other games that were also created by Luis von Ahn such as Peekaboom and Phetch were discontinued at that point.
+ Cheating
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news5' onMouseOver="to(19);" onMouseOut="to(19);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 19)">American Idol 2011 Top 24 Confirmed Tonight With The Green Mile Episode</a><br/>I hope youre ready for two more hours of American Idols long awaited Green Mile Top 24 spoilers here episode tonight. After last nights planned 2-hour Vegas episode was cut in half to make way for more Green Mile well end up with a full three hours of arguing judges and crying Idol hopefuls.If you missed last nights Vegas Green Mile episode, then check out Brandens recap of...<br/><small><i></i></small><div id="minilinks19" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 19)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 19)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 19)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 19)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 19)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links19" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 19)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 19)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 19)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 19)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 19)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images5' onMouseOver="to(29);" onMouseOut="to(29);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 29)"><img style="padding:3px;"  align="left" src=http://thm-a02.yimg.com/nimage/b8c6266db1d158e0></a><br/>urlhttp i43 tinypic com 2j4euf9 jpg Here is mine from ages ago When TF2 was new<br/><small><i>http://forum.gamedeception.net/showthread.php?p=113214</i></small><div id="minilinks29" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 29)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 29)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 29)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 29)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 29)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links29" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 29)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 29)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 29)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 29)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 29)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos5' onMouseOver="to(39);" onMouseOut="to(39);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 39)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/K_Rku_dckCo/default.jpg><br>UNDETECTED CoD2 Wallhack Aimbot Chams Name ESP Muti Hack 2011 UNDETECTABLE [Update Mar 15, 2011]</a><br><div id="minilinks39" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 39)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 39)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 39)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 39)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 39)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links39" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 39)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 39)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 39)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 39)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 39)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs6' onMouseOver="to(10);" onMouseOut="to(10);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 10)">Scrum Alliance - Scrum GamesParticipatory Activities that ...</a><br/>The <b>ESP</b> (extrasensory perception) <b>game</b> is a very simple <b>game</b> that I <b>...</b> The <b>ESP</b> <b>game</b> should be played after the team has gone through a Scrum planning <b>...</b><br/><small><i></i></small><div id="minilinks10" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 10)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 10)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 10)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 10)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 10)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links10" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 10)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 10)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 10)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 10)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 10)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons6' onMouseOver="to(65);" onMouseOut="to(65);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 65)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/41UTcgswIFL._SL75_.jpg><br>Youth Leadership in Action: A Guide to Cooperative Games and Group Activities Kendall Hunt Pub Co</a><br><div id="minilinks65" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 65)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 65)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 65)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 65)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 65)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links65" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 65)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 65)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 65)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 65)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 65)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki6'>Ahn has described countermeasures which prevent players from "cheating" the game and introducing false data into the system. By giving players occasional test images for which common labels are known it is possible to check that players are answering honestly and a player's guesses are only stored if they successfully label the test images.3
+ Furthermore a label is only stored after a certain number of players (N) have agreed on it. At this point all of the taboo listsclarification needed for the images are deleted and the image is returned to the game pool as if it were a fresh image. If X is probability of a label being incorrect despite a player having successfully labelled test images then after N repetitions the probability of corruption is XN assuming that end repetitions are independent of each other.3
+ References
+
+ "Solving the web's image problem". bbc. 2008-05-14. http://news.bbc.co.uk/1/hi/technology/7395751.stm. Retrieved 2008-12-14.&#160;
+ Google Tech Talk on Human Computation by creator Luis von Ahn http://video.google.com/videoplaydocid-8246463980976635143&amp;qgoogle+tech+talks retrieved 2009-10-24&#160;
+ a b Google Tech Talk on human computation by Luis von Ahn
+
+ External links
+
+The ESP Game
+Creator's website
+Google's Image Labeler
+
+
+
+
+
+
+ <br/><br/></div><div class=webs><div style='position:relative; ' id='news6' onMouseOver="to(20);" onMouseOut="to(20);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 20)">Arsenal vs Barcelona 2011 Highlights</a><br/>Watch Arsenal vs FC Barcelona soccer live streaming online on February 16, 2011 for the English Champions League football games between Arsenal and FC Barcelona in another exciting football match.Look for streaming of the match free online for the latest updates and live coverage and score including statistics of each players as well as predictions, preview, recaps and highlights on which team ...<br/><small><i></i></small><div id="minilinks20" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 20)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 20)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 20)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 20)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 20)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links20" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 20)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 20)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 20)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 20)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 20)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images6' onMouseOver="to(30);" onMouseOut="to(30);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 30)"><img style="padding:3px;"  align="left" src=http://thm-a01.yimg.com/nimage/7326bd0acc66c7d6></a><br/>5000 people playing the ESP game simultaneously can label all images in Google in 2 months<br/><small><i>http://dukeresearch.blogspot.com/2009/10/when-computers-cant-humans-can-help.html</i></small><div id="minilinks30" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 30)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 30)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 30)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 30)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 30)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links30" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 30)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 30)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 30)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 30)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 30)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos6' onMouseOver="to(40);" onMouseOut="to(40);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 40)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/3Gr2aPtmavY/default.jpg><br>Call Of Duty Modern Warfare 2 WallHackName Tags ESP Box Hack [Update Mar 13, 2011]</a><br><div id="minilinks40" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 40)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 40)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 40)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 40)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 40)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links40" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 40)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 40)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 40)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 40)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 40)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs7' onMouseOver="to(11);" onMouseOut="to(11);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 11)">Entertainment Software Publishing - Wikipedia, the free ...</a><br/><b>ESP</b> took the burdens of public relations and sales out of the hands of <b>game</b> studios. <b>...</b> This Japanese video <b>game</b> corporation or company article is a stub. <b>...</b><br/><small><i></i></small><div id="minilinks11" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 11)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 11)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 11)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 11)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 11)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links11" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 11)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 11)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 11)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 11)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 11)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons7' onMouseOver="to(66);" onMouseOut="to(66);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 66)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/41oZah43j7L._SL75_.jpg><br>Are You Psychic?: Tests & Games to Measure Your Powers Prion</a><br><div id="minilinks66" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 66)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 66)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 66)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 66)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 66)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links66" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 66)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 66)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 66)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 66)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 66)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki7'> <br/><br/></div><div class=webs><div style='position:relative; ' id='news7' onMouseOver="to(21);" onMouseOut="to(21);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 21)">Cricket World Cup 2011 Opening Ceremony Live Stream</a><br/>Watch Cricket World Cup 2011 Opening Ceremony live streaming online on February 17, 2011 for the 2011 ICC Cricket World Cup opening ceremony to be held live at Bangabandhu National Stadium in Dhaka in another exciting 10th cricket world cup match of 14 competing teams.Look for streaming of the opening ceremony of the cricket world cup 2011 free online for the latest updates and live coverage of...<br/><small><i></i></small><div id="minilinks21" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 21)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 21)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 21)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 21)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 21)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links21" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 21)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 21)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 21)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 21)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 21)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images7' onMouseOver="to(31);" onMouseOut="to(31);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 31)"><img style="padding:3px;"  align="left" src=http://thm-a02.yimg.com/nimage/495c5a1a9500a69e></a><br/>root likes good looking GUIs http s1b directupload net images 090414 3luhj4r9 png Wtf perfect NoSpread Recoil is possible<br/><small><i>http://forum.gamedeception.net/showthread.php?goto=newpost&amp;t=17110</i></small><div id="minilinks31" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 31)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 31)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 31)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 31)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 31)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links31" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 31)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 31)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 31)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 31)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 31)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos7' onMouseOver="to(41);" onMouseOut="to(41);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 41)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/j3zvZxFBIwc/default.jpg><br>Call of Duty Black Ops Multi Hack [Aimbot/Wallhack/ESP] VAC UNDETECTED FREE DOWNLOAD</a><br><div id="minilinks41" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 41)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 41)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 41)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 41)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 41)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links41" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 41)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 41)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 41)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 41)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 41)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs8' onMouseOver="to(12);" onMouseOut="to(12);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 12)">esp game</a><br/>ShopWiki has 70 results for <b>esp</b> <b>game</b>, including <b>ESP</b> board <b>game</b> (Dynamic), Kreskins <b>Esp</b> Vintage Board <b>Game</b>, PSI-KICK - <b>ESP</b> <b>Games</b>, and Psychic and Other <b>ESP</b> Party <b>Games</b><br/><small><i></i></small><div id="minilinks12" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 12)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 12)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 12)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 12)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 12)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links12" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 12)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 12)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 12)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 12)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 12)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons8' onMouseOver="to(67);" onMouseOut="to(67);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 67)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/515W7T029TL._SL75_.jpg><br>Koda's Psychic Party Games PsyCom/Psychic Publishing</a><br><div id="minilinks67" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 67)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 67)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 67)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 67)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 67)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links67" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 67)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 67)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 67)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 67)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 67)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki8'> <br/><br/></div><div class=webs><div style='position:relative; ' id='news8' onMouseOver="to(22);" onMouseOut="to(22);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 22)">MASTERCARD SPONSORS NEW MEDIA LAUNCH WITHIN THE HOTEL SECTOR</a><br/>COLOGNE, Germany February, 2011 Acentic, a leading supplier of broadband systems and digital interactive TV iTV for the hotel industry has launched Acentic Media, a new multimedia digital platform. Acentic Media went live in November in the hotel sector with MasterCard as a lead sponsor and Infiniti UK as co-sponsor. The launch commenced within selected Holiday Inn and Crowne Plaza hotels and...<br/><small><i></i></small><div id="minilinks22" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 22)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 22)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 22)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 22)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 22)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links22" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 22)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 22)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 22)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 22)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 22)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images8' onMouseOver="to(32);" onMouseOut="to(32);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 32)"><img style="padding:3px;"  align="left" src=http://thm-a01.yimg.com/nimage/a6a95bf888e7037e></a><br/>Yesterday I realized that I have a strange need to when playing video games sip on a beverage befitting of the virtual environment I m in When shooting virtual terrorists or virtual<br/><small><i>http://www.fbesp.org/blog/archive/2008_09_01_archive.html</i></small><div id="minilinks32" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 32)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 32)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 32)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 32)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 32)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links32" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 32)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 32)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 32)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 32)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 32)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos8' onMouseOver="to(42);" onMouseOut="to(42);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 42)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/JLbOroAPbWM/default.jpg><br>Modern Warfare 2 Hacks Aimbot ESP Bounding Boxs No Recoil No Spread [Update Mar 13, 2011]</a><br><div id="minilinks42" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 42)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 42)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 42)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 42)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 42)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links42" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 42)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 42)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 42)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 42)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 42)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs9' onMouseOver="to(13);" onMouseOut="to(13);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 13)">ESP Game - Respiratory System</a><br/>Click on Stop <b>Game</b> in the upper right corner of the screen. <b>...</b> If Click here for results does not appear, you are not yet done with the <b>game</b>. <b>...</b><br/><small><i></i></small><div id="minilinks13" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 13)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 13)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 13)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 13)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 13)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links13" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 13)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 13)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 13)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 13)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 13)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='amazons9' onMouseOver="to(68);" onMouseOut="to(68);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 68)"><img style="padding:3px;" align="left" boder=0 src=http://ecx.images-amazon.com/images/I/51JmYLAIhKL._SL75_.jpg><br>Mind Games Ravenous Romance</a><br><div id="minilinks68" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 68)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 68)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 68)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 68)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 68)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links68" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 68)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 68)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 68)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 68)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 68)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=pedia id='wiki9'> <br/><br/></div><div class=webs><div style='position:relative; ' id='news9' onMouseOver="to(23);" onMouseOut="to(23);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 23)">Menezes axes Robinho for friendly</a><br/>Brazil coach Mano Menezes made several high-profile recalls when he named his squad to face Scotland in a friendly in London later this month, also deciding to leave out Robinho.<br/><small><i></i></small><div id="minilinks23" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 23)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 23)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 23)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 23)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 23)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links23" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 23)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 23)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 23)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 23)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 23)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='images9' onMouseOver="to(33);" onMouseOut="to(33);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 33)"><img style="padding:3px;"  align="left" src=http://thm-a02.yimg.com/nimage/3191446d4b408434></a><br/><br/><small><i>http://www.boardgamegeek.com/image/78850</i></small><div id="minilinks33" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 33)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 33)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 33)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 33)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 33)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links33" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 33)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 33)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 33)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 33)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 33)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='videos9' onMouseOver="to(43);" onMouseOut="to(43);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 43)"><img style="padding:3px;" align="left" boder=0 src=http://i.ytimg.com/vi/iJRvX4A-T_8/default.jpg><br>Crysis 2 Multiplayer Hack - Free Undetectable Wallhack</a><br><div id="minilinks43" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 43)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 43)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 43)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 43)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 43)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links43" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 43)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 43)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 43)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 43)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 43)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div><div class=webs><div style='position:relative;' id='webs10'</div></div><div class=webs><div style='position:relative;' id='amazons10' onMouseOver="to(69);" onMouseOut="to(69);"><a href="" onclick="return GB_showFullScreenSet(page_sets, 69)"><img style="padding:3px;" align="left" boder=0 src=http://thumbs1.ebaystatic.com/pict/1605516034808080_2.jpg><br>DC -IKARUGA- RARE !! SEGA Dreamcast Japan Import ESP JP</a><br>Only $90.8<div id="minilinks69" style="position:absolute; display: none; top:0; right:0;">
+	<a href="#" onclick="return clippad(page_sets, 69)"><img src="http://cloud0.domotica.net/clippad.gif"></a>&middot;
+	<a href="#" onclick="return flag(page_sets, 69)"><img src="http://cloud1.domotica.net/flag.gif"></a>&middot; 
+	<a href="#" onclick="return newwindow(page_sets, 69)"><img src="http://cloud2.domotica.net/newwindow.gif"></a>&middot;
+	<a href="#" onclick="return prints(page_sets, 69)"><img src="http://cloud3.domotica.net/print.gif"></a>&middot;
+	<a href="#" onclick="return tag(page_sets, 69)"><img src="http://cloud1.domotica.net/tag.gif"></a>
+	</div>
+	<div id="mini2links69" style="position:absolute; display: none; bottom:0; right:0;">
+	<a href="#" onclick="return comment(page_sets, 69)"><img src="http://cloud0.domotica.net/comment.gif"></a>&middot;
+	<a href="#" onclick="return favorite(page_sets, 69)"><img src="http://cloud2.domotica.net/favorite.gif"></a>&middot;
+	<a href="#" onclick="return jeer(page_sets, 69)"><img src="http://cloud3.domotica.net/jeer.gif"></a>&middot;
+	<a href="#" onclick="return recommend(page_sets, 69)"><img src="http://cloud1.domotica.net/recommend.gif"></a>&middot;
+	<a href="#" onclick="return subscribe(page_sets, 69)"><img src="http://cloud2.domotica.net/subscribe.gif"></a>
+	</div></div></div>                        </div>
+                </div>
+                </div></div></div>
+        <div id="sidebar">
+<script type="text/javascript"><!--
+google_ad_client = "pub-0974924727787272";
+/* 200x90, created 4/11/10 */
+google_ad_slot = "4964983240";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br><br>
+<h2 class="widgettitle">ESP game</h2>
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=andresm" class="addthis_button_compact">Share</a>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=andresm"></script><br/>
+                                                     <a href="#" onclick="return GB_showFullScreenSet(click,1)">Browse links saved</b></a><br/>
+                              <a href=# onclick="return GB_showFullScreenSet(page_sets, 1)">Include a map in your website</a>
+<br><br>
+<h2 class="widgettitle">Tags</h2>
+<a href="2009">2009</a><br /><a href="Computer">Computer</a><br /><a href="Computer_science">Computer science</a><br /><a href="ESP_game">ESP game</a><br /><a href="Game_with_a_purpose">Game with a purpose</a><br /><a href="Google">Google</a><br /><a href="Human_computation">Human computation</a><br /><a href="Image_recognition">Image recognition</a><br /><a href="Luis_von_Ahn">Luis von Ahn</a><br /><a href="Main_Page">Main Page</a><br /><a href="Metadata">Metadata</a><br /><a href="Video_game">Video game</a><br />        </div>
+        </br>
+        <div id="footer">
+         Domotica.Net &copy; 1999-2011   | <a href="https://spreadsheets.google.com/viewform?formkey=dFVYNzBaa2FnVVZuand6UEhQOG5hU2c6MA..">Contact </a> | <a href="http://en.domotica.net/Home_automation">English</a> | <a href="http://de.domotica.net/Hausautomation">Deutsch </a> | <a href="http://pt.domotica.net/Dom%C3%B3tica">Português</a> | <a href="http://fr.domotica.net/Domotique">Français</a> 
+        </div>
+</body></html>

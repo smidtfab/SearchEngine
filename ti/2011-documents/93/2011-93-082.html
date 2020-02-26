@@ -1,0 +1,968 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_siteHead"><meta name="country" content="Australia" /><meta name="ICBM" content="-33.867139, 151.207114" /><meta name="ICBM" content="51.53524,-0.14516" /><link rel="stylesheet" type="text/css" href="http://css.designcrowd.com/masterpage_style.css" /><link rel="stylesheet" type="text/css" href="http://css.designcrowd.com/designcrowd_style.css" />
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://css.designcrowd.com/designcrowd_IE7_style.css" /><![endif]-->
+    <!--[if IE 6]><link rel="stylesheet" type="text/css" href="http://css.designcrowd.com/designcrowd_IE6_style.css" /><![endif]-->
+    
+    <script type="text/javascript" language="javascript" src="http://javascript.designcrowd.com/designcrowd_js.js"></script>
+    <script type="text/javascript" src="http://javascript.designcrowd.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://javascript.designcrowd.com/jquery.hoverIntent.minified.js"></script>
+    
+    <script type="text/javascript"> 
+        $(document).ready(function() {
+	        function megaHoverOver(){
+		        $(this).find(".sub").stop().fadeTo('fast', 1).show();
+        			
+		        //Calculate width of all ul's
+		        (function($) { 
+			        jQuery.fn.calcSubWidth = function() {
+				        rowWidth = 0;
+				        //Calculate row
+				        $(this).find("ul").each(function() {					
+					        rowWidth += $(this).width(); 
+				        });	
+			        };
+		        })(jQuery); 
+        		
+		        if ( $(this).find(".row").length > 0 ) { //If row exists...
+			        var biggestRow = 0;	
+			        //Calculate each row
+			        $(this).find(".row").each(function() {							   
+				        $(this).calcSubWidth();
+				        //Find biggest row
+				        if(rowWidth > biggestRow) {
+					        biggestRow = rowWidth;
+				        }
+			        });
+			        //Set width
+			        $(this).find(".sub").css({'width' :biggestRow});
+			        $(this).find(".row:last").css({'margin':'0'});
+        			
+		        } else { //If row does not exist...
+        			
+			        $(this).calcSubWidth();
+			        //Set Width
+			        $(this).find(".sub").css({'width' : rowWidth});
+        			
+		        }
+	        }
+        	
+	        function megaHoverOut(){ 
+	          $(this).find(".sub").stop().fadeTo('fast', 0, function() {
+		          $(this).hide(); 
+	          });
+	        }
+         
+	        var config = {    
+		         sensitivity: 2, // number = sensitivity threshold (must be 1 or higher)    
+		         interval: 50, // number = milliseconds for onMouseOver polling interval    
+		         over: megaHoverOver, // function = onMouseOver callback (REQUIRED)    
+		         timeout: 300, // number = milliseconds delay before onMouseOut    
+		         out: megaHoverOut // function = onMouseOut callback (REQUIRED)    
+	        };
+         
+	        $("ul#topnav li .sub").css({'opacity':'0'});
+	        $("ul#topnav li").hoverIntent(config);
+        });
+    </script>
+
+<meta name="description" content="&lt;span style=&quot;font-size: 12px; font-family: arial; color: #333333;&quot;>
+Crowdsourcing can take many forms - for example, you can &lt;a rel=&quot;nofollow&quot; href=&quot;" /><meta name="Keywords" content="graphic design blog,web design blog,logo design blog,graphic design blog,logo design blog,freelance design,freelance graphic design,freelance logo design,freelance web design,graphic design" /><link href="/WebResource.axd?d=d--Yu2h-gqE9xRYkCvuIolB2WkJxvjfXBoIsaF96b3hsJvirEZAmXJA7Oo-1vrhI0&amp;t=634303194038616967" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=d--Yu2h-gqE9xRYkCvuIolB2WkJxvjfXBoIsaF96b3gBoWKwKPI9z5u5nd9N35tj_MYPgXWfIAkkDq1eOIPv45VdssAbYIb_Jb0XSSgFQuc1&amp;t=634303194038616967" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=d--Yu2h-gqE9xRYkCvuIolB2WkJxvjfXBoIsaF96b3gBoWKwKPI9z5u5nd9N35tjMKOn0TL81pM2Ck1OCOZhXy5tmKxKjJgh6EGkvnmAwv01&amp;t=634303194038616967" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=d--Yu2h-gqE9xRYkCvuIolB2WkJxvjfXBoIsaF96b3j0_Mw4YQrX9CYbEs-afMXf0&amp;t=634303194038616967" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><title>
+	Crowdsourcing Video - 5 Tips for Small Business Crowdsourcing | DesignCrowd Blog
+</title></head>
+<body id="siteBody">
+    <div id="container-site">
+        <span id="header">
+            <div id="header_inner">
+                <a href="http://www.designcrowd.com" title="DesignCrowd Home"><span
+                    id="header_left">
+                    <img src="http://images.designcrowd.com/header_logo.png" alt="DesignCrowd Logo" /></a>
+        </span><span id="header_right"><strong>
+            <span id="ctl00_lblLoginStatus"></span></strong>
+            <a id="ctl00_lnkLogin" rel="nofollow" href="http://www.designcrowd.com/login">Log in</a>
+            <a id="ctl00_lnkRegister" rel="nofollow" href="http://www.designcrowd.com/registration">Register</a>
+            
+            
+            <a id="ctl00_lnkHelp" href="http://www.designcrowd.com/help">Help</a>
+            <a href="http://www.designcrowd.com/order/order_start.aspx">
+                <img src="http://images.designcrowd.com/header_postprojectbutton.png"
+                    alt="Post a Design Project Button" /></a> </span>
+    </div>
+    </span>
+    <br />
+    <div id="nav">
+        <div id="nav_inner">
+            <ul id="topnav">
+                <li><a href="http://www.designcrowd.com" class="home" title="Home">Home</a>
+                </li>
+                <li><a href="#" class="categories">Categories</a>
+                    <div class="sub">
+                        <ul>
+                            <li>
+                                <h2>
+                                    Corporate Identity</h2>
+                            </li>
+                            <li><a href="http://logo.designcrowd.com">Logo design</a></li>
+                            <li><a href="http://stationery.designcrowd.com">Stationery design</a></li>
+                            <li><a href="http://businesscard.designcrowd.com">Business card
+                                design</a></li>
+                            <li>&nbsp;</li>
+                            <li>
+                                <h2>
+                                    Print Design</h2>
+                            </li>
+                            <li><a href="http://brochure.designcrowd.com">Brochure design</a></li>
+                            <li><a href="http://poster.designcrowd.com">Poster design</a></li>
+                            <li><a href="http://flyer.designcrowd.com">Flyer design</a></li>
+                            <li><a href="http://print.designcrowd.com">Print design</a></li>
+                            <li>&nbsp;</li>
+                            <li><a style="color: #458fad;" href="http://www.designcrowd.com/order-view-more-designs">
+                                View more design categories</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <h2>
+                                    Web Design</h2>
+                            </li>
+                            <li><a href="http://web.designcrowd.com">Web page design</a></li>
+                            <li><a href="http://wordpress.designcrowd.com">Wordpress design</a></li>
+                            <li><a href="http://bannerad.designcrowd.com">Banner ad design</a></li>
+                            <li>&nbsp;</li>
+                            <li>
+                                <h2>
+                                    Graphic Design</h2>
+                            </li>
+                            <li><a href="http://tshirt.designcrowd.com">T-shirt design</a></li>
+                            <li><a href="http://graphic.designcrowd.com">Graphic design</a></li>
+                            <li><a href="http://icon.designcrowd.com">Icon design</a></li>
+                            <li><a href="http://packaging.designcrowd.com">Packaging design</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#" class="getstarted">Get Started</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="http://www.designcrowd.com/registration">Open an account</a></li>
+                            <li><a href="http://www.designcrowd.com/order">Post a project</a></li>
+                            <li><a href="http://www.designcrowd.com/how-it-works">Learn how it works</a></li>
+                            <li><a href="http://outsource.designcrowd.com">Outsource client projects</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="http://jobs.designcrowd.com/graphic-design-jobs"
+                    class="browseprojects">Graphic design jobs</a>
+                    <div class="sub">
+                        <ul>
+                            <li>
+                                <h2>
+                                    By Type</h2>
+                            </li>
+                            <li><a href="http://jobs.designcrowd.com/graphic-design-jobs">Graphic
+                                design projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/logo-design-jobs">Logo
+                                projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/web-design-jobs">Web design
+                                projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/brochure-design-jobs">Brochure
+                                design projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/flyer-design-jobs">Flyer
+                                design projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/stationery-design-jobs">
+                                Stationery projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/tshirt-design-jobs">T-Shirt
+                                design projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/poster-design-jobs">Poster
+                                design projects</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <h2>
+                                    By Status</h2>
+                            </li>
+                            <li><a href="http://jobs.designcrowd.com/graphic-design-jobs/open">
+                                Open projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/graphic-design-jobs/closed">
+                                Closed projects</a></li>
+                            <li><a href="http://jobs.designcrowd.com/graphic-design-jobs/deciding">
+                                Deciding projects</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="http://designers.designcrowd.com" class="porfolios">
+                    Graphic designers</a>
+                    <div class="sub">
+                        <ul>
+                            <li>
+                                <h2>
+                                    Find a designer...</h2>
+                            </li>
+                            <li><a href="http://designers.designcrowd.com">Graphic designer</a></li>
+                            <li><a href="http://designers.designcrowd.com/logo">Logo designer</a></li>
+                            <li><a href="http://designers.designcrowd.com/web">Web designer</a></li>
+                            <li><a href="http://designers.designcrowd.com/brochure">Brochure
+                                designer</a></li>
+                            <li><a href="http://designers.designcrowd.com/flyer">Flyer designer</a></li>
+                            <li><a href="http://designers.designcrowd.com/stationery">Stationery
+                                designer</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <h2>
+                                    Community Portfolio</h2>
+                            </li>
+                            <li><a href="http://www.designcrowd.com/designs">Design gallery</a><br />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="http://www.designcrowd.com/about" class="aboutus">About Us</a>
+                    <div class="sub">
+                        <ul>
+                            <li><a href="http://www.designcrowd.com/how-it-works">How it works</a></li>
+                            <li><a href="http://www.designcrowd.com/help">Help / FAQ</a></li>
+                            <li><a href="http://www.designcrowd.com/contact">Contact us</a></li>
+                            <li><a href="http://www.designcrowd.com/about">Company info</a></li>
+                            <li><a href="http://www.designcrowd.com/testimonials">Testimonials</a></li>
+                            <li><a href="http://www.designcrowd.com/press">Press</a></li>
+                            <li><a href="http://blog.designcrowd.com">Blog</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="container-main" style="margin: auto; width: 800px; _width: 800px; max-width: 800px;
+        padding: 10px 10px 30px 10px; line-height: normal;">
+        
+        
+        
+    <span id="ctl00_errorContent_errorLabel"><font face="Arial" color="Red"></font></span>
+
+        
+    <style type="text/css">
+        h1, h2, h3, h4, h5, h6
+        {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+        }
+    </style>
+    <div style="float: left; width: 808px; margin-top: 0px; margin-left: 0px; padding-left: 0px;
+        padding-bottom: 5px; padding-top: 0px; height: 44px; background-repeat: no-repeat;
+        color: #177BA4; font-family: Arial; font-size: 12px; float: left">
+        <div style="padding-top: 5px; float: left; padding-left: 0px; height: 44px; vertical-align: middle">
+            <h1 style="font-family: Arial; font-size: 24px; vertical-align: middle">
+                <a href="http://blog.designcrowd.com" style="text-decoration: none">
+                    Blog</a></h1>
+        </div>
+        <div style="padding-top: 15px; padding-left: 15px; float: left; height: 44px; vertical-align: middle">
+            <h2 style="font-family: Arial; font-size: 12px; vertical-align: middle; height: 44px">
+                Blogs so far</h2>
+        </div>
+        <div style="padding-top: 15px; float: left; vertical-align: middle; padding-left: 7px">
+            114
+        </div>
+        <div style="padding-top: 15px; padding-left: 15px; float: left; height: 44px; vertical-align: middle">
+            <h2 style="font-family: Arial; font-size: 12px; vertical-align: middle">
+                Good blogs</h2>
+        </div>
+        <div style="padding-top: 15px; float: left; vertical-align: middle; padding-left: 7px;">
+            24.2553191489362
+        </div>
+        <div style="padding-top: 15px; padding-left: 15px; float: left; height: 44px; vertical-align: middle">
+            <h2 style="font-family: Arial; font-size: 12px; vertical-align: middle">
+                Attempted jokes</h2>
+        </div>
+        <div style="padding-top: 15px; float: left; vertical-align: middle; padding-left: 7px;">
+            342
+        </div>
+    </div>
+    
+    <form name="aspnetForm" method="post" action="../../blog.aspx?blogId=161" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2MTM3MzM1NQ9kFgJmD2QWFgICDw8WAh4LTmF2aWdhdGVVcmwFIGh0dHA6Ly93d3cuZGVzaWduY3Jvd2QuY29tL2xvZ2luZGQCAw8PFgIfAAUnaHR0cDovL3d3dy5kZXNpZ25jcm93ZC5jb20vcmVnaXN0cmF0aW9uZGQCBA8PFgIfAAUlaHR0cDovL3d3dy5kZXNpZ25jcm93ZC5jb20vbXktcHJvZmlsZWRkAgUPDxYCHwAFIWh0dHA6Ly93d3cuZGVzaWduY3Jvd2QuY29tL2xvZ291dGRkAgkPDxYCHgRUZXh0ZWRkAgoPDxYCHwFlZGQCCw8PFgIfAWVkZAIMDw8WAh8BZWRkAg4PZBYCAgEPZBYIAgMPZBYIAgEPDxYCHwEFPUNyb3dkc291cmNpbmcgVmlkZW8gLSA1IFRpcHMgZm9yIFNtYWxsIEJ1c2luZXNzIENyb3dkc291cmNpbmdkZAIDDw8WAh8BBQtEZXNpZ25Dcm93ZGRkAgUPDxYCHwEFCTYvMjkvMjAxMGRkAgcPDxYCHwEFyBs8c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB4OyBmb250LWZhbWlseTogYXJpYWw7IGNvbG9yOiAjMzMzMzMzOyI+DQpDcm93ZHNvdXJjaW5nIGNhbiB0YWtlIG1hbnkgZm9ybXMgLSBmb3IgZXhhbXBsZSwgeW91IGNhbiA8YSByZWw9Im5vZm9sbG93IiBocmVmPSJodHRwOi8vdXNlcnZvaWNlLmNvbS8iPmNyb3dkc291cmNlIGZlZWRiYWNrPC9hPiwgeW91IGNhbiA8YSByZWw9Im5vZm9sbG93IiBocmVmPSJodHRwOi8vd3d3LnRocmVhZGxlc3MuY29tLyI+Y3Jvd2Rzb3VyY2UgdC1zaGlydHM8L2E+LCB5b3UgY2FuIDxhIHJlbD0ibm9mb2xsb3ciIGhyZWY9Imh0dHA6Ly9mdW5kYnJlYWsuY29tLmF1LyI+Y3Jvd2Rzb3VyY2UgZnVuZGluZzwvYT4gYW5kIChvZiBjb3Vyc2UpIHlvdSBjYW4gPGEgaHJlZj0iaHR0cDovL3d3dy5kZXNpZ25jcm93ZC5jb20iPmNyb3dkc291cmNlIGRlc2lnbjwvYT4gKERlc2lnbkNyb3dkIGlzIGEgY3Jvd2Rzb3VyY2luZyBkZXNpZ24gd2Vic2l0ZSkuJm5ic3A7IEVhY2ggY3Jvd2Rzb3VyY2luZyBhcHBsaWNhdGlvbiB1c2VzIGEgZGlmZmVyZW50IHByb2Nlc3Mgc29tZSB1c2Ugdm90aW5nLCBzb21lIHVzZSBjb2xsYWJvcmF0aW9uIGFuZCBzb21lIHVzZSBjb21wZXRpdGlvbiAoRGVzaWduQ3Jvd2QgdXNlcyB0aGUgY29tcGV0aXRpb24gbW9kZWwgdmlhIDxhIGhyZWY9Imh0dHA6Ly9jb250ZXN0cy5kZXNpZ25jcm93ZC5jb20iPmRlc2lnbiBjb250ZXN0PC9hPiBhbmQgPGEgaHJlZj0iaHR0cDovL2xvZ28uZGVzaWduY3Jvd2QuY29tL2NvbnRlc3RzIj5sb2dvIGNvbnRlc3Q8L2E+IHByb2plY3RzKS48YnIgLz4NCjxiciAvPg0KRm9jdXNpbmcgb24gdGhlIGNvbnRlc3QgYXBwcm9hY2ggdG8gY3Jvd2Rzb3VyY2luZyAocGVyaGFwcyB0aGUgbW9zdCBjb21tb24gYW5kIHB1cmVzdCBmb3JtIG9mIGNyb3dkc291cmNpbmcpLCBBbGVjIEx5bmNoIChmb3VuZGVyIG9mIERlc2lnbkNyb3dkIGFuZCBLaW5nIG9mIExldHRpbmcgSGlzIFNoaXJ0IENvbGxhciBQb3Atb3V0KSBnaXZlcyA1IHRpcHMgYXQgVGhlIEluc2lnaHQgRXhjaGFuZ2UgaW4gU3lkbmV5LiAgUGxlYXNlIG5vdGUgdGhlc2UgdGlwcyBhcmUgZm9yIHNtYWxsIGJ1c2luZXNzIChub3QgYmlnIGJyYW5kcykhPGJyIC8+DQo8YnIgLz4NCiZuYnNwOzxvYmplY3QgaGVpZ2h0PSIzODUiIHdpZHRoPSI0ODAiPg0KPHBhcmFtIG5hbWU9Im1vdmllIiB2YWx1ZT0iaHR0cDovL3d3dy55b3V0dWJlLmNvbS92L0ZObWFnUGVXTmNjJmFtcDtobD1lbl9HQiZhbXA7ZnM9MSZhbXA7cmVsPTAiPg0KPHBhcmFtIG5hbWU9ImFsbG93RnVsbFNjcmVlbiIgdmFsdWU9InRydWUiPg0KPHBhcmFtIG5hbWU9ImFsbG93c2NyaXB0YWNjZXNzIiB2YWx1ZT0iYWx3YXlzIj48ZW1iZWQgc3JjPSJodHRwOi8vd3d3LnlvdXR1YmUuY29tL3YvRk5tYWdQZVdOY2MmYW1wO2hsPWVuX0dCJmFtcDtmcz0xJmFtcDtyZWw9MCIgdHlwZT0iYXBwbGljYXRpb24veC1zaG9ja3dhdmUtZmxhc2giIGFsbG93c2NyaXB0YWNjZXNzPSJhbHdheXMiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIzODUiPjwvb2JqZWN0Pg0KPGJyIC8+DQo8c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB4OyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJweDsiPihJZiB5b3UgZG9uJ3Qgd2FudCB0byB3YXRjaCB0aGUgdmlkZW8sIGhlcmUgYXJlIEFsZWMncyBjcm93ZHNvdXJjaW5nIHRpcHMgaW4gdGV4dCAvIGJvcmluZyAvIHRyYWRpdGlvbmFsIC8gQVNDSUkgY29kZSBmb3JtLi4uKTwvc3Bhbj48c3Ryb25nPjxiciAvPg0KPGJyIC8+DQo1IENyb3dkc291cmNpbmcgVGlwcyAoZm9yIHNtYWxsIGJ1c2luZXNzKTxiciAvPg0KPC9zdHJvbmc+PC9zcGFuPiZuYnNwOzxiciAvPg0KPHN0cm9uZz4xLiBDaG9vc2UgdGhlIHJpZ2h0IHRhc2s8L3N0cm9uZz4NCjxiciAvPg0KQ29udGVzdCBjcm93ZHNvdXJjaW5nIHN1aXRzIGRpc2NyZXRlLCBjcmVhdGl2ZSBwcm9qZWN0cyBvZiBtZWRpdW0gY29tcGxleGl0eS4mbmJzcDsNCkdyYXBoaWMgZGVzaWduLCBwaG90b2dyYXBoeSwgY29weXdyaXRpbmcsIHByb2dyYW1taW5nIHNjcmlwdHMsIGlkZWEgZ2VuZXJhdGlvbi48YnIgLz4NCjxiciAvPg0KPHN0cm9uZz4yLiBVc2UgYW4gZXN0YWJsaXNoZWQgcGxhdGZvcm08L3N0cm9uZz4NCjxiciAvPg0KVGhlIENFTyBvZiBJbm5vY2VudGl2ZSBoYXMgc3VnZ2VzdGVkIDUsMDAwIHBlb3BsZSBpcyB0aGUgaWRlYWwgJ3NpemUgb2YgY3Jvd2QnLiZuYnNwOyBJZiB5b3UgdHJ5IGFuZCBidWlsZCB5b3VyIG93biAnY3Jvd2QnIG9yIHJ1biBhIGNvbnRlc3QgdGhyb3VnaCB5b3VyIG93biB3ZWJzaXRlIGl0IHdpbGwgYmUgZXhwZW5zaXZlLiBUaGlzIGlzIG9rYXkgZm9yIGJpZyBicmFuZHMgdHJ5aW5nIHRvIGdldCBwdWJsaWNpdHkgYnV0IGZvciBzdGFydC11cHMgYW5kIHNtYWxsIGJ1c2luZXNzZXMgY3Jvd2Rzb3VyY2luZyBwbGF0Zm9ybXMgaGF2ZSBkb25lIHRoZSBoYXJkIHdvcmsgZm9yIHlvdSE8YnIgLz4NCjxiciAvPg0KPHN0cm9uZz4zLiBEbyBub3Qgc2NyaW1wIGFuZCBzY3JhcGU8L3N0cm9uZz4NCjxiciAvPg0KQ3Jvd2Rzb3VyY2luZyBpbnZvbHZlcyBoYXJuZXNzaW5nIG11bHRpcGxlIHN1cHBsaWVycy4gIElmIHlvdSBkb24ndCBvZmZlciBhbiBhdHRyYWN0aXZlIHByaXplIHlvdSB3b24ndCBhdHRyYWN0IHRhbGVudC48YnIgLz4NCjxiciAvPg0KPHN0cm9uZz40LiBHaXZlIGZlZWRiYWNrPC9zdHJvbmc+DQo8YnIgLz4NCkNyb3dkc291cmNpbmcgb25saW5lLCBhcyB3aXRoIG91dHNvdXJjaW5nIGluIHRoZSByZWFsIHdvcmxkLCByZXF1aXJlcyB5b3UgdG8gaW50ZXJhY3Qgd2l0aCB5b3VyIHN1cHBsaWVycyBhbmQgcHJvdmlkZSBmZWVkYmFjayEmbmJzcDsgVGhpcyBpcyBhIGNyaXRpY2FsIHBhcnQgb2YgbW9zdCBkZXNpZ24sIGNvcHl3cml0aW5nIGFuZCBwcm9ncmFtbWluZyBwcm9qZWN0cyBpbiB0aGUgcmVhbCB3b3JsZCAtIHNpbWlsYXJseSwgaXQgaXMgYW4gaW1wb3J0YW50IHBhcnQgb2YgdGhlIGNyb3dkc291cmNpbmcgcHJvY2Vzcy48YnIgLz4NCjxiciAvPg0KPHN0cm9uZz41LiBHZXQgaGVscCB3aXRoIGRlY2lzaW9uPC9zdHJvbmc+PGJyIC8+DQpKdXN0IGJlY2F1c2UgeW91IGdvdCAxMDArIGJpZHMgb24geW91ciBsb2dvIGRvZXMgbm90IG1lYW4geW91IGRvbid0LiAgRG9uJ3QgbWFrZSB0aGUgPGEgaHJlZj0iaHR0cDovL3d3dy5ueXRpbWVzLmNvbS8yMDA5LzExLzAzL2J1c2luZXNzL2dsb2JhbC8wM3ZlZ2VtaXRlLmh0bWwiIHJlbD0ibm9mb2xsb3ciPnNhbWUgbWlzdGFrZSBhcyBLcmFmdCBGb29kczwvYT4gd2hvIHJlY2VpdmVkIDQ4LDAwMCBlbnRyaWVzIHRvIHRoZWlyIG5hbWUgdGhlIG5ldyBWZWdlbWl0ZSBjb250ZXN0IGFuZCB0aGVuIGNob3NlICdpU25hY2syLjAnLiAgR2V0IGhlbHAgd2l0aCB0aGUgZGVjaXNpb24gLyBkbyBzb21lIG1hcmtldCByZXNlYXJjaCAvIGFzayB0aGUgY3Jvd2QgZm9yIHRoZWlyIG9waW5pb24uPGJyIC8+DQo8L3NwYW4+DQpkZAIFD2QWAgIBDzwrAAkBAA8WBB4IRGF0YUtleXMWAB4LXyFJdGVtQ291bnQCA2QWBmYPZBYCZg8VAk5odHRwOi8vYmxvZy5kZXNpZ25jcm93ZC5jb20vYXJ0aWNsZS8yNTkvdG9wLTEwLWluc3BpcmF0aW9uYWwtc3RldmUtam9icy1xdW90ZXMmVG9wIDEwIEluc3BpcmF0aW9uYWwgU3RldmUgSm9icyBRdW90ZXNkAgEPZBYCZg8VAktodHRwOi8vYmxvZy5kZXNpZ25jcm93ZC5jb20vYXJ0aWNsZS8yNTgvZnJlZS1zeW1ib2wtZm9udHMtLXdhbGwtY2hhcnQtZ3VpZGUkRnJlZSBTeW1ib2wgRm9udHMgLSBXYWxsIENoYXJ0IEd1aWRlZAICD2QWAmYPFQJVaHR0cDovL2Jsb2cuZGVzaWduY3Jvd2QuY29tL2FydGljbGUvMjU3L2ludGVydmlldy13aXRoLWtpbS1oZXJhcy1mb3VuZGVyLW9mLXB1c2hzdGFydC9JbnRlcnZpZXcgd2l0aCBLaW0gSGVyYXMgKGZvdW5kZXIgb2YgUHVzaFN0YXJ0KWQCBw9kFgQCAQ88KwALAQAPFggfAhYAHwNmHglQYWdlQ291bnQCAR4VXyFEYXRhU291cmNlSXRlbUNvdW50ZmRkAgMPPCsAFgMADxYCHhdFbmFibGVBamF4U2tpblJlbmRlcmluZ2hkAxAWBWYCAQICAgMCBBYFFCsAAmQQFgNmAgECAhYDD2RkD2RkD2RkFgNmZmYUKwACZBAWDWYCAQICAgMCBAIFAgYCBwIIAgkCCgILAgwWDQ9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZBYNZmZmZmZmZmZmZmZmZhQrAAJkEBYCZgIBFgIPZGQPZGQWAmZmFCsAAmQQFgJmAgEWAg9kZA9kZBYCZmYUKwACZBAWBmYCAQICAgMCBAIFFgYPZGQPZGQPZGQPZGQPZGQPZGQWBmZmZmZmZg8WBWZmZmZmFgEFelRlbGVyaWsuV2ViLlVJLkVkaXRvckNvbnRleHRNZW51LCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDA4LjMuMTMxNC4yMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FBAWAWYWARQrAANkEBYVZgIBAgICAwIEAgUCBgIHAggCCQIKAgsCDAINAg4CDwIQAhECEgITAhQWFQ9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA8WAh4EVHlwZQspd1RlbGVyaWsuV2ViLlVJLkVkaXRvclRvb2xUeXBlLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDA4LjMuMTMxNC4yMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0AWQPZGQPZGQPZGQPZGQPZGQPFgQfBwsrBAQfAQUEVW5kbxYCHg5wb3B1cGNsYXNzbmFtZQUNcmFkZV9VbmRvUmVkbw8WBB8HCysEBB8BBQRSZWRvFgIfCAUNcmFkZV9VbmRvUmVkbw9kZA9kZA9kZBYVZmZmZmZmZmZmZmZmZmZmZmZmZmZmZA8WAWYWAQV4VGVsZXJpay5XZWIuVUkuRWRpdG9yVG9vbEdyb3VwLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDA4LjMuMTMxNC4yMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FgJmDw8WAh8GZ2QWAmYPDxYCHwZoZGQCCQ9kFgRmDw8WAh8BBQYyOSwyMThkZAIBDw8WAh8BBQkxLDAwOSw4MzZkZAIPDw8WAh8BBQYyOSwyMThkZAIQDw8WAh8BBQkxLDAwOSw4MzZkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAwUiY3RsMDAkbWFpbkNvbnRlbnQkcmFkRWRpdG9yQ29tbWVudAVAY3RsMDAkbWFpbkNvbnRlbnQkY3RsMDBfbWFpbkNvbnRlbnRfcmFkRWRpdG9yQ29tbWVudGRpYWxvZ09wZW5lcgVHY3RsMDAkbWFpbkNvbnRlbnQkY3RsMDBfbWFpbkNvbnRlbnRfcmFkRWRpdG9yQ29tbWVudGRpYWxvZ09wZW5lcl9XaW5kb3dNM2KmcZD+wyaaw72nyPEtKBjmgg==" />
+
+
+<script src="/ScriptResource.axd?d=p-JkH4VtGuSyOOaPgvhDXU3FjqCeaw7JJxqXdxd6oNLG3fWTCg8kCdKLM3tXWFPZ0&amp;t=634303190003096967" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pI8w8bmwnvG-NgTpepQ8p7lqiHwEFULxtzOKiiOgX1MUSVNQp0GypaZLS0FYXOWs0&amp;t=634303194038616967" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pI8w8bmwnvG-NgTpepQ8p7lqiHwEFULxtzOKiiOgX1Ptqs45j_O1AoKNo6eJIoYdUqH0Xc-i_wDZfiVk_1HBKQ2&amp;t=634303194038616967" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pI8w8bmwnvG-NgTpepQ8px-zP7DD768apAnjc2dtpapnY1DhGybjQt1zGlFUq4nC7fNE-ZUQ5LiB58ixO8TeyA2&amp;t=634303194038616967" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pI8w8bmwnvG-NgTpepQ8p3dz0DhIHWA4zUrDqKM-WRDsC0KPFfky_2FjsCI-jxvSf2evhOgU901_XYVxQ_9p8Q2&amp;t=634303194038616967" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pI8w8bmwnvG-NgTpepQ8pzwlNHNxwYk58MspkgUsk35zIp7g5t6n4fJZnrcccpdu-w2_CB-Y1Qjsv1v0h2xCTw2&amp;t=634303194038616967" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pI8w8bmwnvG-NgTpepQ8p9oTwyoTXiurSqP03NLhJMbnW01Y9KkwGf6LTB0EzwYG1XUpWOP73zDiLz4TwXlhWg2&amp;t=634303194038616967" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgL1zci0CgL5r4qfBzBWP2Yfimc08koO8qn7bwOlKlQK" />
+    
+
+    <script type="text/javascript">
+            function SetCorrectSize(editor, args)
+            {                
+                if(!document.all)
+                {
+                    window.setTimeout(function()
+                        {
+                            var editorIframe = $get(editor.get_id() + "Wrapper").getElementsByTagName("iframe")[0];
+                            
+                            editorIframe.style.height = "90px";
+                            editor.setSize(480, 100);
+                       },100);
+                }
+            }
+    </script>
+
+    <div style="font-family: arial; font-size: smaller; color: Black; float: left">
+        <div id="ctl00_mainContent_Blog1">
+	
+            <table width="800px" class="basic-table" style="border-style: solid; border-width: 0;
+                border-color: #D7E4BD">
+                <tr class="header">
+                    <td style="padding: 10px 50px 0 0px; height: 12px">
+                        <table width="800px" style="border-collapse: collapse">
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <h1>
+                                            <span id="ctl00_mainContent_lblBlogTitle">Crowdsourcing Video - 5 Tips for Small Business Crowdsourcing</span></h1>
+                                    </strong>
+                                </td>
+                                <td align="right" style="width: 180px">
+                                    <!-- AddThis Button BEGIN -->
+                                    <div class="addthis_toolbox addthis_default_style">
+                                        <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4b79f49b1ea6a404"
+                                            class="addthis_button_compact">Share</a> <span class="addthis_separator">|</span>
+                                        <a class="addthis_button_email"></a><a class="addthis_button_facebook"></a><a class="addthis_button_twitter">
+                                        </a><a class="addthis_button_google"></a>
+                                    </div>
+
+                                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4b79f49b1ea6a404"></script>
+
+                                    <!-- AddThis Button END -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px 50px 10px 0px; font-size: 11px;">
+                        <span id="ctl00_mainContent_lblBlogAuthor">DesignCrowd</span>,
+                        <span id="ctl00_mainContent_lblBlogDate">6/29/2010</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px 50px 10px 0px;" valign="top">
+                        <span id="ctl00_mainContent_lblBlogContent"><span style="font-size: 12px; font-family: arial; color: #333333;">
+Crowdsourcing can take many forms - for example, you can <a rel="nofollow" href="http://uservoice.com/">crowdsource feedback</a>, you can <a rel="nofollow" href="http://www.threadless.com/">crowdsource t-shirts</a>, you can <a rel="nofollow" href="http://fundbreak.com.au/">crowdsource funding</a> and (of course) you can <a href="http://www.designcrowd.com">crowdsource design</a> (DesignCrowd is a crowdsourcing design website).&nbsp; Each crowdsourcing application uses a different process some use voting, some use collaboration and some use competition (DesignCrowd uses the competition model via <a href="http://contests.designcrowd.com">design contest</a> and <a href="http://logo.designcrowd.com/contests">logo contest</a> projects).<br />
+<br />
+Focusing on the contest approach to crowdsourcing (perhaps the most common and purest form of crowdsourcing), Alec Lynch (founder of DesignCrowd and King of Letting His Shirt Collar Pop-out) gives 5 tips at The Insight Exchange in Sydney.  Please note these tips are for small business (not big brands)!<br />
+<br />
+&nbsp;<object height="385" width="480">
+<param name="movie" value="http://www.youtube.com/v/FNmagPeWNcc&amp;hl=en_GB&amp;fs=1&amp;rel=0">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/FNmagPeWNcc&amp;hl=en_GB&amp;fs=1&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></object>
+<br />
+<span style="font-size: 12px;"><span style="font-size: 12px;">(If you don't want to watch the video, here are Alec's crowdsourcing tips in text / boring / traditional / ASCII code form...)</span><strong><br />
+<br />
+5 Crowdsourcing Tips (for small business)<br />
+</strong></span>&nbsp;<br />
+<strong>1. Choose the right task</strong>
+<br />
+Contest crowdsourcing suits discrete, creative projects of medium complexity.&nbsp;
+Graphic design, photography, copywriting, programming scripts, idea generation.<br />
+<br />
+<strong>2. Use an established platform</strong>
+<br />
+The CEO of Innocentive has suggested 5,000 people is the ideal 'size of crowd'.&nbsp; If you try and build your own 'crowd' or run a contest through your own website it will be expensive. This is okay for big brands trying to get publicity but for start-ups and small businesses crowdsourcing platforms have done the hard work for you!<br />
+<br />
+<strong>3. Do not scrimp and scrape</strong>
+<br />
+Crowdsourcing involves harnessing multiple suppliers.  If you don't offer an attractive prize you won't attract talent.<br />
+<br />
+<strong>4. Give feedback</strong>
+<br />
+Crowdsourcing online, as with outsourcing in the real world, requires you to interact with your suppliers and provide feedback!&nbsp; This is a critical part of most design, copywriting and programming projects in the real world - similarly, it is an important part of the crowdsourcing process.<br />
+<br />
+<strong>5. Get help with decision</strong><br />
+Just because you got 100+ bids on your logo does not mean you don't.  Don't make the <a href="http://www.nytimes.com/2009/11/03/business/global/03vegemite.html" rel="nofollow">same mistake as Kraft Foods</a> who received 48,000 entries to their name the new Vegemite contest and then chose 'iSnack2.0'.  Get help with the decision / do some market research / ask the crowd for their opinion.<br />
+</span>
+</span>
+                    </td>
+                </tr>
+            </table>
+        
+</div>
+        <div id="ctl00_mainContent_panelRelatedArticles">
+	
+            <br />
+            <br />
+            <h4 style="color: #177BA4; padding-bottom: 8px;">
+                Related Articles</h4>
+            <table id="ctl00_mainContent_dlRelatedArticles" cellspacing="0" AutoGenerateColumns="false" border="0" width="780">
+		<tr>
+			<td>
+                   <a href="http://blog.designcrowd.com/article/259/top-10-inspirational-steve-jobs-quotes" style="text-decoration:underline;color:#222">Top 10 Inspirational Steve Jobs Quotes</a>
+                </td>
+		</tr><tr>
+			<td>
+                   <a href="http://blog.designcrowd.com/article/258/free-symbol-fonts--wall-chart-guide" style="text-decoration:underline;color:#222">Free Symbol Fonts - Wall Chart Guide</a>
+                </td>
+		</tr><tr>
+			<td>
+                   <a href="http://blog.designcrowd.com/article/257/interview-with-kim-heras-founder-of-pushstart" style="text-decoration:underline;color:#222">Interview with Kim Heras (founder of PushStart)</a>
+                </td>
+		</tr>
+	</table>
+        
+</div>
+        <div id="ctl00_mainContent_commentsPanel">
+	
+            <br />
+            <br />
+            <h4 style="color: #177BA4; padding-bottom: 8px;">
+                Comments</h4>
+            <div style="border-width: 1px; border-color: #D7E4BD; width: 760px; border-style: solid;
+                padding: 15px;">
+                <table cellspacing="0" rules="all" border="1" id="ctl00_mainContent_dgComments" width="750">
+
+	</table>
+                <br />
+                Add your comment<br />
+                <div id="ctl00_mainContent_radEditorComment" class="radeditor Office2007 rade_wrapper ">
+		<!-- 2008.3.1314.20 --><div id="ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener" style="display:none;">
+			<div id="ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_Window" style="display:none;">
+				<input id="ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_Window_ClientState" name="ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_Window_ClientState" type="hidden" />
+			</div><input id="ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_ClientState" name="ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_ClientState" type="hidden" />
+		</div><table id="ctl00_mainContent_radEditorCommentWrapper" cellpadding="0" cellspacing="0" width="100%" height="130">
+			<tbody>
+				<tr>
+					<td class="rade_wrapper_corner rade_corner_top_left">&nbsp;</td><td class="rade_wrapper_center rade_center_top" colspan="3">&nbsp;</td><td class="rade_wrapper_corner rade_corner_top_right">&nbsp;</td>
+				</tr><tr>
+					<td class="rade_leftVerticalSide" rowspan="4">&nbsp;</td><td rowspan="4" id="ctl00_mainContent_radEditorCommentLeft" class="rade_tlbVertical"></td><td id="ctl00_mainContent_radEditorCommentTop" class="rade_toolZone" width="100%"><div class="Office2007 rade_toolbarWrapper">
+						<ul class="rade_toolbar Office2007">
+							<li class="rade_grip grip_first">&nbsp;</li><li><a title="Bold" class="rade_tool" href="#"><span class="Bold">&nbsp;</span></a></li><li><a title="Italic" class="rade_tool" href="#"><span class="Italic">&nbsp;</span></a></li><li><a title="Underline" class="rade_tool" href="#"><span class="Underline">&nbsp;</span></a></li><li class="rade_separator">&nbsp;</li><li class="rade_separator">&nbsp;</li><li><a title="Numbered List" class="rade_tool" href="#"><span class="InsertOrderedList">&nbsp;</span></a></li><li><a title="Bullet List" class="rade_tool" href="#"><span class="InsertUnorderedList">&nbsp;</span></a></li><li><a title="Outdent" class="rade_tool" href="#"><span class="Outdent">&nbsp;</span></a></li><li><a title="Indent" class="rade_tool" href="#"><span class="Indent">&nbsp;</span></a></li><li class="rade_separator">&nbsp;</li><li><a title="AJAX Spellchecker" class="rade_tool" href="#"><span class="AjaxSpellCheck">&nbsp;</span></a></li><li class="rade_separator">&nbsp;</li><li><a title="Cut" class="rade_tool" href="#"><span class="Cut">&nbsp;</span></a></li><li><a title="Copy" class="rade_tool" href="#"><span class="Copy">&nbsp;</span></a></li><li><a title="Paste" class="rade_tool" href="#"><span class="Paste">&nbsp;</span></a></li><li class="rade_separator">&nbsp;</li><li><a title="Undo" class="rade_tool rad_splitbutton" href="#"><span class="Undo">&nbsp;</span><span class="split_arrow">&nbsp;</span></a></li><li><a title="Redo" class="rade_tool rad_splitbutton" href="#"><span class="Redo">&nbsp;</span><span class="split_arrow">&nbsp;</span></a></li><li class="rade_separator">&nbsp;</li><li><a title="Hyperlink Manager" class="rade_tool" href="#"><span class="LinkManager">&nbsp;</span></a></li><li><a title="Remove Link" class="rade_tool" href="#"><span class="Unlink">&nbsp;</span></a></li><li class="rade_grip grip_last">&nbsp;</li>
+						</ul>
+					</div></td><td rowspan="4" id="ctl00_mainContent_radEditorCommentRight" class="rade_tlbVertical"></td><td rowspan="4" class="rade_rightVerticalSide">&nbsp;</td>
+				</tr><tr>
+					<td valign="top" id="ctl00_mainContent_radEditorCommentCenter" class="rade_contentCell" height="100%"><textarea id="ctl00_mainContent_radEditorCommentContentHiddenTextarea" name="ctl00$mainContent$radEditorComment" rows="4" cols="20" style="display:none;"></textarea></td>
+				</tr><tr>
+					<td class="rade_toolZone"><table cellpadding="0" cellspacing="0" width="100%">
+						<tbody>
+							<tr style="display:none;">
+								<td class="rade_editorModesCell"><div class="rade_editorModes" id="ctl00_mainContent_radEditorComment_ModesWrapper">
+									<ul>
+
+									</ul>
+								</div></td><td valign="top" id="ctl00_mainContent_radEditorCommentBottom">&nbsp;</td><td class="rade_resizeCell" valign="bottom" align="right" width="15"><div id="ctl00_mainContent_radEditorCommentBottomResizer">
+									&nbsp;
+								</div></td>
+							</tr>
+						</tbody>
+					</table></td>
+				</tr><tr>
+					<td id="ctl00_mainContent_radEditorCommentModule" class="rade_toolZone"></td>
+				</tr><tr>
+					<td class="rade_wrapper_corner rade_corner_bottom_left">&nbsp;</td><td class="rade_wrapper_center rade_center_bottom" colspan="3">&nbsp;</td><td class="rade_wrapper_corner rade_corner_bottom_right">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table><input id="ctl00_mainContent_radEditorComment_ClientState" name="ctl00_mainContent_radEditorComment_ClientState" type="hidden" />
+	</div>
+                <br />
+                <input type="submit" name="ctl00$mainContent$btnAddComment" value="Add Comment" id="ctl00_mainContent_btnAddComment" />
+            </div>
+                <br />
+                <br />
+        
+</div>
+        
+<style type="text/css">
+    /* Slide-in and Slide out Tab*/
+    .panel
+    {
+        display: none;
+        position: absolute;
+        left: -10px;
+        top: 160px;
+        background-color: #E8E8E8;
+        border: 1px solid #111111;
+        width: 600px;
+        height: auto;
+        padding: 15px 23px 30px 30px;
+        overflow: hidden;
+        text-align: left;
+    }
+    
+    /* this css code block below is for the inner closing button of the panel.*/
+    .AboutDesignInnerController
+    {
+        background: #E8E8E8 url(images/minus.png) 85% 55% no-repeat;
+        display: block;
+        float: right;
+        height: auto;
+        width: 20px;
+        padding: -10px -25px 0px 80px;
+    }
+    /* this css code block below is used to set the second link incase the panel is set to show*/
+    a.AboutDesignCrowdOpen
+    {
+        position: absolute;
+        text-decoration: none;
+        top: 120px;
+        left: -10px;
+        font-size: 16px;
+        letter-spacing: -1px;
+        font-family: verdana, helvetica, arial, sans-serif;
+        color: #fff;
+        padding: 20px 40px 20px 15px;
+        font-weight: 700;
+        background: #333 url(http://images.designcrowd.com/icons/misc/minus.png) 85% 55% no-repeat;
+        outline: 1px solid #111;
+        border-top: 1px solid #555;
+        display: block;
+    }
+    a.AboutDesignCrowdOpen:hover
+    {
+        position: absolute;
+        text-decoration: none;
+        top: 120px;
+        left: -10px;
+        font-size: 16px;
+        letter-spacing: -1px;
+        font-family: verdana, helvetica, arial, sans-serif;
+        color: #fff;
+        padding: 20px 40px 20px 20px;
+        font-weight: 700;
+        background: #606060 url(http://images.designcrowd.com/icons/misc/minus.png) 85% 55% no-repeat;
+        outline: 1px solid #111;
+        border-top: 1px solid #555;
+        display: block;
+    }
+    a.active.AboutDesignCrowdOpen
+    {
+        background: #606060 url(http://images.designcrowd.com/icons/misc/plus.png) 85% 55% no-repeat;
+    }
+    .header_right
+    {
+        float: right;
+        padding: 30px 30px 30px 30px;
+    }
+    #panel .content
+    {
+        width: 290px;
+        margin-left: 70px;
+        z-index: 88;
+    }
+    #panel .content p
+    {
+        font-size: 11px;
+    }
+    #panel .content h2
+    {
+        color: #CC3300;
+    }
+    #panel .content img
+    {
+        float: left;
+        padding: 0 10px 5px 0;
+    }
+    .images-in-theSlide
+    {
+        width: 120px;
+    }
+    h3.LearnMoreHeading
+    {
+        margin: 0px;
+        font-size: 19px;
+        font-weight: bolder;
+        color: #0099FF;
+    }
+    .HtmlContent
+    {
+
+	    width:auto;
+	    height:auto;
+    }
+    .HtmlContent-Paragraph
+    {
+
+	   font-size: 12px;
+	   padding-left: 20px;
+    }
+    
+    .HtmlContent-Heading
+    {
+        margin: 0px;
+        font-size: 19px;
+        font-weight: bolder;
+        color: #0099FF;
+    }
+    
+    /* this css code block below is used to set the second link incase the panel is set to hide*/
+     a.AboutDesignCrowdClosed
+    {
+        position: absolute;
+        text-decoration: none;
+        top: 120px;
+        left: -10px;
+        font-size: 16px;
+        letter-spacing: -1px;
+        font-family: verdana, helvetica, arial, sans-serif;
+        color: #fff;
+        padding: 20px 40px 20px 15px;
+        font-weight: 700;
+        background: #333 url(http://images.designcrowd.com/icons/misc/plus.png) 85% 55% no-repeat;
+        outline: 1px solid #111;
+        border-top: 1px solid #555;
+        display: block;
+    }
+    a.AboutDesignCrowdClosed:hover
+    {
+        position: absolute;
+        text-decoration: none;
+        top: 120px;
+        left: -10px;
+        font-size: 16px;
+        letter-spacing: -1px;
+        font-family: verdana, helvetica, arial, sans-serif;
+        color: #fff;
+        padding: 20px 40px 20px 20px;
+        font-weight: 700;
+        background: #606060 url(http://images.designcrowd.com/icons/misc/plus.png) 85% 55% no-repeat;
+        outline: 1px solid #111;
+        border-top: 1px solid #555;
+        display: block;
+    }
+    a.active.AboutDesignCrowdClosed
+    {
+        background: #606060 url(http://images.designcrowd.com/icons/misc/minus.png) 85% 55% no-repeat;
+    }
+    .header_right
+    {
+        float: right;
+        padding: 30px 30px 30px 30px;
+    }
+    /* end*/
+    </style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // this first string is used to control the panel to set it to eithe auto, hide or show     
+        $(".panel").show()
+        // the two strings just below are used if other text is needed in the panel.
+        $(".HtmlContent-Heading").html('')
+        
+        // the two strings below are used to control the two links at the borrom
+        $(".AboutDesignCrowdOpen").show()
+        $(".AboutDesignCrowdClosed").hide()
+        
+        // this is the second link incase the panel is set to show
+        $(".AboutDesignCrowdOpen").click(function () {
+            $(".panel").toggle("slow");
+            $(this).toggleClass("active");
+            return false;
+        });
+        
+        // this is the second link incase the panel is set to hide
+        $(".AboutDesignCrowdClosed").click(function () {
+            $(".panel").toggle("slow");
+            $(this).toggleClass("active");
+            return false;
+        });
+        
+        //this is the closing button inside the panel
+        $(".AboutDesignInnerController").click(function () {
+            $(".panel").toggle("slow");
+            $(".AboutDesignCrowdOpen").toggleClass("active");
+            $(".AboutDesignCrowdClosed").toggleClass("active");
+            return false;
+        });
+    });
+
+</script>
+
+
+<div class="panel">
+    <div class="content">
+        <a class="AboutDesignInnerController" href="#"></a>
+        <br />
+        <br />
+        <div class="HtmlContent">
+        <h3 class="HtmlContent-Heading"></h3>
+        <p class="HtmlContent-Paragraph"></p>
+        </div>
+        <table>
+            <tr valign="top">
+                <td>
+                    <h3 class="LearnMoreHeading" style="padding: 1px;">
+                        What is DesignCrowd?
+                    </h3>
+                </td>
+                <td>
+                    <a class='LearnMorePadding' href="http://www.designcrowd.com/how-it-works">
+                        <img src="http://images.designcrowd.com/howitworks/btnLearnMore.png" /></a>
+                </td>
+            </tr>
+        </table>
+        <p style="font-size: 12px; padding-left: 20px;">
+            DesignCrowd is a crowdsourcing marketplace for <span><a href="http://logo.designcrowd.com/">
+                logo design</a></span>, <span><a href="http://web.designcrowd.com/">web design</a></span>
+            and <span><a href="http://graphic.designcrowd.com/">graphic design</a></span> that
+            helps you get ideas from around the world.
+        </p>
+        <table>
+            <tr valign="top">
+                <td>
+                    <h3 class="LearnMoreHeading" style="padding: 1px;">
+                        How It Works
+                    </h3>
+                </td>
+                <td>
+                    <a class='LearnMorePadding' href="http://www.designcrowd.com/how-it-works">
+                        <img src="http://images.designcrowd.com/howitworks/btnLearnMore.png" /></a>
+                </td>
+            </tr>
+        </table>
+        <div style="margin-top: 30px">
+            <table width="609px">
+                <tr align="center" valign="top">
+                    <td style="width: 180px; padding-left: 10px; padding-right: 10px">
+                        <img src="http://images.designcrowd.com/howitworks/bus_step1.png" alt="Step 1 Post a brief"
+                            class="images-in-theSlide" />
+                        <p style="text-align: left; font-size: 12px; padding-left: 20px;">
+                            Describe your project, set your deadline, deposit your project budget and invite
+                            top designers.
+                        </p>
+                    </td>
+                    <td style="width: 180px; padding-left: 10px; padding-right: 10px">
+                        <img src="http://images.designcrowd.com/howitworks/bus_step2.png" alt="Step 2 Get Designs"
+                            class="images-in-theSlide" />
+                        <p style="text-align: left; font-size: 12px; padding-left: 20px;">
+                            Watch as 25 to 100+ custom designs are submitted from designers around the world.
+                        </p>
+                    </td>
+                    <td style="width: 180px; padding-left: 10px; padding-right: 10px">
+                        <img src="http://images.designcrowd.com/howitworks/bus_step3.png" alt="Step 3 Provide Feedback"
+                            class="images-in-theSlide" />
+                        <p style="text-align: left; font-size: 12px;">
+                            Share designs with friends and colleagues, give feedback to the designers and request
+                            changes.
+                        </p>
+                    </td>
+                    <td style="width: 180px; padding-left: 10px; padding-right: 10px">
+                        <img src="http://images.designcrowd.com/howitworks/bus_step4.png" alt="Step 4 Select the best"
+                            class="images-in-theSlide" />
+                        <p style="text-align: left; font-size: 12px; padding-left: 20px;">
+                            Select your favourite design, approve the files, download the files and release
+                            payment!
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <table>
+            <tr valign="top">
+                <td>
+                    <h3 class="LearnMoreHeading" style="padding: -6px;">
+                        Today on DesignCrowd
+                    </h3>
+                </td>
+                <td>
+                    <a class='LearnMorePadding' href="http://www.designcrowd.com/how-it-works">
+                        <img src="http://images.designcrowd.com/howitworks/btnLearnMore.png" /></a>
+                </td>
+            </tr>
+        </table>
+        <div class="bodycontent_inner">
+            <table class="tabletext" width="609px" style="margin-left: 15px;">
+                <tr valign="middle">
+                    <td>
+                        <div style="color: #666666; font-weight: bold; font-size: 25px; padding-top: 2px;">
+                            <span id="ctl00_mainContent_cntAboutPanel_lblDesignersCount">29,218</span></div>
+                        <div style="color: #68adca; font-weight: bold; font-size: 14px; padding-top: 2px;">
+                            Graphic Designers</div>
+                    </td>
+                    <td>
+                        <div style="color: #666666; font-weight: bold; font-size: 25px; padding-top: 2px;">
+                            $<span id="ctl00_mainContent_cntAboutPanel_lblProjectPayments">1,009,836</span></div>
+                        <div style="color: #68adca; font-weight: bold; font-size: 14px; padding-top: 2px;">
+                            Design projects
+                        </div>
+                    </td>
+                    <td>
+                        <div style="color: #666666; font-weight: bold; font-size: 25px; padding-top: 2px;">
+                            Over 61.3</div>
+                        <div style="color: #68adca; font-weight: bold; font-size: 14px; padding-top: 2px;">
+                            Designs per project</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bodycontent_inner">
+            <table width="609px">
+                <tr align="center">
+                    <td colspan="2">
+                        <br />
+                        <br />
+                        <a href="http://www.designcrowd.com/order">
+                            <img src="http://images.designcrowd.com/howitworks/btnStartNow.png"
+                                alt="Start your project" /></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="clear: both;">
+    </div>
+</div>
+<a class="AboutDesignCrowdOpen" href="#">What is this? &nbsp</a>
+<a class="AboutDesignCrowdClosed" href="#">What is this? &nbsp</a>
+
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"clientStateFieldID":"ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_Window_ClientState","formID":"aspnetForm","iconUrl":"","left":"","minimizeIconUrl":"","name":"ctl00_mainContent_radEditorCommentdialogOpener_Window","navigateUrl":"","showContentDuringLoad":false,"skin":"Office2007","top":""}, null, null, $get("ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_Window"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.DialogOpener, {"_dialogDefinitions":{"ImageManager":{"SerializedParameters":"ZHFlMzs5N0VlI2sHSSp1M2Nlfgd5YV1FYXxHYlIMaw8AYW51Ugl6CD9wLFtpJHhEUhdUGylsagxPf2YOdAR4XmJ+aQNwZll1URZ+CU8hDhBha2IuUlZQZidvYQ16c2koAykrRXwgbERnUmIwV2pidUBfEwFOCmVdYVMUEwZhbkZUGHIdBwQkR2klYE9lCA0WP3wFDE9gfRFqLXNeVwR2QWdxWg9nc3ZVez4gVVoBdjViCQlEJGF9ElNbZjMzDCNaU1Z4RGUxTzl4aWUCbnZrBX5vAkxqU3sgOGFUA1JteiMEYAZbZlFgW2ktDVUpbGoMT39mDnQEdF5jcm1hSAB/YH5zW1Z5ISRTYgBmNmpWMEQsWnURVQRmMywiHUhmHn8Hfg5iDmV5QHBBX2xbT39lYlI2Zwo4YWpfaht6DAYFKGNXKlpFaRgvDj9+ZlRhcnIKWgh7QXhybkF8emcJaXBENHcxGkpbXlwsfA83RydgSxRsBmEsOwwJXFE8f0dKUAw1Z2pYXkF1E1x7cF9TajQYDgBxbUBiM3YXBgUrRH4hTmFhcTsbMkVYL05wbld2Fl1MYgZPA3xee0pXcno5eAggTWpJXGtkIxFkHXFfOlN+aSEsJFAbaQkYZE01cTlQZUR7QgBSAnpuV09SJ38+MEhuaWZsYhc8BQpkUCRablYIOwAAcVQKe1xMNVtxRXRnWGFaT2Z7YWRIVCtJMDhwWQB+FGIIFUQnBQYtVXF6OS8lCWdRD2sEfFJ1cFBGTEdxalp8e351FWQ2XSQBFlR1ZDR2DTZxN09qUAdgfBcrFTNDdg9+clgNYSt7Hm4HdXt8X0FRYRZIEHgcKHF2ZWoWfzwvVihNYldiYGEKBCcVXWIJVXhND1x0YUBEYUJkRmd5VUdrYTUdXy0Xdl9pBnoOBHE8X1cqZFpQLVQbKW9iHUlgfRF1A0IaZmEWWnNfVVRgcwEJd1Q0YGJ0XG5SVyxELFp1EVUEZjMsGB18Uwp7W2dTYjBvdVBnemp4XU5BS3FTD3sKLmJ5QH9vZhMHcEdfaSR0XlcHCRspb2IdSWB9EXUDQhpmbksCcGpnTWpzSCRMMSRVWgFUJGUjIwcfdEslb2FLOjsyEl58JRAK","Width":"694px","Height":"490px","Title":"Image Manager"},"LinkManager":{"SerializedParameters":"ZGEGKDgMHUViMxxecjVqK296ZnV6amReeAthEVImexwDYW5fVB1IIzxgBk1pMUFMfwYzGAF+ZVN/YB0KYS1NQWZhEltwZX9TaXNiNUxUDlNbSkgZaTMdTSRkRBh6cGE5BTYwHmYje0RyOnIwVFQBc0JlbEFPCldhajZ3FgBLVANRCQkRKVwsR2o1TkBpcTNUBm5mK3RgGQ50BW9FVn5tXmZ2bEtlT1Q2TlcSf2tdcjZVMDNuKVtXKFJgaRYAUjN6ZlVnQHInW3VQeExEdlxoaHsLWxZnC28pBktyRmUwXA0oWRYBZyVCAlAHKxUBbAU+e01+DW8qf3pRYGl6SHVFUWFeXBR5IyxlbmVABlUjHV0cYEsbYnFLKwMnCVl+MndjfVFcLmNABWFGZWdLT3BpTVELb1M2c2pxfhtIFTFvKHllJwcCZyssUQB8ASBJBUwwdXFvV25zS2VPZF1tfnxmAHogO1FhAQEZU1Qdcy9bdQlgBkM6ODcBZmQiXW5KJG4peENmRXpfRUVIfQJVYgwcPDQXbUlkbmIiKFxLb2APXnh+LCQWKhlIEnQFbhFZGEVFUHFPREheb1BXY1cSfwskVVsBZS19JxIALG9bUmxueTU4Nh1sUTNrREpQXDpganIGQnFSdXRvS15qMloRLmJMfmkJBQoBYDhZaTFOcWoXGRs/ekcTYXFYOnYIZ3piXRML","Width":"408px","Height":"340px","Title":"Hyperlink Manager"},"TableWizard":{"SerializedParameters":"ZGEGKDgMHUViMxxecjVqK296ZnV6amReeAthEVImexwDYW5fVB1IIzxgBk1pMUFMfwYzGAF+ZVN/YB0KYS1NQWZhEltwZX9TaXNiNUxUDlNbSkgZaTMdTSRkRBh6cGE5BTYwHmYje0RyOnIwVFQBc0JlbEFPCldhajZ3FgBLVANRCQkRKVwsR2o1TkBpcTNUBm5mK3RgGQ50BW9FVn5tXmZ2bEtlT1Q2TlcSf2tdcjZVMDNuKVtXKFJgaRYAUjN6ZlVnQHInW3VQeExEdlxoaHsLWxZnC28pBktyRmUwXA0oWRYBZyVOZVIGDRUAbkgzYFpfUG8WXWZVB2l6SHVFUWFeXBR5IyxlbmVABlUjHV0cYEsbYnFLKwMnCVl+MndjfVFcLmNABWFGZWdLT3BpTVELb1M2c2pxfhtIFTFvKHllJwcCZyssUQB8ASBJBUwwdXFvV25zS2VPZF1tfnxmAHogO1FhAQEZU1Qdcy9bdQlgBkM6ODcBZmQiXW5KJG4peENmRXpfRUVIfQJVYgwcPDQXbUlkbmIiKFxLb2APXnh+LCQWKhlIEnQFbhFZGEVFUHFPREheb1BXY1cSfwskVVsBZS19JxIALG9bUmxueTU4Nh1sUTNrREpQXDpganIGQnFSdXRvS15qMloRLmJMfmkJBQoBYDhZaTFOcWoXGRs/ekcTYXFYOnYIZ3piXRML","Width":"720px","Height":"500px","Title":"Table Wizard"},"CleanPasteHtmlContent":{"SerializedParameters":"ZGEGKDgMHUViMxxecjVqK296ZnV6amReeAthEVImexwDYW5fVB1IIzxgBk1pMUFMfwYzGAF+ZVN/YB0KYS1NQWZhEltwZX9TaXNiNUxUDlNbSkgZaTMdTSRkRBh6cGE5BTYwHmYje0RyOnIwVFQBc0JlbEFPCldhajZ3FgBLVANRCQkRKVwsR2o1TkBpcTNUBm5mK3RgGQ50BW9FVn5tXmZ2bEtlT1Q2TlcSf2tdcjZVMDNuKVtXKFJgaRYAUjN6ZlVnQHInW3VQeExEdlxoaHsLWxZnC28pBktyRmUwXA0oWRYBZyVFTlctNxUHYX4NfwdyMG8WXWJ5cFNkS3ZvUWUXWCd0MAZhWwF5J2lXK30sW3kRb11XFwQ2I3FTV3tgZQ5iMGFqTGFwWVJ2fFRXRWckXVA7cFsGVAhyMTZvGnlhJVIHZxgKUQBsAVJ/Y2ovWStZHmBzbXF4dX9gVmByCnojElVtdVNvUiM3bitZXzhgBVc6MjQ/an0yQUNNKnoaeGVmRXlkcGFJVXZdZg97NzRjbgZkCFQFBHEOYmoYZHhlBgoZMn4BIkhbWCdtFAUaYHEaWHNlVUhWSXZRTDFbU210dm5RJx1wJ2BLGGxlRDctJRFvVSx/W0sPDShXaGZGemVSRHcLfXVpOX8JLmNiW1IWfggpcz9EfFJOXlEtBVA8flQIYXJyCloIe0F4cmJBfV5OCFdiajZ5MlIb","Width":"517px","Height":"480px","Title":"Paste As Html"},"CleanPasteTextContent":{"SerializedParameters":"ZGEGKDgMHUViMxxecjVqK296ZnV6amReeAthEVImexwDYW5fVB1IIzxgBk1pMUFMfwYzGAF+ZVN/YB0KYS1NQWZhEltwZX9TaXNiNUxUDlNbSkgZaTMdTSRkRBh6cGE5BTYwHmYje0RyOnIwVFQBc0JlbEFPCldhajZ3FgBLVANRCQkRKVwsR2o1TkBpcTNUBm5mK3RgGQ50BW9FVn5tXmZ2bEtlT1Q2TlcSf2tdcjZVMDNuKVtXKFJgaRYAUjN6ZlVnQHInW3VQeExEdlxoaHsLWxZnC28pBktyRmUwXA0oWRYBZyVFTlctNxUHYX4NfwdyMG8WXWJ5cFNlf19VVGBieid0MAZhWwF5J2lXK30sW3kRb11XFwQ2I3FTV3tgZQ5iMGFqTGFwWVJ2fFRXRWckXVA7cFsGVAhyMTZvGnlhJVIHZxgKUQBsAVJ/Y2ovWStZHmBzbXF4dX9gVmByCnojElVtdVNvUiM3bitZXzhgBVc6MjQ/an0yQUNNKnoaeGVmRXlkcGFJVXZdZg97NzRjbgZkCFQFBHEOYmoYZHhlBgoZMn4BIkhbWCdtFAUaYHEaWHNlVUhWSXZRTDFbU210dm5RJx1wJ2BLGGxlRDctJRFvVSx/W0sPDShXaGZGemVSRHcLfXVpOX8JLmNiW1IWfggpcz9EfFJOXlEtBVA8flQIYXJyCloIe0F4cmJBfV5OCFdiajZ5MlIb","Width":"517px","Height":"480px","Title":"Paste Plain Text"},"ImageEditor":{"SerializedParameters":"ZHFlMzs5N0VlI2sHSSp1M2Nlfgd5YV1FYXxHYlIMaw8AYW51Ugl6CD9wLFtpJHhEUhdUGylsagxPf2YOdAR4XmJ+aQNwZll1URZ+CU8hDhBha2IuUlZQZidvYQ16c2koAykrRXwgbERnUmIwV2pidUBfEwFOCmVdYVMUEwZhbkZUGHIdBwQkR2klYE9lCA0WP3wFDE9gfRFqLXNeVwR2QWdxWg9nc3ZVez4gVVoBdjViCQlEJGF9ElNbZjMzDCNaU1Z4RGUxTzl4aWUCbnZrBX5vAkxqU3sgOGFUA1JteiMEYAZbZlFgW2ktDVUpbGoMT39mDnQEdF5jcm1hSAB/YH5zW1Z5ISRTYgBmNmpWMEQsWnURVQRmMywiHUhmHn8Hfg5iDmV5QHBBX2xbT39lYlI2Zwo4YWpfaht6DAYFKGNXKlpFaRgvDj9+ZlRhcnIKWgh7QXhybkF8emcJaXBENHcxGkpbXlwsfA83RydgSxRsBmEsOwwJXFE8f0dKUAw1Z2pYXkF1E1x7cF9TajQYDgBxbUBiM3YXBgUrRH4hTmFhcTsbMkVYL05wbld2Fl1MYgZPA3xee0pXcno5eAggTWpJXGtkIxFkHXFfOlN+aSEsJFAbaQkYZE01cTlQZUR7QgBSAnpuV09SJ2c+N0h6WGIkXFEwXBpEUiV8fnwXVCw0GXoyeltMVloHe1lWfml/SHV/S2RzW1B7CixyXAFUCVIyPwInTXkRUlt5MSwpCWdiIWgHfCVIDlF4BWN3akJ9fEJhEWQ0Y1U4F31JZjB+DzZxJAJkDmdOVxYRODNDcg5PYnIYbAV7bmFhcWp5XGNQZRQFLHoKClVuZHknVCMdXh9dcVZiYUMHAzcJcWYwY2d6J205YUFQfUJ3Gkt4bHITZVN7DgFLdlxlGXZUAXAoTlEMe0VlCCtQP3pHE2FzXCRaLXNEVnF1eEhla1ZpcWYKTD4wUFtaSBlpMx1NJGREGHpwYTkFNjAeZglBW0xTeihRalxMb3R4S0lvZld9IlpRNH56QFJsdg8wcDgHUip7RWUIK1A/ekcTYXNcJF0IZ0FXWxZaSHd/SGpzSBd3VSx3YWtiMXwhP18cf30OenJyMw==","Width":"832px","Height":"520px","Title":"Image Editor"},"ImageProperties":{"SerializedParameters":"ZGEGKDgMHUViMxxecjVqK296ZnV6amReeAthEVImexwDYW5fVB1IIzxgBk1pMUFMfwYzGAF+ZVN/YB0KYS1NQWZhEltwZX9TaXNiNUxUDlNbSkgZaTMdTSRkRBh6cGE5BTYwHmYje0RyOnIwVFQBc0JlbEFPCldhajZ3FgBLVANRCQkRKVwsR2o1TkBpcTNUBm5mK3RgGQ50BW9FVn5tXmZ2bEtlT1Q2TlcSf2tdcjZVMDNuKVtXKFJgaRYAUjN6ZlVnQHInW3VQeExEdlxoaHsLWxZnC28pBktyRmUwXA0oWRYBZyVOeVEHMycHYWI+ewV6EW4VXWZQW216fFxBU2EWSBJ0HCB1W3VcBlUsP1Ybb1cMYF1XFwJQFXBjCm9fTTZuGWJBUHxHZHBkTAt9bmINXRU7FA18Uxl5HStzEnlSCXAFZ3AsUQBCSBV/b1gsbgZzHGBhU3BJAkF+Z052CH4gK15hAQEIfzMvQyhddQllc0MvOAorGmpVe35+D1QpZx9MR3ZIYGVjbmlsfzlnBzRcaQZkCGIuAHEOQ2EPTnlWLQVVMURAM0xhRDdsLUFiZWITC2UCVU5qFnYSTD4STlx0XChSCCdfGnBUEWRbdTMCUzBafSdaAHo6UHBvdX5DemVSd0xvdVdSU0kcN2F+A1EdSCM8YAZNaTFBQX8EFSw8fgUKSWBuDGITTWptYVtIcGFaT39iQDljLjBxblgAZw==","Width":"370px","Height":"435px","Title":"Set Image Properties"},"ImageMapDialog":{"SerializedParameters":"ZGEGKDgMHUViMxxecjVqK296ZnV6amReeAthEVImexwDYW5fVB1IIzxgBk1pMUFMfwYzGAF+ZVN/YB0KYS1NQWZhEltwZX9TaXNiNUxUDlNbSkgZaTMdTSRkRBh6cGE5BTYwHmYje0RyOnIwVFQBc0JlbEFPCldhajZ3FgBLVANRCQkRKVwsR2o1TkBpcTNUBm5mK3RgGQ50BW9FVn5tXmZ2bEtlT1Q2TlcSf2tdcjZVMDNuKVtXKFJgaRYAUjN6ZlVnQHInW3VQeExEdlxoaHsLWxZnC28pBktyRmUwXA0oWRYBZyVCRVcGDTk/bkgxewdyUW0rUV5VcWl6ZWUYdWIUejd6CgYSWnR+KlIsL3occGERYWFYcTcNK31UVklgSjRidWxXfkVHX2BDYHBfamIkaFY2YUh9VAsBMTFvFnhiGGQDZxUvUj8YdR57WWYJawZvGGNackpOZF1hZU5yC08zOFxsdn4dZTM3by1ZfQpgBgYNNg0NWmYzZE5MJUApVEd2AndlWnVPbl98ZjVjNjBjbUpkMlQvBHJOTmY2dwFnB1gLPH5IFEhablJZFwxYYXFlAktxVX9qc0gbdzUVUXR3RBhVLDdbHVoGClRzYTA4Nh1faldjZnE6ai95aG5eQXpkXmF8cld/UVUOAEtcAmkJVAgpciRfUSp4Wn8EIBIyRVNUSXFyNWwUBRA=","Width":"720px","Height":"430px","Title":"Image Map Editor"}},"_dialogUniqueID":"6c5ecf63-7003-459c-af50-39268a403fa5","additionalQueryString":"","clientStateFieldID":"ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener_ClientState","handlerUrl":"../../Telerik.Web.UI.DialogHandler.aspx","skin":"Office2007"}, null, null, $get("ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadEditor, {"_ajaxSpellCheckScriptReference":"/WebResource.axd?d=d--Yu2h-gqE9xRYkCvuIomAlLk2TT9Sqcy-yYgq6agCtrUphv0_Ka9kvXGi-xFos4rqcfVdn7FQmJTiWydNo_w2&t=634303194038616967","_localization":{"addcustomcolor":"Add Custom Color...","addcustomhexcolor":"Add Hex Color...","addcustomwordsuccess":"successfully added to dictionary","addtodictionary":"Add to dictionary","askwordcleaning":"The content you are trying to paste has MS Word formatting.\r\nWould you like to clean it?","cancelbutton":"Cancel","canceltable":"Cancel","cellproperties":"Cell Properties","cellwarning":"Please, select a cell to set its properties!","changewordstring":"Change Manually","class":"CSS Class","clearclass":"Clear Class","clearallhtmltags":"All HTML Tags","clearcssformatting":"Cascading Style Sheets","clearfonttags":"Font Tags","clearformatting":"Clear Formatting","clearspantags":"Span Tags","clearstyle":"Clear Style","clearwordformatting":"Microsoft Word Formatting","correctspelling":"Spelling Changes","createlink":"Create Link","dialogtoolbar":"Dialogs","dropdowntoolbar":"Dropdowns","enhancededittoolbar":"Enhanced Edit","fileopen":"Open file..","filesaveas":"Save as...","formbutton":"Button","formcheckbox":"Checkbox","formform":"Form","formhidden":"Hidden","formpassword":"Password","formradio":"Radio button","formreset":"Reset","formselect":"Select","formsubmit":"Submit","formtext":"Textbox","formtextarea":"Textarea","htmlmode":"HTML Mode","ignoreallstring":"Ignore All","ignorestring":"Ignore","imagemapwarning":"Please, select an image to set its image map properties!","indenthtml":"Indent HTML","inserttoolbar":"Insert","maintoolbar":"Main Toolbar","morethanoncemessage":"This word occurs more than once in the text. Would you like to replace all instances?","movecommand":"Move","nospellingmistakes":"No mistakes found.","nosuggestions":"(no suggestions)","promptcolor":"Please, provide the custom color HEX value:","radeditordesignmode":"Design","radeditorhtmlmode":"HTML","radeditorpreviewmode":"Preview","resizecommand":"Resize Object","sethtml":"Set HTML","showtoolbartooltip":"Show toolbar","spellcheckcomplete":"Spellchecking complete!","spellcheckend":"Finish spellchecking","spellingchange":"Spelling Change","spellinginprogress":"Spell checking in progress...","spellingmode":"Spell checking mode. Misspelled words are highlighted in yellow.","table":"Table","tabletoolbar":"Table","tablewarning":"Please, select a table to set its properties!","toolbarcaption":"RadEditor Toolbar","toolnotsupportedbynetscape":"This tool is not supported by Mozilla/Netscape browsers.","typing":"Typing...","undodisabledmessage":"You cannot undo further while in spellcheck mode. Please finish spellchecking first.","updatebutton":"Update","usectrlc":"Please use Ctrl+C to Copy","usectrlv":"Please use Ctrl+V to Paste","usectrlx":"Please use Ctrl+X to Cut","aboutdialog":"About RadEditor","absoluteposition":"Set Absolute Position","ajaxspellcheck":"AJAX Spellchecker","applyclass":"Apply CSS Class","backcolor":"Background Color","bold":"Bold","converttolower":"Convert to lower case","converttoupper":"Convert to upper case","copy":"Copy","cut":"Cut","decreasesize":"Decrease Size","deletecell":"Delete Cell","deletecolumn":"Delete Column","deleterow":"Delete Row","deletetable":"Delete Table","documentmanager":"Document Manager","findandreplace":"Find And Replace","flashmanager":"Flash Manager","fontname":"Font Name","fontsize":"Size","forecolor":"Foreground Color","formatblock":"Paragraph Style","formatcodeblock":"Format Code Block","formatstripper":"Format Stripper","help":"Help","imageeditor":"Image Editor","imagemanager":"Image Manager","imagemapdialog":"Image Map Editor","increasesize":"Increase Size","indent":"Indent","insertanchor":"Insert Anchor","insertcolumnleft":"Insert Column to the Left","insertcolumnright":"Insert Column to the Right","insertcustomlink":"Custom Links","insertdate":"Insert Date","insertemaillink":"Insert Email Link","insertformbutton":"Insert Button","insertformcheckbox":"Insert Checkbox","insertformelement":"Insert Form Element","insertformform":"Insert Form","insertformhidden":"Insert Hidden","insertformpassword":"Insert Password","insertformradio":"Insert Radio","insertformreset":"Insert Reset","insertformselect":"Insert Select","insertformsubmit":"Insert Submit","insertformtext":"Insert Textbox","insertformtextarea":"Insert Textarea","insertgroupbox":"Insert Groupbox","inserthorizontalrule":"Horizontal Rule","insertorderedlist":"Numbered List","insertparagraph":"New Paragraph","insertrowabove":"Insert Row Above","insertrowbelow":"Insert Row Below","insertsnippet":"Insert Code Snippet","insertsymbol":"Insert Symbol","inserttable":"Insert Table","inserttime":"Insert Time","insertunorderedlist":"Bullet List","italic":"Italic","justifycenter":"Align Center","justifyfull":"Justify","justifyleft":"Align Left","justifynone":"Remove alignment","justifyright":"Align Right","linkmanager":"Hyperlink Manager","mediamanager":"Media Manager","mergecolumns":"Merge Cells Horizontally","mergerows":"Merge Cells Vertically","modulemanager":"Module Manager","outdent":"Outdent","pageproperties":"Page Properties","paste":"Paste","pasteashtml":"Paste As Html","pastefromword":"Paste from Word","pastefromwordnofontsnosizes":"Paste from Word, strip font","pasteplaintext":"Paste Plain Text","pastestrip":"Paste Options","print":"Print","realfontsize":"Real font size","redo":"Redo","repeatlastcommand":"Repeat Last Command","selectall":"Select All","setcellproperties":"Set Cell Properties","setimageproperties":"Set Image Properties","setlinkproperties":"Set Link Properties","settableproperties":"Set Table Properties","silverlightmanager":"Silverlight Manager","spellcheck":"Spellchecker","splitcell":"Split Cell","strikethrough":"Strikethrough","stripall":"Strip All Formatting","stripcss":"Strip Css Formatting","stripfont":"Strip Font Elements","stripspan":"Strip Span Elements","stripword":"Strip Word Formatting","stylebuilder":"Style Builder","subscript":"Subscript","superscript":"SuperScript","tablewizard":"Table Wizard","templatemanager":"Template Manager","toggledocking":"Dock all Floating Toolbars/Modules","togglescreenmode":"Toggle Full Screen Mode","toggletableborder":"Show/Hide Border","trackchangesdialog":"Track Changes","underline":"Underline","undo":"Undo","unlink":"Remove Link","xhtmlvalidator":"XHTML Validator","zoom":"Zoom"},"clientStateFieldID":"ctl00_mainContent_radEditorComment_ClientState","contentAreaCssFile":"css/EditorContentAreaStyles.css","contextMenusJSON":[{"tagName":"TABLE","tools":[{"name":"ToggleTableBorder","text":"Show/Hide Border"},{"name":"SetTableProperties","text":"Set Table Properties"},{"name":"DeleteTable","text":"Delete Table"}]},{"tagName":"TD","tools":[{"name":"InsertRowAbove","text":"Insert Row Above"},{"name":"InsertRowBelow","text":"Insert Row Below"},{"name":"DeleteRow","text":"Delete Row"},{"name":"InsertColumnLeft","text":"Insert Column to the Left"},{"name":"InsertColumnRight","text":"Insert Column to the Right"},{"name":"DeleteColumn","text":"Delete Column"},{"name":"MergeColumns","text":"Merge Cells Horizontally"},{"name":"MergeRows","text":"Merge Cells Vertically"},{"name":"SplitCell","text":"Split Cell"},{"name":"DeleteCell","text":"Delete Cell"},{"name":"SetCellProperties","text":"Set Cell Properties"},{"name":"SetTableProperties","text":"Set Table Properties"},{"name":"ToggleTableBorder","text":"Show/Hide Border"}]},{"tagName":"IMG","tools":[{"name":"SetImageProperties","text":"Set Image Properties"},{"name":"ImageMapDialog","text":"Image Map Editor"}]},{"tagName":"A","tools":[{"name":"SetLinkProperties","text":"Set Link Properties"},{"name":"Unlink","text":"Remove Link"}]},{"tagName":"*","tools":[{"name":"Cut","text":"Cut"},{"name":"Copy","text":"Copy"},{"name":"Paste","text":"Paste"},{"name":"PasteFromWord","text":"Paste from Word"},{"name":"PastePlainText","text":"Paste Plain Text"},{"name":"PasteAsHtml","text":"Paste As Html"}]}],"editModes":1,"modulesJSON":[],"mozillaFlashOverlayImage":"/WebResource.axd?d=d--Yu2h-gqE9xRYkCvuIolB2WkJxvjfXBoIsaF96b3gBoWKwKPI9z5u5nd9N35tj242qC7zLl8N1Dyy3FYrb3MkKTcGDbqgDTs2hMC9r0I81&t=634303194038616967","skin":"Office2007","spellCheckJSON":{"configuration":"ZHFfKgUmCV9SCWtOTTR6KFFqU0VxX2xBTgpmV30iVTUwbnpZaSR6FyhxDm5nD3hXYXE7Vzx/VA9JYUMYay5vRnlaZQN9ZmQNV2JYKX4ILE91XmI0ZTINdBoGVBVjW1srM1E/Q2YzHHBJU206ZEBMX3EBQlhiCHVVaTlFMAFLT0BiM3YXBgUrRH4hTmFhcTsbMkVYL05wbld2Fl1MYgZPA3xee0pXcmUbfAsaT2oAWBtpMQFgH1p2FVdxWykDNy9TZwhFfUw0VBlUakcL","url":"Telerik.Web.UI.SpellCheckHandler.axd","language":"en-US"},"toolAdapterType":"Telerik.Web.UI.Editor.DefaultToolAdapter","toolJSON":[{"attributes":{"showtoolstext":"false"},"tools":[{"name":"Bold"},{"name":"Italic"},{"name":"Underline"},{"type":8},{"type":8},{"name":"InsertOrderedList"},{"name":"InsertUnorderedList"},{"name":"Outdent"},{"name":"Indent"},{"type":8},{"name":"AjaxSpellCheck"},{"type":8},{"name":"Cut"},{"name":"Copy"},{"name":"Paste"},{"type":8},{"name":"Undo","type":4,"attributes":{"popupclassname":"rade_UndoRedo"}},{"name":"Redo","type":4,"attributes":{"popupclassname":"rade_UndoRedo"}},{"type":8},{"name":"LinkManager"},{"name":"Unlink"}]}],"uniqueID":"ctl00$mainContent$radEditorComment"}, null, {"dialogOpener":"ctl00_mainContent_ctl00_mainContent_radEditorCommentdialogOpener"}, $get("ctl00_mainContent_radEditorComment"));
+});
+//]]>
+</script>
+</form>
+
+    </div>
+    </div>
+    <div id="footer">
+        <div id="footer_inner">
+            <table>
+                <tr>
+                    <td valign="top" width="110px">
+                        <h4>
+                            I need a...</h4>
+                        <a href="http://logo.designcrowd.com">Logo design</a>
+                        <br />
+                        <a href="http://web.designcrowd.com">Web page design</a>
+                        <br />
+                        <a href="http://graphic.designcrowd.com">Graphic design</a>
+                        <br />
+                        <a href="http://brochure.designcrowd.com">Brochure design</a>
+                        <br />
+                        <a href="http://tshirt.designcrowd.com">T-shirt design</a>
+                        <br />
+                        <a href="http://flyer.designcrowd.com">Flyer design</a>
+                        <br />
+                    </td>
+                    <td valign="top">
+                        <img src="http://images.designcrowd.com/footer_spacer.png" alt="Footer Spacer" />
+                    </td>
+                    <td valign="top" width="110px">
+                        <h4>
+                            Find a...</h4>
+                        <a href="http://designers.designcrowd.com/graphics">Graphic designer</a>
+                        <br />
+                        <a href="http://designers.designcrowd.com/logo">Logo designer</a>
+                        <br />
+                        <a href="http://designers.designcrowd.com">Freelance designer</a>
+                        <br />
+                        <a href="http://designers.designcrowd.com/web">Web designer</a>
+                        <br />
+                    </td>
+                    <td valign="top">
+                        <img src="http://images.designcrowd.com/footer_spacer.png" alt="Footer Spacer" />
+                    </td>
+                    <td valign="top" width="180px">
+                        <h4>
+                            Popular pages...</h4>
+                        <a href="http://contests.designcrowd.com">Design contest</a>, <a href="http://logo.designcrowd.com/contests">
+                            Logo contest</a>, <a href="http://logo.designcrowd.com/bids">Logo bids</a>,
+                        <a href="http://outsource.designcrowd.com/">Graphic design outsourcing</a>, <a href="http://www.designcrowd.com/crowdsourcing">
+                            Design Crowdsourcing</a>, <a href="http://designers.designcrowd.com/graphics/australia">
+                                Graphic design Australia</a>, <a href="http://designers.designcrowd.com/graphics/uk">Graphic
+                                    design UK</a>, <a href="http://jobs.designcrowd.com/graphic-design-jobs">
+                                        Graphic design jobs</a>
+                        <br />
+                    </td>
+                    <td valign="top">
+                        <img src="http://images.designcrowd.com/footer_spacer.png" alt="Footer Spacer" />
+                    </td>
+                    <td valign="top" width="80px">
+                        <h4>
+                            About...</h4>
+                        <a href="http://www.designcrowd.com/about">About Us</a>
+                        <br />
+                        <a href="http://www.designcrowd.com/how-it-works">How it Works</a>
+                        <br />
+                        <a href="http://www.designcrowd.com/contact">Contact Us</a>
+                        <br />
+                        <a href="http://www.designcrowd.com/site-map">Site Map</a>
+                        <br />
+                        <a href="http://www.designcrowd.com/help">Help</a>
+                        <br />
+                        <a href="http://blog.designcrowd.com">Blog</a>
+                        <br />
+                    </td>
+                    <td valign="top">
+                        <img src="http://images.designcrowd.com/footer_spacer.png" alt="Footer Spacer" />
+                    </td>
+                    <td valign="top" width="160px">
+                        <h4>
+                            Graphic Designers</h4>
+                        <span style="font-size: 28px;">
+                            <span id="ctl00_lblDesignersCount">29,218</span></span>
+                        <br />
+                        <h4>
+                            Project Payments</h4>
+                        <span style="font-size: 28px;">$<span id="ctl00_lblProjectPayments">1,009,836</span></span>
+                        <br />
+                    </td>
+                    <td valign="top">
+                        <img src="http://images.designcrowd.com/footer_spacer.png" alt="Footer Spacer" />
+                    </td>
+                    <td style="padding-left: 5px; padding-top: 10px; text-align: right" valign="middle">
+                        <a href="http://twitter.com/DesignCrowd" rel="external nofollow">
+                            <img border="0" src="http://images.designcrowd.com/footer_twitter.jpg"
+                                alt="Follow DesignCrowd on Twitter" /></a>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="footer_copyright">
+            <table>
+                <tr>
+                    <td>
+                        <img src="http://images.designcrowd.com/footer_logo.png" alt="DesignCrowd Footer Logo" />
+                    </td>
+                    <td>
+                        Copyright ©
+                        2011
+                        DesignCrowd. Use of this website constitutes acceptance of our <a target="_blank"
+                            href="http://www.designcrowd.com/userAgreement.aspx">User Agreement</a>
+                        and <a target="_blank" href="http://www.designcrowd.com/privacy.aspx">
+                            Privacy Policy</a>. * Conditions apply please see our <a href="http://www.designcrowd.com/help/article/100-money-back-guarantee">
+                                money back refund policy</a>.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //google analytics
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-3058456-3");
+        pageTracker._setDomainName(".designcrowd.com");
+        pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+</body>
+</html>

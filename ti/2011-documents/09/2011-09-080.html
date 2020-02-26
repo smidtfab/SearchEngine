@@ -1,0 +1,280 @@
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+       <title>Betfair Labs - News Listing Viewer</title>
+       <meta name="description" content="Betfair labs gives you the chance to see some of our current ideas in development. Primarily focused on new ways to interact with our technology, we plan to not only provide interesting methods and useful tools, but also examples that you can play with and extend." />
+       <meta name="keywords" content="betfair, labs, innovation, ideas, projects" /> 
+       <meta name="Revisit-after" content="2 days" />
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <link href="/digitalAssets/601_favicon.ico" rel="shortcut icon">
+       <link href="/CSS+Page/?contentId=699" rel="stylesheet" type="text/css" />
+       <script language="javascript">
+var httpRequest;
+
+function makeRequest(requestType, url, parameters, eventFunctionCall) {
+   if (window.XMLHttpRequest) {
+      httpRequest = new XMLHttpRequest();
+   }
+   else if (window.ActiveXObject) {
+         try {
+         httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+         } 
+         catch(e) {
+         try {
+               httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+         } 
+         catch(e) {
+         }
+      }           
+   }
+   if (!httpRequest) {
+      alert('Error in connection!');
+      return false;
+   }
+   else {
+      httpRequest.onreadystatechange = eventFunctionCall;
+       if (requestType == "GET") {
+           httpRequest.open(requestType, url + parameters, true);
+           httpRequest.send(null);
+       }
+       else if (requestType == "POST") {
+           httpRequest.open(requestType, url, true);
+           httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+           httpRequest.setRequestHeader('Content-length', parameters.length);
+           httpRequest.setRequestHeader('Connection', "close");        
+           httpRequest.send(parameters); 
+       }             
+      return true;         
+   }           
+}
+
+function getFormPostString(formName) {
+   var form = document.forms[formName];
+   var postString = '';
+   var i;
+   for (i = 0 ; i < form.elements.length; i++) {
+      if (form.elements[i].name != '') {
+         var name = form.elements[i].name;
+         var type = form.elements[i].type;
+         if (type == "checkbox") {
+            postString += (postString == '') ? '' : '&';
+            postString += name + '=' + escape(form.elements[i].checked);
+         }
+         else if (type == "radio") {
+            if (form.elements[i].checked) {
+               postString += (postString == '') ? '' : '&';
+               postString += name + '=' + escape(form.elements[i].value);
+            }
+         }
+         else {
+            postString += (postString == '') ? '' : '&';
+            postString += name + '=' + escape(form.elements[i].value);
+         }
+      }
+   }
+   return postString;
+}
+
+function trim(input) {
+   return input.replace(/^\s+|\s+$/g, '') ;
+}
+
+function getElement(elementId) { 
+   return (document.getElementById) ? document.getElementById(elementId) : document.all[elementId];
+} 
+
+function changeTextField(formName,textName,newValue) {
+   var form = document.forms[formName];
+   var i;
+   for (i = 0; i < form.elements.length; i++) {
+     if (form.elements[i].name == textName) {
+         form.elements[i].value = newValue;
+         return true;
+      }
+   }
+}
+
+function setCookie(name, value, expires, path) {
+   var cookieString = name + "=" + escape(value) +
+        "; expires=" + expires.toGMTString() +
+        "; path=" + path;
+   document.cookie = cookieString;
+}
+
+function getCookie(name) {
+   var cookieResult = document.cookie.match(name + '=(.*?)(;|$)');
+
+   if (cookieResult) {
+      return (unescape(cookieResult[1]));
+   }
+   else {
+      return null;   
+   }    
+} 
+
+function hideElement(elementId) {
+   var element = getElement(elementId);
+   element.style.display = "none";
+}
+
+function showElement(elementId) {
+   var element = getElement(elementId);
+   element.style.display = "block";
+}
+
+</script>
+   </head>
+
+
+   <body>
+
+
+      <div class="base">
+            <div class="userstatus">
+                 <script language="javascript">
+
+function SecurityPopUp() {
+    window.open("/Security+Details/?contentId=699", 'Security','height=470,width=300');
+}
+
+</script>
+
+
+<span id="loginform" class="userlogin"> 
+<form name="login" method="post" action="https://labs.betfair.com/UserLoginAction.do">
+<input type="hidden" name="successForwardAddressParameter" value="/News+Listing+Viewer/?contentId=699" />
+<input type="hidden" name="errorForwardAddressParameter" value="/News+Listing+Viewer/?contentId=699" />
+<table class="userlogin">
+<tr>
+<td> </td>
+<td class="userlogin">USER NAME:</td>
+<td class="userlogin">PASSWORD:</td>
+<td></td>
+</td>
+<tr>
+<td><a style="overflow: hidden;" alt="Security" title="Security" href="javascript:SecurityPopUp();"><img class="padlock" src="/digitalAssets/1015_icon_padlock.gif" /></a>&nbsp;&nbsp;</td>
+<td><input class="logininput" type="text" id="logininputusername" name="usernameParameter" size="15" value="" autocomplete="off" /></td>
+<td><input class="logininput" type="password" id="logininputpassword" name="passwordParameter" size="15" value="" autocomplete="off" /></td>
+<td>&nbsp;&nbsp;&nbsp;<input type="image" alt="Login" title="Login" src="/digitalAssets/514_submit-button.gif" /></td>
+</td>
+</table>
+</form>
+</span>
+<span id="loginwaiting" class="userlogin" style="display:none;"> 
+Logging in...
+</span>
+            </div>  
+            <div class="header">
+                 <span class="title">
+<img class="noborder" src="/digitalAssets/511_left-rounded-corner.gif" />
+<a href="/"><img class="title" src="/digitalAssets/500_betfair-logo.gif"
+alt="Betfair Labs"/></a>
+</span>
+
+<span class="rightcorner">
+<img class="noborder" src="/digitalAssets/501_right-rounded-corner.gif" />
+</span>
+            </div>       
+            <div class="navigation">
+                 <script language="javascript">
+
+function bookmarkLabs() {
+    if (window.sidebar) {
+        window.sidebar.addPanel("Betfair Labs","http://labs.betfair.com",""); 
+    }
+    else if (window.external) {
+        window.external.AddFavorite("http://labs.betfair.com","Betfair Labs");
+    }
+    else {
+        alert("This feature isn't supported by your browser.");
+    }
+}
+
+function clearSearch() {
+   var form = document.forms["search"];
+   var i;
+   for (i = 0; i < form.elements.length; i++) {
+     if ((form.elements[i].name == "search") && (form.elements[i].value == "search")) {
+         form.elements[i].value = "";
+         return true;
+      }
+   }
+}
+
+</script>
+
+<span class="navigationlinks">
+&nbsp;&nbsp;<a href="/" class="navigationitem">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/Projects/" class="navigationitem">Projects</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/Successes/" class="navigationitem">Successes</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/About/" class="navigationitem">About</a>
+&nbsp;|&nbsp;&nbsp;<a href="javascript:bookmarkLabs();" class="navigationitem">Bookmark</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://account.betfair.com/account-web/registerAccount.html?origin=LABS" target="_blank" class="navigationitem">Open A Betfair Account</a>
+</span>
+
+<form name="search" action="/Search/?contentId=699" method="post">
+<span class="searchbox">
+<input type="image" alt="Search" title="Search" src="/digitalAssets/514_submit-button.gif" />
+</span>
+<span class="searchbox">
+<input type="text" class="searchinput" name="search" value="search" onclick="javascript:clearSearch();" />&nbsp;&nbsp;&nbsp;
+</span>
+
+</form>
+            </div>
+            <div class="horizontalspacer">
+            </div> 
+            <div class="main">
+                 <div class="pagetitle2nomargin">
+   <div class="cornerleft"><img class="noborder" src="/digitalAssets/506_grey-small-left-rounded-corner.gif" /></div>
+   <div class="cornerleft"><img class="noborder" src="/digitalAssets/503_grey-subtitle-icon.gif" />&nbsp;&nbsp;</div>
+   <div class="subtitle2">NEWS</div>
+   <div class="cornerright"><img class="noborder" src="/digitalAssets/505_grey-small-right-rounded-corner.gif" /></div>
+   <div class="cornerclear"></div>   
+</div>
+
+<div class="pagecontentbase">
+<span class="newslistingtitle"><br/>Emerging Technologies Update - 11th December 2009</span>
+
+<p>The ET update is back for this and one more before Christmas then back again in the new year.</p> <p>It looks like 2010 could see an easing of online gambling restrictions in the US. This report suggests there&rsquo;s some heavy lobbying going on to relax laws next year. As always, there are opponents, but the potential tax revenues could be the sweetener to help push things through Congress <a target="_blank" href="http://bit.ly/8IyTGI">http://bit.ly/8IyTGI</a> &nbsp;&nbsp;</p> <p>Just in time for Christmas, a new Internet-enabled TV is about to go on the market. The iViewer will enable online programmes to be viewed directly via a version of the iPlayer modified for TV sets rather than via a set-top-box. It will retail exclusively at Marks &amp; Spencer till March next year, retailing at &pound;499. <a target="_blank" href="http://bit.ly/4ta9CU">http://bit.ly/4ta9CU</a></p> <p>On a similar note, Cisco has just launched FlipShare TV, a small set-top-box which connects via Wi-Fi to a PC or Mac to stream programs via the TV set which are stored on the computer. This development is part of their strategy to enter the consumer market, having bought FlipCam (the mini IP-enabled camcorder) earlier in the year. <a target="_blank" href="http://bit.ly/5a4N8R">http://bit.ly/5a4N8R</a> &nbsp;&nbsp;See also <a target="_blank" href="http://bit.ly/2kY0ga">http://bit.ly/2kY0ga</a></p> <p>PC maker Dell has twittered its way to US$6.5M in sales through marketing on the social networking site, though quite how it tracks back sales to Twitter isn&rsquo;t clear. It says it&rsquo;s been a very lucrative ROI for the outlay involved in a small number of staff spending part of their time tweeting. &nbsp;Proof that social network marketing really works? <a target="_blank" href="http://bit.ly/8Sxoda">http://bit.ly/8Sxoda</a></p> <p>Another story to highlight the power of social networks &ndash; this time an experiment using social networks to solve very large problems quickly. The US national defense agency DARPA offered a US$40,000 prize to whoever could find 10 large red balloons randomly placed all over the United States in the fastest time, staged over a weekend. The idea was to use social networks as a communications tool to locate the balloons. Out of 4,300 teams, MIT won the prize, finding all balloons in under 9 hours.&nbsp; <a target="_blank" href="http://bit.ly/874F5G">http://bit.ly/874F5G</a></p> <p>The latest Android Challenge winners have been announced, and the winning app isn&rsquo;t that inspiring from what I can tell; an app enabling you to send late-night voice-mails. Huh? Android developers are increasingly frustrated at how difficult it is to make good money from Android app development, and the increasing range of devices supported is also making app dev more difficult. <a target="_blank" href="http://bit.ly/7D86Zz">http://bit.ly/7D86Zz</a></p> <p>Picture search has arrived. Google has just released a new downloadable Android app &ndash; Google Goggles. Snap a photo with your smartphone and use it as the input to a google search. Google admits &ldquo;it&rsquo;s not quite perfect yet&rdquo; and the app still needs refining, but it will only get better. <a target="_blank" href="http://bit.ly/52wXfp">http://bit.ly/52wXfp</a></p> <p>Vague rumours that Amazon might be planning a move onto the high street <a target="_blank" href="http://bit.ly/8eVAS6">http://bit.ly/8eVAS6</a></p> <p>Apple has just compiled its favourite iPhone apps of 2009, and its top sellers. For the latter, an air-traffic control simulator came out on top <a target="_blank" href="http://bit.ly/5DNHIE">http://bit.ly/5DNHIE</a></p> <p>And finally - a list of the top 10 viral (twitter) sensations of 2009...&nbsp; X-factor&rsquo;s Susan Boyle is currently in 2<sup>nd</sup> place! <a target="_blank" href="http://bit.ly/8P7QFD">http://bit.ly/8P7QFD</a></p> <p>Happy reading!</p>
+
+<center>
+<!-- ADDTHIS BUTTON BEGIN -->
+<script type="text/javascript">
+addthis_pub             = 'atg@betfair.com'; 
+addthis_brand           = 'Betfair Labs';
+addthis_options         = 'favorites, email, digg, delicious, slashdot';
+</script>
+<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="" /></a>
+<script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+<!-- ADDTHIS BUTTON END -->
+
+</center>
+</div>
+            </div>
+            <div class="footer">
+                 <br/><br/>
+<p class="copyright"><a class="footerlink" href="http://www.betfair.com?origin=LABS" target="_blank">Betfair.com</a>&nbsp; | &nbsp;<a class="footerlink" href="http://bdp.betfair.com?origin=LABS" target="_blank">Developers Program</a>&nbsp; | &nbsp;<a class="footerlink" href="http://content-cache.betfair.com/aboutus/?product=exchange&sWhichKey=Jobs&locale=en_GB&region=GBR&brand=betfair&origin=LABS" target="_blank">Careers</a></p>
+<p class="copyright">BETFAIR® and the BETFAIR LOGO are registered trade marks of The Sporting Exchange Limited. Data on Betfair website(s) (including pricing data) is protected by © and database rights.<br/>It may not be used for any purpose without a licence.</p>
+            </div>
+            <div class="vspacer">
+            </div> 
+      </div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2448990-1";
+urchinTracker();
+</script>
+
+   </body>
+</html>
+
+
+

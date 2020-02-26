@@ -1,0 +1,608 @@
+<!doctype html>
+<head>
+	<title>End-user access to semantically-rich linked data</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="font-size-adjustment" content="-2" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/slidy.css" type="text/css" media="screen, projection, print" />    
+	<link rel="stylesheet" href="css/myskin.css" type="text/css" media="screen, projection, print" />    
+    <!-- JS -->
+    <script type="text/javascript" src="js/slidy.js"></script>
+</head>
+
+<body>
+    
+<div class="slide titlepage" style="text-align:left">
+<h1 style="margin-top:40%;">Integrating user-generated metadata into video collections</h1>
+<p class="authors">
+<a href="http://www.few.vu.nl/~michielh/">Michiel Hildebrand</a>,
+<a href="http://www.vu.nl/">VU University Amsterdam</a>
+</p>
+</div>
+
+<!-- intro -->
+<div class="slide grid2">
+<div class="c1" style="background:url(img/beeld_en_geluid.jpg) no-repeat fixed 0 top">
+<div class="footnote">
+    <a href="http://www.flickr.com/photos/fransdewit/4586821787">
+    http://www.flickr.com/photos/fransdewit/4586821787</a>
+</div>    
+</div>
+<div class="c2">
+    <div style="margin-left:2em;">
+    <h1>Analysis of search behavior at Netherlands Institute for Sound &amp; Vision*</h1>   
+    <ul class="incremental">
+        <li>People predominantly order video fragments
+            <ul>
+                <li>broadcast (33%)</li>
+                <li>stories (17%)</li>
+                <li>fragments (49%)</li>
+            </ul>
+        </li>
+        <li>Finding fragments takes much longer than finding broadcasts
+            <ul>
+                <li>stories (2x)</li>
+                <li>fragment (3x)</li>
+            </ul>      
+        </li>    
+        <li>Vocabulary mismatch between searchers and cataloguers
+            <ul>
+                <li>35% of clicked results are <strong>not</strong> found by title or thesaurus term</li>
+            </ul>    
+        </li>
+    </ul>
+    <div class="footnote">
+    * <a href="http://staff.science.uva.nl/~bhuurnin/publications/huurnink10search.pdf">
+        Search Behavior of Media Professionals at an Audiovisual Archive: A Transaction Log Analysis</a><br/>
+    B. Huurnink, L. Hollink, W. van den Heuvel, and M. de Rijke. 
+    </div>
+    </div>
+</div>    
+</div>
+
+<div class="slide grid2 center">
+<div class="c1">
+</div>
+<div class="c2" style="background:url(img/monks.jpg) no-repeat fixed 100% top">
+    <div class="footnote">
+        <a href="http://www.flickr.com/photos/wonderlane/2450438944/">
+            http://www.flickr.com/photos/wonderlane/2450438944/</a>
+    </div>
+</div>
+<div class="incremental">
+<div class="textblock" style="position:absolute; top:35%; text-align:center">
+<h2>Metadata to support within video search?</h2>
+</div>
+</div>
+</div>
+
+<div class="slide grid2 center">
+<div class="c1">
+    <div class="textbox" style="margin-top:45%">
+        multimedia content analysis<br>
+        (computer vision)
+    </div>
+</div>
+<div class="c2" style="background:url(img/monks.jpg) no-repeat fixed 100% top">
+    <div class="textbox" style="margin-top:45%">
+        user-generated metadata<br>
+        (crowdsourcing)
+    </div>
+    <div class="footnote">
+        <a href="http://www.flickr.com/photos/wonderlane/2450438944/">
+            http://www.flickr.com/photos/wonderlane/2450438944/</a>
+    </div>
+</div>
+</div>
+
+<div class="slide">
+<h1>... this could also enable</h1>
+<ul>
+    <li>Recommendation of video fragments
+        <div class="example"></div>
+    </li>
+    <li>Links between video fragments
+        <div class="example"></div>
+    </li>
+    <li>Links to background information
+        <div class="example"></div>
+    </li>
+</ul>
+</div>
+
+<!-- crowdsourcing -->
+
+<div class="slide center fill">
+<h1 class="parttitle">CROWDSOURCING</h1>
+</div>
+
+<div class="slide center">
+<div class="middle textblock">
+<cite>Crowdsourcing blends open innovation concepts with top-down,
+traditional management structures so that crowdsourcing organizations can
+effectively tap the collective intelligence of online communities for specific
+purposes</cite></div>
+<div class="footnote">
+    <a href="http://dbrabham.wordpress.com/crowdsourcing/">
+        http://dbrabham.wordpress.com/crowdsourcing/</a>
+</div>
+</div>
+
+<!--div class="slide grid2">
+<div class="c1">
+<h1>Typology of crowdsourcing</h1>
+<ul class="incremental">
+    <li>Knowledge Discovery and Management
+        <div class="example">
+            Harvest and organise specific knowledge existing in a community<br/>
+            e.g. WikiPedia?
+        </div>
+    </li>
+    
+    <li>Broadcast Search
+        <div class="example">
+            Find the expert with the right answer<br/>
+            e.g. a company's R&amp;D questions
+        </div>
+    </li>
+    <li>Peer-Vetted Creative Production
+        <div class="example">
+            The community provides the right answer for itself<br/>
+            e.g. user-generated advertising
+        </div>    
+    </li>
+    <li>Distributed Human Intelligence
+        <div class="example">
+            Distribute simple tasks that can not be performed by a computer<br/>
+            e.g. image labeling games
+        </div>    
+    </li>
+</ul>
+<div class="footnote">
+    from: <a href="http://dbrabham.wordpress.com/crowdsourcing/">
+        http://dbrabham.wordpress.com/crowdsourcing/</a>
+</div>
+</div>
+<div class="c2" style="background:url(img/bg1.png) no-repeat fixed 100% top">
+    <div class="footnote">
+    <a href="http://www.flickr.com/photos/wonderlane/2450438944/">
+        http://www.flickr.com/photos/wonderlane/2450438944/</a>
+    </div>
+</div>
+</div-->
+
+<!-- Web factor -->
+<div class="slide center">
+<h1 class="title">don't underestimate the Web</h1>
+</div>
+
+<div class="slide"  style="background:url(img/pillowfight.jpg) no-repeat fixed center center"> 
+<div class="incremental"><div class="middle textbox">    
+<h1>The Web as facilitator for big impact</h1>
+<ul>
+    <li> enables grassroots movement</li>
+    <li> spreads across domains</li>
+    <li> allows contribution and participation</li>
+</ul>
+</div></div>
+<div class="footnote">
+    <a href="http://www.thehospages.com/pictures/misc/2010-04-03-pillowfight/">
+    Pillowfight @ de Dam 03-04-2010: www.thehospages.com</a>
+</div>    
+</div>    
+
+<div class="slide">
+<h1>CAPTCHA</h1>
+<div class="center middle incremental">
+<img src="img/captcha.png" width="50%">    
+<h3>± 200,000,000 captchas entered daily</h3>
+</div>
+</div>
+
+<div class="slide">    
+<h1>reCAPTCHA</h1>
+<div class="incremental">
+<div>
+    <div>reuse to improve Optical Character Recognition (OCR)</div>
+    <img src="img/recaptcha.png" width="80%">
+</div>
+<div>    
+    <h2>Indirectly use human intelligence for digitisation</h2>
+    <div class="example">e.g. Google books, NY times</div>
+    </ul>
+    <div class="footnote">
+        <a href="http://www.google.com/recaptcha/static/reCAPTCHA_Science.pdf">
+        reCAPTCHA: Human-Based Character Recognition via Web Security Measures</a><br/>
+        Luis von Ahn, Benjamin Maurer, Colin McMillen, David Abraham and Manuel Blum
+    </div>
+</div>
+</div>
+</div>    
+
+<div class="slide grid2">
+<div class="c1">
+<h1>Dutch National Archive on Flickr the Commons</h1>
+After two years:
+<ul>
+    <li>1273 photos</li>
+    <li>13,000 tags</li>
+    <li>&gt; 3 million pageviews</li>
+</li>
+</ul>
+</div>
+<div class="c2" style="background:url(img/NA_flickr_commons.jpg) no-repeat fixed 100% top">
+<div class="footnote">
+<a href="http://www.flickr.com/photos/nationaalarchief/5097599312/">
+    http://www.flickr.com/photos/nationaalarchief/5097599312/</a>
+</div>      
+</div>    
+</div>
+
+<!-- crowd control -->
+<div class="slide center">
+<h1 class="title">don't overestimate the crowd</h1>
+</div>
+
+<div class="slide"  style="background:url(img/pillowfight_cleanup.jpg) no-repeat fixed center center"> 
+<div class="incremental"><div class="middle textbox">    
+<h1>organisational structure required</h1>
+<ul>
+    <li>goals, rules, policies, ...</li>
+    <li>quality control</li>
+    <li>motivation for users</li>
+</ul>
+</div></div>
+<div class="footnote">
+    <a href="http://www.thehospages.com/pictures/misc/2010-04-03-pillowfight/">
+    Pillowfight @ de Dam 03-04-2010: www.thehospages.com</a>
+</div>    
+</div>
+
+<div class="slide">
+<h1>Quality of tags?</h1>
+<div class="incremental" 
+style="margin-left: 4em; position: relative"> 
+    <img src="img/NA_flickr_commons_page.png"
+        style="position: static; vertical-align: bottom"/> 
+    <img src="img/NA_flickr_commons_page1.png" alt="eyes" 
+        style="position: absolute; left: 0; top: 0" /> 
+    <img src="img/NA_flickr_commons_page2.png" alt="nose" 
+        style="position: absolute; left: 0; top: 0" /> 
+    <img src="img/NA_flickr_commons_page3.png" alt="mouth" 
+        style="position: absolute; left: 0; top: 0" /> 
+</div> 
+</div>
+
+<div class="slide">
+<h1>Consensus among users</h1>    
+<div class="center">
+<h4>Games with a purpose: score points for matching tags</h4>
+<img height="75%" src="img/esp.png">
+<div><a href="http://www.gwap.com/">http://www.gwap.com/</a></div>
+</div>
+</div>    
+
+<div class="slide">
+<h1>Wikipedia quality assurance</h1>    
+<div class="footnote">
+    <a href="http://dx.doi.org/10.1002/asi.20813)">
+    Information quality work organization in wikipedia</a><br/>
+    Besiki Stvilia et al.
+</div>    
+Different roles and processes:
+<ul class="incremental">
+    <li>editors themselves evaluate quality of an article
+        <div class="example">directly modify, delete, or change the article</div>
+    </li>
+    <li>(content)-community evaluates performance of Wikipedia editors
+        <div class="example">select quality assurance agents (administrators)</div>
+    </li>
+    <li>(software)-community builds and maintains coordination artefacts
+        <div class="example">discussion pages, history logs, etc.</div>
+    </li>
+</div>    
+
+<div class="slide">
+<h1>Wikipedia edit history</h1>
+<img src="img/wp_chocolate_history.png">
+</div>    
+
+<div class="slide">
+<h1>Wikipedia edit history</h1>
+<div class="center">
+<img src="img/wp_chocolate_histogram.png">
+<div>Revision history of article on Chocolate</div>
+</div>
+<div class="footnote">
+    <a href="http://doi.ieeecomputersociety.org/10.1109/HICSS.2007.511">
+        Talk Before You Type: Coordination in Wikipedia</a><br/>
+        Fernanda B. Viégas et al.
+</div>
+</div>    
+
+<div class="slide">
+<h1>Two considerations for crowdsourcing</h1>
+<ul>
+    <li><h2>Web factor</h2>
+        to facilitate big impact</li>
+    <li><h2>Crowd control</h2>
+        to assure goals and quality</li>
+</ul>
+</div>
+
+<!-- Waisda video tagging -->
+<div class="slide center fill">
+<h1 class="parttitle">CROWDSOURCING<br/>VIDEO ANNOTATION</h1>
+</div>
+
+<div class="slide grid2">
+<div class="c1">
+<h1>Crowdsourcing at<br/> Sound &amp; Vision</h1>    
+Motivation:
+<ol>
+    <li>Collect time-based annotations</li>
+    <li>Bridging the ‘semantic gap’</li>
+    <li>Engagement with the public</li>
+</ol>
+</div>
+<div class="c2" style="background:url(img/beeld_en_geluid_brug.jpg) no-repeat 0 top">
+    <div class="footnote">
+        <a href="http://www.flickr.com/photos/mariannedewit/4583461285/">
+            http://www.flickr.com/photos/mariannedewit/4583461285/</a>
+    </div>
+</div>
+</div>
+
+<div class="slide center">
+    <img style="margin-top:10%; width:50%" src="img/waisda_logo.png">
+    <img style="margin-top:20%; width:75%" src="img/waisda_logos.png">
+</div>    
+
+<div class="slide center">
+    <video src="img/waisda.ogg" height="640px" width="800px" preload controls>
+</div>    
+
+<div class="slide center">
+<h1 class="title">Web factor</h1>
+</div>
+
+<div class="slide">
+<h3>Engagement with the public</h3>  
+<ul>
+    <li>44,362 pageviews</li>
+    <li>555 registered players (and thousands of anonymous players!)</li>
+</ul>
+<h3>Time-based annotations</h3>
+<ul>
+    <li>&gt; 600 videos</li>
+    <li>&gt; 420,000 tags</li>
+    <li>46,792 unique tags</li>
+</ul>
+<h3>Bridging the ‘semantic gap’</h3>
+<ul>
+    <li>user perspective</li>
+</ul>
+<div class="footnote">Waida? statistics from November 2009</div>
+</div> 
+
+<div class="slide center">
+<h1>Farmer seeks wife</h1>    
+<iframe style="width:100%;height:100%;border:none" 
+    src="http://semanticweb.cs.vu.nl/prestoprime/yaz/waisdaplayer?video=http://cgi.omroep.nl/legacy/nebo?/id/KRO/serie/KRO_1236964/KRO_1278524/bb.20080120.asf">
+</iframe>    
+</div>
+
+<div class="slide center">
+<h1>BBC News</h1>
+<iframe style="width:100%;height:80%;border:none" 
+    src="http://semanticweb.cs.vu.nl/prestoprime/yaz/player?video=http://g.bbcredux.com/programme/bbcone/2010-11-21/22-00-00&interval=10000">
+</iframe>
+</div>
+
+<div class="slide center">
+<h1 class="title">crowd control</h1>
+</div>
+
+<div class="slide">
+<h1>Engagement with the public</h1>
+<img src="img/waisda_arrivals.jpg">
+<h3>&gt;&gt; constant effort required</h3>
+</div>
+    
+<div class="slide">
+<h1>Time-based annotations</h1>
+Each tag is assigned to a single timepoint
+<ul>
+    <li>a frame?</li>
+    <li>a shot?</li>
+    <li>a scene?</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Bridging the ‘semantic gap’</h1>    
+<div class="incremental">
+<div><h3>Automatically matched to vocabularies</h3>
+    <table><tbody>
+        <tr>
+            <td></td>
+            <td>46,792 unique tags</td>
+            <td>7,372 matched tags</td>
+        </tr>
+        <tr>
+            <td>B&amp;G vocabulary (GTAA)</td>
+            <td>2,517 (5.3%)</td>
+            <td>822 (11%)</td>
+        </tr>
+        <tr>    
+            <td>Cornetto WordNet</td>
+            <td>10,757 (23%)</td>
+            <td>3,858 (52%)</td>
+        </tr>
+    </tbody></table>    
+</div>
+
+<div> <h3>Judged by a cataloguer</h3> <img width="80%"
+src="img/tag_usefulness.png"> <div>Genre influences tags specificity and
+usefulness</div> </div> </div> </div>
+
+<!-- bridge the gaps --> <div class="slide center fill"> <h1
+class="parttitle">INTEGRATION INTO ARCHIVE?</h1> </div>
+
+<div class="slide grid3 center incremental">
+    <div class="c1" style="background:url(img/community_garden.jpg) no-repeat fixed 0 top">
+        <div class="incremental">
+            <div class="textbox" style="margin-top:0">crowdsourced video tagging</div>
+            <div class="textbox" style="margin-top:10%">crowd</div>
+            <div class="textbox" style="margin-top:10%">tags</div>
+            <div class="textbox" style="margin-top:10%">time-based descriptions</div>
+            <div class="textbox" style="margin-top:10%">user perspective (subjective)</div>
+            <div class="textbox" style="margin-top:10%">community consensus</div>
+        </div>    
+        <div class="footnote">
+            <a href="http://www.flickr.com/photos/flatbushgardener/2678195717/">
+                http://www.flickr.com/photos/flatbushgardener/2678195717/</a>
+        </div>   
+    </div>
+    <div class="c2">
+    </div>    
+    <div class="c3" style="background:url(img/palace_garden.jpg) no-repeat fixed 100% top">
+        <div class="incremental">
+            <div class="textbox" style="margin-top:0">in-house controlled annotation</div>
+            <div class="textbox" style="margin-top:10%">professionals</div>
+            <div class="textbox" style="margin-top:10%">concepts</div>
+            <div class="textbox" style="margin-top:10%">descriptions of video/shot</div>
+            <div class="textbox" style="margin-top:10%">expert perspective (objective)</div>
+            <div class="textbox" style="margin-top:10%">cataloguers experience</div>
+        </div>    
+        <div class="footnote">
+            <a href="http://www.flickr.com/photos/8430129@N06/2791957026/">
+                http://www.flickr.com/photos/8430129@N06/2791957026/</a>
+        </div>
+    </div>
+</div>
+
+<div class="slide grid3 center">
+    <div class="c1" style="background:url(img/community_garden.jpg) no-repeat fixed 0 top">
+        <div>
+            <div class="textbox" style="margin-top:0">crowdsourced video tagging</div>
+            <div class="textbox" style="margin-top:10%">crowd</div>
+            <div class="textbox" style="margin-top:10%">tags</div>
+            <div class="textbox" style="margin-top:10%">time-based descriptions</div>
+            <div class="textbox" style="margin-top:10%">user perspective (subjective)</div>
+            <div class="textbox" style="margin-top:10%">community consensus</div>
+        </div>    
+        <div class="footnote">
+            <a href="http://www.flickr.com/photos/flatbushgardener/2678195717/">
+                http://www.flickr.com/photos/flatbushgardener/2678195717/</a>
+        </div>   
+    </div>
+    <div class="c2 incremental">
+        <div class="textbox" style="margin-top:0">?????</div>
+        <div class="textbox" style="margin-top:10%">bridge communities</div>
+        <div class="textbox" style="margin-top:10%">link tags to concepts</div>    
+        <div class="textbox" style="margin-top:10%">descriptions of fragments</div>
+        <div class="textbox" style="margin-top:10%">combine perspectives</div>
+        <div class="textbox" style="margin-top:10%">quality assurance by moderation</div>
+    </div>        
+    <div class="c3" style="background:url(img/palace_garden.jpg) no-repeat fixed 100% top">
+        <div>
+            <div class="textbox" style="margin-top:0">in-house controlled annotation</div>
+            <div class="textbox" style="margin-top:10%">professionals</div>
+            <div class="textbox" style="margin-top:10%">concepts</div>
+            <div class="textbox" style="margin-top:10%">descriptions of video/shot</div>
+            <div class="textbox" style="margin-top:10%">expert perspective (objective)</div>
+            <div class="textbox" style="margin-top:10%">cataloguers experience</div>
+        </div>    
+        <div class="footnote">
+            <a href="http://www.flickr.com/photos/8430129@N06/2791957026/">
+                http://www.flickr.com/photos/8430129@N06/2791957026/</a>
+        </div>
+    </div>
+</div>
+
+<div class="slide" style="background:url(img/japanese_garden.jpg) no-repeat fixed center">
+<div class="footnote">
+    <a href="http://www.flickr.com/photos/10110263@N03/4608152854">
+        http://www.flickr.com/photos/10110263@N03/4608152854</a>
+</div>        
+</div>
+
+<div class="slide center fill">
+<h1 class="parttitle">TAG GARDENING</h1>
+</div>
+
+
+<!-- model of video annotations -->
+
+<div class="slide">   
+<h1>Edit your own tags</h1>
+<iframe style="width:100%;height:80%;border:none" 
+    src="http://semanticweb.cs.vu.nl/prestoprime/yaz/simplegarden?video=http://g.bbcredux.com/programme/bbcone/2010-11-21/22-00-00&process=__bnode360&user=http://semanticweb.cs.vu.nl/prestoprime/user/michiel">
+</iframe>
+</div>
+
+<div class="slide">
+<h1>Roles and processes</h1>
+<div class="incremental">
+    <div>
+        <strong>Tagger:</strong> edits own tags, e.g. after a game
+        <ul>
+            <li>correct spelling</li>
+            <li>delete tags</li>
+            <li>merge tags</li>
+            <li>...</li>
+        </ul>
+    </div>
+    
+    <div>
+        <strong>Gardener:</strong> moderate tags of multiple taggers to create fragment annotations
+        <ul>
+            <li>select and flag tags</li>
+            <li>link tags to fragments</li>
+            <li>link tags to concepts</li>
+            <li>...</li>
+        </ul>
+        <h3>combine community consensus with cataloguers/domain experience</h3>
+    </div>
+</div>    
+</div>
+
+<div class="slide">
+<h1>Garden tags</h1>
+<iframe style="width:100%;height:80%;border:none" 
+    src="http://semanticweb.cs.vu.nl/prestoprime/yaz/taggarden?video=http://g.bbcredux.com/programme/bbcone/2010-11-21/22-00-00">
+</iframe>
+</div>
+
+<div class="slide">
+<h1>... another role and process?</h1>
+<div>
+    <strong>Landlord:</strong> create high quality annotations of video scenes
+    <ul>
+        <li>select video scenes
+            <div class="example">supported by video analysis</div>
+        </li>
+        <li>describe event: who, what, where, when
+            <div class="example">annotation selection algorithm</div>
+        </li>
+    </ul>
+    <h3>combine community consensus with cataloguers/domain experience and video analysis</h3>
+</div>
+</div>    
+</div>
+
+<div class="slide">
+<h1>Garden scenes</h1>
+<div class="center" style="height:85%">
+<img src="img/scene_garden.png" height="100%">
+</div>
+</div>
+
+<!-- end -->
+<div class="slide center fill">
+<h1 class="parttitle"><a style="color:white" href="mailto:m.hildebrand@few.vu.nl">m.hildebrand@few.vu.nl</a></h1>
+</div>
+
+</body>
+</html>

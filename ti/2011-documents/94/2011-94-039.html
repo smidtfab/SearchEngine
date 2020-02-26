@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>  
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Good PHP Tutorials: Security: Basic Usage of reCAPTCHA with PHP</title>
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="revisit-after" content="1 days">
+<meta name="robots" content="index, follow">
+<script type="text/javascript" src="javascripts/prototype.js"></script>
+<script type="text/javascript" src="javascripts/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="javascripts/proto.menu.0.6.js"></script>
+<script type="text/Javascript" src="javascript.js"></script>
+<script type="text/javascript" src="countdown.js" defer="defer"></script>
+<script src="/images/js.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="images/favicon.png">
+<meta name="Keywords" content="PHP, Security, Basic, Usage, of, reCAPTCHA, with, PHP">
+<meta name="Description" content="In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books.">
+<!-- No site is complete without IE hacks. -->
+<!--[if IE]><style type="text/css">@import url("ie.css");</style><![endif]-->
+<link href="images/template_css.css" rel="stylesheet" type="text/css" media="screen">
+<link href="images/jsn_iconlinks.css" rel="stylesheet" type="text/css" media="screen">
+<link href="images/style.css" rel="stylesheet" type="text/css" media="screen">
+<link href="images/style_003.css" rel="stylesheet" type="text/css" media="screen">
+<link href="images/style_002.css" rel="stylesheet" type="text/css" media="screen">
+<link href="images/style_004.css" rel="stylesheet" type="text/css" media="screen">
+<link href="images/style_005.css" rel="stylesheet" type="text/css" media="screen">
+<style type="text/css">
+</style>
+<style type="text/css">
+#jsn-page {
+width: 960px;
+}
+#jsn-header {
+height: 75px;
+}
+#jsn-pinset {
+right: 86px;
+}
+#jsn-puser9 {
+float: left;
+width: 23%;
+}
+#jsn-pheader {
+float: left;
+width: 76.85%;
+}
+#jsn-puser8 {
+float: right;
+width: 23%;
+}
+#jsn-content_inner1 {
+background: transparent url(images/leftside23-bg-full.png) repeat-y 23% top;
+padding: 0;
+}
+#jsn-maincontent_inner {
+padding-left: 0;
+}
+#jsn-content_inner2 {
+background: transparent url(images/rightside23-bg-full.png) repeat-y 77% top;
+padding: 0;
+}
+#jsn-maincontent_inner {
+padding-right: 0;
+}
+#jsn-leftsidecontent {
+float: left;
+width: 23%;
+}
+#jsn-maincontent {
+float: left;
+width: 53.85%;
+}
+#jsn-rightsidecontent {
+float: right;
+width: 23%;
+}
+ul.menu-icon li.order1 a:link,
+ul.menu-icon li.order1 a:visited {
+background-image: url(images/icon-module-cart.png);
+}
+ul.menu-icon li.order2 a:link,
+ul.menu-icon li.order2 a:visited {
+background-image: url(images/icon-module-download.png);
+}
+ul.menu-icon li.order3 a:link,
+ul.menu-icon li.order3 a:visited {
+background-image: url(images/icon-module-star.png);
+}		
+#jsn-master {
+font-size: 75%;
+font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+ul.menu-suckerfish a,
+.componentheading, .contentheading {
+font-family: Verdana, Geneva, sans-serif !important;
+}
+.style1 {
+font-size: small;
+color: #000000;
+}
+.style3 {font-size: small}
+</style>
+</head>
+<body style="font-size: 73%;" id="jsn-master">
+<script type="text/javascript" src="tultip/wz_tooltip.js"></script>
+<div id="jsn-jumper" style="position: absolute; right: 0pt; top: 0pt;"></div>
+<div id="jsn-page">
+<div id="jsn-header">
+<a href="index.php" title="">
+<img src="images/logo.png" alt="" height=75px;" width=250px;"></a>
+<div id="jsn-ptop"><div class="moduletable">
+<ul class="menu-icon">
+<li class="item18 order1 first"><a href="advertise.php"><span>Advertise</span></a></li>
+<li class="item19 order2"><a href="submit.php"><span>Add new tutorial</span></a></li>
+<li class="item17 order3 last"><a href="register.php"><span>Register</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="jsn-body">
+<div id="jsn-mainmenu">
+<div id="jsn-ptoolbar">
+<div class="moduletable">
+<ul class="menu-suckerfish">
+<li class="item1 order1 current active first"><a href="index.php" class="current"><span>Home</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,14,CorelDraw_Tutorials.html"><span>CorelDraw</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,1,CSS_Tutorials.html"><span>CSS</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,7,Databases_Tutorials.html"><span>Databases</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,12,Dreamweaver_Tutorials.html"><span>Dreamweaver</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,2,HTML_Tutorials.html"><span>HTML</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,5,Java_Tutorials.html"><span>Java</span></a></li>
+<li class="item48 order2 parent"><a href="viewcats,8,PhotoShop_Tutorials.html"><span>Photoshop</span></a> </li>
+<li class="item48 order2 parent"><a href="viewcats,11,Operating_Systems_Tutorials.html"><span>Operating Systems</span></a> </li>
+</ul>
+</div>
+</div>
+</div>
+<br />
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9420794904679560";
+/* 728x90, created 2/1/11 */
+google_ad_slot = "7505739234";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</center>
+<br />
+<div id="jsn-promo">
+<div class="clearbreak"></div>
+</div><div id="jsn-content"><div id="jsn-content_inner1"><div id="jsn-content_inner2">
+<div id="jsn-leftsidecontent" class="jsn-column">
+<div id="jsn-pleft">		
+<div class="module-box box-grey icon-arrow">
+<div>
+<div>
+<div>
+<h3>Navigation</h3>
+<ul class="menu-bullettree">
+<ul id="leftList">
+<span><li><a href="viewcats,12,Adobe Dreamweaver_Tutorials.html">Adobe Dreamweaver</a></li></span>	
+<span><li><a href="viewcats,4,Adobe Illustrator_Tutorials.html">Adobe Illustrator</a></li></span>	
+<span><li><a href="viewcats,8,Adobe Photoshop_Tutorials.html">Adobe Photoshop</a></li></span>	
+<span><li><a href="viewcats,3,Business Applications_Tutorials.html">Business Applications</a></li></span>	
+<span><li><a href="viewcats,14,Corel Draw_Tutorials.html">Corel Draw</a></li></span>	
+<span><li><a href="viewcats,1,CSS_Tutorials.html">CSS</a></li></span>	
+<span><li><a href="viewcats,7,Databases_Tutorials.html">Databases</a></li></span>	
+</ul>
+<ul id="rightList">
+<span><li><a href="viewcats,10,Game_Skin Editors_Tutorials.html">Game_Skin Editors</a></li></span>	
+<span><li><a href="viewcats,2,HTML_Tutorials.html">HTML</a></li></span>	
+<span><li><a href="viewcats,5,Java_Tutorials.html">Java</a></li></span>	
+<span><li><a href="viewcats,6,JavaScript_Tutorials.html">JavaScript</a></li></span>	
+<span><li><a href="viewcats,11,Operating Systems_Tutorials.html">Operating Systems</a></li></span>	
+<span><li><a href="viewcats,9,PHP_Tutorials.html">PHP</a></li></span>	
+<span><li><a href="viewcats,13,Ruby_Tutorials.html">Ruby</a></li></span>	
+</ul>
+<div style="clear:both;"></div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="module-box box-green icon-user">
+<div>
+<div>
+<div>
+<h3>Menu</h3>
+<ul id="CGTutorials">
+<li>
+<a href="submit.php"><strong>Add a tutorial</strong></a>
+</li>
+<li>
+<a href="login.php">Login</a>
+</li>
+<li>
+<a href="register.php">Register</a>
+</li>		
+<li>
+<a href="about.php">About us</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="module-box box-green icon-star" >
+<div >
+<div>
+<div >
+<h3>Affilates</h3>
+<br /><center><iframe src="http://www.hextut.com/adsense/adsense3.htm" width="160px" height="600px" frameborder="0" marginwidth ="0px" marginheight="0px" scrolling="no"></iframe></center><br />
+</div>
+</div>
+</div>
+</div>
+<div class="module-box box-green icon-user">
+<div>
+<div>
+<div>
+<h3>Online Users</h3>
+<center>48 Users</center>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="jsn-maincontent" class="jsn-column"><div id="jsn-maincontent_inner">
+<div id="jsn-pathway"><div id="content">	
+<div style="margin-left:2px;">
+<div class="web_search">
+<div class="search_l">
+</div>
+<div class="search_k">
+<form method="post" action="search.php">
+<div class="search_input">
+<input name="q" class="searchbox" value="" type="text"> 
+in 
+<select name="category" class="searchbox" >
+<option value="0">All</option>
+<option value="12">Adobe Dreamweaver</option>
+<option value="4">Adobe Illustrator</option>
+<option value="8">Adobe Photoshop</option>
+<option value="3">Business Applications</option>
+<option value="14">Corel Draw</option>
+<option value="1">CSS</option>
+<option value="7">Databases</option>
+<option value="10">Game_Skin Editors</option>
+<option value="2">HTML</option>
+<option value="5">Java</option>
+<option value="6">JavaScript</option>
+<option value="11">Operating Systems</option>
+<option value="9">PHP</option>
+<option value="13">Ruby</option>
+</select></div>
+<div class="search_button">
+<input type="image" src="images/search_button.gif" value="GO" name="search"/>
+</div>
+</form>
+</div>
+<div class="search_r">
+</div>
+</div>
+<br /><center><iframe src="http://www.hextut.com/adsense/adsense1.htm" width="468px" height="60px" frameborder="0" marginwidth ="0px" marginheight="0px" scrolling="no"></iframe></center><br />
+<div class="tutorialthe" style="padding-top:10px;">
+<div class="dets"><img style="cursor:pointer;" onmouseover="Tip('In this tutorial we will be installing a reCAPTCHA script fr ...',130)" onmouseout="killTip()"; src="thumbs/php.gif2G3DM26NDA.jpgWX2BXJUAHH.jpg" width=40 height=40 align="top">
+<h3><a href="viewtutorial.php?tid=3903&ttitle=Basic_Usage_of_reCAPTCHA_with_PHP ">
+Basic Usage of reCAPTCHA with PHP ..</a></h3> 
+<div class="tMain">Submitted by <span class="green">admin </span> on 2011-04-02 (<a href="http://www.prosoftstudio.com/2011/02/php-tutorial-basic-usage-of-recaptcha-with-php/" class="green" style="font-size:10px;">http://www.prosoftstudio. ...</a>)</div>
+<div class="tMain">Category:  <span class="green"><a href="viewcategory.php?cid=9"> PHP : </a><a href="viewsubcategory.php?cid=9&sid=230"> Security</a></span>
+</div></div><div class="openTut">
+<a target="_blank" title="Basic Usage of reCAPTCHA with PHP" href="opentutorial.php?tutorialID=3903">
+<img width="33" height="19" alt="GO" src="images/goTxt.gif"/> 
+Go to <b>Basic Usage of reCAPTCHA with PHP</b> now</a>
+</div>
+<div class="clear"></div>	<div class="first" style="width:90%;margin-left:10px;">
+In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books.
+</div>
+<ul class="info2" id="rate_9412">
+<li class="first">
+(1 votes)
+</li>
+<li><a href="viewtutorial.php?tid=3903&ttitle=Basic_Usage_of_reCAPTCHA_with_PHP">
+Views: 51</a></li>
+<li>
+<a href="http://digg.com/submit?phase=2&url=http://www.hextut.com/opentutorial.php?tutorialID=3903
+&title=Basic Usage of reCAPTCHA with PHP&bodytext=In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books." class="digg" target="_blank" title="Digg This Tutorial!"></a>
+<a href="http://del.icio.us/post?url=http://www.hextut.com/opentutorial.php?tutorialID=3903
+&ttitle=Basic Usage of reCAPTCHA with PHP&title=Basic Usage of reCAPTCHA with PHP" class="del" target="_blank" title="Post to del.icio.us!"></a>
+<a href="http://www.stumbleupon.com/submit?url=http://www.hextut.com/opentutorial.php?tutorialID=3903
+&title=Basic Usage of reCAPTCHA with PHP&T=Basic Usage of reCAPTCHA with PHP" class="stum" target="_blank" title="Post to Stumbleupon.com!"></a>
+<a href="http://www.netscape.com/submit/?U=http://www.hextut.com/opentutorial.php?tutorialID=3903
+&ttitle=Basic Usage of reCAPTCHA with PHP&T=Basic Usage of reCAPTCHA with PHP" class="net" target="_blank" title="Post to Netscape!"></a>
+<a href="http://reddit.com/submit?url=http://www.hextut.com/opentutorial.php?tutorialID=3903
+&title=Basic Usage of reCAPTCHA with PHP&T=Basic Usage of reCAPTCHA with PHP" class="reddit" target="_blank" title="Post to Reddit.com!"></a>
+<li class="last">&nbsp;</li>
+</ul>
+<div class="clear"></div>
+</div>
+<div class="navPage2" style="margin-top:10px;">
+<p style="margin:0; padding:0;"><small>ADVERTISMENT</small></p>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9420794904679560";
+/* 300x250, Ęă ĹäÔÇÄĺÇ 08/03/11 */
+google_ad_slot = "3050179307";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div id="tutorialDesc" style="margin-top:5px;">
+<div class="whitebox" id="rate">
+<p>
+<strong>
+<a href="javascript:void(0);" onclick="showbox('rateme')">
+<img width="15" height="14" alt="Friend" src="images/rate.gif"/> Rate [+]
+</a>
+</strong>
+</p>
+<div id="rateme" style="display:none;text-align:left;">
+<a href="rateme.php?tutid=3903&r=5&linkme=3903/">
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+</a><br>
+<a href="rateme.php?tutid=3903&r=4&linkme=3903/">
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+</a><br>
+<a href="rateme.php?tutid=3903&r=3&linkme=3903/">
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+</a><br>
+<a href="rateme.php?tutid=3903&r=2&linkme=3903/">
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+</a><br>
+<a href="rateme.php?tutid=3903&r=1&linkme=3903/">
+<img width="13" height="12" alt="*" src="images/ratestar-2.gif"/>
+</a>
+</div>
+</div>	
+<div class="whitebox" id="send">
+<p>
+<a onclick="showbox('mailme');" href="javascript:void(0);">
+<img width="15" height="14" alt="Friend" src="images/friend.gif"/> Email [+]
+</a>
+</p>
+<div id="mailme" style="display:none;text-align:left;">
+<form action="email.php" method="post">
+<p>Your name:<br/>
+<input type="text" class="searchbox" name="name"/></p>
+<p>
+<strong>Your email:</strong>
+<br/><input type="text" class="searchbox" name="from"/>
+</p>
+<p>
+<strong>To:</strong>
+<br/>
+<input type="text" class="searchbox" name="to"/>
+<input type="hidden" value="/t7012/Autodesk_3ds_max/Making_of__Chaleur_et_paix_" name="url"/></p>
+<p>
+<strong>Message:</strong>
+<small>(optional)</small>
+<br/>
+<textarea cols="20" class="searchbox" rows="3" name="text"></textarea>
+</p>
+<p>
+<input type="hidden" value="3903" name="tutId"/>
+<input type="hidden" value="" name="tutName"/>
+<input type="submit" class="go" name="send" value="Send"/>
+</p>
+</form>
+</div>
+</div>
+<div class="whitebox" id="send">
+<p>
+<a onclick="showbox('brokenlink');" href="javascript:void(0);">
+<img width="14" height="14" src="images/icon-module-star.png"/> Broken link [+]
+</a>
+</p>
+<div id="brokenlink" style="display:none;text-align:left;">
+<form action="report.php" method="post">
+<p>Your name:<br/>
+<input type="text" class="searchbox" name="name"/></p>
+<p>
+<strong>Your email:</strong>
+<br/><input type="text" class="searchbox" name="from"/>
+</p>
+<p>	
+<strong>Message:</strong>
+<small>(optional)</small>
+<br/>
+<textarea cols="20" class="searchbox" rows="3" name="text"></textarea>
+</p>
+<p>
+<input type="hidden" value="3903" name="tutId"/>
+<input type="hidden" value="" name="tutName"/>
+<input type="submit" class="go" name="send" value="Send"/>
+</p>
+</form>
+</div>
+</div>
+<div class="whitebox" id="addComment">
+<p><a onclick="showbox('commentme');" href="javascript:void(0);"><img width="14" height="14" alt="Comment" src="images/reviewtext.gif"/> Comment [+]</a></p>
+<div id="commentme" style="display:none;text-align:left;">
+<form method="post" action="comment.php">	
+<p>
+<strong>Your Name</strong>: 
+<small><a href="/login.php">Login <strong>»</strong></a></small>
+</p>	
+<p>
+<input type="text" name="user" value="" class="searchbox"/>
+</p>	
+<p>
+<strong>Your Comment</strong>:
+</p>	
+<p>
+<textarea cols="20" class="searchbox" rows="3" name="comment"></textarea>
+</p>	
+<p>
+<input type="submit" class="go" name="add" value="Add"/> 
+<input type="hidden" value="3903" name="tutId"/>
+<input type="hidden" name="www"/>
+<input type="hidden" value="3903/Basic_Usage_of_reCAPTCHA_with_PHP" name="url"/>
+</p>
+</form>
+</div>
+</div>			
+</div>
+<div id="comments">
+<p><img width="64" height="10" alt="Comments" src="images/comments.gif"/></p>
+<p><b>No comments at this moment</b></p>
+<div id="boxljevo">
+<h3>Random 10 tutorials from this category</h3>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Learn to make unique-per-user salts to create un-bruteforcea ...',130)" onmouseout="killTip();" src="thumbs/(2007.05.09-14 19 04)salts.gifFV3NFD7CEV.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3207&ttitle=Php_Password_Security_Using_Salts">
+Php Password Security Using Salts...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('This tutorial is intended for those who want to ensure that  ...',130)" onmouseout="killTip();" src="thumbs/20070917160614_php.gif8PBWCVFL66.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3217&ttitle=Securing_Forms_with_Random_Noisy_Images">
+Securing Forms with Random Noisy Images...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Protect your user's information with MD5 hases in PHP. ...',130)" onmouseout="killTip();" src="thumbs/20070917160614_php.gifZHT5D3UDGQ.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3218&ttitle=MD5_Encryption">
+MD5 Encryption...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Nice flash presentation that will provide you with a good fo ...',130)" onmouseout="killTip();" src="thumbs/20080213043958_php.gifT2MDPUDR67.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3214&ttitle=PHP_Security_by_Example">
+PHP Security by Example...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Nice little function that will generate a completely random  ...',130)" onmouseout="killTip();" src="thumbs/20070917160614_php.gif8ZF3ZELFC2.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3225&ttitle=Create_a_random_password">
+Create a random password...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Learn how to create a script that protects pages with a pass ...',130)" onmouseout="killTip();" src="thumbs/20071009235635_9321370240.gifB2WP6P5V7M.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3198&ttitle=Advanced_Password_Protect_a_Webpage">
+Advanced Password Protect a Webpage...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Preventing SQL attacks is one of the most effective forms of ...',130)" onmouseout="killTip();" src="thumbs/20070917160614_php.gif3SSN5L3TDN.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3212&ttitle=Preventing_SQL_Injection_Attacks">
+Preventing SQL Injection Attacks...
+</a> by admin (4 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('This tutorial will show you how to use PHP's crypt() functio ...',130)" onmouseout="killTip();" src="thumbs/20080126185848_php-pic.png7EFGU5C373.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3194&ttitle=How_to_Use_PHPs_Crypt___Function_to_Encrypt_and_Check_a_Password">
+How to Use PHPs Crypt() Function to Encrypt and Check a Pass...
+</a> by admin (2 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('Most interactive websites nowadays would require a user to l ...',130)" onmouseout="killTip();" src="thumbs/20080213043958_php.gif9Z4AFR72M4.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3219&ttitle=Developing_a_Login_System_with_PHP_and_MySQL">
+Developing a Login System with PHP and MySQL...
+</a> by admin (3 views)
+</small>
+</div></div>
+<div class="tutorial">
+<div style="padding:2px 4px 4px 4px;font-size:12px;">
+<small>
+<img style="cursor:pointer;" onmouseover="Tip('We're going to be constructing an Apache-like, in fact we're ...',130)" onmouseout="killTip();" src="thumbs/20071211103851_acl.gifXBATN76C5K.jpg" width=25 height=25 align="top">
+<a href="viewcategory.php?cid=9">
+PHP</a>: 
+<a href="viewsubcategory.php?cid=9&sid=230">
+Security»</a> 
+<a href="viewtutorial.php?tid=3195&ttitle=PHP_Walkthrough___Script__Building_an_Apache_like_Access_Control_List__ACL_">
+PHP Walkthrough & Script: Building an Apache-like Access Con...
+</a> by admin (2 views)
+</small>
+</div></div>
+</div>
+</div>
+<br /><center><iframe src="http://www.hextut.com/adsense/adsense2.htm" width="468px" height="60px" frameborder="0" marginwidth ="0px" marginheight="0px" scrolling="no"></iframe></center><br />
+</div>
+<div style="clear:both;"></div>
+</div></div>
+</div>
+</div>
+<div id="jsn-rightsidecontent" class="jsn-column">
+<div id="jsn-pright">
+<div class="module-box box-yellow icon-article">
+<div>
+<div>
+<div>
+<h3>Google Adv</h3>
+<div class="syndicate-plain icon-rss">
+<br /><center><iframe src="http://www.hextut.com/adsense/adsense3.htm" width="160px" height="600px" frameborder="0" marginwidth ="0px" marginheight="0px" scrolling="no"></iframe></center><br />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="module-box box-yellow icon-article">
+<div>
+<div>
+<div>
+<h3>Highest Rated</h3>
+<div class="syndicate-plain icon-rss">
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;"><a href="viewtutorial.php?tid=t1167&ttitle=Create_a_PSP">Create a PSP</a></h4>
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<div style="display:block;"><b>Rated:</b> with <b>53</b> points</div></div>
+</div>
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;"><a href="viewtutorial.php?tid=t1355&ttitle=Draw_a_ShutDown_Icon">Draw a ShutDown Icon</a></h4>
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<div style="display:block;"><b>Rated:</b> with <b>47</b> points</div></div>
+</div>
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;"><a href="viewtutorial.php?tid=t61&ttitle=Image_Upload_Script">Image Upload Script</a></h4>
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<img src="images/ratestar-2.gif" alt="*" height="12" width="13">
+<div style="display:block;"><b>Rated:</b> with <b>43</b> points</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="module-box box-green icon-online">
+<div>
+<div>
+<div>
+<h3>Sponsor Partners</h3>
+<div class="syndicate-plain icon-rss">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="module-box box-yellow icon-selection">
+<div>
+<div>
+<div>
+<h3>Most Popular</h3>
+<div class="syndicate-plain icon-rss">
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;">
+<a href="viewtutorial.php?tid=t61&ttitle=Image_Upload_Script">Image Upload Script</a>
+</h4>
+<b>Rated:</b> with <b>117</b> hits</div>
+</div>
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;">
+<a href="viewtutorial.php?tid=t65&ttitle=Simple_and_clean_shoutbox">Simple and clean shoutbox</a>
+</h4>
+<b>Rated:</b> with <b>109</b> hits</div>
+</div>
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;">
+<a href="viewtutorial.php?tid=t1167&ttitle=Create_a_PSP">Create a PSP</a>
+</h4>
+<b>Rated:</b> with <b>84</b> hits</div>
+</div>
+<div class="tutorialhigest">
+<div style="padding-left:3px;padding-bottom:1px;color:#868686;font-size:11px;">
+<h4 style="color:#217FBD;font-size:12px;">
+<a href="viewtutorial.php?tid=t3898&ttitle=Ten_Neat_Tricks_With_Perl">Ten Neat Tricks With Perl</a>
+</h4>
+<b>Rated:</b> with <b>84</b> hits</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearbreak"></div>
+</div></div></div>
+</div>
+<div id="jsn-footer">
+<div id="jsn-pfooter_grid2" class="jsn-column">
+<div id="jsn-pfooter">
+<div class="moduletable">
+<p>Copyright © 2008 Hextut.com. All rights reserved - 2011.</p>		
+</div>
+</div>
+</div>
+<div id="jsn-pbottom_grid2" class="jsn-column"><div id="jsn-pbottom">
+<div class="moduletable">
+<ul class="menu-divbar">
+<li class="item18 order1 first"><a href="about.php">About us</a></li>
+<li class="item19 order2"><a href="about.php">Contact</a></li>
+<li class="item17 order3 last"><a href="register.php">Register</a></li>
+</ul>		
+</div>
+</div>
+</div>
+<div class="clearbreak"></div>
+</div>
+</div>
+</body>
+</html>

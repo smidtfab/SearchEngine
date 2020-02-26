@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="CrowdFlower's crowdsourcing solutions offer a cost-conscious, elastic workforce which gives companies immediate, high-quality work. CrowdFlower customers complete massive volumes of simple jobs and eliminate the lead time and overhead associated with hiring or outsourcing.">
+  
+  <title>CrowdFlower -  faq</title>
+  
+  <link rel="shortcut icon" href="/images/favicon.png" />
+  
+  <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="/stylesheets/bundles/marketing_master.css?v=846c" />
+  <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="/stylesheets/bundles/marketing.css?v=1dd1" />
+  
+  
+  <script type="text/javascript" src="/javascripts/bundles/mootools.js?v=998c"></script>
+  <script type="text/javascript" src="/javascripts/bundles/crowdflower_base.js?v=ef34"></script>
+  <script type="text/javascript" src="/javascripts/bundles/minibox.js?v=026b"></script><script type="text/javascript" src="/javascripts/bundles/marketing_cross_fade.js?v=0448"></script>
+  <script type="text/javascript" src="http://use.typekit.com/vyd2clc.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type="text/javascript" charset="utf-8">
+  <!--
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3841988-8']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+      ga.src = "http://www.google-analytics.com/ga.js";
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+  //-->
+</script>
+
+  
+  
+  
+</head>
+<body class="marketing  ">
+  <div id="login_panel">
+  <div id="login_container">
+      <a href="#login_form" id="login_panel_tab">Login</a>
+      <form action="/login" method="post" id="login_form" accept-charset="utf-8">
+        <h2>Login 
+            <a class="signup" href="/account/new">(or Signup)</a>
+        </h2>
+        <input type="hidden" name="_method" value="put">
+        <label for="email">Email:</label> <input class="login_input" type="text" name="email" value="">
+        <label for="password">Password:</label> <input class="login_input" type="password" name="password" value="">
+    
+        <input class="button" type="submit" value="Login" id="login_button">
+      </form>
+  </div>
+</div>
+  <div id="header">
+    <div id="logo">
+      <a title="CrowdFlower - Crowdsourcing / Labor-On-Demand" alt="CrowdFlower - Crowdsourcing / Labor-on-Demand" href="/">CrowdFlower</a>
+    </div>
+    <div class="phone_top">
+Call us: <span class="lighter">415 - 651 - 4485</span> 
+</div>
+<ul id="main-nav">
+    <li class=''><a href='/solutions'>Solutions</a></li>
+    <li class='current'><a href='/self_service'>Self Service</a></li>
+    <li class=''><a href='/news'>News &amp; Events</a></li>
+    <li><a href="http://blog.crowdflower.com/">Blog</a></li>
+</ul> 
+
+  </div>
+  <div id="content">
+    <ul class="sub-nav">
+  <li class=''><a href='/self_service/index'>Overview</a></li>
+  <li class='current'><a href='/self_service/faq'>FAQ</a></li>
+</ul>
+
+    <h1>Self-Service Crowdsourcing Tool</h1>
+    
+<div class="span-9 solutions_main_div">
+<h1>Technical FAQ for Self-Service Users</h1>
+  
+<h2>
+  What is Gold Standard Data?
+</h2>
+<p>
+   Gold Standard Data is a set of hidden tests that are randomly distributed through the tasks that a worker completes. By saving the correct answers to a small set of Units prior to running a job, we track the quality of a worker's performance and reject a worker once his or her accuracy drops below a defined threshold. When no Gold Units are inserted, the quality of work plummets. You can create Gold by providing answers to your questions in the Gold Digging Interface. These answers are recorded and randomly distributed throughout the job. For a detailed discussion on Gold, please visit the <a href="http://crowdflower.com/docs/gold">Gold Documentation</a>.
+</p>
+<p>
+  Things to know:
+</p>
+<ul>
+  <li>Good Gold has a definite answer. Your Gold should be free of ALL ambiguity.
+  </li>
+  <li>Workers are notified when they miss a Gold Unit. You can include information about the Gold Unit to help workers better understand what is expected of them. Use Gold Reasons to train workers to meet your standards.
+  </li>
+  <li>Make sure that your Gold isn't too hard in comparison to the majority of questions in your job.
+  </li>
+</ul>
+<h2>
+  How much Gold should I create?
+</h2>
+<p>
+   As a rule of thumb, we suggest creating Gold from 5-10% of your dataset. Your workers should not see a Gold Unit enough times to be able to recognize it. But if you have 10,000 Units, don't feel compelled to dig 1,000 Gold Units. As long as you are confident that workers will not be able to pick up on patterns (ratio of responses, remembering specific Units, etc.), your job should run smoothly.
+</p>
+<p>
+You can also utilize the Max. Work Per Worker feature (found in the Advanced Options under the Data tab) to restrict the amount of judgments workers can submit. Note that this can hinder throughput.
+</p>
+<h2>
+  Can I make Gold via a spreadsheet?
+</h2>
+<p>
+   In the graphical interface under the Edit tab, you may convert text within a specific column in your data to Gold. Within your data, be sure to exactly match any default values, name attributes, radio-option formatting, etc. found in your form elements (e.g., you will receive an error if an element in your form is named "Foo" and is "foo" in your data). 
+</p>
+<p>
+  If you do not wish a row (Unit) to be converted to Gold, leave the cell blank in the columns containing Gold responses. Make sure that your spreadsheet has a corresponding, identifiable header for each field (question) in your form. Once in the graphical interface, select the specific question you wish to set Gold responses to. After selecting, you should see a box displaying "Mark Selected Question As Gold" in the lower left portion of the screen. Select the corresponding column, and this will automatically convert all rows containing responses in the column to Gold. You should see a notification displaying the number of Units converted to Gold.
+</p>
+<h2>
+  Can you provide some tips on creating a job?
+</h2>
+<p>
+   CrowdFlower is compatible with a wide array of job types, each with a different set of goals and processes. Before you start the design process, it may help to answer the following questions:
+</p>
+<ul>
+  <li>What problem are you trying to solve?
+  </li>
+  <li>What is an appropriate solution to this problem (what data do you want)?
+  </li>
+  <li>What questions do you need to ask to obtain the data?
+  </li>
+  <li>How do you want to ask these questions (i.e., what language will you use), and what type of form element (e.g., pulldown, text field, etc.) will you ask it with?
+  </li>
+  <li>In what order do you want to ask these questions?
+  </li>
+  <li>How might these questions behave with each other dynamically (does this form require logic or contingencies)?
+  </li>
+  <li>Have you provided enough background information?
+  </li>
+  <li>Do your instructions make sense?
+  </li>
+  <li>Do your questions beg the specific answers that you want?
+  </li>
+</ul>
+<p>
+  Drawing this out on paper as a table, decision tree, or whatever suits your needs will be a great boon to your quest. Planning ahead will help prevent you from creating an overly long questionnaire. Short, easy jobs are more common, while longer forms tend to become more expensive and reduce accuracy. If you need to have a lot of questions answered, consider breaking your job into separate jobs.
+</p>
+<h2>
+  How do I upload data?
+</h2>
+<p>
+   The easiest way to add data to a job is to upload a UTF-8 encoded CSV. Sometimes other formats (like .xls, .xlsx, .ods, etc.) will work, but the best bet for pain-free uploading is the UTF-8 CSV. If you're getting errors when uploading a CSV, the most common reason is encoding. (Excel doesn't always have the best interface for this, so if you're getting errors when you upload your CSV, try downloading <a href="http://crowdflower.com/docs/gold">OpenOffice</a>, which gives you a lot more control with encoding.) Go to "Save As," change the file type to CSV, and then select Unicode (UTF-8) in the Character Set field. Make sure that the first row of your data file is a header row with appropriate header names. Aim for concise and descriptive headers. Do not include any special characters. (Letters and numbers only please.)  You may also copy an existing job with all/some of your Units. This is beneficial if you are running a job similar to a pre-existing one and need to make only a few edits (as opposed to creating a completely new design and form). <p>You can also copy a job with pre-existing Gold. This allows you to add new data and collect another batch of judgments within the exact same form. Keep in mind that you can also add more data to an existing job. As long as all of your headers match, the process is exactly the same as adding your initial set. In any case, make sure to count the number of Units processed after you upload data to ensure that all of your new Units have uploaded correctly. It is not completely unheard of for Units to get lost in transit.
+</p>
+<h2>How do I display my data on the worker form? Can I display data in a CML element?</h2>
+<p>There are two ways to apply your data to a worker form. After you've uploaded your data, select the Edit tab.</p>
+<ol>
+  <li>In the Graphical Editor, select the middle formatting box containing the menu bar. A list of your data fields will appear on the left side of the screen. Simply select which fields you would like to insert, and your data will display dynamically in the job.</li>
+  <li>In the CML editor, the 'insert field' drop-down menu will allow you to select from a list of available data fields. Once again, select which fields you would like to insert, and your data will display dynamically in the job.</li>
+</ol>
+<p>You can display data in a CML element by entering the {{field_name}} in the 'label' attribute of a parent or child tag.</p>
+<p>
+E.g.,<br />
+&nbsp;&nbsp&lt;cml:radios label=&quot;{{field_name}}&quot; &gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cml:radio label=&quot;{{option_name1}}&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cml:radio label=&quot;{{option_name2}}&quot; /&gt;<br />
+&nbsp;&nbsp;&lt;/cml:radios&gt;
+</p>
+<h2>
+  How do I retrieve my results after the job has finished?
+</h2>
+<p>
+   On the overview page, you will find a dropdown menu displaying the text "Finished" (or "Paused," "Cancelled," or "Not Ordered" if the job has not completed). When scrolling over to this menu, you will see three options in the "Download" section.
+</p>
+<ul>
+  <li><strong>Aggregated CSV:</strong> Includes one result for every Unit. Since multiple workers answer each Unit, the Aggregated CSV aggregates workers' judgments based on individual workers' trust ratings. This CSV is what you are likely to interact with the most.
+  </li>
+  <li><strong>Full CSV:</strong> Includes every judgment made by every worker. Contains (among other things) worker IDs, trust rating, city/country, labor channel, and (of course) his or her judgments. You'll use this CSV to dive deeply into the data to understand patterns (e.g., maybe all workers from a specific region are providing poor responses, but you wouldn't be able to tell that from the Aggregated CSV).
+  </li>
+  <li><strong>JSON:</strong> (JavaScript Object Notation)
+  </li>
+</ul>
+</p>
+<h2>
+  How does the job appear on Amazon Mechanical Turk and other sites? Does our company name show up as the requester?
+</h2>
+<p>
+   All user information is kept confidential. Jobs that are uploaded to our channels are displayed only as CrowdFlower jobs; workers cannot see information about the requester.
+</p>
+<h2>
+  How is worker trust calculated?
+</h2>
+<p>
+   Worker trust is calculated based on a worker's performance on Gold questions within a specific job.
+</p>
+<h2>
+  In the aggregate results, how is the confidence level calculated?
+</h2>
+<p>
+   Confidence is determined by combining the accuracy of workers with the agreement of the responses on a specific Unit.
+</p>
+<h2>
+  Why am I unable to edit projects that have already been ordered?
+</h2>
+<p>
+   Editing a running job is forbidden. This ensures that your results remain consistent. Responses made prior to the change will not be automatically adjusted. We recommend that all problematic jobs be cancelled and copied to a new job, then edited. When you cancel a running job, your account will be automatically refunded with any unused credits left in the job.
+</p>
+<h2>
+  Can I set the number of Gold Units a worker sees?
+</h2>
+<p>
+   Yes. Read about Assignments (below) to learn how.
+</p>
+<h2>
+  How is Gold distributed throughout the job?
+</h2>
+<p>
+   Jobs are broken up into Source Units, Gold Units, and Assignments.
+</p>
+<ul>
+  <li><strong>Source Units</strong> are regular data Units that will gather judgments from workers. It may be helpful to consider these as one row of data in your spreadsheet. If your job were asking workers to choose colors for dresses, and you needed 2,000 dresses to be judged, a Source Unit would be considered one dress.
+  </li>
+  <li><strong>Gold Units</strong> are Source Units that have been converted to Gold by saving the pre-defined answers to questions within the Unit via the Gold Digging Interface. These questions will serve as tests in the running job. When a worker's answer differs from what is set as the Gold response, the worker will be flagged as incorrect. You can learn more about Gold here: <a href="http://crowdflower.com/docs/gold">http://crowdflower.com/docs/gold</a>.
+  </li>
+  <li>An <strong>Assignment</strong> is the total number of Units that a worker sees per page. When you are ready to post a job to a worker channel, you will be asked to define the number of judgments you would like to gather per Unit, as well as how many Units workers will see per assignment. There will be ONE Gold Unit randomly distributed per assignment. This means that you have the power to control how much Gold the workers will see. If you would like workers to see 1 Gold Unit for every 3 Source Units, you would set Units Per Assignment to 4. Workers will then complete four Units, submit the results, and then be notified if they have missed the Gold Unit in the Assignment.
+  </li>
+</ul>
+
+<h2>
+  I noticed that the Gold Units I have set to "Super Easy" are being seen more than my other Gold Units. Are Gold Units sorted by difficulty?
+</h2>
+<p>
+   Yes, when setting the difficulty of Gold Units, easier Units will be seen first. This serves as a bit of a training method, allowing the worker to be familiar with the task before seeing more difficult questions. You can set all Gold Units to the same difficulty level to ensure Gold Units will be seen randomly. Difficulty will automatically change slightly when a Gold Unit receives contentions from workers. This is to ensure that jobs will run as smoothly as possible and that workers do not see poorly created Gold Units.
+</p>
+<h2>
+  At what point does CrowdFlower decide to drop workers from working on a job?
+</h2>
+<p>
+   When a worker's accuracy drops below the accuracy threshold (the default is 70%), his work will then be converted from Trusted to Untrusted. This will exclude their judgments from your results. A worker who has responded to 4 Gold Units will be automatically removed from a job if her accuracy drops below the set accuracy threshold.
+</p>
+<h2>
+  I set "Judgment per Unit" to 3, however some Units received 4 Trusted Judgments. Why is this?
+</h2>
+<p>
+   Before seeing 4 Gold Units, workers will sometimes move back and forth from Trusted to Untrusted based on their accuracy. When a worker is considered Untrusted, the system does not include his judgments in the results and adjusts accordingly to meet the required number of judgments. When said worker moves back into Trusted, our platform then adds an extra judgment into the spreadsheet.
+</p>
+<h2>
+  Can I set restrictions on workers?
+</h2>
+<p>
+   By selecting the Advanced Options button under the Edit tab, you will see that you have a few options at your disposal. Jobs can be set to admit only those workers from a specific country. On the other side, you can choose to exclude specific countries. You may also select how much of your job each worker can see by setting the Max. Work Per Worker feature.
+</p>
+
+</div>
+<div class="span-3 last">
+      <p class="center"><a href="/account/new" class="button orange contact button_width">Sign up!</a>
+      </div>
+
+    
+    <br class="clear">
+  </div>
+  
+  <div id="footer">
+    <div class="span-2">
+      <h2>About</h2>
+      <a href="/about">About CrowdFlower</a>
+      <a href="/about/team/index">Team</a>
+      <a href="/about/jobs">Jobs</a>
+    </div>
+    <div class="span-2">
+      <h2>API</h2>
+      <a href="/docs/interface">Requester Interface</a>
+      <a href="/docs/gold">Gold</a>
+      <a href="/docs/api">CrowdFlower API</a>
+      <a href="/docs/cml">CML</a>
+      <a href="/docs/channel_api">Channel API</a>
+    </div>
+    <div class="span-2">
+      <h2>Solutions</h2>
+      <a href="/solutions/blv/index">Business Listing Verification</a>
+      <a href="/solutions/search_rel/index">Search Relevance</a>
+      <a href="/solutions/prod_cat/index">Product Categorization</a>
+      <a href="/solutions/custom/index">Custom Solutions</a>
+    </div>
+    <div class="span-2">
+      <h2>Self-Service</h2>
+      <a href="/self_service/faq">FAQ</a>
+      <a href="/self_service">Overview</a>
+    </div>
+    <div class="span-2">
+      <h2>News / Events</h2>
+      <a href="/news">Coverage</a>
+      <a href="/news/press_releases">Press Releases</a>
+      <a href="/news/videos">Videos</a>
+      <a href="/news/events">Events</a>
+      <a href="/news/publications">Publications</a>
+    </div>
+    <div class="span-2 last">
+      <h2>Social Media</h2>
+      <a href="http://blog.crowdflower.com/">Blog</a>
+      <a href="http://twitter.com/CrowdFlower">Twitter</a>
+      <a href="http://facebook.com/CrowdFlower">Facebook</a>
+      
+      <h2>Law Talk</h2>
+      <a href="/general/privacy">Privacy Policy</a>
+      <a href="/general/terms_of_service">Terms of Service</a>
+      <a href="http://www.crowdflower.com">&copy;2011 CrowdFlower</a>
+    </div>
+    <br class="clear" />
+  </div>
+  
+  <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  mktoMunchkin("890-IJH-613");
+</script>
+
+</body>
+</html>

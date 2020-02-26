@@ -1,0 +1,765 @@
+
+<!-- strlength of title is 33 smalltitle=smalltitle-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Basic Usage of reCAPTCHA with PHP - Tutorialized</title>
+
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/css/edit_tut.css" rel="stylesheet" type="text/css" />
+<link href="/css/profile_form.css" rel="stylesheet" type="text/css" />
+<link href="/css/register_form.css" rel="stylesheet" type="text/css" />
+<link href="/css/submit_tut.css" rel="stylesheet" type="text/css" />
+<link href="/css/small.css" rel="stylesheet" type="text/css" />
+
+<meta name="description" content="Basic Usage of reCAPTCHA with PHP" />
+<meta name="keywords" content="User Authentication, User Authentication tutorials, PHP Ad Management tutorials, PHP Calendars tutorials, PHP Chat Systems tutorials, PHP Classified Ads tutorials, PHP Content Management tutorials, PHP Cookies and Sessions tutorials, PHP Counters tutorials, PHP Database Related tutorials, PHP Date and Time tutorials, PHP Development tutorials, PHP Discussion Boards tutorials, PHP E Commerce tutorials, PHP Email Systems tutorials, PHP Error Handling tutorials, PHP File Manipulation tutorials, PHP Flash and PHP tutorials, PHP Form Processing tutorials, PHP Guestbooks tutorials, PHP Image Manipulation tutorials, PHP Installing PHP tutorials, PHP Introduction to PHP tutorials, PHP Link Indexing tutorials, PHP Mailing List Management tutorials, PHP Miscellaneous tutorials, PHP Networking tutorials, PHP News Publishing tutorials, PHP PHP vs Other Languages tutorials, PHP Polls and Voting tutorials, PHP Postcards tutorials, PHP Randomizing tutorials, PHP Redirection tutorials, PHP Searching tutorials, PHP Security tutorials, PHP Site Navigation tutorials, PHP User Authentication tutorials, PHP WAP and WML tutorials, PHP Web Fetching tutorials, PHP Web Traffic Analysis tutorials, PHP XML and PHP tutorials, PHP PEAR tutorials, PHP OOP tutorials" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="Tutorialized.com Macromedia Fireworks Tutorials RSS" href="/rss-feed-s-44.xml" />
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+
+  (function() {
+   var elem = document.createElement('script');
+
+   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+   elem.async = true;
+   elem.type = "text/javascript";
+   var scpt = document.getElementsByTagName('script')[0];
+   scpt.parentNode.insertBefore(elem, scpt);  
+  })();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-290307-12']);
+  _gaq.push(['_setDomainName', '.tutorialized.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body bgcolor="#efefef">
+<div id="wrapper">
+<div align=center>
+<table width="1033" height="18" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#FFFFFF">
+      <table width="730" border="0" align="right" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="20"><img src="http://images.devshed.com/tut/tutorialized-01.gif" width="20" height="21" /></td>
+          <td width="35" bgcolor="#33AEEA">&nbsp;</td>
+          <td width="675" valign="middle" bgcolor="#33AEEA"><center><style type="text/css">
+<!--
+#topnavbox {	
+	clear: both;
+	text-align:center;
+	font-size: 0.8em;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.topnavtxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: normal;
+    padding: 0;
+    margin: 0;
+color: #ffffff;\n}
+
+-->
+</style>
+<div id="topnavbox" align=center>
+	<div class="topnavtxt">
+<script type="text/javascript" language="JavaScript">
+<!--
+function ttgo1(url)
+{
+	if (url.length > 1)
+	{
+		document.location.href = "http://" + url + "/";
+	}
+}
+
+function ttfstart1(name)
+{
+	document.write('<div style="display: inline; top: 0; padding:0; border: 0px;"><B>' + name + '</b> <form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px; font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);">');
+	document.write('<option value="" selected> - Select - </option>');	
+}
+
+function ttfend1()
+{
+	document.write('</select></form></div>');
+}
+
+function ttfadd1(name, val)
+{
+	document.write('<option value="' + val + '">' + name + '</option>');
+}
+
+function ttspace1()
+{
+	document.write('&nbsp;&nbsp;&nbsp;');
+}
+
+ttfstart1('Tutorials:');
+ttfadd1('Dev Shed', 'www.devshed.com');
+ttfadd1('ASP Free', 'www.aspfree.com');
+ttfadd1('Dev Articles', 'www.devarticles.com');
+ttfadd1('Dev Hardware', 'www.devhardware.com');
+ttfadd1('SEO Chat', 'www.seochat.com');
+ttfadd1('Web Hosting', 'webhosting.devshed.com');
+ttfadd1('Codewalkers', 'www.codewalkers.com');
+ttfend1();
+
+ttspace1();
+
+ttfstart1('Resources:');
+ttfadd1('Scripts', 'www.scripts.com');
+ttfadd1('Tutorialized', 'www.tutorialized.com');
+ttfadd1('Dev Mechanic', 'tools.devshed.com');
+//ttfadd1('iWatchIT', 'www.iwatchit.com');
+//ttfadd1('IT Marketplace', 'www.itmarketplace.com');
+//ttfadd1('igrep', 'www.igrep.com');
+ttfend1();
+
+ttspace1();
+
+ttfstart1('Forums:');
+ttfadd1('Dev Shed Forums', 'forums.devshed.com');
+ttfadd1('ASP Free Forums', 'forums.aspfree.com');
+ttfadd1('Dev Articles Forums', 'forums.devarticles.com');
+ttfadd1('Dev Hardware Forums', 'www.devhardware.com/forums');
+ttfadd1('SEO Chat Forums', 'forums.seochat.com');
+ttfadd1('Codewalkers Forums', 'forums.codewalkers.com');
+ttfadd1('Tutorialized Forums', 'forums.tutorialized.com');
+ttfadd1('Dev Archives Forums', 'archives.devshed.com/forums');
+ttfend1();
+//-->
+</script>
+	</div>
+</div>
+</center></td>
+        </tr>
+      </table>
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" background="http://images.devshed.com/tut/current/tutorialized.jpg">
+      <table style="padding-left:30px;" width="1003" border="0" cellspacing="0" cellpadding="0">
+        <tr><td height="20" colspan="3" align=right><table cellpadding=0 cellspacing=0><tr><td><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=511");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=426266627' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=511&amp;cb=426266627&amp;n=a72b9207' border='0' alt='' /></a></noscript></td></tr></table></td></tr>
+        <tr>
+          <td width="120" height="57"><a rel="nofollow"
+		href="/" class=title2 title="Tutorialized&trade;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+          <td width="883" valign="bottom" class="pagename">
+		<table border=0 cellpadding=0 cellpadding=0>
+		  <tr>
+<td><a rel='nofollow' href='/' class='title2' title='Tutorialized'></a><a rel='nofollow' href='/' class='smalltitle' title='Basic Usage of reCAPTCHA with PHP'><nobr>Basic Usage of reCAPTCHA with PHP</nobr></a>		    </td>
+		    <td valign=top class=trademark></td>
+        	  </tr>
+      		</table>
+          </td>
+	   </td>
+        </tr>
+        <!-- <tr><td colspan=3>&nbsp;</td></tr> --> 
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">
+     <table width="848" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td bgcolor="#33AEEA" width="20"><img src="http://images.devshed.com/tut/tutorialized-02-heigh23.gif" width="22" height="28" /></td>
+        <td width="1" bgcolor="#33AEEA">&nbsp;</td>
+        <td width="465" bgcolor="#33AEEA" class=pathwaybg><nobr>Basic Usage of reCAPTCHA with PHP<!-- - <span class=txtwhite><a href='http://www.hostway.com' target='_blank'><font color=white>Web Hosting by Hostway</font></a></span>--></nobr></td>
+    	<td height="25" width="360" bgcolor="#33AEEA">
+	     <!-- NEW BANNER ZONE TOP TEXT -->
+	     	     <!-- END TOP TEXT AD -->
+	     <!-- TOP SEARCH BOX -->
+	   <table width="100%" border="0" height=22 cellspacing="0" cellpadding="0">
+              <tr valign="middle"> 
+	     <td height='25' align='right' style='float:right;width:210px;_width:210px;padding-right:3px;padding-top:3px;_padding-right:3px;_padding-top:2px;'><form style='display:inline;' action='http://www.tutorialized.com/googlecse.php' id='cse-search-box'><input type='hidden' name='cx' value='partner-pub-6422417422167576:73eib2tqbyi' /><input type='hidden' name='cof' value='FORID:11' /><input type='hidden' name='ie' value='ISO-8859-1' /><input type='text' name='q' size='20' /> <input type='image' style='margin-top: -3px;_margin-top:0px;' align='absmiddle' src='http://www.devshed.com/components/com_googlecse/google_search.gif' height='20' width='56' name='sa' value='Search' /><script type='text/javascript' src='http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en'></script></form></td>
+             </tr>
+           </table>
+	  </td>
+  	</tr>
+    </table>
+   </td>
+  </tr>
+</table>
+</div>
+<table align=center width="1033" border="0" cellspacing="0" cellpadding="0">
+  <tr valign="top"> 
+    <td width=158  bgcolor="#FFFFFF">
+	<div align=center>
+	  <table cellpadding=0>
+           <tr>
+             <td align="center"><div style="margin: 6px 0px;"><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=515");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1524355681' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=515&amp;cb=1524355681&amp;n=a72b9207' border='0' alt='' /></a></noscript></div></td>
+	    </tr>
+	  </table>
+	</div>
+    </td>
+    <td align=center height="115"  bgcolor="#FFFFFF">
+	<table width=100% cellpadding=0 cellspacing=0>
+         <tr valign="middle"><td align=center height="115" background="http://images.devshed.com/common/bckg-topbanner.gif"><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=499");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1119651680' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=499&amp;cb=1119651680&amp;n=a72b9207' border='0' alt='' /></a></noscript></td></tr>
+	  <tr><td></td></tr>
+	</table>
+    </td>
+  </tr>
+</table>
+  <div id="contentWrap">
+  
+  <div id="LeftColumn">
+
+
+  
+    <div class="Lblock">
+<div class="Lblocktitle">User Tools</div>
+<div class="Lblockcontent">
+    <ul>
+<li class=odd2><a href="http://forums.tutorialized.com/" title="Forums">Forums</a></li><li class=even2><a href="/login.php" title="Login">Login</a></li><li class=odd2><a href="/register.php" title="Register">Register</a></li><li class=even2><a href="/profile.php" title="User Profile">User Profile</a></li><li class=odd2><a href="http://www.tutorialized.com/submit.php" title="Submit"><b>Submit a Tutorial</b></a></li> <li class=even2><a href="http://www.tutorialized.com/faq.php" title="FAQS">Faqs</a></li> <li class=odd2><a href="http://www.developershed.com/newsletter.php" title="Newsletter">Newsletter</a></li> <li class=even2><a href="http://www.developershed.com/advertise.php" title="Advertise">Advertise</a></li><li class=odd2><a href="http://www.developershed.com/contact.php" title="Contacts">Contacts</a></li><li class=even2><a href="/sitemap/" title="Site Map">Site Map</a></li>    </ul>
+</div>
+</div>    <div class="Lblock"><div class="Lblocktitle">2D Graphics</div><div class="Lblockcontent"><ul><li class="odd"><a href="/tutorials/Fireworks/1" title="Fireworks Tutorials">Fireworks </a><span>(245)</span></li><li class="even"><a href="/tutorials/Flash/1" title="Flash Tutorials">Flash </a><span>(4112)</span></li><li class="odd"><a href="/tutorials/Gimp/1" title="Gimp Tutorials">Gimp </a><span>(214)</span></li><li class="even"><a href="/tutorials/Illustrator/1" title="Illustrator Tutorials">Illustrator </a><span>(1280)</span></li><li class="odd"><a href="/tutorials/Paint-Shop-Pro/1" title="Paint Shop Pro Tutorials">Paint Shop Pro </a><span>(55)</span></li><li class="even"><a href="/tutorials/Photoshop/1" title="Photoshop Tutorials">Photoshop </a><span>(15581)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">3D Graphics</div><div class="Lblockcontent"><ul><li class="odd"><a href="/tutorials/3DS-MAX/1" title="3DS MAX Tutorials">3DS MAX </a><span>(2348)</span></li><li class="even"><a href="/tutorials/AutoCAD/1" title="AutoCAD Tutorials">AutoCAD </a><span>(78)</span></li><li class="odd"><a href="/tutorials/Blender-3d/1" title="Blender 3d Tutorials">Blender 3d </a><span>(263)</span></li><li class="even"><a href="/tutorials/Bryce-3d/1" title="Bryce 3d Tutorials">Bryce 3d </a><span>(29)</span></li><li class="odd"><a href="/tutorials/Cinema-4D/1" title="Cinema 4D Tutorials">Cinema 4D </a><span>(132)</span></li><li class="even"><a href="/tutorials/Lightwave-3D/1" title="Lightwave 3D Tutorials">Lightwave 3D </a><span>(36)</span></li><li class="odd"><a href="/tutorials/Maya/1" title="Maya Tutorials">Maya </a><span>(542)</span></li></ul></div></div>    <div class="Lblocktitle">Sponsors</div><div class="Lblockcontent"><ul>
+    		<li class="odd"><a target="_blank" href="http://www.aseohosting.com">Seo hosting - Seo server</a></li>
+    		<li class="even"><a target="_blank" href="http://www.ahosting.net">Reseller hosting</a></li>
+    		<li class="odd"><a target="_blank" href="http://www.ahosting.net">Dedicated server</a></li></ul></div>
+    		<div align="center">
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-6422417422167576";
+			/* Article Page, 200x200, created 1/30/09 */
+			google_ad_slot = "7823299780";
+			google_ad_width = 200;
+			google_ad_height = 200;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
+    <div class="Lblock"><div class="Lblocktitle">Web Design & Development</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/Adobe-Flex/1" title="Adobe Flex Tutorials">Adobe Flex </a><span>(57)</span></li><li class="odd"><a href="/tutorials/ASP/1" title="ASP Tutorials">ASP </a><span>(376)</span></li><li class="even"><a href="/tutorials/ASP.NET/1" title="ASP.NET Tutorials">ASP.NET </a><span>(399)</span></li><li class="odd"><a href="/tutorials/ColdFusion/1" title="ColdFusion Tutorials">ColdFusion </a><span>(19)</span></li><li class="even"><a href="/tutorials/CSS/1" title="CSS Tutorials">CSS </a><span>(501)</span></li><li class="odd"><a href="/tutorials/Dreamweaver/1" title="Dreamweaver Tutorials">Dreamweaver </a><span>(395)</span></li><li class="even"><a href="/tutorials/HTML/1" title="HTML Tutorials">HTML </a><span>(346)</span></li><li class="odd"><a href="/tutorials/Java/1" title="Java Tutorials">Java </a><span>(675)</span></li><li class="even"><a href="/tutorials/Javascript/1" title="Javascript Tutorials">Javascript </a><span>(803)</span></li><li class="odd"><a href="/tutorials/MM-Fusion/1" title="MM Fusion Tutorials">MM Fusion </a><span>(1)</span></li><li class="even"><a href="/tutorials/MS-FrontPage/1" title="MS FrontPage Tutorials">MS FrontPage </a><span>(21)</span></li><li class="odd"><a href="/tutorials/Perl-and-CGI/1" title="Perl and CGI Tutorials">Perl and CGI </a><span>(112)</span></li><li class="even"><a href="/tutorials/PHP/1" title="PHP Tutorials">PHP </a><span>(1617)</span></li><li class="odd"><a href="/tutorials/Python/1" title="Python Tutorials">Python </a><span>(70)</span></li><li class="even"><a href="/tutorials/Ruby-on-Rails/1" title="Ruby on Rails Tutorials">Ruby on Rails </a><span>(97)</span></li><li class="odd"><a href="/tutorials/SEO/1" title="SEO Tutorials">SEO </a><span>(156)</span></li><li class="even"><a href="/tutorials/Web-Design/1" title="Web Design Tutorials">Web Design </a><span>(290)</span></li><li class="odd"><a href="/tutorials/XML/1" title="XML Tutorials">XML </a><span>(163)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Business Applications</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/MS-Excel/1" title="MS Excel Tutorials">MS Excel </a><span>(437)</span></li><li class="odd"><a href="/tutorials/MS-PowerPoint/1" title="MS PowerPoint Tutorials">MS PowerPoint </a><span>(173)</span></li><li class="even"><a href="/tutorials/MS-Word/1" title="MS Word Tutorials">MS Word </a><span>(151)</span></li><li class="odd"><a href="/tutorials/QuarkXPress/1" title="QuarkXPress Tutorials">QuarkXPress </a><span>(8)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Business Development</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/Accounting/1" title="Accounting Tutorials">Accounting </a><span>(46)</span></li><li class="odd"><a href="/tutorials/eCommerce/1" title="eCommerce Tutorials">eCommerce </a><span>(80)</span></li><li class="even"><a href="/tutorials/Legal/1" title="Legal Tutorials">Legal </a><span>(8)</span></li><li class="odd"><a href="/tutorials/Marketing/1" title="Marketing Tutorials">Marketing </a><span>(167)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Databases</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/DB-Design/1" title="DB Design Tutorials">DB Design </a><span>(10)</span></li><li class="odd"><a href="/tutorials/DB2/1" title="DB2 Tutorials">DB2 </a><span>(24)</span></li><li class="even"><a href="/tutorials/MS-Access/1" title="MS Access Tutorials">MS Access </a><span>(106)</span></li><li class="odd"><a href="/tutorials/MsSQL/1" title="MsSQL Tutorials">MsSQL </a><span>(28)</span></li><li class="even"><a href="/tutorials/MySQL/1" title="MySQL Tutorials">MySQL </a><span>(109)</span></li><li class="odd"><a href="/tutorials/Oracle/1" title="Oracle Tutorials">Oracle </a><span>(38)</span></li><li class="even"><a href="/tutorials/SQL-Basics/1" title="SQL Basics Tutorials">SQL Basics </a><span>(60)</span></li><li class="odd"><a href="/tutorials/Sybase/1" title="Sybase Tutorials">Sybase </a><span>(4)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Desktop Programming</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/C-and-Cpp/1" title="C and Cpp Tutorials">C and Cpp </a><span>(533)</span></li><li class="odd"><a href="/tutorials/Delphi/1" title="Delphi Tutorials">Delphi </a><span>(20)</span></li><li class="even"><a href="/tutorials/Visual-Basic/1" title="Visual Basic Tutorials">Visual Basic </a><span>(310)</span></li><li class="odd"><a href="/tutorials/Visual-C/1" title="Visual C Tutorials">Visual C </a><span>(38)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Operating Systems</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/Linux/1" title="Linux Tutorials">Linux </a><span>(625)</span></li><li class="odd"><a href="/tutorials/Windows/1" title="Windows Tutorials">Windows </a><span>(1030)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Video Editing</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/Final-Cut-Studio/1" title="Final Cut Studio Tutorials">Final Cut Studio </a><span>(17)</span></li><li class="odd"><a href="/tutorials/Premiere/1" title="Premiere Tutorials">Premiere </a><span>(66)</span></li></ul></div></div><div class="Lblock"><div class="Lblocktitle">Miscellaneous</div><div class="Lblockcontent"><ul><li class="even"><a href="/tutorials/P2P-Filesharing/1" title="P2P Filesharing Tutorials">P2P Filesharing </a><span>(6)</span></li><li class="odd"><a href="/tutorials/Web-Hosting/1" title="Web Hosting Tutorials">Web Hosting </a><span>(158)</span></li></ul></div></div>    <div style="margin: 6px 0px;" align=center>
+      <script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=502");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=2092743263' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=502&amp;cb=2092743263&amp;n=a72b9207' border='0' alt='' /></a></noscript>    </div>
+    <!-- <div class="Lblock">
+  <div class="Lblocktitle">Web Hosting</div>
+  <div class="Lblockcontent">
+    <ul>
+      <li class="even"><a href="http://www.aspfree.com/asp/freeasphost.asp" title="ASP Web Hosting">ASP Web Hosting</a></li>
+      <li class="even"><a href="http://www.aspfree.com/asp.net-web-hosting" title="ASP.NET Web Hosting">ASP.NET Web Hosting</a></li>
+      <li class="even"><a href="http://www.devshed.com/dedicated-servers" title="Dedicated Servers">Dedicated Servers</a></li>
+      <li class="even"><a href="http://www.devshed.com/e-commerce-hosting" title="E-Commerce Hosting">E-Commerce Hosting</a></li>
+      <li class="even"><a href="http://www.devshed.com/linux-web-hosting" title="Linux Web Hosting">Linux Web Hosting</a></li>	  
+      <li class="even"><a href="http://www.devshed.com/managed-hosting" title="Managed Hosting">Managed Hosting</a></li>	  
+      <li class="even"><a href="http://www.devshed.com/small-business-hosting" title="Small Business Hosting">Small Business Hosting</a></li>
+      <li class="even"><a href="http://www.devshed.com/virtual-private-servers" title="VPS Hosting">VPS Hosting</a></li>
+      <li class="even"><a href="http://webhosting.devshed.com/" title="Web Hosting">Web Hosting</a></li>
+      <li class="even"><a href="http://www.aspfree.com/windows-web-hosting.asp" title="Windows Web Hosting">Windows Web Hosting</a></li>	  	  	  	  
+    </ul>
+  </div>
+</div> -->
+<div class="Lblock">
+  <div class="Lblocktitle">Newsletter</div>
+  <div class="Lblockcontent2">
+    <ul>
+  <form action="http://newsletter.developershed.com/sendstudio/users/form.php?FormID=4" 
+	method="post" name="wfrmSS" onSubmit="return CheckwSS()">
+      <li>
+<script language="JavaScript">
+<!--
+	function CheckwSS()
+	{
+		theFrm = document.wfrmSS;
+		hasDot = theFrm.Email.value.indexOf(".");
+		hasAt = theFrm.Email.value.indexOf("@");
+		
+		if (hasDot == -1 || hasAt == -1)
+		{
+			alert("Please enter a valid email address.");
+			theFrm.Email.focus();
+			theFrm.Email.select();
+			return false;
+		}
+		return true;
+	}
+//-->	
+</script>	  
+        <nobr><INPUT class=form 
+onblur="if (this.value=='') {this.value='Your E-mail';}" 
+title="Your Google Toolbar can fill this in for you. Select AutoFill" 
+style="BACKGROUND-COLOR: #ffffa0" 
+onfocus="if ((this.value=='') || (this.value=='Your E-mail')) {this.value='';};" 
+size=16 value="Your E-mail" name=Email> <input type="hidden" name="SelectLists[16]" value="YES"> 
+        <input type="hidden" name="Format" value="2"> <input type="hidden" name="FormCode" value="ed2d31d9cdcac5a40f6ff626f4acefa3"> 
+        <INPUT class=form type=submit value=GO name=Submit></nobr>
+	  </li>
+  </form>	  
+    </ul>
+  </div>
+</div>
+<div class="Lblock">
+  <div class="Lblocktitle">User Login</div>
+  <div class="Lblockcontent">
+    <form action="/login.php" method="post" name="login">
+      <ul>
+	 <li class=even2>Username</li>
+        <li class=even2><input type="text" name="username" id="membername" /></li>
+	 <li class=even2>Password</li>
+	 <li class=even2><input type="password" name="password" id="wordpass" /></li>
+	 <li class=even3><input name="Login" type="image" class="logbut" src="/design-images/login_button.jpg"/></li>
+      </ul>
+    </form>
+  </div>
+</div>
+
+      <div class="Lblock">
+    <div class="Lblocktitle">Stats</div>
+    <div class="Lblockcontent">
+      <ul class="stats">
+	  	<li><em>Tutorials:</em> 35,266</li>
+	  	<li><em>Categories:</em> 572</li>
+      </ul>
+    </div>
+  </div>	
+  </div>
+
+<div id="CenterColumn">
+	<div class="CATtitle">
+	<h1><a href="/tutorials/PHP/1">PHP Tutorials</a> : Basic Usage of reCAPTCHA with PHP</h1>
+  <div class="tutorialPrap">
+    <table border=0 width=610 cellpadding=0 cellspacing=0>
+    <tr height=5><td></td></tr>
+    <tr valign=top>
+      <td width=12></td>
+      <td valign=top width=395><span class=txtblack>In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books.</span></td>
+      <td valign=top align=left width=50><span class=txtblack><img align=center src="/upload/20110226200423_20110226003245_Prosoft-Studio-Image-Logo.jpg" alt="Basic Usage of reCAPTCHA with PHP  tutorial" width="50" height="50" /></span></td></tr>
+    </table>
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="/view/tutorial/Basic-Usage-of-reCAPTCHA-with-PHP/66273" title="Click Here to View Tutorial"><font color=blue><b>View Tutorial</b></font></a>
+      <table width=100% cellpadding=0 cellspacing=0 border=0><td valign="top"> 
+         <table width="100%" border="0" cellpadding="0" cellspacing="0"> 
+          <tr valign="middle" bgcolor="#F1F1F1">
+            <td colspan="2"><div class="CATtitle2"><h1>Detailed Information</h1></div></td>
+        <!--   <td colspan="6" class="site-bckgtit2"><span style="color:#585858;font-weight:Bold;font-size:0.95em;">Detailed Information</span></td> -->
+          </tr> 
+          <tr bgcolor="#FFFFFF">
+           <td colspan="1" valign="top" class="txtblack" width=25%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tutorial: </td> 
+           <td colspan="1" valign="top" class="txtblack" width=75%>Basic Usage of reCAPTCHA with PHP</td> 
+          </tr> 
+          <tr bgcolor="#FFFFFF"> 
+            <td colspan="1" valign="top" class="txtblack">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Listed:</td> 
+            <td colspan="1" valign="top" class="txtblack">2011-03-04</td> 
+          </tr> 
+          <tr bgcolor="#FFFFFF">
+            <td colspan="1" valign="top" class="txtblack">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submitted By:</td> 
+            <td colspan="1" valign="top" class="txtblack"><a href="/user/BrandonEnr7"><font color=blue>BrandonEnr7</font></a></td> 
+          </tr> 
+          <tr bgcolor="#FFFFFF"> 
+            <td colspan="1" valign="top" class="txtblack">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Hits:</td> 
+            <td colspan="1" valign="top" class="txtblack">584</td> 
+          </tr> 
+          <tr bgcolor="#FFFFFF"> 
+            <td colspan="1" valign="top" class="txtblack">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating</td> 
+            <td colspan="1" valign="top" class="txtblack">
+            <span class="one"><a href="/rate/66273" target = "_rate"><img src="/design-images/ratings/one.jpg" border="0" alt="Tutorial Rating 2.92" /><img src="/design-images/ratings/one.jpg" border="0" alt="Tutorial Rating 2.92" /><img src="/design-images/ratings/half.jpg" border="0" alt="Tutorial Rating 2.92" /><img src="/design-images/ratings/zero.jpg" border="0" alt="Tutorial Rating 2.92" /><img src="/design-images/ratings/zero.jpg" border="0" alt="Tutorial Rating 2.92" /></a></span>
+            (13 votes)
+            </td> 
+          </tr>    
+          </table>
+      </td></tr></table>
+      <br />
+      <table align=center width=445 cellpadding=5 cellspacing=5 border=0 bordercolor="#0000FF">
+		<tr>
+			<td valign="top" width="50%">
+				&nbsp;&nbsp;<b>&#8226;</b>&nbsp;&nbsp;<a href="http://forums.tutorialized.com/php-91/basic-usage-of-recaptcha-with-php-326582.html" title="Click Here to Discuss This Tutorial"><b>Discuss Tutorial</b></a>
+				<br />
+				&nbsp;&nbsp;<b>&#8226;</b>&nbsp;&nbsp;<a href="/review/66273" title="Review  Tutorial: Basic Usage of reCAPTCHA with PHP"><b>Comment On Tutorial</b></a>
+	  		</td>
+			<td width="50%" valign="top">
+				&nbsp;&nbsp;<b>&#8226;</b>&nbsp;&nbsp;<a href="/view/tutorial/Basic-Usage-of-reCAPTCHA-with-PHP/66273" title="Click Here to View Tutorial"><b>View Tutorial</b></a>
+				<br />
+				&nbsp;&nbsp;<b>&#8226;</b>&nbsp;&nbsp;<a href="/broken/66273" target="_broken"><b>Report Broken Link</b></a>
+	  		</td>
+		</tr>			
+	  </table>	      
+	<br />
+	
+	  
+	<table width=445 cellpadding=0 cellspacing=0 border=0><td valign="top">   
+	  
+	
+<!--
+<dd class="comments" id="comment_66273" style= >
+	<div class="addcomment">
+		<span class="left">
+						<a href="/review/66273" title="Review  Tutorial: Basic Usage of reCAPTCHA with PHP"> Add your Comments </a>
+					</span>
+		<span class="right">
+			<a href="/broken/66273" target="_broken">Broken Link?</a>&nbsp;&nbsp;&nbsp;
+		</span>
+	</div>
+</dd>
+-->
+
+</td></tr></table>
+  </div>	
+  &nbsp;  <table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=495");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1020079787' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=495&amp;cb=1020079787&amp;n=a72b9207' border='0' alt='' /></a></noscript></td><td><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=791");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1250177432' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=791&amp;cb=1250177432&amp;n=a72b9207' border='0' alt='' /></a></noscript></td>
+    </tr>
+  </table>
+<div align=center>
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=728");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=222091010' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=728&amp;cb=222091010&amp;n=a72b9207' border='0' alt='' /></a></noscript></div>
+
+
+	</div>
+</div>
+
+
+
+
+<div id="RightColumn">
+  <div align=center>
+
+  <script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=509");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=463280760' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=509&amp;cb=463280760&amp;n=a72b9207' border='0' alt='' /></a></noscript>  <br><br>
+  <script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=505");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1377946417' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=505&amp;cb=1377946417&amp;n=a72b9207' border='0' alt='' /></a></noscript>  
+
+  
+  
+    
+  </div>
+</div>
+
+<br clear=all>
+
+<script type="text/javascript">
+        function comments(id) {
+                var x = document.getElementById(id);
+
+                if (x.style.display == "block") {
+                        x.style.display = "none";
+                } else {
+                        x.style.display = "block";
+                }
+
+        }
+</script>
+
+
+  </div>
+</div>
+
+
+
+
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td bgcolor="#33AEEA"><BR></td>
+    </tr>
+  </table>
+
+<script type="text/javascript">
+_qevents.push({
+qacct:"p-5c0XF2TvTNfd2"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-5c0XF2TvTNfd2.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<style type="text/css">
+<!--
+#botfooter {	
+	clear: both;
+	text-align:center;
+	font-size: 0.8em;
+	background-color:#f1f1f1;
+	font-family:Arial, Helvetica, sans-serif;
+        width: 100%;
+}
+.bottxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	text-decoration: none;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+}
+A.botnetwork:link, A.botnetwork:visited, A.botnetwork:active { 
+  font-family: Verdana,Arial,Helvetica; 
+  font-size: 9px; 
+  color: #000000; 
+  text-decoration: none;
+}
+
+A.botnetwork:hover { 
+  color:blue; 
+  text-decoration: underline;
+}
+.botoverlink {
+  	 cursor:pointer; 
+  	 cursor:hand;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-decoration: underline;
+}
+-->
+</style>
+<br/><div id="botfooter" align=center><table width="100%" class=contentpaneopen cellpadding=3 cellspacing=0 border=0><tr><td width="50"></td><div class="bottxt"><script type="text/javascript" language="JavaScript">
+<!--
+function ttgo(url)
+{
+if (url.length > 1)
+{
+document.location.href = "http://" + url + "/";
+}
+}
+function ttfstart(name)
+{
+document.write('<td width=\'125\'><div style="display: inline;"><b>' + name + '</b></div></td><td width=\'40\'><div style="display: inline;"><form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px;font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);">');
+document.write('<option value="" selected> - Select - </option>'); 
+}
+function ttfend()
+{
+document.write('</select></form></div></td>');
+}
+function ttfadd(name, val)
+{
+document.write('<option value="' + val + '">' + name + '</option>');
+}
+function ttspace()
+{
+document.write('&nbsp;&nbsp;&nbsp;');
+}
+ttfstart('Developer&nbsp;Tutorials:');
+ttfadd('Dev Shed', 'www.devshed.com');
+ttfadd('ASP Free', 'www.aspfree.com');
+ttfadd('Dev Articles', 'www.devarticles.com');
+ttfadd('Dev Hardware', 'www.devhardware.com');
+ttfadd('SEO Chat', 'www.seochat.com');
+ttfadd('Web Hosting', 'webhosting.devshed.com');
+ttfadd('Codewalkers', 'www.codewalkers.com');
+ttfend();
+//ttspace();
+ttfstart('Developer&nbsp;Resources:');
+ttfadd('Scripts', 'www.scripts.com');
+ttfadd('Tutorialized', 'www.tutorialized.com');
+ttfadd('Dev Mechanic', 'tools.devshed.com');
+//ttfadd('iWatchIT', 'www.iwatchit.com');
+//ttfadd('IT Marketplace', 'www.itmarketplace.com');
+//ttfadd('igrep', 'www.igrep.com');
+ttfend();
+//ttspace();
+ttfstart('Developer&nbsp;Forums:');
+ttfadd('Dev Shed Forums', 'forums.devshed.com');
+ttfadd('ASP Free Forums', 'forums.aspfree.com');
+ttfadd('Dev Articles Forums', 'forums.devarticles.com');
+ttfadd('Dev Hardware Forums', 'www.devhardware.com/forums');
+ttfadd('SEO Chat Forums', 'forums.seochat.com');
+ttfadd('Codewalkers Forums', 'forums.codewalkers.com');
+ttfadd('Tutorialized Forums', 'forums.tutorialized.com');
+ttfadd('Dev Archives Forums', 'archives.devshed.com/forums');
+ttfend();
+//-->
+</script>
+</tr><tr><td width="50"></td>
+<div class="bottxt"><script type="text/javascript" language="JavaScript">
+<!--
+function ttgo(url)
+{
+if (url.length > 1)
+{
+document.location.href = "http://" + url + "/";
+}
+}
+function ttfstart(name)
+{
+document.write('<td width=\'125\'><div style="display: inline;"><b>' + name + '</b></div></td><td width=\'40\'><div style="display: inline;"><form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px;font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);"><option value="" selected> - Select - </option>'); 
+}
+function ttfend()
+{
+document.write('</select></form></div></td>');
+}
+function ttfadd(name, val)
+{
+document.write('<option value="' + val + '">' + name + '</option>');
+}
+function ttspace()
+{
+document.write('&nbsp;&nbsp;&nbsp;');
+}
+ttfstart('IT Professionals:');
+ttfadd('Baseline', 'www.baselinemag.com');
+ttfadd('Careers', 'careers.eweek.com');
+ttfadd('CIO Insight', 'www.cioinsight.com');
+ttfadd('eWeek', 'www.eweek.com');
+ttfadd('Networking', 'networking.eweek.com');
+ttfadd('Publish', 'www.publish.com');
+ttfadd('Security IT Hub', 'security.ithub.com');
+ttfadd('Web Buyers Guide', 'www.webbuyersguide.com');
+ttfend();
+//ttspace();
+ttfstart('IT Marketing:');
+ttfadd('Channel Insider', 'www.channelinsider.com');
+ttfadd('eSeminars', 'www.eseminarslive.com');
+ttfadd('Mid-market', 'midmarket.eweek.com');
+ttfadd('Strategic Partner', 'esp.eweek.com');
+ttfend();
+//ttspace();
+ttfstart('Open&nbsp;Source&nbsp;/&nbsp;Microsoft:');
+ttfadd('Desktoplinux', 'www.desktoplinux.com');
+ttfadd('DeviceForge', 'www.deviceforge.com');
+ttfadd('DevSource', 'www.devsource.com');
+ttfadd('LinuxDevices', 'www.linuxdevices.com');
+ttfadd('Linux Watch', 'www.linux-watch.com');
+ttfadd('Microsoft Watch', 'www.microsoft-watch.com');
+ttfadd('PDF Zone', 'www.pdfzone.com');
+ttfadd('Windows for Devices', 'www.windowsfordevices.com');
+ttfend();
+//-->
+</script><td width="50"></td></tr></table><br>
+<span class="bottxt">&copy; 2003-2011 by <a href="http://www.developershed.com"><font color=blue>Developer Shed</font></a>. All rights reserved. DS Cluster 2</span>
+	</div>
+</div>
+
+hoy<script type="text/javascript">
+        doclix_pid = 16403;
+        doclix_cid_anchor = 2660;
+</script>
+<script type="text/javascript" src="http://ads.doclix.com/adserver/serve/js/doclix_synd_overlay.js" async="async" defer="defer" charset="utf-8"></script>
+<script type="text/javascript" src="http://tutorialized.us.intellitxt.com/intellitxt/front.asp?ipid=5500"></script>
+</body>
+</html>
+
+<!-- ZAZA [0.171000] - Complete -->
+
+
+</body>
+</html>

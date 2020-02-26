@@ -1,0 +1,1734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+<title>Basic Usage of reCAPTCHA with PHP - Tutorialized</title>
+
+<meta name="description" content="Basic Usage of reCAPTCHA with PHP- Web Design &amp; Development Articles. Visit Tutorialized to discuss Basic Usage of reCAPTCHA with PHP" />
+<meta name="keywords" content="Web, Design, &amp;, Development, Articles, Basic, Usage, of, reCAPTCHA, with, PHP" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+<base href="http://forums.tutorialized.com/" />
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css">
+<!--
+/* vBulletin 3 CSS For Style 'New Tutorialized Style' (styleid: 9) */
+body
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 0px;
+}
+a:link
+{
+	color: #000020;
+}
+a:visited
+{
+	color: #000020;
+}
+a:hover, a:active
+{
+	color: #FF4400;
+}
+.page
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #A4C0E2;
+}
+.tcat
+{
+	background-color: #CBCB9F;
+	color: #000000;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding:4px;
+}
+.tcat a:link
+{
+	color: #000000;
+	text-decoration: none;
+}
+.tcat a:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active
+{
+	color: #000000;
+	text-decoration: underline;
+}
+.thead
+{
+	background-color: #E0E0C7;
+	color: #000000;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link
+{
+	color: #333333;
+}
+.thead a:visited
+{
+	color: #333333;
+}
+.thead a:hover, .thead a:active
+{
+	color: #333333;
+}
+.tfoot
+{
+	background-color: #E0E0C7;
+	color: #000000;
+}
+.tfoot a:link
+{
+	color: #333333;
+}
+.tfoot a:visited
+{
+	color: #333333;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #333333;
+}
+.alt1, .alt1Active
+{
+	background-color: #F5F5EB;
+	color: #000000;
+}
+.alt1 a:link, .alt1Active a:link
+{
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #F4F4F4;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #F5F5FF;
+	color: #000000;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #000033;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(http://images.devshed.com/fsc/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D5D8E5 url(http://images.devshed.com/fsc/gradients/gradient_panelsurround.gif) repeat-x top left;
+	color: #000000;
+}
+legend
+{
+	color: #22229C;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #738FBF;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #BBC7CE;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8A949E;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#h2 {
+        padding:0px !important;
+        margin:0px !important;
+}
+#h2 a, h2 a:link, #h2 a:visited, #h2 a:active {
+	font-family:  "Trebuchet MS", "Impact", Helvetica,Arial, Verdana, sans-serif  ;
+	font-size: 24px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+        padding:0px !important;
+        margin:0px !important;
+}
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+
+
+
+A.network:link, A.network:visited, A.network:active { font-family: Verdana, Arial, Helvetica; font-size: 12pt; color: #000000; text-decoration: none;}
+  A.network:hover { color:#000000; text-decoration: underline;}
+.overlink {
+  	 cursor:pointer; 
+  	 cursor:hand;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-decoration: underline;
+        font-weight: bold;
+}
+
+.title, A.title:link, A.title:visited, A.title:active {
+	font-family:  "Trebuchet MS", "Impact", Helvetica,Arial, Verdana, sans-serif  ;
+	font-size: 40px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.title2, A.title2:link, A.title2:visited, A.title2:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+         vertical-align: top;
+}
+
+.smalltitle, A.smalltitle:link, A.smalltitle:visited, A.smalltitle:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+
+.art_title, A.art_title:link, A.art_title:visited, A.art_title:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	cursor:pointer; 
+	cursor:hand;
+}
+.showthreadh1
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin:0;
+  font-size: 14px;
+  font-weight: bold;	
+  display: inline;
+}
+.navbar2 {
+font-size: 11px;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+.navbar3 {
+margin-top:7px;
+}
+
+.boxAds, a.boxAds:link, a.boxAds:visited, a.boxAds:active, a.boxAds:hover{ 
+      background-color: #000066; 
+      font-weight: bold; 
+      font-size: 8pt; 
+      color: #FFFFCC; 
+      text-decoration : underline;
+}
+
+.tightline  {line-height: .5}
+.top {
+	cursor:pointer; cursor:hand;
+	text-decoration: underline; color:#000000;
+	font-family: Verdana,Arial,Helvetica; 
+	font-size: 10px;
+}
+
+.search {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #333333;
+        text-decoration: none;
+}
+.search2 {
+        font-family: Geneva, Arial, Helvetica, san-serif;
+        font-size: 15px;
+        font-weight: bold;
+        color: #FFFFFF;
+        text-decoration: none;
+}
+.search3 {
+        font-family: Geneva, Arial, Helvetica, san-serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #FFFFFF;
+}
+
+.footlink, .footlink:link, .footlink:visited, .footlink:hover, .footlink:active {
+	text-decoration: underline;
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	cursor:pointer; 
+  	cursor:hand;
+}
+
+.foottxt {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+}
+
+.newlinks {
+cursor:pointer; cursor:hand;
+text-decoration: underline; color:blue;
+font-family: Verdana,Arial,Helvetica; 
+font-size: 10px;
+}
+
+.blacklinks, .blacklinks:link, .blacklinks:visited, .blacklinks:hover, .blacklinks:active {
+	cursor:hand;
+	text-decoration: underline;
+	color:#000000;
+	cursor:pointer; 
+  	cursor:hand;
+}
+.mainbckgrnd { 
+        background: url(http://forums.tutorialized.com/images/tutorialized_thin.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed
+        background-position: 123px 153px;
+}
+-->
+</style>
+
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var IMGDIR_MISC = "http://images.devshed.com/ftu/misc";
+// -->
+</script>
+
+<script type="text/javascript" src="http://forums.tutorialized.com/clientscript/vbulletin_global.js"></script>
+
+<script type="text/javascript" src="http://forums.tutorialized.com/speller/spellChecker.js"></script>
+<meta name="verify-v1" content="+sLTJGy5bnk96PDtJsjmNvSU+uA72+ziqgnQz+d8Ew0=" />
+<META name="y_key" content="3abd3740c54e9011" />
+
+
+<link href="http://forums.tutorialized.com/styles.css" rel="stylesheet" type="text/css" />
+<link rel="SHORTCUT ICON" HREF="http://forums.tutorialized.com/images/favicon.ico" />
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-290307-12']);
+  _gaq.push(['_setDomainName', '.tutorialized.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body link="#000000" vlink="#000000" alink="#000000" leftmargin="0" topmargin="0" bgcolor="#CCCCCC">
+<a name="top"></a>
+<div align=center>
+
+<table width="98%" height="18" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#FFFFFF">
+      <table width="730" border="0" align="right" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="20"><img src="http://images.devshed.com/tut/tutorialized-01.gif" width="20" height="21" /></td>
+          <td width="35" bgcolor="#33AEEA">&nbsp;</td>
+          <td width="675" valign="middle" bgcolor="#33AEEA"><center><style type="text/css">
+<!--
+#topnavbox {	
+	clear: both;
+	text-align:center;
+	font-size: 0.8em;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.topnavtxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: normal;
+    padding: 0;
+    margin: 0;
+color: #ffffff;\n}
+
+-->
+</style>
+<div id="topnavbox" align=center>
+	<div class="topnavtxt">
+<script type="text/javascript" language="JavaScript">
+<!--
+function ttgo1(url)
+{
+	if (url.length > 1)
+	{
+		document.location.href = "http://" + url + "/";
+	}
+}
+
+function ttfstart1(name)
+{
+	document.write('<div style="display: inline; top: 0; padding:0; border: 0px;"><B>' + name + '</b> <form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px; font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);">');
+	document.write('<option value="" selected> - Select - </option>');	
+}
+
+function ttfend1()
+{
+	document.write('</select></form></div>');
+}
+
+function ttfadd1(name, val)
+{
+	document.write('<option value="' + val + '">' + name + '</option>');
+}
+
+function ttspace1()
+{
+	document.write('&nbsp;&nbsp;&nbsp;');
+}
+
+ttfstart1('Tutorials:');
+ttfadd1('Dev Shed', 'www.devshed.com');
+ttfadd1('ASP Free', 'www.aspfree.com');
+ttfadd1('Dev Articles', 'www.devarticles.com');
+ttfadd1('Dev Hardware', 'www.devhardware.com');
+ttfadd1('SEO Chat', 'www.seochat.com');
+ttfadd1('Web Hosting', 'webhosting.devshed.com');
+ttfadd1('Codewalkers', 'www.codewalkers.com');
+ttfend1();
+
+ttspace1();
+
+ttfstart1('Resources:');
+ttfadd1('Scripts', 'www.scripts.com');
+ttfadd1('Tutorialized', 'www.tutorialized.com');
+ttfadd1('Dev Mechanic', 'tools.devshed.com');
+//ttfadd1('iWatchIT', 'www.iwatchit.com');
+//ttfadd1('IT Marketplace', 'www.itmarketplace.com');
+//ttfadd1('igrep', 'www.igrep.com');
+ttfend1();
+
+ttspace1();
+
+ttfstart1('Forums:');
+ttfadd1('Dev Shed Forums', 'forums.devshed.com');
+ttfadd1('ASP Free Forums', 'forums.aspfree.com');
+ttfadd1('Dev Articles Forums', 'forums.devarticles.com');
+ttfadd1('Dev Hardware Forums', 'www.devhardware.com/forums');
+ttfadd1('SEO Chat Forums', 'forums.seochat.com');
+ttfadd1('Codewalkers Forums', 'forums.codewalkers.com');
+ttfadd1('Tutorialized Forums', 'forums.tutorialized.com');
+ttfadd1('Dev Archives Forums', 'archives.devshed.com/forums');
+ttfend1();
+//-->
+</script>
+	</div>
+</div>
+</center></td>
+        </tr>
+      </table>
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr>
+<td valign="top" class="mainbckgrnd" height="45">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="120" height="45">&nbsp;</td>
+          <td valign="middle">
+		    <table cellpadding=0 cellpadding=0>
+		      <tr>
+		        <td>
+
+				<h2><a rel="nofollow" href="/" title="Web Design &amp; Development Articles">
+				Web Design &amp; Development Articles
+
+        	  </tr>
+      		</table>
+          </td>
+          <td width="100" valign="top"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">
+     <table width="848" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr valign="middle">
+        <td bgcolor="#33AEEA" width="20"><img src="http://images.devshed.com/tut/tutorialized-02-heigh23.gif" width="22" height="29" /></td>
+        <td width="1" bgcolor="#33AEEA">&nbsp;</td>
+        <td width="832" bgcolor="#33AEEA"><table width="832" border="0" cellpadding="0" cellspacing="0">
+          <tr><td class="txtwhite" valign="middle">
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/">Forums</a><span class="foottxt">: &raquo;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/register.php?action=signup">Register</a><span class="foottxt">&nbsp;&laquo;&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/usercp.php">User CP</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/tutorialized-gaming-center-57/">Games</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/calendar.php">Calendar</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/memberlist.php">Members</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/forum-rules-guidelines-55/">FAQs</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/sitemap/">Sitemap</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<span class="footlink" onClick="window.location='http://www.developershed.com/esupport/'">Support</span><span class="foottxt">&nbsp;|&nbsp;</span>
+<a rel="nofollow" href="http://forums.tutorialized.com/rss/"><IMG src="http://images.devshed.com/common/forum-rss3.gif" width="24" height="21" border=0 vspace="0" align="absmiddle" /></a>
+            </td>
+	     <!-- TOP SEARCH BOX -->
+            <td align="right" valign="middle">
+                <table width="265" border="0" align="right" cellpadding="0" cellspacing="0">
+                    <tr valign="middle"> 
+      <td height='26' align='right' style='float:right;width:210px;_width:210px;padding-right:3px;padding-top:3px;_padding-top:0px;_padding-right:3px;'><form style='display:inline;' action='http://forums.tutorialized.com/googlecse.php' id='cse-search-box'><input type='hidden' name='cx' value='partner-pub-6422417422167576:yn5ozos49db' /><input type='hidden' name='cof' value='FORID:11' /><input type='hidden' name='ie' value='ISO-8859-1' /><input type='text' name='q' size='20' /> <input type='image' style='margin-top: -3px;_margin-top:2px;' align='absmiddle' src='http://www.devshed.com/components/com_googlecse/google_search.gif' height='20' width='56' name='sa' value='Search' /><script type='text/javascript' src='http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en'></script></form></td>
+                    </tr>
+                </table>
+              </td>
+  	</tr>
+    </table>
+   </td>
+  </tr>
+</table></td></tr></table>
+
+<table align=center width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr valign="top"> 
+    <td width=158 bgcolor="#EFEFEF">
+	<div align=left>
+      <table width="136" border="0" cellspacing="0" cellpadding="3">
+<!-- Beginning of login -->
+
+        <form action="http://forums.tutorialized.com/login.php" method="post" onsubmit="md5hash(vb_login_password,vb_login_md5password)">
+        <script type="text/javascript" src="clientscript/vbulletin_md5.js"></script>
+          <tr>
+            <td height="15" class="form"><font color="#000000"><b>User Name:</b></font></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="form" name="vb_login_username" id="navbar_username" size="12" accesskey="u" tabindex="1" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" /></td>
+          </tr>
+          <tr>
+            <td class="form"><font color="#000000"><b>Password:</b></font></td>
+          </tr>
+          <tr>
+            <td><input type="password" class="form" name="vb_login_password" size="12" accesskey="p" tabindex="2" />
+              <input type="submit" class="form" value="Log in" tabindex="4" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" /></td>
+          </tr>
+          <tr>
+            <td><label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="3" id="cb_cookieuser_navbar" accesskey="c" checked="checked" /></label>
+              <span class="form"><font color="#000000"><b>Remember me</b></font></span></td>
+          </tr>
+        <input type="hidden" name="s" value="" />
+        <input type="hidden" name="do" value="login" />
+        <input type="hidden" name="forceredirect" value="1" />
+        <input type="hidden" name="vb_login_md5password" />
+        </form>
+
+<!-- End of Login -->
+        </table>
+	</div>
+    </td>
+    <td align=center height="115"  bgcolor="#FFFFFF">
+	<!-- ZONE FOR TOP BANNER AD -->
+	  <table width=100% cellpadding=0 cellspacing=0>
+        <tr valign="middle"><td align=center height="115" background="http://images.devshed.com/common/bckg-topbanner.gif"><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=499");
+   document.write ('&amp;cb=' + m3_r);
+   document.write ("&amp;sub=forums");
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=346957340' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=499&amp;cb=346957340&amp;n=a72b9207' border='0' alt='' /></a></noscript></td></tr>
+    <!-- END ZONE FOR TOP BANNER AD -->
+	    <tr><td></td></tr>
+	  </table>
+    </td>
+  </tr>
+</table>
+<!-- end of header template -->
+
+</div>
+
+<!-- content table -->
+<table bgcolor="" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+  <td width="100%">
+
+
+<!-- Add Breadcrumb title -->
+<table cellspacing=0 cellpadding=0 width="98%" align=center><tr><td>
+<table width="100%" cellpadding="6" cellspacing="1" class="tborder" border="0">
+<tr>
+	<td class="alt1" width="100%" align="center">
+		<table cellpadding="0" cellspacing="0" border="0" align="left">
+		<tr valign="bottom"><td>
+		
+				<a rel=nofollow href="#" onclick="history.back(1)"><img src="http://images.devshed.com/ftu/misc/navbits_start.gif" width="15" height="15" alt="Go Back" border="0" /></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a rel=nofollow href="/" accesskey="1">Tutorialized Forums</a> 
+	&gt;&nbsp;<a class="normalfont" href="http://forums.tutorialized.com/web-design-development-78/">Web Design &amp; Development</a>
+
+	&gt;&nbsp;<a class="normalfont" href="http://forums.tutorialized.com/web-design-development-articles-134/">Web Design &amp; Development Articles</a>
+</span></td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size:10pt; padding-top:1px" colspan="3"><a rel=nofollow href="/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html"><img class="inlineimg"  src="http://images.devshed.com/ftu/misc/navbits_finallink.gif" alt="Reload this Page" width="30" height="15" border="0" /></a> <h1 class="showthreadh1">
+	Basic Usage of reCAPTCHA with PHP
+</h1>		
+
+		
+
+
+		
+
+
+
+
+
+
+
+<div id="intelliTxt" class="navbar2">Discuss <b>Basic Usage of reCAPTCHA with PHP</b> in the Web Design &amp; Development Articles forum on Tutorialized. <br /><i>Basic Usage of reCAPTCHA with PHP</i> This is the place to find articles published on Tutorialized.com that discuss web design and development articles.</div>
+
+
+<style type="text/css">
+<!--
+.style1 {	color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+<!-- JMM -->
+
+<!-- end of check -->
+
+
+</td>
+</tr>
+</table>
+</td></tr></table>
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:3px">
+<tr valign="bottom">
+<BR>
+	
+		<td width="120" class="smallfont"><a rel="nofollow" href="newreply.php?do=newreply&amp;noquote=1&amp;p=361276"><img src="http://images.devshed.com/ftu/buttons/reply.gif" alt="Reply" border="0" /></a></td>
+<td>
+</td>
+	
+<td><center>
+
+
+
+</center></td>
+ 
+<td width="20%" align="center">
+<!-- Add2 - Start -->
+<script language="JavaScript" type="text/javascript">
+<!--
+	var addtoMethod=1;
+	var AddURL = document.location.href;
+	var AddTitle = escape(document.title);
+-->
+</script>
+<script language="JavaScript" src="http://forums.tutorialized.com/clientscript/add2.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+.add2small {
+	font-size: 11px;
+	cursor:pointer;
+}
+.add2head {
+	font-size: 11px;
+	font-weight: bold;
+}
+-->
+</style>
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="660" align="center">
+  <tr> 
+    <td align="left" class="thead" id="currentPost"><div class="normal">Add This Thread To: </div></td>
+    <td align="left" class="alt1" id="currentPost">
+&nbsp;<span class="add2small" title="Add this page to Delicious" onclick="addto(2)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Delicious.gif" width="16" height="16" border="0" /> 
+      <u>Del.icio.us</u></span>
+&nbsp;<span class="add2small" title="Add this page to Digg" onclick="addto(3)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Digg.gif" width="16" height="16" border="0" /> 
+      <u>Digg</u></span>
+&nbsp;<span class="add2small" title="Add this page to Google" onclick="addto(5)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Google.gif" width="16" height="16" border="0" /> 
+      <u>Google</u></span>
+&nbsp;<span class="add2small" title="Add this page to Spurl" onclick="addto(8)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Spurl.gif" width="16" height="16" border="0" /> 
+      <u>Spurl</u></span>
+&nbsp;<span class="add2small" title="Add this page to Blink" onclick="addto(1)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Blink.gif" width="16" height="16" border="0" /> 
+      <u>Blink</u></span>
+&nbsp;<span class="add2small" title="Add this page to Furl" onclick="addto(4)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Furl.gif" width="16" height="16" border="0" /> 
+      <u>Furl</u></span>
+&nbsp;<span class="add2small" title="Add this page to Simpy" onclick="addto(6)"><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Simpy.gif" width="16" height="16" border="0" /> 
+      <u>Simpy</u></span>	  
+&nbsp;<span class="add2small" title="Add this page to Yahoo! MyWeb" onclick="addto(7)" ><img align="absmiddle" src="http://images.devshed.com/cmn/add2/AddTo_Yahoo.gif" width="16" height="16" border="0" /> 
+      <u>Y! MyWeb</u></span>&nbsp;	  	  	  	  	  	  
+	</td>
+  </tr>
+</table>
+<!-- Add2 - End -->
+</td>
+	
+
+</tr>
+</table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+<strong>&laquo;</strong>
+		<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html?goto=nextoldest">Previous Thread</a>
+		|
+		<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html?goto=nextnewest">Next Thread</a>
+	<strong>&raquo;</strong>
+
+		
+<!-- [START HACK='AJAX Feature / Unfeature Thread' VERSION='1.0.0' CHANGEID= 1 ] -->
+		
+<!-- [END HACK='AJAX Feature / Unfeature Thread' VERSION='1.0.0' CHANGEID= 1 ] -->		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools">
+		<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html#threadtools">Thread Tools</a>
+		
+	</td>
+	
+		<td class="vbmenu_control" id="threadsearch">
+			<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html#threadsearch">Search this Thread</a>
+			
+		</td>
+	
+	
+		<td class="vbmenu_control" id="threadrating">
+			<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html#threadrating">Rate Thread</a>
+			
+		</td>
+	
+	
+	<td class="vbmenu_control" id="displaymodes">
+		<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html#displaymodes">Display Modes</a>
+		
+	</td>
+	
+</tr>
+</table>
+<!-- / toolbar -->
+
+<!-- end content table -->
+ </div>  </div></div>
+<!-- / end content table -->
+
+
+
+<div id="posts">
+
+<!-- *** -->
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+				<div style="padding:0px 0px 6px 0px">
+					<table class="tborder" id="ad12321" cellpadding="6" 
+						cellspacing="1" border="0" width="100%" align="center">
+						<tr>
+							<td class="thead"  id="currentPost">
+								<div class="normal" style="float:right">
+									&nbsp;
+								</div>
+								<div class="normal">
+									<a name="ad12321"><img class="inlineimg" src="http://images.devshed.com/ftu/statusicon/post_new.gif" alt="Unread" border="0" /></a>
+Tutorialized Forums Sponsor:
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="alt1">
+<!-- message -->
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=410");
+   document.write ('&amp;cb=' + m3_r);
+   document.write ("&amp;sub=forums");
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=42687304' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=410&amp;cb=42687304&amp;n=a72b9207' border='0' alt='' /></a></noscript>
+<!-- / message -->
+								<div></div>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- *** -->
+
+<!-- post #361276 -->
+
+	<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+	<div style="padding:0px 0px 6px 0px">
+		
+
+
+
+<table class="tborder" id="post361276" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+<tr>
+	<td class="thead" >
+		<div class="normal" style="float:right">
+			&nbsp;
+			
+<!-- checks for warning system -->
+
+	
+	
+	
+	
+
+
+<!-- end of warning system -->
+			
+			#<a rel="nofollow" href="showpost.php?p=361276&amp;postcount=1" target="new"><strong>1</strong></a> &nbsp;
+			
+			
+						
+			
+		</div>
+		
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post361276"><img class="inlineimg" src="http://images.devshed.com/ftu/statusicon/post_old.gif" alt="Old" border="0" /></a>
+			
+				March 4th, 2011, 09:00 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding:0px">
+		<!-- user info -->
+		<table cellpadding="0" cellspacing="6" border="0" width="100%">
+		<tr>
+			
+			<td nowrap="nowrap">
+			
+				<div id="postmenu_361276">
+					
+
+
+<table><tr><td>
+<a rel="nofollow" href="member.php?u=16165">Admin</a></td>
+
+
+
+					<td><img class="inlineimg" src="http://images.devshed.com/ftu/statusicon/user_offline.gif" alt="Admin is offline" border="0" /></td></tr></table>
+					<script type="text/javascript"> vbmenu_register("postmenu_361276", true); </script>
+									</div>				
+				<div class="smallfont">Developer Shed</div>
+				
+</a><div align='left'><a rel="nofollow" href="http://forums.tutorialized.com/forum-announcements-56/top-users-and-moderators-in-our-forums-11102.html"><img border="0" src="http://images.devshed.com/ftu/belts/ftu_forums_tp.gif" alt="Click here for more information."></a></div>				
+			</td>
+			<td width="100%">&nbsp;</td>
+
+<!-- Show warned sign -->
+
+
+
+<!-- End of show warned sign -->
+
+			<td valign="top" nowrap="nowrap">
+				
+				<div class="smallfont">
+					<div>Join Date: Jun 2007</div>
+
+					
+					<div>
+						Posts: 31,949
+						<img class="inlineimg" src="http://images.devshed.com/ftu/reputation/reputation_green.gif" width="8" height="10" alt="Admin User rank is Just a Lowly Private (1 - 20 Reputation Level)" border="0" />&nbsp; 
+<br/>Time spent in forums: < 1 sec
+
+
+
+
+
+
+
+
+
+<br />Reputation Power: 35
+					</div>
+					<div>      </div>
+					<div>   </div>
+				</div>
+				
+			</td>
+		</tr>
+			
+		</table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+	<!-- message, attachments, sig -->
+	
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Basic Usage of reCAPTCHA with PHP</strong>
+			</div>
+
+			<hr size="1" style="color:#FFFFFF" />
+			<!-- / icon and title -->
+		
+		
+		<!-- message --><span id="intelliTxt">
+		
+		<div>In this tutorial we will be installing a reCAPTCHA script from Google on to your website.  This script will help stop spam and actually works for a good cause as it digitizes books.<br />
+<br />
+Read the full article here: <a rel=nofollow href="http://www.tutorialized.com/tutorial/Basic-Usage-of-reCAPTCHA-with-PHP/66273" target="_blank">Basic Usage of reCAPTCHA with PHP</a></div>
+		</span><!-- / message -->
+	<div></div>
+		
+		
+		
+		
+		
+		<hr size="1" style="color:#FFFFFF" />
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td align="left" valign="middle">
+								
+			</td>
+			<td align="right" valign="middle" height="40">
+				<div align="right">
+					<!-- controls -->
+					
+					
+					
+						<a rel="nofollow" href="newreply.php?do=newreply&amp;p=361276"><img src="http://images.devshed.com/ftu/buttons/reply_small.gif" alt="Reply With Quote" width="70" height="22" border="0" /></a>
+					
+					
+					<!-- / controls -->
+				</div>			
+			</td>
+		  </tr>
+		</table>		
+	<!-- message, attachments, sig -->
+	
+	</td>
+</tr>
+</table>
+
+<!-- post 361276 popup menu -->
+<div class="vbmenu_popup" id="postmenu_361276_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tr>
+		<td class="thead">Admin</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="member.php?userid=16165" target="_blank">View Public Profile</a></td></tr>
+	
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="javascript:void(window.open('http://forums.tutorialized.com/rpg.php?userid=16165', '', 'toolbar=no,scrollbars=no,resizable=no,width=300,height=320'));">View Extended RPG Stats</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->
+<!-- START LEFT RPG POSTBIT BAR -->
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="battle.php?do=newbattle&user=Admin">Challenge This User To Battle</a></td></tr>
+<!-- END LEFT RPG POSTBIT BAR -->		
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="private.php?do=newpm&amp;userid=16165">Send a private message to Admin</a></td></tr>
+	
+
+
+	
+<!--	 -->
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="search.php?do=finduser&amp;userid=16165">Find all posts by Admin</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="search.php?do=process&amp;showposts=0&amp;starteronly=1&amp;exactname=1&amp;searchuser=Admin">Find all threads by Admin</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="profile.php?do=addlist&amp;userlist=buddy&amp;u=16165">Add Admin to Your Buddy List</a></td></tr>
+	
+	
+	
+	</table>
+</div>
+<!-- / post 361276 popup menu -->
+
+
+
+	</div>
+	 </div>  </div></div>
+
+<!-- / post #361276 --></div>
+
+
+<!-- start content table -->
+<!-- open content container -->
+
+	<div align="center">
+		<div class="page" style="width:100%; text-align:left">
+			<div style="padding:0px 25px 0px 25px">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr valign="top">
+	
+		<td class="smallfont"><a rel="nofollow" href="newreply.php?do=newreply&amp;noquote=1&amp;p=361276"><img src="http://images.devshed.com/ftu/buttons/reply.gif" alt="Reply" border="0" /></a></td>
+		
+	
+</tr>
+</table>
+<!-- / controls below postbits -->
+
+
+<br />
+
+<!-- Bottom Breadcrumb -->
+<table width="100%" cellpadding="0">
+  <tr> 
+    <td> 
+      <font size=-1> <b>Viewing:</b> <B>  
+      <a rel="nofollow" href="/">  
+      Tutorialized Forums</a> 
+	&gt;&nbsp;<a class="normalfont" href="http://forums.tutorialized.com/web-design-development-78/">Web Design &amp; Development</a>
+
+	&gt;&nbsp;<a class="normalfont" href="http://forums.tutorialized.com/web-design-development-articles-134/">Web Design &amp; Development Articles</a>
+ &gt; 
+	Basic Usage of reCAPTCHA with PHP
+</b></font> 
+    </td>
+  </tr>
+</table>
+<!-- END Bottom Breadcrumb -->
+
+<br />
+
+<div class="smallfont" align="center">
+	<strong>&laquo;</strong>
+		<a rel=nofollow href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html?goto=nextoldest">Previous Thread</a>
+		|
+		<a rel="nofollow" href="http://forums.tutorialized.com/web-design-development-articles-134/basic-usage-of-recaptcha-with-php-326582.html?goto=nextnewest">Next Thread</a>
+	<strong>&raquo;</strong>
+</div>
+
+
+<br />
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="50%" align="center">
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=516");
+   document.write ('&amp;cb=' + m3_r);
+   document.write ("&amp;sub=forums");
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1710433285' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=516&amp;cb=1710433285&amp;n=a72b9207' border='0' alt='' /></a></noscript></td><td width="50%" align="center"><script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://otto.developershed.com/www/delivery/ajs.php':'http://otto.developershed.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=516");
+   document.write ('&amp;cb=' + m3_r);
+   document.write ("&amp;sub=forums");
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a rel=nofollow href='http://otto.developershed.com/www/delivery/ck.php?n=a72b9207&amp;cb=1710433285' target='_blank'><img src='http://otto.developershed.com/www/delivery/avw.php?zoneid=516&amp;cb=1710433285&amp;n=a72b9207' border='0' alt='' /></a></noscript></td></tr></table>
+
+
+
+
+<!-- currently active users -->
+
+<!-- currently active users -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- controls for non-popup browsers -->
+
+
+<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center" style="border-top-width:0px">
+<tr>
+	<td class="thead">Thread Tools<a name="threadtools">&nbsp;</a></td>
+	<td class="thead">Search this Thread<a name="threadsearch">&nbsp;</a></td>
+</tr>
+<tr valign="top">
+	<td class="alt1">
+	
+	<!-- thread tools -->
+	<div class="smallfont">
+
+		<div><img class="inlineimg" src="http://images.devshed.com/ftu/buttons/sendtofriend.gif" alt="Email this Page" vspace="1" /> <a rel="nofollow" href="sendmessage.php?do=sendtofriend&amp;t=326582">Email this Page</a></div>
+		
+		
+	</div>
+	<!-- / thread tools -->
+	
+	</td>
+	<td class="alt1">
+	
+	<!-- search this thread -->
+	<form action="search.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="" />
+		<input type="hidden" name="do" value="process" />
+		<input type="hidden" name="searchthread" value="1" />
+		<input type="hidden" name="showposts" value="1" />
+		<input type="hidden" name="searchthreadid" value="326582" />
+		<strong>Search this Thread</strong>:<br />
+		<input type="text" class="bginput" name="query" size="20" style="width:175px" /><!-- go button -->
+<input type="submit" class="button" value="Go"   /><br />
+		<a rel=nofollow href="search.php">Advanced Search</a>
+	</div>
+	</form>
+	<!-- /  search this thread -->
+	
+	</td>
+</tr>
+<tr>
+	<td class="thead">Display Modes<a name="displaymodes">&nbsp;</a></td>
+	<td class="thead">Rate This Thread<a name="threadrating">&nbsp;</a></td>
+</tr>
+<tr valign="top">
+	<td class="alt2">
+	
+	<!-- thread display modes -->
+	
+	<div class="smallfont">
+		<div><img class="inlineimg" src="http://images.devshed.com/ftu/buttons/mode_linear.gif" alt="Linear Mode" vspace="1" /> <strong>Linear Mode</strong></div>
+		<div><img class="inlineimg" src="http://images.devshed.com/ftu/buttons/mode_hybrid.gif" alt="Hybrid Mode" vspace="1" /> <a rel="nofollow" href="showthread.php?mode=hybrid&amp;t=326582">Switch to Hybrid Mode</a></div>
+		<div><img class="inlineimg" src="http://images.devshed.com/ftu/buttons/mode_threaded.gif" alt="Threaded Mode" vspace="1" /> <a rel="nofollow" href="showthread.php?p=361276&amp;mode=threaded#post361276">Switch to Threaded Mode</a></div>
+	</div>
+	
+	<!-- / thread display modes -->
+	
+	</td>
+	<td class="alt2">
+	
+	<!-- rate this thread -->
+	<form action="threadrate.php" method="post">
+	<div class="smallfont">
+		<input type="hidden" name="s" value="b2ce4a915b8f6ad4572929828946169e" />
+		<input type="hidden" name="t" value="326582" />
+		<input type="hidden" name="pp" value="15" />
+		<input type="hidden" name="page" value="1" />
+		<strong>Rate This Thread</strong>:<br />
+		<select name="vote" onChange="this.form.submit()" style="width:175px">
+			<optgroup label="Choose a rating">
+				<option value="5" >5 : Excellent</option>
+				<option value="4" >4 : Good</option>
+				<option value="3" >3 : Average</option>
+				<option value="2" >2 : Bad</option>
+				<option value="1" >1 : Terrible</option>
+			</optgroup>
+		</select><!-- go button -->
+<input type="submit" class="button" value="Go"   />
+	</div>
+	</form>
+	<!-- / rate this thread -->
+	
+	</td>
+</tr>
+</table>
+<br />
+
+
+<!-- / controls for non-popup browsers -->
+
+
+
+
+
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+<tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="180">
+<thead>
+<tr>
+	<td class="thead">
+		<a rel=nofollow style="float:right" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="http://images.devshed.com/ftu/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="" style="display:none">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr />
+		
+		<div><a rel="nofollow" href="misc.php?do=bbcode" target="_blank">vB code</a> is <strong>On</strong></div>
+		<div><a rel="nofollow" href="misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a rel="nofollow" href="misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+
+<a rel="nofollow" href="/Warn.php?do=ViewMyWarnings">View Your Warnings</a> | 
+
+<a rel="nofollow" href = "/search.php?do=getnew">New Posts</a> | 
+<a rel="nofollow" href="/latest-news-updated-hourly-68/">Latest News</a> | 
+<a rel="nofollow" href="/#latest_threads_table">Latest Threads</a> | 
+<a rel="nofollow" href="/#shoutbox_location">Shoutbox</a>
+<br />
+	<form action="forumdisplay.php" method="get">
+	<input type="hidden" name="s" value=""  />
+	<input type="hidden" name="daysprune" value=""  />
+	<strong>Forum Jump</strong><br />
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="-1" >Please select one</option>
+			<option value="cp" >User Control Panel</option>
+			<option value="pm" >Private Messages</option>
+			<option value="subs" >Subscriptions</option>
+			<option value="wol" >Who's Online</option>
+			<option value="search" >Search Forums</option>
+			<option value="home" >Forums Home</option>
+			<option value="-1">--------------------</option>
+		</optgroup>
+		<optgroup label="Forums">
+		<option value="63" class="fjdpth0" > 2D Graphics</option><option value="64" class="fjdpth1" >&nbsp; &nbsp;  Fireworks</option><option value="65" class="fjdpth1" >&nbsp; &nbsp;  Flash</option><option value="66" class="fjdpth1" >&nbsp; &nbsp;  Gimp</option><option value="67" class="fjdpth1" >&nbsp; &nbsp;  Illustrator</option><option value="68" class="fjdpth1" >&nbsp; &nbsp;  Paint Shop Pro</option><option value="69" class="fjdpth1" >&nbsp; &nbsp;  Photoshop</option><option value="132" class="fjdpth1" >&nbsp; &nbsp;  2D Graphic Articles</option><option value="70" class="fjdpth0" > 3D Graphics</option><option value="71" class="fjdpth1" >&nbsp; &nbsp;  3DS MAX</option><option value="72" class="fjdpth1" >&nbsp; &nbsp;  AutoCAD</option><option value="73" class="fjdpth1" >&nbsp; &nbsp;  Blender 3d</option><option value="74" class="fjdpth1" >&nbsp; &nbsp;  Bryce 3D</option><option value="75" class="fjdpth1" >&nbsp; &nbsp;  Cinema 4D</option><option value="76" class="fjdpth1" >&nbsp; &nbsp;  Lightwave 3D</option><option value="77" class="fjdpth1" >&nbsp; &nbsp;  Maya</option><option value="133" class="fjdpth1" >&nbsp; &nbsp;  3D Graphics Articles</option><option value="78" class="fjdpth0" > Web Design &amp; Development</option><option value="79" class="fjdpth1" >&nbsp; &nbsp;  Adobe Flex</option><option value="80" class="fjdpth1" >&nbsp; &nbsp;  ASP</option><option value="81" class="fjdpth1" >&nbsp; &nbsp;  ASP.NET</option><option value="82" class="fjdpth1" >&nbsp; &nbsp;  ColdFusion</option><option value="83" class="fjdpth1" >&nbsp; &nbsp;  CSS</option><option value="84" class="fjdpth1" >&nbsp; &nbsp;  Dreamweaver</option><option value="85" class="fjdpth1" >&nbsp; &nbsp;  HTML</option><option value="86" class="fjdpth1" >&nbsp; &nbsp;  Java</option><option value="87" class="fjdpth1" >&nbsp; &nbsp;  Javascript</option><option value="88" class="fjdpth1" >&nbsp; &nbsp;  MM Fusion</option><option value="89" class="fjdpth1" >&nbsp; &nbsp;  MS FrontPage</option><option value="90" class="fjdpth1" >&nbsp; &nbsp;  Perl and CGI</option><option value="91" class="fjdpth1" >&nbsp; &nbsp;  PHP</option><option value="92" class="fjdpth1" >&nbsp; &nbsp;  Python</option><option value="93" class="fjdpth1" >&nbsp; &nbsp;  Ruby on Rails</option><option value="129" class="fjdpth1" >&nbsp; &nbsp;  SEO</option><option value="94" class="fjdpth1" >&nbsp; &nbsp;  Web Design</option><option value="95" class="fjdpth1" >&nbsp; &nbsp;  XML</option><option value="134" class="fjsel" selected="selected">&nbsp; &nbsp;  Web Design &amp; Development Articles</option><option value="96" class="fjdpth0" > Business Applications</option><option value="97" class="fjdpth1" >&nbsp; &nbsp;  MS Excel</option><option value="98" class="fjdpth1" >&nbsp; &nbsp;  MS PowerPoint</option><option value="99" class="fjdpth1" >&nbsp; &nbsp;  MS Word</option><option value="100" class="fjdpth1" >&nbsp; &nbsp;  QuarkXPress</option><option value="135" class="fjdpth1" >&nbsp; &nbsp;  Business Application Articles</option><option value="101" class="fjdpth0" > Business Development</option><option value="102" class="fjdpth1" >&nbsp; &nbsp;  Accounting</option><option value="103" class="fjdpth1" >&nbsp; &nbsp;  eCommerce</option><option value="104" class="fjdpth1" >&nbsp; &nbsp;  Legal</option><option value="105" class="fjdpth1" >&nbsp; &nbsp;  Marketing</option><option value="136" class="fjdpth1" >&nbsp; &nbsp;  Business Development Articles</option><option value="106" class="fjdpth0" > Databases</option><option value="107" class="fjdpth1" >&nbsp; &nbsp;  DB Design</option><option value="108" class="fjdpth1" >&nbsp; &nbsp;  DB2</option><option value="109" class="fjdpth1" >&nbsp; &nbsp;  MS Access</option><option value="110" class="fjdpth1" >&nbsp; &nbsp;  MsSQL</option><option value="111" class="fjdpth1" >&nbsp; &nbsp;  MySQL</option><option value="112" class="fjdpth1" >&nbsp; &nbsp;  Oracle</option><option value="113" class="fjdpth1" >&nbsp; &nbsp;  SQL Basics</option><option value="114" class="fjdpth1" >&nbsp; &nbsp;  Sybase</option><option value="137" class="fjdpth1" >&nbsp; &nbsp;  Database Articles</option><option value="115" class="fjdpth0" > Desktop Programming</option><option value="116" class="fjdpth1" >&nbsp; &nbsp;  C and Cpp</option><option value="117" class="fjdpth1" >&nbsp; &nbsp;  Delphi</option><option value="118" class="fjdpth1" >&nbsp; &nbsp;  Visual Basic</option><option value="119" class="fjdpth1" >&nbsp; &nbsp;  Visual C</option><option value="138" class="fjdpth1" >&nbsp; &nbsp;  Desktop Programming Articles</option><option value="120" class="fjdpth0" > Operating Systems</option><option value="121" class="fjdpth1" >&nbsp; &nbsp;  Linux</option><option value="122" class="fjdpth1" >&nbsp; &nbsp;  Windows</option><option value="139" class="fjdpth1" >&nbsp; &nbsp;  Operating System Articles</option><option value="123" class="fjdpth0" > Video Editing</option><option value="124" class="fjdpth1" >&nbsp; &nbsp;  Final Cut Studio</option><option value="125" class="fjdpth1" >&nbsp; &nbsp;  Premiere</option><option value="140" class="fjdpth1" >&nbsp; &nbsp;  Video Editing Articles</option><option value="126" class="fjdpth0" > Miscellaneous</option><option value="127" class="fjdpth1" >&nbsp; &nbsp;  P2P Filesharing</option><option value="128" class="fjdpth1" >&nbsp; &nbsp;  Web Hosting</option><option value="31" class="fjdpth0" > Training Center</option><option value="41" class="fjdpth1" >&nbsp; &nbsp;  Authored Tutorials</option><option value="49" class="fjdpth1" >&nbsp; &nbsp;  Popular Software Help</option><option value="28" class="fjdpth0" > The Showroom</option><option value="37" class="fjdpth1" >&nbsp; &nbsp;  Personal Creations</option><option value="36" class="fjdpth1" >&nbsp; &nbsp;  Your Site, Reviewed</option><option value="30" class="fjdpth0" > The Sales Floor</option><option value="34" class="fjdpth1" >&nbsp; &nbsp;  Buy and Sell Advertising</option><option value="43" class="fjdpth1" >&nbsp; &nbsp;  Contests</option><option value="35" class="fjdpth1" >&nbsp; &nbsp;  Job Openings</option><option value="130" class="fjdpth0" > Other</option><option value="131" class="fjdpth1" >&nbsp; &nbsp;  Tutorialized Lounge</option><option value="50" class="fjdpth0" > Latest News Updated Hourly</option><option value="51" class="fjdpth1" >&nbsp; &nbsp;  Technology News</option><option value="52" class="fjdpth1" >&nbsp; &nbsp;  Business News</option><option value="53" class="fjdpth1" >&nbsp; &nbsp;  Science News</option><option value="54" class="fjdpth0" > Forum Information</option><option value="55" class="fjdpth1" >&nbsp; &nbsp;  Forum Rules/Guidelines</option><option value="56" class="fjdpth1" >&nbsp; &nbsp;  Forum Announcements</option><option value="57" class="fjdpth1" >&nbsp; &nbsp;  Tutorialized Gaming Center</option><option value="58" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Go to the Tutorialized Battle Arena</option><option value="59" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Go to the Tutorialized Arcade Games</option><option value="60" class="fjdpth2" >&nbsp; &nbsp; &nbsp; &nbsp;  Go to the Legend of the Green Dragon</option><option value="61" class="fjdpth1" >&nbsp; &nbsp;  Suggestions &amp; Feedback</option>
+		</optgroup>
+	</select><!-- go button -->
+<input type="submit" class="button" value="Go"   />
+	</form>
+</div>
+			</td>
+		</tr>		
+		</table>
+	</td>
+</tr>
+</table>
+<!-- /forum rules and admin links -->
+<!-- White paper box -->
+<br />
+
+<!-- End :: White paper box -->
+
+<br />
+
+  </td>
+</tr>
+</table>
+<!-- /content area table -->
+</td>
+</tr>
+</table>
+</center>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+     <table width="100%" border="0"  cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="20"><img src="http://images.devshed.com/tut/tutorialized-02.jpg" width="20" height="29" /></td>
+        <td width="65%" bgcolor="#33AEEA"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td class="txtwhite" valign="middle">
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/">Forums</a><span class="foottxt">: &raquo;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/register.php?action=signup">Register</a><span class="foottxt">&nbsp;&laquo;&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/usercp.php">User CP</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/tutorialized-gaming-center-57/">Games</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/calendar.php">Calendar</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/memberlist.php">Members</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/forum-rules-guidelines-55/">FAQs</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<a class="footlink" rel="nofollow" href="http://forums.tutorialized.com/sitemap/">Sitemap</a><span class="foottxt">&nbsp;|&nbsp;</span>
+<span class="footlink" onClick="window.location='http://www.developershed.com/esupport/'">Support</span><span class="foottxt">&nbsp;|&nbsp;</span>
+<a rel="nofollow" href="http://forums.tutorialized.com/rss/"><IMG src="http://images.devshed.com/common/forum-rss3.gif" width="24" height="21" border=0 vspace="0" align="absmiddle" /></a>
+            </td></tr></table></td>
+            <td><div align="right">
+                    <table border="0" cellspacing="0" cellpadding="0" align="right">
+                      <tr>
+<td width="100%"> 
+<table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" bgcolor="#33AEEA" height="21">
+                    <tr> 
+<td>&nbsp;&nbsp;</td>
+      <td height='26' align='right' style='float:right;width:210px;_width:210px;padding-right:3px;padding-top:3px;_padding-top:0px;_padding-right:3px;'><form style='display:inline;' action='http://forums.tutorialized.com/googlecse.php' id='cse-search-box'><input type='hidden' name='cx' value='partner-pub-6422417422167576:yn5ozos49db' /><input type='hidden' name='cof' value='FORID:11' /><input type='hidden' name='ie' value='ISO-8859-1' /><input type='text' name='q' size='20' /> <input type='image' style='margin-top: -3px;_margin-top:2px;' align='absmiddle' src='http://www.devshed.com/components/com_googlecse/google_search.gif' height='20' width='56' name='sa' value='Search' /><script type='text/javascript' src='http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en'></script></form></td>
+                    </tr>
+                </table>
+</td>
+
+<!-- xxx -->
+<td>&nbsp;</td>
+</tr>
+</form>
+                    </table>
+                  </div></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<br/>
+
+<!-- old pos -->
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+
+<style type='text/css'>
+<!--
+ .newlinks {
+cursor:pointer; cursor:hand;
+text-decoration: underline; color:blue;
+font-family: Verdana,Arial,Helvetica; 
+font-size: 10px;
+}
+-->
+</style>
+<center>Powered by: vBulletin Version 3.0.5<br />Copyright &copy;2000 - 2011, Jelsoft Enterprises Ltd.</center>
+<style type="text/css">
+<!--
+#botfooter {	
+	clear: both;
+	text-align:center;
+	font-size: 0.8em;
+	background-color:#f1f1f1;
+	font-family:Arial, Helvetica, sans-serif;
+        width: 100%;
+}
+.bottxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	text-decoration: none;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+}
+A.botnetwork:link, A.botnetwork:visited, A.botnetwork:active { 
+  font-family: Verdana,Arial,Helvetica; 
+  font-size: 9px; 
+  color: #000000; 
+  text-decoration: none;
+}
+
+A.botnetwork:hover { 
+  color:blue; 
+  text-decoration: underline;
+}
+.botoverlink {
+  	 cursor:pointer; 
+  	 cursor:hand;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-decoration: underline;
+}
+-->
+</style>
+<br/><div id="botfooter" align=center><table width="100%" class=contentpaneopen cellpadding=3 cellspacing=0 border=0><tr><td width="50"></td><div class="bottxt"><script type="text/javascript" language="JavaScript">
+<!--
+function ttgo(url)
+{
+if (url.length > 1)
+{
+document.location.href = "http://" + url + "/";
+}
+}
+function ttfstart(name)
+{
+document.write('<td width=\'125\'><div style="display: inline;"><b>' + name + '</b></div></td><td width=\'40\'><div style="display: inline;"><form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px;font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);">');
+document.write('<option value="" selected> - Select - </option>'); 
+}
+function ttfend()
+{
+document.write('</select></form></div></td>');
+}
+function ttfadd(name, val)
+{
+document.write('<option value="' + val + '">' + name + '</option>');
+}
+function ttspace()
+{
+document.write('&nbsp;&nbsp;&nbsp;');
+}
+ttfstart('Developer&nbsp;Tutorials:');
+ttfadd('Dev Shed', 'www.devshed.com');
+ttfadd('ASP Free', 'www.aspfree.com');
+ttfadd('Dev Articles', 'www.devarticles.com');
+ttfadd('Dev Hardware', 'www.devhardware.com');
+ttfadd('SEO Chat', 'www.seochat.com');
+ttfadd('Web Hosting', 'webhosting.devshed.com');
+ttfadd('Codewalkers', 'www.codewalkers.com');
+ttfend();
+//ttspace();
+ttfstart('Developer&nbsp;Resources:');
+ttfadd('Scripts', 'www.scripts.com');
+ttfadd('Tutorialized', 'www.tutorialized.com');
+ttfadd('Dev Mechanic', 'tools.devshed.com');
+//ttfadd('iWatchIT', 'www.iwatchit.com');
+//ttfadd('IT Marketplace', 'www.itmarketplace.com');
+//ttfadd('igrep', 'www.igrep.com');
+ttfend();
+//ttspace();
+ttfstart('Developer&nbsp;Forums:');
+ttfadd('Dev Shed Forums', 'forums.devshed.com');
+ttfadd('ASP Free Forums', 'forums.aspfree.com');
+ttfadd('Dev Articles Forums', 'forums.devarticles.com');
+ttfadd('Dev Hardware Forums', 'www.devhardware.com/forums');
+ttfadd('SEO Chat Forums', 'forums.seochat.com');
+ttfadd('Codewalkers Forums', 'forums.codewalkers.com');
+ttfadd('Tutorialized Forums', 'forums.tutorialized.com');
+ttfadd('Dev Archives Forums', 'archives.devshed.com/forums');
+ttfend();
+//-->
+</script>
+</tr><tr><td width="50"></td>
+<div class="bottxt"><script type="text/javascript" language="JavaScript">
+<!--
+function ttgo(url)
+{
+if (url.length > 1)
+{
+document.location.href = "http://" + url + "/";
+}
+}
+function ttfstart(name)
+{
+document.write('<td width=\'125\'><div style="display: inline;"><b>' + name + '</b></div></td><td width=\'40\'><div style="display: inline;"><form style="display: inline; margin: 0;" name="jumptt"><select style="font-size: 10px;font-family: Verdana, Arial;" name="menutt" onChange="javascript:ttgo(this.options[this.selectedIndex].value);"><option value="" selected> - Select - </option>'); 
+}
+function ttfend()
+{
+document.write('</select></form></div></td>');
+}
+function ttfadd(name, val)
+{
+document.write('<option value="' + val + '">' + name + '</option>');
+}
+function ttspace()
+{
+document.write('&nbsp;&nbsp;&nbsp;');
+}
+ttfstart('IT Professionals:');
+ttfadd('Baseline', 'www.baselinemag.com');
+ttfadd('Careers', 'careers.eweek.com');
+ttfadd('CIO Insight', 'www.cioinsight.com');
+ttfadd('eWeek', 'www.eweek.com');
+ttfadd('Networking', 'networking.eweek.com');
+ttfadd('Publish', 'www.publish.com');
+ttfadd('Security IT Hub', 'security.ithub.com');
+ttfadd('Web Buyers Guide', 'www.webbuyersguide.com');
+ttfend();
+//ttspace();
+ttfstart('IT Marketing:');
+ttfadd('Channel Insider', 'www.channelinsider.com');
+ttfadd('eSeminars', 'www.eseminarslive.com');
+ttfadd('Mid-market', 'midmarket.eweek.com');
+ttfadd('Strategic Partner', 'esp.eweek.com');
+ttfend();
+//ttspace();
+ttfstart('Open&nbsp;Source&nbsp;/&nbsp;Microsoft:');
+ttfadd('Desktoplinux', 'www.desktoplinux.com');
+ttfadd('DeviceForge', 'www.deviceforge.com');
+ttfadd('DevSource', 'www.devsource.com');
+ttfadd('LinuxDevices', 'www.linuxdevices.com');
+ttfadd('Linux Watch', 'www.linux-watch.com');
+ttfadd('Microsoft Watch', 'www.microsoft-watch.com');
+ttfadd('PDF Zone', 'www.pdfzone.com');
+ttfadd('Windows for Devices', 'www.windowsfordevices.com');
+ttfend();
+//-->
+</script><td width="50"></td></tr></table><br>
+<span class="bottxt">&copy; 2003-2011 by <a href="http://www.developershed.com"><font color=blue>Developer Shed</font></a>. All rights reserved. DS Cluster 7</span>
+	</div>
+</div>
+
+
+<!-- End Bottom Footer -->
+</td></tr></table>
+</div>
+
+<script type="text/javascript">
+_qevents.push({
+qacct:"p-5c0XF2TvTNfd2"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-5c0XF2TvTNfd2.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+
+<!-- Overlay - infusionsoft -->
+<script type="text/javascript">
+        doclix_pid = 16403;
+        doclix_cid_anchor = 4908;
+</script>
+<script type="text/javascript" src="http://ads.doclix.com/adserver/serve/js/doclix_synd_overlay.js" async="async" defer="defer" charset="utf-8"></script>
+
+
+  
+<!-- start Vibrant Media IntelliTXT script section -->
+<script type="text/javascript" src="http://devshed.us.intellitxt.com/intellitxt/front.asp?ipid=7965"></script>
+<!-- end Vibrant Media IntelliTXT script section -->
+
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		<!-- thread ratings form here -->
+	
+	<!-- / thread rate -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Apache2::reCaptcha</title>
+<meta name="description" content="reCaptcha based auth system using cookies." />
+<meta name="created" content="Tue Jul 15 20:35:02 2008" />
+<meta name="generator" content="Pod::Xhtml 1.59" />
+
+</head>
+<link rel="stylesheet" href="../../cpan.css" type="text/css" /><body>
+<a name="-top-"></a>
+<h1>Apache2::reCaptcha - reCaptcha based auth system using cookies.</h1>
+
+
+<hr /><table width="100%"><tr>
+<td align="left"><a href="../../Apache2-reCaptcha/">Apache2-reCaptcha documentation</a>
+</td><td align="right">
+Contained in the <a href="http://cpan.uwinnipeg.ca/dist/Apache2-reCaptcha">Apache2-reCaptcha</a> distribution.</td>
+</tr></table>
+<hr />
+<div class="pod">
+<!-- INDEX START -->
+<h3 id="TOP">Index</h3>
+
+<ul><li><a href="#NAME">NAME</a></li>
+<li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+<li><a href="#DESCRIPTION">DESCRIPTION</a>
+<ul>
+<li>
+<ul><li><a href="#Why_reCaptcha">Why reCaptcha?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#CONFIGURATION">CONFIGURATION</a>
+<ul>
+<li>
+<ul><li><a href="#strong_reCaptchaTicketDB_strong"><strong>reCaptchaTicketDB</strong></a></li>
+<li><a href="#strong_reCaptchaTicketDBUser_strong"><strong>reCaptchaTicketDBUser</strong></a></li>
+<li><a href="#strong_reCaptchaTicketDBPassword_str"><strong>reCaptchaTicketDBPassword</strong></a></li>
+<li><a href="#strong_reCaptchaTicketTable_strong"><strong>reCaptchaTicketTable</strong></a></li>
+<li><a href="#strong_reCaptchaTicketLoginHandler_s"><strong>reCaptchaTicketLoginHandler</strong> </a></li>
+<li><a href="#strong_reCaptchaPrivatKey_strong"><strong>reCaptchaPrivatKey</strong> </a></li>
+<li><a href="#strong_reCaptchaPublicKey_strong"><strong>reCaptchaPublicKey</strong> </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#BUGS">BUGS</a></li>
+<li><a href="#CREDITS">CREDITS</a></li>
+<li><a href="#AUTHOR">AUTHOR</a></li>
+<li><a href="#SEE_ALSO">SEE ALSO</a>
+</li>
+</ul><hr />
+<!-- INDEX END -->
+<h2>Code Index:</h2>
+<!-- BEGIN CODE INDEX --><a name="code-index"></a>
+<ul>
+<li><a href="#package-Apache2::reCaptcha-">package Apache2::reCaptcha</a>
+<ul>
+<li><a href="#make_login_screen-">make_login_screen</a></li>
+<li><a href="#authen_cred-">authen_cred</a></li>
+<li><a href="#get_conf-">get_conf</a></li>
+<li><a href="#read_file-">read_file</a></li>
+</ul>
+</li>
+<li><a href="#__END__-">__END__</a></li>
+<li><a href="#EOF-">EOF</a></li>
+</ul>
+<!-- END CODE INDEX -->
+
+<h1 id="NAME">NAME</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="NAME_CONTENT">
+<p>Apache2::reCaptcha - reCaptcha based auth system using cookies.</p>
+
+</div>
+<h1 id="SYNOPSIS">SYNOPSIS</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="SYNOPSIS_CONTENT">
+<pre> # reCaptcha.conf
+ PerlModule Apache2::reCaptcha
+ PerlSetVar reCaptchaTicketDB DBI:mysql:database=sessions;host=mysql.example.com
+ PerlSetVar reCaptchaTicketDBUser session
+ PerlSetVar reCaptchaTicketDBPassword supersecret password
+ PerlSetVar reCaptchaTicketTable tickets:ticket_hash:ts
+ PerlSetVar reCaptchaTicketLoginHandler /reCaptchalogin
+ #This is the path for the cookie
+ PerlSetVar reCaptchaPath /
+ PerlSetVar reCaptchaDomain www.example.com
+ #only use if you want to force your URL to be SSL
+ #PerlSetVar reCaptchaSecure 1
+ PerlSetVar reCaptchaPublicKey biglongrandompublicstringfromrecaptchaproject
+ PerlSetVar reCaptchaPrivateKey biglongandomprivatesringfromrecaptchaproject
+ PerlSetVar reCaptchaHeaderTemplate /etc/apache2/recaptcha.header.inc
+ PerlSetVar reCaptchaFooterTemplate /etc/apache2/recaptcha.footer.inc
+ PerlSetVar reCaptchaLoginScript /reCaptchaloginform
+ PerlSetVar reCaptchaCookieName reCaptcha
+ #Having problems, tun on debugging
+ #PerlSetVar AuthCookieDebug	5
+
+ &lt;Location /reCaptcha&gt;
+     AuthType Apache2::reCaptcha
+     AuthName reCaptcha
+     PerlAuthenHandler Apache2::reCaptcha-&gt;authenticate
+     require valid-user
+ &lt;/Location&gt;
+
+ &lt;Location /reCaptchaloginform&gt;
+     AuthType Apache2::reCaptcha
+     AuthName reCaptcha
+     SetHandler perl-script
+     PerlResponseHandler Apache2::reCaptcha-&gt;login_screen
+ &lt;/Location&gt;
+
+ &lt;Location /reCaptchalogin&gt;
+     AuthType Apache2::reCaptcha
+     AuthName reCaptcha
+     SetHandler perl-script
+     PerlResponseHandler Apache2::reCaptcha-&gt;login
+ &lt;/Location&gt;
+
+ &lt;Location /reCaptcha/logout&gt;
+     AuthType Apache2::reCaptcha
+     AuthName reCaptcha
+     SetHandler perl-script
+     PerlResponseHandler Apache2::reCaptcha-&gt;logout
+ &lt;/Location&gt;
+
+
+
+
+</pre>
+
+</div>
+<h1 id="DESCRIPTION">DESCRIPTION</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="DESCRIPTION_CONTENT">
+<p>This Module uses the reCaptcha projects service to protect webresources from automated scripts that try to screen 
+scrape your data. Often times adding a captcha check to a webapp requires recoding your app.  This module puts the 
+verifcation work into apache and makes it easy to use in multiple places on your website.Often times having to do 
+captchas over and over will discourage people from wanting to use the app. This module will asign a cookie based 
+ticket the first time you complete a captcha for a protected resource and expire after fifteen minutes requiring 
+you to do another captcha.  Since this is done using apache you can also white list IPs via Apaches 
+'Allow from/Deny From' syntax.  This is helpful if your services need to be called from other resources.</p>
+<p>This module has support for HTML templates to make it have the same look and feel as the rest of your website.
+Define reCaptchaHeaderTemplate and reCaptchaFooterTemplate. These template files will be prepended and appended 
+to the reCaptcha code.  Infact the reCaptcha interface look and feel can also be conigured.  See the reCaptcha project
+page to figure out how to do this.</p>
+
+</div>
+<h3 id="Why_reCaptcha">Why reCaptcha?</h3>
+<div id="Why_reCaptcha_CONTENT">
+<p>The reCaptcha project is more than just a great serice with accessability support.  By using it you are helping the 
+=head3 <a href="#&lt;a_href=http://archive.org">&lt;a href=&quot;http://archive.org&quot;</a>Internet Archive&lt;/a&gt;&gt; 
+to digitize books that OCR software can't seem to figure out.   </p>
+
+</div>
+<h1 id="CONFIGURATION">CONFIGURATION</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="CONFIGURATION_CONTENT">
+<p>This module requires the following modules</p>
+<pre> * Apache2::AuthTicet
+ * Captcha::reCAPTCHA
+ * CGI
+ * DBD
+ * DBI
+
+</pre>
+<p>You will also need to create the following tables in a database. </p>
+<pre>	CREATE TABLE IF NOT EXISTS `tickets` (
+	  `ticket_hash` char(32) NOT NULL,
+	  `ts` int(11) NOT NULL,
+	  PRIMARY KEY  (`ticket_hash`)
+	) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+	CREATE TABLE IF NOT EXISTS `ticketsecrets` (
+	  `sec_version` bigint(20) unsigned NOT NULL auto_increment,
+	  `sec_data` text NOT NULL,
+	  UNIQUE KEY `sec_version` (`sec_version`)
+	) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+</pre>
+
+</div>
+<h3 id="strong_reCaptchaTicketDB_strong"><strong>reCaptchaTicketDB</strong></h3>
+<div id="strong_reCaptchaTicketDB_strong_CONT">
+<p>This is a standard perl DBI dsn see the DBI for a complete reference on how to set this up. </p>
+
+</div>
+<h3 id="strong_reCaptchaTicketDBUser_strong"><strong>reCaptchaTicketDBUser</strong></h3>
+<div id="strong_reCaptchaTicketDBUser_strong_">
+<p>The Database username to login</p>
+
+</div>
+<h3 id="strong_reCaptchaTicketDBPassword_str"><strong>reCaptchaTicketDBPassword</strong></h3>
+<div id="strong_reCaptchaTicketDBPassword_str-2">
+<p>The database password</p>
+
+</div>
+<h3 id="strong_reCaptchaTicketTable_strong"><strong>reCaptchaTicketTable</strong></h3>
+<div id="strong_reCaptchaTicketTable_strong_C">
+<p>This is the path to where to store tickets the fomat is table:column1:column2</p>
+
+</div>
+<h3 id="strong_reCaptchaTicketLoginHandler_s"><strong>reCaptchaTicketLoginHandler</strong> </h3>
+<div id="strong_reCaptchaTicketLoginHandler_s-2">
+<p>This is the 
+(See the above example to define these settings).</p>
+
+</div>
+<h3 id="strong_reCaptchaPrivatKey_strong"><strong>reCaptchaPrivatKey</strong> </h3>
+<div id="strong_reCaptchaPrivatKey_strong_CON">
+<p>You will recieve a public key from the reCaptcha project once you sign up</p>
+
+</div>
+<h3 id="strong_reCaptchaPublicKey_strong"><strong>reCaptchaPublicKey</strong> </h3>
+<div id="strong_reCaptchaPublicKey_strong_CON">
+<p>You will recieve a public key from the reCaptcha project once you sign up</p>
+<p>It's easier to place the main config (Like the above config) into a conf file and use Include to include it into your httpd.conf or virtual 
+host config. This defines all the basic setup</p>
+
+</div>
+<h1 id="BUGS">BUGS</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="BUGS_CONTENT">
+<p>If you are using this with proxypass, you may have troubles getting it to work past the first level of the uri</p>
+
+</div>
+<h1 id="CREDITS">CREDITS</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="CREDITS_CONTENT">
+<p>Thanks to Michael Shout for is development of AuthTicket which did all the heavy lifting in this module and 
+Perrin Harkins from the mod_perl mailing list for his help. Last but not least Andy Armstrong for his development of the recaptcha api.</p>
+
+</div>
+<h1 id="AUTHOR">AUTHOR</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="AUTHOR_CONTENT">
+<p>Aaron Collins &lt;analogrithems@gmail.com&gt;</p>
+
+</div>
+<h1 id="SEE_ALSO">SEE ALSO</h1><p><a href="#TOP" class="toplink"> 
+<img src="../../up.png" alt="Top" border="0" /></a></p>
+
+<div id="SEE_ALSO_CONTENT">
+<p><a href="../../Apache-AuthTicket/Apache/AuthTicket.html">Apache::AuthTicket</a></p>
+
+</div>
+</div>
+<hr /><table width="100%"><tr>
+<td align="left"><a href="../../Apache2-reCaptcha/">Apache2-reCaptcha documentation</a>
+</td><td align="right">
+Contained in the <a href="http://cpan.uwinnipeg.ca/dist/Apache2-reCaptcha">Apache2-reCaptcha</a> distribution.</td>
+</tr></table>
+
+<hr /><pre><a name="package-Apache2::reCaptcha-"></a><span class="k">package </span><span class="i">Apache2::reCaptcha</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">Apache2::AuthTicket</span><span class="sc">;</span>
+<span class="i">@ISA</span> = <span class="s">(</span><span class="q">&quot;Apache2::AuthTicket&quot;</span><span class="s">)</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">vars</span> <span class="q">qw(%DEFAULTS %CONFIG)</span><span class="sc">;</span>
+
+
+<span class="k">use</span> <span class="w">Captcha::reCAPTCHA</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">CGI</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">strict</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">warnings</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">Apache2::Const</span> <span class="q">qw(REDIRECT OK)</span><span class="sc">;</span>
+<span class="k">use</span> <span class="w">constant</span> <span class="i">DEBUGGING</span> <span class="cm">=&gt;</span> <span class="n">0</span><span class="sc">;</span>
+
+<span class="k">our</span> <span class="i">$VERSION</span> = <span class="q">&#39;0.02&#39;</span><span class="sc">;</span>
+
+<span class="k">my</span> <span class="i">$_SESS_NAME</span>=<span class="q">&#39;reCaptchaID&#39;</span><span class="sc">;</span>
+
+<a name="make_login_screen-"></a><span class="k">sub </span><span class="m">make_login_screen</span> <span class="s">{</span>
+    <span class="k">my</span> <span class="s">(</span><span class="i">$self</span><span class="cm">,</span> <span class="i">$r</span><span class="cm">,</span> <span class="i">$action</span><span class="cm">,</span> <span class="i">$destination</span><span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+
+    <span class="k">if</span> <span class="s">(</span><span class="i">DEBUGGING</span><span class="s">)</span> <span class="s">{</span>
+        <span class="c"># log what we think is wrong.</span>
+        <span class="k">my</span> <span class="i">$reason</span> = <span class="i">$r</span><span class="i">-&gt;prev</span><span class="i">-&gt;subprocess_env</span><span class="s">(</span><span class="q">&quot;AuthCookieReason&quot;</span><span class="s">)</span><span class="sc">;</span>
+        <span class="i">$r</span><span class="i">-&gt;log_error</span><span class="s">(</span><span class="q">&quot;REASON FOR AUTH NEEDED: $reason&quot;</span><span class="s">)</span><span class="sc">;</span>
+        <span class="i">$reason</span> = <span class="i">$r</span><span class="i">-&gt;prev</span><span class="i">-&gt;subprocess_env</span><span class="s">(</span><span class="q">&quot;AuthTicketReason&quot;</span><span class="s">)</span><span class="sc">;</span>
+        <span class="i">$r</span><span class="i">-&gt;log_error</span><span class="s">(</span><span class="q">&quot;AUTHTICKET REASON: $reason&quot;</span><span class="s">)</span><span class="sc">;</span>
+    <span class="s">}</span>
+
+    <span class="i">$r</span><span class="i">-&gt;content_type</span><span class="s">(</span><span class="q">&#39;text/html&#39;</span><span class="s">)</span><span class="sc">;</span>
+
+    <span class="k">my</span> <span class="i">$c</span> = <span class="w">Captcha::reCAPTCHA</span><span class="w">-&gt;new</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$recaptcha_public_key</span> = <span class="i">$self</span><span class="i">-&gt;get_conf</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="q">&#39;PublicKey&#39;</span><span class="s">)</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$header_template</span> = <span class="i">$self</span><span class="i">-&gt;read_file</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="i">$self</span><span class="i">-&gt;get_conf</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="q">&#39;HeaderTemplate&#39;</span><span class="s">)</span><span class="s">)</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$footer_template</span> = <span class="i">$self</span><span class="i">-&gt;read_file</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="i">$self</span><span class="i">-&gt;get_conf</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="q">&#39;FooterTemplate&#39;</span><span class="s">)</span><span class="s">)</span><span class="sc">;</span>
+
+
+    <span class="k">my</span> <span class="i">$cap_str</span> =  <span class="i">$c</span><span class="i">-&gt;get_html</span><span class="s">(</span> <span class="i">$recaptcha_public_key</span> <span class="s">)</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$bdy</span> = <span class="h">&lt;&lt;END</span><span class="sc">;</span>
+<span class="hh">	&lt;form method=&quot;post&quot; action=&quot;$action&quot;&gt;</span>
+<span class="hh">	&lt;input type=&quot;hidden&quot; name=&quot;destination&quot; value=&quot;$destination&quot;&gt;</span>
+<span class="hh">	$cap_str</span>
+<span class="hh">	&lt;input type=&quot;submit&quot; value=&quot;Verify Me&quot;&gt;</span>
+<span class="hh">	&lt;p&gt;</span>
+<span class="hh">	&lt;/form&gt;</span>
+<span class="hh">	&lt;EM&gt;Note: &lt;/EM&gt;</span>
+<span class="hh">	Set your browser to accept cookies in order for login to succeed.</span>
+<span class="hh">	You will be asked to do this again after some period of time.</span>
+<span class="h">END</span>
+
+    <span class="i">$r</span><span class="i">-&gt;print</span><span class="s">(</span><span class="i">$header_template</span> . <span class="i">$bdy</span> . <span class="i">$footer_template</span><span class="s">)</span><span class="sc">;</span>
+
+    <span class="k">return</span> <span class="w">OK</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<span class="c"># check credentials and return a session key if valid</span>
+<span class="c"># return undef if invalid</span>
+<a name="authen_cred-"></a><span class="k">sub </span><span class="m">authen_cred</span> <span class="s">{</span>
+    <span class="k">my</span> <span class="s">(</span><span class="i">$class</span><span class="cm">,</span> <span class="i">$r</span><span class="cm">,</span> <span class="i">@cred</span><span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+
+    <span class="k">my</span> <span class="i">$this</span> = <span class="i">$class</span><span class="i">-&gt;new</span><span class="s">(</span><span class="i">$r</span><span class="s">)</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$query</span> = <span class="w">new</span> <span class="w">CGI</span><span class="sc">;</span>
+
+    <span class="k">my</span> <span class="i">$response</span> = <span class="i">$query</span><span class="i">-&gt;param</span><span class="s">(</span><span class="q">&#39;recaptcha_response_field&#39;</span><span class="s">)</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$challenge</span> = <span class="i">$query</span><span class="i">-&gt;param</span><span class="s">(</span><span class="q">&#39;recaptcha_challenge_field&#39;</span><span class="s">)</span><span class="sc">;</span>
+
+    <span class="k">my</span> <span class="i">$c</span> = <span class="w">Captcha::reCAPTCHA</span><span class="w">-&gt;new</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$privatekey</span> = <span class="i">$this</span><span class="i">-&gt;get_conf</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="q">&#39;PrivateKey&#39;</span><span class="s">)</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$result</span> = <span class="i">$c</span><span class="i">-&gt;check_answer</span><span class="s">(</span> <span class="i">$privatekey</span><span class="cm">,</span> <span class="i">$ENV</span>{<span class="q">&#39;REMOTE_ADDR&#39;</span>}<span class="cm">,</span> <span class="i">$challenge</span><span class="cm">,</span> <span class="i">$response</span><span class="s">)</span><span class="sc">;</span>
+    
+    <span class="k">if</span> <span class="s">(</span><span class="i">$result</span>-&gt;{<span class="w">is_valid</span>}<span class="s">)</span> <span class="s">{</span>
+         <span class="i">$r</span><span class="i">-&gt;log_error</span><span class="s">(</span><span class="q">&quot;reCaptcha Is good&quot;</span><span class="s">)</span><span class="sc">;</span>
+        <span class="k">return</span> <span class="i">$this</span><span class="i">-&gt;make_ticket</span><span class="s">(</span><span class="i">$r</span><span class="cm">,</span> <span class="q">&#39;recaptcha&#39;</span><span class="s">)</span><span class="sc">;</span>
+    <span class="s">}</span>
+    <span class="k">else</span> <span class="s">{</span>
+         <span class="i">$r</span><span class="i">-&gt;log_error</span><span class="s">(</span><span class="q">&quot;reCaptcha is Bad&quot;</span><span class="s">)</span><span class="sc">;</span>
+        <span class="k">return</span> <span class="k">undef</span><span class="sc">;</span>
+    <span class="s">}</span>
+<span class="s">}</span>
+
+<a name="get_conf-"></a><span class="k">sub </span><span class="m">get_conf</span><span class="s">{</span>
+    <span class="k">my</span> <span class="s">(</span><span class="i">$self</span><span class="cm">,</span> <span class="i">$r</span><span class="cm">,</span> <span class="i">$f</span> <span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$auth_name</span> = <span class="i">$r</span><span class="i">-&gt;auth_name</span><span class="sc">;</span>
+    <span class="k">return</span><span class="s">(</span><span class="i">$r</span><span class="i">-&gt;dir_config</span><span class="s">(</span><span class="q">&quot;${auth_name}$f&quot;</span><span class="s">)</span> ||
+                          <span class="i">$CONFIG</span>{<span class="i">$auth_name</span>}-&gt;{<span class="i">$f</span>} ||
+                          <span class="i">$DEFAULTS</span>{<span class="i">$f</span>}<span class="s">)</span><span class="sc">;</span>
+<span class="s">}</span>
+
+
+<a name="read_file-"></a><span class="k">sub </span><span class="m">read_file</span><span class="s">{</span>
+    <span class="k">my</span> <span class="s">(</span><span class="i">$self</span><span class="cm">,</span> <span class="i">$r</span><span class="cm">,</span> <span class="i">$f</span> <span class="s">)</span> = <span class="i">@_</span><span class="sc">;</span>
+    <span class="k">my</span> <span class="i">$cnts</span><span class="sc">;</span>
+    <span class="k">open</span> <span class="w">F</span><span class="cm">,</span> <span class="q">&quot;&lt; $f&quot;</span> <span class="k">or</span> <span class="i">$r</span><span class="i">-&gt;log_error</span><span class="s">(</span><span class="q">&quot;Can&#39;t open $f : $!&quot;</span><span class="s">)</span><span class="sc">;</span>
+    <span class="k">while</span><span class="s">(</span><span class="q">&lt;F&gt;</span><span class="s">)</span><span class="s">{</span>
+       <span class="i">$cnts</span> .= <span class="i">$_</span><span class="sc">;</span>
+    <span class="s">}</span>
+    <span class="k">close</span> <span class="w">F</span><span class="sc">;</span>
+    <span class="k">return</span> <span class="i">$cnts</span><span class="sc">;</span>
+<span class="s">}</span>
+
+<span class="n">1</span><span class="sc">;</span>
+
+<a name="__END__-"></a><span class="k">__END__</span>
+
+</pre><pre><a name="EOF-"></a></pre></body>
+</html>

@@ -1,0 +1,334 @@
+<HTML>
+<HEAD>
+<TITLE>Captcha::reCAPTCHA</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" TEXT="#000000">
+<UL>
+<LI><A HREF="#NAME">NAME
+
+</A><LI><A HREF="#VERSION">VERSION
+
+</A><LI><A HREF="#SYNOPSIS">SYNOPSIS
+
+</A><LI><A HREF="#DESCRIPTION">DESCRIPTION
+
+</A><LI><A HREF="#INTERFACE">INTERFACE
+
+</A><LI><A HREF="#CONFIGURATION%20AND%20ENVIRONMENT">CONFIGURATION AND ENVIRONMENT
+
+</A><LI><A HREF="#DEPENDENCIES">DEPENDENCIES
+
+</A><LI><A HREF="#INCOMPATIBILITIES">INCOMPATIBILITIES
+
+</A><LI><A HREF="#BUGS%20AND%20LIMITATIONS">BUGS AND LIMITATIONS
+
+</A><LI><A HREF="#AUTHOR">AUTHOR
+
+</A><LI><A HREF="#LICENCE%20AND%20COPYRIGHT">LICENCE AND COPYRIGHT
+
+</A><LI><A HREF="#DISCLAIMER%20OF%20WARRANTY">DISCLAIMER OF WARRANTY
+
+</A></UL>
+<HR>
+<H1><A NAME="NAME">NAME
+
+</A></H1>
+
+<P>Captcha::reCAPTCHA - A Perl implementation of the reCAPTCHA API
+
+</P><H1><A NAME="VERSION">VERSION
+
+</A></H1>
+
+<P>This document describes Captcha::reCAPTCHA version 0.92
+
+</P><H1><A NAME="SYNOPSIS">SYNOPSIS
+
+</A></H1>
+
+<PRE>    use Captcha::reCAPTCHA;
+
+    my $c = Captcha::reCAPTCHA-&gt;new;
+
+    # Output form
+    print $c-&gt;get_html( 'your public key here' );
+
+    # Verify submission
+    my $result = $c-&gt;check_answer(
+        'your private key here', $ENV{'REMOTE_ADDR'},
+        $challenge, $response
+    );
+
+    if ( $result-&gt;{is_valid} ) {
+        print &quot;Yes!&quot;;
+    }
+    else {
+        # Error
+        $error = $result-&gt;{error};
+    }</PRE>
+
+<P>For complete examples see the /examples subdirectory
+
+</P><H1><A NAME="DESCRIPTION">DESCRIPTION
+
+</A></H1>
+
+<P>reCAPTCHA is a hybrid mechanical turk and captcha that allows visitors
+who complete the captcha to assist in the digitization of books.
+
+</P>
+<P>From <A HREF="http://recaptcha.net/learnmore.html">http://recaptcha.net/learnmore.html</A>:
+
+</P>
+<PRE>    reCAPTCHA improves the process of digitizing books by sending words that
+    cannot be read by computers to the Web in the form of CAPTCHAs for
+    humans to decipher. More specifically, each word that cannot be read
+    correctly by OCR is placed on an image and used as a CAPTCHA. This is
+    possible because most OCR programs alert you when a word cannot be read
+    correctly.</PRE>
+
+<P>This Perl implementation is modelled on the PHP interface that can be
+found here:
+
+</P>
+<P><A HREF="http://recaptcha.net/plugins/php/">http://recaptcha.net/plugins/php/</A>
+
+</P>
+<P>To use reCAPTCHA you need to register your site here:
+
+</P>
+<P><A HREF="https://admin.recaptcha.net/recaptcha/createsite/">https://admin.recaptcha.net/recaptcha/createsite/</A>
+
+</P><H1><A NAME="INTERFACE">INTERFACE
+
+</A></H1>
+<DL><DT><A NAME="new"><CODE>new</CODE>
+
+</A></DT>
+<DD>
+Create a new <CODE>Captcha::reCAPTCHA</CODE>.
+
+</DD>
+<DT><A NAME="get_html(%20%24pubkey%2c%20%24error%2c%20%24use_ssl%2c%20%24options%20)"><CODE>get_html( $pubkey, $error, $use_ssl, $options )</CODE>
+
+</A></DT>
+<DD>
+
+<P>Generates HTML to display the captcha.
+
+</P>
+<PRE>    print $captcha-&gt;get_html( $PUB, $err );</PRE>
+<DL><DT><A NAME="%24pubkey"><CODE>$pubkey</CODE>
+
+</A></DT>
+<DD>
+Your reCAPTCHA public key, from the API Signup Page
+
+</DD>
+<DT><A NAME="%24error"><CODE>$error</CODE>
+
+</A></DT>
+<DD>
+Optional. If set this should be either a string containing a reCAPTCHA
+status code or a result hash as returned by <CODE>check_answer</CODE>.
+
+</DD>
+<DT><A NAME="%24use_ssl"><CODE>$use_ssl</CODE>
+
+</A></DT>
+<DD>
+Optional. Should the SSL-based API be used? If you are displaying a page
+to the user over SSL, be sure to set this to true so an error dialog
+doesn't come up in the user's browser.
+
+</DD>
+<DT><A NAME="%24options"><CODE>$options</CODE>
+
+</A></DT>
+<DD>
+Optional. A reference to a hash of options for the captcha. See 
+<CODE>get_options_setter</CODE> for more details.
+
+</DD>
+</DL>
+
+<P>Returns a string containing the HTML that should be used to display
+the captcha.
+
+</P></DD>
+<DT><A NAME="get_options_setter(%20%24options%20)"><CODE>get_options_setter( $options )</CODE>
+
+</A></DT>
+<DD>
+
+<P>You can optionally customize the look of the reCAPTCHA widget with some
+JavaScript settings. <CODE>get_options_setter</CODE> returns a block of Javascript
+wrapped in &lt;script&gt; .. &lt;/script&gt; tags that will set the options to be used
+by the widget.
+
+</P>
+<P><CODE>$options</CODE> is a reference to a hash that may contain the following keys:
+
+</P><DL><DT><A NAME="theme"><CODE>theme</CODE>
+
+</A></DT>
+<DD>
+Defines which theme to use for reCAPTCHA. Possible values are 'red',
+'white' or 'blackglass'. The default is 'red'.
+
+</DD>
+<DT><A NAME="tabindex"><CODE>tabindex</CODE>
+
+</A></DT>
+<DD>
+Sets a tabindex for the reCAPTCHA text box. If other elements in the
+form use a tabindex, this should be set so that navigation is easier for
+the user. Default: 0.
+
+</DD>
+</DL>
+</DD>
+<DT><A NAME="check_answer"><CODE>check_answer</CODE>
+
+</A></DT>
+<DD>
+
+<P>After the user has filled out the HTML form, including their answer for
+the CAPTCHA, use <CODE>check_answer</CODE> to check their answer when they
+submit the form. The user's answer will be in two form fields,
+recaptcha_challenge_field and recaptcha_response_field. The reCAPTCHA
+library will make an HTTP request to the reCAPTCHA server and verify the
+user's answer.
+
+</P><DL><DT><A NAME="%24privkey"><CODE>$privkey</CODE>
+
+</A></DT>
+<DD>
+Your reCAPTCHA private key, from the API Signup Page.
+
+</DD>
+<DT><A NAME="%24remoteip"><CODE>$remoteip</CODE>
+
+</A></DT>
+<DD>
+The user's IP address, in the format 192.168.0.1.
+
+</DD>
+<DT><A NAME="%24challenge"><CODE>$challenge</CODE>
+
+</A></DT>
+<DD>
+The value of the form field recaptcha_challenge_field
+
+</DD>
+<DT><A NAME="%24response"><CODE>$response</CODE>
+
+</A></DT>
+<DD>
+The value of the form field recaptcha_response_field.
+
+</DD>
+</DL>
+
+<P>Returns a reference to a hash containing two fields: <CODE>is_valid</CODE>
+and <CODE>error</CODE>.
+
+</P>
+<PRE>    my $result = $c-&gt;check_answer(
+        'your private key here', $ENV{'REMOTE_ADDR'},
+        $challenge, $response
+    );
+
+    if ( $result-&gt;{is_valid} ) {
+        print &quot;Yes!&quot;;
+    }
+    else {
+        # Error
+        $error = $result-&gt;{error};
+    }</PRE>
+
+<P>See the /examples subdirectory for examples of how to call <CODE>check_answer</CODE>.
+
+</P></DD>
+</DL>
+<H1><A NAME="CONFIGURATION%20AND%20ENVIRONMENT">CONFIGURATION AND ENVIRONMENT
+
+</A></H1>
+
+<P>Captcha::reCAPTCHA requires no configuration files or environment
+variables.
+
+</P>
+<P>To use reCAPTCHA sign up for a key pair here:
+
+</P>
+<P><A HREF="https://admin.recaptcha.net/recaptcha/createsite/">https://admin.recaptcha.net/recaptcha/createsite/</A>
+
+</P><H1><A NAME="DEPENDENCIES">DEPENDENCIES
+
+</A></H1>
+
+<P>LWP::UserAgent,
+HTML::Tiny
+
+</P><H1><A NAME="INCOMPATIBILITIES">INCOMPATIBILITIES
+
+</A></H1>
+
+<P>None reported .
+
+</P><H1><A NAME="BUGS%20AND%20LIMITATIONS">BUGS AND LIMITATIONS
+
+</A></H1>
+
+<P>No bugs have been reported.
+
+</P>
+<P>Please report any bugs or feature requests to
+<CODE>bug-captcha-recaptcha@rt.cpan.org</CODE>, or through the web interface at
+<A HREF="http://rt.cpan.org">http://rt.cpan.org</A>.
+
+</P><H1><A NAME="AUTHOR">AUTHOR
+
+</A></H1>
+
+<P>Andy Armstrong  <CODE>&lt;andy@hexten.net&gt;</CODE>
+
+</P><H1><A NAME="LICENCE%20AND%20COPYRIGHT">LICENCE AND COPYRIGHT
+
+</A></H1>
+
+<P>Copyright (c) 2007, Andy Armstrong <CODE>&lt;andy@hexten.net&gt;</CODE>. All rights reserved.
+
+</P>
+<P>This module is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself. See <A HREF="../perlartistic.html">perlartistic</A>.
+
+</P><H1><A NAME="DISCLAIMER%20OF%20WARRANTY">DISCLAIMER OF WARRANTY
+
+</A></H1>
+
+<P>BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE SOFTWARE &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE
+ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH
+YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
+NECESSARY SERVICING, REPAIR, OR CORRECTION.
+
+</P>
+<P>IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE
+LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL,
+OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE
+THE SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
+RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
+FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
+SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+</P>
+</BODY>
+</HTML>

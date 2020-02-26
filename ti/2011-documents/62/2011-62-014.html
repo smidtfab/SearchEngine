@@ -1,0 +1,455 @@
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Old Nabble - Database World (DBWorld) - [Dbworld] UPDATE: Workshop on Ubiquitous Crowdsourcing at UbiComp 2010 - CfP</title>
+
+<link rel="stylesheet" href="/site6.css" type="text/css" />
+
+<script type="text/javascript" src="/util/jquery.pack.js"></script>
+<script type="text/javascript" src="/util/nabbledropdown.pack.js"></script>
+<script type="text/javascript" src="/Javascript.jtp"></script>
+
+<script type="text/javascript">
+Nabble.setVar("skin",null);
+</script>
+
+
+<script type="text/javascript">
+	var f = 729;
+	if (Nabble.isEmbedded) {
+		f = Nabble.embedForumID;
+	}
+	if (f) {
+		Nabble.setVar('customStyle', f);
+		document.write('<link rel="stylesheet" hr' + 'ef="/catalog/CustomStyle.jtp?forum=' + f + '" type="text/css" />');
+	}
+</script>
+
+<script type="text/javascript">
+	Nabble.setFontSize();
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script src="http://old.nabble.com/static/analytics.js?5" type="text/javascript"></script>
+<script type="text/javascript">
+	Nabble.page = 'forum.TopicDump';
+</script>
+
+<META NAME="description" CONTENT="[Dbworld] UPDATE: Workshop on Ubiquitous Crowdsourcing at UbiComp 2010 - CfP. Summary: Crowdsourcing is successfully engaging networked people to collect...">
+<META NAME="keywords" CONTENT="update, cfp, workshop, crowdsourcing, dbworld, at, on, 2010, ubiquitous, world, database, ubicomp">
+<META NAME="robots" CONTENT="index,follow">
+
+
+<script>
+
+// flagging
+
+Nabble.setFlag = function(postId) {
+	if( this.user==null ) {
+		if( confirm(
+			"You must be logged in to flag a message.\n"
+			+"Would you like to login now?"
+		) ) {
+			parent.location = "/user/Login.jtp?nextUrl="+encodeURIComponent(parent.location);
+		}
+		return;
+	}
+	this.isFlagged[postId] = !this.isFlagged[postId];
+	parent.location = "/forum/Flag.jtp?post=" + postId + "&flag=" + this.isFlagged[postId];
+	this.showFlag(postId);
+};
+
+Nabble.flaggedImg = new Image();
+Nabble.flaggedImg.src = "/images/icon_flagged.png";
+Nabble.unflaggedImg = new Image();
+Nabble.unflaggedImg.src = "/images/icon_unflagged.png";
+
+Nabble.showFlag = function(postId) {
+	var img = this.get("nabble.flag"+postId);
+	if( this.isFlagged[postId] ) {
+		img.src = this.flaggedImg.src;
+		img.alt = "Flagged, click to clear flag";
+	} else {
+		img.src = this.unflaggedImg.src;
+		img.alt = "Click to flag this post";
+	}
+	this.get("nabble.aflag"+postId).title = img.alt;
+}
+
+// rating
+
+Nabble.emptyStar = new Image();
+Nabble.emptyStar.src = "/images/icon_star_grey.png";
+Nabble.ratedStar = new Image();
+Nabble.ratedStar.src = "/images/icon_star_red.png";
+Nabble.emptySpam = new Image();
+Nabble.emptySpam.src = "/images/icon_blocked_gray.png";
+Nabble.ratedSpam = new Image();
+Nabble.ratedSpam.src = "/images/icon_blocked_red.png";
+
+Nabble.clicked = function(postId,n) {
+	if( this.user==null ) {
+		if( confirm(
+			"You must be logged in to rate a post.\n"
+			+"Would you like to login now?"
+		) ) {
+			parent.location = "/user/Login.jtp?nextUrl="+encodeURIComponent(self.location);
+		}
+		return;
+	}
+	this.ratedStars[postId] = n;
+	Nabble.loadScript("/rating/SetRating.jtp?post="+postId+"&rating="+n+"&pwd="+this.getCookie("password"));
+};
+
+Nabble.mouseover = function(postId,n) {
+	this.get('nabble.spam'+postId).src = n==0 ? this.ratedSpam.src : this.emptySpam.src;
+	for( i=1; i<=n; i++ ) {
+		this.get('nabble.star'+postId+'-'+i).src = this.ratedStar.src;
+	}
+	for( ; i<=5; i++ ) {
+		this.get('nabble.star'+postId+'-'+i).src = this.emptyStar.src;
+	}
+	status = n == -1 ? null : this.get('nabble.star'+postId+'-'+n).alt;
+	this.get("nabble.descriptor"+postId).innerHTML =
+			n == -1 ? "Clear Rating" :
+		[
+			"Spam",
+			"Poor Post",
+			"Below Average Post",
+			"Average Post",
+			"Above Average Post",
+			"Excellent Post",
+		][n];
+};
+
+Nabble.mouseout = function(postId) {
+	this.get('nabble.spam'+postId).src = this.ratedStars[postId]==0 ? this.ratedSpam.src : this.emptySpam.src;
+	for( i=1; i<=this.ratedStars[postId]; i++ ) {
+		this.get('nabble.star'+postId+'-'+i).src = this.ratedStar.src;
+	}
+	for( ; i<=5; i++ ) {
+		this.get('nabble.star'+postId+'-'+i).src = this.emptyStar.src;
+	}
+	status = defaultStatus;
+	this.get("nabble.descriptor"+postId).innerHTML = '- Use ratings to moderate (<a title="Click for more info" href="http://old.nabble.com/help/Answer.jtp?id=16">?</a>)';
+};
+
+Nabble.setEditAlert = function(alertId) {
+    var link = this.get('nabble.alertlink');
+    link.href = "/alerts/EmailAlerts.jtp?id="+alertId+"&from=modify&back="+encodeURIComponent(self.location);
+    link.innerHTML = 'Edit alert';
+};
+
+Nabble.searchterms = Nabble.getSearchterms();
+if( Nabble.gquery!=null && Nabble.hideAd )
+	Nabble.hasAdSense = false;
+
+Nabble.tview = "dump";
+
+Nabble.setView = function(newView,post) {
+	Nabble.setVar("tview",newView);
+	if (newView=="newthreaded")
+		var url = "http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-tt29183997.html";
+	else if (newView=="newchron")
+		var url = "http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-tc29183997.html";
+	else
+		var url = "http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-to29183997.html";
+	
+	if( post != null )
+		url += "#a" + post;
+	location.replace(url);
+};
+
+Nabble.cur = location.hash ? location.hash.substr(2) : null;
+
+Nabble.setMarker = function(post) {
+	if( Nabble.cur ) {
+		var t = Nabble.get( "nabble.i" + Nabble.cur );
+		if( t ) {
+			t.style.visibility = "hidden";
+		}
+	}
+	Nabble.cur = post;
+	var t = Nabble.get( "nabble.i" + Nabble.cur );
+	if( t ) {
+		t.style.visibility = "visible";
+	}
+}
+
+Nabble.messageTextWidth();
+
+$(document).ready(function(){
+	hideQuotes();
+});
+
+</script>
+</head>
+<body embed="fixScroll">
+
+<script>
+Nabble.addCssRule(document.styleSheets[0],'.nabble a:link','color:'+document.linkColor);
+Nabble.addCssRule(document.styleSheets[0],'.nabble a:visited','color:'+document.vlinkColor);
+</script>
+
+<div class="nabble" id="nabble">
+	<div class="top-bar">
+		<div class="breadcrumbs" style="float:left;">
+			<span id="nabble.root">
+				<script type="text/javascript">
+					if (!Nabble.isEmbedded) {
+						document.write('<a href="http://www.nabble.com" target="_top">Nabble</a> | <a href="http://old.nabble.com/" target="_top">Old Nabble1</a>');
+					} else if (false) {
+						document.write('<a href="' + top.nabbleinfo.forumUrl + '">Back to the forum</a>');
+					}
+				</script>
+			</span>
+			<span id="nabble.path">
+				<div class="weak-color" style="display:inline">|&nbsp;</div><nobr><a href="http://old.nabble.com/Database-World-%28DBWorld%29-f729.html" embed="fixTarget[729]" target="_top" >Database World (DBWorld)</a></nobr>
+</span>
+</div>
+<div style="text-align:right;">
+<span style="white-space:nowrap;" id="nabble-user-header"></span>
+</div>
+</div>
+<div style="clear:both;"></div>
+<script type="text/javascript">
+Nabble.userHeader(729);
+</script>
+
+<h1 style="margin-top: .25em;">[Dbworld] UPDATE: Workshop on Ubiquitous Crowdsourcing at UbiComp 2010 - CfP</h1>
+
+<table style="width: 100%;margin: .5em 0 1em;border-collapse:collapse;">
+	<tr>
+		<td>
+			<div style="float:left;white-space:nowrap">
+				View:
+				<select id="nabble.viewSelect" onchange="Nabble.setView(this.value,Nabble.cur)">
+					<option value="threaded">Threaded</option>
+					<option value="chron">Chronologically</option>
+					<option value="dump">All Messages</option>
+				</select>
+				<script>
+				Nabble.selectOption(Nabble.get("nabble.viewSelect"),Nabble.tview);
+				</script>
+				<a href="javascript:Nabble.setView('newthreaded',Nabble.cur)" style="font-size:80%">New views</a>
+			</div>
+			<div style="float:right;white-space:nowrap">
+				1 Messages
+				&mdash;
+				<span style="white-space: nowrap;">Rating Filter:</span>
+				<select onchange="Nabble.setTop(this.value);">
+				
+<option value="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-td29183997r0.html"  >0</option>
+
+<option value="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-td29183997r1.html"  >1</option>
+
+<option value="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-td29183997.html" selected >2</option>
+
+<option value="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-td29183997r3.html"  >3</option>
+
+<option value="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-td29183997r4.html"  >4</option>
+
+<option value="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-td29183997r5.html"  >5</option>
+
+</select>
+&nbsp;
+<a id="nabble.alertlink" href="/alerts/EmailAlerts.jtp?topic=9763319&from=new" rel="nofollow" embed="fixTarget" target="_top">Alert me</a>
+&nbsp;
+
+<span id="nabble.assign"></span>
+</div>
+</td>
+</tr>
+</table>
+
+<style type="text/css">
+	.nabble .chron-dump-table td {
+		padding: .8em .4em 1.25em .8em;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+	}
+	.nabble .chron-dump-table td h2 {
+		font-weight: bold;
+		font-size: 1.2em;
+		display: inline;
+		margin-left: 0;
+		margin-right: .6em;
+	}
+	.nabble .chron-dump-table td.current-message {
+		width: 1.7em;
+		padding-top: 1.25em;
+	}
+	.nabble .chron-dump-table td div.message-details {
+		margin: .75em 0;
+	}
+	.nabble .chron-dump-table td div.message-details a {
+		text-decoration: none;
+	}
+	.nabble .chron-dump-table td div.message-details a:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<table class="chron-dump-table" style="width: 100%;border-collapse: collapse;">
+
+
+
+<tr valign="top">
+<!-- Current Message -->
+<td class="current-message">
+	<span id="nabble.i29183997" style="visibility:hidden;"><img alt="" width="12" height="12" src="/images/icon_tri.png" align="absmiddle" /></span><br />
+</td>
+<td>
+<!-- Subject -->
+
+<a name="a29183997" />
+	<h2>[Dbworld] UPDATE: Workshop on Ubiquitous Crowdsourcing at UbiComp 2010 - CfP</h2><a id="nabble.aflag29183997" href="javascript: void Nabble.setFlag(29183997);"><img id="nabble.flag29183997" src="/images/icon_unflagged.png" width="15" height="15" border="0" onmouseover='status = alt; return true;' onmouseout='status = defaultStatus; return true;' /></a>
+<!-- /Subject -->
+<!-- Message Actions -->
+<span id='nabble.rating29183997'>
+<script>document.write(Nabble.ratingStars(3));</script>
+</span>
+
+<div class="message-actions weak-color">
+<p class="message-actions1">
+by <script>document.write('<a href=\"' +'/user/UserProfile' + '.jtp?'+'user=1750484\" rel=\"nofollow\" ' + Nabble.embeddedTarget('_top') + '>');</script>Ohad Greenshpan<script>document.write('</a>');</script>
+<span class="weak-color"><script>document.write(Nabble.formatDateLong(new Date(1279288261000)));</script></span> ::
+Rate this Message:
+<a href="#" title="Click to mark as Spam" onmouseover='Nabble.mouseover(29183997,0); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,0); return false;'><img id="nabble.spam29183997" height="12" width="12" alt="" border="0" style="vertical-align:middle;" /></a>
+<a href="#" title="Click to rate as Poor Post" onmouseover='Nabble.mouseover(29183997,1); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,1); return false;'><img id="nabble.star29183997-1" height="12" width="12" alt="" border="0" style="vertical-align:middle;" /></a><a href="#" title="Click to rate as Below Average Post" onmouseover='Nabble.mouseover(29183997,2); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,2); return false;'><img id="nabble.star29183997-2" height="12" width="12" alt="" border="0" style="vertical-align:middle;" /></a><a href="#" title="Click to rate as Average Post" onmouseover='Nabble.mouseover(29183997,3); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,3); return false;'><img id="nabble.star29183997-3" height="12" width="12" alt="" border="0" style="vertical-align:middle;" /></a><a href="#" title="Click to rate as Above Average Post" onmouseover='Nabble.mouseover(29183997,4); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,4); return false;'><img id="nabble.star29183997-4" height="12" width="12" alt="" border="0" style="vertical-align:middle;" /></a><a href="#" title="Click to rate as Excellent Post" onmouseover='Nabble.mouseover(29183997,5); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,5); return false;'><img id="nabble.star29183997-5" height="12" width="12" alt="" border="0" style="vertical-align:middle;" /></a>
+<a href="#" title="Click to clear rating" onmouseover='Nabble.mouseover(29183997,-1); return true;' onmouseout='Nabble.mouseout(29183997); return true;' onclick='Nabble.clicked(29183997,-1); return false;'><img id='nabble.star29183997-0' alt="" border="0" src='/images/icon_clear_rating.png' style='vertical-align:middle;' /></a>
+<span id="nabble.descriptor29183997"></span>
+</p>
+<p class="message-actions2">
+
+Reply (Restricted by the Administrator)
+
+| <a href="javascript: void Nabble.setView('newthreaded',29183997);">View Threaded</a>
+| <a href="http://old.nabble.com/-Dbworld--UPDATE%3A-Workshop-on-Ubiquitous-Crowdsourcing-at-UbiComp-2010---CfP-p29183997.html" >Show Only this Message</a>
+</p>
+
+</div>
+<div class="message-details">
+<div id="nabble.pending29183997"></div>
+<div class="message-text" id="nabble.msgtxt29183997">Summary:
+<br>Crowdsourcing is successfully engaging networked people to collect information, analyze data and solve problems on-line. However, crowdsourcing is yet to reach its full potential, by lowering the barrier to participation and increasing the reachable population of high-quality contributors. This calls for research to explore mechanisms that facilitate participation of crowd at any time and at any situation. Furthermore, building and deploying crowdsourcing applications that are embedded in our surroundings, beyond the limited, existing, purpose-built prototypes, will require significant progress toward integration with the ubiquitous computing infrastructure. 
+<br>This workshop challenges researchers and practitioners to think about three key aspects of ubiquitous crowdsourcing. Firstly, to establish technological foundations, what are the interaction models and protocols between the ubiquitous computing systems and the crowd? Secondly, how is crowdsourcing going to face the challenges in quality assurance, while providing valuable incentive frameworks that enable honest contributions? Finally, what are the novel applications of crowdsourcing enabled by ubiquitous computing systems?
+<br><br>Topics:
+<br>We are interested in contributions from practitioners and researchers in both industry and academia. Themes include:
+<br>1. Crowdsourcing model: What are the key components of the ubiquitous crowdsourcing service? What are the requirements from use cases in academia and industry? 
+<br>2. Expert and virtual team discovery in evolving networks: How can we describe and categorize experts skills and experiences? Furthermore, for complex tasks, a virtual team of globally distributed experts needs to be assembled, by efficiently matching experts based on skill requirements and social relationships.
+<br>3. Incentives and trust: &nbsp;What is the incentive model that would encourage high quality (trusted) contributions on-line? How do we motivate experts to participate? Furthermore, how does an expert's reputation get established through interaction with crowdsourcing systems?
+<br>4. Quality Control: What are the novel mechanisms that can be employed to maintain the quality of contributions? How can we distinguish between quality of users when we have so many of them?
+<br>5. Crowdsourcing reaches the mobile: How do crowdsouricng solutions integrate with the mobile platforms? What are the new crowdsourcing applications in the mobile domain?
+<br><br>Submissions:
+<br>Participants will be selected based on short 4-page papers and demonstrations around the aforementioned topics of interest. All papers should follow the UbiComp submission guidelines (<a href="http://www.ubicomp2010.org/templates" target="_top" rel="nofollow">http://www.ubicomp2010.org/templates</a>). 
+<br>E-mail your submissions to <a>ubicrowd2010@...</a>
+<br><br>Important Dates:
+<br>Submission deadline for papers (incl. abstracts): July 26th
+<br>Notification of acceptance: Aug 2nd
+<br>Camera ready deadline: Aug 6th
+<br><br>Workshop co-chairs:
+<br>* Maja Vukovic, IBM Research, TJ Watson, Hawthorne, USA (<a>maja@...</a>)
+<br>* Ohad Greenshpan, IBM Research and Tel-Aviv University, Israel (<a>ohadg@...</a>)
+<br>* Soundar Kumara, Pennsylvania State University, USA (<a>u1o@...</a>)
+<br>_______________________________________________
+<br>Please do not post msgs that are not relevant to the database community at large. &nbsp;Go to www.cs.wisc.edu/dbworld for guidelines and posting forms.
+<br>To unsubscribe, go to <a href="https://lists.cs.wisc.edu/mailman/listinfo/dbworld" target="_top" rel="nofollow">https://lists.cs.wisc.edu/mailman/listinfo/dbworld</a><br></div>
+
+<script type="text/javascript"><!--
+if (Nabble.ads) Nabble.ads("banner");
+//--></script>
+
+<script>
+if (Nabble.searchterms != null && Nabble.searchterms.length > 0) {
+	Nabble.hilt(Nabble.searchterms, Nabble.get("nabble.msgtxt29183997"));
+}
+</script>
+</div>
+</td>
+
+</tr>
+
+</table>
+
+
+<form><input type="hidden" id="nabble.back" value="no" /></form>
+<div id='nabble.searchResults'></div>
+<script>
+//Nabble.gquery = 'test';
+//Nabble.topicDumpSearch = true;
+if (Nabble.gquery!=null) {
+	if (Nabble.topicDumpSearch) {
+		Nabble.get('nabble.searchResults').innerHTML = '<h1>&nbsp;Other threads matching \"<strong>'+Nabble.gquery+'</strong>\":</h1>'+
+		'<p style=\"margin-left: 3em;\">looking for matching threads...</p>';
+		Nabble.loadScript('/forum/TopicDump$SearchJs.jtp?query='+encodeURIComponent(Nabble.gquery)+'&post=29183997');
+		Nabble.setVar('prev',null);
+	} else {
+		Nabble.setVar('prev',
+			'<big><a id="nabble.prev_search" href="/forum/Search.jtp?query='+encodeURIComponent(Nabble.gquery)+'">Search Nabble for "<b>'+Nabble.gquery+'</b>"</a>'
+		);
+	}
+}
+
+if( Nabble.prev )
+	Nabble.writeReturnToLink(Nabble.prev);
+
+</script>
+
+
+<table class="footer-table shaded-bg-color" >
+<tr>
+	<td class="footer-left">
+	<a href="http://n2.nabble.com/free-forum.html" target="_top">Free embeddable forum</a> powered by <a href="http://www.nabble.com" title="Free forum and other embeddable web apps">Nabble</a>
+	</td>
+	<td class="footer-right">
+	<a href="/help/Index.jtp" target="_top" embed="fixTarget">Forum Help</a>
+	</td>
+	
+</tr>
+</table>
+</div>
+
+<script>
+(function(){
+	if( Nabble.cur ) {
+		var t = Nabble.get( "nabble.i" + Nabble.cur );
+		if( t ) {
+			t.style.visibility = "visible";
+		}
+	}
+	if( Nabble.gquery!=null ) {
+		var t = Nabble.get("nabble.searchQuery");
+		t.value = Nabble.gquery;
+		Nabble.selectOption(Nabble.get("nabble.searchSelect"),"n");
+		if( !Nabble.notRed ) {
+			t.className += "error-message";
+			t.style.borderStyle = "solid";
+			t.style.borderWidth = "3px";
+			t.style.backgroundColor = Nabble.currentStyle(Nabble.get('nabble')).backgroundColor;
+		}
+	}
+})();
+</script>
+
+<script src="/forum/TopicDump$Js.jtp?root=29183997&rating=2&p=29183997&u=1750484"></script>
+
+<script type="text/javascript">
+	Nabble.analytics();
+</script>
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-34EL1DZyJypTI"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<a href="http://www.quantcast.com/p-34EL1DZyJypTI" rel="nofollow" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-34EL1DZyJypTI.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+</body>
+</html>

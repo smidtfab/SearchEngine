@@ -1,0 +1,977 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<!-- Mobify ReRoute JS -->
+<script type="text/javascript"
+src="http://m.readwriteweb.com/mobify/redirect.js"></script>
+<script type="text/javascript">try{_mobify("http://m.readwriteweb.com/");}
+catch(err) {};</script>
+<!-- Meta Tags -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Movable Type Pro 4.35-en" />
+<meta name="author" content="Richard MacManus" />
+<meta name="copyright" content="2003-2009 ReadWriteWeb" />
+<!-- Facebook properties -->
+<meta property="fb:app_id" content="57345927025" />
+<meta property="og:site_name" content="ReadWriteWeb"/>
+
+<meta property="og:title" content="Secrets of the LinkedIn Data Scientists"/>
+<meta property="og:image" content="http://www.readwriteweb.com/hack/linkedin.jpg"/>
+<meta property="og:type" content="article"/> 
+<meta property="og:url" content="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php"/>
+
+
+
+<meta name="description" content="I suffer from severe data envy when it comes to LinkedIn. They have detailed information on millions of people who are motivated to keep their profiles up-to-date, collect ..." />
+<link rel="canonical" href="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php"/>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.readwriteweb.com/hack/rss.xml" />
+
+<!-- Icons -->
+
+<link rel="icon" href="http://rww.readwriteweb.netdna-cdn.com/favicon.ico" type="image/ico" />
+<link rel="shortcut icon" href="http://rww.readwriteweb.netdna-cdn.com/favicon.ico" type="image/ico" />
+
+<!-- Global CSS + JS -->
+
+
+<link rel="stylesheet" href="http://rww.readwriteweb.netdna-cdn.com/mt-static/themes/df/rww_global.css?v=4" type="text/css" />
+<link rel="stylesheet" href="http://rww.readwriteweb.netdna-cdn.com/mt-static/themes/df/rww_print.css" type="text/css" media="print"  />
+
+<script type="text/javascript">
+
+
+
+</script>
+<!-- Small fix for attfc div pushing nav down - JWS 01/15/2010 -->
+
+<style type="text/css">
+div#atffc { position: absolute; top: 0px; left: 0px; }
+</style>
+
+<!-- Channel CSS + JS -->
+
+<link rel="stylesheet" href="http://rww.readwriteweb.netdna-cdn.com/hack/styles.css" type="text/css" />
+
+
+
+<script src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("jquery", "1");
+  google.load("jqueryui", "1");
+</script>
+
+<script type="text/javascript" src="http://rww.readwriteweb.netdna-cdn.com/mt-static/themes/df/scripts/jw_scripts.js"></script>
+
+<!-- END Channel CSS and JS -->
+
+<!-- RSS -->
+
+
+<!-- Title -->
+<title>
+
+  Secrets of the LinkedIn Data Scientists
+
+</title>
+
+
+
+
+
+
+
+<link rel="prev" href="http://www.readwriteweb.com/hack/2010/11/learn-ruby-in-browser.php" title="Learn Ruby and Rails From the Comfort of Your Browser with Try Ruby and Rails for Zombies" />
+
+
+<link rel="next" href="http://www.readwriteweb.com/hack/2010/11/java7-release-date.php" title="Oracle Announces Release Date for Java 7" />
+
+
+
+
+<script type="text/javascript" src="http://www.readwriteweb.com/hack/mt.js"></script>
+
+
+
+<link rel="alternate" type="application/atom+xml" href="http://www.readwriteweb.com/hack/2010/11/secrets_of_the_linkedin_data_scientists.xml" title="Comments">
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var post_title = 'Secrets of the LinkedIn Data Scientists';
+var post_url = 'http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php';
+var image_src = 'http://www.readwriteweb.com/hack/linkedin.jpg';
+var image_href = post_url;
+var story_template_id = '57352487025';
+/* ]]> */
+</script>
+
+
+
+
+</head>
+
+<body>
+<!-- Stats -->
+
+<!-- FM Tracking Pixel -->
+<script type='text/javascript' src='http://static.fmpub.net/site/readwrite'></script>
+<!-- FM Tracking Pixel -->
+
+<!-- MISC -->
+
+
+  <script type="text/javascript">
+var img = new Image();
+if (typeof commenter_id == 'undefined') { var commenter_id = ''; }
+img.src = "http://www.readwriteweb.com/hack/stats.php?u=" + escape(document.location.href) + "&r=" + escape(document.referrer) + "&a=" + commenter_id + "&b=17&t=entry&i=23144";
+</script>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  // FM GA
+  _gaq.push(['_setAccount', 'UA-2508396-47']);
+  _gaq.push(['_trackPageview']);
+
+  _gaq.push(['b._setAccount', 'UA-10417153-51']);
+  _gaq.push(['b._trackPageview']);
+  // RWW GA
+  _gaq.push(['rww._setAccount', 'UA-421291-1']);
+  _gaq.push(['rww._trackPageview']);
+  
+  _gaq.push(['rww._trackEvent','AuthorEntryViews','petewarden','http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php',1]);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Woopra Async Code - JWS 11042010 -->
+<script type="text/javascript">
+
+var woo_actions=[{'type':'pageview','title':document.title,'url':window.location.pathname,'author':'petewarden','publish_date':'2010-11-19'}];
+
+(function(){
+var wsc=document.createElement('script');
+wsc.src=document.location.protocol+'//static.woopra.com/js/woopra.min.js';
+wsc.async=true;
+var ssc = document.getElementsByTagName('script')[0];
+ssc.parentNode.insertBefore(wsc, ssc);
+})();
+</script>
+<!-- Woopra Async Code End - JWS 11042010 -->
+
+<img src="http://rww.readwriteweb.netdna-cdn.com/mt-static/themes/rww-ideacodes/images/logo.png" id="printlogo" />
+
+
+
+
+
+<h1><span>ReadWriteHack</span></h1>
+<div id="header"><div id="header-inner">
+
+
+				<div id="global-dropdown-nav">
+					<ul>
+				<li><a href="http://www.readwriteweb.com">ReadWriteWeb</a></li>
+				<li><a href="#">Channels</a>
+					<ul>
+						<li><a href="http://www.readwriteweb.com/start/">ReadWriteStart</a></li>
+						<li><a href="http://www.readwriteweb.com/biz/">ReadWriteBiz</a></li>
+						<li><a href="http://www.readwriteweb.com/enterprise/" target="_blank">ReadWriteEnterprise</a></li>
+						<li><a href="http://r1.fmpub.net/?r=http%3A%2F%2Fwww.readwriteweb.com%2Fcloud%2F&k4=251&k5={banner_id}">ReadWriteCloud</a></li>
+						<li><a href="http://r1.fmpub.net/?r=http://www.readwriteweb.com/hack&k4=532&k5=%7Bbanner_id%7D">ReadWriteHack</a></li>
+                                                <li><a href="http://www.readwriteweb.com/mobile/">ReadWriteMobile</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">International</a>
+					<ul>
+						<li><a href="http://readwriteweb.com.br/" target="_blank">ReadWriteBrazil</a></li> 
+                        <li><a href="http://blog.it.sohu.com/readwriteweb/" target="_blank">ReadWriteChina</a></li> 
+                        <li><a href="http://fr.readwriteweb.com/" target="_blank">ReadWriteFrance</a></li> 
+                        <li><a href="http://www.readwriteweb.es/" target="_blank">ReadWriteSpain</a></li> 
+					</ul>
+				</li>
+			</ul>
+  </div>
+
+
+
+
+				<div id="GlobalSearch">
+					<form action="http://www.readwriteweb.com/hack/fastsearch" name="search_form" method="get">
+					<input id="search" class="textfield" type="text" maxlength="80" value="Search ReadWriteHack" onblur="if(this.value=='')value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)value=''" name="search"/>
+					<input class="search_button_search" type="image" src="http://www.readwriteweb.com/mt-static/themes/df/images/header/search-button.png"/>
+					</form>
+				</div>
+				<div class="clear"><!--comment--></div>
+					<div class="logo">
+					<a href="http://www.readwriteweb.com/hack/" title="ReadWriteHack"><span class="notext">ReadWriteHack</span></a>
+
+				</div>
+				
+<div class="sponsorad">
+<!-- Blank -->
+				</div>
+
+<div class="clear"><!--comment--></div>
+				<div id="Navigation">
+					<ul>
+						<li>
+							<a href="http://www.readwriteweb.com/hack/" title="View all posts" class="current" onclick="_gaq.push(['_trackEvent','Channel Navigation','Menu Click','Home'],['b._trackEvent','Channel Navigation','Menu Click','Home'],['rww._trackEvent','Channel Navigation','Menu Click','Home']);">Home</a>
+
+						</li>
+						<li>
+							<a href="http://www.readwriteweb.com/hack/archives.php" title="View the Archives" class="link" onclick="_gaq.push(['_trackEvent','Channel Navigation','Menu Click','Archives'],['b._trackEvent','Channel Navigation','Menu Click','Archives'],['rww._trackEvent','Channel Navigation','Menu Click','Archives']);">Archives</a>
+						</li>
+						
+                                                
+                                                <li>
+                                                        <a href="http://www.readwriteweb.com/hack/articles-and-blogs/" title="Articles &amp; Blogs" class="link" onclick="_gaq.push(['_trackEvent','Channel Navigation','Menu Click','Articles &amp; Blogs'],['b._trackEvent','Channel Navigation','Menu Click','Articles &amp; Blogs'],['rww._trackEvent','Channel Navigation','Menu Click','Articles &amp; Blogs']);">More Articles &amp; Blogs</a>
+                                                </li>
+					</ul>
+				</div>
+				<div id="Subscribe">
+					<a href="http://www.readwriteweb.com/hack/rss.xml" class="RSS" onclick="_gaq.push(['_trackEvent','Channel Navigation','Subscription Click','RSS'],['b._trackEvent','Channel Navigation','Subscription Click','RSS'],['rww._trackEvent','Channel Navigation','Subscription Click','RSS']);">RSS</a>
+
+					<a href="http://twitter.com/rww" class="Twitter" onclick="_gaq.push(['_trackEvent','Channel Navigation','Subscription Click','Twitter'],['b._trackEvent','Channel Navigation','Subscription Click','Twitter'],['rww._trackEvent','Channel Navigation','Subscription Click','Twitter']);return true;">Twitter</a>
+
+					<a href="http://www.facebook.com/ReadWriteWeb" class="FB" onclick="_gaq.push(['_trackEvent','Channel Navigation','Subscription Click','Facebook'],['b._trackEvent','Channel Navigation','Subscription Click','Facebook'],['rww._trackEvent','Channel Navigation','Subscription Click','Facebook']);return true;">Facebook</a>
+					<form action="/newsletters/index.php" method="post" target="popupwindow" onsubmit="window.open('http://www.readwriteweb.com/newsletters/index.php', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"> 
+						<input id="email" class="textfield" type="text" maxlength="80" name="Email" onblur="if(this.value=='')value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)value=''" value="Your email address"/> 
+					<input type="hidden" value="DailyRWHRSS" name="newsletter"/> 
+						<input class="search_button" type="image" src="http://www.readwriteweb.com/mt-static/themes/df/images/header/go-button.png" onclick="_gaq.push(['_trackEvent','Channel Navigation','Subscription Click','E-mail'],['b._trackEvent','Channel Navigation','Subscription Click','E-mail'],['rww._trackEvent','Channel Navigation','Subscription Click','E-mail']);"/>
+					</form>
+				</div>
+
+
+</div></div>
+
+
+<div id="wrapper">
+
+<div id="content-column-left">
+<div id="left_column_style">
+
+<script type="text/javascript">
+var addthis_config = {
+data_track_clickback: true,
+ui_cobrand: "ReadWriteWeb",
+services_compact: 'email,print,linkedin,reddit,evernote,instapaper,readitlater,tumblr'
+}
+</script>
+<div id="entry-23144" class="entry-asset asset">
+<div class="asset-header">
+
+<div id="metadata_digg_box">
+<div id="metadata_digg_left">
+
+<h1 class="titlelink"><a href="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php" title="Permanent link to Secrets of the LinkedIn Data Scientists">Secrets of the LinkedIn Data Scientists</a></h1>
+<div id="submeta" class="author-date-comments">
+
+
+        By <a href="http://www.readwriteweb.com/hack/author/pete-warden.php">Pete Warden</a> / November 19, 2010 10:00 AM 
+
+       / <a href="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php#disqus_thread">0 Comments</a>
+
+</div>
+<div class="share-buttons"><div class="share-tweet-mini"><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://rww.to/bcLi3Q" data-count="horizontal" data-via="RWW" data-text="Secrets of the LinkedIn Data Scientists by @petewarden" data-related="petewarden" data-counturl="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php">Tweet</a></div><div style="float: left" class="addthis_toolbox addthis_default_style"><a class="addthis_button_hackernews">Hacker News</a></div><div style="float: left; padding-right: 10px" class="reddit"><script type="text/javascript">
+// Reddit button configuration
+reddit_url='http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php';
+reddit_title='Secrets of the LinkedIn Data Scientists';
+</script>
+<script type="text/javascript" src="http://reddit.com/static/button/button1.js"></script></div><div class="share-stumble-mini"><script src="http://www.stumbleupon.com/hostedbadge.php?s=1&r=http%3A%2F%2Fwww.readwriteweb.com%2Fhack%2F2010%2F11%2Fsecrets-of-the-linkedin-data-scientists.php"></script></div><div class="share-addthis-mini"><a class="addthis_counter addthis_pill_style" addthis:url="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php"></a></div><br style="clear: both"/></div>
+
+</div>
+
+</div>
+
+</div>
+<!-- Channel Sponsor Message -->
+<div id="channel-intro"><div style="float:left; width: 130px;"><!-- BANNER #1 -->
+<script type="text/javascript" src="http://thirdparty.fmpub.net/placement/392458?fleur_de_sel=[timestamp]"></script>
+<!-- BANNER #1 --><img src="http://altfarm.mediaplex.com/ad/tr/12124-109302-15250-8?mpt=1301848444" border="0" style="line-height: 0px;float:left;font-size:0"></div><p>This post is part of our ReadWriteHack channel, which is a resource and guide for developers.  The channel is sponsored by the <a href="http://r1.fmpub.net/?r=http%3A%2F%2Faltfarm.mediaplex.com%2Fad%2Fck%2F12124-114967-15250-4%3Fmpt%3D1301848444&k4=878&k5={banner_id}" onclick="_gaq.push(['_trackEvent', 'RWHack Channel Sponsor Link - In-Post Message', 'Click'],['b._trackEvent', 'RWHack Channel Sponsor Link - In-Post Message', 'Click'],['rww._trackEvent', 'RWHack Channel Sponsor Link - In-Post Message', 'Click']);">Intel AppUp Developer Program</a>. As you're exploring these resources, check out this helpful resource from our sponsors:  <a href="http://www.readwriteweb.com/hack/articles-and-blogs/air-for-appup---what-you-need/?utm_source=readwritehack&utm_medium=whitepapers_inpost&utm_campaign=whitepapers&utm_content=22394-AIR+for+AppUp+-+What+you+need+to+know">AIR for AppUp: What You Need To Know</a></p><img src="http://altfarm.mediaplex.com/ad/tr/12124-109302-15250-11?mpt=1301848444" border="0" style="line-height: 0px;float:left;font-size:0"></div>
+<br style="clear: both" />
+<div class="asset-content">
+
+
+<div class="asset-body">
+<p><img alt="linkedin.jpg" src="http://rww.readwriteweb.netdna-cdn.com/hack/linkedin.jpg" width="150" height="42" class="mt-image-none" style="" />I suffer from severe data envy when it comes to LinkedIn. They have detailed information on millions of people who are motivated to keep their profiles up-to-date, collect a rich network of connections and have a strong desire from their users for more tools to help them in their professional lives. Over the past couple of years Chief Scientist <a href="http://www.linkedin.com/in/dpatil">DJ Patil</a> has put together an impressive team of data scientists to deliver new services based around all that information. 
+
+<p>One of my favorites is <a href="http://www.readwriteweb.com/archives/new_linkedin_tool_aims_to_help_college_students_vi.php">their career explorer</a>, using the accumulated employment histories of millions of professionals to help students understand where their academic and early job choices might lead them.</p>
+
+</div>
+
+
+
+
+
+<div id="more" class="asset-more">
+
+
+
+
+
+
+
+  
+<p>
+<center><img alt="linkedingraph.jpg" src="http://rww.readwriteweb.netdna-cdn.com/hack/linkedingraph.jpg" width="500" height="499" class="mt-image-none" style="" /></center>
+</p>
+<p>
+<em><a href="http://www.linkedin.com/in/aliimam">Ali Imam's</a> connection network, <a href="http://datasyndrome.com/post/1324654714/force-directed-pastafarianism">via Russell Jurney</a></em>
+
+<p>Their work also shows up in some more subtle ways too, like the <a href="http://www.linkedin.com/groupsDirectory?recommendations=&trk=hb_side_gyml">Groups you may like</a> service that relies on their analyses and the <a href="http://sna-projects.com/sna/">SNA team's work</a> to recommend groups that seem connected to your interests. This kind of recommendation technology is at the heart of a lot of their innovative tools, initially as the first company to create a "People you may know" service, but more recently their Jobs Recommendation work both for job-seekers and recruiters.
+</p>
+<p>
+What I really wanted to know was how they dealt with that deluge of information, so I sat down with <a href="http://www.datawrangling.com/">Peter Skomoroch</a> of their data team to understand the tools and techniques they use. The workhorse of their pipeline is Hadoop, with a large cluster running a mixture of Solaris and CentOS. <a href="http://www.linkedin.com/in/jaykreps ">Jay Kreps</a> has put together a great <a href="http://developer.yahoo.com/blogs/ydn/posts/2010/08/data_applications_at_linkedin/">video</a> and <a href="http://www.slideshare.net/ydn/6-data-applicationlinkedinhadoopsummmit2010">slides</a> on LinkedIn's approach to the system, but Peter tells me they're big fans of Pig for creating their jobs, with snippets of Python for some of the messier integration code. 
+
+<p>Before he joined LinkedIn, he frequently used SQL for querying and exploring his data, but these days he's almost exclusively using lightweight MapReduce scripts to do that sort of processing. To control the running of Hadoop jobs, they've recently open-sourced their internal batch-processing framework <a href="http://sna-projects.com/azkaban/">Azkaban</a> which acts as the circus ringmaster for all of the processes people throughout the company need the cluster to run, both one-offs and recurring tasks.</p>
+
+<p>
+That takes care of pulling in data, but how do you handle getting it somewhere useful once the job is finished? They have created a custom Hadoop step that they can insert to push the information directly to their production Voldemort database. That sounded a bit scary to me, so I asked Peter how they dealt with mistakes that pushed bad data onto the site. That's where Voldemort's versioning saves the day apparently, letting them easily roll back to a previous version before any erroneous changes.
+</p>
+<p>
+The secret ingredient that most surprised me about their pipeline was Peter's use of Mechanical Turk. A lot of their headaches come from the fact that users are allowed to enter free-form text into all the fields, so figuring out that strings like "I.B.M.", "IBM" and "IBM UK" are all the same company can be a real challenge. You can get a long way with clever algorithms, but Peter told me what when these sort of recognition problems get too hairy, he reaches for his 'algorithmic Swiss Army knife': the human brain-power of thousands of Turks.</p> 
+
+<p>As an example, he described how he used the workers to <a href="https://github.com/datawrangling/spatialanalytics">solve the problem</a> of recognizing the place names that Twitter users put into the location field. By asking the Turks to find the places he couldn't understand with an algorithm, he was able to create a much richer view of the user's locations than a simple API could offer. That project's reliance on <a href="http://www.geonames.org/">GeoNames</a> led me to wonder about their use of public data sources. Peter is hooked on the Wikipedia dumps, especially for spotting co-occurrences of related words and n-gram frequencies.
+</p>
+<p>
+<center><img alt="twittermap.png" src="http://rww.readwriteweb.netdna-cdn.com/hack/twittermap.png" width="610" height="416" class="mt-image-none" style="" /></center>
+<p>
+<em><a href="https://github.com/datawrangling/spatialanalytics">Twitter users by location, thanks to Mechanical Turk matching</a></em>
+<p>
+LinkedIn is now over seven years old, and has demands on its systems that dwarf most startups technical problems, but it's been trying to pick up a few tricks from the early-stage world. In particular <a href="http://jruby.org/">JRuby</a> has been a godsend, letting them easily create front ends for the services their back-end data processing makes possible, and the LinkedIn team integrate them seamlessly into their existing Java infrastructure. It's not just the tools that Ruby provides, it's the fact they can tap into a large pool of developers familiar with the technology. </p>
+
+<p>One funky little project he mentioned that I hadn't run across is <a href="http://www.scalatra.org/">Scalatra</a>, a tiny Scala framework designed to work like Ruby's <a href="http://www.sinatrarb.com/">Sinatra</a>. Other open-source projects that get an honorable mention are <a href="http://vis.stanford.edu/protovis/">Protovis</a> for Web graphs and charts, <a href="https://github.com/joshthecoder/tweepy">Tweepy</a> for interacting with the Twitter API and <a href="http://gephi.org/">Gephi</a> for visualizing complex networks. They use Gephi heavily for <a href="http://www.youtube.com/watch?v=se2u5RyGaNE">exploring their networks</a>, and they're such big fans <a href="http://twitter.com/#!/dpatil/status/4242049918312448">they recently hired the project's co-founder</a>, <a href="http://twitter.com/mathieubastian">Mathieu Bastian</a>.
+</p>
+<p>
+Since they rely so heavily on open-source software, they're keen to contribute back to the community. Voldemort, invented by Jay Kreps, is probably their best-known project, but they put all of their open-source components up on <a href="http://sna-projects.com/sna/">SNA-Projects.com</a>. As the hire of Mathieu shows, this isn't pure altruism - they benefit from access to a community of developers for new hires, and Peter asked me to mention they are keen on finding more <a href="http://www.linkedin.com/jobs?viewJob=&jobId=1216584">Ruby</a> <a href="http://www.linkedin.com/jobs?viewJob=&jobId=1211321">developers</a> to join their data team. I kept catching glimpses of the unreleased tools they're working on; they have an ambitious pipeline of upcoming releases, so they need all the engineering help they can find.
+</p>
+<p>
+Hearing about all the fun they're having (and the results they're achieving) did nothing to help my data envy, but it did leave me with lots of ideas for improving my own processing pipeline. What are <em>your</em> favorite data processing tools for this sort of work? What should LinkedIn be looking at? Let me know in the comments.
+</p>
+
+
+
+  
+
+
+
+
+
+
+  <div class="related-entries">
+      <h3>See Also</h3>
+      <ul class="bullet">
+         
+      
+         
+         
+            <li class="widget-list-item"><a href="http://www.readwriteweb.com/hack/2011/02/hacker-poll-ruby-netbeans.php" onclick="pageTracker._trackEvent('In-Post Related Entries','Click','Hacker Poll: What Do You Think of Oracle's Decision to Drop Support for Ruby in NetBeans?');">Hacker Poll: What Do You Think of Oracle's Decision to Drop Support for Ruby in NetBeans?</a></li>
+         
+      
+         
+         
+            <li class="widget-list-item"><a href="http://www.readwriteweb.com/hack/2011/01/learn-to-program-with-hackety.php" onclick="pageTracker._trackEvent('In-Post Related Entries','Click','Learn to Program with Hackety Hack');">Learn to Program with Hackety Hack</a></li>
+         
+      
+         
+         
+            <li class="widget-list-item"><a href="http://www.readwriteweb.com/hack/2011/01/gmail-for-vim-vmail.php" onclick="pageTracker._trackEvent('In-Post Related Entries','Click','Read and Manage Your Gmail in Vim with Vmail');">Read and Manage Your Gmail in Vim with Vmail</a></li>
+         
+      
+         
+         
+            <li class="widget-list-item"><a href="http://www.readwriteweb.com/hack/2010/12/select-blocks-of-ruby-code-in-vim.php" onclick="pageTracker._trackEvent('In-Post Related Entries','Click','Select Blocks of Ruby Code in Vim with rubyblock');">Select Blocks of Ruby Code in Vim with rubyblock</a></li>
+         
+      
+         
+         
+            <li class="widget-list-item"><a href="http://www.readwriteweb.com/hack/2010/12/rails-google-apps-marketplace.php" onclick="pageTracker._trackEvent('In-Post Related Entries','Click','How to Integrate Your Ruby on Rails Application With Google Apps and the Apps Marketplace');">How to Integrate Your Ruby on Rails Application With Google Apps and the Apps Marketplace</a></li>
+         
+      
+   
+      </ul>
+   </div>
+   
+
+
+
+
+<div id="like-and-retweet"><div class="tweetmeme-endpost"><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://rww.to/bcLi3Q" data-count="vertical" data-via="RWW" data-text="Secrets of the LinkedIn Data Scientists by @petewarden" data-related="petewarden" data-counturl="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php">Tweet</a></div>
+<div class="facebook-like"><fb:like action="recommend" href="http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php" font="arial"></fb:like></div><br style="clear: both" /></div>
+
+
+</div>
+
+
+</div>
+<div class="asset-footer">
+
+
+       <div class="nextprevious" >
+
+       		 <a href="http://www.readwriteweb.com/hack/2010/11/learn-ruby-in-browser.php"><span>&laquo; Prior Post</span></a>
+       		 <a href="http://www.readwriteweb.com/hack/2010/11/java7-release-date.php"><span>Next Post &raquo;</span></a>
+
+       </div>
+
+
+
+Posted in <span class="delimiter">
+    <ul class="entry-categories-list">
+        <a href="http://www.readwriteweb.com/hack/interviews/">Interviews</a>
+    </ul>
+</span>
+
+
+
+
+
+and tagged with <span class="delimiter">
+    <ul class="entry-tags-list">
+        <a href="http://www.readwriteweb.com/hack/tag/linkedin" rel="tag">linkedin</a>, <a href="http://www.readwriteweb.com/hack/tag/mechanical+turk" rel="tag">mechanical turk</a>, <a href="http://www.readwriteweb.com/hack/tag/ruby" rel="tag">ruby</a>
+    </ul>
+</span>
+
+
+
+
+
+<ul id="pf_toolbar">
+
+    <li><a href="#comments-open" class="comment">Comment</a></li>
+
+    <li><a href="http://feeds.feedburner.com/readwriteweb" class="subscribe">Subscribe</a></li>   
+    <li><a class="addthis_button_email">E-mail This</a></li>
+<li><a href="javascript:window.print()" class="print">Print This</a></li>
+
+    <li><a href="http://digg.com/submit?url=http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php" class="digg">Digg</a></li>												
+    <li><!-- AddThis Button BEGIN -->
+<a href="http://www.addthis.com/bookmark.php" class="addthis_button" style="text-decoration:none;">
+<img src="http://s7.addthis.com/static/btn/sm-plus.gif" width="16" height="16" border="0" alt="Share" />Share</a>
+<!-- AddThis Button END -->
+</li>
+</ul>
+
+
+</div>
+
+
+
+
+<!-- Author Name:  -->
+<script type="text/javascript">
+var disqus_shortname = "readwritehack";
+
+
+var disqus_config = function(){
+  
+  this.page.author_s3 = 'eyJ1c2VybmFtZSI6ICIifQ== 599bf7df3fc81a52a7aabce60a823987ee330049 1301848444';
+  this.page.api_key = 'p2un7eqgWE3PqfEe0VkRKsMseUYqbc5DvRQGRHsGfxcPZUxITNxMTXVVfOsEpTnm';
+}
+
+// include before universal embed code
+/*
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + 'disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+*/
+</script>
+                <link rel="stylesheet" href="http://disqus.com/stylesheets/readwritehack/disqus.css?v=2.0" type="text/css" media="screen" />
+                
+<div id="disqus_thread">
+	<div id="dsq-content">
+		<ul id="dsq-comments">
+			<div id="comment-106306509"></div>
+
+			<li id="dsq-comment-106306509">
+				<div id="dsq-comment-header-106306509" class="dsq-comment-header">
+					<cite id="dsq-cite-106306509">
+						<span id="dsq-author-user-106306509">Grumpy</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306509" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306509" class="dsq-comment-message">You can click through and read more about that project - it appears to be from a limited API sample and was done for a talk. I think it&#39;s rather unfortunate that RWW just used that image as an example with little context around it.</div>
+				</div>
+			</li>
+			<div id="comment-106306510"></div>
+
+			<li id="dsq-comment-106306510">
+				<div id="dsq-comment-header-106306510" class="dsq-comment-header">
+					<cite id="dsq-cite-106306510">
+						<span id="dsq-author-user-106306510">andreas</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306510" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306510" class="dsq-comment-message">Very nice that they&#39;re using lots of tools, but LinkedIn is falling rapidly behind Facebook. A few weeks ago, I tried to find eight companies on LinkedIn. These companies have $25-50m in annual revenues, with 50-200 employees, etc. Not a single one showed up in LinkedIn. Someone suggested that perhaps the companies don&#39;t allow employees to be on LinkedIn. Well, none of their ex-employees cited their companies in their resumes. (It&#39;s also possible they don&#39;t use LinkedIn because they&#39;re mostly on the East Coast.)<br><br><br><br>So a few days later, I looked for the companies in Facebook. Sure enough, I found five of them. The younger employees listed their companies as their place of employment. Through them, I can reach the directors and VPs. <br><br><br><br>Wow. Facebook is better than LinkedIn for finding companies?  <br><br><br><br>LinkedIn is primarily a place for recruiters to look through resumes. It&#39;s a place to post your resume so you&#39;re found by recruiters. That&#39;s what it is for. Recruiters use it as a database to find candidates. LinkedIn not really useful if you&#39;re not a recruiter or you&#39;re not looking for a job.<br><br><br><br>LinkedIn is somewhat useful for looking up people and learning about them, but you&#39;ll find a great deal more about the person if you look at their Facebook profile, photos, videos, and Wall posts. <br><br><br><br>What is posted in LinkedIn is self-reported, and just like the problem with many resumes, a good deal of is exaggerated or even false. It&#39;s much harder for professionals to mislead in Facebook because their friends, family, and co-workers see the page. <br><br><br><br>LinkedIn refuses to modernize. You can now add a small photo. Why not allow photo albums? Why does the Question tool not allow group discussion? So much can be done to improve LinkedIn.</div>
+				</div>
+			</li>
+			<div id="comment-106306512"></div>
+
+			<li id="dsq-comment-106306512">
+				<div id="dsq-comment-header-106306512" class="dsq-comment-header">
+					<cite id="dsq-cite-106306512">
+						<span id="dsq-author-user-106306512">Judah Richardson</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306512" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306512" class="dsq-comment-message">Pretty interesting post and good work by the LinkedIn team, who&#39;ve crafted an extremely useful product. I&#39;m especially interested since my role at Wolfram|Alpha involves dealing with large datasets also</div>
+				</div>
+			</li>
+			<div id="comment-106306514"></div>
+
+			<li id="dsq-comment-106306514">
+				<div id="dsq-comment-header-106306514" class="dsq-comment-header">
+					<cite id="dsq-cite-106306514">
+						<span id="dsq-author-user-106306514">clermontpc</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306514" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306514" class="dsq-comment-message">OH wow, OK that really makes a lot of sense dude.<br><br><br><br><a href="http://www.privacy-tools.edu.tc" rel="nofollow">www.privacy-tools.edu.tc</a></div>
+				</div>
+			</li>
+			<div id="comment-106306515"></div>
+
+			<li id="dsq-comment-106306515">
+				<div id="dsq-comment-header-106306515" class="dsq-comment-header">
+					<cite id="dsq-cite-106306515">
+						<span id="dsq-author-user-106306515">M B</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306515" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306515" class="dsq-comment-message">Thanks Pete.  Unfortunately, I&#39;m not an engineer so not much I can do with the code.  I just wanted to call attention to the fact that this image was misleading.  As is the case with representations like this, if a few data points seem off the value of the entire map is called into question.<br><br><br><br>Maybe the solution here is a more descriptive title.</div>
+				</div>
+			</li>
+			<div id="comment-106306516"></div>
+
+			<li id="dsq-comment-106306516">
+				<div id="dsq-comment-header-106306516" class="dsq-comment-header">
+					<cite id="dsq-cite-106306516">
+						<span id="dsq-author-user-106306516">Pete Skomoroch</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306516" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306516" class="dsq-comment-message">@MB: Good observations. The values were from a sample of unique members appearing in 6 months of gardenhose Tweets, were normalized by county population, and colorized on a log scale.  The idea was to highlight counties with unusually high adoption of Twitter relative to population.  I didn&#39;t correct for county size or spend much time validating the MTurk location mappings.  This was pulled together for a quick Where 2.0 demo earlier this year and the code is on Github if you want to dig into the details.<br><br><br><br>-Pete</div>
+				</div>
+			</li>
+			<div id="comment-106306517"></div>
+
+			<li id="dsq-comment-106306517">
+				<div id="dsq-comment-header-106306517" class="dsq-comment-header">
+					<cite id="dsq-cite-106306517">
+						<span id="dsq-author-user-106306517">M B</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306517" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306517" class="dsq-comment-message">Of course you need the key, but assuming measurements are relative something is not right.  Plenty of dark blue around major urban centers, which would be expected.  Dark blue in BFE (technical term) Wyoming? Doesn&#39;t matter what the scale is, this depiction is wrong.</div>
+				</div>
+			</li>
+			<div id="comment-106306518"></div>
+
+			<li id="dsq-comment-106306518">
+				<div id="dsq-comment-header-106306518" class="dsq-comment-header">
+					<cite id="dsq-cite-106306518">
+						<span id="dsq-author-user-106306518">John Bender</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306518" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306518" class="dsq-comment-message">You need a key to make any assertions about the maps validity. If they chose dark blue for "more than 20 users in a given county" the whole map would look that way.</div>
+				</div>
+			</li>
+			<div id="comment-106306520"></div>
+
+			<li id="dsq-comment-106306520">
+				<div id="dsq-comment-header-106306520" class="dsq-comment-header">
+					<cite id="dsq-cite-106306520">
+						<span id="dsq-author-user-106306520">M B</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306520" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306520" class="dsq-comment-message">Interesting article, but before we all get smitten with how smart we are and how clever our analysis is, can we discuss the big map of the U.S. in the middle.  The "Twitter users by location" map.<br><br><br><br>Looks great and provides a nice visual, but did the creators stop for a second and do a sanity check?  I find it hard to believe that some of the counties shown have so many Twiiter users when overall population density in the real world is quit low.  There are counties in Wyoming, Nebraska and Kansas that show the darkest shade of blue representing a high concentration.  Heck, it looks like Area 51 in southern Nevada has lots of Twitter users.<br><br><br><br>Explain.</div>
+				</div>
+			</li>
+			<div id="comment-106306521"></div>
+
+			<li id="dsq-comment-106306521">
+				<div id="dsq-comment-header-106306521" class="dsq-comment-header">
+					<cite id="dsq-cite-106306521">
+						<span id="dsq-author-user-106306521">Håkan Jonsson</span>
+					</cite>
+				</div>
+				<div id="dsq-comment-body-106306521" class="dsq-comment-body">
+					<div id="dsq-comment-message-106306521" class="dsq-comment-message">Thanks! Great article. Really interesting to know what tools people use.</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script type="text/javascript" charset="utf-8">
+	var disqus_url = 'http://www.readwriteweb.com/hack/2010/11/secrets-of-the-linkedin-data-scientists.php ';
+	var disqus_container_id = 'disqus_thread';
+	var facebookXdReceiverPath = '/mt434-static/plugins/disqus/xd_receiver.htm';
+</script>
+
+<!-- d tb code was here -->
+
+<script type="text/javascript" charset="utf-8" src="http://disqus.com/scripts/readwritehack/disqus.js?v=2.0&slug=secrets_of_the_linkedin_data_scientists&pname=movabletype&pver=2.0"></script>
+
+</div>
+</div>
+</div>
+
+
+
+  <div id="content-column-right">
+<div id="right_column_style">
+
+<h3>Sponsored by</h3>
+<!-- FM Custom MREC 1 Zone -->
+<script type='text/javascript' src='http://static.fmpub.net/zone/3500'></script>
+<!-- FM Custom MREC 1 Zone -->
+<div id="featured-content" class="appup">
+  <a href="http://appdeveloper.intel.com/en-us/blog/2010/10/07/new-appup-support-dot-net" onclick="_gaq.push(['_trackEvent','Intel Featured Content','Click','Why AppUp'],['b._trackEvent','Intel Featured Content','Click','Why AppUp'],['rww._trackEvent','Intel Featured Content','Click','Why AppUp']);return true;">New AppUp Support for .NET</a>
+</div>
+<div id="intel-blog" class="tab">
+  <div class="sidebar-panel">
+    <h3>From the AppUp Developer Program Blog</h3>
+<ul>            
+           <li><a target="_blank" href="http://appdeveloper.intel.com/en-us/blog/2011/03/30/how-integrate-appup-sdk-and-create-rpm-package-meego-applications" onclick="_gaq.push(['_trackEvent','Intel Blog Feed','Click','How to integrate AppUp SDK and create RPM package for MeeGo applications'],['b._trackEvent','Intel Blog Feed','Click','How to integrate AppUp SDK and create RPM package for MeeGo applications'],['rww._trackEvent','Intel Blog Feed','Click','How to integrate AppUp SDK and create RPM package for MeeGo applications']);return true;">How to integrate AppUp SDK and create RPM package for MeeGo applications</a>
+			</li>
+                  <li><a target="_blank" href="http://appdeveloper.intel.com/en-us/blog/2011/03/22/upsell-resell-and-cross-sell-app-upgrade" onclick="_gaq.push(['_trackEvent','Intel Blog Feed','Click','New InApplication Upgrade Service - Upsell, Resell &amp; Cross Sell Within Your Apps'],['b._trackEvent','Intel Blog Feed','Click','New InApplication Upgrade Service - Upsell, Resell &amp; Cross Sell Within Your Apps'],['rww._trackEvent','Intel Blog Feed','Click','New InApplication Upgrade Service - Upsell, Resell &amp; Cross Sell Within Your Apps']);return true;">New InApplication Upgrade Service - Upsell, Resell &amp; Cross Sell Within Your Apps</a>
+			</li>
+                  <li><a target="_blank" href="http://appdeveloper.intel.com/en-us/blog/2011/03/22/new-flat-fee-component-forum" onclick="_gaq.push(['_trackEvent','Intel Blog Feed','Click','New Flat Fee Component Forum'],['b._trackEvent','Intel Blog Feed','Click','New Flat Fee Component Forum'],['rww._trackEvent','Intel Blog Feed','Click','New Flat Fee Component Forum']);return true;">New Flat Fee Component Forum</a>
+			</li>
+                  <li><a target="_blank" href="http://appdeveloper.intel.com/en-us/blog/2011/03/27/meego-coding-competition-2011" onclick="_gaq.push(['_trackEvent','Intel Blog Feed','Click','MeeGo Coding Competition 2011'],['b._trackEvent','Intel Blog Feed','Click','MeeGo Coding Competition 2011'],['rww._trackEvent','Intel Blog Feed','Click','MeeGo Coding Competition 2011']);return true;">MeeGo Coding Competition 2011</a>
+			</li>
+                  <li><a target="_blank" href="http://appdeveloper.intel.com/en-us/blog/2011/03/24/atom-mashing-radio-explores-great-conversations-tune" onclick="_gaq.push(['_trackEvent','Intel Blog Feed','Click','Atom Mashing Radio explores great conversations: Tune in!'],['b._trackEvent','Intel Blog Feed','Click','Atom Mashing Radio explores great conversations: Tune in!'],['rww._trackEvent','Intel Blog Feed','Click','Atom Mashing Radio explores great conversations: Tune in!']);return true;">Atom Mashing Radio explores great conversations: Tune in!</a>
+			</li>
+        </ul> 
+ <div style="text-align: right; font-weight: bold"><a target="_blank" href="http://r1.fmpub.net/?r=http%3A%2F%2Faltfarm.mediaplex.com%2Fad%2Fck%2F12124-114967-15250-5%3Fmpt%3D1301848444&k4=879&k5={banner_id}" onclick="_gaq.push(['_trackEvent','Intel Blog Feed','Click','More from the Intel Developer Blog'],['b._trackEvent','Intel Blog Feed','Click','More from the Intel Developer Blog'],['rww._trackEvent','Intel Blog Feed','Click','More from the Intel Developer Blog']);return true;">More from the AppUp Developer Blog &raquo;</a></div>
+</div>
+</div>
+<img src="http://altfarm.mediaplex.com/ad/tr/12124-109302-15250-11?mpt=1301848444" border="0">
+<div id="atom-video">
+<object width="300" height="193"><param name="movie" value="http://www.youtube.com/v/_gcV5-YG0yw?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/_gcV5-YG0yw?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="300" height="193"></embed></object></div>
+<div class="tab">
+<div id="whitepapers" class="sidebar-panel">
+<h3>Articles &amp; Blogs</h3>
+<a class="title" href="http://www.readwriteweb.com/hack/articles-and-blogs/intel-appup-java-developer-gui/?utm_source=readwritehack&utm_medium=whitepapers_sidebar&utm_campaign=whitepapers&utm_content=24343-Intel+AppUp+Java+Developer+Guide">Intel AppUp Java Developer Guide</a><span class="page-excerpt"><p>This guide is your source for getting started with the Intel AppUp Software Development Kit (SDK) for Java software SE 1.6 (or later) environments.</p>
+
+<p>It includes information about how to develop software components; use the packaging utility and how to optimize the app for the user.</p></span>							
+<div style="text-align: right; font-weight: bold"><a href="http://www.readwriteweb.com/hack/articles-and-blogs/?utm_source=readwritehack&utm_medium=whitepapers_sidebar&utm_campaign=whitepapers&utm_content=White%20Papers%20Index">More articles &amp; blogs &raquo;</a></div>
+</div>
+</div>
+
+				<div class="clear"><!--comment--></div>
+
+<div id="atom-rect"><!-- FM Custom MREC 1 - RWW Hack Zone -->
+<script type='text/javascript' src='http://static.fmpub.net/zone/3495'></script>
+<!-- FM Custom MREC 1 - RWW Hack Zone --></div>
+
+
+<script type="text/javascript" src="http://readwritehack.disqus.com/combination_widget.js?num_items=5&hide_mods=0&color=grey&default_tab=people&excerpt_length=200"></script>
+<div class="widget-cloud widget">
+<h3 class="widget-header"><a href="http://www.readwriteweb.com/hack/tags.php">POPULAR TAGS</a></h3>
+<div class="widget-content">
+<ul class="widget-list">
+
+<li class="rank-1 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/api">api</a>
+</li>
+
+<li class="rank-2 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/javascript">javascript</a>
+</li>
+
+<li class="rank-2 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/google">google</a>
+</li>
+
+<li class="rank-3 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/apis">apis</a>
+</li>
+
+<li class="rank-3 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/microsoft">microsoft</a>
+</li>
+
+<li class="rank-3 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/tutorials">tutorials</a>
+</li>
+
+<li class="rank-3 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/data">data</a>
+</li>
+
+<li class="rank-3 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/nosql">nosql</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/big+data">big data</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/databases">databases</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/hacks">hacks</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/html5">html5</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/bigdata">bigdata</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/developer+tools">developer tools</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/open+source">open source</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/php">php</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/polls">polls</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/ruby">ruby</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/intel">intel</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/node.js">node.js</a>
+</li>
+
+<li class="rank-4 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/programming+languages">programming languages</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/development">development</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/ide">ide</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/java">java</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/jquery">jquery</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/opensource">opensource</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/couchdb">couchdb</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/database">database</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/developers">developers</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/intel+appup">intel appup</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/appup">appup</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/hadoop">hadoop</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/mobile">mobile</a>
+</li>
+
+<li class="rank-5 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/twitter">twitter</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/apache">apache</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/api+of+the+week">api of the week</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/computer+science+education">computer science education</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/data+visualization">data visualization</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/facebook">facebook</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/geolocation">geolocation</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/mongodb">mongodb</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/resources">resources</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/security">security</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/tools">tools</a>
+</li>
+
+<li class="rank-6 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/yahoo">yahoo</a>
+</li>
+
+<li class="rank-7 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/adobe">adobe</a>
+</li>
+
+<li class="rank-7 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/analytics">analytics</a>
+</li>
+
+<li class="rank-7 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/cassandra">cassandra</a>
+</li>
+
+<li class="rank-7 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/cloud">cloud</a>
+</li>
+
+<li class="rank-7 widget-list-item">
+<a href="http://www.readwriteweb.com/hack/tag/contests">contests</a>
+</li>
+
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+</div>
+
+<p class="hidden"><br class="clear" /></p>
+<!-- Footer -->
+<div id="footer">
+<div id="footer_left">
+<div id="footer_spacer">
+<p><a href="http://www.readwriteweb.com">Home</a> | <a href="/archives/features/">Features</a> | <a href="/trends/">Trends</a> | <a href="/bestof.php">Best of RWW</a> | <a href="/categories.php">Archives</a></p>
+<p><a href="http://www.readwriteweb.com">ReadWriteWeb</a> | <a href="http://r1.fmpub.net/?r=http%3A%2F%2Fwww.readwriteweb.com%2Fstart%2F&k1=MSFT-BZ-SPRK&k2=RRW&k3=RRSTab" title="ReadWriteStart: Resources for enterpreneurs and startups">Startups</a> | <a href="http://www.readwriteweb.com/biz/" title="ReadWriteBiz: Technology tips and resources for small business">Small Business</a> | <a href="http://www.readwriteweb.com/enterprise/" title="ReadWriteEnterprise: Technology news for Enterprise 2.0">Enterprise</a> | <a href="http://r1.fmpub.net/?r=http%3A%2F%2Fwww.readwriteweb.com%2Fcloud%2F&k4=251&k5={banner_id}" title="ReadWriteCloud: All about cloud computing and virtualization">Cloud Computing</a> | <a href="http://r1.fmpub.net/?r=http://www.readwriteweb.com/hack&k4=532&k5=%7Bbanner_id%7D" title="ReadWriteHack: Best practices and resources for developers.">Developers</a>
+</div></div>
+<div id="footer_right">
+<p><a href="http://www.readwriteweb.com/about/">About</a> | <a href="http://www.readwriteweb.com/hack/rss.xml">Subscribe</a> | <a href="http://www.readwriteweb.com/contact/">Contact</a> | <a href="http://www.readwriteweb.com/advertise/">Advertise</a></p>
+<p>&copy; 2003-2010 ReadWriteWeb</p>
+<!-- Disqus Comments Asynchronous Loader -->
+<script type="text/javascript">
+var disqus_shortname = 'readwritehack';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/readwritehack/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script id="aptureScript">
+(function (){var a=document.createElement("script");a.defer="true";a.src="http://www.apture.com/js/apture.js?siteToken=H0arRY0";document.getElementsByTagName("head")[0].appendChild(a);})();
+</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=readwriteweb"></script>
+</div>
+</div>
+<!-- Twitter Tweet Button -->
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '57345927025', status: true, cookie: true,
+             xfbml: true});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+<script type="text/javascript">
+  var vglnk_api_key = "021de175e1e571c67cfaeea3c68d72e8";
+  var vglnk_domain = (("https:" == document.location.protocol) ? "https://" : "http://") + "api.viglink.com";
+  document.write(unescape("%3Cscript src='" + vglnk_domain + "/api/vglnk.js?key=" + vglnk_api_key +
+    "' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    vglnk(vglnk_domain, vglnk_api_key);
+  } catch(err) {}
+</script>
+<script type="text/javascript">
+(function() {
+var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
+s.type = 'text/javascript';
+s.async = true;
+s.src = 'http://widgets.digg.com/buttons.js';
+s1.parentNode.insertBefore(s, s1);
+})();
+</script>
+<script language="javascript" type="text/javascript">
+//<![CDATA[
+var enqsiteid = 'f86784-lb6m645';
+var enqhost = (window.location.protocol == "https:") ? "https://logssl" : "http://log";
+document.writeln('<script language="javascript" src="'+ enqhost +'.enquisite.com/log.js?id='+ enqsiteid +'" type="text/javascript"><\/script>');
+//]]>
+</script>
+</body>
+</html>

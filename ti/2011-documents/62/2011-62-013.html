@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Videos.com Video Search ~ Turk Videos</title>
+<meta name="description" content="Watch Turk videos from all popular video sharing websites on Videos.com. New Turk videos added daily!" />
+<meta name="keywords" lang="en" content="turk,videos,free videos,online videos,video search engine" />
+<link href="http://www.videos.com/templates/default/css/default-main.css" rel="stylesheet" type="text/css" />
+<link rel="search" type="application/opensearchdescription+xml" title="Videos.com ~ Free Videos, Online Videos, Video Search Engine" href="http://www.videos.com/opensearch.xml">
+<link rel="shortcut icon" href="http://www.videos.com/templates/default/images/favicon.ico" />
+</head>
+<body>
+<div id="login">
+   <div class="content clearfix">
+	<div class="left">
+		<h1>Why register with Videos.com?</h1>
+		<h2>Videos.com is a free <em>video search engine</em> that indexes millions of online videos from all across the web! We didn't invent online video search, we just made it simpler, faster, and more dynamic, with instant access to thousands of new videos added daily.<br><br>
+		Videos.com membership is 100% free with, no credit card needed to join! Registered members get a permanent username for our live chats, plus the ability to save unlimited videos to their private playlist. Playlist videos can be watched from any computer with an Internet connection without downloads.<br><br>
+		More free membership features coming soon...</h2>
+	</div>
+	<div class="left" id="logindiv">
+	<!-- Login Form -->
+	<form class="clearfix" action="/login.htm" method="post" name="logfm" id="loginform">
+	<input type="hidden" name="Action" value="Submit">
+	<input type="hidden" name="t" value="1">
+	<input type="hidden" name="page" value="/videos/turk.html">
+		<h1>Member Login:</h1>
+		<label for="log">Username:</label>
+		<input class="field" type="text" name="log" id="log" value="" size="23" maxlength="20" />
+		<label for="pwd">Password:</label>
+		<input class="field" type="password" name="pwd" id="pwd" size="23" value="" maxlength="20" />
+	     	<br /><br />
+		<label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" value="forever" checked /> Keep me logged in</label>
+		<div class="clear"></div>
+		<input type="submit" name="submit" value="Login" class="bt_login" />
+		<a class="lost-pwd" href="/forgot_password.htm">Forgot your password?</a>
+	</form>
+	</div>
+	<div class="left right" id="registerdiv">
+	<!-- Register Form -->
+	<form action="/register.htm" method="post" id="regform">
+		<h1>Quick Registration:</h1>				
+		<label for="signup">Username:</label>
+		<input class="field" type="text" name="signup" id="signup" value="" size="23" maxlength="20" />
+		<label for="email">Email:</label>
+		<input class="field" type="text" name="email" id="email" size="23" maxlength="80" /><br /><br />
+		<label>Registration is free with no credit card required.</label><br />
+		<input type="submit" name="submit" value="Continue" class="bt_register" />
+	</form>
+	</div>
+   </div>
+</div>
+<div id="container">
+   <div id="top"><!-- header -->
+	<div id="header_outer">
+	 	<div id="header_inner">
+			<a href="http://www.videos.com/" id="logo"></a>
+			<div id="top_menu">
+				<ul class="clearfix">
+					<li><a href="http://www.videos.com/" class="s_home pointer"><span>Home</span></a></li>
+					<li><a id="toggleLogin" href="javascript:;" class="s_login pointer"><span>Log In</span></a></li>
+					<li><a id="toggleLogin2" href="javascript:;" class="s_signup pointer"><span>Register</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>  
+   </div><!-- top -->
+</div>
+<div class="clearfix"></div>
+<div align="center">
+<div id="ResultsContent">
+<div class="menuw2">
+   <ul>
+	<li id="vnew"><a href="http://www.videos.com/videos/new_videos.html">New Videos</a></li>
+	<li id="vpopular"><a href="http://www.videos.com/videos/popular_videos.html">Popular Videos</a></li>
+	<li id="vlong"><a href="http://www.videos.com/videos/long_videos.html">Long Videos</a></li>
+	<li id="vhigh"><a href="http://www.videos.com/videos/highest_rated.html">Highest Rated</a></li>
+	<li id="vwatched"><a href="http://www.videos.com/videos/videos_being_watched.html">Being Watched</a></li>
+   </ul>
+<div class="clear"></div>
+</div>
+<div id="headerPad"></div>
+<div>
+<form action="http://www.videos.com/video" method="get" id="mainform" name="myform" onSubmit="return Validate(this)">
+<div id="searchsmall">
+<div id="farrow" class="form-left-arrow_small"></div>
+<div class="searchinput_small"><input type="text" class="sinput_small" name="search" id="searchtext" value="turk" maxlength="100" /></div>
+<div class="searchbutton_small"><input type="submit" value="SEARCH" class="sbutton_small" id="SubmitButton" /></div>
+</div><!--end searchsmall-->
+<div id="search_autocomplete"></div>
+<div id="Soptions_small" style="display:none;">
+<div class="Shide"><a href="javascript:;" id="Shide">Close [X]</a></div>
+<div class="Soptiner_small"><h3>Filter by duration:</h3>
+            <label><input type="radio" name="dur" value="2" onclick="Save('dur','2')" /> less than 5 min</label><br />
+            <label><input type="radio" name="dur" value="3" onclick="Save('dur','3')" /> between 5-10 min</label><br />
+            <label><input type="radio" name="dur" value="4" onclick="Save('dur','4')" /> more than 10 min</label><br />
+            <label><input type="radio" name="dur" value="1" checked onclick="Save('dur','1')" /> all durations</label></div>
+<div class="Soptiner_small"><h3>Filter by time:</h3>
+            <label><input type="radio" name="dateadded" value="2" onclick="Save('dateadded','2')" /> last 24 hours</label><br />
+            <label><input type="radio" name="dateadded" value="3" onclick="Save('dateadded','3')" /> last 7 days</label><br />
+            <label><input type="radio" name="dateadded" value="4" onclick="Save('dateadded','4')" /> last 30 days</label><br />
+            <label><input type="radio" name="dateadded" value="1" checked onclick="Save('dateadded','1')" /> all time</label></div>
+<div class="Soptiner_small">
+	<h3>Show adult content:</h3>
+	<label><input type="radio" name="AF" value="N" onclick="Filter('AF','N')" /> Yes</label>
+	<label><input type="radio" name="AF" value="Y" onclick="Filter('AF','Y')" /> No</label>
+	<label><h3 style="margin:11px 0 5px 2px;"><nobr>I am over 18 years of age:</nobr></h3></label>
+	<label><input type="radio" name="O18" value="Y" onclick="Filter('O18','Y')" /> Yes</label>
+	<label><input type="radio" checked name="O18" value="N" onclick="Filter('O18','N')" /> No</label>
+</div>
+</div><!--End Soptions-->
+</form>
+<div class="filter_sm">Adult Filter: <a href="javascript:;" onClick="$('searchtext').focus()"><span id="filter">ON</span></a></div>
+</div><!--end search-->
+
+<div class="contentsearch" id="holderph">
+<h2>8,819 videos for <strong>turk</strong> found in 0.0431 seconds. Showing 1 to 25 below.</h2>
+<div id="adst" style="height:125px;"></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22212057-1/turk/turk_worship2.html" rel="dailymotion" title="Turk Worship2">
+   <img src="http://img2.videos.com/thumb/d/t/dmxhwxgx.jpg" width="160" height="120" title="Turk Worship2 - From Dailymotion" alt="Turk Worship2" />
+   <br><h4>Turk Worship2</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22229404-1/turk/amatr_liseli_kzlar_plak_ov.html" rel="youtube" title="Amatör Liseli Kızlar çıplak şov">
+   <img src="http://img2.videos.com/thumb/yt/0/yt_uhxBaAYc30.jpg" width="160" height="120" title="Amatör Liseli Kızlar çıplak şov - From Youtube" alt="Amatör Liseli Kızlar çıplak şov" />
+   <br><h4>Amatör Liseli Kızlar çıplak şov</h4><span class="duration">1:50</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22040414-1/turk/turk_olmak.html" rel="blip" title="TURK OLMAK">
+   <img src="http://img2.videos.com/thumb/7/t/bp4945741.jpg" width="160" height="120" title="TURK OLMAK - From Blip" alt="TURK OLMAK" />
+   <br><h4>TURK OLMAK</h4><span class="duration">3:11</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22038724-1/turk/mechanical_turk_and_the_danger_of_digital.html" rel="dailymotion" title="Mechanical Turk And The Danger Of Digital">
+   <img src="http://img2.videos.com/thumb/d/m/dmxhv2ia.jpg" width="160" height="120" title="Mechanical Turk And The Danger Of Digital - From Dailymotion" alt="Mechanical Turk And The Danger Of Digital" />
+   <br><h4>Mechanical Turk And The Danger Of Digital</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21899344-1/turk/music_gillen__turk_-_nyc_sound_tracks.html" rel="dailymotion" title="Music: Gillen & Turk - NYC Sound Tracks">
+   <img src="http://img2.videos.com/thumb/d/m/dmxhtctt.jpg" width="160" height="120" title="Music: Gillen & Turk - NYC Sound Tracks - From Dailymotion" alt="Music: Gillen & Turk - NYC Sound Tracks" />
+   <br><h4>Music: Gillen & Turk - NYC Sound Tracks</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22003750-1/turk/110325_-_hyper_report.html" rel="youtube" title="110325 - Hyper Report">
+   <img src="http://img2.videos.com/thumb/yt/s/ytTVonoJR-3ss.jpg" width="160" height="120" title="110325 - Hyper Report - From Youtube" alt="110325 - Hyper Report" />
+   <br><h4>110325 - Hyper Report</h4><span class="duration">2:50</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21960021-1/turk/trina_turk_tassel_pendant_necklace_in_gold_with_blackmp4.html" rel="youtube" title="Trina Turk Tassel Pendant Necklace In Gold With Black.mp4">
+   <img src="http://img2.videos.com/thumb/yt/k/ytwY0pszB1hdk.jpg" width="160" height="120" title="Trina Turk Tassel Pendant Necklace In Gold With Black.mp4 - From Youtube" alt="Trina Turk Tassel Pendant Necklace In Gold With Black.mp4" />
+   <br><h4>Trina Turk Tassel Pendant Necklace In Gold With Black.mp4</h4><span class="duration">0:21</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21960017-1/turk/bosphorus_master_vintage_20_1821g__22_2322g_rides.html" rel="youtube" title="Bosphorus Master Vintage 20 1821g & 22 2322g Rides">
+   <img src="http://img2.videos.com/thumb/yt/i/yt0CCkG2h765I.jpg" width="160" height="120" title="Bosphorus Master Vintage 20 1821g & 22 2322g Rides - From Youtube" alt="Bosphorus Master Vintage 20 1821g & 22 2322g Rides" />
+   <br><h4>Bosphorus Master Vintage 20 1821g & 22 2322g Rides</h4><span class="duration">1:51</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21946817-1/turk/the_biggest_silver__gold_coin_show_of_the_year.html" rel="youtube" title="THE BIGGEST SILVER & GOLD COIN SHOW OF THE YEAR">
+   <img src="http://img2.videos.com/thumb/yt/m/yt2xpW8FXLIvM.jpg" width="160" height="120" title="THE BIGGEST SILVER & GOLD COIN SHOW OF THE YEAR - From Youtube" alt="THE BIGGEST SILVER & GOLD COIN SHOW OF THE YEAR" />
+   <br><h4>THE BIGGEST SILVER & GOLD COIN SHOW OF THE YEAR</h4><span class="duration">5:50</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21960020-1/turk/trina_turk_half_moon_bay_purple_and_gold_plated_necklace.html" rel="youtube" title="Trina Turk Half Moon Bay Purple And Gold Plated Necklace">
+   <img src="http://img2.videos.com/thumb/yt/0/ytxe5TZBcx6s0.jpg" width="160" height="120" title="Trina Turk Half Moon Bay Purple And Gold Plated Necklace - From Youtube" alt="Trina Turk Half Moon Bay Purple And Gold Plated Necklace" />
+   <br><h4>Trina Turk Half Moon Bay Purple And Gold Plated Necklace</h4><span class="duration">0:20</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21960000-1/turk/trina_turk_amethyst_branch_gold_plated_ring_size_7.html" rel="youtube" title="Trina Turk Amethyst Branch Gold Plated Ring, Size 7">
+   <img src="http://img2.videos.com/thumb/yt/e/yt-KpDGUikxQE.jpg" width="160" height="120" title="Trina Turk Amethyst Branch Gold Plated Ring, Size 7 - From Youtube" alt="Trina Turk Amethyst Branch Gold Plated Ring, Size 7" />
+   <br><h4>Trina Turk Amethyst Branch Gold Plated Ring, Size 7</h4><span class="duration">0:20</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21844144-1/turk/babakan_erdoan_meclis_grup_toplantisinda_konustu_-_3.html" rel="youtube" title="Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 3">
+   <img src="http://img2.videos.com/thumb/yt/u/yt9Cvr_1_S6oU.jpg" width="160" height="120" title="Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 3 - From Youtube" alt="Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 3" />
+   <br><h4>Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 3</h4><span class="duration">14:50</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21844132-1/turk/babakan_erdoan_meclis_grup_toplantisinda_konustu_-_1.html" rel="youtube" title="Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 1">
+   <img src="http://img2.videos.com/thumb/yt/k/yt_0ruBqOC3ak.jpg" width="160" height="120" title="Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 1 - From Youtube" alt="Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 1" />
+   <br><h4>Başbakan Erdoğan, Meclis Grup Toplantisinda Konustu - 1</h4><span class="duration">15:01</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21960001-1/turk/bosphorus_24_master_vintage_ride_cymbal_mv24r-1030811h.html" rel="youtube" title="Bosphorus 24'' Master Vintage Ride Cymbal MV24R-1030811H">
+   <img src="http://img2.videos.com/thumb/yt/e/yt-Jo8T_-DVXE.jpg" width="160" height="120" title="Bosphorus 24'' Master Vintage Ride Cymbal MV24R-1030811H - From Youtube" alt="Bosphorus 24'' Master Vintage Ride Cymbal MV24R-1030811H" />
+   <br><h4>Bosphorus 24'' Master Vintage Ride Cymbal MV24R-1030811H</h4><span class="duration">2:33</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21574237-1/turk/nickels_and_copper__the_poor_mans_way_to_prepare_for_hyperinflation.html" rel="youtube" title="Nickels And Copper : The Poor Mans Way To Prepare For Hyperinflation">
+   <img src="http://img2.videos.com/thumb/yt/c/ytGnBNeNyCmIc.jpg" width="160" height="120" title="Nickels And Copper : The Poor Mans Way To Prepare For Hyperinflation - From Youtube" alt="Nickels And Copper : The Poor Mans Way To Prepare For Hyperinflation" />
+   <br><h4>Nickels And Copper : The Poor Mans Way To Prepare For Hyperinflation</h4><span class="duration">7:00</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22031812-1/turk/must_watch_is_silver_a_great_investment__yep.html" rel="youtube" title="MUST WATCH: IS SILVER A GREAT INVESTMENT ? Yep!">
+   <img src="http://img2.videos.com/thumb/yt/u/ytKRGbXxjRA_U.jpg" width="160" height="120" title="MUST WATCH: IS SILVER A GREAT INVESTMENT ? Yep! - From Youtube" alt="MUST WATCH: IS SILVER A GREAT INVESTMENT ? Yep!" />
+   <br><h4>MUST WATCH: IS SILVER A GREAT INVESTMENT ? Yep!</h4><span class="duration">9:50</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22031813-1/turk/must_watch_sell_all_gold__put_it_into_silver.html" rel="youtube" title="MUST WATCH: SELL ALL GOLD & PUT IT INTO SILVER">
+   <img src="http://img2.videos.com/thumb/yt/k/ytxG4eXELL2sk.jpg" width="160" height="120" title="MUST WATCH: SELL ALL GOLD & PUT IT INTO SILVER - From Youtube" alt="MUST WATCH: SELL ALL GOLD & PUT IT INTO SILVER" />
+   <br><h4>MUST WATCH: SELL ALL GOLD & PUT IT INTO SILVER</h4><span class="duration">9:51</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22169424-1/turk/baba_yasin_-_halay_tanz_tutorial.html" rel="youtube" title="Baba Yasin - Halay Tanz Tutorial">
+   <img src="http://img2.videos.com/thumb/yt/y/ytlzzfvKRCxXY.jpg" width="160" height="120" title="Baba Yasin - Halay Tanz Tutorial - From Youtube" alt="Baba Yasin - Halay Tanz Tutorial" />
+   <br><h4>Baba Yasin - Halay Tanz Tutorial</h4><span class="duration">3:47</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21342669-1/turk/dr_alireza_asgharzadeh_-_iranian_nationalism_historiography_and_epistemic_violence.html" rel="youtube" title="Dr. Alireza Asgharzadeh - Iranian Nationalism, Historiography And Epistemic Violence">
+   <img src="http://img2.videos.com/thumb/yt/q/ytSMxQnkErNpQ.jpg" width="160" height="120" title="Dr. Alireza Asgharzadeh - Iranian Nationalism, Historiography And Epistemic Violence - From Youtube" alt="Dr. Alireza Asgharzadeh - Iranian Nationalism, Historiography And Epistemic Violence" />
+   <br><h4>Dr. Alireza Asgharzadeh - Iranian Nationalism, Historiography And Epistemic Violence</h4><span class="duration">59:05</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21038121-1/turk/matt_turk_and_the_hobo_caravan_live_from_the_gathering_of_the_vibes_2009.html" rel="blip" title="Matt Turk And The Hobo Caravan Live From The Gathering Of The Vibes 2009">
+   <img src="http://img2.videos.com/thumb/7/m/bp2431701.jpg" width="160" height="120" title="Matt Turk And The Hobo Caravan Live From The Gathering Of The Vibes 2009 - From Blip" alt="Matt Turk And The Hobo Caravan Live From The Gathering Of The Vibes 2009" />
+   <br><h4>Matt Turk And The Hobo Caravan Live From The Gathering Of The Vibes 2009</h4><span class="duration">6:52</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21571919-1/turk/the_eurozone_us_uk_or_japan_who_will_go_under_first.html" rel="youtube" title="The Eurozone, US, UK, Or Japan, Who Will Go Under First?">
+   <img src="http://img2.videos.com/thumb/yt/w/ytUbYOBhQxzgw.jpg" width="160" height="120" title="The Eurozone, US, UK, Or Japan, Who Will Go Under First? - From Youtube" alt="The Eurozone, US, UK, Or Japan, Who Will Go Under First?" />
+   <br><h4>The Eurozone, US, UK, Or Japan, Who Will Go Under First?</h4><span class="duration">3:55</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22169430-1/turk/krcim_barku_n_tv_turk_1991_flv.html" rel="youtube" title="Kërcim Barku Në TV Turk 1991 !!!.flv">
+   <img src="http://img2.videos.com/thumb/yt/0/ytV7ntiCoBPh0.jpg" width="160" height="120" title="Kërcim Barku Në TV Turk 1991 !!!.flv - From Youtube" alt="Kërcim Barku Në TV Turk 1991 !!!.flv" />
+   <br><h4>Kërcim Barku Në TV Turk 1991 !!!.flv</h4><span class="duration">3:52</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22019218-1/turk/the_case_for_2250_00_ounce_silver.html" rel="youtube" title="The Case For $2250 00 Ounce Silver">
+   <img src="http://img2.videos.com/thumb/yt/q/yt3BMXY_W4YvQ.jpg" width="160" height="120" title="The Case For $2250 00 Ounce Silver - From Youtube" alt="The Case For $2250 00 Ounce Silver" />
+   <br><h4>The Case For $2250 00 Ounce Silver</h4><span class="duration">5:07</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M20877268-1/turk/toto_still_dreaming_by_rara_feat_dirty_turk.html" rel="dailymotion" title="Toto Still Dreaming By. RaRa Feat. Dirty Turk">
+   <img src="http://img2.videos.com/thumb/d/t/dmxhe0d8.jpg" width="160" height="120" title="Toto Still Dreaming By. RaRa Feat. Dirty Turk - From Dailymotion" alt="Toto Still Dreaming By. RaRa Feat. Dirty Turk" />
+   <br><h4>Toto Still Dreaming By. RaRa Feat. Dirty Turk</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22224733-1/turk/basbug_trkes_fethullah_glen_hocaefendi.html" rel="dailymotion" title="Basbug Türkes Fethullah Gülen Hocaefendi">
+   <img src="http://img2.videos.com/thumb/d/b/dmxh8czm.jpg" width="160" height="120" title="Basbug Türkes Fethullah Gülen Hocaefendi - From Dailymotion" alt="Basbug Türkes Fethullah Gülen Hocaefendi" />
+   <br><h4>Basbug Türkes Fethullah Gülen Hocaefendi</h4><span class="duration"></span></a></div>
+<div class="clear"></div><div class="pages">Page: &nbsp;<b>1</b> <a href="http://www.videos.com/videos/2/turk.html" title="Page 2">2</a> <a href="http://www.videos.com/videos/3/turk.html" title="Page 3">3</a> <a href="http://www.videos.com/videos/4/turk.html" title="Page 4">4</a> <a href="http://www.videos.com/videos/5/turk.html" title="Page 5">5</a> <a href="http://www.videos.com/videos/6/turk.html" title="Page 6">6</a> <a href="http://www.videos.com/videos/7/turk.html" title="Page 7">7</a> <a href="http://www.videos.com/videos/8/turk.html" title="Page 8">8</a> <a href="http://www.videos.com/videos/9/turk.html" title="Page 9">9</a> <a href="http://www.videos.com/videos/10/turk.html" title="Page 10">10</a> <a href="http://www.videos.com/videos/11/turk.html" title="Page 11">11</a> <a href="http://www.videos.com/videos/12/turk.html" title="Page 12">12</a> <a href="http://www.videos.com/videos/13/turk.html" title="Page 13">13</a> <a href="http://www.videos.com/videos/14/turk.html" title="Page 14">14</a> <a href="http://www.videos.com/videos/15/turk.html" title="Page 15">15</a> <a href="http://www.videos.com/videos/16/turk.html" title="Page 16">16</a> <a href="http://www.videos.com/videos/17/turk.html" title="Page 17">17</a> <a href="http://www.videos.com/videos/18/turk.html" title="Page 18">18</a> <a href="http://www.videos.com/videos/19/turk.html" title="Page 19">19</a> <a href="http://www.videos.com/videos/20/turk.html" title="Page 20">20</a> &nbsp;<a href="http://www.videos.com/videos/2/turk.html" title="Next Page" class="pnav">&rsaquo;&rsaquo;</a> &nbsp;</div><div class="clearfix" style="padding-bottom:20px;"></div><div id="adsb"></div>
+<div class="clearfix" style="padding-bottom:20px;"></div>
+<div class="searchsmall">
+<div class="form-left-noarrow_small" id="arrow2"></div>
+<form action="http://www.videos.com/video" method="get" id="mainform" name="myform2" onSubmit="return Validate(this)">
+<div class="searchinput_small"><input type="text" class="sinput_small" name="search" id="stt" value="turk" /></div>
+<div class="searchbutton_small"><input type="submit" value="SEARCH" class="sbutton_small" id="sb" /></div>
+</form>
+</div>
+</div></div><div class="clearfix"></div>
+</div><!--end content-->
+</div><!--end center-->
+<div id="footer">
+<span style="margin:20px;float:right;"><a href="http://www.videos.com/">Videos</a> &middot; <a href="http://www.videos.com/categories.html">Browse</a> &middot; <a href="http://www.videos.com/about.htm">About</a> &middot; <a href="http://www.videos.com/privacy.htm">Privacy</a> &middot; <a href="http://www.videos.com/terms.htm">Terms</a> &middot; <a href="http://www.videos.com/contact.htm">Contact</a> &middot; <a href="http://www.videos.com/suggest.htm">Suggest A Site</a> &middot; <a href="javascript:;" onclick="window.external.AddSearchProvider('http://www.videos.com/opensearch.xml')">Install Our Video Search Plugin</a></span>
+<span style="margin:20px;float:left;">&copy; Copyright 2011 Videos.com. All rights reserved.</span>
+</div>
+<script language="javascript" type="text/javascript" src="http://www.videos.com/templates/default/js/videos.js"></script>
+<script type="text/javascript">
+if (document.getElementById('adst')) JaxRequest('/click?s=turk&a=N&r=http%3A%2F%2Fwww.videos.com%2Fvideos%2Fturk.html','A');
+</script>
+</body>
+</html>

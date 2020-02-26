@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Usability Testing Tips &#8211; Mechanical Turk &#8211; Software API and Support</title>
+<link rel="stylesheet" href="http://blog.feedbackarmy.com/wp-content/themes/feedbackarmy/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://blog.feedbackarmy.com/feed/" />
+<link rel="pingback" href="http://blog.feedbackarmy.com/xmlrpc.php" />
+<meta name="generator" content="WordPress 3.1-RC1-17163" /> <!-- leave this for stats -->
+<link rel="alternate" type="application/rss+xml" title="Usability Testing Tips &raquo; Mechanical Turk &#8211; Software API and Support Comments Feed" href="http://blog.feedbackarmy.com/business-musings/mechanical-turk-software-api-and-support/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.feedbackarmy.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.feedbackarmy.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Usability Testing Tips' href='http://blog.feedbackarmy.com/' />
+<link rel='start' title='Feedback Army Website Usability Testing HOWTO' href='http://blog.feedbackarmy.com/usability-testing/feedback-army-website-usability-testing-howto/' />
+<link rel='prev' title='Feedback Army Website Usability Testing HOWTO' href='http://blog.feedbackarmy.com/usability-testing/feedback-army-website-usability-testing-howto/' />
+<link rel='next' title='Be a Good Turk Boss &#8211; Mechanical Turk Tips' href='http://blog.feedbackarmy.com/business-musings/be-a-good-turk-boss-mechanical-turk-tips/' />
+<meta name="generator" content="WordPress 3.1-RC1-17163" />
+<link rel='canonical' href='http://blog.feedbackarmy.com/business-musings/mechanical-turk-software-api-and-support/' />
+<link rel='shortlink' href='http://blog.feedbackarmy.com/?p=15' />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+<meta name='robots' content='all' />
+
+<meta name='MSSmartTagsPreventParsing' content='true' />
+<link rel='stylesheet' type='text/css' media='print' href='http://www.feedbackarmy.com/print.css'> 
+<link rel='stylesheet' type='text/css' media='screen' href='http://www.feedbackarmy.com/style.css'>
+<link rel='stylesheet' type='text/css' media='screen' href='http://www.feedbackarmy.com/forms.css'>
+</head>
+<body>
+<div id='container'>
+	<div id='header'>
+		<div id='logo'>
+			<h1><a href='http://www.feedbackarmy.com/'>FeedbackArmy</a></h1>
+		</div>
+		<ul class='nav'>
+			<li><a href='http://www.feedbackarmy.com/' class='selected'>Home</a></li>
+
+			<li class='star'></li>
+			<li><a href='http://www.feedbackarmy.com/feedback.slp'><b>Request Feedback</b></a></li>
+			<li class='star'></li>
+			<li><a href='http://www.feedbackarmy.com/questions.slp'>FAQ</a></li>
+			<li class='star'></li>
+                        <li><a href='http://www.feedbackarmy.com/samples.slp' >Samples</a></li>
+                        <li class='star'></li>
+
+			<li><a href='http://www.feedbackarmy.com/contact.slp'>Contact</a></li>
+		</ul>
+	</div>
+      	<div class='page-top'>
+<a class="subscribe_button" href="http://blog.feedbackarmy.com/feed">Subscribe via RSS<span></span></a>
+<h2><a href="http://blog.feedbackarmy.com/" style="text-decoration: none; border: none">Usability Testing Tips</a></h2>
+<p style="width: 500px">Feedback Army blog. Topics include:<br /><a href="http://blog.feedbackarmy.com/category/usability-testing">Usability Testing</a>, <a href="http://blog.feedbackarmy.com/category/business-musings">Business Musings</a>, and <a href="http://blog.feedbackarmy.com/category/site-news">Site News</a>.</p>
+	</div>
+	<div id='content_wrap'>
+		<div id='content' class='page'>
+
+				
+	
+		
+		<div class="post" id="post-15">
+			
+			
+			<h2><a href="http://blog.feedbackarmy.com/business-musings/mechanical-turk-software-api-and-support/" rel="bookmark" title="Permanent Link to Mechanical Turk &#8211; Software API and Support">Mechanical Turk &#8211; Software API and Support</a></h2>
+			
+			
+			<div class="entrytext">
+				<p><img class="alignright" title="Mechanical Turk" src="http://blog.feedbackarmy.com/wp-content/uploads/2009/12/turk1.jpg" alt="" width="360" height="314" /></p>
+<p>I&#8217;ve used <a href="http://www.mturk.com/">Mechanical Turk</a> for several projects including <a href="http://www.feedbackarmy.com">Feedback Army</a>. I&#8217;m often asked for my impressions of the service and what worked for me. Here are my thoughts on the API and support behind Mechanical Turk.</p>
+<h2>Software Integration</h2>
+<p>I use <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=695">Amazon&#8217;s Mechanical Turk Java SDK</a> to deal with the service.  I&#8217;m able to do what I need with <a href="http://docs.amazonwebservices.com/AWSMturkAPI/2008-08-02/index.html">the API</a> but it is confusing and not well documented. Several times I&#8217;ve had to dig in their source code to find certain options.</p>
+<p>I&#8217;ve also dealt with more XML verification issues than I care to think about. I&#8217;ve found the <a href="http://docs.amazonwebservices.com/AWSMturkAPI/2008-08-02/index.html?ApiReference_ExternalQuestionArticle.html">ExternalQuestion mechanism</a> is the way to go. Through this you can direct your workers to an external HTML page that you design and control. This is simple to do and helps avoid these dreaded errors I speak of.</p>
+<p>The SDK requires an insane amount of external libraries. Fortunately these libraries are included. A more complex application that uses different versions of these libraries may have issues. If this is you, I recommend creating a light-weight service that runs stand-alone and acts as an interface to the Mechanical Turk service.</p>
+<h2>Support</h2>
+<p>Support from Amazon is non-existent. There is <a href="http://developer.amazonwebservices.com/connect/forum.jspa?forumID=11">a forum</a> for those working with Mechanical Turk but reading it shows cries for help with few answers. One time, a power outage knocked out my server and Feedback Army stopped working. I was at a loss because my code had not changed. I kept receiving an &#8220;InternalServiceException &#8211; Request has expired.&#8221; error. I later learned that my server&#8217;s clock was out of sync and correcting this fixed the error.</p>
+<h2>Overall Impression</h2>
+<p>In the year I&#8217;ve run Feedback Army, <a href="http://www.mturk.com">Mechanical Turk</a> has proven stable for me from a software point-of-view. The SDK is difficult to work with and the support is non-existent. However once you get your solution developed, you&#8217;re good to go. It will work fine.</p>
+							</div>
+			
+			<div class="bottom_meta">Posted in <a href="http://blog.feedbackarmy.com/category/business-musings/" title="View all posts in business musings" rel="category tag">business musings</a> on December 29, 2009 | <a href="http://blog.feedbackarmy.com/business-musings/mechanical-turk-software-api-and-support/#respond" title="Comment on Mechanical Turk &#8211; Software API and Support">No Comments &#187;</a> </div>
+	
+		</div>
+		
+		
+		
+		
+<!-- You can start editing here. -->
+
+
+   
+		<!-- If comments are open, but there are no comments. -->
+		
+	 
+
+
+<h2>Leave a Reply</h2>
+
+
+<form action="http://blog.feedbackarmy.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+<p><textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type="hidden" name="comment_post_ID" value="15" />
+</p>
+
+</form>
+
+
+
+		
+		
+
+
+
+		</div>
+	</div>
+	<div id='footer'>
+		<div class='left'>
+			&copy; 2008-2010 <a href="http://www.feedbackarmy.com/about.slp">FeedbackArmy.com</a> | Design by <a href='http://www.monfx.com/'>MONFX</a> | 1-866-433-0717
+		</div>
+
+		<div class='right'>
+                   <!-- AddThis Button BEGIN -->
+                   <a href="http://www.addthis.com/bookmark.php" style="border-bottom: none" onclick="addthis_url   = location.href; addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s7.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a><script type="text/javascript">var addthis_pub = "rsmudge";</script><script type="text/javascript" src="http://s7.addthis.com/js/widget.php?v=10"></script>  
+                   <!-- AddThis Button END -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

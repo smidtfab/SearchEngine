@@ -1,0 +1,361 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Using Crowdsourcing and Active Learning to Track Sentiment in Online Media.</title>
+
+<script type="text/javascript" src="http://arnetminer.org/js/jquery.js"></script>
+<script type="text/javascript" src="http://arnetminer.org/js/basic_fn.js"></script>
+<script type="text/javascript" src="http://arnetminer.org/js/arnet_fn.js"></script>
+<script type="text/javascript" src="http://arnetminer.org/js/suggest.js"></script>
+
+<link type="text/css" rel="stylesheet" href="http://arnetminer.org/css/inner.css" />
+<link type="text/css" rel="stylesheet" href="http://arnetminer.org/css/components.css" />
+<link type="text/css" rel="stylesheet" href="http://arnetminer.org/css/layout.css" />
+<link type="text/css" rel="stylesheet" href="http://arnetminer.org/css/search-suggestion.css" />
+
+
+
+
+		<!--		<link type="text/css" rel="stylesheet" href="http://arnetminer.org/css/yui/fonts.css" />-->
+		<link type="text/css" rel="stylesheet" href="http://arnetminer.org/css/viewpub.css" />
+		<script type="text/javascript" src="http://arnetminer.org/js/suggest.js">
+</script>
+	</head>
+	<body>
+		
+		
+
+
+
+
+
+
+
+
+  
+
+    <!-- ======================================================
+          Header > Navigator
+         ================================================== -->
+    <div id="search-header">
+      <div id="upper-half">
+        <img class="flower-head" src="http://arnetminer.org/images/small-flower-head.png"
+          onclick="javascript:window.location='http://arnetminer.org/index.jsp'"
+          onmouseover="this.style.cursor='hand'" style="cursor: pointer;"
+        />
+
+        
+        <ul id="top-navigator">
+          <li class="borderleft"></li>
+			<li class="highlight"><a href="/index.jsp?search_type=expertise">Expertise</a></li>
+<li><a href="/index.jsp?search_type=course">Course</a></li>
+<li><a href="/association.do?m=home">Social Graph</a></li>
+<li><a href="/topicBrowser.do">Topic Browser</a></li>
+<li><a href="/expertrank">Ranks</a></li>
+<li><a href="/rank-conference-bestpaper-homepage.jsp">Conference</a></li>
+
+
+          	
+          	<li >
+            	<a href="login.do"><b>Login</b></a>
+          	</li>
+          	
+          <li class="borderright"></li>
+        </ul>
+      </div>
+
+      <!-- ======================================================
+            Header > Search Area.
+           ================================================== -->
+
+      <div id="header-search-area">
+        <img class="flower" src="http://arnetminer.org/images/logo_small.gif"
+          onclick="javascript:window.location='http://arnetminer.org/index.jsp'"
+          onmouseover="this.style.cursor='hand'" style="cursor: pointer;"
+        />
+        <script><!--  --></script>
+        <img class="txt" src="http://arnetminer.org/images/title_small.gif"
+          onclick="javascript:window.location='http://arnetminer.org/index.jsp'"
+          onmouseover="this.style.cursor='hand'" style="cursor: pointer;"
+        />
+        <script><!--  --></script>
+
+        
+        <form id="search" name="form1" action="expertisesearch.do" method="get"
+          onsubmit="return(ckformheader(1))"
+        >
+          <input type="hidden" id="searchBtnType" name="searchBtnType" value="normal" />
+
+          <div style="width: 580px;">
+          	<input type="text" class="search-box" id="search-box" name="keyword" value="Using Crowdsourcing and Active Learning to Track Sentiment in Online Media." autocomplete="off" style="width: 680px"/>
+          <input type="submit" class="search-button" id="Submitperson" value="Search"
+            name="searchBTN" onclick="document.forms.form1.searchBtnType.value='normal';"
+          />
+          <input type="submit" class="search-button" id="LuckyPerson" name="LuckyPerson" value="Lucky"
+            onclick="document.forms.form1.searchBtnType.value='lucky';"
+          />
+          </div>
+			<div id="suggest"></div>
+		
+          
+			<script><!-- // bugfix  --></script>
+          <br />
+          <span class="text">Search in:   </span>
+
+			<input type="radio" id="searchType1" name="searchRange" value="0"
+				checked='checked' />
+	        <label for="searchType1" class="search-type">Auto</label>
+
+			<input type="radio" id="searchType2" name="searchRange" value="1"
+				/>
+	        <label for="searchType2" class="search-type">Author Only</label>
+
+			<input type="radio" id="searchType3" name="searchRange" value="2"
+				 />
+	        <label for="searchType3" class="search-type">All Field</label>
+
+        </form>
+
+        
+      </div>
+    </div>
+    
+    
+<script type="text/javascript">
+$(document).ready(function() {
+	enableSuggest("search-box", 100);
+});
+</script>
+
+		
+		<div id="content">
+			<div id="main">
+
+				<h2 class="title">Using Crowdsourcing and Active Learning to Track Sentiment in Online Media.</h2>
+				<div class="paper_op_links">
+					&nbsp;<a href="http://www.informatik.uni-trier.de/~ley/db/conf/ecai/ecai2010.html#BrewGC10" class = "yellow-link">[DBLP_Link]</a>&nbsp;<a href="http://www.booksonline.iospress.nl/Content/View.aspx?piid=17731" class = "yellow-link">[Online_Version]</a>
+<span class='text_link'>CitedBy 3</span>
+
+				</div>
+
+				<div class="author_info">
+					<span class="name">Authors: </span>
+					<ul class="authorlist" id="imws_authors" imws:type="PersonInfo.Tiny"
+						imws_param:ids="484029,507433,1390647">
+						<li>Anthony Brew</li><li>Derek Greene</li><li>Padraig Cunningham</li>
+					</ul>
+				</div>
+
+				<div class="paper_info">
+					<a name='Top'></a>
+					<a href="#Reference" class="tab">Reference</a> |
+					<a href="#CitedBy" class="tab">Cited By</a> |
+					<a href="#LNCS" class="tab">Latex</a>
+
+					<ul class="pubdetail">
+						
+						<li>
+							<b>Abstract: </b>
+							<br />
+							<p style="text-indent: 2em">Tracking sentiment in the popular media has long been of interest to media analysts and pundits. With the availability of news content via online syndicated feeds, it is now possible to automate some aspects of this process. There is also great potential to crowdsource Crowdsourcing is a term, sometimes associated with Web 2.0 technologies, that describes outsourcing of tasks to a large often anonymous community. much of the annotation work that is required to train a machine learning system to perform sentiment scoring. We describe such a system for tracking economic sentiment in online media that has been deployed since August 2009. It uses annotations provided by a cohort of non-expert annotators to train a learning system to classify a large body of news items. We report on the design challenges addressed in managing the effort of the annotators and in making annotation an interesting experience. The ACM Portal is published by the Association for Computing Machinery. Copyright © 2010 ACM, Inc. Terms of Usage Privacy Policy Code of Ethics Contact Us Useful downloads: Adobe Acrobat QuickTime Windows Media Player Real Player</p>
+						</li>
+						
+						<li>
+							<b>Year: </b>2010</li>
+						
+						<li>
+							<b>Pages: </b>6</li>
+						
+
+						
+						<li>
+							<b>In Proceedings:  </b>ECAI
+						</li>
+
+						
+					</ul>
+				</div>
+
+
+
+				<div class="paper_info">
+					
+				</div>
+
+
+				<div class="paper_info">
+					
+
+				</div>
+
+				<div style="margin-bottom: 40px;"></div>
+
+
+				<textarea rows="4" cols="80" readonly="readonly">Anthony Brew,&nbsp;Derek Greene,&nbsp;Padraig Cunningham.&nbsp;Using Crowdsourcing and Active Learning to Track Sentiment in Online Media.&nbsp;In Proceedings of ECAI'2010. pp.145~150&nbsp;&nbsp;&nbsp;
+      </textarea>
+				<br />
+				<!-- =========================== I modified from here ========================================= -->
+				<br />
+				<br />
+				<b>Other Format: </b>
+				
+
+				<a name='LNCS'></a>
+				<p>
+					LNCS:&nbsp;&nbsp;
+					<a href="#Top">[Top]</a>
+					<br />
+					<textarea rows="4" cols="80" readonly="readonly">Brew, A., Greene, D., Cunningham, P.: Using Crowdsourcing and Active Learning to Track Sentiment in Online Media.&nbsp;In ECAI(2010) 145-150
+        </textarea>
+					<br />
+				</p>
+				<p name='IEEE'>
+					IEEE:
+					<br />
+					<textarea rows="4" cols="80" readonly="readonly">A. Brew, D. Greene,  and P. Cunningham,  "Using Crowdsourcing and Active Learning to Track Sentiment in Online Media", &nbsp;in Proc. ECAI, 2010, pp.145-150. 
+        </textarea>
+					<br />
+				</p>
+				<p name='ACM'>
+					ACM:
+					<br />
+					<textarea rows="4" cols="80" readonly="readonly">Brew, A., Greene, D.,  and Cunningham, P.  Using Crowdsourcing and Active Learning to Track Sentiment in Online Media. &nbsp;In Proceedings of ECAI. 2010, 145-150. 
+        </textarea>
+					<br />
+				</p>
+
+				<p name='Latex'>
+					Latex:
+					<br />
+					<textarea rows="10" cols="80" readonly="readonly">
+								@INPROCEEDINGS{ brew:using,
+AUTHOR = "Anthony Brew and Derek Greene and Padraig Cunningham",
+TITLE = "Using Crowdsourcing and Active Learning to Track Sentiment in Online Media.",
+booktitle = "ECAI'10",
+PAGES = {145-150},
+YEAR = {2010}  }
+
+		</textarea>
+					<BR>
+				</p>
+
+				
+
+				</ul>
+				<p>
+					<a href="http://www.google.com/search?q=Using Crowdsourcing and Active Learning to Track Sentiment in Online Media." target="_blank" class="url"
+						style="text-decoration: underline;">Search it by Google</a>
+				</p>
+			</div>
+		</div>
+
+<script type="text/javascript">
+var resource_domain = 'arnetminer.org';
+var imws_domain = 'arnetminer.org';
+document.write(unescape( [ "%3Cscript src='http://", resource_domain,
+		"/js/ws/imws_basic.js' type='text/javascript'%3E%3C/script%3E" ]
+		.join('')));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+var wsClient = new ArnetminerWebServiceClient();
+// init
+wsClient.init( {
+	domain : imws_domain,
+	username : 'vivo',
+	resource_domain : resource_domain,
+	cross_site : true,
+	animate: true,
+	load_ext_js : [ 'js/ws/imws_person_info.js' ],
+	load_ext_css : [ 'css/ws/person_info.css' ],
+	page_fields_select : 'id,name,homepage,affiliation,pictureUrl,position'
+});
+</script>
+
+<script type="text/javascript" charset="utf-8">
+ wsClient.renderNode('imws_authors');
+</script>
+
+
+
+
+		
+		
+
+
+<div style="clear: both;"></div>
+<div id="footer">
+
+  <ul>
+    <li><a href="/introduction">Introduction</a></li>
+    <li><a href="/download">Download</a></li>
+    <li><a href="/workshop.do">ArnetPage</a></li>
+    <li><a href="/contactus">Contact Us</a></li>
+    
+    
+    
+  </ul>
+
+  <div style="clear: both;"></div>
+
+  <p class="copyright">
+    Copyright (c) 2006-2009
+    <a href="http://keg.cs.tsinghua.edu.cn" class="url">KEG</a>,
+    <a href="http://www.tsinghua.edu.cn" class="url">Tsinghua</a>. All Rights Reserved. &nbsp;|&nbsp;
+    
+    <a style="font-size: 11px;" href="http://www.miibeian.gov.cn/">京ICP备09068414号</a>
+    
+  </p>
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1156684-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+		
+
+	</body>
+</html>
+

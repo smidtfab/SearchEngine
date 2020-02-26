@@ -1,0 +1,501 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Classification" content="Public">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.7 [en] (Win95; I) [Netscape]">
+<meta name="Author" content="ING">
+<meta name="Description" content="The Galaxy Zoo and Hanny's Voorwerp"><meta name="KeyWords" content="The Galaxy Zoo and Hanny's Voorwerp"><title>The Galaxy Zoo and Hanny's Voorwerp</title>
+<script>
+function setActiveStyleSheet(title) {
+  var i, a, main;
+  for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+    if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+      a.disabled = true;
+      if(a.getAttribute("title") == title) a.disabled = false;
+    }
+  }
+}
+
+</script>
+
+
+
+<script language="JavaScript">
+function muestra_oculta(id){
+if (document.getElementById){ //se obtiene el id
+var el = document.getElementById(id); //se define la variable "el" igual a nuestro div
+el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
+}
+}
+window.onload = function(){/*hace que se cargue la funci�n lo que predetermina que div estar� oculto hasta llamar a la funci�n nuevamente*/
+muestra_oculta('contenido_a_mostrar');/* "contenido_a_mostrar" es el nombre que le dimos al DIV */
+}
+</script>
+
+
+<link rel="icon" href="http://www.ing.iac.es/gifs/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.ing.iac.es/gifs/favicon.ico" type="image/x-icon">
+<LINK REL="stylesheet" HREF="http://www.ing.iac.es/stylesheets/stylesheet.css" TYPE="text/css"></link>
+<LINK REL="alternate stylesheet" HREF="http://www.ing.iac.es/stylesheets/smallersize.css" TYPE="text/css" title="smallersize"></link>
+<LINK REL="alternate stylesheet" HREF="http://www.ing.iac.es/stylesheets/biggersize.css" TYPE="text/css" title="biggersize"></link>
+<LINK REL="alternate stylesheet" HREF="http://www.ing.iac.es/stylesheets/bold.css" TYPE="text/css" title="bold"></link>
+
+
+<STYLE>
+
+TABLE.menu
+{
+    BACKGROUND-COLOR: #D3DCE3;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin;
+    BORDER-RIGHT: black thin inset;
+    BORDER-TOP: black thin;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 2pt;
+    POSITION: absolute; left: 2px; top: 16px;
+    WIDTH: 140pt;
+    VISIBILITY: hidden
+}
+
+
+TABLE.menu2
+{
+    BACKGROUND-COLOR: #D3DCE3;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin;
+    BORDER-RIGHT: black thin inset;
+    BORDER-TOP: black thin;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 2pt;
+    POSITION: absolute; left: 2px; top: 16px;
+    WIDTH: 360px;
+    VISIBILITY: hidden
+}
+
+
+.tapado
+{
+    LEFT: 2mm;
+    OVERFLOW: hidden;
+    POSITION: absolute;
+    Z-INDEX: 1
+}
+SPAN.menu
+{
+    BACKGROUND-COLOR: turquoise;
+    COLOR: olive;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bolder;
+    POSITION: relative;
+    TEXT-DECORATION: underline;
+    TEXT-TRANSFORM: capitalize;
+    WIDTH: 45pt
+}
+
+DIV.menu
+{
+    CURSOR: hand;
+    LEFT: 10pt;
+    POSITION: absolute; 
+    WIDTH: 60pt;
+    Z-INDEX: 10
+}
+SPAN.metodo
+{
+    COLOR: green;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt
+}
+SPAN.objeto
+{
+    COLOR: mediumblue;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt
+}
+SPAN.palabra-clave
+{
+    COLOR: red;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: 500
+}
+SPAN.tag
+{
+    COLOR: brown;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt
+}
+SPAN.comentario
+{
+    COLOR: lightskyblue;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bolder
+}
+ 
+</STYLE>
+ 
+<SCRIPT LANGUAGE=javascript>
+
+/*
+  Esta es la funci�n que oculta el men� cuando el mouse lo abandona
+*/
+function ocultarMenu(menuAOcultar)
+{
+	if (document.all) 
+	  document.all(menuAOcultar).style.visibility="hidden";
+	  if (document.getElementById) 
+	    document.getElementById(menuAOcultar).style.visibility="hidden";
+}
+ 
+/*
+  Esta es la funci�n que muestra el men� cuando el mouse pasa por encima de �l
+*/
+function mostrarMenu(menuAMostrar)
+{
+	if (document.all) 
+	  document.all(menuAMostrar).style.visibility="visible";
+	  if (document.getElementById) 
+	    document.getElementById(menuAMostrar).style.visibility="visible";
+}
+ 
+/*
+  Aqu� deben estar las funciones que responden a los clics en cada 
+  item del men�
+*/
+function cliqueo(numero)
+{
+	alert("Esta es la opci�n " + numero);
+}
+ 
+function estoyen(objeto)
+{
+  if (document.all)
+    document.all(objeto).style.textDecoration = "underline";
+  if (document.getElementById)  
+    document.getElementById(objeto).style.textDecoration = "underline";
+}
+ 
+function salgode(objeto)
+{
+  document.all(objeto).style.textDecoration = "none"
+}
+</SCRIPT>
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="http://www.ing.iac.es/gifs/ing_backgrnd.jpg"><center>
+<a name="top"></a>
+
+
+
+<meta name="Description" content="The Galaxy Zoo and Hanny's Voorwerp"><meta name="KeyWords" content="The Galaxy Zoo and Hanny's Voorwerp"><title>The Galaxy Zoo and Hanny's Voorwerp</title><meta name=Description content=The Galaxy Zoo and Hanny's Voorwerp>
+   <meta name=KeyWords content=The Galaxy Zoo and Hanny's Voorwerp>
+   <title>The Galaxy Zoo and Hanny's Voorwerp</title>
+<LINK REL=StyleSheet HREF="http://www.ing.iac.es/stylesheets/stylesheet.css" TYPE="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="http://www.ing.iac.es/gifs/ing_backgrnd.jpg"><center>
+<a name="top"></a>
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" width="600"><tr><td>
+
+<!--
+<center><a href="http://www.ing.iac.es"><img src="http://www.ing.iac.es/gifs/banner_ing2.jpg" border="0" alt="ING Banner"></a></center></td></tr>
+-->
+
+
+<center><a href="http://www.ing.iac.es"><img src="http://www.ing.iac.es/gifs/banner5_small.png" border="0" alt="ING Banner"></a></center></td></tr>
+
+<tr><td><center>
+<table border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" width="598">
+<tr><td>
+<center>
+<table BORDER="0" cellspacing="0" cellpadding="2" width="100%">
+<tr><td NOWRAP valign="middle" BGCOLOR="#D3DCE3"><center>
+
+<!--
+<div id=wrapper style="position:relative; valign: bottom; height:10; max-height:10px; padding:0px;">
+-->
+
+<!-- Comienzo del menu0 -->
+<div style="position: relative; float: left; width: 95px; height: 20px;" id=menu0 onclick=ocultarMenu("mnuPrueba0") onmouseover=mostrarMenu("mnuPrueba0") onmouseout=ocultarMenu("mnuPrueba0")>
+<a class="plain" href="http://www.ing.iac.es/about-ING/">About ING&nbsp;&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+
+<TABLE id=mnuPrueba0 class=menu  align=left cellpadding=5>
+<TR><TD onmouseover=estoyen("mnu0") onmouseout=salgode("mnu0")  id=mnu0><a class="plain" href="http://www.ing.iac.es/about-ING/Overview/ing_overview.html">An Overview of ING</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu1") onmouseout=salgode("mnu1")  id=mnu1><a class="plain" href="http://www.ing.iac.es/about-ING/Strategy/decadal_strategy_2010_2020.html">ING Vision 2010-2020</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu2") onmouseout=salgode("mnu2")  id=mnu2><a class="plain" href="http://www.ing.iac.es/about-ING/Contact_points/contacts1.html">Address and Contacts</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu3") onmouseout=salgode("mnu3")  id=mnu3><a class="plain" href="http://www.ing.iac.es/about-ING/Staff/ing_staff.html">Staff</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu4") onmouseout=salgode("mnu4")  id=mnu4><a class="plain" href="http://www.ing.iac.es/about-ING/Vacancies/vacancies1.html">Job Opportunities</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu4") onmouseout=salgode("mnu4")  id=mnu4><a class="plain" href="http://www.ing.iac.es/intranet/">Intranet</a></TD></TR>
+</TABLE>
+
+</div>
+<!-- Fin del menu 0 -->
+
+
+<!-- Comienzo del menu1 -->
+<div style="position: relative; float: left; width: 95px; height: 20px;" id=menu1 onclick=ocultarMenu("mnuPrueba1") onmouseover=mostrarMenu("mnuPrueba1") onmouseout=ocultarMenu("mnuPrueba1")>
+<a class="plain" href="http://www.ing.iac.es/astronomy/">Astronomy&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+
+<TABLE id=mnuPrueba1 class=menu2  align=left cellpadding=5 width=300>
+
+<TR><TD onmouseover=estoyen("mnu5") onmouseout=salgode("mnu5")  id=mnu5><a class="plain" href="http://www.ing.iac.es/astronomy/observing/INGinfo_home.html">Applying for Time</a></TD>
+<TD onmouseover=estoyen("mnu6") onmouseout=salgode("mnu6")  id=mnu6><a class="plain" href="http://www.ing.iac.es/astronomy/observing/patt/time.html">Time Allocations</a></TD></TR>
+
+<TR><TD onmouseover=estoyen("mnu17") onmouseout=salgode("mnu17")  id=mnu17><a class="plain" href="http://catserver.ing.iac.es/schedules/">Schedules</a></TD>
+<TD onmouseover=estoyen("mnu7") onmouseout=salgode("mnu7")  id=mnu7><a class="plain" href="http://www.ing.iac.es/astronomy/observing/service/">Service Programme</a></TD></tr>
+
+<tr><TD onmouseover=estoyen("mnu9") onmouseout=salgode("mnu9")  id=mnu9><a class="plain" href="http://www.ing.iac.es/Astronomy/telescopes/wht/">William Herschel Telescope</a></TD>
+<TD onmouseover=estoyen("mnu10") onmouseout=salgode("mnu10")  id=mnu10><a class="plain" href="http://www.ing.iac.es/Astronomy/telescopes/int/">Isaac Newton Telescope</a></TD></tr>
+
+<tr><TD onmouseover=estoyen("mnu8") onmouseout=salgode("mnu8")  id=mnu8><a class="plain" href="http://www.ing.iac.es/astronomy/observing/conditions/">Site Quality</a></TD>
+<TD onmouseover=estoyen("mnu11") onmouseout=salgode("mnu11")  id=mnu11><a class="plain" href="http://www.ing.iac.es/astronomy/observing/instruments.html">Instruments</a></TD></tr>
+
+<tr><TD onmouseover=estoyen("mnu13") onmouseout=salgode("mnu13")  id=mnu13><a class="plain" href="http://www.ing.iac.es/engineering/detectors.html">Detectors</a></TD>
+<TD onmouseover=estoyen("mnu12") onmouseout=salgode("mnu12")  id=mnu12><a class="plain" href="http://catserver.ing.iac.es/filter/">Filters</a></TD></tr>
+
+<tr><TD onmouseover=estoyen("mnu14") onmouseout=salgode("mnu14")  id=mnu14><a class="plain" href="http://www.ing.iac.es/astronomy/planning/">Planning Observations</a></TD>
+<TD onmouseover=estoyen("mnu15") onmouseout=salgode("mnu15")  id=mnu15><a class="plain" href="http://catserver.ing.iac.es/signal/">Exposure Time Calculator</a></TD></tr>
+
+<tr><TD onmouseover=estoyen("mnu16") onmouseout=salgode("mnu16")  id=mnu16><a class="plain" href="http://catserver.ing.iac.es/staralt/index.php">Object Visibility</a></TD>
+<TD onmouseover=estoyen("mnu18") onmouseout=salgode("mnu18")  id=mnu18><a class="plain" href="http://catserver.ing.iac.es/weather/">Weather and Seeing </a></TD></TR>
+
+<TR><TD onmouseover=estoyen("mnu19") onmouseout=salgode("mnu19")  id=mnu19><a class="plain" href="http://www.ing.iac.es/astronomy/observing/overrides.html">Override Programmes</a></TD>
+<TD onmouseover=estoyen("mnu20") onmouseout=salgode("mnu20")  id=mnu20><a class="plain" href="http://www.ing.iac.es/faultdb/">Fault Reports</a></TD></TR>
+
+<TR><TD onmouseover=estoyen("mnu21") onmouseout=salgode("mnu21")  id=mnu21><a class="plain" href="http://catserver.ing.iac.es/feedback/">Feedback Form</a></TD>
+<TD onmouseover=estoyen("mnu22") onmouseout=salgode("mnu22")  id=mnu22><a class="plain" href="http://www.ing.iac.es/astronomy/computing/">Computing</a></TD></TR>
+
+<TR><TD onmouseover=estoyen("mnu23") onmouseout=salgode("mnu23")  id=mnu23><a class="plain" href="http://www.ing.iac.es/astronomy/observing/inglogs.php">Observing Logs</a></TD>
+<TD onmouseover=estoyen("mnu24") onmouseout=salgode("mnu24")  id=mnu24><a class="plain" href="http://casu.ast.cam.ac.uk/casuadc/archives/ingarch">ING Archive</a></TD></TR>
+
+<TR><TD onmouseover=estoyen("mnu25") onmouseout=salgode("mnu25")  id=mnu25><a class="plain" href="http://www.ing.iac.es/astronomy/science/studentship.html">Studentship Programme</a></TD>
+<TD onmouseover=estoyen("mnu26") onmouseout=salgode("mnu26")  id=mnu26><a class="plain" href="http://www.ing.iac.es/astronomy/science/seminars.html">Seminar Programme</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu27") onmouseout=salgode("mnu27")  id=mnu27><a class="plain" href="http://www.ing.iac.es/astronomy/science/conferences.html">Conferences and Meetings</a></TD>
+<TD onmouseover=estoyen("mnu28") onmouseout=salgode("mnu28")  id=mnu28><a class="plain" href="http://www.ing.iac.es/astronomy/library/">Library</a></TD></TR>
+
+</TABLE>
+</div>
+<!-- Fin del menu 1 -->
+
+
+<!-- Comienzo del menu2 -->
+<div style="position: relative; float: left; width: 110px; height: 20px;" id=menu2 onclick=ocultarMenu("mnuPrueba2") onmouseover=mostrarMenu("mnuPrueba2") onmouseout=ocultarMenu("mnuPrueba2")>
+<a class="plain" href="http://www.ing.iac.es/engineering/">Developments&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+
+<TABLE id=mnuPrueba2 class=menu  align=left cellpadding=5>
+<TR><TD onmouseover=estoyen("mnu29") onmouseout=salgode("mnu29")  id=mnu29><a class="plain" href="http://www.ing.iac.es/weave/">WEAVE MOS Spectrograph</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu29") onmouseout=salgode("mnu29")  id=mnu29><a class="plain" href="http://www.ing.iac.es/Astronomy/instruments/acam/">ACAM Imager</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu30") onmouseout=salgode("mnu30")  id=mnu30><a class="plain" href="http://www.ing.iac.es/engineering/CCDgroup.html">CCD Developments</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu31") onmouseout=salgode("mnu31")  id=mnu31><a class="plain" href="http://www.ing.iac.es/engineering/mass.htm"> MASS Turbulence Profiler</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu32") onmouseout=salgode("mnu32")  id=mnu32><a class="plain" href="http://www.ing.iac.es/engineering/software.htm">Software and Computing</a></TD></TR>
+
+</TABLE>
+
+</div>
+<!-- Fin del menu 2 -->
+
+<!-- Comienzo del menu3 -->
+<div style="position: relative; float: left; width: 130px; height: 20px;" id=menu3 onclick=ocultarMenu("mnuPrueba3") onmouseover=mostrarMenu("mnuPrueba3") onmouseout=ocultarMenu("mnuPrueba3")>
+<a class="plain" href="http://www.ing.iac.es/PR/">Public Information&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+<TABLE id=mnuPrueba3 class=menu  align=left cellpadding=5>
+<TR><TD onmouseover=estoyen("mnu34") onmouseout=salgode("mnu34)  id=mnu34><a class="plain" href="http://www.ing.iac.es/PR/tour/leaflet.html">Virtual ING</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu35") onmouseout=salgode("mnu35")  id=mnu35><a class="plain" href="http://www.ing.iac.es/PR/wht_info/">Info on the WHT</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu36") onmouseout=salgode("mnu36")  id=mnu36><a class="plain" href="http://www.ing.iac.es/PR/int_info/">Info on the INT</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu37") onmouseout=salgode("mnu37")  id=mnu37><a class="plain" href="http://www.ing.iac.es/PR/jkt_info/">Info on the JKT</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu38") onmouseout=salgode("mnu38")  id=mnu38><a class="plain" href="http://www.ing.iac.es/PR/press/">Public Releases</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu39") onmouseout=salgode("mnu39")  id=mnu39><a class="plain" href="http://www.ing.iac.es/PR/publications.html">Publications</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu40") onmouseout=salgode("mnu40")  id=mnu40><a class="plain" href="http://www.ing.iac.es/PR/archive/">Photo and Video Archive</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu41") onmouseout=salgode("mnu41")  id=mnu41><a class="plain" href="http://www.ing.iac.es/PR/images_index.html">Astronomical Images</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu42") onmouseout=salgode("mnu42")  id=mnu42><a class="plain" href="http://www.ing.iac.es/PR/impact.html">Scientific Productivity</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu43") onmouseout=salgode("mnu43")  id=mnu43><a class="plain" href="http://www.ing.iac.es/PR/visits/">Visiting ING</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu44") onmouseout=salgode("mnu44")  id=mnu44><a class="plain" href="http://www.ing.iac.es/PR/dissemination/question.php">Ask an Astronomer !</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu45") onmouseout=salgode("mnu45")  id=mnu45><a class="plain" href="http://www.ing.iac.es/PR/credits.html">Credits</a></TD></TR>
+<TR><TD onmouseover=estoyen("mnu46") onmouseout=salgode("mnu46")  id=mnu46><a class="plain" href="http://www.lpiya.org/">The LPIYA Group</a></TD></TR>
+</TABLE>
+
+
+</div>
+<!-- Fin del menu 3 -->
+</td>
+
+<td NOWRAP BGCOLOR="#D3DCE3">
+
+
+<form method="get" action="http://google.ing.iac.es/search">
+<div style="position: relative; float: left; width: 140px; height: 22px;">
+<a class="plain" href="http://www.ing.iac.es/search/">Search:&nbsp;</a>
+<input style="height:18px;" type="text" name="q" size="8">
+</div>
+<input type="hidden" name="btnG" value="ING+Document+Search">
+<input type="hidden" name="entqr" value="0">
+<input type="hidden" name="output" value="xml_no_dtd">
+<input type="hidden" name="sort" value="date%3AD%3AL%3Ad1">
+<input type="hidden" name="entsp" value="a">
+<input type="hidden" name="client" value="ing">
+<input type="hidden" name="ud" value="1">
+<input type="hidden" name="oe" value="UTF-8">
+<input type="hidden" name="ie" value="UTF-8">
+<input type="hidden" name="proxystylesheet" value="ing">
+<input type="hidden" name="site" value="v20z">
+</form>
+
+</td></tr></table>
+
+</td></tr></table>
+
+</td></tr></table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=600><tr><td>
+<b>
+<a href="http://www.ing.iac.es">Home</a> &gt;
+<a href="http://www.ing.iac.es/PR/">Public Information</a> &gt;
+<a href="http://www.ing.iac.es/PR/SH/">Scientific Highlights</a> &gt;
+<a href="http://www.ing.iac.es/PR/SH/SH2008/">2008</a> &gt;</b>
+</b><i>The Galaxy Zoo and Hanny's Voorwerp</i>
+</td></tr></table>
+<br><br>
+</center>
+
+
+<center><table width="594"><tr><td>
+
+<h2>The Galaxy Zoo and Hanny's Voorwerp</h2>
+
+
+<b>WHT+PFIP, WHT+ISIS, INT+WFC</b>
+
+<br><p>
+<div align="justify">
+
+Galaxy Zoo (GZ) is a online project in which volunteers visually classify the morphologies of galaxies selected at random from the spectroscopic sample of the Sloan Digital Sky Survey Data Release 6 (DR6). Information of this type is essential to 
+the development of our understanding of galaxy formation. The public response to the launch of GZ in 2007 July was overwhelming, achieving over 36 Myr classifications within a few months and results that agree exceptionally well with those of professional 
+astronomers. To make the project accessible to as many people as possible a relatively simple classification scheme was used.
+<p>
+Once launched, the Galaxy Zoo website quickly attracted an avalanche of attention from the public and media alike. A story about it on the BBC News website quickly became one of the most e-mailed stories of that day and the initial traffic was 
+such that it temporarily brought the Galaxy Zoo server down. They were quickly back online and gaining traffic of over 70,000 classifications an hour. This meant that the million hits that the team initially hoped for were achieved in a matter of days. 
+By the end of November 2007 every galaxy in the sample had been observed by on average 40 people; a signal-to-noise ratio that the team had only dreamed of achieving.
+<p>
+Some individual objects have also gained a lot of attention; the most famous of these is the Voorwerp (the Dutch for �object�), which was discovered by Dutch schoolteacher Hanny van Arkle. 
+Observations with the William Herschel, among others, led astronomers to the conclusion that this object consists of highly ionized gas.
+<p>
+
+<center><table width="600"><tr><td>
+<center><a href="VoorwerpWHTbig.jpg"><img src="VoorwerpWHTbigs.jpg" border=0></a></td></tr>
+<tr><td><div align="justify"><i>
+
+A combination of gri images using the WFC on the INT, along with an image in He II, which fortuitously gets redshifted to almost exactly the wavelength of H-beta in nearby objects, and in [O III], 
+revealing additional clouds of similar emission spread over a wide area. For scale, the projected distance between the nucleus of IC 2497, the galaxy to the north, and the center of the main blob is about 25 kpc. 
+Credit: Dan Smith (Liverpool John Moores) and Peter Herbert (University of Hertfordshire) [ <a href="VoorwerpWHTbig.jpg">JPEG</a> ].
+</i></td></tr>
+</table></center>
+
+<p>
+
+ With no obvious source of ionization present in the 
+Voorwerp, or in the neighbouring galaxy, they believe that it must come from a light-echo � the reflection of the light from an active nucleus in the Voorwerp�s companion galaxy more than 40,000 years ago. If they are correct, then 
+reflections from different parts of the Voorwerp record the behaviour of the black hole at different times, so the history of the black hole�s shutdown is laid out on the sky for astronomers to see. 
+<p>
+
+<center><table width="600"><tr><td>
+<center><a href="WHTSpecLabelled.jpg"><img src="WHTSpecLabelleds.jpg" border=0></a></td></tr>
+<tr><td><div align="justify"><i>
+
+2D optical spectrum crossing the cloud and IC 2497 obtained using ISIS spectrograph on the WHT. [ <a href="WHTSpecLabelled.jpg">JPEG</a> ].
+</i></td></tr>
+</table></center>
+
+<p>
+
+The spectrum shows emission lines typical of star-forming regions spread across the object, at a redshift associating it with IC 2497, but shows, in addition, features indicating unusually high temperature and higher ionization than seen in H II regions. 
+To have the [O III] 4363 line detectable, the gas has to be unusually hot, more like 15-20,000 K. He II is produced when an electron joins a bare helium nucleus, and requires high enough temperature or radiation with enough energy to tear 
+both electrons from helium. We don't see this in star-forming regions. The only stars hot enough to produce He II in surrounding nebulae are the central stars of planetary nebulae, which are the hottest stars known, but only for a few thousand years, 
+and a handful of X-ray-bright stars usually associated with accretion onto black holes or neutron stars. On top of that, at the blue end of the spectrum is [Ne V]. Pulling four electrons from neon requires 97 electron volts (eV), compared to 54 to make 
+He II and 13.6 to ionize hydrogen. [Ne V] does sometimes show up in planetary nebulae, but even there calculations suggest that it's not the UV starlight that's responsible, but that high-speed shock waves may be the culprit. 
+This line is also common in the spectra of active galaxies - Seyfert nuclei and their kin, where we know that there are abundant X-rays interacting with the gas. 
+<p>
+The high ionization might suggest shock ionization or photoionization by an active galactic nuclei, which would have to be much brighter than any we see in the neighborhood. If the AGN is in IC 2497, it must be highly obscured from our 
+direction but not toward the gas. It may be significant that the cloud lies near the galaxy's projected minor axis. Whatever it is, it seems to be quite unique in the SDSS imaging survey. 
+
+
+
+
+<p>
+<b>More information:</b>
+<p>
+<ul>
+
+<li><a href="http://www3.interscience.wiley.com/search/allsearch?mode=citation&contextLink=blah&issn=1365-2966&volume=388&issue=&pages=1686">Kate Land, Anze Slosar, Chris Lintott, Dan Andreescu, Steven Bamford, Phil Murray, Robert Nichol, M. Jordan Raddick, Kevin Schawinski, Alex Szalay, Daniel Thomas, Jan Vandenberg, 2008, "Galaxy Zoo: the large-scale spin statistics of spiral galaxies in the Sloan Digital Sky Survey",
+<i>MNRAS</i>, <b>388</b>, 1686.</a>
+
+<li><a href="http://www.astron.nl/press/081121.htm">"Westerbork Radio Telescope reveals the nature of Hanny's Voorwerp"</a>, <a href="http://www.astron.nl/">ASTRON</A> press release, 25 November 2008.
+<li><a href="http://physicsworld.com/cws/article/print/35626">Chris Lintott, "Eyeballing the universe", <i>Physics World</i>, September 2008.</a>
+<li><a href="http://www.astr.ua.edu/keel/research/voorwerp.html">Hanny's Voorwerp (SDSS J094103.80+344334.2)</a> web pages.
+<li><a href="http://www.galaxyzoo.org/">Galaxy Zoo</a> web site.
+<li><a href="http://www.hannysvoorwerp.com/">Hanny's weblog</a>
+
+<li><a href="http://apod.nasa.gov/apod/ap080625.html">Astronomy Picture of the Day</a>
+
+</ul>
+
+</table>
+</center>
+
+</td></tr></table>
+
+<br><br>
+
+<center><table border=0 cellpadding=0 cellspacing=0 width=600><tr><td>
+<a href="#top">Top</a> | <a href="javascript:history.back();">Back</a>
+</td></tr></table></center>
+<center><hr WIDTH="600"></center>
+<center><table WIDTH="600"><tr><td>
+
+<table>
+<tr valign=bottom>
+<td VALIGN=BOTTOM><img SRC="http://www.ing.iac.es/gifs/wht_small.gif" ></td>
+<td VALIGN=BOTTOM>
+<font face="Arial,helvetica,times">
+<font size=-1>
+
+<script type="text/javascript" language="JavaScript1.2">
+     function scr_adr(){
+     var a,b,c,d,e,f
+     a='<a class=arclink href=\"mai'  // email-link part 1
+     b='jma'           // address part 1
+     c='\">'            // email-link part 4
+     a+='lto:'          // email-link part 2
+     b+='@ing.'       // address part 2
+     e='</a>'           // email-link part 3
+     f='Javier M&eacute;ndez'    // substitute email address with this string
+     b+='iac.es'        // address part 3
+     if (f) d=f
+     else d=b
+     document.write(a+b+c+d+e)
+     }
+     scr_adr()
+     //-->
+</script>
+
+<br><i>Public Relations Officer</i>
+<br>
+Last modified: 13 December 2010</font></font></td></tr></table>
+
+</td></tr></table>
+
+</center>
+	
+</BODY></HTML>
+	
+	
+
+

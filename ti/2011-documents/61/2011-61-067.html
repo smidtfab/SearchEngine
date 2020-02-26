@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="keywords" content="FAQ,How to integrate reCAPTCHA" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="reCAPTCHA Wiki (en)" />
+		<link rel="alternate" type="application/rss+xml" title="reCAPTCHA Wiki RSS Feed" href="/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="reCAPTCHA Wiki Atom Feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>FAQ - reCAPTCHA Wiki</title>
+		<link rel="stylesheet" href="/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/skins";
+		var wgArticlePath = "/index.php/$1";
+		var wgScriptPath = "";
+		var wgScript = "/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wiki.recaptcha.net";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "FAQ";
+		var wgTitle = "FAQ";
+		var wgAction = "view";
+		var wgArticleId = "6";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 670;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-FAQ skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">FAQ</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From reCAPTCHA Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>Frequently asked questions about <a href="http://recaptcha.net" class="external text" title="http://recaptcha.net" rel="nofollow">reCAPTCHA</a>
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Integration"><span class="tocnumber">1</span> <span class="toctext">Integration</span></a>
+<ul>
+<li class="toclevel-2"><a href="#How_do_I_integrate_reCAPTCHA_with_Facebook_FBML_using_fb:captcha.3F"><span class="tocnumber">1.1</span> <span class="toctext">How do I integrate reCAPTCHA with Facebook FBML using fb:captcha?</span></a></li>
+<li class="toclevel-2"><a href="#How_do_I_integrate_reCAPTCHA_with_my_PHP_form_handling_code.3F"><span class="tocnumber">1.2</span> <span class="toctext">How do I integrate reCAPTCHA with my PHP form handling code?</span></a></li>
+<li class="toclevel-2"><a href="#Can_I_use_reCAPTCHA_in_static_HTML_files.3F"><span class="tocnumber">1.3</span> <span class="toctext">Can I use reCAPTCHA in static HTML files?</span></a></li>
+<li class="toclevel-2"><a href="#Can_I_internationalise_the_reCAPTCHA_challenge_itself.3F"><span class="tocnumber">1.4</span> <span class="toctext">Can I internationalise the reCAPTCHA challenge itself?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Non-Javascript"><span class="tocnumber">2</span> <span class="toctext">Non-Javascript</span></a>
+<ul>
+<li class="toclevel-2"><a href="#I.27m_testing_non-JS_version_and_getting_.22You_are_at_this_page_because....22"><span class="tocnumber">2.1</span> <span class="toctext">I'm testing non-JS version and getting "You are at this page because..."</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Troubleshooting"><span class="tocnumber">3</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toclevel-2"><a href="#It.27s_not_working.21_Help.21"><span class="tocnumber">3.1</span> <span class="toctext">It's not working! Help!</span></a></li>
+<li class="toclevel-2"><a href="#I_keep_getting_.22verify-params-incorrect.22_when_developing_with_Windows_Vista"><span class="tocnumber">3.2</span> <span class="toctext">I keep getting "verify-params-incorrect" when developing with Windows Vista</span></a></li>
+<li class="toclevel-2"><a href="#reCAPTCHA_is_accepting_incorrect_words"><span class="tocnumber">3.3</span> <span class="toctext">reCAPTCHA is accepting incorrect words</span></a></li>
+<li class="toclevel-2"><a href="#reCAPTCHA_accepts_anything_I_type"><span class="tocnumber">3.4</span> <span class="toctext">reCAPTCHA accepts anything I type</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Other"><span class="tocnumber">4</span> <span class="toctext">Other</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Can_I_delete_a_key.2Fall_keys.2Fa_site.2Fmy_account"><span class="tocnumber">4.1</span> <span class="toctext">Can I delete a key/all keys/a site/my account</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Integration" id="Integration"></a><h1> <span class="mw-headline"> Integration </span></h1>
+<a name="How_do_I_integrate_reCAPTCHA_with_Facebook_FBML_using_fb:captcha.3F" id="How_do_I_integrate_reCAPTCHA_with_Facebook_FBML_using_fb:captcha.3F"></a><h2> <span class="mw-headline"> How do I integrate reCAPTCHA with Facebook FBML using fb:captcha? </span></h2>
+<p>I followed the instructions on your wiki and I'm using FormMail.pl to handle the form, but I can't add the required JavaScript call to api.recaptcha.net. Help!
+</p>
+<a name="How_do_I_integrate_reCAPTCHA_with_my_PHP_form_handling_code.3F" id="How_do_I_integrate_reCAPTCHA_with_my_PHP_form_handling_code.3F"></a><h2> <span class="mw-headline"> How do I integrate reCAPTCHA with my PHP form handling code? </span></h2>
+<p>See <a href="/index.php/How_to_integrate_reCAPTCHA" title="How to integrate reCAPTCHA">How to integrate reCAPTCHA</a> for a working example.
+</p>
+<a name="Can_I_use_reCAPTCHA_in_static_HTML_files.3F" id="Can_I_use_reCAPTCHA_in_static_HTML_files.3F"></a><h2> <span class="mw-headline"> Can I use reCAPTCHA in static HTML files? </span></h2>
+<p>Not if all you have are static HTML files - you require a server-side scripting language to verify the reCAPTCHA after it has been submitted by your users. This verification cannot be done in static HTML using Javascript or any other client-side language.
+</p><p>If you want reCAPTCHA you require either knowledge of a server-side language or a web application (examples of both may be found at <a href="http://recaptcha.net/resources.html" class="external free" title="http://recaptcha.net/resources.html" rel="nofollow">http://recaptcha.net/resources.html</a>,) and a hosting provider that will allow you to use it.
+</p>
+<a name="Can_I_internationalise_the_reCAPTCHA_challenge_itself.3F" id="Can_I_internationalise_the_reCAPTCHA_challenge_itself.3F"></a><h2> <span class="mw-headline"> Can I internationalise the reCAPTCHA challenge itself? </span></h2>
+<p>Not yet. It is being looked into however - see <a href="http://groups.google.com/group/recaptcha/browse_thread/thread/e3c63ca13ab5f17d?hl=en" class="external free" title="http://groups.google.com/group/recaptcha/browse_thread/thread/e3c63ca13ab5f17d?hl=en" rel="nofollow">http://groups.google.com/group/recaptcha/browse_thread/thread/e3c63ca13ab5f17d?hl=en</a>
+</p>
+<a name="Non-Javascript" id="Non-Javascript"></a><h1> <span class="mw-headline"> Non-Javascript </span></h1>
+<a name="I.27m_testing_non-JS_version_and_getting_.22You_are_at_this_page_because....22" id="I.27m_testing_non-JS_version_and_getting_.22You_are_at_this_page_because....22"></a><h2> <span class="mw-headline"> I'm testing non-JS version and getting "You are at this page because..." </span></h2>
+<p>If you are getting the message:
+</p><p><i>You are at this page because you loaded the JavaScript free version of reCAPTCHA, but it looks like you have JavaScript. We need to prevent this for security reasons. If you are testing out the JavaScript-free version, turn off JavaScript in your browser.</i>
+</p><p>it means that reCAPTCHA has detected that your browser can handle some Javascript, but for some reason will not accept reCAPTCHA. This is typical of using (e.g.) NoScript in FireFox to selectively disable JS on a site by site basis.
+</p><p>Follow the instructions in the message and turn off JS <b>totally</b> in your browser for the duration of your testing.
+</p><p>Do not assume that turning off JS means simply doing this (in IE6 and IE7):  Tools &gt; Internet Options &gt; Security &gt; Custom level &gt; Scripting &gt; Active scripting &gt; Disable.  By default, this will only turn off JS in your Intranet zone, which means that the page containing the recaptcha widget will have JS turned off; but the page loaded into the iframe between the noscript tags will still have JS turned on, hence you will get the abovementioned message.
+</p><p>To turn off JS <b>totally</b> in this case, select the Internet zone (under Tools &gt; Internet Options &gt; Security) and then choose Custom level &gt; Scripting &gt; Active scripting &gt; Disable as was done for the Intranet zone.
+</p>
+<a name="Troubleshooting" id="Troubleshooting"></a><h1> <span class="mw-headline"> Troubleshooting </span></h1>
+<a name="It.27s_not_working.21_Help.21" id="It.27s_not_working.21_Help.21"></a><h2> <span class="mw-headline"> It's not working! Help! </span></h2>
+<p>Before doing anything else, make sure you're using the correct keys. Are your public and private keys swapped? Did you remember to put the private key in the form handler as well as putting the public key in the form?
+</p><p>Note that Mailhide uses <b>different keys</b> from the main form based reCAPTCHA.
+</p><p>Be sure that your form uses the POST method, or else change the reCAPTCHA form handler variables to GET instead of POST.
+</p>
+<a name="I_keep_getting_.22verify-params-incorrect.22_when_developing_with_Windows_Vista" id="I_keep_getting_.22verify-params-incorrect.22_when_developing_with_Windows_Vista"></a><h2> <span class="mw-headline"> I keep getting "verify-params-incorrect" when developing with Windows Vista </span></h2>
+<p>Vista defaults to IPV6 for localhost and the IP of the browser on localhost will be sent to reCAPTCHA as "0:0:0:0:0:0:0:1".  You must test for this and change it to "127.0.0.1" during development.
+</p>
+<a name="reCAPTCHA_is_accepting_incorrect_words" id="reCAPTCHA_is_accepting_incorrect_words"></a><h2> <span class="mw-headline"> reCAPTCHA is accepting incorrect words </span></h2>
+<p>reCAPTCHA consists of two words: a <b>verification</b> word, to which the reCAPTCHA server knows the answer and a <b>read</b> word which comes from an old book. The read word is not graded (since the server is using human guesses to figure out the answer). As such, this word can be entered incorrectly, and the CAPTCHA will still be valid. Each read word is sent to multiple people, so incorrect solutions will not affect the output of reCAPTCHA.
+</p><p>On the verification word, reCAPTCHA intentionally allows an "off by one" error depending on how much we trust the user giving the solution. This increases the user experience without impacting security. reCAPTCHA engineers monitor this functionality for abuse.
+</p>
+<a name="reCAPTCHA_accepts_anything_I_type" id="reCAPTCHA_accepts_anything_I_type"></a><h2> <span class="mw-headline"> reCAPTCHA accepts anything I type </span></h2>
+<p>You probably aren't validating the reCAPTCHA with the API servers.
+</p>
+<a name="Other" id="Other"></a><h1> <span class="mw-headline"> Other </span></h1>
+<a name="Can_I_delete_a_key.2Fall_keys.2Fa_site.2Fmy_account" id="Can_I_delete_a_key.2Fall_keys.2Fa_site.2Fmy_account"></a><h2> <span class="mw-headline"> Can I delete a key/all keys/a site/my account  </span></h2>
+<p>No. 
+</p><p>Since yours is the only site that can use those keys, no one else can use them. Simply stop using them. Leaving them 'on the system' as it were, does no harm.
+</p><p>If you're having perceived problems because, for example, you've created keys for www.example.com and example.com (without the www) and you want www.example.com to be 'deleted' because you're having issues with authentication, simply remove all keys from your code that refer to the the www.example.com - your example.com keys should work with www.example.com.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 15/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key recaptchawiki-wiki3_:pcache:idhash:6-0!1!0!!en!2!edit=0 and timestamp 20110402230735 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.recaptcha.net/index.php/FAQ">http://wiki.recaptcha.net/index.php/FAQ</a>"</div>
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/index.php/Special:Categories" title="Special:Categories">Category</a>:&#32;<span dir='ltr'><a href="/index.php?title=Category:Help&amp;action=edit&amp;redlink=1" class="new" title="Category:Help (page does not exist)">Help</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/index.php/FAQ" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:FAQ&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/index.php?title=FAQ&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/index.php?title=FAQ&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=FAQ" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/logo.png);" href="/index.php/Main_Page" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/index.php/Main_Page">Main Page</a></li>
+				<li id="n-portal"><a href="/index.php/reCAPTCHA_Wiki:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/index.php/reCAPTCHA_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search reCAPTCHA Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/index.php/Special:WhatLinksHere/FAQ" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/index.php/Special:RecentChangesLinked/FAQ" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/index.php?title=FAQ&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/index.php?title=FAQ&amp;oldid=670" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 28 January 2011, at 15:54.</li>
+					<li id="viewcount">This page has been accessed 32,737 times.</li>
+					<li id="privacy"><a href="/index.php/reCAPTCHA_Wiki:Privacy_policy" title="reCAPTCHA Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="/index.php/reCAPTCHA_Wiki:About" title="reCAPTCHA Wiki:About">About reCAPTCHA Wiki</a></li>
+					<li id="disclaimer"><a href="/index.php/reCAPTCHA_Wiki:General_disclaimer" title="reCAPTCHA Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 1.906 secs. --></body></html>

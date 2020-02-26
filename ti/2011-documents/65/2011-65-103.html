@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="mcontent-Type" content="text/html; charset=UTF-8" />
+	<title>How Mechanical Turk is Broken - Technology Review</title>
+	<meta http-equiv="mcontent-Type" content="text/html; charset=utf-8" />
+	<meta content="Technology, Review, MIT, magazine, nanotechnology, nanotech, biotechnology, biotech, information technology, infotech, business, business technology, biz tech" name="keywords" />
+	<meta content="Why the world's most famous outsourcing hub for tiny tasks is littered with spam and shoddy workmanship." name="description" />
+	<meta content="Technology Review Web Development Team" name="author" />
+	<meta content="How Mechanical Turk is Broken - Technology Review" name="title" />
+	<meta content="" name="pages" />
+	<meta content="" name="collection" />
+	<meta content="Cambridge, MA" name="geo.placename" />
+	<meta content="US-MA" name="geo.region" />
+	
+
+<meta property="og:image" content="http://www.technologyreview.com/files/53409/blog_bits_x116.jpg" />
+<link rel="image_src" href="http://www.technologyreview.com/files/53409/blog_bits_x116.jpg"/>
+
+
+	
+	<link rel="shortcut icon" href="/favicon.ico?634261995914320154" />
+	<link rel="icon" href="/favicon.ico?634261995914320154" />
+
+	<link rel="stylesheet" media="only screen and (device-width: 768px)" href="/css/ipad.css" type="text/css" />
+
+
+	<link href="/css/style.css?634372564687787965" rel="stylesheet" type="text/css" />
+	
+
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.technologyreview.com/rss/rss.aspx" />
+
+<!--[if IE]><link rel="stylesheet" href="/css/ie.css?634280969475877728" type="text/css" media="all" /><![endif]-->
+<!--[if lt IE 8]><link rel="stylesheet" href="/css/ie7.css?634296529933105922" type="text/css" media="all" /><![endif]-->
+<!-- JQuery Library -->
+<script type="text/javascript" src="/scripts/jquery-1.4.2.js?634177217785666350"></script>
+<script type="text/javascript" src="/scripts/scripts.js?634238772152187359"></script>
+<script type="text/javascript" src="/scripts/jsScroller.js?634176559459234440"></script>
+<script type="text/javascript" src="/scripts/jsScrollbar3.js?634176560155340124"></script>
+<script type="text/javascript">
+var scroller  = null;
+var scrollbar = null;
+window.onload = function () {
+	if (document.getElementById("Scroller-3")) {
+  scroller  = new jsScroller(document.getElementById("Scroller-3"), 330, 230);
+  scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+  	}
+}
+</script>
+
+<script type="text/javascript" src="/scripts/MobileCompatibilityScript.js?634093656220000000"></script>
+
+<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script> 
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script> 
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var randartnum = Math.random()*10000000000000000;
+//--><!]]>
+</script>
+</head>
+
+<body>
+<!-- search ignore begin -->
+
+
+
+<div class="container">
+	<div id="header">
+		<div id="topheader">
+
+		<div id="logo">
+			<a href="http://www.technologyreview.com/"><img src="/images/logo.png" width="197" height="63" alt="Technology Review" /></a>
+			<span class="tagline">Published by MIT</span>
+		</div>
+
+		
+		
+		<ul class="languages">
+			<li><a href="http://www.technologyreview.com/">English</a></li>
+			<li><a href="http://www.technologyreview.com/es" lang="es">en Español</a></li>
+			<li><a href="http://www.heise.de/tr/" lang="de">auf Deutsch</a></li>
+			<li><a href="http://www.technologyreview.it/" lang="it">in Italiano</a></li>
+			<!--<li><a href="#" lang="pt">Portugese</a></li>-->
+			<li><a href="http://www.mittrchinese.com/" lang="ar">中文</a></li>
+			<li><a href="http://www.technologyreview.in/" lang="hi">in India</a></li>
+		</ul>
+		
+		<ul id="myaccount">
+			<li class="first"><a href="https://subscribe.technologyreview.com/mit/">Subscribe</a></li>
+			<li>
+	
+				<a href="https://www.technologyreview.com/mytr/login.aspx?redirect=http%3A%2F%2Fwww.technologyreview.com%2Fblog%2Fmimssbits%2F26193%2F">Login</a>
+	
+			</li>
+		</ul>
+	
+		<div class="advert">
+			<div id="topbanneradspacer"></div>
+		</div>
+				
+		
+		<form action="/search.aspx" method="get" class="searchform">
+			<fieldset>
+
+				<label for="search" class="hide">Search</label>
+				<input id="search" name="s" class="text blink" value="search" onclick="if (!this.removedSearch) {this.value = ''; this.removedSearch = true;}"/>
+			</fieldset>
+			<fieldset class="submit">
+				<input type="image" src="/images/go.png" alt="search" class="button" />
+			</fieldset>
+			<input type="hidden" name="mod" value="search" />
+		</form><!--/.searchform-->
+		
+		
+		
+		<div class="clear"></div>
+		
+		</div>
+		
+		
+		<div class="navcontainer">
+			<div class="navs">
+			<ul class="nav" id="nav">
+				<li id="nav1"><a href="http://www.technologyreview.com/?mod=Nav_Home">Home</a></li>
+				<li id="nav2"><a href="http://www.technologyreview.com/computing/?mod=Nav_Computing">Computing</a></li>
+				<li id="nav3"><a href="http://www.technologyreview.com/web/?mod=Nav_Web">Web</a></li>
+				<li id="nav4"><a href="http://www.technologyreview.com/communications/?mod=Nav_Communications">Communications</a></li>
+				<li id="nav5"><a href="http://www.technologyreview.com/energy/?mod=Nav_Energy">Energy</a></li>
+				<li id="nav6"><a href="http://www.technologyreview.com/materials/?mod=Nav_Materials">Materials</a></li>
+				<li id="nav7"><a href="http://www.technologyreview.com/biomedicine/?mod=Nav_Biomedicine">Biomedicine</a></li>
+				<li id="nav8"><a href="http://www.technologyreview.com/business/?mod=Nav_Business">Business</a></li>
+			</ul>
+			
+			<ul class="nav nav2">
+			<li id="nav9"><a href="http://www.technologyreview.com/magazine/?mod=Nav_Magazine">Magazine</a></li>
+				<li id="nav10" class="here"><a href="http://www.technologyreview.com/blog/?mod=Nav_Blogs">Blogs</a></li>
+				<li id="nav11"><a href="http://www.technologyreview.com/video/?mod=Nav_Videos">Video</a></li>
+
+			</ul>
+			</div>
+			
+		
+		</div><!--/.navcontainer-->
+		
+		
+	</div>
+	<!--/.header-->
+
+	
+	<div class="contentwrap">	
+		<div class="mcontent">
+
+<!-- search ignore end -->
+
+
+
+
+			<div class="maincontent">
+				<div class="entry">
+	
+					<h2 style="background-image: none;"><a href="/blog/mimssbits/"><img src="/blog/images/mims_icons_x296.jpg" width="296" height="67" alt="Mims's Bits" class="blogimg" /></a></h2>
+			<div class="head">
+			<div class="description">
+				<h3>How Mechanical Turk is Broken</h3>
+		
+				<p class="intro">Why the world's most famous outsourcing hub for tiny tasks is littered with spam and shoddy workmanship.</p>
+		
+				<div class="info">
+					<p class="info">Christopher Mims  01/03/2010</p>
+		
+					<ul class="info">
+						<li>2 Comments</li>
+						<!--<li>xx trackbacks</li>-->
+					</ul>
+		
+				</div>
+				<!--<div class="options">
+					<a href="#" class="email">E-mail</a>
+					<a href="#" class="audio">Audio &raquo;</a>
+					<a href="#" class="print">Print</a>
+					<span class="icons">
+						<a href="#"><img src="/images/smalltxt-icon.gif" alt="small text" /></a>
+						<a href="#"><img src="/images/medtxt-icon.gif" alt="medium text" /></a>
+						<a href="#"><img src="/images/largetxt-icon.gif" alt="large text" /></a>
+					</span>
+				</div>-->
+			</div>
+		</div>
+		<div class="entry-content">
+			<div class="blogfloatimgr"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td rowspan="1" colspan="1"><div><img src="http://www.technologyreview.com/blog/mimssbits/files/50171/6629217_1f622b62bc_m.jpeg" alt="" width="207" height="240" /></div>Amazon founder and CEO Jeff Bezos<br />(cc) <a href="http://www.flickr.com/photos/oreilly/6629217/" target="_blank">James Duncan Davidson</a></td></tr></tbody></table></div>
+<p>Amazon's Mechanical Turk is important because in a perfect world, it could be the ultimate hub for the "human cloud" -- an amorphous, pan-national, always-on pool of labor usable by corporations and individuals for tasks of any scale. It could provide ready employment for part-time workers in in any country on earth. It could be the ultimate in frictionless, free markets for labor, if you're into that sort of thing.</p>
+<p>Recently, I told you how a fairly simple test of the abilities of Mechanical Turk revealed that the service is <a href="http://www.technologyreview.com/blog/mimssbits/26186/" target="_blank">failing to deliver on its core promise</a> -- providing developers and businesses with access to a pool of humans who can perform tasks better than machines.</p>
+<p>Panos Ipeirotis, a computer scientist who somehow finds himself at the Stern School of Business of New York University, <a href="http://behind-the-enemy-lines.blogspot.com/" target="_blank">explains on his blog</a> how Mechanical Turk arrived at this sorry state of affairs. Being the sort who likes to use Mechanical Turk in his own work -- <a href="http://www.ethanzuckerman.com/blog/2010/11/02/david-rand-social-science-experiments-with-mechanical-turk/" target="_blank">the service is an increasingly popular platform for experimentation by academics</a> -- Iperotis has been chronicling what ails the service for at least a year. Its main problem, <a href="http://behind-the-enemy-lines.blogspot.com/2010/07/mechanical-turk-low-wages-and-market.html" target="_blank">he contends</a>, is that the site has become what economists call a <a href="http://en.wikipedia.org/wiki/The_Market_for_Lemons" target="_blank">Market for Lemons</a>:</p>
+<p>*A market for lemons is a market where the sellers cannot evaluate beforehand the quality of the goods that they are buying. So, if you have two types of products (say good workers and low quality workers) and cannot tell who is whom, the price that the buyer is willing to pay will be proportional to the average quality of the worker. So the offered price will be between the price of a good worker and a low quality worker.</p>
+<p>This drives good workers out of the market alltogether, further lowering the payment per task and leading to a downward spiral of wages and expectations.</p>
+<p>The ravages of this cycle have been profound: from a service that launched with much fanfare in the geek world in 2006, Mechanical Turk has become a site where <a href="http://behind-the-enemy-lines.blogspot.com/2010/12/mechanical-turk-now-with-4092-spam.html" target="_blank">40 percent of all tasks are spam</a>, contends Ipeirotis. Wages on the site average between two and three dollars an hour, despite the fact that for one quarter of participants, called Turkers, <a href="http://behind-the-enemy-lines.blogspot.com/2010/03/new-demographics-of-mechanical-turk.html" target="_blank">Mechanical Turk is their primary source of income</a>. This has led Luis Von Ahn, internet-famous creator of reCaptcha, to wonder whether or not Mechanical Turk has become the <a href="http://vonahn.blogspot.com/2010/07/work-and-internet.html" target="_blank">digital equivalent of an unregulated sweatshop</a>, where laws on minimum wage are flaunted.</p>
+<p>Mechanical Turk is purposefully an anonymous labor market -- there is no way for buyers of labor on the service to determine in what country their laborers reside, for example, and the site lacks a reputation system for workers, beyond the rate at which their completed tasks are accepted by requesters.</p>
+<p>These features make the site more closely resemble something like a software-based cloud; the problem with that model is that humans are not mechanized slaves that consistently churn out work or are eliminated and reprogrammed, like software algorithms. Without transparency and accountability -- the core ingredients of what economists call <a href="http://en.wikipedia.org/wiki/Signalling_(economics)" target="_blank">signaling</a> -- the site will continue to function primarily as an object lesson in the ways that poorly constructed markets fail.</p>
+<p><img src="http://www.technologyreview.com/blog/guest/files/43784/twitter.jpg" alt="" width="25" height="25" /> <a href="http://twitter.com/mims" target="_blank">Follow Mims on Twitter</a> or <a href="http://slipr.com/contact" target="_blank">contact him via email</a>.</p>
+
+		
+			<!--<div class="options">
+				<a href="#" class="email">E-mail</a>
+				<a href="#" class="print">Print</a>
+				<a href="#">Favorite</a>
+				<a href="#">Share</a>
+				<span class="icons">
+					<a href="#"><img src="/images/facebook.gif" alt="facebook" /></a>
+					<a href="#"><img src="/images/twitter.gif" alt="twitter" /></a>
+				</span>
+			</div>-->
+		</div>
+
+				</div><!--/.entry-->
+		
+	
+				<p class="post-paging">
+		
+					<a href="/blog/mimssbits/25128/" class="prev">Why Twitter Is the Future of News</a>
+		
+				</p>
+	
+
+				<div class="extras">
+	
+					<div>
+
+
+<div class="clear"></div>
+<div id="comments"></div>
+	
+<p class="commentOpenClose"><a href="#" onclick="openCloseComments(this); return false">Close Comments</a></p>
+	
+<form action="https://www.technologyreview.com/mytr/login.aspx?redirect=http%3A%2F%2Fwww.technologyreview.com%2Fblog%2Fmimssbits%2F26193%2F%23comments" method="post" class="pagelogin">
+	<input type="hidden" name="loggingIn" value="true" />
+	<p>To comment, please sign in or <a href="https://www.technologyreview.com/mytr/createuser.aspx?redirect=http://www.technologyreview.com/blog/mimssbits/26193/">register</a></p>
+	<fieldset>
+		<label for="cusername" class="hide">Username</label>
+
+		<input name="username" value="username" id="cusername" title="username" class="text blink" />
+		
+		
+		<label for="cpassword" class="hide">Password</label>
+		<input type="password" name="password" id="cpassword" value="password" title="password" class="text blink" />
+	</fieldset>
+	<fieldset class="submit">
+		<input type="image" src="/images/login_button.jpg" alt="login" class="button" />
+	</fieldset>
+	<p><a href="http://www.technologyreview.com/mytr/resetpassword.aspx">Forgot</a> my password  </p>
+</form>
+	
+
+<div class="divider"><!-- --></div>
+
+<div id="allcomments">
+
+<div class="blogcomments" id="comment-229237">
+	<div class="section">
+		<div class="user">
+	<img src="/images/profile.jpg" width="45" height="45" alt="" />
+			<p class="username">karllong</p>
+		
+			<p>1 Comment</p>
+		
+		</div>
+		<div class="comment">
+			<ul class="info">
+				<li>90 Days Ago</li>
+				<li>01/03/2011</li>
+	
+			</ul>
+	
+			<p><strong><a href="#comment-229237">turk and creation of crowdsourcing services</a></strong></p>
+	
+			<p class="commentbody">Some services have emerged that are built on the human cloud of mechanical turk specifically to alieviate many of the concerns expressed in this article. <a target="_blank" rel="nofollow" href="http://crowdflower.com">http://crowdflower.com</a> has many metrics in place that help assure a more predictable quality. Mechanical turk can also be used recursively to check it's own work and providing foundation for a reputation system. <br /><br />(I have no financial interest in crowdflower)<br /><br />I do have an interest in <a target="_blank" rel="nofollow" href="http://tinylevers.com">http://tinylevers.com</a> - crowdsource consulting though :)</p>
+		</div>
+	</div>
+	<p class="reply"><a href="http://www.technologyreview.com/mytr/comment.aspx?pid=229237">Reply</a></p>
+	<div class="clear"></div>
+	
+</div>
+
+<div class="divider"></div>
+	
+<div class="blogcomments" id="comment-229254">
+	<div class="section">
+		<div class="user">
+	<img src="/images/profile.jpg" width="45" height="45" alt="" />
+			<p class="username">Turker</p>
+		
+			<p>1 Comment</p>
+		
+		</div>
+		<div class="comment">
+			<ul class="info">
+				<li>89 Days Ago</li>
+				<li>01/04/2011</li>
+	
+			</ul>
+	
+			<p><strong><a href="#comment-229254">Quick notes</a></strong></p>
+	
+			<p class="commentbody">While I agree that MTurk needs many improvements, I do have a few comments.<br /><br />From the article: "there is no way for buyers of labor on the service to determine in what country their laborers reside,"<br /><br />Requesters can set their HITs so that certain countries are excluded, or that only workers from a country can accept the assignment. True this can be spoofed, but it is one control.<br /><br />Also, many requesters set up a qualification test, so that a worker has to prove they can provide quality work before they can accept the HITs.<br /><br />The problem is for many requesters, they set up their HITs without taking the time to learn how to effectively take advantage of what tools they can use to assure a good workforce. I see new requesters daily who are setting up HITs that are destined to attract only spam workers. <br /></p>
+		</div>
+	</div>
+	<p class="reply"><a href="http://www.technologyreview.com/mytr/comment.aspx?pid=229254">Reply</a></p>
+	<div class="clear"></div>
+	
+</div>
+
+</div>
+
+
+						
+					</div><!--/.col1-->
+					
+				</div><!--/extras-->
+				
+			</div><!--/.maincontent-->
+			
+
+			<div class="sidecontent">
+	
+            	<div class="module module2 bio">
+					<h2>Bio</h2>
+					<!--<a href="#"><img src="/images/sm-photo.jpg" alt="" class="photo" /></a>-->
+					<p><a href="http://slipr.com/about">Christopher Mims</a> is a journalist who covers technology and science for just about everybody.</p>
+					<p class="blogrss"><a href="/rss/blogrss.aspx?id=377">Subscribe to the Mims's Bits RSS Feed</a></p>
+				</div><!--/.module -->
+	
+				
+				<div class="clear"></div>
+            	
+            	<div class="smod">
+					<div class="ad">
+						<div class="adheader"><img src="/images/ad_legend_h.gif" width="79" height="17" alt="Advertisement" /></div>
+	
+			<script type="text/javascript">
+			<!--//--><![CDATA[//><!--
+			var browser_type=navigator.appName
+									var browser_version=parseInt(navigator.appVersion)
+									document.write('<SCR' + 'IPT LANGUAGE="JavaScript" SRC="http://ad.doubleclick.net/adj/mk3.technologyreview.com/mediumrectangle;!category=webexc;channel=web;section=;at=mediumrectangle;page=home;s=mediumrectangle;dcopt=ist;tile=3;ord=' + randartnum + '?"><\/SCR' + 'IPT>')
+			//--><!]]>
+			</script><noscript>
+									<a href="http://ad.doubleclick.net/jump/mk3.technologyreview.com/mediumrectangle;!category=webexc;channel=web;section=;at=mediumrectangle;page=home;s=mediumrectangle;tile=3;ord=?" target="_blank">
+										<img src="http://ad.doubleclick.net/ad/mk3.technologyreview.com/mediumrectangle;!category=webexc;channel=web;section=;at=mediumrectangle;page=home;s=mediumrectangle;tile=3;ord=?" border="0" alt="click here..." />									</a>
+			</noscript>
+					</div>
+					<div class="clear"></div>
+	
+            	</div>
+            	
+            	<div class="clear"></div>
+				
+	
+				<div class="smod gray">
+					<h2>Recent Posts From<br />Mims's Bits</h2>
+					
+					<div class="posts-mod">	
+		
+						<p><a href="/blog/mimssbits/26595/">Simulating Medieval Warfare on Supercomputers</a></p>
+		
+						<p><a href="/blog/mimssbits/26590/">Fake Girlfriend Service Employs Actual Women</a></p>
+		
+						<p><a href="/blog/mimssbits/26581/">How Google saves the world $65 billion a year</a></p>
+		
+						<p><a href="/blog/mimssbits/26579/">The Unexpected Ubiquity of Spam Detection Algorithms</a></p>
+		
+						
+						<p class="more"><a href="/blog/mimssbits/">More</a></p>
+					</div>
+				</div><!--/.gray-->
+	
+				<div class="smod gray">
+					<h2>Blog Topics</h2>
+					<div class="posts-mod tags-mod">
+						<p>
+		
+							<a href="/blog/mimssbits/tags/algorithm/">algorithm</a>
+		
+							<a href="/blog/mimssbits/tags/algorithms/">algorithms</a>
+		
+							<a href="/blog/mimssbits/tags/genetic+analysis/">genetic analysis</a>
+		
+							<a href="/blog/mimssbits/tags/genomes/">genomes</a>
+		
+							<a href="/blog/mimssbits/tags/malicious+code/">malicious code</a>
+		
+							<a href="/blog/mimssbits/tags/malware/">malware</a>
+		
+							<a href="/blog/mimssbits/tags/spam/">spam</a>
+		
+							<a href="/blog/mimssbits/tags/Wikipedia/" class="last">Wikipedia</a>
+		
+						</p>
+					</div>
+				</div>
+	
+				
+            	<div class="smod">
+	
+					<div class="ad">
+						<div class="adheader"><img src="/images/ad_legend_h.gif" width="79" height="17" alt="Advertisement" /></div>
+			<script type="text/javascript">
+			<!--//--><![CDATA[//><!--
+			var browser_type=navigator.appName
+									var browser_version=parseInt(navigator.appVersion)
+									document.write('<SCR' + 'IPT LANGUAGE="JavaScript" SRC="http://ad.doubleclick.net/adj/mk3.technologyreview.com/mediumrectangle;!category=webexc;channel=web;section=;at=mediumrectangle;page=home;s=mediumrectangle;dcopt=ist;tile=3;ord=' + randartnum + '?"><\/SCR' + 'IPT>')
+			//--><!]]>
+			</script><noscript>
+									<a href="http://ad.doubleclick.net/jump/mk3.technologyreview.com/mediumrectangle;!category=webexc;channel=web;section=;at=mediumrectangle;page=home;s=mediumrectangle;tile=3;ord=?" target="_blank">
+										<img src="http://ad.doubleclick.net/ad/mk3.technologyreview.com/mediumrectangle;!category=webexc;channel=web;section=;at=mediumrectangle;page=home;s=mediumrectangle;tile=3;ord=?" border="0" alt="click here..." />									</a>
+			</noscript>
+					</div>
+					<div class="clear"></div>
+	
+            	</div>
+
+   <div class="smod">
+    <div class="tr35nominatebox smod gray">
+	<h2>Facebook</h2>
+<iframe src="http://www.facebook.com/plugins/activity.php?site=www.technologyreview.com&amp;width=336&amp;height=280&amp;ref=blog&amp;header=false&amp;colorscheme=light&amp;recommendations=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:336px; height:280px;" allowTransparency="true"></iframe>
+
+</div>
+</div>
+<div class="clear"></div>         
+			</div><!--/.sidecontent-->
+<!-- search ignore begin -->
+<div class="clear"></div>
+<div id="topbannerad">
+	<div id="topbanneradwraper">
+		<a id="topbanneradhomelink" href="http://www.technologyreview.com/"></a>
+
+		<div class="adheader"><img src="/images/ad_legend_v.gif" width="18" height="90" alt="Advertisement" /></div>
+<div class="topbanneradtag">
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+	document.write('<SCR' + 'IPT LANGUAGE="JavaScript" SRC="//ad.doubleclick.net/adj/mk3.technologyreview.com/leaderboard1;!category=webexc;channel=web;section=;at=leaderboard;page=home;s=leaderboard1;sz=728x90;;tile=1;ord=' + randartnum + '?"><\/SCR' + 'IPT>')
+//--><!]]>
+</script>
+<noscript><a href="https://ad.doubleclick.net/jump/mk3.technologyreview.com/leaderboard1;!category=webexc;channel=web;section=;at=leaderboard;page=home;s=leaderboard1;sz=728x90;tile=1;ord=?" target="_blank"><img src="//ad.doubleclick.net/ad/mk3.technologyreview.com/leaderboard1;!category=webexc;channel=web;section=;at=leaderboard;page=home;s=leaderboard1;sz=728x90;tile=1;ord=?" width="728" height="90" border="0" alt="click here..." /></a></noscript>
+</div>
+
+	</div>
+</div>
+
+<div class="advert-btm"> 
+	<div class="ad">
+
+		<div class="adheader"><img src="/images/ad_legend_h.gif" width="79" height="17" alt="Advertisement" /></div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+	document.write('<SCR' + 'IPT LANGUAGE="JavaScript" SRC="//ad.doubleclick.net/adj/mk3.technologyreview.com/leaderboard2;!category=webexc;channel=web;section=;at=leaderboard;page=home;s=leaderboard2;sz=728x90;;tile=13;ord=' + randartnum + '?"><\/SCR' + 'IPT>')
+//--><!]]>
+</script>
+<noscript><a href="https://ad.doubleclick.net/jump/mk3.technologyreview.com/leaderboard2;!category=webexc;channel=web;section=;at=leaderboard;page=home;s=leaderboard2;sz=728x90;tile=13;ord=?" target="_blank"><img src="//ad.doubleclick.net/ad/mk3.technologyreview.com/leaderboard2;!category=webexc;channel=web;section=;at=leaderboard;page=home;s=leaderboard2;sz=728x90;tile=13;ord=?" width="728" height="90" border="0" alt="click here..." /></a></noscript>
+
+	</div>
+	<div class="clear"></div>
+ </div>
+
+
+		</div>
+	</div>
+<div id="footer">
+		<div class="footerlogo">
+			<img src="/images/MIT-logo.gif" width="54" height="28" alt="MIT" />
+			<p>&copy; 2011 MIT<br />
+			Technology Review</p>
+
+		</div><!--/.footerlogo-->
+		
+        <ul class="footernav">
+			<li><a href="http://www.technologyreview.com/corp/about.aspx">About Us</a></li>
+            <li><a href="http://www.technologyreview.com/media">Advertise</a></li>
+			<li><a href="http://www.technologyreview.com/events">Events</a></li>
+			<li><a href="http://www.technologyreview.com/cust/permissions.aspx">Reprints &amp; Permissions</a></li>
+            <li><a href="http://www.technologyreview.com/corp/press.aspx">Press</a></li>
+            <li><a href="http://www.technologyreview.com/corp/jobs.aspx">Jobs</a></li>
+			<li><a href="http://www.technologyreview.com/careerresources">Resources</a></li>
+            <li><a href="http://www.technologyreview.com/corp/staff.aspx">Staff</a></li>
+            </ul>
+             <ul class="footernav">
+			<li>Help</li>
+            <li><a href="http://www.technologyreview.com/cust/index.aspx">Customer Service</a></li>
+            <li><a href="http://www.technologyreview.com/corp/contact.aspx">Contact Us</a></li>
+            <li><a href="http://www.technologyreview.com/corp/privacy.aspx">Privacy</a></li>
+            <li><a href="http://www.technologyreview.com/corp/terms.aspx">Terms of Use</a></li>
+            <li><a href="http://www.technologyreview.com/cust/sitemap.aspx">Site Map</a></li>
+            <li><a href="http://www.technologyreview.com/cust/feedback.aspx">Website Feedback</a></li>
+			</ul>
+             <ul class="footernav">
+			<li>Subscriptions</li>
+            <li><a href="https://subscribe.technologyreview.com/mit/">Subscribe</a></li>
+            <li><a href="https://subscribe.technologyreview.com/misubgift.aspx?PC=MT">Gift Subscription</a></li>
+			<li><a href="http://www.technologyreview.com/cust/newsletter.aspx">Free Newsletters</a></li>
+			<li><a href="https://subscribe.technologyreview.com/SubInfo.aspx?PC=MT&amp;do=R">Renew</a></li>
+            <li><a href="https://subscribe.technologyreview.com/backissue/subbi.aspx?PC=MT">Back Issues</a></li>
+            <li><a href="http://www.technologyreview.com/cust/">Customer Service</a></li>
+            <li><a href="http://www.technologyreview.com/apps/index.aspx">Apps</a></li>
+
+		</ul>
+		
+		<div class="feeds">
+			<h2>Follow Us</h2>
+			<p id="last"><a href="http://twitter.com/techreview"><img src="/images/Twitter-icon.png" width="16" height="16" alt=""/> On Twitter</a></p>
+			<p><a href="http://www.facebook.com/pages/Technology-Review/17043549797"><img src="/images/FaceBook-icon.png" width="16" height="16" alt="" /> Become a Fan on Facebook</a></p>
+			<p><a href="http://feeds.technologyreview.com/technology_review_top_stories"><img src="/images/Feed-icon.png" width="16" height="16" alt="" /> Subscribe to the Feed</a></p>
+		</div><!--/.feeds-->
+		
+	</div>
+
+</div>
+
+<script type="text/javascript" src="/scripts/omniture_s_code.js?634360295778358562"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+	
+s.pageName = "How Mechanical Turk is Broken";
+	
+
+s.channel = "web";
+s.prop1 = "article";
+	
+
+s.prop3 = "blog";
+	
+s.prop5 = "";
+
+	
+	
+s.prop7 = "http:\/\/www.technologyreview.com\/blog\/mimssbits\/26193\/";
+
+	
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="https://techreview.112.2o7.net/b/ss/techreview/1/H.22.1--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.22.1. -->
+
+
+<!-- Advertiser, Include user in segment 'TechnologyReview?: Homepage Remarketing' -->
+<script src="http://ad.advertise.com/pixel?id=1090410&amp;t=1" type="text/javascript"></script>
+<!-- End of segment tag -->
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">
+_qacct="p-ffE9vWW7lzZG-";
+if (window.quantserve)
+	quantserve();
+</script>
+<noscript><img src="http://pixel.quantserve.com/pixel/p-ffE9vWW7lzZG-.gif" style="display: none" height="1" width="1" alt="Quantcast"/></noscript>
+<!-- End Quantcast tag -->
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7747898-5");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+  (function () {
+    var d = new Image(1, 1);
+    d.onerror = d.onload = function () {
+      d.onerror = d.onload = null;
+    };
+    d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-703343h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+  })();
+//--><!]]>
+</script>
+<noscript>
+  <div>
+    <img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-703343h&amp;cg=0&amp;cc=1&amp;ts=noscript"
+    width="1" height="1" alt="" />
+  </div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var MetrixLab_ChannelText = "MIT";
+
+var ML_img_ServerOnline=new Image();
+ML_img_ServerOnline.src='http://invitation.opinionbar.com/popups/ServerOnline.gif';
+ML_img_ServerOnline.onload=ML_ImageLoaded;
+ML_img_ServerOnline.onabort=ML_ImageLoaded;
+ML_img_ServerOnline.onerror=ML_ImageError;
+
+function ML_ImageLoaded()
+{
+    function metrixlab_onready(el, func){
+	this.args = new Array(el, func);
+	this.doTry = function(){
+		try{
+			var el = eval(this.args[0]);
+			el.onload = this.args[1];
+			el.onload();
+			clearInterval(this.args[2]);
+		}
+		catch(e){}
+	}
+	this.doTry.bind = function(object){
+		var method = this;
+		return function(){
+			method.apply(object);
+		}
+	}
+	this.args[2] = setInterval(this.doTry.bind(this), 250);
+	return this;
+    }
+
+    new metrixlab_onready("document", function(){
+	var metrixlab_body = top.document.getElementsByTagName('body').item(0);
+	var metrixlab_script = top.document.createElement('script');
+	metrixlab_script.setAttribute('defer','defer');
+	metrixlab_script.src='http://invitation.opinionbar.com/popups/p10833_master/overlay.js';
+	metrixlab_script.type='text/javascript';
+	metrixlab_body.insertBefore(metrixlab_script, metrixlab_body.childNodes[0]);
+    });
+}
+function ML_ImageAborted()
+{
+    
+}
+function ML_ImageError()
+{
+    
+}
+//--><!]]>
+</script>
+
+<script type="text/javascript">
+
+/*
+s.tl = function (){
+	alert("omniture called!");
+}
+*/
+
+</script>
+
+
+<!-- search ignore end -->
+
+</body>
+</html>

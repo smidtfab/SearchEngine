@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+                           
+  
+
+
+<html>
+  <head>
+    
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Developer&#39;s Guide - reCAPTCHA - Google Code</title>
+<script type="text/javascript"><!--
+(function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
+
+var _tocPath_ = '/apis/recaptcha/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
+//--></script>
+<link href="/css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="/js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="/osd.xml">
+
+<!--[if IE]><link rel="stylesheet" type="text/css" href="/css/iehacks.css"><![endif]-->
+
+    <link href="/css/semantic_headers.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="gc-documentation">
+
+    
+    
+    <div id="gb">
+ <span>
+  
+   
+    <a href="#"
+       id="projects-dropdown" onclick="return false;"
+       ><span style="text-decoration:underline">My favorites</span> <span style="font-size:.75em;">&#9660;</span></a>
+    |
+  
+    <a id="lang-dropdown" href="/" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
+  
+   
+    | <a href="https://www.google.com/accounts/Login?continue=http%3A%2F%2Fcode.google.com%2Fapis%2Frecaptcha%2Fintro.html&amp;followup=http%3A%2F%2Fcode.google.com%2Fapis%2Frecaptcha%2Fintro.html" onclick="CODESITE_click('/gb/sc/signin');"><span style="style:text-decoration:underline">Sign in</span></a>
+   
+  
+ </span>
+</div>
+
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
+
+<div id="gc-container" class="labs">
+<a id="top"></a>
+<div id="skipto">
+  <a href="#gc-pagecontent">Skip to page content</a>
+  <a href="#gc-toc">Skip to main navigation</a>
+</div>
+
+<div id="gc-header">
+  <div id="logo"><a href="/">
+  
+  
+     <img src="/images/code_labs_logo.gif" height="40" width="167" alt="Google Code Labs" style="border:0;">
+  
+  
+  </a></div>
+  <div id="search">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+      <noscript>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
+      </noscript>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "adwords" or "open source"</div>
+      </div>
+      </form>
+    </div> <!-- end searchForm -->
+  </div> <!-- end search -->
+
+
+
+
+</div> <!-- end gc-header -->
+
+
+<div id="codesiteContent">
+
+<a id="gc-topnav-anchor"></a>
+<div id="gc-topnav">
+  <h1 style="padding:0 0 0 6px;">reCAPTCHA (<a href="/labs/">Labs</a>)</h1>
+  <ul id="docs" class="gc-topnav-tabs">
+
+    <li id="home_link">
+      <a href="/apis/recaptcha/" title="reCAPTCHA home page">Home</a>
+    </li>
+  
+    <li id="docs_link">
+      <a href="/apis/recaptcha/intro.html" class="selected" title="Official reCAPTCHA documentation">Docs</a>
+    </li>
+  
+    <li id="faq_link">
+      <a href="/apis/recaptcha/docs/troubleshooting.html" title="Answers to frequently asked questions about reCAPTCHA">FAQ</a>
+    </li>
+  
+    <li>
+      <a href="http://groups.google.com/group/recaptcha" title="reCAPTCHA developer forum">Forum</a>
+    </li>
+  
+
+  </ul>
+</div> <!-- end gc-topnav -->
+
+    <div class="g-section g-tpl-170">
+
+      <div class="g-unit g-first" id="gc-toc">
+        <ul>
+  <li><a href="https://www.google.com/recaptcha/admin/create">Sign up for an API key</a></li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Documentation</h2>
+    <ul>
+      <li><a href="/apis/recaptcha/intro.html">Introduction</a></li>
+      <li><a href="/apis/recaptcha/docs/display.html">Display Without Plugins</a></li>
+      <li><a href="/apis/recaptcha/docs/verify.html">Verify Without Plugins</a></li>
+      <li><a href="/apis/recaptcha/docs/customization.html">Customization</a></li>
+      <li><a href="/apis/recaptcha/docs/tips.html">Tips and Guidelines</a></li>
+      <li><a href="/apis/recaptcha/docs/troubleshooting.html">Troubleshooting</a></li>
+               <ul>
+                 <li><h2 class="tlw-expanded">Plugins:</h2>
+                    <ul>
+                      <li><a href="/apis/recaptcha/docs/php.html">PHP</a></li>
+                      <li><a href="/apis/recaptcha/docs/aspnet.html">ASP.NET</a></li>
+                      <li><a href="/apis/recaptcha/docs/asp.html">Classic ASP</a></li>
+                      <li><a href="/apis/recaptcha/docs/java.html">Java/JSP</a></li>
+                      <li><a href="/apis/recaptcha/docs/perl.html">Perl</a></li>
+                      <li><a href="/apis/recaptcha/docs/wordpress.html">WordPress</a></li>
+                      <li><a href="/apis/recaptcha/docs/mediawiki.html">MediaWiki</a></li>
+                      <li><a href="/apis/recaptcha/docs/phpbb.html">phpBB</a></li>
+                      <li><a href="/apis/recaptcha/docs/formmail.html">FormMail</a></li>
+                      <li><a href="/apis/recaptcha/docs/otherplatforms.html">Other Platforms</a></li>
+                    </ul></li>
+                </ul>
+      <li><a href="/apis/recaptcha/docs/mailhideapi.html">Mailhide API</a></li>
+    </ul>
+  </li>
+</ul>
+
+        <a class="hidden" href="#gc-topnav-anchor">More reCAPTCHA resource links</a>
+      </div>
+
+      <div class="g-unit" id="gc-pagecontent">
+        <script type="text/javascript">CODESITE_docEarlyProcessing();</script>
+
+
+        <h1 class="page_title">Developer&#39;s Guide</h1>
+
+
+<p>Welcome to the developer documentation for reCAPTCHA! reCAPTCHA lets you embed a
+<a href="http://captcha.net/">CAPTCHA</a> in your web pages in order to protect them against spam
+and other types of automated abuse. Here, we explain how to add reCAPTCHA to your page.</p>
+
+<h2>Audience</h2>
+
+<p>This documentation is designed for people familiar with HTML forms and server-side processing.
+To install reCAPTCHA, you will probably need to edit some code.</p>
+
+<p>We hope you find this documentation easy to follow. Make sure to join the
+<a href="http://groups.google.com/group/recaptcha">reCAPTCHA developer forum</a> to give
+feedback and discuss the API.</p>
+
+<h2>Overview</h2>
+
+<h3>API Keys</h3>
+
+<p>To use reCAPTCHA, you need to
+<a href="http://www.google.com/recaptcha/whyrecaptcha">sign up for API keys</a>
+for your site. Unless you select the "global key" option, the keys are unique to your domain and
+sub-domains. (By default, all keys work on "localhost" (or "127.0.0.1"), so you can always develop
+and test on your local machine.)</p>
+
+<h3>Integration</h3>
+
+<p>Once you've signed up for API keys, adding reCAPTCHA to your site consists of two steps and
+optionally a third step where you customize the widget:</p>
+
+<ol>
+  <li>Client Side: <a href="docs/display.html">Displaying the reCAPTCHA Widget</a> (Required)</li>
+  <li>Server Side: <a href="docs/verify.html">Verifying the solution</a> (Required)</li>
+  <li><a href="docs/customization.html">Customizations</a> (Optional)</li>
+</ol>
+
+<p>In most Web forms, you usually have two files: the form itself with the fields, and the file
+with the script to process the inputs to the form. These two files correspond to steps 1 and 2
+above. Therefore, in most cases you will have to modify two different files.</p>
+
+<p>There are two ways to add reCAPTCHA to your site: (a) using a "plugin," or (b) writing code to
+communicate with our servers. We have plugins for most common applications and programming
+environments, and if there is one that fits your needs, we strongly encourage you to use it. If
+you're using one of the following programming environments or applications, click on the link below
+for specific instructions or plugins. Otherwise, proceed to our pages on
+<a href="docs/display.html">displaying reCAPTCHA without a plugin</a> and
+<a href="docs/verify.html">verifying the user's answer without a plugin</a>.</p>
+
+<h3><a name="Plugins" id="Plugins"></a>Programming Environments:</h3>
+
+<li><a href="docs/php.html">PHP</a></li>
+<li><a href="docs/aspnet.html">ASP.NET</a></li>
+<li><a href="docs/asp.html">Classic ASP</a> (contributed by Mark Short)</li>
+<li><a href="docs/java.html">Java/JSP</a></li>
+<li><a href="docs/perl.html">Perl</a></li>
+<li><a href="http://python.org/pypi/recaptcha-client">Python</a> </li>
+<li><a href="http://bitbucket.org/mml/ruby-recaptcha/wiki/Home">Ruby</a> (contributed by McClain Looney)</li>
+<li>Another <a href="http://github.com/ambethia/recaptcha/">Ruby</a> library from Jason L Perry</li>
+<li><a href="http://github.com/achiu/rack-recaptcha">Ruby/Rack</a> (contributed by Arthur Chiu)</li>
+<li><a href="http://code.google.com/p/mailhide-tag/">JSP Mailhide Tag</a> (contributed by Tamas Magyar)</li>
+<li><a href="http://recaptcha.riaforge.org/">ColdFusion</a> (contributed by Robin Hilliard)</li>
+<li><a href="http://www.danstrong.com/reCAPTCHA-WebDNA.html">WebDNA</a> (contributed by Dan Strong)</li>
+
+<h3>Applications:</h3>
+
+<li><a href="docs/wordpress.html">WordPress</a></li>
+<li><a href="docs/mediawiki.html">MediaWiki</a></li>
+<li><a href="docs/phpbb.html">phpBB</a></li>
+<li><a href="docs/formmail.html">FormMail</a></li>
+<li><a href="http://multipart-mixed.com/software/recaptcha.html">Movable Type</a> (contributed by Josh Carter)</li>
+<li><a href="http://drupal.org/project/recaptcha">Drupal</a> (contributed by Rob Loach)</li>
+<li><a href="http://trac.symfony-project.com/trac/wiki/sfReCaptchaPlugin">Symfony</a> (contributed by Arthur Koziel)</li>
+<li><a href="http://typo3.org/extensions/repository/view/jm_recaptcha/current/">TYPO3</a> (maintained by Markus Blaschke, contributed by Jens Mittag. See also the <a href="http://typo3.org/extensions/repository/view/jm_recaptcha_example/current/">example</a> of using the plugin)</li>
+<li><a href="http://lordmatt.co.uk/item/812/">NucleusCMS</a> (contributed by Matt)</li>
+<li><a href="http://www.vbulletin.org/forum/showthread.php?t=151824">vBulletin</a> (contributed by Magnus)</li>
+<li><a href="http://code.google.com/p/joomla-recaptcha/">Joomla</a> (contributed by Mark Fabrizio)</li>
+<li><a href="http://code.google.com/p/cb-recaptcha/">Joomla Community Builder</a> (contributed by Ayan Debnath)</li>
+<li><a href="http://code.google.com/p/mailhide-tag/">JSP Mailhide</a> (contributed by Tamas Magyar)</li>
+<li><a href="http://www.gospelrhys.co.uk/plugins/bbpress-plugins/recaptcha-bbpress-plugin">bbPress</a> (contributed by Rhys Wynne)</li>
+<li><a href="http://code.google.com/p/expressionengine-recaptcha/">ExpressionEngine</a> (contributed by Jaspaul Aggarwal)</li>
+<li><a href="http://www.ramblingross.co.uk/2010/08/11/recaptcha-for-flatpress/">FlatPress</a> (contributed by Ross Fruen)</li>
+<li><a href="http://www.blutrausch-gilde.com/contents/download/ReCAPTCHA">PHPKIT</a> (contributed by Norman Huth)</li>
+
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+    Â©2011 Google -
+    <a href="/">Code Home</a> -
+    <a href="/terms.html">Terms of Service</a> -
+    <a href="/privacy.html">Privacy Policy</a> -
+    <a href="/more/">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="/intl/en/">English</a> -
+    <a href="/intl/es/">EspaÃ±ol</a> -
+    <a href="/intl/ja/">æ¥æ¬èª</a> -
+    <a href="/intl/ko/">íêµ­ì´</a> -
+    <a href="/intl/pt-BR/">PortuguÃªs</a> -
+    <a href="/intl/ru/">PÑÑÑÐºÐ¸Ð¹</a> -
+    <a href="/intl/zh-CN/">ä¸­æ(ç®ä½)</a> -
+    <a href="/intl/zh-TW/">ä¸­æ(ç¹é«)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="/js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+
+
+  </body>
+</html>
+

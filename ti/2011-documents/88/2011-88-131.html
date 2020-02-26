@@ -1,0 +1,944 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Sri Lanka News Web Provide you Sri Lanka News 24H, Sri Lanka News Forum, Sri Lanka News Blog, Sri Lanka News Photos, Sri Lanka News Videos">
+<meta name="keywords" content="Sri Lanka News Web, , Sri Lanka News, News Web, Lanka News, Sri Lanka News Web, Colombo News, Sri Lanka News Blog, lanka news, news">
+<meta name="revisit-after" content="2 days">
+<title>Alex_Edelstein - by SriLankaNewsWeb.com</title>
+<link rel="stylesheet" type="text/css" href="http://www.SriLankaNewsWeb.com/template/bluegloss/style.css">
+<style>
+<!--
+.stitle      { font-family: Arial; font-size: 7pt; color: #808080 }
+.context     { font-family: Verdana; font-size: 7pt; color: #990000}
+.contexttext { font-family: Verdana; font-size: 7pt; color: #990000; border: 1px solid #990000}
+-->
+</style>
+<script Language="JavaScript">
+var confirmMsg  = 'Do you really want to ';
+var LodingImage = '<img border="0" src="http://www.SriLankaNewsWeb.com/template/loading.gif" width="10" height="10">';
+////////////////////////////////////////////////////////////////////////////////
+function AjaxFriendlyx(text){
+   text = text.replace("&","<and>");
+   text = text.replace("\n","  <br>");
+   return text;
+}
+////////////////////////////////////////////////////////////////////////////////
+function PhotoBrowser(){
+	   if (window.XMLHttpRequest) {
+	       http_request = new XMLHttpRequest();
+	   } else if (window.ActiveXObject) {
+	       http_request = new ActiveXObject("Microsoft.XMLHTTP");
+	   }
+	   document.getElementById('photobrowsertext').innerHTML = '<span class="adminlink1">'+LodingImage+'</span>';
+ 	   var url = 'ajax.php?PhotoBrowser=Yes';
+	   http_request.onreadystatechange = PhotoBrowserSub;
+	   http_request.open('POST', url, true);
+	   http_request.send(null);
+}
+function PhotoBrowserSub() {
+   if (http_request.readyState == 4) {
+		var response = http_request.responseText;
+	   document.getElementById('photobrowsertext').innerHTML = response;
+   }
+}
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="http://www.SriLankaNewsWeb.com/template/animate.js">
+</script>
+</head>
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" language="Javascript1.2">
+<table border="0" width="1000" id="table1" cellpadding="0" style="border-collapse: collapse" align="center">
+	<tr>
+		<td background="template/bluegloss/top_bar.jpg" height="65">
+		<table border="0" width="100%" id="table15" cellpadding="4" style="border-collapse: collapse">
+			<tr>
+				<td align="left" style="font-family: Verdana; font-size: 12pt; color: #FFFFFF">
+				<table border="0" id="table43" cellpadding="0" style="border-collapse: collapse">
+					<tr>
+						<td>
+						<img border="0" src="template/logo.png" align="center"></td>
+						<td class="mainmenu"><span class="Product">Sri Lanka News Web</span></td>
+					</tr>
+				</table>
+				</td>
+				<td align="right" valign="bottom">
+<div align="right">
+	<table border="0" cellpadding="4" style="border-collapse: collapse">
+		<tr>
+			<form action="http://search.conduit.com/Results.aspx" method="get">
+			<td align="right">
+			    <input type="text" name="q" size="40" / value="">
+			    <input type="hidden" name="hl" value="en">
+			    <input type="hidden" name="selfSearch" value="1">
+			    <input type="hidden" name="octid" value="CT405924">
+			    <input type="hidden" name="SearchSourceOrigin" value="1">
+			    <input type="hidden" name="ctid" value="CT405924">
+			    <input type="hidden" name="SelfSearch" value="1">
+			</td>
+			<td align="left">
+				<input type="submit" name="sa" value="Search" />
+			</td>
+			</form>
+		</tr>
+	</table>
+</div>				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table><table border="0" width="1000" id="table2" cellpadding="0" style="border-collapse: collapse" align="center" background="template/bluegloss/top_black_bar.jpg">
+		<tr>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="index.htm">Home</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="photos.htm">News Photos</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="videos.htm">News Videos</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="10">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="100" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="cartoon.htm">News Cartoons</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="forum.htm">News Forum</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="10">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="100" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="blog.htm">News Blog</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="10">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="100" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="sri-lanka-people.htm">SL People</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="10" align="center">&nbsp;</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" width="100" align="center" class="mainmenu" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="background-image: url('template/bluegloss/mainman_but.jpg')" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
+			<a class="mainmenu" href="sri-lanka-food-recipes.htm">Food Recipes</a>
+			</td>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" width="120">
+<a href="changecolor.php?changetemplate=default"><img border="0" src="template/default.jpg" width="19" height="14" alt="Default Template"></a><a href="changecolor.php?changetemplate=green"><img border="0" src="template/green.jpg" width="19" height="14" alt="Green Template"></a><a href="changecolor.php?changetemplate=blue"><img border="0" src="template/blue.jpg" width="19" height="14" alt="Blue Template"></a><a href="changecolor.php?changetemplate=red"><img border="0" src="template/red.jpg" width="19" height="14" alt="Red Template"></a><a href="changecolor.php?changetemplate=gold"><img border="0" src="template/gold.jpg" width="19" height="14" alt="Gold Template"></a><a href="changecolor.php?changetemplate=bluegloss"><img border="0" src="template/bluegloss.jpg" width="19" height="14" alt="Blue Gloss Template"></a>
+			</td>
+		</tr>
+</table><TABLE BORDER="0" WIDTH="1000" ID="TABLE3" CELLPADDING="0" STYLE="BORDER-COLLAPSE: COLLAPSE" align="center">
+	<TR>
+		<TD STYLE="background-image: url('template/bluegloss/top_blue.jpg'); BACKGROUND-REPEAT: REPEAT-X" WIDTH="220" ALIGN="LEFT" VALIGN="TOP" ID="LEFT_NAV">
+<p align="center"><a href="http://www.aboutmaldivesresorts.com/" alt="About Maldives Resorts"><img border="0" src="http://www.aboutmaldivesresorts.com/images/banners/001.jpg" width="300" height="250" alt="About Maldives Resorts"></a></p>
+	<table border="0" width="100%" id="table34" cellpadding="4" style="border-collapse: collapse">
+		<form method="POST" action="do_login.php" name="MembersLogin">
+		<tr>
+			<td class="topic_title">Members Login</td>
+		</tr>
+		<tr>
+			<td>
+			<table border="0" width="100%" id="table51" cellpadding="4" style="border-collapse: collapse">
+								<tr>
+					<td>User ID</td>
+					<td><input type="text" name="uname" size="20" class="inputtext"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="upassword" size="10" class="inputtext"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><input type="submit" value="Login" name="Login" class="subbutton">&nbsp;&nbsp;<a class="adminlink2" href="pages.php?page=blocks-register.php&title=Member Registration">Register</a></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><small><a href="pages.php?page=blocks-ForgotPassword.php&title=Forgot%20Password">Forgot password?</a></small></td>
+				</tr>
+			</table>
+			<input type="hidden" name="returnurl" value="http://www.SriLankaNewsWeb.com/wiki.php<safras.q>title<safras.e>Alex_Edelstein">
+			</td>
+		</tr>
+		</form>
+	</table>
+<hr noshade color="#0A3A7B" size="1">
+<table border="0" width="100%" id="table22" cellpadding="4" style="border-collapse: collapse">
+				<tr>
+					<td class="topic_title">Sri Lanka News Categories</td>
+				</tr>
+				<tr>
+					<td>
+					<table border="0" width="100%" id="table23" cellpadding="0" style="border-collapse: collapse">
+			<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P18" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-18-AccidentsandIncidents.htm">Accidents and Incidents</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P2" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-2-ArtandSociety.htm">Art and Society</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P3" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-3-BusinessandFinance.htm">Business and Finance</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P19" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-19-EducationandEmployment.htm">Education and Employment</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P14" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-14-EnvironmentandDevelopment.htm">Environment and Development</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P16" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-16-HelpandAid.htm">Help and Aid</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P17" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-17-ScienceandTechnology.htm">Science and Technology</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P4" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-4-SecurityandPolitics.htm">Security and Politics</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P6" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-6-ShareMarketandExchangeRates.htm">Share Market and Exchange Rates</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P1" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-1-SportsandEntertainment.htm">Sports and Entertainment</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P5" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-5-TourismandForeignAffairs.htm">Tourism and  Foreign Affairs</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P9" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-9-WomenandHealth.htm">Women and Health</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P20" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-20-Information.htm">Information</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P10" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-10-FoodRecipes.htm">Food Recipes</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P7" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-7-LoveandRelationship.htm">Love and Relationship</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P21" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-21-WebandIT.htm">Web and IT</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P13" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-13-AJAXExamplesandTutorials.htm">AJAX Examples and Tutorials</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P12" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-12-JavaScriptsExamplesandTutorials.htm">Java Scripts Examples and Tutorials</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P11" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-11-PHPScriptsExamplesandTutorials.htm">PHP Scripts Examples and Tutorials</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P22" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-22-TamilMovieNews.htm">Tamil Movie News</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P23" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-23-BollywoodCinemaNews.htm">Bollywood Cinema News</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+					<tr>
+				<td class="categorylinks">
+				<table border="0" width="100%" id="table24" cellpadding="2" style="border-collapse: collapse">
+					<tr>
+						<td id="P24" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="border-right: 1px solid #1C6799; border-top: 1px solid #1C6799; border-bottom: 1px solid #1C6799; background-image: url('template/bluegloss/menue_style_bg.jpg'); background-repeat: repeat-y; background-position-x: right" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="border: 1px solid #FFFFFF" class="categorylinks">
+						<a class="categorylinks" href="newscategory-24-Maldives.htm">Maldives</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+							</table>
+					</td>
+				</tr>
+			</table><hr noshade color="#0A3A7B" size="1">
+<div align="center">
+		<table border="0" width="100%" id="table144" cellpadding="0" style="border-collapse: collapse">
+			<tr>
+				<td align="left" class="partnerslinks" valign="top">
+				<fieldset style="padding: 2">
+				<legend align="center"><b>
+				<font face="Verdana" size="1" color="#FF0000">Important Links</font></b></legend>
+				<table border="0" width="100%" id="table145" style="border-collapse: collapse" cellpadding="4">
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<b>
+						<font color="#006699">
+						<a href="http://www.indiatubevideos.com/">
+						<font color="#FF0000">India Tube Videos</font></a></font></b></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.property-lanka.com/">
+						<font color="#006699">Property Sri Lanka</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.bollywoodcinemaonline.com">
+						<font color="#006699">Bollywood Cinema Online</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						</span></font><a href="http://www.newbalihotels.com/">
+						<font face="Verdana" size="1" color="#006699">Bali Hotels</font></a></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> <a href="http://www.youtubesrilanka.com/"><b>
+						<font color="#CC0000">Y</font></b><font color="#CC0000">ou<b>T</b>ube
+						</font><span style="color: #006699"><b>S</b>ri <b>L</b>anka</span></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.mauritiusholidayresorts.com/">
+						<span style="color: #0066FF">Mauritius Hotels &amp; Resorts</span></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> 
+						<a href="http://www.universalluxuryresorts.com/">
+						<font color="#006699">Universal Luxury Resorts</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						</font><a href="http://www.maldivesholidayresorts.net/">
+						<font face="Verdana" size="1" color="#0066FF">Maldives 
+						Resorts</font></a></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.srilankapicturegallery.com/">
+						Sri Lanka Picture Gallery</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.123makinglove.com">
+						How to Make Love</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="https://www.securepaynet.net/gdshop/rhp/default.asp?prog_id=eInterNext&ci=1767&isc=gppgrs01">
+						Domain Names for $6.99</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.SriLankaWebHosting.Com" style="color: #006699">
+						Sri Lanka <b>Web
+						Hosting</b> Company</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.SriLankanMap.Com" style="color: #006699">
+						Sri Lanka Map</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699; " href="http://www.srilankatoolbar.net">Sri Lanka Toolbar</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.SriLankaBlogSpot.com/">
+						Sri Lanka Blog Directory</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b>
+						<a href="http://www.srilankadot.com/" style="color: #006699">Sri Lanka Dot .Com</a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.SriLankaFriends.Net" style="color: #006699">
+						Sri Lanka Friends</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.srilankanewsweb.com/">
+						<b><font color="#FF0000">Sri Lanka News</font></b> Web</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://bannerexchange.pissu.com">Banner
+						Exchange</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.FunLK.Com">
+						<span style="color: #006699">Fun &amp; Joke</span></a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.mulpituwa.com/top100sites/">
+						Top 100 Sri Lankan Sites</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						</font><a href="http://www.mulpituwa.com">
+						<font face="Verdana" size="1" color="#006699">Sri Lanka 
+						News</font></a></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<p>
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<b>
+						<a style="color: #CC0000" href="http://www.tubevideosonline.com/">
+						Tube Videos
+						Online</a></b></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<p>
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b>
+						<a style="color: #006699" href="http://www.celebritywallpapersonline.com">
+						Celebrity Wallpapers Online</a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #CC0000; font-weight:700" href="http://www.a2zpicturegallery.com/">a2z Picture Gallery</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<p>
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.TamilMovies.Net">Tamil Movies Network</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://php-javascript-ajax.blogspot.com/">
+						PHP JavaScript AJAX</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://theseoarticles.blogspot.com/">
+						Search Engine Optimization</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> <a href="http://www.toplink-exchange.com/">
+						<font color="#000080">Top 
+						Link Exchange</font></a></span></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://www.webmasterscity.net">
+						Web Masters City</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006699" href="http://artofmakinglove.blogspot.com/">
+						Art of Making Love</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a href="http://www.lwv-tours.com" style="color: #006699">
+						Lanka Wonder
+						Vacations</a></font></td>
+					</tr>
+					<tr>
+						<td class="partnerslinks" align="left">
+						<font face="Verdana" size="1">
+						<span style="text-decoration: none">
+						<b>::</b> </span>
+						<a style="color: #006600" href="http://www.SriLankaHolidayHotels.Com" title="Sri Lanka Hotels">Sri Lanka Hotels</a></font></td>
+					</tr>
+					</table>
+				</fieldset></td>
+			</tr>
+
+			<tr>
+				<td align="left" class="partnerslinks" valign="top">
+				&nbsp;</td>
+			</tr>
+			</table></div>
+
+	<fieldset style="border:1px solid #C0C0C0; padding:2px; font-family:Verdana; font-size:8pt; color:#666666">
+	<legend align="left">Mycities Network</legend>
+	<table border="0" width="100%" id="table146" style="border-collapse: collapse" cellpadding="4">
+		<tr>
+			<td align="left">
+			<a href="http://www.srilankatoolbar.net/" title="Sri Lanka Toolbar"><img src="http://www.123makinglove.com/Banner/toolbar200x26.jpg" border=0></a>
+			</td>
+		</tr>
+		</table>
+	</fieldset>		</TD>
+		<TD STYLE="background-image: url('template/bluegloss/top_blue.jpg'); BACKGROUND-REPEAT: REPEAT-X" WIDTH="10" ALIGN="LEFT" VALIGN="TOP"></TD>
+		<TD STYLE="background-image: url('template/bluegloss/top_blue.jpg'); BACKGROUND-REPEAT: REPEAT-X" WIDTH="770" ALIGN="LEFT" VALIGN="TOP" ID="CENTER_NAV">
+<br><br>
+<div align="center">
+	<table border="0" width="100%" cellpadding="4" style="border-collapse: collapse">
+	<tr>
+		<td align="left" valign="top" class="topic_title" colspan="2">Alex Edelstein</td>
+	</tr>
+		<tr>
+			<td align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-7752404582611133";
+/* SriLankaNewsWeb300x250, created 3/16/09 */
+google_ad_slot = "9851526927";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+			<td align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-7752404582611133";
+/* SriLankaNewsWeb300x250, created 3/16/09 */
+google_ad_slot = "9851526927";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+		</tr>
+	</table>
+</div>
+<style>
+<!--
+img           { border-style : solid; border-width: 0 }
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" media="print" href="http://en.wikipedia.org/wiki/skins-1.5/common/commonPrint.css?52" />
+<link rel="stylesheet" type="text/css" media="handheld" href="http://en.wikipedia.org/wiki/skins-1.5/monobook/handheld.css?52" />
+<style TYPE="text/css">
+<!--
+td           { font-family: Verdana; font-size: 8pt }
+img{border: 0 none;}
+-->
+</style>
+<table border="0" width="100%" id="table1" cellpadding="4" style="border-collapse: collapse">
+	<tr>
+		<td align="left" valign="top" class="topic_title">Alex Edelstein</td>
+	</tr>
+	<tr>
+		<td align="left" valign="top">
+<p align="justify">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Alex Edelstein - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.17wmf1" />
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" target="_blank" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
+<script type="text/javascript">wgNamespaceNumber=0;wgAction="view";wgPageName="Alex_Edelstein";wgMainPageTitle="Main Page";wgWikimediaMobileUrl="http:\/\/en.m.wikipedia.org\/wiki";</script><script src="http://bits.wikimedia.org/w/extensions-1.17/WikimediaMobile/MobileRedirect.js?8.2" type="text/javascript"></script><!--[if lt IE 7]><style type="text/css">body{behavior:url("http://en.wikipedia.org/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Alex_Edelstein skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --><script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Alex Edelstein</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<table class="infobox biography vcard" cellspacing="5" style="width:22em;">
+<tr>
+<th colspan="2" class="" style="text-align:center; text-align:center; font-size:125%; font-weight:bold;"><span class="fn">Alex Edelstein</span></th>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;">Born</th>
+<td class="" style=""><span class="nickname">Alexander Edelstein</span><br />
+January 17, 1969 <span style="display:none">(<span class="bday">1969-01-17</span>)</span> <span class="noprint">(age&#160;42)</span><br />
+<a href="wiki-Sherman_Oaks" class="mw-redirect" title="Sherman Oaks">Sherman Oaks</a>, California, USA</td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;"><i><a href="wiki-Alma_mater">Alma mater</a></i></th>
+<td class="" style=""><a href="wiki-Harvard" class="mw-redirect" title="Harvard">Harvard</a><br />
+<a target="_blank" href="http://en.wikipedia.org/w/index.php?title=University_of_California_Berkley&amp;action=edit&amp;redlink=1" class="new" title="University of California Berkley (page does not exist)">University of California Berkley</a></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align:left;">Occupation</th>
+<td class="role" style="">Co-founder &amp; <a href="wiki-Chief_executive_officer" title="Chief executive officer">CEO</a> of <a href="wiki-CloudCrowd">CloudCrowd</a></td>
+</tr>
+</table>
+<p><b>Alex Edelstein</b> (born January 17, 1969) is a <a href="wiki-High-tech" class="mw-redirect" title="High-tech">high-tech</a> business executive and <a href="wiki-Reality_television">reality television</a> participant.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Career"><span class="tocnumber">1</span> <span class="toctext">Career</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Reality_Television"><span class="tocnumber">2</span> <span class="toctext">Reality Television</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Community"><span class="tocnumber">3</span> <span class="toctext">Community</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Career">Career</span></h2>
+<p>Alex Edelstein is the <a href="wiki-Chief_Executive_Officer" class="mw-redirect" title="Chief Executive Officer">Chief Executive Officer</a> of <a href="wiki-CloudCrowd">CloudCrowd</a> a company in the <a href="wiki-Crowdsourcing">crowdsourcing</a> space that he co-founded with Jordan Ritter in 2009. He also heads EditZen and TranslationZen<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span></span>1<span></span></a></sup> Before CloudCrowd, he was a real estate developer and the head of Gemstone Development, where he built the Manhattan residential condomium project <sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span></span>2<span></span></a></sup> He previously held executive roles at Cloudmark and Inktomi. He product managed the early versions of <a href="wiki-Netscape_Navigator">Netscape Navigator</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span></span>3<span></span></a></sup> Additionally, he was on the design team for <a href="wiki-Microsoft_Exchange">Microsoft Exchange</a> and <a href="wiki-Microsoft_Outlook">Microsoft Outlook</a>.</p>
+<h2><span class="mw-headline" id="Reality_Television">Reality Television</span></h2>
+<p>On April 2, 2009, he was featured on the reality TV show The Millionaire Matchmaker. <sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span></span>4<span></span></a></sup></p>
+<h2><span class="mw-headline" id="Community">Community</span></h2>
+<p>He provides television analysis on both real estate <sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span></span>5<span></span></a></sup> and high-tech topics,<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span></span>6<span></span></a></sup> and is on the Board of Directors of <a href="wiki-Kiva_(organization)" title="Kiva (organization)">Kiva.org</a>, a non-profit company that facilities micro-lending in developing countries.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span></span>7<span></span></a></sup></p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <a href="http://www.editzen.com/team" class="external text" rel="nofollow">EditZen</a></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://www.manhattanlv.com/developer.html" class="external text" rel="nofollow">Gemstone Development</a></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <a href="http://news.cnet.com/Politics-entices-Microsoft,-Netscape-veteran/2100-1023_3-253933.html" class="external text" rel="nofollow">CNET</a> March 31, 2001</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <a href="http://www.bravotv.com/the-millionaire-matchmaker/season-2/alex-edelstein-paul-davis" class="external text" rel="nofollow">BRAVO</a> April 2, 2009</li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <a href="http://www.youtube.com/watch?v=rSm978jfYGE" class="external text" rel="nofollow">FOX Business News</a> July 1, 2008</li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">^</a></b> <a href="http://techcrunch.com/2010/07/07/techcrunch-tv-investor-jeff-clavier-cloudcrowd-ceo-debate-apples-china-strategy-twitters-earlybir" class="external text" rel="nofollow">TechCrunch</a> July 7, 2010</li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> <a href="http://www.kiva.org/about/team/advisors" class="external text" rel="nofollow">KIVA</a></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://www.cloudcrowd.com" class="external text" rel="nofollow">CloudCrowd</a></li>
+</ul>
+<table id="persondata" class="persondata" style="border:1px solid #aaa; display:none; speak:none;">
+<tr>
+<th colspan="2"><a href="wiki-Wikipedia:Persondata" title="Wikipedia:Persondata">Persondata</a></th>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Name</td>
+<td>Edelstein, Alex</td>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Alternative names</td>
+<td></td>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Short description</td>
+<td></td>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Date of birth</td>
+<td>January 17, 1969</td>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Place of birth</td>
+<td><a href="wiki-Sherman_Oaks" class="mw-redirect" title="Sherman Oaks">Sherman Oaks</a>, California, USA</td>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Date of death</td>
+<td></td>
+</tr>
+<tr>
+<td class="persondata-label" style="color:#aaa;">Place of death</td>
+<td></td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 2443/1000000
+Post-expand include size: 6262/2048000 bytes
+Template argument size: 2416/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:28788224-0!*!0!!en!*!edit=0 and timestamp 20110402080113 -->
+</p>
+		</td>
+	</tr>
+</table>
+
+
+		</TD>
+	</TR>
+</TABLE>
+<table border="0" width="1000" id="table4" cellpadding="0" style="border-collapse: collapse" align="center">
+		<tr>
+			<td background="template/bluegloss/top_black_bar.jpg" height="36" align="center" class="mainmenu">Sri Lanka News Web by MyCities.Net Work</td>
+		</tr>
+</table>
+<br><br>
+<!--Begin Sri Lanka Banner Exchange Network code -->
+<center><iframe align=top width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no src="http://bannerexchange.pissu.com/view.php?uid=149&cat=0"><ilayer align=top width=468 height=60 src="http://bannerexchange.pissu.com/view.php?uid=149&cat=0"></ILAYER> </iframe><br>
+<a href="http://www.srilankanewsweb.com/toplink.php">Resources</a> - <a href="http://www.toplink-exchange.com/" target="_blank">Top Link Exchange</a><br>
+<a href="http://bannerexchange.pissu.com/index.php?ref=149">Join Sri Lanka Banner Exchange</a> | <a href="http://www.srilankanewsweb.com/telalinks.php">Link Exchange</a></center>
+<!--End Sri Lanka Banner Exchange Network code --><script src="http://hosting.conduit.com/Banners/TopSlider/TopSlider.js"> </script><script> var __ctid = 'CT405924'; var __baseURL='http://www.conduit.com/'; var __downloadUrl='http://SriLanka.mycitytoolbar.com/exe'; var __selectedColor='yellow'; var __opacity='91'; __TopSlide(); </script>																		
+</body>
+</html>

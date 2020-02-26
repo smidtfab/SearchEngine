@@ -1,0 +1,1402 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	CrowdFlower - latest news
+</title><link href="http://interceder.net/css/dashboard.css" rel="stylesheet" type="text/css" />
+    <script src="http://interceder.net/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="http://interceder.net/js/SpryEffects.js" type="text/javascript"></script>
+    <script type='text/javascript' src='http://interceder.net/js/jquery.swfobject.js'></script>    
+	<script type='text/javascript' src='http://interceder.net/js/jquery.metadata.js'></script>
+    <script src="http://interceder.net/js/jquery.json-2.2.js" type="text/javascript"></script>	
+    <script src="http://interceder.net/js/flexcroll.js" type="text/javascript"></script>   
+    <script type='text/javascript' src='http://interceder.net/js/jquery.ceebox-min.js'></script>
+    <link rel="stylesheet" href="http://interceder.net/css/ceebox.css" type="text/css" media="screen" /><link rel="icon" href="http://interceder.net/favicon.ico" type="image/x-icon" /><meta name="apple-touch-fullscreen" content="YES" /><link rel="apple-touch-icon" href="http://interceder.net/images/apple-touch-icon.png" />  
+    <base href="http://interceder.net/" />
+       <script type="text/javascript">
+    
+        $(document).ready(function() {
+            debugging = true;
+            $.fn.ceebox.videos.base.param.allowScriptAccess = "sameDomain"; //added to kill the permissions problem
+            $(".stories").ceebox({width: '640px', height: '480px'});
+        });
+
+        function deleteTab(param) {
+            document.getElementById('tab' + param).style.display = 'none';
+            document.getElementById('del' + param).style.display = 'none';
+            var ck = replaceAll(GetCookie('recentSearchList1'), "recentSearchList1=", "");
+            SetCookie("recentSearchList1", replaceAll(ck, param + ',', ''), "365");
+            //SetCookie("recentSearchList1", replaceAll(ck, '"' + param + '",', ''), "365");
+        }
+        </script>
+        
+</head>
+<body onload="defaultCountry();">
+    <form name="form1" method="post" action="list.aspx?s=CrowdFlower" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzMzYwNjQ2MmRkui77XjNq+A4gRGVAULRTOAVG6pI=" />
+
+
+<script src="/ScriptResource.axd?d=B58y9J7nwpaByB-BydWAmb6SsBs-qPiRjSpAiljglk7T0KGz0MLzHpJi0H-tuFMyAU-Gk9CJh1hMX-1PMwMh3-uXgNPezoGhkdrU_0wJ6f_IEAODKgyQK5bzj2FeaeMcBJmgYkAj-mxl-2zqZwFeEw2CseqDbDO4UwuyIaTEKg_IjjD20&amp;t=514734bc" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="CallWebServiceMethods_list.js" type="text/javascript"></script>
+<script src="WebService_list.asmx/jsdebug" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwL82NrxCgLH0pL8CQKqw7nuDfC/LotPPyWp6lb563A+gMWcZlI1" />
+    
+    <div class="top">
+        <div class="header">
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_share_btn">
+                <a href="http://addthis.com/bookmark.php" class="addthis_button_compact">
+                <span>Share</span></a>
+            </div>   
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=badey"></script>
+            <script type="text/javascript">    var addthis_config = { ui_offset_top: 22, ui_offset_left: 10 };</script>
+            <!-- AddThis Button END -->
+        <table align=center cellpadding=2>
+            <tr>
+                <td align=center colspan=3>                    
+                    <a href="http://interceder.net/" title="Home"><img src="images/logo_.gif" width=188 height=57 border=0 /></a>
+                </td>
+            </tr>
+            <tr>
+                <td align=right>
+                    <div class="searchBar">
+                        <input name="search" type="text" id="search" class="searchTextBox" onKeyPress="return checkEnter(event)" value="CrowdFlower" />
+                        <!--<div class="latestText">Recent searches:</div> <div class="latestSearches"><a href="http://interceder.net/i/christian-bautista" class="contact">christian bautista</a>, <a href="http://interceder.net/i/ortiz" class="contact">ortiz</a>, <a href="http://interceder.net/i/%22David-Stringer%22" class="contact">"David Stringer"</a>, <a href="http://interceder.net/i/cremation-" class="contact">cremation </a>, <a href="http://interceder.net/i/highwood" class="contact">highwood</a>, <a href="http://interceder.net/i/Fidesz" class="contact">Fidesz</a>, <a href="http://interceder.net/i/Malvern" class="contact">Malvern</a>, <a href="http://interceder.net/i/Hulu" class="contact">Hulu</a>, <a href="http://interceder.net/i/Kent-Clark" class="contact">Kent Clark</a>, <a href="http://interceder.net/i/images" class="contact">images</a>, <a href="http://interceder.net/i/Roper" class="contact">Roper</a>...</div>-->
+                    </div>
+                </td>
+                <td align=left>
+                    <a href="javascript:search();" title="Click to search" class="btnSearch"><img src="images/blank.gif" width=73 height=26 /></a>
+                </td>
+                <td align=left>
+                    <a href="#" class="switch_thumb1" title="Switch to Dashboard View">Switch Thumb</a>
+                </td>                
+            </tr>
+        </table>
+        </div>
+ 
+    </div>
+    <div class="tabBarOuter" style="text-align:center;">
+        <div class="tabBar" style="width:1010px;">
+                                <div class="tabs" id="tabs">
+                                    <div class="searches">RECENT</div>
+                                    <div class="tabOn">CrowdFlower</div> 
+                                    <div style="clear: both;"></div>
+                                </div>         
+        </div>
+    </div>                            
+    <br /><br />
+    <div class="container">
+    <div style="margin-bottom:20px;margin-top: -10px;width:100%; text-align:center;">
+            <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-1335813618323898";
+                /* Horizontal Image */
+                google_ad_slot = "3166519208";
+                google_ad_width = 728;
+                google_ad_height = 90;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+     
+    </div>  
+    <table width="990" align=center>
+        <tr valign=top>
+            <td align=left width=30%>
+               
+               
+               
+               <span id="calais">
+                    <div class="highlight1" style="width:100%;">Explore key people and companies</div>
+                    <div class="newsVolume">
+                        <div class="secHeader">
+                        </div>
+                        <span id="ResultId" style="background-color: #25292c;"><img src="images/freebase-loader.gif" align="absmiddle" border="0" /> Analysing news. Please wait...</span>
+                
+                    </div>
+
+                    <br />
+                </span>
+               <div class="newsVolume">
+<script type="text/javascript"><!-- 
+    google_ad_client = "pub-1335813618323898"; 
+    /* 200x90, created 8/11/10  */ 
+    google_ad_slot = "3712689659"; 
+    google_ad_width = 200; 
+    google_ad_height = 90; 
+     //--> 
+</script> 
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> 
+</div> 
+                
+                <div style="text-align: center;">
+                    <br><script type="text/javascript" src="http://videos.video-loader.com/sp/62418615128753123072159.js"></script> 
+                 </div>               
+            </td>
+            <td width=20><img src="images/blank.gif" width=20 height=1 /></td>
+            <td width=69%>
+                <table cellpadding="0" cellspacing="0" width="100%">
+                 <tr id="Tr1" valign="top">
+	<td width="702" align="left">
+                    
+                    
+                    <div class="highlight1">Latest news for CrowdFlower</div>
+                    <br />
+                    <div class="stories">
+                       <table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">3 to 7 days old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="0"><a title="NEWS (summary) : Companies are turning to crowdsourcing middlemen to make "good" crowds. In 2009, Kraft Foods wanted a catchy name for its new version of Vegemite, a yeast-based spread popular in Australia. Instead of hiring a branding agency, the company decided to crowdsource the task. Kraft asked people in Australia to submit and vote on potential names for the new product. After 48,000 entrants made ..." id="link0" href="http://www.technologyreview.com/business/37078/?ref=rss" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Technology Review" src="http://www.google.com/s2/favicons?domain=www.technologyreview.com"> Crowds of Workers, on Demand - Technology Review</a><span style="display:none">Crowds of Workers, on Demand Companies are turning to crowdsourcing middlemen to make "good" crowds. In 2009, Kraft Foods wanted a catchy name for its new version of Vegemite, a yeast-based spread popular in Australia. Instead of hiring a branding agency, the company decided to crowdsource the task. Kraft asked people in Australia to submit and vote on potential names for the new product. After 48,000 entrants made ...31 Mar 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br><table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">1 to 2 weeks old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="1"><a title="NEWS (summary) : At Yelp Inc.'s San Francisco headquarters, a keg refrigerator provides a never-ending supply of beer to employees, letting them drink as much as they like." id="link1" href="http://www.telegram.com/article/20110327/NEWS/103270590/1002/RSS01&source=rss" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Worcester Telegram & Gazette" src="http://www.google.com/s2/favicons?domain=www.telegram.com"> New work habits are bringing booze back to the workplace - Worcester Telegram & Gazette</a><span style="display:none">New work habits are bringing booze back to the workplace At Yelp Inc.'s San Francisco headquarters, a keg refrigerator provides a never-ending supply of beer to employees, letting them drink as much as they like.27 Mar 2011 </span></div><div id="2"><a title="NEWS (summary) : Big data is one of the most buzzed about catch phrases you’ll hear in the cloud, and more and more companies are hopping on this bandwagon to turn all that buzz into revenue. The latest example is CrowdFlower, the popular crowdsourcing platform, which announced a couple of big developments today: it raised $7 million in [...] CrowdFlower Raises Funds, Goes Beyond Crowdsourcing: Big Data ..." id="link2" href="http://siliconangle.com/blog/2011/03/22/crowdflower-raises-funds-goes-beyond-crowdsourcing-big-data-analytics/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from SiliconANGLE" src="http://www.google.com/s2/favicons?domain=siliconangle.com"> CrowdFlower Raises Funds, Goes Beyond Crowdsourcing: Big Data Analytics - SiliconANGLE</a><span style="display:none">CrowdFlower Raises Funds, Goes Beyond Crowdsourcing: Big Data Analytics Big data is one of the most buzzed about catch phrases you’ll hear in the cloud, and more and more companies are hopping on this bandwagon to turn all that buzz into revenue. The latest example is CrowdFlower, the popular crowdsourcing platform, which announced a couple of big developments today: it raised $7 million in [...] CrowdFlower Raises Funds, Goes Beyond Crowdsourcing: Big Data ...22 Mar 2011 </span></div><div id="3"><a title="NEWS (summary) : SAN FRANCISCO--(BUSINESS WIRE)--CrowdFlower launches new service solution and secures Series B funding." id="link3" href="http://www.businesswire.com/news/home/20110322005564/en/CrowdFlower-Launches-Product-Categorization-Solution-E-Commerce-Enterprises" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Business Wire" src="http://www.google.com/s2/favicons?domain=www.businesswire.com"> CrowdFlower Launches Product Categorization Solution for E-Commerce Enterprises - Business Wire</a><span style="display:none">CrowdFlower Launches Product Categorization Solution for E-Commerce Enterprises SAN FRANCISCO--(BUSINESS WIRE)--CrowdFlower launches new service solution and secures Series B funding.22 Mar 2011 </span></div><div id="4"><a title="NEWS (summary) : CrowdFlower, a startup that helps businesses outsource mundane or repetitive tasks to the cloud, has raised $7 million in new funding led by Harmony Partners with Trinity Ventures and Bessemer Venture Partners participating in the round. This brings the startup's total funding to $12 million. CrowdFlower, which launched at TechCrunch50 in 2009 and is a product of Dolores Labs, prices tasks and ..." id="link4" href="http://techcrunch.com/2011/03/22/crowdflower-raises-7m-launches-e-commerce-tool-for-data-categorization/" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from TechCrunch" src="http://www.google.com/s2/favicons?domain=www.techcrunch.com"> CrowdFlower Raises $7M, Launches E-Commerce Tool For Data Categorization - TechCrunch</a><span style="display:none">CrowdFlower Raises $7M, Launches E-Commerce Tool For Data Categorization CrowdFlower, a startup that helps businesses outsource mundane or repetitive tasks to the cloud, has raised $7 million in new funding led by Harmony Partners with Trinity Ventures and Bessemer Venture Partners participating in the round. This brings the startup's total funding to $12 million. CrowdFlower, which launched at TechCrunch50 in 2009 and is a product of Dolores Labs, prices tasks and ...22 Mar 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br><table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">2 to 4 weeks old</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="5"><a title="NEWS (summary) : Many local startups embrace responsible drinking while at work." id="link5" href="http://www.nbcbayarea.com/news/local/Workplace-Drinking-Making-a-Comeback-117977404.html" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from NBC Bay Area" src="http://www.google.com/s2/favicons?domain=www.nbcbayarea.com"> Workplace Drinking Making a Comeback - NBC Bay Area</a><span style="display:none">Workplace Drinking Making a Comeback Many local startups embrace responsible drinking while at work.15 Mar 2011 </span></div><div id="6"><a title="NEWS (summary) : In a contemporary version of 'Mad Men' and its bibulous ad executives, more dot-coms are embracing the idea of drinking at work" id="link6" href="http://www.businessweek.com/news/2011-03-14/booze-makes-comeback-in-workplace-with-silicon-valley-twist.html" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from BusinessWeek" src="http://www.google.com/s2/favicons?domain=www.businessweek.com"> Booze Makes Comeback in Workplace, with Silicon Valley Twist - BusinessWeek</a><span style="display:none">Booze Makes Comeback in Workplace, with Silicon Valley Twist In a contemporary version of 'Mad Men' and its bibulous ad executives, more dot-coms are embracing the idea of drinking at work14 Mar 2011 </span></div><div id="7"><a title="NEWS (summary) : At Yelp Inc.'s San Francisco headquarters, a keg refrigerator provides a never-ending supply of beer to employees, letting them drink as much as they like. They just have to be comfortable with full disclosure: Workers..." id="link7" href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2011/03/13/BUP11I8SF3.DTL" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from San Francisco Chronicle" src="http://www.google.com/s2/favicons?domain=www.sfgate.com"> Bar's open 24/7 as startup culture revives - San Francisco Chronicle</a><span style="display:none">Bar's open 24/7 as startup culture revives At Yelp Inc.'s San Francisco headquarters, a keg refrigerator provides a never-ending supply of beer to employees, letting them drink as much as they like. They just have to be comfortable with full disclosure: Workers...13 Mar 2011 </span></div><div id="8"><a title="NEWS (summary) : Check out these 101 small business web applications – software in the cloud. The selections reflect the breadth of innovative ideas and new business pursuits at play in the small business technology cloud landscape." id="link8" href="http://www.businessinsider.com/101-small-business-web-applications-you-must-check-out-2011-3" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from Business Insider" src="http://www.google.com/s2/favicons?domain=www.businessinsider.com"> 101 Small Business Web Applications You Must Check Out - Business Insider</a><span style="display:none">101 Small Business Web Applications You Must Check Out Check out these 101 small business web applications – software in the cloud. The selections reflect the breadth of innovative ideas and new business pursuits at play in the small business technology cloud landscape.10 Mar 2011 </span></div><div id="9"><a title="NEWS (summary) : In March, college basketball fans across the country partake in an annual ritual to fill out NCAA basketball tournament brackets. Citizen Effect is hosting its 2nd Annual Brackets with Benefits , sponsored by Edelman, CrowdFlower and Fathead, and putting a philanthropic twist on your NCAA bracket. Brackets with Benefits works just like other pools players donate..." id="link9" href="http://pitch.pe/130280" target="_blank" class="titleLink1 {video:false,html:false}"><img border="0" title="News from PitchEngine" src="http://www.google.com/s2/favicons?domain=www.pitchengine.compitchfeed.php"> Citizen Effects Brackets with Benefits Adds Good To NCAA Tourney - PitchEngine</a><span style="display:none">Citizen Effects Brackets with Benefits Adds Good To NCAA Tourney In March, college basketball fans across the country partake in an annual ritual to fill out NCAA basketball tournament brackets. Citizen Effect is hosting its 2nd Annual Brackets with Benefits , sponsored by Edelman, CrowdFlower and Fathead, and putting a philanthropic twist on your NCAA bracket. Brackets with Benefits works just like other pools players donate...07 Mar 2011 </span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br><table width=100% cellpadding=0 cellspacing=0><tr valign=top><td width=120><div class="timePeriod">Older than 1 month</div></td><td><img src="images/corner_top.gif"><br><div class="listContent"><div id="10" class="video thumb1" style="background:url('http://i.ytimg.com/vi/6uZc2Jwrk1A/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=6uZc2Jwrk1A&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 2 Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 2 Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers&#39; reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it&#39;s possible to build robust quality-control mechanisms in order to stan..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 2 
+  
+  Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers&#39; reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it&#39;s possible to build robust quality-control mechanisms in order to standardize the results that come back from the crowd. The important thing to remember is that crowdsourcing provides channels that allow researchers, businesses, or even armchair social scientists to gather data. Topics for any discipline that focuses on quantitative or technical data have always depended on the datasets that were available at the time. For example, the Brown Corpus is a dataset compiled in the 1960s that has served as the basis for thousands of linguistics studies. Graduate students would center entire research plans on the availability of previously collected data. As a result, generations of papers on word disambiguation were tailored to the constraints of old data. By contrast, almost every grad student in the Stanford linguistics department is using crowdsourcing platforms for their studies. Using crowdsourcing tools, it&#39;s possible to conduct experiments that replicate the World Color Survey, test Benford&#39;s Law (aka, the &quot;first digit law&quot;), explore age and gender stereotypes, or even pose philosophical problems &mdash; in a fraction of the time that such experiments used to take, while yielding tons of data. Brought &lt;b&gt;...&lt;/b&gt;   
+   From: 
+ cloudtimes  
+  Views: 
+14 
+           
+ 0
+ ratings    
+   Time: 
+ 04:26  
+  More in 
+ Science &amp; Technology      .  
+          
+   Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 2 
+  
+  Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers&#39; reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it&#39;s possible to build robust quality-control mechanisms in order to standardize the results that come back from the crowd. The important thing to remember is that crowdsourcing provides channels that allow researchers, businesses, or even armchair social scientists to gather data. Topics for any discipline that focuses on quantitative or technical data have always depended on the datasets that were available at the time. For example, the Brown Corpus is a dataset compiled in the 1960s that has served as the basis for thousands of linguistics studies. Graduate students would center entire research plans on the availability of previously collected data. As a result, generations of papers on word disambiguation were tailored to the constraints of old data. By contrast, almost every grad student in the Stanford linguistics department is using crowdsourcing platforms for their studies. Using crowdsourcing tools, it&#39;s possible to conduct experiments that replicate the World Color Survey, test Benford&#39;s Law (aka, the &quot;first digit law&quot;), explore age and gender stereotypes, or even pose philosophical problems &mdash; in a fraction of the time that such experiments used to take, while yielding tons of data. Brought &lt;b&gt;...&lt;/b&gt;   
+   From: 
+ cloudtimes  
+  Views: 
+14 
+           
+ 0
+ ratings    
+   Time: 
+ 04:26  
+  More in 
+ Science &amp; Technology       04 Feb 2011</span></div><div id="11" class="video thumb1" style="background:url('http://i.ytimg.com/vi/mgsGcI0IKi0/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=mgsGcI0IKi0&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 1 Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 1 Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers&#39; reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it&#39;s possible to build robust quality-control mechanisms in order to stan..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 1 
+  
+  Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers&#39; reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it&#39;s possible to build robust quality-control mechanisms in order to standardize the results that come back from the crowd. The important thing to remember is that crowdsourcing provides channels that allow researchers, businesses, or even armchair social scientists to gather data. Topics for any discipline that focuses on quantitative or technical data have always depended on the datasets that were available at the time. For example, the Brown Corpus is a dataset compiled in the 1960s that has served as the basis for thousands of linguistics studies. Graduate students would center entire research plans on the availability of previously collected data. As a result, generations of papers on word disambiguation were tailored to the constraints of old data. By contrast, almost every grad student in the Stanford linguistics department is using crowdsourcing platforms for their studies. Using crowdsourcing tools, it&#39;s possible to conduct experiments that replicate the World Color Survey, test Benford&#39;s Law (aka, the &quot;first digit law&quot;), explore age and gender stereotypes, or even pose philosophical problems &mdash; in a fraction of the time that such experiments used to take, while yielding tons of data. Brought &lt;b&gt;...&lt;/b&gt;   
+   From: 
+ cloudtimes  
+  Views: 
+27 
+           
+ 0
+ ratings    
+   Time: 
+ 07:12  
+  More in 
+ Science &amp; Technology      .  
+          
+   Strata Conference 2011 - Lukas Biewald (CrowdFlower) Part 1 
+  
+  Crowdsourcing and the Democratization of Data Crowdsourcing democratizes the data-collection process, cutting researchers&#39; reliance on stagnant, overused datasets. Now anyone can gather data overnight, rather than waiting years. Some of the data collection may be sloppy, but it&#39;s possible to build robust quality-control mechanisms in order to standardize the results that come back from the crowd. The important thing to remember is that crowdsourcing provides channels that allow researchers, businesses, or even armchair social scientists to gather data. Topics for any discipline that focuses on quantitative or technical data have always depended on the datasets that were available at the time. For example, the Brown Corpus is a dataset compiled in the 1960s that has served as the basis for thousands of linguistics studies. Graduate students would center entire research plans on the availability of previously collected data. As a result, generations of papers on word disambiguation were tailored to the constraints of old data. By contrast, almost every grad student in the Stanford linguistics department is using crowdsourcing platforms for their studies. Using crowdsourcing tools, it&#39;s possible to conduct experiments that replicate the World Color Survey, test Benford&#39;s Law (aka, the &quot;first digit law&quot;), explore age and gender stereotypes, or even pose philosophical problems &mdash; in a fraction of the time that such experiments used to take, while yielding tons of data. Brought &lt;b&gt;...&lt;/b&gt;   
+   From: 
+ cloudtimes  
+  Views: 
+27 
+           
+ 0
+ ratings    
+   Time: 
+ 07:12  
+  More in 
+ Science &amp; Technology       04 Feb 2011</span></div><div id="12" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_4v2NjJsBQ0/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_4v2NjJsBQ0&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now, Take a Bow - Rendered on: Wed, 02 Feb 2011 18:00:07 GMT Now, Take a Bow - Rendered on: Wed, 02 Feb 2011 18:00:07 GMT Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elst..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now, Take a Bow - Rendered on: Wed, 02 Feb 2011 18:00:07 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+8 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now, Take a Bow - Rendered on: Wed, 02 Feb 2011 18:00:07 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+8 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       03 Feb 2011</span></div><div id="13" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_fL2vvLe3Bg/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_fL2vvLe3Bg&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now, Take a Bow - Rendered on: Mon, 10 Jan 2011 11:00:05 GMT Now, Take a Bow - Rendered on: Mon, 10 Jan 2011 11:00:05 GMT Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elst..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now, Take a Bow - Rendered on: Mon, 10 Jan 2011 11:00:05 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+283 
+           
+ 1
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now, Take a Bow - Rendered on: Mon, 10 Jan 2011 11:00:05 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+283 
+           
+ 1
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       10 Jan 2011</span></div><div id="14" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_lZR2Z8UfCw/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_lZR2Z8UfCw&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now, Take a Bow - Rendered on: Fri, 07 Jan 2011 22:00:06 GMT Now, Take a Bow - Rendered on: Fri, 07 Jan 2011 22:00:06 GMT Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elst..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now, Take a Bow - Rendered on: Fri, 07 Jan 2011 22:00:06 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+0 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now, Take a Bow - Rendered on: Fri, 07 Jan 2011 22:00:06 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+0 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       08 Jan 2011</span></div><div id="15" class="video thumb1" style="background:url('http://i.ytimg.com/vi/ZwHTH7CQ0HI/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=ZwHTH7CQ0HI&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Interview with Lukas Biewald of CrowdFlower Interview with Lukas Biewald of CrowdFlower CrowdFlower uses crowdsourcing to harness a round-the-clock workforce that spans more than 70 countries, multiple languages, and can access up to half-a-million workers to dispatch diverse tasks and provide near-real time answers. From: UpsideNews Views:39 0ratingsTime: 04:14 More in News &amp; Politics"><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Interview with Lukas Biewald of CrowdFlower 
+  
+  CrowdFlower uses crowdsourcing to harness a round-the-clock workforce that spans more than 70 countries, multiple languages, and can access up to half-a-million workers to dispatch diverse tasks and provide near-real time answers.   
+   From: 
+ UpsideNews  
+  Views: 
+39 
+           
+ 0
+ ratings    
+   Time: 
+ 04:14  
+  More in 
+ News &amp; Politics      .  
+          
+   Interview with Lukas Biewald of CrowdFlower 
+  
+  CrowdFlower uses crowdsourcing to harness a round-the-clock workforce that spans more than 70 countries, multiple languages, and can access up to half-a-million workers to dispatch diverse tasks and provide near-real time answers.   
+   From: 
+ UpsideNews  
+  Views: 
+39 
+           
+ 0
+ ratings    
+   Time: 
+ 04:14  
+  More in 
+ News &amp; Politics       06 Jan 2011</span></div><div id="16" class="video thumb1" style="background:url('http://i.ytimg.com/vi/__ikF_RB7u0/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=__ikF_RB7u0&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now, Take a Bow - Rendered on: Wed, 29 Dec 2010 17:00:05 GMT Now, Take a Bow - Rendered on: Wed, 29 Dec 2010 17:00:05 GMT Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elst..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now, Take a Bow - Rendered on: Wed, 29 Dec 2010 17:00:05 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+1 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now, Take a Bow - Rendered on: Wed, 29 Dec 2010 17:00:05 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+1 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       30 Dec 2010</span></div><div id="17" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_zyS67jX6K8/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_zyS67jX6K8&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now Take a Bow - Gegenereerd op: Tue, 07 Dec 2010 11:00:05 GMT Now Take a Bow - Gegenereerd op: Tue, 07 Dec 2010 11:00:05 GMT Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Herma..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now Take a Bow - Gegenereerd op: Tue, 07 Dec 2010 11:00:05 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+6 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now Take a Bow - Gegenereerd op: Tue, 07 Dec 2010 11:00:05 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+6 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       07 Dec 2010</span></div><div id="18" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_hhbqRnymh8/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_hhbqRnymh8&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now Take a Bow - Gegenereerd op: Sat, 23 Oct 2010 22:00:05 GMT Now Take a Bow - Gegenereerd op: Sat, 23 Oct 2010 22:00:05 GMT Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Herma..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now Take a Bow - Gegenereerd op: Sat, 23 Oct 2010 22:00:05 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+26 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now Take a Bow - Gegenereerd op: Sat, 23 Oct 2010 22:00:05 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+26 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       24 Oct 2010</span></div><div id="19" class="video thumb1" style="background:url('http://i.ytimg.com/vi/t1J2RXrvPek/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=t1J2RXrvPek&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Web 2.0 Expo NY 2010: Lukas Biewald and Leila Chirayath Janah, "The Future of Work" Web 2.0 Expo NY 2010: Lukas Biewald and Leila Chirayath Janah, &quot;The Future of Work&quot; Lukas Biewald (CrowdFlower), Leila Chirayath Janah (Samasource), &quot;The Future of Work&quot; From: OreillyMedia Views:1382 8ratingsTime: 14:46 More in Science &amp; Technology"><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Web 2.0 Expo NY 2010: Lukas Biewald and Leila Chirayath Janah, &quot;The Future of Work&quot; 
+  
+  Lukas Biewald (CrowdFlower), Leila Chirayath Janah (Samasource), &quot;The Future of Work&quot;   
+   From: 
+ OreillyMedia  
+  Views: 
+1382 
+           
+ 8
+ ratings    
+   Time: 
+ 14:46  
+  More in 
+ Science &amp; Technology      .  
+          
+   Web 2.0 Expo NY 2010: Lukas Biewald and Leila Chirayath Janah, &quot;The Future of Work&quot; 
+  
+  Lukas Biewald (CrowdFlower), Leila Chirayath Janah (Samasource), &quot;The Future of Work&quot;   
+   From: 
+ OreillyMedia  
+  Views: 
+1382 
+           
+ 8
+ ratings    
+   Time: 
+ 14:46  
+  More in 
+ Science &amp; Technology       01 Oct 2010</span></div><div id="20" class="video thumb1" style="background:url('http://i.ytimg.com/vi/DjUcpeq9h40/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=DjUcpeq9h40&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Lukas Biewald interviewed at Web 2.0 Expo New York Lukas Biewald interviewed at Web 2.0 Expo New York web2expo.com Lukas Biewald is the founder and CEO of CrowdFlower. Founded in 2007, CrowdFlower provides Labor-on-Demand to help companies outsource high-volume, repetitive tasks to a massively-distributed global workforce. Before founding CrowdFlower, Lukas was a senior scientist and manager within the Ranking and Management Team at Powerset, Inc., acquired by Microsoft in..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Lukas Biewald interviewed at Web 2.0 Expo New York 
+  
+  web2expo.com Lukas Biewald is the founder and CEO of CrowdFlower. Founded in 2007, CrowdFlower provides Labor-on-Demand to help companies outsource high-volume, repetitive tasks to a massively-distributed global workforce. Before founding CrowdFlower, Lukas was a senior scientist and manager within the Ranking and Management Team at Powerset, Inc., acquired by Microsoft in 2008. He led the Search Relevance Team for Yahoo! Japan after graduating from Stanford University with a BS in Mathematics and an MS in Computer Science. Recently, Lukas won the Netexplorateur Award for GiveWork -- a collaboration with Samasource that brings digital work to refugees worldwide. Lukas is also an expert level Go player.   
+   From: 
+ OreillyMedia  
+  Views: 
+295 
+           
+ 1
+ ratings    
+   Time: 
+ 04:39  
+  More in 
+ Science &amp; Technology      .  
+          
+   Lukas Biewald interviewed at Web 2.0 Expo New York 
+  
+  web2expo.com Lukas Biewald is the founder and CEO of CrowdFlower. Founded in 2007, CrowdFlower provides Labor-on-Demand to help companies outsource high-volume, repetitive tasks to a massively-distributed global workforce. Before founding CrowdFlower, Lukas was a senior scientist and manager within the Ranking and Management Team at Powerset, Inc., acquired by Microsoft in 2008. He led the Search Relevance Team for Yahoo! Japan after graduating from Stanford University with a BS in Mathematics and an MS in Computer Science. Recently, Lukas won the Netexplorateur Award for GiveWork -- a collaboration with Samasource that brings digital work to refugees worldwide. Lukas is also an expert level Go player.   
+   From: 
+ OreillyMedia  
+  Views: 
+295 
+           
+ 1
+ ratings    
+   Time: 
+ 04:39  
+  More in 
+ Science &amp; Technology       30 Sep 2010</span></div><div id="21" class="video thumb1" style="background:url('http://i.ytimg.com/vi/-yM_KzV8u-Q/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=-yM_KzV8u-Q&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 17:39:14 GMT Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 17:39:14 GMT Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Herma..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 17:39:14 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+91 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 17:39:14 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+91 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       28 Sep 2010</span></div><div id="22" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_3Z0MAe2qvQ/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_3Z0MAe2qvQ&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 16:00:05 GMT Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 16:00:05 GMT Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Herma..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 16:00:05 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+72 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now Take a Bow - Gegenereerd op: Mon, 27 Sep 2010 16:00:05 GMT 
+  
+  Heb je een webcam? Ga dan naar nowtakeabow.nl om jeeigen scene op te nemen. Now, Take a Bow is een steeds veranderende film gemaakt door mensen zoals jij! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+72 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       28 Sep 2010</span></div><div id="23" class="video thumb1" style="background:url('http://i.ytimg.com/vi/gTZjbkCG53M/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=gTZjbkCG53M&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : joseph childress at crowdflower part 2 joseph childress at crowdflower part 2 end of song From: SeaweedSway Views:9 0ratingsTime: 00:20 More in Music"><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   joseph childress at crowdflower part 2 
+  
+  end of song   
+   From: 
+ SeaweedSway  
+  Views: 
+9 
+           
+ 0
+ ratings    
+   Time: 
+ 00:20  
+  More in 
+ Music      .  
+          
+   joseph childress at crowdflower part 2 
+  
+  end of song   
+   From: 
+ SeaweedSway  
+  Views: 
+9 
+           
+ 0
+ ratings    
+   Time: 
+ 00:20  
+  More in 
+ Music       27 Sep 2010</span></div><div id="24" class="video thumb1" style="background:url('http://i.ytimg.com/vi/df4Jv-IgKIQ/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=df4Jv-IgKIQ&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : joseph childress at crowdflower joseph childress at crowdflower sorry it&#39;s so dark! From: SeaweedSway Views:39 0ratingsTime: 03:00 More in Music"><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   joseph childress at crowdflower 
+  
+  sorry it&#39;s so dark!   
+   From: 
+ SeaweedSway  
+  Views: 
+39 
+           
+ 0
+ ratings    
+   Time: 
+ 03:00  
+  More in 
+ Music      .  
+          
+   joseph childress at crowdflower 
+  
+  sorry it&#39;s so dark!   
+   From: 
+ SeaweedSway  
+  Views: 
+39 
+           
+ 0
+ ratings    
+   Time: 
+ 03:00  
+  More in 
+ Music       27 Sep 2010</span></div><div id="25" class="video thumb1" style="background:url('http://i.ytimg.com/vi/lzxP8Wlsq1M/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=lzxP8Wlsq1M&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : elephant micah at crowdflower elephant micah at crowdflowerFrom: SeaweedSway Views:71 0ratingsTime: 03:00 More in Music"><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   elephant micah at crowdflower 
+  
+     
+   From: 
+ SeaweedSway  
+  Views: 
+71 
+           
+ 0
+ ratings    
+   Time: 
+ 03:00  
+  More in 
+ Music      .  
+          
+   elephant micah at crowdflower 
+  
+     
+   From: 
+ SeaweedSway  
+  Views: 
+71 
+           
+ 0
+ ratings    
+   Time: 
+ 03:00  
+  More in 
+ Music       27 Sep 2010</span></div><div id="26" class="video thumb1" style="background:url('http://i.ytimg.com/vi/-0-diLttU40/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=-0-diLttU40&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 13:00:04 GMT Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 13:00:04 GMT Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elst..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 13:00:04 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+6 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 13:00:04 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+6 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       19 Sep 2010</span></div><div id="27" class="video thumb1" style="background:url('http://i.ytimg.com/vi/_vY5NOC9AKM/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=_vY5NOC9AKM&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 02:00:05 GMT Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 02:00:05 GMT Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elst..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 02:00:05 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+16 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment      .  
+          
+   Now, Take a Bow - Rendered on: Sun, 19 Sep 2010 02:00:05 GMT 
+  
+  Got a webcam? Then visit nowtakeabow.com torecord your very own scene. Now, Take a Bow is an everchanging short film made by people like you! Designed and Directed by Jonathan Puckey &amp; Roel Wouters Producer Vincent Lindeboom Technical Jonathan Puckey Martijn Pannevis Director of Photography Sal Kroonenberg Sound Recording Jaap Hermans Music Rik Elstgeest David Corel Bo Koek Voice-over Roel Wouters Instructors Jonathan Puckey &amp; Roel Wouters Location Wittenplaats.nl Funded by Mediafonds, NTR Thanks to Stefanie Hakkesteegt Ingrid Walschot Jan Schenk Juerg Lehni Luna Maurer Lauren Grusenmeyer Karst-Janneke Rogaar   
+   From: 
+ nowtakeabow  
+  Views: 
+16 
+           
+ 0
+ ratings    
+   Time: 
+ 03:08  
+  More in 
+ Entertainment       19 Sep 2010</span></div><div id="28" class="video thumb1" style="background:url('http://i.ytimg.com/vi/0VQUek6L--Y/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=0VQUek6L--Y&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : TEDxDU - Lukas Biewald - 5/13/10 TEDxDU - Lukas Biewald - 5/13/10 Lukas shares his great idea &mdash; CrowdFlower - which provides labor-on-demand to help companies outsource high-volume, repetitive tasks to a massively distributed global workforce. In the wake of the Jan. 12, 2010, earthquake in Haiti, CrowdFlower repurposed its service as a text-message translation tool to help Mission 4636 meet the urgent needs of the Haitian people. About TEDx, x = independently organi..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   TEDxDU - Lukas Biewald - 5/13/10 
+  
+  Lukas shares his great idea &mdash; CrowdFlower - which provides labor-on-demand to help companies outsource high-volume, repetitive tasks to a massively distributed global workforce. In the wake of the Jan. 12, 2010, earthquake in Haiti, CrowdFlower repurposed its service as a text-message translation tool to help Mission 4636 meet the urgent needs of the Haitian people. About TEDx, x = independently organized event In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TEDTalks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.* (*Subject to certain rules and regulations)   
+   From: 
+ TEDxTalks  
+  Views: 
+789 
+           
+ 6
+ ratings    
+   Time: 
+ 10:45  
+  More in 
+ Nonprofits &amp; Activism      .  
+          
+   TEDxDU - Lukas Biewald - 5/13/10 
+  
+  Lukas shares his great idea &mdash; CrowdFlower - which provides labor-on-demand to help companies outsource high-volume, repetitive tasks to a massively distributed global workforce. In the wake of the Jan. 12, 2010, earthquake in Haiti, CrowdFlower repurposed its service as a text-message translation tool to help Mission 4636 meet the urgent needs of the Haitian people. About TEDx, x = independently organized event In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TEDTalks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.* (*Subject to certain rules and regulations)   
+   From: 
+ TEDxTalks  
+  Views: 
+789 
+           
+ 6
+ ratings    
+   Time: 
+ 10:45  
+  More in 
+ Nonprofits &amp; Activism       11 Jun 2010</span></div><div id="29" class="video thumb1" style="background:url('http://i.ytimg.com/vi/5efpl5mN9c8/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=5efpl5mN9c8&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Ray Solnik excerpt from SaaS University on Crowdsourcing in Dallas 01-2010 Ray Solnik excerpt from SaaS University on Crowdsourcing in Dallas 01-2010 Sample speaking engagement by Ray Solnik at SaaS University in Dallas, Texas, January, 2010. He was there representing Dolores Labs, Inc. (aka CrowdFlower) and speaking to approximately 125 software and web executives about crowdsourcing - what it is, case studies, industry dynamics, and how they can leverage this new cloud c..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Ray Solnik excerpt from SaaS University on Crowdsourcing in Dallas 01-2010 
+  
+  Sample speaking engagement by Ray Solnik at SaaS University in Dallas, Texas, January, 2010. He was there representing Dolores Labs, Inc. (aka CrowdFlower) and speaking to approximately 125 software and web executives about crowdsourcing - what it is, case studies, industry dynamics, and how they can leverage this new cloud computing service industry.   
+   From: 
+ reslmy  
+  Views: 
+43 
+           
+ 1
+ ratings    
+   Time: 
+ 02:07  
+  More in 
+ Science &amp; Technology      .  
+          
+   Ray Solnik excerpt from SaaS University on Crowdsourcing in Dallas 01-2010 
+  
+  Sample speaking engagement by Ray Solnik at SaaS University in Dallas, Texas, January, 2010. He was there representing Dolores Labs, Inc. (aka CrowdFlower) and speaking to approximately 125 software and web executives about crowdsourcing - what it is, case studies, industry dynamics, and how they can leverage this new cloud computing service industry.   
+   From: 
+ reslmy  
+  Views: 
+43 
+           
+ 1
+ ratings    
+   Time: 
+ 02:07  
+  More in 
+ Science &amp; Technology       14 Apr 2010</span></div><div id="30" class="video thumb1" style="background:url('http://i.ytimg.com/vi/0XzNW3i8dDI/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=0XzNW3i8dDI&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Hive45 Singularity Podcast #8 2/3 - Collective Intelligence, Hive-mind Hive45 Singularity Podcast #8 2/3 - Collective Intelligence, Hive-mind Collective Intelligence (CI) and hive-mind talk for this week ending the 21/03/10: MIT kicking some ass with research into harnessing collective intelligence for a more productive and smarter populace (and ultimately, AI), robots making new scientific discoveries and solving problems on their own, recommendation engines the next stag..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Hive45 Singularity Podcast #8 2/3 - Collective Intelligence, Hive-mind 
+  
+  Collective Intelligence (CI) and hive-mind talk for this week ending the 21/03/10: MIT kicking some ass with research into harnessing collective intelligence for a more productive and smarter populace (and ultimately, AI), robots making new scientific discoveries and solving problems on their own, recommendation engines the next stage of the web and the subsequent impacts of individualized browsing, oh and Hunch recommends some gay anthems. Please visit the website to see the full show notes and links: hive45.com Stories covered this week: SingularityHub, World Economic Forum, IdeasLab with MIT Thomas Malone Video, Forget IQ, Collective Intelligence is the New Measure of Smart, MIT Center for Collective Intelligence, Adam The Robot Scientist Makes Its First Discovery, Chrome Extension: Diigo Web Highlighter and Bookmark, Computer Program Self-Discovers Laws of Physics, SETI@home, Folding@home, Acne Drug Prevents HIV Breakout, Cure for Multiple Sclerosis Promising, Trials Coming Soon, Susan Blackmore on Memes &amp; Temes, Hunch Founder Caterina Fake Wiki, Hunch.com, Hunch Twitter Predictor Game, Virtual Reality Hamster Ball, Tobacco Smoke Enema, Female Hysteria, Google Gives First $1337 Prize to Chrome Security Patcher, TechCrunch: Outsourcing Picking-up Speed, CrowdFlower, CloudCrowd, Chatroulette Improv Piano Video   
+   From: 
+ hive45com  
+  Views: 
+80 
+           
+ 0
+ ratings    
+   Time: 
+ 08:42  
+  More in 
+ Science &amp; Technology      .  
+          
+   Hive45 Singularity Podcast #8 2/3 - Collective Intelligence, Hive-mind 
+  
+  Collective Intelligence (CI) and hive-mind talk for this week ending the 21/03/10: MIT kicking some ass with research into harnessing collective intelligence for a more productive and smarter populace (and ultimately, AI), robots making new scientific discoveries and solving problems on their own, recommendation engines the next stage of the web and the subsequent impacts of individualized browsing, oh and Hunch recommends some gay anthems. Please visit the website to see the full show notes and links: hive45.com Stories covered this week: SingularityHub, World Economic Forum, IdeasLab with MIT Thomas Malone Video, Forget IQ, Collective Intelligence is the New Measure of Smart, MIT Center for Collective Intelligence, Adam The Robot Scientist Makes Its First Discovery, Chrome Extension: Diigo Web Highlighter and Bookmark, Computer Program Self-Discovers Laws of Physics, SETI@home, Folding@home, Acne Drug Prevents HIV Breakout, Cure for Multiple Sclerosis Promising, Trials Coming Soon, Susan Blackmore on Memes &amp; Temes, Hunch Founder Caterina Fake Wiki, Hunch.com, Hunch Twitter Predictor Game, Virtual Reality Hamster Ball, Tobacco Smoke Enema, Female Hysteria, Google Gives First $1337 Prize to Chrome Security Patcher, TechCrunch: Outsourcing Picking-up Speed, CrowdFlower, CloudCrowd, Chatroulette Improv Piano Video   
+   From: 
+ hive45com  
+  Views: 
+80 
+           
+ 0
+ ratings    
+   Time: 
+ 08:42  
+  More in 
+ Science &amp; Technology       14 Apr 2010</span></div><div id="31" class="video thumb1" style="background:url('http://i.ytimg.com/vi/mWkfoYLyM7U/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=mWkfoYLyM7U&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Hive45 Singularity Podcast #8 3/3 - Collective Intelligence, Hive-mind Hive45 Singularity Podcast #8 3/3 - Collective Intelligence, Hive-mind Collective Intelligence (CI) and hive-mind talk for this week ending the 21/03/10: MIT kicking some ass with research into harnessing collective intelligence for a more productive and smarter populace (and ultimately, AI), robots making new scientific discoveries and solving problems on their own, recommendation engines the next stag..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Hive45 Singularity Podcast #8 3/3 - Collective Intelligence, Hive-mind 
+  
+  Collective Intelligence (CI) and hive-mind talk for this week ending the 21/03/10: MIT kicking some ass with research into harnessing collective intelligence for a more productive and smarter populace (and ultimately, AI), robots making new scientific discoveries and solving problems on their own, recommendation engines the next stage of the web and the subsequent impacts of individualized browsing, oh and Hunch recommends some gay anthems. Please visit the website to see the full show notes and links: hive45.com Stories covered this week: SingularityHub, World Economic Forum, IdeasLab with MIT Thomas Malone Video, Forget IQ, Collective Intelligence is the New Measure of Smart, MIT Center for Collective Intelligence, Adam The Robot Scientist Makes Its First Discovery, Chrome Extension: Diigo Web Highlighter and Bookmark, Computer Program Self-Discovers Laws of Physics, SETI@home, Folding@home, Acne Drug Prevents HIV Breakout, Cure for Multiple Sclerosis Promising, Trials Coming Soon, Susan Blackmore on Memes &amp; Temes, Hunch Founder Caterina Fake Wiki, Hunch.com, Hunch Twitter Predictor Game, Virtual Reality Hamster Ball, Tobacco Smoke Enema, Female Hysteria, Google Gives First $1337 Prize to Chrome Security Patcher, TechCrunch: Outsourcing Picking-up Speed, CrowdFlower, CloudCrowd, Chatroulette Improv Piano Video   
+   From: 
+ hive45com  
+  Views: 
+74 
+           
+ 0
+ ratings    
+   Time: 
+ 08:59  
+  More in 
+ Science &amp; Technology      .  
+          
+   Hive45 Singularity Podcast #8 3/3 - Collective Intelligence, Hive-mind 
+  
+  Collective Intelligence (CI) and hive-mind talk for this week ending the 21/03/10: MIT kicking some ass with research into harnessing collective intelligence for a more productive and smarter populace (and ultimately, AI), robots making new scientific discoveries and solving problems on their own, recommendation engines the next stage of the web and the subsequent impacts of individualized browsing, oh and Hunch recommends some gay anthems. Please visit the website to see the full show notes and links: hive45.com Stories covered this week: SingularityHub, World Economic Forum, IdeasLab with MIT Thomas Malone Video, Forget IQ, Collective Intelligence is the New Measure of Smart, MIT Center for Collective Intelligence, Adam The Robot Scientist Makes Its First Discovery, Chrome Extension: Diigo Web Highlighter and Bookmark, Computer Program Self-Discovers Laws of Physics, SETI@home, Folding@home, Acne Drug Prevents HIV Breakout, Cure for Multiple Sclerosis Promising, Trials Coming Soon, Susan Blackmore on Memes &amp; Temes, Hunch Founder Caterina Fake Wiki, Hunch.com, Hunch Twitter Predictor Game, Virtual Reality Hamster Ball, Tobacco Smoke Enema, Female Hysteria, Google Gives First $1337 Prize to Chrome Security Patcher, TechCrunch: Outsourcing Picking-up Speed, CrowdFlower, CloudCrowd, Chatroulette Improv Piano Video   
+   From: 
+ hive45com  
+  Views: 
+74 
+           
+ 0
+ ratings    
+   Time: 
+ 08:59  
+  More in 
+ Science &amp; Technology       14 Apr 2010</span></div><div id="32" class="video thumb1" style="background:url('http://i.ytimg.com/vi/lxyUaWSblaA/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=lxyUaWSblaA&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Crowdsourcing (3/3/10) Crowdsourcing (3/3/10) Crowdsourcing Lukas Biewald, CEO, CrowdFlower Sharon Chiarella, Vice President, Mechanical Turk at Amazon Lilly Irani, Ph.D. Candidate, UC Irvine, Dept. of Informatics; Previously a User Experience Designer, Google Leila Chirayath Janah, Founder and CEO, Samasource Brad Stone, Technology Correspondent, The New York Times - Moderator Since Jeff Howe coined the phrase crowdsourcing in 2006, the idea of tapping into the power of t..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Crowdsourcing (3/3/10) 
+  
+  Crowdsourcing Lukas Biewald, CEO, CrowdFlower Sharon Chiarella, Vice President, Mechanical Turk at Amazon Lilly Irani, Ph.D. Candidate, UC Irvine, Dept. of Informatics; Previously a User Experience Designer, Google Leila Chirayath Janah, Founder and CEO, Samasource Brad Stone, Technology Correspondent, The New York Times - Moderator Since Jeff Howe coined the phrase crowdsourcing in 2006, the idea of tapping into the power of the human cloud has brought both innovation and controversy. From building a people-powered online encyclopedia to algorithm contests, crowdsourcing might be the worlds largest real-time workforce. But questions remain: Can you trust the crowd to give high-quality information? Will this movement allow a whole new way to work for the disenfranchised? How will being able to share knowledge more efficiently than ever before change the world?   
+   From: 
+ commonwealthclub  
+  Views: 
+950 
+           
+ 3
+ ratings    
+   Time: 
+ 01:01:56  
+  More in 
+ News &amp; Politics      .  
+          
+   Crowdsourcing (3/3/10) 
+  
+  Crowdsourcing Lukas Biewald, CEO, CrowdFlower Sharon Chiarella, Vice President, Mechanical Turk at Amazon Lilly Irani, Ph.D. Candidate, UC Irvine, Dept. of Informatics; Previously a User Experience Designer, Google Leila Chirayath Janah, Founder and CEO, Samasource Brad Stone, Technology Correspondent, The New York Times - Moderator Since Jeff Howe coined the phrase crowdsourcing in 2006, the idea of tapping into the power of the human cloud has brought both innovation and controversy. From building a people-powered online encyclopedia to algorithm contests, crowdsourcing might be the worlds largest real-time workforce. But questions remain: Can you trust the crowd to give high-quality information? Will this movement allow a whole new way to work for the disenfranchised? How will being able to share knowledge more efficiently than ever before change the world?   
+   From: 
+ commonwealthclub  
+  Views: 
+950 
+           
+ 3
+ ratings    
+   Time: 
+ 01:01:56  
+  More in 
+ News &amp; Politics       12 Mar 2010</span></div><div id="33" class="video thumb1" style="background:url('http://i.ytimg.com/vi/QVvYauvydac/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=QVvYauvydac&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : Mission 4636: Emergency Response for Haiti | FrontlineSMS, Ushahidi, Samasource, CrowdFlower Mission 4636: Emergency Response for Haiti | FrontlineSMS, Ushahidi, Samasource, CrowdFlower envisionGood.com In this video interview, Brian Herbert of Ushahidi, Robert Munro of FrontlineSMS, Lukas Biewald of CrowdFlower, and Leila Janah of Samasource share background on how they came together, with the support of inSTEDD, DigiCel, local radio stations, and local NGOs, to deploy a ..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   Mission 4636: Emergency Response for Haiti | FrontlineSMS, Ushahidi, Samasource, CrowdFlower 
+  
+  envisionGood.com In this video interview, Brian Herbert of Ushahidi, Robert Munro of FrontlineSMS, Lukas Biewald of CrowdFlower, and Leila Janah of Samasource share background on how they came together, with the support of inSTEDD, DigiCel, local radio stations, and local NGOs, to deploy a critical emergency communications system to help save lives and provide emergency care to people in Haiti, following the catastrophic 7.0 earthquake that hit the country on January 12, 2010. Learn how people in Haiti and around the world tapped the power of mobile text messages, crowdsourcing, social media and technology to come together in support of Haiti. For more info on Mission 4636, see samasource.org ushahidi.org http frontlinesms.com Join envisionGood on the web twitter.com facebook.com   
+   From: 
+ envisiongood  
+  Views: 
+396 
+           
+ 2
+ ratings    
+   Time: 
+ 10:00  
+  More in 
+ Science &amp; Technology      .  
+          
+   Mission 4636: Emergency Response for Haiti | FrontlineSMS, Ushahidi, Samasource, CrowdFlower 
+  
+  envisionGood.com In this video interview, Brian Herbert of Ushahidi, Robert Munro of FrontlineSMS, Lukas Biewald of CrowdFlower, and Leila Janah of Samasource share background on how they came together, with the support of inSTEDD, DigiCel, local radio stations, and local NGOs, to deploy a critical emergency communications system to help save lives and provide emergency care to people in Haiti, following the catastrophic 7.0 earthquake that hit the country on January 12, 2010. Learn how people in Haiti and around the world tapped the power of mobile text messages, crowdsourcing, social media and technology to come together in support of Haiti. For more info on Mission 4636, see samasource.org ushahidi.org http frontlinesms.com Join envisionGood on the web twitter.com facebook.com   
+   From: 
+ envisiongood  
+  Views: 
+396 
+           
+ 2
+ ratings    
+   Time: 
+ 10:00  
+  More in 
+ Science &amp; Technology       10 Feb 2010</span></div><div id="34" class="video thumb1" style="background:url('http://i.ytimg.com/vi/sohzHF0vixM/default.jpg') center center no-repeat;width:123px;height:75px;"><a href="http://www.youtube.com/watchwatch?v=sohzHF0vixM&feature=youtube_gdata"  class="{videoGallery:true}" title="VIDEO : How Do Samasource & CrowdFlower Use Mobile iPhones to "Give Work" to Refugees in Africa? How Do Samasource &amp; CrowdFlower Use Mobile iPhones to &quot;Give Work&quot; to Refugees in Africa? envisionGood.com &quot;Give Work&quot; is a mobile phone app developed by partners Samasource and CrowdFlower. In this video interview, Leila Janah, Founder of Samasource, and Lukas Biewald, Founder of CrowdFlower, talk about this amazing app that lets you helps refugees in Kenya, Afr..."><img border="0" src=images/youtubefront.gif  width=123 height=75 border=0/></a><span style="display:none"> 
+          
+   How Do Samasource &amp; CrowdFlower Use Mobile iPhones to &quot;Give Work&quot; to Refugees in Africa? 
+  
+  envisionGood.com &quot;Give Work&quot; is a mobile phone app developed by partners Samasource and CrowdFlower. In this video interview, Leila Janah, Founder of Samasource, and Lukas Biewald, Founder of CrowdFlower, talk about this amazing app that lets you helps refugees in Kenya, Africa by completing quick tasks on your iPhone while on-the-go. Nice!   
+   From: 
+ envisiongood  
+  Views: 
+1108 
+           
+ 3
+ ratings    
+   Time: 
+ 05:32  
+  More in 
+ Science &amp; Technology      .  
+          
+   How Do Samasource &amp; CrowdFlower Use Mobile iPhones to &quot;Give Work&quot; to Refugees in Africa? 
+  
+  envisionGood.com &quot;Give Work&quot; is a mobile phone app developed by partners Samasource and CrowdFlower. In this video interview, Leila Janah, Founder of Samasource, and Lukas Biewald, Founder of CrowdFlower, talk about this amazing app that lets you helps refugees in Kenya, Africa by completing quick tasks on your iPhone while on-the-go. Nice!   
+   From: 
+ envisiongood  
+  Views: 
+1108 
+           
+ 3
+ ratings    
+   Time: 
+ 05:32  
+  More in 
+ Science &amp; Technology       14 Jan 2010</span></div><div style="clear:both"></div></div><img src="images/corner_bottom.gif"></td></tr></table><br>                       
+                    </div>
+                    <div style="clear:both"></div>
+                             
+                    </td>
+</tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+  
+    </div>
+    <br /><br />
+   <div style="width:100%;background-color:#25292c;border-top:solid 1px #141618;border-bottom:solid 1px #141618;text-align:center;-webkit-box-shadow: 2px 2px 1px #121619;-moz-box-shadow:2px 2px 1px #121619;">
+        <br /><br />
+        
+        <div class="footerLinks">
+            <table align=center width=92%>
+                <tr valign=top>
+                    <td align=left  nowrap=nowrap style="text-align:left;">                        
+                        <div class="footerTabs">
+                            <h1 style="background-image:url('images/bar-chart.gif');float:left;margin-left: 8px;">Trending News</h1>
+                            <a href="javascript:void(0);" onclick="fade('us')" style="margin-right: 15px;" id=linkus class="footerTab"><img border=0 src="images/us.gif" /> United States</a>
+                            <a href="javascript:void(0);" onclick="fade('uk')" id=linkuk class="footerTab"><img border=0 src="images/uk.gif" /> United Kingdom</a>
+                            <a href="javascript:void(0);" onclick="fade('ca')" id=linkca class="footerTab"><img border=0 src="images/ca.gif" /> Canada</a>
+                            <a href="javascript:void(0);" onclick="fade('au')"  id=linkau class="footerTab"><img border=0 src="images/au.gif" /> Australia</a>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="popular">
+                            <table cellpadding=3 cellspacing=3 width=100% id="us" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Show latest news on Muammar Gaddafi" href="http://interceder.net/list/Muammar-Gaddafi">Muammar Gaddafi</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Bashar al-Assad" href="http://interceder.net/list/Bashar-al-Assad">Bashar al-Assad</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Google" href="http://interceder.net/list/Google">Google</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Fulham" href="http://interceder.net/list/Fulham">Fulham</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Foreign Office" href="http://interceder.net/list/Foreign-Office">Foreign Office</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Premier League" href="http://interceder.net/list/Premier-League">Premier League</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Taliban" href="http://interceder.net/list/Taliban">Taliban</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Japans government" href="http://interceder.net/list/Japans-government">Japans government</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Ai Weiwei" href="http://interceder.net/list/Ai-Weiwei">Ai Weiwei</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Ali Abdullah Saleh" href="http://interceder.net/list/Ali-Abdullah-Saleh">Ali Abdullah Saleh</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <img border="0" src="images/sad.gif" align="absmiddle"/><br>Error!<br> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Katy Perry" href="http://interceder.net/list/Katy-Perry">Katy Perry</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Justin Bieber" href="http://interceder.net/list/Justin-Bieber">Justin Bieber</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Susan Boyle" href="http://interceder.net/list/Susan-Boyle">Susan Boyle</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Warner Bros." href="http://interceder.net/list/Warner-Bros.">Warner Bros.</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Academy of Country Music Awards" href="http://interceder.net/list/Academy-of-Country-Music-Awards">Academy of Country Music Awards</a></td></tr><tr><td>7. </td><td><a title="Show latest news on UK Film Council" href="http://interceder.net/list/UK-Film-Council">UK Film Council</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Snoop Dogg" href="http://interceder.net/list/Snoop-Dogg">Snoop Dogg</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Lyudmila Gurchenko" href="http://interceder.net/list/Lyudmila-Gurchenko">Lyudmila Gurchenko</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Elizabeth Taylor" href="http://interceder.net/list/Elizabeth-Taylor">Elizabeth Taylor</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Show latest news on New York Yankees" href="http://interceder.net/list/New-York-Yankees">New York Yankees</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Magners League" href="http://interceder.net/list/Magners-League">Magners League</a></td></tr><tr><td>3. </td><td><a title="Show latest news on New York Jets" href="http://interceder.net/list/New-York-Jets">New York Jets</a></td></tr><tr><td>4. </td><td><a title="Show latest news on St. Louis Cardinals" href="http://interceder.net/list/St.-Louis-Cardinals">St. Louis Cardinals</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Premier League" href="http://interceder.net/list/Premier-League">Premier League</a></td></tr><tr><td>6. </td><td><a title="Show latest news on San Francisco Giants" href="http://interceder.net/list/San-Francisco-Giants">San Francisco Giants</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Bobby Zamora" href="http://interceder.net/list/Bobby-Zamora">Bobby Zamora</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Sachin Tendulkar" href="http://interceder.net/list/Sachin-Tendulkar">Sachin Tendulkar</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Dominique Wilkins" href="http://interceder.net/list/Dominique-Wilkins">Dominique Wilkins</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Emile Griffith" href="http://interceder.net/list/Emile-Griffith">Emile Griffith</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>                        
+                            <table cellpadding=3 cellspacing=3 width=100% id="ca" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Show latest news on Stephen Harper" href="http://interceder.net/list/Stephen-Harper">Stephen Harper</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Michael Ignatieff" href="http://interceder.net/list/Michael-Ignatieff">Michael Ignatieff</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Jack Layton" href="http://interceder.net/list/Jack-Layton">Jack Layton</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Sydney Morning Herald" href="http://interceder.net/list/Sydney-Morning-Herald">Sydney Morning Herald</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Toronto Sun" href="http://interceder.net/list/Toronto-Sun">Toronto Sun</a></td></tr><tr><td>7. </td><td><a title="Show latest news on CNN International" href="http://interceder.net/list/CNN-International">CNN International</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Washington Post" href="http://interceder.net/list/Washington-Post">Washington Post</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Adel Safar" href="http://interceder.net/list/Adel-Safar">Adel Safar</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Moammar Gadhafi" href="http://interceder.net/list/Moammar-Gadhafi">Moammar Gadhafi</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <img border="0" src="images/sad.gif" align="absmiddle"/><br>Error!<br> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Leonard Cohen" href="http://interceder.net/list/Leonard-Cohen">Leonard Cohen</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Robbie Robertson" href="http://interceder.net/list/Robbie-Robertson">Robbie Robertson</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Luc Plamondon" href="http://interceder.net/list/Luc-Plamondon">Luc Plamondon</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Los Angeles Times" href="http://interceder.net/list/Los-Angeles-Times">Los Angeles Times</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Montreal Gazette" href="http://interceder.net/list/Montreal-Gazette">Montreal Gazette</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Toronto Sun" href="http://interceder.net/list/Toronto-Sun">Toronto Sun</a></td></tr><tr><td>8. </td><td><a title="Show latest news on William Shatner" href="http://interceder.net/list/William-Shatner">William Shatner</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Toronto Star" href="http://interceder.net/list/Toronto-Star">Toronto Star</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Glee" href="http://interceder.net/list/Glee">Glee</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Create a dashboard on New Jersey Devils" href="http://interceder.net/list/New-Jersey-Devils">New Jersey Devils</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Chicago Bulls" href="http://interceder.net/list/Chicago-Bulls">Chicago Bulls</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Vancouver Canucks" href="http://interceder.net/list/Vancouver-Canucks">Vancouver Canucks</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Toronto Maple Leafs" href="http://interceder.net/list/Toronto-Maple-Leafs">Toronto Maple Leafs</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Edmonton Oilers" href="http://interceder.net/list/Edmonton-Oilers">Edmonton Oilers</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Toronto Blue Jays" href="http://interceder.net/list/Toronto-Blue-Jays">Toronto Blue Jays</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Kyle Drabek" href="http://interceder.net/list/Kyle-Drabek">Kyle Drabek</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Ottawa Senators" href="http://interceder.net/list/Ottawa-Senators">Ottawa Senators</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Minnesota Twins" href="http://interceder.net/list/Minnesota-Twins">Minnesota Twins</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Toronto FC" href="http://interceder.net/list/Toronto-FC">Toronto FC</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>                            
+                            <table cellpadding=3 cellspacing=3 width=100% id="uk" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Show latest news on Ronan Kerr" href="http://interceder.net/list/Ronan-Kerr">Ronan Kerr</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Muammar Gaddafi" href="http://interceder.net/list/Muammar-Gaddafi">Muammar Gaddafi</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Musa Kusa" href="http://interceder.net/list/Musa-Kusa">Musa Kusa</a></td></tr><tr><td>5. </td><td><a title="Show latest news on William Hague" href="http://interceder.net/list/William-Hague">William Hague</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Two Japan" href="http://interceder.net/list/Two-Japan">Two Japan</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Omagh police" href="http://interceder.net/list/Omagh-police">Omagh police</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Scottish police" href="http://interceder.net/list/Scottish-police">Scottish police</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Elizabeth Taylor" href="http://interceder.net/list/Elizabeth-Taylor">Elizabeth Taylor</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Barack Obama" href="http://interceder.net/list/Barack-Obama">Barack Obama</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Google" href="http://interceder.net/list/Google">Google</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Facebook" href="http://interceder.net/list/Facebook">Facebook</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Apple" href="http://interceder.net/list/Apple">Apple</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Microsoft" href="http://interceder.net/list/Microsoft">Microsoft</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on iPhone" href="http://interceder.net/list/iPhone">iPhone</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Motorola" href="http://interceder.net/list/Motorola">Motorola</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Twitter" href="http://interceder.net/list/Twitter">Twitter</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Samsung" href="http://interceder.net/list/Samsung">Samsung</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on YouTube" href="http://interceder.net/list/YouTube">YouTube</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on National Aeronautics and Space Administration" href="http://interceder.net/list/National-Aeronautics-and-Space-Administration">National Aeronautics and Space Administration</a></td></tr></table> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Show latest news on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Show latest news on Joan Miró" href="http://interceder.net/list/Joan-Miró">Joan Miró</a></td></tr><tr><td>3. </td><td><a title="Show latest news on Norah Jones" href="http://interceder.net/list/Norah-Jones">Norah Jones</a></td></tr><tr><td>4. </td><td><a title="Show latest news on Keren Ann Zeidel" href="http://interceder.net/list/Keren-Ann-Zeidel">Keren Ann Zeidel</a></td></tr><tr><td>5. </td><td><a title="Show latest news on Dan" href="http://interceder.net/list/Dan">Dan</a></td></tr><tr><td>6. </td><td><a title="Show latest news on Penelope Cruz" href="http://interceder.net/list/Penelope-Cruz">Penelope Cruz</a></td></tr><tr><td>7. </td><td><a title="Show latest news on Bob Dylan" href="http://interceder.net/list/Bob-Dylan">Bob Dylan</a></td></tr><tr><td>8. </td><td><a title="Show latest news on Wild Bill Austin" href="http://interceder.net/list/Wild-Bill-Austin">Wild Bill Austin</a></td></tr><tr><td>9. </td><td><a title="Show latest news on Brooke Mueller" href="http://interceder.net/list/Brooke-Mueller">Brooke Mueller</a></td></tr><tr><td>10. </td><td><a title="Show latest news on Terry Gilliam" href="http://interceder.net/list/Terry-Gilliam">Terry Gilliam</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Mario Balotelli" href="http://interceder.net/list/Mario-Balotelli">Mario Balotelli</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Carlos Tevez" href="http://interceder.net/list/Carlos-Tevez">Carlos Tevez</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Wayne Rooney" href="http://interceder.net/list/Wayne-Rooney">Wayne Rooney</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Lee Cattermole" href="http://interceder.net/list/Lee-Cattermole">Lee Cattermole</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Steven Gerrard" href="http://interceder.net/list/Steven-Gerrard">Steven Gerrard</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Roberto Mancini" href="http://interceder.net/list/Roberto-Mancini">Roberto Mancini</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Peter Murphy" href="http://interceder.net/list/Peter-Murphy">Peter Murphy</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Bobby Zamora" href="http://interceder.net/list/Bobby-Zamora">Bobby Zamora</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Alex Ferguson" href="http://interceder.net/list/Alex-Ferguson">Alex Ferguson</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Glen Johnson" href="http://interceder.net/list/Glen-Johnson">Glen Johnson</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table cellpadding=3 cellspacing=3 width=100% id="au" style="display:none;">
+                                <tr valign=top>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Top News</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Labor" href="http://interceder.net/list/Labor">Labor</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Keli Lane" href="http://interceder.net/list/Keli-Lane">Keli Lane</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Pauline Hanson" href="http://interceder.net/list/Pauline-Hanson">Pauline Hanson</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Colin Barnett" href="http://interceder.net/list/Colin-Barnett">Colin Barnett</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Anthony Albanese" href="http://interceder.net/list/Anthony-Albanese">Anthony Albanese</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on John Robertson" href="http://interceder.net/list/John-Robertson">John Robertson</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Campbell Newman" href="http://interceder.net/list/Campbell-Newman">Campbell Newman</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on New South Wales Education Department" href="http://interceder.net/list/New-South-Wales-Education-Department">New South Wales Education Department</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Sydney police" href="http://interceder.net/list/Sydney-police">Sydney police</a></td></tr></table>
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Technology</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Google" href="http://interceder.net/list/Google">Google</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Microsoft" href="http://interceder.net/list/Microsoft">Microsoft</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Twitter" href="http://interceder.net/list/Twitter">Twitter</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Facebook" href="http://interceder.net/list/Facebook">Facebook</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Rolls-Royce" href="http://interceder.net/list/Rolls-Royce">Rolls-Royce</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on James Franco" href="http://interceder.net/list/James-Franco">James Franco</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Paul Baran" href="http://interceder.net/list/Paul-Baran">Paul Baran</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Scott Watters" href="http://interceder.net/list/Scott-Watters">Scott Watters</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on YouTube" href="http://interceder.net/list/YouTube">YouTube</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on CSC" href="http://interceder.net/list/CSC">CSC</a></td></tr></table> 
+                                    </td>
+                                    <td width=25% style="border-right: dotted 1px #727476;">
+                                        <div class="newsArea">Entertainment</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Charlie Sheen" href="http://interceder.net/list/Charlie-Sheen">Charlie Sheen</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Katy Perry" href="http://interceder.net/list/Katy-Perry">Katy Perry</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on Britney Spears" href="http://interceder.net/list/Britney-Spears">Britney Spears</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Snoop Dogg" href="http://interceder.net/list/Snoop-Dogg">Snoop Dogg</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Justin Bieber" href="http://interceder.net/list/Justin-Bieber">Justin Bieber</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Jennifer Lopez" href="http://interceder.net/list/Jennifer-Lopez">Jennifer Lopez</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Lindsay Lohan" href="http://interceder.net/list/Lindsay-Lohan">Lindsay Lohan</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on Sex and the City" href="http://interceder.net/list/Sex-and-the-City">Sex and the City</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Chris Hemsworth" href="http://interceder.net/list/Chris-Hemsworth">Chris Hemsworth</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Michael Lohan" href="http://interceder.net/list/Michael-Lohan">Michael Lohan</a></td></tr></table>
+                                    </td>
+                                    <td width=25%>
+                                        <div class="newsArea">Sport</div> <table><tr><td>1. </td><td><a title="Create a dashboard on Sydney Roosters" href="http://interceder.net/list/Sydney-Roosters">Sydney Roosters</a></td></tr><tr><td>2. </td><td><a title="Create a dashboard on Jorge Lorenzo" href="http://interceder.net/list/Jorge-Lorenzo">Jorge Lorenzo</a></td></tr><tr><td>3. </td><td><a title="Create a dashboard on the World Cup" href="http://interceder.net/list/the-World-Cup">the World Cup</a></td></tr><tr><td>4. </td><td><a title="Create a dashboard on Casey Stoner" href="http://interceder.net/list/Casey-Stoner">Casey Stoner</a></td></tr><tr><td>5. </td><td><a title="Create a dashboard on Emily Seebohm" href="http://interceder.net/list/Emily-Seebohm">Emily Seebohm</a></td></tr><tr><td>6. </td><td><a title="Create a dashboard on Alan Hutton" href="http://interceder.net/list/Alan-Hutton">Alan Hutton</a></td></tr><tr><td>7. </td><td><a title="Create a dashboard on Robbie Farah" href="http://interceder.net/list/Robbie-Farah">Robbie Farah</a></td></tr><tr><td>8. </td><td><a title="Create a dashboard on the Spanish Grand Prix" href="http://interceder.net/list/the-Spanish-Grand-Prix">the Spanish Grand Prix</a></td></tr><tr><td>9. </td><td><a title="Create a dashboard on Berrick Barnes" href="http://interceder.net/list/Berrick-Barnes">Berrick Barnes</a></td></tr><tr><td>10. </td><td><a title="Create a dashboard on Southern Steel" href="http://interceder.net/list/Southern-Steel">Southern Steel</a></td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="20"><img width=20 src="images/blank.gif"></td>
+                    <td width="200" align=left nowrap=nowrap style="text-align:left;">
+                        <div class="footerTabs">
+                            <h1 style="background-image:url('images/light.gif');margin: 4px;margin-left: 8px;"> Current</h1>
+                        </div>
+                        <div class="popular flexcroll" style="overflow:auto;overflow-x: hidden;padding:0px;padding-top:4px;width: 200px;height: 230px;">
+                            <a href="http://interceder.net/dashboard/Keri-Russell" title="Create a dashboard on Keri Russell" class="recent">Keri Russell</a><a href="http://interceder.net/list/christian-bautista" title="Show latest news on christian bautista" class="recent">christian bautista</a><a href="http://interceder.net/list/ortiz" title="Show latest news on ortiz" class="recent">ortiz</a><a href="http://interceder.net/list/%22David-Stringer%22" title="Show latest news on "David Stringer"" class="recent">"David Stringer"</a><a href="http://interceder.net/dashboard/Prashant-Bhushan" title="Create a dashboard on Prashant Bhushan" class="recent">Prashant Bhushan</a><a href="http://interceder.net/dashboard/David-Irving" title="Create a dashboard on David Irving" class="recent">David Irving</a><a href="http://interceder.net/dashboard/The-Borgias" title="Create a dashboard on The Borgias" class="recent">The Borgias</a><a href="http://interceder.net/list/cremation-" title="Show latest news on cremation " class="recent">cremation </a><a href="http://interceder.net/dashboard/Iain-Dowie" title="Create a dashboard on Iain Dowie" class="recent">Iain Dowie</a><a href="http://interceder.net/list/Fidesz" title="Show latest news on Fidesz" class="recent">Fidesz</a><a href="http://interceder.net/list/Malvern" title="Show latest news on Malvern" class="recent">Malvern</a><a href="http://interceder.net/list/Kent-Clark" title="Show latest news on Kent Clark" class="recent">Kent Clark</a><a href="http://interceder.net/dashboard/steinway" title="Create a dashboard on steinway" class="recent">steinway</a><a href="http://interceder.net/list/Roper" title="Show latest news on Roper" class="recent">Roper</a><a href="http://interceder.net/dashboard/mrs-l" title="Create a dashboard on mrs l" class="recent">mrs l</a><a href="http://interceder.net/list/DINGDONG-DANTES" title="Show latest news on DINGDONG DANTES" class="recent">DINGDONG DANTES</a><a href="http://interceder.net/list/widnes" title="Show latest news on widnes" class="recent">widnes</a><a href="http://interceder.net/dashboard/Denise-Richards" title="Create a dashboard on Denise Richards" class="recent">Denise Richards</a><a href="http://interceder.net/list/fairfax-county" title="Show latest news on fairfax county" class="recent">fairfax county</a><a href="http://interceder.net/list/Biomet" title="Show latest news on Biomet" class="recent">Biomet</a><a href="http://interceder.net/list/Yes-Man" title="Show latest news on Yes Man" class="recent">Yes Man</a><a href="http://interceder.net/dashboard/Henrico-Police" title="Create a dashboard on Henrico Police" class="recent">Henrico Police</a><a href="http://interceder.net/list/pashto" title="Show latest news on pashto" class="recent">pashto</a><a href="http://interceder.net/dashboard/woman-attempts" title="Create a dashboard on woman attempts" class="recent">woman attempts</a><a href="http://interceder.net/dashboard/future-history" title="Create a dashboard on future history" class="recent">future history</a><a href="http://interceder.net/list/Mitre-10" title="Show latest news on Mitre 10" class="recent">Mitre 10</a><a href="http://interceder.net/list/hindin" title="Show latest news on hindin" class="recent">hindin</a><a href="http://interceder.net/list/penola" title="Show latest news on penola" class="recent">penola</a><a href="http://interceder.net/list/highwood" title="Show latest news on highwood" class="recent">highwood</a><a href="http://interceder.net/dashboard/Wayne-Bennett" title="Create a dashboard on Wayne Bennett" class="recent">Wayne Bennett</a><a href="http://interceder.net/list/cedric" title="Show latest news on cedric" class="recent">cedric</a><a href="http://interceder.net/list/Christina-Aguilera" title="Show latest news on Christina Aguilera" class="recent">Christina Aguilera</a><a href="http://interceder.net/list/National-Asset-Management-Agency" title="Show latest news on National Asset Management Agency" class="recent">National Asset Mana...</a><a href="http://interceder.net/list/Steve-Newman" title="Show latest news on Steve Newman" class="recent">Steve Newman</a><a href="http://interceder.net/dashboard/cellular-telephone" title="Create a dashboard on cellular telephone" class="recent">cellular telephone</a><a href="http://interceder.net/dashboard/Brits-in-T" title="Create a dashboard on Brits in T" class="recent">Brits in T</a><a href="http://interceder.net/list/Miguel-Cabrera" title="Show latest news on Miguel Cabrera" class="recent">Miguel Cabrera</a><a href="http://interceder.net/list/FORT-BRAGG" title="Show latest news on FORT BRAGG" class="recent">FORT BRAGG</a><a href="http://interceder.net/list/gregg" title="Show latest news on gregg" class="recent">gregg</a><a href="http://interceder.net/dashboard/McClelland" title="Create a dashboard on McClelland" class="recent">McClelland</a><a href="http://interceder.net/list/joyce" title="Show latest news on joyce" class="recent">joyce</a><a href="http://interceder.net/list/Josh-Ritter" title="Show latest news on Josh Ritter" class="recent">Josh Ritter</a><a href="http://interceder.net/list/Nawras" title="Show latest news on Nawras" class="recent">Nawras</a><a href="http://interceder.net/dashboard/jumping" title="Create a dashboard on jumping" class="recent">jumping</a><a href="http://interceder.net/list/Teesa-Williams" title="Show latest news on Teesa Williams" class="recent">Teesa Williams</a><a href="http://interceder.net/dashboard/International-Criminal-Court" title="Create a dashboard on International Criminal Court" class="recent">International Crimi...</a><a href="http://interceder.net/list/Pl%c3%a1cido-Domingo" title="Show latest news on Plácido Domingo" class="recent">Plácido Domingo</a><a href="http://interceder.net/list/Salem" title="Show latest news on Salem" class="recent">Salem</a><a href="http://interceder.net/list/images" title="Show latest news on images" class="recent">images</a><a href="http://interceder.net/list/Crash'" title="Show latest news on Crash'" class="recent">Crash'</a><a href="http://interceder.net/list/Broken-Femur" title="Show latest news on Broken Femur" class="recent">Broken Femur</a><a href="http://interceder.net/dashboard/Samuel-Beckett" title="Create a dashboard on Samuel Beckett" class="recent">Samuel Beckett</a><a href="http://interceder.net/list/Yahoo!-Inc" title="Show latest news on Yahoo! Inc" class="recent">Yahoo! Inc</a><a href="http://interceder.net/list/imani" title="Show latest news on imani" class="recent">imani</a><a href="http://interceder.net/list/Dana-Holgorsen" title="Show latest news on Dana Holgorsen" class="recent">Dana Holgorsen</a><a href="http://interceder.net/list/humboldt-county" title="Show latest news on humboldt county" class="recent">humboldt county</a><a href="http://interceder.net/list/crowdsourcing" title="Show latest news on crowdsourcing" class="recent">crowdsourcing</a><a href="http://interceder.net/dashboard/Tony-Abbott" title="Create a dashboard on Tony Abbott" class="recent">Tony Abbott</a><a href="http://interceder.net/list/Newtown" title="Show latest news on Newtown" class="recent">Newtown</a><a href="http://interceder.net/dashboard/Trevor-William-Rankin" title="Create a dashboard on Trevor William Rankin" class="recent">Trevor William Rank...</a><a href="http://interceder.net/list/kindle-3" title="Show latest news on kindle 3" class="recent">kindle 3</a><a href="http://interceder.net/dashboard/haughton" title="Create a dashboard on haughton" class="recent">haughton</a><a href="http://interceder.net/list/Millis" title="Show latest news on Millis" class="recent">Millis</a><a href="http://interceder.net/list/Carphone-Warehouse" title="Show latest news on Carphone Warehouse" class="recent">Carphone Warehouse</a><a href="http://interceder.net/dashboard/Cornwall" title="Create a dashboard on Cornwall" class="recent">Cornwall</a><a href="http://interceder.net/dashboard/FOXBORO" title="Create a dashboard on FOXBORO" class="recent">FOXBORO</a><a href="http://interceder.net/dashboard/COURT" title="Create a dashboard on COURT" class="recent">COURT</a><a href="http://interceder.net/list/pompeo" title="Show latest news on pompeo" class="recent">pompeo</a><a href="http://interceder.net/list/Robert-Logan" title="Show latest news on Robert Logan" class="recent">Robert Logan</a><a href="http://interceder.net/dashboard/Lawson-Software" title="Create a dashboard on Lawson Software" class="recent">Lawson Software</a><a href="http://interceder.net/list/Teaser" title="Show latest news on Teaser" class="recent">Teaser</a><a href="http://interceder.net/list/seeman" title="Show latest news on seeman" class="recent">seeman</a><a href="http://interceder.net/list/skadden" title="Show latest news on skadden" class="recent">skadden</a><a href="http://interceder.net/dashboard/SATYAM" title="Create a dashboard on SATYAM" class="recent">SATYAM</a><a href="http://interceder.net/list/soles" title="Show latest news on soles" class="recent">soles</a><a href="http://interceder.net/dashboard/laptop" title="Create a dashboard on laptop" class="recent">laptop</a><a href="http://interceder.net/list/kempton" title="Show latest news on kempton" class="recent">kempton</a><a href="http://interceder.net/list/Adel-Safar" title="Show latest news on Adel Safar" class="recent">Adel Safar</a><a href="http://interceder.net/dashboard/%22natural-gas%22" title="Create a dashboard on "natural gas"" class="recent">"natural gas"</a><a href="http://interceder.net/list/I-75-South" title="Show latest news on I 75 South" class="recent">I 75 South</a><a href="http://interceder.net/dashboard/millennium-development" title="Create a dashboard on millennium development" class="recent">millennium developm...</a><a href="http://interceder.net/dashboard/ROBERTO-MARONI" title="Create a dashboard on ROBERTO MARONI" class="recent">ROBERTO MARONI</a><a href="http://interceder.net/list/Sandpoint-Idaho" title="Show latest news on Sandpoint Idaho" class="recent">Sandpoint Idaho</a>
+                        </div>
+                   
+                    </td>                                        
+                </tr>
+            </table>
+
+        </div>
+        <br /><br />
+    </div>    
+        <input type="hidden" name="hiddenEntity" id="hiddenEntity" />  
+
+    <div class="end" style="margin-top: 45px;>
+        <a href="#" class="contact" onclick="installOpenSearch(); return false;">Install Search Plugin</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <img src="images/mail.gif" align="absmiddle" /><a class="contact" href="mailto:info@interceder.net">Contact</a><br /><br />
+    </div>        
+        <br /><br />
+
+    <script type="text/javascript">document.getElementById('calais').style.display = 'none';</script>
+    <!-- FREEBASING -->
+    <script type="text/javascript">
+    var Metaweb = {};                               
+    Metaweb.HOST = "http://www.freebase.com";       
+    Metaweb.QUERY_SERVICE = "/api/service/mqlread"; 
+    Metaweb.counter = 0;                           
+    Metaweb.read = function(q, f) {
+    var callbackName = "_" + Metaweb.counter++ 
+    Metaweb[callbackName] = function(outerEnvelope) {
+        var innerEnvelope = outerEnvelope.qname;         
+        if (innerEnvelope.code.indexOf("/api/status/ok") != 0) {  
+          var error = innerEnvelope.messages[0]          
+          throw error.code + ": " + error.message      
+        }
+        var result = innerEnvelope.result;   
+        document.body.removeChild(script);   
+        delete Metaweb[callbackName];        
+        f(result);                           
+    };
+    envelope = {qname: {query: q}}
+    var querytext = encodeURIComponent(JSON.serialize(envelope));
+    var url = Metaweb.HOST + Metaweb.QUERY_SERVICE +  
+        "?queries=" + querytext + "&callback=Metaweb." + callbackName
+    var script = document.createElement("script");
+    script.src = url
+    document.body.appendChild(script);
+};
+var JSON = {}; 
+JSON.parse = function(s) {
+    try {
+        return !(/[^,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]/.test(
+                                   s.replace(/"(\\.|[^"\\])*"/g, ''))) &&
+            eval('(' + s + ')');
+    }
+    catch (e) {
+        return false;
+    }
+};
+
+(function () {
+    var m = {  
+            '\b': '\\b', '\t': '\\t',  '\n': '\\n', '\f': '\\f',
+            '\r': '\\r', '"' : '\\"',  '\\': '\\\\'
+        },
+        s = {
+            'boolean': function (x) { return String(x); },
+            'null': function (x) { return "null"; },
+            number: function (x) { return isFinite(x) ? String(x) : 'null'; },
+            string: function (x) {
+                if (/["\\\x00-\x1f]/.test(x)) {
+                    x = x.replace(/([\x00-\x1f\\"])/g, function(a, b) {
+                        var c = m[b];
+                        if (c) {
+                            return c;
+                        }
+                        c = b.charCodeAt();
+                        return '\\u00' +
+                            Math.floor(c / 16).toString(16) +
+                            (c % 16).toString(16);
+                    });
+                }
+                return '"' + x + '"';
+            },
+            array: function (x) {
+                var a = ['['], b, f, i, l = x.length, v;
+                for (i = 0; i < l; i += 1) {
+                    v = x[i];
+                    f = s[typeof v];
+                    if (f) {
+                        v = f(v);
+                        if (typeof v == 'string') {
+                            if (b) {
+                                a[a.length] = ',';
+                            }
+                            a[a.length] = v;
+                            b = true;
+                        }
+                    }
+                }
+                a[a.length] = ']';
+                return a.join('');
+            },
+            object: function (x) {
+                if (x) {
+                    if (x instanceof Array) {
+                        return s.array(x);
+                    }
+                    var a = ['{'], b, f, i, v;
+                    for (i in x) {
+                        v = x[i];
+                        f = s[typeof v];
+                        if (f) {
+                            v = f(v);
+                            if (typeof v == 'string') {
+                                if (b) {
+                                    a[a.length] = ',';
+                                }
+                                a.push(s.string(i), ':', v);
+                                b = true;
+                            }
+                        }
+                    }
+                    a[a.length] = '}';
+                    return a.join('');
+                }
+                return 'null';
+            }
+        };
+    JSON.serialize = function(o) { return s.object(o); };
+})(); 
+function showimage(entity) 
+{
+        var query = {
+        "/common/topic/image" : [
+          {
+            "id" : null
+          }
+        ],
+        "name" : entity,
+        "type" : "/common/topic",
+        "limit" : 1
+        };        
+        Metaweb.read(query, display);
+        function display(result) 
+        {  
+            var link = document.getElementById(entity);
+            var imagelink = document.getElementById('imageLink' + entity);
+            if (!result || !result["/common/topic/image"][0].id) 
+            {
+                link.style.backgroundImage = 'url(images/noperson.gif)';
+                link.title=entity;
+            }
+            try
+            {
+                var id = result["/common/topic/image"][0].id; 
+                link.style.backgroundImage = 'url(http://freebase.com/api/trans/image_thumb' + id + ')';
+                //imagelink.href = 'http://www.freebase.com/view' + id;                
+                //link.title=entity;
+            } 
+            catch (e)
+            {
+                link.style.backgroundImage = 'url(images/noperson.gif)';
+                imagelink.href = 'images/noperson.gif';
+                //link.title=entity;
+            }
+        }
+}
+    
+        if (GetCookie('sort') != null) {
+            var sort = $.evalJSON(GetCookie('sort'));
+            sort = sort["items"];
+            var previous = "";
+            for (var key in sort) 
+            {
+                if (sort[key]["order"] == "0") 
+                {
+                    $('#' + sort[key]["id"]).appendTo("#" + sort[key]["column"]);
+                }  
+                else
+                {
+                    $('#' + sort[key]["id"]).insertAfter('#' + previous);
+                }
+                            
+                previous = sort[key]["id"];
+            }
+        }
+
+       jQuery(document).ready(function() {
+//            $(window).resize(resizeWindow).resize()
+//            function resizeWindow(e) {
+
+//                var width = ($(window).width() - 90) / 3;
+//                $(".film, object, embed").width(width - 10);
+//                $('.dragbox').width(width);
+//                $('#ResultId').width(width);
+//                $.youtubeResize();
+//            }
+
+           $("a.switch_thumb1").toggle(function() {
+                $(this).addClass("swap1");
+
+            }, function() {
+                $(this).removeClass("swap1");
+            });
+
+        });        
+//    
+//        window.onresize = function(event) {
+//		    $.youtubeResize();
+//		}
+        function checkEnter(e) { //e is event object passed from function invocation
+
+            var character //Code literal character code will be stored in this variable
+            if (e && e.which) { //if which property of event object is supported (NN4)
+                e = e
+                characterCode = e.which //character code is contained in NN4's which property
+            }
+            else {
+                e = event
+                characterCode = e.keyCode //character code is contained in IE's keyCode property
+            }
+
+            if (characterCode == 13) { //if character code is equal to ascii 13 (if enter key)
+                search();
+                return false; //return false to the event handler
+            }
+            else {
+                return true //return true to the event handler
+            }
+        }
+
+		function search() {
+		    if (document.getElementById('search').value != '') {
+		        window.location.href = 'http://interceder.net/list/' + replaceAll(document.getElementById('search').value, " ", "-");
+		    }
+		}
+
+		function loopCalais() {
+		    for (i = 0; i < 150; i++) {
+		        //try
+		        //{
+		        if (document.getElementById('name' + i) != null) {
+		            showimage(document.getElementById('name' + i).innerHTML);
+		        }
+		        //} 
+		        //catch(e) {}
+		    }
+		}
+		function replaceAll(text, strA, strB) {
+		    while (text.indexOf(strA) != -1) {
+		        text = text.replace(strA, strB);
+		    }
+		    return text;
+		}
+
+		function processResult(response) {
+		    var result = response.q1.result;
+		    var html = '';
+		    if (result[0]) {
+		        for (var i = 0; i != result[0]["/common/topic/webpage"].length; i++) {
+
+		            if (result[0]["/common/topic/webpage"][i].description != null)
+		                document.getElementById('links').innerHTML = '<a href="' + result[0]["/common/topic/webpage"][i].uri + '" target="_blank" class="contact">' + trim(result[0]["/common/topic/webpage"][i].description) + '</a><br>' + document.getElementById('links').innerHTML;
+		            else
+		                document.getElementById('links').innerHTML = '<a href="' + result[0]["/common/topic/webpage"][i].uri + '" target="_blank" class="contact">' + trim(result[0]["/common/topic/webpage"][i].uri) + '</a><br>' + document.getElementById('links').innerHTML;
+		        }
+		    }
+		}
+
+		function trim(link) {
+
+		    if (link.length > 35)
+		        link = link.substring(0, 34) + "...";
+		    return link;
+		}
+		function goLink(entity) {
+		    window.location.href = 'http://interceder.net/list/' + replaceAll(entity, " ", "-");
+
+
+		}      
+		function SetCookie(cookieName, cookieValue, nDays) {
+		    var today = new Date();
+		    var expire = new Date();
+		    if (nDays == null || nDays == 0) nDays = 1;
+		    expire.setTime(today.getTime() + 3600000 * 24 * nDays);
+		    document.cookie = cookieName + "=" + cookieValue + ";expires=" + expire.toGMTString() + ";path=/";
+		}
+
+		function GetCookie(cookieName) {
+		    var theCookie = "" + document.cookie;
+		    var ind = theCookie.indexOf(cookieName);
+		    if (ind == -1 || cookieName == "") return "";
+		    var ind1 = theCookie.indexOf(';', ind);
+		    if (ind1 == -1) ind1 = theCookie.length;
+		    return unescape(theCookie.substring(ind + cookieName.length + 1, ind1));
+		}
+		if (GetCookie('background') != null && GetCookie('background') == 'white') {
+		    document.styleSheets[0].disabled = true;
+		    document.styleSheets[1].disabled = false;
+		}		
+
+		function hide(name) {
+		    var lastname = GetCookie('lastName');
+		    if (document.getElementById('name' + name) != null && document.getElementById('name' + name).className == 'selectedEntity') {
+		        document.getElementById('name' + name).className = 'bar';
+		        document.getElementById('name' + name).style.backgroundImage = "url('images/bar.gif')";
+		        hide(' ', '');
+
+		    }
+		    else {
+		        for (i = 0; i < 400; i++) {
+
+		            if (document.getElementById(i) != null && document.getElementById(i).innerHTML.toLowerCase().indexOf(name.toLowerCase()) < 0) {
+		                if (document.getElementById(i).innerHTML.indexOf('blank.gif') > -1) {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 40, toggle: false });
+		                }
+		                else {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 40, toggle: false });
+		                }
+		            }
+		            else if (document.getElementById(i) != null) {
+		                if (document.getElementById(i).innerHTML.indexOf('blank.gif') > -1) {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 100, toggle: false });
+		                }
+		                else {
+		                    Spry.Effect.AppearFade(document.getElementById(i), { duration: 1500, from: 100, to: 100, toggle: false });
+		                }
+		            }
+		        }
+
+		        if (document.getElementById('name' + lastname) != null) {
+		            document.getElementById('name' + lastname).className = 'bar';
+		            document.getElementById('name' + lastname).style.backgroundImage = "url('images/bar.gif')";
+		        }
+		        var entity = document.getElementById('hiddenEntity').value;
+		        if (document.getElementById('name' + name) != null) {
+		            document.getElementById('name' + name).className = 'selectedEntity';
+		            //alert(document.getElementById('name' + name).style.background);
+		            document.getElementById('name' + name).style.backgroundImage = "url('images/bar2.gif')";
+		            SetCookie('lastName', name, 1);
+		        }
+
+		    }
+		}
+		function defaultCountry() {
+		    var c = GetCookie("dash_country1");
+		    if (c != '')
+		        fade(c);
+		    else
+		        fade('us');
+
+
+		    //        if(document.getElementById('box1').innerHTML.length < 3050)
+		    //        {
+		    //            document.getElementById('box1').innerHTML = '<table align=center height=350><tr><td align=center><img src=images/sad.gif><br>Nothing found on Twitter</td></tr></table>';
+		    //            document.getElementById('box1').style.backgroundColor = '#3d4346';
+		    //        }
+
+		}
+		function fade(loc) {
+		    $('#au, #uk, #us, #ca').hide();
+		    $('#' + loc).fadeIn("slow");
+
+		    $('#linkau, #linkus, #linkuk, #linkca').removeClass('footerTab');
+		    $('#linkau, #linkus, #linkuk, #linkca').removeClass('footerTabOn');
+		    $('#linkau, #linkus, #linkuk, #linkca').addClass('footerTab');
+		    $('#link' + loc).removeClass('footerTab');
+		    $('#link' + loc).addClass('footerTabOn');
+		    SetCookie("dash_country1", loc, 365);
+		}
+
+		function installOpenSearch() { if ((typeof window.external == "object") && ((typeof window.external.AddSearchProvider == "unknown") || (typeof window.external.AddSearchProvider == "function"))) { window.external.AddSearchProvider("http://interceder.net/opensearch_d.xml"); } else { alert("This plugin requires a browser that supports OpenSearch."); } }
+    </script>
+     <script type="text/javascript">jQuery(document).ready(function() { $("a.switch_thumb1").click(function() { window.location = 'http://interceder.net/dashboard/CrowdFlower'; });});</script>
+    
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+
+    <!-- Start GA -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-723152-2");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+    </script>
+    <!-- End GA -->
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>CAPTCHA - Flash version, courtesy of PowerShow.com</title><meta name="keywords" content="strangely" />
+<meta name="description" content="Public (ALL CODE AND DATA USED BY A CAPTCHA SHOULD BE PUBLICLY ... Also Described as a ... Strangely Addictive. It's so much fun trying to guess ..." /><link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/themes/default/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/themes/original/css/original.css" />
+<!--[if lte IE 6.5]><link rel="stylesheet" type="text/css" href="/themes/default/css/ie.css" /><![endif]-->
+<script type="text/javascript" src="/js/libraries/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="http://cdn.gigya.com/wildfire/js/wfapiv2.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/libraries/swfobject2.2.js"></script>
+<script type="text/javascript" src="/js/player.js"></script></head>
+
+<body>
+
+<div class="site widepage">
+        <div class="box header ">
+    <div class="topleft"></div><div class="topright"></div><div class="top"></div>
+    <div class="left"><div class="right"><div class="center">
+    <div class="content">
+        <div class="logo"><a href="/"><img id="logo" src="/themes/default/images/logo.png" alt="PowerShow.com" /></a></div>
+        <a href="#" class="feedback" title="Send Us Feedback" onclick="AppPopup.open('feedback');return false;"></a>
+        <div class="clear"></div>
+
+        <div class="links"><a href="/">Home</a> | <a href="/help">Help</a></div>
+        <div class="search">
+            <form id="simple_search" action="/search" method="get">
+                <input class="textinput headersearch" name="search" maxlength="128" type="text" value="" />
+                <input type="submit" class="searchbutton" value="" />
+                <a href="/search/advanced" class="advancedsearchlink">Advanced</a>
+            </form>
+        </div>
+
+        <a href="/presentation/upload" class="upload" title="Upload"></a>
+        <div class="links2">
+                        <a href="/preferences">Preferences</a> | <a href="/user/signup?back=http%3A%2F%2Fwww.powershow.com%2Fview%2F1cb0f2-YzhmM%2FCAPTCHA">Sign up</a> | <a href="/user/login?back=http%3A%2F%2Fwww.powershow.com%2Fview%2F1cb0f2-YzhmM%2FCAPTCHA">Log in</a>
+                    </div>
+    </div>
+    </div></div></div>
+    <div class="bottomleft"></div><div class="bottomright"></div><div class="bottom"></div>
+    </div>
+
+
+
+<div class="pagecontent">
+    <script type="text/javascript">//<![CDATA[
+function addTags(){
+    var tags = $("#form_tags").val();
+    var options = {
+            url: "/presentation/1880306/addtags",
+            request: {tags: tags},
+            callback: function(xhr) {
+                $("#addtags").fadeOut();
+                $("#form_tags").val("");
+                if (true === xhr.result) {
+                    $.blink("Tag(s) added", 3);
+                    tags = xhr.tags.join(' <span>|</span> ');
+                    $('#tags').html(tags);
+                }else{
+                    $.blink("Tag(s) not added", 3);
+                }
+            }
+    };
+    AppAjax.get("#tags", options);
+}
+
+// comments content
+var commentsSort = "default";
+function commentsContent(commentsSort, page) {
+    page = (page) ? page : 1;
+    // load box
+    $("#comments_content").removeData("paginator").ajaxBox({
+        "url": "/comment/presentation",
+        "request": {
+            "pid": 1880306,
+            "order": commentsSort,
+            "p": page
+        },
+        "pagination": {
+            "controller": "#comments_paginator",
+            "listing": "#comments_num",
+            "callback": function(paginator) {
+                $("#total_comments").text(paginator.totalItemCount);
+                if (paginator.totalItemCount > 2) {
+                    $("#comments_sort_box, #comments_num").show();
+                }
+                else {
+                    $("#comments_sort_box, #comments_num").hide();
+                }
+            }
+        }
+    });
+}
+// Onload functions
+$(function(){
+    $(".moreinfo")
+        .mouseenter(function(){
+            var target = $("#" + $(this).attr("id").replace(/tooltip_/, ""));
+            target.show();
+        })
+        .mouseleave(function(){
+            var target = $("#" + $(this).attr("id").replace(/tooltip_/, ""));
+            target.hide();
+        });
+    $(".expandbar").click(function(event){
+        event.preventDefault();
+        AppEffects.blockToggle(this);
+    });
+    // animate buttons
+    $("#buttons_presentationcontrols").find(".largebutton").not(".disabled")
+        .bind("mousedown mouseup", function(){
+            AppEffects.buttonToggle(this);
+        });
+    $("#writecommentbutton").find(".fakebutton").not(".disabled")
+        .bind("mousedown mouseup", function(){
+            AppEffects.buttonToggle(this);
+        });
+    $("#comments").find(".fakebutton").not(".disabled")
+        .bind("mousedown mouseup", function(){
+            AppEffects.buttonToggle(this);
+        });
+    $("#addtags").find(".fakebutton").not(".disabled")
+    .bind("mousedown mouseup", function(){
+        AppEffects.buttonToggle(this);
+    });
+    var relatedSort = "recommended";
+    // related content
+    function relatedContent(relatedSort) {
+        // load box
+        $("#related_content").ajaxBox({
+            "url": "/presentation/ajaxlist",
+            "request": {
+                "pid": 1880306,
+                "adult": 0,
+                "format": "related",
+                "sort": relatedSort,
+                "p": 1
+            },
+            "pagination": {
+                "controller": "#related_paginator"
+            }
+        });
+        // load box
+        $("#morefrom_content").ajaxBox({
+            "url": "/presentation/ajaxlist",
+            "request": {
+                "pid": 1880306,
+                "uid": 7779,
+                "format": "morefrom",
+                "sort": relatedSort,
+                "p": 1
+            },
+            "pagination": {
+                "controller": "#morefrom_paginator"
+            }
+        });
+    }
+    relatedContent(relatedSort);
+    $("#sort")
+        .find("select")
+        .change(function(){
+            relatedSort = $(this).val();
+            relatedContent(relatedSort);
+        })
+    .end()
+        .find(".dropdown-arrow")
+        .click(function(){$(this).parent().find('.dropdownvalues').toggle()})
+    .end()
+        .find(".dropdownbox")
+        .data("ddTimer", false)
+        .mouseenter(function(){
+            var $target = $(this);
+            var ddTimer = setTimeout(function(){
+                $target.data("ddTimer", false)
+                .children(".dropdownvalues").slideDown('fast');
+            }, 500);
+            $target.data("ddTimer", ddTimer);
+        })
+        .mouseleave(function(){
+            var $target = $(this);
+
+            if ($target.data("ddTimer") !== false) {
+                clearTimeout($target.data("ddTimer"));
+            }
+            $target.dequeue().children(".dropdownvalues").hide();
+        })
+    .end()
+        .find(".dropdownvalues").children("a").click(function(event){
+            event.preventDefault();
+            var text  = $(this).text();
+            commentsSort = this.hash.replace(/#/, "");
+            $(this)
+                .parent().hide()
+                .prev().text(text);
+            relatedContent(commentsSort);
+        });
+    commentsContent(commentsSort);
+    $("#comments_sort_box")
+        .find("select")
+        .change(function(){
+            commentsSort = $(this).val();
+            commentsContent(commentsSort);
+        })
+    .end()
+        .find(".dropdownbox")
+        .data("ddTimer", false)
+        .mouseenter(function(){
+            var $target = $(this);
+            if ($target.data("ddTimer") !== false) {
+                clearTimeout($target.data("ddTimer"));
+            }
+            $target.dequeue().children(".dropdownvalues").slideDown("fast");
+        })
+        .mouseleave(function(){
+            var $target = $(this);
+            var ddTimer = setTimeout(function(){
+                $target.data("ddTimer", false)
+                    .children(".dropdownvalues").hide();
+            }, 1000);
+            $target.data("ddTimer", ddTimer);
+        })
+    .end()
+        .find(".dropdownvalues").children("a").click(function(event){
+            event.preventDefault();
+            var text  = $(this).text();
+            commentsSort = this.hash.replace(/#/, "");
+            $(this)
+                .parent().hide()
+                .prev().text(text);
+            commentsContent(commentsSort);
+        });
+
+    // button send | share
+                                $("#button_shareit").click(function(){
+                AppPopup.open("presentation_1880306_share");
+            });
+                                    $("#button_send").click(function(){
+                                AppPopup.open("presentation_1880306_sendselect");
+                            });
+                    
+        // presentation rating
+    var currentRating = 3;
+    $("#rating_selectors").find(".selector")
+        .mouseenter(function(){
+            var value = parseInt(this.id.replace(/rate/, ''));
+            $("#rating").removeClass().addClass("rating" + value);
+            var msg='';
+            switch(value){
+                case 1:
+                    msg = 'Poor';
+                    break;
+                case 2:
+                    msg = 'Nothing special';
+                    break;
+                case 3:
+                    msg = 'Worth seeing';
+                    break;
+                case 4:
+                    msg = 'Pretty good';
+                    break;
+                case 5:
+                    msg = 'Excellent!';
+                    break;
+            }
+            $('#rating_count').hide();
+            $('#rating_message').hide().text(msg).show();
+        })
+        .mouseleave(function(){
+            var value = parseInt(this.id.replace(/rate/, ''));
+            $("#rating").removeClass().addClass("rating" + currentRating);
+            $('#rating_message').hide();
+        })
+        .click(function(){
+            var value = parseInt(this.id.replace(/rate/, ''));
+            var options = {
+                url: "/presentation/1880306/rating",
+                request: {v: value},
+                callback: function(xhr) {
+                    if (true === xhr.result) {
+                        currentRating = xhr.response.rating.rating_avg;
+                        $("#rating_count").text(xhr.response.rating.rating_count + " ratings");
+                        $("#rating").removeClass().addClass("rating" + currentRating);
+                        $.blink("Thanks for rating this presentation", 3);
+                        $.cookie('YY_232-'+xhr.response.pid, 'YY1301852044', {
+                            expires : 70,
+                            path : '/'
+                        });
+                    }
+                }
+            };
+            AppAjax.get("#rating", options);
+        });
+    $("#rates").mouseleave(function(){
+        $('#rating_message').hide().text();
+        $('#rating_count').show();
+    });
+    
+    $("#writecommentbutton").find(".tcommentwrite").click(function(){
+        top.location.href = "/user/login?feature=1&back=" + escape(top.location.href + '?action=comment');
+    });
+    // button flag | favorite
+    $("#button_flag, #button_favorite").click(function(){
+        top.location.href = "/user/login?feature=1&back=" + escape(top.location.href);
+    });
+    // rating
+//    $("#rates")
+//        .bind("mouseenter", function(){
+//            $('#rating_count').hide();
+//            $('#rating_message').show();
+//        })
+//        .bind("mouseleave", function(){
+//            $('#rating_message').hide();
+//            $('#rating_count').show();
+//        });
+});
+//]]></script>
+
+<div class="viewpageads">
+<div class="box">
+<div class="topleft"></div><div class="topright"></div><div class="top"></div>
+<div class="left"><div class="right"><div class="center">
+<script type="text/javascript">//<![CDATA[
+var google_ad_client = 'pub-0529305388270060',google_ad_slot = '3233080910',google_ad_width = '120',google_ad_height = '600';
+//]]></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><script type="text/javascript">//<![CDATA[
+var google_ad_client = 'pub-0529305388270060',google_ad_slot = '3233080910',google_ad_width = '120',google_ad_height = '600';
+//]]></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div></div></div>
+<div class="bottomleft"></div><div class="bottomright"></div><div class="bottom"></div>
+</div>
+</div>
+
+<div id="left" class="viewpagemain">
+<div class="box gainlayout">
+<div class="topleft"></div><div class="topright"></div><div class="top"></div>
+<div class="left"><div class="right"><div class="center">
+<!-- google_ad_section_start(weight=ignore) -->
+<div class="boxtitle yellow"><h1>CAPTCHA</h1></div>
+<!-- google_ad_section_end -->
+<div class="content gainlayout">
+
+<div id="presentation" class="presentation i">
+<script type="text/javascript">var flashvars = {"pid":"A1259847004JOXFp","lg":"n","lse":"y","_":"41cf8977cd4a0fb1701d90d69c36589d"};
+var params = {quality:"high", wmode:"opaque", allowfullscreen:"true", bgcolor:"#000000", allowscriptaccess:"always"};
+var attributes = {name:"AAPlayerEXP"};
+swfobject.embedSWF("http://swf.powershow.com.s3.amazonaws.com/AAPlayerEXP.swf", "flash", "530", "332", "9.0.0", "/flash/expressInstall.swf", flashvars, params, attributes);
+</script><div class="flashcontainer" id="flash"><p>The Adobe Flash plugin is needed to view this content</p><p><a href="http://www.adobe.com/go/getflashplayer">Get the plugin now</a></p></div></div>
+<div class="presentationcontrols">
+<table class="buttons" id="buttons_presentationcontrols">
+<tr>
+<td>
+    <div class="largebutton centermargins" id="button_shareit" title="Embed or bookmark &quot;CAPTCHA&quot; on other websites.">
+    <div class="upstate"></div>
+    <div class="text"><div class="icon share"></div>Share</div>
+    </div>
+</td>
+<td>
+    <div class="largebutton centermargins" id="button_send" title="Email a link to &quot;CAPTCHA&quot; to your friends and associates.">
+    <div class="upstate"></div>
+    <div class="text"><div class="icon send"></div>Send</div>
+    </div>
+</td>
+     <td>
+   <div class="largebutton centermargins" id="button_flag" title="Report  &quot;CAPTCHA&quot; as inappropriate.">
+    <div class="upstate"></div>
+    <div class="text"><div class="icon flag"></div>Flag</div>
+    </div>
+</td>
+<!-- google_ad_section_start(weight=ignore) -->
+ <td>
+   <div class="largebutton centermargins" id="button_favorite" title="Remember &quot;CAPTCHA&quot; as one of your favorites.">
+    <div class="upstate"></div>
+    <div class="text"><div class="icon favorite"></div>Favorite</div>
+    </div>
+ </td>
+ <!-- google_ad_section_end -->
+  </tr>
+</table>
+
+
+<!-- google_ad_section_start(weight=ignore) -->
+<div id="views" class="views">
+    <div class="viewsnum">Views: 0</div>
+        <div class='download disabled'>Save as PPS or open with PowerPoint Viewer</div>
+    </div>
+
+<div id="rates" class="rates">
+    <div id="rating_selectors" class="rating rightfloated">
+        <div class="rating3" id="rating"></div>
+        <div id="rate1" class="selector"></div>
+        <div id="rate2" class="selector"></div>
+        <div id="rate3" class="selector"></div>
+        <div id="rate4" class="selector"></div>
+        <div id="rate5" class="selector"></div>
+    </div>
+    <div class="ratingtitle">Rate:</div>
+    <div id="rating_count">0 ratings</div>
+    <div id="rating_message" class="hidden"><a href="http://www.powershow.com/user/login?feature=1&amp;back=http%3A%2F%2Fwww.powershow.com%2Fview%2F1cb0f2-YzhmM%2FCAPTCHA">Log in</a> to use this feature</div>
+</div>
+<!-- google_ad_section_end -->
+
+</div>
+<div class="clear"></div>
+
+<div class="expandbar">
+<div class="expandbarleft"></div><div class="expandbarright"></div>
+<div class="expandbartitle"><div class="arrow arrow-open"></div><div class="aboutpresentationtitle"></div></div>
+</div>
+<div id="aboutpresentation">
+<div class="aboutinfo">
+<div><strong><!-- google_ad_section_start(weight=ignore) -->Title:<!-- google_ad_section_end --></strong>CAPTCHA</div>
+<div><strong><!-- google_ad_section_start(weight=ignore) -->Description:<!-- google_ad_section_end --></strong>
+<!-- google_ad_section_start -->
+<div class="description">Public (ALL CODE AND DATA USED BY A CAPTCHA SHOULD BE PUBLICLY ... Also Described as a ... Strangely Addictive. It's so much fun trying to guess ...</div>
+<!-- google_ad_section_end -->
+<div class="clear"></div>
+<div><strong><!-- google_ad_section_start(weight=ignore) -->Learn more at:<!-- google_ad_section_end --></strong><span class="learnmore"><a rel="nofollow" href="http://cs.calstatela.edu/wiki/images/8/8b" target="_blank">http://cs.calstatela.edu/wiki/images/8/8b</a></span></div>
+</div>
+<div id="aboutmore">
+    <!-- google_ad_section_start(weight=ignore) -->
+<div><strong>Presentation added: </strong>13 December 2009</div>
+<div><strong>Slides: </strong>43</div>
+    <!-- google_ad_section_end -->
+<div><strong><!-- google_ad_section_start(weight=ignore) -->Category:<!-- google_ad_section_end --></strong><a href="/search?mode=category&amp;id=0">Unassigned</a></div>
+<div><strong><!-- google_ad_section_start(weight=ignore) -->Tags:<!-- google_ad_section_end --></strong><span id="tags">
+<a href="/search?mode=tag&amp;tag=strangely">strangely</a></span>
+<div class="clear"></div>
+    <a class="addmoretagslink" href="/user/login?feature=1&back=http://www.powershow.com/view/1cb0f2-YzhmM/CAPTCHA">Add more tags</a>    <!-- google_ad_section_end -->
+</div>
+</div>
+
+<p><a id="aboutmorelink" class="more" onclick="$('#aboutmorelink').hide(); $('#aboutlesslink').show(); $('#aboutmore').fadeIn('slow'); return false;" href="#" style="display: none;">more</a> <a id="aboutlesslink" class="less" onclick="$('#aboutlesslink').hide(); $('#aboutmorelink').show(); $('#aboutmore').fadeOut('slow'); return false;" href="#">less</a></p>
+</div>
+</div>
+
+<div class="expandbar">
+<div class="expandbarleft"></div><div class="expandbarright"></div>
+<div class="expandbartitle"><div class="arrow arrow-open"></div><div class="aboutpresentertitle"></div></div>
+</div>
+
+<div id="presenter">
+<div id="presenterContent" class="presenterinfo">
+<a rel='nofollow' href='http://cs.calstatela.edu' target='_blank'><div class="thumb" style="background: url(/themes/default/images/noimage-profile-small.png) 50% 50% no-repeat;"></div></a><div class="details">
+<script type="text/javascript">//<![CDATA[
+$(function(){
+    $("#presenterName").html("<a rel='nofollow' href='http://cs.calstatela.edu' target='_blank'></a>");
+});
+//]]></script>
+<div id="presenterName" class="name"></div>
+<div class="views"><strong><!-- google_ad_section_start(weight=ignore) -->Number of presentations:<!-- google_ad_section_end --></strong>40</div>
+<div class="presrating"><strong><!-- google_ad_section_start(weight=ignore) -->Avg rating:<!-- google_ad_section_end --></strong>3.0</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
+<!-- << comments -->
+<div class="write" id="writecommentbutton" >
+    <div class="fakebutton larger tcommentwrite">
+    <div class="upstate" id="writeup"></div>
+    <div class="text"><!-- google_ad_section_start(weight=ignore) -->Write a Comment</div>
+    </div>
+</div>
+
+<div id="commentsbar" class="expandbar commentsbar">
+<div class="expandbarleft"></div><div class="expandbarright"></div>
+<div class="expandbartitle"><div class="arrow arrow-open"></div>
+User Comments (<span id="total_comments">0</span>)</div><!-- google_ad_section_end -->
+</div>
+
+<div id="comments"><div class="comments"><div id="write_comment" class="write_form" style="display:none;">
+<form id="form_comment_add">
+<div class="noerrors">
+    <textarea name="comment_text" rows="200" cols="6"></textarea>
+</div>
+<div class="comment_text_errors hidden"></div>
+<div class="buttons">
+    <div class="fakebutton rightfloated" onclick="AppEffects.slideToggle('#write_comment');">
+    <div class="upstate" id="cancelup"></div>
+    <div class="text">Cancel</div>
+    </div>
+    <div class="fakebutton rightfloated ajax_add_comment">
+    <div class="upstate" id="okup"></div>
+    <div class="text">OK</div>
+    </div>
+    <div class="clear"></div>
+</div>
+</form>
+</div>
+<div class="commentsnum" id="comments_num" style="display:none;"></div>
+<!-- google_ad_section_start(weight=ignore) -->
+<div id="comments_sort_box" class="sort" style="display:none;">
+    <div class="dropdownbox">
+        <div class="dropdown-arrow"></div><div class="dropdown">Latest</div>
+        <div class="dropdownvalues" id="comments_sortfilter" style="display:none;">
+            <a href="#default">Latest</a>
+            <a href="#rating">Highest Rated</a>
+        </div>
+    </div>
+    Sort by:
+    <select id="comments_sort">
+        <option selected="selected" value="default">Latest</option>
+        <option value="rating">Highest Rated</option>
+    </select>
+</div>
+<!-- google_ad_section_end -->
+<div id="comments_content"></div>
+<div id="comments_paginator" class="pagination hidden">
+<div class="prevpage"><div class="arrow"></div></div>
+<div class="nextpage"><div class="arrow"></div></div>
+Page <input type="text" value="" class="currentpage" /> of <span class="totalpages"></span>
+</div>
+
+</div></div>
+<!-- comments >> -->
+
+<div class="expandbar">
+<div class="expandbarleft"></div><div class="expandbarright"></div>
+<div class="expandbartitle">
+<div class="arrow arrow-closed"></div>
+<!-- google_ad_section_start(weight=ignore) -->
+Transcript &amp; Presenter Notes</div>
+<!-- google_ad_section_end -->
+</div>
+<div id="transcript" style='display:none;'>
+
+<div class="transcript">
+<br/><strong><!-- google_ad_section_start(weight=ignore) -->Title: <!-- google_ad_section_end --><!-- google_ad_section_start -->CAPTCHA</strong><br/><br/>
+<br /><strong>1</strong><br />CAPTCHA  THE ESP GAMESHAH JAYESH  <br />CS575 SPRING 2008 <br /><strong>2</strong><br /> OVERVIEW<ul><li> What is CAPTCHA </li><li> History. </li><li> Examples. </li><li> Applications. </li><li> How to Beat CAPTCHA </li><li> 3-D CAPTCHA. </li><li> The ESP Game. </li><li> Why it is So popular </li><li> Fact about the ESP Game.</li></ul><br /> </ul> <br /><strong>3</strong><br />(No Transcript) <br /><strong>4</strong><br /> CAPTCHA <br />A program that can tell whether its user is a <br />human or a computer. <br /><strong>5</strong><br /> CAPTCHA <br />Completely Automated Public (ALL CODE AND <br />DATA USED BY A CAPTCHA SHOULD BE PUBLICLY <br />AVAILABLE) Turing Test to tell Computers and <br />Humans Apart trademarked by Carnegie Mellon <br />University. <br /><strong>6</strong><br /> CAPTCHA <ul><li>A PROGRAM THAT CAN GENERATE AND GRADE TESTS THAT </li><li> Most Human can pass. </li><li> Current Computer Programs cannot Pass. </li></ul> <br /><strong>7</strong><br /> CAPTCHA <ul><li>Also Described as a reverse Turing test </li><li> It is administered by a machine and targeted to <br />a human. </li><li> Contrast to the standard Turing test that is <br />typically administered by a human and targeted <br />to a machine </li></ul><br />The Turing test is a proposal for a test of a <br />machines capability to demonstrate intelligence. </ul> <br /><strong>8</strong><br />HISTORY <br />In 1950 when Alan Turing described his <br />now-famous Turing test. Automated tests which <br />distinguish humans from computers for the purpose <br />of controlling access to web services were first <br />discussed in 1996. Primitive CAPTCHAs seem to <br />have been developed in 1997 at AltaVista by <br />Andrei Broder and his colleagues to prevent bots <br />from adding URLs to their search engine. <br /><strong>9</strong><br />HISTORY <br />In 2000 Luis von Ahn and Manuel Blum developed <br />and publicized the notion of a CAPTCHA which <br />included any program that can distinguish humans <br />from computers. They invented multiple examples <br />of CAPTCHAs including the first CAPTCHAs to be <br />widely used which were those adopted by <br />Yahoo!. <br /><strong>10</strong><br />HISTORY <br />Luis von Ahn received his Ph.D. in 2005 from <br />Carnegie Mellon University. He is the recipient <br />of a Microsoft Research Fellowship and became a <br />MacArthur Fellow (a.k.a. the genius award) in <br />2006. His research includes CAPTCHAs and <br />Human-based computation. <br /><strong>11</strong><br />EXAMPLE<br />Picks Random Renders it into a String of <br />Letters. Distorted Image. <br />following finding <br /><strong>12</strong><br />and Generates a TESTType the Characters <br />that Appear in the Image. <br /><strong>13</strong><br />APPLICATIONS<ul><li> To Stop Spammers. </li><li> Stopping automated posting to blogs forums and <br />wikis. </li><li> To Protect systems vulnerable to e-mail spam <br />such as webmail services of Gmail Hotmail and <br />Yahoo! Mail. </li></ul> <br /><strong>14</strong><br />EXAMPLES OF CAPTCHA<br /> <br />What are this Images of  <br /><strong>15</strong><br />EXAMPLES OF CAPTCHA<br /> <br />The Images need to be randomly distorted .. <br /><strong>16</strong><br />EXAMPLES OF CAPTCHA<br /> <br />What are these Pictures of  <br /><strong>17</strong><br />EXAMPLES OF CAPTCHA<br /> <br />http//www.alipr.com/captcha/ <br /><strong>18</strong><br />SOUND BASED CAPTCHA<ul><li> Humans are better than Computers <br />at understanding of spoken Languages. </li></ul><br /> </ul> <br /><strong>19</strong><br />How to beat CAPTCHA<ul><li> Extraction of the image from the web page. </li><li> Removal of background clutter. </li><li> Segmentation. </li><li> Identifying the letter for each region. </li></ul> <br /><strong>20</strong><ul><li> Steps 1 2 and 4 are easy tasks for <br />computers. The only part where humans still <br />outperform computers is segmentation. </li><li> The segmentation becomes nearly impossible with <br />current software. Hence an effective CAPTCHA <br />should focus on the segmentation. </li></ul> <br /><strong>21</strong><br />THE 3-D CAPTCHA<ul><li> The 3-D CAPTCHA and modern video games use the <br />same basic mechanism to generate unique images. </li><li> A single 3-D CAPTCHA image might contain 26 <br />identifiable features and asking for the <br /> identification of 3 of those features will <br /> result in (26)(25)(24)  15600 possible <br /> combinations while the requirement to identify <br />5 features will result in 7893600 combinations <br />making a brute force attack impractical. </li></ul><br /> </ul> <br /><strong>22</strong><br />THE 3-D CAPTCHA<ul><li> Designing a computer vision program that can <br />recognize the objects within the 3-D CAPTCHA <br />images is intrinsically difficult. </li><li> The instructions that accompany the 3-D CAPTCHA <br />image are bound by language dependency. Any <br />entity deploying the 3-D CAPTCHA will need to <br />select the language to be used for the <br />instructions that will accompany the image.</li></ul><br /> </ul> <br /><strong>23</strong><br />EXAMPLE OF 3-D CAPTCHA<br /> <br />We now have the code CKT <br /><strong>24</strong><br />DIRTY HACKS<br />CAPTCHA sweat shops SPAM COMPANIES HIRE HUMANS <br />TO SOLVE CAPTCHAS ALL DAY LONG 2.50 PER HOUR <br />FOR EACH HUMAN 720 CAPTCHAS PER HOUR PER <br />HUMAN 1/3 CENT PER ACCOUNT.<br /> <br /><strong>25</strong><br />(No Transcript) <br /><strong>26</strong><br />The ESP Game<br /> <br /><strong>27</strong><br />The ESP Game <br />Labeling Images with Words Man Ho<br />rse Ground Belly Still an open <br />problem <br /><strong>28</strong><br />ACCESSIBLITY <br /> Less than 10 of the web is accessible to the <br />visually impaired. Reason Most images dont <br />have proper Captions. <br /><strong>29</strong><br />The ESP Game <ul><li> Two Player online Game. </li><li> Partners dont know each other and cant <br /> communicate. </li><li>Objective of Game </li><li> Type the Same Word. </li><li> The only thing in common is an Image. </li></ul> <br /><strong>30</strong><br />THE ESP GAME</ul><br /> PLAYER 1 PLAYER 2</ul> <br /><strong>31</strong><br />The ESP Gamehttp//www.espgame.org/ <br /><strong>32</strong><br />FACT<ul><li> THE ESP Game is Fun !!!!!!! </li><li> 4.1 million labels with 23000 players. </li><li> There are many people that play over 20 hours <br />a week. </li><li> 5000 people playing simultaneously can label <br />all images on Google in 30 days! </li><li> Individual games in yahoo! And msn average over <br />5000 players at a time. </li><li> </li></ul> <br /><strong>33</strong><br />WHY DO PEOPLE LIKE THE ESP GAME <br /><strong>34</strong><ul><li> The ESP Game gives its players a weird and <br />Beautiful sense of anonymous intimacy. </li><li> On the other hand the two of you are bringing <br />your minds together in a way that lovers would <br />envy. </li></ul> <br /><strong>35</strong><ul><li> Strangely Addictive. </li><li> Its so much fun trying to guess what others <br />think. You have to step outside of yourself to <br />match. </li><li> Its fast-paced. </li><li> Helps me learn English. </li></ul> <br /><strong>36</strong><br />THE POWER OF HUMAN CYCLES</ul><br />CAPTCHA</ul></ul><br />OPEN PROBLEM</ul></ul><br />GAME</ul> <br /><strong>37</strong><br /> HAS APPEARED IN OVER 50 NEWSPAPERS AROUND <br />THE WORLD.<br />THE ESP GAME</ul> <br /><strong>38</strong><br />(No Transcript) <br /><strong>39</strong><br />Name That Image Computers excel at sifting <br />information but they have trouble distinguishing <br />a picture of a tree from one of a turtle. So <br />researchers at Carnegie Mellon University knew <br />they needed human volunteers to successfully <br />label millions of unmarked images on the Web. <br />Luis von Han a graduate student in computer <br />science had the inspired idea of turning the <br />laborious process into a two-player contest <br />called the ESP Game Each time you play you <br />are randomly paired with another anonymous <br />player. You cant communicate with your partner <br />although you both see the same image. The goal is <br />to guess the descriptive word your partner is <br />typing for the image. Once you both type the same <br />word you see a new image. Since October the <br />game has attracted 15000 registered players and <br />they have created more than 1.5 million labels (a <br />label is a single descriptive word most photos <br />require multiple labels). The site draws from a <br />database of 200000 Web images another 200000 <br />are to be added soon. Mr. von Han said that <br />properly labeling Web images would allow for more <br />efficient image searching improve the screen <br />readers used by the visually impaired and help <br />users block inappropriate images. <br /><strong>40</strong><br />(No Transcript) <br /><strong>41</strong><br />REFERENCES<ul><li> http//en.wikipedia.org/wiki/Captcha </li><li> http//www.espgame.org/ </li><li> http//www.captcha.net/ </li><li> http//www.alipr.com/captcha/ </li></ul> <br /><strong>42</strong><br />THANK YOU NO QUESTIONS  <!-- google_ad_section_end -->
+<div class="clear"></div>
+</div>
+</div>
+
+</div>
+</div></div></div>
+<div class="bottomleft"></div><div class="bottomright"></div><div class="bottom"></div>
+</div>
+</div>
+
+<div id="right" class="viewpagecolumn">
+
+<!-- google_ad_section_start(weight=ignore) -->
+<div class="box">
+<div class="topleft"></div><div class="topright"></div><div class="top"></div>
+<div class="left"><div class="right"><div class="center">
+<div class="boxtitle blue">
+    <div id="sort" class="sort">
+        <div class="dropdownbox">
+            <div class="dropdown-arrow"></div><div class="dropdown">Recommended</div>
+            <div class="dropdownvalues" id="sortfilter" style="display:none;">
+                <a href="#recommended">Recommended</a>
+                <a href="#latest">Latest</a>
+                <a href="#rating">Highest Rated</a>
+                <a href="#viewed">Most Viewed</a>
+            </div>
+        </div>
+        Sort by:
+        <select>
+            <option value="recommended" selected="selected">Recommended</option>
+            <option value="latest">Latest</option>
+            <option value="rating">Highest Rated</option>
+            <option value="viewed">Most Viewed</option>
+        </select>
+    </div>
+<div class="relatedtitle"></div>
+<div class="clear"></div>
+</div>
+<!-- google_ad_section_end -->
+<div class="content gainlayout">
+
+<div class="expandbar">
+<div class="expandbarleft"></div><div class="expandbarright"></div>
+<div class="expandbartitle"><div class="arrow arrow-closed"></div>More from this user</div>
+</div>
+<div id="morefromuser" class="revealingbox" style="display:none;">
+<div id="morefrom_content" class="presentationlist narrowlist scrollbox"></div>
+<div id="morefrom_paginator" class="pagination hidden">
+<div class="prevpage"><div class="arrow"></div></div>
+<div class="nextpage"><div class="arrow"></div></div>
+Page <input type="text" value="" class="currentpage" /> of <span class="totalpages"></span>
+</div>
+</div>
+
+<div class="expandbar">
+<div class="expandbarleft"></div><div class="expandbarright"></div>
+<div class="expandbartitle"><div class="arrow arrow-open"></div><!-- google_ad_section_start(weight=ignore) -->Other Related Presentations<!-- google_ad_section_end --></div>
+</div>
+<div id="otherrelated" class="revealingbox">
+<div id="related_content" class="presentationlist narrowlist scrollbox" style="height:750px;"></div>
+<div id="related_paginator" class="pagination hidden">
+<div class="prevpage"><div class="arrow"></div></div>
+<div class="nextpage"><div class="arrow"></div></div>
+Page <input type="text" value="" class="currentpage" /> of <span class="totalpages"></span>
+</div>
+</div>
+
+</div>
+</div></div></div>
+<div class="bottomleft"></div><div class="bottomright"></div><div class="bottom"></div>
+</div>
+
+<div class="box">
+<div class="topleft"></div><div class="topright"></div><div class="top"></div>
+<div class="left"><div class="right"><div class="center">
+<div class="content">
+
+<div class="adspace">
+<div><a target="_blank" href="/click?target=http%3A%2F%2Fwww.crystalgraphics.com%2Fpowerpoint%2Ftemplates.backgrounds.main.asp%3Fr%3Dps%26p%3DpsAdHppt1%26ref%3Dnone"><img width="335" height="278" alt="PowerPlugs" src="http://ads.powershow.com.s3.amazonaws.com/psAdlppt1.gif" /></a></div></div>
+
+</div>
+</div></div></div>
+<div class="bottomleft"></div><div class="bottomright"></div><div class="bottom"></div>
+</div>
+
+</div>    <div class="clear"></div>
+
+<div class="box">
+<div class="topleft"></div><div class="topright"></div><div class="top"></div>
+<div class="left"><div class="right"><div class="center">
+<div class="content topadsblock" style="text-align:center;">
+<script type="text/javascript">//<![CDATA[
+var google_ad_client = 'pub-0529305388270060',google_ad_slot = '4183644998',google_ad_width = '728',google_ad_height = '90';
+//]]></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div>
+</div></div></div>
+<div class="bottomleft"></div><div class="bottomright"></div><div class="bottom"></div>
+</div>
+</div>
+
+</div>
+
+<div class="footerwrap">
+<div class="footer widepage">
+<!-- google_ad_section_start(weight=ignore) -->
+<div><a href="/" class="link">Home</a> <a href="/aboutus" class="link">About Us</a> <a href="/terms" class="link">Terms and Conditions</a> <a href="/directory/popular/page0.html" class="link">Popular Presentations</a> <a href="/contact" class="link">Contact Us</a><br/>Copyright 2011 <a href="http://www.crystalgraphics.com/default.asp?p=psfoot">CrystalGraphics, Inc.</a> &#8212; All rights Reserved. PowerShow.com is a trademark of CrystalGraphics, Inc.</div>
+<div>The slide show: &quot;CAPTCHA&quot; is the property of its rightful owner.</div>
+<!-- google_ad_section_end -->
+<div><!-- google_ad_section_start(weight=ignore) -->Committed to assisting Calstatela University and other schools with their<!-- google_ad_section_end --> online training <!-- google_ad_section_start(weight=ignore) -->by sharing educational presentations for free<!-- google_ad_section_end --></div>
+
+</div>
+</div>
+
+<div id="opaco" class="hidden"></div>
+<div id="popup" class="hidden"></div>
+<div id="loading" class="hidden loading"><img src="/themes/default/images/loading.gif" width='59' height='29' alt='Loading...' /></div>
+<div id="alert_message" class="hidden"></div>
+
+<script type="text/javascript">//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//]]></script>
+<script type="text/javascript">//<![CDATA[
+try {
+var pageTracker = _gat._getTracker("UA-2610266-2");
+pageTracker._trackPageview();
+} catch(e) {}
+//]]></script>
+
+</body>
+</html>

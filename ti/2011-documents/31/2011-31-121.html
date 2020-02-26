@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+                           
+  
+
+
+<html>
+  <head>
+    
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Using reCAPTCHA with PHP - reCAPTCHA - Google Code</title>
+<script type="text/javascript"><!--
+(function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
+
+var _tocPath_ = '/apis/recaptcha/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
+//--></script>
+<link href="/css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="/js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="/osd.xml">
+
+<!--[if IE]><link rel="stylesheet" type="text/css" href="/css/iehacks.css"><![endif]-->
+
+    <link href="/css/semantic_headers.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="gc-documentation">
+
+    
+    
+    <div id="gb">
+ <span>
+  
+   
+    <a href="#"
+       id="projects-dropdown" onclick="return false;"
+       ><span style="text-decoration:underline">My favorites</span> <span style="font-size:.75em;">&#9660;</span></a>
+    |
+  
+    <a id="lang-dropdown" href="/" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
+  
+   
+    | <a href="https://www.google.com/accounts/Login?continue=http%3A%2F%2Fcode.google.com%2Fapis%2Frecaptcha%2Fdocs%2Fphp.html&amp;followup=http%3A%2F%2Fcode.google.com%2Fapis%2Frecaptcha%2Fdocs%2Fphp.html" onclick="CODESITE_click('/gb/sc/signin');"><span style="style:text-decoration:underline">Sign in</span></a>
+   
+  
+ </span>
+</div>
+
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
+
+<div id="gc-container" class="labs">
+<a id="top"></a>
+<div id="skipto">
+  <a href="#gc-pagecontent">Skip to page content</a>
+  <a href="#gc-toc">Skip to main navigation</a>
+</div>
+
+<div id="gc-header">
+  <div id="logo"><a href="/">
+  
+  
+     <img src="/images/code_labs_logo.gif" height="40" width="167" alt="Google Code Labs" style="border:0;">
+  
+  
+  </a></div>
+  <div id="search">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+      <noscript>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
+      </noscript>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "adwords" or "open source"</div>
+      </div>
+      </form>
+    </div> <!-- end searchForm -->
+  </div> <!-- end search -->
+
+
+
+
+</div> <!-- end gc-header -->
+
+
+<div id="codesiteContent">
+
+<a id="gc-topnav-anchor"></a>
+<div id="gc-topnav">
+  <h1 style="padding:0 0 0 6px;">reCAPTCHA (<a href="/labs/">Labs</a>)</h1>
+  <ul id="docs" class="gc-topnav-tabs">
+
+    <li id="home_link">
+      <a href="/apis/recaptcha/" title="reCAPTCHA home page">Home</a>
+    </li>
+  
+    <li id="docs_link">
+      <a href="/apis/recaptcha/intro.html" class="selected" title="Official reCAPTCHA documentation">Docs</a>
+    </li>
+  
+    <li id="faq_link">
+      <a href="/apis/recaptcha/docs/troubleshooting.html" title="Answers to frequently asked questions about reCAPTCHA">FAQ</a>
+    </li>
+  
+    <li>
+      <a href="http://groups.google.com/group/recaptcha" title="reCAPTCHA developer forum">Forum</a>
+    </li>
+  
+
+  </ul>
+</div> <!-- end gc-topnav -->
+
+    <div class="g-section g-tpl-170">
+
+      <div class="g-unit g-first" id="gc-toc">
+        <ul>
+  <li><a href="https://www.google.com/recaptcha/admin/create">Sign up for an API key</a></li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Documentation</h2>
+    <ul>
+      <li><a href="/apis/recaptcha/intro.html">Introduction</a></li>
+      <li><a href="/apis/recaptcha/docs/display.html">Display Without Plugins</a></li>
+      <li><a href="/apis/recaptcha/docs/verify.html">Verify Without Plugins</a></li>
+      <li><a href="/apis/recaptcha/docs/customization.html">Customization</a></li>
+      <li><a href="/apis/recaptcha/docs/tips.html">Tips and Guidelines</a></li>
+      <li><a href="/apis/recaptcha/docs/troubleshooting.html">Troubleshooting</a></li>
+               <ul>
+                 <li><h2 class="tlw-expanded">Plugins:</h2>
+                    <ul>
+                      <li><a href="/apis/recaptcha/docs/php.html">PHP</a></li>
+                      <li><a href="/apis/recaptcha/docs/aspnet.html">ASP.NET</a></li>
+                      <li><a href="/apis/recaptcha/docs/asp.html">Classic ASP</a></li>
+                      <li><a href="/apis/recaptcha/docs/java.html">Java/JSP</a></li>
+                      <li><a href="/apis/recaptcha/docs/perl.html">Perl</a></li>
+                      <li><a href="/apis/recaptcha/docs/wordpress.html">WordPress</a></li>
+                      <li><a href="/apis/recaptcha/docs/mediawiki.html">MediaWiki</a></li>
+                      <li><a href="/apis/recaptcha/docs/phpbb.html">phpBB</a></li>
+                      <li><a href="/apis/recaptcha/docs/formmail.html">FormMail</a></li>
+                      <li><a href="/apis/recaptcha/docs/otherplatforms.html">Other Platforms</a></li>
+                    </ul></li>
+                </ul>
+      <li><a href="/apis/recaptcha/docs/mailhideapi.html">Mailhide API</a></li>
+    </ul>
+  </li>
+</ul>
+
+        <a class="hidden" href="#gc-topnav-anchor">More reCAPTCHA resource links</a>
+      </div>
+
+      <div class="g-unit" id="gc-pagecontent">
+        <script type="text/javascript">CODESITE_docEarlyProcessing();</script>
+
+
+        <h1 class="page_title">Using reCAPTCHA with PHP</h1>
+
+
+<p>The reCAPTCHA PHP Library provides a simple way to place a <a href="http://www.google.com/recaptcha/captcha">CAPTCHA</a> on
+your PHP website, helping you stop bots from abusing it. The library wraps the
+<a href="/apis/recaptcha/intro.html">reCAPTCHA API</a>.</p>
+
+
+<p>To use reCAPTCHA with PHP, you can download <a
+href="http://code.google.com/p/recaptcha/downloads/list?q=label:phplib-Latest">reCAPTCHA PHP
+library</a>. You will only need one file from there (recaptchalib.php). The other files are
+examples, readme and legal stuff -- they don't affect functionality.</p>
+
+<h2>Quick Start</h2>
+
+<p>After you've signed up for your API keys, below are basic instructions for installing reCAPTCHA on your site. A full
+reference guide to the PHP plugin can be found below.</p>
+
+<h3>Client Side (How to make the CAPTCHA image show up)</h3>
+
+<p>If you want to use the PHP library to display the reCAPTCHA widget, you'll need to insert
+this snippet of code inside the &lt;form&gt; element where the reCAPTCHA widget will be
+placed:</p>
+
+<pre class="prettyprint">
+  require_once('recaptchalib.php');
+  $publickey = "your_public_key"; // you got this from the signup page
+  echo recaptcha_get_html($publickey);
+</pre>
+
+<p>With the code, your form might look something like this:</p>
+
+<pre class="prettyprint">
+  &lt;html&gt;
+    &lt;body&gt; &lt;!-- the body tag is required or the CAPTCHA may not show on some browsers --&gt;
+      &lt;!-- your HTML content --&gt;
+
+      &lt;form method="post" action="verify.php"&gt;
+        &lt;?php
+          require_once('recaptchalib.php');
+          $publickey = "your_public_key"; // you got this from the signup page
+          echo recaptcha_get_html($publickey);
+        ?&gt;
+        &lt;input type="submit" /&gt;
+      &lt;/form&gt;
+
+      &lt;!-- more of your HTML content --&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+
+<p>Don't forget to set $publickey by replacing <code>your_public_key</code> with
+your API public key.</p>
+
+<p>Note that the value of the "action" attribute is "verify.php". Now, verify.php is the
+destination file in which the values of this form are submitted to. So you will need a file
+verify.php in the same location as the client html.</p>
+
+<p>The require_once function in the example above expects recaptchalib.php to be in the same
+directory as your form file. If it is in another directory, you must link it appropriately.
+For example if your recaptchalib.php is in the directory called "captcha" that is on the same
+level as your form file, the function will look like this:
+<code>require_once('captcha/recaptchalib.php')</code>.</p>
+
+<h3>Server Side (How to test if the user entered the right answer)</h3>
+
+<p>The following code should be placed at the top of the verify.php file:</p>
+
+
+<pre class="prettyprint">
+  &lt;?php
+  require_once('recaptchalib.php');
+  $privatekey = "<font color=red>your_private_key</font>";
+  $resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["recaptcha_challenge_field"],
+                                $_POST["recaptcha_response_field"]);
+
+  if (!$resp->is_valid) {
+    // What happens when the CAPTCHA was entered incorrectly
+    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+         "(reCAPTCHA said: " . $resp->error . ")");
+  } else {
+    // Your code here to handle a successful verification
+  }
+  ?&gt;
+</pre>
+
+
+<p>In the code above:
+<li><code>recaptcha_check_answer</code> returns an object that represents whether the user
+successfully completed the challenge.</li>
+<li>If <code>$resp->is_valid</code> is true then the captcha challenge was correctly completed and you should continue with form processing.</li>
+<li>If <code>$resp->is_valid</code> is false then the user failed to provide the correct captcha
+text and you should redisplay the form to allow them another attempt. In this case
+<code>$resp->error</code> will be an error code that can be provided to <code>recaptcha_get_html</code>.
+Passing the error code makes the reCAPTCHA control display a message explaining that the user
+entered the text incorrectly and should try again.</li>
+
+<p>Notice that this code is asking for the <b>private</b> key, which should not be confused
+with the public key. You get that from the same page as the public key.</p>
+
+<p>Also make sure your form is set to get the form variables using $_POST, instead of
+$_REQUEST, and that the form itself is using the POST method.</p>
+
+<p>That's it! reCAPTCHA should now be working on your site.</p>
+
+<h3>Further Reading</h3>
+
+<li><a href="customization.html">Customizing Look and Feel</a></li>
+<li><a href="tips.html">Tips and Guidelines</a></li>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+
+<h2>PHP Plugin Reference Guide</h2>
+
+<p>Below is a comprehensive list of all the methods of the reCAPTCHA PHP Plugin.</p>
+
+<h3>The recaptcha_get_html function</h3>
+
+<p>The <code>recaptcha_get_html</code> function displays the HTML that presents reCAPTCHA to
+the
+user.</p>
+
+<div>
+  <table class="funcdoc">
+    <tbody>
+    <tr>
+      <td class="funcdoc-name" colspan="2">
+        recaptcha_get_html
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-header" colspan="2">
+        Parameter
+      </td>
+    </tr>
+
+    <tr>
+      <td class="funcdoc-param">
+        $pubkey -- string. required.
+      </td>
+      <td>
+        Your reCAPTCHA public key, from the <a href="https://www.google.com/recaptcha/admin/create?app=php">API Signup Page</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="funcdoc-param">
+        $error -- string. optional (null is the default)
+      </td>
+      <td>
+        If this string is set, the reCAPTCHA area will display the error code
+        given. This error code comes from ReCaptchaResponse-&gt;$error
+      </td>
+    </tr>
+
+    <tr>
+      <td class="funcdoc-param">
+        $use_ssl -- boolean. optional (false is default)
+      </td>
+      <td>
+        Should the SSL-based API be used? If you are displaying a page to the
+        user over SSL, be sure to set this to true so an error dialog doesn't
+        come up in the user's browser.
+      </td>
+    </tr>
+
+    <tr>
+      <td class="funcdoc-header">
+        Return value
+      </td>
+      <td>
+        A string containing HTML to put on the web page.
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<h3>The recaptcha_check_answer function</h3>
+
+<p>After the user has filled out the HTML form, including their answer for the CAPTCHA, we
+want to check their answer when they submit the form using the
+<code>recaptcha_check_answer</code> function. The user's answer will be in two form fields,
+<code>recaptcha_challenge_field</code> and <code>recaptcha_response_field</code>. The
+reCAPTCHA library will make an HTTP request to the reCAPTCHA server and verify the user's
+answer.</p>
+
+<p>
+  <table class="funcdoc">
+    <tbody>
+    <tr>
+      <td class="funcdoc-name" colspan="2">
+        recaptcha_check_answer
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-header" colspan="2">
+        Parameter
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $privkey -- string. required.
+      </td>
+      <td>
+        Your reCAPTCHA private key, from the <a href="https://www.google.com/recaptcha/admin/create?app=php">API Signup Page</a>.
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $remoteip -- string. required.
+      </td>
+      <td>
+        The user's IP address, in the format 192.168.0.1
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $challenge -- string. required.<br/>
+      </td>
+      <td>
+        The value of the form field recaptcha_challenge_field
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $response -- string. required
+      </td>
+      <td>
+        The value of the form field recaptcha_response_field
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-header">
+        Return value
+      </td>
+      <td>
+        An instance of the ReCaptchaResponse class
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</p>
+
+<p>
+  <table class="funcdoc">
+    <tbody>
+    <tr>
+      <td class="funcdoc-name" colspan="2">
+        ReCaptchaResponse
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-header"  colspan="2">
+        Field
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $is_valid -- boolean
+      </td>
+      <td>
+        Did reCAPTCHA believe the answer was valid?
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $error -- string
+      </td>
+      <td>
+        If the answer was invalid what was the problem? This error code can be
+        used in recaptcha_get_html
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-header">
+        Return value
+      </td>
+      <td>
+        The HTML or raw url to decode the email address, depending on which you function you
+called.
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</p>
+
+<h3>Mailhide</h3>
+
+<p>The reCAPTCHA PHP Library includes bindings for the <a
+href="http://www.google.com/recaptcha/mailhide/">Mailhide</a> API.  This
+API allows you to wrap an email in a reCAPTCHA to prevent spammers from seeing it:
+exam<a
+href="http://www.google.com/recaptcha/mailhide/d?k=01YVrDO6WGOpRXmUmxagsIkA==&amp;c=rewEvxp1sUSNPrHRiX8quxJZ_HfM6j3L-tvj74kEFm8="
+onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k=01YVrDO6WGOpRXmUmxagsIkA==&amp;c=rewEvxp1sUSNPrHRiX8quxJZ_HfM6j3L-tvj74kEFm8=',
+'',
+'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300');
+return false;" title="Reveal this e-mail address">...</a>@example.com.</p>
+
+<p>The Mailhide portion of the PHP Library requires the PHP <a
+href="http://php.net/mcrypt">mcrypt</a> module.</p>
+
+<p>The Mailhide API consists of two functions <code>recaptcha_mailhide_html</code> and
+<code>recaptcha_mailhide_url</code>. The functions have the same parameters. The _html version
+returns HTML
+that can be directly put on your web page. The username portion of the email that is passed in
+is truncated and replaced with a link that calls Mailhide. The _url version gives you the url
+to decode the email and leaves it up to you to place the email in HTML.</p>
+
+<p>
+  <table class="funcdoc">
+    <tbody>
+    <tr>
+      <td class="funcdoc-name" colspan="2">
+        recaptcha_mailhide_url / recaptcha_mailhide_html
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-header"  colspan="2">
+        Parameter
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $pubkey -- string
+      </td>
+      <td>
+        The Mailhide public key from the <a href="http://www.google.com/recaptcha/mailhide/apikey">signup page</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="funcdoc-param">
+        $privkey -- string
+      </td>
+      <td>
+        The Mailhide private key from the <a href="http://www.google.com/recaptcha/mailhide/apikey">signup page</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="funcdoc-param">
+        $email -- string
+      </td>
+      <td>
+        The email address you want to hide.
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</p>
+
+
+<p>The following example shows how to use Mailhide:</p>
+
+<pre class="prettyprint">
+&lt;html&gt;&lt;body&gt;
+&lt;?
+require_once (&quot;recaptchalib.php&quot;);
+// get a key at <a
+href="http://www.google.com/recaptcha/mailhide/apikey">http://www.google.com/recaptcha/mailhide/apikey</a>
+$mailhide_pubkey = '';
+$mailhide_privkey = '';
+?&gt;
+The Mailhide encoding of example@example.com is
+&lt;?
+echo recaptcha_mailhide_html ($mailhide_pubkey,
+                              $mailhide_privkey,
+                              &quot;example@example.com&quot;);
+?&gt;.
+&lt;br&gt;
+The url for the email is:
+&lt;?
+echo recaptcha_mailhide_url ($mailhide_pubkey,
+                             $mailhide_privkey,
+                             &quot;example@example.com&quot;);
+?&gt;
+&lt;br&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+    Â©2011 Google -
+    <a href="/">Code Home</a> -
+    <a href="/terms.html">Terms of Service</a> -
+    <a href="/privacy.html">Privacy Policy</a> -
+    <a href="/more/">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="/intl/en/">English</a> -
+    <a href="/intl/es/">EspaÃ±ol</a> -
+    <a href="/intl/ja/">æ¥æ¬èª</a> -
+    <a href="/intl/ko/">íêµ­ì´</a> -
+    <a href="/intl/pt-BR/">PortuguÃªs</a> -
+    <a href="/intl/ru/">PÑÑÑÐºÐ¸Ð¹</a> -
+    <a href="/intl/zh-CN/">ä¸­æ(ç®ä½)</a> -
+    <a href="/intl/zh-TW/">ä¸­æ(ç¹é«)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="/js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+
+
+  </body>
+</html>
+

@@ -6,14 +6,16 @@ package ti;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 
 /**
  * A processor to extract terms from HTML documents.
  */
 public class HtmlProcessor implements DocumentProcessor
 {
-
-	// P2
+	protected File pathToStopWords;
 
 	/**
 	 * Creates a new HTML processor.
@@ -23,8 +25,8 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	public HtmlProcessor(File pathToStopWords) throws IOException
 	{
-		// P2
 		// Load stopwords
+		this.pathToStopWords = pathToStopWords;
 	}
 
 	/**
@@ -32,10 +34,16 @@ public class HtmlProcessor implements DocumentProcessor
 	 */
 	public Tuple<String, String> parse(String html)
 	{
-		// P2
 		// Parse document
+		//TODO: Implement jsoup split into title and body
+		
+		Document doc = Jsoup.parse(html);
 
-		return null; // Return title and body separately
+		String title = doc.title();
+		String body = doc.body().text();
+		Tuple<String, String> outputDoc = new Tuple<>(title, body);
+
+		return outputDoc; // Return title and body separately
 	}
 
 	/**

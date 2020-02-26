@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ProgrammingBulls.com - Recaptcha php problem </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Hey guys, I'm using recaptcha and I've got a problem, when a user clicks the signup button it redirects him to the sign up verification page, and here is the code, found on the very top of the web code, that checks the recaptcha entered data." />
+<meta name="robots" content="index,follow" />
+<meta name="DC.title" content="Recaptcha php problem" />
+<link rel="shortcut icon" href="/sites/all/themes/spreadfirefox/favicon.ico" type="image/x-icon" />
+ <script type="text/javascript" src="/misc/jquery.js"></script>
+<script type="text/javascript" src="/misc/drupal.js"></script>
+<script type="text/javascript" src="/sites/all/modules/drigg/drigg/drigg.js"></script>
+<script type="text/javascript" src="/sites/all/modules/drigg/drigg_rl/drigg_rl.js"></script>
+<script type="text/javascript" src="/sites/all/modules/jquery_update/compat.js"></script>
+<script type="text/javascript" src="/sites/all/modules/poormanscron/poormanscron.js"></script>
+<script type="text/javascript" src="/sites/all/modules/popup_msg/popup_msg.js"></script>
+<script type="text/javascript" src="/sites/all/modules/vote_up_down/ajax_vote_up_down.js"></script>
+<script type="text/javascript">Drupal.extend({ settings: { "drigg": { "base_path": "/" }, "cron": { "basePath": "/poormanscron", "runNext": 1301816009 }, "popup_msg": { "selector": ".messages", "timeout": 10, "boxwidth": "400px", "msgok": "OK", "msgclose": "Close in", "msgshowbox": "\x26raquo; Click to display notice message." } } });</script>
+ <style type="text/css" media="all">@import "/files/css/adcf8ba36847f8b12c77f12222dc81fe.css";</style>
+ <style type="text/css" media="screen">
+  <!--
+   @import url(/sites/all/themes/spreadfirefox/modules.css);
+   @import url(/sites/all/themes/spreadfirefox/nav.css);
+   @import url(/sites/all/themes/spreadfirefox/layout.css);
+  -->
+ </style>
+ <!--[if lte IE 6]>
+  <![endif]-->
+</head>
+<body >
+<div class="hide">
+  <a href="#content" title="Skip the site navigation to go directly to the content">Skip to content</a>
+</div>
+<!-- closes #header-->
+<!-- START: HEADER -->
+<div id="wrapper1">
+ <div id="wrapper2">
+  <div class="header" id="header">
+   <div class="headerpadding">
+        
+    <div id ="region_header"><a href="http://www.programmingbulls.com">ProgrammingBulls</a></div>
+    
+    
+    <div class="block block-menu" id="block-menu-250">
+<div class="content">
+<ul class="menu">
+<li class="leaf"><a href="/user/login" title="Login">Login</a></li>
+<li class="leaf"><a href="/programming-tutorials" title="Tutorials">Tutorials</a></li>
+<li class="leaf"><a href="/programm-questions" title="ShortTips">ShortTips</a></li>
+<li class="leaf"><a href="/" title="Hone">Home</a></li>
+
+</ul>
+</div>
+</div>
+
+
+         <form action="/search/node"  method="post" id="search-theme-form">
+<div><div id="search" class="container-inline"><div class="form-item">
+ <input type="text" maxlength="128" name="search_theme_form_keys" id="edit-search-theme-form-keys"  size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+</div>
+</div></form>
+ 
+       
+      
+    </div>
+   </div>
+<!-- END: HEADER-->
+<hr class="hide" />  
+    <div class="columns">
+                  <div class="rightcolumn sidebar" id="sidebar-right">
+        <div class="rightpadding">
+          <div class="block block-block" id="block-block-4">
+<div class="content">    <a href="/node/add/drigg" class="button_block">Create Short Technical Tip</a>
+    
+<div style="margin-top:10px;">
+<a href="http://feeds.feedburner.com/ProgrammingBulls" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="" style="border:0; vertical-align: middle; margin-right: 5px;"/></a><a href="http://feeds.feedburner.com/ProgrammingBulls" title="Subscribe to my feed" rel="alternate" type="application/rss+xml">Subscribe in a reader</a>
+<br />
+<p><a href="http://feeds.feedburner.com/ProgrammingBulls"><img src="http://feeds.feedburner.com/~fc/ProgrammingBulls?bg=99CCFF&amp;fg=444444&amp;anim=1&amp;label=listeners" height="26" width="88" style="border:0" alt="" /></a></p>
+</div></div>
+</div>
+
+<div class="block block-block" id="block-block-5">
+<div class="content"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-6836350341430652";
+/* ProgrammingBullsLeftBar2 */
+google_ad_slot = "3422133421";
+google_ad_width = 180;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+</div>
+
+<div class="block block-menu" id="block-menu-296">
+ <h2 class="title"><span>Easy Tutorials</span></h2> <div class="content">
+<ul class="menu">
+<li class="collapsed"><a href="/html-tutorial-starting-make-webpages" title="HTML Tutorial">HTML Tutorial</a></li>
+<li class="collapsed"><a href="/cascading-style-sheets-or-css-tutorial" title="CSS Tutorial">CSS Tutorial</a></li>
+<li class="collapsed"><a href="/php-tutorial" title="PHP Tutorial">PHP Tutorial</a></li>
+<li class="collapsed"><a href="/drupal-tutorial" title="Drupal Tutorial">Drupal Tutorial</a></li>
+<li class="leaf"><a href="/php-and-mysql-join" title="MYSQL Tutorial: JOINS">MYSQL Tutorial: JOINS</a></li>
+<li class="collapsed"><a href="/c-tutorial-cplusplus" title="C++ Tutorial">C++ Tutorial</a></li>
+<li class="collapsed"><a href="/perl-tutorial" title="Perl Tutorial">Perl Tutorial</a></li>
+
+</ul>
+</div>
+</div>
+
+<div class="block block-block" id="block-block-7">
+ <h2 class="title"><span>About Us</span></h2> <div class="content"><p>ShortTip stands for &quot;Short&nbsp; technical useful tip&quot;.&nbsp; You can create a &quot;shorttip&quot; or edit an existing one to make it useful. Cut the crap and create only userful tip.</p></div>
+</div>
+
+<div class="block block-block" id="block-block-6">
+<div class="content"><iframe id="iframe_like" name="fbLikeIFrame_0" class="social-iframe" scrolling="no" frameborder="0" src="http://www.facebook.com/widgets/like.php?width=100&amp;show_faces=1&amp;layout=standard&amp;href=http://programmingbulls.com/recaptcha-php-problem" width=100 height=300></iframe></div>
+</div>
+
+        </div>
+      </div>
+            <hr class="hide" />  
+      <div class="centercolumn">
+        <div class="centerpadding">
+          <div class="main-content" id="main">
+
+        
+      
+            
+                              <div id="breadcrumbs">
+                  You are here: <div class="breadcrumb"><a href="/">Home</a></div> <span class="breadcrumb"> &raquo;  Recaptcha Php Problem</span>
+                </div>
+                                      
+<br />
+<p>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6836350341430652";
+/* ProgrammingBullsBanner */
+google_ad_slot = "8562024090";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p>
+<br />
+
+<div id="message"><div class="messages status">
+You think you can improve existing shortTip or help convert the existing RSS feed (we call it seed) fetched from stackoverflow/drupal/ubuntuforums etc into a userful tip.
+<a href="/node/29109">Edit the <em>ShortTip</em></a></div>
+</div>
+
+<h1 id="title">Recaptcha php problem</h1>
+                                    	    
+            <!-- start main content -->
+	    <span style="width: 100%;"><a name="content"></a></span>
+            <div style="width: 200px; float: right;">
+<iframe id="iframe_like" name="fbLikeIFrame_0" class="social-iframe" scrolling="no" frameborder="0" src="http://www.facebook.com/widgets/like.php?width=100&amp;show_faces=1&amp;layout=standard&amp;colorscheme=light&amp;href=http://programmingbulls.com/recaptcha-php-problem" width="100%" height="30"></iframe>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="http://programmingbulls.com/recaptcha-php-problem" data-text="Recaptcha php problem | ProgrammingBulls.com" data-via="programmingbulls">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</div>
+<div class="node ntype-drigg odd clearfix" id="node-29109">
+       
+  <div class="offset">
+
+         
+      <!-- This accommodates for the fact that Drigg can be configured so that
+           a story doesn't have a link pointing to an external resource --> 
+      
+        
+        
+    
+    <div class="story">
+
+      
+      <div class="vote-up-down-widget"><span id="vote_up_29109" class="vote-up-inact" title="/vote_up_down/node/29109/1/1"><a href="/vote_up_down/node/29109/1?destination=node%2F29109" class="vote-up-inact" title="Vote up"></a></span><span id="vote_points_29109" class="vote-points">5 points</span><span id="vote_down_29109" class="vote-down-inact" title="/vote_up_down/node/29109/-1/1"><a href="/vote_up_down/node/29109/-1?destination=node%2F29109" class="vote-down-inact" title="Vote down"></a></span></div><p>Hey guys, I'm using recaptcha and I've got a problem, when a user clicks the signup button it redirects him to the sign up verification page, and here is the code, found on the very top of the web code, that checks the recaptcha entered data.</p>
+<p>&lt;?php<br />
+require_once('recaptchalib.php');<br />
+$privatekey = "***";<br />
+$resp = recaptcha_check_answer ($privatekey,<br />
+$_SERVER["REMOTE_ADDR"],<br />
+$_POST["recaptcha_challenge_field"],<br />
+$_POST["recaptcha_response_field"]);<br />
+if (!$resp-&gt;is_valid) {</p>
+<p>header('location: signup.php');</p>
+<p>}<br />
+?&gt;</p>
+<p>But it seems whatever I type in in the recaptcha box, be it right or wrong, I get redirected to the signup.php page.</p>
+<p>Here is the recaptcha code in the signup.php page:</p>
+<p>  &lt;?php<br />
+    ini_set('display_errors', 'On');<br />
+    error_reporting(E_ALL | E_STRICT);<br />
+      require_once('recaptchalib.php');<br />
+      $publickey = "***";<br />
+      echo recaptcha_get_html($publickey);<br />
+      ?&gt;</p>
+<p>Hey guys, I'm using recaptcha and I've got a problem, when a user clicks the signup button it redirects him to the sign up verification page, and here is the code, found on the very top of the web code, that checks the recaptcha entered data.</p>
+<p>&lt;?php<br />
+require_once('recaptchalib.php');<br />
+$privatekey = "***";<br />
+$resp = recaptcha_check_answer ($privatekey,<br />
+$_SERVER["REMOTE_ADDR"],<br />
+$_POST["recaptcha_challenge_field"],<br />
+$_POST["recaptcha_response_field"]);<br />
+if (!$resp-&gt;is_valid) {</p>
+<p>header('location: signup.php');</p>
+<p>}<br />
+?&gt;</p>
+<p>But it seems whatever I type in in the recaptcha box, be it right or wrong, I get redirected to the signup.php page.</p>
+<p>Here is the recaptcha code in the signup.php page:</p>
+<p>  &lt;?php<br />
+    ini_set('display_errors', 'On');<br />
+    error_reporting(E_ALL | E_STRICT);<br />
+      require_once('recaptchalib.php');<br />
+      $publickey = "***";<br />
+      echo recaptcha_get_html($publickey);<br />
+      ?&gt;</p>
+<p>         Original Question by: <a target='_blank' href='http://stackoverflow.com/users/553855'>Sam Gabriel</a></p>
+      
+        
+
+          </div>
+
+    
+          <div class="links">
+                 
+        12 weeks 2 days ago                         <a href="/taxonomy/term/"></a> &nbsp; Tags:       
+        <ul class="links inline"><li class="first feedapi_original"><a href="http://stackoverflow.com/questions/4620051/recaptcha-php-problem" target="_blank" class="feedapi_original">View Stackoverflow Question</a></li>
+<li class="comment_add"><a href="/node/add/comment/29109" title="Add a new comment to this page." class="comment_add">Add new Comment</a></li>
+<li class="vote_up_down_reset"><a href="/vote_up_down/node/29109/0?destination=node%2F29109" title="Reset your vote." class="vote_up_down_reset">Reset vote</a></li>
+<li class="last vote_up_down_points"><span class="vote_up_down_points"><span id="vote_points_29109" class="vote-points">5 points</span></span></li>
+</ul>      </div>
+        
+  </div>
+</div>
+
+<br />
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6836350341430652";
+/* ProgrammingBullsMedium */
+google_ad_slot = "7138634313";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6836350341430652";
+/* ProgrammingBullsMedium2 */
+google_ad_slot = "6327636175";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="block block-similar" id="block-similar-0">
+
+<h2 class="title"><span>People who liked the above shorttip also liked:  </span></h2>
+<div class="content"><div class="item-list"><ul><li><h3 class="similar-title"><a href="/using-ajax-verify-recaptcha">Using ajax to verify a recaptcha</a></h3><div class="simlar-teaser"><p>            hi I've a problem with a recaptcha, trying to use it with ajax.</p>
+<p>this is the ajax code (javascript)</p>
+</div></li><li><h3 class="similar-title"><a href="/recaptcha-not-working">ReCaptcha not working</a></h3><div class="simlar-teaser"><p>I just installed the Recaptcha module, but it's not working properly. These're the steps I did:<br />
+1) Downloaded the Recaptcha module<br />
+2) Unzipped and installed it<br />
+3) Activated it<br />
+4) I went to recaptcha.net and created private / public keys (first based on a fictive domain and checked "global key". Then, since it didn't work, again, for localhost -- cause I'm testing it on localhost)<br />
+5) Filled in the keys in the Recaptcha settings for the module<br />
+6) Set user registration to use Recaptcha.</p>
+</div></li><li><h3 class="similar-title"><a href="/what-inn-recaptcha-script-is-valid-text-it-array-key">What is inn the reCaptcha script the 'is_valid' text? Is it an array key?</a></h3><div class="simlar-teaser"><p>            Please don't mind my use of English.<br />
+In the reCaptcha script you'll find this piece of code:</p>
+<p>$recaptcha_response-&gt;is_valid = false;</p>
+<p>I wonder what the -&gt; does/means.<br />
+Is it an alternative way to assign an key (with a value) to a string?</p>
+<p>            Please don't mind my use of English.<br />
+In the reCaptcha script you'll find this piece of code:</p>
+<p>$recaptcha_response-&gt;is_valid = false;</p>
+<p>I wonder what the -&gt; does/means.<br />
+Is it an alternative way to assign an key (with a value) to a string?</p>
+</div></li><li><h3 class="similar-title"><a href="/installing-recaptcha-joomla-1-5-user-registration">Installing Recaptcha in Joomla 1.5 user registration</a></h3><div class="simlar-teaser"><p>            I am trying to install ReCaptcha into the user registration of Joomla 1.5. This may just be an issue with Joomla but when i hit register nothing happens. I think it's doing some JavaScript form validation but there is nothing telling the user what went wrong. if, God forbid, they do fill out the form correctly Joomla will redirect the user to the homepage and give no notice of success.</p>
+<p>Is this a Joomla issue or is there something wrong with my install? Does anyone know of a plug-in or module for Joomla that would make this easier?</p>
+</div></li><li><h3 class="similar-title"><a href="/recaptcha-being-bypassed-how-do-i-fix">reCAPTCHA being bypassed. How do I fix?</a></h3><div class="simlar-teaser"><p>Hi All,<br />
+I'm running a Drupal 6.20 site and have employed reCAPTCHA on my user registration page to stop bots signing up however this does not seem to be working. I have tested the CAPTCHA and cannot create an account if the words are omitted or incorrectly entered.</p>
+</div></li><li><h3 class="similar-title"><a href="/recaptcha-no-longer-displaying-other-test-message">reCAPTCHA no longer displaying - other than the test message</a></h3><div class="simlar-teaser"><p>I have reCATCHA set up to be used when people open a new account on my site.  I had to disable it this morning as a person talked to me last night and told me he couldn't create an account.  I went out and tried myself, and the reCAPTCHA box isn't displaying; the test message is there but there is no opportunity for input.  This was working and other than normal site updates that have had nothing to do with reCAPTCHA, I haven't changed anything.  Any ideas?</p>
+</div></li><li><h3 class="similar-title"><a href="/avoid-browsing-caching-specific-view">Avoid Browsing Caching for a Specific View</a></h3><div class="simlar-teaser"><p>I have a calendar that allows people to click and sign up for events using the signup module.  Unfortunately, if the user hits the back button after they sign up the calendar will still show the event even though there is a filter set up in the view to only show events that have had no sign ups.<br />
+I was able to modify the signup module to clear the Drupal page cache on signup and when an admin cancels a signup, but I still have an issue of users seeing an event they shouldn't if they use the back button because of browser caching.  </p>
+</div></li><li><h3 class="similar-title"><a href="/zend-form-recaptcha-not-working">Zend Form ReCaptcha not working</a></h3><div class="simlar-teaser"><p>            Hello!I have a simple Zend-based form with reCaptcha element:<br />
+        $form = new Zend_Form();<br />
+        $form-&gt;setName('forgotpassword')<br />
+            -&gt;setMethod('POST');</p>
+</div></li></ul></div></div>
+</div>
+            <!-- end main content -->
+          </div><!-- main -->
+        </div>
+      </div>
+      
+
+    </div>
+    </div>
+        </div><!-- wrapper -->
+    <div class="clearing"></div>
+    <hr class="hide" />
+<!-- START: FOOTER-->
+    <div id="footer" class="footer">
+      
+<a href="http://www.programmingbulls.com/privacy-policy"> Privacy Policy </a> | <a href="http://www.programmingbulls.com/feedback"> Contact Us</a>
+        
+            <script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script><script type="text/javascript">_uacct = "UA-2200761-4";urchinTracker();</script><!-- END: FOOTER -->
+
+
+</body>
+</html>
+

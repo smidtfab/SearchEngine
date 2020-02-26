@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<head>
+    <title>Grails - Plugin - ReCaptcha and Mailhide Plugin</title>
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="NOODP">
+    <meta name="Description" content="Grails is a high-productivity web framework based on the Groovy language that embraces the coding by convention paradigm, but is designed specifically for the Java platform.">	
+
+    
+    <link href="/static/mnqzhxEka8fg6Hu3z6ra5TBwnHBXIJDpqN0Mz2O4JZw.ico" type="image/x-icon" rel="shortcut icon" />
+    
+<link href="/static/khe6KM5Qe8BczqwESfsTfJf60pT5jC6UqJJDyJEG37w.css" type="text/css" rel="stylesheet" />
+<link href="/static/ZPWaWr3cF1MGDJG2xzFthqjSPoy51qFEQvtXvs0BKkI.css" type="text/css" rel="stylesheet" />
+<link href="/static/bqYjrlbrS9BWb7TGvdlu6qxiUY1we21Ex38KeByXnEb.css" type="text/css" rel="stylesheet" />
+<link href="/static/99TBy2vrVs3CwZobamH9zKFW7ko6BqpCA2C4apxYOYV.css" type="text/css" rel="stylesheet" />
+
+
+
+
+
+
+    
+    
+    
+    
+        
+        <script type="text/javascript" src="/js/yui/2.7.0/yahoo-dom-event/yahoo-dom-event.js"></script><script type="text/javascript" src="/js/yui/2.7.0/connection/connection.js"></script>
+        <script type="text/javascript" src="/plugins/rateable-0.6.2/js/ratings.js"></script>
+        <link rel="stylesheet" href="/plugins/rateable-0.6.2/css/ratings.css" />
+        
+        <link rel='stylesheet' type='text/css' href='/js/yui/2.7.0/fonts/fonts.css'/>
+<link rel='stylesheet' type='text/css' href='/js/yui/2.7.0/tabview/assets/skins/sam/tabview.css'/>
+<link rel='stylesheet' type='text/css' href='/js/yui/2.7.0/container/assets/skins/sam/container.css'/>
+<link rel='stylesheet' type='text/css' href='/js/yui/2.7.0/button/assets/skins/sam/button.css'/>
+<link rel='stylesheet' type='text/css' href='/js/yui/2.7.0/autocomplete/assets/skins/sam/autocomplete.css'/>
+<link rel='stylesheet' type='text/css' href='/plugins/grails-ui-1.2-SNAPSHOT/js/grailsui/../../css/grailsui/grails-ui.css'/>
+<script type="text/javascript" src="/js/yui/2.7.0/yahoo-dom-event/yahoo-dom-event.js" ></script>  
+<script type="text/javascript" src="/plugins/grails-ui-1.2-SNAPSHOT/js/grailsui/grailsui.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/connection/connection-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/element/element-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/tabview/tabview-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/dragdrop/dragdrop-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/button/button-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/container/container-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/datasource/datasource-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/autocomplete/autocomplete-min.js" ></script>  
+<script type="text/javascript" src="/js/yui/2.7.0/animation/animation-min.js" ></script>  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    <meta name="layout" content="pluginDetails">
+
+
+    
+    
+
+    <style type="text/css" media="screen">
+.yui-navset-bottom .yui-nav li a em {
+    display:inline;
+}
+.yui-navset .yui-nav li a em, .yui-navset-top .yui-nav li a em, .yui-navset-bottom .yui-nav li a em {
+    display:inline;
+}
+    </style>
+
+
+    
+
+
+</head>
+<body onload="addJsClass();">
+    
+    <div align="center">
+        <div id="springSourceBar">
+	<div id="grailsLogo">
+		<a href="/"><img src="/static/cXmUZIAv28XIiNgkRiz4RRl21TsGZ5HoGpZw1UITNyV.png" uri="/images/new/grailslogo_topNav.png" border="0" /></a>			
+	</div>
+
+	<div id="springSourceLogo">
+		<a href="http://www.springsource.com/"><img src="/static/xATgakdqUqjehM4CPEgEyIEVaa7xHY09sonkDDDBPA5.png" uri="/images/new/springsource.png" border="0" /></a>			
+	</div>
+	<div id="searchbar">
+		<form action="/search" method="get" name="searchForm" id="searchForm" >
+		    <input
+		 		onblur="this.style.color = '#CDE5C4';" 
+				onfocus="this.style.color = '#48802C';this.value='';"
+				type="text" accessKey="s" name="q" value=""/>		
+		</form>		
+	</div>
+</div>
+
+        <div class="mainMenuBarWrapper">
+            <ul id="mainMenuBar">
+	
+    <li><a href="http://www.springsource.com/products/grails">Products</a></li>
+    <li><a href="http://www.springsource.com/groovy-grails-consulting">Services</a></li>
+    <li><a href="http://www.springsource.com/training/grv001">Training</a></li>
+    <li><a href="/Testimonials">Case Studies</a></li>
+    <li><a href="/Community">Community</a></li>
+    <li><a href="/Download">Downloads</a></li>
+    <li><a href="/plugins">Plugins</a> </li>
+    <li><a href="/Documentation">Documentation</a></li>
+</ul><!-- mainMenuBar -->
+
+        </div>
+    </div>
+
+    <div id="contentWrapper" align="center">
+        <div id="contentInnerWrapper">
+            <div id="contentCenter" >
+                
+    
+
+    <div id="contentPane">
+
+	<div id="pluginBigBox">
+            
+		
+            <div id="pluginBgTop"></div>
+            <div id="pluginBox">
+                <div id="pluginDetailWrapper">
+
+                    
+	<div id="pluginDetailsBox" align="center">
+		<div id="pluginDetailsContainer">
+			
+			
+			
+        <div class="null">
+            <div id="loginDialog">
+                <div class="hd">Login required</div>
+                <div class="bd">
+                    
+			    <div id='loginFormDiv'></div>
+			
+                </div>
+            </div>
+        </div>
+        <script>
+            function init_dlg_loginDialog() {
+                // Instantiate the Dialog
+                GRAILSUI.loginDialog = new YAHOO.widget.Dialog("loginDialog",
+                { 'modal': true,
+'fixedcenter': true,
+'visible': false,
+'params': [],
+'constraintoviewport': true,
+'buttons': [{'text': 'OK',
+handler: function() {this.cancel();},
+'isDefault': true}] });
+                GRAILSUI.loginDialog.render(document.body);
+                
+        
+            }
+            YAHOO.util.Event.onDOMReady(init_dlg_loginDialog);
+        </script>
+
+			<div id="downloadBox">
+				<a href="http://plugins.grails.org/grails-recaptcha/tags/RELEASE_0_5_0/grails-recaptcha-0.5.0.zip"><img src="/static/OPPwb7Wv8IXVwcl47IOpipg9CwS65FWrxQSXQVVmAVh.png" uri="/images/new/plugins/Buttons/downloadBox_btn.png" alt="Download" border="0" /></a>
+			</div>
+
+			<h1 id="pluginBoxTitle">ReCaptcha and Mailhide Plugin</h1>
+
+			<div class="ratingBox">
+			    
+			    
+					<div id="ratingDisplay">
+						
+            <table class="ratingDisplay">
+                <tr>
+            <td><div class="star on"><a href="/login?originalURI=%2Fplugin%2Frecaptcha"></a></div></td><td><div class="star on"><a href="/login?originalURI=%2Fplugin%2Frecaptcha"></a></div></td><td><div class="star on"><a href="/login?originalURI=%2Fplugin%2Frecaptcha"></a></div></td><td><div class="star on"><a href="/login?originalURI=%2Fplugin%2Frecaptcha"></a></div></td><td><div class="star on"><a href="/login?originalURI=%2Fplugin%2Frecaptcha"></a></div></td>
+                    <td>(4)</td>
+                </tr>
+            </table>
+            																							
+					</div>
+			    
+			</div>
+
+			<p></p>
+
+		    <div class="pluginDetail">
+		        <table>
+		            <tr>
+		                <th>Author(s)</th>
+		                <td>iamthechad</td>
+		            </tr>
+		            <tr>
+		                <th>Current Release</th>
+		                <td>0.5.0</td>
+		            </tr>
+		            <tr>
+		                <th>Grails Version</th>
+		                <td>?</td>
+		            </tr>
+		            <tr>
+		                <th>Tags</th>
+		                <td class='tags'>
+		                    <span id='pluginTags'>
+		                        
+
+    <span class="tag"><a href="/plugins/tag/captcha">captcha</a>
+    
+        
+
+        
+        
+        
+        
+            <img id="remove_captcha_tag_from_295" src="/images/famfamfam/delete.png"/>
+            <script>
+                YAHOO.util.Event.onDOMReady(function() {
+                    // on show, put the dialog in the right place
+                    YAHOO.util.Event.on("remove_captcha_tag_from_295", 'click', function() {
+                        window.location = "/login?originalURI=%2Fplugin%2Frecaptcha";
+                    });
+                });
+            </script>
+        
+    
+    </span>
+
+    <span class="tag"><a href="/plugins/tag/mailhide">mailhide</a>
+    
+        
+
+        
+        
+        
+        
+            <img id="remove_mailhide_tag_from_295" src="/images/famfamfam/delete.png"/>
+            <script>
+                YAHOO.util.Event.onDOMReady(function() {
+                    // on show, put the dialog in the right place
+                    YAHOO.util.Event.on("remove_mailhide_tag_from_295", 'click', function() {
+                        window.location = "/login?originalURI=%2Fplugin%2Frecaptcha";
+                    });
+                });
+            </script>
+        
+    
+    </span>
+
+    <span class="tag"><a href="/plugins/tag/security">security</a>
+    
+        
+
+        
+        
+        
+        
+            <img id="remove_security_tag_from_295" src="/images/famfamfam/delete.png"/>
+            <script>
+                YAHOO.util.Event.onDOMReady(function() {
+                    // on show, put the dialog in the right place
+                    YAHOO.util.Event.on("remove_security_tag_from_295", 'click', function() {
+                        window.location = "/login?originalURI=%2Fplugin%2Frecaptcha";
+                    });
+                });
+            </script>
+        
+    
+    </span>
+
+
+		                    </span>
+		                    <span id='addTagTrigger'><img src="/static/V6lM9VtbWbu4xVIRmbEy9b9fLKlnbnjkdqYpgr9UUla.png" uri="/images/famfamfam/add.png" /></span>
+		                </td>
+		            </tr>
+		        </table>
+		    </div>
+		    <ul class="links">
+		        <li><a href="http://svn.codehaus.org/grails-plugins/grails-recaptcha"> <img src="/static/trqEoCdSJ5w3ZFEEbpY0HWoHsc8unKTBKpdx8nJJdjU.png" uri="/images/new/plugins/icons/fisheye.png" border="0" />&nbsp;Source</a></li>
+<li><a href="http://grails.codehaus.org/ReCaptcha+Plugin"> <img src="/static/p0JQdku750CsGnqCBsMCxTgbSRcQNFWPoc1ysZ5LFuf.png" uri="/images/new/plugins/icons/doc.png" border="0" />&nbsp;Docs</a></li>
+
+
+		        <li>
+		            <a href="/plugin/edit/295">
+                        <img src="/static/drgakn823IcL4KeSlqigXNEYTBqSs0AKbVKJQH1z1yl.png" uri="/images/new/plugins/icons/16x16_icons/edit.png" border="0" />&nbsp;Edit Plugin
+                    </a>
+                </li>
+		    </ul>
+			
+		</div>
+		
+	</div>
+
+	
+</div>
+
+
+
+    
+    
+    
+    
+        <script>
+            YAHOO.util.Event.onDOMReady(function() {
+                // on show, put the dialog in the right place
+                YAHOO.util.Event.on('addTagTrigger', 'click', function() {
+                    window.location = "/login?originalURI=%2Fplugin%2Frecaptcha";
+                });
+                // also hang up rating click if not logged in, redirect to login page with originalURI of this page
+                // for redirect
+                YAHOO.util.Event.on('ratingdiv', 'click', function(e) {
+                    YAHOO.util.Event.stopEvent(e);
+                    window.location = "/login?originalURI=%2Fplugin%2Frecaptcha";
+                });
+            });
+        </script>
+    
+
+	<div id="pluginContent" align="center">
+	    
+	        
+        <div id="tabView_gui_1d22b688fb0428cfd16d0ea9a79a8f0f" class="yui-navset">
+            <div class="tabOuter">
+                <div class="tabInner">
+                    <ul class="yui-nav">
+                        <li class='  '><a href="#installationTab"><span class="tabLeft"></span><em>Installation</em><span class="tabRight"></span></a></li>
+
+<li class='selected  '><a href="#descriptionTab"><span class="tabLeft"></span><em>Description</em><span class="tabRight"></span></a></li>
+
+<li class='  '><a href="#faqTab"><span class="tabLeft"></span><em>Faq</em><span class="tabRight"></span></a></li>
+
+<li class='  '><a href="#screenshotsTab"><span class="tabLeft"></span><em>Screenshots</em><span class="tabRight"></span></a></li>
+
+                    </ul>
+                </div><!-- end #tabInner -->
+            </div><!-- end #tabOuter -->
+            <div class="yui-content">
+                <div id="installationTab">
+	                    <div class="wikiLinks">
+    
+
+    <ul class="wikiActionMenu">
+        
+            <li>
+                <a href="/edit/installation-295?update=installationTab&editFormName=installationEditForm" onclick="YAHOO.util.Connect.asyncRequest('GET', '/edit/installation-295?'+'update=installationTab&editFormName=installationEditForm', {success: function(o){hideCommentPost();YAHOO.util.Dom.get('installationTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                    <img src="/static/drgakn823IcL4KeSlqigXNEYTBqSs0AKbVKJQH1z1yl.png" border="0" uri="/images/icon-edit.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                    <span>Edit</span>
+                </a>
+            </li>
+        
+        <li>
+            <a href="/info/installation-295?update=installationTab" onclick="YAHOO.util.Connect.asyncRequest('GET', '/info/installation-295?'+'update=installationTab', {success: function(o){YAHOO.util.Dom.get('installationTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                <img src="/static/PnoLmQ9FQkQ1vYUqZ6BJ5yWRWKMaUJOz3Hzx68S9YBq.png" border="0" uri="/images/icon-info.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                <span>View Info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+	                    <div class='installation, wikiPage'></div>
+	                </div>
+
+<div id="descriptionTab">
+	                    <div class="wikiLinks">
+    
+
+    <ul class="wikiActionMenu">
+        
+            <li>
+                <a href="/edit/description-295?update=descriptionTab&editFormName=descriptionEditForm" onclick="YAHOO.util.Connect.asyncRequest('GET', '/edit/description-295?'+'update=descriptionTab&editFormName=descriptionEditForm', {success: function(o){hideCommentPost();YAHOO.util.Dom.get('descriptionTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                    <img src="/static/drgakn823IcL4KeSlqigXNEYTBqSs0AKbVKJQH1z1yl.png" border="0" uri="/images/icon-edit.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                    <span>Edit</span>
+                </a>
+            </li>
+        
+        <li>
+            <a href="/info/description-295?update=descriptionTab" onclick="YAHOO.util.Connect.asyncRequest('GET', '/info/description-295?'+'update=descriptionTab', {success: function(o){YAHOO.util.Dom.get('descriptionTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                <img src="/static/PnoLmQ9FQkQ1vYUqZ6BJ5yWRWKMaUJOz3Hzx68S9YBq.png" border="0" uri="/images/icon-info.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                <span>View Info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+	                    <div class='description, wikiPage'><a name="Introduction"></a><h1>Introduction</h1><p class="paragraph"/>This plugin is designed to make using the ReCaptcha and Mailhide services within Grails easy. In order to use this plugin, you must have a ReCaptcha account, available from <a href="http://recaptcha.net" class="pageLink">http://recaptcha.net</a>.<p class="paragraph"/><a name="Installation"></a><h1>Installation</h1><p class="paragraph"/>This plugin is easily installed from the Grails plugin repository.<p class="paragraph"/>Issue this command to install:
+ <code>grails install-plugin recaptcha</code> .<p class="paragraph"/><a name="Usage - ReCaptcha"></a><h1>Usage - ReCaptcha</h1><p class="paragraph"/>The plugin is simple to use. In order to use it, there are four basic steps:<p class="paragraph"/><a name="Edit the Configuration"></a><h2>Edit the Configuration</h2><p class="paragraph"/>The plugin creates a file called  <code>RecaptchaConfig.groovy</code>  in  <code>grails-app/conf</code>  that has the following content:
+<div class="code"><pre>recaptcha &#123;
+    // These keys are generated by the ReCaptcha service
+     publicKey = <span class="java&#45;quote">""</span>
+     privateKey = <span class="java&#45;quote">""</span><p class="paragraph"/>   // Include the noscript tags in the generated captcha
+     includeNoScript = <span class="java&#45;keyword">true</span>
+&#125;<p class="paragraph"/>mailhide &#123;
+    publicKey = <span class="java&#45;quote">""</span>
+    privateKey = <span class="java&#45;quote">""</span>
+&#125;<p class="paragraph"/>environments &#123;
+  development &#123;
+    recaptcha &#123;
+      // Set to <span class="java&#45;keyword">false</span> to disable the display of captcha
+      enabled = <span class="java&#45;keyword">false</span><p class="paragraph"/>      // Communicate using HTTPS
+      useSecureAPI = <span class="java&#45;keyword">false</span>
+    &#125;
+  &#125;
+  production &#123;
+    recaptcha &#123;
+      // Set to <span class="java&#45;keyword">false</span> to disable the display of captcha
+      enabled = <span class="java&#45;keyword">true</span><p class="paragraph"/>      // Communicate using HTTPS
+      useSecureAPI = <span class="java&#45;keyword">true</span>
+    &#125;
+  &#125;
+&#125;</pre></div>
+The values are pretty self-explanatory, and match with values used by the ReCaptcha service. You must enter your public and private ReCaptcha keys, or errors will be thrown when trying to display a captcha. Note that you can override values within the  <code>environments</code>  closure.<p class="paragraph"/><a name="Use the Tag Library"></a><h2>Use the Tag Library</h2><p class="paragraph"/>The plugin includes four ReCaptcha tags:  <code>&#60;recaptcha:ifEnabled&#62;</code> , <code>&#60;recaptcha:ifDisabled&#62;@, @&#60;recaptcha:recaptcha&#62;</code> , and  <code>&#60;recaptcha:ifFailed&#62;</code> .
+<ul class="star">
+<li>The  <code>&#60;recaptcha:ifEnabled&#62;</code>  tag is a simple utility tag that will render the contents of the tag if the captcha is enabled in  <code>RecaptchaConfig.groovy</code> .</li>
+<li>The  <code>&#60;recaptcha:ifDisabled&#62;</code>  tag is a simple utility tag that will render the contents of the tag if the captcha is disabled in  <code>RecaptchaConfig.groovy</code> .</li>
+<li>The  <code>&#60;recaptcha:recaptcha&#62;</code>  tag is responsible for generating the correct HTML output to display the captcha. It supports four attributes: "theme", "lang", "tabindex", and "custom_theme_widget". These attributes map directly to the values that can be set according to the ReCaptcha API. See the <a href="http://recaptcha.net/apidocs/captcha/client.html" class="pageLink">ReCaptcha Client Guide</a> for more details.</li>
+<li>The  <code>&#60;recaptcha:ifFailed&#62;</code>  tag will render its contents if the previous validation failed. Some ReCaptcha themes, like "clean", do not display error messages and require the developer to show an error message. Use this tag if you're using one of these themes.</li>
+</ul><a name="Verify the Captcha"></a><h2>Verify the Captcha</h2><p class="paragraph"/>In your controller, call  <code>recaptchaService.verifyAnswer(session, request.getRemoteAddr(), params)</code>  to verify the answer provided by the user. This method will return true or false, but will set the  <code>error_message</code>  property on the captcha behind the scenes so that the error message will be properly displayed when the ReCaptcha is redisplayed. Also note that  <code>verifyAnswer</code>  will return  <code>true</code>  if the plugin has been disabled in the configuration - this means you won't have to change your controller.<p class="paragraph"/><a name="Clean up After Yourself"></a><h2>Clean up After Yourself</h2><p class="paragraph"/>Once the captcha has been verified, call  <code>recaptchaService.cleanUp(session)</code> . This is not strictly needed, but it will clean the errors from the session.<p class="paragraph"/><a name="Examples"></a><h2>Examples</h2><p class="paragraph"/>Here's a simple example pulled from an account creation application.<p class="paragraph"/><a name="Tag Usage"></a><h3>Tag Usage</h3><p class="paragraph"/>In  <code>create.gsp</code> , we add the code to show the captcha:
+<div class="code"><pre>&#60;recaptcha:ifEnabled&#62;
+    &#60;recaptcha:recaptcha theme=<span class="java&#45;quote">"blackglass"</span>/&#62;
+&#60;/recaptcha:ifEnabled&#62;</pre></div>
+In this example, we're using ReCaptcha's "blackglass" theme. Leaving out the "theme" attribute will default the captcha to the "red" theme.<p class="paragraph"/>If you are using a theme that does not supply error messages, your code might look like this:
+<div class="code"><pre>&#60;recaptcha:ifEnabled&#62;
+    &#60;recaptcha:recaptcha theme=<span class="java&#45;quote">"clean"</span>/&#62;
+    &#60;recaptcha:ifFailed&#62;CAPTCHA Failed&#60;/recaptcha:ifFailed&#62;
+&#60;/recaptcha:ifEnabled&#62;</pre></div><p class="paragraph"/><a name="Verify User Input"></a><h3>Verify User Input</h3><p class="paragraph"/>Here's an abbreviated controller class that verifies the captcha value when a new user is saved:
+<div class="code"><pre><span class="java&#45;keyword">import</span> com.megatome.grails.RecaptchaService
+class UserController &#123;
+    RecaptchaService recaptchaService<p class="paragraph"/>    def save = &#123;
+        def user = <span class="java&#45;keyword">new</span> User(params)
+        ...other validation&#8230;
+        def recaptchaOK = <span class="java&#45;keyword">true</span>
+        <span class="java&#45;keyword">if</span> (!recaptchaService.verifyAnswer(session, request.getRemoteAddr(), params)) &#123;
+             recaptchaOK = <span class="java&#45;keyword">false</span>
+        &#125;
+        <span class="java&#45;keyword">if</span>(!user.hasErrors() &#38;&#38; recaptchaOK &#38;&#38; user.save()) &#123;
+            recaptchaService.cleanUp(session)
+            ...other account creation acivities&#8230;
+            render(view:'showConfirmation',model:&#91;user:user&#93;)
+        &#125;
+        <span class="java&#45;keyword">else</span> &#123;
+            render(view:'create',model:&#91;user:user&#93;)
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><a name="Sample Using a Custom Theme"></a><h3>Sample Using a Custom Theme</h3><p class="paragraph"/><div class="code"><pre>&#60;g:form action=<span class="java&#45;quote">"validateCustom"</span> method=<span class="java&#45;quote">"post"</span> &#62;
+    &#60;div id=<span class="java&#45;quote">"recaptcha_widget"</span> style=<span class="java&#45;quote">"display:none"</span>&#62;
+        &#60;div id=<span class="java&#45;quote">"recaptcha_image"</span> style=<span class="java&#45;quote">"width:300px;height:57px;"</span>&#62;&#60;/div&#62;
+        &#60;div class=<span class="java&#45;quote">"recaptcha_only_if_incorrect_sol"</span> style=<span class="java&#45;quote">"color:red;"</span>&#62;
+            Incorrect Answer
+        &#60;/div&#62;
+        Enter the words above:
+        &#60;input id=<span class="java&#45;quote">"recaptcha_response_field"</span> name=<span class="java&#45;quote">"recaptcha_response_field"</span> type=<span class="java&#45;quote">"text"</span> autocomplete=<span class="java&#45;quote">"off"</span>/&#62;
+        &#60;div&#62;
+            &#60;a href=<span class="java&#45;quote">"javascript:Recaptcha.reload()"</span>&#62;Get another CAPTCHA&#60;/a&#62;
+        &#60;/div&#62;
+        &#60;div class=<span class="java&#45;quote">"recaptcha_only_if_image"</span>&#62;
+            &#60;a href=<span class="java&#45;quote">"javascript:Recaptcha.switch_type('audio')"</span>&#62;Get an audio CAPTCHA&#60;/a&#62;
+        &#60;/div&#62;
+        &#60;div&#62;
+            &#60;a href=<span class="java&#45;quote">"javascript:Recaptcha.showhelp()"</span>&#62;Help&#60;/a&#62;
+        &#60;/div&#62;
+   &#60;/div&#62;
+   &#60;recaptcha:ifEnabled&#62;
+       &#60;recaptcha:recaptcha theme=<span class="java&#45;quote">"custom"</span> lang=<span class="java&#45;quote">"en"</span> custom_theme_widget=<span class="java&#45;quote">"recaptcha_widget"</span>/&#62;
+   &#60;/recaptcha:ifEnabled&#62;
+   &#60;br/&#62;
+   &#60;g:submitButton name=<span class="java&#45;quote">"submit"</span>/&#62;
+&#60;/g:form&#62;</pre></div><p class="paragraph"/><a name="Testing"></a><h3>Testing</h3><p class="paragraph"/>With version 0.4.5, the plugin should be easier to integrate into test scenarios. You can look at the test cases in the plugin itself, or you can implement something similar to:
+<div class="code"><pre><span class="java&#45;keyword">private</span> void buildAndCheckAnswer(def postText, def expectedValid, def expectedErrorMessage) &#123;
+    def mocker = <span class="java&#45;keyword">new</span> MockFor(Post.class)
+    mocker.demand.getQueryString(4..4) &#123; <span class="java&#45;keyword">new</span> QueryString() &#125;
+    mocker.demand.getText &#123; postText &#125;
+    mocker.use &#123;
+      def response = recaptchaService.checkAnswer(<span class="java&#45;quote">"123.123.123.123"</span>, <span class="java&#45;quote">"abcdefghijklmnop"</span>, <span class="java&#45;quote">"response"</span>)<p class="paragraph"/>      assertTrue response.valid == expectedValid
+      assertEquals expectedErrorMessage, response.errorMessage
+    &#125;
+&#125;</pre></div><p class="paragraph"/>The <code>postText</code> parameter represents the response from the ReCaptcha server. Here are examples of simulating success and failure results:
+<div class="code"><pre><span class="java&#45;keyword">public</span> void testCheckAnswerSuccess() &#123;
+    // ReCaptcha server will <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">true</span> to indicate success
+    buildAndCheckAnswer(<span class="java&#45;quote">"<span class="java&#45;keyword">true</span>"</span>, <span class="java&#45;keyword">true</span>, <span class="java&#45;keyword">null</span>)
+&#125;<p class="paragraph"/><span class="java&#45;keyword">public</span> void testCheckAnswerFailure() &#123;
+    // ReCaptcha server will <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">false</span>, followed by the error message on a <span class="java&#45;keyword">new</span> line <span class="java&#45;keyword">for</span> failure
+    buildAndCheckAnswer("<span class="java&#45;keyword">false</span>&#92;&#92;nError Message<span class="java&#45;quote">", <span class="java&#45;keyword">false</span>, "</span>Error Message")
+&#125;</pre></div><p class="paragraph"/><a name="Usage - Mailhide"></a><h1>Usage - Mailhide</h1><p class="paragraph"/><a name="Edit the Configuration"></a><h2>Edit the Configuration</h2><p class="paragraph"/>The plugin creates a file called  <code>RecaptchaConfig.groovy</code>  in  <code>grails-app/conf</code>  that includes the following content:
+<div class="code"><pre>&#8230; ReCaptcha configuration...<p class="paragraph"/>mailhide &#123;
+    publicKey = <span class="java&#45;quote">""</span>
+    privateKey = <span class="java&#45;quote">""</span>
+&#125;<p class="paragraph"/>...ReCaptcha configuration...</pre></div>
+You must enter your public and private Mailhide keys, or errors will be thrown when trying to display a Mailhide link.<p class="paragraph"/><a name="Use the Tag Library"></a><h2>Use the Tag Library</h2><p class="paragraph"/>The plugin includes two Mailhide tags:  <code>&#60;recaptcha:mailhide&#62;</code> and <code>&#60;recaptcha:mailhideURL&#62;</code> .
+<ul class="star">
+<li>The  <code>&#60;recaptcha:mailhide&#62;</code>  tag creates a Mailhide URL that opens in a new, pop-up window per the Mailhide specification. It supports one attribute: "emailAddress", to specify the email to be hidden. The link will be created around whatever content is in the body of the tag.</li>
+<li>The  <code>&#60;recaptcha:mailhideURL&#62;</code>  tag creates a "raw" URL that can be used however desired. This is useful if the pop-up behavior of the other tag is not wanted. It supports two attributes: "emailAddress" and "var". The "emailAddress" attribute specifies the email to be hidden, while the "var" attribute specifies the name of the variable that the created URL should be available under in the page. The URL variable is only available in the context of the tag body.</li>
+</ul><a name="Examples"></a><h2>Examples</h2><p class="paragraph"/><a name="mailhide tag"></a><h3>mailhide tag</h3>
+<div class="code"><pre>&#60;recaptcha:mailhide emailAddress=<span class="java&#45;quote">"x@example.com"</span>&#62;Some text to wrap in a link&#60;/recaptcha:mailhide&#62;</pre></div><p class="paragraph"/>will create:<p class="paragraph"/><div class="code"><pre>&#60;a href=<span class="java&#45;quote">"http://www.google.com/recaptcha/mailhide/d?k=...publicKey...&#38;c=..encryptedEmail..."</span>
+     onclick=<span class="java&#45;quote">"window.open('http://www.google.com/recaptcha/mailhide/d?k=...publicKey...&#38;c=...encryptedEmail...', '', 
+     'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); <span class="java&#45;keyword">return</span> <span class="java&#45;keyword">false</span>;"</span> 
+     title=<span class="java&#45;quote">"Reveal <span class="java&#45;keyword">this</span> e&#45;mail address"</span>&#62;Some text to wrap in a link&#60;/a&#62;</pre></div><p class="paragraph"/><a name="mailhideURL tag"></a><h3>mailhideURL tag</h3>
+<div class="code"><pre>&#60;recaptcha:mailhideURL emailAddress=<span class="java&#45;quote">"x@example.com"</span> <span class="java&#45;keyword">var</span>=<span class="java&#45;quote">"mu"</span>&#62;
+Created Mailhide URL: $&#123;mu&#125;
+&#60;/recaptcha:mailhideURL&#62;</pre></div><p class="paragraph"/>will create:<p class="paragraph"/><div class="code"><pre>Created Mailhide URL: http://www.google.com/recaptcha/mailhide/d?k=...publicKey...&#38;c=...encryptedEmail...</pre></div><p class="paragraph"/><a name="Misc."></a><h1>Misc.</h1><p class="paragraph"/>
+<a name="CHANGELOG"></a><h3>CHANGELOG</h3>
+<ul class="star">
+<li>0.5.0 Add Mailhide support. Add support for specifying configuration options elsewhere than <code>RecaptchaConfig.groovy</code> via the <code>grails.config.locations</code> method.</li>
+<li>0.4.5 Add code to perform the ReCaptcha functionality - removed recaptcha4j library. Don't add captcha instance to session to avoid serialization issues. Hopefully make it easier to test against.</li>
+<li>0.4 New version number for Grails 1.1. Same functionality as 0.3.2</li>
+<li>0.3.2 Moved code into packages. Tried to make licensing easier to discern. Updated to Grails 1.0.4</li>
+<li>0.3 Added support for environments and new  <code>&#60;recaptcha:ifFailed&#62;</code>  tag. Updated to Grails 1.0.3</li>
+<li>0.2 initial release, developed and tested against Grails 1.0.2</li>
+</ul><a name="KNOWN ISSUES"></a><h3>KNOWN ISSUES</h3>
+<ul class="star">
+<li>If you are testing locally on a Mac, you may need to change  <code>recaptchaService.verifyAnswer(session, request.getRemoteAddr(), params)</code>  to  <code>recaptchaService.verifyAnswer(session, "127.0.0.1", params)</code> . This seems to be an issue with the ReCaptcha service not being able to handle the IPV6 localhost identifier.</li>
+</ul><a name="TODO"></a><h3>TODO</h3>
+<ul class="star">
+<li>Automate session cleanup</li>
+</ul><a name="Suggestions or Comments"></a><h1>Suggestions or Comments</h1><p class="paragraph"/>Feel free to submit questions or comments to the Grails users mailing list.<p class="paragraph"/><a href="http://grails.org/Mailing lists" class="pageLink">http://grails.org/Mailing+lists</a><p class="paragraph"/>Alternatively you can contact me directly - cjohnston at megatome dot com</div>
+	                </div>
+
+<div id="faqTab">
+	                    <div class="wikiLinks">
+    
+
+    <ul class="wikiActionMenu">
+        
+            <li>
+                <a href="/edit/faq-295?update=faqTab&editFormName=faqEditForm" onclick="YAHOO.util.Connect.asyncRequest('GET', '/edit/faq-295?'+'update=faqTab&editFormName=faqEditForm', {success: function(o){hideCommentPost();YAHOO.util.Dom.get('faqTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                    <img src="/static/drgakn823IcL4KeSlqigXNEYTBqSs0AKbVKJQH1z1yl.png" border="0" uri="/images/icon-edit.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                    <span>Edit</span>
+                </a>
+            </li>
+        
+        <li>
+            <a href="/info/faq-295?update=faqTab" onclick="YAHOO.util.Connect.asyncRequest('GET', '/info/faq-295?'+'update=faqTab', {success: function(o){YAHOO.util.Dom.get('faqTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                <img src="/static/PnoLmQ9FQkQ1vYUqZ6BJ5yWRWKMaUJOz3Hzx68S9YBq.png" border="0" uri="/images/icon-info.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                <span>View Info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+	                    <div class='faq, wikiPage'></div>
+	                </div>
+
+<div id="screenshotsTab">
+	                    <div class="wikiLinks">
+    
+
+    <ul class="wikiActionMenu">
+        
+            <li>
+                <a href="/edit/screenshots-295?update=screenshotsTab&editFormName=screenshotsEditForm" onclick="YAHOO.util.Connect.asyncRequest('GET', '/edit/screenshots-295?'+'update=screenshotsTab&editFormName=screenshotsEditForm', {success: function(o){hideCommentPost();YAHOO.util.Dom.get('screenshotsTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                    <img src="/static/drgakn823IcL4KeSlqigXNEYTBqSs0AKbVKJQH1z1yl.png" border="0" uri="/images/icon-edit.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                    <span>Edit</span>
+                </a>
+            </li>
+        
+        <li>
+            <a href="/info/screenshots-295?update=screenshotsTab" onclick="YAHOO.util.Connect.asyncRequest('GET', '/info/screenshots-295?'+'update=screenshotsTab', {success: function(o){YAHOO.util.Dom.get('screenshotsTab').innerHTML = o.responseText;}, failure: function(o){}}, null);return false;" class="actionIcon">
+                <img src="/static/PnoLmQ9FQkQ1vYUqZ6BJ5yWRWKMaUJOz3Hzx68S9YBq.png" border="0" uri="/images/icon-info.png" width="15" height="15" alt="Icon Edit" class="inlineIcon" />
+                <span>View Info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+	                    <div class='screenshots, wikiPage'></div>
+	                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            GRAILSUI.tabView_gui_1d22b688fb0428cfd16d0ea9a79a8f0f = new YAHOO.widget.TabView('tabView_gui_1d22b688fb0428cfd16d0ea9a79a8f0f');
+        </script>
+				
+	</div>
+
+
+                    <div class="pluginBoxBottom"></div>
+                    <div id="previewContainer" class="previewPane" style="display:none;">
+    <div id="closePreview"><a href="#" onclick="hidePreview();"><img src="/static/hDJsm4ken9OT06aDDvH8zaXcH13K42QLdmmqCi3xnVK.png" class="inlineIcon" width="15" height="15" border="0" alt="Icon Cancel" uri="/images/icon-cancel.png" /> Close</a></div>
+    <div id="previewPane" style="margin:10px; "></div>
+</div>
+                </div>	
+            </div>		
+	</div>
+    </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="btmSectionGraphicsWrapper">
+        <div id="mountainLeft"></div>
+        <div id="knight"></div>
+        <div id="mountainRight"></div>
+        <div id="castle"></div>
+    </div>
+
+    <div id="footer">
+    <div align="center">
+        <div class="innerFooter">
+			<a href="http://contegix.com"><img src="/static/kyk1IIgLbhsHB7QxrDRoVw08G2anuhJvcSDQnDAEyu9.jpg" uri="/images/contegix_logo.jpg" alt="Hosted by Contegix" border="0" /></a>
+	
+            <a href="http://twitter.com/grailsframework"><div class="twitter"></div></a>
+            <p>Running Grails 1.3.7 &copy; Copyright 2009-2011 SpringSource.<br/>All Rights Reserved. </p>
+        </div><!-- innerFooter -->
+    </div><!-- center -->
+</div><!-- footer -->
+
+
+    
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-2728886-12");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+    
+    <script src="/static/kgsIy3zs77rg5ek2Ceex5XQXQ0TGxjHLjCr8wTyzmqQ.js" type="text/javascript" ></script>
+
+<script type="text/javascript">
+    var dmp = new diff_match_patch();
+
+    function hideCommentPost() {
+        YAHOO.util.Dom.addClass('postComment', 'hidden');
+    }
+    function showCommentPost() {
+        YAHOO.util.Dom.removeClass('postComment', 'hidden');
+    }
+
+    function showDiff() {
+
+
+        var text1 = myYUI.get("text1").innerHTML
+        var text2 = myYUI.get("text2").innerHTML
+
+        var d = dmp.diff_main(text1, text2);
+        dmp.diff_cleanupSemantic(d);
+        var ds = dmp.diff_prettyHtml(d);
+
+        myYUI.get('diffOutputDiv').innerHTML = ds;
+
+        myYUI.appear('diffOutputDiv')
+    }
+
+    function hidePreview() {
+        myYUI.fade('previewContainer')
+    }
+    function showPreview() {
+        myYUI.appear('previewContainer')
+    }
+
+function fadeMessages() {
+    if(myYUI.get("errors")!=null) {
+        myYUI.fade("errors", 5);
+    }
+    if(myYUI.get("message")!=null) {
+        myYUI.fade("message", 10);
+    }
+}
+
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+	if (classes.length == 1 && classes[0] == "") {
+		classes = ["js"];
+	}
+	else {
+		classes.push("js");
+	}
+    document.body.className = classes.join(" ");
+}
+    </script>
+</body>
+</html>
+
+

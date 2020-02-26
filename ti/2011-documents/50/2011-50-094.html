@@ -1,0 +1,674 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Why do users tag? Detecting user motivation in tagging systems &laquo;  Intentialicious: Markus Strohmaier&#039;s Weblog</title>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/pub/freshy/style.css?m=1292357029g" type="text/css" media="screen" title="Freshy"/>
+<!--[if IE 7]>
+	<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/pub/freshy/ie7.css?m=1286132869g" type="text/css" media="screen" />
+<![endif]-->
+<!--[if lt IE 7]>
+	<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/pub/freshy/ie6.css?m=1286132869g" type="text/css" media="screen" />
+<![endif]-->
+<link rel="pingback" href="http://mstrohm.wordpress.com/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Intentialicious: Markus Strohmaier&#039;s Weblog &raquo; Feed" href="http://mstrohm.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Intentialicious: Markus Strohmaier&#039;s Weblog &raquo; Comments Feed" href="http://mstrohm.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Intentialicious: Markus Strohmaier&#039;s Weblog &raquo; Why do users tag? Detecting user motivation in tagging&nbsp;systems Comments Feed" href="http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1297799136g" type="text/css" />
+<link rel='stylesheet' id='sharedaddy-css'  href='http://s1.wp.com/wp-content/mu-plugins/sharing/sharing.css?m=1287601727g&#038;ver=MU' type='text/css' media='all' />
+<script type='text/javascript' src='http://s2.wp.com/wp-includes/js/l10n.js?m=1295648996g&amp;ver=20101110'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/jquery/jquery.js?m=1290133841g&amp;ver=1.4.4'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/comment-reply.js?m=1286132848g&amp;ver=20090102'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mstrohm.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://mstrohm.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Intentialicious: Markus Strohmaier&#039;s Weblog' href='http://mstrohm.wordpress.com/' />
+<link rel='prev' title='Intent Tag Clouds and 6th Sense&nbsp;Devices' href='http://mstrohm.wordpress.com/2009/02/25/intent-tag-clouds-and-6th-sense-devices/' />
+<link rel='next' title='Annotating Textual Resources on the Web with Human&nbsp;Intentions' href='http://mstrohm.wordpress.com/2009/04/23/annotating-textual-resources-on-the-web/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/' />
+<link rel='shortlink' href='http://wp.me/pbMuw-2v' />
+<link rel="shortcut icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1286132847g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1286132847g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1286132855g" />
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( /i/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( /i/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel='openid.server' href='http://mstrohm.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://mstrohm.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://mstrohm.wordpress.com/osd.xml" title="Intentialicious: Markus Strohmaier&#039;s Weblog" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+	<script type="text/javascript" charset="utf-8">
+		try{
+			var id = location.hash.match( /\#\!\/entry\/(\d+)/ )[1];
+			if ( id ) {
+				window.location = "http://mstrohm.wordpress.com?p=" + id;
+			};
+		}catch( error ){
+		}
+	</script>		
+
+	<style type="text/css">
+	.menu.primary li a {
+		background-image:url("http://s0.wp.com/wp-content/themes/pub/freshy/images/menu/menu_triple.gif?m=1286132868g");
+	}
+	.menu.primary li a.first_menu {
+		background-image:url("http://s0.wp.com/wp-content/themes/pub/freshy/images/menu/menu_start_triple.gif?m=1286132868g");
+	}
+	.menu.primary li a.last_menu {
+		background-image:url("http://s0.wp.com/wp-content/themes/pub/freshy/images/menu/menu_end_triple.gif?m=1286132868g");
+	}
+
+	.description {
+		color:#ADCF20;
+	}
+	#content .commentlist dd.author_comment {
+		background-color:#a3cb00 !important;
+	}
+	html > body #content .commentlist dd.author_comment {
+		background-color:#a3cb00 !important;
+	}
+	#content .commentlist dt.author_comment .date {
+		color:#a3cb00 !important;
+		border-color:#a3cb00 !important;
+	}
+	#content .commentlist .author_comment .author,
+	#content .commentlist .author_comment .author a {
+		color:#a3cb00 !important;
+		border-color:#a3cb00 !important;
+	}
+	#sidebar h2 {
+		color:#f78b0c;
+		background-color:#FFFFFF;
+		border-bottom-color:#f78b0c;
+	}
+	#sidebar {
+		background-color:#FFFFFF;
+	}
+	*::-moz-selection {
+		background-color:#FF3C00;
+	}
+
+	#content a:hover {
+		border-bottom:1px dotted #FF3C00;
+	}
+
+	#sidebar a:hover,
+	#sidebar .current_page_item li a:hover,
+	#sidebar .current-cat li a:hover,
+	#sidebar .current_page_item a,
+	#sidebar .current-cat a ,
+	.readmore,
+	#content .postmetadata a
+	{
+		color : #FF3C00;
+	}
+
+	#title_image {
+		margin:0;
+		text-align:left;
+		display:block;
+		height:95px;
+	}
+
+	</style>
+
+	<style type="text/css">
+	#title_image {
+	background-image:url(http://mstrohm.wordpress.com/wp-content/themes/pub/freshy/images/headers/header_image3.jpg);
+	}
+</style>
+<meta name="application-name" content="Intentialicious: Markus Strohmaier&#039;s Weblog" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="agents, goals &amp; social computation on the web" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://mstrohm.wordpress.com/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" />
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+GS_googleAddAdSenseService("ca-pub-3443918307802676");
+GS_googleEnableAllServices();
+</script>
+<script type='text/javascript'>
+GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post");
+</script>
+<script type='text/javascript'>
+GA_googleFetchAds();
+</script><script type="text/javascript"> 
+	window.google_analytics_uacct = "UA-52447-2"; 
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+<body>
+
+<div id="page">
+	
+	<!-- header -->
+	<div id="header">
+		<div id="title">
+			<h1>
+				<a href="http://mstrohm.wordpress.com/">
+					<span>Intentialicious: Markus Strohmaier&#039;s Weblog</span>
+				</a>
+			</h1>
+			<div class="description">
+				<small>agents, goals &amp; social computation on the web</small>
+			</div>
+		</div>
+		<div id="title_image"></div>
+	</div>
+	
+	<!-- main div -->
+	<div id="frame">
+
+	<!-- main menu -->
+	<ul class="menu page-menu primary">
+	<li class="page_item">
+		<a class="first_menu" href="http://mstrohm.wordpress.com/">
+			Home		</a>
+	</li>
+
+	<li class="page_item"><a href="http://mstrohm.wordpress.com/publications/" title="Publications">Publications</a></li>
+<li class="page_item"><a href="http://mstrohm.wordpress.com/about/" title="About">About</a></li>
+
+	<li class="last_menu">
+		<!-- put an empty link to have the end of the menu anyway -->
+		<a class="last_menu_off"></a>
+	</li>
+</ul>
+	
+	<hr style="display:none"/>
+
+	<div id="content">
+	
+			
+						
+			<div class="post-155 post type-post status-publish format-standard hentry category-uncategorized tag-intent tag-motivation tag-tagging tag-tagging-motivation" id="post-155">
+				
+				<h2><a href="http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/" rel="bookmark" title="Read Why do users tag? Detecting user motivation in tagging&nbsp;systems">Why do users tag? Detecting user motivation in tagging&nbsp;systems</a></h2>
+
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">04</span>
+					<span class="date_year">2009</span>
+				</small>
+					
+				<div class="entry">
+					<p>On the &#8220;social web&#8221; or &#8220;web2.0&#8243;, where user participation is entirely voluntarily, User Motivation has been identified as a key factor in the mechanisms contributing to the success of tagging systems. Web researchers are trying to identify the reasons why tagging systems work for a couple of years now, evident in, for example, the organization of a <a href="http://portal.acm.org/citation.cfm?id=1125451.1125462">panel at CHI 2006</a> and a number of conferences and workshops on this topic.</p>
+<p>Recent research on tagging motivation suggests that it is a rather complex construct. However, there seems to be emerging consensus that a distinction between at least two categories of tagging motivation appears useful: <strong>Categorization vs. </strong><strong>Description</strong>. (<span style="color:#000000;"><em>Update May 30 2009: I was able to trace back the earliest mention of this distinction to a <a href="http://www.plasticbag.org/archives/2005/06/two_cultures_of_fauxonomies_collide/">blog post by Tom Coates from 2005</a></em></span>).</p>
+<p><span style="color:#ff0000;">UPDATE March 15 2010 &#8211; </span><span style="color:#ff0000;">More results can be found</span><span style="color:#ff0000;"> in: </span><em>M. Strohmaier, C. Koerner, R. Kern,  <strong>Why do Users Tag? Detecting Users&#8217; Motivation  for Tagging in Social Tagging Systems</strong>, 4th International  AAAI Conference on Weblogs and Social Media (ICWSM2010), Washington,  DC, USA, May 23-26, 2010. </em>(<a href="http://kmi.tugraz.at/staff/markus/documents/2010_ICWSM2010_Detecting_Tagging_Motivation.pdf">Download pdf</a>)</p>
+<p><span style="color:#ff0000;">UPDATE April 23 2010 &#8211; Even more results in:</span> <em>C. Körner, R. Kern, H.P. Grahsl, M. Strohmaier, <strong>Of Categorizers  and Describers: An Evaluation of Quantitative Measures for Tagging  Motivation</strong>, 21st ACM SIGWEB Conference on Hypertext and  Hypermedia (HT2010), Toronto, Canada, June 13-16, ACM, 2010. (<a href="http://kmi.tugraz.at/staff/markus/documents/2010_HT2010_Categorizers_Describers.pdf">download pdf</a>)</em></p>
+<h4>Categorization vs. Description</h4>
+<p><strong>Categorization</strong>: Users who are motivated by Categorization engage in tagging because they want to construct and maintain a navigational aid to the resources (URLs, photos, etc) being tagged. This typically implies a limited set of tags (or categories) that is rather stable. Resources are assigned to tags whenever they share some common characteristic important to the mental model of the user (e.g. &#8216;family photos&#8217;, &#8216;trip to Vienna&#8217; or &#8216;favorite list of URLs&#8217;). Because the tags assigned are very close to the mental models of users, they can act as suitable facilitators for navigation and <em>browsing</em>.</p>
+<p><strong>Description</strong>: On the other hand, users who are motivated by Description engage in tagging because they want to accurately and precisely describe the resources being tagged. This typically implies an open set of tag, with a rather dynamic and unlimited tag vocabulary. The goal of tagging is to identify those tags that match the resource best. Because the tags assigned are very close to the content of the resources, they can act as suitable facilitators for description and <em>searching</em>.</p>
+<p><strong>Related Research</strong>: This basic distinction can be identified in the work of a number of researchers who have made similar distinctions: Xu et al 2006 (&#8220;Context-based&#8221; vs. &#8220;Content-based&#8221;), Golder and Huberman 2006 (&#8220;Refining Categories&#8221; vs. &#8220;Identifying what it is/is about&#8221;), Marlow et al 2006 (&#8220;Future retrieval&#8221; &#8211; &#8220;Contribution and Sharing&#8221;),  Ames and Naaman 2007 (&#8220;Organization&#8221; vs. &#8220;Communication&#8221;) and Heckner et al 2008 (&#8220;Personal Information Management vs. Sharing&#8221;), just to give a few examples, all represent recent research aiming to demystify and conceptualize the reasons why users participate in tagging systems.</p>
+<h4>Why should we care?</h4>
+<p>&#8220;<em>In the wild</em>&#8220;, user behavior on social tagging systems is often a combination of both. <strong>So why is this distinction interesting? </strong>I believe that this distinction is interesting because it has a number of important implications, including but not limited to:</p>
+<ol>
+<li><em>Tag Recommender Systems</em>: Assuming that a user is a &#8220;Categorizer&#8221;, he will more likely reject tags that are recommended from a larger user population because he is primarily interested in constructing and maintaing &#8220;her&#8221; taxonomy, using &#8220;her&#8221; individual tag vocabulary.</li>
+<li><em>Search</em>: Tags produced by &#8220;Describers&#8221; are more likely to be helpful for search and retrieval because they focus on the content of resources, where tags produced by &#8220;Categorizers&#8221; focus on their mental model. Tags by categorizers thus are more <em>subjective</em>, whereas tags by describers are more <em>objective</em>.</li>
+<li><em>Knowledge Acquisition</em>: Folksonomies, i.e. the conceptual structures that can be inferred from the tripartite graph of tagging systems, are likely to be influenced by the &#8220;mixture&#8221; or dominance of categorizers and describers in their system. A tagging system primarily populated by categorizers is likely to give rise to a completely different set of possible folksonomies than tagging systems primarily populated  by describers. More importantly, it is plausible to assume that even within certain tagging systems, tagging motivation among users vary.</li>
+</ol>
+<p>This brings me to a small research project I am currently working on: Assuming that a) this distinction in user motivation exists in real-world tagging systems and b) it has important implications, it would be interesting to measure and detect the degree to which users are Categorizers or Describers. Due to the latent nature of &#8220;tagging motivation&#8221;, past research has mostly focused on <em>questionnaire or sample-based studies </em>of motivation, asking users how they interpret their tagging behavior themselves. While this early work has provided fundamental insights into tagging motivation and contributed significantly to theory building, as a research community, <strong>we currently lack robust metrics and automatic methods to detect tagging motivation in tagging systems </strong>without direct user interaction.</p>
+<h4>Detecting Tagging Motivation</h4>
+<p>I think there are several approaches to detect whether users are Categorizers or Describers without the need to ask them directly. One approach would focus on analyzing the semantics of tags, using wordnet and other knowledge bases to determine the meaning of tags and infer user motivation. This would require parsing of text and performing linguistic analysis, which I believe is difficult in the presence of typos, named entities, combined tags (&#8220;toread&#8221;) and other issues. Another approach would focus on comparing the tag vocabulary of users to the tag vocabulary of &#8220;the crowd&#8221;. Users that share a greater set of common tag vocabulary might be describers, whereas users having a highly individual vocabulary might be categorizers. Again there are problems: Tagging systems that accomodate users with different language backgrounds might be prone to detecting user motivation based on false premises.</p>
+<p>So what would be a more robust way of detecting user motivation? I am currently interested in developing a model that would be agnostic to language, semantics or social context, focusing solely on statistical properties of individual tagging histories. This way, a determination of user motivation could be made without linguistic analysis or acquiring complete folksonomies from tagging systems, based on a single users&#8217; log of tagging. Let me explain what I mean. I hypothesize that the following statistical properties of users&#8217; tagging history allows to conduct interesting analyses:</p>
+<ol>
+<li><strong>Tag Vocabulary size </strong>over time: Over time, an ideal Categorizer&#8217;s tag vocabulary would reach a plateau, because there is only limited categories that are of interest to him. An ideal Describer is not limited in terms of her tagging vocabulary. This should be easy to observe.</li>
+<li><strong>Tag Entropy </strong>over time: A Categorizer has an incentive to maintain high entropy (or &#8220;information value&#8221;) in his tag cloud. Tags would need to be as discriminative as possible in order for him to use them as a navigational aid, otherwise tags would be of little use in <em>browsing</em>. A describer would not have an interest to maintain high entropy.</li>
+<li><strong>Percentage of Tag Orphans </strong>over time: Categorizers have an interest in a low ratio of Tag Orphans (tags that are only used once) in their set of tags, because lots of orphans would inhibit the usage of their set of tags for browsing. Describers naturally produce lots of orphans when trying to find the most descriptive and complete set of tags for resources.</li>
+<li><strong>Tag Overlap</strong>: While a Describer would be perfectly fine assigning two or more synonymous tags to the same resource (he might not know which term to use when <em>searching </em>for this resource at a later point), a Categorizer would not have an interest in creating two categories that contain the exact same set of resources. This would again inhibit the usage of tags for browsing, a Categorizers&#8217; main motivation for tagging.</li>
+</ol>
+<h4>Preliminary Investigations</h4>
+<p>I have done some preliminary investigations to explore whether these statistical properties of users&#8217; tagging history can actually serve as indicators of tagging motivation. Here are my preliminary results:</p>
+<div id="attachment_168" class="wp-caption aligncenter" style="width: 520px"><a href="http://mstrohm.files.wordpress.com/2009/04/tag-vocabulary1.png"><img class="size-full wp-image-168" src="http://mstrohm.files.wordpress.com/2009/04/tag-vocabulary1.png?w=510&#038;h=208" alt="tag-vocabulary1" width="510" height="208" /></a><p class="wp-caption-text">Growth of tag vocabulary in different tagging systems</p></div>
+<p>The diagram above shows the growth of tag vocabulary of different taggers. The upper most red line represents tagging behavior of an almost &#8220;ideal&#8221; Describer, in this case tags produced by the <a href="http://www.cs.cmu.edu/~biglou/resources/">ESP game</a>, that contain a set of tags that represent valid descriptions of the resources they are assigned to. The lower most green line represents tagging behavior of an almost &#8220;ideal&#8221; Categorizer, tags (in this case: a number of photo sets) produced by a flickr user that categorized photos into a limited set of categories (&gt; 100 sets). All other lines represent tagging behavior of real users on different tagging platforms (bibsonomy, delicious, flickr tags). It is worth noting that all other data lies between the two identified extremes.</p>
+<p>In the following, I will discuss the suitability of tag entropy of <em>single </em>users (as opposed to the work by<span style="color:#000000;"> Chi  and T. Mytkowicz 2008 focusing on large sets of users) as an indicator for detecting tagging motivation:</span></p>
+<p style="text-align:left;">
+<div id="attachment_170" class="wp-caption aligncenter" style="width: 520px"><a href="http://mstrohm.files.wordpress.com/2009/04/tag-entropy.png"><img class="size-full wp-image-170" src="http://mstrohm.files.wordpress.com/2009/04/tag-entropy.png?w=510&#038;h=246" alt="Change of tag entropy over time" width="510" height="246" /></a><p class="wp-caption-text">Change of tag entropy over time</p></div>
+<p style="text-align:left;">In this diagram, we can see that while our &#8220;ideal&#8221; Categorizer and our &#8220;ideal&#8221; Describer almost describe extremes, there are some users &#8220;outdoing&#8221; them (e.g. &#8220;u5 bibsonomy bookmarks&#8221; has even lower entropy than the tags acquired from the &#8220;ideal&#8221; Describer &#8220;ESP game&#8221;). Entropy thus seems to be -to some extent &#8211; a useful indicator for tagging motivation.</p>
+<p style="text-align:left;">Next, I&#8217;ll discuss data comparing the rate of tag orphans in different datasets:</p>
+<p style="text-align:left;">
+<div id="attachment_171" class="wp-caption aligncenter" style="width: 520px"><a title="Why do users tag? Detecting user motivation in tagging systems" href="http://mstrohm.files.wordpress.com/2009/04/tag-orphans.png"><img class="size-full wp-image-171" src="http://mstrohm.files.wordpress.com/2009/04/tag-orphans.png?w=510&#038;h=236" alt="Rate of Tag Orphans over time" width="510" height="236" /></a><p class="wp-caption-text">Rate of Tag Orphans over time</p></div>
+<p>Like in the previous diagram, extreme behavior represents a good (but not optimal) upper and lower bound for real tagging behavior. While the &#8220;ideal&#8221; Categorizer (flickr sets, green line at the bottom) has a very small number of tag orphans, the &#8220;ideal&#8221; Describer (ESP game data, red line at the top) has a much higher tag orphan rate.</p>
+<p style="text-align:left;">If we can identify the functions of extreme user motivation &#8220;(ideal&#8221; Categorizers and Describers), and position real user motivation between those extremes, we might be able to come up with scores indicative of user motivation in tagging systems &#8211; e.g. a user might be 80% Categorizer, and 20% Describer. Having such a model could help exploring the implications of different user motivations outlined above. Together with students (<em>in particular <a href="http://mstrohm.wordpress.com/2009/07/04/acm-hypertext09-student-competition/">Christian Körner</a>, Hans-Peter Grahsl and Roman Kern</em>), I am working on constructing and validating such a model, which we are aiming to submit to a conference this year.</p>
+<p style="text-align:left;"><span style="color:#ff0000;">UPDATE  March 15 2010: More results can be found in the following publication: </span><em>M. Strohmaier, C.  Koerner, R. Kern,  <strong>Why do Users Tag? Detecting  Users&#8217; Motivation  for Tagging in Social Tagging Systems</strong>, 4th  International  AAAI Conference on Weblogs and Social Media (ICWSM2010),  Washington,  DC, USA, May 23-26, 2010. </em>(<a href="http://kmi.tugraz.at/staff/markus/documents/2010_ICWSM2010_Detecting_Tagging_Motivation.pdf">Download pdf</a>)</p>
+<p><span style="color:#ff0000;">UPDATE  April 23 2010 &#8211; Even more results in: </span><em>C. Körner, R. Kern,  H.P. Grahsl, M. Strohmaier, <strong>Of Categorizers  and Describers: An  Evaluation of Quantitative Measures for Tagging  Motivation</strong>,  21st ACM SIGWEB Conference on Hypertext and  Hypermedia (HT2010),  Toronto, Canada, June 13-16, ACM, 2010. (<a href="http://kmi.tugraz.at/staff/markus/documents/2010_HT2010_Categorizers_Describers.pdf">download  pdf</a>)</em></p>
+<p style="text-align:left;"><em>References:</em></p>
+<p class="entry"><span class="entry_author">Z. Xu and Y. Fu and J. Mao and D. Su. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/29a9a66df007b4b59213537ab18404170/mstrohm">Towards the Semantic Web: Collaborative Tag Suggestions</a>. </span><span class="entry_booktitle">Proceedings of the Collaborative Web Tagging Workshop at the WWW 2006, </span><span class="entry_address">Edinburgh, Scotland, </span><span class="entry_year">2006. </span><a href="http://.inf.unisi.ch/phd/mesnage/site/Readings/Readings.html"></a></p>
+<p class="entry"><span class="entry_author">Kerstin Bischoff and Claudiu S. Firan and Wolfgang Nejdl and Raluca Paiu. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/2c55cedf781cb624e2a3513df9a61fbb0/mstrohm">Can all tags be used for search?</a>. </span><span class="entry_booktitle">CIKM &#8217;08: Proceeding of the 17th ACM conference on Information and knowledge management, </span><span class="entry_vonupa">193&#8211;202, </span><span class="entry_publisher">ACM, </span><span class="entry_address">New York, NY, USA, </span><span class="entry_year">2008. </span></p>
+<p class="entry"><span class="entry_author">C. Marlow and M. Naaman and D. Boyd and M. Davis. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/2ce7283705da861ca3f66f51ca58f7128/mstrohm">HT06, tagging paper, taxonomy, Flickr, academic article, to read</a>. </span><span class="entry_booktitle">HYPERTEXT &#8217;06: Proceedings of the seventeenth conference on Hypertext and hypermedia, </span><span class="entry_vonupa">31&#8211;40, </span><span class="entry_publisher">ACM, </span><span class="entry_address">New York, NY, USA, </span><span class="entry_year">2006. </span></p>
+<p class="entry"><span class="entry_author">S.A. Golder and B.A. Huberman. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/2281943ad0a7c81ad975f0a4c7de43447/mstrohm">Usage patterns of collaborative tagging systems</a>. </span><span class="entry_journal">Journal of Information Science, </span><span class="entry_vonupa">(32)2:198, </span><span class="entry_year">2006.</span></p>
+<p class="entry"><span class="entry_author">Cameron Marlow and Mor Naaman and Danah Boyd and Marc Davis. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/2c522d6982d34510925f7abbccfb29e14/sirakov">HT06, tagging paper, taxonomy, Flickr, academic article, to read</a>. </span><span class="entry_booktitle">HYPERTEXT &#8217;06: Proceedings of the seventeenth conference on Hypertext and hypermedia, </span><span class="entry_vonupa">31&#8211;40, </span><span class="entry_publisher">ACM, </span><span class="entry_address">New York, NY, USA, </span><span class="entry_year">2006. </span><a href="http://www.bibsonomy.org/publ/%5Curl%7Bhttp://www.danah.org/papers/Hypertext2006.pdf%7D"></a></p>
+<p class="entry"><span class="entry_author">M. Heckner and M. Heilemann and C. Wolff. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/285b4f1232dffda4292d09ac2494b0c3a/mstrohm">Personal Information Management vs. Resource Sharing: Towards a Model of Information Behaviour in Social Tagging Systems</a>. </span><span class="entry_booktitle">Int&#8217;l AAAI Conference on Weblogs and Social Media (ICWSM), </span><span class="entry_address">San Jose, CA, USA, </span><span class="entry_year">2009. </span></p>
+<p class="entry"><span class="entry_author">M. Ames and M. Naaman. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/2086a9710865aefdb864e60fa7cf0a16d/mstrohm">Why we tag: motivations for annotation in mobile and online media</a>. </span><span class="entry_booktitle">CHI &#8217;07: Proceedings of the SIGCHI conference on Human factors in computing systems, </span><span class="entry_vonupa">971&#8211;980, </span><span class="entry_publisher">ACM, </span><span class="entry_address">New York, NY, USA, </span><span class="entry_year">2007. </span></p>
+<p class="entry"><span class="entry_author">E.H. Chi and T. Mytkowicz. </span><span class="entry_title"><a href="http://www.bibsonomy.org/bibtex/2ba382bdb07fed1b97dcd3dc0d13a60cc/mstrohm">Understanding the efficiency of social tagging systems using information theory</a>. </span><span class="entry_booktitle">Proceedings of the nineteenth ACM conference on Hypertext and hypermedia, </span><span class="entry_vonupa">81&#8211;88, </span><span class="entry_year">2008. </span></p>
+<p class="entry"><img class="alignnone size-full wp-image-206" title="Why do users tag? Detecting user motivation in tagging systems" src="http://mstrohm.files.wordpress.com/2009/04/1x1.png?w=1&#038;h=1" alt="Why do users tag? Detecting user motivation in tagging systems" width="1" height="1" /></p>
+<div class="snap_nopreview sharing robots-nocontent">
+<ul>
+<li class="sharing_label">Share this:</li>
+<li class="share-twitter share-regular">
+<div class="twitter_button"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fwp.me%2FpbMuw-2v&#038;counturl=http%3A%2F%2Fmstrohm.wordpress.com%2F2009%2F04%2F05%2Fwhy-do-users-tag-detecting-user-motivation-in-tagging-systems%2F&#038;count=horizontal&#038;text=Why%20do%20users%20tag%3F%20Detecting%20user%20motivation%20in%20tagging%20systems: " style="width:97px; height:20px;"></iframe></div>
+</li>
+<li class="share-end"></li>
+</ul>
+<div class="sharing-clear"></div>
+</div>
+
+<!-- wpcom_below_post -->
+<div align="center" style="margin-bottom: 10px;">
+<script type="text/javascript">
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("theme_bg", "ffffff"); GA_googleAddAttr("theme_border", "ffffff"); GA_googleAddAttr("theme_text", "000000"); GA_googleAddAttr("theme_link", "515151"); GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Autotag", "technology"); GA_googleAddAttr("Tag", "intent"); GA_googleAddAttr("Tag", "motivation"); GA_googleAddAttr("Tag", "tagging"); GA_googleAddAttr("Tag", "tagging-motivation"); 
+GA_googleFillSlot("wpcom_below_post");
+</script>
+</div>				</div>
+				
+								
+			</div>
+			
+			<p class="navigation">
+				<span class="alignleft">&laquo; <a href="http://mstrohm.wordpress.com/2009/02/25/intent-tag-clouds-and-6th-sense-devices/" rel="prev">Intent Tag Clouds and 6th Sense&nbsp;Devices</a></span>
+				<span class="alignright"><a href="http://mstrohm.wordpress.com/2009/04/23/annotating-textual-resources-on-the-web/" rel="next">Annotating Textual Resources on the Web with Human&nbsp;Intentions</a> &raquo;</span>
+			</p>
+			<br/>
+			<h3>Actions</h3>
+			<ul class="postmetadata">
+					<li class="with_icon"><img class="icon" src="http://s0.wp.com/wp-content/themes/pub/freshy/images/icons/feed-icon-16x16.gif?m=1286132869g" alt="rss" />&nbsp;<a href='http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/feed/'>Comments RSS</a></li>
+							<li class="with_icon"><img class="icon" src="http://s0.wp.com/wp-content/themes/pub/freshy/images/icons/trackback-icon-16x16.gif?m=1286132869g" alt="trackback" />&nbsp;<a href="http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/trackback/ " rel="trackback" title="make a trackback">Trackback</a></li>
+							</ul>
+				
+			<h3>Information</h3>
+			<ul class="postmetadata">
+					<!--<li>Author : Markus Strohmaier</li>-->
+					<li>Date : April 5, 2009</li>
+									<li>Tags: <a href="http://en.wordpress.com/tag/intent/" rel="tag">intent</a>, <a href="http://en.wordpress.com/tag/motivation/" rel="tag">motivation</a>, <a href="http://en.wordpress.com/tag/tagging/" rel="tag">tagging</a>, <a href="http://en.wordpress.com/tag/tagging-motivation/" rel="tag">tagging motivation</a></li>
+					<li>Categories : <a href="http://mstrohm.wordpress.com/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></li>
+							</ul>
+				
+			<div id="wpl-likebox"><div id="wpl-button"><a href='http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/?like=1&amp;_wpnonce=235fbcd591' title='I like this post' class='like needs-login' rel='nofollow'><span>Like</span></a></div><div id="wpl-count">Be the first to like this post.</div></div>	<h3 id="comments">3 responses</h3>
+
+	<dl class="commentlist">
+	
+	<dt class=" none">
+		<small class="date">
+			<span class="date_day">1</span>
+			<span class="date_month">06</span>
+			<span class="date_year">2009</span>
+		</small>
+	</dt>
+
+	<dd class="pingback even thread-even depth-1 commentlist_item" id="comment-91">			
+
+		<div class="comment" id="div-comment-91">
+			<strong class="comment-author vcard author" style="height:32px;line-height:32px;">
+						
+			<span class="fn"><a href='http://mstrohm.wordpress.com/2009/06/01/study-on-why-users-tag/' rel='external nofollow' class='url'>Study on &#8220;Why users tag&#8221; &laquo; Intentialicious</a></span></strong> <span class="comment-meta commentmetadata"><small>(14:39:42)</small> : </span>
+						
+			<br style="display:none;"/>
+		
+			<div class="comment_text">				
+			<p>[...] background on this research can be found in a previous post. Your help would be greatly [...]</p>
+			</div>
+			<div class="reply">
+				<a class='comment-reply-link' href='/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/?replytocom=91#respond' onclick='return addComment.moveForm("div-comment-91", "91", "respond", "155")'>Reply</a>			</div>
+		</div>
+	</dd>
+
+	<dt class=" none">
+		<small class="date">
+			<span class="date_day">21</span>
+			<span class="date_month">07</span>
+			<span class="date_year">2009</span>
+		</small>
+	</dt>
+
+	<dd class="pingback odd alt thread-odd thread-alt depth-1 commentlist_item" id="comment-142">			
+
+		<div class="comment" id="div-comment-142">
+			<strong class="comment-author vcard author" style="height:32px;line-height:32px;">
+						
+			<span class="fn"><a href='http://mstrohm.wordpress.com/2009/07/21/motivations-for-tagging-categorization-vs-description/' rel='external nofollow' class='url'>Motivations for Tagging: Categorization vs. Description &laquo; Intentialicious</a></span></strong> <span class="comment-meta commentmetadata"><small>(17:17:39)</small> : </span>
+						
+			<br style="display:none;"/>
+		
+			<div class="comment_text">				
+			<p>[...] Motivations for Tagging: Categorization vs.&nbsp;Description  21 07 2009   In a past post, I talked about the role of tagging motivation in social tagging systems, and a distinctio&#8230;. [...]</p>
+			</div>
+			<div class="reply">
+				<a class='comment-reply-link' href='/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/?replytocom=142#respond' onclick='return addComment.moveForm("div-comment-142", "142", "respond", "155")'>Reply</a>			</div>
+		</div>
+	</dd>
+
+	<dt class=" none">
+		<small class="date">
+			<span class="date_day">16</span>
+			<span class="date_month">02</span>
+			<span class="date_year">2010</span>
+		</small>
+	</dt>
+
+	<dd class="pingback even thread-even depth-1 commentlist_item" id="comment-199">			
+
+		<div class="comment" id="div-comment-199">
+			<strong class="comment-author vcard author" style="height:32px;line-height:32px;">
+						
+			<span class="fn"><a href='http://franzwirl.at/wordpress/?p=76' rel='external nofollow' class='url'>Warum wird Annotiert? &laquo; Research Items</a></span></strong> <span class="comment-meta commentmetadata"><small>(11:50:10)</small> : </span>
+						
+			<br style="display:none;"/>
+		
+			<div class="comment_text">				
+			<p>[...] <a href="http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-system.." rel="nofollow">http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-system..</a>. [...]</p>
+			</div>
+			<div class="reply">
+				<a class='comment-reply-link' href='/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/?replytocom=199#respond' onclick='return addComment.moveForm("div-comment-199", "199", "respond", "155")'>Reply</a>			</div>
+		</div>
+	</dd>
+	</dl>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://mstrohm.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;pre&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='155' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						
+<input type="hidden" name="genseq" value="1301851486" />
+<p><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe">Notify me of follow-up comments via email.</label></p><p><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Send me site updates</label></p><input type="hidden" name="sub-type" value="comment-form-text3" /><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a1e2da9fc3" /></p>					</form>
+							</div><!-- #respond -->
+												
+			
+	<!-- nothing found -->
+			
+	</div>
+	
+	<hr style="display:none"/>
+	
+	<!-- sidebar -->
+		
+	<div id="sidebar">
+		<div>
+		<div id="text-401242141" class="widget widget_text"><h2 class="title">About me</h2>			<div class="textwidget"><img class="alignleft size-full wp-image-189" title="me-gc-48-48" src="http://mstrohm.files.wordpress.com/2008/02/me-gc-48-48.jpg" alt="me-gc-48-48" width="51" height="48" />
+<p>Markus Strohmaier, Assistant Professor at Graz University of Technology</p>
+
+My research focuses on the World Wide Web, my interests include social computation, agents, online production systems and crowdsourcing.<br><br>
+
+
+<img class="alignleft size-full wp-image-189" title="me-gc-48-48" src="http://mstrohm.files.wordpress.com/2010/01/twitter-button.png" alt="twitter" width="25" height="25" />
+I'm <a href="http://www.twitter.com/mstrohm">@mstrohm</a> on Twitter.<br><br>
+</div>
+		</div><div id="text-402469822" class="widget widget_text"><h2 class="title">Flattr my blog</h2>			<div class="textwidget"><a href="http://flattr.com/thing/51346/Markus-Strohmaiers-blog-on-agents-goals-and-social-media" target="_blank">
+<img src="http://api.flattr.com/button/button-static-50x60.png" alt="Flattr this" title="Flattr this" border="0" /></a><br><br>
+<a title="wordpress hit counter" href="http://www.statcounter.com/wordpress.org/" target="_blank"><img src="http://c.statcounter.com/4648100/0/0fb18230/1/" alt="wordpress hit counter" border="0"></a></div>
+		</div><div id="search-2" class="widget widget_search"><form method="get" id="searchform" action="http://mstrohm.wordpress.com/">
+<p>
+<input size="12" type="text" value="" name="s" id="s" /><input class="btn" type="submit" id="searchsubmit" value="Search" />
+</p>
+</form>
+</div>		<div id="top-posts" class="widget widget_stats_topposts">			<h2 class="title">Top Posts (last 48 hours)</h2>			<ul><li><a href='http://mstrohm.wordpress.com/2009/07/22/list-of-available-social-tagging-datasets/'>List of Social Tagging Datasets</a></li><li><a href='http://mstrohm.wordpress.com/2010/02/12/www2010-stop-thinking-start-tagging-tag-semantics-emerge-from-collaborative-verbosity/'>WWW'2010 - Stop Thinking, Start Tagging: Tag Semantics Emerge From Collaborative Verbosity</a></li></ul>		</div><div id="twitter-2" class="widget widget_twitter"><h2 class="title"><a href='http://twitter.com/mstrohm'>Recent Tweets</a></h2><ul class='tweets'>
+<li><a href='http://twitter.com/search?q=%23www2011'>#www2011</a> slides for my talk on &quot;Pragmatic evaluation of folksonomies&quot;: <a href="http://slidesha.re/fRikLG" rel="nofollow">http://slidesha.re/fRikLG</a> paper: <a href="http://bit.ly/f97aEO" rel="nofollow">http://bit.ly/f97aEO</a> (pdf) <a href="http://twitter.com/mstrohm/statuses/53775139317366784" class="timesince">2&nbsp;days&nbsp;ago</a></li>
+<li>Papadimitriou: &quot;Today the inputs to your algorithm are selfish agents keenly interested in your algorithm&#039;s output&quot; <a href='http://twitter.com/search?q=%23www2011'>#www2011</a> <a href="http://twitter.com/mstrohm/statuses/53666107113996289" class="timesince">2&nbsp;days&nbsp;ago</a></li>
+<li>Papadimitriou: &quot;The first computational artifact that was never designed, and hence must be approached by the scientific method&quot; <a href='http://twitter.com/search?q=%23www2011'>#www2011</a> <a href="http://twitter.com/mstrohm/statuses/53662038362308608" class="timesince">2&nbsp;days&nbsp;ago</a></li>
+<li>@<a href='http://twitter.com/eastgate'>eastgate</a> I do not know whether tbl&#039;s keynote was transcribed. www paper proceedings are available online though on the website. <a href="http://twitter.com/mstrohm/statuses/53437894571999232" class="timesince">3&nbsp;days&nbsp;ago</a></li>
+<li>RT @<a href='http://twitter.com/marc_smith'>marc_smith</a>: <a href='http://twitter.com/search?q=%23NodeXL'>#NodeXL</a> <a href='http://twitter.com/search?q=%23WWW2011'>#WWW2011</a> connection map <a href="http://t.co/iYpJH7U" rel="nofollow">http://t.co/iYpJH7U</a> Top: @<a href='http://twitter.com/timberners_lee'>timberners_lee</a>, @<a href='http://twitter.com/googleresearch'>googleresearch</a>, @<a href='http://twitter.com/www2011india'>www2011india</a>, @<a href='http://twitter.com/w3cbrasil'>w3cbrasil</a>, @<a href='http://twitter.com/phelo'>phelo</a> <a href="http://twitter.com/mstrohm/statuses/53332248002437120" class="timesince">3&nbsp;days&nbsp;ago</a></li>
+</ul>
+</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="title">Recent Posts</h2>		<ul>
+				<li><a href="http://mstrohm.wordpress.com/2011/02/22/what-is-the-size-of-a-library-of-twitter/" title="What is the size of the Library of&nbsp;Twitter?">What is the size of the Library of&nbsp;Twitter?</a></li>
+				<li><a href="http://mstrohm.wordpress.com/2010/12/29/programming-poems-with-mechanical-turk/" title="Programming Poems with Mechanical&nbsp;Turk">Programming Poems with Mechanical&nbsp;Turk</a></li>
+				<li><a href="http://mstrohm.wordpress.com/2010/10/11/playing-buzzword-bingo-on-twitter/" title="A game-with-a-purpose based on&nbsp;Twitter">A game-with-a-purpose based on&nbsp;Twitter</a></li>
+				<li><a href="http://mstrohm.wordpress.com/2010/08/16/are-tag-clouds-useful-for-navigating-social-media/" title="Are Tag Clouds Useful for Navigating Social&nbsp;Media?">Are Tag Clouds Useful for Navigating Social&nbsp;Media?</a></li>
+				<li><a href="http://mstrohm.wordpress.com/2010/04/17/on-taxonomies-folksonomies-and-tweetonomies/" title="On taxonomies, folksonomies, and&nbsp;tweetonomies">On taxonomies, folksonomies, and&nbsp;tweetonomies</a></li>
+				</ul>
+		</div><div id="wp_tag_cloud" class="widget wp_widget_tag_cloud"><h2 class="title">Tag Cloud</h2><div style="overflow:hidden"><a href='http://mstrohm.wordpress.com/tag/ai/' class='tag-link-14067' title='1 topic' style='font-size: 8pt;'>AI</a>
+<a href='http://mstrohm.wordpress.com/tag/book/' class='tag-link-2364' title='1 topic' style='font-size: 8pt;'>book</a>
+<a href='http://mstrohm.wordpress.com/tag/california/' class='tag-link-1337' title='1 topic' style='font-size: 8pt;'>california</a>
+<a href='http://mstrohm.wordpress.com/tag/call-for-papers/' class='tag-link-44185' title='2 topics' style='font-size: 13.25pt;'>Call for Papers</a>
+<a href='http://mstrohm.wordpress.com/tag/categorization/' class='tag-link-132891' title='1 topic' style='font-size: 8pt;'>categorization</a>
+<a href='http://mstrohm.wordpress.com/tag/categorizer/' class='tag-link-18048972' title='1 topic' style='font-size: 8pt;'>categorizer</a>
+<a href='http://mstrohm.wordpress.com/tag/cfp/' class='tag-link-34879' title='2 topics' style='font-size: 13.25pt;'>CfP</a>
+<a href='http://mstrohm.wordpress.com/tag/cikm08/' class='tag-link-13000238' title='1 topic' style='font-size: 8pt;'>CIKM08</a>
+<a href='http://mstrohm.wordpress.com/tag/cikm2008/' class='tag-link-13000239' title='1 topic' style='font-size: 8pt;'>CIKM2008</a>
+<a href='http://mstrohm.wordpress.com/tag/conference/' class='tag-link-33525' title='2 topics' style='font-size: 13.25pt;'>conference</a>
+<a href='http://mstrohm.wordpress.com/tag/data-mining/' class='tag-link-867' title='1 topic' style='font-size: 8pt;'>data mining</a>
+<a href='http://mstrohm.wordpress.com/tag/delicious/' class='tag-link-493' title='1 topic' style='font-size: 8pt;'>delicious</a>
+<a href='http://mstrohm.wordpress.com/tag/describer/' class='tag-link-17977410' title='1 topic' style='font-size: 8pt;'>describer</a>
+<a href='http://mstrohm.wordpress.com/tag/description/' class='tag-link-50206' title='1 topic' style='font-size: 8pt;'>description</a>
+<a href='http://mstrohm.wordpress.com/tag/earthquake/' class='tag-link-43760' title='1 topic' style='font-size: 8pt;'>earthquake</a>
+<a href='http://mstrohm.wordpress.com/tag/earthquakes/' class='tag-link-10371' title='1 topic' style='font-size: 8pt;'>earthquakes</a>
+<a href='http://mstrohm.wordpress.com/tag/emergent-semantics/' class='tag-link-27198873' title='1 topic' style='font-size: 8pt;'>emergent semantics</a>
+<a href='http://mstrohm.wordpress.com/tag/events/' class='tag-link-924' title='2 topics' style='font-size: 13.25pt;'>events</a>
+<a href='http://mstrohm.wordpress.com/tag/folksonomies/' class='tag-link-5383' title='1 topic' style='font-size: 8pt;'>folksonomies</a>
+<a href='http://mstrohm.wordpress.com/tag/goals/' class='tag-link-11870' title='2 topics' style='font-size: 13.25pt;'>goals</a>
+<a href='http://mstrohm.wordpress.com/tag/haiti/' class='tag-link-51094' title='1 topic' style='font-size: 8pt;'>haiti</a>
+<a href='http://mstrohm.wordpress.com/tag/housing-crisis/' class='tag-link-317345' title='1 topic' style='font-size: 8pt;'>housing crisis</a>
+<a href='http://mstrohm.wordpress.com/tag/ht09/' class='tag-link-19226555' title='2 topics' style='font-size: 13.25pt;'>ht09</a>
+<a href='http://mstrohm.wordpress.com/tag/hypertext2009/' class='tag-link-22279950' title='2 topics' style='font-size: 13.25pt;'>hypertext2009</a>
+<a href='http://mstrohm.wordpress.com/tag/information-foraging/' class='tag-link-753876' title='1 topic' style='font-size: 8pt;'>information foraging</a>
+<a href='http://mstrohm.wordpress.com/tag/intent/' class='tag-link-573569' title='5 topics' style='font-size: 22pt;'>intent</a>
+<a href='http://mstrohm.wordpress.com/tag/keynote/' class='tag-link-157183' title='2 topics' style='font-size: 13.25pt;'>keynote</a>
+<a href='http://mstrohm.wordpress.com/tag/knowledge-management/' class='tag-link-36118' title='1 topic' style='font-size: 8pt;'>knowledge management</a>
+<a href='http://mstrohm.wordpress.com/tag/motivation/' class='tag-link-2885' title='3 topics' style='font-size: 16.75pt;'>motivation</a>
+<a href='http://mstrohm.wordpress.com/tag/purpose-tagging/' class='tag-link-10963464' title='1 topic' style='font-size: 8pt;'>purpose tagging</a>
+<a href='http://mstrohm.wordpress.com/tag/search/' class='tag-link-2373' title='4 topics' style='font-size: 19.666666666667pt;'>search</a>
+<a href='http://mstrohm.wordpress.com/tag/search-intentions/' class='tag-link-13000242' title='1 topic' style='font-size: 8pt;'>search intentions</a>
+<a href='http://mstrohm.wordpress.com/tag/social/' class='tag-link-3457' title='1 topic' style='font-size: 8pt;'>social</a>
+<a href='http://mstrohm.wordpress.com/tag/social-media/' class='tag-link-49818' title='4 topics' style='font-size: 19.666666666667pt;'>social media</a>
+<a href='http://mstrohm.wordpress.com/tag/ssm08/' class='tag-link-13000240' title='1 topic' style='font-size: 8pt;'>SSM08</a>
+<a href='http://mstrohm.wordpress.com/tag/ssm2008/' class='tag-link-13000241' title='1 topic' style='font-size: 8pt;'>SSM2008</a>
+<a href='http://mstrohm.wordpress.com/tag/tagging/' class='tag-link-1503' title='5 topics' style='font-size: 22pt;'>tagging</a>
+<a href='http://mstrohm.wordpress.com/tag/tagging-motivation/' class='tag-link-18786034' title='2 topics' style='font-size: 13.25pt;'>tagging motivation</a>
+<a href='http://mstrohm.wordpress.com/tag/tagging-pragmatics/' class='tag-link-31440514' title='1 topic' style='font-size: 8pt;'>tagging pragmatics</a>
+<a href='http://mstrohm.wordpress.com/tag/tag-semantics/' class='tag-link-31440513' title='1 topic' style='font-size: 8pt;'>tag semantics</a>
+<a href='http://mstrohm.wordpress.com/tag/tweets/' class='tag-link-181707' title='2 topics' style='font-size: 13.25pt;'>tweets</a>
+<a href='http://mstrohm.wordpress.com/tag/twitter/' class='tag-link-599182' title='5 topics' style='font-size: 22pt;'>twitter</a>
+<a href='http://mstrohm.wordpress.com/tag/user/' class='tag-link-6951' title='1 topic' style='font-size: 8pt;'>user</a>
+<a href='http://mstrohm.wordpress.com/tag/web-science/' class='tag-link-475307' title='1 topic' style='font-size: 8pt;'>web-science</a>
+<a href='http://mstrohm.wordpress.com/tag/www2010/' class='tag-link-19852617' title='2 topics' style='font-size: 13.25pt;'>www2010</a></div></div><div id="rss-342788251" class="widget widget_rss"><h2 class="title"><a class='rsswidget' href='http://www.bibsonomy.org/rss/concept/user/mstrohm/EVENTS' title='Syndicate this content'><img style='background:orange;color:white;border:none;' width='14' height='14' src='http://s.wordpress.com/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://www.bibsonomy.org/rss/concept/user/mstrohm/EVENTS' title='BibSonomy RSS Feed for /concept/user/mstrohm/EVENTS'>Interesting Events</a></h2><ul><li><a class='rsswidget' href='http://vlds2011.search-computing.net/' title=''>First International Workshop on Searching and Integrating New Web Data Sources | Very Large Data Search 2011</a></li><li><a class='rsswidget' href='http://sonic.northwestern.edu/events/webnetsciworkshop/conference-schedule/' title='Net/Web-Science'>Schedule - SONIC Advancing the Science of Networks in Communities</a></li><li><a class='rsswidget' href='http://www.dai-labor.de/carr2011/' title='IUI2011 Workshop on Context-awareness in Retrieval and Recommendation Subm. Deadline Nov 11'>CaRR2011</a></li><li><a class='rsswidget' href='http://morrislab.med.utoronto.ca/~anna/networksnips2010/CFP.html' title='in conjunction with the 24th Annual Conference on Neural Information Processing Systems (NIPS 2010)'>Workshop on &quot;Networks Across Disciplines in Theory and Applications &quot;</a></li><li><a class='rsswidget' href='http://snap.stanford.edu/soma2010/program.html' title='Workshop on Social Media Analytics @ KDD'>SOMA 2010 - Workshop Program</a></li><li><a class='rsswidget' href='http://futurezone.orf.at/stories/1645573/' title=''>Wie verknüpfte Tags der Web-Welt nützen - futurezone.ORF.at</a></li><li><a class='rsswidget' href='http://csk.media.mit.edu/' title=''>Commonsense Knowledge AAAI Fall 2010 Symposium</a></li><li><a class='rsswidget' href='http://aksw.org/WebScienceWorkshop' title=''>AKSW : Web Science Workshop</a></li><li><a class='rsswidget' href='http://phdchallenge.org/call-for-participation' title=''>PhD Challenge » Call for Participation</a></li><li><a class='rsswidget' href='http://matt-welsh.blogspot.com/2010/03/psychology-of-program-committees.html' title=''>The Psychology of Program Committees</a></li></ul></div><div id="rss-342788252" class="widget widget_rss"><h2 class="title"><a class='rsswidget' href='http://www.bibsonomy.org/publrss/user/mstrohm' title='Syndicate this content'><img style='background:orange;color:white;border:none;' width='14' height='14' src='http://s.wordpress.com/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://www.bibsonomy.org/publrss/user/mstrohm' title='BibSonomy RSS feed for /user/mstrohm'>Interesting Articles</a></h2><ul><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/23efa9d8a561ae479d3847284f825a38a/mstrohm' title=''>Pragmatic Evaluation of Folksonomies</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2b50f5711fa3788d7f2f712db1c544144/mstrohm' title=''>Engineering social order</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2ec87a6c378bab5c07f9378456ad49c32/mstrohm' title=''>As We May Think</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2e5e21b26153f8edb79b2fd996ab9fca9/mstrohm' title=''>The Spread of Behavior in an Online Social Network Experiment</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2e2bfc2db7b8d1a2898ddb293a78a880d/mstrohm' title=''>A survey of ontology evaluation techniques</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2c7903397a9cd1510b5dd1ed3b13859c5/mstrohm' title='[0709.0303] Navigability of Complex Networks'>Navigability of Complex Networks</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/29b041bdba459fdc749a0b13de3d343d3/mstrohm' title=''>Networks, Crowds, and Markets: Reasoning About a Highly Connected World</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/29356c1e2db92c2198c326c0b31bbbcbe/mstrohm' title=''>Measuring the semantic value of folksonomies</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2906028140344bee66413044499fa2dd6/mstrohm' title='Back to the future with hypertext'>Back to the future with hypertext: a tale of two or three conferences</a></li><li><a class='rsswidget' href='http://www.bibsonomy.org/bibtex/2df6c80018948cb19e0bb02c6b77843bd/mstrohm' title='analysis of the LODC based on a sample of the LODC'>Weaving the Pedantic Web</a></li></ul></div><div id="rss-346924221" class="widget widget_rss"><h2 class="title"><a class='rsswidget' href='http://www.bibsonomy.org/rss/user/mstrohm' title='Syndicate this content'><img style='background:orange;color:white;border:none;' width='14' height='14' src='http://s.wordpress.com/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://www.bibsonomy.org/rss/user/mstrohm' title='BibSonomy RSS Feed for /user/mstrohm'>Interesting Links</a></h2><ul><li><a class='rsswidget' href='http://vlds2011.search-computing.net/' title=''>First International Workshop on Searching and Integrating New Web Data Sources | Very Large Data Search 2011</a></li><li><a class='rsswidget' href='http://www.greenteapress.com/thinkstats/' title=''>Think Stats: Probability and Statistics for Python Programmers</a></li><li><a class='rsswidget' href='http://mercurio.ii.uam.es:8080/cTagDemo/clusters.iface' title=''>CTag context viewer for folksonomies</a></li><li><a class='rsswidget' href='http://www.clips.ua.ac.be/pages/pattern' title='Phyton library'>Pattern | CLiPS</a></li><li><a class='rsswidget' href='http://www.princeton.edu/mudd/news/faq/topics/honor_code.shtml' title='on cheating'>The Princeton Honor System</a></li><li><a class='rsswidget' href='http://opinionator.blogs.nytimes.com/2011/03/04/the-health-coach-you-know/?nl=todaysheadlines&#038;emc=thab1' title=''>The Health Coach You Know - NYTimes.com</a></li><li><a class='rsswidget' href='https://www.nytimes.com/2011/02/10/technology/personaltech/10basics.html?_r=1&#038;nl=technology&#038;emc=ctb3' title=''>Weight-Loss Apps Help Users to Add Friends and Lose Pounds - NYTimes.com</a></li><li><a class='rsswidget' href='http://sonic.northwestern.edu/events/webnetsciworkshop/conference-schedule/' title='Net/Web-Science'>Schedule - SONIC Advancing the Science of Networks in Communities</a></li><li><a class='rsswidget' href='http://infolab.stanford.edu/~widom/paper-writing.html#intro' title=''>Tips for Writing Technical Papers by Stanford Infolab</a></li><li><a class='rsswidget' href='http://videolectures.net/acmmm2010_watts_uws/' title=''>Using the Web to do Social Science, by Duncan Watts</a></li></ul></div><div id="archives-2" class="widget widget_archive"><h2 class="title">Archives</h2>		<ul>
+			<li><a href='http://mstrohm.wordpress.com/2011/02/' title='February 2011'>February 2011</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/12/' title='December 2010'>December 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/10/' title='October 2010'>October 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/08/' title='August 2010'>August 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/04/' title='April 2010'>April 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/03/' title='March 2010'>March 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/02/' title='February 2010'>February 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2010/01/' title='January 2010'>January 2010</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/12/' title='December 2009'>December 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/10/' title='October 2009'>October 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/09/' title='September 2009'>September 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/08/' title='August 2009'>August 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/07/' title='July 2009'>July 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/06/' title='June 2009'>June 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/04/' title='April 2009'>April 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/02/' title='February 2009'>February 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2009/01/' title='January 2009'>January 2009</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/12/' title='December 2008'>December 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/11/' title='November 2008'>November 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/10/' title='October 2008'>October 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/09/' title='September 2008'>September 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/08/' title='August 2008'>August 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/07/' title='July 2008'>July 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/06/' title='June 2008'>June 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/05/' title='May 2008'>May 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/04/' title='April 2008'>April 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/03/' title='March 2008'>March 2008</a></li>
+	<li><a href='http://mstrohm.wordpress.com/2008/02/' title='February 2008'>February 2008</a></li>
+		</ul>
+</div><div id="meta-2" class="widget widget_meta"><h2 class="title">Meta</h2>			<ul>
+			<li><a href="http://mstrohm.wordpress.com/wp-login.php?action=register">Register</a></li>			<li><a href="http://mstrohm.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://mstrohm.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://mstrohm.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+</div>		</div>
+	</div>
+
+	<br style="clear:both" /><!-- without this little <br /> NS6 and IE5PC do not stretch the frame div down to encopass the content DIVs -->
+</div>
+				
+<!-- footer -->
+
+<hr style="display:none"/>
+
+<div id="footer">
+	<small class="footer_content">
+	<a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>. Theme: <a href="http://theme.wordpress.com/themes/freshy/">Freshy</a> by <a href="http://www.jide.fr/" rel="designer">Jide</a>.	</small>
+
+</div>
+
+</div> <!--- end of the <div id="page"> (from header.php) -->
+
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery( function() {
+			
+			jQuery('#wpl-button > a.like').click( function(e) {
+				e.preventDefault();
+				
+				jQuery('#wpl-mustlogin').remove();
+
+				jQuery.post( 'http://mstrohm.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_like_click'
+				} );
+
+				var tenMins = new Date();
+				tenMins.setTime( tenMins.getTime() + 600000 );
+				document.cookie = 'wpl_rand=d877f39601; expires=' + tenMins.toGMTString() + '; domain=wordpress.com; path=/;';
+				
+				jQuery('#wpl-count').after( '\
+					<div id="wpl-mustlogin"> \
+						<form action="http://mstrohm.wordpress.com/wp-login.php" method="post"> \
+							<p>Just one more step to like this post:</p> \
+							<label><span>Username</span> <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="80" /></label> \
+							<label><span>Password</span> <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="81" /></label> \
+							<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="82" /> \
+							<input type="hidden" name="redirect_to" value="http://mstrohm.wordpress.com/2009/04/05/why-do-users-tag-detecting-user-motivation-in-tagging-systems/?like=1" /> \
+							<input type="hidden" name="wpl_rand" value="d877f39601" /> \
+							<p>Not a member yet? <a href="http://wordpress.com/signup/?ref=likebox" id="wpl-signup-link">Sign up with WordPress.com</a></p> \
+						</form> \
+					</div> \
+				');
+				
+				jQuery('#wpl-mustlogin').hide().slideDown('fast');
+			} );
+			
+			jQuery('#wpl-mustlogin input.input').live( 'focus', function() {
+				jQuery(this).prev().hide();
+			}).live( 'blur', function() {
+				if ( jQuery(this).val() == '' )
+					jQuery(this).prev().show();
+			});
+			
+			jQuery('#wpl-mustlogin input#wp-submit').live( 'click', function(e) {
+				e.preventDefault();
+				
+				jQuery.post( 'http://mstrohm.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_login_submit'
+				}, function() {
+					jQuery('#wpl-mustlogin form').submit();
+				} );
+			});			
+			
+			jQuery('#wpl-mustlogin a#wpl-signup-link').live( 'click', function(e) {
+				e.preventDefault();
+				
+				var link = jQuery(this).attr('href');
+				
+				jQuery.post( 'http://mstrohm.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_signup_click'
+				}, function() {
+					location.href = link;
+				} );
+			});					
+			
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.en,type.wpcom,posttag.intent,posttag.motivation,posttag.tagging,posttag.tagging-motivation'};</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript><p><img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.en%2Ctype.wpcom%2Cposttag.intent%2Cposttag.motivation%2Cposttag.tagging%2Cposttag.tagging-motivation" style="display:none" height="1" width="1" alt="" /></p></noscript>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?p&#038;ver=MU'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {
+	my_hash: ""
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1298424233g&amp;ver=MU'></script>
+	<div style="display:none">
+	</div>
+<script type='text/javascript'>_acseed='Nm01fCNhbSQ6WHkvVltmL2l5eSY2WWZMLnw4O3FeYDVbc0U2fmhRPnoqaXlUOS8kUX5KaTE+SnwxSilxV0dWOloubHFKemYmUEBvSTA/N0FMNXZVNWI9JipwdEUpbE9SYzE9ZyA7QHUzeUE3Z1F2PnxQNFY6WyhDRyo3LXQ0cj1JZD1RUjNsWDQ2VCZoZSVILX17dH0zRSp7Y3g=';</script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/mu-plugins/sharing/sharing.js?m=1289605033g&amp;ver=0.1'></script>
+<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="http://s.stats.wordpress.com/w.js?19" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'2808012','v':'wpcom','user_id':'0','post':'155','subd':'mstrohm'});
+ex_go({'crypt':'RDY2ZWNfUWVLOWJvdDlOLXVaQ0I1QzVGUDFLZkRxUTJlLixnW3MmJm0rZl90dkRna3BoP1hWd1QwaCZsdkkrRkhhMnRbckdTSmorSD1INSVZQ341eS09K1NQWFVHWlZCVXFwPXN5WUdZS200W1djNkhOWi5Ob28wUi1lPStQZnQwVHY1JWEtNHMuM0RRRWdCMWh+MGJaaWZQT1V2UjBjV11TVUFtfFNKRVRQZH5jT3xTeD9+Tz9HRUNCbFF6aDF1STBPcEg/bSZtUkFMN1pmQnF4Rz9PViV2T0xPZFIxLWJxflJmKz02ZTI3elVucHF8VUt+ai81RXExTiVHT3VWc2ddbjhSJlRjRi9PM3U0YSxSS0tUSU1FflBwQUxHXVNjSTJzV1VHUW5wa2klJVIyZ08vZj9jXVJZdWhLYWEwUThuR2dranlRbjlCMDN4RT9GP3xINUNPS2NzNGIuJkhiOWk4YUIvUWRZYz8rOHosLHJEakZ5Lkx8di1dZWFUSk1uRCVZSVJvSDRaU1ByWTFZc2olOXZYWit3'});
+addLoadEvent(function(){linktracker_init('2808012',155);});
+	</script>
+</body>
+</html>

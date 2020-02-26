@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>ReCaptcha | AgileWebDevelopment</title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="Robots" content="index,follow" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/application.css" media="screen" />
+	
+  <script src="/javascripts/jquery-1.3.2.min.js?1289067657" type="text/javascript"></script>
+<script src="/javascripts/autocompleter.js?1289067657" type="text/javascript"></script>
+<script src="/javascripts/plugins_show.js?1289067657" type="text/javascript"></script>
+<script src="/javascripts/jquery.rating.pack.js?1289067657" type="text/javascript"></script>
+  <link href="/stylesheets/autocompleter.css?1289067657" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/jquery.rating.css?1289067657" media="screen" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body id="plugins_show">
+		
+<div id="topbar">
+		<div class="content">
+			
+			<div class="wrap content">
+
+				<form action="/plugins/search" method="get">
+          <div class="se">
+				    <input class="text" name="q" type="text" value="Search..."  onblur="if(this.value=='') this.value='Search...';" onfocus="if(this.value=='Search...') this.value='';" />
+			    </div>					
+				</form>
+
+				<h1><a href="/" title="">Agile Web Development</a></h1>
+				<span id="slogan">Build it. Launch it. Love it.</span>
+			</div>
+		</div>
+</div>
+
+<div id="subbar">
+	<div class="content">
+		<div class="wrap menu">
+			<div class="right rss"></div>
+			<ul>	
+				<li><a href="/" title="home">Home</a></li>
+				<li><a href="/plugins/new" title="Add a plugin">Add a plugin</a></li>
+				
+				<li><a href="/favorites">Favorites</a></li>
+				<li><a href="/content/about" title="About">About</a></li>
+				<li>
+				  <a href="http://agilewebdevelopment.com/session/new">Log in</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+	
+<div class="content">
+	<div id="main">
+		<div class="padding">
+			<div class="right_side">
+				<div class="ls">
+				  <h3>Links</h3>
+				  <ul>
+				    <li><a href="/plugins/new">Add a plugin</a></li>
+				    <li><a href="http://feeds.feedburner.com/RubyOnRailsPlugins">Subscribe</a></li>
+				    <li><a href="/plugins/random">Surprise me</a></li>
+				  </ul>
+				</div>
+				<div class="ls">
+  <h3>ReCaptcha</h3>
+  <ul>
+    
+      <li><a href="/plugins/recaptcha/favorites/new">Add to Favorites</a></li>
+    
+    <li><a href="#vitals">Vitals</a></li>
+    <li><a href="#comments">Comments</a></li>
+    <li><a href="/plugins/recaptcha/edit">Edit this plugin</a></li>
+    
+  </ul>
+</div>
+				
+				<div class="ls">
+				  
+					<h3>Categories</h3>
+					<ul>
+					  <li class="category"><a href="/plugins/recent">Most recent</a></li>
+					  <li class="category"><a href="/plugins/top_rated">Top rated</a></li>
+						
+						  <li class="category" id="category_6">
+                <a href="/plugins/category/6">Assets</a>
+						  </li>
+						
+						  <li class="category" id="category_7">
+                <a href="/plugins/category/7">Controllers</a>
+						  </li>
+						
+						  <li class="category" id="category_8">
+                <a href="/plugins/category/8">Internationalization</a>
+						  </li>
+						
+						  <li class="category" id="category_11">
+                <a href="/plugins/category/11">Misc. Enhancements</a>
+						  </li>
+						
+						  <li class="category" id="category_2">
+                <a href="/plugins/category/2">Model</a>
+						  </li>
+						
+						  <li class="category" id="category_10">
+                <a href="/plugins/category/10">Rails Engines</a>
+						  </li>
+						
+						  <li class="category" id="category_4">
+                <a href="/plugins/category/4">Searching and Queries</a>
+						  </li>
+						
+						  <li class="category" id="category_1">
+                <a href="/plugins/category/1">Security</a>
+						  </li>
+						
+						  <li class="category" id="category_9">
+                <a href="/plugins/category/9">Statistics and Logs</a>
+						  </li>
+						
+						  <li class="category" id="category_3">
+                <a href="/plugins/category/3">Testing</a>
+						  </li>
+						
+						  <li class="category" id="category_5">
+                <a href="/plugins/category/5">View Extensions</a>
+						  </li>
+						
+					</ul>
+   			</div>
+   			<div class="ls" id="sponsors">
+     			<a href="http://railskits.com/"><img src="/images/railskits_logo_125x125.gif" alt="Ready-made Rails code" title="Ready-made Rails code" height="125" width="125" /></a>
+   			</div>
+			</div>
+		
+			<div id="left_side">
+			  <h1>ReCaptcha</h1>
+			  
+				
+
+<div id="description">
+  
+<table>
+<tr><td valign="top">Author:</td><td>Jason L Perry (<a href="http://ambethia.com">http://ambethia.com</a>)
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2007 Jason L Perry
+
+</td></tr>
+<tr><td valign="top">License:</td><td>MIT
+
+</td></tr>
+<tr><td valign="top">Info:</td><td><a href="http://ambethia.com/recaptcha">http://ambethia.com/recaptcha</a>
+
+</td></tr>
+<tr><td valign="top">Git:</td><td><a href="http://github.com/ambethia/recaptcha">http://github.com/ambethia/recaptcha</a>
+
+</td></tr>
+<tr><td valign="top">Bugs:</td><td><a href="http://github.com/ambethia/recaptcha/issues">http://github.com/ambethia/recaptcha/issues</a>
+
+</td></tr>
+</table>
+<p>
+This plugin adds helpers for the {reCAPTCHA API}[<a href="http://recaptcha.net]">http://recaptcha.net]</a>. In
+your views you can use the <tt>recaptcha_tags</tt> method to embed the
+needed javascript, and you can validate in your controllers with
+<tt>verify_recaptcha</tt>.
+</p>
+<p>
+You&#8217;ll want to add your public and private API keys in the
+environment variables <tt>RECAPTCHA_PUBLIC_KEY</tt> and
+<tt>RECAPTCHA_PRIVATE_KEY</tt>, respectively. You could also specify them
+in <tt>config/environment.rb</tt> if you are so inclined (see below).
+Exceptions will be raised if you call these methods and the keys
+can&#8217;t be found.
+</p>
+<h2>Rails Installation</h2>
+<p>
+reCAPTCHA for Rails can be installed as a gem:
+</p>
+<pre>
+  config.gem &quot;recaptcha&quot;, :lib =&gt; &quot;recaptcha/rails&quot;
+</pre>
+<p>
+Or, as a standard rails plugin:
+</p>
+<pre>
+  script/plugin install git://github.com/ambethia/recaptcha.git
+</pre>
+<h2>Merb Installation</h2>
+<p>
+reCAPTCHA can also be used in a Merb application when installed as a gem:
+</p>
+<pre>
+  dependency &quot;alm-recaptcha&quot;, &quot;&gt;=0.2.2.1&quot;, :require_as =&gt; &quot;recaptcha/merb&quot;
+</pre>
+<p>
+Initial Merb compatability funded by ALM Labs.
+</p>
+<h2>Setting up your API Keys</h2>
+<p>
+There are two ways to setup your reCAPTCHA API keys once you
+{obtain}[<a href="http://recaptcha.net/whyrecaptcha.html">http://recaptcha.net/whyrecaptcha.html</a>] a pair. You can pass in
+your keys as options at runtime, for example:
+</p>
+<pre>
+  recaptcha_tags :public_key =&gt; '6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy'
+</pre>
+<p>
+and later,
+</p>
+<pre>
+  verify_recaptcha :private_key =&gt; '6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx'
+</pre>
+<p>
+Or, preferably, you can keep your keys out of your code base by exporting
+the environment variables mentioned earlier. You might do this in the
+.profile/rc, or equivalent for the user running your application:
+</p>
+<pre>
+  export RECAPTCHA_PUBLIC_KEY  = '6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy'
+  export RECAPTCHA_PRIVATE_KEY = '6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx'
+</pre>
+<p>
+If that&#8217;s not your thing, and dropping things into
+<tt>config/environment.rb</tt> is, you can just do:
+</p>
+<pre>
+  ENV['RECAPTCHA_PUBLIC_KEY']  = '6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx'
+</pre>
+<h2><tt>recaptcha_tags</tt></h2>
+<p>
+Some of the options available:
+</p>
+<table>
+<tr><td valign="top"><tt>:ssl</tt>:</td><td>Uses secure http for captcha widget (default <tt>false</tt>)
+
+</td></tr>
+<tr><td valign="top"><tt>:noscript</tt>:</td><td>Include &lt;noscript&gt; content (default <tt>true</tt>)
+
+</td></tr>
+<tr><td valign="top"><tt>:display</tt>:</td><td>Takes a hash containing the <tt>theme</tt> and <tt>tabindex</tt> options
+per the API. (default <tt>nil</tt>)
+
+</td></tr>
+<tr><td valign="top"><tt>:ajax</tt>:</td><td>Render the dynamic AJAX captcha per the API. (default <tt>false</tt>)
+
+</td></tr>
+<tr><td valign="top"><tt>:public_key</tt>:</td><td>Your public API key, takes precedence over the ENV variable (default
+<tt>nil</tt>)
+
+</td></tr>
+<tr><td valign="top"><tt>:error</tt>:</td><td>Override the error code returned from the reCAPTCHA API (default
+<tt>nil</tt>)
+
+</td></tr>
+</table>
+<p>
+You can also override the html attributes for the sizes of the generated
+<tt>textarea</tt> and <tt>iframe</tt> elements, if CSS isn&#8217;t your
+thing. Inspect the source of <tt>recaptcha_tags</tt> to see these options.
+</p>
+<h2><tt>verify_recaptcha</tt></h2>
+<p>
+This method returns <tt>true</tt> or <tt>false</tt> after processing the
+parameters from the reCAPTCHA widget. Why isn&#8217;t this a model
+validation? Because that violates MVC. Use can use it like this, or how
+ever you like. Passing in the ActiveRecord object is optional, if you
+do&#8212;and the captcha fails to verify&#8212;an error will be added to
+the object for you to use.
+</p>
+<p>
+Some of the options available:
+</p>
+<table>
+<tr><td valign="top"><tt>:model</tt>:</td><td>Model to set errors
+
+</td></tr>
+<tr><td valign="top"><tt>:message</tt>:</td><td>Custom error message
+
+</td></tr>
+<tr><td valign="top"><tt>:private_key</tt>:</td><td>Your private API key, takes precedence over the ENV variable (default
+<tt>nil</tt>).
+
+</td></tr>
+<tr><td valign="top"><tt>:timeout</tt>:</td><td>The number of seconds to wait for reCAPTCHA servers before give up.
+(default +3+)
+
+</td></tr>
+</table>
+<pre>
+  respond_to do |format|
+    if verify_recaptcha(:model =&gt; @post, :message =&gt; 'Oh! It's error with reCAPTCHA!') &amp;&amp; @post.save
+      # ...
+    else
+      # ...
+    end
+  end
+</pre>
+<h2>TODO</h2>
+<ul>
+<li>Remove Rails/ActionController dependencies
+
+</li>
+<li>Framework agnostic
+
+</li>
+<li>Add some helpers to use in before_filter and what not
+
+</li>
+<li>Better documentation
+
+</li>
+</ul>
+
+</div>
+
+<h2 id="vitals">Vitals</h2>
+<table id="plugin_summary">
+  <tr>
+    <th>Home</th>
+    <td><a href="http://ambethia.com/recaptcha">http://ambethia.com/recaptcha</a></td>
+  </tr>
+  <tr>
+    <th>Repository</th>
+    <td>git://github.com/ambethia/recaptcha.git       <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+              width="110"
+              height="14"
+              id="clippy" >
+      <param name="movie" value="/flash/clippy.swf"/>
+      <param name="allowScriptAccess" value="always" />
+      <param name="quality" value="high" />
+      <param name="scale" value="noscale" />
+      <param NAME="FlashVars" value="text=git://github.com/ambethia/recaptcha.git">
+      <param name="bgcolor" value="#FFFFFF">
+      <embed src="/flash/clippy.swf"
+             width="110"
+             height="14"
+             name="clippy"
+             quality="high"
+             allowScriptAccess="always"
+             type="application/x-shockwave-flash"
+             pluginspage="http://www.macromedia.com/go/getflashplayer"
+             FlashVars="text=git://github.com/ambethia/recaptcha.git"
+             bgcolor="#FFFFFF"
+      />
+      </object>
+</td>
+  </tr>
+  <tr>
+    <th>License</th>
+    <td>Rails' (MIT)</td>
+  </tr>
+  <tr>
+    <th>Tags</th>
+    <td>
+      <a href="#" id="add_tag" title="Add tag"><img alt="Tag_red" src="/images/tag_red.png?1289067657" /></a>
+      <a href="/plugins/tag/aaa">aaa</a> <a href="/plugins/tag/authentication">authentication</a> <a href="/plugins/tag/captcha">captcha</a> <a href="/plugins/tag/recaptcha">recaptcha</a> <a href="/plugins/tag/robots">robots</a> <a href="/plugins/tag/security">security</a> <a href="/plugins/tag/spam">spam</a> <a href="/plugins/tag/spam">spam</a> 
+      <form action="/plugins/recaptcha/taggings" id="tag_form" method="post" style="display:none"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="AlNm/Rwjqh1GdF/XMZ31q8KOZ2oGpPdTw1IJdjCuRwI=" /></div>
+        <label>Add tag:</label>
+        <input type="text" name="tag" value="" id="tag">
+        <input type="submit" name="comm" value="Tag it">
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <th>Rating</th>
+    <td id="rating">
+      
+        <input name="star" type="radio" class="starry" value="1" />
+      
+        <input name="star" type="radio" class="starry" value="2" />
+      
+        <input name="star" type="radio" class="starry" value="3" />
+      
+        <input name="star" type="radio" class="starry" value="4" checked="checked"/>
+      
+        <input name="star" type="radio" class="starry" value="5" />
+      
+      (44 votes)
+    </td>
+  </tr>
+  
+    <tr>
+      <th>Owner</th>
+      <td>
+        <a href="/plugins/owner/485">Jason L Perry</a>
+      </td>
+    </tr>
+  
+  <tr>
+    <th>Created</th>
+    <td>26 May 2007</td>
+  </tr>
+</table>
+
+<h2 id="comments">Comments</h2>
+<ul id="plugin_comments">
+  
+    <li class="comment" id="comment_1455">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=10fd2f9af3fbd20d270bd815fc621b06&amp;" width="40" />
+        <div class="comment_name">
+          sergey
+        </div>
+        <div class="comment_date">
+           7 September 2007
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>save in this way
+verify_recaptcha(@post) &amp;&amp; @post.save</p>
+
+<p>will behave strange, user can make errors in model, but will see only catcha error. He he will forced to enter corrent captha, only to see errors in model</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_1482">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=34aad1d43c076fae243141ba736114b0&amp;" width="40" />
+        <div class="comment_name">
+          <a href="http://www.guydavis.ca" rel="nofollow">Guy Davis</a>
+        </div>
+        <div class="comment_date">
+          22 September 2007
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>Doesn't work when the &lt;script src='..recaptcha.org...'&gt; tag is placed into the DOM using using ExtJS UpdateManager even with loadScripts=true.  Error in Firebug: Recaptcha State not defined.  recaptcha.js:483.</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_1708">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=0f710ec7beae2d92fdf2172fbbfb6bbc&amp;" width="40" />
+        <div class="comment_name">
+          Peter
+        </div>
+        <div class="comment_date">
+          21 December 2007
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>sergey- Good point. I'd recommend doing @post.save &amp;&amp; verify_recaptcha(@post). Switch the order. That way, if the model doesn't validate, it takes precedence, and a new captcha is generated anyway (AFAIK).</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_1748">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=4a551074ddba4460f95d011c47190d0e&amp;" width="40" />
+        <div class="comment_name">
+          <a href="http://henrik.nyh.se" rel="nofollow">Henrik N</a>
+        </div>
+        <div class="comment_date">
+          10 January 2008
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>sergey, Peter:</p>
+
+<p>  @post.save &amp;&amp; verify_recaptcha(@post)</p>
+
+<p>is not a good idea. If the @post is valid, then the @post database record is successfully saved without consulting the captcha. May I suggest this instead:</p>
+
+<p>  [@post.valid?, verify_recaptcha(@post)].all? &amp;&amp; @post.save</p>
+
+<p>This also has the benefit of showing both the @post validation errors and the added captcha error.</p>
+
+<p>Some feedback on the plugin:</p>
+
+<p>I would like an option to specify your own validation error message for a captcha mismatch. Or, really, it could just be changed from &quot;Captcha response is incorrect, please try again.&quot; to &quot;Captcha response is incorrect&quot; and I'd be happy with the default. The &quot;please try again&quot; and the period are unconventional.</p>
+
+<p>I don't like how captcha errors are stored in session. If you get a captcha wrong when making a post, then give up, then revisit the site and open the &quot;new post&quot; page again, you'll see &quot;Incorrect. Try again.&quot; before trying anything.</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_1999">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=16462f49b44507dc6522eb9bea0fce51&amp;" width="40" />
+        <div class="comment_name">
+          g
+        </div>
+        <div class="comment_date">
+           3 May 2008
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>would love to see an example tag that changes the theme. i have tried everything under the sun but nothing i have tried works.</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_2104">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=8c75b25f10d2ed0388239da98ccf7d4a&amp;" width="40" />
+        <div class="comment_name">
+          <a href="http://www.i3dtutorials.com" rel="nofollow">Jonaphin</a>
+        </div>
+        <div class="comment_date">
+           8 July 2008
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>Sergey,</p>
+
+<p>Do it this way:</p>
+
+<p>if [@user.valid?, verify_recaptcha(@user)].all?</p>
+
+<pre><code>  @user.save
+</code></pre>
+
+<p>That will solve your issue.</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_2176">
+      <div class="comment_meta">
+        
+        <div class="comment_name">
+          DW
+        </div>
+        <div class="comment_date">
+          15 August 2008
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>FYI: Just installed using SVN repository and got this at the end:</p>
+
+<p>&quot;This plugin has moved to
+http://github.com/ambethia/recaptcha&quot;</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_2201">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=1e2195ef04472c73ccd53d77bec0c7e6&amp;" width="40" />
+        <div class="comment_name">
+          <a href="http://kevburnsjr.com" rel="nofollow">KevBurnsJr</a>
+        </div>
+        <div class="comment_date">
+          30 August 2008
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>g : drop a few lines of javascript just ABOVE the captcha call in the 'new' view.</p>
+
+<p>RecaptchaOptions = { theme : 'custom' };</p>
+
+<p>http://pastie.org/263015</p>
+
+      </div>
+    </li>
+  
+    <li class="comment" id="comment_2227">
+      <div class="comment_meta">
+        <img alt="Avatar" height="40" src="http://www.gravatar.com/avatar.php?gravatar_id=60ddc6163ea70b566074dad3e3fd9a46&amp;" width="40" />
+        <div class="comment_name">
+          <a href="http://adamflorin.com" rel="nofollow">Adam Florin</a>
+        </div>
+        <div class="comment_date">
+          24 September 2008
+        </div>
+      </div>
+      <div class="comment_main">
+        <p>Nice work. But it looks like the :display hash is being unnecessarily html escaped on output, btw, which makes the JS var invalid... just fyi</p>
+
+      </div>
+    </li>
+  
+</ul>
+<p id="add_comment"><a href="/plugins/recaptcha/comments/new">Add a comment</a></p>
+
+
+
+
+
+			</div>
+		</div>
+	<div class="clear"></div>
+	</div>
+	<div id="footer">
+		<div class="right">
+		  Design by <a href="http://www.free-css-templates.com" title="Free Css Template">Free Css Templates</a>
+		</div>
+		<div class="fmenu">
+			&copy; Copyright 2005 - 2011, <a href="http://www.bencurtis.com/">Benjamin Curtis</a>
+		</div>
+	<br />
+	
+	</div>	
+	
+</div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-97250-4");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+
+</body>
+</html>

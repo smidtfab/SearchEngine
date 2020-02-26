@@ -1,0 +1,1556 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="alternate" type="application/rss+xml" title="Baseline:" href="http://www.baselinemag.com/rss-feeds-104.xml" />
+<title>Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0 - Web Services and SOA - News & Reviews - Baseline.com</title>
+<meta name="medium" content="news" />
+<meta name="title" content="Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0 - Web Services and SOA - News & Reviews - Baseline.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<meta name="headline" content="Amazons Mechanical Turk Where the 1700s Meet Web 20  Web Services and SOA" />
+<meta name="created" content="2008-02-21 13:47:58" />
+<meta name="keywords" content="require,particularly,well-suited,image,processing,working,amazons,mechanical,turk,where,the,1700s,meet,, " />
+<meta name="description" content="Amazon's Mechanical Turk is particularly well-suited for image processing tasks. " />
+
+
+<base href="http://www.baselinemag.com/" />
+
+
+<link rel="STYLESHEET" type="text/css" href="/images/eweek.css">
+<link rel="STYLESHEET" type="text/css" href="/templates/devshed/css/fpstyles.css">
+<link rel="SHORTCUT ICON" href="/favicon.ico">
+<link rel="canonical" href="http://www.baselinemag/c/a/Web-Services-and-SOA/Amazons-Mechanical-Turk-Where-the-1700s-Meet-Web-20/" />
+<meta name="robots" content="index,follow">
+
+
+<script language="javascript">
+
+/**********************
+***********************
+*********************** DART FUNCTIONS FOR ZDE
+***********************
+**********************/
+
+var n_mpu = 0;
+var n_hpbox = 0;
+var n_leader = 0;
+var n_skyscraper = 0;
+var n_micro = 0;
+var rvar = 0;
+var n_bottom = 0;
+var tile_cntr = 0;
+
+function showdart(typ, siz, ret, tilecntr) {
+
+	var thistile=0;
+
+	// Override optional args if they arent passed
+	if (arguments.length < 4) {
+		tilecntr=-1;
+	}
+	if (arguments.length < 3) {
+		ret=0;
+	}
+
+	tile_cntr++;
+
+	if (typ=="MPU") {
+		n_mpu++;
+		thistile = n_mpu;
+	}
+        if (typ=="HP_BOX") {
+                n_hpbox++; 
+                thistile = n_hpbox;
+        }
+	if (typ=="LEADER") {
+		n_leader++;
+		thistile = n_leader;
+	}
+	if (typ=="SKY") {
+		n_skyscraper++;
+		thistile = n_skyscraper;
+	}
+	if (typ=="MICRO") {
+		n_micro++;
+		thistile = n_micro;
+	}
+        if (typ=="BOTTOM") {
+                n_bottom++; 
+                thistile = n_bottom;
+        }
+	if (thistile < 1) {thistile=1};
+
+	// retval = "tile=" + thistile + ";";
+
+	if (tilecntr < 9999) {
+		retval = "tile=" + tile_cntr + ";";
+	} else {
+		thistile = 3;
+		retval = "tile=3;";
+	}
+
+	//var tmt = typ + ' ' + retval;
+	//alert(tmt);
+
+	if (thistile==1) {
+		retval = retval + "pos=top;dcopt=ist;";
+	}
+	else {
+		retval = retval + "pos=bottom;";
+	}
+
+	//var tmt = typ + ' tile:' + thistile + ' :***:' + retval;
+	//alert(tmt);
+
+	//var tvar = '<' + 'script type="text/javascript" language="JavaScript" src="http://ad.doubleclick.net/adj/entzd.base/developer;zdtopic=developer;zdtopic=servers;zdtopic=itmanagement;zdtopic=;zdtopic=;zdid=a4454;zdtype=news;zdaudience=;zdproduct=;zdcompany=;zdpagetype=;u=zdtopic=developer|zdtopic=servers|zdtopic=itmanagement|zdid=a4454|zdtype=news|zdaudience=|zdproduct=|zdcompany=|zdpagetype=;' + retval + 'sz=' + siz + ';ord=46371?"' + '><' + '/script>';
+	var tvar = '<' + 'script type="text/javascript" language="JavaScript" src="http://ad.doubleclick.net/adj/entzd.base/developer;zdtopic=developer;zdtopic=servers;zdtopic=itmanagement;zdtopic=;zdtopic=;zdid=a4454;zdtype=news;zdaudience=;zdproduct=;zdpagetype=;u=zdtopic=developer|zdtopic=servers|zdtopic=itmanagement|zdid=a4454|zdtype=news|zdaudience=|zdproduct=|zdcompany=|zdpagetype=;' + retval + 'sz=' + siz + ';ord=46371?"' + '><' + '/script>';
+
+	// alert(tvar);
+	if (ret==1) {
+		return(tvar);
+	} else {
+		document.write(tvar);
+	}
+}
+
+function showdart2(typ, siz, rvar) {
+
+	var thistile=0;
+tile_cntr++;
+
+	if (typ=="MPU") {
+		n_mpu++;
+		thistile = n_mpu;
+	}
+	if (typ=="LEADER") {
+		n_leader++;
+		thistile = n_leader;
+	}
+        if (typ=="HP_BOX") {
+                n_hpbox++;
+                thistile = n_hpbox;
+        }
+	if (typ=="SKY") {
+		n_skyscraper++;
+		thistile = n_skyscraper;
+	}
+	if (typ=="MICRO") {
+		n_micro++;
+		thistile = n_micro;
+	}
+	if (thistile < 1) {thistile=1};
+
+	// retval = "tile=" + thistile + ";";
+	if (rvar) {
+		retval = "tile=" + rvar + ";";
+	} else {
+		retval = "tile=" + tile_cntr + ";";
+	}
+
+	if (thistile<=3) {
+		retval = retval + "pos=top;dcopt=ist;";
+	}
+	else {
+		retval = retval + "pos=bottom;";
+	}
+
+	//tvar = 'http://ad.doubleclick.net/adi/entzd.base/developer;zdtopic=developer;zdtopic=servers;zdtopic=itmanagement;zdtopic=;zdtopic=;zdid=a4454;zdtype=news;zdaudience=;zdproduct=;zdcompany=;zdpagetype=;' + retval + 'sz=' + siz + ';ord=';
+	tvar = 'http://ad.doubleclick.net/adi/entzd.base/developer;zdtopic=developer;zdtopic=servers;zdtopic=itmanagement;zdtopic=;zdtopic=;zdid=a4454;zdtype=news;zdaudience=;zdproduct=;zdcompany=;zdpagetype=;' + retval + 'sz=' + siz + ';ord=';
+	return tvar;
+}
+
+</script>
+
+<script language="javascript">
+function displayPopUnder() {
+        var cookieExist = getCookie("Baseline");
+        if (document.referrer&&document.referrer.indexOf('altavista')==-1) {
+        if (document.referrer.indexOf('google')==-1) {
+            if (cookieExist == null) {
+                            setCookie("Baseline","Baseline");
+                        var promopopup = window.open("http://www.baselinemag.com/popup/circ_popup2.htm","promopopup","width=336,height=280");
+                        //self.focus();
+                    }
+        }
+    }
+}
+</script>
+
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/common_util_js.js"></script>
+
+<link href="/images/evideo-mod.css" rel="stylesheet" type="text/css"></link>
+<script src="/images/evideo-scroller.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/images/eweek_header_styles.css" />
+
+<!-- SiteCatalyst code version: H.17.
+Copyright 1997-2008 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="/js/s_code_remote_new.js"></script>
+
+<script language="JavaScript"><!--
+s.pageName="Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0-Page001-4454"
+s.referrer = ""
+s.server=""
+s.channel="Baseline Home>Web Services/SOA"
+s.pageType=""
+s.prop1="Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0"
+s.prop2="Web Services/SOA"
+s.prop3="Doug Bartholomew"
+s.prop4="News"
+s.prop5="Online"
+s.prop6="News"
+s.prop7="Unregistered"
+s.prop8=""
+s.prop9=""
+s.prop10=""
+s.prop11="2008-02"
+s.prop12="entzd.base/developer"
+s.prop13=""
+s.prop17="developer;servers;itmanagement"
+s.campaign=""
+
+
+s.state=""
+s.zip=""
+s.events="event4"
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3=""
+s.eVar4=s.prop4;
+s.eVar5=s.prop1;
+s.eVar6="Baseline Home>Web Services/SOA"
+s.eVar7=s.prop3;
+s.eVar8=s.prop8;
+s.hier1="Baseline>Home>Web Services/SOA>Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://ziffdavisbaseline.112.2O7.net/b/ss/ziffdavisbaseline/1/H.17--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.17. -->
+<script>
+var ss_s_obj = s;
+</script>
+</head>
+<body>
+<div id="main_container">
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-2464436-2";
+</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2464436-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+<div id="TopBarNew" style="height:36px;_height:37px;overflow:hidden;">
+   <table cellspacing="0" cellpadding="0">
+       <tr valign="absmiddle">
+<!--        <td width="50%">Web Services/SOA - Baseline</td> -->
+        <td width="100%" valign="middle">
+<div style="float:left;display:block;width:145px;_width:155px;padding-right:10px;line-height:11px;vertical-align:middle;height:24px;_height:34px;overflow:hidden;padding-top:7px;">Web Services/SOA - Baseline</div>
+<div style="float:left;display:block;width:600px;padding-top:2px;_padding-top:3px;">
+</div>
+<div style="float:right;display:block;width:210px;_width:210px;padding-right:0px;padding-top:0px;">
+	<form action="/googlecse.html" id="cse-search-box">
+        <img src="/images/search.gif" align="top"><br/>
+    <input type="hidden" name="cx" value="partner-pub-6422417422167576:h6yet-5gt52" />
+    <input type="hidden" name="cof" value="FORID:11" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+        <span class="Search"><input type="text" name="q" size="30"></span>
+        <input type="image" name="sa" value="Search" align="top" src="/images/but-search.gif" height="15" border="0">
+	</form>
+</div>
+        </td>
+      </tr>
+   </table>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+</div>
+
+
+<div style="clear:both;"></div>
+
+
+<div class="page_banner">
+<div class="zde_header_logo"><a href="http://www.ziffdavisenterprise.com/" rel="nofollow"><img alt="Ziff Davis Enterprise" src="/images/zde/zde-logo-white-background.gif"/></a></div>
+  <div id="site_logo">
+    <a href="/" target="_top"><img src="/images/zde/baseline.gif" alt="Baseline" /></a>
+  </div>
+  <div id="subscribe_container">
+    <div id="subscribe_padding"></div>
+    <div id="subscribe_links">
+      <a href="https://enterprise-secure-registration.com/index.php?page=pubSubscription&pub=bsl&p=bslsubtb" target="_top"><img src="/images/zde/sub_bl_free_button.jpg" alt="Subscribe" width="191" height="17" border="0" /></a><a href="http://feeds.ziffdavisenterprise.com/RSS/baseline.xml" target="_top"><img src="/images/zde/rss_button.jpg" alt="Baseline RSS Feeds" width="42" height="17" border="0"/></a><a href="http://www.baselinemag.com/newsletter-manage/" target="_top"><img src="/images/zde/sub_nl_button.jpg" alt="Subscribe to Baseline's Newsletter" width="178" height="17" border="0" /></a>
+    </div>
+  </div>
+</div>
+
+
+
+<ul id="primary_navbar">
+<li id='prinav0' class='tabOn' title='HOME'><a href='/'>HOME</a></li><li id='prinav1' class='tabOff' title='COMPLIANCE'><a href='/c/s/Compliance/'>COMPLIANCE</a></li><li id='prinav2' class='tabOff' title='INTELLIGENCE'><a href='/c/s/Business-Intelligence/'>INTELLIGENCE</a></li><li id='prinav3' class='tabOff' title='IT MANAGEMENT'><a href='/c/s/IT-Management/'>IT MANAGEMENT</a></li><li id='prinav4' class='tabOff' title='MID-MARKET'><a href='/c/s/Mid-Market/'>MID-MARKET</a></li><li id='prinav5' class='tabOff' title='NEWS'><a href='/c/s/News/'>NEWS</a></li><li id='prinav6' class='tabOff' title='PROJECTS'><a href='/c/s/Projects/'>PROJECTS</a></li><li id='prinav7' title='TECHDIRECT' class='tabOff'><a href='http://www.jazdtech.com/techdirect/?utm_source=td&utm_medium=partner&utm_campaign=nav' target='_blank'>TECHDIRECT</a></li><li id='prinav8' title='WHITE PAPERS' class='tabOff'><a href='http://www.webbuyersguide.com/resource/resourceLibrary.aspx?&sitename=webbuyersguide' target='_blank'>WHITE PAPERS</a></li><li id='prinav9' title='WEBCASTS' class='tabOff'><a href='http://www.eseminarslive.com/' target='_blank'>WEBCASTS</a></li>
+</ul>
+
+<div id='secondary_nav_container'>
+<ul id='subnav0' style='display: block;'><li><a href='/c/s/Podcasts/'>Podcasts</a><span>|</span></li><li><a href='http://www.eweek.com/c/s/Videos/'>Videos</a><span>|</span></li><li><a href='/c/s/eSlideshows/'>Slideshows</a></li>
+</div>
+
+<div style="clear:both"></div>
+<table><tr><td height=3><img src="/images/spacer.gif"></td></tr></table>
+
+<div style="clear:both"></div>
+<table><tr><td height=3><img src="/images/spacer.gif"></td></tr></table>
+
+	
+<div id="sponsor_banner" style="display: block;">
+<table width="1004" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top" class="ad-cell">
+        <div class="leaderboard_ad">
+<script language="JavaScript" type="text/javascript">
+showdart('LEADER', '728x90');</script>
+</td>
+        </div>
+<td width="180" valign="top" class="ad-cell">
+        <div class="micro_ad">
+<script language="JavaScript" type="text/javascript">
+showdart('MICRO', '160x90');</script>
+        </div></td>
+</tr>
+</table>
+<div style="clear:both"></div>
+</div>
+
+<div align=left><span class="pathwaybg"><a rel=nofollow href="http://www.baselinemag.com/" class="pathwaybg"><span class=pathwaybg><u>Home</u></span></a>  <img src="images/M_images/arrow_black.png" border="0" alt="arrow" />   <a rel=nofollow href="http://www.baselinemag.com/c/b/Web-Services-and-SOA/" class="pathwaybg"><span class=pathwaybg><u>Web Services/SOA</u></span></a>  <img src="images/M_images/arrow_black.png" border="0" alt="arrow" />   Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0 </span></div>
+<table><tr><td height=3><img src="/images/spacer.gif"></td></tr></table>
+<!--end cached nav bar-->
+<div style="clear:both"></div>
+
+<div align=center>
+	<div id=resultframe>
+	  <table border="0" cellpadding="0" cellspacing="0" width="1004" bgcolor="FFFFFF">	
+<!-- google_ad_region_start=devshed1 -->
+     <tr>
+	  <td valign=top width=120>
+	    
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<table width="147" cellspacing="0" cellpadding="0" border="0" class="Module_BG"><tbody><tr><td width="1" class="Module_Border"><br />
+</td><td width="206" valign="middle" align="left" class="Module_Border"><img border="1" align="middle" alt="" src="/zimages/4/125012.gif" complete="complete" /> </td><td width="1" class="Module_Border"><img height="1" width="1" alt="" src="/images/spacer.gif" complete="complete" /></td></tr><tr><td width="1" class="Module_Border"><img height="1" width="1" alt="" src="/images/spacer.gif" complete="complete" /></td><td valign="top" align="left" class="Module_Content">
+<div class="modulepadding_body"><!--Begin Module Content-->
+<div><img border="1" align="left" alt="" src="/zimages/4/125013.gif" complete="complete" />
+<div style="width: 120px; float: left;" align="left"><!--First whitepaper and link here --><a href="http://www.webbuyersguide.com/resource/brief.aspx?id=18608&amp;sitename=riverbed&amp;kc=BASNWP03182011RVBWOT&amp;src=BASNWP03182011RVBWOT">WAN Optimization: The Key to Effective Private Clouds</a><!--end first whitepaper --></div></div><br clear="all" />
+<div><img border="1" align="left" alt="" src="/zimages/4/125013.gif" complete="complete" />
+<div style="width: 120px; float: left;" align="left"><!--Second whitepaper and link here --><a href="http://www.webbuyersguide.com/resource/white-paper/16392/Unleashing-Cloud-Performance-Making-the-Promise-of-Cloud-a-Reality&amp;kc=BASNWP03182011RVBUCP&amp;src=BASNWP03182011RVBUCP">Unleashing Cloud Performance: Making the Promise of Cloud a Reality</a><!--end second whitepaper --></div></div><br clear="all" />
+<div>
+<div><img border="1" align="left" alt="" src="/zimages/4/125013.gif" complete="complete" />
+<div style="width: 120px; float: left;" align="left"><!-- Third whitepaper and link here --><a href="http://www.webbuyersguide.com/resource/white-paper/17054/ESG---What%27s-Needed-for-Cloud-Computing&amp;kc=BASNWP03182011RVBWNC&amp;src=BASNWP03182011RVBWNC">ESG - What�s Needed for Cloud Computing</a><!-- end third whitepaper --></div></div><br clear="all" />
+<div>
+<div style="float: right;"><a href="http://www.webbuyersguide.com/resource/rllibrary.aspx?sitename=webbuyersguide&amp;kc=BASNWP05072010SEEALL&amp;src=BASNWP05072010SEEALL">See All White Papers &gt;</a></div></div>
+<p><!--End Module Content--></p></div></div></td><td width="1" class="Module_Border"><img height="1" width="1" alt="" src="/images/spacer.gif" complete="complete" /></td></tr><tr><td class="Module_Border" colspan="3"><img height="1" width="1" alt="" src="/images/spacer.gif" complete="complete" /></td></tr></tbody></table>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<br />
+<script>
+showdart('SKY','160x600');
+</script>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<br />
+<style type="text/css">#st-resources{width:160px}#st-resources div.st-res-asset{background:url('http://circ.ziffdavisenterprise.com/creative-services/st-resources/images/resource-bg.gif') no-repeat;height:43px;width:160px}#st-resources div.st-res-asset a{display:block;color:#2d3543;text-decoration:none;padding:8px 10px 0 18px;background:url('http://circ.ziffdavisenterprise.com/creative-services/st-resources/images/bullet-arr.gif') no-repeat 10px 12px;font-family:Arial,Helvetica,sans-serif;font-size:12px}#st-resources div.st-res-asset a:hover{text-decoration:underline}#st-resources div.single a{padding:14px 10px 0 18px;background:url('http://circ.ziffdavisenterprise.com/creative-services/st-resources/images/bullet-arr.gif') no-repeat 10px 19px}</style>
+<div id="st-resources">
+<div id="st-res-head"><a href="http://ad.doubleclick.net/clk;233483881;22968807;v?http://ad.doubleclick.net/clk;233993889;57142670;z"><img border="0" complete="complete" src="http://circ.ziffdavisenterprise.com/creative-services/st-resources/images/st-resources-header.gif" alt="" /></a></div>
+<div class="st-res-asset"><a href="http://ad.doubleclick.net/clk;238156241;22968807;n?http://ad.doubleclick.net/clk;237701688;57142665;r">Where Finance Belongs on the IT Agenda</a></div>
+<div class="st-res-asset"><a href="http://ad.doubleclick.net/clk;238156243;22968807;p?http://ad.doubleclick.net/clk;237701702;57142665;e">Smarter Cities and Smarter Buildings</a></div>
+<div class="st-res-asset"><a href="http://ad.doubleclick.net/clk;238156244;22968807;q?http://ad.doubleclick.net/clk;236794708;57142665;v">Business Analytics Assessment Tool</a></div>
+<div class="st-res-footer"><a href="http://ad.doubleclick.net/clk;233483908;22968807;v?http://ad.doubleclick.net/clk;233993986;57142669;f"><img border="0" complete="complete" src="http://circ.ziffdavisenterprise.com/creative-services/st-resources/images/more-resources.gif" alt="" /></a></div><img height="1" width="1" border="0" complete="complete" src="http://ad.doubleclick.net/ad/N815.zdenterprise/B5069510.9;sz=1x1;ord=[timestamp]?" alt="Click Here" /> <img height="1" width="1" border="0" complete="complete" src="http://ad.doubleclick.net/ad/entzd.eweek/ibmwidget/virtimu;sz=1x1;ord=1" alt="Click Here" /> </div>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<!-- START SUBCRIPTION INCLUDE-->
+<table cellspacing="0" cellpadding="1" border="0" bgcolor="#0099ff" width="150"><tbody><tr><td>
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#003366" width="148"><tbody><tr><td><img height="124" width="148" alt="" src="/util_get_image/8/0,1311,i=97855,00.gif" /></td></tr><tr><td><img height="38" width="148" alt="" src="/util_get_image/8/0,1311,i=97851,00.gif" /></td></tr><tr><td>
+<form name="order" onsubmit="window.open('','form_results','width=390,height=430,scrollbars,status');" action="https://enterprise-secure-registration.com/index.php?page=pubSubscription&amp;pub=bsl&amp;p=bslbanrew" method="post" target="form_results">
+<table cellspacing="0" cellpadding="0" border="0" width="148"><tbody><tr><td><img height="4" width="1" alt="" src="spacer.gif" /></td></tr><tr><td>
+<table cellspacing="0" cellpadding="0" border="0" align="center" width="131"><tbody><tr><td>
+<table cellspacing="0" cellpadding="0" border="0" width="131"><tbody><tr><td width="63" valign="bottom"><img height="9" width="43" alt="" src="/util_get_image/8/0,1311,i=97854,00.gif" /><br />
+<input style="font-size: 9px; width: 63px; font-family: Verdana; height: 16px;" type="text" id="FNAME" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="FNAME" autocomplete="OFF" /></td><td width="5"><img height="1" width="5" alt="" src="spacer.gif" /></td><td width="63" valign="bottom"><img height="9" width="41" alt="" src="/util_get_image/8/0,1311,i=97856,00.gif" /><br />
+<input style="font-size: 9px; width: 63px; font-family: Verdana; height: 16px;" type="text" id="LNAME" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="LNAME" autocomplete="OFF" /></td></tr></tbody></table></td></tr><tr><td>
+<table cellspacing="0" cellpadding="0" border="0" width="131"><tbody><tr><td width="63" valign="bottom"><img height="9" width="18" alt="" src="/util_get_image/8/0,1311,i=97861,00.gif" /><br />
+<input style="font-size: 9px; width: 63px; font-family: Verdana; height: 16px;" type="text" id="TITLE" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="TITLE" /></td><td width="5"><img height="1" width="5" alt="" src="spacer.gif" /></td><td width="63" valign="bottom"><img height="10" width="36" alt="" src="/util_get_image/8/0,1311,i=97853,00.gif" /><br />
+<input style="font-size: 9px; width: 63px; font-family: Verdana; height: 16px;" type="text" id="COMPANY" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="COMPANY" /></td></tr></tbody></table></td></tr><tr><td>
+<table cellspacing="0" cellpadding="0" border="0" width="131"><tbody><tr><td width="131" valign="bottom"><img height="9" width="33" alt="" src="/util_get_image/8/0,1311,i=97849,00.gif" /><br />
+<input style="font-size: 9px; width: 131px; font-family: Verdana; height: 16px;" type="text" id="ADDRESS2" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="ADDRESS2" /></td></tr></tbody></table></td></tr><tr><td>
+<table cellspacing="0" cellpadding="0" border="0" width="131"><tbody><tr><td width="61" valign="bottom"><img height="10" width="16" alt="" src="/util_get_image/8/0,1311,i=97852,00.gif" /><br />
+<input style="font-size: 9px; width: 45px; font-family: Verdana; height: 16px;" type="text" id="CITY" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="CITY" autocomplete="OFF" /></td><td width="5"><img height="1" width="5" alt="" src="spacer.gif" /></td><td width="30" valign="bottom"><img height="9" width="21" alt="" src="/util_get_image/8/0,1311,i=97857,00.gif" /><br />
+<select style="font-size: 9px; width: 40px; font-family: Verdana; height: 16px;" size="1" name="STATE">
+<option value="" selected="selected">&nbsp;</option>
+<option value="AL">AL</option>
+<option value="AK">AK</option>
+<option value="AZ">AZ</option>
+<option value="AR">AR</option>
+<option value="CA">CA</option>
+<option value="CO">CO</option>
+<option value="CT">CT</option>
+<option value="DE">DE</option>
+<option value="DC">DC</option>
+<option value="FL">FL</option>
+<option value="GA">GA</option>
+<option value="GU">GU</option>
+<option value="HI">HI</option>
+<option value="ID">ID</option>
+<option value="IL">IL</option>
+<option value="IN">IN</option>
+<option value="IA">IA</option>
+<option value="KS">KS</option>
+<option value="KY">KY</option>
+<option value="LA">LA</option>
+<option value="ME">ME</option>
+<option value="MD">MD</option>
+<option value="MA">MA</option>
+<option value="MI">MI</option>
+<option value="MN">MN</option>
+<option value="MS">MS</option>
+<option value="MO">MO</option>
+<option value="MT">MT</option>
+<option value="NE">NE</option>
+<option value="NV">NV</option>
+<option value="NH">NH</option>
+<option value="NJ">NJ</option>
+<option value="NM">NM</option>
+<option value="NY">NY</option>
+<option value="NC">NC</option>
+<option value="ND">ND</option>
+<option value="OH">OH</option>
+<option value="OK">OK</option>
+<option value="OR">OR</option>
+<option value="PA">PA</option>
+<option value="PR">PR</option>
+<option value="RI">RI</option>
+<option value="SC">SC</option>
+<option value="SD">SD</option>
+<option value="TN">TN</option>
+<option value="TX">TX</option>
+<option value="UT">UT</option>
+<option value="VT">VT</option>
+<option value="VI">VI</option>
+<option value="VA">VA</option>
+<option value="WA">WA</option>
+<option value="WV">WV</option>
+<option value="WI">WI</option>
+<option value="WY">WY</option>
+<option value="">--</option>
+<option value="AA">AA</option>
+<option value="AE">AE</option>
+<option value="AP">AP</option>
+<option value="">--</option>
+<option value="54">AB</option>
+<option value="55">BC</option>
+<option value="56">MB</option>
+<option value="57">NB</option>
+<option value="58">NF</option>
+<option value="59">NS</option>
+<option value="60">NT</option>
+<option value="66">NU</option>
+<option value="61">ON</option>
+<option value="62">PE</option>
+<option value="63">QC</option>
+<option value="64">SK</option>
+<option value="65">YT</option></select> </td><td width="5"><img height="1" width="5" alt="" src="spacer.gif" /></td><td width="36" valign="bottom"><img height="10" width="14" alt="" src="/util_get_image/8/0,1311,i=97862,00.gif" /><br />
+<input style="font-size: 9px; width: 36px; font-family: Verdana; height: 16px;" type="text" id="ZIPCODE" onblur="this.style.backgroundColor='#FFFFFF'" onfocus="this.style.backgroundColor='#FFFFCC'" value="" name="ZIPCODE" autocomplete="OFF" /></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td><img height="4" width="1" alt="" src="spacer.gif" /></td></tr><tr><td>
+<input height="32" border="0" type="image" width="148" src="/util_get_image/8/0,1311,i=97860,00.gif" value="" name="imageField2" /></td></tr><tr><td align="center"><img height="3" width="1" alt="" src="spacer.gif" /><br />
+<a href="https://enterprise-secure-registration.com/index.php?page=pubSubscription&pub=bsl&p=bslbanrew" target="new"><font size="1" face="arial" color="#ffffff">Renew Your Subscription</font></a><br />
+<img height="3" width="1" alt="" src="spacer.gif" /></td></tr></tbody></table></form></td></tr></tbody></table></td></tr></tbody></table><br />
+<!-- END SUBSCRIPTION INCLUDE -->    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<br />
+<script type="text/javascript" src="http://www.eweek.com/widgets/ibmtco/calcinit.php?ff=sky&calc=cloud" id="calcinit"></script>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+	  </td>
+      <td valign=top>
+        <style type="text/css">
+h2{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#333;text-decoration:none;text-align:left;margin-bottom:10px;}
+h2{padding:0px;margin:0px;line-height:13px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;color:#333;text-decoration:none;text-align:left;margin-bottom:10px;}
+h1{margin-top:10px;line-height:22px;margin-bottom:10px;}
+
+</style>
+
+<!-- MM: CDate 2008-02-21 13:47:58 - MDate 2008-02-28 15:22:37 -->
+<table width='100%' border='0' cellpadding='0' cellspacing='0'><tr><td class='SuperSite_Header' background="/images/zde/backtop.gif" width=424 height=37><h3 class="section_header" style="margin:1px 5px;">Web Services/SOA</h3></td></tr></table><img src='/images/ew_spacer.gif' width='1' height='1'><br style='font-size:5px'><BR>
+
+<table cellpadding=4 cellspacing=0><tr><td>
+  
+  <h1>Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0</h1>
+ <div style="float:right;display:block;">
+<script type="text/javascript">
+tweetmeme_service = 'bit.ly';
+tweetmeme_url = 'http://www.baselinemag.com/c/a/Web-Services-and-SOA/Amazons-Mechanical-Turk-Where-the-1700s-Meet-Web-20/';
+tweetmeme_source = 'baselinemag';
+</script>
+<script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+</div>
+<div style="float:left;display:block;">
+ 
+  <span class="authorsource">By</span>&nbsp;<span class="authorsource"><a rel=nofollow href="http://www.baselinemag.com/cp/bio/Doug-Bartholomew/">Doug Bartholomew</a></span><BR>
+  <span class="Article_Date">2008-02-21  
+		<BR><BR>
+		<span class="Article_Date">Article Views: 3977<BR>
+			<span class="content_rating">
+	Article Rating:<img src="http://www.baselinemag.com/images/M_images/rating_star.png" width="11" height="10" border="0" alt="star" valign="middle" /><img src="http://www.baselinemag.com/images/M_images/rating_star.png" width="11" height="10" border="0" alt="star" valign="middle" /><img src="http://www.baselinemag.com/images/M_images/rating_star.png" width="11" height="10" border="0" alt="star" valign="middle" /><img src="http://www.baselinemag.com/images/M_images/rating_star.png" width="11" height="10" border="0" alt="star" valign="middle" /><img src="http://www.baselinemag.com/images/M_images/rating_star_blank.png" width="11" height="10" border="0" alt="star" valign="middle" />&nbsp;/&nbsp;4	</span>
+ 
+</div>
+				
+		</span> 
+  
+
+                <br clear="both" />
+
+<br />
+<h2><p>Amazon�s Mechanical Turk is particularly well-suited for image processing tasks.&nbsp;</p></h2>
+
+<table cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td valign=top>
+<style type="text/css">
+<!--
+#ArticleWidgets {
+font-family: Arial, Verdana, Helvetica, sans-serif;
+font-size: 11px;
+font-weight: none;
+text-decoration: none;
+margin-bottom: 0px;
+}
+#ArticleWidgets {
+color: #003399;
+font-weight: none;
+text-decoration: none;
+line-height: 16px;
+}
+#ArticleWidgets.a, ArticleWidgets.a:hover {
+color: #003399;
+font-weight: none;
+text-decoration: underline;
+line-height: 16px;
+}
+
+#position {padding:5px 0px 5px 5px;}
+#spacer {height:5px; line-height:5px;}
+.add2head_new {
+        font-size: 11px;
+        font-weight: bold;
+        width: 200px;
+        margin-left:8px;
+        margin-right:8px;
+        display:block;
+        float:right;
+}
+.ArticleWidgetsHeadline {
+font-size:11px;
+font-weight:bold;
+}
+-->
+</style>
+
+<script language="JavaScript" type="text/javascript">
+var addtoMethod=1;
+var AddURL = document.location.href;
+var AddTitle = escape(document.title);
+</script>
+<script language="JavaScript" src="/includes/js/add2.js" type="text/javascript"></script>
+<span class="add2head_new">
+<table width="200" cellspacing="0" cellpadding="0" border="1" style="border-collapse:collapse;" bordercolor="#cccccc">
+<tr><td class="ArticleWidgetsHeadline" height="20" bgcolor="#CCCCCC" align="center">Rate This Article:</td><tr>
+<tr>
+    <td width="100" valign="middle"><div id="position"><div id="ArticleWidgets">
+        <span class="Article_Date" style="line-height:16px;">
+                		<table class="Article_Date" cellpadding=0 cellspacing="0">
+		<form method="post" action="http://www.baselinemag.com/">
+		<tr><td align="center"><nobr>
+		Poor
+		<input type="radio" style="position:relative; left:-5px;" name="user_rating" value="1" />
+		<input type="radio" style="position:relative; left:-5px;" name="user_rating" value="2"/>
+		<input type="radio" style="position:relative; left:-5px;" name="user_rating" value="3"/>
+		<input type="radio" style="position:relative; left:-5px;" name="user_rating" value="4"/>
+		<input type="radio" style="position:relative; left:-5px;" name="user_rating" value="5" checked />
+		Best</nobr>
+		<div align="right"><input type="submit" class="txt" name="submit_vote" value="Rate" /></div>
+		<input type="hidden" name="task" value="vote" />
+		<input type="hidden" name="pop" value="0" />
+		<input type="hidden" name="option" value="content" />
+		<input type="hidden" name="Itemid" value="28" />
+		<input type="hidden" name="cid" value="4454" />
+		<input type="hidden" name="url" value="/index.php?option=content&task=view&id=4454&Itemid=28&limit=&limitstart=" />
+		</td></tr>
+		</form>
+		</table>
+        </span> 
+    </td>
+</tr>
+<tr><td class="ArticleWidgetsHeadline" height="20" bgcolor="#CCCCCC" align="center">Add This Article To:</td><tr>
+<td><table border="0">
+<tr>
+    <td width="100" valign="middle"><div id="position"><div id="ArticleWidgets">
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Digg" onclick="addto(3)"><img src="http://images.devshed.com/cmn/add2/AddTo_Digg.gif" border="0"> <a id="1">Digg this</a></span><br>
+        <div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Delicious" onclick="addto(2)"><img src="http://images.devshed.com/cmn/add2/AddTo_Delicious.gif" border="0"> <a id="1">Del.icio.us</a></span><br>
+        <div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Slashdot" onclick="addto(9)"><img src="http://images.devshed.com/cmn/add2/AddTo_Slashdot.gif" border="0"> <a id="1">Slashdot</a></span><br>
+        <div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Yahoo! MyWeb" onclick="addto(7)"><img src="http://images.devshed.com/cmn/add2/AddTo_Yahoo.gif" border="0"> <a id="1">Y! My Web</a></span><br>
+	<div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Email Article To Friend" onclick="javascript:void window.open('http://www.baselinemag.com/index2.php?option=content&task=emailform&id= 4454', 'win2', 'status=no,toolbar=no,scrollbars=no,titlebar=no,menubar=no,resizable=yes,width=400,height=200,directories=no,location=no');"><img src="http://www.eweek.com/images/stories/eTools/email-icon.gif" border="0"> <a id="1">E-mail</a></span><br>
+	<div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Print Version of this Article" onclick="javascript:void window.open('http://www.baselinemag.com/index2.php?option=content&task=view&id=4454&pop=1&hide_ads=1&page=0&hide_js=1', 'win2', 'status=no,toolbar=yes,scrollbars=yes,titlebar=no,menubar=yes,resizable=yes,width=640,height=480,directories=no,location=no');"><img src="http://www.eweek.com/images/stories/eTools/print-icon.gif" border="0"> <a id="1">Print</a></span><br>
+        </div></div>
+        </td>
+    <td width="100" valign="top"><div id="position"><div id="ArticleWidgets">
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Furl" onclick="addto(4)"><img src="http://images.devshed.com/cmn/add2/AddTo_Furl.gif" border="0"> <a id="1">Furl</a></span><br>
+        <div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Google" onclick="addto(5)"><img src="http://images.devshed.com/cmn/add2/AddTo_Google.gif" border="0"> <a id="1">Google</a></span><br>
+        <div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Simpy" onclick="addto(6)"><img src="http://images.devshed.com/cmn/add2/AddTo_Simpy.gif" border="0"> <a id="1">Simpy</a></span><br>
+        <div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="Add this page to Spurl" onclick="addto(8)"><img src="http://images.devshed.com/cmn/add2/AddTo_Spurl.gif" border="0"> <a id="1">Spurl!</a></span><br>
+	<div id="spacer">&nbsp;</div>
+        <span style="cursor:hand;cursor:pointer;" title="PDF Version Of Article" onclick="javascript:void window.open('http://www.wrightsreprints.com/reprints/?magid=1965', 'win2', 'status=yes,toolbar=yes,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,directories=yes,location=yes');"><img src="http://www.eweek.com/images/stories/eTools/pdf-icon.gif" border="0"> <a id="1">PDF Version</a></span><br>
+        </div></div>
+        </td>
+</tr>
+</table>
+</td></tr>
+</table>
+</span>
+
+	<div id='intelliTxt' class="txt">
+
+<p>Imagine a computer that can harness the power of a million human brains working on different pieces of a monumental task and you�ve envisioned the Amazon Mechanical Turk. </p>
+<p>The service is named for the infamous Mechanical Turk built in 1769 by Hungarian nobleman Wolfgang von Kempelen. His chess-playing �machine� astonished audiences throughout Europe before being exposed as a hoax. </p>
+<p>The original Turk�s cabinet of intricate cogs and gears actually concealed a human chess master who defeated most opponents, including luminaries such as Napoleon Bonaparte and Benjamin Franklin.
+</p>
+<p>With the Amazon Mechanical Turk, the true human brainpower also is hidden�in cyberspace. Using so-called �crowd sourcing,� AMT customers submit tasks that require human judgment and action. These human intelligence tasks (HITs) are performed by a community of �turkers� who are paid by the requesters, while Amazon gets a 10 percent commission. </p>
+<p>The AMT was born when Amazon executives were aiming to ensure that photos of businesses taken for the online Yellow Pages on the company�s A9 search site corresponded to the correct listings. They set up a Web site and asked people to verify the pictures for a penny or two per photograph. It worked so well that in November 2005, the company launched the Amazon Mechanical Turk.
+</p>
+<p>AMT is particularly well-suited for image processing tasks that require judgment, such as tagging objects found in an image, selecting the most effective images for advertising or checking images to rule out inappropriate content. </p>
+<p>�Determining the tone of an article, for instance, is also a task that only a human can do,� explains AMT director Peter Cohen. </p>
+<p>Although the Amazon Mechanical Turk continues to operate in beta, millions of turkers are currently working on jobs provided by online taskmasters. The individuals who assign the work define the tasks, including the output desired, the format, how the work items are displayed and how much they will pay for each task. </p>
+<p>In addition, clients can require workers to pass a qualification test before tackling any tasks and can retrieve the results using Amazon�s Web services APIs.
+</p><BR>
+<br clear=all><BR><div align=center><script>showdart('BOTTOM','350x50');</script></div><BR><table width=100% cellpadding=1 cellspacing=0 bgcolor=black border=0><TR><TD><table width=100% cellpadding=0 cellspacing=0 bgcolor=white border=0 class=contentpaneopen><tr bgcolor=#CC3300><td width=5> </td><td align=center><a href=/showblog/4373/Amazon`s-Mechanical-Turk-Where-the-1700s-Meet-Web-20/ class=sidenav><font color=#FFFFFF><B>Discuss Amazon`s Mechanical Turk: Where the 1700s Meet Web 2.0</b></font></a></td><td width=5> </td></tr><tr bgcolor=#EEEEEE><td width=5> </td><td> &nbsp;</td><td width=5> </td></tr><tr bgcolor=#EEEEEE><td></td><td><font color=blue>>>></font> <a rel=nofollow href=/showblog/4373/Amazon`s-Mechanical-Turk-Where-the-1700s-Meet-Web-20/ class=sidenav><U><B>Be the FIRST to comment on this article!</b></u></a></td><td></td></tr><tr bgcolor=#EEEEEE><td width=5> </td><td> &nbsp;</td><td width=5> </td></tr></table></td></tr></table><br clear=all>
+<table><TR><td height=3><img src=/images/spacer.gif></td></tr></table><table width=100% cellpadding=1 cellspacing=0 bgcolor=black border=0><TR><TD><table width=100% cellpadding=0 cellspacing=0 bgcolor=white border=0 class=contentpaneopen><tr bgcolor=#CC3300><td width=5> </td><td>&nbsp;</td><td width=5> </td></tr><tr bgcolor=lightyellow><td width=5> </td><td> &nbsp;</td><td width=5> </td></tr><tr bgcolor=lightyellow><td></td><td><font color=blue>&gt;&gt;&gt;</font> <a rel=nofollow href=http://www.baselinemag.com/c/b/Web-Services-and-SOA/ class=sidenav><U><B>More Web Services/SOA Articles</b></u></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=blue>&gt;&gt;&gt;</font> <a rel=nofollow href='http://www.baselinemag.com/cp/bio/Doug-Bartholomew/' class=sidenav><U><B>More By Doug Bartholomew</b></u></a></td><td></td></tr><tr bgcolor=lightyellow><td width=5> </td><td> &nbsp;</td><td width=5> </td></tr></table></td></tr></table><BR>
+
+	</div>
+	
+
+	
+<span class="Article_Date">
+
+
+				<br /><div align=center>
+		<a rel=nofollow href="javascript:void window.open('http://www.baselinemag.com/index2.php?option=content&task=emailform&id= 4454', 'win2', 'status=no,toolbar=no,scrollbars=no,titlebar=no,menubar=no,resizable=yes,width=400,height=200,directories=no,location=no');">Email Article To Friend</a>
+		&nbsp;&diams;&nbsp;<a rel=nofollow href="javascript:void window.open('http://www.baselinemag.com/index2.php?option=content&task=view&id=4454&pop=1&hide_ads=1&page=0&hide_js=1', 'win2', 'status=no,toolbar=yes,scrollbars=yes,titlebar=no,menubar=yes,resizable=yes,width=640,height=480,directories=no,location=no');">Print Version Of Article</a>
+		&nbsp;&diams;&nbsp;<a rel=nofollow href="javascript:void window.open('http://www.baselinemag.com/index2.php?option=content&do_pdf=1&id=4454', 'win2', 'status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no');">PDF Version Of Article</a><br />
+		</div>
+</span>
+	<br />
+	
+	
+	
+	
+
+</td>
+</tr>
+</table>
+</td></tr></table>
+
+
+	    
+
+<!-- Loading Module 'mod_secnews' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+			    		<tr>
+    			<td>
+			    			</td>
+			</tr>
+      	</table>
+
+
+	
+
+<!-- End of Module 'mod_secnews' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<table style="border-bottom: 1px solid; border-left: 1px solid; border-top: 1px solid; border-right: 1px solid;" width="100%" class="SponsorBg" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="150" align="right" valign="top" rowspan="2"><img width="144" height="20" align="right" alt="Sponsored Links" src="/images/bl_sponsoredlinks.gif" border="0" hspace="3" complete="complete" complete="complete" /></td>
+<td width="4" rowspan="2" rel="nofollow"><img width="4" height="1" alt="" src="/images/bl_spacer.gif" border="0" complete="complete" complete="complete" rel="nofollow" /></td>
+<td height="8"><img width="1" height="8" alt="" src="/images/bl_spacer.gif" border="0" complete="complete" complete="complete" /></td></tr>
+<tr>
+<td width="100%" valign="top"><!--IBM Smarter Tech�12/31/10�Ilana-->
+<li><a href="http://ad.doubleclick.net/clk;226869626;23051668;r?http://www.smartertechnology.com/c/a/Smarter-Strategies/Five-New-Technologies-That-Will-Change-Enterprise-Computing/" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">5 New Technologies That Will Change Enterprise IT</font></a><img width="1" height="1" alt="Advertisement" src="http://ad.doubleclick.net/ad/N815.zdenterprise/B5069510.30;sz=1x1;ord=%n?" border="0" complete="complete" /><br />
+<!-- IBM-LMI�4/30/11�Nathalie --></li>
+<li><a href="http://ad.doubleclick.net/clk;236875280;23051668;l?http://www.itarchitectforumblog.com/" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">Connect with the The Future of IT Architecture blog. </font></a><br />
+<!-- Sophos-6/30/11-Elyssa --></li>
+<li><a href="http://ad.doubleclick.net/clk;239238815;23051668;l?http://www.sophos.com/dlpfordummies?utm_source=Ziff-Davis&amp;utm_medium=textlink&amp;utm_content=DL-Dummies&amp;utm_campaign=Ziff-Davis-DL-Dummies" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">FREE Compliance for Dummies Book from Sophos </font></a>&lt;<br />
+<!-- Insight�4-28-11�Alexa--></li>
+<li><a href=" http://ad.doubleclick.net/clk;239256592;23051668;n?http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&amp;c=20&amp;mc=click&amp;pli=2372440&amp;PluID=0&amp;ord=[timestamp]" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">McAfee SaaS � Protection delivered in the cloud. </font></a><br />
+<!-- HPvidblog-10/31/11-Nathalie --></li>
+<li><a href=" http://ad.doubleclick.net/clk;239240775;23051668;j?http://blogs.eweek.com/bizadvisor/ " target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">Biz Advisor Video Blog by HP </font></a><img width="1" height="1" alt="" src="http://ad.doubleclick.net/ad/entzd.eweek/hpvideoblogdrivers;sz=1x1;ord=timestamp" border="0" complete="complete" complete="complete" /><br />
+<!-- DellHigherED � 4/30/11 - Nathalie --></li>
+<li><a href="http://ad.doubleclick.net/clk;239235384;23051668;j?http://www.eweek.com/dellhighered/" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">Transform IT operations with the Connected Campus</font></a><br />
+<!-- Dell�4/30/11�Nathalie --></li>
+<li><a href="http://ad.doubleclick.net/clk;236780847;23051668;p?http://www.governmentdatacentermgmt.com/" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">Simplify your IT setup with Dell VIS. </font></a><br />
+<!--Dell�4/30/11�Nathalie--></li>
+<li><a href="http://ad.doubleclick.net/clk;236603642;23051668;c?http://www.virtualintegratedsystemsblog.com/" target="_blank" rel="nofollow"><font class="PubFooterCopy" size="1">Leverage your virtual computing environment with Dell.</font></a><br />
+<div>&nbsp;</div></li></td></tr></tbody></table>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<table style="border: 1px solid rgb(204, 204, 204); margin: 5px 10px 5px 20px;" width="500" cellspacing="0" cellpadding="0" border="0"><tbody><tr valign="top"><td height="100%" width="50%"><!---- Start left side ---->
+<table height="100%" width="100%" cellspacing="10" cellpadding="0" border="0"><tbody><tr class="AdModule_BG"><td style="padding: 7px;" height="40" align="center" class="AdModule_Hdr"><strong>FEATURED SPONSORED CONTENT</strong></td></tr><tr><td><span class="AdModule_ContentLarge">
+<ul>
+<p align="left"><span xmlns="http://www.w3.org/1999/xhtml"><span xmlns="http://www.w3.org/1999/xhtml"><a rel="nofollow" target="new" href="http://ad.doubleclick.net/clk;226000963;23051668;y?http://www.smartertechnology.com/c/a/Technology-For-Change/Innovative-Computer-Model-Accurately-Simulates-Cell-Behavior/">Innovative Computer Model Accurately Simulates Cell Behavior</a><br />
+<br />
+<a rel="nofollow" target="new" href="http://ad.doubleclick.net/clk;226000963;23051668;y?http://www.smartertechnology.com/c/a/Technology-For-Change/Group-Aims-to-Improve-Effectiveness-of-Targeted-Cancer-Drug-Therapies/">Group Aims to Improve Effectiveness of Targeted Cancer Drug Therapies</a><br />
+<br />
+<a rel="nofollow" target="new" href="http://ad.doubleclick.net/clk;226000963;23051668;y?http://www.smartertechnology.com/c/a/Smarter-Strategies/Speed-Briefing-Big-Data-and-The-Intelligent-Economy/">Speed Briefing: 'Big Data' and 'The Intelligent Economy'</a><br />
+<br />
+<a rel="nofollow" target="new" href="http://ad.doubleclick.net/clk;226000963;23051668;y?http://www.smartertechnology.com/"><u>Read more</u></a><br />
+<br />
+</span></span></p>
+<p><span xmlns="http://www.w3.org/1999/xhtml"><span xmlns="http://www.w3.org/1999/xhtml"><span xmlns="http://www.w3.org/1999/xhtml">&nbsp;&nbsp;<font size="1">Brought to you by<br />
+<a rel="nofollow" target="new" href="http://ad.doubleclick.net/clk;226000963;23051668;y?http://www.smartertechnology.com/"><img border="0" alt="" src="/images/stories/Marketing/smartTech_154x55.jpg" /></a><img height="1" width="1" border="0" src="http://ad.doubleclick.net/ad/N815.zdenterprise/B5069510.30;sz=1x1;ord=[timestamp]?" alt="Advertisement" /><img height="1" width="1" border="0" alt="" src="http://ad.doubleclick.net/ad/entzd.eweek/ibmwidget/cloudimu;sz=1x1;ord=1" /></font></span></span></span></p></ul></span></td></tr></tbody></table></td><td style="padding-right: 1px;"><br />
+</td><td height="100%" width="50%"><!-- End left/ Start right side -->
+<table height="100%" width="100%" cellspacing="10" cellpadding="0" border="0"><tbody><tr class="AdModule_BG"><td style="padding: 7px;" height="40" align="center" class="AdModule_Hdr"><strong>FEATURED SPONSORED MESSAGE</strong></td></tr><tr><td><span class="AdModule_ContentLarge">
+<ul>
+<p align="left"><a href="http://ad.doubleclick.net/clk;239240742;23051668;d?http://blogs.eweek.com/bizadvisor/content/social_media/how_linkedin_is_helping_smbs_find_new_business.html" target="new" rel="nofollow"><strong>The Budding Relationship Between SMBs and Social Media</strong><br />
+</a><br />
+In his recent book, Social Marketing To The Business Customer, author Paul Gillin explains how to use social networks such as Facebook, LinkedIn and Twitter to create new links to existing customers and find new customers.<br />
+<br />
+<strong><a rel="nofollow" href="http://ad.doubleclick.net/clk;239240742;23051668;d?http://blogs.eweek.com/bizadvisor/content/social_media/how_linkedin_is_helping_smbs_find_new_business.html" target="new">Watch the Video</a></strong> </p>
+<p>&nbsp;&nbsp;<font size="1">Brought to You By<br />
+</font><a rel="nofollow" href="http://ad.doubleclick.net/clk;239240742;23051668;d?http://blogs.eweek.com/bizadvisor/content/social_media/how_linkedin_is_helping_smbs_find_new_business.html" target="new"><img border="0" complete="complete" src="/images/stories/Marketing/hp-logo.png" alt="Click Here" /></a><img height="1" width="1" border="0" alt="" src="http://ad.doubleclick.net/ad/entzd.eweek/hpvideoblogdrivers;sz=1x1;ord=timestamp%22" /></p></ul></span></td></tr></tbody></table></td>
+<center>&nbsp;</center></tr></tbody></table><!-- end side by side Ad module -->    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module 'mod_secreviews' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+			    		<tr>
+    			<td>
+			    			</td>
+			</tr>
+      	</table>
+
+
+	
+
+<!-- End of Module 'mod_secreviews' -->
+
+
+
+<!-- Loading Module 'mod_secopinions' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+			    		<tr>
+    			<td>
+			    			</td>
+			</tr>
+      	</table>
+
+
+	
+
+<!-- End of Module 'mod_secopinions' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<div id="marketplace">
+
+<div class="hdr">
+<h3 style="margin: 0pt; padding: 0pt;">&nbsp;</h3>
+</div>
+
+<div style="border: 1px solid rgb(153, 153, 153); text-align: center;">
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-6422417422167576";
+//MP-BaselineMag-AP 336x280, Baseline created 1/22/08
+google_ad_slot = "3486164594";
+google_ad_width = 336;
+google_ad_height = 280;
+//--></script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script>
+
+</div>
+</div>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+	  </td>
+      <td valign=top width=200>
+	    
+
+<!-- Loading Module 'mod_related_content_solr' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+			    		<tr>
+    			<td>
+			<!-- solr --><style type="text/css">
+#related-content {
+	WIDTH: 323px; FONT-FAMILY: verdana,arial,sans-serif; POSITION: relative; HEIGHT: 390px; _HEIGHT: 385px
+}
+#related-content-header {
+	Z-INDEX: 5; BACKGROUND-IMAGE: url(/images/related_content/slices2/baseline-relcon-header-bg.gif); WIDTH: 323px; POSITION: absolute; HEIGHT: 36px
+}
+#related-content-header H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; Z-INDEX: 5; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 323px; COLOR: #fff; LINE-HEIGHT: 36px; PADDING-TOP: 0px; FONT-FAMILY: verdana,arial,sans-serif; POSITION: absolute; HEIGHT: 36px; TEXT-ALIGN: center
+}
+#related-content-body {
+	CLEAR: both; BACKGROUND-IMAGE: url(/images/related_content/slices2/relcon-bg.gif); WIDTH: 323px; FONT-FAMILY: arial,sans-serif; POSITION: relative; TOP: 35px; HEIGHT: 319px
+}
+#related-content-body-ccpc {
+	CLEAR: both; BACKGROUND-IMAGE: url(/images/related_content/slices2/relcon-bg_ads.gif); WIDTH: 323px; FONT-FAMILY: arial,sans-serif; POSITION: relative; TOP: 35px; HEIGHT: 329px
+}
+#related-content-tabs {
+	CLEAR: both; BORDER-TOP: #cccccc 1px solid; LEFT: 2px; WIDTH: 319px; FONT-FAMILY: arial,sans-serif; POSITION: relative; TOP: 38px; HEIGHT: 27px; BACKGROUND-COLOR: #CC9900;
+}
+.related-content-date{
+        font-size: .78em;color:#000000;
+}
+.rel-tab-on {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 105px; _WIDTH: 107px;COLOR: #0000cc; LINE-HEIGHT: 23px; PADDING-TOP: 0px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.rel-tab-on A B {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 105px; _WIDTH: 107px;COLOR: #0000cc; LINE-HEIGHT: 23px; PADDING-TOP: 0px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.rel-tab-off {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 13px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 104px; _WIDTH: 106px;COLOR: #ffffff; LINE-HEIGHT: 23px; PADDING-TOP: 0px; BACKGROUND-COLOR: #663333; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.rel-tab-off A B {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 13px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 104px; _WIDTH: 106px;COLOR: #ffffff; LINE-HEIGHT: 23px; PADDING-TOP: 0px; BACKGROUND-COLOR: #663333; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+#related-content-tabs A {
+	DISPLAY: inline; FONT-SIZE: 13px; HEIGHT: 27px
+}
+#related-content-body DIV OL,  #related-content-body-ccpc DIV OL{
+	PADDING: 0px; LIST-STYLE: none none outside;  MARGIN: 0px; COLOR: #c4c4c4; 
+}
+#related-content-body DIV OL LI, #related-content-body-ccpc DIV OL LI  {
+	 MARGIN: 0px; OVERFLOW: hidden; PADDING: 0px; POSITION: relative; HEIGHT: 35px; _height:32px;
+}
+#related-content-body DIV OL LI DIV, #related-content-body-ccpc DIV OL LI DIV {
+    width:323px; overflow:hidden; height:30px; _height:34px; padding:0px; margin:0px;
+}
+#related-content-body DIV OL LI DIV A, #related-content-body-ccpc DIV OL LI DIV A  {
+	vertical-align:middle;PADDING-RIGHT: 4px; DISPLAY: inline; position:absolute;MARGIN-LEFT: 72px; FONT-WEIGHT: bold; FONT-SIZE: 11px; PADDING-BOTTOM: 0px; overflow:hidden;width:230px;height:26px;_height:28px;line-height:13px;COLOR: #663333; TEXT-DECORATION: none; padding-top:3px;
+}
+#related-content-body DIV OL LI DIV SPAN #related-content-body-ccpc DIV OL LI DIV SPAN {
+	margin:0px;padding:0px;
+}
+#related-content-body DIV OL LI DIV SPAN A, #related-content-body-ccpc DIV OL LI DIV SPAN A{
+	margin:0px;padding:0px;
+}
+#related-content-body DIV OL LI DIV SPAN A IMG, #related-content-body-ccpc DIV OL LI DIV SPAN A IMG  {
+	margin:0px;padding:0px; margin-top: 6px; position:absolute;display:inline;MARGIN-LEFT: 35px; VERTICAL-ALIGN: middle; MARGIN-RIGHT: 4px
+}
+#related-content-body DIV OL LI DIV B, #related-content-body-ccpc DIV OL LI DIV B {
+	DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 16px; LEFT: 12px; COLOR: #3366cc; LINE-HEIGHT: 30px; POSITION: absolute; TEXT-ALIGN: right
+}
+#related-content-bottom {
+	DISPLAY: block; WIDTH: 318px; POSITION: absolute; HEIGHT: 25px; TEXT-ALIGN: right
+}
+</style>
+
+<!-- SiteCatalyst code version: H.19.4.
+Copyright 1997-2009 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="http://www.baselinemag.com/js/s_code_relcon_new.js"></script> 
+
+<script language="JavaScript" type="text/javascript"><!--
+
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName="Related Content Widget"
+s.prop1="Related Content Widget"
+s.prop2=document.title
+s.prop3=document.url
+s.prop4=document.domain
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://emgrelatedcontent.112.2O7.net/b/ss/emgrelatedcontent/1/H.19.4--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.19.4. -->
+
+<script language=JavaScript>
+
+function rctracker(obj) {
+  var s=s_gi('emgrelatedcontent');
+  s.linkTrackVars='prop1,prop5,prop6,prop7,prop8,eVar1,events';
+  s.linkTrackEvents='event5';
+  s.events='event5';
+  s.prop1='Related Content Article Click';
+  s.prop5=document.title;
+  s.prop6=document.URL;
+  s.prop7=document.domain;
+  s.prop8=obj.href;
+  s.eVar1='Related Content Article Click';
+  s.tl(obj,'e','');
+}
+</script>
+
+<script type="text/javascript">
+    function toggleContent(param,rnd) {
+	    if (param==0) {
+		    document.getElementById("articles_tab_" + rnd).setAttribute("class", "rel-tab-on");
+		    document.getElementById("labs_tab_" + rnd ).setAttribute("class", "rel-tab-off");
+		    document.getElementById("media_tab_" + rnd).setAttribute("class", "rel-tab-off");
+		    document.getElementById("articles_tab_" + rnd).setAttribute("className", "rel-tab-on");
+		    document.getElementById("labs_tab_" + rnd).setAttribute("className", "rel-tab-off");
+		    document.getElementById("media_tab_" + rnd).setAttribute("className", "rel-tab-off");
+		    document.getElementById("articles_" + rnd).style.visibility="visible";
+		    document.getElementById("labs_" + rnd).style.visibility="hidden";
+		    document.getElementById("media_" + rnd).style.visibility="hidden";
+		    document.getElementById("articles_" + rnd).style.display="block";
+		    document.getElementById("labs_" + rnd).style.display="none";
+		    document.getElementById("media_" + rnd).style.display="none";
+		}
+		if (param==1) {
+		    document.getElementById("articles_tab_" + rnd).setAttribute("class", "rel-tab-off");
+		    document.getElementById("labs_tab_" + rnd).setAttribute("class", "rel-tab-on");
+		    document.getElementById("media_tab_" + rnd).setAttribute("class", "rel-tab-off");
+		    document.getElementById("articles_tab_" + rnd).setAttribute("className", "rel-tab-off");
+		    document.getElementById("labs_tab_" + rnd).setAttribute("className", "rel-tab-on");
+		    document.getElementById("media_tab_" + rnd).setAttribute("className", "rel-tab-off");
+		    document.getElementById("articles_" + rnd).style.visibility="hidden";
+		    document.getElementById("labs_" + rnd).style.visibility="visible";
+		    document.getElementById("media_" + rnd).style.visibility="hidden";
+		    document.getElementById("articles_" + rnd).style.display="none";
+		    document.getElementById("labs_" + rnd).style.display="block";
+		    document.getElementById("media_" + rnd).style.display="none";
+		}
+		if (param==2) {
+		    document.getElementById("articles_tab_" + rnd).setAttribute("class", "rel-tab-off");
+		    document.getElementById("labs_tab_" + rnd).setAttribute("class", "rel-tab-off");
+		    document.getElementById("media_tab_" + rnd).setAttribute("class", "rel-tab-on");
+		    document.getElementById("articles_tab_" + rnd).setAttribute("className", "rel-tab-off");
+		    document.getElementById("labs_tab_" + rnd).setAttribute("className", "rel-tab-off");
+		    document.getElementById("media_tab_" + rnd).setAttribute("className", "rel-tab-on");
+		    document.getElementById("articles_" + rnd).style.visibility="hidden";
+		    document.getElementById("labs_" + rnd).style.visibility="hidden";
+		    document.getElementById("media_" + rnd).style.visibility="visible";
+		    document.getElementById("articles_" + rnd).style.display="none";
+		    document.getElementById("labs_" + rnd).style.display="none";
+		    document.getElementById("media_" + rnd).style.display="block";									
+		}
+	}
+   
+    var related_resource_contents="<br/><a target='_new' onClick='rctracker(this)' href='http://www.eseminarslive.com/c/a/Desktops-and-Notebooks/DELL120610/' title='Your PC Upgrade Cycle and Windows 7 - Why the Time for upgrades is Now!'>Your PC Upgrade Cycle and Windows 7 - Why the Time for upgrades is Now!</a><br/><a target='_new' onClick='rctracker(this)' href='http://www.eseminarslive.com/c/a/Messaging-and-Collaboration/Citrix011210/' title='Driving Growth and Cutting Costs in 2010 with Online Collaboration'>Driving Growth and Cutting Costs in 2010 with Online Collaboration</a><br/><a target='_new' onClick='rctracker(this)' href='http://www.eseminarslive.com/c/a/VoIP-and-Telephony/Citrix041310/' title='Do More, Meet Less: Driving Team Efficiency with Web Conferencing'>Do More, Meet Less: Driving Team Efficiency with Web Conferencing</a><br/><a target='_new' onClick='rctracker(this)' href='http://www.eseminarslive.com/c/a/IT-Infrastructure/IBM091310/' title='Deliver Consistent Responses to Your Most Critical Applications'>Deliver Consistent Responses to Your Most Critical Applications</a>";
+    document.getElementById('related_resources_content').innerHTML=related_resource_contents + '<br/>';
+
+</script>
+<div id="related-content">
+	<div id="related-content-header">
+	  <h4>Related Content</h4>
+	<div id="related-content-tabs">
+		<a id="articles_tab_429" onclick="toggleContent(0,429);" class="rel-tab-on"><b>Articles</b></a>
+		<a id="labs_tab_429" onclick="toggleContent(1,429);" class="rel-tab-off"><b>Labs/How-To</b></a>
+		<a id="media_tab_429" onclick="toggleContent(2,429);" class="rel-tab-off"><b>Multimedia</b></a>
+	</div>
+	<div id="related-content-body-ccpc">
+		<div>
+			<ol id="articles_429" style="visibility:visible;">
+
+                  
+    <li style="background-color:#EEF2F7;width:317px;_width:316px;margin-left:3px;margin-top:1px;_height:47px;height:45px;"><div style="height:45px;_height:47px;width:317px;width:_316px;"><span><a style="width:60px;_width:60px;_height:47px;height:45px;" onClick="rctracker(this)" target="_new" href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q"><img style="margin-left:16px;padding-top:0px;" title="Sponsor: HP LaserJet pays you back! Learn more. (Sponsor)
+" src="http://internet.ziffdavisenterprise.com/ContextClicks/alert_icon.png" height="35" border="0" /></a></span><a style="margin-left:70px;width:250px;_width:249px;_height:47px;height:45px;" onClick="rctracker(this)" target="_new" href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q" title="Sponsor: HP LaserJet pays you back! Learn more. (Sponsor)
+"><IMG SRC="http://ad.doubleclick.net/ad/N5823.ZiffDavis/B5265728.27;sz=1x1;ord={timestamp}?" BORDER=0 WIDTH=1 HEIGHT=1 ALT="Advertisement">HP LaserJet pays you back! Learn more. (Sponsor)<img src="http://images.devshed.com/pt/pixeltrack.php?trackid=relcon_hples&char1=hples&ran={timestamp}" width="1" height="1" border="0" />
+ </a></div></li>
+    <li><div><b>1: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/Amazons-Cloud-Drive-and-Player-Stripped-Down-Easy-to-Use-319318/"><img title="eWeek News: Amazon's Cloud Drive and Player: Stripped Down, Easy to Use" src="/images/icons/icon_eweek.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/Amazons-Cloud-Drive-and-Player-Stripped-Down-Easy-to-Use-319318/" title="Amazon's Cloud Drive and Player: Stripped Down, Easy to Use">Amazon's Cloud Drive and Player: Stripped Down, Easy to Use&nbsp;<span class='related-content-date'>(2011-03-30)</span></a></div></li>
+    <li><div><b>2: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Messaging-and-Collaboration/Amazon-Opens-Mechanical-Turk-Crowdsourcing-to-NonGeeks/"><img title="eWeek News: Amazon Opens Mechanical Turk Crowdsourcing for Noncoders" src="/images/icons/icon_eweek.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Messaging-and-Collaboration/Amazon-Opens-Mechanical-Turk-Crowdsourcing-to-NonGeeks/" title="Amazon Opens Mechanical Turk Crowdsourcing for Noncoders">Amazon Opens Mechanical Turk Crowdsourcing for Noncoders&nbsp;<span class='related-content-date'>(2008-07-31)</span></a></div></li>
+    <li><div><b>3: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/Amazon-Cloud-Music-Embraces-Android-Ignores-Apple-iOS-896024/"><img title="eWeek News: Amazon Cloud Music Embraces Android, Ignores Apple iOS " src="/images/icons/icon_eweek.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/Amazon-Cloud-Music-Embraces-Android-Ignores-Apple-iOS-896024/" title="Amazon Cloud Music Embraces Android, Ignores Apple iOS ">Amazon Cloud Music Embraces Android, Ignores Apple iOS &nbsp;<span class='related-content-date'>(2011-03-29)</span></a></div></li>
+    <li><div><b>4: </b><span><a onClick="rctracker(this)" href="http://www.baselinemag.com/c/a/IT-Management/Baseline-Issue-March-2008/"><img title="Baseline Magazine News: Baseline Issue March 2008" src="/images/icons/icon_baseline.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.baselinemag.com/c/a/IT-Management/Baseline-Issue-March-2008/" title="Baseline Issue March 2008">Baseline Issue March 2008&nbsp;<span class='related-content-date'>(2008-08-20)</span></a></div></li>
+    <li><div><b>5: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Management/Amazoncom-Advocates-Crowdsourcing-Mechanical-Turk-in-NYC-453866/"><img title="eWeek News: Amazon.com Advocates Crowdsourcing, Mechanical Turk in NYC" src="/images/icons/icon_eweek.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Management/Amazoncom-Advocates-Crowdsourcing-Mechanical-Turk-in-NYC-453866/" title="Amazon.com Advocates Crowdsourcing, Mechanical Turk in NYC">Amazon.com Advocates Crowdsourcing, Mechanical Turk in NYC&nbsp;<span class='related-content-date'>(2009-11-11)</span></a></div></li>
+    <li><div><b>6: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Security/Amazons-Mechanical-Turk-Used-to-Generate-Massive-Amounts-of-Spam-856935/"><img title="eWeek News: Amazon's Mechanical Turk Used to Generate Massive Amounts of Spam" src="/images/icons/icon_eweek.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Security/Amazons-Mechanical-Turk-Used-to-Generate-Massive-Amounts-of-Spam-856935/" title="Amazon's Mechanical Turk Used to Generate Massive Amounts of Spam">Amazon's Mechanical Turk Used to Generate Massive Amounts of Spam&nbsp;<span class='related-content-date'>(2010-12-22)</span></a></div></li>
+    <li><div><b>7: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Web-Services-Web-20-and-SOA/Bezos-Opens-WebServices-Sharing-for-Profits/"><img title="eWeek News: Bezos Opens Web-Services Sharing for Profits" src="/images/icons/icon_eweek.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Web-Services-Web-20-and-SOA/Bezos-Opens-WebServices-Sharing-for-Profits/" title="Bezos Opens Web-Services Sharing for Profits">Bezos Opens Web-Services Sharing for Profits&nbsp;<span class='related-content-date'>(2006-09-27)</span></a></div></li>
+			</ol>
+			<ol id="labs_429" style="visibility:hidden;display:none;">
+                  
+    <li style="background-color:#EEF2F7;width:317px;_width:316px;margin-left:3px;margin-top:1px;_height:47px;height:45px;"><div style="height:45px;_height:47px;width:317px;width:_316px;"><span><a style="width:60px;_width:60px;_height:47px;height:45px;" onClick="rctracker(this)" target="_new" href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q"><img style="margin-left:16px;padding-top:0px;" title="Sponsor: HP LaserJet pays you back! Learn more. (Sponsor)
+" src="http://internet.ziffdavisenterprise.com/ContextClicks/alert_icon.png" height="35" border="0" /></a></span><a style="margin-left:70px;width:250px;_width:249px;_height:47px;height:45px;" onClick="rctracker(this)" target="_new" href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q" title="Sponsor: HP LaserJet pays you back! Learn more. (Sponsor)
+"><IMG SRC="http://ad.doubleclick.net/ad/N5823.ZiffDavis/B5265728.27;sz=1x1;ord={timestamp}?" BORDER=0 WIDTH=1 HEIGHT=1 ALT="Advertisement">HP LaserJet pays you back! Learn more. (Sponsor)<img src="http://images.devshed.com/pt/pixeltrack.php?trackid=relcon_hples&char1=hples&ran={timestamp}" width="1" height="1" border="0" />
+ </a></div></li>
+      
+    <li><div><b>1: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/Will-PAAS-Solve-All-Developer-Ills-336738/"><img title="Review: Will PAAS Solve All Developer Ills?" src="/images/icons/icon_review2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/Will-PAAS-Solve-All-Developer-Ills-336738/" title="Will PAAS Solve All Developer Ills?">Will PAAS Solve All Developer Ills?</a></div></li>
+      
+    <li><div><b>2: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/SpotCloud-Explores-the-Clouds-Utility-Computing-Future-541606/"><img title="Review: SpotCloud Explores the Cloud's Utility Computing Future" src="/images/icons/icon_review2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/SpotCloud-Explores-the-Clouds-Utility-Computing-Future-541606/" title="SpotCloud Explores the Cloud's Utility Computing Future">SpotCloud Explores the Cloud's Utility Computing Future</a></div></li>
+      
+    <li><div><b>3: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Virtualization/rPaths-rBuilder-5-Streamlines-Linux-Virtual-Machine-Management/"><img title="Review: rPath's rBuilder 5 Streamlines Linux Virtual Machine Management" src="/images/icons/icon_review2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Virtualization/rPaths-rBuilder-5-Streamlines-Linux-Virtual-Machine-Management/" title="rPath's rBuilder 5 Streamlines Linux Virtual Machine Management">rPath's rBuilder 5 Streamlines Linux Virtual Machine Management</a></div></li>
+      
+    <li><div><b>4: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Infrastructure/OpenSUSE-114-Offers-Updated-OpenSource-Apps-Components-372992/"><img title="Review: OpenSUSE 11.4 Offers Updated Open-Source Apps, Components" src="/images/icons/icon_review2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Infrastructure/OpenSUSE-114-Offers-Updated-OpenSource-Apps-Components-372992/" title="OpenSUSE 11.4 Offers Updated Open-Source Apps, Components">OpenSUSE 11.4 Offers Updated Open-Source Apps, Components</a></div></li>
+      
+    <li><div><b>5: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Application-Development/RightScale-Eases-Developing-on-Amazon-EC2/"><img title="Review: RightScale Eases Developing on Amazon EC2" src="/images/icons/icon_review2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Application-Development/RightScale-Eases-Developing-on-Amazon-EC2/" title="RightScale Eases Developing on Amazon EC2">RightScale Eases Developing on Amazon EC2</a></div></li>
+      
+    <li><div><b>6: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/How-to-Achieve-the-Strategic-Value-of-Cloud-while-Delivering-Real-ROI/"><img title="How-To: How to Achieve the Strategic Value of Cloud While Delivering Real ROI" src="/images/icons/icon_knowledge2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Cloud-Computing/How-to-Achieve-the-Strategic-Value-of-Cloud-while-Delivering-Real-ROI/" title="How to Achieve the Strategic Value of Cloud While Delivering Real ROI">How to Achieve the Strategic Value of Cloud While Delivering Real ROI</a></div></li>
+      
+    <li><div><b>7: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Web-Services-Web-20-and-SOA/How-to-Scale-Your-Ruby-Applications/"><img title="How-To: How to Scale Your Ruby Applications" src="/images/icons/icon_knowledge2.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Web-Services-Web-20-and-SOA/How-to-Scale-Your-Ruby-Applications/" title="How to Scale Your Ruby Applications">How to Scale Your Ruby Applications</a></div></li>
+			</ol>	
+			<ol id="media_429" style="visibility:hidden;display:none;">
+                  
+    <li style="background-color:#EEF2F7;width:317px;_width:316px;margin-left:3px;margin-top:1px;_height:47px;height:45px;"><div style="height:45px;_height:47px;width:317px;width:_316px;"><span><a style="width:60px;_width:60px;_height:47px;height:45px;" onClick="rctracker(this)" target="_new" href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q"><img style="margin-left:16px;padding-top:0px;" title="Sponsor: HP LaserJet pays you back! Learn more. (Sponsor)
+" src="http://internet.ziffdavisenterprise.com/ContextClicks/alert_icon.png" height="35" border="0" /></a></span><a style="margin-left:70px;width:250px;_width:249px;_height:47px;height:45px;" onClick="rctracker(this)" target="_new" href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q" title="Sponsor: HP LaserJet pays you back! Learn more. (Sponsor)
+"><IMG SRC="http://ad.doubleclick.net/ad/N5823.ZiffDavis/B5265728.27;sz=1x1;ord={timestamp}?" BORDER=0 WIDTH=1 HEIGHT=1 ALT="Advertisement">HP LaserJet pays you back! Learn more. (Sponsor)<img src="http://images.devshed.com/pt/pixeltrack.php?trackid=relcon_hples&char1=hples&ran={timestamp}" width="1" height="1" border="0" />
+ </a></div></li>
+      
+    <li><div><b>1: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Midmarket/Dataguise-Joins-NetApp-Alliance-Partner-Program-187904/"><img title="Slideshow: Dataguise Joins NetApp Alliance Partner Program" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Midmarket/Dataguise-Joins-NetApp-Alliance-Partner-Program-187904/" title="Dataguise Joins NetApp Alliance Partner Program">Dataguise Joins NetApp Alliance Partner Program</a></div></li>
+      
+    <li><div><b>2: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Management/10-Strategic-Technologies-for-2008/"><img title="Slideshow: 10 Strategic Technologies for 2008" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Management/10-Strategic-Technologies-for-2008/" title="10 Strategic Technologies for 2008">10 Strategic Technologies for 2008</a></div></li>
+      
+    <li><div><b>3: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Messaging-and-Collaboration/10-Most-Disruptive-Technologies/"><img title="Slideshow: 10 Most Disruptive Technologies" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Messaging-and-Collaboration/10-Most-Disruptive-Technologies/" title="10 Most Disruptive Technologies">10 Most Disruptive Technologies</a></div></li>
+      
+    <li><div><b>4: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Infrastructure/Top-10-Disruptive-Technologies-Affecting-the-Data-Center/"><img title="Slideshow: Top 10 Disruptive Technologies Affecting the Data Center" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/IT-Infrastructure/Top-10-Disruptive-Technologies-Affecting-the-Data-Center/" title="Top 10 Disruptive Technologies Affecting the Data Center">Top 10 Disruptive Technologies Affecting the Data Center</a></div></li>
+      
+    <li><div><b>5: </b><span><a onClick="rctracker(this)" href="http://www.cioinsight.com/c/a/Technology/Technology-Tablet-PCs/"><img title="Slideshow: Technology: Tablet PCs" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.cioinsight.com/c/a/Technology/Technology-Tablet-PCs/" title="Technology: Tablet PCs">Technology: Tablet PCs</a></div></li>
+      
+    <li><div><b>6: </b><span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Security/The-Best-and-Worst-Microsoft-Products/"><img title="Slideshow: The Best and Worst Microsoft Products" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.eweek.com/c/a/Security/The-Best-and-Worst-Microsoft-Products/" title="The Best and Worst Microsoft Products">The Best and Worst Microsoft Products</a></div></li>
+      
+    <li><div><b>7: </b><span><a onClick="rctracker(this)" href="http://www.cioinsight.com/c/a/Technology/Technology-Content-Management/"><img title="Slideshow: Technology: Content Management" src="/images/icons/icon_slideshow.png" height="20" border="0" /></a></span><a onClick="rctracker(this)" href="http://www.cioinsight.com/c/a/Technology/Technology-Content-Management/" title="Technology: Content Management">Technology: Content Management</a></div></li>
+			</ol>						
+		</div>
+		<div id="related-content-bottom">
+<a href="http://ad.doubleclick.net/clk;238346872;23051668;n?http://ad.doubleclick.net/clk;236755195;60292780;q" target="_new"><img src="http://internet.ziffdavisenterprise.com/ContextClicks/HP-Logo-White-72x25_RC.Module.jpg" vspace="2" border="0" /></a>
+		</div>
+	</div>
+</div>
+    			</td>
+			</tr>
+      	</table>
+
+
+	
+
+<!-- End of Module 'mod_related_content_solr' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<script>
+showdart('MPU','336x280');
+</script>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module 'mod_artmorelist' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+			    		<tr>
+    			<td>
+			
+<table class="Module_BG" cellspacing="0" cellpadding="0" width="336" border="0">
+<tbody>
+<tr>
+	<td class="Module_Border" width="1"><img height="1" alt="" src="/images/spacer.gif" width="1" /></td>
+	<td class="Module_Border" valign="middle" align="left" width="336">LATEST STORIES</td>
+	<td class="Module_Border" width="1"><img height="1" alt="" src="/images/spacer.gif" width="1" /></td>
+</tr>
+<tr>
+	<td class="Module_Border" width="1"><img height="1" alt="" src="/images/spacer.gif" width="1" /></td>
+	<td class="Module_Content" valign="top" align="left">
+		<div class="modulepadding_body">
+	
+		<a href="http://www.baselinemag.com/c/a/IT-Management/Seven-Essential-Skills-of-Great-Leaders-121339/" >- Seven Essential Skills of Great Leaders</a><br />
+		<a href="http://www.baselinemag.com/c/a/IT-Management/How-to-Revive-a-Failing-Project-878251/" >- How to Revive a Failing Project</a><br />
+		<a href="http://www.baselinemag.com/c/a/IT-Management/Flexible-Work-Arrangements-Gain-Popularity-165701/" >- Flexible Work Arrangements Gain Popularity</a><br />
+		<a href="http://www.baselinemag.com/c/a/Innovation/Innovation-Strategy-Needs-IT-Input-388141/" >- Innovation Strategy Needs IT Input</a><br />
+		<a href="http://www.baselinemag.com/c/a/Intelligence/Your-Boss-Stinks-And-He-Knows-It-653955/" >- Your Boss Stinks And He Knows It</a><br />
+		
+
+		</div></td>
+	<td class="Module_Border" width="1"><img height="1" alt="" src="/images/spacer.gif" width="1" /></td>
+</tr>
+<tr>
+	<td class="Module_Border" colspan="3"><img height="1" alt="" src="/images/spacer.gif" width="1" /></td>
+</tr>
+</tbody>
+</table>
+<br />
+    			</td>
+			</tr>
+      	</table>
+
+
+	
+
+<!-- End of Module 'mod_artmorelist' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<br />
+<style type="text/css" media="screen">#recent_videos_title {font-size: 11px; line-height:12px; font-weight:bold; font-family: arial, sans-serif; color:#ffcc66; padding:5 5 0 5;}
+#recent_videos_title a {color:#ffcc66; text-decoration:none;}
+#recent_videos_title a:hover {color: #336666; background-color: #ffcc66; text-decoration: none;}
+#recent_videos_description {font-size: 10px; line-height:10px; font-weight:none; font-family: arial, sans-serif; color:#ffffff; padding:2 5 5 5;}
+#archive_title {font-size: 12px; line-height:12px; font-weight:bold; font-family: arial, sans-serif; color:#ffcc66; padding:5 10 0 0;}
+#archive_title a {color:#ffcc66; text-decoration:none;}
+#archive_title a:hover {text-decoration:underline;}
+.IPvidNav {font-size: 12px; line-height:12px; font-weight:bold; font-family: arial, sans-serif; color:#08224a; padding:0 10 0 10; white-space:nowrap; width:60px; text-align:center; cursor:default;}
+.eweekIPvidPanel{ display: none;}
+.eweekIPnbPanel{ display: none;}
+ul#evideoTabs{white-space:nowrap;font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:700;margin:0;padding:5px 10px;}
+#evideoTabs li{display:inline;list-style-type:none; margin: 0 10px 0 5px;}
+#evideoTabs a{padding:3px 10px;}
+#evideoTabs a:link,#evideoTabs a:visited{color:#fff;text-decoration:none;background:url(http://internet.ziffdavisenterprise.com/video/common/images/evideo-ext-bg.gif);}
+#evideoTabs a:hover{text-decoration:underline;}
+#evideoTabs li.evideoTabRecentVideo {padding:3px 10px;background:url(/util_get_image/15/0,,i=151842&,00.gif);border:1px solid #B8CAD6;border-bottom:0;color:#0F2E5A;cursor: default}
+#IPcontentBlock{width:323px;}
+#IPcontentBlock ul{list-style-type:none;width:336px;margin:0;padding:0;}
+#IPcontentBlock li{border-bottom:1px solid #CACACA;margin:0;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px}
+#IPcontentBlock li a span.watchCallout{font-weight:700;color:#912222;text-transform:uppercase;font-size:10px;padding-top:2px;text-align:right;margin-right:6px;display:block}
+#IPcontentBlock li a{color:#00426D;padding-top:2px;text-decoration:none;display:block; min-height:69px; _height: 69px;}
+#IPcontentBlock li a img {float:left; padding-right:6px;padding-left:4px;}
+#IPcontentBlock li a:hover{background:#ffc;}
+.IPvidSponsorTbl { font-size: 10px; font-family:Arial, Helvetica, sans-serif;}</style>
+<script language="javascript" src="http://internet.ziffdavisenterprise.com/video/common/js/evideo-config.js" type="text/javascript">
+// </script>
+<script language="javascript" src="http://internet.ziffdavisenterprise.com/video/common/js/evideo-gen.js" type="text/javascript"></script>
+<div style="margin-left: 25px; position: relative; top: -17px;">
+<table cellspacing="0" cellpadding="0" width="336" align="center" border="0">
+<tbody>
+<tr>
+<td style="padding-top: 10px;" align="center" background="http://internet.ziffdavisenterprise.com/video/common/images/evideo-top-bg.gif" colspan="3">
+<div id="IPtabsBlock">&nbsp;</div>
+<script language="javascript" type="text/javascript">
+IPgenTabs();
+</script><br />
+</td></tr>
+<tr>
+<td colspan="3">
+<div id="IPcontentBlock">&nbsp;</div>
+<script language="javascript" type="text/javascript">
+IPgenContent();
+</script></td></tr></tbody></table></div><br />    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<script>
+showdart('MPU','336x280');
+</script>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<script language="javascript">
+function midmarket() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/midmarket;sz=1x1;ord=1';}
+function clevel() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/clevel;sz=1x1;ord=1';}
+function itpro() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/itpros;sz=1x1;ord=1';}
+function buckettopic() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/buckettopic;sz=1x1;ord=1';}
+function pathstage() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/pathstage;sz=1x1;ord=1';}
+function backbtn() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/back;sz=1x1;ord=1';}
+function homebtn() {document.getElementById('clickimg').src='http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial/homestlogo;sz=1x1;ord=1';}
+</script>
+
+<img width="1" height="1" alt="" src="http://ad.doubleclick.net/ad/entzd.eweek/ibmtutorial;sz=1x1;ord=1" border="0" complete="complete" />
+<img width="1" height="1" alt="pixel" src="http://ad.doubleclick.net/ad/N815.zdenterprise/B4597436.59;sz=1x1;ord=1288981822554?" border="0" complete="complete" />
+<img id="clickimg" src="blank.gif" width="1" height="1"/>
+<IMG SRC="http://ad.doubleclick.net/ad/N815.zdenterprise/B4822628.25;sz=1x1;ord=[timestamp]?" BORDER=0 WIDTH=1 HEIGHT=1 ALT="Click Here"><IMG SRC="http://ad.doubleclick.net/ad/N815.zdenterprise/B5069510.14;sz=1x1;ord=[timestamp]?" BORDER=0 WIDTH=1 HEIGHT=1 ALT="Advertisement">
+
+<style type="text/css">
+	#tut-container { width:312px; height:382px; border:12px solid #e6e7e8;}
+</style>
+
+<div id="tut-container">
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="312" height="382" id="st-tutorial-nov2010" align="middle" althtml="&lt;embed src="/st-tutorial-nov2010.swf" quality="high" bgcolor="#ffffff" width="312" height="382" name="st-tutorial-nov2010" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" &gt;&lt;/embed&gt;">
+	<param name="allowScriptAccess" value="sameDomain" />
+	<param name="allowFullScreen" value="false" />
+	<param name="movie" value="/st-tutorial-nov2010.swf" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#ffffff" />
+    <embed src="/st-tutorial-nov2010.swf" quality="high" bgcolor="#ffffff" width="312" height="382" name="st-tutorial-nov2010" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+	</object>
+</div>
+<div style="width:336px;"><a href="http://ad.doubleclick.net/clk;233482806;22968807;r?http://ad.doubleclick.net/clk;233993842;57142676;u" target="_blank"><img src="http://circ.ziffdavisenterprise.com/creative-services/st-tutorial-nov2010/st-tut-banner2.jpg" /></a></div>
+
+<br>
+<script type="text/javascript">
+var jstimestamp = new Date().getTime();
+document.write ('<img src="http://ad.doubleclick.net/ad/N815.zdenterprise/B4597436.59;sz=1x1;ord=' + jstimestamp + '?" border="0" width="1" height="1" alt="pixel" />');
+</script>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<div style="font-size: 10px; margin-left: 30px; width: 336px;">
+<div style="float: left; margin-bottom: 20px; margin-right: 10px;"><a href="http://feeds.ziffdavisenterprise.com/RSS/baseline.xml"><font size="1"><img height="16" alt="rss graphic" src="/images/zde/rss.gif" width="28" border="0" /></font></a></div>&nbsp;&nbsp;&nbsp;<a href="http://www.google.com/ig/directory?hl=en&amp;root=%2Fig&amp;dpos=top&amp;q=baseline&amp;btnG=Search+Homepage+Content"><img alt="" src="/images/zde/addtogoogle.gif" border="0" /></a> &nbsp;&nbsp;&nbsp;<strong><font size="1"><a title="" href="/newsletter-manage/"><font size="1">Baseline Newsletters</font></a></font></strong></div><br />    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+
+
+<!-- Loading Module 'mod_ibinternal' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+			    		<tr>
+    			<td>
+				
+	
+<table width="336" border="0" cellpadding="1">
+  <tr>
+    <td><script type="text/javascript" src="http://jlinks.industrybrains.com/jsct?sid=769&amp;ct=BASELINE_ROS&amp;tr=INTERNAL_PAGE&amp;num=3&amp;layt=1&amp;fmt=simp"></script>
+ </td>
+  </tr>
+</table>	
+	
+	
+	    			</td>
+			</tr>
+      	</table>
+
+
+	
+
+<!-- End of Module 'mod_ibinternal' -->
+
+
+
+<!-- Loading Module '' -->
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+		    		<tr>
+    			<td>
+      				<p>
+<script type="text/javascript"><!--
+google_ad_client = "pub-6422417422167576";
+/* Baseline Article Right Rect, 336x280, created 12/22/08 */
+google_ad_slot = "4472307558";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript">
+</script> </p>    			</td>
+			</tr>
+      	</table>
+
+	
+
+<!-- End of Module '' -->
+
+	  </td>
+	 </tr> 	  
+<!-- google_ad_region_end=devshed1 -->		
+	  </table>
+	</div>
+</div>
+<div id=clear>
+</div>
+  
+
+
+
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="1004" bordercolor="#ff0000">
+
+<tr align="left" valign="top" bgcolor="#ff9900">
+	<td valign="top" align=right><p class="Footer_Text" style="margin-top:5;margin-bottom:5"><a  rel="nofollow"  href="http://www.baselinemag.com" name="Baseline" title="Baseline" class="Footer_ZD"><font color=black>Baseline:</font></a> &nbsp;</p></td>
+	<td valign="top"><p class="Footer_Text" style="margin-top:5;margin-bottom:5">
+<a  style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/previous_issues/" title="Issue Index"><span class="Footer_ZD">Issue Index</span></a> |
+<a  style="white-space:nowrap;color:#7E2514" rel="nofollow"  rel="nofollow"  href="http://www.ziffdavisenterprise.com/contactus.html"><span class="Footer_ZD">Contact Us</span></a> | <!-- start ziffarticle //--><a rel="nofollow"  rel="nofollow"  href="http://www.baselinemag.com/c/a/Past-News/Editorial-Mission/"><span class="Footer_ZD">About</span></a><!-- end ziffarticle //--> | 
+
+<a  style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://baselinemagmedia.com/index.html" rel="nofollow" title="Advertise"><span class="Footer_ZD">Media Kit</span></a> |
+<a  style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://circ.ziffdavisenterprise.com/cust_serv.html" title="Customer Service"><span class="Footer_ZD">Magazine Customer Service</span></a> |
+<a  style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/sitemap.html"><span class="Footer_ZD">Navigation Guide</span></a>
+</p></td>
+</tr><tr align="left" valign="top" bgcolor="#ff9900">
+	<td valign="top" align=right><p class="Footer_Text" style="margin-bottom:5"><a rel="nofollow"  rel="nofollow"  href="http://www.baselinemag.com" name="Quick Links" title="Quick Links" class="Footer_ZD"><font color=black>Quick Links:</font></a> &nbsp;</p></td>
+	<td valign="top"><p class="Footer_Text" style="margin-bottom:5">
+<a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Tools-Planners/" title="Project Planners"><span class="Footer_ZD">Project Planners</span></a> |
+
+<!-- <a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Tools-Calculators/" title="ROI Calculators"><span class="Footer_ZD">ROI Calculators</span></a> | --><a  rel="nofollow"  href="http://www.baselinemag.com/c/s/Projects-Enterprise-Planning/" title="Enterprise Resource Planning"><span class="Footer_ZD">Enterprise Resource Planning</span></a> | 
+<a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Projects-Security/" title="Network and Online Security"><span class="Footer_ZD">Network and Online Security</span></a> |
+<a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Projects-Data-Analysis/" title="Data Analysis"><span class="Footer_ZD">Data Analysis</span></a> |
+<a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Projects-Processes/" title="Process Management"><span class="Footer_ZD">Process Management</span></a> |
+<a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.eweek.com/c/s/Storage/" title="Storage Devices"><span class="Footer_ZD">Storage Devices</span></a>|
+
+<a style="white-space:nowrap;color:#7E2514"  rel="nofollow"  href="http://www.ziffdavisenterprise.com/contactus.html" rel="nofollow"><span class="Footer_ZD">Link to Us</span></a>
+</p></td>
+</tr>
+
+
+<tr><td colspan=2><img src="images/spacer.gif" height=5></td></tr>
+<tr align="left" valign="top" bgcolor="#ffffff">
+	<td valign="top"><a  rel="nofollow"  href="http://www.ziffdavisenterprise.com" name="Ziff Davis Enterprise Inc." title="Ziff Davis Enterprise Inc." class="Footer_ZD"><img src="http://www.eweek.com/images/zde/zde-logo-white-background.gif" align="left" border=0></a></td>
+	<td><p class="Footer_Text" style="margin-top:5"><a style="white-space:nowrap"  rel="nofollow"  href="http://www.ziffdavisenterprise.com/" title="Ziff Davis Home">Ziff Davis Enterprise Home</a>&nbsp;| 
+<a style="white-space:nowrap" rel="nofollow"  rel="nofollow"  href="http://www.ziffdavisenterprise.com/contactus.html" title="Contact Us">Contact Us</a>&nbsp;| 
+<a style="white-space:nowrap" rel="nofollow"  rel="nofollow"  href="http://eweekmedia.com/" title="Advertise">Advertise</a>&nbsp;| 
+
+<a style="white-space:nowrap" rel="nofollow"  rel="nofollow"  href="http://www.ziffdavisenterprise.com/contactus.html" title="Link to Us">Link to Us</a>&nbsp;| 
+<a  rel="nofollow"  href="http://www.ziffdavisenterprise.com/contactus.html" rel="nofollow" title="Reprints">Reprints</a>&nbsp;| 
+<a style="white-space:nowrap" rel="nofollow"  rel="nofollow"  href="http://circ.ziffdavisenterprise.com/cust_serv.html" title="Magazine Subscriptions">Magazine Subscriptions</a>&nbsp;| 
+<a style="white-space:nowrap" rel="nofollow"   rel="nofollow"  href="http://www.eweek.com/newsletter-manage/" title="Newsletters">Newsletters</a><br>
+
+<a style="white-space:nowrap"  rel="nofollow"  href="http://www.baselinemag.com/rss-feeds.html" title="RSS Feeds">Tech RSS Feeds</a>&nbsp;|
+<a style="white-space:nowrap" target="_blank"  rel="nofollow"  href="http://www.webbuyersguide.com/bguide/Whitepaper/Wplibrary.asp_Q_sitename_E_webbuyersguide" title="White Papers">White Papers</a>&nbsp;| 
+<!-- <a style="white-space:nowrap"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Tools-Calculators/" title="ROI Calculators">ROI Calculators</a>&nbsp;| -->
+<a style="white-space:nowrap"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Podcasts/" title="Tech Podcasts">Tech Podcasts</a>&nbsp;|
+
+<a style="white-space:nowrap"  rel="nofollow"  href="http://www.baselinemag.com/c/s/Videos" title="Tech Video">Tech Video</a>&nbsp;|
+<a style="white-space:nowrap" target="_blank"  rel="nofollow"  href="http://www.channelinsider.com/" title="Vars">VARs</a> | 
+<a style="white-space:nowrap" target="_blank"  rel="nofollow"  href="http://www.channelinsider.com/c/a/Reviews/Ingram-Micro-Brings-House-Brand-Monitor-to-System-Builders/" title="System Builder">System Builder</a>
+</p></td>
+</tr>
+
+<tr align="left" valign="top" bgcolor="#ffffff">
+	<td><img src="http://www.baselinemag.com/images/spacer.gif" width="108" align="left" height="15"></td>
+	<td><p class="Footer_Text" style="margin-top:5"><a rel="nofollow"  rel="nofollow"  href="http://www.baselinemag.com">Baseline</a> | 
+<a  rel="nofollow"  href="http://careers.eweek.com" target="_blank">Careers</a> | 
+<a  rel="nofollow"  href="http://www.channelinsider.com" target="_blank">Channel Insider</a> | 
+<a  rel="nofollow"  href="http://www.cioinsight.com" target="_blank">CIO Insight</a> | 
+<a  rel="nofollow"  href="http://www.desktoplinux.com" target="_blank">DesktopLinux</a> | 
+<a  rel="nofollow"  href="http://www.deviceforge.com" target="_blank">DeviceForge</a> |
+<a  rel="nofollow"  href="http://www.devsource.com" target="_blank">DevSource</a> |
+<a  rel="nofollow"  href="http://www.eseminarslive.com" target="_blank">eSeminars</a> |<br>
+<a  rel="nofollow"  href="http://www.eweek.com" target="_blank">eWEEK</a> | 
+<a  rel="nofollow"  href="http://www.eweek.com/c/s/Security/" target="_blank">Enterprise Network Security</a> | 
+<a  rel="nofollow"  href="http://www.linuxdevices.com" target="_blank">LinuxDevices</a> | 
+<a  rel="nofollow"  href="http://www.linux-watch.com" target="_blank">Linux Watch </a> | 
+<a  rel="nofollow"  href="http://www.microsoft-watch.com" target="_blank">Microsoft Watch</a> | 
+<a  rel="nofollow"  href="http://www.eweek.com/c/s/Mid-Market/">Mid-market</a> | 
+<a  rel="nofollow"  href="http://networking.eweek.com" target="_blank">Networking</a> |
+<a  rel="nofollow"  href="http://www.pdfzone.com" target="_blank">PDF Zone</a> |<br>
+<a  rel="nofollow"  href="http://www.publish.com" target="_blank">Publish</a> |
+<a  rel="nofollow"  href="http://security.ithub.com" rel="nofollow">Security IT Hub</a> | 
+<a  rel="nofollow"  href="http://www.esp.eweek.com" target="_blank">Strategic Partner</a> |
+<a  rel="nofollow"  href="http://www.jazdtech.com/techdirect/?utm_source=td&utm_medium=partner&utm_campaign=footer" target="_blank">TechDirect</a> |
+<a  rel="nofollow"  href="http://www.webbuyersguide.com" target="_blank">Technology White Papers</a> | 
+<a  rel="nofollow"  href="http://www.windowsfordevices.com">Windows for Devices</a></ziffhtml></td>
+</tr>
+		
+<tr align="left" valign="top" bgcolor="#ffffff">
+
+	<td><img src="http://www.eweek.com/images/spacer.gif" width="108" align="left" height="15"></td>
+	<td><p class="Footer_Text" style="margin-top:5"><a  rel="nofollow"  href="http://www.developershed.com/">Developer Shed</a> | 
+<a  rel="nofollow"  href="http://www.devshed.com/">Dev Shed</a> | 
+<a  rel="nofollow"  href="http://www.aspfree.com/">ASP Free</a> | 
+<a  rel="nofollow"  href="http://www.devarticles.com/">Dev Articles</a> | 
+<a  rel="nofollow"  href="http://www.devhardware.com/">Dev Hardware</a> | 
+
+<a  rel="nofollow"  href="http://www.seochat.com/">SEO Chat</a> | 
+<a  rel="nofollow"  href="http://www.tutorialized.com/">Tutorialized</a> |
+<a  rel="nofollow"  href="http://www.scripts.com/">Scripts</a> |<br>
+<a  rel="nofollow"  href="http://www.codewalkers.com/">Code Walkers</a> | 
+<a  rel="nofollow"  href="http://webhosting.devshed.com/">Web Hosters</a> | 
+<a  rel="nofollow"  href="http://tools.devshed.com/">Dev Mechanic</a> | 
+
+<a  rel="nofollow"  href="http://archives.devshed.com/">Dev Archives</a> |
+<a  rel="nofollow"  href="http://www.igrep.com/">igrep</a>
+<br><br>
+Use of this site is governed by our <a rel="nofollow"  rel="nofollow"  href="http://www.ziffdavisenterprise.com/TermsofService.htm">Terms of Use</a> and <a  rel="nofollow"  href="http://www.ziffdavisenterprise.com/PrivacyPolicy.htm" rel="nofollow">Privacy Policy</a><br></td>
+</tr>
+
+<tr align="left" valign="top" bgcolor="#ffffff">
+	<td><img src="http://www.baselinemag.com/images/spacer.gif" width="108" align="left" height="15"></td>
+	<td><p class="Footer_Text" style="margin-top:5">Copyright &copy;1996-2011 <a  rel="nofollow"  href="http://www.ziffdavisenterprise.com" title="Ziff Davis Enterprise Holdings Inc." class="Footer_ZD">Ziff Davis Enterprise Holdings Inc.</a> All Rights Reserved. eWEEK and Spencer F. Katt are trademarks of Ziff Davis Enterprise Holdings, Inc. Reproduction in whole or in part in any form or medium without express written permission of Ziff Davis Enterprise Inc. is prohibited.</p></td>
+</tr>
+
+</table>
+<!-- end footer -->
+
+</center>
+
+</div>
+<!-- survey thing -->
+
+<!-- OVERLAY NOT SHOWN STATUS OFF-->
+
+
+
+<!-- start Vibrant Media IntelliTxt script section -->
+<STYLE type="text/css">
+.iTt{
+    FONT-FAMILY:       Verdana, Arial, Helvetica;
+    FONT-SIZE:         11px;
+    FONT-STYLE:        normal;
+    FONT-WEIGHT:       normal;
+    COLOR:             black;
+    BACKGROUND-COLOR:  lightyellow;
+    BORDER:            black 1px solid;
+    PADDING:           2px;
+}
+</STYLE>
+<script type="text/javascript" src="http://baselinemag.us.intellitxt.com/intellitxt/front.asp?ipid=12630"></script>
+<!-- end Vibrant Media IntelliTxt script section -->
+
+
+</body>
+</html>
+
+
+
+<!-- Generated by new in 1.746833 sec. --> 
+
+
+
+

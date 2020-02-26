@@ -1,0 +1,361 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+<head>
+<title>AWS Developer Forums: Mechanical Turk releases new Worker management tools for Requesters</title>
+<meta http-equiv="content-type"
+    content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"
+    href="/css/forums.css"/>
+
+
+
+</head>
+<body>
+
+<script src="/js/urchin.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+  var AWSForumsUrchin = function() {
+  var meta = document.createElement('meta');
+  meta.name = "Urchin-AWSF";
+  meta.id = "Urchin-AWSF";
+  meta.content = "OK";
+  urchinTracker();
+  document.getElementsByTagName('head')[0].appendChild( meta );
+ };
+ AWSForumsUrchin ();
+</script> 
+
+<link rel="stylesheet" href="/css/awsGlobalNav2.css" type="text/css" /> 
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" href="/css/awsGlobalNav2IE6.css" type="text/css" />
+    <link rel="stylesheet" href="/css/documentationIE6.css" type="text/css" />
+  <![endif]--> 
+   <table cellpadding="0" cellspacing="0" border="0" align="center" width="950px">
+      <tr>
+        <td valign="top">
+        <!-- header -->
+        <div id="mainNav">
+          <a href="http://aws.amazon.com/">
+          <img src="//dct5qpnx91avp.cloudfront.net/images/logo_aws.gif"
+             id="awsHeaderLogo"
+             width="164"
+             height="60"
+             alt="Amazon Web Services">
+          </a>
+        <div id="globalTopLinks">
+          <a href="https://console.aws.amazon.com/ec2/home"
+           class="signIn"><img src="//dct5qpnx91avp.cloudfront.net/images/laptop-icon-16x13.png"
+                               width="16"
+                               height="13"
+                               alt=""><span>Sign in to the AWS Management Console</span></a>
+          <a href="https://aws-portal.amazon.com/gp/aws/developer/registration/index.html"
+           class="create"><img src="//dct5qpnx91avp.cloudfront.net/images/aws-box-13x13.png"
+                               width="13"
+                               height="13"
+                               alt=""><span>Create an AWS Account</span></a>
+        </div>
+        <ul id="tabs">
+            <li class="first tab" id="awsTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/about-aws/">AWS</a>
+                </div>
+            </li>
+            <li class="tab" id="productsTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/products/">Products</a>
+                </div>
+            </li>
+
+            <li class="tab" id="developersTab">
+                <div class="liner">
+                    <span class="icon"></span>
+                    <a href="http://aws.amazon.com/resources/">Developers</a>
+                </div>
+            </li>
+            <li class="tab" id="communityTab">
+
+                <div class="liner">
+                    <span class="icon"></span>
+                    <a href="http://aws.amazon.com/resources/">Community</a>
+                </div>
+            </li>
+            <li class="tab" id="supportTab">
+                <div class="liner">
+
+                    <span class="icon"></span><a href="http://aws.amazon.com/support">Support</a>
+                </div>
+            </li>
+            <li class="last tab" id="accountTab">
+                <div class="liner">
+                    <span class="icon"></span><a href="http://aws.amazon.com/account/">Account</a>
+                </div>
+            </li>
+        </ul>
+        <div class="flyout">
+            <div class="liner">
+                <div class="content"></div>
+
+            <a href="#" class="close">
+                    close <img src="//dct5qpnx91avp.cloudfront.net/images/close-14x14.png" height="14" width="14" alt="">
+                </a>
+            </div>
+          </div>
+        </div>
+        </td>
+      </tr>
+    <tr><td valign="top">
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="jive-page-title">Discussion Forums</td>
+        <td nowrap align="right">
+<div id="jive-accountbox" class="clearfix">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td align="right" class="account-box-wrapper">
+Welcome, Guest                 <a class="jive-acc-login" href="/login.jspa;jsessionid=BECB5FCB5A631837FE83F1074ECC544D">Login</a>
+                 <a href="/help.jspa;jsessionid=BECB5FCB5A631837FE83F1074ECC544D" class="jive-acc-help" title="Forums Help">Forums Help</a> 
+         </td>
+    </tr>
+    </table>
+</div>
+</td>
+    </tr>
+    <tr>
+
+        <td style="padding-top: 8px;" colspan="2" valign="top">
+         <div id="jive-breadcrumbs">
+    <em>
+
+
+    <a href="/index.jspa;jsessionid=BECB5FCB5A631837FE83F1074ECC544D?categoryID=1">Discussion Forums</a>
+
+
+            <span class="bidi">
+            <span class="gt">&gt;</span>
+            <a href="/category.jspa;jsessionid=BECB5FCB5A631837FE83F1074ECC544D?categoryID=3">Category: Amazon Web Services</a>
+            </span>
+
+            <span class="bidi">
+            <span class="gt">&gt;</span>
+                    <a href="/forum.jspa;jsessionid=BECB5FCB5A631837FE83F1074ECC544D?forumID=11&start=0">Forum: Amazon Mechanical Turk (Beta)</a>
+            </span>
+
+        
+
+        <span class="bidi">
+            <span class="gt">&gt;</span>
+            <span class="bctxt">Announcement</span>
+        </span>
+    
+    
+    </em>
+</div>
+   <div id="jive-annpage">
+
+<div class="jive-buttons">
+<table summary="Buttons" cellpadding="0" cellspacing="0" border="0">
+<tbody>
+    <tr>
+        <td class="jive-icon">
+            
+                <a href="forum.jspa?forumID=11"
+                 ><img src="https://dn1lvoe5mgzdm.cloudfront.net/images/arrow-left-16x16.gif" width="16" height="16" border="0" alt="Back to Discussion Forum"></a>
+            
+        </td>
+        <td class="jive-icon-label">
+            
+                <a href="forum.jspa?forumID=11"
+                 >Back to Discussion Forum</a>
+            
+        </td>
+
+        
+    </tr>
+</tbody>
+</table>
+</div>
+
+<br />
+
+
+
+    <div class="jive-pm-box">
+    <div class="jive-table">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <thead>
+        <tr>
+            <th class="jive-first-last">
+            	
+                Announcement: Mechanical Turk releases new Worker management tools for Requesters
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" class="jive-first-last">
+                <div class="jive-pm-msg-info">
+                <table cellpadding="3" cellspacing="1" border="0" width="100%">
+                <tr>
+                    <td class="jive-label">
+                    	
+                        Posted By:
+                    </td>
+                    <td>
+                        
+                            <a href="profile.jspa?userID=103722"
+                                >Andrea@AWS</a>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="jive-label">
+                        Created in:
+                    </td>
+                    <td colspan="2">
+                        
+                            Forum:
+                            <a href="forum.jspa?forumID=11">Amazon Mechanical Turk (Beta)</a>
+                        
+                    </td>
+                </tr>
+
+                
+
+                    <tr>
+                        <td class="jive-label">
+                            
+                            Status:
+                        </td>
+                        <td colspan="2">
+                            
+                            <span style="color:#f00;font-weight:bold;">Expired</span>
+                        </td>
+                    </tr>
+
+                
+
+                <tr>
+                    <td class="jive-label">
+                    	
+                        Posted on:
+                    </td>
+                    <td colspan="2">
+                        Oct 4, 2010 10:42 AM
+                    </td>
+                </tr>
+
+                
+
+                </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="jive-first-last">
+                <div class="jive-body">
+                Amazon Mechanical Turk has released a new set of features designed to help Requesters get better accuracy by providing tools to manage Workers.<br />
+<br />
+Our goal is to make it easier for you to find Workers who are good at your HITs.<br />
+<br />
+These new tools will:<br />
+<br />
+1) Identify good workers by giving you data on who’s in your workforce and how they perform so you can easily.<br />
+2) Allow you to easily manage Workers and Qualification Types.<br />
+3) Save you time by providing information so you can prioritize your audit systems and send work to your best Workers.<br />
+<br />
+The key new features being released today are: <br />
+<br />
+1) Workers Statistics: Data on who is doing work for you, their performance on that work.<br />
+2) Qualification Types Management: Create new Qualification Types in the UI and assign them to Workers to create Qualified Worker groups. <br />
+3) Worker Management Tools: Bonus, Block and assign qualifications for a specific Worker.<br />
+<br />
+Learn more about these new features by viewing this presentation:<br />
+<br />
+<a class="jive-link-external" href="http://www.slideshare.net/mechanicalturk/manage-your-workforce-fall-2010-requester-product-update">http://www.slideshare.net/mechanicalturk/manage-your-workforce-fall-2010-requester-product-update</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+
+
+
+</div> <br />
+        <br />
+         <hr moshade="noshade" width="100%" color="#cccccc" size="1"> 
+ 
+<style> 
+ 
+.aws-footer {
+    font-size:85%;
+    text-align:center;
+}
+ 
+.h_bar {
+  list-style-image: none;
+  list-style-position:outside;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 10px;
+}
+ 
+.h_bar li{
+  border-left: 1px solid #CCCCCC;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: inline;
+  list-style-type: none;
+}
+ 
+li.first{
+  border-left: 0px;
+}
+ 
+</style> 
+ 
+<div class="aws-footer"> 
+    <ul class="h_bar"> 
+        <li class="first"> 
+          <a target="_blank" href="http://aws.typepad.com/">AWS Blog <img src="https://dn1lvoe5mgzdm.cloudfront.net/images/amazon/icon_offsite.gif" height="13" alt="null" width="15" border="0"/></a> 
+        </li> 
+        <li> 
+          <a href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&amp;p=irol-InfoReq">Press Inquiries</a> 
+        </li> 
+        <li> 
+          <a href="http://aws.amazon.com/careers">Careers at AWS</a> 
+        </li> 
+        <li> 
+            <a href="http://aws.amazon.com/contact-us">Contact Us</a> 
+        </li> 
+        <li>    
+            <a href="/guidelines.jsp">Community Guidelines</a> 
+        </li> 
+        <li>    
+            <a href="http://aws.amazon.com/privacy">Privacy Policy</a> 
+        </li> 
+        <li>    
+            <a href="http://aws.amazon.com/terms">Terms of Use</a> 
+        </li> 
+    </ul>    
+    <br><span style="color: rgb(102, 102, 102);">&copy; 2009-2010 Amazon Web Services <span class="caps">LLC</span> or its affiliates. All rights reserved.</span> 
+ 
+    <br> 
+    <br><img src="https://dn1lvoe5mgzdm.cloudfront.net/images/amazon/logo_an_amazon_company.gif" height="21" width="160" border="0"/> 
+</div> 
+        </td>
+    </tr>
+</table>
+</body>
+</html>

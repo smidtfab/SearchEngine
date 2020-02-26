@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta name="description" content="Information Technology News, Reviews, and Analysis">
+<meta name="keywords" content="Information Technology, InfoTech, IT, Technology News, Tech Information">
+<link href="http://images.tmcnet.com/tmc/IT/infotech.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="http://images.tmcnet.com/tmc/IT/infoTech.js"></script>
+<script type="text/javascript" src="http://images.tmcnet.com/js/jquery.js"></script>
+<script language="javascript">
+function gotoENewsletter()
+    {
+        document.forms[0].action = "eNewsletterSignup.aspx?Email=" + document.getElementById("txtEmail").value;
+        document.forms[0].submit();
+    }
+</script>
+<script language="javascript">
+	function showPlayer() {
+	document.getElementById('featureGraphics').style.display = 'block';
+	document.getElementById('featureCover').style.display = 'none';
+	}
+	
+	
+	function showBucket2(panel)
+	{
+		document.getElementById('bucket5Link').className = 'navOff';
+		document.getElementById('bucket6Link').className = 'navOff';
+		document.getElementById('bucket7Link').className = 'navOff';
+	
+		document.getElementById('bucket5').style.display = 'none';
+		document.getElementById('bucket6').style.display = 'none';
+		document.getElementById('bucket7').style.display = 'none';
+	
+		document.getElementById(panel).style.display = 'block';
+		document.getElementById(panel + 'Link').className = 'navOn'; 
+		
+	}
+	
+// JavaScript Document
+navHover = function() {
+	var lis = document.getElementById("itechNav-main").getElementsByTagName("LI");
+	for (var i=0; i<lis.length; i++) {
+		lis[i].onmouseover=function() {
+			this.className+=" iehover";
+		}
+		lis[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+		}
+	}
+	
+	
+	var lis = document.getElementById("itechNav-left").getElementsByTagName("LI");
+	for (var i=0; i<lis.length; i++) {
+		lis[i].onmouseover=function() {
+			this.className+=" iehover";
+		}
+		lis[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", navHover);	
+</script>
+
+
+<!-- TMC1.ZZZ BEGIN -->
+<!--USubChID:::41185--><!--ZZZAPicURLZZZ:::http://images.tmcnet.com/headshots/2007/shami.jpg--><!--ZZZPTitleZZZ:::Spiceworks Adds Crowdsourcing Features to Spiceworks IT Desktop--><!--ZZZHomepageZZZ:::http://www.tmcnet.com/tmcnet/columnists/columnist.aspx?id=100116&nm=Shamila%20Janakiraman--><!--ZZZEmailZZZ:::shamila07@hotmail.com-->
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="description" content="Spiceworks announced that it has added new crowd sourcing features to the Spiceworks IT Desktop. This is a free collaborative IT management application for small and medium businesses. The new features are included as SpiceLists and they enable users to develop, share and rank IT practices, products, services and reports collaboratively. This allows easy management of networks."><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spiceworks Adds Crowdsourcing Features to Spiceworks IT Desktop</title>
+
+</head>
+<body>
+<div class="powered"><a href="http://www.tmcnet.com" title="powered by TMCnet" target="_blank"><img src="http://images.tmcnet.com/tmc/IT/images/powered-by-tmcnet.png" alt="powered by TMCnet" border="0" /></a></div>
+<div id="itech-page-wrap">
+<h1>Information Technology</h1>
+    <div id="itech-page">
+    	
+        <!-- InfoTech Header -->
+		
+        <div id="itech-header">
+<div class="logo"><a href="http://www.infotechspotlight.com" title="infoTECH Spotlight"><img src="http://images.tmcnet.com/tmc/IT/images/infotech-spotlight.png" alt="infoTECH Spotlight" border="0" height="70" /></a></div>
+
+<!-- infoTECH Top Nav -->
+<div id="itech-nav">
+	<ul id="itechNav-main">
+		<li id="IThome"><a href="http://infotechspotlight.com/" title="infoTECH Spotlight">Home</a></li>
+		<li id="ITnews"><a href="http://infotechspotlight.com/" title="Information Technology News">News</a>
+			<ul>
+				<div id="rollBox">
+					<div class="it-resource"><a href="http://it.tmcnet.com/topnews.aspx" title="Information Technology News">Top infoTECH News</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/itsoftware.aspx" title="Information Technology Software">Software News</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/ithardware.aspx" title="Information Technology Hardware">Hardware News</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/itsecurity.aspx" title="Information Technology Security">Security News</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/itnetworking.aspx" title="Information Technology Networking">Networking News</a></div>
+				</div>
+			</ul>
+		</li>
+		<li id="ITmag"><a href="http://it.tmcnet.com/magazine/" title="Information Technology Magazine">Magazine</a></li>
+		<li id="ITwp"><a href="http://it.tmcnet.com/Library.aspx" title="Information Technology Whitepapers">Whitepapers</a></li>
+		<li id="ITvid"><a href="http://it.tmcnet.com/Videos.aspx" title="Information Technology Videos">Videos</a></li>
+		<!--<li id="ITpod"><a href="http://it.tmcnet.com/Library.aspx?type=podcasts" title="Information Technology Podcasts">Podcasts</a></li>-->
+		<li id="ITweb"><a href="http://it.tmcnet.com/webinars.aspx" title="Information Technology Webinars">Webinars</a></li>
+		<li id="ITres"><a href="http://it.tmcnet.com/whatshot.aspx" title="Information Technology Resources">Resources</a>
+			<ul>
+				<div id="rollBox">
+					<div class="it-resource"><a href="http://it.tmcnet.com/FeaturedArticles.aspx" title="Information Technology Editor's Pick">infoTECH Editor's Pick</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/Awards.aspx" title="Information Technology Awards">infoTECH Awards</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/whatshot.aspx" title="What's Hot in Information Technology">What's Hot in Information Technology?</a></div>
+					<div class="it-resource"><a href="http://it.tmcnet.com/Services.aspx" title="Information Technology Services">infoTECH Services</a></div>
+					<div class="it-resource"><a href="http://images.tmcnet.com/mkt/media-kit/InfoTECH-Spotlight_Media-Kit.pdf" title="infoTECH Media Kit" target="_blank">infoTECH Media Kit</a></div>
+				</div>
+			</ul>
+		</li>
+		<li id="ITblog"><a href="http://it.tmcnet.com/blogs.aspx" title="Information Technology Blogs">Blogs</a></li>
+	</ul>
+</div>
+
+
+	<form action="http://it.tmcnet.com/it-search.aspx" id="cse-search-box">
+		<input type="hidden" name="cx" value="009654677570201030784:v1jnvp_r6qo" />
+		<input type="hidden" name="cof" value="FORID:9" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<div id="searchBox">
+		<input type="text" name="q" style="border: 0px none ; background: transparent none repeat scroll 0% 0%; font-size: 12px; line-height: 27px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 27px; width: 290px; color: rgb(102, 102, 102);" value="Search infoTECH Spotlight" onfocus="this.value='';" />
+		</div>
+		<div id="searchButton"><input name="sa" onclick="document.cse-search-box.submit()" src="http://images.tmcnet.com/tmc/IT/images/search.png" type="image"></div>                    
+	</form>
+	
+	<div id="googlePower"><img src="http://images.tmcnet.com/tmc/IT/images/powered-by-google.png" alt="Powered by Google" border="0" /></div>
+
+	<div class="rss"><a href="http://rss.tmcnet.com/rss/information%20technology" title="Information Technology RSS Feed" target="_blank"><img src="http://images.tmcnet.com/tmc/satellite/images/rss-icon.png" alt="Information Technology RSS Feed" border="0" /></a></div>
+	<div class="facebook"><a href="http://www.facebook.com/pages/InfoTech-Spotlight/114733425220746" title="Become a Fan of Information Technology" target="_blank"><img src="http://images.tmcnet.com/tmc/satellite/images/facebook-icon.png" alt="InfoTech Spotlight Facebook" border="0" /></a></div>
+	<div class="twitter"><a href="http://twitter.com/TMCnetCom" title="Follow Information Technology on Twitter" target="_blank"><img src="http://images.tmcnet.com/tmc/satellite/images/twitter-icon.png" alt="InfoTech Spotlight Twitter" border="0" /></a></div>
+
+</div>
+<div id="itech-left">
+<h2>Communities</h2>
+<div id="box135">
+<ul id="itechNav-left">
+
+<li class="itech-comm"><a href="http://10-gigabit-ethernet.tmcnet.com/" title="10 Gigabit Ethernet">10 Gigabit Ethernet</a></li>
+
+<li class="itech-comm"><a href="http://defrag.tmcnet.com/" title="Defrag">Defrag</a></li>
+	
+</ul>
+</div>
+
+<h2>Channels</h2>
+<div id="box135">
+<ul id="itechNav-left">
+
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/application-performance-management/" title="Application Performance Management">Application Performance Management</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/application-performance-monitoring/" title="Application Performance Monitoring">Application Performance Monitoring</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/bpm-software/" title="BPM Software">BPM Software</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/cloud-communications/" title="Cloud Communications">Cloud Communications</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/cloud-computing/" title="Cloud Computing">Cloud Computing</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/cloud-storage/" title="Cloud Storage">Cloud Storage</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/data-center-network/" title="Data Center Network">Data Center Network</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/data-center-power/" title="Data Center Power">Data Center Power</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/environmental-monitoring/" title="Environmental Montioring">Environmental Montioring</a></li>
+	<li class="itech-comm"><a href="http://www.tmcnet.com/channels/load-balancer/" title="Load Balancer">Load Balancer</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/managed-networks/" title="Managed Networks">Managed Networks</a></li>
+	<li class="itech-comm"><a href="http://www.tmcnet.com/channels/network-access/" title="Network Access">Network Access</a></li>
+	<li class="itech-comm"><a href="http://www.tmcnet.com/channels/network-monitoring/" title="Network Monitoring">Network Monitoring</a></li>
+	<li class="itech-comm"><a href="http://www.tmcnet.com/channels/network-security/" title="Network Security">Network Security</a></li>
+	<li class="itech-comm"><a href="http://www.tmcnet.com/channels/private-cloud/" title="Private Cloud">Private Cloud</a></li>
+	<li class="itech-comm"><a href="http://it.tmcnet.com/channels/projector-lamp/" title="Projector Lamp">Projector Lamp</a></li>
+	<li class="itech-comm"><a href="http://www.tmcnet.com/channels/virtual-tap/" title="Virtual Tap">Virtual Tap</a></li>
+	 
+	
+</ul>
+</div>
+
+<div id="eNews">
+	<a href="http://it.tmcnet.com/eNewsletterSignup.aspx" alt="InfoTech eNewsletter"><img src="http://images.tmcnet.com/tmc/it/images/it-enews.png" alt="Subscribe to the InfoTech eNewsletter" border="0" ></a>
+</div>
+
+<div id="skyscraper">
+<SCRIPT LANGUAGE="JavaScript">
+  <!--
+	   OAS_AD('Right3');
+	  //-->
+</SCRIPT>
+</div>
+
+<div id="skyscraper">
+<SCRIPT LANGUAGE="JavaScript">
+  <!--
+	   OAS_AD('Right1');
+	  //-->
+</SCRIPT>
+</div>
+
+<div id="skyscraper">
+<SCRIPT LANGUAGE="JavaScript">
+  <!--
+	   OAS_AD('Right2');
+	  //-->
+</SCRIPT>
+</div>
+
+</div>
+
+<script>
+document.cookie = "poptmcpop=poptmcpop";
+cookieGood = (document.cookie.toString().indexOf("poptmcpop=poptmcpop") >= 0);
+if (navigator.cookieEnabled && cookieGood && document.cookie.toString().indexOf("popnow=yes")<0) {
+
+  //************** SPLASH **************//
+  location.href="http://it.tmcnet.com/viewette.aspx?u=http%3a%2f%2fit.tmcnet.com%2ftopics%2fit%2farticles%2f35003-spiceworks-adds-crowdsourcing-features-spiceworks-it-desktop.htm";
+}
+</script>
+
+
+        
+        <div id="itech-main">
+        	<!-- InfoTech Left Nav -->
+			
+            
+            <!-- InfoTech Content -->
+            <div id="itech-content">
+            
+                <!-- Leaderboard -->
+            	<div class="leaderDefault">
+				<SCRIPT LANGUAGE="JavaScript">
+					<!--
+						OAS_AD('x96');
+					//-->
+                </SCRIPT>
+				</div>
+
+            	<div id="itech-middle">
+                    <div id="it-subHead">
+                        <h2>infoTECH Feature</h2>
+                   	</div>
+                    
+
+
+<div id="extrasBox">
+	<div class="iconBox">
+	<script type="text/javascript">
+	addthis_pub             = 'YOUR-ACCOUNT-ID'; 
+	addthis_logo            = 'http://www.addthis.com/images/yourlogo.png';
+	addthis_logo_background = 'EFEFFF';
+	addthis_logo_color      = '666699';
+	addthis_brand           = 'InfoTech Spotlight';
+	addthis_options         = 'twitter, linkedin, digg, facebook, buzz, slashdot, delicious, stumbleupon, newsvine, mixx';
+	</script>
+	<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" border="0" alt="Share" /></a>
+	<script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+	</div>
+
+	<div class="iconBox"><a onMouseOver="window.status='Add bookmark'; return true;" onMouseOut="window.status=''; return true;"
+	href="javascript:if(document.all) window.external.AddFavorite('http://it.tmcnet.com/topics/it/articles/35003-spiceworks-adds-crowdsourcing-features-spiceworks-it-desktop.htm', document.title); else alert('Please Use Ctrl-D to bookmark this page');"><img src="http://images.tmcnet.com/tmc/vertical/it/images/save_icon.gif" border="0" /></a></div>
+	<div class="iconBox"><a target="_blank" href="http://www.tmcnet.com/scripts/print-page.aspx?PagePrint=http%3a%2f%2fit.tmcnet.com%2ftopics%2fit%2farticles%2f35003-spiceworks-adds-crowdsourcing-features-spiceworks-it-desktop.htm"><img src="http://images.tmcnet.com/tmc/vertical/it/images/print_icon.gif" border="0" /></a></div>
+	<div class="iconBox"><a id="emailpagelink" href="http://it.tmcnet.com/emailpage.aspx?PageEmail=http%3a%2f%2fit.tmcnet.com%2ftopics%2fit%2farticles%2f35003-spiceworks-adds-crowdsourcing-features-spiceworks-it-desktop.htm"><img src="http://images.tmcnet.com/tmc/vertical/it/images/email_to_freind.gif" border="0" /></a></div>
+
+	<div class="magic"></div>
+</div>
+
+<!-- TMC1.ZZZ END -->
+
+                    
+<!-- TMC2.ZZZ BEGIN -->
+
+
+                    <div id="itech-editorial">
+                         
+                         
+                        <div class="date"><!--ZZZDateZZZBEG-->July 23, 2008<!--ZZZDateZZZEND--></div>
+                         
+                        <h1>Spiceworks Adds Crowdsourcing Features to Spiceworks IT Desktop</h1>
+                        <div class="paragraph"><img src="http://images.tmcnet.com/headshots/2007/shami.jpg" height="59"> By <a href="http://www.tmcnet.com/tmcnet/columnists/columnist.aspx?id=100116&nm=Shamila%20Janakiraman" class="pln-nav"><!--ZZZNameZZZBEG-->Shamila Janakiraman<!--ZZZNameZZZEND--></a></div>
+                        <div><a href="http://www.tmcnet.com/tmcnet/columnists/columnist.aspx?id=100116&nm=Shamila%20Janakiraman" class="date2"><!--ZZZATitleZZZBEG-->TMCnet Contributor<!--ZZZATitleZZZEND--></a></div>
+                        <div class="story-article"><!--ZZZBodyZZZBEG--><div><!--ZZZLinkBegZZZ-->Spiceworks&nbsp;(<a href='http://www.tmcnet.com/snapshots/snapshots.aspx?Company=Spiceworks'>News</a> - <a href='http://www.tmcnet.com/enews/subs.aspx?k1=%22Spiceworks%22'>Alert</a>)<!--ZZZLinkEndZZZ--> announced that it has added new crowd sourcing features to the Spiceworks IT Desktop. This is a free collaborative IT management application for small and medium businesses. The new features are included as SpiceLists and they enable users to develop, share and rank IT practices, products, services and reports collaboratively. This allows easy management of networks.</div>
+
+
+<div>&nbsp;</div>
+<div>The SpiceLists would help solve problems faced by IT pros in small businesses and enable the rapid and easy connection between people including themselves for finding products, services and information required for solving their typical IT issues.</div>
+<div>&nbsp;</div>
+<div>&ldquo;Crowdsourcing has brought tremendous benefits to the consumer world and it&rsquo;s now doing the same for the average small business IT manager like me,&rdquo; said Martin Peverley, IT manager, Bihler of America, Inc. &ldquo;By assembling the collective experience, knowledge and ratings from thousands of IT professionals around the world and letting the best rise to the top, Spiceworks is making it easier for me to get my job done.&rdquo; </div>
+<div>&nbsp;</div>
+<div>The crowdsourcing features of Spiceworks enable IT pros to come together including several thousand small businesses. The SpiceLists provides Share Advice service which includes the ability to collaborate on best practices and daily tasks. Community members can capture, rank and rate best practices on several topics. This includes deploying <!--ZZZLinkBegZZZ-->Microsoft&nbsp;(<a href='http://www.tmcnet.com/snapshots/snapshots.aspx?Company=Microsoft'>News</a> - <a href='http://www.tmcnet.com/enews/subs.aspx?k1=%22Microsoft%22&k2=+%22Windows%22&k3=+%22Bill+Gates%22'>Alert</a>)<!--ZZZLinkEndZZZ--> Vista, the best way to back up servers besides 10 best anti-virus solutions. The service encompasses various industries, geographies and IT interest areas.</div>
+<div>&nbsp;</div>
+<div>Best products and services can be located by the IT pros. Ratings and reviews in the Spiceworks network indicate which products or services work best and which will be most suitable for them. Spiceworks allow creation and sharing of custom reports among IT pros. Shared reports can be browsed so as to search for specific solutions besides downloading and installing the reports.</div>
+<div>&nbsp;</div>
+<div>&ldquo;Sharing community brain power is part of the DNA of Web 2.0 applications,&rdquo; said Scott Abel, co-founder and CEO of Spiceworks, Inc. &ldquo;It&rsquo;s built into the Spiceworks IT Desktop through crowdsourcing capabilities like embedded product ratings, reviews and now our new SpiceLists. Making community collaboration an integral part of the daily workflow helps ensure our users are not alone in their quest to simplify everything IT.&rdquo; </div>
+<div>&nbsp;</div>
+<div>The Spiceworks IT Desktop is most suitable for small and medium organizations with about 250 employees. Spiceworks users use this free IT management applications for discovering, inventory, monitor, track, report on, troubleshoot and repair the hardware and software running in their networks.</div>
+<div>&nbsp;</div>
+<div>It also provides a built-in help desk, remote control capability and business application to embed crowdsourcing and community collaboration features directly into the workflow. This free service is supported by advertisements which are relevant to IT professionals and are non-intrusive at the same time. </div>
+<div><em>&nbsp;</em></div>
+<div><em>Shamila Janakiraman is a TMCnet Contributing Editor.</em></div>
+<div><em>&nbsp;</em></div>
+<div><em>Don't forget to check out TMCnet&rsquo;s </em><a title="http://www.tmcnet.com/tmc/whitepapers/" href="http://www.tmcnet.com/tmc/whitepapers/"><em>White Paper Library</em></a><em>, which provides a selection of in-depth information on relevant topics affecting the IP Communications industry. The library offers white papers, case studies and other documents which are free to registered users.</em></div><!--ZZZBodyZZZEND--></div>
+                        
+                    </div>
+                    
+<br>
+<div>
+<table><tr><td>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /**
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    */
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://tmcnet.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=tmcnet">comments powered by Disqus.</a></noscript> <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</td></tr></table></div>
+<br />
+<!-- TMC2.ZZZ END -->
+
+         
+            	</div>
+
+				
+<div id="itech-right">
+	<div id="box336">
+	<h2>infoTECH Headlines</h2>
+	<span id="ITbucket"><span><font color="Red"></font></span>
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160345-us-air-force-awards-23-million-order-general.htm' title="Information Technology - U.S. Air Force Awards $23 Million Order to General Dynamics">U.S. Air Force Awards $23 Million Order to General Dynamics</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160343-csc-signs-agreement-acquire-healthcare-it-provider-isoft.htm' title="Information Technology - CSC Signs Agreement to Acquire Healthcare IT Provider iSOFT">CSC Signs Agreement to Acquire Healthcare IT Provider iSOFT</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160328-group-coeds-creates-website-casual-hookups.htm' title="Information Technology - Group of Coeds Creates Website for Casual Hookups">Group of Coeds Creates Website for Casual Hookups</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160327-w3is-appallstar-optimizes-app-recommendation.htm' title="Information Technology - W3i's AppAllStar Optimizes App Recommendation">W3i's AppAllStar Optimizes App Recommendation</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160322-livedrive-releases-new-technology-back-up-digital-data.htm' title="Information Technology - Livedrive Releases New Technology to Back Up Digital Data by Printing it on Paper">Livedrive Releases New Technology to Back Up Digital Data by Printing it on Paper</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160312-skyline-software-releases-terraexplorer-v6-products-with-added.htm' title="Information Technology - Skyline Software Releases TerraExplorer v6 Products with Added Capabilities and Benefits">Skyline Software Releases TerraExplorer v6 Products with Added Capabilities and Benefits</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160309-teledyne-subsidiary-acquires-minority-stake-optech.htm' title="Information Technology - Teledyne Subsidiary Acquires Minority Stake in Optech">Teledyne Subsidiary Acquires Minority Stake in Optech</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160272-robert-half-district-president-wins-ron-muns-lifetime.htm' title="Information Technology - Robert Half District President Wins the Ron Muns Lifetime Achievement Award">Robert Half District President Wins the Ron Muns Lifetime Achievement Award</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160264-appliedmicro-announces-availability-new-multi-core-embedded-processing.htm' title="Information Technology - AppliedMicro Announces Availability of New Multi-Core Embedded Processing Devices">AppliedMicro Announces Availability of New Multi-Core Embedded Processing Devices</a></h3>
+		
+		<h3><a href='http://it.tmcnet.com/topics/it/articles/160259-best-tech-related-april-fools-pranks-2011.htm' title="Information Technology - Best Tech-Related April Fool's Pranks of 2011">Best Tech-Related April Fool's Pranks of 2011</a></h3>
+		</span>
+	</div>
+	
+	<div id="ad-box">
+	<SCRIPT LANGUAGE="JavaScript">
+	  <!--
+		   OAS_AD('Middle');
+		  //-->
+	</SCRIPT>
+	</div>
+	
+                    <div class="top-news-nav-hldr">
+                        <div id="bucket5Link" class="navOn"><a href="javascript:showBucket2('bucket5')">Blogs</a></div> 
+                        <div id="bucket6Link" class="navOff"><a href="javascript:showBucket2('bucket6')">Videos</a></div>
+                        <div id="bucket7Link" class="navOff"><a href="javascript:showBucket2('bucket7')">Webinars</a></div>
+                    </div>
+                    
+                    <div id="bucket5">
+                    <span id="rtBlog"><span><font color="Red"></font></span>
+                        <div class="blog"><a href="http://blog.tmcnet.com/blog/rich-tehrani/google/so-google-can-alter-its-results-manually.html" target="_blank">So Google Can Alter its Results Manually?</a></asp:HyperLink><br />Rich Tehrani</div> 
+                        
+                        <div class="blog"><a href="http://blog.tmcnet.com/blog/rich-tehrani/google/microsoft-google-and-eu-antitrust---is-facebook-next.html" target="_blank">Microsoft, Google and EU  Antitrust - Is Facebook Next?</a></asp:HyperLink><br />Rich Tehrani</div> 
+                        
+                        <div class="blog"><a href="http://blog.tmcnet.com/blog/rich-tehrani/apple/it-spending-up-thanks-ipad.html" target="_blank">IT Spending Up: Thanks iPad</a></asp:HyperLink><br />Rich Tehrani</div> 
+                        </span>
+                    <span id="tkBlog"><span><font color="Red"></font></span>
+                            <div class="blog"><a href="http://blog.tmcnet.com/blog/tom-keating/technology-and-science/marko-rodin-smart-laser---coolest-use-of-lasers-ever.asp" target="_blank">Marko Rodin Smart Laser - Coolest Use of Lasers Ever!</a></asp:HyperLink><br />Tom Keating</div> 
+                        
+                            <div class="blog"><a href="http://blog.tmcnet.com/blog/tom-keating/voip/infonetics-research---breakout-year-for-sip-trunking.asp" target="_blank">Infonetics Research - &quot;Breakout year for SIP trunking&quot;</a></asp:HyperLink><br />Tom Keating</div> 
+                        
+                            <div class="blog"><a href="http://blog.tmcnet.com/blog/tom-keating/home-entertainment/star-wars-the-complete-saga-on-blu-ray-hits-september-16.asp" target="_blank">Star Wars The Complete Saga on Blu-ray Hits September 16</a></asp:HyperLink><br />Tom Keating</div> 
+                        </span>
+					</div>
+                    
+                    <div id="bucket6" style="display: none;">
+                    <span id="ITVideos"><span><font color="Red"></font></span>
+                            <div class="video"><a href='http://www.tmcnet.com/tmc/videos/default.aspx?vid=4337&type=3&title=Teachers Employ Skype as New TTeachers Employ Skype as New Teaching Tool' title="Teachers Employ Skype as New Teaching Tool" target="_blank">Teachers Employ Skype as New Teaching Tool</a><br />Green Tech Majors Beware, Jobs May be Sparse...<br>MIT Women Break Science Field Mold...</div>
+                        
+                            <div class="video"><a href='http://www.tmcnet.com/tmc/videos/default.aspx?vid=4336&type=3&title=Interview with TelasticInterview with Telastic' title="Interview with Telastic" target="_blank">Interview with Telastic</a><br />TMC&#39;s Erik Linask speaks with Vic Bozzo, Chief Sales &amp; Marketing Officer for Pac-West and President of the Telastic Division</div>
+                        
+                            <div class="video"><a href='http://www.tmcnet.com/tmc/videos/default.aspx?vid=4335&type=3&title=Interview with VitelityInterview with Vitelity' title="Interview with Vitelity" target="_blank">Interview with Vitelity</a><br />TMC&#39;s Erik Linask speaks with Vitelity CEO, Chris Hall</div>
+                        
+                            <div class="video"><a href='http://www.tmcnet.com/tmc/videos/default.aspx?vid=4334&type=3&title=Interview with GCSInterview with GCS' title="Interview with GCS" target="_blank">Interview with GCS</a><br />TMC&#39;s Erik Linask speaks with Chis Birdsall, Executive Vice President of Worldwide sales for GCS</div>
+                        
+                            <div class="video"><a href='http://www.tmcnet.com/tmc/videos/default.aspx?vid=4332&type=3&title=Lil Piggy Power BanksLil Piggy Power Banks' title="Lil Piggy Power Banks" target="_blank">Lil Piggy Power Banks</a><br />Belkin Conserve Energy-Saving Surge Strip...<br>Bamboo Laptop...<br>Solar Camcorder...</div>
+                        </span>
+                    </div>
+
+                     <div id="bucket7" style="display: none;">
+                    <span id="ITWebinars"><span><font color="Red"></font></span></span>
+                    </div>
+
+	<div id="box336">
+	<h2>infoTECH Whitepapers</h2>
+	<span id="ITwps"><span><font color="Red"></font></span>
+			<h3><a href='/librarydownload.aspx?id=2700&type=1&title=Digital Media and the Role of Digital Media and the Role of Satellite' title="Digital Media and the Role of Satellite">Digital Media and the Role of Satellite</a></h3>
+		
+			<h3><a href='/librarydownload.aspx?id=2699&type=1&title=PCI CompliancePCI Compliance' title="PCI Compliance">PCI Compliance</a></h3>
+		</span>
+	</div>
+
+	<div id="googleAd">
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-8317963745003590";
+	/* 336x280, created 4/13/10 */
+	google_ad_slot = "3732426018";
+	google_ad_width = 336;
+	google_ad_height = 280;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+	</div>
+					   
+</div>
+
+                
+                <div class="magic"></div>
+            
+            </div>
+            
+                    
+        <div class="magic"></div>
+        </div>
+        
+        <!-- IT Footer -->
+<div id="it-footer">
+	<div id="footerFloat">
+	  <div><a href="http://www.tmcnet.com/" title="TMCnet.com"><img src="http://images.tmcnet.com/tmc/it/images/TMCnetcom.png" alt="TMCnet.com" border="0" /></a></div>
+		<div class="footerText">
+		Technology Marketing Corporation,
+		<br />
+		800 Connecticut Ave, 1st Floor East, <br />Norwalk, CT 06854 USA
+		<br />
+		Ph: 800-243-6002, 203-852-6800; <br />
+		Fx: 203-853-2845
+		<br />
+		<a href="http://it.tmcnet.com/Contact.aspx" target="_blank" title="Contact TMC">Contact us</a>
+		<br />
+		Technology Marketing Corp. 1997-2011 Copyright.
+		</div>
+	</div>
+				
+	<div id="footerFloat">
+		<div class="footerTitle">infoTECH Resources</div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/FeaturedArticles.aspx" title="Information Technology Feature Editorial">Editor's Pick</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/magazine/" title="Information Technology Magazine">Magazine</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/topnews.aspx" title="Information Technology News">infoTECH News</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/itsoftware.aspx" title="Information Technology Software">Software News</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/ithardware.aspx" title="Information Technology Hardware">Hardware News</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/itsecurity.aspx" title="Information Technology Security">Security News</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/itnetworking.aspx" title="Information Technology Networking">Networking News</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/Library.aspx" title="Information Technology Whitepapers">Whitepapers</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/Library.aspx?type=podcasts" title="Information Technology Podcasts">Podcasts</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/Videos.aspx" title="Information Technology Videos">Videos</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/webinars.aspx" title="Information Technology Webinars">Webinars</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/blogs.aspx" title="Information Technology Blogs">Blogs</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/Services.aspx" title="Information Technology Services">Services</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/Awards.aspx" title="Satellite Spotlight Awards">Awards</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/whatshot.aspx" title="What's Hot in Information Technology">What's Hot</a></div>
+		<div class="fit-resource"><a href="http://images.tmcnet.com/mkt/media-kit/InfoTECH-Spotlight_Media-Kit.pdf" title="infoTECH Spotlight Media Kit" target="_blank">Media Kit</a></div>
+	</div>
+				
+	<div id="footerFloat">
+		<div class="footerTitle">infoTECH Communities</div>
+		<div class="fit-resource"><a href="http://10-gigabit-ethernet.tmcnet.com/" title="10 Gigabit Ethernet">10 Gigabit Ethernet</a></div>
+		<div class="fit-resource"><a href="http://defrag.tmcnet.com/" title="Defrag">Defrag</a></div>
+	</div>
+				
+	<div id="footerFloat">
+		<div class="footerTitle">infoTECH Channels</div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/application-performance-management/" title="Application Performance Management">Application Performance Management</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/application-performance-monitoring/" title="Application Performance Monitoring">Application Performance Monitoring</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/bpm-software/" title="BPM Software">BPM Software</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/cloud-communications/" title="Cloud Communications">Cloud Communications</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/cloud-computing/" title="Cloud Computing">Cloud Computing</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/cloud-storage/" title="Cloud Storage">Cloud Storage</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/data-center-network/" title="Data Center Network">Data Center Network</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/data-center-power/" title="Data Center Power">Data Center Power</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/environmental-monitoring/" title="Environmental Montioring">Environmental Montioring</a></div>
+		<div class="fit-resource"><a href="http://www.tmcnet.com/channels/load-balancer/" title="Load Balancer">Load Balancer</a></div>
+		<div class="fit-resource"><a href="http://www.tmcnet.com/channels/network-monitoring/" title="Network Monitoring">Network Monitoring</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/network-security/" title="Network Security">Network Security</a></div>
+		<div class="fit-resource"><a href="http://www.tmcnet.com/channels/private-cloud/" title="Private Cloud">Private Cloud</a></div>
+		<div class="fit-resource"><a href="http://it.tmcnet.com/channels/projector-lamp/" title="Projector Lamp">Projector Lamp</a></div>
+		<div class="fit-resource"><a href="http://www.tmcnet.com/channels/virtual-tap/" title="Virtual Tap">Virtual Tap</a></div>
+
+	</div>
+	
+	<div id="footerFloat">
+		<div class="footerTitle">Other Industries</div>
+		<div class="fit-resource"><a href="http://www.tmcnet.com/" title="IP Communications" target="_blank">IP Communications</a></div>
+		<div class="fit-resource"><a href="http://www.cablespotlight.com/" title="Satellite Technology" target="_blank">Cable Spotlight</a></div>
+		<div class="fit-resource"><a href="http://www.satellitespotlight.com/" title="Satellite Technology" target="_blank">Satellite Spotlight</a></div>
+		<div class="fit-resource"><a href="http://www.4gwe.com/" title="4G Wireless Evolution" target="_blank">4G Wireless Evolution</a></div>
+		<div class="fit-resource"><a href="http://smart-grid.tmcnet.com/" title="Smart Grid" target="_blank">Smart Grid</a></div>
+		<div class="fit-resource"><a href="http://www.sportstechy.com/" title="Sports Techy: Sports Technology & Communications" target="_blank">Sports Techy</a></div>
+		<div class="fit-resource"><a href="http://www.m2mevolution.com/" title="M2M Evolution" target="_blank">M2M Evolution</a></div>
+	</div>
+	<div class="magic"></div>     
+</div>
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qacct="p-5cEhFSZZan1sk";quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-5cEhFSZZan1sk" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-5cEhFSZZan1sk.gif" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+        
+    </div>
+</div>
+</body>
+</html>
+

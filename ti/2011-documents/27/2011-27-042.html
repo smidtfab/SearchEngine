@@ -1,0 +1,457 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSE 628 Introduction to Natural Language Processing Fall 2010</title>
+</head>
+<body>
+<h1><center>CSE 628 Introduction to Natural Language Processing</center></h1> 
+<h2><center>Fall 2010</center></h2>
+<h3><center>Mon <font color="red">11:40am</font> - 12:40pm, Wed <font 
+color="red">11:10am</font> - 12:40pm at [CS-2129]</center></h3>
+<br>
+
+<h4>Instructor:</h4> 
+<ul type="circle">
+<a href="http://www.cs.stonybrook.edu/~ychoi/">Yejin Choi</a>&nbsp;(email: ychoi@cs, 
+office: 
+CS-1422, <font color="blue"><b>Office Hours: Mon/Wed 2:30pm - 3:30pm</b></font>) <br>
+</ul>
+
+<h4>Course Description:</h4>
+
+<ul type="circle">
+<li>This course intends to provide a general introduction to Natural Language 
+Processing (NLP), the study of computational systems to understand and/or
+generate human language.
+Approximately two thirds of the class will cover fundamental concepts and techniques in 
+NLP, such as language models, statistical techniques for sequence tagging, parsing, 
+information extraction, and information retrieval. The remaining one third of the class will introduce students to
+some of the more recent development in NLP research, such as the use of constraint 
+optimization techniques, and ideas for data acquisition without expert 
+annotation. Throughout the class, students will be exposed to some of the 
+recent research papers that connect the concepts learned from the textbook to 
+exciting research questions that are practically motivated.
+<br>
+<b>Note:</b> The material covered in this class will not overlap with the companion class [CSE 507 Computational Linguistics] that 
+will be offered in Spring 2011; this class concerns subjects that are more 
+computationally-oriented, while CSE 507 will touch more on the linquistic 
+theories and semantics.
+<br><br>
+<li><b>Textbook: </b>
+Jurafsky and Martin, <a href="http://www.cs.colorado.edu/~martin/slp2.html"> SPEECH and LANGUAGE PROCESSING: An Introduction to 
+Natural Language Processing, Computational Linguistics, and Speech Recognition
+, Second Edition</a>, McGraw Hill, 2008. 
+
+<br><br>Note that some copies of the textbook should be available in the reserve 
+shelf of the North Reading Room 
+(NRR) at the library.
+<br><br>
+<li><b>Prerequisites: </b> 
+Familiarity with either Artificial Intelligence or Machine 
+Learning is strongly recommended, but not strictly necessary.
+<br><br>
+<li><b>Grading: </b>
+Paper Presentation 10%,
+Quiz (for paper presentations) 10%,
+Homework 35%,
+Final Project 35%,
+Class Participation 10% 
+<br><br>
+<li> Late submission: Each student may adjust his/her homework deadline upto 7 days 
+throughout the semester without a penalty. (not 7 days for each assignment, 
+but 7 days cumulatively for the entire semester). After then, 10% of score will be 
+subtracted each day. This policy is to encourage students to submit quality work, 
+rather than poorly composed work in a hurry. For the purpose 
+of counting late submission, factional values will be rounded up - for 
+instance, late submission by 1 hour is counted as late by 1 day.
+If there are situations where the application of this rule can be ambiguous, I have 
+the right to apply the rule as I see appropriate. If you have a doubt, consult with me 
+first before making your own assumption.
+<br><br>
+<li> Assignments are posted to <a href="https://blackboard.stonybrook.edu/bin/common/course.pl?course_id=_321486_1">
+Blackboard </a> 
+
+</ul>
+
+
+<h4><font color="black">Announcements:</font></h4>
+<ol>
+<li> First class will be on Wednesday Sep 1.
+<li> This class is open to <i>both</i> Ph.D. and masters students. 
+<li> The class location has moved to CS 2129. Due 
+to the availability of the room, the Monday classes will begin at 11:40am and end 
+at 12:40pm. The Wednesday classes are 11:10am - 12:40pm.
+<li> <font color="black"> Homework-1 (paper reading assignment) will be due Sep 19th 
+6pm. (See <a href="https://blackboard.stonybrook.edu/bin/common/course.pl?course_id=_321486_1">
+Blackboard </a> for details) </font> 
+<li> <font color="black"> Homework-2 (paper reading assignment) will be due Sep 
+28th (TUE) 11:59pm. (See <a href="https://blackboard.stonybrook.edu/bin/common/course.pl?course_id=_321486_1">
+Blackboard </a> for details) </font>
+<li> <font color="black"> Homework-3 (project plan) will be due Oct 12th (TUE) 11:59pm. (See <a href="https://blackboard.stonybrook.edu/bin/common/course.pl?course_id=_321486_1">
+Blackboard </a> for details) </font> 
+<li> <font color="black"> Homework-4 (baseline implementation/data collection) will be due Oct 
+26th (TUE) 11:59pm. (See <a href="https://blackboard.stonybrook.edu/bin/common/course.pl?course_id=_321486_1">
+Blackboard </a> for details) </font>
+<li> <font color="black"> Notice that your late submission credit has been 
+increased by 2 days!  </font>
+<li> <font color="black"> Homework-5 submission (substantial implementation of your 
+project and in-depth analysis and evaluation) will be due Nov 
+23th (TUE) 11:59pm. (See <a href="https://blackboard.stonybrook.edu/bin/common/course.pl?course_id=_321486_1">
+Blackboard </a> for details) </font> 
+<li> <b> <font color="red"> Homework-6 submission (Final Project Submission) will be due 
+Dev 19th (SUN) 11:59pm. Submission guideline is similar to that of the previous 
+submission. </font> </b>
+
+</ol>
+
+<h4>Syllabus: (<i><small>subject to change depending on the students' backgrounds and 
+interests</i></small>)</h4>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" style="border-collapse: collapse"
+bordercolor="#808080" 
+ cellspacing="2">
+  <tbody>
+    <tr bgcolor="black"> 
+      <td width="30"></td>
+      <td width="80"><font size=4 color="white"><b>Date</b></font></td>
+      <td><font size=4 color="white"><b>Topics</b></font></td>
+      <td><font size=4 color="white"><b>References</b></font></td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>01</td>    
+      <td>Wed 09/01</td>
+      <td>Introduction <a href="./lecture/01-intro.pdf">[slides]</a></td>
+      <td><ul type="circle">
+      <li>J&M Chapter 1	
+      <li><a href="http://www.cs.cornell.edu/home/llee/papers/cstb.pdf">[pdf]</a>
+      Lillian Lee, 2001. <i>I'm
+      sorry Dave, I'm afraid I can't do that: Linguistics, Statistics,
+      and Natural Language Processing circa 2001.</i>  The National
+      Academies' study on the Fundamentals of Computer Science
+      </ul></td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>02</td>
+      <td>Mon 09/06</td>
+      <td>No Class (Labor Day)</td>
+      <td></td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>03</td>
+      <td>Wed 09/08</td>
+      <td>Language Models <a href="./lecture/02-ngram.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 4</ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>04</td>
+      <td>Mon 09/13</td>
+      <td>Language Models & Information Theory <a href="./lecture/03-ngram.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 4      
+      <li>
+      <a href="http://www.aclweb.org/anthology/P/P05/P05-1065.pdf">[pdf]</a>
+      Sarah E. Schwarm and Mari Ostendorf, 2005.
+      <i>Reading level assessment using support vector machines and statistical 
+language models.</i> ACL
+	  <li>
+	  <a href="http://research.microsoft.com/en-us/um/people/kevynct/pubs/hlt04_readability.
+pdf">[pdf]</a>
+	  Kevyn Collins-Thompson and Jamie Callan, 2004. <i> A language modeling approach to predicting 
+reading difficulty.</i> NAACL 
+      <li>
+      <a href="http://www.ldc.upenn.edu/acl/A/A00/A00-2032.pdf">[pdf]</a>
+      Rie Kubota Ando and Lillian Lee, 2000.
+      <i>Mostly-Unsupervised Statistical Segmentation of Japanese: Applications to 
+Kanji.</i> NAACL
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>05</td>
+      <td>Wed 09/15</td>
+      <td>Machine Learning Basics <a href="./lecture/04h.pdf">[slides]</a></td>
+      <td><ul type="circle">      
+      </ul></td> 
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>06</td>
+      <td>Mon 09/20</td>
+      <td>Part-of-Speech Tagging & Sequence Tagging <a href="./lecture/05h.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 5</ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>07</td>
+      <td>Wed 09/22</td>
+      <td>Part-of-Speech Tagging & Sequence Tagging <a href="./lecture/05h.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 5</ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>08</td>
+      <td>Mon 09/27</td>
+      <td>Hidden Markov Models <a href="./lecture/06h.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 6</ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>09</td>
+      <td>Wed 09/29</td>
+      <td>Hidden Markov Models <a href="./lecture/06h.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 6</ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>10</td>
+      <td>Mon 10/04</td>
+      <td>2nd Assignment & Project Discussion</td>
+      <td>      
+      <ul type="circle"><li>
+      See blackboards for slides
+      </ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>11</td>
+      <td>Wed 10/06</td>
+      <td>Project Meeting</td>
+      <td></td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>12</td>
+      <td>Mon 10/11</td>
+      <td>Recruiting Event</td>
+      <td>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>13</td>
+      <td>Wed 10/13</td>
+      <td>Maximum Entropy Models & Conditional Random Fields <a href="./lecture/07h.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle">
+      <li>J&M Chapter 6
+      </ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>14</td>
+      <td>Mon 10/18</td>
+      <td>Information Extraction <a href="./lecture/08h.pdf">[slides]</a></td>
+      <td><ul type="circle">
+      <li>J&M Chapter 22
+      </ul>      
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>15</td>
+      <td>Wed 10/20</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle">
+      <li>Balanagireddy Mudiam to present [<i>Large-Scale Named Entity Disambiguation Based on 
+      Wikipedia Data </i> by Silviu Cucerzan] 
+      <a href="http://acl.ldc.upenn.edu/D/D07/D07-1074.pdf">[pdf]</a>
+      <a href="./students/bala.pdf">[slides]</a>
+      <li>Ruchita Sarawgi, Kailash GVS, Praveen V S to present 
+      [<i>Automatically profiling the Author of an Anonymous 
+      Text</i> by Shlomo Argamon, Moshe Koppel, James W. Pennebaker, and Jonathan Schler]
+      <a href="http://www.cs.biu.ac.il/~koppel/papers/AuthorshipProfiling-cacm-final.pdf">[pdf]</a>
+      <a href="./students/ruch.ppt">[slides]</a>
+      </ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>16</td>
+      <td>Mon 10/25</td>
+      <td>Context Free Grammars <a href="./lecture/09h.pdf">[slides]</a></td>
+      <td>
+      <ul type="circle"><li>J&M Chapter 12      
+      </ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>17</td>
+      <td>Wed 10/27</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle">     
+      <li> Ritwik Banerjee to present [<i>A Non-negative Matrix Tri-factorization Approach to Sentiment Classification 
+with Lexical Prior Knowledge</i> by Tao Li, Yi Zhang, and Vikas Sindhwani] 
+<a href="http://www.aclweb.org/anthology/P/P09/P09-1028.pdf"> [pdf]</a>
+<a href="./students/ritw.pdf">[slides]</a>
+      <li>Thomas J Condus to present [<i>A Hierarchical Approach to Encoding Medical Concepts for Clinical 
+      Notes</i> by Yitao Zhang] <a href="http://www.aclweb.org/anthology/P/P08/P08-3012.pdf">[pdf]</a>
+      <a href="./students/thom.ppt">[slides]</a>
+      </ul>
+      </td>
+    </tr>
+
+    <tr bgcolor="lightcyan"><td>18</td>
+      <td>Mon 11/01</td>
+      <td>Parsing <a href="./lecture/10h.pdf">[slides]</a></td>
+      <td>  
+      <ul type="circle"><li>J&M Chapter 13
+      </ul>
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>19</td>
+      <td>Wed 11/03</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle">
+      <li>
+      Deepika Srinivasan, Annapurneshwari Kulkarni to present
+      [<i>Annotating Named Entities in Twitter Data with Crowdsourcing</i> by   	
+Tim Finin, Will Murnane, Anand Karandikar, Nicholas Keller, Justin Martineau, and Mark Dredze]
+      <a href="http://www.cs.jhu.edu/~mdredze/publications/amt_ner.pdf">[pdf]</a>  
+      <a href="./students/deep.ppt">[slides]</a>
+      <li>Ishani Garg, Sumati Priya to present [<i>Robust Sentiment Detection on Twitter from Biased and Noisy 
+      Data</i> by Luciano Barbosa, and Junlan Feng]
+      <a 
+      href="http://www2.research.att.com/~lbarbosa/publications/coling_2010.pdf">[pdf]</a>
+      <a href="./students/isha.pdf">[slides]</a>
+      <li>Mandeep Singh Grang, Sudheer Jetty to present 
+      [<i>NLP (Natural Language Processing) for NLP (Natural Language 
+      Programming)</i> by Rada Mihalcea, Hugo Liu, and Henry Lieberman] <a 
+      href="http://www.cse.unt.edu/~rada/papers/mihalcea.cicling06a.pdf">[pdf]</a>          
+      <a href="./students/mand.pdf">[slides]</a>
+      </ul>      
+      </td>      
+    </tr>    
+        
+    <tr bgcolor="lightcyan"><td>20</td>
+      <td>Mon 11/08</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle">
+      <li>Rohith Menon, Goutham Bhat and Shruthi D to present 
+      [<i>Authorship Attribution Using Probabilistic Context-Free Grammars</i> by Sindhu Raghavan, Adriana Kovashka, and Raymond Mooney]
+      <a href="http://www.aclweb.org/anthology/P/P10/P10-2008.pdf">[pdf]</a>
+      </ul>
+      </td>   
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>21</td>
+      <td>Wed 11/10</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle">
+      <li>
+      Manoj Harpalani, Sandesh Singh to present
+      [<i>Learning within sentence semantic coherence</i> by Elena Eneva, Rose 
+      Hoberman, and Lucian Lita]
+      <a href="http://www.aclweb.org/anthology/W/W01/W01-0503.pdf">[pdf]</a>
+      <li>Chandrakanth Reddy B, Anand sagar Kothapalli to present 
+      [<i>An Approach for Combining Content-based and Collaborative Filters</i> by   	
+Qing Li, and Byeong Man Kim]
+      <li>Harit Himanshu to present [<i>Thumbs up? Sentiment Classification using Machine Learning 
+      Techniques</i> by Bo Pang, and Lillian Lee]
+      <a href="http://www.cs.cornell.edu/home/llee/papers/sentiment.pdf">[pdf]</a>
+      </ul>
+      </td>   
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>22</td>
+      <td>Mon 11/15</td>
+      <td>Paper Presentations <br> & <br> Statistical Parsing <a href="./lecture/11h.pdf">[slides]</a></td>
+      <td>      
+      <ul type="circle">      
+      <li>Parag Kadu & Aneesh Ali to present [<i>Sentence Boundary Detection and the Problem with the 
+      U.S.</i> by Dan Gillick] <a 
+      href="http://www.aclweb.org/anthology/N/N09/N09-2061.pdf">[pdf]</a>      
+      <li>J&M Chapter 14
+      </ul>
+      </td>   
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>23</td>
+      <td>Wed 11/17</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle">
+      <li>Vaibhav Shrivastava & Girish SK to present 
+      [<i>Hierarchical Document Categorization with Support Vector 
+      Machines</i> by Lijuan Cai and Thomas Hofmann.]
+      <a href="http://sca2002.cs.brown.edu/people/th/papers/CaiHof-CIKM2004.pdf">[pdf]</a>
+	  <li>Amitha Cheluvagopal & Sharath Ravindran & Avinash Gupta Konda to 
+	  present [<i>An Effective Two-Stage Model for Exploiting Non-Local Dependencies in Named 
+Entity Recognition</i> by Vijay Krishnan and Christopher Manning]
+<a href="http://www.aclweb.org/anthology/P/P06/P06-1141.pdf">[pdf]</a>	
+      </ul>
+      </td>   
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>24</td>
+      <td>Mon 11/22</td>
+      <td>Paper Presentations</td>
+      <td>
+      <ul type="circle"><li>Siming Li & Girish Kulkarni to present [<i>A Linear Programming Formulation for Global Inference
+in Natural Language Tasks</i> by Dan Roth, and Wen-tau Yih]
+      <a href="http://l2r.cs.uiuc.edu/~danr/Papers/RothYi04a.pdf">[pdf]</a>
+      <li>Longfei Xing & Supriya Vasudevan to present
+      [<i>Graph-based Ranking Algorithms for Sentence Extraction,
+Applied to Text Summarization</i> by Rada Mihalcea]
+<a href="http://acl.ldc.upenn.edu/P/P04/P04-3020.pdf">[pdf]</a>
+	  </ul>
+      </td>   
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>25</td>
+      <td>Wed 11/24</td>
+      <td>Correction Day - Follows a FRIDAY schedule </td>
+      <td></td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>26</td>
+      <td>Mon 11/29</td>
+      <td>Statistical Parsing <a href="./lecture/11h.pdf">[slides]</a></td>
+      <td><ul type="circle">      
+      <li>J&M Chapter 14
+      </ul>      
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>27</td>
+      <td>Wed 12/01</td>
+      <td>Paper Presentations <br> & <br> Machine Translation <a 
+      href="./lecture/12h.pdf">[slides]</a></td>
+      <td><ul type="circle">
+      <li>Khusboo Agarwal & Piyush Kumat to present 
+      [<i>NaLIX: an Interactive Natural Language Interface for Querying XML</i> by 
+      Yunyao Li, Huahai Yang, and H. V. Jagadish]
+      <a href="http://www-personal.umich.edu/~yunyaol/publication/130NaLIX.pdf">[pdf]</a>
+      <li>J&M Chapter 25</ul>      
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>28</td>
+      <td>Mon 12/06</td>
+      <td>Machine Translation <a href="./lecture/12h.pdf">[slides]</a></td>
+      <td><ul type="circle">
+      <li>J&M Chapter 25</ul>      
+      </td>
+    </tr>
+    
+    <tr bgcolor="lightcyan"><td>29</td>
+      <td>Wed 12/08</td>
+      <td>Expectation Maximization <br> & <br> How to be successful in your 
+      future career</td>
+      <td></td>
+    </tr>
+   
+  </tbody>
+</table>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+</body>
+</html>

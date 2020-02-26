@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"><head xmlns="http://www.w3.org/1999/xhtml"><title>Overview</title><link rel="stylesheet" href="aws-docs.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"/><link rel="start" href="#AWSMechanicalTurkRequester" title="Amazon Mechanical Turk"/><link rel="up" href="ConceptsArticle.html" title="Mechanical Turk Concepts"/><link rel="prev" href="ConceptsArticle.html" title="Mechanical Turk Concepts"/><link rel="next" href="Concepts_RequestersAndWorkersArticle.html" title="Requesters and Workers"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body><div class="navheader"><table width="100%" summary="Navigation header" cellspacing="0" cellpadding="2"><tr><td width="20%" align="left"><a accesskey="p" href="ConceptsArticle.html">Prev</a> </td><th width="60%" align="center"/><td width="20%" align="right"> <a accesskey="n" href="Concepts_RequestersAndWorkersArticle.html">Next</a></td></tr></table></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" lang="en"><div class="titlepage"><div><div><h1 xmlns="" class="topictitle">Overview</h1></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e226"/>Artificial Artificial Intelligence</h2></div></div></div><p>
+      In 1769, Hungarian nobleman Wolfgang von Kempelen astonished
+      Europe by building a mechanical chess-playing automaton that
+      defeated nearly every opponent it faced. A life-sized wooden
+      mannequin, adorned with a fur-trimmed robe and a turban,
+      Kempelen's "Turk" was seated behind a cabinet and toured
+      Europe confounding such brilliant challengers as Benjamin
+      Franklin and Napoleon Bonaparte. To persuade skeptical
+      audiences, Kempelen would slide open the cabinet's doors to
+      reveal the intricate set of gears, cogs and springs that powered
+      his invention. He convinced them that he had built a machine
+      that made decisions using artificial intelligence. What they did
+      not know was the secret behind the Mechanical Turk: a human chess
+      master cleverly concealed inside.
+    </p><p>
+      Today, we build complex software applications based on the
+      things computers do well, such as storing and retrieving large
+      amounts of information or rapidly performing
+      calculations. However, humans still significantly outperform the
+      most powerful computers at completing such simple tasks as
+      identifying objects in photographs - something children can do
+      even before they learn to speak.
+    </p><p>
+      When we think of interfaces between human beings and computers,
+      we usually assume that the human being is the one requesting
+      that a task be completed, and the computer is completing the
+      task and providing the results. What if this process were
+      reversed and a computer program could ask a human being to
+      perform a task and return the results? What if it could
+      coordinate many human beings to perform a task?
+    </p><p>
+      Amazon Mechanical Turk provides a web services API for computers
+      to integrate "artificial, artificial intelligence" directly into
+      their processing by making requests of humans. Developers use
+      the Amazon Mechanical Turk web services API to submit tasks to
+      the Amazon Mechanical Turk web site, approve completed tasks,
+      and incorporate the answers into their software applications. To
+      the application, the transaction looks very much like any remote
+      procedure call: The application sends the request, and the
+      service returns the results. Behind the scenes, a network of
+      humans fuels this artificial, artificial intelligence by coming
+      to the web site, searching for and completing tasks, and
+      receiving payment for their work.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e237"/>Requesters, Workers, the Service, the Web Site</h2></div></div></div><p>
+      Your application interacts with the Amazon Mechanical Turk web
+      service to ask questions to be answered by human beings.  In
+      Mechanical Turk terms, you are the
+      <span class="emphasis"><em>Requester</em></span> of information, and your
+      application is the <span class="emphasis"><em>Requester application</em></span>.
+      The <span class="emphasis"><em>Workers</em></span>, the human beings providing the
+      answers, find and answer your questions using the Mechanical
+      Turk web site (<a href="http://mturk.amazon.com/" target="_top">http://mturk.amazon.com/</a>).
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e254"/>Human Intelligence Tasks (HITs)</h2></div></div></div><p>
+      Each question your application asks is a <span class="emphasis"><em>Human Intelligence Task</em></span>, or <span class="emphasis"><em>HIT</em></span>.  A
+      HIT contains all of the information a Worker needs to answer the
+      question, including information about how the question is shown
+      to the Worker and what kinds of answers would be considered
+      valid.
+    </p><p>
+      Each HIT has a <span class="emphasis"><em>reward</em></span>, an amount of money
+      you pay to the Worker that successfully completes
+      the HIT.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e270"/>Assignments</h2></div></div></div><p>
+      When a Worker finds a HIT to complete, the Worker
+      <span class="emphasis"><em>accepts</em></span> the HIT.  Mechanical Turk creates
+      an <span class="emphasis"><em>assignment</em></span> to track the completion of
+      the task and store the answer the Worker submits.
+    </p><p>
+      Mechanical Turk reserves the assignment while the Worker is
+      actively working on it, so no other Worker can accept it or
+      submit results.  If the Worker fails to complete the assignment
+      before the deadline you specified (the Worker
+      <span class="emphasis"><em>abandons</em></span> the HIT), or if the Worker chooses
+      not to complete it after accepting it (the Worker
+      <span class="emphasis"><em>returns</em></span> the HIT), the assignment is once
+      again made available for other Workers to accept.
+    </p><p>
+      A HIT can have multiple assignments.  This is useful for
+      gathering multiple answers to a single question for comparison,
+      or for collecting multiple opinions.  A Worker can only accept a
+      HIT once, so a HIT with multiple assignments is guaranteed to be
+      performed by multiple Workers.
+    </p><p>You can specify the maximum number of assignments that any Worker
+    can accept for your HITs. You can set two types of limits: </p><div class="itemizedlist"><ul type="disc"><li><p>The maximum number of assignments any Worker can accept for a specific HIT type you've created.</p></li><li><p>The maximum number of assignments any Worker can accept for all your HITs that don't otherwise have a HIT-type-specific limit already assigned.</p></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e300"/>Approval and Payment</h2></div></div></div><p>
+      Once a HIT has all of the answers that were requested, or an
+      expiration date you specified has passed, your application
+      retrieves the assignments with the answer data.  If an
+      assignment's answer satisfies the question, you
+      <span class="emphasis"><em>approve</em></span> the assignment.  You may
+      <span class="emphasis"><em>reject</em></span> the assignment if the HIT was not
+      completed successfully.
+    </p><p>
+      Mechanical Turk automatically processes payment of the reward
+      to the Worker once the assignment is
+      approved.  The reward is transferred from your
+      Amazon.com account to the Worker's Amazon.com account.
+      You can deposit or withdraw funds from your Mechanical Turk
+      account at any time using the Requester web site (<a href="http://requester.mturk.amazon.com/" target="_top">http://requester.mturk.amazon.com/</a>).
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e316"/>Qualifications and Quality Control</h2></div></div></div><p>
+      You can manage which Workers can accept a particular HIT
+      using <span class="emphasis"><em>Qualifications</em></span>.  A Qualification is
+      an attribute assigned by you to a Worker.  It includes a name
+      and a number value.  A HIT can include <span class="emphasis"><em>Qualification requirements</em></span> that a Worker must meet before they are
+      allowed to accept the HIT.
+    </p><p>
+      You create a <span class="emphasis"><em>Qualifiation type</em></span> to
+      represent a Worker's skill or ability.  A Worker discovers your
+      Qualification type either by browsing HITs that require it, or
+      by browsing Qualification types directly.  The Worker requests a
+      Qualification of the type, and you grant the request with a value.
+    </p><p>
+      A Qualification type may include a <span class="emphasis"><em>Qualification test</em></span>.  A Qualification test is a set of questions,
+      similar to a HIT, that the Worker must answer to request the
+      Qualification.  You can grant the request manually by
+      evaluating the Worker's test answers, or you can
+      include an <span class="emphasis"><em>answer key</em></span> for the test when
+      they create the Qualification type.  For Qualification types
+      with a test and an answer key, Mechanical Turk processes
+      Qualification requests automatically, and sets Qualification
+      values as specified by the answer key.
+    </p><p>
+      Mechanical Turk provides several <span class="emphasis"><em>system Qualifications</em></span> that represent a Worker's account
+      history.  The values are updated continuously as the Worker uses
+      the system.  A HIT may include Qualification requirements based
+      on these system Qualifications.
+    </p></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" cellspacing="0" cellpadding="2"><tr><td width="40%" align="left"><a accesskey="p" href="ConceptsArticle.html">Prev</a> </td><td width="20%" align="center"><a href="copyrightinfo.html">Copyright Information</a></td><td width="40%" align="right"> <a accesskey="n" href="Concepts_RequestersAndWorkersArticle.html">Next</a></td></tr></table></div></body></html>

@@ -1,0 +1,991 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>LISTSERV 15.5 - SIGIR Archives</title>
+<style type="text/css">
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000000
+}
+p {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000000
+}
+a {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #3366CC;
+  text-decoration: none
+}
+textarea, input, select {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000000
+}
+td {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000000
+}
+h1 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #CC0033;
+  margin: 0pt
+}
+h2 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #CC0033;
+  margin: 0pt
+}
+h3 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: #3366CC;
+  margin: 0pt
+}
+h4 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #FFFFFF;
+  margin: 0pt
+}
+h4 a {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #FFFFFF;
+  margin: 0pt
+}
+p.small {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #000000
+}
+p.smallheader {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF
+}
+tt {
+  font-size: 14px;
+}
+pre {
+  font-size: 14px;
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  word-wrap:break-word;
+  _white-space:pre;   /* IE only hack to re-specify in addition to word-wrap  */
+}
+.tableframe {
+  border-right: #999999 1px solid;
+  border-top: #999999 1px solid;
+  border-left: #999999 1px solid;
+  border-bottom: #999999 1px solid
+}
+.tableframeinv {
+  border-right: #F1F4FA 1px solid;
+  border-top: #F1F4FA 1px solid;
+  border-left: #F1F4FA 1px solid;
+  border-bottom: #F1F4FA 1px solid
+}
+.emphasizedcell {
+  background-color: #3366CC
+}
+.emphasizedgroup {
+  background-color: #F1F4FA
+}
+.normalgroup {
+  background-color: #FFFFFF
+}
+.headergroup {
+  background-color: #C4CDDE
+}
+.cardcolor {
+  background-color: #F1F4FA
+}
+.reply {
+  font-family: Verdana, Arial, Helvetica, sans-serif
+}
+.error {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #CC3333
+}
+.message {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #3333FF
+}
+.green {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #009900
+}
+.grey {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #999999
+}
+.subindent {
+  text-indent:50px
+}
+.listselframe {
+  background-image: url("/archives/images/b-listselback.jpg");
+  background-repeat: repeat-x;
+  background-color: #FFFFFF;
+  background-position: bottom;
+  border-right: #999999 1px solid;
+  border-top: #999999 1px solid;
+  border-left: #999999 1px solid;
+  border-bottom: #999999 1px solid
+}
+.boxtop {
+  background-image: url("/archives/images/b-boxbluetop.jpg");
+  background-position: top;
+  background-repeat: repeat-x;
+  background-color: #BDCDEF;
+  border-right: #999999 1px solid;
+  border-top: #999999 1px solid;
+  border-left: #999999 1px solid;
+  border-bottom: #999999 1px solid
+}
+.boxback {
+  background-image: url("/archives/images/b-boxback.jpg");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-color: #FFFFFF;
+  border-right: #999999 1px solid;
+  border-left: #999999 1px solid;
+  border-bottom: #999999 1px solid
+}
+hr {
+  width:100%;
+  height:1px;
+  color:#999999;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px 0px 0px 0px
+}
+.SPF_red {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #CC3333
+}
+.SPF_orange {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #FF9933
+}
+.SPF_green {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #336633
+}
+.SPF_error {
+  font-weight: bold;
+  color: #CC3333
+}
+.SPF_match {
+  font-weight: bold;
+  color: #3333FF
+}
+.SPF_comment {
+  font-weight: bold;
+  color: #3333FF
+}
+.userRole {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #3366CC
+}
+.titleBorderTop {
+  border-top: #999999 1px solid;
+  border-left: #999999 1px solid;
+  border-right: #999999 1px solid
+}
+.pulldownMenuTopLevel {
+  background-image: url("/archives/images/b-menuback.jpg");
+  background-repeat: repeat-x;
+  background-color: #FFFFFF;
+  background-position: bottom;
+  border-top: #999999 1px solid;
+  border-bottom: #999999 1px solid;
+  border-left: #999999 1px solid;
+  border-right: #999999 1px solid
+}
+.pulldownMenuInner {
+  background-color: #F1F4FA;
+  border: #999999 1px solid
+}
+.pulldownMenuItem {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #3366CC;
+  padding-top: 4;
+  padding-bottom: 4;
+  padding-left: 5;
+  padding-right: 5;
+  cursor: pointer
+}
+.pulldownMenuItemHighlight {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #3366CC;
+  padding-top:4;
+  padding-bottom: 4;
+  padding-left: 5;
+  padding-right: 5;
+  cursor: pointer;
+  background-color: #B6B9CA
+}
+.pulldownMenuItemSpec {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #3366CC;
+  cursor: pointer
+}
+.pulldownMenuItem a {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #3366CC;
+  text-decoration: none
+}
+.pulldownMenuItem a:hover {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #3366CC;
+  text-decoration: none;
+  background-color: #B6B9CA
+}
+.pulldownMenuSeparator {
+  border-top: #999999 1px solid
+}
+.pulldownMenuDropShadowRight {
+  width: 5;
+  background: url("/archives/images/b-menudropshadow.png") no-repeat top right
+}
+.pulldownMenuDropShadowBottom {
+  height: 5;
+  background: url("/archives/images/b-menudropshadow.png") no-repeat bottom left
+}
+.pulldownMenuDropShadowCorner {
+  width: 5;
+  height: 5;
+  background: url("/archives/images/b-menudropshadow.png") no-repeat bottom right
+}
+.pulldownMenuArrow {
+  width: 9;
+  height: 9;
+  background: url("/archives/images/b-menuarrow.png") no-repeat center
+}
+.pulldownMenuArrowDown {
+  width: 12;
+  height: 9;
+  background: url("/archives/images/b-menuarrowdown.png") no-repeat center
+}
+</style>
+<!--[if lt ie 7]>
+<style type="text/css">
+.pulldownMenuDropShadowRight {
+  width:3;
+  background: url("/archives/images/b-menudropshadow.gif") no-repeat top right
+}
+.pulldownMenuDropShadowBottom {
+  height:3;
+  background: url("/archives/images/b-menudropshadow.gif") no-repeat bottom left
+}
+.pulldownMenuDropShadowCorner {
+  width:3;
+  height:3;
+  background: url("/archives/images/b-menudropshadow.gif") no-repeat bottom right
+}
+.pulldownMenuArrowDown {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/archives/images/b-menuarrowdown.png", sizingMethod="image");
+  background: none
+}
+.pulldownMenuArrowForOldIE {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/archives/images/b-menuarrow.png", sizingMethod="image");
+  background: none
+}
+</style>
+<![endif]-->
+
+
+<script language="javascript" type="text/javascript">
+var menuCurrentlyOpen = new Array();
+var menuCurrentlyInsideID;
+var menuCurrentlyInsideIsTopLevel;
+var menuCurrentlyInsideLevel
+var menuItemCurrentlyInsideID;
+var menusReady;
+var req;
+
+
+
+function menuInitPosition() {
+  /*@cc_on @*/
+
+
+
+
+  menusReady = true;
+}
+
+function menuMouseDown() {
+  if (!menusReady)
+  return;
+  if (menuCurrentlyInsideID != null) {
+  // Mouse clicked inside of menu-title
+  if (menuCurrentlyInsideIsTopLevel) {
+  // menu-title is in top level menu
+  if (menuCurrentlyOpen[0] == null) {
+  // Currently no menu open: Open the clicked menu
+  menuCurrentlyOpen[0] = document.getElementById(menuCurrentlyInsideID);
+  menuCurrentlyOpen[0].style.visibility = "visible";
+  } else {
+  // Currently a menu already open: Close it, but leave the current menu-title highlighted
+  menuHide(0);
+  menuHighlight(menuCurrentlyInsideID, true);
+  }
+  }
+  } else {
+  // Mouse clicked outside of a menu-title: Close any open menus
+  menuHide(0);
+  }
+  // Mouse clicked inside of menu item: Execute this item
+  switch (menuItemCurrentlyInsideID) {
+  case "sub" :
+  self.location.href="/cgi-bin/wa.exe?REPORT&z=3&s=0&9=O";
+  break;
+  case "lists" :
+  self.location.href="/cgi-bin/wa.exe?INDEX";
+  break;
+  case "prefs" :
+  self.location.href="/cgi-bin/wa.exe?PREF";
+  break;
+  case "login" :
+  self.location.href="/cgi-bin/wa.exe?LOGON&L=sigir";
+  break;
+  case "logout" :
+  self.location.href="/cgi-bin/wa.exe?RESET-COOKIE&X=";
+  break;
+  }
+}
+
+function menuIn(level, menuID) {
+  menuHighlight(menuID, true);      // highlight the current menu-title
+  menuCurrentlyInsideID = menuID;      // remember which one this is
+  menuCurrentlyInsideIsTopLevel = level == 0;
+  menuCurrentlyInsideLevel = level;
+  if (level > 0 || menuCurrentlyOpen[0] != null) {
+  // Currently a menu already open: Check which one this is
+  menuCurrentlyInside = document.getElementById(menuCurrentlyInsideID);
+  if (menuCurrentlyInside != menuCurrentlyOpen[level]) {
+  // Currently open menu is a different one: Close it, and open the current menu instead
+  menuHide(level);
+  menuCurrentlyOpen[level] = menuCurrentlyInside;
+  menuCurrentlyOpen[level].style.visibility = "visible";
+  }
+  }
+}
+
+function menuOut(level, menuID) {
+  if (menuCurrentlyOpen[level] == null)    // if no menu is currently open:
+  menuHighlight(menuID, false);     // remove its highlight
+  menuCurrentlyInsideID = null;      // remember that we are now not 'inside' of a menu-title
+}
+
+function menuItemIn(level, menuItemID) {
+  menuHighlight(menuItemID, true);     // highlight current menu-item
+  menuItemCurrentlyInsideID = menuItemID;    // remember which one this is
+  menuCurrentlyInsideLevel = level;
+  if (level > 0 & menuCurrentlyOpen[level] != null) {
+  // If not on top-level and currently a menu open: Close it
+  menuHide(level);
+  }
+}
+
+function menuItemOut(level, menuItemID) {
+  menuHighlight(menuItemID, false);     // remove highlight of menu-item
+  menuItemCurrentlyInsideID = null;     // remember that we are now not 'inside' of a menu-item
+}
+
+
+function menuHide(level) {
+  if (menuCurrentlyOpen[level] != null) {
+  // If a menu is open: remove highlight and close it and all sub-menus
+  menuHighlight(menuCurrentlyOpen[level].id, false);
+  menuCurrentlyOpen[level].style.visibility = "hidden";
+  menuCurrentlyOpen[level] = null;
+  menuHide(level + 1);
+  }
+}
+
+function menuHighlight(menuItemID, highlightOn) {
+  if (highlightOn)
+  document.getElementById(menuItemID + ".cell").className = "pulldownMenuItemHighlight";
+  else
+  document.getElementById(menuItemID + ".cell").className = "pulldownMenuItem";
+}
+
+function menuGetLeft(menuObj) {
+  menuLeftPos = 0;
+  while (menuObj) {
+  if (menuObj.offsetLeft)
+  menuLeftPos += menuObj.offsetLeft;
+  menuObj = menuObj.offsetParent;
+  }
+  return menuLeftPos;
+}
+
+function menuGetTop(menuObj) {
+  menuTopPos = 0;
+  while (menuObj) {
+  if (menuObj.offsetTop)
+  menuTopPos += menuObj.offsetTop;
+  menuObj = menuObj.offsetParent;
+  }
+  return menuTopPos;
+}
+
+function loadXMLDoc(url) {
+  req = false;
+  // branch for native XMLHttpRequest object
+  if(window.XMLHttpRequest) {
+  try {
+  req = new XMLHttpRequest();
+  } catch(e) {
+  req = false;
+  }
+  // branch for IE/Windows ActiveX version
+  } else if(window.ActiveXObject) {
+  try {
+  req = new ActiveXObject("Msxml2.XMLHTTP");
+  } catch(e) {
+  try {
+  req = new ActiveXObject("Microsoft.XMLHTTP");
+  } catch(e) {
+  req = false;
+  }
+  }
+  }
+  if(req) {
+  req.onreadystatechange = processReqChange;
+  req.open("GET", url, true);
+  req.send("");
+  }
+}
+
+function subform() {
+   document.forms[0].submit();
+}
+
+function windowUp(URL,h) {
+   day = new Date();
+   id = day.getTime();
+   window.open (URL, id,'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=yes,width=600,height=' + h + ' ');
+}
+
+function confirmOpt(prompt) {
+   input_box=confirm(prompt);
+   if (input_box==true) {
+   return true;
+   } else {
+   return false;
+   }
+}
+
+
+</script>
+
+</head>
+<body onload="menuInitPosition()" onresize="menuInitPosition()" onmousedown="menuMouseDown()">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td>
+</td>
+<td align="right">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr>
+<td class="userRole">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="titleBorderTop">
+<colgroup>
+<col width="30">
+<col width="*">
+<col width="275">
+</colgroup>
+<tr>
+<td background="/archives/images/b-middle.jpg"><a href="http://www.lsoft.com" target="_blank"><img src="/archives/images/b-listserv.jpg" alt="LISTSERV mailing list manager" title="LISTSERV mailing list manager" border="0"></a></td>
+<td background="/archives/images/b-middle.jpg"><a href="/cgi-bin/wa.exe?INDEX"><img src="/archives/images/b-version.jpg" alt="LISTSERV 15.5" title="LISTSERV 15.5" border="0"></a></td>
+<td background="/archives/images/b-right.jpg" align="right">
+<p><a href="/cgi-bin/wa.exe?SHOWTPL=HELP-A2" target="_help"><img src="/archives/images/b-help.gif" alt="Help for SIGIR Archives" title="Help for SIGIR Archives" border="0" style="margin:2 5 0 0"></a></p>
+</td>
+</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="pulldownMenuTopLevel" id="menuBar">
+<tr>
+<td id="sub.cell" onmouseover="menuItemIn(0, 'sub')" onmouseout="menuItemOut(0, 'sub')" class="pulldownMenuItem" nowrap>
+<NOSCRIPT>
+<a href="/cgi-bin/wa.exe?REPORT&z=3&s=0&9=O">
+</NOSCRIPT>
+Subscriber's Corner
+<NOSCRIPT>
+</a>
+</NOSCRIPT>
+</td>
+<td id="lists.cell" nowrap onmouseover="menuItemIn(0, 'lists')" onmouseout="menuItemOut(0, 'lists')" class="pulldownMenuItem" nowrap>
+<NOSCRIPT>
+<a href="/cgi-bin/wa.exe?INDEX">
+</NOSCRIPT>
+Email Lists
+<NOSCRIPT>
+</a>
+</NOSCRIPT>
+</td>
+<td width="100%"></td>
+<td id="login.cell" onmouseover="menuItemIn(0, 'login')" onmouseout="menuItemOut(0, 'login')" class="pulldownMenuItem" nowrap>
+<NOSCRIPT>
+<a href="/cgi-bin/wa.exe?LOGON&L=sigir">
+</NOSCRIPT>
+Log In
+<NOSCRIPT>
+</a>
+</NOSCRIPT>
+</td>
+</tr>
+</table>
+<br>
+<table width="100%" cellpadding="5" cellspacing="0">
+<tr>
+<td width="64"><img src="/archives/images/b-archiveicon.gif" alt="SIGIR Archives" title="SIGIR Archives"></td>
+<td width="100%" nowrap>
+<h2>SIGIR Archives
+</h2>
+</td>
+</tr>
+</table>
+<br>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="tableframe">
+<tr>
+<td class="emphasizedgroup">
+<table width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr><td>
+<a name="TOP"></a>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+<td width="10%" valign="top" nowrap><p><b>View:</b></p></td>
+<td width="40%" valign="top"><p>
+<a href="/cgi-bin/wa.exe?A2=ind1103&L=sigir&D=0&P=37873">Next  Message</a> | <a href="/cgi-bin/wa.exe?A2=ind1103&L=sigir&D=0&P=36288">Previous  Message</a>
+<br>
+Next  in Topic</a> | Previous  in Topic</a>
+<br>
+<a href="/cgi-bin/wa.exe?A2=ind1103&L=sigir&D=0&P=66173">Next  by Same Author</a> | Previous  by Same Author</a>
+<br>
+Chronologically | <a href="/cgi-bin/wa.exe?A2=ind1103&L=sigir&D=0&P=37135&D=1">Most Recent First</a>
+<br>
+<a href="/cgi-bin/wa.exe?A2=ind1103&L=sigir&D=0&P=37135&F=P">Proportional Font</a> | Monospaced Font
+</p></td>
+<td width="10%" valign="top" nowrap><p><b>Options:</b></p></td>
+<td width="40%" valign="top"><p>
+<a href="/cgi-bin/wa.exe?SUBED1=sigir">Join or Leave SIGIR</a><br>
+<a href="/cgi-bin/wa.exe?P1&L=sigir"><a href="/cgi-bin/wa.exe?P1=ind1103&P=37135&c=ml%40ISCHOOL.UTEXAS.EDU&S=Re%3A+%5BSIG-IRList%5D+2nd+CFP%3A+Special+Issue+of+Information+Retrieval%2C+a+Springer+journal%2C+on+Crowdsourcing+for+Information+Retrieval&L=sigir">Reply</a> |
+<a href="/cgi-bin/wa.exe?P1&L=sigir">Post New Message</a><br>
+<a href="/cgi-bin/wa.exe?S1=sigir&D=0">Search Archives</a>
+</p></td>
+</table>
+<br>
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="tableframe">
+<tr><td class="normalgroup">
+
+
+
+
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+
+<tr><td width="10%" valign="top" nowrap><tt><b>Subject:</b></tt></td><td valign="top"><tt>     [SIG-IRList] 2nd CFP: Special Issue of Information Retrieval, a Springer journal, on Crowdsourcing for Information Retrieval</tt></td></tr>
+
+<tr><td width="10%" valign="top" nowrap><tt><b>From:</b></tt></td><td valign="top"><tt>        Matt Lease &#60;<a href="/cgi-bin/wa.exe?LOGON=A2%3Dsigir%3BPpUiBw%3B20110315231710-0500" >[log in to unmask]</a>&#62;</tt></td></tr>
+
+<tr><td width="10%" valign="top" nowrap><tt><b>Reply-To:</b></tt></td><td valign="top"><tt>Matt Lease &#60;<a href="/cgi-bin/wa.exe?LOGON=A2%3Dsigir%3BPpUiBw%3B20110315231710-0500" >[log in to unmask]</a>&#62;</tt></td></tr>
+
+<tr><td width="10%" valign="top" nowrap><tt><b>Date:</b></tt></td><td valign="top"><tt>Tue, 15 Mar 2011 23:17:10 -0500</tt></td></tr>
+
+<tr><td width="10%" valign="top" nowrap><tt><b>Content-Type:</b></tt></td><td valign="top"><tt>multipart/mixed</tt></td></tr>
+
+<tr>
+<td width="10%" valign="middle" nowrap>
+<tt><b>Parts/Attachments:</b></tt>
+</td>
+<td><table><tr><td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/archives/images/b-paperclip.gif" alt="Parts/Attachments"></td><td><p><a href="/cgi-bin/wa.exe?A3=ind1103&L=SIGIR&E=8bit&P=447356&B=------------%3D_1300275442-30617-10&T=text%2Fplain;%20charset=UTF-8">text/plain</a>
+
+
+(129 lines)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+, <a href="/cgi-bin/wa.exe?A3=ind1103&L=SIGIR&E=8bit&P=452924&B=------------%3D_1300275442-30617-10&T=text%2Fplain;%20charset=UTF-8;%20name=%22message-footer.txt%22&N=message-footer.txt">message-footer.txt</a>
+
+
+(18 lines)
+
+</p></td></tr></table></td>
+</tr>
+
+</table>
+
+<br>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+<tr><td id="awesomepre">
+
+
+
+<pre>
+Information Retrieval, a Springer journal
+Special Issue on Crowdsourcing for Information Retrieval
+
+Call for papers: <a href="http://ir.ischool.utexas.edu/irj-crowd-cfp.pdf">http://ir.ischool.utexas.edu/irj-crowd-cfp.pdf</a>
+
+Note extended submission date: May 6, 2011
+
+Details of the Special Issue are listed below. First, a few related
+items of note:
+
+* there will be a crowdsourcing workshop at SIGIR (URL and details soon
+forthcoming)
+
+* TREC 2011 crowdsourcing track:
+<a href="https://sites.google.com/site/treccrowd2011">https://sites.google.com/site/treccrowd2011</a> (details soon forthcoming)
+
+* WSDM 2011 crowdsourcing workshop proceedings:
+<a href="http://ir.ischool.utexas.edu/csdm2011/proceedings.html">http://ir.ischool.utexas.edu/csdm2011/proceedings.html</a>
+
+* other crowdsourcing news, events, and resources:
+<a href="http://ir.ischool.utexas.edu/crowd">http://ir.ischool.utexas.edu/crowd</a>
+
+
+============================
+Information Retrieval, a Springer journal
+Special Issue on Crowdsourcing for Information Retrieval
+
+
+The advent of crowdsourcing is revolutionizing information technology by
+enabling a wide host of new methodology for data collection, annotation,
+and processing, as well as system design and evaluation. Given the
+massive datasets that are both ubiquitous and rapidly growing in today’s
+digital age, the field of information retrieval (IR) stands to
+particularly benefit from such advances as academic researchers and
+industrial practitioners alike leverage the wisdom of crowds to more
+effective cope with and exploit massive datasets. The novelty of
+crowdsourcing makes this is an especially exciting time to focus the IR
+community’s attention toward it and provide an opportunity for
+discussion and education on this key emerging area. Traditionally
+manual-labor intensive processes have been particularly impacted by
+dramatically reducing the time, cost, and effort involved. In IR, this
+has driven a disruptive shift in areas like:
+
+Evaluation: The Cranfield paradigm for evaluating search engines
+requires manually assessing document relevance to search queries. Recent
+work on stochastic evaluation has reduced but not removed this
+dependence on manual assessment.
+
+Supervised Learning: While traditional costs associated with data
+annotation have driven recent machine learning work (e.g. Learning to
+Rank) toward greater use of unsupervised and semi-supervised methods,
+the emergence of crowdsourcing has made labeled data far easier to
+acquire, thereby driving a potential resurgence in supervised or
+semi-supervised methods.
+
+Applications: Crowdsourcing has introduced exciting new opportunities to
+integrate human labor into automated systems: handling difficult cases
+where automation fails, exploiting the breadth of backgrounds,
+geographic dispersion, and real-time crowd response, etc.
+
+While existing studies on crowdsourcing for IR have been encouraging, a
+variety of important questions remain open with regard to theory,
+methodology, policy, and best practices.  See call for additional
+background (<a href="http://ir.ischool.utexas.edu/irj-crowd-cfp.pdf).">http://ir.ischool.utexas.edu/irj-crowd-cfp.pdf).</a>
+
+
+Call for Papers
+---------------
+The special issue welcomes novel, high-quality manuscripts on the
+development, evaluation, and theoretical analysis of crowdsourcing for
+IR. Submissions to the special issue should not be under consideration
+in any other journal or conference and will be evaluated according to
+the Information Retrieval Journal reviewing criteria and appropriateness
+to the special issue. If the submission is a revision of a previous
+conference paper, the revision must contain significant amplification or
+clarification of the original material or there is some significant
+additional benefit to be gained. For more details, please refer to
+&quot;manuscript submission&quot; on the journal homepage. Submissions should use
+the Information Retrieval Journal style templates available from the
+Journal's homepage and should be submitted through the IR Journal online
+submission page, selecting the “S.I.: Crowdsourcing for Info. Ret.”
+article type.
+
+Topics of interest include but are not limited to the following areas:
+
+* Theoretical, experimental, and/or methodological developments
+advancing state-of-the-art knowledge of crowdsourcing for IR
+
+* Novel applications of IR enabled by crowdsourcing (e.g. use of
+real-time crowd response, using human computation to “close the loop”
+with automation for hybrid IR systems, etc.)
+
+* Tutorials or best practices on employing crowdsourcing to support
+different IR scenarios
+
+* Innovative ideas for better using crowdsourcing platforms such as
+Amazon’s Mechanical Turk, Crowdflower, etc.
+
+* Description of novel software packages improving ease and/or quality
+of crowdsourcing, (e.g. TurkIt, qmturk, Turk Surveyor, etc.)
+
+* Reflective or forward-looking vision on use of crowdsourcing in this area
+
+
+Important dates
+---------------
+Submissions due: May 6, 2011
+Reviewer feedback to authors: June 24, 2011
+Revised submissions due: July 22, 2011
+Notification of acceptance and final reviewer feedback: August 22, 2011
+Final submissions due: September 30, 2011
+
+
+Guest Editors
+-------------
+All questions regarding submissions should be directed to the special
+issue Guest Editors:
+
+Vitor Carvalho, Intelius
+<a href="http://www.cs.cmu.edu/~vitor">http://www.cs.cmu.edu/~vitor</a>
+
+Matthew Lease, University of Texas at Austin
+<a href="http://www.ischool.utexas.edu/~ml">http://www.ischool.utexas.edu/~ml</a>
+
+Emine Yilmaz, Microsoft Research
+<a href="http://research.microsoft.com/en-us/people/eminey">http://research.microsoft.com/en-us/people/eminey</a>
+
+
+</pre>
+<script language="javascript">
+<!--
+var ua = navigator.userAgent;
+var index = -1;
+
+if (ua) index = ua.indexOf("MSIE");
+if (index != -1)
+{
+    document.getElementById("awesomepre").style.width=document.body.clientWidth*0.9;
+}
+-->
+</script>
+</td></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td></tr></table>
+<br>
+<table width="100%" cellspacing="0" cellpadding="0" border="0"><tr>
+<td align="left"><p>Back to: <a href="#TOP">Top of Message</a> | <a href="/cgi-bin/wa.exe?A1=ind1103&L=sigir&D=0">Previous Page</a> | <a href="/cgi-bin/wa.exe?A0=sigir">Main SIGIR Page</a></p></td>
+<td align="right"><p><a href="/cgi-bin/wa.exe?A2=sigir;PpUiBw;20110315231710-0500" target="_blank">Permalink</a></p></td>
+</tr></table>
+</td></tr></table>
+</td></tr></table>
+<br><br>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left"><p><a href="/cgi-bin/wa.exe?INDEX">WWW.LISTS.UTWENTE.NL</a></p></td>
+<td align="right"><p>
+<a href="http://www.lsoft.com/catalist.html" target="_blank"><img src="/archives/images/b-catalist.gif" alt="CataList Email List Search" title="CataList Email List Search" border="0"></a>
+<a href="http://www.lsoft.com/products/listserv-powered.asp" target="_blank"><img src="/archives/images/b-lpowered.gif" alt="Powered by the LISTSERV Email List Manager" title="Powered by the LISTSERV Email List Manager" border="0"></a>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+</pre>

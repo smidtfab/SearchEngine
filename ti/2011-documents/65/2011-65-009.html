@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; CHARSET=UTF-8" />
+<title>Amazon's Mechanical Turk</title>
+<link rel="stylesheet" href="/default.css?v1_006" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/print.css?v1_001" type="text/css" media="print" />
+<link rel="alternate" type="application/rss+xml" title="Google Blogoscoped Feed" href="/rss.xml" />
+<script type="text/javascript" src="/lib/dynamic.js?v1_002"></script>
+</head><body id="blog"><div id="all"><h1><a href="/"><img src="/files/logo-80-percent.png" alt="Google Blogoscoped" /></a></h1><div class="blogContent"><h2>Friday, November 4, 2005</h2><h3>Amazon&#8217;s Mechanical Turk</h3><p><img src="/files/mechanical-turk.gif" alt="" /></p>
+
+<p><div class="inlineSideAd"><script type="text/javascript"><!--
+google_ad_client = "pub-4135663670627621";
+google_alternate_ad_url = "http://blogoscoped.com/files/alternate-button.html";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "245182";
+google_color_url = "245182";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>Wow. Amazon releases <a href="http://www.mturk.com/mturk/welcome">Mechanical Turk</a>, a web service that does exactly what I talked about in <a href="/archive/2005-03-25-n43.html">CHI</a>. Their three-letter acronym is HIT, Human Intelligence Task. (The "Mechanical Turk" refers to the famous chess machine which centuries ago astounded people, but had a human hidden inside to power its intelligence.) The description of their service:</p>
+
+<p><q>"Amazon Mechanical Turk provides a web services API for computers to integrate "artificial, artificial intelligence" directly into their processing by making requests of humans. Developers use the Amazon Mechanical Turk web services API to submit tasks to the Amazon Mechanical Turk web site, approve completed tasks, and incorporate the answers into their software applications. To the application, the transaction looks very much like any remote procedure call: the application sends the request, and the service returns the results. In reality, a network of humans fuels this artificial, artificial intelligence by coming to the web site, searching for and completing tasks, and receiving payment for their work."</q></p>
+
+<p>They even have some pseudo-code sample (which does a similar task I saw CHI fitted for, image recognition &#8211; hard for computers to do, easy for humans):</p>
+
+<div><pre>read (photo);
+photoContainsHuman = callMechanicalTurk(photo);
+if (photoContainsHuman == TRUE) {
+  acceptPhoto;
+}
+else {
+  rejectPhoto;
+}</pre></div>
+
+<p>Now if you're a developer, you can make use of their <a href="http://www.amazon.com/gp/aws/sdk/002-4682651-6344019?v=2005%2d10%2d01&amp;s=AWSMechanicalTurkRequester">Mechanical Turk API</a> &#8211; you will be what Amazon calls the <em>Requester</em> (see the <a href="http://requester.mturk.com/mturk/welcome">Requester homepage</a>, where you can sign up with your Amazon account). You can use both SOAP or REST, whichever you prefer. And if you want to make money answering questions instead, you can do that too &#8211; Amazon calls this the <em>Worker</em>. What's in it for Amazon? Well, Requesters pay Workers a fee... and Amazon takes 10% of that (their minimum commission is $0.005).</p>
+
+<p>This service opens up great new possibilites if you're writing web software. The Mechanical Turk is still in Beta and I'm sure there are many issues to settle once it runs full-speed, but the potential is immense.</p>
+
+<p>As far as I understand it, the service at the moment &#8211; at least for Requesters &#8211; is only available in the US (you can sign-in from anywhere, but you are asked to transfer money from a US bank to your Requester account).</p>
+
+<p class="via">[Via <a href="http://waxy.org/links/">Andy Baio</a>.]</p><p class="postFooter" id="postFooterLast"><a href="/archive/2005-11-04-n69.html">Amazon&#8217;s Mechanical Turk</a> by Philipp Lenssen | <a href="/forum/12483.html" class="commentLink">Comments&nbsp;(44)</a></p><p class="morePosts">&gt;&gt; <a href="/calendar/">More posts</a></p>
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-60595-1";
+</script>
+<p class="adBlockBottom"><span style="font-size: 11px; color: #777">Advertisement</span><br /><script type="text/javascript"><!--
+google_ad_client = "pub-4135663670627621";
+google_alternate_ad_url = "http://blogoscoped.com/files/alternate.html";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text_image";
+//2007-01-25: Google Blogoscoped
+google_ad_channel ="2267862142";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "A9401D";
+google_color_text = "333333";
+google_color_url = "D9643E";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p><div class="adBlockBottomBreak">&nbsp;</div></div>
+<div class="context"><span class="topLinksMain"><strong><a href="/">Blog</a> &nbsp;|&nbsp; <a href="/forum/">Forum</a></strong></span> &nbsp; &nbsp; <span id="topLinksMoreSwitch"><a href="javascript:showMoreTopLinks()">more &gt;&gt;</a></span> <span id="topLinksMore"><a href="/calendar/">Archive</a> | <a href="/rss.xml">Feed</a> | <a href="/google/">Google's blogs</a> | <a href="/google-blog.html">About</a></span></div>
+<div class="moreContext">
+<div class="adBlock"><span class="adBlockDisclosure">Advertisement</span><div class="adBlockAd1 adBlockAdSense"><script type="text/javascript"><!--google_ad_client = "pub-4135663670627621";google_ad_width = 125;google_ad_height = 125;google_ad_format = "125x125_as";google_ad_type = "text";//2007-08-10: Google Blogoscoped 125x125google_ad_channel = "6872927131";google_color_border = "FFFFFF";google_color_bg = "FFFFFF";google_color_link = "A5342C";google_color_text = "333333";google_color_url = "666666";google_ui_features = "rc:10";//--></script><script type="text/javascript"  src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div><div class="adBlockAd2"><a href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?icep_ff3=9&amp;pub=5574865277&amp;toolid=10001&amp;campid=5336468524&amp;customid=&amp;icep_uq=google&amp;icep_sellerId=&amp;icep_ex_kw=&amp;icep_sortBy=12&amp;icep_catId=267&amp;icep_minPrice=&amp;icep_maxPrice=&amp;ipn=psmain&amp;icep_vectorid=229466&amp;kwid=902099&amp;mtid=824&amp;kw=lg" rel="nofollow"><img src="/files/square-ads/google-books.png" alt="Books about Google on Ebay" title="" /></a></div><a class="adBlockAd3" href="/ad/?id=23" rel="nofollow"><img src="/files/square-ads/allposters.png" alt="Want to make money with your website? AllPosters.com Affiliates Program" title="" /></a> <a class="adBlockAd4" href="/advertise.php5" rel="nofollow"><img src="/files/square-ads/blogoscoped.png" alt="Advertise here?" title="" /></a> </div><form class="blogSearch" method="get" action="/search/"><p><input name="q" type="text" size="16" class="inputBox" />&nbsp; <input type="submit" value="Search" class="submitButton" /></p></form><p><a href="/google-blog.html">This site</a> unofficially covers Google&trade; and more with <a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">some rights reserved</a>. You can subscribe to the <a href="/rss.xml">feed</a>, <a href="mailto:info@blogoscoped.com">email</a> your tips and join our <a href="/forum/">forum</a>!</p></div>
+</div>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">var pageTracker = _gat._getTracker("UA-60595-1");pageTracker._initData();pageTracker._trackPageview();</script></body></html>

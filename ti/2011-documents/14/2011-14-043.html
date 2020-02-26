@@ -1,0 +1,408 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="The CrowdFlower Blog covers all things crowdsourcing: Labor-on-demand, research, and more from a variety of authors from the crowdsourcing industry.">
+  <meta name="google-site-verification" content="ts085V1FF2dg9kNMGWEMKdocyK7ue5QSIC4vELhXS6I">
+
+  <title>Wisdom of small crowds, part 1: how to aggregate Turker judgments for classification (the threshold calibration trick) | The CrowdFlower Blog</title>
+
+  <link rel="shortcut icon" href="http://crowdflower.com/images/favicon.png" />
+  <link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog RSS Feed" href="http://feeds.feedburner.com/crowdflower" />
+
+  <!-- Production mode -->
+      <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="http://crowdflower.com/stylesheets/bundles/marketing_master.css" />
+    <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="http://crowdflower.com/stylesheets/bundles/marketing.css" />
+    <link media="all" charset="utf-8" type="text/css" rel="Stylesheet" href="http://crowdflower.com/stylesheets/bundles/blog.css" />
+    
+   
+  <script type="text/javascript" src="http://crowdflower.com/javascripts/bundles/mootools.js"></script>
+  <script type="text/javascript" src="http://crowdflower.com/javascripts/bundles/crowdflower_base.js"></script>
+  
+      <script src="http://www.google-analytics.com/ga.js" type="text/javascript" charset="utf-8" async="true"></script>
+    <script type="text/javascript" charset="utf-8">
+      <!--
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3841988-8']);
+      _gaq.push(['_trackPageview']);
+      //-->
+    </script>
+    
+  <script type="text/javascript" src="http://use.typekit.com/vyd2clc.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog &raquo; Feed" href="http://blog.crowdflower.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog &raquo; Comments Feed" href="http://blog.crowdflower.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The CrowdFlower Blog &raquo; Wisdom of small crowds, part 1: how to aggregate Turker judgments for classification (the threshold calibration trick) Comments Feed" href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.crowdflower.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.crowdflower.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='The CrowdFlower Blog' href='http://blog.crowdflower.com/' />
+<link rel='start' title='The Manifesto' href='http://blog.crowdflower.com/2008/03/the-manifesto/' />
+<link rel='prev' title='FaceStat scales!' href='http://blog.crowdflower.com/2008/06/facestat-scales/' />
+<link rel='next' title='Shallow Graph Explorer' href='http://blog.crowdflower.com/2008/07/shallow-graph-explorer/' />
+<meta name="generator" content="WordPress 3.0.4" />
+<link rel='shortlink' href='http://blog.crowdflower.com/?p=61' />
+
+<!-- All in One SEO Pack 1.6.13.1 by Michael Torbert of Semper Fi Web Design[479,634] -->
+<meta name="description" content="We use Turkers to classify all sorts of data, by having several workers render judgments on each item. But what should we do when they disagree? Like any" />
+<link rel="canonical" href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/" />
+<!-- /all in one seo pack -->
+</head>
+<body class="marketing blog">
+  <div id="login_panel"> 
+    <div id="login_container"> 
+        <a href="#login_form" id="login_panel_tab">Login</a> 
+        <form action="http://crowdflower.com/login" method="post" id="login_form" accept-charset="utf-8"> 
+          <h2>Login
+            <a class="signup" href="http://crowdflower.com/account/new">(or Signup)</a> 
+          </h2> 
+          <input type="hidden" name="_method" value="put"> 
+          <label for="email">Email:</label> <input class="login_input" type="text" name="email" value=""> 
+          <label for="password">Password:</label> <input class="login_input" type="password" name="password" value=""> 
+          
+          <input class="button" type="submit" value="Login" id="login_button"> 
+        </form>
+    </div>
+  </div>
+  <div id="header">
+    <div id="logo">
+      <a href="http://crowdflower.com">CrowdFlower</a>
+    </div>
+     <ul id="main-nav">
+        <li><a href='http://crowdflower.com/solutions'>Solutions</a></li>
+        <li><a href='http://crowdflower.com/self_service'>Self Service</a></li>
+        <li><a href='http://crowdflower.com/news'>News &amp; Events</a></li>
+        <li class="current no_sub_nav"><a href="http://blog.crowdflower.com/">Blog</a></li>
+      </ul>
+  </div>
+  <div id="content">
+    <h1><a href="/">The CrowdFlower Blog</a></h1>
+  
+  <div class="span-9">
+
+  	
+  		<div class="post-61 post type-post hentry category-misc category-wisdom single" id="post-61">
+  			<h2 class="top">Wisdom of small crowds, part 1: how to aggregate Turker judgments for classification (the threshold calibration trick)</h2>
+			
+  			<p class="post-subtitle">
+  			  <span class="post-date">June 16th, 2008</span>
+  			  <span class="post-attribution">by <span class="post-author"><a href="http://blog.crowdflower.com/author/brendano/" title="Posts by Brendan O&#039;Connor">Brendan O'Connor</a></span></span>
+  			</p>
+
+  			<div class="entry">
+  				<p>[ This article is part of a series, <a href="/topics/wisdom/">Wisdom of Small Crowds</a>, which focuses on crowdsourcing methodology for Amazon <a href="http://www.mturk.com/">Mechanical Turk</a>-like systems. ]</p>
+<p>We use Turkers to <a href="http://doloreslabs.com/services.html">classify all sorts of data</a>, by having several workers render judgments on each item.  But what should we do when they disagree?  Like any other human behavior, Turker judgments are noisy: sometimes there are mistakes, and sometimes the task is genuinely difficult or subjective, and there is no &#8220;right&#8221; answer.  Once we have a bunch of Turker judgments, we need to aggregate them &#8212; that is, use some sort of voting mechanism &#8212; to give as accurate a classification as possible.  It turns out that one simple trick, threshold calibration, can substantially improve accuracy, and can be tuned to the specifics of the problem.</p>
+<p>Here&#8217;s an example.  A recent client of ours had a de-duping task: given a pair of similar articles, the task was to decide if they were &#8220;about the same topic&#8221; or &#8220;about different topics&#8221;.  This is just a binary classification problem; call these labels &#8220;YES&#8221; and &#8220;NO&#8221;.  To figure out how well Turkers could perform the task, we had our client provide us with a gold standard data set.  That is, for 135 examples, their experts did the task themselves and provided &#8220;gold&#8221; ground truth labels.</p>
+<p>We used a very high number of workers per example (about 20).  For all 135 examples in the gold standard, the following graph plots them vertically by their &#8220;Turker confidence in YES&#8221; &#8212; that&#8217;s just the percentage of votes for &#8220;YES&#8221; among the 20 or so judgments for that particular example.  I&#8217;ve also colored each example with the experts&#8217; gold label.  You can see that this simple Turker data provides some statistical separation between the classes.</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/06/vertthresh.png'><img class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/06/vertthresh.png' alt='Test set separation by Turker ensemble binary classifier' /></a></p>
+<p>This graph also shows how to create a classifier from Turker votes.  We have to choose a confidence threshold for our classifier&#8217;s decision: above the threshold, say &#8220;YES&#8221;, and below say &#8220;NO&#8221;.  Unfortunately, Turkers aren&#8217;t perfect at modeling the experts: anywhere we place the threshold, errors occur.  However, some thresholds are better than others.  The threshold with the best accuracy is at 73% confidence &#8212; that is, a 73% super-majority voting rule &#8212; and it classifies instances correctly 90% of the time.  Furthermore, we can tune for different types of errors.  If we are particularly concerned with avoiding false positive errors, we can set a higher, more conservative threshold; or, if we want to find as many &#8220;YES&#8221; instances as possible, we can set a lower, more liberal threshold.</p>
+<p>Here&#8217;s another chart that more carefully details the tradeoffs between true and false positives vs. true and false negatives.  For a particular decision threshold, it shows how it divides up the instances into the confusion matrix&#8217;s 4 categories of correct and incorrect decisions.</p>
+<p><img class='centered' src='http://blog.doloreslabs.com/wp-content/uploads/2008/06/confusionbars.png' alt='Classifier performance on gold standard at different thresholds' /></p>
+<p>A final note on why threshold calibration is important: For this task, the Turkers were considerably more liberal than the experts at deciding what a &#8220;YES&#8221; example was &#8212; experts marked only 36% of examples as &#8220;YES&#8221;, whereas a simple Turker majority voting rule marks 57% that way.  This is because the experts understood the full implications of the decision, which were substantial &#8212; various entries in their database and website would be merged, and users would be confused if they were exposed to a bad merge.  False positives had a very high cost.  The prompt for Turkers, by contrast, was fairly vague.  (In our experience, we generally find that good task design is a huge factor in getting better Turker accuracy.)  However, since Turker decisions noisily correlate with the experts, moving the decision threshold can help accuracy.  Here&#8217;s the threshold vs. accuracy graph:</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/06/thresh-acc.png' title='thresh-acc.png'><img src='http://blog.doloreslabs.com/wp-content/uploads/2008/06/thresh-acc.png' alt='thresh-acc.png' class='centered' /></a></p>
+<p>Statistical analysis of Turker data can substantially improve accuracy performance, even with something as simple as choosing the best decision threshold.  This blog post only scratched the surface; there are a few more useful things to consider.  Stay tuned for Part 2 and hopefully many more!</p>
+<p>A few more notes on Turker voting and threshold calibration:</p>
+<p><span id="more-61"></span></p>
+<p>An interesting question is the upper bound of possible performance on the task.  A good experiment to try is to have two experts independently perform a task, and check their agreement rate.  We should be satisfied if Turkers can match experts as reliably as experts match each other.  That is, for this task, if experts agree no more than 90% of the time, then Turkers perform the task as well as experts.  (We didn&#8217;t have this particular experiment done in this case, but I&#8217;d be very curious to see the results!)  In general, agreement rates can help indicate the difficulty of a task.  If expert agreement rates are low, it can be argued that the task is not very &#8220;real&#8221;.</p>
+<p>The terminology of &#8220;true/false positives&#8221;, &#8220;true/false negatives&#8221;, &#8220;precision&#8221; and &#8220;recall&#8221; are all part of a statistics/machine learning mini-field of binary classifier evaluation.  Any statistical classifier that outputs a confidence value or ranking among instances (Naive Bayes, logistic regression, IR ranking, etc.) can be subject to this sort of threshold analysis.  A decent place to read more is the <a href="http://en.wikipedia.org/wiki/Receiver_operating_characteristic">ROC</a> Wikipedia page.  ROC and Precision-Recall curves have long been used to show thresholding tradeoffs.  I think the above plots make it easier to interpret the basic information, but the more traditional graphs are also useful.  Here they are for this data (provided courtesy of the excellent <a href="http://rocr.bioinf.mpi-sb.mpg.de/">ROCR</a> package):</p>
+<p><a href='http://blog.doloreslabs.com/wp-content/uploads/2008/06/roc-pr.png' title='ROC and Precision-Recall curves'><img src='http://blog.doloreslabs.com/wp-content/uploads/2008/06/roc-pr.png' alt='ROC and Precision-Recall curves' class='centered' /></a></p>
+<p>A nice overview of these topics can be found in <a href="http://nr.com/CS395T/lectures2008/17-ROCPrecisionRecall.pdf">these lecture notes</a> from <a href="http://www.nr.com/whp/">William Press</a>.</p>
+<p>-<a href="http://socialscienceplusplus.blogspot.com">Brendan</a></p>
+
+  				  			</div>
+			
+  	  	<div class="span-7">
+  				<div class="post-meta">
+  				    				  <span class="meta-title">Categories:</span> <a href="http://blog.crowdflower.com/topics/misc/" title="View all posts in Miscellaneous" rel="category tag">Miscellaneous</a>, <a href="http://blog.crowdflower.com/topics/wisdom/" title="View all posts in Wisdom of Small Crowds" rel="category tag">Wisdom of Small Crowds</a>  				</div>
+  			</div>
+  			<div class="span-2 last"></div>
+  			<br class="clear">
+  		</div>
+
+  		<div class="navigation">
+  			<div class="older"><span class="button">&laquo; <a href="http://blog.crowdflower.com/2008/06/facestat-scales/" rel="prev">FaceStat scales!</a></span></div>
+  			<div class="newer"><span class="button"><a href="http://blog.crowdflower.com/2008/07/shallow-graph-explorer/" rel="next">Shallow Graph Explorer</a> &raquo;</span></div>
+  		</div>
+
+  	
+<!-- You can start editing here. -->
+
+<div class="comments">
+
+    	<h2>Comments</h2>
+
+  	<ol class="commentlist">
+  	     <li class="comment even thread-even depth-1" id="li-comment-330">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         Paul (from Belgium)       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/#comment-330">06/17/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-330">
+                <p>Hey Luke and the others,<br />
+Now I get the service that your company is providing on top of Amazon Turk, and it&#8217;s quite cool I must say!</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-338">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         Logan       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/#comment-338">06/17/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-338">
+                <p>Great explanation. What did you use to make the red and blue confusion matrix plot? Is that in an R package? Nice way to visualize it.</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment byuser comment-author-brendano bypostauthor even thread-even depth-1" id="li-comment-339">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://socialscienceplusplus.blogspot.com' rel='external nofollow' class='url'>brendano</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/#comment-339">06/17/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-339">
+                <p>Logan: It&#8217;s all about the R!  I wrote the routines myself for the separation dotplot and the confusion barplot.  I&#8217;ve never seen anything quite like the confusion barplot before; I&#8217;d be curious if anyone else has used it.  (It would need modifications for problems where the class distribution isn&#8217;t as balanced; for example, where true negatives dominate, just ditch the TN bars.  I have a bunch of plots here where I tried all possible stacking orders; it&#8217;s fun, they emphasize different ratios among the confusion categories.)  The code is currently at <a href="http://github.com/brendano/dlanalysis" rel="nofollow">http://github.com/brendano/dlanalysis</a> but it&#8217;s rather tangled up with other things.</p>
+<p>I really recommend the ROCR package (in R) as a well-done, reusable package for all the standard confusion plots, e.g. P/R and ROC, expected costs, etc etc.  I was thinking of porting my plotting routines into their system, eventually&#8230;</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-438">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://lingpipe-blog.com/' rel='external nofollow' class='url'>Bob Carpenter</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/#comment-438">08/14/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-438">
+                <p>I&#8217;d expect that blending in an estimate of the accuracy of the users would help separate out the confident assignments from others.  This might not work in this setting, though, where annotators only have a go at very few data points.  Also, estimating the prevalence of a given category can also provide helpful information.</p>
+<p>Have you looked at uncertain or borderline cases for which there is a lot of disagreement to see if they are in fact hard cases?</p>
+      </div>
+      <br class="clear">
+</li>
+   <li class="comment byuser comment-author-brendano bypostauthor even thread-even depth-1" id="li-comment-440">
+     
+     <div class="span-2">
+       <p class="comment-author">
+         <a href='http://socialscienceplusplus.blogspot.com' rel='external nofollow' class='url'>brendano</a>       </p>
+       <p class="comment-meta commentmetadata"><a href="http://blog.crowdflower.com/2008/06/aggregate-turker-judgments-threshold-calibration/#comment-440">08/15/08</a></p>
+     </div>
+      <div class="span-7 last" id="comment-440">
+                <p>Bob &#8211; yes, indeed some of the high-disagreement cases are genuinely hard.  Not all of them though.  I&#8217;ve only looked at this anecdotally.</p>
+      </div>
+      <br class="clear">
+</li>
+  	</ol>
+	
+   
+
+  
+  <div id="respond">
+
+  <h3>Leave a Reply</h3>
+
+  <div class="cancel-comment-reply">
+  	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/06/aggregate-turker-judgments-threshold-calibration/#respond" style="display:none;">Click here to cancel reply.</a></small>
+  </div>
+
+  
+  <form action="http://blog.crowdflower.com/wp-comments-post.php" method="post" id="commentform">
+
+      
+    <table class="form form_comment">
+      <tr>
+        <th><label for="author">Name <span class='tip'>(required)</span></label></th>
+        <td><input class="text" type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' /></td>
+      </tr>
+      <tr>
+        <th><label for="email">Mail <span class="tip">(not public) (required)</span> </label></th>
+        <td><input class="text" type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true'</td>
+      </tr>
+      <tr>
+        <th><label for="url">Website</label></th>
+        <td><input class="text" type="text" name="url" id="url" value="" size="22" tabindex="3" /></td>
+      </tr>
+
+    
+  <tr>
+    <th>Comment</th>
+    <td><textarea class="textarea" name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></td>
+  </tr>
+  <tr class="submit">
+    <td colspan="2">
+      <input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+    </td>
+  </tr>
+  </table>
+  
+  <input type='hidden' name='comment_post_ID' value='61' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+  
+  <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ed3d4ffe1a" /></p>
+  </form>
+
+    </div>
+  
+</div>
+
+
+  	  </div>
+
+
+<div class="span-3 last">
+	<div class="sidebar" id="blog-sidebar" role="complementary">
+		<ul>
+			
+					
+		  <li class="search"><h2 class="top">Search the blog</h2>
+		    <ul>
+		      <li>
+    		    <form role="search" method="get" id="blog-search-form" action="/" > 
+            	<label class="hide" for="s">Search for:</label> 
+            	<input type="text" value="" name="s" id="s" />
+              <input type="submit" id="searchsubmit" value="Search" />
+            </form>
+    		  </li>
+    		</ul>
+    	</li>
+    </ul>
+    
+		<ul role="navigation" class="bottom">
+			<li><h2>Archives</h2>
+				<ul>
+					<li><a href='http://blog.crowdflower.com/2011/' title='2011'>2011</a>&nbsp;(8)</li>
+	<li><a href='http://blog.crowdflower.com/2010/' title='2010'>2010</a>&nbsp;(38)</li>
+	<li><a href='http://blog.crowdflower.com/2009/' title='2009'>2009</a>&nbsp;(24)</li>
+	<li><a href='http://blog.crowdflower.com/2008/' title='2008'>2008</a>&nbsp;(27)</li>
+				</ul>
+			</li>
+
+			<li class="categories"><h2>Categories</h2><ul>	<li class="cat-item cat-item-87"><a href="http://blog.crowdflower.com/topics/art/" title="View all posts filed under Art">Art</a> (6)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blog.crowdflower.com/topics/colors/" title="View all posts filed under Colors">Colors</a> (5)
+</li>
+	<li class="cat-item cat-item-85"><a href="http://blog.crowdflower.com/topics/disaster-relief/" title="View all posts filed under Disaster Relief">Disaster Relief</a> (2)
+</li>
+	<li class="cat-item cat-item-58"><a href="http://blog.crowdflower.com/topics/economics/" title="View all posts filed under Economics">Economics</a> (8)
+</li>
+	<li class="cat-item cat-item-91"><a href="http://blog.crowdflower.com/topics/events/" title="View all posts filed under Events">Events</a> (6)
+<ul class='children'>
+	<li class="cat-item cat-item-93"><a href="http://blog.crowdflower.com/topics/events/conference/" title="View all posts filed under Conference">Conference</a> (2)
+</li>
+	<li class="cat-item cat-item-92"><a href="http://blog.crowdflower.com/topics/events/meetup-events/" title="View all posts filed under Meetup">Meetup</a> (4)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-54"><a href="http://blog.crowdflower.com/topics/experiments/" title="View all posts filed under Experiments">Experiments</a> (13)
+<ul class='children'>
+	<li class="cat-item cat-item-78"><a href="http://blog.crowdflower.com/topics/experiments/motivation-experiments/" title="View all posts filed under Motivation">Motivation</a> (2)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://blog.crowdflower.com/topics/faces/" title="View all posts filed under Faces">Faces</a> (8)
+</li>
+	<li class="cat-item cat-item-57"><a href="http://blog.crowdflower.com/topics/human-behavior/" title="View all posts filed under Human Behavior">Human Behavior</a> (2)
+</li>
+	<li class="cat-item cat-item-72"><a href="http://blog.crowdflower.com/topics/labor-law/" title="View all posts filed under Labor Law">Labor Law</a> (1)
+</li>
+	<li class="cat-item cat-item-70"><a href="http://blog.crowdflower.com/topics/law-2/" title="View all posts filed under Law">Law</a> (1)
+</li>
+	<li class="cat-item cat-item-13"><a href="http://blog.crowdflower.com/topics/media/" title="View all posts filed under Media">Media</a> (5)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.crowdflower.com/topics/misc/" title="View all posts filed under Miscellaneous">Miscellaneous</a> (78)
+</li>
+	<li class="cat-item cat-item-98"><a href="http://blog.crowdflower.com/topics/office-life/" title="View all posts filed under Office Life">Office Life</a> (1)
+</li>
+	<li class="cat-item cat-item-71"><a href="http://blog.crowdflower.com/topics/regulation/" title="View all posts filed under Regulation">Regulation</a> (1)
+</li>
+	<li class="cat-item cat-item-95"><a href="http://blog.crowdflower.com/topics/sports/" title="View all posts filed under Sports">Sports</a> (2)
+</li>
+	<li class="cat-item cat-item-74"><a href="http://blog.crowdflower.com/topics/translation/" title="View all posts filed under Translation">Translation</a> (3)
+</li>
+	<li class="cat-item cat-item-11"><a href="http://blog.crowdflower.com/topics/wisdom/" title="View all posts filed under Wisdom of Small Crowds">Wisdom of Small Crowds</a> (9)
+</li>
+</ul></li>		</ul>
+
+			</div>
+	
+	<div class="sidebar" id="extras-sidebar" role="complementary">
+	  <ul class="bottom">
+	   <li>
+	     <h2 class="top">Subscribe</h2>
+	     <a id="subscribe-rss" href="#">RSS feed</a>
+	   </li>
+	  </ul>
+	</div>
+</div>
+
+
+    <br class="clear">
+  </div>
+  <div id="footer">
+    <div class="span-2">
+      <h2>About</h2>
+      <a href="http://crowdflower.com/about">About CrowdFlower</a>
+      <a href="http://crowdflower.com/about/team/index">Team</a>
+      <a href="http://crowdflower.com/about/jobs">Jobs</a>
+    </div>
+    <div class="span-2">
+      <h2>API</h2>
+      <a href="http://crowdflower.com/docs/interface">Requester Interface</a>
+      <a href="http://crowdflower.com/docs/gold">Gold</a>
+      <a href="http://crowdflower.com/docs/api">CrowdFlower API</a>
+      <a href="http://crowdflower.com/docs/cml">CML</a>
+      <a href="http://crowdflower.com/docs/channel_api">Channel API</a>
+    </div>
+    <div class="span-2">
+      <h2>Solutions</h2>
+      <a href="http://crowdflower.com/solutions/blv/index">Business Listing Verification</a>
+      <a href="http://crowdflower.com/solutions/search_rel/index">Search Relevance</a>
+      <a href="http://crowdflower.com/solutions/prod_cat/index">Product Categorization</a>
+      <a href="http://crowdflower.com/solutions/custom/index">Custom Solutions</a>
+    </div>
+    <div class="span-2">
+      <h2>Self-Service</h2>
+      <a href="http://crowdflower.com/self_service/faq">FAQ</a>
+      <a href="http://crowdflower.com/self_service">Overview</a>
+    </div>
+    <div class="span-2">
+      <h2>News / Events</h2>
+      <a href="http://crowdflower.com/news">Coverage</a>
+      <a href="http://crowdflower.com/news/press_releases">Press Releases</a>
+      <a href="http://crowdflower.com/news/videos">Videos</a>
+      <a href="http://crowdflower.com/news/events">Events</a>
+      <a href="http://crowdflower.com/news/publications">Publications</a>
+    </div>
+    <div class="span-2 last">
+      <h2>Social Media</h2>
+      <a href="http://blog.crowdflower.com/">Blog</a>
+      <a href="http://twitter.com/CrowdFlower">Twitter</a>
+      <a href="http://facebook.com/CrowdFlower">Facebook</a>
+      
+      <h2>Law Talk</h2>
+      <a href="http://crowdflower.com/general/privacy">Privacy Policy</a>
+      <a href="http://crowdflower.com/general/terms_of_service">Terms of Service</a>
+      <a href="http://www.crowdflower.com">&copy;2011 CrowdFlower</a>
+    </div>
+    <br class="clear">
+  </div>
+  
+    
+  <script src="http://rtlpxk9h.appmetrx.com/t/rtlpxk9h.js" type="text/javascript"></script> 
+   <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script> 
+   <script type="text/javascript"> 
+     document.addEvent('load', function() {
+       mktoMunchkin("890-IJH-613")
+     });
+   </script>
+   
+</body>
+</html>

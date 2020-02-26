@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format"><head xmlns="http://www.w3.org/1999/xhtml"><title>QualificationType</title><link rel="stylesheet" href="aws-docs.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"/><link rel="start" href="#AWSMechanicalTurkRequester" title="Amazon Mechanical Turk"/><link rel="up" href="ApiReference_DataStructuresArticle.html" title="Data Structures"/><link rel="prev" href="ApiReference_QualificationRequirementDataStructureArticle.html" title="QualificationRequirement"/><link rel="next" href="ApiReference_NotificationDataStructureArticle.html" title="Notification"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body><div class="navheader"><table width="100%" summary="Navigation header" cellspacing="0" cellpadding="2"><tr><td width="20%" align="left"><a accesskey="p" href="ApiReference_QualificationRequirementDataStructureArticle.html">Prev</a> </td><th width="60%" align="center"/><td width="20%" align="right"> <a accesskey="n" href="ApiReference_NotificationDataStructureArticle.html">Next</a></td></tr></table></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" lang="en"><div class="titlepage"><div><div><h1 xmlns="" class="topictitle">QualificationType</h1></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e14519"/>Description</h2></div></div></div><p>
+      The QualificationType data structure represents a Qualification
+      type, a description of a property of a Worker that must match
+      the requirements of a HIT for the Worker to be able to accept the HIT.  The
+      type also describes how a Worker can obtain a Qualification of
+      that type, such as through a Qualification test.
+    </p><p>
+      The QualificationType data structure is used as a response
+      element for the following operations:
+    </p><div class="itemizedlist"><ul type="disc"><li><p><code class="function">CreateQualificationType</code></p></li><li><p><code class="function">GetQualificationType</code></p></li><li><p><code class="function">SearchQualificationTypes</code></p></li><li><p><code class="function">UpdateQualificationType</code></p></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e14543"/>Sample: GetQualificationType</h2></div></div></div><p>
+      The following example of the QualificationType data structure
+      could be returned by a call to the
+      <code class="function">GetQualificationType</code> operation.
+      <code class="function">GetQualificationType</code> returns a
+      <strong class="userinput"><code>GetQualificationTypeResult</code></strong> element, which
+      contains a <strong class="userinput"><code>QualificationType</code></strong> element.
+    </p><pre class="programlisting">&lt;QualificationType&gt;
+  &lt;QualificationTypeId&gt;789RVWYBAZW00EXAMPLE&lt;/QualificationTypeId&gt;
+  &lt;CreationTime&gt;2005-01-31T23:59:59Z&lt;/CreationTime&gt;
+  &lt;Name&gt;EnglishWritingAbility&lt;/Name&gt;
+  &lt;Description&gt;The ability to write and edit text...&lt;/Description&gt;
+  &lt;Keywords&gt;English, text, write, edit, language&lt;/Keywords&gt;
+  &lt;QualificationTypeStatus&gt;Active&lt;/QualificationTypeStatus&gt;
+  &lt;RetryDelayInSeconds&gt;86400&lt;/RetryDelayInSeconds&gt;
+  &lt;IsRequestable&gt;true&lt;/IsRequestable&gt;
+&lt;/QualificationType&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d0e14562"/>Elements</h2></div></div></div><p>
+      The QualificationType structure may contain the following
+      elements.
+    </p><div class="informaltable"><table cellspacing="0" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th>Name</th><th>Description</th><th>Value</th></tr></thead><tbody><tr><td>
+	      <em class="parameter"><code>QualificationTypeId</code></em>
+	    </td><td>
+	      <p>
+		A unique identifier for the Qualification type.  A
+		Qualification type is given a Qualification type ID
+		when <code class="function">CreateQualificationType</code> is
+		called, and it retains that ID forever.
+	      </p>
+	    </td><td>
+	      <p>
+		A valid Qualification type ID
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>CreationTime</code></em>
+	    </td><td>
+	      <p>
+		The date and time the Qualification type was created.
+	      </p>
+	    </td><td>
+	      <p>
+		A <a href="http://www.w3.org/TR/xmlschema-2/#dateTime" target="_top">dateTime</a> in the Coordinated Universal Time (Greenwich Mean Time) time zone, such as <strong class="userinput"><code>2005-01-31T23:59:59Z</code></strong>
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>Name</code></em>
+	    </td><td>
+	      <p>
+		The name of the Qualification type.  The type name is
+		used to identify the type, and to find the type using
+		a Qualification type search.
+	      </p>
+	    </td><td>
+	      <p>
+		A string
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>Description</code></em>
+	    </td><td>
+	      <p>
+		A long description for the Qualification type.
+	      </p>
+	    </td><td>
+	      <p>
+		A string
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>Keywords</code></em>
+	    </td><td>
+	      <p>
+		One or more words or phrases that describe the
+		Qualification type, separated by commas. A type's
+		Keywords make the type easier to find using a search.
+	      </p>
+	    </td><td>
+	      <p>
+		A string
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>QualificationTypeStatus</code></em>
+	    </td><td>
+	      <p>
+		The status of the Qualification type.  A Qualification
+		type's status determines if users can apply to receive
+		a Qualification of this type, and if HITs can be
+		created with requirements based on this type.
+	      </p>
+	      <p>
+		If a Qualification type is
+		<strong class="userinput"><code>Active</code></strong>, a user may take a
+		Qualification test to receive the Qualification, and
+		HITs may include requirements based on the type.  If
+		the <em class="parameter"><code>QualificationTypeStatus</code></em> is
+		<strong class="userinput"><code>Inactive</code></strong>, users may not apply
+		for the Qualification, and newly created HITs may not
+		use the type for their requirements.  If a type
+		becomes <strong class="userinput"><code>Inactive</code></strong>, HITs created
+		while the type was <strong class="userinput"><code>Active</code></strong> and
+		have not yet expired may continue to be accepted by
+		Workers whose Qualifications meet the requirements.
+	      </p>
+	    </td><td>
+	      <p>
+		<strong class="userinput"><code>Active</code></strong> | <strong class="userinput"><code>Inactive</code></strong>
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>RetryDelayInSeconds</code></em>
+	    </td><td>
+	      <p>
+		An amount of time after taking the Qualification test
+		a user must wait before the user can take it again.  A
+		user may wish to take a Qualification test multiple
+		times if they were not granted the Qualification from
+		a previous attempt, or if the test offers a gradient
+		score and the user would like a better score.
+	      </p>
+	      <p>
+		If <em class="parameter"><code>RetryDelayInSeconds</code></em> is not specified, then retries are disabled.  A user may only request a Qualification of this type once, even if they have not been granted the Qualification.
+	      </p>
+	    </td><td>
+	      <p>
+		A number of seconds, as a positive integer
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>Test</code></em>
+	    </td><td>
+	      <p>
+		The questions for a Qualification test associated with this
+		Qualification type that a user can take to obtain a
+		Qualification of this type.
+	      </p>
+	      <p>
+		This value is an XML data structure.  See <a href="ApiReference_QuestionFormDataStructureArticle.html" title="QuestionForm">the
+		QuestionForm data structure</a> for more
+		information.  (Note: A Qualification test cannot use
+		an "external question" like a HIT can.)
+	      </p>
+	    </td><td>
+	      <p>
+		XML data for the Qualification test, a QuestionForm data structure
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>TestDurationInSeconds</code></em>
+	    </td><td>
+	      <p>
+		An amount of time a user has from requesting the
+		Qualification to complete the Qualification test.  If
+		the user does not submit test answers before this
+		duration has elapsed after requesting the
+		Qualification, the user must wait for the
+		<em class="parameter"><code>RetryDelayInSeconds</code></em> to elapse
+		before requesting the Qualification again.  If retries
+		are disabled and the duration elapses, the user will
+		not be able to request the Qualification again, nor
+		will the user be able to submit test answers for the
+		request.
+	      </p>
+	    </td><td>
+	      <p>
+		A number of seconds, as a positive integer
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>AnswerKey</code></em>
+	    </td><td>
+	      <p>
+		The answers to the Qualification test specified in the <em class="parameter"><code>Test</code></em> parameter.
+	      </p>
+	      <p>
+		If an answer key is provided for a test, Mechanical Turk will process requests for the Qualification automatically, assigning the user a Qualification with a value that corresponds to the percentage of answers that match the answer key.
+	      </p>
+	      <p>
+		This value is an XML data structure.  See <a href="ApiReference_AnswerKeyDataStructureArticle.html" title="AnswerKey">the
+		AnswerKey data structure</a> for more information.
+	      </p>
+	      <p>
+		The answer key is optional.  If an answer key is not
+		provided with a test, Qualification requests must be
+		processed manually by the Qualification author.  The
+		user's test answers will be included in the response
+		from the <code class="function">GetQualificationRequests</code>
+		operation.
+	      </p>
+	      <p>
+		<em class="parameter"><code>Test</code></em> must be specified if <em class="parameter"><code>AnswerKey</code></em> is present.
+	      </p>
+	    </td><td>
+	      <p>
+		XML data for the answer key, an AnswerKey data structure
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>AutoGranted</code></em>
+	    </td><td>
+	      <p>
+		If <strong class="userinput"><code>true</code></strong>, requests for the
+		Qualification type will be granted immediately,
+		without prompting the Worker with a Qualification
+		test.
+	      </p>
+	      <p>
+		A Qualification type cannot have both a
+		<em class="parameter"><code>Test</code></em> and an
+		<em class="parameter"><code>AutoGranted</code></em> value of
+		<strong class="userinput"><code>true</code></strong>.
+	      </p>
+	    </td><td>
+	      <p>
+		A Boolean, <strong class="userinput"><code>true</code></strong> or <strong class="userinput"><code>false</code></strong>
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>AutoGranted</code></em>
+	    </td><td>
+	      <p>
+		The Qualification value to use for automatically
+		granted Qualifications, if
+		<em class="parameter"><code>AutoGranted</code></em> is
+		<strong class="userinput"><code>true</code></strong>.
+	      </p>
+	      <p>
+		If <em class="parameter"><code>AutoGrantedValue</code></em> is not
+		specified and <em class="parameter"><code>AutoGranted</code></em> is
+		<strong class="userinput"><code>true</code></strong>, Qualifications will be
+		granted automatically with a value of "1".
+	      </p>
+	    </td><td>
+	      <p>
+		An integer
+	      </p>
+	    </td></tr><tr><td>
+	      <em class="parameter"><code>IsRequestable</code></em>
+	    </td><td>
+	      <p>
+		This will be <strong class="userinput"><code>true</code></strong> if the Qualification type is one a user can request through the Mechanical Turk web site, such as by taking a Qualification test.  This will be <strong class="userinput"><code>false</code></strong> for Qualifications assigned automatically by the system.
+	      </p>
+	    </td><td>
+	      <p>
+		A Boolean, <strong class="userinput"><code>true</code></strong> or <strong class="userinput"><code>false</code></strong>
+	      </p>
+	    </td></tr></tbody></table></div></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" cellspacing="0" cellpadding="2"><tr><td width="40%" align="left"><a accesskey="p" href="ApiReference_QualificationRequirementDataStructureArticle.html">Prev</a> </td><td width="20%" align="center"><a href="copyrightinfo.html">Copyright Information</a></td><td width="40%" align="right"> <a accesskey="n" href="ApiReference_NotificationDataStructureArticle.html">Next</a></td></tr></table></div></body></html>

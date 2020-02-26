@@ -1,0 +1,3130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(d,i,e){e=e!=undefined?e:(new Date).getTime();this.t[d]=[e,i]};this.tick("start",null,b)}var f=new c;a.jstiming={Timer:c,load:f};try{var g=null;if(a.chrome&&a.chrome.csi)g=Math.floor(a.chrome.csi().pageT);if(g==null)if(a.gtbExternal)g=a.gtbExternal.pageT();if(g==null)if(a.external)g=a.external.pageT;if(g)a.jstiming.pt=g}catch(h){};a.tickAboveFold=function(b){var d=0;if(b.offsetParent){do d+=b.offsetTop;while(b=b.offsetParent)}b=d;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+<link href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="natural language processing blog - Atom" href="http://nlpers.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="natural language processing blog - RSS" href="http://nlpers.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="natural language processing blog - Atom" href="http://www.blogger.com/feeds/19803222/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=19803222" />
+<link rel="alternate" type="application/atom+xml" title="natural language processing blog - Atom" href="http://nlpers.blogspot.com/feeds/3004609946111119179/comments/default" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>natural language processing blog: Survey of Parser Usage</title>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/987282334-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=19803222&zx=e80c7eea-f8d6-429c-83f2-9aa1ec5d1bf0"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+/*
+* -----------------------------------------------------
+* Blogger Template Style
+* Name:     Snapshot: Madder
+* Designer: Dave Shea
+* URL:      mezzoblue.com / brightcreative.com
+* Date:     27 Feb 2004
+* Updated by: Blogger Team
+* ------------------------------------------------------ */
+/* Variable definitions
+====================
+<Variable name="textcolor" description="Text Color"
+type="color" default="#474B4E">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#7B8186">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#C4663B">
+<Variable name="footercolor" description="Post Footer Color"
+type="color" default="#B4BABE">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#7B8186">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#DD6599">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#D6A0B6">
+<Variable name="bodyfont" description="Text Font"
+type="font"
+default="normal normal 100% Helvetica, Arial, sans-serif">
+*/
+/* -- basic html elements -- */
+body {
+padding: 0;
+margin: 0;
+font-size: small;
+color: #474B4E;
+background: #fff;
+text-align: center;
+}
+a {
+color: #DD6599;
+text-decoration: none;
+}
+a:visited {
+color: #D6A0B6;
+}
+a:hover {
+text-decoration: underline;
+color: #FD0570;
+}
+h1 {
+margin: 0;
+color: #7B8186;
+font-size: 1.5em;
+text-transform: lowercase;
+}
+h1 a, h1 a:link, h1 a:visited {
+color: #7B8186;
+}
+h2, #comments h4 {
+font-size: 1em;
+margin: 2em 0 0 0;
+color: #7B8186;
+background: transparent url(http://www.blogblog.com/snapshot/bg-header1.gif) bottom right no-repeat;
+padding-bottom: 2px;
+}
+h3 {
+font-size: 1em;
+margin: 2em 0 0 0;
+background: transparent url(http://www.blogblog.com/snapshot/bg-header1.gif) bottom right no-repeat;
+padding-bottom: 2px;
+}
+h4, h5 {
+font-size: 0.9em;
+text-transform: lowercase;
+letter-spacing: 2px;
+}
+h5 {
+color: #7B8186;
+}
+h6 {
+font-size: 0.8em;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+p {
+margin: 0 0 1em 0;
+}
+img, form {
+border: 0; margin: 0;
+}
+/* -- layout -- */
+#outer-wrapper {
+width: 800px;
+margin: 0 auto;
+text-align: left;
+font: normal normal 100% Helvetica, Arial, sans-serif;
+background: #fff url(http://www.blogblog.com/snapshot/bg-body.gif) 0 0 repeat-y;
+}
+#header-wrapper {
+background: #D8DADC url(http://www.blogblog.com/snapshot/bg-headerdiv.gif) 0 0 repeat-y;
+}
+.descriptionwrapper {
+background: #fff url(http://www.blogblog.com/snapshot/bg-sidebar.gif) 1px 0 no-repeat;
+float: right;
+width: 214px;
+padding: 0 0 0 8px;
+margin: 1px 0 2px 0;
+}
+.description {
+border: 1px solid #F3B89D;
+background: #FFD1BC url(http://www.blogblog.com/snapshot/bg-profile.gif);
+padding: 10px 0 10px 7px;
+margin: 4px 0 0 -6px;
+color: #C4663B;
+}
+#header {
+background: transparent url(http://www.blogblog.com/snapshot/header-01.gif) bottom left no-repeat;
+}
+#main-wrapper {
+line-height: 1.4;
+float: left;
+padding: 10px 12px;
+border-top: solid 1px #fff;
+width: 578px;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+/* Tantek hack - http://www.tantek.com/CSS/Examples/boxmodelhack.html */
+voice-family: "\"}\"";
+voice-family: inherit;
+width: 554px;
+}
+/* IE5 hack */
+#main {}
+#sidebar {
+float:right;
+border-top: solid 1px #fff;
+padding: 4px 0 0 7px;
+background: #fff;
+width: 214px;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#footer {
+clear: both;
+background: #E9EAEB url(http://www.blogblog.com/snapshot/bg-footer.gif) bottom left no-repeat;
+border-top: solid 1px #fff;
+min-height: 15px;
+}
+/* -- header style -- */
+#header h1 {
+padding: 12px 0 92px 4px;
+width: 707px;
+line-height: 1;
+}
+/* -- content area style -- */
+#main {
+line-height: 1.4;
+}
+.post h3 {
+font-size: 1.2em;
+margin-bottom: 0;
+color: #C4663B;
+}
+.post h3 a,
+.post h3 a:visited {
+color: #C4663B;
+}
+.post {
+clear: both;
+margin-bottom: 4em;
+}
+.post-footer .post-author,
+.post-footer .post-timestamp {
+color: #B4BABE;
+}
+.uncustomized-post-template .post-author,
+.uncustomized-post-template .post-timestamp {
+float: left;
+margin-right: 4px;
+}
+.uncustomized-post-template .post-footer .comment-link {
+float: right;
+margin-left: 4px;
+}
+.post img {
+border: 1px solid #E3E4E4;
+padding: 2px;
+background: #fff;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.comment-footer {
+margin-bottom: 10px;
+}
+/* -- sidebar style -- */
+.sidebar .widget {
+margin: 1.3em 0 0.5em 0;
+}
+.sidebar h2 {
+font-size: 1.3em;
+}
+.sidebar dl {
+margin: 0 0 10px 0;
+}
+.sidebar ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.sidebar li {
+padding-bottom: 5px;
+line-height: 1
+}
+.main .widget .clear {
+clear: both;
+}
+/* -- sidebar style -- */
+#footer p {
+margin: 0;
+padding: 12px 8px;
+font-size: 0.9em;
+}
+.profile-textblock {
+margin-left: 0;
+clear: both;
+}
+.profile-img {
+float: left;
+margin: 0 10px 5px 0;
+border: 1px solid #7C78B5;
+padding: 4px;
+}
+/** Page structure tweaks for layout editor wireframe */
+body#layout #header-wrapper {
+margin-top: 0;
+}
+body#layout #main-wrapper {
+padding:0;
+}
+img.latex_eq {
+padding: 0;
+margin: 0;
+border: 0;
+}
+
+--></style>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+    function showRelatedContent(args) {
+      var el = document.getElementById('related-iframe');
+      if (el.parentNode.style.display != 'none') {
+        el.parentNode.style.display = 'none';
+        document.onclick = showRelatedContent.prevOnClick;
+        return;
+      }
+      
+      var match = /(?:^[?]|&)c=([0-9]+)(?:&|(?!.))/.exec(args);
+      if (match !== null) {
+        document.getElementById('related-loading').style.left = match[1] + 'px';
+        el.style.left = Math.max(0, match[1] - parseInt(el.width) / 2) + 'px';
+      }
+      el.src = "http://www.blogger.com"
+          + '/related-content.g?q='
+          + "http://nlpers.blogspot.com/"
+          + '&id=' + "19803222";
+      el.parentNode.style.display = 'block';
+      showRelatedContent.prevOnClick = document.onclick;
+
+      // Hide related-content dropdown when clicking anywhere but on it.
+      document.onclick = function() {
+        var el = document.getElementById('related-iframe');
+        if (el.parentNode.style.display != 'none') {
+          el.parentNode.style.display = 'none';
+        }
+        document.onclick = showRelatedContent.prevOnClick;
+      };
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=19803222&amp;blogName=natural+language+processing+blog&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLUE&amp;layoutType=LAYOUTS&amp;searchRoot=http%3A%2F%2Fnlpers.blogspot.com%2Fsearch&amp;blogLocale=en_US&amp;homepageUrl=http%3A%2F%2Fnlpers.blogspot.com%2F&amp;targetPostID=3004609946111119179" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+
+<div></div></div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='http://nlpers.blogspot.com/'>natural language processing blog</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>my biased thoughts on the fields of natural language processing (NLP), computational linguistics (CL) and related topics (machine learning, math, funding, etc.)</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>12 January 2007</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post uncustomized-post-template'>
+<a name='3004609946111119179'></a>
+<h3 class='post-title'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html'>Survey of Parser Usage</a>
+</h3>
+<div class='post-header-line-1'></div>
+<div class='post-body'>
+<p>I know people use parsers a fair amount; I'm curious which parsers people use.  Thus, a new poll :).  What I'm interested in, in particular, is if you use a parser essentially as a preprocessing step before doing something "higher level."  In other words, if you are Mark Johnson and you use the Charniak parser to build a better parser, this doesn't count (sorry, Mark!).  I want to know if you use one to do, eg., summarization or MT or IE or something other than parser... (Also, I don't count shallow parsing in this context.)  I look forward to responses!<br /><br /><br /><br /><form method=post action=http://poll.pollhost.com/vote.cgi><table border=0 width=450 bgcolor=#EEEEEE cellspacing=0 cellpadding=2><tr><td colspan=2><font face="Arial" size=-1 color="#000000"><b>Do you use a parser for your work?</b></font></td></tr><tr><td width=5><input type=radio name=answer value=1></td><td><font face="Arial" size=-1 color="#000000">Nope, no parsing in this neck of the woods!</font></td></tr><tr><td width=5><input type=radio name=answer value=2></td><td><font face="Arial" size=-1 color="#000000">Yes, one of the Brown parsers (Charniak, Johnson, etc.)</font></td></tr><tr><td width=5><input type=radio name=answer value=3></td><td><font face="Arial" size=-1 color="#000000">Yes, one of the Collins' parsers (Collins, Bikel, etc.)</font></td></tr><tr><td width=5><input type=radio name=answer value=4></td><td><font face="Arial" size=-1 color="#000000">Yes, MiniPar</font></td></tr><tr><td width=5><input type=radio name=answer value=5></td><td><font face="Arial" size=-1 color="#000000">Yes, one of the CoNLL dependency parsers (Nivre, McDonald, etc.)</font></td></tr><tr><td width=5><input type=radio name=answer value=6></td><td><font face="Arial" size=-1 color="#000000">Yes, a rule-based parser.</font></td></tr><tr><td width=5><input type=radio name=answer value=7></td><td><font face="Arial" size=-1 color="#000000">Yes, something else entirely.</font></td></tr><tr><td colspan=2><input type=hidden name=config value="aGNkYXVtZTMJMTE2ODYyNDE3NAlFRUVFRUUJMDAwMDAwCUFyaWFsCUFzc29ydGVk"><center><input type=submit value=Vote>&nbsp;&nbsp;<input type=submit name=view value=View></center></td></tr></table></form></p>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<p class='post-footer-line post-footer-line-1'>
+<span class='post-author'>
+Posted by
+hal
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html' title='permanent link'>1/12/2007 09:43:00 AM</a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-action'>
+<a href='http://www.blogger.com/email-post.g?blogID=19803222&postID=3004609946111119179' title='Email Post'>
+<span class='email-post-icon'>&#160;</span>
+</a>
+</span>
+<span class='item-control blog-admin pid-794439212'>
+<a href='http://www.blogger.com/post-edit.g?blogID=19803222&postID=3004609946111119179' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+</p>
+<p class='post-footer-line post-footer-line-2'>
+<span class='post-labels'>
+Labels:
+<a href='http://nlpers.blogspot.com/search/label/parsing' rel='tag'>parsing</a>,
+<a href='http://nlpers.blogspot.com/search/label/survey' rel='tag'>survey</a>
+</span>
+</p>
+<p class='post-footer-line post-footer-line-3'></p>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+18
+comments:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+<dt class='comment-author ' id='c4214011033908196656'>
+<a name='c4214011033908196656'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/15950294272852443488" rel="nofollow" onclick="" class="avatar-hovercard" id="av-0-15950294272852443488"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="chris brew">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/15950294272852443488' rel='nofollow'>chris brew</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4214011033908196656'>
+<p>
+What would you like us to do with your survey if<br />we do work that compares multiple parsers? At <br />least on my machine, I can't do multiple selections<br />from your list<br /><br />We use Minipar, Charniak, Bikel and Clark and Curran's CCG parser.  Only the first and last are<br />feasible for the scale of corpus we think we want <br />to work with and the computational resources we can assemble. The others are too slow. At least, that's what our very preliminary studies seem to say.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1168659660000#c4214011033908196656' title='comment permalink'>
+12 January, 2007 20:41
+</a>
+<span class='item-control blog-admin pid-1384055250'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=4214011033908196656' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c5705426120476395062'>
+<a name='c5705426120476395062'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/02162908373916390369" rel="nofollow" onclick="" class="avatar-hovercard" id="av-1-02162908373916390369"><img src="http://img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" class="delayLoad" style="display: none;" longdesc="http://www.cs.utah.edu/~hal/portrait.jpg" title="hal">
+
+<noscript><img src="http://www.cs.utah.edu/~hal/portrait.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='http://www.blogger.com/profile/02162908373916390369' rel='nofollow'>hal</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5705426120476395062'>
+<p>
+i guess i should have learned my lesson and allowed multiple choices ... i tried changing it to checkboxes, but the poll hosting site doesn't like that :(.<br /><br />i'd say in general if you use more than one, choose the one you use most ... break ties randomly :).
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1168719000000#c5705426120476395062' title='comment permalink'>
+13 January, 2007 13:10
+</a>
+<span class='item-control blog-admin pid-794439212'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=5705426120476395062' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c3061826585626124476'>
+<a name='c3061826585626124476'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-3061826585626124476'>
+<p>
+Academically, I have used CnC, Minipar, Abney's chunker and RASP.<br /><br />Commercially, however, it is often most advisable to stick with chunking ie use little or no syntactic processing at all, and only rely on IE.<br /><br />Parsing research has made a lot of progress, but I'm worried that the community is still using section 21 of the WSJ corpus for benchmarking. In my humble opinion, it's about time for a fresh shipment of treebanks...<br /><br />Regards,<br />    Jochen<br /><br />--<br />Jochen L Leidner<br />Linguit Ltd. (www.linguit.com)
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1168955700000#c3061826585626124476' title='comment permalink'>
+16 January, 2007 06:55
+</a>
+<span class='item-control blog-admin pid-1837929114'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=3061826585626124476' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c3962741376450329565'>
+<a name='c3962741376450329565'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://umiacs.umd.edu/~resnik/" rel="nofollow" onclick=""><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Philip Resnik">
+
+</a></span></div>
+<a href='http://umiacs.umd.edu/~resnik/' rel='nofollow'>Philip Resnik</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-3962741376450329565'>
+<p>
+Great survey!  We've used Minipar, Conexor, Collins, Bikel, Charniak, and most currently the Stanford parser, mainly in the context of MT or MT-related research.   With (~16-way) parallel parsing on a cluster we're finding Stanford quite workable for O(1M)-sentence data sets.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1168965180000#c3962741376450329565' title='comment permalink'>
+16 January, 2007 09:33
+</a>
+<span class='item-control blog-admin pid-1955995105'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=3962741376450329565' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2198970192452601342'>
+<a name='c2198970192452601342'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2198970192452601342'>
+<p>
+We use Link Grammar for speed reason (only have single or Dual CPU machines). Can anyone comment how it fares against the others that have been mentioned?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1169105640000#c2198970192452601342' title='comment permalink'>
+18 January, 2007 00:34
+</a>
+<span class='item-control blog-admin pid-1554453897'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=2198970192452601342' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5053613617726544048'>
+<a name='c5053613617726544048'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/15180984480085538844" rel="nofollow" onclick="" class="avatar-hovercard" id="av-5-15180984480085538844"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Min">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/15180984480085538844' rel='nofollow'>Min</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5053613617726544048'>
+<p>
+alternately, i guess you can vote more than once.  we happen to use lots of minipar and charniak's work here, just because we're most familiar with them.  upgrading parsers usually takes time and doesn't happen in the middle of projects for us.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1169108100000#c5053613617726544048' title='comment permalink'>
+18 January, 2007 01:15
+</a>
+<span class='item-control blog-admin pid-1551820432'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=5053613617726544048' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c5592231392052250550'>
+<a name='c5592231392052250550'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/02162908373916390369" rel="nofollow" onclick="" class="avatar-hovercard" id="av-6-02162908373916390369"><img src="http://img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" class="delayLoad" style="display: none;" longdesc="http://www.cs.utah.edu/~hal/portrait.jpg" title="hal">
+
+<noscript><img src="http://www.cs.utah.edu/~hal/portrait.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='http://www.blogger.com/profile/02162908373916390369' rel='nofollow'>hal</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5592231392052250550'>
+<p>
+i'm actually really surprised how many "other"s were selected!  i suppose i should have included link, stanford and c+c, but they totally just slipped my mind.<br /><br />i'm also shocked that rule-based parsers are beating out any of the family of statistical parsers (though if you lump collins + brown together, since they're very similar, this is no longer the case).  you certainly wouldn't predict this based on what is published at .*ACL.<br /><br />i personally typically use a variant of collins (implementation due to <a href="http://www.isi.edu/~radu">Radu Soricut</a>) because Radu's impl is very fast and outputs a lot of extra stuff i like (like headedness).  if that's too slow, i'll use minipar, but always feel like i'm fighting with it.<br /><br />(although, truth-be-told, i typically use my own <a href="http://hal3.name/TagChunk">chunker</a> instead of a parser, unless I <i>really</i> need full trees.)
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1169148540000#c5592231392052250550' title='comment permalink'>
+18 January, 2007 12:29
+</a>
+<span class='item-control blog-admin pid-794439212'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=5592231392052250550' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c4508627631618652011'>
+<a name='c4508627631618652011'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4508627631618652011'>
+<p>
+It's also impressive the number of people who read the NLP blog and do not use parsing at all. Maybe parsing is not as popular in NLP as it used to be...
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1170712440000#c4508627631618652011' title='comment permalink'>
+05 February, 2007 14:54
+</a>
+<span class='item-control blog-admin pid-1495517400'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=4508627631618652011' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c4536182108945795139'>
+<a name='c4536182108945795139'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.cat-equipment.gowylie.com" rel="nofollow" onclick=""><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="Rosie">
+
+</a></span></div>
+<a href='http://www.cat-equipment.gowylie.com' rel='nofollow'>Rosie</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4536182108945795139'>
+<p>
+i totally agree with you Hal
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1171379280000#c4536182108945795139' title='comment permalink'>
+13 February, 2007 08:08
+</a>
+<span class='item-control blog-admin pid-517092124'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=4536182108945795139' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5214267887733494459'>
+<a name='c5214267887733494459'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://free-ps3-for-me.blogspot.com" rel="nofollow" onclick=""><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="free ps3">
+
+</a></span></div>
+<a href='http://free-ps3-for-me.blogspot.com' rel='nofollow'>free ps3</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5214267887733494459'>
+<p>
+Thanks for the nice post!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1189770660000#c5214267887733494459' title='comment permalink'>
+14 September, 2007 05:51
+</a>
+<span class='item-control blog-admin pid-1906190229'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=5214267887733494459' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1832314371747067948'>
+<a name='c1832314371747067948'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/15855910490442482216" rel="nofollow" onclick="" class="avatar-hovercard" id="av-10-15855910490442482216"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title=".">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/15855910490442482216' rel='nofollow'>.</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1832314371747067948'>
+<p>
+酒店經紀PRETTY GIRL <A HREF="http://www.taipeilady.com/" REL="nofollow" TITLE="台北酒店經紀人">台北酒店經紀人</A> ,<A HREF="http://tw.myblog.yahoo.com/jw!qZ9n..6QEhhc0LkItOBm/" REL="nofollow" TITLE="禮服店">禮服店</A> 酒店兼差PRETTY GIRL<A HREF="http://www.mashow.org/" REL="nofollow" TITLE="酒店公關">酒店公關</A> 酒店小姐 彩色爆米花<A HREF="http://blog.xuite.net/jkl338801/blog/" REL="nofollow" TITLE="酒店兼職">酒店兼職</A>,酒店工作 彩色爆米花<A HREF="http://tw.myblog.yahoo.com/jw!BIBoU5SeBRs21nb_ajFpncbTqXds" REL="nofollow" TITLE="酒店經紀">酒店經紀</A>, <A HREF="http://mypaper.pchome.com.tw/news/thomsan/3/1310065116/20080905040949/" REL="nofollow" TITLE="酒店上班">酒店上班</A>,酒店工作 PRETTY GIRL<A HREF="http://tw.myblog.yahoo.com/jw!rybqykeeER6TH3AKz1HQ5grm/" REL="nofollow" TITLE="酒店喝酒">酒店喝酒</A>酒店上班 彩色爆米花<A HREF="http://mypaper.pchome.com.tw/news/jkl338801/" REL="nofollow" TITLE="台北酒店">台北酒店</A>酒店小姐 PRETTY GIRL<A HREF="http://www.mashow.org/" REL="nofollow" TITLE="酒店上班">酒店上班</A>酒店打工PRETTY GIRL<A HREF="http://www.tpangel.com/" REL="nofollow" TITLE="酒店打工">酒店打工</A>酒店經紀 彩色爆米花
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1242147660000#c1832314371747067948' title='comment permalink'>
+12 May, 2009 11:01
+</a>
+<span class='item-control blog-admin pid-572516514'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=1832314371747067948' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1049264221238737082'>
+<a name='c1049264221238737082'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/04574900363151226023" rel="nofollow" onclick="" class="avatar-hovercard" id="av-11-04574900363151226023"><img src="http://img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" class="delayLoad" style="display: none;" longdesc="http://1.bp.blogspot.com/_r_HteVvrbes/SpOjyI37FBI/AAAAAAAAAAk/Ag23XBqTXPg/S45/121212.jpg" title="&#37202;&#24215;&#19978;&#29677;&#35531;&#25214;&#33406;&#33907;">
+
+<noscript><img src="http://1.bp.blogspot.com/_r_HteVvrbes/SpOjyI37FBI/AAAAAAAAAAk/Ag23XBqTXPg/S45/121212.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='http://www.blogger.com/profile/04574900363151226023' rel='nofollow'>酒店上班請找艾葳</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1049264221238737082'>
+<p>
+艾葳<a href="http://www.aed8.com" rel="nofollow">酒店經紀</a>公司提供專業的<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330637" rel="nofollow">酒店經紀</a>, <a href="http://tw.myblog.yahoo.com/jw!ycVTCIqTFRMGkedtdX2NjK6QDLD6DG9E" rel="nofollow">酒店上班</a>小姐,<a href="http://www.wretch.cc/blog/aed8888" rel="nofollow">八大行業</a>,<a href="http://blog.xuite.net/aed8888/8888" rel="nofollow">酒店兼職</a>,<a href="http://r2av.com" rel="nofollow">傳播妹</a>,或者想要<a href="http://blog.sina.com.tw/loveed8/" rel="nofollow">打工兼差</a>&#12289;<a href="http://blog.yam.com/haloveha" rel="nofollow">打工</a>,<a href="http://blog.roodo.com/kiss88" rel="nofollow">兼差</a>,<a href="http://avs6.com" rel="nofollow">八大行業</a>,<a href="http://m5av.com" rel="nofollow">酒店兼職</a>,想去<a href="http://avx0.com/05" rel="nofollow">酒店上班</a>, <a href="http://%20http://m5av.com%20/03" rel="nofollow">日式酒店</a>,<a href="http://%20http://avx6.com/03" rel="nofollow">制服酒店</a>,<a href="http://%20http://r2av.com/01" rel="nofollow">ktv酒店</a>,<a href="http://m5av.com/02" rel="nofollow">禮服店</a>,整天穿得水水漂漂的,還是想去<a href="http://avz4.com/02" rel="nofollow">制服店</a>當<a href="http://www.wretch.cc/blog/aed8ed8" rel="nofollow">日領</a>上班小姐,水水們如果想要擁有<a href="http://0av0.com" rel="nofollow">打工</a>工作&#12289;<a href="http://s6av.com/05" rel="nofollow">晚上兼差工作</a>&#12289;<a href="http://avs6.com/05" rel="nofollow">兼差打工</a>&#12289;<a href="http://avz4.com/05" rel="nofollow">假日兼職</a>&#12289;<a href="http://l7av.com/05" rel="nofollow">兼職工作</a>&#12289;<a href="http://mypaper.pchome.com.tw/news/aed8888/" rel="nofollow">酒店兼差</a>&#12289;<a href="http://avl7.com/05" rel="nofollow">兼差</a>&#12289;<a href="http://av0x.com" rel="nofollow">打工兼差</a>&#12289;<a href="http://av0x.com/01" rel="nofollow">日領工作</a>&#12289;<a href="http://av6p.com%20/01" rel="nofollow">晚上兼差工作</a>&#12289;<a href="http://av8x.com/03" rel="nofollow">酒店工作</a>&#12289;<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330643" rel="nofollow">酒店上班</a>&#12289;<a href="http://av8x.com/05" rel="nofollow">酒店打工</a>&#12289;<a href="http://av8x.com" rel="nofollow">兼職</a>&#12289;<a href="http://av6p.com" rel="nofollow">兼差</a>&#12289;<a href="http://avz4.com" rel="nofollow">兼差工作</a>&#12289;<a href="http://avl7.com" rel="nofollow">酒店上班</a>等,想了解<a href="http://avl7.com/04" rel="nofollow">酒店相關工作</a>和<a href="http://avz4.com/04" rel="nofollow">特種行業</a>內容,想<a href="http://avu4.com" rel="nofollow">兼職工作日領</a>&#12289;<a href="http://l7av.com/" rel="nofollow">假日兼職</a>&#12289;<a href="http://s4av.com/" rel="nofollow">兼差打工</a>&#12289;或<a href="http://x6av.com" rel="nofollow">晚班兼職</a>想擁有<a href="http://blog.udn.com/aed8888" rel="nofollow">鋼琴酒吧</a>又有保障的工作嗎???又可以<a href="http://0av0.com/05" rel="nofollow">現領</a>請找專業又有保障的艾葳<a href="http://www.aed8.com/front/bin/home.phtml" rel="nofollow">酒店經紀</a>公司!<br /><br />艾葳<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330639" rel="nofollow">酒店經紀</a>是合法的公司工作環境高雅時尚&#65292;無業績壓力&#65292;無脫秀無喝酒壓力&#65292;高層次會員制客源&#65292;工作輕鬆&#65292;可<a href="http://a3av.com" rel="nofollow">日領</a>&#12289;<a href="http://avx6.com" rel="nofollow">現領</a>&#12290;<br />一般的<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330641" rel="nofollow">酒店經紀</a>只會在水水們第一次上班和領薪水時出現而已&#65292;對水水們的上班安全一點保障都沒有&#65281;艾葳酒店經紀公司的水水們上班時全程媽咪作陪&#65292;不需擔心&#65281;只提供最優質的<a href="http://www.aed8.com" rel="nofollow">酒店上班</a>,<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=331073" rel="nofollow">酒店上班</a>,<a href="http://avx0.com" rel="nofollow">酒店打工</a>環境&#12289;上班條件給水水們&#12290;心動嗎!? 趕快來填寫你的<a href="http://www.aed8.com/front/bin/home.phtml" rel="nofollow">酒店上班</a>履歷表<br /><br />水水們妳有缺<a href="http://aed8888.pixnet.net/blog" rel="nofollow">現領</a>&#12289;有<a href="http://pink168.blogspot.com/" rel="nofollow">兼職</a>&#12289;<a href="http://m5av.com/05" rel="nofollow">缺錢</a><a href="http://aed8ed8.spaces.live.com/default.aspx" rel="nofollow">便服店</a>的煩腦嗎?想到日本留學<a href="http://www.im.tv/blog/3177093" rel="nofollow">缺錢</a>嗎?妳是<a href="http://hk.myblog.yahoo.com/aed8888@kimo.com" rel="nofollow">傳播妹</a>??想要擁有高時薪又輕鬆的<a href="http://hahapinka.spaces.live.com/default.aspx" rel="nofollow">賺錢</a>,<a href="http://aed8ed8.pixnet.net/blog" rel="nofollow">酒店</a>和,<a href="http://s4av.com/05" rel="nofollow">假日打工</a>,<a href="http://aed8888.mysinablog.com/index.php" rel="nofollow">假日兼職</a><a href="http://hahapinka.spaces.live.com/blog/" rel="nofollow">賺錢</a>的機會嗎??想實現夢想卻又<a href="http://s6av.com" rel="nofollow">缺錢</a>沒錢嗎!?? <br />艾葳酒店<a href="http://blog.xuite.net/aed8ed8/blog" rel="nofollow">台北酒店經紀</a>招兵買馬!!徵專業的<a href="http://tw.myblog.yahoo.com/jw!BKdiTxSTFRMUjbctTwdik8rQeZdDrm8T" rel="nofollow">酒店打工</a>,想要去<a href="http://aed8ed8.pixnet.net/blog" rel="nofollow">酒店</a>的水水,想要短期<a href="http://www.wretch.cc/blog/aed8ed8" rel="nofollow">日領</a>,<a href="http://%20http://blog.roodo.com/aed8ed8" rel="nofollow">酒店日領</a>,<a href="http://%20http://aed8ed8.blogspot.com/" rel="nofollow">禮服酒店</a>,<a href="http://www.im.tv/blog/3174889" rel="nofollow">制服店</a>,<a href="http://hk.myblog.yahoo.com/aed8ed8@kimo.com" rel="nofollow">酒店經紀</a>,<a href="http://aed8ed8.mysinablog.com/index.php" rel="nofollow">ktv酒店</a>,<a href="http://%20http://aed8ed8.spaces.live.com/blog/" rel="nofollow">便服店</a>,<a href="http://mypaper.pchome.com.tw/news/aed8ed8" rel="nofollow">酒店工作</a>,<a href="http://blog.udn.com/aed8ed8" rel="nofollow">禮服店</a>,<a href="http://blog.yam.com/aed8ed8" rel="nofollow">酒店小姐</a>,<a href="http://blog.sina.com.tw/aed8ed8/" rel="nofollow">酒店經紀人</a>,  <br />等相關服務 幫您快速的實現您的夢想~!!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1253496501269#c1049264221238737082' title='comment permalink'>
+20 September, 2009 19:28
+</a>
+<span class='item-control blog-admin pid-1469532605'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=1049264221238737082' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c6883745098345665968'>
+<a name='c6883745098345665968'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/02426237509987504754" rel="nofollow" onclick="" class="avatar-hovercard" id="av-12-02426237509987504754"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="seldamuratim">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/02426237509987504754' rel='nofollow'>seldamuratim</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6883745098345665968'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.seslidesohbet.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslidesohbet.com" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslidesohbet.com" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><a href="http://www.seslidesohbet.com" title="seslisohbet" rel="nofollow">seslisohbet</a><a href="http://www.seslidesohbet.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><a href="http://www.seslidesohbet.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri</a><a href="http://www.seslidesohbet.com" title="seslichat" rel="nofollow">seslichat</a><a href="http://www.seslidesohbet.com" title="sesli sohpet" rel="nofollow">sesli sohpet</a><a href="http://www.seslidesohbet.com" title="seslisohbet.com" rel="nofollow">seslisohbet.com</a><a href="http://www.seslialo.com" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslialo.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslialo.com" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><a href="http://www.seslisohbetr.com" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslisohbetr.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslisohbetr.com" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><br /><a href="http://www.gvzsohbet.net" title="seslisohbet" rel="nofollow">seslisohbet</a><a href="http://www.gvzsohbet.net" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.gvzsohbet.net" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><a href="http://www.seslisohbetr.net" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslisohbetr.net" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslisohbetr.net" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1274240616353#c6883745098345665968' title='comment permalink'>
+18 May, 2010 21:43
+</a>
+<span class='item-control blog-admin pid-884818942'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=6883745098345665968' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7049546161219017524'>
+<a name='c7049546161219017524'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.taebotraining.com/" rel="nofollow" onclick=""><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="taebo training">
+
+</a></span></div>
+<a href='http://www.taebotraining.com/' rel='nofollow'>taebo training</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-7049546161219017524'>
+<p>
+the truth is sometimes I use it but I do not really like it, is something I require, however, sometimes do not use it!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1277771500461#c7049546161219017524' title='comment permalink'>
+28 June, 2010 18:31
+</a>
+<span class='item-control blog-admin pid-145899930'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=7049546161219017524' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c203909210587247468'>
+<a name='c203909210587247468'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.teeterhangupsonline.com/" rel="nofollow" onclick=""><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="teeter hang ups">
+
+</a></span></div>
+<a href='http://www.teeterhangupsonline.com/' rel='nofollow'>teeter hang ups</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-203909210587247468'>
+<p>
+I would like to know the results of the survey, I think an interesting question. anyway I will find out .. continue to make, they are great ..
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1277779606701#c203909210587247468' title='comment permalink'>
+28 June, 2010 20:46
+</a>
+<span class='item-control blog-admin pid-533282939'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=203909210587247468' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c9097876233779771821'>
+<a name='c9097876233779771821'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.teethingsymptoms.net/" rel="nofollow" onclick=""><img src="http://img1.blogblog.com/img/blank.gif" width="16" height="16" alt="" title="teething symptoms">
+
+</a></span></div>
+<a href='http://www.teethingsymptoms.net/' rel='nofollow'>teething symptoms</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-9097876233779771821'>
+<p>
+clear that I use is dramatically useful, recommend it to those who have not tried it yet ..
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1277785396371#c9097876233779771821' title='comment permalink'>
+28 June, 2010 22:23
+</a>
+<span class='item-control blog-admin pid-627490861'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=9097876233779771821' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c6553617308756466502'>
+<a name='c6553617308756466502'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/08864478017755374115" rel="nofollow" onclick="" class="avatar-hovercard" id="av-16-08864478017755374115"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="DiSCo">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/08864478017755374115' rel='nofollow'>DiSCo</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6553617308756466502'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it<br /><br />to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.yumuyum.com" title="seslisohbet" rel="nofollow">seslisohbet</a> <br /><a href="http://www.yumuyum.com" title="Seslichat" rel="nofollow">seslichat</a> <br /><a href="http://www.yumuyum.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a> <br /><a href="http://www.yumuyum.com" title="sesli chat" rel="nofollow">sesli chat</a><br /><a href="http://www.yumuyum.com" title="sesli" rel="nofollow">sesli</a><br /><a href="http://www.yumuyum.com" title="sesli site" rel="nofollow">sesli site</a><br /><a href="http://www.yumuyum.com" title="görüntülü sohbet" rel="nofollow">görünlütü sohbet</a><br /><a href="http://www.yumuyum.com" title="görüntülü chat" rel="nofollow">görüntülü chat</a><br /><a href="http://www.yumuyum.com" title="kameralı sohbet" rel="nofollow">kameralı sohbet</a><br /><a href="http://www.yumuyum.com" title="kameralı chat" rel="nofollow">kameralı chat</a><br /><a href="http://www.yumuyum.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><br /><a href="http://www.yumuyum.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri</a><br /><a href="http://www.yumuyum.com" title="görüntülü sohbet siteleri" rel="nofollow">görüntülü sohbet siteleri</a><br /><a href="http://www.yumuyum.com" title="görüntülü chat siteleri" rel="nofollow">görüntülü chat siteleri</a><br /><a href="http://www.yumuyum.com" title="kameralı sohbet siteleri" rel="nofollow">kameralı sohbet siteleri</a><br /><a href="http://www.yumuyum.com" title="canlı sohbet" rel="nofollow">canlı sohbet</a><br /><a href="http://www.yumuyum.com" title="sesli muhabbet" rel="nofollow">sesli muhabbet</a><br /><a href="http://www.yumuyum.com" title="görüntülü muhabbet" rel="nofollow">görüntülü muhabbet</a><br /><a href="http://www.yumuyum.com" title="kameralı muhabbet" rel="nofollow">kameralı muhabbet</a><br /><a href="http://www.yumuyum.com/seslidunya-seslidunyalar-net-com.html" title="seslidunya" rel="nofollow">seslidunya</a><br /><a href="http://www.yumuyum.com/seslisehir-com-net.html" title="seslisehir" rel="nofollow">seslisehir</a><br /><a href="http://www.yumuyum.com/sesli-sex-seslisex.html" title="sesli sex" rel="nofollow">sesli sex</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1279500800606#c6553617308756466502' title='comment permalink'>
+18 July, 2010 18:53
+</a>
+<span class='item-control blog-admin pid-425357420'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=6553617308756466502' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c6328493887995685057'>
+<a name='c6328493887995685057'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/01208937718387743310" rel="nofollow" onclick="" class="avatar-hovercard" id="av-17-01208937718387743310"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Sesli Chat">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/01208937718387743310' rel='nofollow'>Sesli Chat</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6328493887995685057'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it<br /><br />to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.birsesverin.com" title="seslisohbet" rel="nofollow">seslisohbet</a><br /><a href="http://www.birsesverin.com" title="Seslichat" rel="nofollow">seslichat</a><br /><a href="http://www.birsesverin.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><br /><a href="http://www.birsesverin.com" title="sesli chat" rel="nofollow">sesli chat</a><br /><a href="http://www.birsesverin.com" title="sesli" rel="nofollow">sesli</a><br /><a href="http://www.birsesverin.com" title="sesli site" rel="nofollow">sesli site</a><br /><a href="http://www.birsesverin.com" title="görüntülü sohbet" rel="nofollow">görünlütü sohbet</a><br /><a href="http://www.birsesverin.com" title="görüntülü chat" rel="nofollow">görüntülü chat</a><br /><a href="http://www.birsesverin.com" title="kameralı sohbet" rel="nofollow">kameralı sohbet</a><br /><a href="http://www.birsesverin.com" title="kameralı chat" rel="nofollow">kameralı chat</a><br /><a href="http://www.birsesverin.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><br /><a href="http://www.birsesverin.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri</a><br /><a href="http://www.birsesverin.com" title="sesli chat siteleri" rel="nofollow">sesli muhabbet siteleri</a><br /><a href="http://www.birsesverin.com" title="görüntülü sohbet siteleri" rel="nofollow">görüntülü sohbet siteleri</a><br /><a href="http://www.birsesverin.com" title="görüntülü chat siteleri" rel="nofollow">görüntülü chat siteleri</a><br /><a href="http://www.birsesverin.com" title="görüntülü muhabbet siteleri" rel="nofollow">görüntülü muhabbet siteleri</a><br /><a href="http://www.birsesverin.com" title="kameralı sohbet siteleri" rel="nofollow">kameralı sohbet siteleri</a><br /><a href="http://www.birsesverin.com" title="kameralı chat siteleri" rel="nofollow">kameralı chat siteleri</a><br /><a href="http://www.birsesverin.com" title="kameralı muhabbet siteleri" rel="nofollow">kameralı muhabbet siteleri</a><br /><a href="http://www.birsesverin.com" title="canlı sohbet" rel="nofollow">canlı sohbet</a><br /><a href="http://www.birsesverin.com" title="sesli muhabbet" rel="nofollow">sesli muhabbet</a><br /><a href="http://www.birsesverin.com" title="görüntülü muhabbet" rel="nofollow">görüntülü muhabbet</a><br /><a href="http://www.birsesverin.com" title="kameralı muhabbet" rel="nofollow">kameralı muhabbet</a><br /><a href="http://www.birsesverin.com" title="birsesver" rel="nofollow">birsesver</a><br /><a href="http://www.birsesverin.com" title="birses" rel="nofollow">birses</a><br /><a href="http://www.birsesverin.com/seslidunya-com-net.html" title="seslidunya" rel="nofollow">seslidunya</a><br /><a href="http://www.birsesverin.com/seslisehir-com-net.html" title="seslisehir" rel="nofollow">seslisehir</a><br /><a href="http://www.birsesverin.com/seslisex-sesli-sex.html" title="sesli sex" rel="nofollow">sesli sex</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html?showComment=1279973870377#c6328493887995685057' title='comment permalink'>
+24 July, 2010 06:17
+</a>
+<span class='item-control blog-admin pid-246358671'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=19803222&postID=6328493887995685057' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class='comment-footer'>
+<a href='https://www.blogger.com/comment.g?blogID=19803222&postID=3004609946111119179' onclick=''>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+<a name='links'></a><h4>
+</h4>
+<p class='comment-footer'>
+<a class='comment-link' href='' id='Blog1_backlinks-create-link' target='_blank'>
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="latency-3004609946111119179"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-3004609946111119179")); } </script>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://nlpers.blogspot.com/2007/01/comments-on-mark-up-barking-up-wrong.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://nlpers.blogspot.com/2007/01/what-irks-me-about-e-mail-customer.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://nlpers.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://nlpers.blogspot.com/feeds/3004609946111119179/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget Profile' id='Profile1'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<a href='http://www.blogger.com/profile/02162908373916390369'><img alt='My Photo' class='profile-img' height='80' src='http://www.cs.utah.edu/~hal/portrait.jpg' width='80'/></a>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link' href='http://www.blogger.com/profile/02162908373916390369' rel='author'>
+Hal Daume III
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='http://www.blogger.com/profile/02162908373916390369' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=19803222&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Label' id='Label1'>
+<h2>Labels</h2>
+<div class='widget-content list-label-widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/acl'>acl</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/ACS'>ACS</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/advising'>advising</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/algorithms'>algorithms</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/bayesian'>bayesian</a>
+<span dir='ltr'>(10)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/chunking'>chunking</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/classification'>classification</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/clustering'>clustering</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/community'>community</a>
+<span dir='ltr'>(25)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/conferences'>conferences</a>
+<span dir='ltr'>(44)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/coreference'>coreference</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/data'>data</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/discourse'>discourse</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/domain%20adaptation'>domain adaptation</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/evaluation'>evaluation</a>
+<span dir='ltr'>(9)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/finite%20state%20methods'>finite state methods</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/graphical%20models'>graphical models</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/hiring'>hiring</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/information%20retrieval'>information retrieval</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/journals'>journals</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/language%20modeling'>language modeling</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/linguistics'>linguistics</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/loss%20functions'>loss functions</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/machine%20learning'>machine learning</a>
+<span dir='ltr'>(44)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/machine%20translation'>machine translation</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/mcmc'>mcmc</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/news'>news</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/online%20learning'>online learning</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/papers'>papers</a>
+<span dir='ltr'>(16)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/parsing'>parsing</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/PL'>PL</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/poll'>poll</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/problems'>problems</a>
+<span dir='ltr'>(12)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/questions'>questions</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/research'>research</a>
+<span dir='ltr'>(12)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/reviewing'>reviewing</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/sentiment'>sentiment</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/software'>software</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/speech'>speech</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/statistics'>statistics</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/structured%20prediction'>structured prediction</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/summarization'>summarization</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/survey'>survey</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/teaching'>teaching</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/theory'>theory</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://nlpers.blogspot.com/search/label/topic%20models'>topic models</a>
+<span dir='ltr'>(1)</span>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=19803222&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target='configLabel1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogList' id='BlogList1'>
+<h2 class='title'>My Blog List</h2>
+<div class='widget-content'>
+<div class='blog-list-container' id='BlogList1_container'>
+<ul id='BlogList1_blogs'>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.stat.columbia.edu/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.stat.columbia.edu/~cook/movabletype/mlm/' target='_blank'>
+Statistical Modeling, Causal Inference, and Social Science</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/StatisticalModelingCausalInferenceAndSocialScience/~3/OC-d3XKPCAU/the_saber_saw_t.html' target='_blank'>
+The saber saw, the ashtray, and other stories of misbehaving profs</a>
+</span>
+<div class='item-time'>
+39 minutes ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://nuit-blanche.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://nuit-blanche.blogspot.com/' target='_blank'>
+Nuit Blanche</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/blogspot/wCeDd/~3/W0geyqtwDmw/cs-dantzig-selector-solvers.html' target='_blank'>
+CS: The Dantzig Selector solvers: Multiplicative Noise Effect on the Donoho-Tanner Phase Transition (Part 7)</a>
+</span>
+<div class='item-time'>
+8 hours ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://mybiasedcoin.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mybiasedcoin.blogspot.com/' target='_blank'>
+My Biased Coin</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://mybiasedcoin.blogspot.com/2011/04/more-on-academic-communications.html' target='_blank'>
+More on Academic Communications</a>
+</span>
+<div class='item-time'>
+22 hours ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://mysliceofpizza.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mysliceofpizza.blogspot.com/' target='_blank'>
+my slice of pizza</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://mysliceofpizza.blogspot.com/2011/04/theory-of-computation-as-lens-on.html' target='_blank'>
+Theory of Computation as a Lens on the Sciences: Berkeley Conference</a>
+</span>
+<div class='item-time'>
+1 day ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://blog.oddhead.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.oddhead.com/' target='_blank'>
+Oddhead Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://blog.oddhead.com/2011/04/01/naming-march-madness-rounds/' target='_blank'>
+March Madness thingnaming: Core 64, True 32?</a>
+</span>
+<div class='item-time'>
+2 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://lemire.me/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://lemire.me/blog' target='_blank'>
+Daniel Lemire's blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/daniel-lemire/atom/~3/Pu5J-oIRd5I/' target='_blank'>
+You can assess trends by the status of the participants</a>
+</span>
+<div class='item-time'>
+2 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://blog.computationalcomplexity.org/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.computationalcomplexity.org/' target='_blank'>
+Computational Complexity</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://blog.computationalcomplexity.org/2011/04/complexity-of-soul.html' target='_blank'>
+The Complexity of the Soul</a>
+</span>
+<div class='item-time'>
+2 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.talkingbrains.org/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.talkingbrains.org/' target='_blank'>
+Talking Brains</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/TalkingBrains/~3/w5aCP5XBDog/faculty-positions-dept-of-psychology.html' target='_blank'>
+Faculty positions: Dept. of Psychology - Univ. of S. Caroline</a>
+</span>
+<div class='item-time'>
+2 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://lingpipe-blog.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://lingpipe-blog.com' target='_blank'>
+LingPipe Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://lingpipe-blog.com/2011/03/31/lingpipe-book-draft-0-4/' target='_blank'>
+LingPipe Book Draft 0.4</a>
+</span>
+<div class='item-time'>
+2 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://earningmyturns.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://earningmyturns.blogspot.com/' target='_blank'>
+Earning My Turns</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://earningmyturns.blogspot.com/2011/03/fleeting.html' target='_blank'>
+Fleeting</a>
+</span>
+<div class='item-time'>
+3 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://glinden.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://glinden.blogspot.com/' target='_blank'>
+Geeking with Greg</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://glinden.blogspot.com/2011/03/latest-reading.html' target='_blank'>
+Latest reading</a>
+</span>
+<div class='item-time'>
+3 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://terrytao.wordpress.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://terrytao.wordpress.com' target='_blank'>
+What's new</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://terrytao.wordpress.com/2011/03/30/higher-order-fourier-analysis/' target='_blank'>
+Higher order Fourier analysis</a>
+</span>
+<div class='item-time'>
+4 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.scala-lang.org/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.scala-lang.org/' target='_blank'>
+The Scala Programming Language</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.scala-lang.org/node/8990' target='_blank'>
+Scala IDE for Eclipse - New Version</a>
+</span>
+<div class='item-time'>
+4 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://geomblog.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://geomblog.blogspot.com/' target='_blank'>
+The Geomblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/TheGeomblog/~3/MRV8TRpx-r0/stoc-2011-poster-session.html' target='_blank'>
+STOC 2011 Poster Session</a>
+</span>
+<div class='item-time'>
+5 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://gowers.wordpress.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://gowers.wordpress.com' target='_blank'>
+Gowers's Weblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://gowers.wordpress.com/2011/03/28/april-1st-comes-a-few-days-early/' target='_blank'>
+April 1st comes a few days early</a>
+</span>
+<div class='item-time'>
+6 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://hunch.net/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://hunch.net' target='_blank'>
+Machine Learning (Theory)</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://hunch.net/?p=1739' target='_blank'>
+Vowpal Wabbit, v5.1</a>
+</span>
+<div class='item-time'>
+6 days ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://wadler.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://wadler.blogspot.com/' target='_blank'>
+Wadler's Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://wadler.blogspot.com/2011/03/surface-detail.html' target='_blank'>
+Surface Detail</a>
+</span>
+<div class='item-time'>
+1 week ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://quantombone.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://quantombone.blogspot.com/' target='_blank'>
+tombone's blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://quantombone.blogspot.com/2011/03/matlab-trick-counting-via-sparse.html' target='_blank'>
+Matlab Trick: Counting via Sparse</a>
+</span>
+<div class='item-time'>
+1 week ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://lucatrevisan.wordpress.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://lucatrevisan.wordpress.com' target='_blank'>
+in   theory</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://lucatrevisan.wordpress.com/2011/03/21/women-in-science-engineering-and-politics/' target='_blank'>
+Women in Science, Engineering, and Politics</a>
+</span>
+<div class='item-time'>
+1 week ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://math.andrej.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://math.andrej.com/' target='_blank'>
+Mathematics and Computation</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://math.andrej.com/2011/03/18/bob-harper-has-a-blog/' target='_blank'>
+Bob Harper has a blog</a>
+</span>
+<div class='item-time'>
+2 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://ba.stat.cmu.edu/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ba.stat.cmu.edu/forthcoming.php' target='_blank'>
+Bayesian Analysis Journal :: Forthcoming Articles</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://ba.stat.cmu.edu/abstracts/Hoff.php' target='_blank'>
+Separable covariance arrays via the Tucker product, with applications to 
+multivariate relational data</a>
+</span>
+<div class='item-time'>
+2 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://lada.si.umich.edu:8080/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://lada.si.umich.edu:8080/wordpress' target='_blank'>
+Information Engineering</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://lada.si.umich.edu:8080/wordpress/?p=963' target='_blank'>
+URLs</a>
+</span>
+<div class='item-time'>
+3 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.jstatsoft.org/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.jstatsoft.org/rss' target='_blank'>
+Journal of Statistical Software</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.jstatsoft.org/v39/i13/paper' target='_blank'>
+Hierarchical Generalized Linear Models: The R Package HGLMMM</a>
+</span>
+<div class='item-time'>
+3 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://michaelnielsen.org/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://michaelnielsen.org/blog' target='_blank'>
+Michael Nielsen</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/michaelnielsen/wmna/~3/hygXF7xxPcw/' target='_blank'>
+TEDxWaterloo</a>
+</span>
+<div class='item-time'>
+4 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://tcsmath.wordpress.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://tcsmath.wordpress.com' target='_blank'>
+tcs math - some mathematics of theoretical computer science</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://tcsmath.wordpress.com/2011/02/23/psd-lifting-and-unique-games-integrality-gaps/' target='_blank'>
+PSD lifting and Unique Games integrality gaps</a>
+</span>
+<div class='item-time'>
+5 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://vimsu99.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://vimsu99.blogspot.com/' target='_blank'>
+Learning in Vision</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://vimsu99.blogspot.com/2011/02/self-promotion-two-new-papers.html' target='_blank'>
+Self promotion: two new papers</a>
+</span>
+<div class='item-time'>
+1 month ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://mark.reid.name/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mark.reid.name/iem/' target='_blank'>
+Inductio Ex Machina</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://mark.reid.name/iem/bayesian-serenity-prayer.html' target='_blank'>
+Bayesian Serenity Prayer</a>
+</span>
+<div class='item-time'>
+2 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://andysresearch.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://andysresearch.blogspot.com/' target='_blank'>
+Andy's Math/CS page</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://andysresearch.blogspot.com/2010/12/harassment-policies-for-theory_09.html' target='_blank'>
+Harassment Policies for Theory Conferences</a>
+</span>
+<div class='item-time'>
+3 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://infoweekly.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://infoweekly.blogspot.com/' target='_blank'>
+WebDiarios de Motocicleta</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://infoweekly.blogspot.com/2010/11/complexity-theory.html' target='_blank'>
+Complexity Theory</a>
+</span>
+<div class='item-time'>
+4 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.informaniac.net/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.informaniac.net/' target='_blank'>
+Undirected Grad</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.informaniac.net/2010/10/ecmlpkdd-2010-highlights.html' target='_blank'>
+ECML&#8211;PKDD 2010 Highlights</a>
+</span>
+<div class='item-time'>
+5 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://xorshammer.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://xorshammer.com' target='_blank'>
+XOR's Hammer</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://xorshammer.com/2010/09/18/the-spectrum-from-logic-to-probability/' target='_blank'>
+The Spectrum From Logic to Probability</a>
+</span>
+<div class='item-time'>
+6 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://groundtruth.info/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://groundtruth.info/AstroStat/slog' target='_blank'>
+The AstroStat Slog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://groundtruth.info/AstroStat/slog/2010/cas2010-webcast/' target='_blank'>
+CAS2010 Webcast</a>
+</span>
+<div class='item-time'>
+7 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://apperceptual.wordpress.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://apperceptual.wordpress.com' target='_blank'>
+Apperceptual</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://apperceptual.wordpress.com/2009/10/06/embodiment-and-metaphor/' target='_blank'>
+Embodiment and Metaphor</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.datawrangling.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.datawrangling.com' target='_blank'>
+Data Wrangling</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.datawrangling.com/slides-thoughts-from-hadoop-world-nyc' target='_blank'>
+Slides &amp; Thoughts from Hadoop World NYC</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://jeffhammerbacher.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://jeffhammerbacher.com/' target='_blank'>
+Mainly Data</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/MainlyData/~3/GTDyylb8V58/114974065' target='_blank'>
+Blogging for the Yoga Bear Cause</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://ergodicity.iamganesh.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ergodicity.iamganesh.com/' target='_blank'>
+Ganesh Swami</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://ergodicity.iamganesh.com/2009/01/on-git/' target='_blank'>
+On Git</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://qualgorithms.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://qualgorithms.blogspot.com/' target='_blank'>
+Quantum Algorithms</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://qualgorithms.blogspot.com/2008/12/polynomial-time-quantum-algorithm-for.html' target='_blank'>
+Polynomial-time quantum algorithm for the simulation of chemical dynamics</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://logicomp.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://logicomp.blogspot.com/' target='_blank'>
+Logicomp</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://logicomp.blogspot.com/2008/10/when-does-bob-deserve-to-be-co-author.html' target='_blank'>
+When does Bob deserve to be a co-author?</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://magic.aladdin.cs.cmu.edu/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://magic.aladdin.cs.cmu.edu/' target='_blank'>
+[Lowerbounds, Upperbounds]</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://magic.aladdin.cs.cmu.edu/2008/08/20/parasitic-seo-is-not-a-victimless-crime/' target='_blank'>
+Parasitic SEO is not a Victimless Crime</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://www.sixthform.info/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.sixthform.info/maths' target='_blank'>
+Mathematics Weblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.sixthform.info/maths/?p=166' target='_blank'>
+A Levels</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://structlearn.blogspot.com/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://structlearn.blogspot.com/' target='_blank'>
+Structured Learning</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://structlearn.blogspot.com/2007/07/corrections-to-acl-anthology-urls.html' target='_blank'>
+Corrections to ACL Anthology URLs</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://ciir.cs.umass.edu/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ciir.cs.umass.edu/~fdiaz/irblog' target='_blank'>
+Information Retrieval</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://ciir.cs.umass.edu/~fdiaz/irblog/?p=27' target='_blank'>
+&#8220;Data Catalysis: Facilitating Large-Scale Natural Language Data Processing&#8221;</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://mehve.org/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mehve.org/ywml/index.html' target='_blank'>
+yw's machine learning blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://mehve.org/ywml/2007/04/acl-accepted-papers-up.html' target='_blank'>
+ACL Accepted Papers Up</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://sixthform.info/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://sixthform.info/maths/index.php' target='_blank'>
+Mathematics Weblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://sixthform.info/maths/index.php?p=1&c=1' target='_blank'>
+GIMPS</a>
+</span>
+<div class='item-time'>
+7 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='https://www.lists.utah.edu/favicon.ico?count=20&for=10'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://www.lists.utah.edu/wws/rss/latest_d_read/mstatbiostat?count=20&for=10' target='_blank'>
+mstatbiostat :</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+</span>
+<div class='item-time'>
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<input type='hidden' value='http://groundtruth.info/favicon.ico'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://groundtruth.info/AstroStat/slog/' target='_blank'>
+http://groundtruth.info/AstroStat/slog/</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+</span>
+<div class='item-time'>
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=19803222&widgetType=BlogList&widgetId=BlogList1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogList1"));' target='configBlogList1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2011-01-01T00%3A00%3A00-07%3A00&updated-max=2012-01-01T00%3A00%3A00-07%3A00&max-results=6'>2011</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2011_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2011/03/postdoc-position-at-clip-umd.html'>Postdoc Position at CLIP (@UMD)</a></li>
+<li><a href='http://nlpers.blogspot.com/2011/03/some-thoughts-on-supplementary.html'>Some thoughts on supplementary materials</a></li>
+<li><a href='http://nlpers.blogspot.com/2011/03/grad-school-survey-revisited.html'>Grad school survey, revisited</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2011_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2011/02/what-are-your-plans-between-acl-and.html'>What are your plans between ACL and ICML?</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2011_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2011/01/parsing-with-transformations.html'>Parsing with Transformations</a></li>
+<li><a href='http://nlpers.blogspot.com/2011/01/nips-2010-retrospective.html'>NIPS 2010 Retrospective</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2010-01-01T00%3A00%3A00-07%3A00&updated-max=2011-01-01T00%3A00%3A00-07%3A00&max-results=29'>2010</a>
+<span class='post-count' dir='ltr'>(29)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/11/crowdsourcing-workshop-tutorial.html'>Crowdsourcing workshop (/tutorial) decisions</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/11/managing-group-papers.html'>Managing group papers</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/10/comparing-bounds.html'>Comparing Bounds</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/10/my-giant-reviewing-error.html'>My Giant Reviewing Error</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/09/acl-icml-symposium.html'>ACL / ICML Symposium?</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/09/very-sad-news.html'>Very sad news....</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/09/aistats-2011-call-for-papers.html'>AIStats 2011 Call for Papers</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/09/manifold-assumption-versus-margin.html'>Manifold Assumption versus Margin Assumption</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/08/online-learning-algorithms-that-work.html'>Online Learning Algorithms that Work Harder</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/08/calibrating-reviews-and-ratings.html'>Calibrating Reviews and Ratings</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/08/finite-state-nlp-with-unlabeled-data-on.html'>Finite State NLP with Unlabeled Data on Both Sides...</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/08/readers-kill-blogs.html'>Readers kill blogs?</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/08/multi-task-learning-should-our.html'>Multi-task learning: should our hypothesis classes...</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/08/why-discourse-structure.html'>Why Discourse Structure?</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/07/acl-2010-retrospective.html'>ACL 2010 Retrospective</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/06/icml-2010-retrospective.html'>ICML 2010 Retrospective</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/06/naacl-2010-retrospective.html'>NAACL 2010 Retrospective</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(5)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/04/graduating-want-post-doc-let-nsf-pay.html'>Graduating?  Want a post-doc?  Let NSF pay!</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/04/b-and-not-b-not.html'>((A =&gt; B) and (not B)) =&gt; (not A)</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/04/how-i-teach-machine-learning.html'>How I teach machine learning</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/04/when-maximum-likelihood-doesnt-make.html'>When Maximum Likelihood Doesn&#39;t Make Sense</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/04/classification-weirdness-regression.html'>Classification weirdness, regression simplicity</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/02/google-5gram-corpus-has-unreasonable.html'>Google 5gram corpus has unreasonable 5grams</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/02/senses-versus-metaphors.html'>Senses versus metaphors</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/02/blog-heads-east.html'>Blog heads east</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2010_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2010/01/coordinate-ascent-and-inverted-indices.html'>Coordinate ascent and inverted indices...</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/01/machine-learners-apology.html'>A machine learner&#39;s apology</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/01/interviewing-follies.html'>Interviewing Follies</a></li>
+<li><a href='http://nlpers.blogspot.com/2010/01/arxiv-and-nlp-ml-and-computer-science.html'>ArXiV and NLP, ML and Computer Science</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2009-01-01T00%3A00%3A00-07%3A00&updated-max=2010-01-01T00%3A00%3A00-07%3A00&max-results=34'>2009</a>
+<span class='post-count' dir='ltr'>(34)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/12/some-random-nips-thoughts.html'>Some random NIPS thoughts...</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/12/from-kivenenwarmuth-and-eg-to-cw.html'>From Kivenen/Warmuth and EG to CW learning and Ada...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/11/k-means-vs-gmm-sum-product-vs-max.html'>K-means vs GMM, sum-product vs max-product</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/03/nlp-as-study-of-representations.html'>NLP as a study of representations</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/11/getting-started-in-bayesian-nlp.html'>Getting Started In: Bayesian NLP</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/10/convex-or-not-my-schizophrenic.html'>Convex or not, my schizophrenic personality</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/09/some-notes-on-job-search.html'>Some notes on job search</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/09/where-did-you-apply-to-grad-school.html'>Where did you Apply to Grad School?</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/09/acl-and-emnlp-retrospective-many-days.html'>ACL and EMNLP retrospective, many days late</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/08/classifier-performance-alternative.html'>Classifier performance: alternative metrics of suc...</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/08/acs-machine-translation-papers-at-emnlp.html'>ACS: Machine Translation Papers at EMNLP</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/08/destination-singapore.html'>Destination: Singapore</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/07/non-parametric-as-memorizing-in-exactly.html'>Non-parametric as memorizing, in exactly the wrong...</a></li>
+<li><a href='http://nlpers.blogspot.com/2009/07/small-changes-beget-good-or-bad.html'>Small changes beget good or bad examples?</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2009/06/icmlcoltuai-2009-retrospective.html'>ICML/COLT/UAI 2009 retrospective</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2009_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2008-01-01T00%3A00%3A00-07%3A00&updated-max=2009-01-01T00%3A00%3A00-07%3A00&max-results=37'>2008</a>
+<span class='post-count' dir='ltr'>(37)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2008_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2007-01-01T00%3A00%3A00-07%3A00&updated-max=2008-01-01T00%3A00%3A00-07%3A00&max-results=50'>2007</a>
+<span class='post-count' dir='ltr'>(58)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2007_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(7)</span>
+<ul class='posts'>
+<li><a href='http://nlpers.blogspot.com/2007/01/good-news-on-acl-reviews.html'>Good News on ACL Reviews</a></li>
+<li><a href='http://nlpers.blogspot.com/2007/01/error-analysis.html'>Error Analysis</a></li>
+<li><a href='http://nlpers.blogspot.com/2007/01/comments-on-mark-up-barking-up-wrong.html'>Comments on: Mark-up Barking Up the Wrong Tree</a></li>
+<li><a href='http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html'>Survey of Parser Usage</a></li>
+<li><a href='http://nlpers.blogspot.com/2007/01/what-irks-me-about-e-mail-customer.html'>What Irks Me about E-mail Customer Service</a></li>
+<li><a href='http://nlpers.blogspot.com/2007/01/naacl-accepted-papers.html'>NAACL Accepted Papers</a></li>
+<li><a href='http://nlpers.blogspot.com/2007/01/learning-when-test-and-train-inputs.html'>Learning when test and train inputs have different...</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2006-01-01T00%3A00%3A00-07%3A00&updated-max=2007-01-01T00%3A00%3A00-07%3A00&max-results=50'>2006</a>
+<span class='post-count' dir='ltr'>(78)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2006_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/search?updated-min=2005-01-01T00%3A00%3A00-07%3A00&updated-max=2006-01-01T00%3A00%3A00-07%3A00&max-results=6'>2005</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://nlpers.blogspot.com/2005_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=19803222&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div id='footer-wrapper'>
+<div class='footer section' id='footer'><div class='widget HTML' id='HTML1'>
+<div class='widget-content'>
+<script src="http://s17.sitemeter.com/js/counter.js?site=s17nlers" type="text/javascript">
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=19803222&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/1019049897-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '19803222';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=19803222','http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html','19803222');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=19803222','APq4FmBEgZHqCdN67A6p1uGSyrPQAdVgNv00lom6CcrWb93CbET-C7LDJ2czpEcGAniJG1V6kSNACxcBSJUIxhW_rKWKMzmdyg==','AOuZoY7rMp66DXWZW7vvAP2io4eqtwn5JA:1301852553302');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'natural language processing blog', 'pageType': 'item', 'url': 'http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html', 'canonicalUrl': 'http://nlpers.blogspot.com/2007/01/survey-of-parser-usage.html', 'homepageUrl': 'http://nlpers.blogspot.com/', 'faviconUrl': 'http://www.blogger.com/favicon.ico', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Survey of Parser Usage', 'pageTitle': 'natural language processing blog: Survey of Parser Usage', 'encoding': 'UTF-8', 'locale': 'en-US', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42natural language processing blog - Atom\42 href\75\42http://nlpers.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42natural language processing blog - RSS\42 href\75\42http://nlpers.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42natural language processing blog - Atom\42 href\75\42http://www.blogger.com/feeds/19803222/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\07519803222\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42natural language processing blog - Atom\42 href\75\42http://nlpers.blogspot.com/feeds/3004609946111119179/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(d,i,e){e\75e!\75undefined?e:(new Date).getTime();this.t[d]\75[e,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;if(a.chrome\46\46a.chrome.csi)g\75Math.floor(a.chrome.csi().pageT);if(g\75\75null)if(a.gtbExternal)g\75a.gtbExternal.pageT();if(g\75\75null)if(a.external)g\75a.external.pageT;if(g)a.jstiming.pt\75g}catch(h){};a.tickAboveFold\75function(b){var d\0750;if(b.offsetParent){do d+\75b.offsetTop;while(b\75b.offsetParent)}b\75d;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){if(!j){j\75true;a.jstiming.load.tick(\42firstScrollTime\42)}}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': ''}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'footer', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogListView', new _WidgetInfo('BlogList1', 'sidebar', null, document.getElementById('BlogList1'), {'numItemsToShow': 0, 'totalItems': 46}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '3004609946111119179', 'lightboxEnabled': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

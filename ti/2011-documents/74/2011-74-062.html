@@ -1,0 +1,995 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="icon" type="image/ico" href="//awsmedia.s3.amazonaws.com/favicon.ico">
+  <link rel="shortcut icon" type="image/ico" href="//awsmedia.s3.amazonaws.com/favicon.ico">
+  <meta name="description" content="Amazon Mechanical Turk enables companies to access thousands of global workers on demand and programmatically integrate their work into various business processes. " /><meta name="keywords" content="Amazon Web Services, AWS, S3, EC2, Amazon Simple Storage Service, Amazon Elastic Compute Cloud, Cloud Computing, Web Hosting, Grid Computing, Utility Computing, Amazon Mechanical Turk, Simple Queue Service, SimpleDB, Flexible Payments Service, Amazon Payments, DevPay, Alexa, Developer Forum, AWS User Group, Developer Tools, APIs, Web Application Development" />
+
+  <title>Amazon Mechanical Turk</title>
+
+  
+
+  <link rel="stylesheet" href="/css/screen_1.css" type="text/css" />
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" href="/css/awsGlobalNav2IE6.css" type="text/css" />
+    <link rel="stylesheet" href="/css/documentationIE6.css" type="text/css" />
+  <![endif]-->
+
+  
+
+  <script src="/js/all_1.js" type="text/javascript"></script>
+
+  <script src="/js/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+  _udn="amazon.com";
+  urchinTracker();
+</script>
+
+</head>
+
+<body id="top" class="yui-skin-sam">
+  
+  <!-- layout _210_left -->
+  <div id="doc4" class="yui-t2">
+    <div id="hd">
+
+
+
+
+
+
+
+
+  <!-- header -->
+<div id="mainNav" class="withSearch">
+  <a href="/">
+    <img src="//awsmedia.s3.amazonaws.com/logo_aws.gif"
+         id="awsHeaderLogo"
+         width="164"
+         height="60"
+         alt="Amazon Web Services">
+  </a>
+
+  <div id="globalTopLinks">
+    <a href="https://console.aws.amazon.com/s3/home"
+       class="signIn"><img src="//awsmedia.s3.amazonaws.com/globalNav/img/laptop-icon-16x13.png"
+                           width="16"
+                           height="13"
+                           alt=""><span>Sign in to the AWS Management Console</span></a>
+    <a href="https://aws-portal.amazon.com/gp/aws/developer/registration/index.html"
+       class="create"><img src="//awsmedia.s3.amazonaws.com/globalNav/img/aws-box-13x13.png"
+                           width="13"
+                           height="13"
+                           alt=""><span>Create an AWS Account</span></a>
+  </div>
+
+  <div id="globalSearch">
+    <form method="get" action="/search">
+      <div class="liner">
+        <label>Search:</label>
+        <input type="hidden" name="searchPath" value="all">
+        <div class="buttonInput">
+          <input type="text" name="searchQuery" class="query input">
+          <input class="submit" type="image" src="//awsmedia.s3.amazonaws.com/globalNav/search-submit-23x23.png" width="23" height="23" alt="Go">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <ul id="tabs">
+    <li class="first tab" id="awsTab">
+      <div class="liner">
+        <span class="icon"></span><a href="/about-aws/">AWS</a>
+      </div>
+    </li>
+    <li class="tab" id="productsTab">
+      <div class="liner">
+        <span class="icon"></span><a href="/products/">Products</a>
+      </div>
+    </li>
+    <li class="tab" id="developersTab">
+      <div class="liner">
+        <span class="icon"></span><a href="/resources/">Developers</a>
+      </div>
+    </li>
+    <li class="tab" id="communityTab">
+      <div class="liner">
+        <span class="icon"></span><a href="/resources/">Community</a>
+      </div>
+    </li>
+    <li class="tab" id="supportTab">
+      <div class="liner">
+        <span class="icon"></span><a href="http://developer.amazonwebservices.com/connect/support.jspa">Support</a>
+      </div>
+    </li>
+    <li class="last tab" id="accountTab">
+      <div class="liner">
+        <span class="icon"></span><a href="/account/">Account</a>
+      </div>
+    </li>
+  </ul>
+
+  <div class="flyout">
+    <div class="liner">
+      <div class="content"></div>
+      <a href="#" class="close">
+        close <img src="//awsmedia.s3.amazonaws.com/globalNav/img/close-14x14.png" height="14" width="14" alt="">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+<noscript>
+  
+</noscript>
+
+
+<script type="text/javascript">
+  if ( ! window.AWSGlobalNav ) {
+      AWSGlobalNav = {};
+  }
+
+  // This has to be set early (before the onload handlers execute)
+  AWSGlobalNav.acceptLanguage = '';
+
+
+  jQuery(function($) {
+      $.extend(AWSGlobalNav, {
+          tabContentBaseURL: '//aws.amazon.com',
+          smartLanguageChange: true
+      });
+  });
+</script>
+
+
+<!-- /header -->
+
+
+</div> 
+    <div id="bd">
+  <!-- layout product_detail -->
+  <div id="yui-main" style="line-height:1.5em;">
+    <div class="yui-b">
+      <h1 class="title">Amazon Mechanical Turk <sup><span style="font-size:90%; color:#888;">(beta)</span></sup></h1>
+
+<div class="yui-gc"> 
+<div class="yui-u first">
+<div class="bordrt">
+
+	<p>Amazon Mechanical Turk is a marketplace for work that requires human intelligence. The Mechanical Turk web service enables companies to programmatically access this marketplace and a diverse, on-demand workforce. Developers can leverage this service to build human intelligence directly into their applications.</p>
+
+
+	<p>While computing technology continues to improve, there are still many things that human beings can do much more effectively than computers, such as identifying objects in a photo or video, performing data de-duplication, transcribing audio recordings or researching data details. Traditionally, tasks like this have been accomplished by hiring a large temporary workforce (which is time consuming, expensive and difficult to scale) or have gone undone.</p>
+
+
+	<p>Mechanical Turk aims to make accessing human intelligence simple, scalable, and cost-effective. Businesses or developers needing tasks done (called Human Intelligence Tasks or &#8220;HITs&#8221;) can use the robust Mechanical Turk APIs to access thousands of high quality, low cost, global, on-demand workers&#8212;and then programmatically integrate the results of that work directly into their business processes and systems. Mechanical Turk enables developers and businesses to achieve their goals more quickly and at a lower cost than was previously possible.</p>
+
+
+</div>
+<br>
+</div>
+<div class="yui-u" style="align: top;">
+<div style="padding-left:5px;">   
+<span class="product_highlights">Sign Up for Amazon Mechanical Turk</span>
+<br><br>
+
+	<p>Keep these steps handy as you sign up for Amazon Mechanical Turk:</p>
+
+
+<ol class="txt90">
+<li> <a href="https://aws-portal.amazon.com/gp/aws/developer/registration/index.html">Create an <span class="caps">AWS</span> Account</a><br/><br/>
+<li> Register as a Requester at <a href="http://requester.mturk.amazon.com">requester.mturk.amazon.com</a> to begin building with the Amazon Mechanical Turk web service<br/><br/>
+<li> Before creating a <span class="caps">HIT</span>, buy Prepaid Mechanical Turk HITs at <a href="http://requester.mturk.amazon.com">requester.mturk.amazon.com</a>
+</ol>
+
+</div>
+</div>
+</div>
+
+      <hr class="mar_top_10"> 
+
+      <div class="mar_top_10">
+  This page contains the following categories of information.  Click to jump down:
+</div>
+
+<div class="yui-g">
+  <div class="yui-u first arrow_bullets">
+    <ul>
+      
+        <li><a href="#functionality">Amazon Mechanical Turk Functionality</a>
+      
+      
+        <li><a href="#highlights">Service Highlights</a>
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="#pricing">Pricing</a>
+      
+      
+      
+      
+      
+        <li><a href="#bus-case">Sample Business Cases</a>
+      
+    </ul>
+  </div>
+  <div class="yui-u arrow_bullets">
+    <ul>
+      
+      
+      
+        <li><a href="#resources">Resources</a>
+      
+      
+        <li><a href="#details">Detailed Description</a>
+      
+      
+      
+      
+      
+        <li><a href="#legal">Intended Usage and Restrictions</a>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div class="bullet_indent underline" style="padding-top:6px;">    
+        
+          <hr />
+          <h1 id="functionality">Amazon Mechanical Turk Functionality</h1>
+          <p>Mechanical Turk offers access to a virtual community of workers that are available to help you accomplish your business goals. A robust set of APIs and command line tools enable you to programmatically distribute tasks that require human intelligence to a widely distributed, on-demand workforce.</p>
+
+
+	<p>Mechanical Turk allows you to:</p>
+
+
+	<ul>
+	<li>Define your HITs, including the specific output desired, the format of the output, how you display your work items and how much you will pay to have them completed.</li>
+		<li>Load millions of HITs into the marketplace to be completed.</li>
+		<li>Qualify your workforce: if special skills are required to complete your tasks, you can require that workers pass a qualification test before they are allowed to work on your HITs. Alternately, you can require that a worker has historically completed a minimum percentage of their tasks correctly or a minimum number of previous HITs in order to qualify for your <span class="caps">HIT</span>.</li>
+		<li>Only pay for quality work. Once your work items have been completed, you have the ability to review the results and accept or reject them. You only pay for accepted work.</li>
+		<li>Retrieve the results. Using the web services APIs, developers can retrieve the results and integrate them directly into their applications.</li>
+	</ul>
+
+
+<div class="no-underline">
+
+	<p style="text-align:right;"><a href="#top"><span class="orangedk bold txt110">&uarr;</span> Top</a></p>
+
+
+</div>
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+          <hr />
+          <h1 id="highlights">Service Highlights</h1>
+          <h2>On-Demand Workforce</h2>
+
+
+	<p>Amazon Mechanical Turk provides access to a marketplace of workers whenever your business needs them. Mechanical Turk can connect you to a variety of skill sets and capabilities via a global workforce that can help you to complete your work whenever and wherever you need it.</p>
+
+
+	<h2>Elastic Workforce</h2>
+
+
+	<p>One of the difficulties that businesses face is dealing with demand spikes for certain types of work. You may have one million images that need to be tagged today, or 100,000 new catalog entries that need to be validated, but only have that need once per month. Amazon Mechanical Turk allows you to get that work done easily when you need it, without the difficulty associated with dynamically scaling your in-house workforce.</p>
+
+
+	<h2>Quality Management Tools</h2>
+
+
+	<p>Amazon Mechanical Turk provides several mechanisms to help you ensure the quality of the work you receive. In addition to worker qualifications, plurality is another mechanism to help developers maintain high quality levels. This functionality enables multiple workers to submit answers to the same <span class="caps">HIT</span>. When a specific number of workers reply back with the same answer, the <span class="caps">HIT</span> is automatically approved. Additionally, you only pay for what you deem to be good results; if the output is not up to par you simply reject the work and do not pay the worker.</p>
+
+
+	<h2>Lower Cost Structure</h2>
+
+
+	<p>The overhead and fixed costs associated with hiring and managing a temporary workforce can often be significant. By leveraging the skills of on-demand workers from around the world, you can significantly lower costs while achieving results that might not have even been possible with just a dedicated team.</p>
+
+
+	<h2>Enabling New Businesses</h2>
+
+
+	<p>Amazon Mechanical Turk enables developers to create applications that were previously not possible. From search results enhanced with human input, to automated image identification, to distributed content creation, to podcast-to-text transcription, companies are relying on human intelligence and Amazon Mechanical Turk to power a whole new class of applications.</p>
+
+
+<div class="no-underline">
+
+	<p style="text-align:right;"><a href="#top"><span class="orangedk bold txt110">&uarr;</span> Top</a></p>
+
+
+</div>
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div> 
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+          <hr />
+          <h1 id="pricing">Pricing</h1>
+          <ul>
+	<li>Pay only for what you use, there is no minimum or up-front fee</li>
+		<li>Amazon Mechanical Turk collects a 10% commission on top of the amount you (the &#8220;Requester&#8221;) have paid someone to complete your Human Intelligence Tasks (&#8220;HITs&#8221;). The minimum commission charge is $0.005 per <span class="caps">HIT</span>.</li>
+	</ul>
+
+
+<div class="no-underline">
+
+	<p style="text-align:right;"><a href="#top"><span class="orangedk bold txt110">&uarr;</span> Top</a></p>
+
+
+</div>
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+          <hr />
+          <h1 id="bus-case">Sample Business Cases</h1>
+          <p>In order to see how Mechanical Turk might benefit your business, it is helpful to see how others have leveraged the service.</p>
+
+
+	<h2>Photo / Video Processing</h2>
+
+
+	<p>Amazon Mechanical Turk is well-suited for processing images. While difficult for computers, it is a task that is extremely easy for people to do. In the past, companies have used Mechanical Turk to:</p>
+
+
+	<ul>
+	<li>Tag objects found in an image for easier searching / advertising targeting</li>
+		<li>Select from a set of images the best picture to represent a product</li>
+		<li>Audit user-uploaded images for inappropriate content</li>
+		<li>Classify objects found in satellite imagery</li>
+	</ul>
+
+
+	<h2>Data Verification / Clean-up</h2>
+
+
+	<p>Companies with large online directories or catalogs are using Mechanical Turk to identify duplicate entries and verify item details. Examples of this have included:</p>
+
+
+	<ul>
+	<li>De-duplication of yellow pages directory listings</li>
+		<li>Identification of duplicate products in an online product catalog</li>
+		<li>Verify restaurant details such as phone number or hours of operation</li>
+	</ul>
+
+
+	<h2>Information Gathering</h2>
+
+
+	<p>The diversification and the scale of the Mechanical Turk workforce allow you to gather a breadth of information that would be almost impossible to do otherwise such as:</p>
+
+
+	<ul>
+	<li>Allowing people to ask questions from a computer or mobile device about any topic and have workers return results to those questions</li>
+		<li>Filling out survey data on a variety of topics</li>
+		<li>Writing reviews, descriptions and blog entries for websites</li>
+		<li>Finding specific fields or data elements in large legal and government documents</li>
+	</ul>
+
+
+	<h2>Data Processing</h2>
+
+
+	<p>The following are examples of companies taking advantage of the power of the Mechanical Turk workforce to understand and intelligently respond to different types of data:</p>
+
+
+	<ul>
+	<li>Podcast editing and transcription</li>
+		<li>Human powered translation services</li>
+		<li>Rating the accuracy of results for a search engine</li>
+	</ul>
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+          <hr />
+          <h1 id="resources">Resources</h1>
+          <div class="yui-g">
+<div class="yui-u first" style="width:49%;">
+<div class="resources_section">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="padding_margin_zero">Developer Resources</td>
+    <td class="padding_margin_zero no-underline" style="font-size:65%;" valign="bottom"><div align="right"><img src="//awsmedia.s3.amazonaws.com/orange_carat_2.png" alt="" /> <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=7">view all</a></div></td>
+  </tr>
+</table>
+</div>
+
+	<ul>
+	<li><a href="http://mechanicalturk.amazonaws.com/AWSMechanicalTurk/AWSMechanicalTurkRequester.wsdl"><span class="caps">WSDL</span></a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=28">Documentation</a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=27">Release Notes</a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=24">Sample Code &#38; Libraries</a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=121">SDKs</a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=25">Developer Tools</a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=56">Articles &#38; Tutorials</a></li>
+		<li><a href="http://developer.amazonwebservices.com/connect/forum.jspa?forumID=11">Community Forum</a></li>
+		<li><a href="http://sandbox.mturk.com/">Mechanical Turk Sandbox</a></li>
+	</ul>
+
+
+</div>
+
+<div class="yui-u">
+<div class="resources_section">Additional Product Information</div>
+
+	<ul>
+	<li><a href="/mturk/faqs/">FAQs</a></li>
+		<li><a href="http://requester.mturk.com/mturk/welcome">Requester Web Site</a></li>
+		<li><a href="/agreement">Amazon Web Services Customer Agreement</a></li>
+		<li><a href="http://www.mturk.com/mturk/conditionsofuse">Amazon Mechanical Turk Participant Agreement</a></li>
+		<li><a href="http://status.aws.amazon.com/">Service Health Dashboard</a></li>
+	</ul>
+
+
+</div>
+</div>
+<div class="no-underline">
+
+	<p style="text-align:right;"><a href="#top"><span class="orangedk bold txt110">&uarr;</span> Top</a></p>
+
+
+</div>
+        
+      </div>
+      <div class="bullet_indent underline">    
+        
+          <hr />
+          <h1 id="details">Detailed Description</h1>
+          <p>One of the best ways to understand Amazon Mechanical Turk is to submit a <span class="caps">HIT</span> and see what the experience is like. Visit the Amazon Mechanical Turk web site, <a href="http://requester.mturk.com">http://requester.mturk.com</a> and try it out for yourself.</p>
+
+
+	<h2>Defining HITs</h2>
+
+
+	<p>How a <span class="caps">HIT</span> is defined is critical to ensuring you get exactly the information you are seeking at the lowest price. Workers tend to gravitate to HITs that are interesting, straightforward to complete, and provide clear guidance on what they are expected to do. The easier you can make it for workers to complete your <span class="caps">HIT</span>, the faster your work will be completed, and the less you will likely need to pay. HITs that are constructed well have very clear questions and instructions. They communicate exactly how the question should be answered and the components that are expected as part of the response. Sample responses can be helpful as well in communicating to the worker exactly the type of response you are looking for.</p>
+
+
+	<h2>Determining Your Price</h2>
+
+
+	<p>It is important to keep in mind the dynamics of a marketplace when defining your tasks. Mechanical Turk brings together a pool of workers and companies that need work completed. Workers are free to work on the tasks they find most interesting, the tasks they enjoy completing or the tasks that pay the most. You may choose to offer higher rates for certain high priority tasks in order to attract more workers and increase throughput, while you pay less when you have more flexibility with regard to when it is completed.</p>
+
+
+	<h2>Submitting <span class="caps">HITS</span></h2>
+
+
+	<p>HITs can be submitted either through a simple online interface if you want to get started quickly, or by using the Mechanical Turk web services <span class="caps">API</span> or the command line tools if you have a large volume of work. When you submit a <span class="caps">HIT</span>, you will need to specify how long workers have to complete the work, how many people you want to complete each task, how much you will pay for the work, and specific details around what work you want completed.</p>
+
+
+	<h2>Qualifying Your Workforce</h2>
+
+
+	<p>Mechanical Turk offers the ability to first qualify workers before they are allowed to work on your tasks. Qualifications can consist of a short series of questions or sample tasks that you ask the workers to complete. You can also require that workers have historically answered a minimum percentage of their submitted HITs correctly. There are several reasons why you might want to qualify workers. Your tasks might require a very specific skill set such as language translation or a particular demographic profile such as only workers that live in Los Angeles. You may also want to use the qualification as a mechanism to &#8220;train&#8221; your workforce. By requiring workers to go through a quick test, you can show them how you would like your work to be completed and illustrate the kind of responses you expect.</p>
+
+
+	<h2>Retrieving and Approving the Work</h2>
+
+
+	<p>Once your HITs have been completed, they will be available for you via several mechanisms. You can log on to the Mechanical Turk website and view the submitted work. Additionally, you can download all of your completed work via the web services APIs. After you have received the results and have verified the quality of the work, you can approve the work and submit payment to the workers.</p>
+
+
+	<h2>Paying for Completed Work</h2>
+
+
+	<p>Payments for completed HITs are managed by Amazon Payments. Before you can submit HITs to the Amazon Mechanical Turk marketplace, you need to prepay for them with a credit card, bank account, or Amazon Payments account balance. The amount associated with the <span class="caps">HIT</span> (price and bonus), along with the commission charged by Amazon Mechanical Turk, is automatically deducted from your Prepaid <span class="caps">HIT</span> balance when you approve a <span class="caps">HIT</span> result and the worker is paid.</p>
+
+
+	<h2>Developer Tools and Resources</h2>
+
+
+	<p>Amazon Mechanical Turk provides tools and resources to help developers learn more about the service and be more productive. This includes code samples, libraries, tutorials, technical documentation and release notes. Find them in our <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=7">Resource Center</a>.</p>
+
+
+<div class="no-underline">
+
+	<p style="text-align:right;"><a href="#top"><span class="orangedk bold txt110">&uarr;</span> Top</a></p>
+
+
+</div>
+        
+      </div>
+      <div class="bullet_indent underline" style="padding-top:6px;">    
+        
+      </div>
+      <div class="bullet_indent underline" style="padding-top:6px;">    
+        
+      </div>
+      <div class="bullet_indent underline" style="padding-top:6px;">    
+        
+      </div>
+      <div class="bullet_indent underline" style="padding-top:6px;">    
+        
+          <hr />
+          <h1 id="legal">Intended Usage and Restrictions</h1>
+          <ul>
+	<li>Please see the <a href="/agreement">Amazon Web Services Licensing Agreement</a> for more details.</li>
+		<li>See the <a href="http://www.mturk.com/mturk/conditionsofuse">Amazon Mechanical Turk Participant Agreement</a> on the mturk.com web site for additional, service-specific terms.</li>
+	</ul>
+
+
+<div class="no-underline">
+
+	<p style="text-align:right;"><a href="#top"><span class="orangedk bold txt110">&uarr;</span> Top</a></p>
+
+
+</div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="yui-b">
+    <div id="sideNav">
+      <div id="subNavA">
+  
+
+
+
+
+
+
+
+
+  
+  <div id="subPageSelector" class="products">
+    <div id="subPageComboButton"></div>
+    <div class="flyout">
+      <div class="liner">
+        
+  <div class="col1">
+  <h4>Compute</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/ec2/" class="">
+      Amazon Elastic Compute Cloud <span class="norm">(EC2)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/elasticmapreduce/" class="">
+      Amazon Elastic MapReduce
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/autoscaling/" class="">
+      Auto Scaling
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Content Delivery</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/cloudfront/" class="">
+      Amazon CloudFront
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Database</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/simpledb/" class="">
+      Amazon SimpleDB
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/rds/" class="">
+      Amazon Relational Database Service <span class="norm">(RDS)</span>
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Deployment & Management</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/elasticbeanstalk/" class="">
+      AWS Elastic Beanstalk
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>E-Commerce</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/fws/" class="">
+      Amazon Fulfillment Web Service (FWS)
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Messaging</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/sqs/" class="">
+      Amazon Simple Queue Service <span class="norm">(SQS)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/sns/" class="">
+      Amazon Simple Notification Service <span class="norm">(SNS)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/ses/" class="">
+      Amazon Simple Email Service <span class="norm">(SES)</span>
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Monitoring</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/cloudwatch/" class="">
+      Amazon CloudWatch
+    </a>
+      </li>
+    
+  
+      </ul>
+</div>
+
+<div class="col2">
+  <h4>Networking</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/route53/" class="">
+      Amazon Route 53
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/vpc/" class="">
+      Amazon Virtual Private Cloud <span class="norm">(VPC)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/elasticloadbalancing/" class="">
+      Elastic Load Balancing
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Payments &amp; Billing</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/fps/" class="">
+      Amazon Flexible Payments Service <span class="norm">(FPS)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/devpay/" class="">
+      Amazon DevPay
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Storage</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/s3/" class="">
+      Amazon Simple Storage Service <span class="norm">(S3)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/ebs/" class="">
+      Amazon Elastic Block Storage <span class="norm">(EBS)</span>
+    </a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/importexport/" class="">
+      AWS Import/Export
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Support</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/premiumsupport/" class="">
+      AWS Premium Support
+    </a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Web Traffic</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/awis/" class="">Alexa Web Information Service</a>
+      </li>
+    
+    
+      <li class="">
+        <a href="/alexatopsites/" class="">Alexa Top Sites</a>
+      </li>
+    
+  
+      </ul>
+
+  <h4>Workforce</h4>
+  <ul class="">
+        
+    
+      <li class="">
+        <a href="/mturk/" class="selected">
+      Amazon Mechanical Turk
+    </a>
+      </li>
+    
+  
+      </ul>
+</div>
+
+
+      </div>
+    </div>
+    <a href="/products/" class="noScript">Products &amp; Services</a>
+  </div>
+   
+
+
+
+  
+    <div class="decoratedBox ">
+      <div class="head">
+        <h4>Mechanical Turk</h4>
+      </div>
+      <div class="body">
+        <div class="liner">
+          
+    <ul class="">
+        
+      
+      <li class="">
+        <a href="/mturk/" class="selected">MTurk Overview</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="/mturk/faqs/" class="">FAQs</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="http://mturk.amazon.com/" class="">MTurk Website</a>
+      </li>
+    
+      
+      <li class="last">
+        <a href="http://sandbox.mturk.com/" class="">MTurk Sandbox</a>
+      </li>
+    
+    
+      </ul>
+  
+        </div>
+      </div>
+    </div>
+    
+
+</div>
+<div id="subNavB">
+  
+    <div class="decoratedBox ">
+      <div class="head">
+        <h4>Developer Resources</h4>
+      </div>
+      <div class="body">
+        <div class="liner">
+          
+    <ul class="">
+        
+      
+      <li class="">
+        <a href="/documentation/mturk/" class="">Documentation</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=27" class="">Release Notes</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=24" class="">Sample Code & Libraries</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=121" class="">SDKs</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=25" class="">Developer Tools</a>
+      </li>
+    
+      
+      <li class="">
+        <a href="http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=56" class="">Articles & Tutorials</a>
+      </li>
+    
+      
+      <li class="last">
+        <a href="http://developer.amazonwebservices.com/connect/forum.jspa?forumID=11" class="">Community Forum</a>
+      </li>
+    
+    
+      </ul>
+  
+        </div>
+      </div>
+    </div>
+    
+
+</div><br><br><br><br>
+
+<div class="case_studies_box">
+<div class="case_studies_header"><span class="case_studies_header_font">Webinar: Intro to Mechanical Turk for <span class="caps">AWS</span> Solution Providers</span></div>
+<div class="case_studies_body_text padtop10">Attend this March 4 webinar to learn how to create innovative solutions and drive revenue with Amazon Mechanical Turk.</div>
+<div class="carat_bullet padbot10"><ul><li><a href="https://www2.gotomeeting.com/register/475358250%20target=_blank"><strong>Register today</strong></a></li></ul></div>
+</div>
+
+	<p><br>
+<br></p>
+
+
+<div class="case_studies_box">
+<div class="case_studies_header"><span class="case_studies_header_font">Mechanical Turk Sandbox</span></div>
+<div class="case_studies_body_text padtop10">Create and test your <span class="caps">HIT</span> requests before they go live in the Mechanical Turk Developer Sandbox.</div>
+<div class="carat_bullet padbot10"><ul><li><a href="http://sandbox.mturk.com/">Learn more at <strong>sandbox.mturk.com</strong></a></li></ul></div>
+</div>
+
+	<p><br>
+<br></p>
+
+
+<div class="case_studies_box">
+<div class="case_studies_header"><span class="case_studies_header_font">Mechanical Turk Website</span></div>
+<div class="case_studies_body_text padtop10">Get results as a Requester or earn money as a Worker.</div>
+<div class="carat_bullet padbot10"><ul><li><a href="http://mturk.amazon.com/">Learn more at the Amazon Mechanical Turk web site, <strong>mturk.amazon.com</strong></a></li></ul></div>
+</div>
+    </div>
+  </div>
+
+</div>
+    <div id="ft">
+
+
+
+
+
+
+
+
+  <div style="border-top: 1px solid #ccc; margin-bottom: 12px; margin-top: 10px; padding-top: 2px;">
+  <ul class="h_bar">
+    <li class="first">
+      <a href="http://aws.typepad.com/" target="_blank"><span class="caps">AWS</span> Blog <img src="//awsmedia.s3.amazonaws.com/icon_offsite.gif" width="15" height="13" border="0" alt="This link will launch a new browser window or tab."></a>
+    </li>
+    <li><a href="http://phx.corporate-ir.net/phoenix.zhtml?c=176060&#38;p=irol-InfoReq">Press Inquiries</a></li>
+    <li><a href="/careers/">Careers at <span class="caps">AWS</span></a></li>
+    <li><a href="/contact-us/">Contact Us</a></li>
+    <li><a href="/privacy/">Privacy Policy</a></li>
+    <li><a href="/terms/">Terms of Use</a></li>
+  </ul>
+  <div class="grey666">&#169;2010, Amazon Web Services <span class="caps">LLC</span> or its affiliates. All rights reserved.</div>
+  <img src="//awsmedia.s3.amazonaws.com/awsmedia/logo_an_amazon_company.gif" width="160" height="21" vspace="8">
+</div>
+</div> 
+  </div>
+
+
+  
+</body>
+
+</html>

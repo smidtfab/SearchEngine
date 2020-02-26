@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>
+		SpeechInk : You transcribe on your time.  We pay competative rates.	</title>
+	<link href="/img/new/favicon.ico" type="image/x-icon" rel="icon" /><link href="/img/new/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link rel="stylesheet" type="text/css" href="/css/base_styles.css" /><link rel="stylesheet" type="text/css" href="/css/transcriptions.css" /><script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="/js/jquery-ui-1.7.2.custom.min.js"></script><script type="text/javascript" src="/js/jquery_si_base.js"></script><script type="text/javascript" src="/js/jquery.shortkeys.js"></script><script type="text/javascript" src="/js/menu.js"></script>
+</head>
+<body>
+
+	<div class="bodyContent">
+
+	<div class="header">
+		<div class="logo"><a href="/"><img src="/img/new/logo.png" alt="SpeechInk" /></a></div>
+			<div class="loginLogout">			
+	<div class="links">
+					<div class="login">
+				<div class="loginText">
+					<h2>Account Login</h2>
+					<p>Don't Have an Account? <a href="/users/register">Create one</a></p>
+				</div>
+				<div class="clear"></div>
+				<form id="UserLoginForm" method="post" action="/users/login"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /></fieldset><div class="input text"><input name="data[User][username]" type="text" value="Email" class="cold" onfocus="if(this.value==&quot;Email&quot;) {$(this).removeClass(&quot;cold&quot;);$(this).addClass(&quot;hot&quot;);this.value=&quot;&quot;;}" onblur="if(this.value==&quot;&quot;) {$(this).removeClass(&quot;hot&quot;);$(this).addClass(&quot;cold&quot;);this.value=&quot;Email&quot;;}" maxlength="255" id="UserUsername" /></div><div class="input password"><input type="password" name="data[User][password]" value="Password" class="cold" onfocus="if(this.value==&quot;Password&quot;) {$(this).removeClass(&quot;cold&quot;);$(this).addClass(&quot;hot&quot;);this.value=&quot;&quot;;}" onblur="if(this.value==&quot;&quot;) {$(this).removeClass(&quot;hot&quot;);$(this).addClass(&quot;cold&quot;);this.value=&quot;Password&quot;;}" id="UserPassword" /></div><input type="hidden" name="data[User][tz_offset]" value="0" id="UserTzOffset" />				<input type="submit" value="Submit"  />
+				</form>			</div>
+			</div>
+		</div>
+	</div>
+	<div class="navigation"><script type="text/javascript">
+$(document).ready(function(){
+	$("ul.topnav li a").hover(function() {
+		$(this).parent().find("ul.subnav").slideDown('fast').show();
+		$(this).parent().hover(function() {
+		}, function(event){
+			if (event.pageY < (this.offsetTop + this.offsetHeight)) {
+				$(this).parent().find("ul.subnav").slideUp('fast');
+			}
+		});
+		$(this).parent().find("ul.subnav").hover(function() {
+		}, function(){
+			$(this).parent().find("ul.subnav").slideUp('fast');
+		});
+		}).hover(function() {
+				$(this).addClass("subhover");
+			}, function(){
+				$(this).removeClass("subhover");
+			}
+	);
+});
+</script>
+
+<style type="text/css">
+		.topnav li ul.ddm {
+			margin: 40px 0 0 0;
+			padding: 0;
+			position: absolute;
+			visibility: hidden;
+			z-index: 1000;
+			background:  url("/img/new/nav_bg.png") repeat-x scroll center bottom #FFFFFF;
+            font-size: 12px;
+            text-transform: uppercase;
+            width: 200px;
+		}
+
+			.topnav li ul.ddm li {
+	            margin:0;
+	            border-top:1px solid #fff;
+	            display: block;
+	            background: url("/img/new/nav_bg.png") repeat-x scroll center bottom #FFFFFF;
+	            clear: both;
+	            height: 35px;
+			}
+
+			.topnav li ul.ddm li a {
+	            display:block;
+	            height:15px;
+	            /*padding: 10px 5px;*/
+	            padding-top: 10px;
+				padding-bottom: 10px;
+	            width: 200px;
+	            background-color: transparent;
+	            background: none;
+			}
+
+			.topnav li ul.ddm li a:hover {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				margin-bottom:0;
+			}
+</style>
+
+<ul class="topnav">
+<li ><a href="/transcribers/home">Home</a></li></ul>
+</div>
+	<div class="content">
+				<div class="contentPadded"><h2>Transcribers - Getting Started Guide</h2><h4>Step 1 - Get a Mechanical Turk Account</h4><p>SpeechInk's transcription jobs are done through Amazon's Mechanical Turk service.
+		The Mechanical Turk (MTurk) service provides a way for you to find our jobs, and a way for us
+		to pay you through your existing Amazon account. If you don't have an existing Amazon
+		account, you will need to create one.</p><p>Instructions for creating an MTurk account can be found at
+		<a href='http://aws.amazon.com/mturk' target="_new">http://aws.amazon.com/mturk</a>.</p><h4>Step 2 - Find SpeechInk Jobs on MTurk</h4><p>Your home page will always show a list of current jobs. The fastest way
+		to find jobs is to click on this list. You can also find jobs by doing a
+		a search from within <a href="https://www.mturk.com/mturk/searchbar?searchWords=SpeechInk" target="_new">Mechanical Turk</a>.</p><h4>Step 3 - Get Qualified</h4><p>Many of our jobs require certain qualifications. For example, for confidential jobs, we require
+		that you have agreed to the terms of our Confidentiality Agreement. Or for other jobs, you might need to take
+		a brief test (Rating Qualification) to show that you have mastered job requirements.</p><p>When you see a job on MTurk that you want to do, first check to see if it requires a qualification.
+	Some jobs require both a Confidentiality Qualification and a Rating Qualification. For these jobs, you will
+	see two Take Qualification Test links. To qualify for these jobs, click on the first Take Qualification Test link.
+	Review the Confidentiality Agreement and fill in the fields on the form. Then click Submit to indicate that you
+	agree to the terms of the Agreement. You will receive an email confirming your agreement. <br /> <br />
+
+	Next, you will need to qualify to do the job by taking a test or doing a practice job. You will get paid
+	for taking the test or doing the practice job! Your rating is initially zero, but you can quickly move it
+	up by taking the rating test or doing a practice job. To take the rating test, on any of our jobs, click
+	on the Take Qualification Test link. <br /> <br / >
+
+	Before taking the test or doing a practice job, review our Quick Start guide and transcription guidelines.
+	Our customers demand the highest quality from us and therefore we demand the highest quality from you. <br / > <br />
+
+	Once you submit your first job, your rating will be updated and we'll send you an email telling you your rating. It's
+	important that you click on the link in the email you receive to review our feedback on your hard work. We appreciate
+	the time and effort you put into creating high quality transcriptions.
+
+	If your rating is 80 or higher you can then do real jobs. If not, you'll need to do more practice jobs and improve
+	your rating before you can qualify to do real jobs. </p><h4>Step 4 - Get Bonused</h4><p>We rate the quality of each transcription, and use your rating to determine your bonus.
+		The better your work, the more you can make! And after each transcription, we'll send
+		you an email to show you what you did wrong.</p><h4>We Are Here To Help</h4><p>We are here to help you succeed as a transcriber. If you have questions simply email our Community Manager
+	at manager@speechink.com and we'll get back to you as soon as we can.</p></div>
+	</div>
+	<div class="clear"></div>
+	<div class="footer">
+		<div class="copyright">Copyright &copy; 2011 SpeechInk. All Rights Reserved.</div>
+		<div class="links"><ul>
+	<li><a href="/pages/privacy_policy/">Privacy Policy</a></li>
+		<li><a href="/pages/about_us/">About Us</a></li>
+			<li><a href="/transcribers/">Transcribers</a></li>
+	</ul>
+</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12495691-1");
+pageTracker._setDomainName("none");
+pageTracker._setAllowLinker(true);
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript" language="javascript">llactid=16808</script>
+<script type="text/javascript" language="javascript" src="http://t5.trackalyzer.com/trackalyze.js"></script>
+<!-- LeadFormix -->
+<a href="http://www.leadformix.com" title="Marketing Automation" onclick="window.open(this.href);return(false);">
+<script language="javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://vlog.leadformix.com/" : "http://vlog.leadformix.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "bf/bf.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://vlog.leadformix.com/" : "http://vlog.leadformix.com/");
+<!--
+bf_action_name = '';
+bf_idsite = 6649;
+bf_url = pkBaseURL+'bf/bf.php';
+setTimeout('bf_log("' + bf_action_name+'",'+ bf_idsite+',"'+ bf_url +'")',0);
+//-->
+</script></a>
+<!-- LeadFormix --><script type="text/javascript">
+var uservoiceOptions = {
+  /* required */
+  key: 'speechink',
+  host: 'speechink.uservoice.com', 
+  forum: '66093',
+  showTab: true,  
+  /* optional */
+  alignment: 'left',
+  background_color:'#06C', 
+  text_color: 'white',
+  hover_color: '#03C',
+  lang: 'en'
+};
+
+function _loadUserVoice() {
+  var s = document.createElement('script');
+  s.setAttribute('type', 'text/javascript');
+  s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js");
+  document.getElementsByTagName('head')[0].appendChild(s);
+}
+_loadSuper = window.onload;
+window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+</script></body>
+</html>

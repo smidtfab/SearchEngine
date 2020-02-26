@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>Recaptcha - question on how to use</title>
+<base href="http://www.issociate.de/board/" />
+<link rel="stylesheet" href="/board/theme/default/new.css" type="text/css" title="Default Style" />
+</head>
+<body>
+
+<div id="logo"><a href="http://www.xodox.de/" target=_blank><img src="/images/misc/xodox.gif" width=468 height=60 border=0 alt="Webhosting bei xodox"></a></div>
+<br>
+<div class="posting">
+<div class="subject"><h1>Recaptcha - question on how to use</h1></div>
+<div class="content">
+http://mailhide.recaptcha.net/protect<br />
+<br />
+In reading some of the earlier posts, someone mentioned using Recaptcha to <br />
+protect email boxes being filled with spam.<br />
+<br />
+After reading about Recaptcha, I guess I don't understand how it works / <br />
+where to use it.  Can it be used in the "mailto:" area -- for example, the <br />
+CONTACT US of this website?<br />
+<br />
+http://www.brickwallbuster.com/new/index.htm<br />
+<br />
+Thank you again,<br />
+Brenda
+</div>
+<div class="msgfooter">Brenda [ Sa, 19 Januar 2008 22:49 ] [ ID #1911939 ]</div>
+</div>
+<div class="posting">
+<div class="subject"><h1>RE: Recaptcha - question on how to use</h1></div>
+<div class="content">
+Hi Brenda,<br />
+<br />
+Go to http://mailhide.recaptcha.net/ -  and enter your email address in the <br />
+Protect Email Address field and submit.<br />
+<br />
+The resulting page will give you some HTML code [ignore the URL code] to <br />
+paste into the body of your html page where you want to display your email <br />
+address.<br />
+<br />
+Then publish your page<br />
+<br />
+Your email address will not be displayed complete - [eg hidden from spamming <br />
+robots with a few letters missing] - just click on the incomplete email link <br />
+and follow the instructions to reveal the complete email address just like <br />
+your visitors will have to do<br />
+<br />
+Regards<br />
+-- <br />
+Steve<br />
+<br />
+<br />
+<br />
+"Brenda" wrote:<br />
+<br />
+&gt; http://mailhide.recaptcha.net/protect<br />
+&gt; <br />
+&gt; In reading some of the earlier posts, someone mentioned using Recaptcha to <br />
+&gt; protect email boxes being filled with spam.<br />
+&gt; <br />
+&gt; After reading about Recaptcha, I guess I don't understand how it works / <br />
+&gt; where to use it.  Can it be used in the "mailto:" area -- for example, the <br />
+&gt; CONTACT US of this website?<br />
+&gt; <br />
+&gt; http://www.brickwallbuster.com/new/index.htm<br />
+&gt; <br />
+&gt; Thank you again,<br />
+&gt; Brenda <br />
+&gt; <br />
+&gt; <br />
+&gt;
+</div>
+<div class="msgfooter">Steve [ So, 20 Januar 2008 00:01 ] [ ID #1911944 ]</div>
+</div>
+<div class="posting">
+<div class="subject"><h1>Re: Recaptcha - question on how to use</h1></div>
+<div class="content">
+Steve,<br />
+<br />
+Thank you.  I think something like Recaptcha may *not* be what I am looking <br />
+for.<br />
+<br />
+On the website I am trying to build (http://www.brickwallbuster.com/new/)  I <br />
+have a CONTACT US.<br />
+<br />
+It's the spam that the CONTACT US will generate, that I'm trying to control. <br />
+Any thoughts on something that might work for that?<br />
+<br />
+Thank you,<br />
+Brenda
+</div>
+<div class="msgfooter">Brenda [ So, 20 Januar 2008 18:14 ] [ ID #1912399 ]</div>
+</div>
+<div class="posting">
+<div class="subject"><h1>Re: Recaptcha - question on how to use</h1></div>
+<div class="content">
+Best idea is to use a form with a server side handler written in PHP, <br />
+ASP, asp.NET - whatever your host supports.  Mailto links will always <br />
+attract spammers.  They can be obscured with JavaScript, but this may <br />
+not be a permanent solution.<br />
+See http://www.jimcosoftware.com/addins.aspx and look for Spam Spoiler, <br />
+which will add the JavaScript to the page.<br />
+<br />
+The email address shown on your pages may already be harvested, so best <br />
+to change it.<br />
+--<br />
+Ron Symonds - Microsoft MVP (FrontPage)<br />
+Reply only to group - emails will be deleted unread.<br />
+<br />
+http://www.rxs-enterprises.org/fp<br />
+<br />
+<br />
+<br />
+<br />
+"Brenda" &lt;brenda [at] google.com&gt; wrote in message <br />
+news:4kLkj.44256$Ux2.2369 [at] attbi_s22:<br />
+<br />
+&gt; Steve,<br />
+&gt;<br />
+&gt; Thank you.  I think something like Recaptcha may *not* be what I am looking<br />
+&gt; for.<br />
+&gt;<br />
+&gt; On the website I am trying to build (http://www.brickwallbuster.com/new/)  I<br />
+&gt; have a CONTACT US.<br />
+&gt;<br />
+&gt; It's the spam that the CONTACT US will generate, that I'm trying to control.<br />
+&gt; Any thoughts on something that might work for that?<br />
+&gt;<br />
+&gt; Thank you,<br />
+&gt; Brenda
+</div>
+<div class="msgfooter">Ronx [ So, 20 Januar 2008 18:29 ] [ ID #1912402 ]</div>
+</div>
+<div class="posting">
+<div class="subject"><h1>Re: Recaptcha - question on how to use</h1></div>
+<div class="content">
+Thank you Ron - I will check it out, and will change her email address.<br />
+<br />
+Brenda
+</div>
+<div class="msgfooter">Brenda [ So, 20 Januar 2008 18:54 ] [ ID #1912403 ]</div>
+</div>
+<div id="group"><span class="GenText">Microsoft &raquo; <a href="thread/9/microsoft.public.frontpage.client">microsoft.public.frontpage.client</a> &raquo; <b>Recaptcha - question on how to use</b></span></div>
+<div><br /></div>
+<div id="linkage">
+Vorheriges Thema: <a href="goto/1913030/PHP_Help.html">PHP Help</a><br />
+N&auml;chstes Thema: <a href="goto/1912397/frontpage_03_page_preview.html">frontpage 03 page preview</a><br />
+</div>
+<div><br /></div>
+<div id="menu">
+
+<div class="centered">
+<b><a href="http://www.issociate.de">Issociate</a></b><br />
+<a href="/fileadmin/templates/issociate/Domainpreisliste/domainpreisliste.html">Domains</a> - <a href="/issociate-produkte/managed-cluster-systeme.html">DNSbox</a><br />
+<a href="http://www.seo-host.de" target=_blank>Multiple IP Seo Hosting</a><br />
+<a href="http://www.1299.de" target=_blank>Preise bis 12,99</a><br />
+<a href="http://www.penz-bautenschutzstoffe.de" target=_blank>Balkon abdichten</a><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-6273583276374513";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="5349358311";
+google_ad_type = "text_image";
+google_color_border = "D4D9B5";
+google_color_bg = "E4E9C5";
+google_color_link = "000088";
+google_color_url = "000088";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>
+</div>
+</div>
+<div class="footer">
+[ <a href="index.php">Startseite</a> ] 
+[ <a class="UserControlPanel" href="index.php?t=login">Administrator</a> ] 
+[ <a class="UserControlPanel" href="index.php?t=search">Suche</a> ] 
+[ <a href="index.php?t=help_index">Hinweise</a> ] 
+[ <a href="impressum.php">Impressum</a> ]
+<br />
+<br />
+<img src="/board/images/powered.gif" width="393" height="26" alt="Powered by FudForum" />
+</div>
+
+</body>
+</html>
+
+

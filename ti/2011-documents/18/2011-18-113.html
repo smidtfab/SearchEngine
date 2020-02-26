@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+	<title>together, in a sense : Using Mechanical Turk for experiments</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="screen,projection" href="http://blog.logicalrealism.org/wp-content/themes/barthelme/style.css" title="Barthelme" />
+	<link rel="stylesheet" type="text/css" media="print" href="http://blog.logicalrealism.org/wp-content/themes/barthelme/print.css" />
+	<link rel="alternate" type="application/rss+xml" href="http://blog.logicalrealism.org/feed/" title="together, in a sense RSS feed" />
+	<link rel="alternate" type="application/rss+xml" href="http://blog.logicalrealism.org/comments/feed/" title="together, in a sense comments RSS feed" />
+	<link rel="pingback" href="http://blog.logicalrealism.org/xmlrpc.php" />
+
+<link rel="alternate" type="application/rss+xml" title="together, in a sense &raquo; Using Mechanical Turk for experiments Comments Feed" href="http://blog.logicalrealism.org/2010/01/28/using-mechanical-turk-for-experiments/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.logicalrealism.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.logicalrealism.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='together, in a sense' href='http://blog.logicalrealism.org/' />
+<link rel='start' title='Welcome' href='http://blog.logicalrealism.org/2006/09/20/welcome/' />
+<link rel='prev' title='updated viz of political blogs’ link similarity' href='http://blog.logicalrealism.org/2009/12/24/updated-viz-of-political-blogs%e2%80%99-link-similarity/' />
+<link rel='next' title='some thoughts on Facebook&#8217;s recent changes, from the perspective of an application designer' href='http://blog.logicalrealism.org/2010/02/16/some-thoughts-on-facebooks-recent-changes-from-the-perspective-of-an-application-designer/' />
+<meta name="generator" content="WordPress 3.1" />
+<link rel='canonical' href='http://blog.logicalrealism.org/2010/01/28/using-mechanical-turk-for-experiments/' />
+<link rel='shortlink' href='http://blog.logicalrealism.org/?p=191' />
+
+<style type="text/css" media="screen,projection">
+/*<![CDATA[*/
+/* CSS inserted by Barthelme theme options */
+	body{font-family:arial,helvetica,sans-serif;font-size:75%;}
+	div#content h2,div#content h3,div#content h4,div#content h5,div#content h6,body.archive div.archive-meta,body.attachment div.entry-content div.attachment-content p.attachment-name,body.home div#content div.entry-meta span,body.archive div#content div.entry-meta span,body.search div#content div.entry-meta span,body.single div.entry-date,body.single div.entry-meta,div#content blockquote,div.comments ol.commentlist li div.comment-meta,div.entry-content div.page-link,div.entry-content span.tag-links,body.page div.archive-meta,div.formcontainer form#commentform div.form-input input,div.formcontainer form#commentform div.form-textarea textarea#comment,input#s,div.entry-content div.entry-caption{font-family:georgia,times,serif;}
+	body div#content div.hentry{text-align:left;}
+	body div#wrapper{width:auto;}
+	div#header,div#header h1#blog-title a,div#header h1#blog-title a:link,div#header h1#blog-title a:visited{color:#fefefe;outline:none;text-decoration:none;}
+	body div#header{background:#bbc8d9 url("http://blog.logicalrealism.org/wp-content/themes/barthelme/images/header-img.php?upper=8999b0&lower=bbc8d9") repeat-x left top;}
+/*]]>*/
+</style>
+
+</head>
+
+<body class="wordpress y2011 m04 d03 h12 single s-y2010 s-m01 s-d28 s-h08 s-category-research s-author-sean">
+
+<div id="wrapper">
+
+	<div id="header" onclick="location.href='http://blog.logicalrealism.org/';">
+		<h1 id="blog-title"><a href="http://blog.logicalrealism.org/" title="together, in a sense">together, in a sense</a></h1>
+		<div id="blog-description"></div>
+	</div><!-- #header -->
+	
+	<div class="access"><span class="content-access"><a href="#content" title="Skip to content">Skip to content</a></span></div>
+
+<div id="globalnav"><ul id="menu"><li class="page_item_home home-link"><a href="http://blog.logicalrealism.org/" title="together, in a sense" rel="home">Home</a></li><li class="page_item page-item-3"><a href="http://blog.logicalrealism.org/about/" title="About">About</a></li></ul></div>
+
+	<div id="container">
+		<div id="content" class="hfeed">
+
+
+			<div id="post-191" class="hentry p1 post publish author-sean category-research y2010 m01 d28 h08">
+				<div class="entry-date"><span class="meta-sep">{</span> <abbr class="published" title="2010-01-28T13:14:36+0000">2010 01 28</abbr> <span class="meta-sep">}</span></div>
+				<h2 class="entry-title">Using Mechanical Turk for experiments</h2>
+				<div class="entry-content">
+<p>In my upcoming CHI paper, &#8220;<a onclick="javascript:pageTracker._trackPageview('/outgoing/www.smunson.com/portfolio/projects/aggdiversity/PresentingDiversePoliticalOpinions-chi10.pdf');"  href="http://www.smunson.com/portfolio/projects/aggdiversity/PresentingDiversePoliticalOpinions-chi10.pdf" title="Presenting Diverse Political Opinions: How and How Much (CHI 2010)">Presenting Diverse Political Opinions: How and How Much</a>,&#8221; we used Amazon&#8217;s <a onclick="javascript:pageTracker._trackPageview('/outgoing/requester.mturk.com');"  href="https://requester.mturk.com">Mechanical Turk</a> (AMT) to recruit subjects and to administer the study. I&#8217;ll talk a bit more about the research questions and results in a future post, but I&#8217;ve had enough questions about using Mechanical Turk that I think a blog post may be helpful.</p>
+<p>In this study, Paul Resnick and I explored individuals&#8217; preferences for diversity of political opinion in online news aggregators and evaluated whether some very basic presentation techniques might affect satisfaction with the range of opinions represented in a collection of articles.</p>
+<p>To address these questions, we needed subjects with known political preferences, from the United States, and with at least some very basic political knowledge, and we wanted to collect some demographic information about each subject. Each approved subject was then assigned to either a manipulation check group or to the experimental group. Subjects in the manipulation check group viewed individual articles and indicated their agreement or disagreement with each; subjects in the experimental group viewed entire collections and answered questions about the collection. The subjects in the experimental group were also assigned to a particular treatment (how the list would appear to them). Once approved, subjects could view a list up to once per day. </p>
+<p><b>Screening.</b> To screen subjects, we used a <a onclick="javascript:pageTracker._trackPageview('/outgoing/docs.amazonwebservices.com/AWSMechanicalTurkRequester/2008-08-02/index.html?Concepts_QualificationsArticle.html');"  href="http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2008-08-02/index.html?Concepts_QualificationsArticle.html">Qualification test</a> in AMT. When unqualified subjects viewed at task (HIT &#8211; human intelligence task, in mTurk parlance), they were informed that they needed to complete a qualification. The qualification test asked subjects two questions about their political preferences, three multiple choice questions about US politics, and a number of demographic questions. Responses were automatically downloaded and evaluated to complete screening and assignment. </p>
+<p>To limit our subjects to US residents, we also used the automatic <a onclick="javascript:pageTracker._trackPageview('/outgoing/docs.amazonwebservices.com/AWSMechanicalTurkRequester/2007-06-21/ApiReference_QualificationRequirementDataStructureArticle.html');"  href="http://docs.amazonwebservices.com/AWSMechanicalTurkRequester/2007-06-21/ApiReference_QualificationRequirementDataStructureArticle.html">locale  qualification</a>.</p>
+<p><b>Assignment.</b> We handled subject assignment in two ways. To distinguish between the treatment group and the manipulation check group, we created to additional qualifications that were automatically assigned; an approved subject would be granted only one of these qualifications, and could thus could only complete the associated task type.</p>
+<p><b>Tasks (HITs).</b> The task implementation was straightforward. We hosted tasks on our own server using the <a onclick="javascript:pageTracker._trackPageview('/outgoing/docs.amazonwebservices.com/AWSMturkAPI/2008-08-02/index.html?ApiReference_ExternalQuestionArticle.html');"  href="http://docs.amazonwebservices.com/AWSMturkAPI/2008-08-02/index.html?ApiReference_ExternalQuestionArticle.html">external question HIT type</a>. When a subject loaded a task, AMT passed us the subject&#8217;s worker ID. We verified that the subject was qualified for the task and loaded the appropriate presentation for that subject. Each day, we uploaded one task of each type, with many assignments; assignments are the number of turkers that can complete each task.</p>
+<p>Because we needed real-time access to the manipulation check data, the responses to this task were stored in our own database after a subject submitted the form; the subject could then return to AMT. This was not necessary for the experimental data, and so the responses were sent directly to AMT for later retrieval. </p>
+<p><i>Quality control.</i> Careless clicking or hurrying through the task is a potential problem on mTurk. Using multiple raters does not work when asking subjects about their opinions. Kittur, Chi, and Suh recommend asking Turkers verifiable questions as a way to deal with the problem<sup><a href="#mturk1" name="mturk1s">1</a></sup>. We did not, however, ask verifiable questions about any of the articles or the list, because that might have changed how turkers read the list and responded to our other questions. Instead, we randomly repeated a demographic question from the qualification test. 5 subjects changed their answer substantially (e.g. aging more than one year or in reverse or shifting on either of the political spectrum questions by 2 points or more). Though there are many possible explanations for these shifts – such as shared accounts within a household, careless clicking, easily shifting political opinions, deliberate deception, or lack of effort – all of these explanations are not desirable for study subjects, and so they were excluded. We also examined how long each subject took to complete tasks (looking for implausibly fast responses); this did not lead to the exclusion of any additional subjects or responses.</p>
+<p><b>Some reflection</b>. We had to pay turkers a bit more than we expected (~$12/hr) and we recruited fewer subjects than we anticipated. The unpaid qualification task may be a bit of a barrier, especially because potential subjects could only complete one of our paid tasks per day (and only one was listed at a time). Instead, we might have implemented the qualification as a paid task, but that might result in paying for subjects who would never return to complete an actual task. </p>
+<h2>Further resources</h2>
+<ul>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/ecbiz76.inmotionhosting.com/~smalls7/blog/?p=95');"  href="http://ecbiz76.inmotionhosting.com/~smalls7/blog/?p=95">Guide to experiments on Amazon&#8217;s Mechanical Turk:</a> Winter Mason has put together a great getting started guide, including an overview of the <a onclick="javascript:pageTracker._trackPageview('/outgoing/mturk.s3.amazonaws.com/CLT_Tutorial/UserGuide.html');"  href="http://mturk.s3.amazonaws.com/CLT_Tutorial/UserGuide.html">AMT command line tools</a>. Also see his <a href="#mturk2" name="mturk2s">paper from HComp 2009</a>.</li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/experimentalturk.wordpress.com/');"  href="http://experimentalturk.wordpress.com/">Experimental Turk:</a> Blog about using Mechanical Turk for social science experiments, including the reproduction of several classic experiments on mTurk.</li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/behind-the-enemy-lines.blogspot.com/search/label/mechanical%20turk');"  href="http://behind-the-enemy-lines.blogspot.com/search/label/mechanical%20turk">Mechanical Turk @ A Computer Scientist in a Business School:</a> Panos Ipeirotis has written several blog posts about AMT and turkers, including turker motivations and demographics and using AMT in other contexts (particularly labeling data).</li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/blogs.parc.com/blog/2009/07/experimenting-on-mechanical-turk-5-how-tos/');"  href="http://blogs.parc.com/blog/2009/07/experimenting-on-mechanical-turk-5-how-tos/">Experimenting on Mechanical Turk: 5 How Tos:</a> Another set of tips on Mechanical Turk experiments, from Markus Jakobsson (PARC).</li>
+<li><a onclick="javascript:pageTracker._trackPageview('/outgoing/blog.doloreslabs.com/');"  href="http://blog.doloreslabs.com/">Dolores Labs blog:</a> Lots of great crowdsourcing examples and tips.</li>
+</ul>
+<p><a name="mturk1" href="#mturk1s">1.</a> Kittur, A., Chi, E. H., and Suh, B. (2009). “Crowdsourcing User Studies With Mechanical Turk,” Proc. CHI 2009: 453-456. (<a onclick="javascript:pageTracker._trackPageview('/outgoing/portal.acm.org/citation.cfm?doid=1357054.1357127');"  href="http://portal.acm.org/citation.cfm?doid=1357054.1357127">ACM</a> | <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.parc.com/publication/1984/crowdsourcing-user-studies-with-mechanical-turk.html');"  href="http://www.parc.com/publication/1984/crowdsourcing-user-studies-with-mechanical-turk.html">PARC</a>)<br />
+<a name="mturk2" href="#mturk2s">2.</a> Mason, W. and Watts, D. J. (2009). “Financial incentives and the ‘performance of crowds,’” SIGKDD Workshop on Human Computation: 77-85. (<a onclick="javascript:pageTracker._trackPageview('/outgoing/doi.acm.org/10.1145/1600150.1600175');"   href="http://doi.acm.org/10.1145/1600150.1600175">ACM</a> | <a onclick="javascript:pageTracker._trackPageview('/outgoing/research.yahoo.com/pub/2808');"  href="http://research.yahoo.com/pub/2808">Yahoo</a>)</p>
+<p>This study is part of the <a onclick="javascript:pageTracker._trackPageview('/outgoing/balance.projects.si.umich.edu');"  href="http://balance.projects.si.umich.edu">BALANCE project</a> and was funded by NSF award <a onclick="javascript:pageTracker._trackPageview('/outgoing/www.nsf.gov/awardsearch/showAward.do?AwardNumber=0916099');"  href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0916099">#IIS-0916099</a>.</p>
+
+
+
+				</div>
+
+				<div class="entry-meta">
+					<span class="entry-published">Posted by <span class="entry-author author vcard"><span class="fn n">sean</span></span> on <abbr class="published" title="2010-01-28T13:14:36+0000">Thursday, January 28, 2010, at 1:14 pm</abbr>.</span> <span class="cat-links">Filed under <a href="http://blog.logicalrealism.org/category/research/" title="View all posts in research" rel="category tag">research</a>.</span> <span class="tag-links">Tagged <a href="http://blog.logicalrealism.org/tag/balance/" rel="tag">BALANCE</a>, <a href="http://blog.logicalrealism.org/tag/crowdsourcing/" rel="tag">crowdsourcing</a>, <a href="http://blog.logicalrealism.org/tag/mechanical-turk/" rel="tag">mechanical turk</a>, <a href="http://blog.logicalrealism.org/tag/politics/" rel="tag">politics</a>, <a href="http://blog.logicalrealism.org/tag/research/" rel="tag">research</a>.</span> <span class="entry-rsslink">Follow any responses to this post with its <a href="http://blog.logicalrealism.org/2010/01/28/using-mechanical-turk-for-experiments/feed/" title="Comments RSS to Using Mechanical Turk for experiments" rel="alternate" type="application/rss+xml">comments RSS</a> feed.</span>
+					<span class="entry-interact">You can <a href="#respond" title="Post a comment">post a comment</a> or <a href="http://blog.logicalrealism.org/2010/01/28/using-mechanical-turk-for-experiments/trackback/" rel="trackback" title="Trackback URL for your post">trackback</a> from your blog.</span>
+				</div>
+			</div><!-- .post -->
+
+<div class="comments">
+
+
+	<h3 id="respond">Post a Comment</h3>
+
+	<div class="formcontainer">	
+
+		<form id="commentform" action="http://blog.logicalrealism.org/wp-comments-post.php" method="post">
+
+			<div id="comment-notes">Your email is <em>never</em> published nor shared. Required fields are marked <span class="req-field">*</span></div>
+
+			<div class="form-label"><label for="author">Name <span class="req-field">*</span></label></div>
+			<div class="form-input"><input id="author" name="author" type="text" value="" size="30" maxlength="20" tabindex="3" /></div>
+
+			<div class="form-label"><label for="email">Email <span class="req-field">*</span></label></div>
+			<div class="form-input"><input id="email" name="email" type="text" value="" size="30" maxlength="50" tabindex="4" /></div>
+
+			<div class="form-label"><label for="url">Website</label></div>
+			<div class="form-input"><input id="url" name="url" type="text" value="" size="30" maxlength="50" tabindex="5" /></div>
+
+
+			<div class="form-label"><label for="comment">Comment</label></div>
+			<div class="form-textarea"><textarea id="comment" name="comment" cols="45" rows="8" tabindex="6"></textarea></div>
+			<div class="form-submit"><input id="submit" name="submit" type="submit" value="Submit comment" tabindex="7" /><input type="hidden" name="comment_post_ID" value="191" /></div>
+
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="cb0ea44177" /></p>		</form><!-- #commentform -->
+	</div><!-- .formcontainer -->
+
+</div><!-- .comments -->
+
+			<div id="nav-below" class="navigation">
+				<div class="nav-previous">&laquo; <a href="http://blog.logicalrealism.org/2009/12/24/updated-viz-of-political-blogs%e2%80%99-link-similarity/" rel="prev">updated viz of political blogs’ link similarity</a></div>
+				<div class="nav-next"><a href="http://blog.logicalrealism.org/2010/02/16/some-thoughts-on-facebooks-recent-changes-from-the-perspective-of-an-application-designer/" rel="next">some thoughts on Facebook&#8217;s recent changes, from the perspective of an application designer</a> &raquo;</div>
+			</div>
+
+		</div><!-- #content .hfeed -->
+	</div><!-- #container -->
+
+	<div id="primary" class="sidebar">
+		<ul>
+<li id="text-1" class="widget widget_text">			<div class="textwidget"><div style="font-size:0.9em;"><p>by <a href="http://www.smunson.com">Sean Munson</a></p></div></div>
+		</li>
+<li id="twitter-1" class="widget widget_twitter"><h3 class='widgettitle'><a href="http://twitter.com/smunson" class="twitter_title_link">on twitter</a></h3>
+<ul class="twitter"><li class="twitter-item"> <a href="http://twitter.com/andrewmiller" class="twitter-user">@andrewmiller</a> ugh. 5-paragraph essays for the lose. <a href="http://twitter.com/smunson/statuses/53944980741427200" class="twitter-link">twitter.com</a> <span class="twitter-timestamp"><abbr title="2011/04/01 22:21:00">2011/04/01</abbr></span></li></ul></li>
+<li id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://blog.logicalrealism.org/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form></li>
+<li id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class='widgettitle'>Tags</h3>
+<div class="tagcloud"><a href='http://blog.logicalrealism.org/tag/aircraft/' class='tag-link-37' title='1 topic' style='font-size: 8pt;'>aircraft</a>
+<a href='http://blog.logicalrealism.org/tag/balance/' class='tag-link-86' title='6 topics' style='font-size: 17.506172839506pt;'>BALANCE</a>
+<a href='http://blog.logicalrealism.org/tag/blog/' class='tag-link-3' title='1 topic' style='font-size: 8pt;'>blog</a>
+<a href='http://blog.logicalrealism.org/tag/blogs/' class='tag-link-63' title='2 topics' style='font-size: 11.111111111111pt;'>blogs</a>
+<a href='http://blog.logicalrealism.org/tag/boeing/' class='tag-link-38' title='1 topic' style='font-size: 8pt;'>boeing</a>
+<a href='http://blog.logicalrealism.org/tag/books/' class='tag-link-30' title='1 topic' style='font-size: 8pt;'>books</a>
+<a href='http://blog.logicalrealism.org/tag/calendar/' class='tag-link-25' title='1 topic' style='font-size: 8pt;'>calendar</a>
+<a href='http://blog.logicalrealism.org/tag/chi/' class='tag-link-34' title='1 topic' style='font-size: 8pt;'>chi</a>
+<a href='http://blog.logicalrealism.org/tag/collections/' class='tag-link-6' title='1 topic' style='font-size: 8pt;'>collections</a>
+<a href='http://blog.logicalrealism.org/tag/community/' class='tag-link-13' title='2 topics' style='font-size: 11.111111111111pt;'>community</a>
+<a href='http://blog.logicalrealism.org/tag/computer/' class='tag-link-31' title='1 topic' style='font-size: 8pt;'>computer</a>
+<a href='http://blog.logicalrealism.org/tag/conference/' class='tag-link-47' title='3 topics' style='font-size: 13.185185185185pt;'>conference</a>
+<a href='http://blog.logicalrealism.org/tag/cscw/' class='tag-link-4' title='2 topics' style='font-size: 11.111111111111pt;'>cscw</a>
+<a href='http://blog.logicalrealism.org/tag/design/' class='tag-link-17' title='7 topics' style='font-size: 18.37037037037pt;'>design</a>
+<a href='http://blog.logicalrealism.org/tag/education/' class='tag-link-10' title='4 topics' style='font-size: 14.913580246914pt;'>education</a>
+<a href='http://blog.logicalrealism.org/tag/facebook/' class='tag-link-42' title='4 topics' style='font-size: 14.913580246914pt;'>facebook</a>
+<a href='http://blog.logicalrealism.org/tag/flickr/' class='tag-link-24' title='2 topics' style='font-size: 11.111111111111pt;'>flickr</a>
+<a href='http://blog.logicalrealism.org/tag/fun/' class='tag-link-55' title='2 topics' style='font-size: 11.111111111111pt;'>fun</a>
+<a href='http://blog.logicalrealism.org/tag/google-transit/' class='tag-link-33' title='2 topics' style='font-size: 11.111111111111pt;'>google transit</a>
+<a href='http://blog.logicalrealism.org/tag/government/' class='tag-link-36' title='1 topic' style='font-size: 8pt;'>government</a>
+<a href='http://blog.logicalrealism.org/tag/hardware/' class='tag-link-12' title='1 topic' style='font-size: 8pt;'>hardware</a>
+<a href='http://blog.logicalrealism.org/tag/identity/' class='tag-link-16' title='4 topics' style='font-size: 14.913580246914pt;'>identity</a>
+<a href='http://blog.logicalrealism.org/tag/ischools/' class='tag-link-9' title='2 topics' style='font-size: 11.111111111111pt;'>ischools</a>
+<a href='http://blog.logicalrealism.org/tag/linking/' class='tag-link-64' title='2 topics' style='font-size: 11.111111111111pt;'>linking</a>
+<a href='http://blog.logicalrealism.org/tag/mechanical-turk/' class='tag-link-87' title='2 topics' style='font-size: 11.111111111111pt;'>mechanical turk</a>
+<a href='http://blog.logicalrealism.org/tag/meetings/' class='tag-link-26' title='1 topic' style='font-size: 8pt;'>meetings</a>
+<a href='http://blog.logicalrealism.org/tag/meta/' class='tag-link-23' title='1 topic' style='font-size: 8pt;'>meta</a>
+<a href='http://blog.logicalrealism.org/tag/music/' class='tag-link-7' title='1 topic' style='font-size: 8pt;'>music</a>
+<a href='http://blog.logicalrealism.org/tag/news/' class='tag-link-60' title='3 topics' style='font-size: 13.185185185185pt;'>news</a>
+<a href='http://blog.logicalrealism.org/tag/opinion/' class='tag-link-61' title='2 topics' style='font-size: 11.111111111111pt;'>opinion</a>
+<a href='http://blog.logicalrealism.org/tag/photos/' class='tag-link-2' title='2 topics' style='font-size: 11.111111111111pt;'>photos</a>
+<a href='http://blog.logicalrealism.org/tag/place/' class='tag-link-18' title='4 topics' style='font-size: 14.913580246914pt;'>place</a>
+<a href='http://blog.logicalrealism.org/tag/policy/' class='tag-link-35' title='1 topic' style='font-size: 8pt;'>policy</a>
+<a href='http://blog.logicalrealism.org/tag/politics/' class='tag-link-5' title='8 topics' style='font-size: 19.234567901235pt;'>politics</a>
+<a href='http://blog.logicalrealism.org/tag/privacy/' class='tag-link-41' title='2 topics' style='font-size: 11.111111111111pt;'>privacy</a>
+<a href='http://blog.logicalrealism.org/tag/recommender-systems/' class='tag-link-11' title='2 topics' style='font-size: 11.111111111111pt;'>recommender systems</a>
+<a href='http://blog.logicalrealism.org/tag/research/' class='tag-link-32' title='12 topics' style='font-size: 22pt;'>research</a>
+<a href='http://blog.logicalrealism.org/tag/si/' class='tag-link-8' title='7 topics' style='font-size: 18.37037037037pt;'>si</a>
+<a href='http://blog.logicalrealism.org/tag/smart-mobs/' class='tag-link-53' title='1 topic' style='font-size: 8pt;'>smart mobs</a>
+<a href='http://blog.logicalrealism.org/tag/social-software/' class='tag-link-29' title='5 topics' style='font-size: 16.296296296296pt;'>social software</a>
+<a href='http://blog.logicalrealism.org/tag/software/' class='tag-link-28' title='1 topic' style='font-size: 8pt;'>software</a>
+<a href='http://blog.logicalrealism.org/tag/surveys/' class='tag-link-27' title='1 topic' style='font-size: 8pt;'>surveys</a>
+<a href='http://blog.logicalrealism.org/tag/three-good-things/' class='tag-link-88' title='2 topics' style='font-size: 11.111111111111pt;'>three good things</a>
+<a href='http://blog.logicalrealism.org/tag/transit/' class='tag-link-14' title='4 topics' style='font-size: 14.913580246914pt;'>transit</a>
+<a href='http://blog.logicalrealism.org/tag/visualization/' class='tag-link-66' title='2 topics' style='font-size: 11.111111111111pt;'>visualization</a></div>
+</li>
+<li id="archives-2" class="widget widget_archive"><h3 class='widgettitle'>Archives</h3>
+		<ul>
+			<li><a href='http://blog.logicalrealism.org/2011/04/' title='April 2011'>April 2011</a></li>
+	<li><a href='http://blog.logicalrealism.org/2010/05/' title='May 2010'>May 2010</a></li>
+	<li><a href='http://blog.logicalrealism.org/2010/02/' title='February 2010'>February 2010</a></li>
+	<li><a href='http://blog.logicalrealism.org/2010/01/' title='January 2010'>January 2010</a></li>
+	<li><a href='http://blog.logicalrealism.org/2009/12/' title='December 2009'>December 2009</a></li>
+	<li><a href='http://blog.logicalrealism.org/2009/07/' title='July 2009'>July 2009</a></li>
+	<li><a href='http://blog.logicalrealism.org/2009/06/' title='June 2009'>June 2009</a></li>
+	<li><a href='http://blog.logicalrealism.org/2009/05/' title='May 2009'>May 2009</a></li>
+	<li><a href='http://blog.logicalrealism.org/2009/02/' title='February 2009'>February 2009</a></li>
+	<li><a href='http://blog.logicalrealism.org/2008/12/' title='December 2008'>December 2008</a></li>
+	<li><a href='http://blog.logicalrealism.org/2008/11/' title='November 2008'>November 2008</a></li>
+	<li><a href='http://blog.logicalrealism.org/2008/07/' title='July 2008'>July 2008</a></li>
+	<li><a href='http://blog.logicalrealism.org/2008/04/' title='April 2008'>April 2008</a></li>
+	<li><a href='http://blog.logicalrealism.org/2008/01/' title='January 2008'>January 2008</a></li>
+	<li><a href='http://blog.logicalrealism.org/2007/11/' title='November 2007'>November 2007</a></li>
+	<li><a href='http://blog.logicalrealism.org/2007/09/' title='September 2007'>September 2007</a></li>
+	<li><a href='http://blog.logicalrealism.org/2007/04/' title='April 2007'>April 2007</a></li>
+	<li><a href='http://blog.logicalrealism.org/2007/03/' title='March 2007'>March 2007</a></li>
+	<li><a href='http://blog.logicalrealism.org/2007/01/' title='January 2007'>January 2007</a></li>
+	<li><a href='http://blog.logicalrealism.org/2006/12/' title='December 2006'>December 2006</a></li>
+	<li><a href='http://blog.logicalrealism.org/2006/11/' title='November 2006'>November 2006</a></li>
+	<li><a href='http://blog.logicalrealism.org/2006/10/' title='October 2006'>October 2006</a></li>
+	<li><a href='http://blog.logicalrealism.org/2006/09/' title='September 2006'>September 2006</a></li>
+		</ul>
+</li>
+
+		</ul>
+	</div>
+
+	<div id="footer">
+		<span id="copyright">&copy; 2011 <span class="vcard"><a class="url fn n" href=""><span class="given-name"></span> <span class="family-name"></span></a></span></span>
+		<span class="meta-sep">|</span>
+		<span id="generator-link">Thanks, <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a></span>
+		<span class="meta-sep">|</span>
+		<span id="theme-link"><a href="http://www.plaintxt.org/themes/barthelme/" title="Barthelme theme for WordPress" rel="follow designer">Barthelme</a> theme by <span class="vcard"><a class="url fn n" href="http://scottwallick.com/" title="scottwallick.com" rel="follow designer"><span class="given-name">Scott</span><span class="additional-name"> Allan</span><span class="family-name"> Wallick</span></a></span></span><!-- Theme design credit, that's all -->
+		<span class="meta-sep">|</span>
+		<span id="web-standards"> Standards Compliant <a href="http://validator.w3.org/check/referer" title="Valid XHTML">XHTML</a> &amp; <a href="http://jigsaw.w3.org/css-validator/validator?profile=css2&amp;warning=2&amp;uri=http://blog.logicalrealism.org/wp-content/themes/barthelme/style.css" title="Valid CSS">CSS</a></span>
+		<span class="meta-sep">|</span>
+		<span id="footer-rss"> RSS <a href="http://blog.logicalrealism.org/feed/" title="together, in a sense RSS 2.0 Feed" rel="alternate" type="application/rss+xml">Posts</a> &amp; <a href="http://blog.logicalrealism.org/comments/feed/" title="together, in a sense Comments RSS 2.0 Feed" rel="alternate" type="application/rss+xml">Comments</a></span>
+	</div><!-- #footer -->
+
+
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-85479-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+</div><!-- #wrapper -->
+
+</body><!-- end trasmission -->
+</html>
+<!-- Dynamic Page Served (once) in 0.444 seconds -->

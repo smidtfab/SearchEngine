@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Why I Hate Mechanical Turk Research &laquo;  cond = false</title>
+	<link rel="stylesheet" href="http://blog.cond.org/wp-content/themes/modernist/style.css" type="text/css" media="screen" />
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="http://blog.cond.org/wp-content/themes/modernist/ie-fixes.css" type="text/css" media="screen" />
+	<![endif]-->	
+	<link rel="pingback" href="http://blog.cond.org/xmlrpc.php" />
+	<script type="text/javascript" charset="utf-8">
+	//<![CDATA[
+		sfHover = function() {
+			var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+			for (var i=0; i<sfEls.length; i++) {
+				sfEls[i].onmouseover=function() {
+					this.className+=" sfhover";
+				}
+				sfEls[i].onmouseout=function() {
+					this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+				}
+			}
+		}
+		if (window.attachEvent) window.attachEvent("onload", sfHover);		
+	//]]>
+	</script>
+	<link rel="alternate" type="application/rss+xml" title="cond = false &raquo; Feed" href="http://blog.cond.org/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="cond = false &raquo; Comments Feed" href="http://blog.cond.org/?feed=comments-rss2" />
+<link rel="alternate" type="application/rss+xml" title="cond = false &raquo; Why I Hate Mechanical Turk Research Comments Feed" href="http://blog.cond.org/?feed=rss2&amp;p=28" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.cond.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.cond.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='cond = false' href='http://blog.cond.org' />
+<link rel='start' title='Why I Hate Mechanical Turk Research' href='http://blog.cond.org/?p=28' />
+<meta name="generator" content="WordPress 3.0.4" />
+<link rel='canonical' href='http://blog.cond.org/?p=28' />
+<style type="text/css">
+        #header {
+			height: 132px;
+            background: url();
+        }
+		
+		#header a {
+				    color: #21759B;
+		}
+		    </style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3116463-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body class="single single-post postid-28">
+
+<div id="wrapper">	
+	<div id="header-wrapper">
+		<div id="nav">
+			<ul>
+				<li class="page_item page-item-2"><a href="http://blog.cond.org/?page_id=2" title="About">About</a></li>
+			</ul>
+		</div>
+		
+		<div id="header">
+			<h1><a href="http://blog.cond.org">cond = false</a></h1>
+		</div>
+	</div>
+	
+	<hr />
+	
+	<div id="content">					
+		<div id="post-28" class="post-28 post type-post hentry category-thoughts tag-thoughts">
+			<div class="post-header">
+				<h2><a href="http://blog.cond.org/?p=28" rel="bookmark" title="Permanent Link to Why I Hate Mechanical Turk Research">Why I Hate Mechanical Turk Research</a></h2>
+				<p>by admin on November 11, 2010</p>
+			</div>
+			
+			<div>
+<p>Ok, it&#8217;s not that I actually hate it, but in reviewing a number of <a href="https://www.mturk.com/mturk/welcome">Turk </a>papers, reading many more, and listening to many, many, many more planned Turk projects I find myself increasingly frustrated.  Don&#8217;t get me wrong: we use it all the time in my group for evaluation purposes (or labeling training/test data).  It allows us to cheaply&#8211;an interesting <a title="sensational article here" href="http://www.pcpro.co.uk/features/360127/inside-the-online-sweatshops">debate in itself</a>&#8211;evaluate a number of new ideas in front of a large population.</p>
+<p>Like a good reviewer, let me also mention the type(s) of Turk-specific research that I do like (they&#8217;re related, bear with me):<em> </em></p>
+<ol>
+<li>projects that help us understand the <a href="http://behind-the-enemy-lines.blogspot.com/2010/03/new-demographics-of-mechanical-turk.html">demographics</a>, <a href="http://blog.crowdflower.com/2010/02/why-people-participate-on-mechanical-turk-now-as-a-mosaic-plot/">motivations</a> and behavioral patterns  of the Turkers,</li>
+<li>papers that identify unique <a href="http://people.csail.mit.edu/msbernst/papers/soylent-uist2010.pdf">design </a><a href="http://glittle.org/Papers/TurKitUIST2010.pdf">patterns</a> and <a href="http://www.cs.washington.edu/homes/weld/papers/dai-aaai10.pdf">optimizations</a>,</li>
+<li>mechanism papers that demonstrate effective ways to post-process Turk data to get <a href="http://archive.nyu.edu/handle/2451/29799">signal from noise</a>.</li>
+</ol>
+<p>We basically need all these to enable us to effectively use the Turk (run the experiment), and address issues of bias and validity (produce believable, generalizable, reproducible results).</p>
+<p>Think of it this way:  we&#8217;ve been given some new instrument with some rough edges and without a manual.  We&#8217;re collectively writing one.  Unfortunately, at some point the production of the manual and the sharpening of the tool, which up until now have been a scientific process, are no longer interesting as science.  We seem to be rapidly arriving at this point: there are only so many design patterns, so many demographic studies, so many measures of noise, and so many inference techniques for noisy data for this particular instrument (and arguably most instruments of this type).  In other words, we&#8217;re running out of low hanging fruit.</p>
+<p><em><strong>Showing that Humans can do Human Tasks is not a Contribution</strong></em></p>
+<p>To stretch the metaphor, the lack of low hanging fruit of the first type have led to the pursuit of an entirely different kind of fruit, the ones that already fell on the floor (and occasionally ones we&#8217;ve already pretty much eaten in pie*).  Basically, taking <a href="http://en.wikipedia.org/wiki/AI-complete">AI-hard</a> problems&#8211;those that we know people can do but that machines are not so good at&#8211;and farming them out to Turkers.  We know that most people can do this kind of work (find a car in a picture, pick out cancer cells, label sentences).  The surprise would be if Turkers couldn&#8217;t.</p>
+<p>In the past, when dealing with computationally taxing problems, one would either a) make simplifying assumptions, b) optimize, optimize, optimize, or c) propose some difficult-to-compute, partial solution and argue that current technology trends will allow us to catch up (proof-by-<a href="http://en.wikipedia.org/wiki/Moore's_law">Moore&#8217;s law</a>).  Although not always satisfying, the key feature of all approaches was that we built <em>automated</em> solutions&#8211;hopefully creating true advancements on the boundaries.</p>
+<p>The Turk has created a certain laziness.  When I recently pointed out in a review that a particular hard computational step had been glossed over, the authors countered with a small experiment that indicated that Turkers could be paid 4 cents per task.  Though they made no arguments about the total cost of this approach (which could have easily been in the millions given the scope of their project), the authors felt this was a sufficient explanation.  QED, proof-by-Turk-existence.</p>
+<p>The difference between the two &#8220;proofs&#8221; is subtle. but important.  When we argue that our algorithm will eventually run reasonably well we do so by relying on the fact that computers are getting faster and cheaper.  We frequently design things that we know won&#8217;t run well for a few years out.  The same can&#8217;t be said for the Turk.  Humans don&#8217;t really get cheaper and their ability to do work doesn&#8217;t magically scale.</p>
+<p>Are there situations where crowdsourcing is desirable?  Sure. If you&#8217;re a biologist and the advancement in your discipline is hampered by some hard AI step, don&#8217;t waste your time on solving the AI part.  Your artifact/contribution is a drug and you&#8217;re stuck on how proteins fold?  By all means, <a href="http://fold.it/portal/">crowdsource</a>!**</p>
+<p>The switch in &#8220;fruit&#8221; has led to a deluge of papers that spend 98% of the space demonstrating that yes, people can solve easy people-problems; that yes, the mechanical Turk makes this easy; and that yes, it&#8217;s pretty cheap.  The other 2% (or 1% or 0%) might be some minor observation: an attempt at adding something to the manual, some undiscovered toggle somewhere.  Maybe, if we&#8217;re lucky, it will be novel.</p>
+<p>But are we really that lucky? Have we stumbled on some population or work environment that is so fundamentally different that it requires 1000s of pages of research?  Or does this really boil down to things we already knew? Turkers are human, Turkers are unreliable and Turkers maximize &#8220;profits.&#8221;</p>
+<p>We seem to have forgotten the original <a href="http://en.wikipedia.org/wiki/The_Turk">mechanical Turk</a>.  Most generously, it was an elegant illusion, but really it was a hoax and a  con with the purpose of deceiving .  So are we just tricking ourselves into believing we are doing something interesting? When was the last time <em>paying-people-to-do-stuff</em> a novel <em>scientific</em> or <em>engineering</em> contribution?</p>
+<p>So now that we have our manual, can we go back to the hard problems?  trying to build reliable <em>mechanized</em> systems that just do what we ask.  I have some electrons I can pay with.</p>
+<p>* The worst is when we <em>already know</em> that there&#8217;s a good solution</p>
+<p>** Want to win a Nobel?  Hint: solve the automation problem.  But, seriously, figuring out how to get people to do biology without knowing biology&#8230; that&#8217;s pretty slick too (GWAP++).</p>
+<p>Update: I&#8217;ve been told by some beta readers that it&#8217;s not entirely obvious what I don&#8217;t  like.  While it&#8217;s easy to point to papers that I think are good (I do above, in the 3 bullet points), I&#8217;m uncomfortable pointing at specific papers I think are bad.  Luckily, most of the really bad ones don&#8217;t  make it past review.  But to be clear: it&#8217;s the papers that don&#8217;t advance the field in any dimension that I object to.  These fail the &#8220;so what?&#8221; test by demonstrating that humans can do work that we knew humans could do (contrary to popular belief, this is not a contribution).  Or they don&#8217;t show anything surprising about the instrument (the Turk).  These almost always get the &#8220;well, duh!&#8221; response from me as they really just confirm what we know.  There are a lot of these.</p>
+<p>Update 2: Someone (he can self-identify if he wants) pointed out to me that the difficult part of Turk system building is that while a human is good at a task human<em>s</em> (plural) are not.  Reminds me of one of my favorite quotes: &#8220;<a href="http://en.wikiquote.org/wiki/Men_in_Black">A </a><em><a href="http://en.wikiquote.org/wiki/Men_in_Black">person</a></em><a href="http://en.wikiquote.org/wiki/Men_in_Black"> is smart. </a><em><a href="http://en.wikiquote.org/wiki/Men_in_Black">People</a></em><a href="http://en.wikiquote.org/wiki/Men_in_Black"> are dumb, panicky, dangerous animals, and you know it</a>.&#8221;  I totally agree, this is an interesting challenge which needs to be addressed by technical and non-technical interventions: we either make individual components less noisy or just learn to derive signal.  Here we can, though we rarely do, turn to other scientific disciplines.  Von Neumann taught us about majority voting, and the hundreds of system architecture and OS researchers that followed him only added to this literature (voting, RAID, parallel development, etc.).  Similarly, &#8220;manipulating&#8221; and &#8220;incentivizing&#8221; people to behave better (making the component less noisy) is also thoroughly addressed in psych, survey design, and marketing research.  This doesn&#8217;t mean there&#8217;s nothing new here.  We have people coming in and out, issues of money, cultural issues, etc.  The combination is novel and unique enough that we need that new operating manual.  But why do we need to rediscover everything? New to us does not mean new.</p>
+</div>
+						
+			<div class="post-meta">
+				<ul>
+					<li><a href="http://blog.cond.org/?p=28#comments" title="Comment on Why I Hate Mechanical Turk Research">5 comments</a> &bull; Tagged as: <a href="http://blog.cond.org/?tag=thoughts" rel="tag">thoughts</a></li>
+					<li>Share on <a href="http://twitter.com/home?status=Currently reading: Why I Hate Mechanical Turk Research http://blog.cond.org/?p=28">Twitter</a>, <a href="http://www.facebook.com/share.php?u=http://blog.cond.org/?p=28&amp;t=Why I Hate Mechanical Turk Research">Facebook</a>, <a href="http://del.icio.us/post?v=4;url=http://blog.cond.org/?p=28">Delicious</a>, <a href="http://digg.com/submit?url=http://blog.cond.org/?p=28">Digg</a>, <a href="http://www.reddit.com/submit?url=http://blog.cond.org/?p=28&amp;title=Why I Hate Mechanical Turk Research">Reddit</a></li>
+									</ul>
+			</div>
+		</div>
+
+				
+	
+	
+
+	<div class="post-comments" id="comments">
+		<h2>5 comments</h2>
+	
+		   <div class="comment even thread-even depth-1" id="comment-2">
+      <div class="comment-avatar">
+         <img alt='' src='http://1.gravatar.com/avatar/7144949b505458c1580fc5bf7db25b65?s=54&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D54&amp;r=G' class='avatar avatar-54 photo' height='54' width='54' />      </div>
+
+ 	  <div class="comment-body">
+		 				
+			<p>The interesting challenge for me is to build extremely non-trivial crowd-powered systems. What can we do with crowd platforms that you wouldn&#8217;t think would be otherwise possible?</p>
+<p>The design space used to look like a tradeoff between user and AI. The user could step in when an AI couldn&#8217;t solve a problem, and guide it in the right direction. Now, we have a triangular (simplex) design space: user, AI and crowd. What do we rely on the user to do? What can an AI do? What can a crowd do? How can they play off each others&#8217; strengths to reach new heights?</p>
+<p>We&#8217;ve chatted about this, but a similar critique could be levied against most paradigm shifts in science and engineering. Researchers rush in, and it produces bad work as well as good work. This happens in mechanized systems as well. &#8220;Why I hate incremental LDA research&#8221;, &#8220;Yet Another Slight Tweak on SVMs&#8221;, &#8220;Why I Review Too many  Twitter Papers that Don&#8217;t Have A Good Grip On Twitter&#8221;, etc.</p>
+			
+			<p class="comment-meta">by <a href='http://people.csail.mit.edu/msbernst' rel='external nofollow' class='url'>Michael Bernstein</a> on November 11, 2010 at 4:03 pm. <a rel='nofollow' class='comment-reply-link' href='/?p=28&#038;replytocom=2#respond' onclick='return addComment.moveForm("comment-2", "2", "respond", "28")'>Reply</a> <a href="#comment-2" title="Permanent Link for this comment">#</a></p>
+	  </div>
+   <div class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="comment-3">
+      <div class="comment-avatar">
+         <img alt='' src='http://0.gravatar.com/avatar/873ffc234e9e382a4fee034be1a303de?s=54&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D54&amp;r=G' class='avatar avatar-54 photo' height='54' width='54' />      </div>
+
+ 	  <div class="comment-body">
+		 				
+			<p>No question&#8230;   s/turk/buzzword/ in the above post (that&#8217;s &#8220;replace&#8221; for those of you who don&#8217;t speak regexp).  I should do that every year when I do CHI reviews.</p>
+			
+			<p class="comment-meta">by admin on November 11, 2010 at 4:57 pm. <a rel='nofollow' class='comment-reply-link' href='/?p=28&#038;replytocom=3#respond' onclick='return addComment.moveForm("comment-3", "3", "respond", "28")'>Reply</a> <a href="#comment-3" title="Permanent Link for this comment">#</a></p>
+	  </div>
+</div>
+</div>
+   <div class="comment even thread-odd thread-alt depth-1" id="comment-4">
+      <div class="comment-avatar">
+         <img alt='' src='http://1.gravatar.com/avatar/d336880b5932aeed78fab4070c5146ae?s=54&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D54&amp;r=G' class='avatar avatar-54 photo' height='54' width='54' />      </div>
+
+ 	  <div class="comment-body">
+		 				
+			<p>I work on the &#8220;building signal from noise&#8221; aspect of using Turk, so I&#8217;m glad that you value that.  While I haven&#8217;t reviewed a Turk paper yet, I have to admit that I have a low bar for Turk papers.  As long as they show me something about the nature of tasks that *need* to be done by &#8216;trained people&#8217; and the tasks can be done by &#8216;Turkers&#8217;, I&#8217;m usually happy.  (Special note: I consider the training of an annotator to be inducement of bias, which is a more complicated discussion.)</p>
+<p>For many conferences, this isn&#8217;t enough of a contribution, but if someone where churning out blog posts about the difference between Turkers and &#8216;trained&#8217; annotators (that are commonly used in social science research), I would think it was an interesting contribution.</p>
+<p>Having worked on many, many annotation projects, I am deeply skeptical of the annotation process, especially as it is applied both in academia and in business.  If I can&#8217;t use more sophisticated science than is typically applied to the annotations, I have grave concerns about the work.  So, a movement to large N annotators (possible with Turk), can shed a lot of light on how &#8216;regular&#8217; people respond under a variety of conditions instead of measuring the responses of  WEIRD subjects (where WEIRD is an acronym from recent research that, if you don&#8217;t know it, you need to read). <img src='http://blog.cond.org/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+			
+			<p class="comment-meta">by <a href='http://stephenpurpura.com' rel='external nofollow' class='url'>Stephen Purpura</a> on November 11, 2010 at 5:01 pm. <a rel='nofollow' class='comment-reply-link' href='/?p=28&#038;replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "28")'>Reply</a> <a href="#comment-4" title="Permanent Link for this comment">#</a></p>
+	  </div>
+</div>
+   <div class="comment odd alt thread-even depth-1" id="comment-5">
+      <div class="comment-avatar">
+         <img alt='' src='http://0.gravatar.com/avatar/e377f3e2140297d32460ae9a4b38ff98?s=54&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D54&amp;r=G' class='avatar avatar-54 photo' height='54' width='54' />      </div>
+
+ 	  <div class="comment-body">
+		 				
+			<p>The clever counterpoint would be to design a system for evaluating papers about Mechanical Turk, and to parcel out the work so that the Turkers themselves are the reviewers.  (Peer review and all that.)</p>
+			
+			<p class="comment-meta">by <a href='http://vielmetti.typepad.com' rel='external nofollow' class='url'>Edward Vielmetti</a> on November 11, 2010 at 5:08 pm. <a rel='nofollow' class='comment-reply-link' href='/?p=28&#038;replytocom=5#respond' onclick='return addComment.moveForm("comment-5", "5", "respond", "28")'>Reply</a> <a href="#comment-5" title="Permanent Link for this comment">#</a></p>
+	  </div>
+</div>
+   <div class="comment even thread-odd thread-alt depth-1" id="comment-6">
+      <div class="comment-avatar">
+         <img alt='' src='http://1.gravatar.com/avatar/5d9d9b2adc2f264cf1b942fdce1ada56?s=54&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D54&amp;r=G' class='avatar avatar-54 photo' height='54' width='54' />      </div>
+
+ 	  <div class="comment-body">
+		 				
+			<p>Really interesting post. As a Turk simpleton two things strike me<br />
+1. It needs a decent reputation system<br />
+2. But more importantly I feel the digital sweat shop nature of the mturk (partly due to the reputation problems) is due to a misunderstanding of what computers and humans should be for. The Human Use of Human Beings by Norbert Wiener and also Computer Power and Human Reason by Joseph Weizenbaum dealt a long time ago with how we should divide tasks between humans and machines.</p>
+<p>If Norbert Wiener was willing to worry about these problems that seems to say that it is important the mturk be used effectively for experiments on what humans and computers should do.</p>
+			
+			<p class="comment-meta">by <a href='http://liveatthewitchtrials.blogspot.com/' rel='external nofollow' class='url'>iamreddave</a> on November 11, 2010 at 6:18 pm. <a rel='nofollow' class='comment-reply-link' href='/?p=28&#038;replytocom=6#respond' onclick='return addComment.moveForm("comment-6", "6", "respond", "28")'>Reply</a> <a href="#comment-6" title="Permanent Link for this comment">#</a></p>
+	  </div>
+</div>
+	
+			</div>
+
+
+
+	<div id="respond" class="post-comments comment-form">
+		<h2>Leave your comment</h2>
+	
+			
+		<form action="http://blog.cond.org/wp-comments-post.php" method="post">
+		
+		<!-- <p>You can use these XHTML tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p> -->
+		
+				
+		<table>
+			<tr>
+				<th>
+					<label for="author">Name</label>
+					<p>Required. </p>
+				</th>
+				<td>
+					<input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label for="email">Email</label>
+					<p>Required. Not published.</p>
+				</th>
+				<td>
+					<input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label for="url">Website</label>
+					<p>If you have one.</p>
+				</th>
+				<td>
+					<input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+				</td>
+			</tr>
+				
+				
+			<tr>
+				<th>
+					<label for="comment">Comment</label>
+				</th>
+				<td>
+					<textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th />
+				<td>
+<blockquote>
+Comment moderation is in use. Please do not submit your comment twice -- it will appear shortly.
+
+</blockquote>
+
+					<input name="submit" type="submit" id="submit" tabindex="5" value="Submit" />
+				</td>
+			</tr>
+		</table>
+	
+		<input type='hidden' name='comment_post_ID' value='28' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+			
+		</form>
+	</div>
+</div>
+
+<hr />
+
+		
+	<div id="sidebar">
+			<div class="section">
+			<h2>About this blog</h2>
+			<p>A collection of randomness by <A HREF="http://www.cond.org">Eytan</A></p>.  <P>These are random opinions.  I (mostly) believed them when I wrote them.  I reserve the right to change my mind.  You should feel free to tell me why I'm wrong.</P>
+		</div>
+		
+		<div class="section">
+			<h2>Search</h2>
+			<form method="get" id="searchform" action="http://blog.cond.org/">
+	<div><input type="text" name="s" value="" id="s" /></div>
+</form>
+		</div>
+		
+		<div class="section">
+			<h2>Tags</h2>
+			<div class="tag-cloud"><ul class='wp-tag-cloud'>
+	<li><a href='http://blog.cond.org/?tag=thoughts' class='tag-link-4' title='1 topic' style='font-size: 1em;'>thoughts</a></li>
+</ul>
+</div>		</div>
+	</div>
+
+<hr />			<div id="footer">
+			<p>Proudly powered by <a href="http://www.wordpress.org">WordPress</a> and <a href="http://www.rodrigogalindez.com/themes/modernist/" title="Free WordPress theme">Modernist</a>, a theme by <a href="http://www.rodrigogalindez.com" title="Web Designer">Rodrigo Galindez</a>. <a href="http://blog.cond.org/?feed=rss2" title="Syndicate this site using RSS"><acronym title="Really Simple Syndication">RSS</acronym> Feed</a>.</p>
+		</div>
+	</div>
+</body>
+</html>

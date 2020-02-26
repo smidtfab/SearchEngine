@@ -1,0 +1,927 @@
+<!-- $Id: example.html,v 1.4 2006/03/27 02:44:36 pat Exp $ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Mark Dredze</title>
+
+<style type="text/css">
+.text {
+	font-size: 1.1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.project_name {
+	font-style: italic;
+	font-size: 1.1em;
+}
+.student_name {
+
+}
+.student_table {
+    border: dashed 1px silver;
+}
+.collapsible {
+    display: none; /* Only important part */
+    border: none; /* dashed 1px silver; */
+    padding: 5px;
+    text-indent: 20px;
+    font-style: italic;
+}
+.pub_year_header {
+	font-size: 18px;
+	font-weight: bold;
+}
+.notes {
+}
+.title { font-weight: bolder;
+	font-size: 1.0em;
+	color: #225522; }
+
+.author { color: black; }
+
+.venue { font-style: italic; }
+
+.volume { font-weight: bolder; }
+
+.year { color: black; }
+
+.abstract {
+	font-size: 1.0em;
+	line-height: 100%; 
+	padding-top: 10px; }
+
+.pub_link { font-size: .9em; color: #c95e62; }
+
+.pub_table {
+	background-color: #00FFFF;
+	border-style: none;
+}
+.pub_side_cell {
+	background-color: #00FFFF;
+}
+.pub_middle_cell {
+	background-color: #FFFFFF;
+}
+.colleague {
+	font-size: 1.1em; 
+	text-decoration: none;
+}
+</style>
+
+<!-- This controls the expandable boxes used for abstracts -->
+<script type="text/javascript">
+//preload image
+var collimg = new Image();
+collimg.src = "collapse.gif";
+var expimg = new Image();
+expimg.src = "expand.gif";
+
+function ShowHideLayer(boxID) {
+	/* Obtain reference for the selected boxID layer and its button */
+	var box = document.getElementById("box"+boxID);
+	var boxbtn = document.getElementById("btn"+boxID);
+	
+	/* If the selected box is currently invisible, show it */
+	if(box.style.display == "none" || box.style.display=="") {
+		box.style.display = "block";
+ 		boxbtn.src = "collapse.gif";
+	}
+	/* otherwise hide it */
+	else {
+		box.style.display = "none";
+		boxbtn.src = "expand.gif";
+	}
+}
+</script>
+
+
+ <SCRIPT type="text/javascript">
+<!--
+function mail(domain,userid) {
+  document.write('<a href="mail' + 'to:' + userid + '@');
+  document.write(domain + '">' + userid);
+  document.write('@' + domain);
+  document.write('</a>');
+}
+// -->
+</SCRIPT>
+
+
+<script type="text/javascript" src="tabber.js"></script>
+<link rel="stylesheet" href="tabber.css" TYPE="text/css" MEDIA="screen">
+<link rel="stylesheet" href="tabber-print.css" TYPE="text/css" MEDIA="print">
+
+<script type="text/javascript">
+
+/* Optional: Temporarily hide the "tabber" class so it does not "flash"
+   on the page as plain HTML. After tabber runs, the class is changed
+   to "tabberlive" and it will appear. */
+
+document.write('<style type="text/css">.tabber{display:none;}<\/style>');
+</script>
+
+</head>
+<body>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3865572; 
+var sc_invisible=1; 
+var sc_partition=31; 
+var sc_click_stat=1; 
+var sc_security="e48ddc1f"; 
+</script>
+
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><div class="statcounter"><a href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c32.statcounter.com/3865572/0/e48ddc1f/1/" alt="counter stats" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Whatcounter Code START -->
+<script language="JavaScript" type="text/javascript" src="pphlogger.js"></script>
+<noscript><img alt="" src="http://w1.whatcounter.com/pphlogger.php?id=mdredze&st=img">
+<a href="http://www.whatcounter.com">Free invisible hit counter</a></noscript>
+<!-- Whatcounter Code END -->
+
+<table>
+<tr valign="top">
+<td width="235">
+<img src="dredze3b.jpg" border="0" alt="" align="left" width="307" height="208">
+</td>
+<td>
+<table>
+<tr>
+<td>
+<h1>Mark Dredze</h1>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a href="http://www.jhu.edu" alt="Johns Hopkins University"><img src="jhu-logo.gif" align="right" border="0" alt="Johns Hopkins University"></a></td>
+</tr>
+</table>
+<table border=0>
+<tr>
+<td>Senior Research Scientist</td>
+<td></td>
+<td><a href="http://web.jhu.edu/hltcoe">Human Language Technology Center of Excellence</a></td>
+</tr>
+<tr>
+<td>Assistant Research Professor</td>
+<td></td>
+<td><a href="http://cs.jhu.edu/">Department of Computer Science</a></td>
+</tr>
+<tr>
+<td>
+</td>
+<td></td>
+<td>
+<a href="http://www.clsp.jhu.edu">Center for Language and Speech Processing</a>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td>
+<b>Contact:</b>&nbsp;</td>
+<td>
+<SCRIPT type="text/javascript">
+<!--
+mail('cs.jhu.edu','mdredze');
+// -->
+</script>
+&nbsp;|&nbsp;
+<a href="http://www.cs.jhu.edu/~mdredze">www.cs.jhu.edu/~mdredze</a>&nbsp;&nbsp;
+<a href="http://www.dredze.com">www.dredze.com</a>
+</td>
+</tr>
+<tr>
+<td>
+<b>Office:</b>&nbsp;</td><td><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=810+Wyman+Park+Dr,+Baltimore,+MD+21211+(COE)&sll=40.006046,-75.23321&sspn=0.009796,0.02178&g=2+Hardie+Way,+PA+19004&ie=UTF8&ll=39.324322,-76.625991&spn=0.010374,0.02178&z=16&iwloc=addr">Stieff</a> 181 &nbsp;&nbsp; (410) 516-6786 </td></tr></table>
+</td>
+</tr>
+</table>
+<div class="tabber">
+
+     <div class="tabbertab">
+	  <h2>About Me</h2>
+	  <p class="text">
+	  I am teaching Current Topics in Machine Learning (600.775) in the Spring of 2011.<br><br>
+	  
+	  
+	  I organized a workshop on Amazon Mechanical Turk at NAACL 2010. All of the data is available: <a href="http://sites.google.com/site/amtworkshop2010/">Check it out.</a><br><br>
+	  
+
+
+
+I am an assistant research professor of <a href="http://cs.jhu.edu/">computer science</a> at <a href="http://www.jhu.edu">Johns Hopkins University</a>. I primarily work 
+in the <a href="http://web.jhu.edu/HLTCOE">Human Language Technology Center of Excellence</a> (COE), home to many excellent
+<a href="http://web.jhu.edu/HLTCOE/staff.html">researchers</a> in NLP. I also am affiliated with the <a href="http://www.clsp.jhu.edu">Center for Speech and Language Processing (CLSP)</a>.
+<br><br>
+<b>Research Interests</b><br>
+I have a range of research interests in machine learning, natural language processing and intelligent user interfaces.
+The most exciting work combines these three areas in new and interesting ways. Specifically, I've recently worked in
+online learning, semi-supervised learning, intelligent email and domain adaptation.
+<br><br>
+<b>"I want to work with you."</b><br>
+Great! Please contact me if you are a JHU student. It is probably helpful if you've taken natural language, machine learning or artificial intelligence.
+If you are <i>not</i> a JHU student, <i>do not</i> contact me directly asking about open positions. If you do I will ignore your email. Instead, please see the admissions process at the <a href="http://www.clsp.jhu.edu/admissions/">CLSP</a> and <a href="http://cs.jhu.edu/grad-admissions-info/">CS</a> department. The COE offers <a href="http://web.jhu.edu/HLTCOE/opportunities.html">graduate fellowships</a>. 
+
+<br><br>
+<b>"What do you do?"</b><br>
+In addition to listing my research interests above, I like to describe the evolution
+of my research.
+<br><br>
+I began my research as an undergraduate at <a href="http://www.northwestern.edu">Northwestern University</a>
+working on intelligent user interfaces in the InfoLab,
+specifically an interface for bringing contextual information to television
+news viewers. The work required various learning components:
+generating queries, segmenting stories, classification, etc. Realizing that I knew little about
+these technologies, I decided to learn more about components that would support good UIs. At
+<a href="http://www.watson.ibm.com/">IBM TJ Watson Research Center</a>, I began work on a natural
+medium for these applications: email. After working on email activity management, I began my PhD at the 
+<a href="http://www.upenn.edu">University of Pennsylvania</a> with 
+<a href="http://www.cis.upenn.edu/~pereira/">Fernando Pereira</a>
+working on the <href="http://www.ai.sri.com/project/CALO">Calo</a> Project.
+I branched off into other email tasks, including
+reply prediction and attachment prediction, both designed to improve the email
+experience. This taught me the importance of building learning models
+specific to each user since different users operate in different environments.
+<br><br>
+Subsequently, I expanded my interests to other applications and developments of these
+learning technologies, such as semi-supervised learning and online learning.
+Observations about differences in user behaviors lead to work in domain/user adaptation,
+an important problem for natural language processing.
+<br><br>
+Over the years I have worked at a variety of industrial research labs, including
+<a href="http://www.google.com">Google</a>,
+<a href="http://www.ibm.com">IBM</a> and
+<a href="http://www.microsoft.com">Microsoft</a>.
+This works has given me an appreciation for real world deployment challenges of intelligent
+systems. In general, I am interested in these challenges and how we can develop
+more robust learning systems.
+
+<br><br>
+
+	  </p>
+     </div>
+
+
+     <div class="tabbertab">
+	  <h2>Publications</h2>
+	  <p class="text">
+	  
+
+Click <img src="expand.gif" width="9" height="9" border="0" /> to show abstract.
+
+<br>
+
+
+<!-- Insert publications here -->
+<table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2010</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(1);">
+<img src="expand.gif" alt="Expand Me" name="btn1" width="9" height="9" border="0" id="btn1" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Aren Jansen, Glen Coppersmith, Kenneth Church</span>. <span class="title">NLP on Spoken Documents without ASR</span>. <span class="venue">Empirical Methods in Natural Language Processing (EMNLP)</span>, <span class="year">2010</span>. [<a href="publications/emnlp_2010_nlp_asr.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box1" class="collapsible">
+<span class="abstract">There is considerable interest in interdisciplinary combinations of automatic speech recognition (ASR), machine learning, natural language processing, text classification and information retrieval. Many of these boxes, especially ASR, are often based on considerable linguistic resources. We would like to be able to process spoken documents with few (if any) resources. Moreover, connecting black boxes in series tends to multiply errors, especially when the key terms are out-of-vocabulary (OOV). The proposed alternative applies text processing directly to the speech without a dependency on ASR. The method finds long (&amp;#160;1 sec) repetitions in speech, and clusters them into pseudo-terms (roughly phrases). Document clustering and classification work surprisingly well on pseudo-terms; performance on a Switchboard task approaches a baseline using gold standard manual transcriptions.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(2);">
+<img src="expand.gif" alt="Expand Me" name="btn2" width="9" height="9" border="0" id="btn2" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Tim Oates, Christine Piatko</span>. <span class="title">We're Not in Kansas Anymore: Detecting Domain Changes in Streams</span>. <span class="venue">Empirical Methods in Natural Language Processing (EMNLP)</span>, <span class="year">2010</span>. [<a href="publications/emnlp_2010_domain_shift.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box2" class="collapsible">
+<span class="abstract">Domain adaptation, the problem of adapting a natural language processing system trained in one domain to perform well in a different domain, has received significant attention. This paper addresses an important problem for deployed systems that has received little attention -- detecting when such adaptation is needed by a system operating in the wild, i.e., performing classification over a stream of unlabeled examples. Our method uses A-distance, a metric for detecting shifts in data streams, combined with classification margins to detect domain shifts. We empirically show effective domain shift detection on a variety of data sets and shift conditions.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(3);">
+<img src="expand.gif" alt="Expand Me" name="btn3" width="9" height="9" border="0" id="btn3" /></a>
+&nbsp;&nbsp;
+<span class="author">Carolina Parada, Abhinav Sethy, Mark Dredze, Fred Jelinek</span>. <span class="title">A Spoken Term Detection Framework for Recovering Out-of-Vocabulary Words Using the Web</span>. <span class="venue">International Speech Communication Association (INTERSPEECH)</span>, <span class="year">2010</span>. [<a href="publications/interspeech_2010_oovrecovery.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box3" class="collapsible">
+<span class="abstract">Vocabulary restrictions in large vocabulary continuous speech recognition (LVCSR) systems mean that out-of-vocabulary (OOV) words are lost in the output. However, OOV words tend to be information rich terms (often named entities) and their omission from the transcript negatively affects both usability and downstream NLP technologies, such as machine translation or knowledge distillation. We propose a novel approach to OOV recovery that uses a spoken term detection (STD) framework. Given an identified OOV region in the LVCSR output, we recover the uttered OOVs by utilizing contextual information and the vast and constantly updated vocabulary on the Web. Discovered words are integrated into system output, recovering up to 40% of OOVs and resulting in a reduction in system error.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(4);">
+<img src="expand.gif" alt="Expand Me" name="btn4" width="9" height="9" border="0" id="btn4" /></a>
+&nbsp;&nbsp;
+<span class="author">Delip Rao, Paul McNamee, Mark Dredze</span>. <span class="title">Streaming Cross Document Entity Coreference Resolution</span>. <span class="venue">Conference on Computational Linguistics (Coling)</span>, <span class="year">2010</span>. [<a href="publications/streaming_coref_coling.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box4" class="collapsible">
+<span class="abstract">Previous research in cross-document entity coreference has generally been restricted to the offline scenario where the set of documents is provided in advance. As a consequence, the dominant approach is based on greedy agglomerative clustering techniques that utilize pairwise vector comparisons and thus require O(n^2) space and time. In this paper we explore identifying coreferent entity mentions across documents in high-volume streaming text, including methods for utilizing orthographic and contextual information. We test our methods using several corpora to quantitatively measure both the efficacy and scalability of our streaming approach. We show that our approach scales to at least an order of magnitude larger data than previous reported methods.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(5);">
+<img src="expand.gif" alt="Expand Me" name="btn5" width="9" height="9" border="0" id="btn5" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Paul McNamee, Delip Rao, Adam Gerber, Tim Finin</span>. <span class="title">Entity Disambiguation for Knowledge Base Population</span>. <span class="venue">Conference on Computational Linguistics (Coling)</span>, <span class="year">2010</span>. [<a href="publications/entity_linking_coling.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box5" class="collapsible">
+<span class="abstract">The integration of facts derived from information extraction systems into existing knowledge bases requires a system to disambiguate entity mentions in the text. This is challenging due to issues such as non-uniform variations in entity names, mention ambiguity, and entities absent from a knowledge base. We present a state of the art system for entity disambiguation that not only addresses these challenges but also scales to knowledge bases with several million entries using very little resources. Further, our approach achieves performance of up to 95% on entities mentioned from newswire and 80% on a public test set that was designed to include challenging queries.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(6);">
+<img src="expand.gif" alt="Expand Me" name="btn6" width="9" height="9" border="0" id="btn6" /></a>
+&nbsp;&nbsp;
+<span class="author">Chris Callison-Burch, Mark Dredze</span>. <span class="title">Creating Speech and Language Data With Amazon's Mechanical Turk</span>. <span class="venue">Workshop on Creating Speech and Language Data With Mechanical Turk at NAACL-HLT</span>, <span class="year">2010</span>. [<a href="publications/amt_overview.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box6" class="collapsible">
+<span class="abstract">In this paper we give an introduction to using Amazon\'s Mechanical Turk crowdsourcing platform for the purpose of collecting data for human language technologies. We survey the papers published in the NAACL-2010 Workshop. 24 researchers participated in the workshop\'s shared task to create data for speech and language applications with $100.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(7);">
+<img src="expand.gif" alt="Expand Me" name="btn7" width="9" height="9" border="0" id="btn7" /></a>
+&nbsp;&nbsp;
+<span class="author">Tim Finin, William Murnane, Anand Karandikar, Nicholas Keller, Juntin Martineau, Mark Dredze</span>. <span class="title">Annotating named entites in Twitter data with crowdsourcing</span>. <span class="venue">Workshop on Creating Speech and Language Data With Mechanical Turk at NAACL-HLT</span>, <span class="year">2010</span>. [<a href="publications/amt_ner.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box7" class="collapsible">
+<span class="abstract">We describe our experience using both Amazon Mechanical Turk (MTurk) and CrowdFlower to collect simple named entity annotations for Twitter status updates. Unlike most genres that have traditionally been the focus of named entity experiments Twitter is far more informal and abbreviated. The collected annotations and annotation techniques will provide a first step towards the full study of named entity recognition in domains like Facebook and Twitter. We also briefly describe how to use MTurk to collect judgements on the quality of "word clouds."</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(8);">
+<img src="expand.gif" alt="Expand Me" name="btn8" width="9" height="9" border="0" id="btn8" /></a>
+&nbsp;&nbsp;
+<span class="author">Matthew R. Gormley, Adam Gerber, Mary Harper, Mark Dredze</span>. <span class="title">Non-Expert Correction of Automatically Generated Relation Annotations</span>. <span class="venue">Workshop on Creating Speech and Language Data With Mechanical Turk at NAACL-HLT</span>, <span class="year">2010</span>. [<a href="publications/amt_relations.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box8" class="collapsible">
+<span class="abstract">We explore a new way to collect human annotated relations in text using Amazon Mechanical Turk. Given a knowledge base of relations and a corpus, we identify sentences which mention both an entity and an attribute that have some relation in the knowledge base. Each noisy sentence/relation pair is presented to multiple turkers, who are asked whether the sentence expresses the relation. We describe a design which encourages user efficiency and aids discovery of cheating. We also present results on inter-annotator agreement.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(9);">
+<img src="expand.gif" alt="Expand Me" name="btn9" width="9" height="9" border="0" id="btn9" /></a>
+&nbsp;&nbsp;
+<span class="author">Courtney Napoles, Mark Dredze</span>. <span class="title">Learning Simple Wikipedia: A Cogitation in Ascertaining Abecedarian Language</span>. <span class="venue">Workshop on Computational Linguistics and Writing: Writing Processes and Authoring Aids at NAACL-HLT 2010</span>, <span class="year">2010</span>. [<a href="publications/wiki_simple.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box9" class="collapsible">
+<span class="abstract">Text simplification is the process of changing vocabulary and grammatical structure to create a more accessible version of the text while maintaining the underlying information and content. Automated tools for text simplification are a practical way to make large corpora of text accessible to a wider audience lacking high levels of fluency in the corpus language. In this work, we investigate the potential of Simple Wikipedia to assist automatic text simplification by building a statistical classification system that discriminates simple English from ordinary English. Most text simplification systems are based on hand-written rules (e.g., PEST and its module SYSTAR), and therefore face limitations scaling and transferring across domains. The potential for using Simple Wikipedia for text simplification is significant; it contains nearly 60,000 articles with revision histories and aligned articles to ordinary English Wikipedia. Using articles from Simple Wikipedia and ordinary Wikipedia, we evaluated different classifiers and feature sets to identify the most discriminative features of simple English for use across domains. These findings help further understanding of what makes text simple and can be applied as a tool to help writers craft simple text.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(10);">
+<img src="expand.gif" alt="Expand Me" name="btn10" width="9" height="9" border="0" id="btn10" /></a>
+&nbsp;&nbsp;
+<span class="author">Justin Ma, Alex Kulesza, Koby Crammer, Mark Dredze, Lawrence Saul, Fernando Pereira</span>. <span class="title">Exploiting Feature Covariance in High-Dimensional Online Learning</span>. <span class="venue">AIStats</span>, <span class="year">2010</span>. [<a href="publications/aistats10_diagfull.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box10" class="collapsible">
+<span class="abstract">Some online algorithms for linear classification model the uncertainty in their weights over the course of learning. Modeling the full covariance structure of the weights can provide a significant advantage for classification. However, for high-dimensional, large-scale data, even though there may be many second-order feature interactions, it is computationally infeasible to maintain this covariance structure. To extend second-order methods to high-dimensional data, we develop low-rank approximations of the covariance structure. We evaluate our approach on both synthetic and real-world data sets using the confidence-weighted online learning framework. We show improvements over diagonal covariance matrices for both low and high-dimensional data.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(11);">
+<img src="expand.gif" alt="Expand Me" name="btn11" width="9" height="9" border="0" id="btn11" /></a>
+&nbsp;&nbsp;
+<span class="author">Carolina Parada, Mark Dredze, Denis Filimonov, Fred Jelinek</span>. <span class="title">Contextual Information Improves OOV Detection in Speech</span>. <span class="venue">North American Chapter of the Association for Computational Linguistics (NAACL)</span>, <span class="year">2010</span>. [<a href="publications/oov_crf.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box11" class="collapsible">
+<span class="abstract">Out-of-vocabulary (OOV) words represent an important source of error in large vocabulary continuous speech recognition (LVCSR) systems. These words cause recognition failures, which propagate through pipeline systems impacting the performance of downstream applications. The detection of OOV regions in the output of a LVCSR system is typically addressed as a binary classification task, where each region is independently classified using local information. In this paper, we show that jointly predicting OOV regions, and including contextual information from each region, leads to substantial improvement in OOV detection. Compared to the state-of-the-art, we reduce the missed OOV rate from 42.6% to 28.4% at 10% false alarm rate.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(12);">
+<img src="expand.gif" alt="Expand Me" name="btn12" width="9" height="9" border="0" id="btn12" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Alex Kulesza, Koby Crammer</span>. <span class="title">Multi-Domain Learning by Confidence-Weighted Parameter Combination</span>. <span class="venue">Machine Learning</span>, <span class="year">2010</span>. [<a href="http://www.springerlink.com/content/a78049767680386l/"><span class="pub_link">PDF</span></a>] [<a href="publications/multi_domain_tech_report.pdf"><span class="pub_link">Tech Report</span></a>]
+<div id="box12" class="collapsible">
+<span class="abstract">State-of-the-art statistical NLP systems for a variety of tasks learn from labeled training data that is often domain specific. However, there may be multiple domains or sources of interest on which the system must perform. For example, a spam filtering system must give high quality predictions for many users, each of whom receives emails from different sources and may make slightly different decisions about what is or is not spam. Rather than learning separate models for each domain, we explore systems that learn across multiple domains. We develop a new multi-domain online learning framework based on parameter combination from multiple classifiers. Our algorithms draw from multi-task learning and domain adaptation to adapt multiple source domain classifiers to a new target domain, learn across multiple similar domains, and learn across a large number of disparate domains. We evaluate our algorithms on two popular NLP domain adaptation tasks: sentiment classification and spam filtering.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2009</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Mark Dredze</span>. <span class="title">Intelligent Email: Aiding Users with AI</span>. <span class="venue">PhD Thesis, Computer and Information Science, University of Pennsylvania</span>, <span class="year">2009</span>. [<a href="publications/dredze_thesis.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box13" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Paul McNamee, Mark Dredze, Adam Gerber, Nikesh Garera, Tim Finin, James Mayfield, Christine Piatko, Delip Rao, David Yarowsky, Markus Dreyer</span>. <span class="title">HLTCOE Approaches to Knowledge Base Population at TAC 2009</span>. <span class="venue">Text Analysis Conference (TAC)</span>, <span class="year">2009</span>. 
+<div id="box14" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(15);">
+<img src="expand.gif" alt="Expand Me" name="btn15" width="9" height="9" border="0" id="btn15" /></a>
+&nbsp;&nbsp;
+<span class="author">Koby Crammer, Alex Kulesza, Mark Dredze</span>. <span class="title">Adaptive Regularization of Weight Vectors</span>. <span class="venue">Advances in Neural Information Processing Systems (NIPS)</span>, <span class="year">2009</span>. [<a href="publications/nips09_arow.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box15" class="collapsible">
+<span class="abstract">We present AROW, a new online learning algorithm that combines several useful properties: large margin training, confidence weighting, and the capacity to handle non-separable data. AROW performs adaptive regularization of the prediction function upon seeing each new instance, allowing it to perform especially well in the presence of label noise. We derive a mistake bound, similar in form to the second order perceptron bound, that does not assume separability. We also relate our algorithm to recent confidence-weighted online learning techniques and show empirically that AROW achieves state-of-the-art performance and notable robustness in the case of non-separable data.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(16);">
+<img src="expand.gif" alt="Expand Me" name="btn16" width="9" height="9" border="0" id="btn16" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze Partha Pratim Talukdar, Koby Crammer</span>. <span class="title">Sequence Learning from Data with Multiple Labels</span>. <span class="venue">ECML/PKDD Workshop on Learning from Multi-Label Data</span>, <span class="year">2009</span>. [<a href="publications/mld09_ml.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box16" class="collapsible">
+<span class="abstract">We present novel algorithms for learning structured predictors from instances with multiple labels in the presence of noise. The proposed algorithms improve performance on two standard NLP tasks when we have a small amount of training data (low quantity) and when the labels are noisy (low quality). In these settings, the methods improve performance over using a single label, in some cases exceeding performance using gold labels. Our methods could be used in a semi-supervised setting, where a limited amount of labeled data could be combined with a rule based automatic labeling of unlabeled data with multiple possible labels.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(17);">
+<img src="expand.gif" alt="Expand Me" name="btn17" width="9" height="9" border="0" id="btn17" /></a>
+&nbsp;&nbsp;
+<span class="author">Koby Crammer, Mark Dredze, Alex Kulesza</span>. <span class="title">Multi-Class Confidence Weighted Algorithms</span>. <span class="venue">Empirical Methods in Natural Language Processing (EMNLP)</span>, <span class="year">2009</span>. [<a href="publications/emlnp09_mccw.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box17" class="collapsible">
+<span class="abstract">The recently introduced online confidence-weighted (CW) learning algorithm for binary classification performs well on many binary NLP tasks. However, for multi-class problems CW learning updates and inference cannot be computed analytically or solved as convex optimization problems as they are in the binary case. We derive learning algorithms for the multi-class CW setting and provide extensive evaluation using nine NLP datasets, including three derived from the recently released New York Times corpus. Our best algorithm outperforms state-of-the-art online and batch methods on eight of the nine tasks. We also show that the confidence information maintained during learning yields useful probabilistic information at test time.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(18);">
+<img src="expand.gif" alt="Expand Me" name="btn18" width="9" height="9" border="0" id="btn18" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Bill Schilit, Peter Norvig</span>. <span class="title">Suggesting Email View Filters for Triage and Search</span>. <span class="venue">International Joint Conference on Artificial Intelligence (IJCAI)</span>, <span class="year">2009</span>. [<a href="publications/dredze_ijcai_09.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box18" class="collapsible">
+<span class="abstract">Growing email volumes cause flooded inboxes and swelled email archives, making search and new email processing difficult. While emails have rich metadata, such as recipients and folders, suitable for creating filtered views, it is often difficult to choose appropriate filters for new inbox messages without first examining messages. In this work, we consider a system that automatically suggests relevant view filters to the user for the currently viewed messages. We propose several ranking algorithms for suggesting useful filters. Our work suggests that such systems quickly filter groups of inbox messages and find messages more easily during search.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2008</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(19);">
+<img src="expand.gif" alt="Expand Me" name="btn19" width="9" height="9" border="0" id="btn19" /></a>
+&nbsp;&nbsp;
+<span class="author">Kevin Lerman, Ari Gilder, Mark Dredze, Fernando Pereira</span>. <span class="title">Reading the Markets: Forecasting Public Opinion of Political Candidates by News Analysis</span>. <span class="venue">Conference on Computational Linguistics (Coling)</span>, <span class="year">2008</span>. [<a href="publications/markets_coling08.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box19" class="collapsible">
+<span class="abstract">Media reporting shapes public opinion which can in turn influence events, particularly in political elections, in which candidates both respond to and shape public perception of their campaigns. We use computational linguistics to automatically predict the impact of news on public perception of political candidates. Our system uses daily newspaper articles to predict shifts in public opinion as reflected in prediction markets. We discuss various types of features designed for this problem. The news system improves market prediction over baseline market systems.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(20);">
+<img src="expand.gif" alt="Expand Me" name="btn20" width="9" height="9" border="0" id="btn20" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Joel Wallenberg</span>. <span class="title">Further Results and Analysis of Icelandic Part of Speech Tagging</span>. <span class="venue">Technical Report MS-CIS-08-13, University of Pennsylvania, Department of Computer and Information Science</span>, <span class="year">2008</span>. [<a href="http://repository.upenn.edu/cis_reports/878/"><span class="pub_link">PDF</span></a>] 
+<div id="box20" class="collapsible">
+<span class="abstract">Data driven POS tagging has achieved good performance for English, but can still lag behind linguistic rule based taggers for morphologically complex languages, such as Icelandic. We extend a statistical tagger to handle fine grained tagsets and improve over the best Icelandic POS tagger. Additionally, we develop a case tagger for non-local case and gender decisions. An error analysis of our system suggests future directions. This paper presents further results and analysis to the original work.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(21);">
+<img src="expand.gif" alt="Expand Me" name="btn21" width="9" height="9" border="0" id="btn21" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Joel Wallenberg</span>. <span class="title">Icelandic Data-Driven Part of Speech Tagging</span>. <span class="venue">Association for Computational Linguistics (ACL)</span>, <span class="year">2008</span>. [<a href="publications/acl_icelandic_pos.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box21" class="collapsible">
+<span class="abstract">Data driven POS tagging has achieved good performance for English, but can still lag behind linguistic rule based taggers for morphologically complex languages, such as Icelandic. We extend a statistical tagger to handle fine grained tagsets and improve over the best Icelandic POS tagger. Additionally, we develop a case tagger for non-local case and gender decisions. An error analysis of our system suggests future directions.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(22);">
+<img src="expand.gif" alt="Expand Me" name="btn22" width="9" height="9" border="0" id="btn22" /></a>
+&nbsp;&nbsp;
+<span class="author">Kuzman Ganchev, Mark Dredze</span>. <span class="title">Small Statistical Models by Random Feature Mixing</span>. <span class="venue">Workshop on Mobile NLP at ACL</span>, <span class="year">2008</span>. [<a href="publications/mobile_nlp_feature_mixing.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box22" class="collapsible">
+<span class="abstract">The application of statistical NLP systems to resource constrained devices is limited by the need to maintain parameters for a large number of features and an alphabet mapping features to parameters. We introduce random feature mixing to eliminate alphabet storage and reduce the number of parameters without severely impacting model performance.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(23);">
+<img src="expand.gif" alt="Expand Me" name="btn23" width="9" height="9" border="0" id="btn23" /></a>
+&nbsp;&nbsp;
+<span class="author">Koby Crammer, Mark Dredze, John Blitzer, Fernando Pereira</span>. <span class="title">Batch Performance for an Online Price</span>. <span class="venue">The NIPS 2007 Workshop on Efficient Machine Learning</span>, <span class="year">2008</span>. [<a href="publications/crammer_batch_online_nips07.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box23" class="collapsible">
+<span class="abstract">Batch learning techniques achieve good performance, but at the cost of many (sometimes even hundreds) of passes over the data. For many tasks, such as web-scale ranking of machine translation hypotheses, making many passes over the data is prohibitively expensive, even in parallel over thousands of machines. Online algorithms, which treat data as a stream of examples, are conceptually appealing for these large scale problems. In practice, however, online algorithms tend to underperform batch methods, unless they are themselves run in multiple passes over the data. &lt;br&gt;In this work we explore a new type of online learning algorithm that incorporates a measure of confidence to the algorithm. The model maintains a confidence for each parameter, reflecting previously observed properties of the data. While this requires an additional parameter for each feature of the data, this is a minimal cost when compared to running the algorithm multiple times over the data. The resulting algorithm learns faster, requiring both fewer training instances and fewer passes over the training data, often approaching batch performance with only a single pass through the data.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(24);">
+<img src="expand.gif" alt="Expand Me" name="btn24" width="9" height="9" border="0" id="btn24" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Krzysztof Czuba</span>. <span class="title">Learning to Admit You're Wrong: Statistical Tools for Evaluating Web QA</span>. <span class="venue">The NIPS 2007 Workshop on Machine Learning for Web Search</span>, <span class="year">2008</span>. [<a href="publications/dredze_gqa_nips07.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box24" class="collapsible">
+<span class="abstract">Web search engines provide specialized results to specific queries, often relying on the output of a QA system. However, targeted answers, while helpful, are embarrassing when wrong. Automated techniques are required to avoid wrong answers and improve system performance. We present the Expected Answer System, a statistical data-driven framework that analyzes the performance of a QA system with the goal of improving system accuracy. Our system is used for wrong answer prediction, missing answer discovery, and question class analysis. An empirical study of a production QA system, one of the first such evaluations presented in the literature, motivates our approach.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(25);">
+<img src="expand.gif" alt="Expand Me" name="btn25" width="9" height="9" border="0" id="btn25" /></a>
+&nbsp;&nbsp;
+<span class="author">Kedar Bellare, Partha Pratim Talukdar, Giridhar Kumaran, Fernando Pereira, Mark Liberman, Andrew McCallum, Mark Dredze</span>. <span class="title">Lightly-Supervised Attribute Extraction for Web Search</span>. <span class="venue">The NIPS 2007 Workshop on Machine Learning for Web Search</span>, <span class="year">2008</span>. [<a href="publications/bellare_attributes_nips07.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box25" class="collapsible">
+<span class="abstract">Web search engines can greatly benefit from knowledge about attributes of entities present in search queries. In this paper, we introduce lightly-supervised methods for extracting entity attributes from natural language text. Using these methods, we are able to extract large numbers of attributes of different entities at fairly high precision from a large natural language corpus. We compare our methods against a previously proposed pattern-based relation extractor, showing that the new methods give considerable improvements over that baseline. We also demonstrate that query expansion using extracted attributes improves retrieval performance on underspecified information-seeking queries.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(26);">
+<img src="expand.gif" alt="Expand Me" name="btn26" width="9" height="9" border="0" id="btn26" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Hanna Wallach, Danny Puller, Fernando Pereira</span>. <span class="title">Generating Summary Keywords for Emails Using Topics</span>. <span class="venue">Intelligent User Interfaces (IUI)</span>, <span class="year">2008</span>. [<a href="publications/dredze_summarization_iui08.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box26" class="collapsible">
+<span class="abstract">Email summary keywords, used to concisely represent the gist of an email, can help users manage and prioritize large numbers of messages. We develop an unsupervised learning framework for selecting summary keywords from emails using latent representations of the underlying topics in a user's mailbox. This approach selects words that describe each message in the context of existing topics rather than simply selecting keywords based on a single message in isolation. We present and compare four methods for selecting summary keywords based on two well-known models for inferring latent topics: latent semantic analysis and latent Dirichlet allocation. The quality of the summary keywords is assessed by generating summaries for emails from twelve users in the Enron corpus. The summary keywords are then used in place of entire messages in two proxy tasks: automated foldering and recipient prediction. We also evaluate the extent to which summary keywords enhance the information already available in a typical email user interface by repeating the same tasks using email subject lines.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(27);">
+<img src="expand.gif" alt="Expand Me" name="btn27" width="9" height="9" border="0" id="btn27" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Hanna Wallach, Danny Puller, Tova Brooks, Josh Carroll, Joshua Magarick, John Blitzer, Fernando Pereira</span>. <span class="title">Intelligent Email: Aiding Users with AI</span>. <span class="venue">American National Conference on Artificial Intelligence (AAAI), NECTAR Paper</span>, <span class="year">2008</span>. [<a href="publications/nectar_intelligent_email.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box27" class="collapsible">
+<span class="abstract">Email occupies a central role in the modern workplace. This has led to a vast increase in the number of email messages that users are expected to handle daily. Furthermore, email is no longer simply a tool for asynchronous online communication - email is now used for task management, personal archiving, as well both synchronous and asynchronous online communication. This explosion can lead to "email overload" - many users are overwhelmed by the large quantity of information in their mailboxes. In the human--computer interaction community, there has been much research on tackling email overload. Recently, similar efforts have emerged in the artificial intelligence (AI) and machine learning communities to form an area of research known as intelligent email.\nIn this paper, we take a user-oriented approach to applying AI to email. We identify enhancements to email user interfaces and employ machine learning techniques to support these changes. We focus on three tasks - summary keyword generation, reply prediction and attachment prediction - and summarize recent work in these areas.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(28);">
+<img src="expand.gif" alt="Expand Me" name="btn28" width="9" height="9" border="0" id="btn28" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Tova Brooks, Josh Carroll, Joshua Magarick, John Blitzer, Fernando Pereira</span>. <span class="title">Intelligent Email: Reply and Attachment Prediction</span>. <span class="venue">Intelligent User Interfaces (IUI)</span>, <span class="year">2008</span>. [<a href="publications/dredze_intelligent_email_iui08.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box28" class="collapsible">
+<span class="abstract">We present two prediction problems under the rubric of Intelligent Email that are designed to support enhanced email interfaces that relieve the stress of email overload. Reply prediction alerts users when an email requires a response and facilitates email response management. Attachment prediction alerts users when they are about to send an email missing an attachment or triggers a document recommendation system, which can catch missing attachment emails before they are sent. Both problems use the same underlying email classification system and task specific features. Each task is evaluated for both single-user and cross-user settings.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(29);">
+<img src="expand.gif" alt="Expand Me" name="btn29" width="9" height="9" border="0" id="btn29" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Hanna Wallach</span>. <span class="title">User Models for Email Activity Management</span>. <span class="venue">IUI Workshop on Ubiquitous User Modeling</span>, <span class="year">2008</span>. [<a href="publications/dredze_ubiqum_user_model_08.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box29" class="collapsible">
+<span class="abstract">A single user activity, such as planning a conference trip, typically involves multiple actions. Although these actions may involve several applications, the central point of co-ordination for any particular activity is usually email. Previous work on email activity management has focused on clustering emails by activity. Dredze et al. accomplished this by combining supervised classifiers based on document similarity, authors and recipients, and thread information. In this paper, we take a different approach and present an unsupervised framework for email activity clustering. We use the same information sources as Dredze et al.- namely, document similarity, message recipients and authors, and thread information - but combine them to form an unsupervised, non-parametric Bayesian user model. This approach enables email activities to be inferred without any user input. Inferring activities from a user's mailbox adapts the model to that user. We next describe the statistical machinery that forms the basis of our user model, and explain how several email properties may be incorporated into the model. We evaluate this approach using the same data as Dredze et al., showing that our model does well at clustering emails by activity.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(30);">
+<img src="expand.gif" alt="Expand Me" name="btn30" width="9" height="9" border="0" id="btn30" /></a>
+&nbsp;&nbsp;
+<span class="author">Koby Crammer, Mark Dredze, Fernando Pereira</span>. <span class="title">Exact Convex Confidence-Weighted Learning</span>. <span class="venue">Advances in Neural Information Processing Systems (NIPS)</span>, <span class="year">2008</span>. [<a href="publications/cw_nips_08.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box30" class="collapsible">
+<span class="abstract">Confidence-weighted (CW) learning, an online learning method for linear classifiers, maintains a Gaussian distributions over weight vectors, with a covariance matrix that represents uncertainty about weights and correlations. Confidence constraints ensure that a weight vector drawn from the hypothesis distribution correctly classifies examples with a specified probability. Within this framework, we derive a new convex form of the constraint and analyze it in the mistake bound model. Empirical evaluation with both synthetic and text data shows our version of CW learning achieves lower cumulative and out-of-sample errors than commonly used first-order and second-order online methods.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(31);">
+<img src="expand.gif" alt="Expand Me" name="btn31" width="9" height="9" border="0" id="btn31" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Koby Crammer, Fernando Pereira</span>. <span class="title">Confidence-Weighted Linear Classification</span>. <span class="venue">International Conference on Machine Learning (ICML)</span>, <span class="year">2008</span>. [<a href="publications/icml_variance.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box31" class="collapsible">
+<span class="abstract">We introduce confidence-weighted linear classifiers, which add parameter confidence information to linear classifiers. Online learners in this setting update both classifier parameters and the estimate of their confidence. The particular online algorithms we study here maintain a Gaussian distribution over parameter vectors and update the mean and covariance of the distribution with each instance. Empirical evaluation on a range of NLP tasks show that our algorithm improves over other state of the art online and batch methods, learns faster in the online setting, and lends itself to better classifier combination after parallel training.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(32);">
+<img src="expand.gif" alt="Expand Me" name="btn32" width="9" height="9" border="0" id="btn32" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Koby Crammer</span>. <span class="title">Active Learning with Confidence</span>. <span class="venue">Association for Computational Linguistics</span>, <span class="year">2008</span>. [<a href="publications/acl_active_confident_learning.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box32" class="collapsible">
+<span class="abstract">Active learning is a machine learning approach to achieving high-accuracy with a small amount of labels by letting the learning algorithm choose instances to be labeled. Most of previous approaches based on discriminative learning use the margin for choosing instances. We present a method for incorporating confidence into the margin by using a newly introduced online learning algorithm and show empirically that confidence improves active learning.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(33);">
+<img src="expand.gif" alt="Expand Me" name="btn33" width="9" height="9" border="0" id="btn33" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Koby Crammer</span>. <span class="title">Online Methods for Multi-Domain Learning and Adaptation</span>. <span class="venue">Empirical Methods in Natural Language Processing (EMNLP)</span>, <span class="year">2008</span>. [<a href="publications/multi_domain_emnlp08.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box33" class="collapsible">
+<span class="abstract">NLP tasks are often domain specific, yet systems can learn behaviors across multiple domains. We develop a new multi-domain online learning framework based on parameter combination from multiple classifiers. Our algorithms draw from multi-task learning and domain adaptation to adapt multiple source domain classifiers to a new target domain, learn across multiple similar domains, and learn across a large number of dispirate domains. We evaluate our algorithms on two popular NLP domain adaptation tasks: sentiment classification and spam filtering.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2007</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">John Blitzer, Mark Dredze, Fernando Pereira</span>. <span class="title">Biographies, Bollywood, Boom-boxes and Blenders: Domain Adaptation for Sentiment Classification</span>. <span class="venue">North East Student Colloquium on Artificial Intelligence (NESCAI)</span>, <span class="year">2007</span>. 
+<div id="box34" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Danny Puller, Hanna Wallach, Mark Dredze, Fernando Pereira</span>. <span class="title">Generating Summary Keywords for Emails Using Topics</span>. <span class="venue">Women in Machine Learning Workshop (WiML) at Grace Hopper</span>, <span class="year">2007</span>. 
+<div id="box35" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(36);">
+<img src="expand.gif" alt="Expand Me" name="btn36" width="9" height="9" border="0" id="btn36" /></a>
+&nbsp;&nbsp;
+<span class="author">Neal Parikh, Mark Dredze</span>. <span class="title">Graphical Models for Primarily Unsupervised Sequence Labeling</span>. <span class="venue">Technical Report MS-CIS-07-18, University of Pennsylvania, Department of Computer and Information Science</span>, <span class="year">2007</span>. [<a href="http://repository.upenn.edu/cis_reports/638/"><span class="pub_link">PDF</span></a>] 
+<div id="box36" class="collapsible">
+<span class="abstract">Most models used in natural language processing must be trained on large corpora of labeled text. This tutorial explores a 'primarily unsupervised' approach (based on graphical models) that augments a corpus of unlabeled text with some form of prior domain knowledge, but does not require any fully labeled examples. We survey probabilistic graphical models for (supervised) classification and sequence labeling and then present the prototype-driven approach of Haghighi and Klein (2006) to sequence labeling in detail, including a discussion of the theory and implementation of both conditional random fields and prototype learning. We show experimental results for English part of speech tagging.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(37);">
+<img src="expand.gif" alt="Expand Me" name="btn37" width="9" height="9" border="0" id="btn37" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Reuven Gevaryahu, Ari Elias-Bachrach</span>. <span class="title">Learning Fast Classifiers for Image Spam</span>. <span class="venue">Conference on Email and Anti-Spam (CEAS)</span>, <span class="year">2007</span>. [<a href="publications/image_spam_ceas07.pdf"><span class="pub_link">PDF</span></a>] [<a href="datasets/image_spam/"><span class="pub_link">Data</span></a>]
+<div id="box37" class="collapsible">
+<span class="abstract">Recently, spammers have proliferated image spam, emails which contain the text of the spam message in a human readable image instead of the message body, making detection by conventional content filters difficult. New techniques are needed to filter these messages. Our goal is to automatically classify an image directly as being spam or ham. We present features that focus on simple properties of the image, making classification as fast as possible. Our evaluation shows that they accurately classify spam images in excess of 90% and up to 99% on real world data. Furthermore, we introduce a new feature selection algorithm that selects features for classification based on their speed as well as predictive power. This technique produces an accurate system that runs in a tiny fraction of the time. Finally, we introduce Just in Time (JIT) feature extraction, which creates features at classification time as needed by the classifier. We demonstrate JIT extraction using a JIT decision tree that further increases system speed. This paper makes imagespam classification practical by providing both high accuracy features and a method to learn fast classifiers.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(38);">
+<img src="expand.gif" alt="Expand Me" name="btn38" width="9" height="9" border="0" id="btn38" /></a>
+&nbsp;&nbsp;
+<span class="author">Koby Crammer, Mark Dredze, Kuzman Ganchev, Partha Pratim Talukdar, Steven Carroll</span>. <span class="title">Automatic Code Assignment to Medical Text</span>. <span class="venue">BioNLP Workshop at ACL</span>, <span class="year">2007</span>. [<a href="publications/cmc_bionlp07.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box38" class="collapsible">
+<span class="abstract">Code assignment is important for handling large amounts of electronic medical data in the modern hospital. However, only expert annotators with extensive training can assign codes. We present a system for the assignment of ICD-9-CM clinical codes to free text radiology reports. Our system assigns a code configuration, predicting one or more codes for each document. We combine three coding systems into a single learning system for higher accuracy. We compare our system on a real world medical dataset with both human annotators and other automated systems, achieving nearly the maximum score on the Computational Medicine Center's challenge.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Hanna M. Wallach</span>. <span class="title">Email Keyword Summarization and Visualization with Topic Models</span>. <span class="venue">North East Student Colloquium on Artificial Intelligence (NESCAI)</span>, <span class="year">2007</span>. 
+<div id="box39" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(40);">
+<img src="expand.gif" alt="Expand Me" name="btn40" width="9" height="9" border="0" id="btn40" /></a>
+&nbsp;&nbsp;
+<span class="author">John Blitzer, Mark Dredze, Fernando Pereira</span>. <span class="title">Biographies, Bollywood, Boom-boxes and Blenders: Domain Adaptation for Sentiment Classification</span>. <span class="venue">Association for Computational Linguistics (ACL)</span>, <span class="year">2007</span>. [<a href="publications/sentiment_acl07.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box40" class="collapsible">
+<span class="abstract">Automatic sentiment classification has been extensively studied and applied in recent years. However, sentiment is expressed differently in different domains, and annotating corpora for every possible domain of interest is impractical. We investigate domain adaptation for sentiment classifiers, focusing on online reviews for different types of products. First, we extend to sentiment classification the recently-proposed structural correspondence learning (SCL) algorithm, reducing the relative error due to adaptation between domains by an average of 30% over the original SCL algorithm and 46% over a supervised baseline. Second, we identify a measure of domain similarity that correlates well with the potential for adaptation of a classifier from one domain to another. This measure could for instance be used to select a small set of domains to annotate whose trained classifiers would transfer well to many other domains.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(41);">
+<img src="expand.gif" alt="Expand Me" name="btn41" width="9" height="9" border="0" id="btn41" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, John Blitzer, Partha Pratim Talukdar, Kuzman Ganchev, Joao Graca, Fernando Pereira</span>. <span class="title">Frustratingly Hard Domain Adaptation for Parsing</span>. <span class="venue">Shared Task - Conference on Natural Language Learning - CoNLL 2007 shared task</span>, <span class="year">2007</span>. [<a href="publications/adaptation_conll07.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box41" class="collapsible">
+<span class="abstract">We describe some challenges of adaptation in the 2007 CoNLL Shared Task on Domain Adaptation. Our error analysis for this task suggests that a primary source of error is differences in annotation guidelines between treebanks. Our suspicions are supported by the observation that no team was able to improve target domain performance substantially over a state of the art baseline.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2006</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, John Blitzer, Koby Crammer, Fernando Pereira</span>. <span class="title">Feature Design for Transfer Learning</span>. <span class="venue">North East Student Colloquium on Artificial Intelligence (NESCAI)</span>, <span class="year">2006</span>. [<a href="publications/transfer_nescai_06.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box42" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(43);">
+<img src="expand.gif" alt="Expand Me" name="btn43" width="9" height="9" border="0" id="btn43" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, John Blitzer, Fernando Pereira</span>. <span class="title">``Sorry, I Forgot the Attachment:'' Email Attachment Prediction</span>. <span class="venue">Conference on Email and Anti-Spam (CEAS)</span>, <span class="year">2006</span>. [<a href="publications/attachment_ceas06.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box43" class="collapsible">
+<span class="abstract">The missing attachment problem: a missing attachment generates a wave of emails from the recipients notifying the sender of the error. We present an attachment prediction system to reduce the volume of missing attachment mail. Our classifier could prompt an alert when an outgoing email is missing an attachment. Additionally, the system could activate an attachment recommendation system, whereby suggested documents are offered once the system determines the user is likely to include an attachment, effectively reminding the user to include the attachment. We present promising initial results and discuss implications of our work.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(44);">
+<img src="expand.gif" alt="Expand Me" name="btn44" width="9" height="9" border="0" id="btn44" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Tessa Lau, Nicholas Kushmerick</span>. <span class="title">Automatically classifying emails into activities</span>. <span class="venue">Intelligent User Interfaces (IUI)</span>, <span class="year">2006</span>. [<a href="publications/iui06-dredze.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box44" class="collapsible">
+<span class="abstract">Email-based activity management systems promise to give users better tools for managing increasing volumes of email, by organizing email according to a user\'s activities. Current activity management systems do not automatically classify incoming messages by the activity to which they belong, instead relying on simple heuristics (such as message threads), or asking the user to manually classify incoming messages as belonging to an activity. This paper presents several algorithms for automatically recognizing emails as part of an ongoing activity. Our baseline methods are the use of message reply-to threads to determine activity membership and a naive Bayes classifier. Our SimSubset and SimOverlap algorithms compare the people involved in an activity against the recipients of each incoming message. Our SimContent algorithm uses IRR (a variant of latent semantic indexing) to classify emails into activities using similarity based on message contents. An empirical evaluation shows that each of these methods provide a significant improvement to the baseline methods. In addition, we show that a combined approach that votes the predictions of the individual methods performs better than each individual method alone.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Nicholas Kushmerick, Tessa Lau, Mark Dredze, Rinat Khoussainov</span>. <span class="title">Activity-Centric Email: A Machine Learning Approach</span>. <span class="venue">American National Conference on Artificial Intelligence (AAAI)</span>, <span class="year">2006</span>. [<a href="publications/kushmerick-aaai06-nectar.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box45" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2005</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Rie Kuboto Ando, Mark Dredze, Tong Zhang</span>. <span class="title">Trec 2005 Genomics Track Experiments at IBM Watson</span>. <span class="venue">Text REtrieval Conference (TREC)</span>, <span class="year">2005</span>. [<a href="publications/ibm_trec05_genomics.pdf"><span class="pub_link">PDF</span></a>] (Group invited talk at TREC 2005, ranked 3rd and 4th out of 53 entries)
+<div id="box46" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(47);">
+<img src="expand.gif" alt="Expand Me" name="btn47" width="9" height="9" border="0" id="btn47" /></a>
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, John Blitzer, Fernando Pereira</span>. <span class="title">Reply Expectation Prediction for Email Management</span>. <span class="venue">Conference on Email and Anti-Spam (CEAS)</span>, <span class="year">2005</span>. [<a href="publications/dredze_ceas05.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box47" class="collapsible">
+<span class="abstract">We reduce email overload by addressing the problem of waiting for a reply to one's email. We predict whether sent and received emails necessitate a reply, enabling the user to both better manage his inbox and to track mail sent to others. We discuss the features used to discriminate emails, show promising initial results with a logistic regression model, and outline future directions for this work.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+<a href="javascript:;" onclick="ShowHideLayer(48);">
+<img src="expand.gif" alt="Expand Me" name="btn48" width="9" height="9" border="0" id="btn48" /></a>
+&nbsp;&nbsp;
+<span class="author">Catalina Danis, Wendy Kellogg, Tessa Lau, Mark Dredze, Jeffrey Stylos, Nicholas Kushmerick</span>. <span class="title">Managers Email: Beyond Tasks and To-Dos</span>. <span class="venue">Conference on Human Factors in Computing Systems (CHI)</span>, <span class="year">2005</span>. [<a href="publications/danis_chi2005.pdf"><span class="pub_link">PDF</span></a>] 
+<div id="box48" class="collapsible">
+<span class="abstract">In this paper, we describe preliminary findings that indicate that managers and non-mangers think about their email differently. We asked three research managers and three research non-managers to sort about 250 of their own email messages into categories that "would help them to manage their work." Our analyses indicate that managers create more categories and a more differentiated category structure than non-managers. Our data also suggest that managers create "relationship-oriented" categories more often than non-managers. These results are relevant to research on "email overload" that has highlighted the use of email for activities beyond communication. In particular, our findings suggest that too strong a focus on task management may be incomplete, and that a user's organizational role has an impact on their conceptualization and likely use of email.</span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2004</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Mark Dredze, Jeffrey Stylos, Tessa Lau, Wendy Kellogg, Catalina Danis, Nicholas Kushmerick</span>. <span class="title">Taxie: Automatically identifying tasks in email</span>. <span class="venue">Unpublished Manuscript</span>, <span class="year">2004</span>. 
+<div id="box49" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br><table width="100%" border=0 cellspacing=0 cellpadding=0><tr class="pub_table">
+<td width="5" class="pub_side_cell"></td><td width="5" class="pub_side_cell">
+</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pub_year_header">2003</td></tr>
+<tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="author">Kevin Livingston, Mark Dredze, Kristian Hammond, Larry Birnbaum</span>. <span class="title">Beyond Broadcast</span>. <span class="venue">Proceedings of the 2003 International Conference on Intelligent User Interfaces</span>, <span class="year">2003</span>. 
+<div id="box50" class="collapsible">
+<span class="abstract"></span></div>
+</td></tr><tr><td width="5" class="pub_side_cell"></td><td width="5" class="pub_middle_cell"></td><td>&nbsp;</td></tr>
+</table>
+<br>
+
+
+
+<!-- End insert publications. -->
+
+
+	  </p>
+     </div>
+
+
+
+	<div class="tabbertab">
+	<h2>Students</h2>
+	 <p class="text">
+	
+
+<b>Current Students</b><br>
+<table class="student_table">
+<tr>
+<td width="500"><span class="colleague">Nicholas Andrews</span> (Co-advised with Jason Eisner)</td>
+</tr>
+<tr>
+<td width="500"><span class="colleague">Matt Gormley</span> (Co-advised with Jason Eisner)</td>
+</tr>
+<tr>
+<td width="500"><span class="colleague">Carolina Parada</span> [<a href="http://www.clsp.jhu.edu/~carolinap/">www</a>] (Co-advised with Hynek Hermansky)</td>
+</tr>
+<tr>
+<td width="500"><span class="colleague">Michael Paul</span> [<a href="http://cs.jhu.edu/~mpaul/">www</a>] (first year)</td>
+</tr>
+<tr>
+<td width="500"><span class="colleague">Ariya Rastrow</span> [<a href="http://www.clsp.jhu.edu/~arastrow/">www</a>] (Co-advised with Sanjeev Khudanpur)</td>
+</tr>
+<tr>
+<td width="500"><span class="colleague">Svitlana Volkova</span> [<a href="http://svolkova.weebly.com/">www</a>] (first year)</td>
+</tr>
+</table>
+
+
+<br><br>
+<b>Previous UPenn Student Projects</b><br>
+<table class="student_table">
+<tr>
+<td width="300"><span class="project_name"><b>Project</b></span></td>
+<td width="75"><span class="project_name"><b>Student</b></span></td>
+<td width="25"></td>
+<td width="250"></td>
+</tr>
+
+<tr>
+<td><span class="project_name">Email keyword summarization</span></td>
+<td><span class="student_name">Danny Puller</span></td>
+<td></td>
+<td>UPenn Summer Provost Fellowship</td>
+</tr>
+
+<tr>
+<td><span class="project_name">Sentiment classification</span></td>
+<td><span class="student_name">Ian Cohen</span></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><span class="project_name">Email Attachment Prediction</span></td>
+<td><span class="student_name">Josh Magarick</span></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><span class="project_name">Prototype Driven Learning and Graphical Models</span></td>
+<td><span class="student_name">Neal Parikh</span></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr valign="top">
+<td><span class="project_name">Machine Learning in Prediction Markets</span></td>
+<td><span class="student_name">Ari Gilder <br> Kevin Lerman</span></td>
+<td>[<a href="http://www.seas.upenn.edu/~cse400/CSE401_2007/GilderLerman/project.html">Link</a>]</td>
+<td>Winner Best CS Senior Design Project, Honorary Mention Best Engineering Design Project</td>
+</tr>
+
+<tr valign="top">
+<td><span class="project_name">User Adaptation in Email Reply Prediction</span></td>
+<td><span class="student_name">Tova Brooks <br> Josh Carroll</span></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><span class="project_name">Formal and Informal Meeting Extraction from Email</span></td>
+<td><span class="student_name">Lauren Paone</span></td>
+<td>[<a href="http://www.seas.upenn.edu/~cse400/CSE401_2006/Paone/project.html">Link</a>]</td>
+<td></td>
+</tr>
+
+</table>
+	</p>
+	</div>
+	
+	
+     <div class="tabbertab">
+	  <h2>Teaching</h2>
+	  <p class="text">
+	    Spring 2011: CS 600.775 Current Topics in Machine Learning<br>
+	    Fall 2010: CS 600.475 Machine Learning [<a href="teaching/2010_600_475">Class site</a>]<br>
+		Fall 2009: CS 600.475 Machine Learning [<a href="teaching/2009_600_475">Class site</a>]
+	  </p>
+     </div>
+
+     <div class="tabbertab">
+	  <h2>Data/Code</h2>
+	   <p class="text">
+	  
+
+I get a lot of emails asking me for data or code from one of my papers. If you
+are wondering, the answer is yes! I try to provide both data and code so that
+others can reproduce or compare against my results. Sadly, I don't post data or code due to the lack of time,
+but I usually make them available if you email me.
+<br><br>
+<b>Datasets</b>
+<br>
+<b>TAC 2009 Entity Linking</b> (Email for data)<br>
+A collection of manually linked training examples to supplement those provided in the TAC 2009 KBP task. These
+are described in my Coling 2010 paper on entity linking.
+<br><br>
+<b>Image Spam Dataset</b> [<a href="datasets/image_spam/">Link</a>]<br>
+A collection of ham and spam images taken from real user email.
+<br><br>
+<b>Multi-Domain Sentiment Dataset</b> [<a href="datasets/sentiment/">Link</a>]<br>
+Product reviews from several different product types taken from Amazon.com.
+<br><br>
+<b>Attachment Prediction Email</b> <i> (Email for data)</i><br>
+Enron emails annotated with attachment information and cleaned of numerous artificats inserted by email programs.
+<br><br>
+<b>Code</b><br>
+<b>Structured Learning at Penn</b> [<a href="http://www.seas.upenn.edu/~strctlrn/">Link</a>]<br>
+This is a collection of software developed by me and others in Fernando Pereria's research group at UPenn.
+It is designed for a range of machine learning tasks, such
+as dependency parsing, structured learning, gene prediction and gene mention finding.
+<br><br>
+<b>Confidence Weighted Learning Library</b> <i>(Email for code)</i><br>
+We have collected most of the core algorithms in the confidence weighted learning framework for release
+as a software library. Please email me for the code.
+
+
+<br><br>
+	  </p>
+     </div>
+
+	<div class="tabbertab">
+	<h2>Colleagues</h2>
+	 <p class="text">
+
+I have worked with a lot of amazing people on a wide variety of projects. Here
+are a few of them:<br><br>
+<table>
+<tr>
+<td valign="top">
+<a href="http://www.cs.umass.edu/~kedarb/" class="colleague">Kedar Bellare</a><br>
+<a href="http://www.seas.upenn.edu/~abernal/" class="colleague">Axel Bernal</a><br>
+<a href="http://www.infolab.northwestern.edu/person.asp?id=41" class="colleague"> Larry Birnbaum </a> <br>
+<a href="http://john.blitzer.com/" class="colleague">John Blitzer</a> <br>
+<a href="http://www.cis.upenn.edu/~crammer/" class="colleague">Koby Crammer</a> <br>
+<a href="http://www.cs.cmu.edu/~kczuba/" class="colleague">Krzysztof Czuba</a> <br>
+<a href="http://www.infolab.northwestern.edu/person.asp?id=40" class="colleague">Kris Hammond</a> <br>
+<a href="http://www.cis.upenn.edu/~gabbard/" class="colleague">Ryan Gabbard</a><br>
+<a href="http://www.seas.upenn.edu/~kuzman/" class="colleague">Kuzman Ganchev </a><br>
+<a href="https://www.l2f.inesc-id.pt/wiki/index.php/Jo%C3%A3o_Gra%C3%A7a" class="colleague">João Graça</a><br>
+<a href="http://riejohnson.com/david.html" class="colleague">David Johnson </a><br>
+<a href="http://riejohnson.com" class="colleague">Rie Johnson (Ando)</a> <br> 
+<span class="colleague">Alex Kulesza</span><br>
+<a href="http://www.kushmerick.org/nick/" class="colleague">Nicholas Kushmerick</a> <br> 
+<a href="http://tlau.org/" class="colleague"> Tessa Lau</a> <br> 
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td valign="top">
+<span class="colleague">Kevin Lerman </span><br>
+<span class="colleague">Qian Liu</span><br>
+<a href="http://ryanmcd.googlepages.com/index.html" class="colleague">Ryan McDonald</a> <br>
+<a href="http://www.cs.umass.edu/~mimno/" class="colleague">David Mimno</a> <br>
+<a href="http://norvig.com/" class="colleague">Peter Norvig</a> <br>
+<a href="http://www.cis.upenn.edu/~pereira/" class="colleague">Fernando Pereira</a> <br>
+<span class="colleague">Jeff Reynar </span><br> 
+<span class="colleague">Doug Riecken </span> <br> 
+<a href="http://www.cs.toronto.edu/~roweis/" class="colleague">Sam Roweis</a> <br>
+<a href="http://schilit.googlepages.com/" class="colleague">Bill Schilit</a> <br>
+<a href="http://www.cis.upenn.edu/~partha/" class="colleague">Partha Pratim Talukdar</a> <br> 
+<a href="http://www.inference.phy.cam.ac.uk/hmw26/" class="colleague">Hanna M. Wallach</a> <br> 
+<span class="colleague">Joel Wallenberg </span><br> 
+<span class="colleague">Casey Whitelaw </span><br> 
+<a href="http://stat.rutgers.edu/~tzhang/" class="colleague">Tong Zhang</a><br>
+
+</td>
+</tr>
+</table>
+
+	</p>
+	</div>
+	
+	
+	
+	<div class="tabbertab">
+	<h2>Links</h2>
+	 <p class="text">
+	
+<b>Links:</b><br>
+<a href="http://enhancedmessagingworkshop.googlepages.com/">AAAI 2008 Workshop on Enhanced Messaging</a>. Email, IM, AI, HCI, and all that. Check it out.<br>
+<br>
+<a href="http://sites.google.com/site/emailresearchorg/">Email Research Website</a><br>
+<br>
+
+
+
+
+	</p>
+	</div>
+	
+	
+</div>
+
+</body>
+</html>

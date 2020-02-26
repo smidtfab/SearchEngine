@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><link id="ctl00_HeaderLink1" rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Global/Global-bn20110314.css" /><link id="ctl00_HeaderLink2" rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/Platform/MasterPages/Library/Library-bn20110314.css" /><meta name="NormalizedUrl" content="http://207.46.16.251/en-us/library(d=default)/gg537794(l=en-us,v=VS.99).aspx" /><meta name="VotingContextUrl" content="http://207.46.16.251/en-us/library(d=default)/gg537794(l=en-us,v=VS.99).aspx" /><meta name="ROBOTS" content="NOINDEX,NOFOLLOW" /><meta name="MN" content="82DCB1A0-9:19:20 AM" /><meta name="ms.locale" content="en-us" /><meta name="Search.ShortId" content="gg537794" /><meta name="DCSext.ProductFamily" content="LIB_DG" />
+<meta name="DCSext.Product" content="DevDiv UE" />
+<meta name="DCSext.Title" content="ReCaptcha Class" />
+
+<!-- Looking for metadata? Use the robot view instead http://currentsite/currenturl(robot).aspx -->
+<meta name="DCS.dcsuri" content="/en-us/library(d=default)/gg537794(l=en-us,v=VS.99).aspx" />
+<link rel="stylesheet" type="text/css" href="http://i3.msdn.microsoft.com/en-us/library/mtps-bn20110314.css?l=en-us&amp;i=library&amp;ct=AlternateSelector;CCEditor;CCSection;CCTagEditor;CodeSnippet;CollapsibleArea;ContentFallback;DropDownFilter;ExpandCollapseAll;Eyebrow;Footer;InstrumentedLink;InteractiveToolbar;iRootBrand;KTableControl;LanguageSpecificText;LocaleManagementFlyout;lwViewSwitcher;MastheadLibrary;MemberlistFrameworksFilter;MemberlistMembersFilter;MtpsLoginStatus;MtpsRating;MtViewDropDown;Omniture;RedVelvetCodeSnippet;RedVelvetCollapsibleArea;RedVelvetInstrumentedLink;RelatedPages;ResizeableAreaD10;StoSearch;StoTabStripLibrary;SurveyLauncher;TagCloud;TemplatedFlyout;Tickler;Toc;UserRecognition;WebMetrix;WebTrends&amp;clustimg=1"></link><link rel="alternate" media="print" href="/en-us/library/microsoft.web.helpers.recaptcha(VS.99,printer).aspx" />
+<title>
+	ReCaptcha Class (Microsoft.Web.Helpers)
+</title></head>
+<body id="ctl00_Mtps_body" dir="ltr">
+
+  <form name="aspnetForm" method="post" action="microsoft.web.helpers.recaptcha(VS.99).aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFHmN0bDAwJGN0bDAwJGN0bDAwJFNlYXJjaEJ1dHRvbu22G3AJR/xfEImODFUvTBV1QSFf" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var CurUserId="AxUFAAAAAAB0CAAA49ybZmhHJ1+f2f2D/eVBfA!!";var ClientURL="http%3a%2f%2f207.46.16.251%2fen-us%2flibrary(d%3ddefault)%2fgg537794(l%3den-us%2cv%3dVS.99).aspx";var maxRating=5;var RatingObjId="ctl00_ib1_Flyout_Rating1";var tbCommentsId="ctl00_ib1_Flyout_tbComments";var PageId="gg537794";var pageTag="contentRatinggg537794VS.99en-us";var sendBtnId="ctl00_ib1_Flyout_btnSend";var curRating="0";var contentRated=false;var RatingTooltipText="Click a star and provide feedback";var RatedTooltipText="You have already rated this content. Thank you for your feedback.";var userIPAddress="163.117.147.80";var MtpsPageDirection="ltr";var RatingFlyoutID="ctl00_ib1_Flyout";var Rating_Device="default";//]]>
+</script>
+
+<script src="http://i2.msdn.microsoft.com/Platform/cjs/jquery-1.2.6-bn20110314.js" type="text/javascript"></script>
+<script src="http://i2.msdn.microsoft.com/Platform/cjs/Silverlight-bn20110314.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var wt_nvr_ru = "WT_NVR_RU";var wt_fpcdom = ".microsoft.com";var wt_domlist = "msdn.microsoft.com";var wt_pathlist = "";var wt_paramlist = "DCSext.mtps_devcenter";var wt_siteid = "MSDN";var gDomain="m.webtrends.com";
+var gDcsId="dcsmgru7m99k7mqmgrhudo0k8_8c6m";
+var gFpc="WT_FPC";
+/*<![CDATA[*/
+if(document.cookie.indexOf(gFpc+"=")==-1){document.write("<scr"+"ipt type='text/javascript' src='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'><\/scr"+"ipt>");}
+/*]]>*/
+var detectedLocale = 'en-us';
+var wtsp="msdnlib_webdev";
+var gTrackEvents = 0;
+var omni_guid='60db99b6-8473-4f01-adfb-f03de7b9a0ff';//]]>
+</script>
+<script src='http://i2.msdn.microsoft.com/Platform/Controls/Omniture/resources/MSDN/omni_rsid_msdn-bn20110314.js' type='text/javascript'></script><noscript><a href='http://www.omniture.com' title='Web Analytics'><img src='http://msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0'  height='1' width='1' border='0' alt='' /></a></noscript>
+<script src="http://i2.msdn.microsoft.com/platform/cjs/extract/compositejscript3.js" type="text/javascript"></script>
+  
+   
+  <div id="rheader">
+    
+
+<div class="mastheadfontbase">
+  <div>
+		<div class="GlobalBar">
+			<div class="Teaser">
+				
+
+<span id="ticklerWrapper" >
+<a id="ctl00_ctl00_Tickler1_InstallLink" class="slLink" href="http://clk.atdmt.com/MRT/go/141489558/direct/01/" onclick="javascript:Track('ctl00_ctl00_Tickler1|_InstallLink',this);">Upgrade your Internet Experience</a>
+</span>
+
+
+			</div>
+			<div class="GlobalBarRight">
+			  <div class="LocaleFlyout">
+				  <div class="LocaleManagementFlyoutStatic" style="position:relative;" id="ctl00_ctl00_LocaleManagement_ctl00"><a class="LocaleManagementFlyoutStaticLink" href="javascript:void(0)">United States - English&nbsp;</a><img class="LocaleManagementFlyoutPopArrow LibC_popdownarrow" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" alt="Dropdown Arrow" height="4" width="7" border="0" /><div id="ctl00_ctl00_LocaleManagement_ctl00_Popup" class="LocaleManagementFlyoutPopup" style="position: absolute;visibility:hidden;left:-1000px;">
+		<table border="0" width="175">
+			<tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl05&#39;,&#39;&#39;)">Argentina (Español)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl06&#39;,&#39;&#39;)">Australia (English)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl07&#39;,&#39;&#39;)">Brasil (Português)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl08&#39;,&#39;&#39;)">Canada (English)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl09&#39;,&#39;&#39;)">Canada (Français)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl10&#39;,&#39;&#39;)">中国 (简体中文)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl11&#39;,&#39;&#39;)">Colombia (Español)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl12&#39;,&#39;&#39;)">Deutschland (Deutsch)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl13&#39;,&#39;&#39;)">España (Español)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl14&#39;,&#39;&#39;)">France (Français)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl15&#39;,&#39;&#39;)">India (English)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl16&#39;,&#39;&#39;)">Italia (Italiano)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl17&#39;,&#39;&#39;)">日本 (日本語)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl18&#39;,&#39;&#39;)">México (Español)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl19&#39;,&#39;&#39;)">Perú (Español)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl20&#39;,&#39;&#39;)">Россия (Pусский)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl21&#39;,&#39;&#39;)">United Kingdom (English)</a></td>
+			</tr><tr>
+				<td><a href="javascript:__doPostBack(&#39;ctl00$ctl00$LocaleManagement$ctl00$ctl22&#39;,&#39;&#39;)">United States (English)</a></td>
+			</tr><tr>
+				<td class="LocaleManagementFlyoutPopupHr"></td>
+			</tr><tr>
+				<td><a href="/en-us/ms376822.aspx">More...</a></td>
+			</tr>
+		</table></div><div id="ctl00_ctl00_LocaleManagement_ctl00_Anim" class="TFlyPopupAnimate"></div>
+</div>
+
+
+
+		    </div>
+		    <div class="SiteMap">
+				  <a id="ctl00_ctl00_MSFT_Site" title="Microsoft.com" class="SiteMapLink" href="http://www.microsoft.com">Microsoft.com</a>
+			  </div>
+			  <div class="PassportScarab">
+				  <span id="ctl00_ctl00_UserRecognitionFlyout_lbwelcom" class="UserRecognitionStaticText">Welcome</span>
+
+  
+  
+<a id="idPPScarab" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1301847560&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http:%2F%2F207.46.16.251%2Fen-us%2Flibrary%2Fmicrosoft.web.helpers.recaptcha%2528VS.99%2529.aspx&amp;lc=1033&amp;cb=&amp;id=254354" ><span id="idPPScarabSIT" class="MTPS_GlobalToolbarLinks_msdn">Sign in</span></a>
+
+
+			  </div>
+			  
+			  
+		  </div>
+		</div>
+	</div>
+	<div class="classicTopNav">
+	    <div class="ThinNavBox">
+		<a href="/en-us/default.aspx" id="ctl00_ctl00_brandlink"><div id="ctl00_ctl00_BrandLogo" class="BrandLogo">
+	<img src="http://i.msdn.microsoft.com/Platform/Controls/MastheadLibrary/resources/MSDN_classic_logo.png" id="ctl00_ctl00_logoimage" class="logoimage" onclick="location.href=&#39;/en-us/default.aspx&#39;; return false;" />
+</div></a>
+		<div class="Search"><div id="ctl00_ctl00_ctl00_SearchBox" class="SearchBox">
+    <input name="ctl00$ctl00$ctl00$SearchTextBox" type="text" id="ctl00_ctl00_ctl00_SearchTextBox" title="Search MSDN" class="TextBoxSearch" />
+    <input type="image" name="ctl00$ctl00$ctl00$SearchButton" id="ctl00_ctl00_ctl00_SearchButton" title="Click here to search" class="SearchButton" alt="Click here to search" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" />
+    <span class="Bing"></span>
+<script type="text/javascript" defer="defer" src="http://i2.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=ctl00_ctl00_ctl00_SearchTextBox&btnid=ctl00_ctl00_ctl00_SearchButton&brand=MSDN&loc=en-us&focusOnInit=true" id="mscom.srch.searchBox"></script></div></div>
+		<div class="evergreenLinks">
+	    
+      
+     
+        <a id="ctl00_ctl00_eventlink"><div id="ctl00_ctl00_EventLogo" class="EventLogo">
+
+</div></a>
+     </div>
+     
+       
+	</div>
+	    <div class="Clear"></div>
+        
+
+	<div class="NavigationBox">
+	    <div id="ctl00_ctl00_tabs_CenterTitle" class="HeaderTitle">Microsoft Developer Network</div>
+		<div class="Sponsor">
+		  
+		</div>
+		<div class="ClearLeft"></div>
+        <div class="leftcap"></div>
+        <div class="internav">
+	        <div id="ctl00_ctl00_tabs_manTabsHolder"><a id="ctl00_ctl00_tabs_ctl01" href="http://207.46.16.251/en-us/default.aspx" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl00|ctl00_ctl00_tabs_ctl01',this);">Home</a><a id="ctl00_ctl00_tabs_ctl03" class="active" href="http://207.46.16.251/en-us/library/default.aspx" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl02|ctl00_ctl00_tabs_ctl03',this);">Library</a><a id="ctl00_ctl00_tabs_ctl05" href="http://207.46.16.251/en-us/bb188199.aspx" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl04|ctl00_ctl00_tabs_ctl05',this);">Learn</a><a id="ctl00_ctl00_tabs_ctl07" href="http://beta.code.msdn.microsoft.com/" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl06|ctl00_ctl00_tabs_ctl07',this);">Code</a><a id="ctl00_ctl00_tabs_ctl09" href="http://207.46.16.251/en-us/aa570309.aspx" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl08|ctl00_ctl00_tabs_ctl09',this);">Downloads</a><a id="ctl00_ctl00_tabs_ctl11" href="http://207.46.16.251/en-us/aa570318.aspx" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl10|ctl00_ctl00_tabs_ctl11',this);">Support</a><a id="ctl00_ctl00_tabs_ctl13" href="http://207.46.16.251/en-us/aa497440.aspx" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl12|ctl00_ctl00_tabs_ctl13',this);">Community</a><a id="ctl00_ctl00_tabs_ctl15" href="http://social.msdn.microsoft.com/Forums/en-US/categories" onclick="javascript:Track('|TabStrip Link|ctl00_ctl00_tabs_ctl14|ctl00_ctl00_tabs_ctl15',this);">Forums</a></div>
+        </div>
+        
+
+<div id="ctl00_ctl00_tabs_LwViewSwitcher1_Panel1" class="LWVS_Loband">
+	
+<a id="ctl00_ctl00_tabs_LwViewSwitcher1_ClassicLink" tabindex="201" class="LWVS_DisabledLink" onclick="SetViewCookie(&#39;classic&#39;)">Classic</a>&nbsp | &nbsp <a href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha(VS.99).aspx" id="ctl00_ctl00_tabs_LwViewSwitcher1_LightweightLink" tabindex="202" class="LWVS_Link" onclick="SetViewCookie(&#39;lightweight&#39;)">Lightweight</a>&nbsp | &nbsp <a href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha(VS.99).aspx" id="ctl00_ctl00_tabs_LwViewSwitcher1_LobandLink" tabindex="203" class="LWVS_Link" onclick="SetViewCookie(&#39;loband&#39;)">ScriptFree</a>
+</div>
+
+
+        <div class="rightcap"></div>
+	</div>
+	
+	<div class="Clear"></div>
+	<div id="ctl00_ctl00_tabs_LocalNavigation" class="LocalNavigation" style="height:2px;">
+	    
+	</div>
+	<div class="cleartabstrip"></div>
+	<div id="ctl00_ctl00_tabs_LocalNavBottom" class="LocalNavBottom"></div>
+	
+	
+	
+    </div>
+</div>
+<div class="Clear"></div>    
+    <div id="ctl00_ib1_Panel1" class="miniRatings">
+	
+<div id="ctl00_ib1_miniRatings_left" class="miniRatings_left">
+		
+    <a id="ctl00_ib1_hlPrint" title="Print This Content" class="itPrint" onclick="javascript:SubmitRateAction(&#39;printerFriendlyPage&#39;);" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha(VS.99,printer).aspx"><img id="ctl00_ib1_imgPrint" class="LibC_rtg_print" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" />&nbsp;Printer Friendly Version</a>&nbsp;&nbsp;
+    &nbsp;&nbsp;
+    <a id="ctl00_ib1_hlSendCont" title="Send This Content" class="itSend" onclick="javascript:SubmitRateAction(&#39;sendThisPage&#39;);" href="mailto:?subject=ReCaptcha Class (Microsoft.Web.Helpers)&amp;body=This URL points to a page on MSDN that may interest you: http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha(VS.99).aspx"><img id="ctl00_ib1_imgSendCont" class="LibC_rtg_email" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" />&nbsp;Send</a>&nbsp;&nbsp;
+    &nbsp;&nbsp;
+   
+	</div>
+<div id="ctl00_ib1_miniRatings_right" class="miniRatings_right">
+		
+        <div class="ratingFlyoutStatic" style="position:relative;" id="ctl00_ib1_Flyout"><div id="ctl00_ib1_Flyout_rtgContainer" title="Turn scripting on  to submit a rating and send feedback." style="display: block; text-align:right;">
+				
+              <table>
+                <tr>
+                  <td style="text-align:right;line-height:70%;">
+                    <span id="ctl00_ib1_Flyout_rateTitleLabel" class="tbFont">Click to Rate and Give Feedback</span>
+                  </td>
+                  <td id="ctl00_ib1_Flyout_tdRtg" style="width:85px" onclick="if($get(&#39;ctl00_ib1_Flyout_tbComments&#39;)!=null &amp;&amp; $get(&#39;ctl00_ib1_Flyout_tbComments&#39;).visible == &#39;true&#39;) $get(&#39;ctl00_ib1_Flyout_tbComments&#39;).focus();">
+                      <div id="ctl00_ib1_Flyout_Rating1" title="Click a star and provide feedback" dir="ltr">
+					<a href="#" id="ctl00_ib1_Flyout_Rating1_A" title="Click a star and provide feedback" style="text-decoration:none"><span id="ctl00_ib1_Flyout_Rating1_Star_1" class="ratingStar emptyRatingStar">&nbsp;</span><span id="ctl00_ib1_Flyout_Rating1_Star_2" class="ratingStar emptyRatingStar">&nbsp;</span><span id="ctl00_ib1_Flyout_Rating1_Star_3" class="ratingStar emptyRatingStar">&nbsp;</span><span id="ctl00_ib1_Flyout_Rating1_Star_4" class="ratingStar emptyRatingStar">&nbsp;</span><span id="ctl00_ib1_Flyout_Rating1_Star_5" class="ratingStar emptyRatingStar">&nbsp;</span></a>
+				</div>
+                  </td>
+				
+                </tr>
+              </table>
+            
+			</div>
+            <div style="display: block; float: none; clear: both;">
+            </div>
+          <div id="ctl00_ib1_Flyout_Popup" class="ratingFlyoutPopup" style="position: absolute;visibility:hidden;left:-1000px;">
+				<span id="ctl00_ib1_Flyout_lbOptText" class="OptionalText">Give feedback on this content</span><textarea name="ctl00$ib1$Flyout$tbComments" rows="2" cols="20" id="ctl00_ib1_Flyout_tbComments" class="Comment">
+</textarea><input name="ctl00$ib1$Flyout$btnClose" type="button" id="ctl00_ib1_Flyout_btnClose" Class="Button" value="Close" OnClick="CloseFLY(&quot;ctl00_ib1_Flyout&quot;) " /><input name="ctl00$ib1$Flyout$btnSend" type="button" id="ctl00_ib1_Flyout_btnSend" Class="Button" value="Send" OnClick="return IsPageRated(&quot;ctl00_ib1_Flyout_Rating1&quot;,&quot;ctl00_ib1_Flyout_lbOptText&quot;,&#39;Please rate the page first.&#39;, &quot;ctl00_ib1_Flyout&quot;,this)" /></div><div id="ctl00_ib1_Flyout_Anim" class="TFlyPopupAnimate"></div>
+		</div>
+		
+      
+	</div>
+    
+  <div id="intercleardiv" style="display: block; clear: both; visibility: hidden;"></div>
+
+</div>
+
+  </div>
+  <div id="contents">
+   <div id="ctl00_LibFrame" class="resizableArea">
+	<div id="ctl00_raLeft" class="leftSection" style="width:300px;">
+		
+        <img id="ctl00_TocVector1_o" class="hidden" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" />
+<img id="ctl00_TocVector1_c" class="hidden" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" />
+<img id="ctl00_TocVector1_e" class="hidden" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" />
+<div id="holder" onclick="TocClick(event)">
+<div id="ctl00_TocVector1_root" class="rootToc">
+			<ul class="toc" id="tocVectorTreeId"><li name="ms310241(n)"><img src="http://i.msdn.microsoft.com/Global/Images/clear.gif" class="LibC_c"/><a href="http://207.46.16.251/en-us/library/ms123401.aspx" target="_top">MSDN Library</a></li></ul>
+		</div>
+</div>
+
+
+      
+	</div><div id="ctl00_raSplitter" title="Click and drag to resize. Double click or press &#39;t&#39; to toggle visibility." class="splitter" style="left:300px;">
+		<div class="LibC_lib_grippy" style="position:absolute;top:50%;"></div>
+	</div><div id="ctl00_raRight" class="rightSection">
+		
+        <div >
+          <div id="ctl00_eb1_Panel1" class="EyebrowMenuBar">
+			
+<div class="stat" style="position:relative;" id="ctl00_eb1_ctl00"><a title="MSDN" href="http://207.46.16.251/en-us/ms348103.aspx">MSDN</a><div id="ctl00_eb1_ctl00_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/36cf08ac-18d1-4fe0-abc8-466852a0f9c7(n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl00_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl01"><a title="MSDN Library" href="http://207.46.16.251/en-us/library/ms123401.aspx">MSDN Library</a><div id="ctl00_eb1_ctl01_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/ms310241(n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl01_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl02"><a title="Web Development" href="http://207.46.16.251/en-us/library/aa155073.aspx">Web Development</a><div id="ctl00_eb1_ctl02_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/aa155073(n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl02_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl03"><a title="Microsoft WebMatrix" href="http://207.46.16.251/en-us/library/gg549173(VS.99).aspx">Microsoft WebMatrix</a><div id="ctl00_eb1_ctl03_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/gg549175(VS.99,n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl03_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl04"><a title="ASP.NET Web Pages with Razor Syntax" href="http://207.46.16.251/en-us/library/gg549172(VS.99).aspx">ASP.NET Web Pages with Razor Syntax</a><div id="ctl00_eb1_ctl04_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/gg549176(VS.99,n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl04_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl05"><a title="ASP.NET Web Pages Reference" href="http://207.46.16.251/en-us/library/gg549171(VS.99).aspx">ASP.NET Web Pages Reference</a><div id="ctl00_eb1_ctl05_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/gg549177(VS.99,n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl05_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl06"><a title="Microsoft.Web.Helpers" href="http://207.46.16.251/en-us/library/gg547907(VS.99).aspx">Microsoft.Web.Helpers</a><div id="ctl00_eb1_ctl06_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/gg569625(VS.99,n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl06_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<div class="stat" style="position:relative;" id="ctl00_eb1_ctl07"><a title="ReCaptcha Class" href="http://207.46.16.251/en-us/library/gg537794(VS.99).aspx">ReCaptcha Class</a><div id="ctl00_eb1_ctl07_Popup" class="popup" style="position: absolute;visibility:hidden;left:-1000px;">
+					<span name="http://207.46.16.251/en-us/library/gg569642(VS.99,n).aspx">Please Wait</span></div><div id="ctl00_eb1_ctl07_Anim" class="TFlyPopupAnimate"></div>
+			</div>
+			<span style="float:none;clear:both;display:block;"></span>
+		</div>
+
+        </div>
+        
+
+        <div class="RightPanel">
+          <div class="ContentBar">
+            
+<div id="ECDiv" class="ECPanel">
+<img id="ECImg" class="LibC_o" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" alt="Collapse All/Expand All" align="middle" style="border-width:0px;" />
+<span id="ECCollapse" class="ECLink" >Collapse All</span>
+<span id="ECExpand" class="ECLink" style="display:none">Expand All</span>
+</div>
+
+
+            
+<script type="text/Javascript">
+var visualbasic = new Array(2);
+visualbasic[0] = "ctl00_MTCS_main_ctl40_ctl00_ctl01_VisualBasicUsage";
+visualbasic[1] = "ctl00_MTCS_main_ctl40_ctl00_ctl00_VisualBasicDeclaration";
+var csharp = new Array(1);
+csharp[0] = "ctl00_MTCS_main_ctl40_ctl00_ctl02_CSharp";
+var managedcplusplus = new Array(1);
+managedcplusplus[0] = "ctl00_MTCS_main_ctl40_ctl00_ctl03_ManagedCPlusPlus";
+var jscript = new Array(1);
+jscript[0] = "ctl00_MTCS_main_ctl40_ctl00_ctl04_JScript";
+</script>
+
+<style type="text/css">
+.vb, .cs, .cpp, .nu, .fs
+{
+	display:none;
+}
+</style>
+<style id="LanguageSpecificTextStyle" type="text/css">
+.nu
+{
+   display:inline;
+}
+</style><div id="ctl00_DropDownFilter_DropDownFilterMain" class="DropDownFilterStyle"><img id="ctl00_DropDownFilter_MTPS_DD_ImageArrow" title="Language Filter" class="MTPS_DropDownImage LibC_arrow-off" onclick="DDFilterOn(event);" onmouseover="ChangeDropDownImage(true);ResetLanguagesMenuTimer(event);" onmouseout="ChangeDropDownImage(false);RequestHideLanguagesMenu();" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" alt="Language Filter" border="0" /><a id="ctl00_DropDownFilter_Mtps_DropDownFilterText" title="Language Filter" class="DropDownFilterOff" onclick="DDFilterOn(event);" onmouseover="ChangeDropDownImage(true);" onmouseout="ChangeDropDownImage(false);" href="/en-us/library/microsoft.web.helpers.recaptcha(VS.99).aspx#Mtps_DropDownFilterText">Language Filter</a><div id="ctl00_DropDownFilter_Mtps_DropDownPopUp" style="display:none" class="MTPS_PopupDivPanel" onmouseover="ResetLanguagesMenuTimer(event);" onmouseout="RequestHideLanguagesMenu();"><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="Visual Basic" arrayValue="visualbasic" onclick="SetLangFilter(&#39;visualbasic&#39;,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_0" title="Visual Basic">Visual Basic<br/></span>
+		</div><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="C#" arrayValue="csharp" onclick="SetLangFilter(&#39;csharp&#39;,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_1" title="C#">C#<br/></span>
+		</div><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="C++" arrayValue="managedcplusplus" onclick="SetLangFilter(&#39;managedcplusplus&#39;,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_2" title="C++">C++<br/></span>
+		</div><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="J#" arrayValue="jsharp" onclick="SetLangFilter(null,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_3" title="J#">J#<br/></span>
+		</div><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="JScript" arrayValue="jscript" onclick="SetLangFilter(&#39;jscript&#39;,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_4" title="JScript">JScript<br/></span>
+		</div><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="XAML" arrayValue="xaml" onclick="SetLangFilter(null,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_5" title="XAML">XAML<br/></span>
+		</div><div class="DivCbxLabelLanguage">
+			<input name="ctl00$DropDownFilter$DropDownLngFilterCtrl" type="checkbox" id="ctl00_DropDownFilter_DropDownLngFilterCtrl" checked="checked" value="F#" arrayValue="fsharp" onclick="SetLangFilter(null,true);" /><span id="ctl00_DropDownFilter_ctl00_DropDownFilter_DropDownLngFilterCtrl_6" title="F#">F#<br/></span>
+		</div></div>
+<script type="text/Javascript">
+var strConstLangFilterAll ="All";
+var strConstLangFilterMulti ="Multiple";
+var strConstLangFilterNone ="None";
+var strConstLangFilterText ="Language Filter";
+var oMTPS_DD_ImgArrow = document.getElementById("ctl00_DropDownFilter_MTPS_DD_ImageArrow");
+var oMTPS_DD_PanelLink = document.getElementById("ctl00_DropDownFilter_Mtps_DropDownFilterText");
+var oMTPS_DD_Div = document.getElementById("ctl00_DropDownFilter_DropDownFilterMain");
+var oMTPS_DD_PopUpDiv = document.getElementById("ctl00_DropDownFilter_Mtps_DropDownPopUp");
+</script>
+</div>
+              
+            
+            
+          </div>
+           <div class="ContentArea">
+      
+          
+          <span id="ctl00_altSelector"></span>
+          
+          
+          
+        
+          <!--starting processing--><div class="topic" ><div class="majorTitle">.NET Framework Class Library<!----></div><div class="title">ReCaptcha Class<!----></div><!--Content type: Devdiv1. Transform: orcas2mtps.xslt.--><div id="mainSection"><div id="mainBody"><p><!----></p> <div><div class="summary"><p>Generates a CAPTCHA test that is based on the reCAPTCHA service.</p></div></div><span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;Inheritance Hierarchy
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="familyToggle"><!----></a><a id="ctl00_MTCS_main_ctl38_ctl00_ctl00" href="http://207.46.16.251/en-us/library/system.object(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl38_ctl00_contenthere|ctl00_MTCS_main_ctl38_ctl00_ctl00',this);">System<span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span>Object</a><br />  <span class="selflink">Microsoft.Web.Helpers<span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span>ReCaptcha</span><br />
+</div>
+</div>
+</span><p><!----></p>
+    <strong>Namespace:</strong> 
+   <a id="ctl00_MTCS_main_ctl05" href="http://207.46.16.251/en-us/library/microsoft.web.helpers(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl00|ctl00_MTCS_main_ctl05',this);">Microsoft.Web.Helpers</a><br />
+    <strong>Assembly:</strong>
+   <span>Microsoft.Web.Helpers</span> (in Microsoft.Web.Helpers.dll)<span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;Syntax
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="syntaxToggle"><!----></a><span id="ctl00_MTCS_main_ctl40_ctl00_ctl00">
+<div class='libCScode'
+id="ctl00_MTCS_main_ctl40_ctl00_ctl00_VisualBasicDeclaration">
+    
+    <div class="CodeSnippetTitleBar">
+        <div class="CodeDisplayLanguage">
+            Visual Basic (Declaration)
+        </div>
+        
+    </div>
+    <div dir="ltr" style="background-color: #ddd">
+    <pre class="libCScode" id="ctl00_MTCS_main_ctl40_ctl00_ctl00_code" space="preserve"><span style="color:blue">Public</span> <span style="color:blue">NotInheritable</span> <span style="color:blue">Class</span> ReCaptcha</pre>
+    </div>
+</div>
+
+</span><span id="ctl00_MTCS_main_ctl40_ctl00_ctl01">
+<div class='libCScode'
+id="ctl00_MTCS_main_ctl40_ctl00_ctl01_VisualBasicUsage">
+    
+    <div class="CodeSnippetTitleBar">
+        <div class="CodeDisplayLanguage">
+            Visual Basic (Usage)
+        </div>
+        
+    </div>
+    <div dir="ltr" style="background-color: #ddd">
+    <pre class="libCScode" id="ctl00_MTCS_main_ctl40_ctl00_ctl01_code" space="preserve">You <span style="color:blue">do</span> <span style="color:blue">not</span> need <span style="color:blue">to</span> <span style="color:blue">declare</span> an instance <span style="color:blue">of</span> a <span style="color:blue">static</span> <span style="color:blue">class</span> <span style="color:blue">in</span> order <span style="color:blue">to</span> access its members.</pre>
+    </div>
+</div>
+
+</span><span id="ctl00_MTCS_main_ctl40_ctl00_ctl02">
+<div class='libCScode'
+id="ctl00_MTCS_main_ctl40_ctl00_ctl02_CSharp">
+    
+    <div class="CodeSnippetTitleBar">
+        <div class="CodeDisplayLanguage">
+            C#
+        </div>
+        
+    </div>
+    <div dir="ltr" style="background-color: #ddd">
+    <pre class="libCScode" id="ctl00_MTCS_main_ctl40_ctl00_ctl02_code" space="preserve"><span style="color:blue">public</span> <span style="color:blue">static</span> <span style="color:blue">class</span> ReCaptcha</pre>
+    </div>
+</div>
+
+</span><span id="ctl00_MTCS_main_ctl40_ctl00_ctl03">
+<div class='libCScode'
+id="ctl00_MTCS_main_ctl40_ctl00_ctl03_ManagedCPlusPlus">
+    
+    <div class="CodeSnippetTitleBar">
+        <div class="CodeDisplayLanguage">
+            Visual C++
+        </div>
+        
+    </div>
+    <div dir="ltr" style="background-color: #ddd">
+    <pre class="libCScode" id="ctl00_MTCS_main_ctl40_ctl00_ctl03_code" space="preserve"><span style="color:blue">public</span> ref <span style="color:blue">class</span> ReCaptcha abstract sealed</pre>
+    </div>
+</div>
+
+</span><span id="ctl00_MTCS_main_ctl40_ctl00_ctl04">
+<div class='libCScode'
+id="ctl00_MTCS_main_ctl40_ctl00_ctl04_JScript">
+    
+    <div class="CodeSnippetTitleBar">
+        <div class="CodeDisplayLanguage">
+            JScript
+        </div>
+        
+    </div>
+    <div dir="ltr" style="background-color: #ddd">
+    <pre class="libCScode" id="ctl00_MTCS_main_ctl40_ctl00_ctl04_code" space="preserve"><span style="color:blue">public</span> final <span style="color:blue">class</span> ReCaptcha</pre>
+    </div>
+</div>
+
+</span>
+</div>
+</div>
+</span><p>The <span class="selflink">ReCaptcha</span> type exposes the following members.</p><span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;Properties
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="propertyTableToggle"><!----></a><table id="memberList" class="members"><tr><th class="iconColumn">
+               
+            </th><th class="nameColumn">Name</th><th class="descriptionColumn">Description</th></tr><tr data="public;static;declared;notNetfw;"><!----><td><!--src=[../icons/pubproperty.gif]--><img alt="Public property" src="http://i.msdn.microsoft.com/Gg537794.pubproperty(en-us,VS.99).gif" /><!--src=[../icons/static.gif]--><img alt="Static member" src="http://i.msdn.microsoft.com/Gg537794.static(en-us,VS.99).gif" /></td><td><a id="ctl00_MTCS_main_ctl41_ctl00_ctl02" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.privatekey(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl41_ctl00_contenthere|ctl00_MTCS_main_ctl41_ctl00_ctl02',this);">PrivateKey</a></td><td><span>Gets or sets a private key for the reCAPTCHA service.</span></td></tr><tr data="public;static;declared;notNetfw;"><!----><td><!--src=[../icons/pubproperty.gif]--><img alt="Public property" src="http://i.msdn.microsoft.com/Gg537794.pubproperty(en-us,VS.99).gif" /><!--src=[../icons/static.gif]--><img alt="Static member" src="http://i.msdn.microsoft.com/Gg537794.static(en-us,VS.99).gif" /></td><td><a id="ctl00_MTCS_main_ctl41_ctl00_ctl05" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.publickey(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl41_ctl00_contenthere|ctl00_MTCS_main_ctl41_ctl00_ctl05',this);">PublicKey</a></td><td><span>Gets or sets the public key for the reCAPTCHA service.</span></td></tr></table><a href="#mainBody">Top</a>
+</div>
+</div>
+</span><span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;Methods
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="methodTableToggle"><!----></a><table id="memberList1" class="members"><tr><th class="iconColumn">
+               
+            </th><th class="nameColumn">Name</th><th class="descriptionColumn">Description</th></tr><tr data="public;static;declared;notNetfw;"><!----><td><!--src=[../icons/pubmethod.gif]--><img alt="Public method" src="http://i.msdn.microsoft.com/Gg537794.pubmethod(en-us,VS.99).gif" /><!--src=[../icons/static.gif]--><img alt="Static member" src="http://i.msdn.microsoft.com/Gg537794.static(en-us,VS.99).gif" /></td><td><a id="ctl00_MTCS_main_ctl42_ctl00_ctl02" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.gethtml(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl42_ctl00_contenthere|ctl00_MTCS_main_ctl42_ctl00_ctl02',this);">GetHtml</a></td><td><span>Render a reCAPTCHA control.</span></td></tr><tr data="public;static;declared;notNetfw;"><!----><td><!--src=[../icons/pubmethod.gif]--><img alt="Public method" src="http://i.msdn.microsoft.com/Gg537794.pubmethod(en-us,VS.99).gif" /><!--src=[../icons/static.gif]--><img alt="Static member" src="http://i.msdn.microsoft.com/Gg537794.static(en-us,VS.99).gif" /></td><td><a id="ctl00_MTCS_main_ctl42_ctl00_ctl05" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.gethtmlwithoptions(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl42_ctl00_contenthere|ctl00_MTCS_main_ctl42_ctl00_ctl05',this);">GetHtmlWithOptions</a></td><td><span>Render a reCAPTCHA control and enable the caller to pass additional rendering options.</span></td></tr><tr data="public;static;declared;notNetfw;"><!----><td><!--src=[../icons/pubmethod.gif]--><img alt="Public method" src="http://i.msdn.microsoft.com/Gg537794.pubmethod(en-us,VS.99).gif" /><!--src=[../icons/static.gif]--><img alt="Static member" src="http://i.msdn.microsoft.com/Gg537794.static(en-us,VS.99).gif" /></td><td><a id="ctl00_MTCS_main_ctl42_ctl00_ctl08" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.validate(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl42_ctl00_contenthere|ctl00_MTCS_main_ctl42_ctl00_ctl08',this);">Validate</a></td><td><span>Returns a value that indicates whether the user is validated.</span></td></tr></table><a href="#mainBody">Top</a>
+</div>
+</div>
+</span><span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;Remarks
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="remarksToggle"><!----></a><p>This class represents a helper, which is a component that simplifies Web programming in ASP.NET Web Pages. You can use the <span><span class="selflink">ReCaptcha</span></span> class to help protect against malicious computer programs that make automated attacks on Web sites. The class generates a CAPTCHA, which is a test that checks user input based on the reCAPTCHA service. To use the service, you must register at the reCAPTCHA Web site (<a id="ctl00_MTCS_main_ctl43_ctl00_ctl00" href="http://www.recaptcha.net/" onclick="javascript:Track('ctl00_MTCS_main_ctl43_ctl00_contenthere|ctl00_MTCS_main_ctl43_ctl00_ctl00',this);">http://www.recaptcha.net</a>) and obtain public and private keys.</p><p>A CAPTCHA test validates that user input is submitted by a human rather than a computer program. This helps prevent typical automated attacks such as adding spam comments to blogs or forums, or creating false user accounts on Web sites. A typical CAPTCHA test generates random text in the form of a distorted graphic image, which humans can read but computer programs cannot. If users correctly submit the randomly generated text shown in the distorted image, the CAPTCHA validates them.</p><p>To use the <span><span class="selflink">ReCaptcha</span></span> class to help protect your Web site against automated attacks, use the following steps at the points where the code validates user input (such as when it creates a new account or logs in a user):</p><ol><li><p>Render the reCAPTCHA control. This is the form that displays a graphic image of words and prompts users to submit the correct text values. Call the <span><a id="ctl00_MTCS_main_ctl43_ctl00_ctl01" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.gethtml(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl43_ctl00_contenthere|ctl00_MTCS_main_ctl43_ctl00_ctl01',this);">GetHtml(String, String, String, Int32)</a></span> method or the <span><a id="ctl00_MTCS_main_ctl43_ctl00_ctl02" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.gethtmlwithoptions(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl43_ctl00_contenthere|ctl00_MTCS_main_ctl43_ctl00_ctl02',this);">GetHtmlWithOptions(String, Object)</a></span> method to render the reCAPTCHA control.</p></li><li><p>Validate the user input. Call the <span><a id="ctl00_MTCS_main_ctl43_ctl00_ctl03" href="http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha.validate(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl43_ctl00_contenthere|ctl00_MTCS_main_ctl43_ctl00_ctl03',this);">Validate(String)</a></span> method to verify that the input passes the CAPTCHA test. If the method returns <span><span class="input">true</span></span>, the code can allow the user to continue. If the method returns <span><span class="input">false</span></span>, the code can take another action such as notifying the user that the input was incorrect and prompting the user to try again. </p></li></ol><span IndexMoniker="!DefaultDynamicLinkIndex" errorURL="" filterName="" filterString=""></span>
+</div>
+</div>
+</span><span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;Thread Safety
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="threadSafetyToggle"><!----></a>Any public <span class="input">static</span> (<span class="input">Shared</span> in Visual Basic)  members of this type are thread safe. Any instance members are not guaranteed to be thread safe.
+</div>
+</div>
+</span><span>
+<div  class="MTPS_CollapsibleRegion">
+<div  class="CollapseRegionLink"> <!-- ApplyClick with current id -->
+<img  class='LibC_o' src="http://i.msdn.microsoft.com/Global/Images/clear.gif" style='border-width:0px;vertical-align:middle;' />
+&nbsp;See Also
+</div>
+<div class="MTPS_CollapsibleSection" style='display:block;' >  
+<a id="seeAlsoToggle"><!----></a><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a id="ctl00_MTCS_main_ctl45_ctl00_ctl00" href="http://207.46.16.251/en-us/library/microsoft.web.helpers(VS.99).aspx" onclick="javascript:Track('ctl00_MTCS_main_ctl45_ctl00_contenthere|ctl00_MTCS_main_ctl45_ctl00_ctl00',this);">Microsoft.Web.Helpers Namespace</a></div>
+</div>
+</div>
+</span></div></div></div>
+        
+          
+        </div>
+      </div>
+
+      
+      
+
+<div style="overflow:hidden;display:block;position:relative;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td id="ctl00_mtpsFooter_FooterFadeCell" class="MTPS_FooterFade">
+      <div id="ctl00_mtpsFooter_SiteLinks" class="MTPS_FooterLinks">
+
+		</div>
+      <span id="ctl00_mtpsFooter_MSFT_copyright" title="© 2011  Microsoft. All rights reserved." class="MTPS_FooterCopyright">&copy; 2011  Microsoft. All rights reserved.</span>
+      <a id="ctl00_mtpsFooter_MSFT_Terms" title="Terms of Use" class="MTPS_FooterLinks" href="/cc300389.aspx">Terms of Use</a>
+      <span id="ctl00_mtpsFooter_PipeSpan1">|</span>
+      <a id="ctl00_mtpsFooter_MSFT_Trademarks" title="Trademarks" class="MTPS_FooterLinks" href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a>
+      <span id="ctl00_mtpsFooter_PipeSpan2">|</span>
+      <a id="ctl00_mtpsFooter_MSFT_PrivacyStatement" title="Privacy Statement" class="MTPS_FooterLinks" href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</a>
+      
+      <a id="ctl00_mtpsFooter_MSFT_Feedback" class="MTPS_FooterLinks" rel="sitefeedback" target="_blank"></a>
+      
+      <a id="ctl00_mtpsFooter_MSFT_FeedbackAnswers" class="MTPS_FooterLinks"></a>
+    </td>
+		
+    <td id="ctl00_mtpsFooter_FooterLogoCell">
+      <a id="ctl00_mtpsFooter_MSFT_LOGO" title="Microsoft" href="http://www.microsoft.com/en/us/default.aspx"><img id="ctl00_mtpsFooter_MSFT_imgLogo" class="msdn_TabC_mslogo" src="http://i.msdn.microsoft.com/Global/Images/clear.gif" border="0" /></a>
+    </td>
+		
+  </tr>
+</table>
+
+</div>
+ 
+      
+	</div>
+</div>
+  </div>
+  <div style="display:none"><img src="http://c.microsoft.com/trans_pixel.asp?source=207.46.16.251&amp;TYPE=PV&amp;uri=%2fen-us%2flibrary(d%3ddefault)%2fgg537794(l%3den-us%2cv%3dVS.99).aspx&amp;p=_en-us_library(d=default)_gg537794(l=en-us,v=VS.99).aspx" width="0" height="0" hspace="0" vspace="0" border="0" alt="Page view tracker" /></div>
+  
+<script src="http://i2.msdn.microsoft.com/Platform/Controls/WebTrends/resources/webtrendsscript-bn20110314.js" type="text/javascript"></script>
+<noscript>
+<div><img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" /></div>
+</noscript>
+  <script type="text/javascript" src="http://i2.msdn.microsoft.com/en-us/library/mtps-bn20110314.js?l=en-us&amp;i=library&amp;ct=AlternateSelector;CCEditor;CCSection;CCTagEditor;CodeSnippet;CollapsibleArea;ContentFallback;DropDownFilter;ExpandCollapseAll;Eyebrow;Footer;InstrumentedLink;InteractiveToolbar;iRootBrand;KTableControl;LanguageSpecificText;LocaleManagementFlyout;lwViewSwitcher;MastheadLibrary;MemberlistFrameworksFilter;MemberlistMembersFilter;MtpsLoginStatus;MtpsRating;MtViewDropDown;Omniture;RedVelvetCodeSnippet;RedVelvetCollapsibleArea;RedVelvetInstrumentedLink;RelatedPages;ResizeableAreaD10;StoSearch;StoTabStripLibrary;SurveyLauncher;TagCloud;TemplatedFlyout;Tickler;Toc;UserRecognition;WebMetrix;WebTrends"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        setTimeout(function() {
+            var hashElementId = document.location.hash.substr(1);
+            var hashElement = document.getElementById(hashElementId);
+            if (hashElement != null) {
+                hashElement.scrollIntoView(true);
+            }
+        }, 1);
+        //]]>
+    </script>
+  
+
+<script type="text/javascript">
+//<![CDATA[
+ RegisterAutoSubmit('ctl00_ib1_Flyout_Rating1','ctl00_ib1_Flyout_btnSend','contentRatinggg537794VS.99en-us');
+//]]>
+</script>
+<script type="text/javascript" language="javascript">
+<!--
+ function GetContentWnd(){ return parent; } function OnInitPage(){var oWnd = GetContentWnd();} function OnSave(){ var oWnd = GetContentWnd(); window.external.addFavorite('http://207.46.16.251/en-us/library/microsoft.web.helpers.recaptcha(VS.99).aspx', oWnd.document.title ); }
+
+-->
+</script>
+<script type="text/javascript">
+//<![CDATA[
+document.getElementById('ctl00_ib1_Flyout_rtgContainer').title="Click a star and provide feedback";
+TFly_Init('ctl00_ctl00_LocaleManagement_ctl00',0,0,1,0,0,'LocaleManagementFlyoutStaticHover','',0,400,'','','','');
+TFly_Init('ctl00_ib1_Flyout',5,2,1,0,0,'','',0,400,'','TFlyPreAnimate','','');
+MTPS.Controls.MtpsRating.createMtpsRating('ctl00_ib1_Flyout_Rating1','ratingStar','filledRatingStar','emptyRatingStar','savedRatingStar','5','LeftToRightTopToBottom', false);MTPS.Controls.ResizeableArea = new MTPS.Controls.CreateResizeableArea('ctl00_LibFrame','ctl00_raSplitter','ctl00_raLeft','ctl00_raRight','tocwidth','toccollapsed','173');var tocVectorObject;var hostbase;var closedImg;var openImg;var emptyImg;var loadingImg;var tocVector;var tocIndex = 0;var holder;var tocLoaded = false;var tocCollapsed = 'False';var pageIdentifier = 'microsoft.web.helpers.recaptcha';tocVectorObject = {"nodes": [{"id": "ms310241(n)" ,"url": "/ms310241(n)"},{"id": "aa155073(n)" ,"url": "/aa155073(n)"},{"id": "gg549175(vs.99,n)" ,"url": "/gg549175(VS.99,n)"},{"id": "gg549176(vs.99,n)" ,"url": "/gg549176(VS.99,n)"},{"id": "gg549177(vs.99,n)" ,"url": "/gg549177(VS.99,n)"},{"id": "gg569625(vs.99,n)" ,"url": "/gg569625(VS.99,n)"},{"id": "gg569642(vs.99,n)" ,"url": "/gg569642(VS.99,n)"}]};hostbase ="http://207.46.16.251/en-us/library";tocVector = eval(tocVectorObject);closedImg = "LibC_c";openImg = "LibC_o";emptyImg = "LibC_e";var tocDir = false;TFly_Init('ctl00_eb1_ctl00',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl01',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl02',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl03',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl04',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl05',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl06',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+TFly_Init('ctl00_eb1_ctl07',0,-1,-1,0,0,'statHover','',0,0,'EyeBrowMenuBarSetHeight','ExpEye','','');
+CheckDropDownClientCookie(true);SetFilterText(true);//]]>
+</script>
+</form>
+</body>
+
+<script language="javascript" type="text/javascript" src="http://js.microsoft.com/library/svy/sto/broker.js"></script>
+</html>

@@ -1,0 +1,1297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='9frw3o0' name='verify-postrank'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(d,i,e){e=e!=undefined?e:(new Date).getTime();this.t[d]=[e,i]};this.tick("start",null,b)}var f=new c;a.jstiming={Timer:c,load:f};try{var g=null;if(a.chrome&&a.chrome.csi)g=Math.floor(a.chrome.csi().pageT);if(g==null)if(a.gtbExternal)g=a.gtbExternal.pageT();if(g==null)if(a.external)g=a.external.pageT;if(g)a.jstiming.pt=g}catch(h){};a.tickAboveFold=function(b){var d=0;if(b.offsetParent){do d+=b.offsetTop;while(b=b.offsetParent)}b=d;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+<link href='http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Never Read Passively - Atom" href="http://www.neverreadpassively.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Never Read Passively - RSS" href="http://www.neverreadpassively.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Never Read Passively - Atom" href="http://www.blogger.com/feeds/946587890062083577/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=946587890062083577" />
+<link rel="alternate" type="application/atom+xml" title="Never Read Passively - Atom" href="http://www.neverreadpassively.com/feeds/5261058083025709262/comments/default" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Never Read Passively: Crowdsourcing NP-Complete Problems</title>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/987282334-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=946587890062083577&zx=d46898ed-2cf4-4040-957d-fe8f5ab965d6"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Stretch Denim Light
+Designer: Darren Delaye
+URL:      www.DarrenDelaye.com
+Date:     11 Jul 2006
+-----------------------------------------------
+*/
+/* Variable definitions
+====================
+<Variable name="bgColor" description="Page Background Color"
+type="color" default="#ffffff">
+<Variable name="textColor" description="Text Color"
+type="color" default="#333333">
+<Variable name="linkColor" description="Link Color"
+type="color" default="#336699">
+<Variable name="headerBgColor" description="Page Header Background Color"
+type="color" default="#c4e1ff">
+<Variable name="headerTextColor" description="Page Header Text Color"
+type="color" default="#003366">
+<Variable name="headerCornersColor" description="Page Header Corners Color"
+type="color" default="#c4e1ff">
+<Variable name="mainBgColor" description="Main Background Color"
+type="color" default="#ffffff">
+<Variable name="borderColor" description="Border Color"
+type="color" default="#ffffff">
+<Variable name="dateHeaderColor" description="Date Header Color"
+type="color" default="#999999">
+<Variable name="sidebarTitleBgColor" description="Sidebar Title Background Color"
+type="color" default="#ffffff">
+<Variable name="sidebarTitleTextColor" description="Sidebar Title Text Color"
+type="color" default="#333333">
+<Variable name="bodyFont" description="Text Font"
+type="font" default="normal normal 100% Verdana, Arial, Sans-serif;">
+<Variable name="headerFont" description="Page Header Font"
+type="font" default="normal normal 210% Verdana, Arial, Sans-serif;">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+body {
+background: #ffffff;
+margin: 0;
+padding: 0px;
+font: x-small Verdana, Arial;
+text-align: center;
+color: #333333;
+font-size/* */:/**/small;
+font-size: /**/small;
+}
+a:link {
+color: #336699;
+}
+a:visited {
+color: #336699;
+}
+a img {
+border-width: 0;
+}
+#outer-wrapper {
+font: normal normal 100% Verdana, Arial, Sans-serif;;
+}
+/* Header
+----------------------------------------------- */
+#header-wrapper {
+margin:0;
+padding: 0;
+background-color: #c4e1ff;
+text-align: left;
+}
+#header {
+margin: 0 2%;
+background-color: #c4e1ff;
+color: #003366;
+padding: 0;
+font: normal normal 210% Verdana, Arial, Sans-serif;;
+position: relative;
+}
+h1.title {
+padding-top: 38px;
+margin: 0 1% .1em;
+line-height: 1.2em;
+font-size: 100%;
+}
+h1.title a, h1.title a:visited {
+color: #003366;
+text-decoration: none;
+}
+#header .description {
+display: block;
+margin: 0 1%;
+padding: 0 0 40px;
+line-height: 1.4em;
+font-size: 50%;
+}
+/* Content
+----------------------------------------------- */
+.clear {
+clear: both;
+}
+#content-wrapper {
+margin: 0 2%;
+padding: 0 0 15px;
+text-align: left;
+background-color: #ffffff;
+border: 1px solid #ffffff;
+border-top: 0;
+}
+#main-wrapper {
+margin-left: 1%;
+width: 64%;
+float: left;
+background-color: #ffffff;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+margin-right: 1%;
+width: 29%;
+float: right;
+background-color: #ffffff;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2, h3 {
+margin: 0;
+}
+/* Posts
+----------------------------------------------- */
+.date-header {
+margin: 1.5em 0 0;
+font-weight: normal;
+color: #999999;
+font-size: 100%;
+}
+.post {
+margin: 0 0 1.5em;
+padding-bottom: 1.5em;
+}
+.post-title {
+margin: 0;
+padding: 0;
+font-size: 125%;
+font-weight: bold;
+line-height: 1.1em;
+}
+.post-title a, .post-title a:visited, .post-title strong {
+text-decoration: none;
+color: #333333;
+font-weight: bold;
+}
+.post div {
+margin: 0 0 .75em;
+line-height: 1.3em;
+}
+.post-footer {
+margin: -.25em 0 0;
+color: #333333;
+font-size: 87%;
+}
+.post-footer .span {
+margin-right: .3em;
+}
+.post img {
+padding: 4px;
+border: 1px solid #ffffff;
+}
+.post blockquote {
+margin: 1em 20px;
+}
+.post blockquote p {
+margin: .75em 0;
+}
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin: 1em 0;
+color: #999999;
+}
+#comments h4 strong {
+font-size: 110%;
+}
+#comments-block {
+margin: 1em 0 1.5em;
+line-height: 1.3em;
+}
+#comments-block dt {
+margin: .5em 0;
+}
+#comments-block dd {
+margin: .25em 0 0;
+}
+#comments-block dd.comment-footer {
+margin: -.25em 0 2em;
+line-height: 1.4em;
+font-size: 78%;
+}
+#comments-block dd p {
+margin: 0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar h2 {
+margin: 1.6em 0 .5em;
+padding: 4px 5px;
+background-color: #ffffff;
+font-size: 100%;
+color: #333333;
+}
+.sidebar ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.sidebar li {
+margin: 0;
+padding-top: 0;
+padding-right: 0;
+padding-bottom: .5em;
+padding-left: 15px;
+text-indent: -15px;
+line-height: 1.5em;
+}
+.sidebar {
+color: #333333;
+line-height:1.3em;
+}
+.sidebar .widget {
+margin-bottom: 1em;
+}
+.sidebar .widget-content {
+margin: 0 5px;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #ffffff;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font-weight: bold;
+line-height: 1.6em;
+font-size: 78%;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+clear: both;
+text-align: center;
+color: #333333;
+}
+#footer .widget {
+margin:.5em;
+padding-top: 20px;
+font-size: 85%;
+line-height: 1.5em;
+text-align: left;
+}
+/** Page structure tweaks for layout editor wireframe */
+body#layout #header {
+width: 750px;
+}
+
+--></style>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+    function showRelatedContent(args) {
+      var el = document.getElementById('related-iframe');
+      if (el.parentNode.style.display != 'none') {
+        el.parentNode.style.display = 'none';
+        document.onclick = showRelatedContent.prevOnClick;
+        return;
+      }
+      
+      var match = /(?:^[?]|&)c=([0-9]+)(?:&|(?!.))/.exec(args);
+      if (match !== null) {
+        document.getElementById('related-loading').style.left = match[1] + 'px';
+        el.style.left = Math.max(0, match[1] - parseInt(el.width) / 2) + 'px';
+      }
+      el.src = "http://www.blogger.com"
+          + '/related-content.g?q='
+          + "http://www.neverreadpassively.com/"
+          + '&id=' + "946587890062083577";
+      el.parentNode.style.display = 'block';
+      showRelatedContent.prevOnClick = document.onclick;
+
+      // Hide related-content dropdown when clicking anywhere but on it.
+      document.onclick = function() {
+        var el = document.getElementById('related-iframe');
+        if (el.parentNode.style.display != 'none') {
+          el.parentNode.style.display = 'none';
+        }
+        document.onclick = showRelatedContent.prevOnClick;
+      };
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=946587890062083577&amp;blogName=Never+Read+Passively&amp;publishMode=PUBLISH_MODE_HOSTED&amp;navbarType=BLUE&amp;layoutType=LAYOUTS&amp;searchRoot=http%3A%2F%2Fwww.neverreadpassively.com%2Fsearch&amp;blogLocale=en&amp;homepageUrl=http%3A%2F%2Fwww.neverreadpassively.com%2F&amp;targetPostID=5261058083025709262" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+
+<div></div></div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='http://www.neverreadpassively.com/'>Never Read Passively</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>Document everything obsessively. Synthesize new ideas constantly. Never read passively. <small><a href="http://www.neverreadpassively.com/2008/03/how-to-think.html">[?]</a></small></span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol section' id='crosscol'></div>
+</div>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Monday, April 28, 2008</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='5261058083025709262'></a>
+<h3 class='post-title entry-title'>
+<a href='http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html'>Crowdsourcing NP-Complete Problems</a>
+</h3>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+<p>I'm shifting gears and have decided to start pushing ideas out as web sites rather than <a href="http://www.neverreadpassively.com/2008/04/side-project-automating-document.html">technical prototypes</a>. The reason for the gear change, is because I want users and I want to try broader experiments. I've got some ideas regarding <a href="http://www.neverreadpassively.com/2008/04/drive-by-web-aggregate-contributions.html">drive-by</a> (casual) contributions and <a href="http://www.neverreadpassively.com/2008/04/patterning-collective-intelligence.html">patterns of collective intelligence</a> I want to try out that require lots of varied user behaviour. Specifically, I intend on building a webapp that captures casual contributions made by users towards playing a game or solving a simple puzzle, the aggregation of which will contribute toward solving an <a href="http://en.wikipedia.org/wiki/NP-complete">NP-complete</a> problem.<br /><br />My intention is to capture my progress, thoughts, and problems on this blog while realising this modest project. After deciding to commit to the idea, I spent today mocking some screens, coding a proof of concept prototype for the <a href="http://en.wikipedia.org/wiki/Traveling_salesman_problem">Travelling Salesman Problem</a> (TSP), and setting up a development environment.<br /><br /><span style="font-weight: bold;">The Application</span><br />The early vision for the site focuses on the user contributions as a game or puzzle, and the aggregation of all contributions received to date as a holistic solution. User contributions may be made anonymously, although signing-up permits the capture of user statistics, puzzle scores, and a leader board. The minimal interface focuses on the puzzle solving aspect, although provides some visualisation of the state of the holistic solution such as number of contributions, users, and holistic scoring. The holistic solution may be visualised, along with a graph of community performance over time. Problems would rotate after converge (lack of improvement) or a time limit, and a past-solutions repository will be accessible with solution visualisation. Tomorrow I want to find some free software to capture screen mock-ups or just hack out the templates.<br /><br /><span style="font-weight: bold;">The Problem</span><br />I chose the TSP first because I have worked with the general problem a lot in the past. Specifically with regard to a multiple user interaction model across a P2P network (see <a href="http://www.ict.swin.edu.au/personal/jbrownlee/iidle/index.html">IIDLE</a>), and with regard to a stardardised problem solving framework (see my <a href="http://optalgtoolkit.sourceforge.net/">OAT project</a>). Simple symmetric Euclidean TSP's can be addressed by the aggregation of multiple sub-graph solutions. The sub-problems or "<span style="font-style: italic;">puzzle</span>" to be addressed by users will be to connect a set of points to form a sub-tour (<span style="font-style: italic;">connect the dots</span>). My assumption is that the human pattern recognition will be at least as good as a <a href="http://en.wikipedia.org/wiki/Greedy_algorithm">Greedy</a> <a href="http://en.wikipedia.org/wiki/Nearest_neighbour_algorithm">Nearest Neighbour</a> (NN) solution, and hopefully with tweaking of the interface and aggregation function, better than NN. My technical prototype verified that the greedy  aggregation of multiple sub-tours demonstrates that a NN-like solution can be achieved easily as long as enough contributions are received. I need to formalise notions of "enough" and "convergence" for problem rotation.<br /><br /><span style="font-weight: bold;">The Technology</span><br />I have decided to build the application using <span style="font-style: italic;">Ruby on Rails</span>, based on my previous assessment of the <a href="http://www.neverreadpassively.com/2008/04/highlighting-peaks-in-web-development.html">technology landscape</a>. I have played around with rails before in late 2006 on my mac, although that was some time ago, and I'm developing this site on a PC (for now). I hit the <a href="http://www.rubyonrails.org/">rails site</a>, got running with <a href="http://instantrails.rubyforge.org">InstantRails</a> and <a href="http://www.aptana.com/rails/">RadRails </a>using <a href="http://www.aptana.com/">Aptana</a>. I then did a read a quick refresher with the <a href="http://www.onlamp.com/">ONLamp</a> articles "<span style="font-style: italic;">rolling with rails revised</span>" (parts <a href="http://www.onlamp.com/pub/a/onlamp/2006/12/14/revisiting-ruby-on-rails-revisited.html">one</a> and <a href="http://www.onlamp.com/pub/a/onlamp/2007/01/05/revisiting-ruby-on-rails-revisited-2.html">two</a>). The tools seem nice and work together well. At this stage it feels like the old PHP and Tomcat/Struts days.<br /><br />I only had the notion for the project at lunch time, so it's all still fresh and new. I expect to bash out some page and database templates tomorrow and think through the user experience. I'm going to try and put-off getting into the technical aspects of problem definition/integration/visualisation for as long as I can because that's the fun stuff and I want to get on top of the mundane (user-centric) things first.</p>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Jason</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html' rel='bookmark' title='permanent link'><abbr class='published' title='2008-04-28T16:46:00+10:00'>4:46 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-action'>
+<a href='http://www.blogger.com/email-post.g?blogID=946587890062083577&postID=5261058083025709262' title='Email Post'>
+<img alt='' class='icon-action' src='http://www.blogger.com/img/icon18_email.gif'/>
+</a>
+</span>
+<span class='item-control blog-admin pid-1111478270'>
+<a href='http://www.blogger.com/post-edit.g?blogID=946587890062083577&postID=5261058083025709262' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-2'></div>
+<a href='http://del.icio.us/post?url=http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html'>Post to del.icio.us</a>
+<div class='post-footer-line post-footer-line-3'></div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+0
+comments:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+</dl>
+</div>
+<p class='comment-footer'>
+<a href='https://www.blogger.com/comment.g?blogID=946587890062083577&postID=5261058083025709262' onclick=''>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+<a name='links'></a><h4>
+</h4>
+<p class='comment-footer'>
+<a class='comment-link' href='' id='Blog1_backlinks-create-link' target='_blank'>
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="latency-5261058083025709262"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-5261058083025709262")); } </script>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://www.neverreadpassively.com/2008/04/considering-user-experience-in.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://www.neverreadpassively.com/2008/04/funnelling-cognitive-surplus-with-and.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://www.neverreadpassively.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://www.neverreadpassively.com/feeds/5261058083025709262/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget Profile' id='Profile1'>
+<h2>About the Author</h2>
+<div class='widget-content'>
+<a href='http://www.blogger.com/profile/11283603094324243247'><img alt='My Photo' class='profile-img' height='80' src='http://3.bp.blogspot.com/_Nm8O-3rVrk0/Sk_iFShcXkI/AAAAAAAAAFc/cUqZBpgrQ9Y/S220/Snapshot.png' width='62'/></a>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link' href='http://www.blogger.com/profile/11283603094324243247' rel='author'>
+Jason Brownlee
+</a>
+</dt>
+<dd class='profile-data'>Melbourne, Victoria, Australia</dd>
+<dd class='profile-textblock'>Software Engineer and Research Scientist</dd>
+</dl>
+<a class='profile-link' href='http://www.blogger.com/profile/11283603094324243247' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Image' id='Image1'>
+<div class='widget-content'>
+<img alt='' height='21' id='Image1_img' src='http://bp1.blogger.com/_Nm8O-3rVrk0/SBa9KiDHaTI/AAAAAAAAABQ/Oc3LS8P-VrA/S1600-R/contact.png' width='206'/>
+<br/>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=Image&widgetId=Image1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Image1"));' target='configImage1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML6'>
+<h2 class='title'>Read my AI Book</h2>
+<div class='widget-content'>
+<a href="http://www.CleverAlgorithms.com"> Clever Algorithms: Nature-Inspired Programming Recipes</a><br /><br />
+<a href="http://www.CleverAlgorithms.com"><img src="http://www.cleveralgorithms.com/images/small_cover.png" alt="Clever Algorithms" border="0" /></a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML6&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML6"));' target='configHTML6' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML3'>
+<h2 class='title'>Popular Posts</h2>
+<div class='widget-content'>
+<script src="http://api.postrank.com/static/widget-v2.js" type="text/javascript"></script>
+<script type="text/javascript">
+var options = {
+	"feed_hash": "4568b4be93b82c2ee76fb73d55cebe15",
+	"num":        6 ,
+	"theme":     "blueSteel" 
+};
+new PostRankWidget(options);
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML7'>
+<h2 class='title'>Gift Me!</h2>
+<div class='widget-content'>
+I love books! If you find anything on this site useful, consider <a href="http://amzn.com/w/13F7P2FRNH0X7">gifting me a book from my wish list</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML7&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML7"));' target='configHTML7' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML2'>
+<h2 class='title'>Twitter Updates</h2>
+<div class='widget-content'>
+<div id="twitter_div">
+<h2 style="display:none;" class="sidebar-title">Twitter Updates</h2>
+<ul id="twitter_update_list"></ul>
+<a id="twitter-link" style="display:block;text-align:right;" href="http://twitter.com/jbrownlee">follow me on Twitter</a>
+</div>
+<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
+<script src="http://twitter.com/statuses/user_timeline/jbrownlee.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Older Posts</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/search?updated-min=2011-01-01T00%3A00%3A00%2B11%3A00&updated-max=2012-01-01T00%3A00%3A00%2B11%3A00&max-results=20'>2011</a>
+<span class='post-count' dir='ltr'>(20)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2011_04_01_archive.html'>Apr</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2011/04/april-challenge-watch-1-tech-video.html'>April Challenge: Watch 1 Tech Video Every Day</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2011_03_01_archive.html'>Mar</a>
+<span class='post-count' dir='ltr'>(11)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2011/03/march-challenge-all-over.html'>March Challenge: All Over</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/buying-house-at-auction-some-lessons.html'>Buying a House at Auction: Some Lessons</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/sony-nex-5.html'>Sony NEX-5</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/junk-food-media-consumption.html'>Junk food media consumption</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/publishing-book-on-lulu.html'>Publishing a book on Lulu</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/pondering-new-camera.html'>Pondering a new Camera</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/10-great-ideas-for-using-clever.html'>10 Great Ideas for using Clever Algorithms</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/computational-intelligence-on-wikipedia.html'>Computational Intelligence on Wikipedia</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/australian-tropical-cyclones-data.html'>Australian Tropical Cyclones: Data Availability</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/family-media-player.html'>Family Media Player</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/03/book-launch-one-month-on-stats-and.html'>Book Launch: One Month On (stats and lessons)</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2011_02_01_archive.html'>Feb</a>
+<span class='post-count' dir='ltr'>(7)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2011/02/march-challenge-shed-weight-get-ipad.html'>March Challenge: Shed weight, get an iPad</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/02/suburb-analysis-crime-statistics.html'>Suburb Analysis: Crime Statistics</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/02/suburb-analysis-travel-time-tofrom-work.html'>Suburb Analysis: Travel Time to/from Work</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/02/buying-house-suburb-selection.html'>Buying a House: Suburb Selection Methodology</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/02/melbourne-house-price-trends.html'>Melbourne House Price Trends</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/02/new-project-buy-house.html'>New Project: Buy a House</a></li>
+<li><a href='http://www.neverreadpassively.com/2011/02/machine-learning-jumpstart.html'>Machine Learning Jumpstart</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2011_01_01_archive.html'>Jan</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2011/01/clever-algorithms-nature-inspired.html'>Clever Algorithms: Nature-Inspired Programming Rec...</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/search?updated-min=2010-01-01T00%3A00%3A00%2B11%3A00&updated-max=2011-01-01T00%3A00%3A00%2B11%3A00&max-results=17'>2010</a>
+<span class='post-count' dir='ltr'>(17)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_09_01_archive.html'>Sep</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/09/update-on-chess-rating-competition.html'>Update on the chess rating competition</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_08_01_archive.html'>Aug</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/08/chess-rating-machine-learning.html'>Chess Rating Machine Learning Competition</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/08/tricorder-or-paperweight.html'>Tricorder or Paperweight?</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_07_01_archive.html'>Jul</a>
+<span class='post-count' dir='ltr'>(5)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/07/service-idea-tender-problems-for-given.html'>Service Idea: Tender problems for a given solution...</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/07/book-idea-movies-by-numbers.html'>Book Idea: Movies by the numbers</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/07/chris-andersons-most-profound-ted-talks.html'>Chris Anderson&#39;s most profound TED talks</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/07/ted-talks-for-startups.html'>TED talks for startups</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/07/lost-productivity.html'>LOST, productivity</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_06_01_archive.html'>Jun</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/06/clever-algorithms-some-analytics-on.html'>Clever Algorithms: Some analytics on the smote tes...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/05/machine-learning-as-service-google.html'>Machine Learning as a Service: The Google Predicti...</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/05/aspects-as-programming-aide.html'>Aspects as a programming aid</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_04_01_archive.html'>Apr</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/04/clever-algorithms-smoke-test-for-my.html'>Clever Algorithms: A smoke test for my book projec...</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/04/linux-for-desktop-development.html'>Linux for Desktop Development</a></li>
+<li><a href='http://www.neverreadpassively.com/2010/04/good-scifi-movies-from-last-year-non.html'>Good SciFi movies from the Last year (non-blockbus...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_03_01_archive.html'>Mar</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/03/tropical-cyclones-and-software.html'>Tropical Cyclones and Software Maintenance</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_02_01_archive.html'>Feb</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/02/intelligent-software-agents-lessons.html'>Intelligent Software Agents: Lessons Learned</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2010_01_01_archive.html'>Jan</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2010/01/my-new-imac-five-year-plan.html'>My New iMac: The Five Year Plan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/search?updated-min=2009-01-01T00%3A00%3A00%2B11%3A00&updated-max=2010-01-01T00%3A00%3A00%2B11%3A00&max-results=22'>2009</a>
+<span class='post-count' dir='ltr'>(22)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_12_01_archive.html'>Dec</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/12/genetic-algorithm-in-googles-go.html'>A Genetic Algorithm in Google&#39;s Go Language</a></li>
+<li><a href='http://www.neverreadpassively.com/2009/12/great-science-and-technology-podcasts.html'>Great Science and Technology Podcasts</a></li>
+<li><a href='http://www.neverreadpassively.com/2009/12/genetic-algorithm-in-lua.html'>A Genetic Algorithm in Lua</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_11_01_archive.html'>Nov</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/11/random-project-ideas.html'>Random Project Ideas</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_10_01_archive.html'>Oct</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/10/back-from-china-trip.html'>Back from China Trip</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_09_01_archive.html'>Sep</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/09/competition-hacking-with-ruby-and.html'>Competition hacking with Ruby and Objective-C</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_08_01_archive.html'>Aug</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/08/setting-old-projects-free.html'>Setting Old Projects Free</a></li>
+<li><a href='http://www.neverreadpassively.com/2009/08/what-is-good-optimization-algorithm.html'>What is a good optimization algorithm? A data-driv...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/05/natural-selection-project-status-update.html'>Natural Selection: Project Status Update</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_04_01_archive.html'>Apr</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/04/dropping-dimension-cocos2d-and-box2d-on.html'>Dropping a Dimension: Cocos2D and Box2D on iPhone</a></li>
+<li><a href='http://www.neverreadpassively.com/2009/04/oolong-engine-for-iphone-first-look.html'>Oolong Engine for the iPhone: A First Look</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_03_01_archive.html'>Mar</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2009/03/review-of-iphone-3d-engines.html'>Review of 3D Engines for the iPhone</a></li>
+<li><a href='http://www.neverreadpassively.com/2009/03/not-reading-passively-iphone-links.html'>Not Reading Passively: iPhone Links</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2009_01_01_archive.html'>Jan</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/search?updated-min=2008-01-01T00%3A00%3A00%2B11%3A00&updated-max=2009-01-01T00%3A00%3A00%2B11%3A00&max-results=50'>2008</a>
+<span class='post-count' dir='ltr'>(86)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_12_01_archive.html'>Dec</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_11_01_archive.html'>Nov</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_10_01_archive.html'>Oct</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_09_01_archive.html'>Sep</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_08_01_archive.html'>Aug</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_06_01_archive.html'>Jun</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_04_01_archive.html'>Apr</a>
+<span class='post-count' dir='ltr'>(30)</span>
+<ul class='posts'>
+<li><a href='http://www.neverreadpassively.com/2008/04/connect-dots-human-based-tsp-solver.html'>Connect The Dots: A Human-Based TSP Solver</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/considering-user-experience-in.html'>Considering User Experience in Crowdsourced Proble...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html'>Crowdsourcing NP-Complete Problems</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/funnelling-cognitive-surplus-with-and.html'>Funnelling Cognitive Surplus With and Without Your...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/hierarchical-temporal-memory-and.html'>Hierarchical Temporal Memory and Thoughts on Conve...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/patterning-interestingness-artefact.html'>Patterning Interestingness: Artefact, Context, and...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/side-project-automating-document.html'>Side Project: Automating Document Interestingness</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/recaptcha-makes-me-want-to-work-on.html'>reCAPTCHA Makes Me Want To Work On Machine Vision ...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/intelligent-content-filtering-with.html'>Intelligent Content Filtering with AideRSS and Som...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/specialised-human-information.html'>Specialised Human Information Processing: The Case...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/seed-funding.html'>Seed Funding?</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/attention-profiling-and-apml.html'>Attention Profiling and APML</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/considering-twine-and-semantic.html'>Considering Twine and Semantic Computation</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/grasping-lifestream.html'>Grasping the Lifestream</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/startups-in-oz.html'>Startups in Oz</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/anything-is-better-than-nothing-or.html'>Anything is Better than Nothing or Random</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/grasping-rest.html'>Grasping REST</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/highlighting-peaks-in-web-development.html'>Highlighting the Peaks in the Web Development Land...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/twitter-micro-blogging-and-notions-of.html'>Twitter, Micro-blogging, and Notions of a Public I...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/do-we-really-want-fine-grained-news.html'>Do We Really Want Fine-Grained News Personalizatio...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/patterning-collective-intelligence.html'>Patterning Collective Intelligence: Users, Aggrega...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/toward-harnessing-computation-in.html'>Toward Harnessing Computation in the Browser</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/drive-by-web-aggregate-contributions.html'>Drive-by Web, Aggregate Contributions, and Ad Hoc ...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/toward-engineering-cumulative-advantage.html'>Toward Engineering Cumulative Advantage</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/considering-collective-intelligence-on.html'>Considering Collective Intelligence on the Web</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/slowly-grasping-online-advertising.html'>Slowly Grasping Online Advertising Model</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/web20-and-ideas-on-ideas.html'>Web2.0 and Ideas on Ideas</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/business-revenue-whatever-just-hack.html'>Business, Revenue, Whatever: Just Hack</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/rule-world-or-acknowleding-startup.html'>Rule the World! or Acknowledging Startup Idealism ...</a></li>
+<li><a href='http://www.neverreadpassively.com/2008/04/hello-world-for-startup-wannabes-like.html'>&#39;Hello World&#39; for Startup Wannabes (like me)</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://www.neverreadpassively.com/2008_03_01_archive.html'>Mar</a>
+<span class='post-count' dir='ltr'>(15)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget LinkList' id='LinkList1'>
+<h2>My Projects</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://www.cleveralgorithms.com/'>Clever Algorithms</a></li>
+<li><a href='http://optalgtoolkit.sourceforge.net/'>Optimization Algorithm Toolkit (OAT)</a></li>
+<li><a href='http://www.ict.swin.edu.au/personal/jbrownlee/'>PhD Research Page</a></li>
+<li><a href='http://wekaclassalgos.sourceforge.net/'>WEKA Classification Algorithms</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target='configLinkList1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML5'>
+<div class='widget-content'>
+<a href="http://www.linkedin.com/in/jasonbrownlee"><img border="0" width="160" alt="View Jason Brownlee's profile on LinkedIn" src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.gif" height="25"/></a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML5&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML5"));' target='configHTML5' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML1'>
+<div class='widget-content'>
+<p><a href="http://feeds.feedburner.com/NeverReadPassively"><img width="88" style="border:0" alt="" src="http://feeds.feedburner.com/~fc/NeverReadPassively?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26"/></a></p>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div id='footer-wrapper'>
+<div class='footer section' id='footer'><div class='widget HTML' id='HTML4'>
+<div class='widget-content'>
+<a href="http://creativecommons.org/licenses/by-sa/2.5/au/" rel="license"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/2.5/au/88x31.png"/></a><br/>This <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" rel="dc:type">work</span> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.5/au/" rel="license">Creative Commons Attribution-Share Alike 2.5 Australia License</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=946587890062083577&widgetType=HTML&widgetId=HTML4&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' target='configHTML4' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type='text/javascript'>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type='text/javascript'>
+var pageTracker = _gat._getTracker("UA-3896883-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/1019049897-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '946587890062083577';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=946587890062083577','http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html','946587890062083577');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=946587890062083577','APq4FmDc15jKasXrZYpNZKa4EeqpOJfqLPsLquO6FGs6DKcA036h7gGiCJaLv97A0fCBzmqJyj5vOQ_IxL1O35QyjD3cTpISMDfUWadV8UV1ljiD_KF5GUM=','AOuZoY7LHfKpiEnfx8sCXEbBiQlpbD_PxA:1301852518709');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'Never Read Passively', 'pageType': 'item', 'url': 'http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html', 'canonicalUrl': 'http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html', 'homepageUrl': 'http://www.neverreadpassively.com/', 'faviconUrl': 'http://www.blogger.com/favicon.ico', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Crowdsourcing NP-Complete Problems', 'pageTitle': 'Never Read Passively: Crowdsourcing NP-Complete Problems', 'encoding': 'UTF-8', 'locale': 'en', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Never Read Passively - Atom\42 href\75\42http://www.neverreadpassively.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Never Read Passively - RSS\42 href\75\42http://www.neverreadpassively.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Never Read Passively - Atom\42 href\75\42http://www.blogger.com/feeds/946587890062083577/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\75946587890062083577\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Never Read Passively - Atom\42 href\75\42http://www.neverreadpassively.com/feeds/5261058083025709262/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(d,i,e){e\75e!\75undefined?e:(new Date).getTime();this.t[d]\75[e,i]};this.tick(\42start\42,null,b)}var f\75new c;a.jstiming\75{Timer:c,load:f};try{var g\75null;if(a.chrome\46\46a.chrome.csi)g\75Math.floor(a.chrome.csi().pageT);if(g\75\75null)if(a.gtbExternal)g\75a.gtbExternal.pageT();if(g\75\75null)if(a.external)g\75a.external.pageT;if(g)a.jstiming.pt\75g}catch(h){};a.tickAboveFold\75function(b){var d\0750;if(b.offsetParent){do d+\75b.offsetTop;while(b\75b.offsetParent)}b\75d;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){if(!j){j\75true;a.jstiming.load.tick(\42firstScrollTime\42)}}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': ''}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'footer', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image1', 'sidebar', null, document.getElementById('Image1'), {'resize': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'sidebar', null, document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'sidebar', null, document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'sidebar', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '5261058083025709262', 'lightboxEnabled': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

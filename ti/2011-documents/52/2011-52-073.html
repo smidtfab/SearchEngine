@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head >
+ <link rel="next" href="package.webservices.services-recaptcha.mailhide.php" title="getting started with the Mailhide functionality of Services_ReCaptcha"/>
+ <link rel="prev" href="package.webservices.services-recaptcha.intro.php" title="introduction to the Services_ReCaptcha package"/>
+ <link rel="up" href="package.webservices.services-recaptcha.php" title="Services_ReCaptcha"/>
+ <link rel="home" href="./" title="PEAR Manual"/>
+ <title>Manual :: getting started with the reCAPTCHA functionality of Services_ReCaptcha</title>
+ <link rel="shortcut icon" href="/gifs/favicon.ico" />
+ <link rel="stylesheet" type="text/css" href="/css/reset-fonts.css" />
+ <link rel="stylesheet" type="text/css" href="/css/style.css" />
+ <link rel="stylesheet" type="text/css" href="/css/manual.css" />
+ <!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/IE7styles.css" /><![endif]-->
+ <!--[if IE 6]><link rel="stylesheet" type="text/css" href="/css/IE6styles.css" /><![endif]-->
+ <link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+ <link rel="alternate" type="application/rss+xml" title="RSS feed" href="http://pear.php.net/feeds/latest.rss" />
+ <!-- compliance patch for microsoft browsers -->
+<!--[if lt IE 8]>
+ <script type="text/javascript" src="/javascript/IE8.js"></script>
+<![endif]-->
+ <link rel="search" type="application/opensearchdescription+xml" title="PEAR Search Plugin" href="http://pear.php.net/osd.xml" />
+</head>
+
+<body>
+<div>
+<a id="TOP"></a>
+</div>
+
+<div id="doc3">
+<!-- START HEADER -->
+ <div id="user">
+  <ul>
+   <li><a href="/account-request.php">Register</a></li>
+   <li class="last"><a href="/login.php?redirect=/manual/en/package.webservices.services-recaptcha.recaptcha.php">Login</a></li>
+  </ul>
+ </div>
+
+ <div id="search">
+  <form method="get" action="/search.php">
+   <p style="margin: 0px;">
+    <span class="accesskey">S</span>earch for
+    <input type="text" name="q" value="" size="20" accesskey="s" />
+    in the
+    <select name="in">
+        <option value="packages">Packages</option>
+        <option value="site">This site (using Yahoo!)</option>
+        <option value="users">Developers</option>
+        <option value="pear-dev">Developer mailing list</option>
+        <option value="pear-general">General mailing list</option>
+        <option value="pear-cvs">SVN commits mailing list</option>
+    </select>
+    <input type="image" src="/gifs/small_submit_white.gif" alt="search" style="vertical-align: middle;" />
+   </p>
+  </form>
+ </div>
+
+  <div id="header">
+   <a href="/"><img src="/gifs/pearsmall.gif" style="border: 0;" width="104" height="50" alt="PEAR"  /></a><br />
+  </div>
+
+<div id="menubar">
+
+<ul id="menu">
+ <li class="menu-item"><a href="/index.php">Main</a></li>
+ <li class="menu-item"><a href="/support/">Support</a></li>
+ <li class="menu-item current"><a href="/manual/">Documentation</a></li>
+ <li class="menu-item"><a href="/packages.php">Packages</a></li>
+ <li class="menu-item"><a href="/pepr/">Package Proposals</a></li>
+ <li class="menu-item"><a href="/accounts.php">Developers</a></li>
+ <li class="menu-item menu-item-last"><a href="/bugs/">Bugs</a></li>
+</ul>
+
+</div>
+
+
+<ul id="submenu">
+ <li class="menu-item"><a href="/manual/en/about-pear.php">About PEAR</a></li>
+ <li class="menu-item current"><a href="/manual/">Manual</a></li>
+ <li class="menu-item menu-item-last"><a href="/manual/en/faq.php">FAQ</a></li>
+</ul>
+
+<!-- END HEADER -->
+<!-- START MIDDLE -->
+
+<!-- START MAIN CONTENT -->
+
+  <div id="body">
+
+<!-- START MANUAL NAVIGATION -->
+<div class="manual-navigation" id="manual-navigation-top">
+ <a class="manual-previous" href="package.webservices.services-recaptcha.intro.php" accesskey="r">introduction to the Services_ReCaptcha package
+<span class="title">(P<span class="accesskey">r</span>evious)</span></a>
+
+ <a class="manual-next" href="package.webservices.services-recaptcha.mailhide.php" accesskey="x">getting started with the Mailhide functionality of Services_ReCaptcha
+<span class="title">(Ne<span class="accesskey">x</span>t)</span></a>
+
+ <div class="manual-clear"></div>
+</div>
+<!-- END MANUAL NAVIGATION -->
+
+
+
+<!-- START MANUAL SIDEBAR -->
+<div class="manual-sidebar" id="manual-sidebar">
+ <div class="manual-sidebar-top">
+  <ul>
+   <li><a href="./">PEAR Manual</a></li>
+  </ul>
+ </div>
+
+ <div class="manual-sidebar-up">
+  <ul>
+   <li><a href="package.webservices.services-recaptcha.php">Services_ReCaptcha</a></li>
+  </ul>
+ </div>
+
+ <div class="manual-sidebar-pages">
+  <ol>
+   <li class="manual-sidebar-page"><a href="package.webservices.services-recaptcha.intro.php">Introduction</a></li>
+   <li class="manual-sidebar-page"><strong>reCAPTCHA</strong></li>
+   <li class="manual-sidebar-page"><a href="package.webservices.services-recaptcha.mailhide.php">reCAPTCHA Mailhide</a></li>
+  </ol>
+ </div>
+
+ <div class="manual-sidebar-info">
+  <ul>
+   <li><a href="/package/Services_ReCaptcha">Package Info</a></li>
+   <li><a href="/package/Services_ReCaptcha/docs/latest/">API Documentation</a></li>
+  </ul>
+ </div>
+</div>
+<!-- END MANUAL SIDEBAR -->
+
+<div class="manual-content" id="manual-content">
+<div class="refentry" id="package.webservices.services-recaptcha.recaptcha">
+ 
+  <h1 class="refname">reCAPTCHA</h1>
+  <div class="refnamediv">reCAPTCHA &ndash; getting started with the reCAPTCHA functionality of <strong class="package">Services_ReCaptcha</strong></div>
+
+ 
+ <div class="refsection"><div class="info"><h1>Instanciating the <strong class="classname">Services_ReCaptcha</strong> class</h1>
+</div>
+  <p class="para">
+   To instanciate the Services_ReCaptcha class just do:
+   </p><div class="phpcode">
+   <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">require_once&nbsp;</span><span style="color: #DD0000">'Services/ReCaptcha.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$recaptcha&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Services_ReCaptcha</span><span style="color: #007700">(</span><span style="color: #DD0000">'your_public_key'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'your_private_key'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code>
+   </div><p>
+  </p>
+  <p class="para">
+   You can also pass an array of option as third parameter, or pass options 
+   later with the 
+   <a href="http://pear.php.net/package/Services_ReCaptcha/docs/latest/Services_ReCaptcha/Services_ReCaptcha_Base.html#methodsetOption" class="apidoclink">Services_ReCaptcha_Base::setOption()</a> 
+   or  
+   <a href="http://pear.php.net/package/Services_ReCaptcha/docs/latest/Services_ReCaptcha/Services_ReCaptcha_Base.html#methodsetOptions" class="apidoclink">Services_ReCaptcha_Base::setOptions()</a> 
+  </p>
+  <p class="para">
+   Available options are:
+   </p><table class="table">
+    <caption>Services_ReCaptcha options</caption>
+    
+     <thead valign="middle">
+      <tr valign="middle">
+       <th colspan="1">Name</th>
+       <th colspan="1">Description</th>
+       <th colspan="1">Type</th>
+       <th colspan="1">Default value</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr valign="middle">
+       <td>secure</td>
+       <td>Whether to force the ssl url or not</td>
+       <td>boolean</td>
+       <td>false</td>
+      </tr>
+
+      <tr valign="middle">
+       <td>xhtml</td>
+       <td>Whether the html should be xhtml compliant or not</td>
+       <td>boolean</td>
+       <td>true</td>
+      </tr>
+
+      <tr valign="middle">
+       <td>theme</td>
+       <td>The theme to use for the CAPTCHA</td>
+       <td>string</td>
+       <td>red</td>
+      </tr>
+
+      <tr valign="middle">
+       <td>lang</td>
+       <td>The language to use for the CAPTCHA (must be one of the reCATCHA supported languages codes)</td>
+       <td>string</td>
+       <td>en</td>
+      </tr>
+
+      <tr valign="middle">
+       <td>custom_translations</td>
+       <td>An array of cutom translations to use</td>
+       <td>array</td>
+       <td>null</td>
+      </tr>
+
+      <tr valign="middle">
+       <td>custom_theme_widget</td>
+       <td>The id of the HTML element corresponding to the theme widget</td>
+       <td>string</td>
+       <td>null</td>
+      </tr>
+
+      <tr valign="middle">
+       <td>tabindex</td>
+       <td>The HTML tabindex attribute for the reCAPTCHA textarea</td>
+       <td>string</td>
+       <td>null</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+<p>
+   For more information about these options please consult 
+   <a href="http://recaptcha.net/apidocs/captcha/client.html" class="link external">relevant reCAPTCHA API docs.</a>
+  </p>
+ </div>
+
+ <div class="refsection"><div class="info"><h1>A simple recaptcha example</h1>
+</div>
+  <p class="para">
+   </p><div class="example">
+    <div class="phpcode">
+        <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/**<br />&nbsp;*&nbsp;Include&nbsp;the&nbsp;Services_ReCaptcha&nbsp;class<br />&nbsp;*/<br /></span><span style="color: #007700">require_once&nbsp;</span><span style="color: #DD0000">'Services/ReCaptcha.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;you&nbsp;must&nbsp;get&nbsp;your&nbsp;API&nbsp;keys&nbsp;here:<br />//&nbsp;http://recaptcha.net/api/getkey<br /></span><span style="color: #0000BB">$publicKey&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'your_public_key'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$privateKey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'your_private_key'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;instanciate&nbsp;our&nbsp;Services_ReCaptcha&nbsp;instance&nbsp;with&nbsp;the&nbsp;public&nbsp;key&nbsp;and&nbsp;the&nbsp;<br />//&nbsp;private&nbsp;key<br /></span><span style="color: #0000BB">$recaptcha&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Services_ReCaptcha</span><span style="color: #007700">(</span><span style="color: #0000BB">$publicKey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privateKey</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;form&nbsp;was&nbsp;submitted&nbsp;and&nbsp;the&nbsp;catpcha&nbsp;challenge&nbsp;response&nbsp;is&nbsp;ok,&nbsp;we&nbsp;<br />//&nbsp;display&nbsp;a&nbsp;message&nbsp;and&nbsp;exit<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'submit'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">validate</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Challenge&nbsp;response&nbsp;ok&nbsp;!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;display&nbsp;the&nbsp;html&nbsp;form<br /></span><span style="color: #0000BB">?&gt;<br /></span>&lt;html&gt;<br />&lt;head&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;recaptcha&nbsp;test&lt;/title&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&nbsp;method="post"&nbsp;action=""&gt;<br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="submit"&nbsp;name="submit"&nbsp;value="Ok"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</span>
+</code>
+    </div>
+   </div><p>
+  </p>
+ </div>
+
+ <div class="refsection"><div class="info"><h1>A more advanced recaptcha example</h1>
+</div>
+  <p class="para">
+   </p><div class="example">
+    <div class="phpcode">
+        <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/**<br />&nbsp;*&nbsp;Include&nbsp;the&nbsp;Services_ReCaptcha&nbsp;class<br />&nbsp;*/<br /></span><span style="color: #007700">require_once&nbsp;</span><span style="color: #DD0000">'Services/ReCaptcha.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;you&nbsp;must&nbsp;get&nbsp;your&nbsp;API&nbsp;keys&nbsp;here:<br />//&nbsp;http://recaptcha.net/api/getkey<br /></span><span style="color: #0000BB">$publicKey&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'your_public_key'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$privateKey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'your_private_key'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;instanciate&nbsp;our&nbsp;Services_ReCaptcha&nbsp;instance&nbsp;with&nbsp;the&nbsp;public&nbsp;key&nbsp;and&nbsp;the&nbsp;<br />//&nbsp;private&nbsp;key<br /></span><span style="color: #0000BB">$recaptcha&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Services_ReCaptcha</span><span style="color: #007700">(</span><span style="color: #0000BB">$publicKey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privateKey</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;are&nbsp;going&nbsp;to&nbsp;customize&nbsp;our&nbsp;Services_ReCaptcha&nbsp;instance<br /></span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setOption</span><span style="color: #007700">(</span><span style="color: #DD0000">'secure'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;we&nbsp;force&nbsp;the&nbsp;secure&nbsp;url<br /></span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setOption</span><span style="color: #007700">(</span><span style="color: #DD0000">'theme'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'white'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;use&nbsp;the&nbsp;white&nbsp;theme<br /></span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setOption</span><span style="color: #007700">(</span><span style="color: #DD0000">'lang'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'fr'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;set&nbsp;language&nbsp;to&nbsp;french<br /><br />//&nbsp;alternatively&nbsp;we&nbsp;could&nbsp;have&nbsp;done:<br />//&nbsp;$recaptcha&nbsp;=&nbsp;new&nbsp;Services_ReCaptcha($publicKey,&nbsp;$privateKey,&nbsp;array(<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'secure'&nbsp;=&gt;&nbsp;true,<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'theme'&nbsp;&nbsp;=&gt;&nbsp;'white',<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'lang'&nbsp;&nbsp;&nbsp;=&gt;&nbsp;'fr'<br />//&nbsp;));<br />//&nbsp;or:<br />//&nbsp;$recaptcha-&gt;setOptions(array('theme'&nbsp;=&gt;&nbsp;'white',&nbsp;'lang'&nbsp;=&gt;&nbsp;'fr'));<br /><br />//&nbsp;we&nbsp;use&nbsp;a&nbsp;proxy,&nbsp;so&nbsp;we&nbsp;need&nbsp;to&nbsp;configure&nbsp;it<br /></span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRequest</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">setConfig</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'proxy_host'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'proxy_port'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">8118</span><span style="color: #007700">)<br />);<br /><br /></span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;form&nbsp;was&nbsp;submitted<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'submit'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">validate</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;the&nbsp;catpcha&nbsp;challenge&nbsp;response&nbsp;is&nbsp;ok,&nbsp;we&nbsp;display&nbsp;a&nbsp;message&nbsp;and&nbsp;exit<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Challenge&nbsp;response&nbsp;ok&nbsp;!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;captcha&nbsp;validation&nbsp;failed,&nbsp;instead&nbsp;of&nbsp;letting&nbsp;the&nbsp;captcha&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;display&nbsp;the&nbsp;error,&nbsp;we&nbsp;want&nbsp;to&nbsp;echo&nbsp;the&nbsp;error&nbsp;and&nbsp;exit<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getError</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;display&nbsp;the&nbsp;html&nbsp;form<br /></span><span style="color: #0000BB">?&gt;<br /></span>&lt;html&gt;<br />&lt;head&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;recaptcha&nbsp;test&lt;/title&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&nbsp;method="post"&nbsp;action=""&gt;<br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$recaptcha</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="submit"&nbsp;name="submit"&nbsp;value="Ok"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</span>
+</code>
+      </div>
+    </div><p>
+  </p>
+ </div>
+
+</div>
+</div>
+<!-- START MANUAL NAVIGATION -->
+<div class="manual-navigation" id="manual-navigation-bottom">
+ <a class="manual-previous" href="package.webservices.services-recaptcha.intro.php">introduction to the Services_ReCaptcha package
+<span class="title">(P<span class="accesskey">r</span>evious)</span></a>
+
+ <a class="manual-next" href="package.webservices.services-recaptcha.mailhide.php">getting started with the Mailhide functionality of Services_ReCaptcha
+<span class="title">(Ne<span class="accesskey">x</span>t)</span></a>
+
+ <div class="manual-clear"></div>
+ <div class="manual-info">Last updated: Sun, 03 Apr 2011 — <a href="/manual/">Download Documentation</a></div>
+
+ <div class="manual-bug">
+  Do you think that something on this page is wrong?  Please <a href="/bugs/report.php?package=Services_ReCaptcha">file a bug report</a>   or <a href="/notes/add-note-form.php?redirect=/manual/en/package.webservices.services-recaptcha.recaptcha.php&amp;uri=package.webservices.services-recaptcha.recaptcha.php">add a note</a>. 
+ </div>
+
+ <div class="manual-languages">
+View this page in:  <ul class="manual-language-list">
+   <li class="manual-language"><strong>English</strong></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../pt_BR/package.webservices.services-recaptcha.recaptcha.php">Brazilian Portuguese</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../nl/package.webservices.services-recaptcha.recaptcha.php">Dutch</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../fr/package.webservices.services-recaptcha.recaptcha.php">French</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../de/package.webservices.services-recaptcha.recaptcha.php">German</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../hu/package.webservices.services-recaptcha.recaptcha.php">Hungarian</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../ja/package.webservices.services-recaptcha.recaptcha.php">Japanese</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../pl/package.webservices.services-recaptcha.recaptcha.php">Polish</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../ru/package.webservices.services-recaptcha.recaptcha.php">Russian</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../es/package.webservices.services-recaptcha.recaptcha.php">Spanish</a></li>
+   <li class="manual-language"> &nbsp;•&nbsp; <a href="../tr/package.webservices.services-recaptcha.recaptcha.php">Turkish</a></li>
+  </ul>
+ </div>
+
+ <div class="manual-notes" id="user-notes">
+  <h3>User Notes:</h3>
+  There are no user contributed notes for this page.
+ </div>
+</div>
+<!-- END MANUAL NAVIGATION -->
+
+
+  </div>
+
+<!-- END MAIN CONTENT -->
+<!-- END MIDDLE -->
+
+<!-- START FOOTER -->
+<div id="footer">
+  <div id="foot-bar"><a href="/about/privacy.php">PRIVACY POLICY</a>&nbsp;|&nbsp;<a href="/about/credits.php">CREDITS</a></div>
+  <div id="foot-copy">
+    <a href="/copyright.php">Copyright &copy; 2001-2011 The PHP Group</a>    All rights reserved.
+  </div>
+
+  <div id="foot-source">
+    Bandwidth and hardware provided by:
+    <a href="http://www.eukhost.com/">eUKhost</a>
+  </div>
+</div>
+
+<!-- Onload focus to pear -->
+<!-- END FOOTER -->
+ </div>
+</body>
+</html>

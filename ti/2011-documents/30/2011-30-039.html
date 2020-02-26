@@ -1,0 +1,890 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="http://www.typepad.com/" />
+	<meta name="keywords" content="amazon mechanical turk, crowdsourcing, on-demand labor, labor-as-a-service" />
+	<meta name="description" content="The official blog of Amazon Mechanical Turk - find tips, tricks, best practices, product announcements to learn more about using the mTurk marketplace. " />
+	<link rel="stylesheet" href="/mechanicalturk.typepad.com/blog/styles.css?v=6" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/themes/common/print.css" type="text/css" media="print" />
+	<link rel="alternate" type="application/atom+xml" title="Posts on 'The Mechanical Turk Blog ' (Atom)" href="/mechanicalturk.typepad.com/blog/atom.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'The Mechanical Turk Blog ' (RSS 1.0)" href="/mechanicalturk.typepad.com/blog/index.rdf" />
+	<link rel="alternate" type="application/rss+xml" title="Posts on 'The Mechanical Turk Blog ' (RSS 2.0)" href="/mechanicalturk.typepad.com/blog/rss.xml" />
+	<script type="text/javascript">
+		var TPApp = {};
+		TPApp.app_uri = "http://www.typepad.com/";
+	</script>
+	<script type="text/javascript" src="/static.typepad.com/.shared:v20110331.01-0-gdadb2b8:typepad:en_us/js/yui/yahoo-dom-event.js,/js/app/thumbnail-gallery-min.js,/js/sixatrack-loader.js,/js/app/flyouts-min.js"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['t2._setAccount', 'UA-225723-36']);
+		_gaq.push(['t2._setDomainName', 'none']);
+		_gaq.push(['t2._setAllowLinker', true]);
+        _gaq.push(['t2._setCustomVar', 1, 'Blog', '6a013488051a84970c013488e4664c970c', 3]);
+        _gaq.push(['t2._setCustomVar', 2, 'Page Type', 'index', 3]);
+		_gaq.push(['t2._trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = /mechanicalturk.typepad.com/('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+	<title>The Mechanical Turk Blog </title>
+	<link rel="openid.server" href="/www.typepad.com/services/openid/server" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/www.typepad.com/services/rsd/6a013488051a84970c013488e4664c970c" />
+	
+        
+<script type="text/javascript" src="/use.typekit.com/bjd1nks.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body class="layout-two-column-right">
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+    FB.init( { apiKey: 'a279adbe87e2b3c505e777af99a5260d' } );
+
+    YAHOO.util.Event.onDOMReady( function() {
+        FB.XFBML.parse();
+    } );
+};
+( function() {
+    var e = document.createElement( 'script' ); e.async = true;
+    e.src = /mechanicalturk.typepad.com/document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    document.getElementById( 'fb-root' ).appendChild( e );
+} )();
+</script>
+
+	
+	<div id="container">
+		<div id="container-inner" class="pkg">
+			
+			<!-- banner -->
+<div id="banner">
+	<div id="banner-inner" class="pkg">
+		
+		<h1 id="banner-header"><a href="/mechanicalturk.typepad.com/blog/" accesskey="1">The Mechanical Turk Blog </a></h1>
+		<h2 id="banner-description">
+			The official blog of Amazon Mechanical Turk. 
+		</h2>
+	</div>
+</div>
+
+<div id="nav">
+	<div id="nav-inner">
+		<ul class="nav-list pkg">
+			<li class="nav-list-item"><a href="/mechanicalturk.typepad.com/blog/">Home</a></li>
+			<li class="nav-list-item"><a href="/mechanicalturk.typepad.com/blog/archives.html">Browse the Archives</a></li>
+			<li class="nav-list-item"><a href="/mechanicalturk.typepad.com/blog/atom.xml">Subscribe to the Feed</a></li>
+			<li class="last-nav-list-item nav-list-item"><a href="/www.mturk.com/">Visit Us at MTurk.com</a></li>
+		</ul>
+	</div>
+</div>
+
+
+			<div id="pagebody">
+				<div id="pagebody-inner" class="pkg">
+					<div id="alpha">
+						<div id="alpha-inner" class="pkg">
+							<!-- entry list sticky -->
+
+	
+	<div class="entry-category-announcements entry-category-product_ entry-category-requester entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c014e86f6ed63970d">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/03/spring-refresh-new-look-new-features-.html">Spring Refresh – new look, new features! </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Over here in Seattle spring has started to arrive. Flowers are beginning to bloom, the sun is peaking out and our Requester website has been refreshed!</p>
+<p>We wanted to improve the look and feel of the Requester Website so that we could provide more helpful content about Mechanical Turk that showcases how business are using the marketplace to <a href="/requester.mturk.com/tour/data_cleansing" target="_self">clean their data</a>, <a href="/requester.mturk.com/tour/categorization" target="_self">categorize items</a>, <a href="/requester.mturk.com/tour/content_creation_moderation" target="_self">create and moderate content</a> or <a href="/requester.mturk.com/tour/business_feedback" target="_self">get business feedback</a>.</p>
+<p><a style="display: inline;" href="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e376bdaa970b-pi"><img class="asset  asset-image at-xid-6a013488051a84970c0147e376bdaa970b image-full" title="Overview - Requester - Amazon Mechanical Turk_1301011285111" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e376bdaa970b-800wi" border="0" alt="Overview - Requester - Amazon Mechanical Turk_1301011285111" /></a> <br /><br /></p>
+<p>As you’ll see we’ve updated the navigation, created a homepage for Developers and added more information on how to use Mechanical Turk through use cases and case studies. We are also highlighting the robust ecosystem of Applications and Solution Providers who are building useful tools on top of the Mechanical Turk API. Go check it out! <br /><a href="/requester.mturk.com/" target="_self">Requester Website &gt;&gt;</a><br /><a href="/requester.mturk.com/tour" target="_self">Browse the Tour &gt;&gt;</a><br /><a href="/requester.mturk.com/case_studies" target="_self">View Case Studies &gt;&gt;</a><br /><a href="/requester.mturk.com/applications" target="_self">Find an application &gt;&gt;</a><br /><a href="/requester.mturk.com/solution_provider" target="_self">Find a solution provider &gt;&gt; </a><br /><a href="/requester.mturk.com/developer" target="_self">Explore Developer tools &gt;&gt;</a><br /><a href="/requester.mturk.com/help" target="_self">Get Help &gt;&gt; </a></p>
+<p>In addition to the Requester website refresh we have also released a few feature improvements – details below.</p>
+<ul>
+<li><strong>New Worker statistics (Web UI only)</strong><br /><em>See 7-day and 30-day performance statistics in addition to lifetime data on Workers so that Requesters can identify which Workers are currently performing well or poorly against past performance. </em></li>
+<li><strong>HIT &amp; Qualification Search improvements</strong><br /><em>More easily find the HITs you want to work on and the Qualifications you need. </em></li>
+<li><strong>Bonus Reasons update</strong><br /><em>Workers will now receive a copy of the Bonus Reason when they receive a bonus. </em></li>
+<li><strong>API Improvements</strong><br /><em>We’ve modified our API to be more standards compliant.</em></li>
+</ul>
+<p><span style="text-decoration: underline;"><strong>New Worker Management Statistics (Web UI only) </strong></span><br />We have made an improvement to the Worker Statistics available in the Web UI. You can now view approval rates for your Workers by 7 days and 30 days in addition to the Lifetime data that was previously available. These statistics are inclusive of the current day. For example if it is Tuesday February 10 at noon, you would see statistics for the current day plus statistics for the previous 6 days (i.e. Tuesday Feb10th through the previous Wednesday, February 4th).<br /><br /><span style="text-decoration: underline;"><strong>HIT &amp; Qualification Search Improvements</strong></span><br /><em>Prefix searching on HITs </em><br />You can now search for a partial term such as Cast and find results for Casting Words and Castle.&nbsp; This change applies to all the words in the title, the keywords and the requesters name.<br /><em>Search parity on Qualification search </em><br />Qualification Search now searches across Title, Keywords and Requester name and supports prefix search. <br /><br /><span style="text-decoration: underline;"><strong>Bonus Reasons are now shared with Workers </strong></span><br />Requesters can optionally include a “Reason” when they grant a bonus via the API, CLT or Web UI. Previously these notes were not distributed to Workers but they will now be included in a notification e-mail that the Worker receives. If the reason is left blank nothing will be shared with the Worker. <br /><br /><span style="text-decoration: underline;"><strong>API Improvements</strong></span><br />We’ve modified our API to be more standards compliant. We’ve changed the way in which we URL encode signatures on outbound REST event notification requests so that it is standards compliant. <br />We also now support all of the standard W3C xhtml entities within FormattedContent blocks. <br /><a href="/forums.aws.amazon.com/thread.jspa?threadID=50729" target="_self">Learn more about URL Encoding changes on the forum &gt;&gt;</a><br /><br /></p>
+<p>We hope you enjoy these updates – and are getting some spring sunshine!<br />The Mechanical Turk Team</p>
+<p>&nbsp;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 03/25/2011 at 13:59 in <a href="/mechanicalturk.typepad.com/blog/announcements/">Announcements</a>, <a href="/mechanicalturk.typepad.com/blog/product/">Product </a>, <a href="/mechanicalturk.typepad.com/blog/requester/">Requester</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/03/spring-refresh-new-look-new-features-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/03/spring-refresh-new-look-new-features-.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/03/spring-refresh-new-look-new-features-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F03%2Fspring-refresh-new-look-new-features-.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F03%2Fspring-refresh-new-look-new-features-.html&title=Spring%20Refresh%20%E2%80%93%20new%20look%2C%20new%20features!%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Spring Refresh – new look, new features! ';
+var tweetUrl    = 'http://bit.ly/fzZRKw';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/03/spring-refresh-new-look-new-features-.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-how_to_ entry-category-requester entry-category-tips_tricks entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c014e5fc7aa07970c">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/03/how-to-fund-your-mechanical-turk-account-with-a-bank-account.html">How to fund your Mechanical Turk account with a bank account</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Many of our Requesters today fund their accounts with a credit card – but we often get asked about funding an account with a bank account. Here’s how:</p>
+<p><strong><span style="text-decoration: underline;">Part 1: Add your bank account to your Amazon Payments Account<br /><br /> <a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e32291fa970b-pi" style="display: inline;"><img alt="Amzn_payments" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e32291fa970b image-full" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e32291fa970b-800wi" title="Amzn_payments" /></a> <br /><br /></span></strong></p>
+<p>First, you will need to add your bank account details to your Amazon Payments account.&#0160; If you’ve ever purchased Mechanical Turk pre-paid HITs you have an Amazon Payments account associated with your Mechanical Turk account. To add the bank account to your Amazon Payments account:</p>
+<ol>
+<li>Log in to <a href="/payments.amazon.com " target="_self">http://payments.amazon.com </a></li>
+<li>Go to “Edit My Account Setting” in your Payments account.&#0160; </li>
+<li>Click on “Add bank account”</li>
+<li>Provide your account details including your Bank Account Holder Name, Routing Number, Account Number and Account type (personal or corporate checking account).</li>
+<li>Click Continue and you will be led through the Bank Account verification process.</li>
+</ol>
+<p class="MsoNormal"><strong><span style="text-decoration: underline;">Part 2: Pre-pay for HITs with your bank account</span></strong></p>
+<p class="MsoNormal">Once your bank account has been verified, you can use it to purchase Mechanical Turk pre-paid HITs by following these steps:</p>
+<ol>
+<li>Log in to your Mechanical Turk Requester account - <a href="/requester.mturk.com" target="_self">http://requester.mturk.com</a></li>
+<li>From your Mechanical Turk account, go to Account Settings -&gt; Prepay for Mechanical Turk HITs.</li>
+<li>Enter in the amount you would like to fund.&#0160; </li>
+<li>Click “Continue to Amazon Payments”</li>
+<li>Login to Amazon Payments with your Amazon Payments account email and password.&#0160; </li>
+<li>Select the bank account you want to fund the Mechanical Turk account.&#0160;&#0160; </li>
+<li>Confirm your selection. </li>
+</ol>
+<p class="MsoListParagraph" style="margin-left: 0.25in; line-height: 115%;"><em>Note: It can take up to 5-7 days for bank account transfers to clear and for the funds to be available in your Amazon Mechanical Turk account. </em></p>
+<p class="MsoNormal"><a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e5fc7a6c9970c-pi" style="display: inline;"><img alt="Settings_amnt" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e5fc7a6c9970c image-full" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e5fc7a6c9970c-800wi" title="Settings_amnt" /></a></p>
+<p class="MsoNormal"><a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e5fc7a94f970c-pi" style="display: inline;"><img alt="Paywithbankacct" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e5fc7a94f970c image-full" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e5fc7a94f970c-800wi" title="Paywithbankacct" /></a> <br /><br /></p>
+<p>&#0160;</p>
+<p>&#0160;</p>
+<div class="mcePaste" id="_mcePaste" style="position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">
+<p class="MsoListParagraph" style="text-indent: -0.25in;"><span>1)<span style="font: 7pt &quot;Times New Roman&quot;;">&#0160;&#0160;&#0160;&#0160;&#0160; </span></span>Log in to <a href="/payments.amazon.com/">http://payments.amazon.com</a></p>
+<p class="MsoListParagraph" style="text-indent: -0.25in; line-height: 115%;"><span>2)<span style="font: 7pt &quot;Times New Roman&quot;;">&#0160;&#0160;&#0160;&#0160;&#0160; </span></span>Go to “Edit My Account Setting” in your Payments account.&#0160;</p>
+<p class="MsoListParagraph" style="text-indent: -0.25in; line-height: 115%;"><span>3)<span style="font: 7pt &quot;Times New Roman&quot;;">&#0160;&#0160;&#0160;&#0160;&#0160; </span></span>Click on “Add bank account”</p>
+<p class="MsoListParagraph" style="text-indent: -0.25in; line-height: 115%;"><span>4)<span style="font: 7pt &quot;Times New Roman&quot;;">&#0160;&#0160;&#0160;&#0160;&#0160; </span></span>Provide your account details including your Bank Account Holder Name, Routing Number, Account Number and Account type (personal or corporate checking account).</p>
+<p class="MsoListParagraph" style="text-indent: -0.25in; line-height: 115%;"><span>5)<span style="font: 7pt &quot;Times New Roman&quot;;">&#0160;&#0160;&#0160;&#0160;&#0160; </span></span>Click Continue and you will be led through the Bank Account verification process.</p>
+</div>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 03/10/2011 at 19:15 in <a href="/mechanicalturk.typepad.com/blog/how-to/">How to </a>, <a href="/mechanicalturk.typepad.com/blog/requester/">Requester</a>, <a href="/mechanicalturk.typepad.com/blog/tips-tricks/">Tips & Tricks</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/03/how-to-fund-your-mechanical-turk-account-with-a-bank-account.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/03/how-to-fund-your-mechanical-turk-account-with-a-bank-account.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/03/how-to-fund-your-mechanical-turk-account-with-a-bank-account.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F03%2Fhow-to-fund-your-mechanical-turk-account-with-a-bank-account.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F03%2Fhow-to-fund-your-mechanical-turk-account-with-a-bank-account.html&title=How%20to%20fund%20your%20Mechanical%20Turk%20account%20with%20a%20bank%20account', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'How to fund your Mechanical Turk account with a bank account';
+var tweetUrl    = 'http://bit.ly/hoyjQ8';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/03/how-to-fund-your-mechanical-turk-account-with-a-bank-account.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-announcements entry-category-conferences entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0147e3210726970b">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/03/fixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html">Fixing Dirty Data with Mechanical Turk – Werner Vogel’s Keynote @ Strata </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><iframe frameborder="0" height="390" src="/www.youtube.com/embed/oNTp5spjv0w?rel=0" title="YouTube video player" width="640"></iframe></p>
+<p>A few weeks ago, I attended the <a href="/strataconf.com/strata2011/" target="_self">O’Reilly Strata conference</a> where <a href="/en.wikipedia.org/wiki/Werner_Vogels" target="_self">Werner Vogels</a>, CTO of Amazon, gave a keynote.&#0160; He spoke about big data – how to collect, store, organize, analyze and share data. In his talk (at minute 13:04) he covered how enterprises are using Mechanical Turk to organize their data. Specifically, how you can leverage the hundreds of thousands Workers on Mechanical Turk to:&#0160;</p>
+<ul>
+<li>Verify your data </li>
+<li>Correct data </li>
+<li>Enrich data by adding meta information to your data set </li>
+<li>Filter data through content moderation</li>
+</ul>
+<p>He then shared a common case study of how a company managing millions of business listings incorporated Mechanical Turk into their data management workflow to optimize the accuracy of their data and improve their customer experience. In the scenario he described, the provider of business listings built a data processing engine that automatically sent data exceptions to Mechanical Turk. These exceptions were reviewed and corrected by Workers; their answers were automatically validated, placed back in the data flow and then updated on their website:</p>
+<p><a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e86a11682970d-pi" style="display: inline;"><img alt="Strata_datacleansing" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e86a11682970d image-full" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e86a11682970d-800wi" title="Strata_datacleansing" /></a></p>
+<p>You can see all of the keynotes with transcripts on the <a href="/strataconf.com/strata2011/public/schedule/stype/keynote" target="_self">O’Reilly summary page </a>– click on the purple icon <br />( <a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e86a11d8d970d-pi" style="display: inline;"><img alt="Transcript_icon" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e86a11d8d970d" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e86a11d8d970d-800wi" title="Transcript_icon" /></a> ) to read the transcript. &#0160; <br />Thanks to Mechanical Turk partners&#0160;&#0160; <a href="/www.castingwords.com" style="display: inline;" target="_self"><img alt="CW_edited" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e3210d2b970b" height="34" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e3210d2b970b-800wi" title="CW_edited" width="140" /></a> and&#0160;  <a href="/mechanicalturk.typepad.com/www.speechpad.com" style="display: inline;" target="_self"><img alt="Logo_speechpad" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e5fc61bd1970c" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e5fc61bd1970c-800wi" title="Logo_speechpad" /></a> who &#0160;provided the transcriptions for the conference!&#0160; Here’s the <a href="/assets.en.oreilly.com/1/event/55/strata2011_transcripts_data-without-limits_vogels.htm" target="_self">transcript </a>from Werner’s presentation.</p>
+<p>&#0160;</p>
+<p>-- Natala</p>
+<p>&#0160;</p>
+<ul>
+</ul>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 03/10/2011 at 12:40 in <a href="/mechanicalturk.typepad.com/blog/announcements/">Announcements</a>, <a href="/mechanicalturk.typepad.com/blog/conferences/">Conferences</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/03/fixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/03/fixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/03/fixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F03%2Ffixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F03%2Ffixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html&title=Fixing%20Dirty%20Data%20with%20Mechanical%20Turk%20%E2%80%93%20Werner%20Vogel%E2%80%99s%20Keynote%20%40%20Strata%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Fixing Dirty Data with Mechanical Turk – Werner Vogel’s Keynote @ Strata ';
+var tweetUrl    = 'http://bit.ly/hjD2Mz';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/03/fixing-dirty-data-with-mechanical-turk-werner-vogels-speech-strata-.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-requester entry-category-tips_tricks entry-category-webinar entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0147e2d08fbc970b">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/02/social-media-webinar-recap.html">Social Media Webinar – Recap </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<div id="__ss_7048915" style="width: 510px;">
+<object height="426" id="__sse7048915" width="510">
+<param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=socialmediawebinarfeb242011-110224154507-phpapp01&amp;rel=0&amp;stripped_title=social-media-use-cases-webinar&amp;userName=mechanicalturk" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" /> <embed allowfullscreen="true" allowscriptaccess="always" height="426" name="__sse7048915" src="/static.slidesharecdn.com/swf/ssplayer2.swf?doc=socialmediawebinarfeb242011-110224154507-phpapp01&amp;rel=0&amp;stripped_title=social-media-use-cases-webinar&amp;userName=mechanicalturk" type="application/x-shockwave-flash" width="510" />
+</object>
+</div>
+<p>&#0160;</p>
+<p>Yesterday, we held a webinar for Requesters interested in learning how to leverage <a href="/requester.mturk.com" target="_self">Mechanical Turk</a> for Social Media use cases such as:</p>
+<ul>
+<li>Moderation – identify photos that are inappropriate</li>
+<li>Discovery – add relevant tags to help content be more discoverable in search&#0160;</li>
+<li>Analysis – analyze content to understand sentiment&#0160;</li>
+<li>Creation – have content written such as captions or headlines&#0160;</li>
+</ul>
+<p>The slides from the presentation are above for you to view.&#0160;&#0160;<br /><br />As always, it was great to connect with customers about how to use Mechanical Turk. Please post any questions you have in the comments.</p>
+<p>If you want to be notified of future webinars, follow us on this blog or on Twitter <a href="/www.twitter.com/amazonmturk" target="_self">@amazonmturk</a>.</p>
+<p>Cheers,&#0160;Natala&#0160;</p>
+<p>&#0160;</p>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<p>&#0160;</p>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 02/25/2011 at 09:10 in <a href="/mechanicalturk.typepad.com/blog/requester/">Requester</a>, <a href="/mechanicalturk.typepad.com/blog/tips-tricks/">Tips & Tricks</a>, <a href="/mechanicalturk.typepad.com/blog/webinar/">Webinar</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/02/social-media-webinar-recap.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/02/social-media-webinar-recap.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/02/social-media-webinar-recap.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F02%2Fsocial-media-webinar-recap.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F02%2Fsocial-media-webinar-recap.html&title=Social%20Media%20Webinar%20%E2%80%93%20Recap%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Social Media Webinar – Recap ';
+var tweetUrl    = 'http://bit.ly/eB213t';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/02/social-media-webinar-recap.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-announcements entry-category-requester entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c014e863b4571970d">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/02/register-now-for-our-mturk-social-media-webinar-this-thursday.html">Register now for our Social Media Webinar – this Thursday!</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e863b44f4970d-pi" style="display: inline;"><img alt="Webinar_graphic" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e863b44f4970d" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e863b44f4970d-800wi" title="Webinar_graphic" /></a> <br /><br /></p>
+<p>Are you a social media company trying to figure out how to manage content creation and moderation? Do you want to make your content more discoverable and make sure it complies with your community guidelines? This Webinar will share best practices for content creation and moderation, classification and transcription so that your content is better managed and more discoverable. We will have a 30 minute presentation and then take questions from attendees. Here are the details:</p>
+<p><strong>Mechanical Turk Best Practices for Social Media Web Services - Webinar<br /></strong>Thursday, February 24<sup>th</sup> at 1:00 PM PST.</p>
+<p>&#0160; <a href="/www2.gotomeeting.com/register/132181754" style="display: inline;" target="_self"><img alt="Registerforthisevent_button" border="0" class="asset  asset-image at-xid-6a013488051a84970c014e863b04cb970d" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c014e863b04cb970d-800wi" title="Registerforthisevent_button" /></a></p>
+<p>&#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 02/21/2011 at 17:56 in <a href="/mechanicalturk.typepad.com/blog/announcements/">Announcements</a>, <a href="/mechanicalturk.typepad.com/blog/requester/">Requester</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/02/register-now-for-our-mturk-social-media-webinar-this-thursday.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/02/register-now-for-our-mturk-social-media-webinar-this-thursday.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/02/register-now-for-our-mturk-social-media-webinar-this-thursday.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F02%2Fregister-now-for-our-mturk-social-media-webinar-this-thursday.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F02%2Fregister-now-for-our-mturk-social-media-webinar-this-thursday.html&title=Register%20now%20for%20our%20Social%20Media%20Webinar%20%E2%80%93%20this%20Thursday!', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Register now for our Social Media Webinar – this Thursday!';
+var tweetUrl    = 'http://bit.ly/ihCNJt';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/02/register-now-for-our-mturk-social-media-webinar-this-thursday.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c014e5f4b5638970c">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/02/aws-office-hours-recap-.html">AWS Office Hours - Recap </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><embed allowfullscreen="true" allowscriptaccess="always" height="334" src="/blip.tv/play/AYKkuDYA" type="application/x-shockwave-flash" width="512" /></p>
+<p>A couple of weeks ago we held our first AWS sponsored Mechanical Turk Office Hours. It was awesome to connect with our customers – both Workers and Requesters and to hear your questions.&#0160;</p>
+<p>In the Office Hours we spent part of the time sharing updates on Mechanical Turk and spent the rest of the time answering your questions. &#0160;For those of you who were not able to attend, here is a link to the <a href="/mturk.blip.tv/file/4773106/" target="_self">video</a>&#0160;(please note that the audio on the video starts at [1:24]), and link to <a href="/mturk.s3.amazonaws.com/AWS_mTurk_OfficeHours_Jan2011.rtf" target="_self">download the transcript</a> (done by Mechanical Turk Workers via <a href="/mechanicalturk.typepad.com/www.castingwords.com" target="_self">CastingWords</a>). &#0160;You can also find the <a href="/www.slideshare.net/mechanicalturk/aws-mechanical-turk-office-hours-jan-2011" target="_self">slides</a> on Slideshare.&#0160;</p>
+<p><span style="text-decoration: underline; font-size: 12pt;"><strong>Highlights:&#0160;</strong></span><br /><em>We’ve included the time stamp from the video for reference.&#0160;</em></p>
+<p><strong>[10:24] Worker Management Overview&#0160;</strong><br />We reviewed our recently released Worker management features and how you can you use these tools to create qualified workgroups.&#0160;</p>
+<p><strong>[19:52] API Best Practices</strong></p>
+<ul>
+<li>Take advantage of the notification capability that we&#39;ve built into our API instead of using the polling interfaces in the Search HITs API or Reviewable HITs API.&#0160;</li>
+<li>Disposing HITs can improve your performance as there is less data to manage for your requests.</li>
+</ul>
+<p><strong>[23:30] HIT Best Practices</strong></p>
+<ol>
+<li><em><strong>Clear &amp; concise instructions&#0160;</strong></em><br />Provide clear and concise instructions to Workers that make it very easy to understand what the task is and what a good task response would be.</li>
+<li><em><strong>Add keywords to your HIT</strong></em><br />This helps to make it searchable for Workers. Workers search for certain types of tasks, photo moderation, classification categorization, business listing verification, having those types of keywords in the HIT description is very useful.&#0160;</li>
+<li><em><strong>User experience or the design of your HIT.</strong></em><br />&#0160;Make your HIT as efficient as possible, minimizing instructions that push the work down to the bottom of the page. Minimizing scrolling is very important to think about when you design your HIT.</li>
+<li><em><strong>Test &amp; Iterate</strong></em><br />Most Requesters need to modify their HITs a few times before the question(s) and instructions are clear to Workers and the HIT is designed and working properly. &#0160;So when you first publish your HIT in the Mechanical Turk marketplace, consider it to be a test. Start by running a low volume of HITs to get feedback from Workers and to validate what the experience was, how long it took, and to make sure that the HIT itself is functioning as expected. Include an additional box that asks Workers for &quot;any feedback on this HIT.&quot; The Mechanical Turk Worker community sees lots of HITs and they are able to give very helpful feedback.&#0160;</li>
+</ol>
+<p><span style="text-decoration: underline; font-size: 12pt;"><strong>Q &amp; A Highlights:&#0160;</strong></span></p>
+<p><strong>[43:26] How should I price my HIT?&#0160;</strong><br />As a marketplace, the going price for a HIT will fluctuate based on basic laws of supply and demand. You determine the offer for your work, and Workers choose what they want to do. When setting the reward for your HIT you should consider:&#0160;</p>
+<ul>
+<li>How long does it take you to do the task?&#0160;</li>
+<li>How quickly do you need the work completed?</li>
+<li>How valuable is the task to you?&#0160;</li>
+<li>Look at the marketplace and see how similar tasks are being priced.&#0160;</li>
+<li>Test the price in the marketplace with a few HITs – do they get done as you’d expect?&#0160;</li>
+</ul>
+<p><strong>[46:37] “How do I attract good Workers? How do I find them?&quot;</strong><br />Take the time to build a good reputation, by being quick and fair in your payment of Workers. Audit work and bonus your best Workers. This is a great way to encourage your best Workers to do more work for you. &#0160;We also reviewed our Worker Management features. You can learn more about them in this SlideShare.&#0160;</p>
+<p><strong>[47:37] A question from TurkerNation: &quot;How should I [as a Worker] handle blocks?&#0160;</strong><br />A block prevents a Worker from working for a Requester. It is individual and specific to that relationship. If a Requester blocks you, we recommend that you work directly with that Requester to understand why. They are the ones who have the ultimate control over that block.</p>
+<p><strong>[56:24] A question from Brent Lee. &quot;How many Workers are currently registered to work on HITs?&quot;</strong><br />We have over a half a million Workers worldwide from over 190 different countries.&#0160;<br /><br /><strong>[57:38] “Where should Requesters post their API questions?”&#0160;</strong><br />We have a forum for developers to ask questions about the Requester Web site or API tools. Here’s the link:<br /><a href="/forums.aws.amazon.com/forum.jspa?forumID=11" target="_self">https://forums.aws.amazon.com/forum.jspa?forumID=11 </a></p>
+<p>For quick viewing, here are the slides for you to view:</p>
+<div id="__ss_6660772" style="width: 425px;"><strong style="display: block; margin: 12px 0 4px;"><a href="/www.slideshare.net/mechanicalturk/aws-mechanical-turk-office-hours-jan-2011" title="AWS Mechanical Turk Office Hours - Jan 2011">AWS Mechanical Turk Office Hours - Jan 2011</a></strong> 
+<object height="355" id="__sse6660772" width="425">
+<param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=awsofficehoursmturkjan11final-110122025659-phpapp01&amp;rel=0&amp;stripped_title=aws-mechanical-turk-office-hours-jan-2011&amp;userName=mechanicalturk" />
+<param name="allowFullScreen" value="true" />
+<param name="allowScriptAccess" value="always" /><embed allowfullscreen="true" allowscriptaccess="always" height="355" name="__sse6660772" src="/static.slidesharecdn.com/swf/ssplayer2.swf?doc=awsofficehoursmturkjan11final-110122025659-phpapp01&amp;rel=0&amp;stripped_title=aws-mechanical-turk-office-hours-jan-2011&amp;userName=mechanicalturk" type="application/x-shockwave-flash" width="425" />
+</object>
+<div style="padding: 5px 0 12px;">View more <a href="/www.slideshare.net/">presentations</a> from <a href="/www.slideshare.net/mechanicalturk">Mechanical Turk </a>.</div>
+</div>
+<p>P.S. I apologize for the delay in getting the video and write-up posted to the blog!&#0160;</p>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+<script src="/b.scorecardresearch.com/beacon.js?c1=7&amp;c2=7400849&amp;c3=1&amp;c4=&amp;c5=&amp;c6="></script>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 02/17/2011 at 22:44 </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/02/aws-office-hours-recap-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/02/aws-office-hours-recap-.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/02/aws-office-hours-recap-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F02%2Faws-office-hours-recap-.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F02%2Faws-office-hours-recap-.html&title=AWS%20Office%20Hours%20-%20Recap%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'AWS Office Hours - Recap ';
+var tweetUrl    = 'http://bit.ly/fuH1uO';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/02/aws-office-hours-recap-.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-product_ entry-category-requester entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0147e17fe609970b">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/01/improved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html">Improved Feature: Approve or Reject Assignments while a Batch is in Progress</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>We recently improved our support for Requesters who want to approve or reject assignments in the Web UI via CSV upload. Now, Requesters can upload their CSV file with approvals and rejections any time after the batch has been loaded, enabling more flexibility and faster feedback cycles. This will allow you to pay Workers so they keep working on your HITs.&#0160; You can even republish your rejected work while the batch is still in progress, resulting in faster project completion times.&#0160;</p>
+<p>We hope you enjoy this improvement!</p>
+<p>-- Natala&#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 01/17/2011 at 19:44 in <a href="/mechanicalturk.typepad.com/blog/product/">Product </a>, <a href="/mechanicalturk.typepad.com/blog/requester/">Requester</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/01/improved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/01/improved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/01/improved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F01%2Fimproved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F01%2Fimproved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html&title=Improved%20Feature%3A%20Approve%20or%20Reject%20Assignments%20while%20a%20Batch%20is%20in%20Progress', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Improved Feature: Approve or Reject Assignments while a Batch is in Progress';
+var tweetUrl    = 'http://bit.ly/if4h6o';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/01/improved-feature-approve-or-reject-assignments-while-a-batch-is-in-progress.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-announcements entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0147e1af6e65970b">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/01/questions-well-answer-them-during-office-hours-.html">Questions? We'll answer them during Office Hours. </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p><a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e1b0545a970b-pi" style="display: inline;"><img alt="OfficeHours" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e1b0545a970b" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e1b0545a970b-800wi" title="OfficeHours" /></a></p>
+<p>Just a quick reminder that we will be hosting Mechanical Turk AWS Office Hours this Thursday! Members of the Mechanical Turk Team will be available during this interactive Q &amp; A session to answer your questions and share updates on the platform and crowdsourcing.&#0160;</p>
+<p>Do you have a question that you&#39;d like us to answer during Office Hours? Ask it in the comments below and it could be selected for answering during the live session.&#0160;</p>
+<p>If you haven&#39;t registered for the session, do so now:</p>
+<p><a href="/www2.gotomeeting.com/register/783718634" style="display: inline;" target="_self"><img alt="Registerforthisevent_button" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e1407e47970b" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e1407e47970b-800wi" title="Registerforthisevent_button" /></a></p>
+<p>We look forward to speaking with you during office hours!&#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 01/17/2011 at 18:01 in <a href="/mechanicalturk.typepad.com/blog/announcements/">Announcements</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/01/questions-well-answer-them-during-office-hours-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/01/questions-well-answer-them-during-office-hours-.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/01/questions-well-answer-them-during-office-hours-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F01%2Fquestions-well-answer-them-during-office-hours-.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F01%2Fquestions-well-answer-them-during-office-hours-.html&title=Questions%3F%20We\'ll%20answer%20them%20during%20Office%20Hours.%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Questions? We\'ll answer them during Office Hours. ';
+var tweetUrl    = 'http://bit.ly/fX5EDm';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/01/questions-well-answer-them-during-office-hours-.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-announcements entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0148c749eefd970c">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2011/01/mechanical-turk-office-hours-jan-20th-2011.html">Mechanical Turk Office Hours - January 20, 2011</a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Please join members of the Mechanical Turk team for AWS Office Hours on January 20th from 11:00 AM to 12:00 PM PST.&#0160;</p>
+<p>During this interactive Q &amp; A session we will answer your business and technical questions. &#0160;We will discuss how Mechanical Turk can solve a number of use cases including content moderation, data cleansing and data verification. &#0160;<br /><br /><em>Mechanical Turk attendees:</em><br />James Willeford, Principal Development Engineer<br />Adam Bradley, Sr. Software Engineer<br />Natala Menezes, Sr. Product Manager</p>
+<p><a href="/www2.gotomeeting.com/register/783718634" style="display: inline;" target="_self"><img alt="Registerforthisevent_button" border="0" class="asset  asset-image at-xid-6a013488051a84970c0147e1407e47970b" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0147e1407e47970b-800wi" title="Registerforthisevent_button" /></a></p>
+<p>We look forward to speaking with you during office hours!&#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 01/03/2011 at 21:57 in <a href="/mechanicalturk.typepad.com/blog/announcements/">Announcements</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2011/01/mechanical-turk-office-hours-jan-20th-2011.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2011/01/mechanical-turk-office-hours-jan-20th-2011.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2011/01/mechanical-turk-office-hours-jan-20th-2011.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F01%2Fmechanical-turk-office-hours-jan-20th-2011.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2011%2F01%2Fmechanical-turk-office-hours-jan-20th-2011.html&title=Mechanical%20Turk%20Office%20Hours%20-%20January%2020%2C%202011', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Mechanical Turk Office Hours - January 20, 2011';
+var tweetUrl    = 'http://bit.ly/fnnMAC';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2011/01/mechanical-turk-office-hours-jan-20th-2011.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+	
+	
+	<div class="entry-category-product_ entry-category-worker entry-author-natala_menezes entry-type-post entry" id="entry-6a013488051a84970c0148c72e9e0a970c">
+
+					<h3 class="entry-header"><a href="/mechanicalturk.typepad.com/blog/2010/12/search-by-requester-name-.html">Search by Requester Name </a></h3>
+		
+		<div class="entry-content">
+			<div class="entry-body">
+				<p>Hello Turkers! I wanted to let you know that we recently released an update to the search functionality for the HIT catalog on Mechanical Turk. You can now search for a Requester by name – making it easier to find work you enjoy.&#0160;</p>
+<p><br /><strong>How it works:</strong><br />Enter the exact name of the Requester in the search box and we will return all of the available HIT capsules (or groups) for this Requester. In the sample below I searched for [Amazon Requester Inc.] and the results returned all the active HITS for this Requester.</p>
+<p><a href="/mechanicalturk.typepad.com/.a/6a013488051a84970c0148c72e9d1f970c-pi" style="display: inline;"><img alt="Searchbyrequester" border="0" class="asset  asset-image at-xid-6a013488051a84970c0148c72e9d1f970c image-full" src="/mechanicalturk.typepad.com/.a/6a013488051a84970c0148c72e9d1f970c-800wi" title="Searchbyrequester" /></a> <br />Happy New Year!<br />-- Natala &#0160;</p>
+			</div>
+			
+			
+		</div>
+		<div class="entry-footer">
+			<p class="entry-footer-info">
+				
+                <span class="post-footers">Posted on 12/30/2010 at 14:19 in <a href="/mechanicalturk.typepad.com/blog/product/">Product </a>, <a href="/mechanicalturk.typepad.com/blog/worker/">Worker</a> </span> <span class="separator">|</span> <a class="permalink" href="/mechanicalturk.typepad.com/blog/2010/12/search-by-requester-name-.html">Permalink</a>
+									<span class="separator">|</span>
+					<a class="entry-comments" href="/mechanicalturk.typepad.com/blog/2010/12/search-by-requester-name-.html#comments">Comments (0)</a>
+				
+									<span class="separator">|</span>
+					<a class="entry-trackbacks" href="/mechanicalturk.typepad.com/blog/2010/12/search-by-requester-name-.html#trackback">TrackBack (0)</a>
+				
+			</p>
+			<!-- technorati tags -->
+
+
+			<!-- post footer links -->
+	<p class="entry-footer-share entry-footer-share-buttons">
+		<span class="entry-footer-links-digg"><a href="/digg.com/submit?url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fsearch-by-requester-name-.html&amp;phase=2" class="share-link share-link-digg">Digg This</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-delicious"><a href="/del.icio.us/post" class="share-link share-link-delicious" onclick="window.open('http://del.icio.us/post?v=4&partner=typepad&noui&jump=close&url=/mechanicalturk.typepad.com/http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F2010%2F12%2Fsearch-by-requester-name-.html&title=Search%20by%20Requester%20Name%20', 'delicious', 'toolbar=no,width=700,height=400'); return false;">Save to del.icio.us</a>
+</span> <span class="separator">|</span> <span class="entry-footer-links-twitter"><script type="text/javascript">
+var tweetTitle  = 'Search by Requester Name ';
+var tweetUrl    = 'http://bit.ly/foRlXf';
+var maxLength = 140 - (tweetUrl.length + 1);
+if (tweetTitle.length > maxLength) {
+  tweetTitle = tweetTitle.substr(0, (maxLength - 3))+'...';
+}
+var tweetLink = 'http://twitter.com/home?status='+encodeURIComponent(tweetTitle + ' ' + tweetUrl);
+document.write('<a href="'+tweetLink+'" target="_blank"'+' class="share-link share-link-twitter">Tweet This!<'+'/a>');
+</script></span> <span class="separator">|</span> <span class="entry-footer-links-facebook_like">
+<fb:like href="/mechanicalturk.typepad.com/blog/2010/12/search-by-requester-name-.html" layout="button_count" show_faces="false"></fb:like>
+</span>
+	</p>
+
+
+		</div>
+	</div>
+			<div class="pager-bottom pager-entries pager content-nav">
+		<div class="pager-inner">
+			
+			
+			<span class="pager-right">
+				<a href="/mechanicalturk.typepad.com/blog/page/2/"><span class="pager-label">Next</span>
+					<span class="chevron">&#187;</span></a>
+			</span>
+		</div>
+	</div>
+	
+	
+
+
+						</div>
+					</div>
+					<div id="beta">
+						<div id="beta-inner" class="pkg">
+							<!-- sidebar -->
+
+
+<div class="module-custom_html module">
+    <div class="module-content">
+<a href="/www.mturk.com"><img src="/mechanicalturk.typepad.com/button_blog_mturk.png" width="231" height="64" alt="Visit the Amazon Mechanical Turk website" /></a>
+    </div>
+</div>
+<!-- Blog Search Module -->
+<div class="module-search module">
+    <h2 class="module-header">Search</h2>
+    <div class="module-content">
+        <form id="search-blog" method="get" action="/mechanicalturk.typepad.com/.services/blog/6a013488051a84970c013488e4664c970c/search">
+            <input type="search" name="filter.q" results="5" value="" />
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+</div>
+<!-- END Blog Search Module -->
+<div class="module-custom_html module">
+    <div class="module-content">
+<script src="/widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 3,
+  interval: 6000,
+  width: 230,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#dbdbdb',
+      color: '#666666'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#666666',
+      links: '#fea413'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('amazonmturk').start();
+</script>
+    </div>
+</div>
+<div class="module-custom_html module">
+    <div class="module-content">
+<script src="/connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="/www.facebook.com/amazonmturk" width="230" connections="6" stream="false" header="true"></fb:like-box>
+    </div>
+</div>
+<div class="module-custom_html module">
+    <div class="module-content">
+<script type="text/javascript">
+var disqus_shortname = 'amazonmturk';
+
+// DON'T EDIT BELOW THIS LINE
+(function () {
+    var div = document.getElementById('all-comments');
+    div.innerHTML = ''; div.id = 'disqus_thread';
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+    </div>
+</div>
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+<!--
+var extra_happy = Math.floor(1000000000 * Math.random());
+document.write('<img src="/www.typepad.com/t/stats?blog_id=86844807377098508&amp;user_id=&amp;page=' + escape(location.href) + '&amp;referrer=' + escape(document.referrer) + '&amp;i=' + extra_happy + '" width="1" height="1" alt="" style="position: absolute; top: 0; left: 0;" />');
+// -->
+</script>
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try{
+    var pageTracker = _gat._getTracker("UA-20104705-1");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="/edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qoptions = { tags:"typepad.core" }; _qacct="p-fcYWUmj5YbYKM"; quantserve();</script>
+<noscript>
+<a href="/www.quantcast.com/p-fcYWUmj5YbYKM" target="_blank"><img src="/pixel.quantserve.com/pixel/p-fcYWUmj5YbYKM.gif?tags=typepad.core" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+ 
+
+<!-- Blogside Toolbar -->
+<script type="text/javascript">
+    var TPToolbar = {
+        src:   "http://www.typepad.com/services/toolbar?blog_id=6a013488051a84970c013488e4664c970c&asset_id=&atype=index&to=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F&autofollowed=0",
+        asset_xid: "",
+    
+        bookmarklet_uri: "http://static.typepad.com/.shared/js/qp/loader-combined-min.js"
+    };
+    var TYPEPAD___bookmarklet_domain = "http://www.typepad.com/";
+</script>
+<script type="text/javascript" src="/mechanicalturk.typepad.com/.shared/js/toolbar/blogside-toolbar-combined-min.js"></script>
+<!-- End Blogside Toolbar -->
+<!-- Begin comScore Tag -->
+<script>
+document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js'%3E%3C/script%3E"));
+</script>
+<script>
+COMSCORE.beacon({
+  c1: 2,
+  c2: "6035669",
+  c3: "",
+  c4: "http://mechanicalturk.typepad.com/blog/",
+  c5: "",
+  c6: "",
+  c15: ""
+});
+</script>
+<noscript>
+  <img src="/b.scorecardresearch.com/b?c1=2&c2=6035669&c3=&c4=http%3A%2F%2Fmechanicalturk.typepad.com%2Fblog%2F&c5=&c6=&c15=&cv=1.3&cj=1" style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+</body>
+</html>
+<!-- ph=1 -->

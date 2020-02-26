@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Videos.com Video Search ~ Zoo Videos Results</title>
+<meta name="description" content="Watch Zoo Videos from all popular video sharing websites on Videos.com. New Zoo Videos added daily!" />
+<meta name="keywords" lang="en" content="zoo videos,videos,free videos,online videos,video search engine" />
+<link href="http://www.videos.com/templates/default/css/default-main.css" rel="stylesheet" type="text/css" />
+<link rel="search" type="application/opensearchdescription+xml" title="Videos.com ~ Free Videos, Online Videos, Video Search Engine" href="http://www.videos.com/opensearch.xml">
+<link rel="shortcut icon" href="http://www.videos.com/templates/default/images/favicon.ico" />
+</head>
+<body>
+<div id="login">
+   <div class="content clearfix">
+	<div class="left">
+		<h1>Why register with Videos.com?</h1>
+		<h2>Videos.com is a free <em>video search engine</em> that indexes millions of online videos from all across the web! We didn't invent online video search, we just made it simpler, faster, and more dynamic, with instant access to thousands of new videos added daily.<br><br>
+		Videos.com membership is 100% free with, no credit card needed to join! Registered members get a permanent username for our live chats, plus the ability to save unlimited videos to their private playlist. Playlist videos can be watched from any computer with an Internet connection without downloads.<br><br>
+		More free membership features coming soon...</h2>
+	</div>
+	<div class="left" id="logindiv">
+	<!-- Login Form -->
+	<form class="clearfix" action="/login.htm" method="post" name="logfm" id="loginform">
+	<input type="hidden" name="Action" value="Submit">
+	<input type="hidden" name="t" value="1">
+	<input type="hidden" name="page" value="/videos/zoo_videos.html">
+		<h1>Member Login:</h1>
+		<label for="log">Username:</label>
+		<input class="field" type="text" name="log" id="log" value="" size="23" maxlength="20" />
+		<label for="pwd">Password:</label>
+		<input class="field" type="password" name="pwd" id="pwd" size="23" value="" maxlength="20" />
+	     	<br /><br />
+		<label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" value="forever" checked /> Keep me logged in</label>
+		<div class="clear"></div>
+		<input type="submit" name="submit" value="Login" class="bt_login" />
+		<a class="lost-pwd" href="/forgot_password.htm">Forgot your password?</a>
+	</form>
+	</div>
+	<div class="left right" id="registerdiv">
+	<!-- Register Form -->
+	<form action="/register.htm" method="post" id="regform">
+		<h1>Quick Registration:</h1>				
+		<label for="signup">Username:</label>
+		<input class="field" type="text" name="signup" id="signup" value="" size="23" maxlength="20" />
+		<label for="email">Email:</label>
+		<input class="field" type="text" name="email" id="email" size="23" maxlength="80" /><br /><br />
+		<label>Registration is free with no credit card required.</label><br />
+		<input type="submit" name="submit" value="Continue" class="bt_register" />
+	</form>
+	</div>
+   </div>
+</div>
+<div id="container">
+   <div id="top"><!-- header -->
+	<div id="header_outer">
+	 	<div id="header_inner">
+			<a href="http://www.videos.com/" id="logo"></a>
+			<div id="top_menu">
+				<ul class="clearfix">
+					<li><a href="http://www.videos.com/" class="s_home pointer"><span>Home</span></a></li>
+					<li><a id="toggleLogin" href="javascript:;" class="s_login pointer"><span>Log In</span></a></li>
+					<li><a id="toggleLogin2" href="javascript:;" class="s_signup pointer"><span>Register</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>  
+   </div><!-- top -->
+</div>
+<div class="clearfix"></div>
+<div align="center">
+<div id="ResultsContent">
+<div class="menuw2">
+   <ul>
+	<li id="vnew"><a href="http://www.videos.com/videos/new_videos.html">New Videos</a></li>
+	<li id="vpopular"><a href="http://www.videos.com/videos/popular_videos.html">Popular Videos</a></li>
+	<li id="vlong"><a href="http://www.videos.com/videos/long_videos.html">Long Videos</a></li>
+	<li id="vhigh"><a href="http://www.videos.com/videos/highest_rated.html">Highest Rated</a></li>
+	<li id="vwatched"><a href="http://www.videos.com/videos/videos_being_watched.html">Being Watched</a></li>
+   </ul>
+<div class="clear"></div>
+</div>
+<div id="headerPad"></div>
+<div>
+<form action="http://www.videos.com/video" method="get" id="mainform" name="myform" onSubmit="return Validate(this)">
+<div id="searchsmall">
+<div id="farrow" class="form-left-arrow_small"></div>
+<div class="searchinput_small"><input type="text" class="sinput_small" name="search" id="searchtext" value="zoo videos" maxlength="100" /></div>
+<div class="searchbutton_small"><input type="submit" value="SEARCH" class="sbutton_small" id="SubmitButton" /></div>
+</div><!--end searchsmall-->
+<div id="search_autocomplete"></div>
+<div id="Soptions_small" style="display:none;">
+<div class="Shide"><a href="javascript:;" id="Shide">Close [X]</a></div>
+<div class="Soptiner_small"><h3>Filter by duration:</h3>
+            <label><input type="radio" name="dur" value="2" onclick="Save('dur','2')" /> less than 5 min</label><br />
+            <label><input type="radio" name="dur" value="3" onclick="Save('dur','3')" /> between 5-10 min</label><br />
+            <label><input type="radio" name="dur" value="4" onclick="Save('dur','4')" /> more than 10 min</label><br />
+            <label><input type="radio" name="dur" value="1" checked onclick="Save('dur','1')" /> all durations</label></div>
+<div class="Soptiner_small"><h3>Filter by time:</h3>
+            <label><input type="radio" name="dateadded" value="2" onclick="Save('dateadded','2')" /> last 24 hours</label><br />
+            <label><input type="radio" name="dateadded" value="3" onclick="Save('dateadded','3')" /> last 7 days</label><br />
+            <label><input type="radio" name="dateadded" value="4" onclick="Save('dateadded','4')" /> last 30 days</label><br />
+            <label><input type="radio" name="dateadded" value="1" checked onclick="Save('dateadded','1')" /> all time</label></div>
+<div class="Soptiner_small">
+	<h3>Show adult content:</h3>
+	<label><input type="radio" name="AF" value="N" onclick="Filter('AF','N')" /> Yes</label>
+	<label><input type="radio" name="AF" value="Y" onclick="Filter('AF','Y')" /> No</label>
+	<label><h3 style="margin:11px 0 5px 2px;"><nobr>I am over 18 years of age:</nobr></h3></label>
+	<label><input type="radio" name="O18" value="Y" onclick="Filter('O18','Y')" /> Yes</label>
+	<label><input type="radio" checked name="O18" value="N" onclick="Filter('O18','N')" /> No</label>
+</div>
+</div><!--End Soptions-->
+</form>
+<div class="filter_sm">Adult Filter: <a href="javascript:;" onClick="$('searchtext').focus()"><span id="filter">ON</span></a></div>
+</div><!--end search-->
+
+<div class="contentsearch" id="holderph">
+<h2>16,923 videos for <strong>zoo videos</strong> found in 0.4365 seconds. Showing 1 to 25 below.</h2>
+<div id="adst" style="height:125px;"></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22218898-1/zoo_videos/missing_bronx_zoo_cobra_recovered.html" rel="metacafe" title="Missing Bronx Zoo Cobra Recovered">
+   <img src="http://img2.videos.com/thumb/m/m/mccb-HXb5sT2JfjqEnfNnR2Q0f8paG7WiimlU.jpg" width="160" height="120" title="Missing Bronx Zoo Cobra Recovered - From Metacafe" alt="Missing Bronx Zoo Cobra Recovered" />
+   <br><h4>Missing Bronx Zoo Cobra Recovered</h4><span class="duration">1:24</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22217822-1/zoo_videos/zoo_filez_lemur_exhibit.html" rel="dailymotion" title="Zoo Filez: Lemur Exhibit">
+   <img src="http://img2.videos.com/thumb/d/5/dmxhxdw5.jpg" width="160" height="120" title="Zoo Filez: Lemur Exhibit - From Dailymotion" alt="Zoo Filez: Lemur Exhibit" />
+   <br><h4>Zoo Filez: Lemur Exhibit</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22182715-1/zoo_videos/missing_cobra_found_at_bronx_zoo.html" rel="metacafe" title="Missing Cobra Found At Bronx Zoo">
+   <img src="http://img2.videos.com/thumb/m/m/mccb-gqt73b6xjY4aCqVQzHZEse5Iny9HeEoG.jpg" width="160" height="120" title="Missing Cobra Found At Bronx Zoo - From Metacafe" alt="Missing Cobra Found At Bronx Zoo" />
+   <br><h4>Missing Cobra Found At Bronx Zoo</h4><span class="duration">2:01</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22214605-1/zoo_videos/accuweather39_s_weatherman_jim_kosek_calls_out_the_bronx_zoo39_s_cobra.html" rel="youtube" title="AccuWeather&#39 S Weatherman Jim Kosek Calls Out The Bronx Zoo&#39 S Cobra!">
+   <img src="http://img2.videos.com/thumb/yt/y/yt1D9rDGdMT9Y.jpg" width="160" height="120" title="AccuWeather&#39 S Weatherman Jim Kosek Calls Out The Bronx Zoo&#39 S Cobra! - From Youtube" alt="AccuWeather&#39 S Weatherman Jim Kosek Calls Out The Bronx Zoo&#39 S Cobra!" />
+   <br><h4>AccuWeather&#39 S Weatherman Jim Kosek Calls Out The Bronx Zoo&#39 S Cobra!</h4><span class="duration">1:30</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22181567-1/zoo_videos/santa_barbara_zoo_helps_endangered.html" rel="dailymotion" title="Santa Barbara Zoo Helps Endangered">
+   <img src="http://img2.videos.com/thumb/d/s/dmxhwuiu.jpg" width="160" height="120" title="Santa Barbara Zoo Helps Endangered - From Dailymotion" alt="Santa Barbara Zoo Helps Endangered" />
+   <br><h4>Santa Barbara Zoo Helps Endangered</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22174657-1/zoo_videos/potawatomi_zoo_opens_friday_with_new_exhibit.html" rel="dailymotion" title="Potawatomi Zoo Opens Friday With New Exhibit">
+   <img src="http://img2.videos.com/thumb/d/p/dmxhwnmg.jpg" width="160" height="120" title="Potawatomi Zoo Opens Friday With New Exhibit - From Dailymotion" alt="Potawatomi Zoo Opens Friday With New Exhibit" />
+   <br><h4>Potawatomi Zoo Opens Friday With New Exhibit</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21994588-1/zoo_videos/zoo_story.html" rel="blip" title="Zoo Story">
+   <img src="http://img2.videos.com/thumb/7/z/bp4941191.jpg" width="160" height="120" title="Zoo Story - From Blip" alt="Zoo Story" />
+   <br><h4>Zoo Story</h4><span class="duration">13:18</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22130830-1/zoo_videos/gemma_atkinson_zoo_photoshoot_2007.html" rel="youtube" title="Gemma Atkinson Zoo Photoshoot 2007">
+   <img src="http://img2.videos.com/thumb/yt/8/ytJkHAFfrAgj8.jpg" width="160" height="120" title="Gemma Atkinson Zoo Photoshoot 2007 - From Youtube" alt="Gemma Atkinson Zoo Photoshoot 2007" />
+   <br><h4>Gemma Atkinson Zoo Photoshoot 2007</h4><span class="duration">4:00</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21926068-1/zoo_videos/how_many_galaxies_are_you_looking_to_classify_through_galaxy_zoo_galaxy_zoo.html" rel="metacafe" title="How Many Galaxies Are You Looking To Classify Through Galaxy Zoo?: Galaxy Zoo">
+   <img src="http://img2.videos.com/thumb/m/h/mc6166178.jpg" width="160" height="120" title="How Many Galaxies Are You Looking To Classify Through Galaxy Zoo?: Galaxy Zoo - From Metacafe" alt="How Many Galaxies Are You Looking To Classify Through Galaxy Zoo?: Galaxy Zoo" />
+   <br><h4>How Many Galaxies Are You Looking To Classify Through Galaxy Zoo?: Galaxy Zoo</h4><span class="duration">0:47</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21926070-1/zoo_videos/what_is_galaxy_zoo_galaxy_zoo.html" rel="metacafe" title="What Is Galaxy Zoo?: Galaxy Zoo">
+   <img src="http://img2.videos.com/thumb/m/w/mc6166177.jpg" width="160" height="120" title="What Is Galaxy Zoo?: Galaxy Zoo - From Metacafe" alt="What Is Galaxy Zoo?: Galaxy Zoo" />
+   <br><h4>What Is Galaxy Zoo?: Galaxy Zoo</h4><span class="duration">1:37</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21811388-1/zoo_videos/lowry_park_volunteer_charged_with_molesting_boy_at_zoo.html" rel="liveleak" title="Lowry Park Volunteer Charged With Molesting Boy At Zoo">
+   <img src="http://img2.videos.com/thumb/3/l/llc24_1300920866.jpg" width="160" height="120" title="Lowry Park Volunteer Charged With Molesting Boy At Zoo - From Liveleak" alt="Lowry Park Volunteer Charged With Molesting Boy At Zoo" />
+   <br><h4>Lowry Park Volunteer Charged With Molesting Boy At Zoo</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21812578-1/zoo_videos/baby_cheetah_born_at_the_jacksonville_zoo.html" rel="ebaumsworld" title="Baby Cheetah Born At The Jacksonville Zoo">
+   <img src="http://img2.videos.com/thumb/8/b/eb81394019.jpg" width="160" height="120" title="Baby Cheetah Born At The Jacksonville Zoo - From Ebaumsworld" alt="Baby Cheetah Born At The Jacksonville Zoo" />
+   <br><h4>Baby Cheetah Born At The Jacksonville Zoo</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21810626-1/zoo_videos/zoo_york_at_tampa_pro_2011.html" rel="dailymotion" title="ZOO YORK AT TAMPA PRO 2011">
+   <img src="http://img2.videos.com/thumb/d/z/dmxhsa5r.jpg" width="160" height="120" title="ZOO YORK AT TAMPA PRO 2011 - From Dailymotion" alt="ZOO YORK AT TAMPA PRO 2011" />
+   <br><h4>ZOO YORK AT TAMPA PRO 2011</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M22199097-1/zoo_videos/_remembering_knut_rip_.html" rel="youtube" title="♥ Remembering Knut RIP ♥">
+   <img src="http://img2.videos.com/thumb/yt/s/ytU2TqmeKB7Cs.jpg" width="160" height="120" title="♥ Remembering Knut RIP ♥ - From Youtube" alt="♥ Remembering Knut RIP ♥" />
+   <br><h4>♥ Remembering Knut RIP ♥</h4><span class="duration">3:01</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21859059-1/zoo_videos/patrick_-_road_to_recovery_as_of_march_21_2011.html" rel="youtube" title="Patrick - Road To Recovery As Of March 21, 2011">
+   <img src="http://img2.videos.com/thumb/yt/4/ytrYm7irMrlF4.jpg" width="160" height="120" title="Patrick - Road To Recovery As Of March 21, 2011 - From Youtube" alt="Patrick - Road To Recovery As Of March 21, 2011" />
+   <br><h4>Patrick - Road To Recovery As Of March 21, 2011</h4><span class="duration">5:25</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21738378-1/zoo_videos/naked_at_the_zoo.html" rel="dailymotion" title="Naked At The Zoo">
+   <img src="http://img2.videos.com/thumb/d/n/dmxhr70s.jpg" width="160" height="120" title="Naked At The Zoo - From Dailymotion" alt="Naked At The Zoo" />
+   <br><h4>Naked At The Zoo</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21711175-1/zoo_videos/eisbr_knut_letzte_minuten_knuts_tod_im_berliner_zoo.html" rel="youtube" title="Eisbär Knut Letzte Minuten Knuts Tod Im Berliner Zoo">
+   <img src="http://img2.videos.com/thumb/yt/y/ytFgOIuq14PLY.jpg" width="160" height="120" title="Eisbär Knut Letzte Minuten Knuts Tod Im Berliner Zoo - From Youtube" alt="Eisbär Knut Letzte Minuten Knuts Tod Im Berliner Zoo" />
+   <br><h4>Eisbär Knut Letzte Minuten Knuts Tod Im Berliner Zoo</h4><span class="duration">6:21</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21737544-1/zoo_videos/zoo_animals_run_free.html" rel="dailymotion" title="Zoo Animals Run Free">
+   <img src="http://img2.videos.com/thumb/d/z/dmxhr6lv.jpg" width="160" height="120" title="Zoo Animals Run Free - From Dailymotion" alt="Zoo Animals Run Free" />
+   <br><h4>Zoo Animals Run Free</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21744340-1/zoo_videos/tierische_gef252_hle_in_bremerhaven_150_wir_besuchen_den_zoo_am_meer.html" rel="blip" title="Tierische Gef&#252 Hle In Bremerhaven &#150 Wir Besuchen Den Zoo Am Meer">
+   <img src="http://img2.videos.com/thumb/7/t/bp4917675.jpg" width="160" height="120" title="Tierische Gef&#252 Hle In Bremerhaven &#150 Wir Besuchen Den Zoo Am Meer - From Blip" alt="Tierische Gef&#252 Hle In Bremerhaven &#150 Wir Besuchen Den Zoo Am Meer" />
+   <br><h4>Tierische Gef&#252 Hle In Bremerhaven &#150 Wir Besuchen Den Zoo Am Meer</h4><span class="duration">5:23</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21688622-1/zoo_videos/animal_in_the_zoo.html" rel="metacafe" title="Animal In The Zoo">
+   <img src="http://img2.videos.com/thumb/m/a/mcmv-oFnj.jpg" width="160" height="120" title="Animal In The Zoo - From Metacafe" alt="Animal In The Zoo" />
+   <br><h4>Animal In The Zoo</h4><span class="duration">2:12</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21859050-1/zoo_videos/jannah_paradise_part_two.html" rel="youtube" title="JANNAH PARADISE PART TWO">
+   <img src="http://img2.videos.com/thumb/yt/y/ytZ7zqzLbkDoY.jpg" width="160" height="120" title="JANNAH PARADISE PART TWO - From Youtube" alt="JANNAH PARADISE PART TWO" />
+   <br><h4>JANNAH PARADISE PART TWO</h4><span class="duration">10:51</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21531545-1/zoo_videos/fort_worth_zoo_hopes_for_record_attendance.html" rel="dailymotion" title="Fort Worth Zoo Hopes For Record Attendance">
+   <img src="http://img2.videos.com/thumb/d/f/dmxhp454.jpg" width="160" height="120" title="Fort Worth Zoo Hopes For Record Attendance - From Dailymotion" alt="Fort Worth Zoo Hopes For Record Attendance" />
+   <br><h4>Fort Worth Zoo Hopes For Record Attendance</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21505056-1/zoo_videos/broader_tv_ep120_spring_sessions_at_moreboards_stubai_zoo.html" rel="vimeo" title="BrOADER TV Ep.120: Spring Sessions At MOREBOARDS Stubai Zoo">
+   <img src="http://img2.videos.com/thumb/o/b/vm21159207.jpg" width="160" height="120" title="BrOADER TV Ep.120: Spring Sessions At MOREBOARDS Stubai Zoo - From Vimeo" alt="BrOADER TV Ep.120: Spring Sessions At MOREBOARDS Stubai Zoo" />
+   <br><h4>BrOADER TV Ep.120: Spring Sessions At MOREBOARDS Stubai Zoo</h4><span class="duration"></span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21767700-1/zoo_videos/ocelot_kitty_hates_the_dentist.html" rel="youtube" title="Ocelot Kitty Hates The Dentist">
+   <img src="http://img2.videos.com/thumb/yt/k/ytHJV2XK77m8k.jpg" width="160" height="120" title="Ocelot Kitty Hates The Dentist - From Youtube" alt="Ocelot Kitty Hates The Dentist" />
+   <br><h4>Ocelot Kitty Hates The Dentist</h4><span class="duration">0:56</span></a></div>
+   <div class="video-box">
+   <a href="http://www.videos.com/play/M21503352-1/zoo_videos/birds_at_the_rio_grande_zoo.html" rel="dailymotion" title="Birds At The Rio Grande Zoo">
+   <img src="http://img2.videos.com/thumb/d/b/dmxhok56.jpg" width="160" height="120" title="Birds At The Rio Grande Zoo - From Dailymotion" alt="Birds At The Rio Grande Zoo" />
+   <br><h4>Birds At The Rio Grande Zoo</h4><span class="duration"></span></a></div>
+<div class="clear"></div><div class="pages">Page: &nbsp;<b>1</b> <a href="http://www.videos.com/videos/2/zoo_videos.html" title="Page 2">2</a> <a href="http://www.videos.com/videos/3/zoo_videos.html" title="Page 3">3</a> <a href="http://www.videos.com/videos/4/zoo_videos.html" title="Page 4">4</a> <a href="http://www.videos.com/videos/5/zoo_videos.html" title="Page 5">5</a> <a href="http://www.videos.com/videos/6/zoo_videos.html" title="Page 6">6</a> <a href="http://www.videos.com/videos/7/zoo_videos.html" title="Page 7">7</a> <a href="http://www.videos.com/videos/8/zoo_videos.html" title="Page 8">8</a> <a href="http://www.videos.com/videos/9/zoo_videos.html" title="Page 9">9</a> <a href="http://www.videos.com/videos/10/zoo_videos.html" title="Page 10">10</a> <a href="http://www.videos.com/videos/11/zoo_videos.html" title="Page 11">11</a> <a href="http://www.videos.com/videos/12/zoo_videos.html" title="Page 12">12</a> <a href="http://www.videos.com/videos/13/zoo_videos.html" title="Page 13">13</a> <a href="http://www.videos.com/videos/14/zoo_videos.html" title="Page 14">14</a> <a href="http://www.videos.com/videos/15/zoo_videos.html" title="Page 15">15</a> <a href="http://www.videos.com/videos/16/zoo_videos.html" title="Page 16">16</a> <a href="http://www.videos.com/videos/17/zoo_videos.html" title="Page 17">17</a> <a href="http://www.videos.com/videos/18/zoo_videos.html" title="Page 18">18</a> <a href="http://www.videos.com/videos/19/zoo_videos.html" title="Page 19">19</a> <a href="http://www.videos.com/videos/20/zoo_videos.html" title="Page 20">20</a> &nbsp;<a href="http://www.videos.com/videos/2/zoo_videos.html" title="Next Page" class="pnav">&rsaquo;&rsaquo;</a> &nbsp;</div><div class="clearfix" style="padding-bottom:20px;"></div><div id="adsb"></div>
+<div class="clearfix" style="padding-bottom:20px;"></div>
+<div class="searchsmall">
+<div class="form-left-noarrow_small" id="arrow2"></div>
+<form action="http://www.videos.com/video" method="get" id="mainform" name="myform2" onSubmit="return Validate(this)">
+<div class="searchinput_small"><input type="text" class="sinput_small" name="search" id="stt" value="zoo videos" /></div>
+<div class="searchbutton_small"><input type="submit" value="SEARCH" class="sbutton_small" id="sb" /></div>
+</form>
+</div>
+</div></div><div class="clearfix"></div>
+</div><!--end content-->
+</div><!--end center-->
+<div id="footer">
+<span style="margin:20px;float:right;"><a href="http://www.videos.com/">Videos</a> &middot; <a href="http://www.videos.com/categories.html">Browse</a> &middot; <a href="http://www.videos.com/about.htm">About</a> &middot; <a href="http://www.videos.com/privacy.htm">Privacy</a> &middot; <a href="http://www.videos.com/terms.htm">Terms</a> &middot; <a href="http://www.videos.com/contact.htm">Contact</a> &middot; <a href="http://www.videos.com/suggest.htm">Suggest A Site</a> &middot; <a href="javascript:;" onclick="window.external.AddSearchProvider('http://www.videos.com/opensearch.xml')">Install Our Video Search Plugin</a></span>
+<span style="margin:20px;float:left;">&copy; Copyright 2011 Videos.com. All rights reserved.</span>
+</div>
+<script language="javascript" type="text/javascript" src="http://www.videos.com/templates/default/js/videos.js"></script>
+<script type="text/javascript">
+if (document.getElementById('adst')) JaxRequest('/click?s=zoo+videos&a=N&r=http%3A%2F%2Fwww.videos.com%2Fvideos%2Fzoo_videos.html','A');
+</script>
+</body>
+</html>

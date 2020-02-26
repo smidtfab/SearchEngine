@@ -1,0 +1,815 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head profile="http://purl.org/uF/2008/03/">
+  <title>Sigalon's Personalities Soup</title>
+  <meta name="description" content="Interesting Personalities and some RSS feeds from the organizations they represent: BillGates ,  JustinKistner , RichardMacManus , RobertScoble , EmilyChang , MichaelArrington , SteveJobs , PeteCashmore , OmMalik , NickDenton , SteveRubel , ChrisPirillo , PaulKrugman , NaomiKlein , JonStewart , CharlieRose , KeithOlbermann , Amy Goodman , NoamChomsky ( ZSpace ),  RachelMaddow ( TheShow ),  JohnPilger , LarryKing , GlennGreenwald ( Salon ), GoreVidal . " />
+
+  <link href="http://static.soup.io/stylesheets/global.css?e00691e05d1119f058c56b149a07a79b981e8650" media="screen" rel="stylesheet" title="" type="text/css"  />
+<link href="/appearance/css/305197?e00691e05d1119f058c56b149a07a79b981e8650" media="screen" rel="stylesheet" title="" type="text/css" id="skin_css" />
+  <style id="after_skin_css"></style>
+  
+  <link href="http://Sigalonpersonalities.soup.io/rss/tag/crowdflower" rel="alternate" title="Sigalon's Personalities Soup - posts tagged 'crowdflower'" type="application/rss+xml" />
+
+  
+    <link href="http://asset.soup.io/asset/0878/6140_d1dc_16.jpeg" rel="shortcut icon" type="image/png" />
+  
+
+  
+
+  
+    <script src="http://static.soup.io/javascripts/squeezed/visitor.js?1286213114" type="text/javascript"></script>
+  
+
+  
+
+  
+</head>
+
+<body class="not_edit tag-crowdflower">
+<script type="text/javascript">var SOUP_Referer = "/";</script>
+
+
+
+<script type="text/javascript">
+  //JS Localization
+  if (!SOUP.Text) SOUP.Text = {}
+
+  
+    SOUP.Text['skin_loading'] = 'Loading skin';
+    SOUP.Text['skin_preview'] = 'Unsaved skin preview';
+    SOUP.Text['skin_save'] = 'Save now';
+    SOUP.Text['skin_cancel'] = 'Revert';
+    SOUP.Text['skin_change_confirm'] = 'This will reset your Custom CSS. There is no undo. Are you sure?';
+    SOUP.Text['unsaved_detected'] = 'You have an unsaved draft';
+    SOUP.Text['unsaved_restore'] = 'Restore';
+    SOUP.Text['unsaved_discard'] = 'Discard';
+    SOUP.Text['months'] = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    SOUP.Text['backup_restore_error'] = 'Sorry, unable to restore backup';
+    SOUP.Text['date_format'] = 'mdy';
+    SOUP.Text['date_styles'] = {'d': 'd', 'm': 'm', 'y': 'y'};
+    SOUP.Text['dismiss'] = 'Dismiss';
+    SOUP.Text['reposting'] = 'Reposting...';
+    SOUP.Text['cal_month_prev'] = 'Previous month';
+    SOUP.Text['cal_month_next'] = 'Next month';
+    SOUP.Text['just_a_moment'] = 'Just a moment...';
+    SOUP.Text['im'] = 'I\'m';
+    SOUP.Text['my'] = 'my';
+    SOUP.Text['is'] = 'is';
+    SOUP.Text['bookmarklet_button'] = 'Don\'t click me, drag this button to your browser toolbar!';
+    SOUP.Text['tutorial_bmlet'] = 'simply drag this button up to your browser\'s bookmark toolbar:';
+    SOUP.Text['tutorial_bmlet_ie'] = 'right-click this button, select \"<b>Add to favorites<\/b>\" and save it to the ' + SOUP.Text['tutorial_bmlet_ie'+SOUP.Public.browser.IEversion()] + '. Don\'t worry, it\'s perfectly safe.';
+    SOUP.Text['bookmarklet'] = Prototype.Browser.IE ? SOUP.Text['tutorial_bmlet_ie'] : SOUP.Text['tutorial_bmlet'];
+    SOUP.Text['tutorial_bmlet_ie7'] = '\"<b>Links<\/b>\" folder (make sure it\'s set to visible in Tools &gt; Toolbars)';
+    SOUP.Text['tutorial_bmlet_ie8'] = '\"<b>Favorites Bar<\/b>\" folder';
+    SOUP.Text['tutorial_invitation'] = '<p>If you like, I can briefly walk you through the main functionality.<\/p><p class=\"btns\"><a class=\"btn\" href=\"#nojs\" onclick=\"return SOUP.Admin.tutorial.step(1)\">Yes please, continue<\/a> <a class=\"btn skip\" href=\"#nojs\" onclick=\"return SOUP.Admin.tutorial.step(-1)\">No, skip this<\/a><\/p>';
+    SOUP.Text['tutorial_end'] = '<h3>Your turn...<\/h3><p><b>That\'s it for now.<\/b> Feel free to play around some more and explore all the other things Soup can do.<\/p>';
+    SOUP.Text['tutorial_initialusername'] = 'What\'s your username on $1?';
+    SOUP.Text['tutorial_initialimport'] = '<h3>Soup &hearts; $1<\/h3><p>Hi <strong>$2<\/strong>! This is your brand new demo account at Soup.io.<\/p><p>We\'ve started importing your public data from $1 in the background &ndash; it should start appearing within minutes and will sync automatically in the future.<\/p><p>That should get you off to a great start here, now try sharing other aspects of your digital life at Soup.io!<\/p>'+SOUP.Text['tutorial_invitation'];
+    SOUP.Text['tutorial'] = [
+      '<h3>Welcome to Soup!<\/h3>'+SOUP.Text['tutorial_invitation'],
+      'Click the \"Add\" button to make your <strong>first post<\/strong>',
+      '<h3>Post types<\/h3><p>These are the types of stuff you can post to your Soup.<br />Go ahead and pick one!<\/p><p>If you can\'t think of anything, how about sharing a favorite quotation, or something funny a friend recently said?',
+      'Just hit \"Save\" when you\'re done.',
+      'Click here to switch to <strong>edit mode<\/strong> to add an \"about me\" text',
+      '<h3>Edit mode<\/h3><p>In edit mode, you can change the title and description of your Soup, as well as edit and delete posts.<\/p><p>Why not <strong>add a short \"about\" text<\/strong>, maybe with your name and location, and how to contact you?<a href=\"#nojs\" class=\"next\" onclick=\"SOUP.Admin.edit_toggle(); return SOUP.Admin.tutorial.step(6)\">Skip this<\/a><\/p>',
+      
+      '<h3>Bookmarklet<\/h3><p>You can use a little browser tool to post cool stuff you find on other websites to Soup.<\/p><p>To set it up, '+SOUP.Text['bookmarklet']+'<\/p><p class=\"bmlet\"><a href=\"#nojs\" class=\"next\" onclick=\"return SOUP.Admin.tutorial.step(8)\">Continue / skip this<\/a>\n<a class=\"bmlet\" href=\"javascript:%0Avar%20es=[\'body\',\'frameset\',\'head\'];%0Avar%20u=document.location.protocol+\'//www.soup.io/\';%0Avar%20fn=\'soup_bookmarklet_\'+(Math.floor(Math.random()*100000));%0A%0Awindow.open(u+\'bookmarklet-loading.html\',fn,\'toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=400\');%0A%0Atry%0A%7B%0A%20%20var%20s=document.createElement(\'script\');%0A%20%20s.setAttribute(\'src\',u+\'bookmarklet/js/\'+%20fn%20+\'/5\');%0A%20%20for%20(var%20i=0;i%3Ces.length;i++)%7B%0A%20%20%20%20var%20e=document.getElementsByTagName(es[i])[0];%0A%20%20%20%20if(e)%7B%0A%20%20%20%20%20%20e.appendChild(s);%0A%20%20%20%20%20%20break;%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0Acatch(e)%0A%7B%0A%20%20alert(%22This%20doesn\'t%20work%20here.%22);%0A%7D%0Avoid(0);%0A\" onmouseup=\"return SOUP.Admin.bookmarklet_button()\">\n <img src=\"/images/bookmarklet.png\" alt=\"Post to Soup\" title=\"Post to Soup\" />\n<\/a>\n<\/p>',
+      '<p>The next time you\'re on a web page and see something you want to share, you can just click <b>Post to Soup<\/b> to post a quote, an image or a video from that page to your Soup.<\/p><p class=\"btns\"><a href=\"#nojs\" class=\"next\" onclick=\"return SOUP.Admin.tutorial.step(6)\">Dragging didn\'t work? Try again...<\/a><a class=\"btn\" href=\"#nojs\" onclick=\"return SOUP.Admin.tutorial.step(8)\">Continue<\/a><\/p>',
+      'Click here to open the <strong>options panel<\/strong> and customize your Soup',
+      '<h3>Customization<\/h3><p>Pick a skin and choose colors you like. Don\'t forget to hit <strong>Save<\/strong> afterwards!<\/p>'
+    ];
+    SOUP.Text['tutorial_end'] = 'Exit the tutorial';
+    SOUP.Text['tutorial_confirm_end'] = 'Do you want to end the tutorial?';
+
+    SOUP.Text['nothing_more_to_play'] = 'Nothing more to play';
+    SOUP.Text['nothing_to_play'] = 'Nothing to play';
+    SOUP.Text['tv_switching_to_everyone'] = 'Nothing more to play, now showing videos by everyone';
+    SOUP.Text['tv_fetch_failed'] = 'Failed to fetch more videos to play';
+    SOUP.Text['tv_fetch_one_failed'] = 'Failed to fetch video';
+
+    SOUP.Text['flag_thanks'] = 'Thank you for flagging this Soup! It will be reviewed.';
+
+  
+    SOUP.Text['tutorial'].push(SOUP.Text['tutorial_end']+'<p style=\"padding-right:65px\">Soup is more fun with friends &ndash; we can now check to see if anyone you know is here already.<\/p><p class=\"btns\"><a class=\"btn\" href=\"http://www.soup.io/friendfinder\">Find &amp; invite friends<\/a><a href=\"#nojs\" class=\"next\" onclick=\"return SOUP.Admin.tutorial.step(-1)\">Skip this and close tutorial<\/a><\/p>');
+  
+
+  // Skin name
+  
+
+  
+
+  
+    SOUP.Public.ignored_user_ids = SOUP.Public.ignored_user_ids.concat(new Array());
+  
+
+  SOUP.Public.open_links_in_new_windows = true;
+
+  // Calendar picker
+  var A_TCALDEF = {
+        'months': SOUP.Text['months'],
+        'weekdays': ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        'yearscroll': false, // show year scroller
+        'weekstart': 1, // first day of week: 0-Su or 1-Mo
+        'centyear': 70, // 2 digit years less than 'centyear' are in 20xx, othewise in 19xx.
+        'imgpath': '/images/calendar/' // directory with calendar images
+  }
+</script>
+
+<script type="text/javascript">
+SOUP.CrossFrame.subscribe(SOUP.Public.process_message_event);
+
+SOUP.Public.storefront_host = 'www.soup.io';
+
+if (!window.postMessage) {
+  document.body.appendChild(new Element('iframe', {'class': 'hidden', 'src': 'http://www.soup.io/iframe-proxy.html'}));
+  
+  
+    document.body.appendChild(new Element('iframe', {'class': 'hidden', 'src': 'http://sigalonpersonalities.soup.io/iframe-proxy.html'}));
+  
+}
+</script>
+
+<div id="remote-iframe-container">
+  
+  <iframe src="http://www.soup.io/remote/toggle/frame?blog_id=305197&amp;origin_host=sigalonpersonalities.soup.io"
+          id="toggle-iframe"
+          name="toggle"
+          scrolling="no"
+          frameborder="0"
+          border="0"
+          allowtransparency="true"></iframe>
+
+
+<iframe src="http://www.soup.io/remote/repost/frame?c=33679ccdc314225f2353dbdb38eaa26f2adfc753#host=sigalonpersonalities.soup.io"
+        scrolling="no"
+        id="repost-iframe"
+        name="repost"
+        frameborder="0"
+        border="0"
+        allowtransparency="true"
+        onmouseover="if (SOUP.Public.over_post_id) SOUP.Public.post_mouseover($('post' + SOUP.Public.over_post_id), event);"
+        onmouseout="if (SOUP.Public.over_post_id) SOUP.Public.post_mouseout($('post' + SOUP.Public.over_post_id), event);"></iframe>
+
+</div>
+
+<div id="reaction-iframe-container"></div>
+
+
+  <div id="soup">
+    <a href="http://www.soup.io"><img alt="Tumblelog by Soup.io" src="http://static.soup.io/images/soup_badge.png?1273074663" title="Tumblelog by Soup.io" /></a>
+  </div>
+
+
+<div id="barcontainer">
+  
+</div>
+
+<div id="admin">
+  <ul id="admin-hot">
+  
+
+
+  <li id="toggle-buttons">
+    <div id="toggle-caption"></div>
+  </li>
+
+
+</ul>
+
+
+
+<div id="admin-sidebar">
+  
+</div>
+</div>
+
+    <div id="lightbox-bg"></div>
+    <div id="lightbox" title="click to return"></div>
+
+    <div id="bubble" onmouseover="SOUP.Public.bubble_over()" onmouseout="SOUP.Public.bubble_out()">
+      <div id="bubblebit"></div>
+      <div id="bubblepost"></div>
+    </div>
+    <script type="text/javascript">
+    SOUP.Public.content_width = 500;
+    SOUP.Public.environment = 'production';
+    </script>
+
+    <img src="http://static.soup.io/images/small_arrow_up.gif" id="actionbar_arrow_up" />
+
+
+
+
+
+  <script type="text/javascript">
+    SOUP.Public.message({
+      message: 'Displaying posts tagged &nbsp;<tt>crowdflower</tt>',
+      buttons: [['Return', function() { document.location.replace('http://sigalonpersonalities.soup.io/') }]]
+    });
+  </script>
+
+
+<div id="contentcontainer2">
+<div id="contentcontainer" class="groups_empty">
+<div id="content" class="single-author">
+
+<div id="headercontainer2" class="">
+<div id="headercontainer" class="">
+  <div id="header" class="friends_empty">
+
+    <div id="title">
+
+      <div id="avatarcontainer" class="vcard">
+        
+          <a id="avatar" href="http://sigalonpersonalities.soup.io/" class="url ">
+            <img src="http://asset.soup.io/asset/0878/6140_d1dc_48-square.jpeg" alt="Sigalonpersonalities" class="fn nickname user305243 photo" width="48" height="48" />
+          </a>
+        
+      </div>
+
+      <div id="h1">
+            <h1 class=""><a href="http://sigalonpersonalities.soup.io/" name="options[title]">Sigalon's Personalities Soup</a></h1>
+
+    
+      </div>
+
+    </div>
+
+    <div id="userinfo">
+
+      <div id="description_search">
+
+        
+        <div id="descriptioncontainer2">
+          <h4>About</h4>
+          <div id="descriptioncontainer">
+            <div class="description">
+  <div class="description-inner">
+  <div>Interesting Personalities and some RSS feeds from the organizations they represent:</div><div><br /></div><a href="http://en.wikipedia.org/wiki/Bill_Gates">BillGates</a>, <a href="http://www.justinkistner.com/">JustinKistner</a>, <a href="http://en.wikipedia.org/wiki/ReadWriteWeb">RichardMacManus</a>, <a href="http://en.wikipedia.org/wiki/Robert_Scoble">RobertScoble</a>, <a href="http://en.wikipedia.org/wiki/Emily_Chang">EmilyChang</a>, <a href="http://en.wikipedia.org/wiki/Michael_Arrington">MichaelArrington</a>, <a href="http://en.wikipedia.org/wiki/Steve_Jobs">SteveJobs</a>, <a href="http://en.wikipedia.org/wiki/Pete_Cashmore">PeteCashmore</a>, <a href="http://en.wikipedia.org/wiki/Om_Malik">OmMalik</a>, <a href="http://en.wikipedia.org/wiki/Nick_Denton">NickDenton</a>, <a href="http://en.wikipedia.org/wiki/Steve_Rubel">SteveRubel</a>, <a href="http://en.wikipedia.org/wiki/Chris_Pirillo">ChrisPirillo</a>, <a href="http://en.wikipedia.org/wiki/Paul_Krugman">PaulKrugman</a>, <a href="http://en.wikipedia.org/wiki/Naomi_Klein">NaomiKlein</a>, <a href="http://en.wikipedia.org/wiki/Jon_Stewart">JonStewart</a>, <a href="http://en.wikipedia.org/wiki/Charlie_Rose">CharlieRose</a>, <a href="http://en.wikipedia.org/wiki/Keith_Olbermann">KeithOlbermann</a>, <a href="http://en.wikipedia.org/wiki/Amy_Goodman">Amy Goodman</a>, <a href="http://en.wikipedia.org/wiki/Noam_Chomsky">NoamChomsky</a>(<a href="http://www.zcommunications.org/zspace/noamchomsky">ZSpace</a>), <a href="http://en.wikipedia.org/wiki/Rachel_Maddow">RachelMaddow</a>(<a href="http://www.msnbc.msn.com/id/26315908/ns/msnbc_tv-rachel_maddow_show/">TheShow</a>),       <div><a href="http://en.wikipedia.org/wiki/John_Pilger">JohnPilger</a>, <a href="http://en.wikipedia.org/wiki/Larry_King">LarryKing</a>, <a href="http://en.wikipedia.org/wiki/Glenn_Greenwald">GlennGreenwald</a>(<a href="http://www.salon.com/news/opinion/glenn_greenwald/">Salon</a>), <a href="http://en.wikipedia.org/wiki/Gore_Vidal">GoreVidal</a>. </div>
+  </div>
+</div>
+
+
+
+          </div>
+        </div>
+        
+
+        
+        <div id="searchcontainer">
+          <form action="" method="get" accept-charset="utf-8">
+            <input class="search" type="text" name="search" value="" size="20" />
+            <input class="btn" type="submit" value="Search" />
+          </form>
+        </div>
+        
+
+          </div><!-- description_search -->
+
+      
+      <div id="accountcontainer">
+        <h4>Accounts</h4>
+        <ul id="accounts">
+          
+          
+              
+                <li><a href="http://www.charlierose.com/" class="feed" rel="me" title="Charlie Rose - Recent Content"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.charlierose.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.thedailyshow.com?rsspartner=rssMozilla" class="feed" rel="me" title="Daily Show Videos"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.thedailyshow.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.democracynow.org/" class="feed" rel="me" title="Democracy Now!"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.democracynow.org/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.steverubel.com" class="feed" rel="me" title="The Steve Rubel Stream"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.steverubel.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.readwriteweb.com/" class="feed" rel="me" title="ReadWriteWeb"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.readwriteweb.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://techcrunch.com" class="feed" rel="me" title="TechCrunch"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://techcrunch.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://gigaom.com" class="feed" rel="me" title="GigaOM"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://gigaom.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.justinkistner.com" class="feed" rel="me" title="Justin Kistner"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.justinkistner.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://emilychang.com/ehub" class="feed" rel="me" title="Emily Chang - eHub"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://emilychang.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://lifehacker.com/index.xml" class="feed" rel="me" title="Lifehacker"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://lifehacker.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://mashable.com" class="feed" rel="me" title="Mashable!"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://mashable.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.naomiklein.org/articles/all" class="feed" rel="me" title="Articles by Naomi Klein"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.naomiklein.org/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://www.newstatesman.com/writers/john_pilger" class="feed" rel="me" title="New Statesman - John Pilger"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://www.newstatesman.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://chris.pirillo.com" class="feed" rel="me" title="Chris Pirillo"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://chris.pirillo.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://scobleizer.com" class="feed" rel="me" title="Scobleizer"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://scobleizer.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://topics.nytimes.com/top/opinion/editorialsandoped/oped/columnists/paulkrugman/index.html?inline=nyt-per&amp;" class="feed" rel="me" title="NYT &gt; Paul Krugman"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://topics.nytimes.com/favicon.ico" width="16" /></a></li>
+              
+          
+              
+                <li><a href="http://video.google.fr/videosearch?q=gore+vidal+politics&amp;hl=en&amp;prmd=vo" class="feed" rel="me" title="Google Videos - gore vidal politics"><img alt="Favicon" height="16" onerror="SOUP.Public.default_image(this)" src="http://video.google.fr/favicon.ico" width="16" /></a></li>
+              
+          
+        </ul>
+      </div>
+      
+
+      <div id="groups_friends">
+        
+
+        
+        <div id="friendscontainer">
+
+          <h4>Friends</h4>
+
+          
+                <ul id="friends-head" class="friends" onmouseout="if(window.SOUP) SOUP.Public.bubble()">
+                  
+                  
+                </ul>
+        </div>
+        
+
+      </div><!-- groups_friends -->
+
+    </div><!-- userinfo -->
+
+    
+      <div id="filtercontainer">
+        <ul id="filter">
+          <li class="sel"><a href="http://sigalonpersonalities.soup.io/">My stream</a></li>
+          <li class="tv"><a href="http://sigalonpersonalities.soup.io/tv">My TV</a></li>
+          
+            <li class="friends"><a href="http://sigalonpersonalities.soup.io/friends">My friends</a></li>
+          
+        </ul>
+      </div>
+    
+
+  </div><!--/header-->
+</div><!--/headercontainer-->
+</div><!--/headercontainer2-->
+
+<div id="maincontainer">
+<div id="main">
+  
+  
+  <div id="searchbox">
+
+  </div>
+  <noscript>
+  
+  
+</noscript>
+
+
+  
+
+  <div id="posts">
+
+  
+    
+
+  <script type="text/javascript">
+      SOUP.Endless.next_url = '/tag/crowdflower?sessid=6551ab69620036ba9fc8ffa79ab65af5&since=65165074';
+  </script>
+        <div id="scroll-contents" style="position: absolute; left: -1000px; visibility: hidden"></div>
+  <div id="reload_notice" class="endlessnotice">
+    <strong>Newer posts are loading.</strong><br />
+  </div>
+        <div id="top_notice" class="endlessnotice">
+                <strong>You are at the newest post.</strong><br/>
+    <a href="/tag/crowdflower?newer=1&sessid=6551ab69620036ba9fc8ffa79ab65af5&since=117458121" id="endless_top_post"
+             onclick="SOUP.Endless.getMoreAbove(); return false;">Click here</a>
+     to check if anything new just came in.
+  </div>
+  <div id="more_history"><div id="first_batch">
+    
+  <div id="new-future" class="new-container"></div>
+
+
+
+  
+    <h2 class="date">
+      
+    <span class="m">March</span>
+    <span class="d">22</span>
+    <span class="y">2011</span>
+    </h2>
+  
+
+
+
+  <div id="new-today" class="new-container"></div>
+
+
+<div id="post117458121" class="post post_regular imported feeds-feedburner-com long author-self " onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Sigalonpersonalities.soup.io/post/117458121/CrowdFlower-Raises-7M-Launches-E-Commerce-Tool" title="CrowdFlower Raises $7M, Launches E-Commerce Tool For Data Categorization"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user305243" ><a class="url" href="http://Sigalonpersonalities.soup.io"><img src="http://asset.soup.io/asset/0878/6140_d1dc_32-square.jpeg" alt="Sigalonpersonalities" title="Sigalonpersonalities" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Sigalonpersonalities.soup.io/post/117458121/CrowdFlower-Raises-7M-Launches-E-Commerce-Tool">
+              <img src="http://techcrunch.com/favicon.ico" width="16" height="16" title="Imported from feedburner.com" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Mar 22 2011 11:58:41 UTC">11:58</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content tag-tc tag-crowdflower">
+  
+
+  
+  <h3><a href="http://feedproxy.google.com/~r/Techcrunch/~3/w7NZlYSNXSU/"><a href="http://feedproxy.google.com/~r/Techcrunch/~3/w7NZlYSNXSU/">CrowdFlower Raises $7M, Launches E-Commerce Tool For Data Categorization</a></a></h3>
+
+
+<div class="body">
+
+
+  
+  <p><img class="shot2" src="http://tctechcrunch.files.wordpress.com/2010/01/CrowdFlower.jpg" /><a href="http://crowdflower.com/">CrowdFlower,</a> a startup that helps businesses outsource mundane or repetitive tasks to the cloud, has raised $7 million in new funding led by Harmony Partners with <a href="http://www.crunchbase.com/financial-organization/trinity-ventures">Trinity Ventures</a> and <a href="http://www.crunchbase.com/financial-organization/bessemer-venture-partners">Bessemer Venture Partners</a> participating in the round. This brings the startup’s total funding to <a href="http://www.crunchbase.com/company/crowdflower">$12 million. </a></p>
+<p>CrowdFlower, which <a href="http://www.techcrunch.com/2009/09/15/tc50-crowdflower-crowdsources-mundane-labor-to-the-cloud/">launched at TechCrunch50</a> in 2009 and is a product of <a href="http://doloreslabs.com/">Dolores Labs,</a> prices tasks and jobs based on the amount of time it takes to perform the assignment per unit (the user does the sample task). The startup mainly focuses on helping businesses complete tasks relating to data collection, content moderation and product search relevance. </p>
+<p>The startup will break the task into units that can be performed by a single person and price the task accordingly. CrowdFlower then lets you choose the channels of work ranging from Amazon’s Mechanical Turk to their own labor force to even a Facebook application where people perform task to earn virtual currencies. Once the task is finished, CrowdFlower will perform a quality control check and show the user the results of the task. The startup will indicate which workers were most productive and accurate. CrowdFlower will continue to employ workers who have high ratings. On the client end, businesses will only pay for task completed to a specified quality level.</p>
+<p>Now, the startup is starting to offer industry and task specific offerings to businesses. A few months ago, CrowdFlower released a data collection offering that verifies business listings and local directories on the web. And today, the startup is releasing a categorization product that allows e-commerce sites to sift through data and categorize each product.</p>
+<p>Lukas Biewald, CEO of CrowdFlower, says that many e-commerce sites get unstructured data from manufacturers and suppliers and find it difficult to sort through and categorize all this data. And if a retailers doesn’t categorize and tag data properly, then it won’t be searchable on their sites and will leas to less conversions. CorwdFlower claims that the product has 95% accuracy. Additionally, the API and customized dashboard enable an automated solution for data transfer to clients.</p>
+<p> CrowdFlower, which faces competition from <a href="http://www.crunchbase.com/company/cloudcrowd">CloudCrowd</a>, plans to use the funding to scale the business and for new product development. </p>
+<div class="cbw snap_nopreview"><div class="cbw_header"><div class="cbw_header_text"><a href="http://www.crunchbase.com/">CrunchBase Information</a></div></div><div class="cbw_content"><div class="cbw_subheader"><a href="http://www.crunchbase.com/company/crowdflower">CrowdFlower</a></div><div class="cbw_subcontent"></div><div class="cbw_footer">Information provided by <a href="http://www.crunchbase.com/">CrunchBase</a></div></div></div>
+<br />  <a href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/comments/tctechcrunch.wordpress.com/286628/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/delicious/tctechcrunch.wordpress.com/286628/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gofacebook/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/facebook/tctechcrunch.wordpress.com/286628/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gotwitter/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/twitter/tctechcrunch.wordpress.com/286628/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/stumble/tctechcrunch.wordpress.com/286628/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/digg/tctechcrunch.wordpress.com/286628/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch.wordpress.com/286628/"><img src="http://feeds.wordpress.com/1.0/reddit/tctechcrunch.wordpress.com/286628/" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=techcrunch.com&amp;blog=11718616&amp;post=286628&amp;subd=tctechcrunch&amp;ref=&amp;feed=1" height="1" alt="" width="1" />
+<p><a href="http://feedads.g.doubleclick.net/~at/7IS_5egIsB_Z_RnnnV7ANDQSf2g/0/da"><img src="http://feedads.g.doubleclick.net/~at/7IS_5egIsB_Z_RnnnV7ANDQSf2g/0/di" /></a><br />
+<a href="http://feedads.g.doubleclick.net/~at/7IS_5egIsB_Z_RnnnV7ANDQSf2g/1/da"><img src="http://feedads.g.doubleclick.net/~at/7IS_5egIsB_Z_RnnnV7ANDQSf2g/1/di" /></a></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=w7NZlYSNXSU:9_gEvRu01wo:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=w7NZlYSNXSU:9_gEvRu01wo:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=w7NZlYSNXSU:9_gEvRu01wo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=w7NZlYSNXSU:9_gEvRu01wo:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=w7NZlYSNXSU:9_gEvRu01wo:-BTjWOF_DHI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=w7NZlYSNXSU:9_gEvRu01wo:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=w7NZlYSNXSU:9_gEvRu01wo:D7DqB2pKExk" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=w7NZlYSNXSU:9_gEvRu01wo:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" /></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/w7NZlYSNXSU" height="1" width="1" />
+  
+
+
+</div>
+
+
+
+  
+    <div class="tags">
+      Tags: 
+      <a href="http://Sigalonpersonalities.soup.io/tag/TC">TC</a> <a href="http://Sigalonpersonalities.soup.io/tag/crowdflower">crowdflower</a>
+    </div>
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Sigalonpersonalities.soup.io/post/117458121/CrowdFlower-Raises-7M-Launches-E-Commerce-Tool" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=117458121&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+    <h2 class="date">
+      
+    <span class="m">August</span>
+    <span class="d">22</span>
+    <span class="y">2010</span>
+    </h2>
+  
+
+
+
+
+<div id="post72258190" class="post post_regular imported feeds-feedburner-com long author-self " onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Sigalonpersonalities.soup.io/post/72258190/Crowdsourcing-Disaster-Relief" title="Crowdsourcing Disaster Relief"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user305243" ><a class="url" href="http://Sigalonpersonalities.soup.io"><img src="http://asset.soup.io/asset/0878/6140_d1dc_32-square.jpeg" alt="Sigalonpersonalities" title="Sigalonpersonalities" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Sigalonpersonalities.soup.io/post/72258190/Crowdsourcing-Disaster-Relief">
+              <img src="http://techcrunch.com/favicon.ico" width="16" height="16" title="Imported from feedburner.com" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Aug 22 2010 02:45:18 UTC">02:45</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content tag-tc tag-crowdflower tag-samasource">
+  
+
+  
+  <h3><a href="http://feedproxy.google.com/~r/Techcrunch/~3/5Dg61to2tow/"><a href="http://feedproxy.google.com/~r/Techcrunch/~3/5Dg61to2tow/">Crowdsourcing Disaster Relief</a></a></h3>
+
+
+<div class="body">
+
+
+  
+  <p><img class="snap_nopreview shot2" src="http://tctechcrunch.files.wordpress.com/2010/08/haitirelief.jpg" alt="" /><em>This article was written by <a href="http://www.crunchbase.com/person/lukas-biewald">Lukas Biewald</a>, CEO of <a href="http://crowdflower.com/">CrowdFlower</a> and <a href="http://www.crunchbase.com/person/leila-chirayath-janah">Leila Janah</a>, CEO of <a href="http://www.samasource.org/">Samasource</a>.</em></p>
+<p>On Thursday July 8, 2010, residents of Oakland took to the streets after a jury convicted police officer Johannes Mehserle of involuntary manslaughter of Oscar Grant, a 22-year-old unarmed black youth. Race-related riots are not new to California. But this time, the first people to learn about violent incidents tied to the protests weren’t riot cops — they were the Oakland residents behind <a href="http://OscarGrantProtests.com/">OscarGrantProtests.com</a>, a website that allowed people near the action to map incidents of violence and view reports from others. Established in a few days, OscarGrantProtests employs crisis mapping technology from a group of open-source developers called <a href="http://www.ushahidi.com/">Ushahidi</a>, who built the software to report violence in the aftermath of the 2008 disputed Kenyan presidential election.</p>
+<p>Ushahidi has radically altered the way we respond to disasters by placing reporting power in the hands of people who might otherwise be victims. Virtually every disaster affecting large groups of people presents the same problem: in the absence of real-time data, emergency responders don’t know where to go and when. Technology can solve this problem quickly and cheaply, but governments and relief agencies don’t often use it.</p>
+<p>Telecommunications infrastructure is now ubiquitous — even in sub-Saharan Africa, eight out of 10 adults have access to a mobile phone. The four billion cell phones in use around the world create massive amounts of data and demand for crowdsourcing technology to aggregate, categorize, and otherwise make sense of it.</p>
+<p><a href="http://www.mission4636.org/">Mission 4636</a> provides a good example of how we can use data from mobile phones to make relief efforts more effective. In the aftermath of the January earthquake that shook the Haitian capital of Port-au-Prince, millions of Haitians lacked food, water and shelter. Aid workers flooded the capital, but lacked information about who needed help, and where. Voila and Digicel, Haiti’s two major telecommunications carriers, had their cell towers up and running immediately following the quake, but huge call volumes exceeded their capacity and resulted in service outages. Text messages offered a solution — texts take up less bandwidth than calls, and are much less affected by network delays.</p>
+<p>A group of companies, including Ushahidi, FrontlineSMS, CrowdFlower and Samasource, collaborated to set up a text message hotline – “Mission 4636” – supported by the U.S. Department of State. The Haitian government collaborated with radio stations to advertise the hotline, and a few days after the disaster, anyone in Port-au-Prince could send an SMS to a toll-free number, 4636, to request help. The messages were routed to relief crews at the U.S. Coast Guard and the International Red Cross on the ground.</p>
+<p>In the first month, Haitians sent more than 40,000 texts to 4636. But Mission 4636 ran into a problem: the messages were in Haitian Creole, but the aid workers designated to respond spoke English. Worse still, many of the texts contained location information that only Haitians familiar with the geography of Port-au-Prince could comprehend, such as references to neighborhoods or popular landmarks. Without a translation service that could operate in real-time, Mission 4636 provided little value to victims of the earthquake.</p>
+<p>Traditionally, governments solve problems like these by hiring contractors — after major disasters, it’s not uncommon for relief agencies to spend millions of dollars building temporary call centers to handle the flood of new calls. Outsourced translation firms abound, but charge large premiums to deliver translation on a 24/7 basis. In Haiti, crowdsourcing provided an answer: we customized Ushahidi and CrowdFlower’s technology to allow hundreds of thousands of Haitians living outside the country to translate texts from Port-au-Prince in real time, and for free, via a public website. News of the site spread quickly through the Haitian Diaspora living abroad, who heard of our efforts through a grassroots media campaign The results were immediate. In the first day, Mission 4636 got a message from an overcrowded hospital that was running out of fuel. Within minutes the message was translated and desperately needed fuel was deployed.</p>
+<p>Mass collaboration accomplished more than Creole-English translations — armchair disaster relief agents around the world also collaboratively edited maps and information about Haiti to assist aid workers. A few days after the disaster, <a href="http://Openstreetmap.com/">Openstreetmap.com</a>, a Wikipedia-like site for amateur map makers, had more accurate maps of Haiti than the U.S. Department of Defense.</p>
+<p>Perhaps most critically, crowdsourcing provided hundreds of thousands of data points on what Haitians most needed after the earthquake. Surprisingly, after immediate needs were met, text messages sent to 4636expressed unprompted demand for something other food, water or shelter — people started asking for travay, or work. It became clear that short-form translation could create needed jobs in parts of Haiti flooded with refugees from the disaster. Samasource trained 50 people in Mirebalais, a small rural community in Haiti’s Central Plateau, to translate the 4636 messages on the web after Ushahidi volunteers categorized them by priority level. Using netbooks (small, cheap laptops) powered by a generator and a satellite Internet connection, these workers translated tens of thousands of messages, forming a kind of “virtual assembly line” with the Ushahidi volunteers.</p>
+<p>The rapid proliferation of broadband, wireless and cell phones, coupled with new crowdsourcing technology, is completely changing the face of disaster relief. Everyone with a computer can provide crucial assistance, sifting through satellite photos, translating messages or updating maps, and most people are happy to do this free of charge — contributing to life-saving relief efforts is a powerful motivator. Mission 4636 cost less than $500,000 to design, build and deploy. At a fraction of the cost of most relief budgets, crowdsourcing can solve coordination problems on the ground. Governments and aid agencies should make it a central part of future disaster response efforts.</p>
+<div class="cbw snap_nopreview"><div class="cbw_header"><div class="cbw_header_text"><a href="http://www.crunchbase.com/">CrunchBase Information</a></div></div><div class="cbw_content"><div class="cbw_subheader"><a href="http://www.crunchbase.com/company/samasource">Samasource</a></div><div class="cbw_subcontent"></div><div class="cbw_subheader"><a href="http://www.crunchbase.com/company/crowdflower">CrowdFlower</a></div><div class="cbw_subcontent"></div><div class="cbw_footer">Information provided by <a href="http://www.crunchbase.com/">CrunchBase</a></div></div></div>
+<br />  <a href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/comments/tctechcrunch.wordpress.com/210688/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/delicious/tctechcrunch.wordpress.com/210688/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gofacebook/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/facebook/tctechcrunch.wordpress.com/210688/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gotwitter/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/twitter/tctechcrunch.wordpress.com/210688/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/stumble/tctechcrunch.wordpress.com/210688/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/digg/tctechcrunch.wordpress.com/210688/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch.wordpress.com/210688/"><img src="http://feeds.wordpress.com/1.0/reddit/tctechcrunch.wordpress.com/210688/" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=techcrunch.com&amp;blog=11718616&amp;post=210688&amp;subd=tctechcrunch&amp;ref=&amp;feed=1" height="1" alt="" width="1" /><p><a href="http://pro.tweetmeme.com/share?url=http://techcrunch.com/2010/08/21/crowdsourcing-disaster-relief/&amp;style=compact&amp;source=techcrunch&amp;service=bit.ly&amp;service_api=techcrunch:R_0381170e330c42dda299f92709e0ef5c"><img src="http://pro.tweetmeme.com/imagebutton.gif?url=http://techcrunch.com/2010/08/21/crowdsourcing-disaster-relief/&amp;style=compact&amp;source=techcrunch&amp;service=bit.ly" /></a></p>
+<p><a href="http://feedads.g.doubleclick.net/~at/d66W-YM0NvxZ113AMdXRecoLtbQ/0/da"><img src="http://feedads.g.doubleclick.net/~at/d66W-YM0NvxZ113AMdXRecoLtbQ/0/di" /></a><br />
+<a href="http://feedads.g.doubleclick.net/~at/d66W-YM0NvxZ113AMdXRecoLtbQ/1/da"><img src="http://feedads.g.doubleclick.net/~at/d66W-YM0NvxZ113AMdXRecoLtbQ/1/di" /></a></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5Dg61to2tow:uoBK0l__4Lo:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5Dg61to2tow:uoBK0l__4Lo:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5Dg61to2tow:uoBK0l__4Lo:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5Dg61to2tow:uoBK0l__4Lo:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=5Dg61to2tow:uoBK0l__4Lo:-BTjWOF_DHI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5Dg61to2tow:uoBK0l__4Lo:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=5Dg61to2tow:uoBK0l__4Lo:D7DqB2pKExk" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=5Dg61to2tow:uoBK0l__4Lo:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" /></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/5Dg61to2tow" height="1" width="1" />
+  
+
+
+</div>
+
+
+
+  
+    <div class="tags">
+      Tags: 
+      <a href="http://Sigalonpersonalities.soup.io/tag/TC">TC</a> <a href="http://Sigalonpersonalities.soup.io/tag/crowdflower">crowdflower</a> <a href="http://Sigalonpersonalities.soup.io/tag/samasource">samasource</a>
+    </div>
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Sigalonpersonalities.soup.io/post/72258190/Crowdsourcing-Disaster-Relief" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=72258190&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+  
+    <h2 class="date">
+      
+    <span class="m">July</span>
+    <span class="d">13</span>
+    <span class="y">2010</span>
+    </h2>
+  
+
+
+
+
+<div id="post65165074" class="post post_regular imported feeds-feedburner-com long author-self " onmouseover="SOUP.Public.post_mouseover($(this), event);" onmouseout="SOUP.Public.post_mouseout($(this), event);">
+  <div class="meta">
+    
+      <div class="icons">
+        <div class="icon type"><a href="http://Sigalonpersonalities.soup.io/post/65165074/Inside-CloudCrowd-Betting-On-Credibility-Video" title="Inside CloudCrowd: Betting On Credibility [Video]"></a></div>
+        
+          <div class="icon author">
+            <span class="user_container  user305243" ><a class="url" href="http://Sigalonpersonalities.soup.io"><img src="http://asset.soup.io/asset/0878/6140_d1dc_32-square.jpeg" alt="Sigalonpersonalities" title="Sigalonpersonalities" class="photo fn" width="32" height="32" /></a></span>
+          </div>
+        
+        
+          <div class="icon source">
+            <a href="http://Sigalonpersonalities.soup.io/post/65165074/Inside-CloudCrowd-Betting-On-Credibility-Video">
+              <img src="http://techcrunch.com/favicon.ico" width="16" height="16" title="Imported from feedburner.com" onerror="SOUP.Public.default_image(this)" />
+            </a>
+          </div>
+        
+      </div>
+    
+    
+       <span class="time"><abbr title="Jul 13 2010 17:24:26 UTC">17:24</abbr></span>
+    
+  </div>
+
+  <div class="content-container">
+    <div class="content tag-tc tag-cloudcrowd tag-crowdflower">
+  
+
+  
+  <h3><a href="http://feedproxy.google.com/~r/Techcrunch/~3/pFxWo8LRkHk/"><a href="http://feedproxy.google.com/~r/Techcrunch/~3/pFxWo8LRkHk/">Inside CloudCrowd: Betting On Credibility [Video]</a></a></h3>
+
+
+<div class="body">
+
+
+  
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+			
+
+	  
+	
+	
+<p>As one of the founders of the original Napster and <a href="http://www.crunchbase.com/company/cloudmark">CloudMark</a> (an anti-spam service), <a href="http://www.crunchbase.com/person/jordan-ritter">Jordan Ritter</a>, has always been fascinated by the idea of combining the power of the cloud and the potential of human capital. Last April, he met up with <a href="http://www.crunchbase.com/person/alex-edelstein">Alex Edelstein</a>, a former <a href="http://www.cloudmark.com/en/home.html">CloudMark</a> executive, to hammer out their next business plan.</p>
+<p>Over a round of beers, the idea for <a href="http://www.cloudcrowd.com/">CloundCrowd</a> was born.</p>
+<p>Like <a href="http://crowdflower.com/">CrowdFlower</a> and Amazon’s <a href="https://www.mturk.com/mturk/welcome">Mechanical Turk</a>, CloudCrowd is trying to bring labor into the cloud, by creating a vast network of workers around the globe. Today, there are roughly 25,000 workers, who have completed more than a million tasks since the site’s launch in October 2009. That represents a small fraction of <a href="http://www.crunchbase.com/company/crowdflower">CrowdFlower’s</a> claim to 500,000 workers, but CEO Edelstein says their force is quickly expanding, with some 2,000 additions each week. Although it took 7 months to reach the one million task mark, Edelstein predicts they’ll reach 2 million jobs in 8 weeks. See video above.</p>
+<p>CloudCrowd has two main segments. The <a href="http://techcrunch.com/2010/03/19/cloudcrowd-outsources-labor-to-the-cloud/">bulk</a> of its business is client-driven work: a company submits tasks to CloudCrowd and the service will farm that out to eligible workers. Workers access CloudCrowd through a Facebook app, where they can pick available tasks and arrange payment.The tasks can be as simple as checking the quality of an image or involve the translation of entire web pages. Because pricing is determined by the level of difficulty, the payouts range from one penny to several dollars. Once a task is completed, a separate user will check the finished product for an additional fee, creating a level of quality control.</p>
+<p>The second part of their business is a new layer of consumer-facing services.</p>
+<p>CloudCrowd recently launched EditZen, a simple web site, where consumers can submit pages for editing at $4 a page. The company will soon launch TranslationZen, which will offer translation services at $19.95 a page (far cheaper than some alternatives which are priced at $60 a page).</p>
+<p>Aside from their consumer services, CloudCrowd’s cut varies widely depending on the job— ranging from a 20% cut to as high as 80%. The average worker doesn’t get paid handsomely for their task, but it can be a nice source for supplemental income— especially for workers in developing countries where salaries are generally well below America’s mean. In fact, the company now attracts more workers outside of the US, with a heavy concentration in Southeast Asia and Eastern Europe (many from Malaysia, Philippines and Singapre).</p>
+<p>The startup, which has yet to reach profitability, is a 15 person operation in San Francisco with modest funding. So far Edelstein is their sole investor, with $1.5 million in the project, but they are talking to major VC firms about a Series A round.</p>
+<p>The main challenge for a company like CloudCrowd is keeping pace with its ever-growing workforce. Edelstein admits that feeding the machine with sufficient volume and variety is a difficult endeavor in this early stage. The company has not spent a significant amount of capital on marketing and courting clients, instead, CloudCrowd still relies on word of mouth to attract new business.</p>
+<p>“Well it’s true that the number one complaint of our workers is give me more work, I want more availability of jobs. In both of the previous outsourcing, disruptive eras, the era of manufacturing moving to China and developing nations and the era of white collar work moving to India it took years of explaining, educating and showing corporations and all sorts of people who had work how much they could benefit…how consistent the work quality could be….We don’t expect that overnight every single company in the Fortune 500 is going to outsource significant amounts of their work to the internet cloud but we’re sure that it’s going to happen over time.”</p>
+<p>The key to their success (and beating rivals like CrowdFlower) lies in the credibility of their workforce and amassing as much information as possible on the skills of their workers. According to Ritter, the system  is structured to create dynamic profiles on each user. Every time a user completes a task and that task is reviewed, CloudCrowd will learn how reliable that user is and which skills they excel at. If all that information is organized properly, that could be highly valuable for a client who needs to finish a targeted task in a short time frame. ”We’re building sort of what we call the credibility graph of known reliable people on the internet,” Ritter says. “If there are particular customers who… say, ‘I want a thousand reliable people on the internet to do a particular job for me.’ Well today you really can’t find that. Where would you find 1,000 reliable people on the internet.”</p>
+<div class="cbw snap_nopreview"><div class="cbw_header"><div class="cbw_header_text"><a href="http://www.crunchbase.com/">CrunchBase Information</a></div></div><div class="cbw_content"><div class="cbw_subheader"><a href="http://www.crunchbase.com/company/cloudcrowd">CloudCrowd</a></div><div class="cbw_subcontent"></div><div class="cbw_subheader"><a href="http://www.crunchbase.com/company/crowdflower">CrowdFlower</a></div><div class="cbw_subcontent"></div><div class="cbw_subheader"><a href="http://www.crunchbase.com/person/jordan-ritter">Jordan Ritter</a></div><div class="cbw_subcontent"></div><div class="cbw_footer">Information provided by <a href="http://www.crunchbase.com/">CrunchBase</a></div></div></div>
+<br />  <a href="http://feeds.wordpress.com/1.0/gocomments/tctechcrunch.wordpress.com/196737/"><img src="http://feeds.wordpress.com/1.0/comments/tctechcrunch.wordpress.com/196737/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godelicious/tctechcrunch.wordpress.com/196737/"><img src="http://feeds.wordpress.com/1.0/delicious/tctechcrunch.wordpress.com/196737/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/gostumble/tctechcrunch.wordpress.com/196737/"><img src="http://feeds.wordpress.com/1.0/stumble/tctechcrunch.wordpress.com/196737/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/godigg/tctechcrunch.wordpress.com/196737/"><img src="http://feeds.wordpress.com/1.0/digg/tctechcrunch.wordpress.com/196737/" alt="" /></a> <a href="http://feeds.wordpress.com/1.0/goreddit/tctechcrunch.wordpress.com/196737/"><img src="http://feeds.wordpress.com/1.0/reddit/tctechcrunch.wordpress.com/196737/" alt="" /></a> <img src="http://stats.wordpress.com/b.gif?host=techcrunch.com&amp;blog=11718616&amp;post=196737&amp;subd=tctechcrunch&amp;ref=&amp;feed=1" alt="" /><p><a href="http://pro.tweetmeme.com/share?url=http://techcrunch.com/2010/07/13/inside-cloudcrowd-betting-on-credibility-video/&amp;style=compact&amp;source=techcrunch&amp;service=bit.ly&amp;service_api=techcrunch:R_0381170e330c42dda299f92709e0ef5c"><img src="http://pro.tweetmeme.com/imagebutton.gif?url=http://techcrunch.com/2010/07/13/inside-cloudcrowd-betting-on-credibility-video/&amp;style=compact&amp;source=techcrunch&amp;service=bit.ly" /></a></p>
+<p><a href="http://feedads.g.doubleclick.net/~at/knJnUnUhUJOFxwUc_cx1qXZvnKY/0/da"><img src="http://feedads.g.doubleclick.net/~at/knJnUnUhUJOFxwUc_cx1qXZvnKY/0/di" /></a><br />
+<a href="http://feedads.g.doubleclick.net/~at/knJnUnUhUJOFxwUc_cx1qXZvnKY/1/da"><img src="http://feedads.g.doubleclick.net/~at/knJnUnUhUJOFxwUc_cx1qXZvnKY/1/di" /></a></p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/Techcrunch?a=pFxWo8LRkHk:AM_BQKJeqm4:2mJPEYqXBVI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=2mJPEYqXBVI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=pFxWo8LRkHk:AM_BQKJeqm4:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=7Q72WNTAKBA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=pFxWo8LRkHk:AM_BQKJeqm4:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=yIl2AUoC8zA" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=pFxWo8LRkHk:AM_BQKJeqm4:-BTjWOF_DHI"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=pFxWo8LRkHk:AM_BQKJeqm4:-BTjWOF_DHI" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=pFxWo8LRkHk:AM_BQKJeqm4:D7DqB2pKExk"><img src="http://feeds.feedburner.com/~ff/Techcrunch?i=pFxWo8LRkHk:AM_BQKJeqm4:D7DqB2pKExk" /></a> <a href="http://feeds.feedburner.com/~ff/Techcrunch?a=pFxWo8LRkHk:AM_BQKJeqm4:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/Techcrunch?d=qj6IDK7rITs" /></a>
+</div><img src="http://feeds.feedburner.com/~r/Techcrunch/~4/pFxWo8LRkHk" height="1" width="1" />
+  
+
+
+</div>
+
+
+
+  
+    <div class="tags">
+      Tags: 
+      <a href="http://Sigalonpersonalities.soup.io/tag/TC">TC</a> <a href="http://Sigalonpersonalities.soup.io/tag/cloudcrowd">cloudcrowd</a> <a href="http://Sigalonpersonalities.soup.io/tag/crowdflower">crowdflower</a>
+    </div>
+  
+
+  
+  
+
+  
+  
+</div>
+
+<ul class="actionbar">
+  <li class="first permalink"><a href="http://Sigalonpersonalities.soup.io/post/65165074/Inside-CloudCrowd-Betting-On-Credibility-Video" title="Permalink">#</a></li>
+  <li class="repost"><span class="inner">&nbsp;</span></li>
+  <li class="last react"><a href="#nojs" onclick="SOUP.Public.open_reaction($(this), &quot;http://www.soup.io/remote/reaction/frame?parent_id=65165074&amp;origin_host=&quot; + location.host); return false">React</a></li>
+</ul>
+
+
+
+
+
+
+  </div>
+</div>
+
+  </div></div>
+  <script type="text/javascript">
+    document.observe('dom:loaded', function() { SOUP.Public.fixup($('first_batch')); });
+  </script>
+  <input autocomplete="false" id="history_index" name="history_index" type="hidden" value="2" />
+  <input id="page_id" name="page_id" type="hidden" value="1301852816" />
+
+  
+          <div id="load_more" class="endlessnotice">
+            <strong><a href="/tag/crowdflower?sessid=6551ab69620036ba9fc8ffa79ab65af5&amp;since=65165074" onclick="SOUP.Endless.getMoreBelow(); return false;">Older posts are this way</a></strong>
+            If this message doesn't go away, click anywhere on the page to continue loading posts.
+            <noscript><br/>Note: If you enable JavaScript, we will load old posts automatically</noscript>
+                </div>
+          <div id="endless_error" class="endlessnotice">
+      <strong>Could not load more posts</strong><br />
+      Maybe Soup is currently being updated? I'll try again automatically in a few seconds...
+          </div>
+          <div id="more_loading" class="endlessnotice">
+            <strong>Just a second, loading <a href="/tag/crowdflower?sessid=6551ab69620036ba9fc8ffa79ab65af5&amp;since=65165074">more posts</a>...</strong>
+          </div>
+          <div id="page_end" class="endlessnotice">
+            You've reached the end.
+          </div>
+  
+  <div style="position:absolute;top:0px;left:0px;visibility:hidden;" id="spacer">&nbsp;</div>
+
+
+  
+
+    <div id="overlay"></div>
+
+  </div><!--/posts-->
+
+  <noscript>
+  
+  
+    <div class="pagination paginationbottom">
+      
+        
+        
+      
+    </div>
+  
+</noscript>
+
+
+</div><!--/main-->
+</div><!--/maincontainer-->
+
+<div id="footercontainer">
+  <div id="footer">
+  </div>
+</div>
+
+</div><!--/content-->
+</div><!--/contentcontainer-->
+</div><!--/contentcontainer2-->
+
+
+      <script type="text/javascript">
+        _qoptions = { qacct:"p-e4h_-nY6rysa2" };
+      </script>
+      <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+      <noscript>
+        <img src="http://pixel.quantserve.com/pixel/p-e4h_-nY6rysa2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+      </noscript>
+
+
+<script type="text/javascript">
+  SOUP.Public.actionbar_enabled = true;
+
+  
+  
+</script>
+
+
+
+</body>
+</html>
