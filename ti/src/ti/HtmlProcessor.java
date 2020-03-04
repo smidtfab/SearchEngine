@@ -67,7 +67,7 @@ public class HtmlProcessor implements DocumentProcessor
 				String normToken = this.normalize(token);
 				//System.out.println(normToken);
 				String stemmedToken = this.stem(normToken);
-				System.out.println(normToken + " -- stemmed --> " + stemmedToken);
+				//System.out.println(normToken + " -- stemmed --> " + stemmedToken);
 				processedTokens.add(stemmedToken);
 			}
 		}
@@ -127,7 +127,7 @@ public class HtmlProcessor implements DocumentProcessor
 		        String line = scanner.nextLine();
 		        lineNum++;
 		        if(line.equals(term)) { 
-		            System.out.println("stop word in line #" + lineNum + " --> " + term);
+		            //System.out.println("stop word in line #" + lineNum + " --> " + term);
 		            scanner.close();
 		            return true;
 		        }
