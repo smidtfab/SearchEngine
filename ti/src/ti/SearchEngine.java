@@ -120,9 +120,9 @@ public class SearchEngine
         ind.printStatistics();
 
         // Instantiate retriever and run
-        //DocumentProcessor docProcessor = new SimpleProcessor();
+        DocumentProcessor docProcessor = new SimpleProcessor();
         //TODO: Change file path argument
-        DocumentProcessor docProcessor = new HtmlProcessor(pathToIndex);
+        //DocumentProcessor docProcessor = new HtmlProcessor(pathToIndex);
         RetrievalModel cosine = new Cosine();
         Interactive inter = new Interactive(cosine, ind, docProcessor);
         inter.run();
