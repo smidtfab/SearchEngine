@@ -1,0 +1,7 @@
+javac -cp "jars/jsoup-1.12.2.jar;src" src/ti/SearchEngine.java
+
+java -cp "jars/jsoup-1.12.2.jar;src" ti.SearchEngine index 2011-myIndex 2011-documents stop-words.txt
+
+java -cp "jars/jsoup-1.12.2.jar;src" ti.SearchEngine batch 2011-myIndex 2011-topics.xml > 2011.run
+
+java -jar jars/ireval.jar 2011_student.run 2011.qrel

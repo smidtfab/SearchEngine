@@ -139,11 +139,11 @@ public class SearchEngine
                 SearchEngine.doIndex(args);
                 break;
             case "batch":
-            	System.out.println("batch");
+            	//System.out.println("batch");
                 SearchEngine.doBatch(args);
                 break;
             case "interactive":
-            	System.out.println("interactive");
+            	//System.out.println("interactive");
                 SearchEngine.doInteractive(args);
                 break;
             default:
